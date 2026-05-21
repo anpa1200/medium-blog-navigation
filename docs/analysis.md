@@ -22,7 +22,7 @@ posts and organizes them by topic, recency, role, and depth.
 The home page uses two sorting models:
 
 - **Newest articles:** sorted by publish date, newest first, from the RSS feed.
-- **Topic navigation:** sorted by practitioner workflow, following the existing
+- **Topic navigation and direct navigation:** sorted like the existing
   18-group Medium master index.
 
 The topic order is not purely chronological. It is designed for navigation:
@@ -67,6 +67,31 @@ RSS-derived labels used approximate word-count thresholds:
 
 Some older posts were manually labeled from visible Medium metadata such as
 reading time and article role.
+
+## Practical Tags
+
+The Docusaurus navigator adds practical tags that are easier to filter than
+Medium's publication tags:
+
+- `offensive`
+- `lab`
+- `cloud`
+- `tool`
+- `cti`
+- `detection`
+- `malware`
+- `web`
+- `osint`
+- `ad`
+- `passwords`
+- `soc`
+- `devops`
+- `ai`
+
+These tags are assigned by article role and topic group. For example,
+HexStrike-AI and exploitation walkthroughs are tagged `offensive`, vulnerable
+environments are tagged `lab`, AWS/GCP/Kubernetes content is tagged `cloud`,
+and utility or framework posts are tagged `tool`.
 
 ## Current Blog Shape
 
