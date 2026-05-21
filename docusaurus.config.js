@@ -73,7 +73,7 @@ const config = {
           items: [
             {label: 'Medium', href: 'https://medium.com/@1200km'},
             {label: 'GitHub', href: 'https://github.com/anpa1200'},
-            {label: 'LinkedIn', href: 'https://www.linkedin.com/in/andrey-pautov-44718441'},
+            {label: 'LinkedIn', href: 'https://www.linkedin.com/in/andrey-pautov/'},
           ],
         },
       ],
