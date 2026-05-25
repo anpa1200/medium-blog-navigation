@@ -55,6 +55,7 @@ const config = {
         {to: '/docs/reading-paths', label: 'Reading Paths', position: 'left'},
         {href: 'https://medium.com/@1200km', label: 'Medium', position: 'right'},
         {href: 'https://github.com/anpa1200', label: 'GitHub', position: 'right'},
+        {href: 'https://anpa1200.github.io/', label: 'All Projects', position: 'right', className: 'navbar-portfolio-btn'},
       ],
     },
     footer: {
