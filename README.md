@@ -17,4 +17,4 @@ npm run build
 
 Production target:
 
-https://anpa1200.github.io/medium-blog-navigation/
+https://1200km.com/medium-blog-navigation/

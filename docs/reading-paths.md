@@ -57,5 +57,5 @@ complete topic list.
 ## Vulnerability Management
 
 1. [CVSS v4.0: The Practical Field Guide for Vulnerability Management](https://medium.com/bugbountywriteup/cvss-v4-0-the-practical-field-guide-for-vulnerability-management-5b5a59728456)
-2. Open the [CVSS v4.0 Field Guide Docusaurus site](https://anpa1200.github.io/cvss/)
+2. Open the [CVSS v4.0 Field Guide Docusaurus site](https://1200km.com/cvss/)
 3. Open the [cvss_4.0 repository](https://github.com/anpa1200/cvss_4.0)

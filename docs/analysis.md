@@ -120,4 +120,4 @@ Medium RSS usually exposes the latest 10 posts. When new articles are published:
 
 The original Medium master index remains the broadest source for the full
 100+ article map. This Docusaurus site is intended to make that map easier to
-scan, filter, and publish as part of the `anpa1200.github.io` ecosystem.
+scan, filter, and publish as part of the `1200km.com` ecosystem.
