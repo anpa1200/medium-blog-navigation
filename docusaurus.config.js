@@ -60,6 +60,13 @@ const config = {
   ],
 
   themeConfig: {
+    image: 'img/favicon.svg',
+    metadata: [
+      {
+        name: 'keywords',
+        content: 'Andrey Pautov blog, threat intelligence articles, CTI research, detection engineering articles, malware analysis, Medium security research, 1200km, InfoSec Write-ups, security blog',
+      },
+    ],
     colorMode: {
       respectPrefersColorScheme: true,
     },
