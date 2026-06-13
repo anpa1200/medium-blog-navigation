@@ -12,25 +12,6 @@ const config = {
   organizationName: 'anpa1200',
   projectName: 'medium-blog-navigation',
 
-  headTags: [
-    {
-      tagName: 'script',
-      attributes: {
-        async: 'true',
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-TMTG21RVHM',
-      },
-    },
-    {
-      tagName: 'script',
-      attributes: {},
-      innerHTML: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-TMTG21RVHM');
-      `,
-    },
-  ],
 
   onBrokenLinks: 'throw',
   markdown: {
@@ -52,6 +33,7 @@ const config = {
           sidebarPath: './sidebars.js',
         },
         blog: false,
+        gtag: {trackingID: 'G-TMTG21RVHM', anonymizeIP: true},
         theme: {
           customCss: './src/css/custom.css',
         },
