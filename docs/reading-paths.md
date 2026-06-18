@@ -15,7 +15,7 @@ complete topic list.
 3. [ATT&CK as a Working Tool](https://medium.com/@1200km/att-ck-as-a-working-tool-theory-and-hands-on-practical-usage-d63835c9f101)
 4. [Attribution Methodology](https://medium.com/@1200km/attribution-methodology-how-to-build-defend-and-challenge-a-threat-actor-attribution-071066437ced)
 5. [Manual CTI vs. AI-Assisted CTI](https://medium.com/@1200km/manual-cti-vs-ai-assisted-cti-a-step-by-step-clock-comparison-ee08325203fc)
-6. [ThreatMapper — Self-Hosted AI Threat Intelligence Platform](https://medium.com/@1200km/threatmapper-i-built-a-self-hosted-ai-threat-intelligence-platform-heres-how-to-use-it-0aa7673e6bd8)
+6. [AdversaryGraph - Self-Hosted AI Threat Intelligence Platform](https://1200km.com/articles/adversarygraph-v2-self-hosted-ai-cti-platform.html)
 
 ## CTI-to-Detection Builder
 
@@ -35,7 +35,7 @@ complete topic list.
 
 1. [AI in Offensive Operations](https://medium.com/@1200km/ai-in-offensive-operations-how-threat-actors-use-artificial-intelligence-4eaeeaf029a9)
 2. [The AI Revolution in Cybersecurity](https://medium.com/@1200km/the-ai-revolution-in-cybersecurity-31e44704d51a)
-3. [ThreatMapper — Self-Hosted AI Threat Intelligence Platform](https://medium.com/@1200km/threatmapper-i-built-a-self-hosted-ai-threat-intelligence-platform-heres-how-to-use-it-0aa7673e6bd8)
+3. [AdversaryGraph - Self-Hosted AI Threat Intelligence Platform](https://1200km.com/articles/adversarygraph-v2-self-hosted-ai-cti-platform.html)
 4. [HexStrike-AI: A Force Multiplier for Red Teams](https://medium.com/@1200km/hexstrike-ai-a-force-multiplier-for-red-teams-and-a-dangerous-shift-in-the-threat-landscape-3e1d4e86f3ae)
 5. [The Intelligent Shield. OpenCTI](https://medium.com/@1200km/the-intelligent-shield-057c9b4b9394)
 
