@@ -1,0 +1,1392 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-articles/2026/2026-03-06-cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">CTI Research: Handala Hack Group (aka Handala Hack Team) | Andrey Pautov Blog Navigator</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://1200km.com/medium-blog-navigation/docs/articles/2026/2026-03-06-cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="Andrey Pautov blog, threat intelligence articles, CTI research, detection engineering articles, malware analysis, Medium security research, 1200km, InfoSec Write-ups, security blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="CTI Research: Handala Hack Group (aka Handala Hack Team) | Andrey Pautov Blog Navigator"><meta data-rh="true" name="description" content="Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (December 2023 to March 2026)"><meta data-rh="true" property="og:description" content="Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (December 2023 to March 2026)"><meta data-rh="true" property="og:image" content="https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png"><meta data-rh="true" name="twitter:image" content="https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png"><link data-rh="true" rel="icon" href="/medium-blog-navigation/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://1200km.com/medium-blog-navigation/docs/articles/2026/2026-03-06-cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8"><link data-rh="true" rel="alternate" href="https://1200km.com/medium-blog-navigation/docs/articles/2026/2026-03-06-cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8" hreflang="en"><link data-rh="true" rel="alternate" href="https://1200km.com/medium-blog-navigation/docs/articles/2026/2026-03-06-cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Articles","item":"https://1200km.com/medium-blog-navigation/docs/articles/"},{"@type":"ListItem","position":2,"name":"CTI Research: Handala Hack Group (aka Handala Hack Team)","item":"https://1200km.com/medium-blog-navigation/docs/articles/2026/2026-03-06-cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMTG21RVHM"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-TMTG21RVHM",{anonymize_ip:!0})</script>
+
+
+
+<script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c5736a51.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.747630dc.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.f6557f21.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/medium-blog-navigation/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/medium-blog-navigation/"><div class="navbar__logo"><img src="/medium-blog-navigation/img/logo.svg" alt="1200km" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/medium-blog-navigation/img/logo.svg" alt="1200km" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Blog Navigator</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/medium-blog-navigation/">Navigator</a><a class="navbar__item navbar__link" href="/medium-blog-navigation/docs/analysis">Analysis</a><a class="navbar__item navbar__link" href="/medium-blog-navigation/docs/reading-paths">Reading Paths</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/medium-blog-navigation/docs/articles">Articles</a><a class="navbar__item navbar__link" href="/medium-blog-navigation/docs/labs">Labs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Projects</a><ul class="dropdown__menu"><li><a href="https://1200km.com/cti-analyst-field-manual/" target="_blank" rel="noopener noreferrer" class="dropdown__link">CTI Analyst Field Manual<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/CTI_as_a_Code/" target="_blank" rel="noopener noreferrer" class="dropdown__link">CTI as a Code<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/operation-desert-hydra/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Operation Desert Hydra<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/customer-driven-ai-cti-project/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Customer-Driven AI CTI<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/israel-government-threat-actors-cti/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Israel Threat Actors CTI<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/ai-vs-defense/" target="_blank" rel="noopener noreferrer" class="dropdown__link">AI vs Defense<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/0x4m4/hexstrike-ai" target="_blank" rel="noopener noreferrer" class="dropdown__link">HexStrike AI<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/adversarygraph-docs/" target="_blank" rel="noopener noreferrer" class="dropdown__link">AdversaryGraph Docs<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Medium<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://1200km.com/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-portfolio-btn">Main Page<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/medium-blog-navigation/docs/analysis"><span title="Blog Analysis" class="linkLabel_WmDU">Blog Analysis</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/medium-blog-navigation/docs/reading-paths"><span title="Reading Paths" class="linkLabel_WmDU">Reading Paths</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/medium-blog-navigation/docs/articles/"><span title="Articles" class="categoryLinkLabel_W154">Articles</span></a><button aria-label="Collapse sidebar category &#x27;Articles&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f"><span title="2024" class="categoryLinkLabel_W154">2024</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/articles/2025/2025-02-24-soc-tier-1-the-complete-onboarding-guide-to-security-monitoring-and-incident-response-824a1dfe4476"><span title="2025" class="categoryLinkLabel_W154">2025</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-02-burp-suite-mcp-gemini-cli-c1229edfe092"><span title="2026" class="categoryLinkLabel_W154">2026</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-02-burp-suite-mcp-gemini-cli-c1229edfe092"><span title="Burp Suite MCP + Gemini CLI" class="linkLabel_WmDU">Burp Suite MCP + Gemini CLI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-03-hexstrike-openai-codex-ai-driven-exploitation-of-metasploitable-b892c07be39f"><span title="HexStrike+OpenAI Codex. AI-Driven Exploitation of Metasploitable." class="linkLabel_WmDU">HexStrike+OpenAI Codex. AI-Driven Exploitation of Metasploitable.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-04-hexstrike-gemini-ai-assisted-ssh-credential-brute-force-a9162f8e253b"><span title="HexStrike + Gemini. AI-Assisted SSH Credential Brute-Force" class="linkLabel_WmDU">HexStrike + Gemini. AI-Assisted SSH Credential Brute-Force</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-05-building-an-extremely-vulnerable-windows-10-lab-a-step-by-step-guide-bonus-full-pt-with-9290d388744c"><span title="Building an Extremely Vulnerable Windows 10 Lab: A Step-by-Step Guide (Bonus:Full PT with…" class="linkLabel_WmDU">Building an Extremely Vulnerable Windows 10 Lab: A Step-by-Step Guide (Bonus:Full PT with…</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-05-hexstrike-gemini-ai-assisted-smb-exposure-credential-brute-force-2c5f99dcdbf4"><span title="HexStrike + Gemini. AI-Assisted SMB Exposure Credential Brute-Force" class="linkLabel_WmDU">HexStrike + Gemini. AI-Assisted SMB Exposure Credential Brute-Force</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-06-building-an-extremely-vulnerable-ubuntu-24-04-server-lab-bonus-full-pt-with-hexstrike-90034032775b"><span title="Building an Extremely Vulnerable Ubuntu 24.04 Server Lab (Bonus: Full PT with Hexstrike)" class="linkLabel_WmDU">Building an Extremely Vulnerable Ubuntu 24.04 Server Lab (Bonus: Full PT with Hexstrike)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-08-hexstrike-cursor-mcp-from-single-target-full-subnet-compromise-lab-pt-walkthrough-f2e1fd793ad7"><span title="HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough)" class="linkLabel_WmDU">HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-11-hexstrike-cursor-for-osint-from-one-email-to-a-full-exposure-map-ffdfc7ba1b30"><span title="HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map" class="linkLabel_WmDU">HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-15-building-a-usb-rubber-ducky-with-arduino-leonardo-with-cursor-a23dd64d1bbe"><span title="Building a USB Rubber Ducky with Arduino Leonardo with Cursor." class="linkLabel_WmDU">Building a USB Rubber Ducky with Arduino Leonardo with Cursor.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-16-hacker-tool-development-workflow-android-rubber-ducky-payloads-in-cursor-ai-47fcccb9c845"><span title="Hacker Tool Development Workflow: Android Rubber Ducky Payloads in Cursor AI" class="linkLabel_WmDU">Hacker Tool Development Workflow: Android Rubber Ducky Payloads in Cursor AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-17-the-one-prompt-pt-lab-autonomous-android-security-research-with-cursor-ai-b96ed2053071"><span title="The One-Prompt PT Lab: Autonomous Android Security Research with Cursor AI" class="linkLabel_WmDU">The One-Prompt PT Lab: Autonomous Android Security Research with Cursor AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-19-the-ai-revolution-in-offensive-security-31e44704d51a"><span title="The AI Revolution in Offensive Security" class="linkLabel_WmDU">The AI Revolution in Offensive Security</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-23-deploy-a-complete-active-directory-pentest-lab-in-one-prompt-with-cursor-ai-ff926fd2b3fc"><span title="Deploy a Complete Active Directory PenTest Lab in One Prompt with Cursor AI" class="linkLabel_WmDU">Deploy a Complete Active Directory PenTest Lab in One Prompt with Cursor AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-24-active-directory-lab-for-pentest-manual-deployment-guide-cab28cd4ad8d"><span title="Active Directory Lab for PenTest. Manual Deployment Guide" class="linkLabel_WmDU">Active Directory Lab for PenTest. Manual Deployment Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-25-hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191"><span title="Hi! Two of my articles have been in pending status for the past few days." class="linkLabel_WmDU">Hi! Two of my articles have been in pending status for the past few days.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-26-active-directory-penetration-testing-745cfb31d7d3"><span title="Active Directory Penetration Testing" class="linkLabel_WmDU">Active Directory Penetration Testing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-27-ai-driven-black-box-active-directory-penetration-testing-8de0b9ad38b7"><span title="AI-Driven Black Box Active Directory Penetration Testing" class="linkLabel_WmDU">AI-Driven Black Box Active Directory Penetration Testing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-28-adcs-esc8-attack-certificate-based-domain-compromise-complete-guide-7ec76562fa6d"><span title="ADCS ESC8 Attack: Certificate-Based Domain Compromise — Complete Guide" class="linkLabel_WmDU">ADCS ESC8 Attack: Certificate-Based Domain Compromise — Complete Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-29-building-a-vulnerable-gcp-pentest-lab-with-terraform-9d1edfcd8eff"><span title="Building a Vulnerable GCP Pentest Lab with Terraform" class="linkLabel_WmDU">Building a Vulnerable GCP Pentest Lab with Terraform</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-29-cursor-hexstrike-fully-automated-adcs-esc8-attack-8736fec53c58"><span title="Cursor + Hexstrike. Fully Automated ADCS ESC8 Attack" class="linkLabel_WmDU">Cursor + Hexstrike. Fully Automated ADCS ESC8 Attack</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-31-a-complete-cloud-penetration-testing-walkthrough-1914f687d7fd"><span title="A Complete Cloud Penetration Testing Walkthrough" class="linkLabel_WmDU">A Complete Cloud Penetration Testing Walkthrough</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-31-ai-assisted-web-and-cloud-penetration-testing-with-cursor-mcp-hexstrike-and-burp-suite-mcp-01c02eed5258"><span title="AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP." class="linkLabel_WmDU">AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-02-building-a-vulnerable-kubernetes-lab-a-complete-guide-to-25-critical-security-issues-fae4fc8e3a91"><span title="Building a Vulnerable Kubernetes Lab: A Complete Guide to 25 Critical Security Issues" class="linkLabel_WmDU">Building a Vulnerable Kubernetes Lab: A Complete Guide to 25 Critical Security Issues</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-03-black-box-kubernetes-penetration-testing-playbook-56350b178af4"><span title="Black-Box Kubernetes Penetration Testing Playbook" class="linkLabel_WmDU">Black-Box Kubernetes Penetration Testing Playbook</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-04-my-lab-82d780962213"><span title="My lab:" class="linkLabel_WmDU">My lab:</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-04-one-prompt-ai-powered-black-box-kubernetes-penetration-test-c75a4747960e"><span title="One-Prompt AI-Powered Black-Box Kubernetes Penetration Test" class="linkLabel_WmDU">One-Prompt AI-Powered Black-Box Kubernetes Penetration Test</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-05-warning-i-just-built-real-malware-by-using-just-human-language-prompts-8949628dee19"><span title="⚠️ WARNING: I Just Built Real Malware by using just human language prompts!" class="linkLabel_WmDU">⚠️ WARNING: I Just Built Real Malware by using just human language prompts!</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-06-welcome-to-the-new-era-when-a-teenager-can-crash-your-company-in-minutes-8818fb6c0503"><span title="Welcome to the New Era: When a Teenager Can Crash Your Company in Minutes" class="linkLabel_WmDU">Welcome to the New Era: When a Teenager Can Crash Your Company in Minutes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-09-gcp-penetration-testing-a-step-by-step-attack-guide-9e39bc3eb96d"><span title="GCP Penetration Testing: A Step-by-Step Attack Guide" class="linkLabel_WmDU">GCP Penetration Testing: A Step-by-Step Attack Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-11-kubernetes-logging-and-monitoring-complete-guide-2ce9d4bdba80"><span title="Kubernetes Logging and Monitoring: Complete Guide" class="linkLabel_WmDU">Kubernetes Logging and Monitoring: Complete Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-13-build-a-vulnerable-iis-sharepoint-lab-with-fluent-bit-complete-deployment-guide-8fe947e8439e"><span title="Build a Vulnerable IIS SharePoint Lab with Fluent Bit: Complete Deployment Guide" class="linkLabel_WmDU">Build a Vulnerable IIS SharePoint Lab with Fluent Bit: Complete Deployment Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-19-the-complete-guide-to-ai-driven-penetration-testing-cursor-mcp-and-the-modern-pt-workflow-8f27ff19f9ca"><span title="The Complete Guide to AI-Driven Penetration Testing: Cursor, MCP, and the Modern PT Workflow" class="linkLabel_WmDU">The Complete Guide to AI-Driven Penetration Testing: Cursor, MCP, and the Modern PT Workflow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-21-one-tool-to-rule-them-all-file-metadata-and-static-analysis-for-malware-analysts-and-soc-t-c6dba1f5b7de"><span title="One Tool to Rule Them All: File Metadata &amp; Static Analysis for Malware Analysts and SOC Teams" class="linkLabel_WmDU">One Tool to Rule Them All: File Metadata &amp; Static Analysis for Malware Analysts and SOC Teams</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-26-a-practical-guide-to-string-analyzer-extract-and-analyze-strings-from-binaries-without-the-875dc74e4868"><span title="A Practical Guide to String Analyzer: Extract and Analyze Strings from Binaries (Without the…" class="linkLabel_WmDU">A Practical Guide to String Analyzer: Extract and Analyze Strings from Binaries (Without the…</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-26-pe-import-analyzer-a-practical-guide-for-malware-analysts-and-reverse-engineers-29b8b98aeaf3"><span title="PE Import Analyzer: A Practical Guide for Malware Analysts and Reverse Engineers" class="linkLabel_WmDU">PE Import Analyzer: A Practical Guide for Malware Analysts and Reverse Engineers</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-02-28-unpacker-a-practical-guide-to-modular-malware-packer-detection-and-unpacking-cf8ba924f25b"><span title="Unpacker: A Practical Guide to Modular Malware Packer Detection and Unpacking" class="linkLabel_WmDU">Unpacker: A Practical Guide to Modular Malware Packer Detection and Unpacking</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-01-basic-static-malware-analysis-from-triage-to-unpacking-explained-and-automated-9442ef3b11b8"><span title="Basic Static Malware Analysis: From Triage to Unpacking — Explained and Automated" class="linkLabel_WmDU">Basic Static Malware Analysis: From Triage to Unpacking — Explained and Automated</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-06-cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8"><span title="CTI Research: Handala Hack Group (aka Handala Hack Team)" class="linkLabel_WmDU">CTI Research: Handala Hack Group (aka Handala Hack Team)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-07-cti-research-sandworm-apt44-649332e8af44"><span title="CTI Research: Sandworm / APT44" class="linkLabel_WmDU">CTI Research: Sandworm / APT44</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-09-cti-research-muddywater-seedworm-mango-sandstorm-ebf6af5ba061"><span title="CTI Research: MuddyWater/Seedworm (Mango Sandstorm)" class="linkLabel_WmDU">CTI Research: MuddyWater/Seedworm (Mango Sandstorm)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-11-building-a-dockerized-ai-powered-host-vulnerability-assessment-tool-cd6e2147ce59"><span title="Building a Dockerized AI-Powered Host Vulnerability Assessment Tool" class="linkLabel_WmDU">Building a Dockerized AI-Powered Host Vulnerability Assessment Tool</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-13-building-a-vulnerable-cloud-pentest-lab-with-terraform-9858ac96b29e"><span title="Building a Vulnerable Cloud Pentest Lab with Terraform" class="linkLabel_WmDU">Building a Vulnerable Cloud Pentest Lab with Terraform</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-14-ai-powered-malware-debugger-that-explains-every-function-it-sees-2a28ef75df8a"><span title="AI-Powered Malware Debugger That Explains Every Function It Sees" class="linkLabel_WmDU">AI-Powered Malware Debugger That Explains Every Function It Sees</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-14-stratusai-i-built-an-ai-powered-cloud-security-scanner-for-aws-and-gcp-here-s-everything-89c6702d3b84"><span title="StratusAI: I Built an AI-Powered Cloud Security Scanner for AWS and GCP — Here’s Everything" class="linkLabel_WmDU">StratusAI: I Built an AI-Powered Cloud Security Scanner for AWS and GCP — Here’s Everything</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-16-navigate-my-blog-all-articles-by-topic-ffd800ef5480"><span title="Navigate My Blog: All Articles by Topic" class="linkLabel_WmDU">Navigate My Blog: All Articles by Topic</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-19-att-and-ck-as-a-working-tool-theory-and-hands-on-practical-usage-d63835c9f101"><span title="ATT&amp;CK as a Working Tool: Theory and Hands-On Practical Usage" class="linkLabel_WmDU">ATT&amp;CK as a Working Tool: Theory and Hands-On Practical Usage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-20-attribution-methodology-how-to-build-defend-and-challenge-a-threat-actor-attribution-071066437ced"><span title="Attribution Methodology: How to Build, Defend, and Challenge a Threat Actor Attribution" class="linkLabel_WmDU">Attribution Methodology: How to Build, Defend, and Challenge a Threat Actor Attribution</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-21-infrastructure-pivoting-how-cti-analysts-expand-from-a-single-ioc-to-a-full-attacker-netwo-1295d50ec29c"><span title="Infrastructure Pivoting: How CTI Analysts Expand From a Single IOC to a Full Attacker Network" class="linkLabel_WmDU">Infrastructure Pivoting: How CTI Analysts Expand From a Single IOC to a Full Attacker Network</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-24-cvss-v4-0-the-practical-field-guide-for-vulnerability-management-5b5a59728456"><span title="CVSS v4.0: The Practical Field Guide for Vulnerability Management" class="linkLabel_WmDU">CVSS v4.0: The Practical Field Guide for Vulnerability Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-30-android-apk-analysis-tool-ai-powered-static-malware-analysis-in-your-terminal-4beb239dad12"><span title="Android APK Analysis Tool: AI-Powered Static Malware Analysis in Your Terminal" class="linkLabel_WmDU">Android APK Analysis Tool: AI-Powered Static Malware Analysis in Your Terminal</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-03-30-android-malware-analysis-a-practical-guide-for-security-analysts-9cda5efb181d"><span title="Android Malware Analysis: A Practical Guide for Security Analysts" class="linkLabel_WmDU">Android Malware Analysis: A Practical Guide for Security Analysts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-06-building-an-android-app-analysis-lab-on-ubuntu-a-practical-setup-guide-4a09fff37622"><span title="Building an Android App Analysis Lab on Ubuntu: A Practical Setup Guide" class="linkLabel_WmDU">Building an Android App Analysis Lab on Ubuntu: A Practical Setup Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-07-android-emulation-and-virtualisation-2f6b33fcc4aa"><span title="Android Emulation &amp; Virtualisation" class="linkLabel_WmDU">Android Emulation &amp; Virtualisation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-08-android-apk-vulnerability-research-complete-guide-a8fcae0f4849"><span title="Android APK Vulnerability Research Complete Guide" class="linkLabel_WmDU">Android APK Vulnerability Research Complete Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-08-deliberately-vulnerable-android-app-covering-every-owasp-mobile-top-10-class-7be775fc6415"><span title="Deliberately Vulnerable Android App Covering Every OWASP Mobile Top 10 Class" class="linkLabel_WmDU">Deliberately Vulnerable Android App Covering Every OWASP Mobile Top 10 Class</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-12-ai-in-offensive-operations-how-threat-actors-use-artificial-intelligence-4eaeeaf029a9"><span title="AI in Offensive Operations: How Threat Actors Use Artificial Intelligence" class="linkLabel_WmDU">AI in Offensive Operations: How Threat Actors Use Artificial Intelligence</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426"><span title="From Threat Intelligence to Detection: A Practitioner’s Guide" class="linkLabel_WmDU">From Threat Intelligence to Detection: A Practitioner’s Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-18-what-ai-assisted-offensive-work-actually-means-for-your-detection-program-a-practitioner-s-9c27a8f40f12"><span title="What AI-Assisted Offensive Work Actually Means for Your Detection Program: A Practitioner’s…" class="linkLabel_WmDU">What AI-Assisted Offensive Work Actually Means for Your Detection Program: A Practitioner’s…</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12"><span title="Malicious Activity as a Statistical Signal: A Detection Engineering Analysis of Anomaly-Based…" class="linkLabel_WmDU">Malicious Activity as a Statistical Signal: A Detection Engineering Analysis of Anomaly-Based…</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-22-detecting-malicious-insider-activity-a-technical-detection-engineering-guide-3c3b41e95e82"><span title="Detecting Malicious Insider Activity: A Technical Detection Engineering Guide" class="linkLabel_WmDU">Detecting Malicious Insider Activity: A Technical Detection Engineering Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-25-cti-research-kubernetes-and-cloud-native-threat-landscape-70373d6d7a87"><span title="CTI Research: Kubernetes &amp; Cloud-Native Threat Landscape" class="linkLabel_WmDU">CTI Research: Kubernetes &amp; Cloud-Native Threat Landscape</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-28-vulnerable-ai-lab-3747e96314dd"><span title="Vulnerable AI Lab" class="linkLabel_WmDU">Vulnerable AI Lab</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-04-29-ai-offensive-security-practical-attacks-against-llm-agents-516dbdabbf86"><span title="AI Offensive Security: Practical Attacks Against LLM Agents" class="linkLabel_WmDU">AI Offensive Security: Practical Attacks Against LLM Agents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-02-apt41-targeting-pharmaceutical-sector-log4shell-to-domain-compromise-9e4c1ba9dad6"><span title="APT41 Targeting Pharmaceutical Sector: Log4Shell to Domain Compromise" class="linkLabel_WmDU">APT41 Targeting Pharmaceutical Sector: Log4Shell to Domain Compromise</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-02-lab-architecture-operation-dragonrx-38602f432e5c"><span title="Lab Architecture — Operation DragonRx" class="linkLabel_WmDU">Lab Architecture — Operation DragonRx</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-04-attack-playbook-operation-dragonrx-91339316f0df"><span title="Attack Playbook — Operation DragonRx" class="linkLabel_WmDU">Attack Playbook — Operation DragonRx</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-08-manual-cti-vs-ai-assisted-cti-a-step-by-step-clock-comparison-ee08325203fc"><span title="Manual CTI vs. AI-Assisted CTI: A Step-by-Step Clock Comparison" class="linkLabel_WmDU">Manual CTI vs. AI-Assisted CTI: A Step-by-Step Clock Comparison</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-09-cti-kill-chain-an-analyst-guide-with-real-world-evidence-c3bef6fd2979"><span title="CTI Kill Chain: An Analyst Guide With Real-World Evidence" class="linkLabel_WmDU">CTI Kill Chain: An Analyst Guide With Real-World Evidence</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-09-cti-led-defensive-strategy-for-a-cellular-provider-case-study-c77bc5765b31"><span title="CTI-Led Defensive Strategy for a Cellular Provider (Case Study)" class="linkLabel_WmDU">CTI-Led Defensive Strategy for a Cellular Provider (Case Study)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-10-applying-sherman-kent-s-analytic-discipline-to-cti-a-practical-analyst-guide-33142ad7553b"><span title="Applying Sherman Kent’s Analytic Discipline to CTI: A Practical Analyst Guide" class="linkLabel_WmDU">Applying Sherman Kent’s Analytic Discipline to CTI: A Practical Analyst Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-11-customer-driven-ai-cti-project-template-part-1-foundations-745861507d03"><span title="Customer-Driven AI CTI Project Template. Part 1: Foundations" class="linkLabel_WmDU">Customer-Driven AI CTI Project Template. Part 1: Foundations</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-12-customer-driven-ai-cti-project-template-part-2a-phase-by-phase-execution-guide-f9751a8bcb59"><span title="Customer-Driven AI CTI Project Template. Part 2A: Phase-by-Phase Execution Guide" class="linkLabel_WmDU">Customer-Driven AI CTI Project Template. Part 2A: Phase-by-Phase Execution Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943"><span title="Customer-Driven AI CTI Project Template:Part 2B: Reference Toolkit" class="linkLabel_WmDU">Customer-Driven AI CTI Project Template:Part 2B: Reference Toolkit</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-13-customer-driven-ai-cti-project-c0db3cdc1830"><span title="Customer-Driven AI CTI Project" class="linkLabel_WmDU">Customer-Driven AI CTI Project</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-05-18-cti-analyst-field-manual-complete-reference-ef2a370bb21f"><span title="CTI Analyst Field Manual — Complete Reference" class="linkLabel_WmDU">CTI Analyst Field Manual — Complete Reference</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/"><span title="Article Archive" class="linkLabel_WmDU">Article Archive</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/medium-blog-navigation/docs/labs/"><span title="Labs" class="categoryLinkLabel_W154">Labs</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/labs/"><span title="Labs and Deployment Guides" class="linkLabel_WmDU">Labs and Deployment Guides</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/llm-agent-attack-lab"><span title="AI Security" class="categoryLinkLabel_W154">AI Security</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/hackerai-metasploitable-lab"><span title="AI-Assisted Pentest" class="categoryLinkLabel_W154">AI-Assisted Pentest</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/active-directory-manual-lab"><span title="Active Directory" class="categoryLinkLabel_W154">Active Directory</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/operation-dragonrx-attack-playbook"><span title="CTI Emulation" class="categoryLinkLabel_W154">CTI Emulation</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/ai-web-cloud-pentest-lab"><span title="Cloud" class="categoryLinkLabel_W154">Cloud</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/black-box-kubernetes-pentest-playbook"><span title="Kubernetes" class="categoryLinkLabel_W154">Kubernetes</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/android-app-analysis-lab"><span title="Mobile Security" class="categoryLinkLabel_W154">Mobile Security</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/dockerized-ai-host-vulnerability-assessment"><span title="Tooling" class="categoryLinkLabel_W154">Tooling</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/vulnerable-iis-sharepoint-fluent-bit-lab"><span title="Vulnerable Infrastructure" class="categoryLinkLabel_W154">Vulnerable Infrastructure</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/safe-dvwa-ansible-lab"><span title="Vulnerable Web" class="categoryLinkLabel_W154">Vulnerable Web</span></a></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/medium-blog-navigation/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/medium-blog-navigation/docs/articles/"><span>Articles</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">2026</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">CTI Research: Handala Hack Group (aka Handala Hack Team)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>CTI Research: Handala Hack Group (aka Handala Hack Team)</h1></header>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png" alt="Cover image" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Article Metadata</div><div class="admonitionContent_BuS1"><ul>
+<li class=""><strong>Category:</strong> CTI</li>
+<li class=""><strong>Source article:</strong> <a href="https://medium.com/@1200km/cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8" target="_blank" rel="noopener noreferrer" class="">https://medium.com/@1200km/cti-research-handala-hack-group-aka-handala-hack-team-ddbdd294cfb8</a></li>
+<li class=""><strong>Published:</strong> 2026-03-06</li>
+<li class=""><strong>Preserved media:</strong> 14 image(s), including cover images, screenshots, diagrams, and infographics where present.</li>
+<li class=""><strong>Preserved technical blocks:</strong> 0 code/configuration block(s).</li>
+</ul></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ecosystem-fit">Ecosystem Fit<a href="#ecosystem-fit" class="hash-link" aria-label="Direct link to Ecosystem Fit" title="Direct link to Ecosystem Fit" translate="no">​</a></h2>
+<p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evidence-labeled-threat-intelligence-assessment-and-soc-defensive-guidance-december-2023-to-march-2026">Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (December 2023 to March 2026)<a href="#evidence-labeled-threat-intelligence-assessment-and-soc-defensive-guidance-december-2023-to-march-2026" class="hash-link" aria-label="Direct link to Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (December 2023 to March 2026)" title="Direct link to Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (December 2023 to March 2026)" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png" alt="Article image" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="table-of-contents">Table of Contents<a href="#table-of-contents" class="hash-link" aria-label="Direct link to Table of Contents" title="Direct link to Table of Contents" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Report Metadata</strong></p>
+</li>
+<li class="">
+<p><strong>Methodology &amp; Evidence Labels</strong></p>
+</li>
+<li class="">
+<p><strong>Confidence &amp; What Changes Confidence</strong></p>
+</li>
+<li class="">
+<p><strong>Executive Summary</strong></p>
+</li>
+<li class="">
+<p><strong>Alias / Cluster Crosswalk</strong></p>
+</li>
+<li class="">
+<p><strong>Key Judgments</strong></p>
+</li>
+<li class="">
+<p><strong>Activity Timeline (2023–2026)</strong></p>
+</li>
+<li class="">
+<p><strong>Confirmed vs Claimed Matrix</strong></p>
+</li>
+<li class="">
+<p><strong>Public Presence and Information Operations Footprint</strong></p>
+</li>
+<li class="">
+<p><strong>Targeting and Victimology</strong></p>
+</li>
+<li class="">
+<p><strong>Tactics, Techniques, and Procedures (Observed/Reported)</strong></p>
+</li>
+<li class="">
+<p><strong>ATT&amp;CK-Oriented Mapping (Analyst View)</strong></p>
+</li>
+<li class="">
+<p><strong>Detection and Response Priorities</strong></p>
+</li>
+<li class="">
+<p><strong>Detection Engineering Pack (SOC-Ready)</strong></p>
+</li>
+<li class="">
+<p><strong>Wiper First 30 Minutes (Defensive Mini-Playbook)</strong></p>
+</li>
+<li class="">
+<p><strong>Controls Mapping (NIST CSF-Lite)</strong></p>
+</li>
+<li class="">
+<p><strong>Comprehensive IOC Compendium (Public Reporting)</strong></p>
+</li>
+<li class="">
+<p><strong>Overall Statistics, Common Patterns, and Cross-Group Correlation</strong></p>
+</li>
+<li class="">
+<p><strong>Confidence and Gaps</strong></p>
+</li>
+<li class="">
+<p><strong>Practical Defensive Actions (Next 30 Days)</strong></p>
+</li>
+<li class="">
+<p><strong>References</strong></p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="report-metadata">Report Metadata<a href="#report-metadata" class="hash-link" aria-label="Direct link to Report Metadata" title="Direct link to Report Metadata" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>**Author:**Andrey Pautov</p>
+</li>
+<li class="">
+<p>**Date:**March 6, 2026</p>
+</li>
+<li class="">
+<p>**Scope:**Threat actor profile and defensive implications</p>
+</li>
+<li class="">
+<p>**Assessment window:**December 2023 to March 2026</p>
+</li>
+<li class="">
+<p>**Evidence cutoff (collection freeze):**March 5, 2026 (UTC)</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="methodology--evidence-labels">Methodology &amp; Evidence Labels<a href="#methodology--evidence-labels" class="hash-link" aria-label="Direct link to Methodology &amp; Evidence Labels" title="Direct link to Methodology &amp; Evidence Labels" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>**Observed:**directly documented technical evidence in primary technical/government reporting (for example: hashes, malware behavior, telemetry-backed procedure descriptions).</p>
+</li>
+<li class="">
+<p>**Reported:**described by reputable external reporting (vendor intelligence, government advisories, established press), but not independently re-validated in this report.</p>
+</li>
+<li class="">
+<p>**Assessed:**analytic inference derived from multiple Observed/Reported items; used for synthesis, not as standalone proof.</p>
+</li>
+<li class="">
+<p>**Claimed:**actor-channel or press-amplified claims without sufficient technical corroboration in public artifacts.</p>
+</li>
+<li class="">
+<p>**Partially corroborated:**used in the Confirmed vs Claimed Matrix only. Denotes events where at least one technical artifact or vendor technical report exists, but full victim-side forensic detail or complete kill-chain confirmation is not publicly available. Epistemically closer to “Reported” than “Observed.”</p>
+</li>
+<li class="">
+<p>**Partially corroborated — rule of use:**apply only when at least one technical artifact exists (for example: hash, sample, infrastructure indicator, or behavior chain). Press-only narrative coverage without technical artifacts is excluded.</p>
+</li>
+<li class="">
+<p>**Analytic rule:**actor claims are treated as collection leads, not confirmation.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="confidence--what-changes-confidence">Confidence &amp; What Changes Confidence<a href="#confidence--what-changes-confidence" class="hash-link" aria-label="Direct link to Confidence &amp; What Changes Confidence" title="Direct link to Confidence &amp; What Changes Confidence" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>**High confidence:**converging technical reporting across independent primary sources with artifact-level overlap.</p>
+</li>
+<li class="">
+<p>**Medium-High confidence:**direct primary-source equivalence statements or near-converging technical reporting with minor gaps.</p>
+</li>
+<li class="">
+<p>**Medium confidence:**partial convergence, but either incomplete forensic detail or cluster-level (not incident-level) attribution.</p>
+</li>
+<li class="">
+<p>**Low confidence:**claim-led events lacking technical artifacts.</p>
+</li>
+<li class="">
+<p>**What increases confidence:**victim-side telemetry (EDR/SIEM), email traces, malware samples/hashes, sinkhole/passive-DNS corroboration, and independent IR confirmation from affected organizations.</p>
+</li>
+<li class="">
+<p>**What decreases confidence:**single-source narratives, circular citation loops, and actor-post claims without technical evidence.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="executive-summary">Executive Summary<a href="#executive-summary" class="hash-link" aria-label="Direct link to Executive Summary" title="Direct link to Executive Summary" translate="no">​</a></h2>
+<p>Handala (also presented as “Handala Hack Team”) is a politically aligned hack-and-leak threat persona whose operations are designed to create both<strong>technical disruption</strong>and<strong>information shock</strong>. The group has primarily targeted Israeli organizations, with occasional spillover into regional ecosystems through supply-chain and partner-connected pathways. Their campaign pattern combines intrusion activity, selective data theft, destructive actions, and fast public messaging intended to amplify fear, uncertainty, and reputational pressure.</p>
+<p>This actor should be evaluated as an<strong>influence-enabled intrusion threat</strong>, not only a traditional cybercrime or espionage actor. In practice, the technical compromise is often one component of a broader operation where public claims, timed leaks, and narrative control are used to magnify impact beyond direct system damage. For executive audiences, this means risk should be measured in three dimensions at once: operational downtime, legal/regulatory exposure from data loss, and external trust erosion.</p>
+<p>As of the evidence cutoff (<strong>March 5, 2026 UTC</strong>), open vendor reporting has converged strongly on the identity of Handala Hack with Iranian MOIS-linked cluster<strong>Void Manticore (Storm-0842/Storm-842/BANISHED KITTEN/Dune — naming variants across vendors)</strong>. Attribution confidence has strengthened materially over the assessment window:</p>
+<ul>
+<li class="">
+<p>Early 2024 reporting contained higher uncertainty at operation level.</p>
+</li>
+<li class="">
+<p>By 2025–2026, five or more independent vendors and government sources converged on strong MOIS-aligned cluster identity assessments.</p>
+</li>
+<li class="">
+<p>Individual incident claims from actor channels still require independent forensic corroboration.</p>
+</li>
+</ul>
+<p>The observed tradecraft pattern is generally<strong>pragmatic rather than novel</strong>. Reporting frequently points to phishing, social-engineering lures tied to current events, abuse of trusted sender or supplier channels, staged payload delivery via commercial file-sharing services (Storj, Mega), and wiper-linked impact paths. This suggests Handala does not require cutting-edge zero-day capability in every campaign; instead, it achieves effect through speed, timing, target selection, and rapid transition from initial access to public pressure operations.</p>
+<p>From a business risk perspective, organizations with high external visibility, public-service dependency, or concentrated third-party service reliance face disproportionate exposure. Particularly at risk are environments where security update trust workflows are weak,<code>.msi</code>/installer controls are permissive, and incident communications are not prepared for claim-driven campaigns. In these conditions, even a partial compromise can escalate into a strategic incident because narrative impact may outpace technical containment.</p>
+<p>Bottom line: Handala should be treated as a persistent regional threat persona where<strong>disruption + leak + influence</strong>are fused into a single operating concept, with high-confidence cluster-level overlap to MOIS-linked infrastructure in current open reporting. Defenders should prioritize supplier-channel trust controls, phishing hardening for event-themed lures, wiper-resilience (offline recovery), and communications playbooks that separate verified compromise evidence from adversary propaganda.</p>
+<p>&gt; This report does not independently validate victim compromise and should be read as structured normalization of open-source reporting. Attribution statements are strongest at cluster level and should not be interpreted as exclusive proof for every actor-branded incident.</p>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*U1BpulRAhDMpSJZBRnaLeg.png" alt="Article image" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="alias--cluster-crosswalk">Alias / Cluster Crosswalk<a href="#alias--cluster-crosswalk" class="hash-link" aria-label="Direct link to Alias / Cluster Crosswalk" title="Direct link to Alias / Cluster Crosswalk" translate="no">​</a></h2>
+<p>&gt; [Assessed] Cross-vendor naming crosswalks indicate overlap, not identity at every incident level; operator, infrastructure, and campaign boundaries may differ by vendor model. The cluster-level equivalence between Void Manticore, BANISHED KITTEN, Dune, and the Handala Hack persona is directly stated by multiple primary sources and should be treated as high-confidence at the persona/cluster level.</p>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*TwJNWefkeNvLm8-q6RPSFQ.png" alt="Article image" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="attribution-link-analysis-analyst-view">Attribution Link Analysis (Analyst View)<a href="#attribution-link-analysis-analyst-view" class="hash-link" aria-label="Direct link to Attribution Link Analysis (Analyst View)" title="Direct link to Attribution Link Analysis (Analyst View)" translate="no">​</a></h3>
+<p><code>Handala Hack Persona (public claims/leaks channels) ↔ Void Manticore (Check Point) ↔ Storm-0842/842 (Microsoft) ↔ COBALT MYSTIQUE (Sophos) ↔ BANISHED KITTEN (CrowdStrike) ↔ Dune (Recorded Future)</code></p>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*huioUHzqdEeDvfu_sQM8QQ.png" alt="Article image" class="img_ev3q"></p>
+<p><code>Cluster-confidence anchor:</code>Check Point direct equivalence statement<code>Void Manticore (Handala Hack)</code>+ cross-vendor naming convergence + recurring infrastructure intersections in reported operations (for example,<code>64.176.172.0/24</code>set).[R2][R5][R11][R19][R23c][R23d][R23e]</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-judgments">Key Judgments<a href="#key-judgments" class="hash-link" aria-label="Direct link to Key Judgments" title="Direct link to Key Judgments" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>**Operational doctrine is “disrupt + leak + amplify.”**Handala activity repeatedly combines technical intrusion/disruption with rapid public claim dissemination through social/messaging channels, indicating a deliberate information-operations layer rather than incidental publicity.<strong>Confidence: High.</strong>[R1][R5][R9][R10][R12].
+**Evidence:**vendor technical reporting + OSINT platform activity patterns; actor channels used as supporting context and early-warning feed.</p>
+</li>
+<li class="">
+<p>**Targeting emphasizes Israeli entities with civilian-impact leverage and symbolic value.**Open reporting spans public and private targets, including incidents involving educational/emergency communication contexts and healthcare infrastructure, consistent with pressure-oriented campaign design.
+<strong>Confidence: High.</strong>[R3][R4][R13][R17]
+**Evidence:**threat-intel weekly reporting + established press + incident summaries.</p>
+</li>
+<li class="">
+<p>**Initial access and delivery are typically pragmatic, not novel.**The strongest documented cases show phishing/current-events lures and trusted-channel abuse (including supplier/CRM pathways and commercial file-sharing services), suggesting reliable operator tradecraft without dependence on advanced zero-day capability.<strong>Confidence: Medium-High.</strong>[R1][R3][R5][R14]
+**Evidence:**vendor technical reports and campaign chain documentation.</p>
+</li>
+<li class="">
+<p>**Destructive capability is operationally meaningful, not theoretical.**Technical reporting describes wiper-linked behaviors and destructive execution paths across at least six confirmed phases, demonstrating that impact objectives include system denial and data destruction, not only exfiltration/leak activity.
+<strong>Confidence: High.</strong>[R1][R2][R5]
+**Evidence:**malware and destructive procedure descriptions in technical reporting.</p>
+</li>
+<li class="">
+<p>**Attribution is strongest at cluster level; incident-level certainty varies.**Multiple independent vendors and government sources directly link the Handala Hack persona to MOIS-aligned clusters (Void Manticore / BANISHED KITTEN / Storm-0842 or Storm-842 / Dune naming variants), while actor-channel claims remain unevenly corroborated per incident.<strong>Confidence: Medium-High.</strong>[R2][R5][R6][R11][R23c][R23d][R23e]**Evidence:**Check Point Research directly equates Void Manticore with the Handala Hack persona[R5]; CrowdStrike tracks the same cluster as BANISHED KITTEN[R23c]; cross-vendor alias mapping + cluster lineage reporting + multi-vendor convergence context[R2][R11][R19][R23d][R23e], plus recurring infrastructure intersections in reported campaigns (<code>64.176.169.22</code>,<code>64.176.172.101</code>,<code>64.176.172.165</code>,<code>64.176.172.235</code>,<code>64.176.173.77</code>,<code>64.176.172.0/24</code>)[R2]. Confidence is Medium-High (not High) because it covers both cluster-level identity (strong) and incident-level certainty for individual actor-channel claims (variable).</p>
+</li>
+<li class="">
+<p>**Business impact is magnified by narrative velocity.**Claim and leak messaging can outpace forensic validation, forcing organizations into high-pressure legal, reputational, and executive response cycles before technical scoping is complete.
+<strong>Confidence: Medium.</strong>[R9][R12][R16]
+**Evidence:**channel activity patterns + media amplification timelines + campaign retrospectives.<em>(Note: confidence is bounded at Medium because evidence consists of observed outputs — channel activity and media amplification — rather than operational planning artifacts or documented actor intent.)</em></p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="activity-timeline-20232026">Activity Timeline (2023–2026)<a href="#activity-timeline-20232026" class="hash-link" aria-label="Direct link to Activity Timeline (2023–2026)" title="Direct link to Activity Timeline (2023–2026)" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*IG9iqbGgoEfqokU1dMi-gQ.png" alt="Article image" class="img_ev3q"></p>
+<p>&gt; Default evidence handling for this section:</p>
+<p>&gt; Statements are [Reported] unless explicitly marked [Assessed] or [Claimed] .</p>
+<p>&gt; [Claimed] entries are not treated as confirmation and require independent technical validation.</p>
+<ul>
+<li class="">**Post-February 2025 note:**Handala’s own public channels (including primary Telegram) went silent after approximately February 9, 2025, before resuming in approximately July 2025. Activity attributed to Handala in the interim and subsequent phases represents researcher/vendor cluster-level attribution (Void Manticore / BANISHED KITTEN) rather than actor self-claims via the group’s own infrastructure. This distinction is noted in relevant phase Claims sections.[R23a][R23b][R23d]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="octobernovember-2023-pre-brand-operational-context">October–November 2023 (Pre-Brand Operational Context)<a href="#octobernovember-2023-pre-brand-operational-context" class="hash-link" aria-label="Direct link to October–November 2023 (Pre-Brand Operational Context)" title="Direct link to October–November 2023 (Pre-Brand Operational Context)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>**[Reported]**Microsoft and Check Point documented MOIS-linked destructive activity in Israel involving BiBi wiper variants and cooperation patterns between access and destructive operators (Storm-0861 with Storm-0842 in Microsoft naming).[R2][R19]</p>
+</li>
+<li class="">
+<p>**[Reported]**This period is the operational backdrop for later Handala-branded activity and explains why attribution is more stable at cluster level than per individual post/claim.[R2][R19]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Initial access (</strong><code>**T1190**</code>**):**exploitation of public-facing SharePoint (<code>CVE-2019-0604</code>) in related Iran-linked destructive operations.[R8]</p>
+</li>
+<li class="">
+<p><strong>Persistence (</strong><code>**T1505.003**</code>**):**ASPX webshell use (<code>pickers.aspx</code>,<code>error4.aspx</code>,<code>ClientBin.aspx</code>).[R8]</p>
+</li>
+<li class="">
+<p><strong>Credential/privilege operations (</strong><code>**T1003.001**</code><strong>,</strong><code>**T1069**</code>**):**LSASS dumping and Exchange mailbox-search cmdlets (<code>New-MailboxSearch</code>,<code>Get-Recipient</code>).[R8]</p>
+</li>
+<li class="">
+<p><strong>Lateral movement (</strong><code>**T1021.001**</code><strong>,</strong><code>**T1021.002**</code>**):**RDP/SMB-heavy movement patterns with internal pivoting.[R8]</p>
+</li>
+<li class="">
+<p><strong>Impact (</strong><code>**T1485**</code><strong>,</strong><code>**T1561**</code><strong>,</strong><code>**T1490**</code>**):**paired encryptor/wiper behavior (<code>GoXML.exe</code>,<code>cl.exe</code>,<code>rwdsk.sys</code>) and BiBi-family destructive logic.[R2][R8]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">
+<p>[Assessed] The access-to-impact handoff model seen later under Handala branding was already operationally established in this lineage period.[R2][R8][R19]</p>
+</li>
+<li class="">
+<p>[Assessed] CVE-2019–0604 is referenced here as lineage context from MOIS-linked historical operations documented in the pre-brand period. It is not assessed as a dominant or universal access vector for 2023–2026 Handala-related incidents. For broader cross-group context, see the Cross-Group Correlation section.[R8]</p>
+</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] No phase-specific actor branding claims are central here; this phase is primarily cluster-lineage reporting.</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">
+<p>**Lineage IOC note:**treat these as cluster-lineage indicators, not standalone attribution proof; validate with current telemetry before blocking.[R2][R8]</p>
+</li>
+<li class="">
+<p><strong>Host artifacts:</strong><code>error4.aspx</code>,<code>ClientBin.aspx</code>,<code>pickers.aspx</code>,<code>cl.exe</code>,<code>GoXML.exe</code>,<code>rwdsk.sys</code>,<code>mellona.exe</code>,<code>disable_defender.exe</code>.[R8]</p>
+</li>
+<li class="">
+<p><strong>Network indicators:</strong><code>64.176.169.22</code>,<code>64.176.172.235</code>,<code>64.176.172.165</code>,<code>64.176.173.77</code>,<code>64.176.172.101</code>.[R2]</p>
+</li>
+<li class="">
+<p><strong>Sample hashes:</strong><code>d0c03d40772cd468325bbc522402f7b737f18b8f37a89bacc5c8a00c2b87bfc6</code>,<code>deeaf85b2725289d5fc262b4f60dda0c68ae42d8d46d0dc19b9253b451aea25a</code>,<code>87f0a902d6b2e2ae3647f10ea214d19db9bd117837264ae15d622b5314ff03a5</code>,<code>85fa58cc8c4560adb955ba0ae9b9d6cab2c381d10dbd42a0bceb8b62a92b7636</code>,<code>74d8d60e900f931526a911b7157511377c0a298af986d42d373f51aac4f362f6</code>,<code>cc77e8ab73b577de1924e2f7a93bcfd852b3c96c6546229bc8b80bf3fd7bf24e</code>.[R2]</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="december-2023-public-emergence-of-handala-persona">December 2023 (Public Emergence of Handala Persona)<a href="#december-2023-public-emergence-of-handala-persona" class="hash-link" aria-label="Direct link to December 2023 (Public Emergence of Handala Persona)" title="Direct link to December 2023 (Public Emergence of Handala Persona)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Trellix places Handala emergence in December 2023, with first X post on<strong>December 18, 2023</strong>.[R1]</p>
+</li>
+<li class="">
+<p>[Reported] Early messaging already combined target naming and psychological pressure framing.[R1][R9]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Persona/channel establishment (</strong><code>**T1585.001**</code>**):**rapid setup/use of social and messaging channels.[R1][R9][R10]</p>
+</li>
+<li class="">
+<p>**Information staging:**taunting and victim-name publication patterns. [R1][R9]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Communication infrastructure was built as an operational component, not as post-incident publicity.[R1][R9]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] Early breach claims in this phase should be treated as directional until matched with victim telemetry.[R9][R10]</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">
+<p><code>https://t.me/HANDALA_RSS</code>[R10]</p>
+</li>
+<li class="">
+<p>Monitor abrupt actor-branded victim naming bursts in channel timelines.[R1][R9]</p>
+</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*Ynb4V542wi_-Q8z0Zt6YFQ.png" alt="Article image" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="december-2023february-2024-early-claim-led-campaigning">December 2023–February 2024 (Early Claim-Led Campaigning)<a href="#december-2023february-2024-early-claim-led-campaigning" class="hash-link" aria-label="Direct link to December 2023–February 2024 (Early Claim-Led Campaigning)" title="Direct link to December 2023–February 2024 (Early Claim-Led Campaigning)" translate="no">​</a></h3>
+<ul>
+<li class="">[Reported] Cyberint described phishing/defacement/leak-claim activity with ideological framing.[R9]</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Phishing/social engineering (</strong><code>**T1566**</code><strong>,</strong><code>**T1204**</code><strong>)</strong>.[R9]</p>
+</li>
+<li class="">
+<p><strong>Defacement signaling (</strong><code>**T1491**</code><strong>)</strong>.[R9]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Reputation-building through repeated claim cadence appears central in this period.[R9]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] Leak assertions and partial-proof releases in this phase remain unevenly corroborated in public artifacts.[R9]</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Soft indicators: defacement references, claim screenshots, teaser leak fragments.[R9][R10]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="marchjune-2024-escalation-of-claimed-target-set">March–June 2024 (Escalation of Claimed Target Set)<a href="#marchjune-2024-escalation-of-claimed-target-set" class="hash-link" aria-label="Direct link to March–June 2024 (Escalation of Claimed Target Set)" title="Direct link to March–June 2024 (Escalation of Claimed Target Set)" translate="no">​</a></h3>
+<ul>
+<li class="">[Reported] Additional claim campaigns expanded to defense/technology-adjacent targets and ransomware/leak assertions.[R9]</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Target-set expansion behaviors (</strong><code>**T1591**</code><strong>)</strong>.[R9]</p>
+</li>
+<li class="">
+<p><strong>Narrative amplification through repeated victim rollups</strong>.[R9]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Strategic effect in this phase relied more on coercive messaging tempo than on highly novel technical means.[R9]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] Claimed compromises and extortion narratives in this window are primarily claim-led and require independent verification.[R9]</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Soft indicators: synchronized “new victim list” waves across channels.[R9][R10]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="may-2024-attribution-convergence-and-void-manticore-framing">May 2024 (Attribution Convergence and “Void Manticore” Framing)<a href="#may-2024-attribution-convergence-and-void-manticore-framing" class="hash-link" aria-label="Direct link to May 2024 (Attribution Convergence and “Void Manticore” Framing)" title="Direct link to May 2024 (Attribution Convergence and “Void Manticore” Framing)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Check Point linked Israel-focused destructive activity to Void Manticore and described overlap with Scarred Manticore victim sets.[R2]</p>
+</li>
+<li class="">
+<p>[Reported] Sophos provides alias context for<code>COBALT MYSTIQUE</code>in overlap analysis with<code>Void Manticore</code>and<code>Storm-0842</code>naming.[R11]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Access-to-impact handoff model</strong>across cooperating clusters.[R2][R11]</p>
+</li>
+<li class="">
+<p><strong>Destructive endpoint operations (</strong><code>**T1485**</code><strong>,</strong><code>**T1561**</code><strong>,</strong><code>**T1490**</code><strong>)</strong>. [R2]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Cluster-level attribution confidence in this phase is stronger than incident-level certainty for every actor-branded claim.[R2][R11]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] Actor-branded claims still require forensic closure even when cluster-level linkage is strong.[R2][R9]</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Reuse lineage IOCs (<code>cl.exe</code>,<code>rwdsk.sys</code>, listed hashes,<code>64.176.172.0/24</code>context) as hunt pivots.[R2]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="july-2024-crowdstrike-lure-wiper-campaign">July 2024 (CrowdStrike-Lure Wiper Campaign)<a href="#july-2024-crowdstrike-lure-wiper-campaign" class="hash-link" aria-label="Direct link to July 2024 (CrowdStrike-Lure Wiper Campaign)" title="Direct link to July 2024 (CrowdStrike-Lure Wiper Campaign)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported; includes artifacts] Trellix documented the lure chain (<code>phishing/PDF</code>→<code>update.zip</code>→<code>CrowdStrike.exe</code>→ destructive stage).[R1]</p>
+</li>
+<li class="">
+<p>[Reported] BleepingComputer coverage reflects the same campaign pattern for defender dissemination.[R14]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Lure-driven initial access (</strong><code>**T1566**</code><strong>,</strong><code>**T1204**</code><strong>)</strong>.[R1][R14]</p>
+</li>
+<li class="">
+<p><strong>Payload staging (</strong><code>**T1105**</code>**):**malicious payload hosted on Storj file share (<code>storjshare.io</code>).[R1]</p>
+</li>
+<li class="">
+<p><strong>Destructive execution (</strong><code>**T1485**</code><strong>,</strong><code>**T1561**</code><strong>)</strong>.[R1]</p>
+</li>
+<li class="">
+<p><strong>Exfiltration via web/messaging APIs (</strong><code>**T1567.002**</code><strong>pattern)</strong>.[R1]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Current-events lure timing was used to compress defender decision time and improve execution probability.[R1][R14]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] No major additional claim-only elements dominate this phase relative to technical reporting.</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">
+<p>Artifacts (campaign-reported; enforce by hash/context where possible):<code>update.zip</code>,<code>CrowdStrike.exe</code>,<code>rwdsk.sys</code>,<code>RawDisk3</code>;<code>cl.exe</code>is context-dependent and should be treated as hard only with hash/driver/service corroboration.[R1][R5][R14]</p>
+</li>
+<li class="">
+<p>Delivery infrastructure: Storj file share (<code>storjshare.io</code>) used for payload hosting in this campaign. Distinct from Mega file share used in the December 2024–January 2025 CRM-linked campaign.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="august-2024-platform-pressure-and-information-friction">August 2024 (Platform Pressure and Information Friction)<a href="#august-2024-platform-pressure-and-information-friction" class="hash-link" aria-label="Direct link to August 2024 (Platform Pressure and Information Friction)" title="Direct link to August 2024 (Platform Pressure and Information Friction)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] The Record documented X account suspension on<strong>August 21, 2024</strong>and continuation via other channels.[R12]</p>
+</li>
+<li class="">
+<p>[Reported] ODNI/FBI/CISA issued election-influence statement on<strong>August 19, 2024</strong>in the same period context.[R20]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class=""><strong>Channel migration/resilience (</strong><code>**T1585.001**</code>**— operational use of alternate channels on both Telegram and X platform):**Post-ban activity migrated to<code>@Handala_Backup</code>on X and continued via pre-existing Telegram infrastructure (<code>t.me/HANDALA_RSS</code>,<code>t.me/s/handala_backup_357</code>). These are separate platform assets, not a single unified channel.[R9][R10][R12][R18]</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*4Qaner8OxsOlsuBr5KSMKA.png" alt="Article image" class="img_ev3q"></p>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Distribution-channel disruption increased friction but did not materially interrupt campaign continuity.[R9][R12][R18]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] Post-ban actor messaging streams remain claim feeds unless corroborated by independent technical evidence.[R10][R18]</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">
+<p>Telegram channels (active before and after X ban):<code>https://t.me/HANDALA_RSS</code>[R10],<code>https://t.me/s/handala_backup_357</code>[R18]</p>
+</li>
+<li class="">
+<p>X (Twitter) backup account active post-ban:<code>@Handala_Backup</code>[R12]</p>
+</li>
+<li class="">
+<p>Note: The Telegram channels and the X backup account are distinct infrastructure on separate platforms; do not conflate them as a single migration artifact.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="septemberoctober-2024-high-impact-claims-against-strategic-targets">September–October 2024 (High-Impact Claims Against Strategic Targets)<a href="#septemberoctober-2024-high-impact-claims-against-strategic-targets" class="hash-link" aria-label="Direct link to September–October 2024 (High-Impact Claims Against Strategic Targets)" title="Direct link to September–October 2024 (High-Impact Claims Against Strategic Targets)" translate="no">​</a></h3>
+<ul>
+<li class="">[Reported] Press and ICT described claims against strategic Israeli targets, including large-volume theft assertions.[R16][R17]</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class=""><strong>Strategic victim signaling and coercive narrative framing</strong>.[R16][R17]</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] This phase prioritized influence effects and symbolic target selection over publicly validated technical disclosure.[R16][R17]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] Soreq/Shin Bet-adjacent compromise claims and 197GB exfil assertions remain claim-heavy in open sources.[R16][R17]</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Soft IOC: claim bundles naming strategic institutions and high-volume theft assertions.[R16][R17]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="december-2024january-2025-reutone-supply-chain-style-campaign">December 2024–January 2025 (ReutOne Supply-Chain Style Campaign)<a href="#december-2024january-2025-reutone-supply-chain-style-campaign" class="hash-link" aria-label="Direct link to December 2024–January 2025 (ReutOne Supply-Chain Style Campaign)" title="Direct link to December 2024–January 2025 (ReutOne Supply-Chain Style Campaign)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Check Point weekly reporting described Handala claims tied to ReutOne/CRM pathway.[R3]</p>
+</li>
+<li class="">
+<p>[Reported] Check Point retrospective added technical chain detail: recipients were instructed to “back up” their files by downloading a malicious<code>.msi</code>installer hosted on<strong>Mega file share</strong>, followed by wiper behavior upon execution.[R5]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Trusted-relationship abuse (</strong><code>**T1199**</code><strong>)</strong>.[R3][R5]</p>
+</li>
+<li class="">
+<p><strong>Installer-led execution/destructive follow-on (</strong><code>**T1204**</code><strong>,</strong><code>**T1059**</code><strong>,</strong><code>**T1485**</code><strong>)</strong>.[R5]</p>
+</li>
+<li class="">
+<p><strong>Valid Accounts abuse (</strong><code>**T1078**</code>**):**compromised supplier/CRM account context used to increase delivery credibility.[R3][R5]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Authenticated business context increased delivery credibility and downstream blast radius risk. Hosting payload on Mega (a legitimate, widely trusted file-sharing service) further reduced recipient suspicion.[R3][R5]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] Cross-country victim-scope claims in this phase require case-by-case forensic confirmation.[R3]</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">
+<p>Hard IOC:<code>6eb7dbf27a25639c7f11c05fd88ea2a301e0ca93d3c3bdee1eb5917fc60a56ff</code>(<code>.msi</code>).[R5]</p>
+</li>
+<li class="">
+<p>Delivery infrastructure: malicious<code>.msi</code>hosted on<strong>Mega file share</strong>(<code>mega.nz</code>or<code>mega.io</code>). Monitor for<code>.msi</code>downloads originating from Mega in enterprise egress logs, particularly in combination with supplier/business-context email lures. Distinct from the Storj-based hosting observed in the July 2024 CrowdStrike-lure campaign.[R5]</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="january-2025-kindergarten-sirenpa-system-incident">January 2025 (Kindergarten Siren/PA System Incident)<a href="#january-2025-kindergarten-sirenpa-system-incident" class="hash-link" aria-label="Direct link to January 2025 (Kindergarten Siren/PA System Incident)" title="Direct link to January 2025 (Kindergarten Siren/PA System Incident)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Press and weekly TI described panic-button/emergency audio abuse across approximately 20 educational sites and parallel intimidation messaging.[R4][R13][R17]</p>
+</li>
+<li class="">
+<p>[Reported] The Record identified<strong>Maagar-Tec</strong>, an Israeli electronics firm operating panic button systems in schools, as the compromised provider through which the siren activation occurred. The company confirmed it disconnected affected systems and launched an investigation.[R13]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<p>&gt; ⚠️ Caveat: The technical intrusion path for this incident is not fully resolved in public reporting (see Claims section below). The TTPs listed here describe observed operational effects and reported messaging behaviors, not a confirmed kill-chain. Do not treat these as documented attacker procedures without a validated intrusion path.</p>
+<ul>
+<li class="">
+<p><strong>Emergency communication workflow abuse</strong>.[R13][R17]</p>
+</li>
+<li class="">
+<p><strong>Mass intimidation messaging</strong>.[R13][R17]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] The objective was high-visibility civilian psychological impact with limited need for complex malware tradecraft.[R4][R13]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">
+<p>[Claimed] Exact technical intrusion path and full scope remain partially unresolved in public reporting.[R13][R17]</p>
+</li>
+<li class="">
+<p>[Claimed] Handala claimed to have wiped Maagar-Tec systems following the siren activation; this wiper claim is unverified in public technical reporting and is not counted in the confirmed destructive/wiper phase total.</p>
+</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">
+<p>Soft IOCs: out-of-schedule siren/PA events with synchronized intimidation SMS bursts.[R13][R17]</p>
+</li>
+<li class="">
+<p>Vendor/supplier pivot: Maagar-Tec (panic button / PA system vendor) identified as access point; any organizations using this vendor’s systems should validate access logs and system integrity for the January 2025 window.[R13]</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="february-2025-leak-and-pressure-operations-final-self-claimed-phase">February 2025 (Leak and Pressure Operations; Final Self-Claimed Phase)<a href="#february-2025-leak-and-pressure-operations-final-self-claimed-phase" class="hash-link" aria-label="Direct link to February 2025 (Leak and Pressure Operations; Final Self-Claimed Phase)" title="Direct link to February 2025 (Leak and Pressure Operations; Final Self-Claimed Phase)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Additional leak campaigns referenced personal-data and weapons-holder data exposure themes.[R15][R16]</p>
+</li>
+<li class="">
+<p>[Reported] OP Innovate analysis indicates that Handala’s own public channels (including primary Telegram) went silent after approximately<strong>February 9, 2025</strong>, making this the last phase with confirmed actor self-claims via the group’s own infrastructure.[R23a][R23b]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Doxing/exposure pressure behaviors</strong>.[R15][R16]</p>
+</li>
+<li class="">
+<p><strong>Sustained release cadence across channels</strong>.[R9][R16]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Campaign value in this period was primarily reputational and societal pressure amplification.[R9][R16]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">[Claimed] Published leak-scope assertions remain variably corroborated by independent technical reporting.[R15][R16]</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Soft IOC: leak-drop waves tied to civilian registry themes.[R15][R16]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="june-2025-wiper-activity-during-iranisrael-escalation">June 2025 (Wiper Activity During Iran–Israel Escalation)<a href="#june-2025-wiper-activity-during-iranisrael-escalation" class="hash-link" aria-label="Direct link to June 2025 (Wiper Activity During Iran–Israel Escalation)" title="Direct link to June 2025 (Wiper Activity During Iran–Israel Escalation)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Check Point Research tracked a Handala Hack wiper event in June 2025, coinciding with the twelve-day Iran–Israel escalation period. This is the only primary-vendor-confirmed destructive technical activity listed for this phase; narrative/influence operations continued in parallel.[R5]</p>
+</li>
+<li class="">
+<p>[Reported] This phase marks the resumption of Handala/Void Manticore cluster activity following the February–June 2025 communications gap on the group’s own public channels.[R5][R23a][R23b]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class=""><strong>Destructive execution — wiper deployment (</strong><code>**T1485**</code>**):**wiper activity tracked by Check Point Research in the June 2025 escalation window.[R5]</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Wiper deployment during a high-visibility kinetic escalation window is consistent with the cluster’s established doctrine of synchronizing technical disruption with geopolitical tension peaks.[R5]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">
+<p>[Claimed] Specific victim claims and technical details for the June 2025 wiper have not been released publicly by Check Point at the time of this report’s evidence cutoff.</p>
+</li>
+<li class="">
+<p>[Assessed] Post-February 2025 Handala attributions represent researcher/vendor cluster-level attribution (Void Manticore / BANISHED KITTEN), not actor self-claims via the group’s own infrastructure.[R23c][R23d]</p>
+</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Technical pivot: Check Point Research has confirmed wiper activity in this phase[R5]; consumers should request Check Point private intelligence for campaign-specific artifact details not yet released publicly. Treat the June 2025 window as a confirmed destructive-activity period when scoping retrospective hunt queries.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="july-2025-hack-and-leak-against-iran-international">July 2025 (Hack-and-Leak Against Iran International)<a href="#july-2025-hack-and-leak-against-iran-international" class="hash-link" aria-label="Direct link to July 2025 (Hack-and-Leak Against Iran International)" title="Direct link to July 2025 (Hack-and-Leak Against Iran International)" translate="no">​</a></h3>
+<ul>
+<li class="">[Reported] RRM Canada documented a Handala/BANISHED KITTEN hack-and-leak operation targeting Iran International, involving data exfiltration affecting five journalists.[R23d][R23f]</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class=""><strong>Hack-and-leak with targeted journalist exposure (</strong><code>**T1591**</code><strong>,</strong><code>**T1567.002**</code><strong>pattern)</strong>.[R23d][R23f]</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Targeting Iran International — a prominent Persian-language media outlet — is consistent with MOIS operational interests and the cluster’s pattern of combining technical compromise with high-profile narrative pressure.[R23d][R23f]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">
+<p>[Claimed] Full scope of data accessed and actor self-claims require forensic validation.</p>
+</li>
+<li class="">
+<p>[Assessed] Post-February 2025 Handala attributions represent researcher/vendor cluster-level attribution, not actor self-claims via the group’s own infrastructure.[R23c][R23d]</p>
+</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Soft IOC: sudden publication of journalist personal data tied to Persian-language media organizations.[R23d][R23f]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="october-2025-international-airport-claim">October 2025 (International Airport Claim)<a href="#october-2025-international-airport-claim" class="hash-link" aria-label="Direct link to October 2025 (International Airport Claim)" title="Direct link to October 2025 (International Airport Claim)" translate="no">​</a></h3>
+<ul>
+<li class="">[Reported] Open-source claim tracking reported a Handala/BANISHED KITTEN-associated claim of access to Suvarnabhumi Airport (Bangkok) systems.[R23g]</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class=""><strong>High-profile infrastructure claim — aviation sector</strong>.[R23g]</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Aviation sector claims in non-Israeli geographies represent potential cluster expansion beyond primary targeting geography, possibly for international pressure effects.[R23g]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">
+<p>[Claimed] Airport access claim has not been independently confirmed by technical reporting at evidence cutoff.</p>
+</li>
+<li class="">
+<p>[Assessed] Post-February 2025 Handala attributions represent researcher/vendor cluster-level attribution.[R23c][R23d]</p>
+</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Soft IOC: access claims naming international transport infrastructure.[R23g]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="novemberdecember-2025-bennett-telegram-compromise-and-bibi-gate-wave">November–December 2025 (Bennett Telegram Compromise and “Bibi Gate” Wave)<a href="#novemberdecember-2025-bennett-telegram-compromise-and-bibi-gate-wave" class="hash-link" aria-label="Direct link to November–December 2025 (Bennett Telegram Compromise and “Bibi Gate” Wave)" title="Direct link to November–December 2025 (Bennett Telegram Compromise and “Bibi Gate” Wave)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] JNS stated Bennett office confirmation of Telegram account compromise, without confirmed phone-level compromise.[R21]</p>
+</li>
+<li class="">
+<p>[Reported] Israel Hayom/ICT described “Bibi Gate” claim escalation with mixed verified/unverified elements.[R16][R22]</p>
+</li>
+<li class="">
+<p>[Reported] Secondary reporting citing KELA technical analysis of the Bennett/Braverman incident found that the majority of “1,900 chats” cited by the actor consisted of empty contact cards auto-generated by Telegram during phone contact synchronization; fewer than 40 messages with actual content were present. This indicates the actor materially overstated the data scope of the claimed compromise.[R23i][R23j]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>High-profile account targeting/session compromise behavior</strong>.[R21]</p>
+</li>
+<li class="">
+<p><strong>Rapid narrative amplification around elite targets</strong>.[R16][R22]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Mixing authentic data with auto-generated Telegram artifacts increases verification burden and extends influence effects even when actual data volume is limited.[R21][R22][R23i][R23j]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">
+<p>[Claimed] Several political leak assertions in this period remained under review at publication time.[R16][R22]</p>
+</li>
+<li class="">
+<p>[Assessed] Secondary coverage of KELA analysis indicates the actor significantly overstated the data scope of the Bennett account compromise. Treat all claim-volume figures from actor channels as unverified until independently validated.[R23i][R23j]</p>
+</li>
+<li class="">
+<p>[Assessed] Post-February 2025 Handala attributions represent researcher/vendor cluster-level attribution.[R23c][R23d]</p>
+</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">
+<p>Account signals: unexpected Telegram sessions/device fingerprints/geolocations for high-profile users.[R21]</p>
+</li>
+<li class="">
+<p>Validation note: when actor claims specific data volumes from account compromises, independently verify before treating as confirmed scope.[R23i][R23j]</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="february-2026-technical-consolidation-clalit-healthcare-campaign">February 2026 (Technical Consolidation; Clalit Healthcare Campaign)<a href="#february-2026-technical-consolidation-clalit-healthcare-campaign" class="hash-link" aria-label="Direct link to February 2026 (Technical Consolidation; Clalit Healthcare Campaign)" title="Direct link to February 2026 (Technical Consolidation; Clalit Healthcare Campaign)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Check Point retrospective documented likely large-scale phishing, compromised CRM-linked sender path, malicious<code>.msi</code>, and destructive endpoint behavior. [R5]</p>
+</li>
+<li class="">
+<p>[Reported] Handala/BANISHED KITTEN claimed an attack on<strong>Clalit</strong>, Israel’s largest healthcare organization, in February 2026.[R23h]</p>
+</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Broad phishing distribution (</strong><code>**T1566**</code><strong>)</strong>.[R5]</p>
+</li>
+<li class="">
+<p><strong>Trusted sender compromise (</strong><code>**T1199**</code><strong>)</strong>.[R5]</p>
+</li>
+<li class="">
+<p><strong>Installer-led destructive behavior (</strong><code>**T1204**</code><strong>,</strong><code>**T1485**</code><strong>,</strong><code>**T1490**</code><strong>)</strong>.[R5]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">
+<p>[Assessed] This phase provides one of the strongest public bridges between claim-layer activity and concrete technical procedures.[R5]</p>
+</li>
+<li class="">
+<p>[Assessed] Healthcare sector targeting (Clalit) is consistent with the cluster’s established pattern of selecting organizations with high civilian-impact leverage and symbolic value.[R23h]</p>
+</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">
+<p>[Claimed] Clalit attack scope and technical details remain unverified in public primary-source reporting at evidence cutoff.</p>
+</li>
+<li class="">
+<p>[Assessed] Post-February 2025 Handala attributions represent researcher/vendor cluster-level attribution.[R23c][R23d]</p>
+</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Hard IOC:<code>6eb7dbf27a25639c7f11c05fd88ea2a301e0ca93d3c3bdee1eb5917fc60a56ff</code>.[R5]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="march-2026-regional-escalation-and-claimed-cross-border-activity">March 2026 (Regional Escalation and Claimed Cross-Border Activity)<a href="#march-2026-regional-escalation-and-claimed-cross-border-activity" class="hash-link" aria-label="Direct link to March 2026 (Regional Escalation and Claimed Cross-Border Activity)" title="Direct link to March 2026 (Regional Escalation and Claimed Cross-Border Activity)" translate="no">​</a></h3>
+<ul>
+<li class="">[Reported] Unit 42 (published<strong>March 2, 2026</strong>) assessed elevated Iran-related cyber risk and included Handala among prominent personas in the operating environment.[R6]</li>
+</ul>
+<p><strong>TTPs (Reported)</strong></p>
+<ul>
+<li class="">
+<p><strong>Opportunistic sector targeting under escalation conditions</strong>.[R6]</p>
+</li>
+<li class="">
+<p><strong>Influencer/public-figure intimidation campaign behavior</strong>.[R6]</p>
+</li>
+</ul>
+<p><strong>TTPs (Assessed)</strong></p>
+<ul>
+<li class="">[Assessed] Public claim velocity in escalation windows can outpace forensic closure and increase communications risk.[R6][R9]</li>
+</ul>
+<p><strong>Claims (Unverified)</strong></p>
+<ul>
+<li class="">
+<p>[Claimed] Energy/fuel and cross-border claim streams in this window require strict evidence separation before external confirmation.[R6][R10][R18]</p>
+</li>
+<li class="">
+<p>[Assessed] Post-February 2025 Handala attributions represent researcher/vendor cluster-level attribution.[R23c][R23d]</p>
+</li>
+</ul>
+<p><strong>IOC/Hunting Leads</strong></p>
+<ul>
+<li class="">Soft IOC: rapid claim surges naming critical sectors/public figures; correlate with local telemetry windows before attribution decisions.[R6]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="timeline-synthesis">Timeline Synthesis<a href="#timeline-synthesis" class="hash-link" aria-label="Direct link to Timeline Synthesis" title="Direct link to Timeline Synthesis" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Assessed] Across 2023–2026, the recurring operational cycle is: opportunistic access → staging → disruptive/destructive or leak action → claim publication → amplification → repeat.[R1][R2][R5][R9][R12]</p>
+</li>
+<li class="">
+<p>[Assessed] This cycle reduces defender decision time and can produce strategic impact even when technical novelty is limited.[R1][R2][R5][R9][R12]</p>
+</li>
+<li class="">
+<p>[Assessed] The February–June 2025 communications gap on the group’s own channels did not halt cluster operations; wiper activity (June 2025) and hack-and-leak operations (July 2025) continued under researcher attribution to the Void Manticore / BANISHED KITTEN cluster.[R5][R23a][R23b][R23d][R23f]</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-model-text-diagram">Operational Model (Text Diagram)<a href="#operational-model-text-diagram" class="hash-link" aria-label="Direct link to Operational Model (Text Diagram)" title="Direct link to Operational Model (Text Diagram)" translate="no">​</a></h3>
+<p><code>Access → Stage Payload (via Storj / Mega / other commercial hosting) → Impact (Disrupt/Wipe/Leak) → Public Claim → Amplify Across Channels → Repeat</code></p>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*Goj7JhwzZ08fgG_DaEZNxg.png" alt="Article image" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="confirmed-vs-claimed-matrix">Confirmed vs Claimed Matrix<a href="#confirmed-vs-claimed-matrix" class="hash-link" aria-label="Direct link to Confirmed vs Claimed Matrix" title="Direct link to Confirmed vs Claimed Matrix" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-presence-and-information-operations-footprint">Public Presence and Information Operations Footprint<a href="#public-presence-and-information-operations-footprint" class="hash-link" aria-label="Direct link to Public Presence and Information Operations Footprint" title="Direct link to Public Presence and Information Operations Footprint" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>[Reported]**Telegram ecosystem:**Handala-associated channels are repeatedly cited as primary leak/claim dissemination infrastructure, including both main and backup streams. Active self-claims via own channels through approximately February 9, 2025.[R9][R10][R18][R23a][R23b]</p>
+</li>
+<li class="">
+<p>[Reported]**Social media migration pattern:**reported suspension on mainstream platform(s) followed by backup channel usage and renewed message distribution.[R12]</p>
+</li>
+<li class="">
+<p>[Reported]**Forum footprint:**OSINT reporting references BreachForums-linked persona activity, but forum-origin claims require independent validation.[R9]</p>
+</li>
+<li class="">
+<p>[Assessed]**Operational implication:**messaging infrastructure is an attack amplifier; channel output should remain unverified until corroborated by local telemetry.[R9][R12]</p>
+</li>
+<li class="">
+<p>[Assessed]**Post-February 2025 framing:**activity attributed to Handala after approximately February 9, 2025 is primarily vendor/researcher cluster attribution (Void Manticore / BANISHED KITTEN) rather than actor self-published claims. This does not reduce operational risk but affects how confidence should be calibrated for specific incidents.[R23a][R23b][R23c][R23d]</p>
+</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*fV-9L7MpOqjK3Bxok_Jvmw.png" alt="Article image" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="targeting-and-victimology">Targeting and Victimology<a href="#targeting-and-victimology" class="hash-link" aria-label="Direct link to Targeting and Victimology" title="Direct link to Targeting and Victimology" translate="no">​</a></h2>
+<p>Observed victim focus in open reporting includes:</p>
+<ul>
+<li class="">
+<p>[Reported]**Public services / civilian-impact organizations:**education, emergency-communications-adjacent environments, healthcare (Clalit, February 2026).[R4][R13][R17][R23h]</p>
+</li>
+<li class="">
+<p>[Reported]**Supplier and CRM ecosystem:**third-party and trusted-sender pathways with downstream victim potential.[R3][R5]</p>
+</li>
+<li class="">
+<p>[Reported]**Political principals / public figures / media organizations:**high-visibility individuals, affiliated communication channels, and Persian-language press (Iran International, July 2025).[R16][R21][R22][R23d][R23f]</p>
+</li>
+<li class="">
+<p>[Reported]**Critical sectors:**escalation-period references to energy/fuel, nationally sensitive institutions, and international aviation.[R6][R16][R17][R23g]</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tactics-techniques-and-procedures-observedreported">Tactics, Techniques, and Procedures (Observed/Reported)<a href="#tactics-techniques-and-procedures-observedreported" class="hash-link" aria-label="Direct link to Tactics, Techniques, and Procedures (Observed/Reported)" title="Direct link to Tactics, Techniques, and Procedures (Observed/Reported)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="initial-access-and-delivery">Initial Access and Delivery<a href="#initial-access-and-delivery" class="hash-link" aria-label="Direct link to Initial Access and Delivery" title="Direct link to Initial Access and Delivery" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Spearphishing and lure-based delivery (including current-event themed campaigns).</p>
+</li>
+<li class="">
+<p>[Reported] Distribution through trusted or semi-trusted channels (e.g., compromised provider accounts, CRM-linked sender paths).</p>
+</li>
+<li class="">
+<p>[Reported] Commercial file-sharing services used for payload delivery: Storj (July 2024), Mega (December 2024–January 2025).</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="execution-and-operations">Execution and Operations<a href="#execution-and-operations" class="hash-link" aria-label="Direct link to Execution and Operations" title="Direct link to Execution and Operations" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Staged payload delivery (installer/script chain —<code>.zip</code>,<code>.msi</code>,<code>.ps1</code>).</p>
+</li>
+<li class="">
+<p>[Reported] Use of common administrative and scripting paths.</p>
+</li>
+<li class="">
+<p>[Reported] Wiper-style destructive actions and operational disruption.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-and-influence">Impact and Influence<a href="#impact-and-influence" class="hash-link" aria-label="Direct link to Impact and Influence" title="Direct link to Impact and Influence" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Reported] Data theft plus timed publication (“hack-and-leak”).</p>
+</li>
+<li class="">
+<p>[Reported] Defacement/intimidation messaging to amplify public impact.</p>
+</li>
+<li class="">
+<p>[Reported] Emergency communication system abuse (PA/siren systems).</p>
+</li>
+<li class="">
+<p>[Assessed] Campaign framing designed to increase psychological pressure; actor claim volumes frequently overstated relative to confirmed data scope.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attck-oriented-mapping-analyst-view">ATT&amp;CK-Oriented Mapping (Analyst View)<a href="#attck-oriented-mapping-analyst-view" class="hash-link" aria-label="Direct link to ATT&amp;CK-Oriented Mapping (Analyst View)" title="Direct link to ATT&amp;CK-Oriented Mapping (Analyst View)" translate="no">​</a></h2>
+<p>&gt; This table is a consolidated normalization from public reporting. Evidence label per entry matches the label assigned in the originating timeline phase.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-and-response-priorities">Detection and Response Priorities<a href="#detection-and-response-priorities" class="hash-link" aria-label="Direct link to Detection and Response Priorities" title="Direct link to Detection and Response Priorities" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>**Phishing resilience for current-event lures
+-**Block newly observed lure themes quickly.</p>
+</li>
+<li class="">
+<p>Increase SOC scrutiny during major geopolitical/technology events.</p>
+</li>
+<li class="">
+<p>**Supplier/partner trust controls
+-**Enforce zero-trust assumptions for partner-originated updates/messages.</p>
+</li>
+<li class="">
+<p>Add verification workflows for urgent “security update” requests.</p>
+</li>
+<li class="">
+<p>Prioritize supply-chain exposure mapping for panic-button/PA vendors (Maagar-Tec and functional analogs), including emergency access workflows and delegated admin paths.</p>
+</li>
+<li class="">
+<p>Monitor for<code>.msi</code>downloads from commercial file-sharing services (Storj, Mega) in combination with supplier-context email lures.</p>
+</li>
+<li class="">
+<p>**Wiper-impact preparedness
+-**Keep offline immutable backups.</p>
+</li>
+<li class="">
+<p>Test restoration regularly under time constraints.</p>
+</li>
+<li class="">
+<p>Monitor for mass overwrite/deletion behavior and suspicious service/driver installation.</p>
+</li>
+<li class="">
+<p>**Influence-aware incident handling
+-**Separate breach validation from social-media claims.</p>
+</li>
+<li class="">
+<p>Prepare communications playbooks for “claim before proof” scenarios.</p>
+</li>
+<li class="">
+<p>Apply claim-scope deflation: actor volume assertions are frequently overstated (see Bennett incident secondary coverage citing KELA analysis).</p>
+</li>
+<li class="">
+<p>**Egress and API controls
+-**Inspect unusual outbound API traffic from endpoints/servers.
+-Alert on unexpected outbound traffic to messaging-platform infrastructure and commercial file-sharing services.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-engineering-pack-soc-ready">Detection Engineering Pack (SOC-Ready)<a href="#detection-engineering-pack-soc-ready" class="hash-link" aria-label="Direct link to Detection Engineering Pack (SOC-Ready)" title="Direct link to Detection Engineering Pack (SOC-Ready)" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*Wbeo8i3T5LyAIORjGFGOMg.png" alt="Article image" class="img_ev3q"></p>
+<ul>
+<li class="">
+<p>**Current-event lure + archive/installer chain</p>
+</li>
+<li class="">
+<p>Data sources:**secure email gateway, M365/Google mail logs, endpoint process tree.
+-**Logic:**event-themed message → user opens archive/PDF → execution of uncommon installer (<code>.zip</code>/NSIS/<code>.msi</code>) from user temp/download path.
+-**FP notes:**internal IT broadcasts during genuine global outages.
+-**Triage:**validate sender trust history, attachment lineage, first-seen prevalence.
+-**Response:**quarantine artifact, isolate host, search enterprise-wide for same hash/filename.</p>
+</li>
+<li class="">
+<p><strong>Unusual</strong><code>**.msi**</code>**execution from supplier/business context or commercial file share</p>
+</li>
+<li class="">
+<p>Data sources:**EDR process telemetry, email metadata, identity logs, proxy/egress logs.
+-<strong>Logic:</strong><code>.msi</code>launched from mail attachment path combined with sender-account anomaly (new geolocation/device/time pattern), OR<code>.msi</code>download from Mega (<code>mega.nz</code>,<code>mega.io</code>) or Storj (<code>storjshare.io</code>) immediately preceding installer execution.
+-**FP notes:**approved software rollouts.
+-**Triage:**verify change ticket and deployment source.
+-**Response:**block hash, suspend suspicious sender account, enforce recipient-side detonation flow.</p>
+</li>
+<li class="">
+<p>**Potential destructive pre-impact sequence</p>
+</li>
+<li class="">
+<p>Data sources:**endpoint command-line telemetry.
+-**Logic:**command combinations such as<code>vssadmin Delete Shadows</code>,<code>bcdedit /set ... recoveryenabled No</code>,<code>bootstatuspolicy ignoreallfailures</code>.
+-**FP notes:**rare but possible admin recovery operations.
+-**Triage:**identify initiator account/process ancestry.
+-**Response:**isolate host, revoke active credentials, snapshot volatile evidence.</p>
+</li>
+<li class="">
+<p>**Driver/service pattern consistent with raw-disk tooling</p>
+</li>
+<li class="">
+<p>Data sources:**Windows service creation logs, driver-load events.
+-**Logic:**creation/loading behavior consistent with<code>rwdsk.sys</code>,<code>RawDisk3</code>, and related destructive chain context.
+-**FP notes:**low expected baseline in standard enterprise fleets.
+-**Triage:**confirm signer metadata and prevalence.
+-**Response:**contain endpoint cluster and trigger destructive-impact playbook.</p>
+</li>
+<li class="">
+<p>**Mass file overwrite/deletion burst</p>
+</li>
+<li class="">
+<p>Data sources:**EDR file telemetry, filesystem events.
+-**Logic:**abnormal high-rate writes/renames/deletions across many directories after suspicious installer/script execution.
+-**FP notes:**backup agents, bulk migration jobs.
+-**Triage:**correlate with signed maintenance windows.
+-**Response:**network isolate and preserve forensic timeline.</p>
+</li>
+<li class="">
+<p>**Security-process kill-list behavior</p>
+</li>
+<li class="">
+<p>Data sources:**process termination logs.
+-**Logic:**repeated termination attempts targeting AV/EDR process names in short interval.
+-**FP notes:**endpoint security upgrades/removals by IT.
+-**Triage:**verify admin actor and approved maintenance.
+-**Response:**host isolation and credential reset for initiating context.</p>
+</li>
+<li class="">
+<p>**Telegram/API egress anomaly from enterprise assets</p>
+</li>
+<li class="">
+<p>Data sources:**proxy logs, firewall egress, DNS logs.
+-**Logic:**new outbound patterns to Telegram/web API endpoints from non-messaging servers/endpoints immediately post execution.
+-**FP notes:**legitimate user messaging traffic.
+-**Triage:**map destination to host role and recent process ancestry.
+-**Response:**temporary egress containment + targeted packet/log retention.</p>
+</li>
+<li class="">
+<p>**Channel-claim vs telemetry mismatch alert</p>
+</li>
+<li class="">
+<p>Data sources:**threat intel monitoring + SIEM.
+-**Logic:**actor claim names an organization/system but no matching local compromise indicators appear in expected window.
+-**FP notes:**delayed telemetry ingestion.
+-**Triage:**verify collection health and time sync.
+-**Response:**classify as unverified claim, continue focused hunting. Note: actor claim volumes are frequently overstated; mismatch between claim scope and local evidence is expected and should not itself be treated as confirmation.</p>
+</li>
+<li class="">
+<p>**Emergency communication workflow anomaly</p>
+</li>
+<li class="">
+<p>Data sources:**OT/system admin logs, telecom/provider logs.
+-**Logic:**out-of-schedule siren/PA activation paired with suspicious access/session events.
+-**FP notes:**drills and planned tests.
+-**Triage:**confirm authorized schedule and operator identity.
+-**Response:**fail-safe fallback, credential rotation, incident bridge with facility/security teams.</p>
+</li>
+<li class="">
+<p>**High-profile account compromise proxy detection (endpoint-first)</p>
+</li>
+<li class="">
+<p>Data sources:**endpoint telemetry (process/file/network), browser credential/session events, enterprise proxy logs, identity provider signals.
+-**Logic:**suspicious token/session artifacts or credential export behavior from endpoint context associated with high-profile users (for example, unexpected Telegram Desktop local database access/copy, abnormal browser cookie/session theft patterns, non-messaging processes initiating Telegram API/domain connections).
+-**FP notes:**legitimate client upgrades, profile migration, approved forensic collection.
+-**Triage:**validate process ancestry, signer reputation, first-seen prevalence, and user-confirmed activity timeline.
+-**Response:**session revocation, credential reset, token invalidation, endpoint isolation if theft patterns are present. Note: actor-claimed chat volume is not a reliable scope proxy without forensic validation.</p>
+</li>
+<li class="">
+<p>**IIS ASPX webshell deployment anomaly</p>
+</li>
+<li class="">
+<p>Data sources:**IIS logs, web-server file integrity monitoring, EDR file/process events.
+-**Logic:**new/modified<code>.aspx</code>files in unusual web directories (for example,<code>/scripts/</code>,<code>/images/</code>) combined with webshell-like child process behavior (for example,<code>w3wp.exe</code>spawning<code>cmd.exe</code>/<code>powershell.exe</code>).
+-**FP notes:**legitimate web application updates and admin uploads.
+-**Triage:**compare against deployment baseline and signed release artifacts.
+-**Response:**isolate web node, preserve web root + logs, hunt for lateral movement from web tier.</p>
+</li>
+<li class="">
+<p>**Exchange mailbox collection spike</p>
+</li>
+<li class="">
+<p>Data sources:**Exchange audit logs, PowerShell logs, identity logs.
+-**Logic:**anomalous burst of mailbox-search/cmdlet activity (for example,<code>New-MailboxSearch</code>,<code>Get-Recipient</code>) from unusual admin context.
+-**FP notes:**planned compliance/eDiscovery operations.
+-**Triage:**verify requester, ticket, scope, and time window.
+-**Response:**suspend suspicious session, rotate credentials, initiate data-access impact scoping.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wiper-first-30-minutes-defensive-mini-playbook">Wiper First 30 Minutes (Defensive Mini-Playbook)<a href="#wiper-first-30-minutes-defensive-mini-playbook" class="hash-link" aria-label="Direct link to Wiper First 30 Minutes (Defensive Mini-Playbook)" title="Direct link to Wiper First 30 Minutes (Defensive Mini-Playbook)" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*J-qhvEY46BBuFeLppY-zTw.png" alt="Article image" class="img_ev3q"></p>
+<ul>
+<li class="">
+<p>Declare destructive-activity severity and open incident command.</p>
+</li>
+<li class="">
+<p>Isolate impacted hosts/subnets; block east-west movement where feasible.</p>
+</li>
+<li class="">
+<p>Disable suspicious privileged accounts/tokens used in preceding 24 hours.</p>
+</li>
+<li class="">
+<p>Preserve volatile artifacts (process tree, command-line, loaded drivers, active connections).</p>
+</li>
+<li class="">
+<p>Freeze risky automated actions (software deployment jobs, admin scripts) pending validation.</p>
+</li>
+<li class="">
+<p>Validate backup integrity and launch clean-room restore decision path.</p>
+</li>
+<li class="">
+<p>Trigger communications guardrails: separate verified impact from public claims; do not accept actor claim volumes at face value.</p>
+</li>
+<li class="">
+<p>Begin enterprise-wide sweep for known destructive command and artifact patterns.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="controls-mapping-nist-csf-lite">Controls Mapping (NIST CSF-Lite)<a href="#controls-mapping-nist-csf-lite" class="hash-link" aria-label="Direct link to Controls Mapping (NIST CSF-Lite)" title="Direct link to Controls Mapping (NIST CSF-Lite)" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="comprehensive-ioc-compendium-public-reporting">Comprehensive IOC Compendium (Public Reporting)<a href="#comprehensive-ioc-compendium-public-reporting" class="hash-link" aria-label="Direct link to Comprehensive IOC Compendium (Public Reporting)" title="Direct link to Comprehensive IOC Compendium (Public Reporting)" translate="no">​</a></h2>
+<p>&gt; Use this IOC set as a correlation and triage baseline , not as standalone attribution proof. Lineage IOCs (MOIS/Void Manticore context) do not independently prove Handala attribution; validate with current telemetry before blocking. [R1] [R2] [R5] [R8]</p>
+<p><strong>IOC tagging model:</strong><code>evidence_tag</code>—<code>hard</code>(cryptographic/sample-level) ·<code>near-hard</code>(campaign-specific but reusable) ·<code>soft</code>(contextual/behavioral) ·<code>benign-context</code>(legitimate service seen in chain)<code>freshness_tag</code>—<code>stable_tracking</code>(long-lived) ·<code>active_monitor</code>(monitor continuously) ·<code>volatile</code>·<code>maybe_expired</code>(infrastructure likely rotated) ·<code>durable_pattern</code>(behavioral pattern)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="network-iocs-ipcidr">Network IOCs (IP/CIDR)<a href="#network-iocs-ipcidr" class="hash-link" aria-label="Direct link to Network IOCs (IP/CIDR)" title="Direct link to Network IOCs (IP/CIDR)" translate="no">​</a></h3>
+<p>**Type:**Near-hard ·**Shelf life:**Medium — revalidate against passive DNS and ASN movement ·**Action:**Hunt + conditional block after environment impact validation</p>
+<p><code>**64.176.169.22**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt; conditional block after local validation ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**64.176.172.235**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt; conditional block after local validation ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**64.176.172.165**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt; conditional block after local validation ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**64.176.173.77**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt; conditional block after local validation ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**64.176.172.101**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt; conditional block after local validation ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**64.176.172.0/24**</code>*(reported range context)*Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt; conditional block after local validation ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="url-and-infrastructure-iocs">URL and Infrastructure IOCs<a href="#url-and-infrastructure-iocs" class="hash-link" aria-label="Direct link to URL and Infrastructure IOCs" title="Direct link to URL and Infrastructure IOCs" translate="no">​</a></h3>
+<p>**Type:**Mixed (Near-hard + benign-but-used-in-chain) ·**Shelf life:**Short to medium ·**Action:**Delivery paths — monitor + temporary block + detonation/hunt. Benign/commercial references — hunt-only / behavioral correlation.<strong>Never blocklist</strong><code>**icanhazip.com**</code><strong>or</strong><code>**microsoft.com**</code><strong>in isolation.</strong></p>
+<p><code>**hxxps://link-target[.]net/jfby32**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Monitor + detonation + temporary block in campaign window ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**hxxps://storjshare[.]io/s/jv4ftpt67w5zw2b2wqj4v4zffviq/...update.zip**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Monitor + detonation + temporary block in campaign window ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**mega[.]nz**</code><strong>/</strong><code>**mega[.]io**</code>Evidence:<code>benign-context</code>· Freshness:<code>active_monitor</code>· Action: Hunt-only in supplier-lure +<code>.msi</code>execution context (Dec 2024–Jan 2025 CRM campaign delivery platform);<strong>never block in isolation</strong>·<a href="https://research.checkpoint.com/2026/2025-the-untold-stories-of-check-point-research/" target="_blank" rel="noopener noreferrer" class="">[R5]</a></p>
+<p><code>**hxxps://www[.]icanhazip[.]com**</code>Evidence:<code>benign-context</code>· Freshness:<code>stable_tracking</code>· Action: Behavior correlation only; never block in isolation ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**hxxps://www[.]microsoft[.]com**</code>Evidence:<code>benign-context</code>· Freshness:<code>stable_tracking</code>· Action: Behavior correlation only; never block in isolation ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="actor-channel-and-messaging-iocs">Actor Channel and Messaging IOCs<a href="#actor-channel-and-messaging-iocs" class="hash-link" aria-label="Direct link to Actor Channel and Messaging IOCs" title="Direct link to Actor Channel and Messaging IOCs" translate="no">​</a></h3>
+<p>**Type:**Soft IOC ·**Shelf life:**Short ·**Action:**Monitor + correlate only; not attribution proof by itself</p>
+<p><code>**https://t.me/HANDALA_RSS**</code>*(primary monitored channel)*Evidence:<code>soft</code>· Freshness:<code>volatile</code>· Action: Monitor + timeline correlation only ·<a href="https://t.me/HANDALA_RSS" target="_blank" rel="noopener noreferrer" class="">[R10]</a></p>
+<p><code>**https://t.me/s/handala_backup_357**</code>*(backup monitored stream)*Evidence:<code>soft</code>· Freshness:<code>volatile</code>· Action: Monitor + timeline correlation only ·<a href="https://t.me/s/handala_backup_357" target="_blank" rel="noopener noreferrer" class="">[R18]</a></p>
+<p><code>**@Handala_Backup**</code>*(X/Twitter backup, post-August 2024 ban)*Evidence:<code>soft</code>· Freshness:<code>volatile</code>· Action: Monitor + timeline correlation only ·<a href="https://therecord.media/handala-x-account-banned-twitter-palestine-iran" target="_blank" rel="noopener noreferrer" class="">[R12]</a></p>
+<p>&gt; Volatile bot token/chat ID indicators (Telegram bot token and chat ID observed in malware workflow) are documented in Appendix B only . See Appendix B for handling guidance, redaction recommendations, and distribution-risk notes before sharing beyond TLP<!-- -->:WHITE<!-- --> scope.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="file-service-and-artifact-iocs">File, Service, and Artifact IOCs<a href="#file-service-and-artifact-iocs" class="hash-link" aria-label="Direct link to File, Service, and Artifact IOCs" title="Direct link to File, Service, and Artifact IOCs" translate="no">​</a></h3>
+<p>**Type:**Mixed (Hard + Near-hard) ·**Shelf life:**Medium ·**Action:**Hunt + block where validated; keep lineage tagging in SIEM</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="core-deliveryimpact-artifacts">Core delivery/impact artifacts<a href="#core-deliveryimpact-artifacts" class="hash-link" aria-label="Direct link to Core delivery/impact artifacts" title="Direct link to Core delivery/impact artifacts" translate="no">​</a></h3>
+<p><code>**update.zip**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + detonation + quarantine if re-observed ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**CrowdStrike.exe**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + detonation + quarantine if re-observed ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**OpenFileFinder.dll**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + detonation + quarantine if re-observed ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**Champion.pif**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + detonation + quarantine if re-observed ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**Careol.zip**</code>*(variant spelling as appearing in Trellix report text)*Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + detonation + quarantine if re-observed ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**Carrol.zip**</code>*(alternate spelling in same report; treat as same artifact — possible OCR/transcription variant)*Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + detonation + quarantine if re-observed ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**Carrol.cmd**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + process-lineage correlation ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**Ukraine**</code>*(wiper stage artifact name)*Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + process-lineage correlation ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**Phase3.ps1**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + script block telemetry correlation ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**UploadDataToTelegram**</code>*(project identifier in malware logic)*Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Hunt in malware/project strings + process ancestry ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wiper-and-destructive-lineage-artifacts">Wiper and destructive lineage artifacts<a href="#wiper-and-destructive-lineage-artifacts" class="hash-link" aria-label="Direct link to Wiper and destructive lineage artifacts" title="Direct link to Wiper and destructive lineage artifacts" translate="no">​</a></h3>
+<p><code>**cl.exe**</code>Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Hunt with hash + service/driver correlation ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**rwdsk.sys**</code>Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Hunt with hash + driver-load correlation ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**GoXML.exe**</code>Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Hunt + sandbox + lineage mapping ·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**do.zip**</code><strong>/</strong><code>**Do.exe**</code>Evidence:<code>near-hard</code>· Freshness:<code>maybe_expired</code>· Action: Hunt + detonation + process-lineage ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**RawDisk3**</code>*(service label)*Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Service/driver analytics + response playbook trigger ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**reGeorge**</code>*(webshell family)*Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Web-tier hunt + child-process analytics ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**error4.aspx**</code><strong>,</strong><code>**ClientBin.aspx**</code><strong>,</strong><code>**pickers.aspx**</code>Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Web root diff + IIS/EDR correlation ·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**mellona.exe**</code><strong>,</strong><code>**disable_defender.exe**</code>Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Hunt + AV-kill/defense-evasion correlation ·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hash-iocs-sha-256">Hash IOCs (SHA-256)<a href="#hash-iocs-sha-256" class="hash-link" aria-label="Direct link to Hash IOCs (SHA-256)" title="Direct link to Hash IOCs (SHA-256)" translate="no">​</a></h3>
+<p>**Type:**Hard IOC ·**Shelf life:**Long for sample tracking; medium for blocking efficacy ·**Action:**Block + retro-hunt + sandbox triage · All hashes normalized to lowercase.</p>
+<p><code>**6eb7dbf27a25639c7f11c05fd88ea2a301e0ca93d3c3bdee1eb5917fc60a56ff**</code>Context: CRM-linked malicious<code>.msi</code>· Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://research.checkpoint.com/2026/2025-the-untold-stories-of-check-point-research/" target="_blank" rel="noopener noreferrer" class="">[R5]</a></p>
+<p><code>**e1204ebbd8f15dbf5f2e41dddc5337e3182fc4daf75b05acc948b8b965480ca0**</code>Context:<code>cl.exe</code>· Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**3c9dc8ada56adf9cebfc501a2d3946680dcb0534a137e2e27a7fcb5994cd9de6**</code>Context:<code>rwdsk.sys</code>· Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**d0c03d40772cd468325bbc522402f7b737f18b8f37a89bacc5c8a00c2b87bfc6**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**deeaf85b2725289d5fc262b4f60dda0c68ae42d8d46d0dc19b9253b451aea25a**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**87f0a902d6b2e2ae3647f10ea214d19db9bd117837264ae15d622b5314ff03a5**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**85fa58cc8c4560adb955ba0ae9b9d6cab2c381d10dbd42a0bceb8b62a92b7636**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**74d8d60e900f931526a911b7157511377c0a298af986d42d373f51aac4f362f6**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**cc77e8ab73b577de1924e2f7a93bcfd852b3c96c6546229bc8b80bf3fd7bf24e**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**40417eb9ca90af12129f7bcf6e7b2f250f4919f1c5ea59d2f4fc9c96c7f819e3**</code>Context: Check Point YARA metadata · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hash-iocs-md5">Hash IOCs (MD5)<a href="#hash-iocs-md5" class="hash-link" aria-label="Direct link to Hash IOCs (MD5)" title="Direct link to Hash IOCs (MD5)" translate="no">​</a></h3>
+<p>**Type:**Hard IOC (legacy format) ·**Shelf life:**Medium ·**Action:**Hunt + correlation; avoid MD5-only blocking decisions.</p>
+<p><code>**2bf14f4d28ea8e80f227873de0a4f367**</code>Context: Campaign · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**7b1602dcf39d2f564008e3abbb2f2f6a**</code>Context: Campaign · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**57fbfeb55f8332f6413f31bb310ed7f9**</code>Context: Campaign · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**1476f9f4f13db0a7179fd4dc0825765d**</code>Context: Campaign · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><code>**81e123351eb80e605ad73268a5653ff3**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**a9fa6cfdba41c57d8094545e9b56db36**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**8f766dea3afd410ebcd5df5994a3c571**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**7b71764236f244ae971742ee1bc6b098**</code>Context:<code>cl.exe</code>· Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**bbe983dba3bf319621b447618548b740**</code>Context:<code>GoXML.exe</code>· Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**8f6e7653807ebb57ecc549cef991d505**</code>Context:<code>rwdsk.sys</code>· Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**78562ba0069d4235f28efd01e3f32a82**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<p><code>**60afb1e62ac61424a542b8c7b4d2cf01**</code>Context: Lineage · Evidence:<code>hard</code>· Freshness:<code>stable_tracking</code>·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="command-line-and-behavioral-iocs">Command-Line and Behavioral IOCs<a href="#command-line-and-behavioral-iocs" class="hash-link" aria-label="Direct link to Command-Line and Behavioral IOCs" title="Direct link to Command-Line and Behavioral IOCs" translate="no">​</a></h3>
+<p>**Type:**Soft to Near-hard (behavioral) ·**Shelf life:**Medium to long ·**Action:**Detection/hunting priority; do not use alone for attribution</p>
+<p><code>**vssadmin Delete Shadows /all /quiet**</code>Evidence:<code>soft</code>· Freshness:<code>durable_pattern</code>· Action: High-priority detection + destructive playbook trigger ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**bcdedit /set &amp;#123;default&amp;#125; recoveryenabled No**</code>Evidence:<code>soft</code>· Freshness:<code>durable_pattern</code>· Action: High-priority detection + destructive playbook trigger ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**bcdedit /set &amp;#123;default&amp;#125; bootstatuspolicy ignoreallfailures**</code>Evidence:<code>soft</code>· Freshness:<code>durable_pattern</code>· Action: High-priority detection + destructive playbook trigger ·<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">[R2]</a></p>
+<p><code>**ping 4.2.2.4 -n 5 &amp;gt; Nul**</code>*(execution-timing / flow-control pattern)*Evidence:<code>soft</code>· Freshness:<code>durable_pattern</code>· Action: Correlate with installer/script ancestry ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><strong>Wiper invocation argument:</strong><code>**confirmdeletefiles**</code>Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Hunt + command-line correlation ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><strong>Security-process kill-list</strong>—<code>wrsa.exe</code>,<code>msmpeng.exe</code>,<code>ccsvchst.exe</code>,<code>tmccsf.exe</code>,<code>aswidsagent.exe</code>,<code>avp.exe</code>,<code>savservice.exe</code>,<code>fssm32.exe</code>,<code>coreServiceShell.exe</code>,<code>V3Svc.exe</code>,<code>V3LITE.EXE</code>,<code>V3Main.exe</code>Evidence:<code>soft</code>· Freshness:<code>durable_pattern</code>· Action: Correlate with kill-burst + anti-recovery behavior ·<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">[R1]</a></p>
+<p><strong>Exchange mailbox collection cmdlets:</strong><code>**New-MailboxSearch**</code><strong>,</strong><code>**Get-Recipient**</code>Evidence:<code>near-hard</code>· Freshness:<code>durable_pattern</code>· Action: Hunt in Exchange/PowerShell audit logs ·<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">[R8]</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="defender-usage-notes">Defender Usage Notes<a href="#defender-usage-notes" class="hash-link" aria-label="Direct link to Defender Usage Notes" title="Direct link to Defender Usage Notes" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Prioritize<strong>multi-signal correlation</strong>— IOC hit + behavior + campaign context — instead of one-indicator decisions.</p>
+</li>
+<li class="">
+<p>Treat channel/claim-only indicators as<strong>soft IOCs</strong>until telemetry confirms compromise.</p>
+</li>
+<li class="">
+<p>Revalidate all network indicators against current blocklists and passive-DNS before production blocking.</p>
+</li>
+<li class="">
+<p>Actor claim volumes are frequently overstated relative to confirmed data scope; do not use claimed exfiltration size as a proxy for confirmed impact.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overall-statistics-common-patterns-and-cross-group-correlation">Overall Statistics, Common Patterns, and Cross-Group Correlation<a href="#overall-statistics-common-patterns-and-cross-group-correlation" class="hash-link" aria-label="Direct link to Overall Statistics, Common Patterns, and Cross-Group Correlation" title="Direct link to Overall Statistics, Common Patterns, and Cross-Group Correlation" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quantitative-snapshot">Quantitative Snapshot<a href="#quantitative-snapshot" class="hash-link" aria-label="Direct link to Quantitative Snapshot" title="Direct link to Quantitative Snapshot" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*iy1MSwtIDPDFW3kBTYSWpg.png" alt="Article image" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-operational-patterns">Common Operational Patterns<a href="#common-operational-patterns" class="hash-link" aria-label="Direct link to Common Operational Patterns" title="Direct link to Common Operational Patterns" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>[Assessed]**Access → impact → narrative cycle is persistent.**Handala-linked operations repeatedly progress from initial compromise into destructive or leak action, then immediately into public claim/disinformation pressure.[R1][R2][R5][R9]</p>
+</li>
+<li class="">
+<p>[Assessed]**Tradecraft is operationally effective but technically pragmatic.**Public reporting points to phishing, social engineering, webshell lineage, known destructive utilities, and commercial file-sharing infrastructure (Storj, Mega) rather than dependency on novel 0-days in every campaign.[R1][R5][R8][R9]</p>
+</li>
+<li class="">
+<p>[Assessed]**Influence operations are not a side effect; they are part of the attack design.**Telegram and mirror channels function as force multipliers for reputational and psychological damage. Actor claim volumes are frequently overstated.[R9][R10][R12][R16][R23i][R23j]</p>
+</li>
+<li class="">
+<p>[Assessed]**Supplier/partner pathways are a recurring risk amplifier.**Compromised trusted senders and CRM-linked channels are repeatedly highlighted in 2025 reporting.[R3][R5]</p>
+</li>
+<li class="">
+<p>[Assessed]**Attribution is strongest at cluster/workflow level.**Multiple independent primary sources (Check Point, CrowdStrike, Microsoft, Sophos, Recorded Future) converge on strong cluster-level identity between the Handala Hack persona and MOIS-linked Void Manticore / BANISHED KITTEN / Storm-0842 cluster.[R2][R5][R11][R19][R23c][R23d][R23e]</p>
+</li>
+<li class="">
+<p>[Assessed]**Communications gap ≠ operational halt.**The silence of Handala’s own public channels from approximately February 9 to July 2025 did not prevent cluster operations; wiper activity (June 2025) and hack-and-leak operations (July 2025) continued under vendor cluster attribution.[R5][R23a][R23b][R23d][R23f]</p>
+</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*ElDHOIabUMYADITamboeQQ.png" alt="Article image" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*rOMLRFo5qOucEPuXiMlU_g.png" alt="Article image" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="confidence-and-gaps">Confidence and Gaps<a href="#confidence-and-gaps" class="hash-link" aria-label="Direct link to Confidence and Gaps" title="Direct link to Confidence and Gaps" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="confidence">Confidence<a href="#confidence" class="hash-link" aria-label="Direct link to Confidence" title="Direct link to Confidence" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>**High:**Handala has conducted repeated disruptive, destructive, and influence-oriented campaigns against Israeli targets across at least six confirmed wiper-phase events and multiple hack-and-leak operations.</p>
+</li>
+<li class="">
+<p>**High (cluster level):**Multiple independent primary sources (Check Point, CrowdStrike, Sophos, Microsoft, Recorded Future) directly link the Handala Hack persona to the Void Manticore / BANISHED KITTEN / Storm-0842 MOIS-aligned cluster.</p>
+</li>
+<li class="">
+<p>**Medium-High:**Individual incident attribution for post-February 2025 activity — attributions are researcher/vendor cluster-level and do not represent actor self-claims.</p>
+</li>
+<li class="">
+<p>**Low:**Specific operational claims posted by actor channels without independent forensic corroboration. Per methodology: claim-led, single-source, no independent technical corroboration; confidence floor is “Low.”</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gaps">Gaps<a href="#gaps" class="hash-link" aria-label="Direct link to Gaps" title="Direct link to Gaps" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Public reporting remains uneven on confirmed victim impact in several high-profile claims.</p>
+</li>
+<li class="">
+<p>Multi-actor overlap in the same theater complicates precise operation-level attribution.</p>
+</li>
+<li class="">
+<p>**Post-February 2025 communications gap:**Handala’s own public channels went silent after approximately February 9, 2025, before resuming in approximately July 2025. Activity attributed to Handala in the interim (June 2025 wiper) and subsequent phases represents researcher/vendor cluster-level attribution (Void Manticore / BANISHED KITTEN) rather than actor self-claims. Consumers should distinguish between cluster-level attribution by researchers and actor self-claimed operations when assessing post-February 2025 incidents. [R23a][R23b][R23d]</p>
+</li>
+<li class="">
+<p><strong>Operational interpretation of the gap:<strong>current evidence supports a working hypothesis of pause/reduction in influence-channel output rather than pause in intrusion capability. The June 2025 wiper event during the channel-silence window supports continuity of intrusion operations despite communications disruption or tradecraft shift.</strong>[R5][R23a][R23b][R23d]</strong></p>
+</li>
+<li class="">
+<p><strong>Actor claim-volume reliability:<strong>Secondary reporting citing KELA analysis of the December 2025 Bennett incident demonstrated that the actor materially overstated data scope (claimed 1,900 chats; fewer than 40 contained real messages). This pattern likely applies across other claim-volume assertions in the dataset.</strong>[R23i][R23j]</strong></p>
+</li>
+<li class="">
+<p><strong>June 2025 wiper artifacts:<strong>Campaign-specific artifact details for the June 2025 wiper event have not been publicly released by Check Point at evidence cutoff.</strong>[R5]</strong></p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="practical-defensive-actions-next-30-days">Practical Defensive Actions (Next 30 Days)<a href="#practical-defensive-actions-next-30-days" class="hash-link" aria-label="Direct link to Practical Defensive Actions (Next 30 Days)" title="Direct link to Practical Defensive Actions (Next 30 Days)" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>Run a focused supplier-risk review for CRM/IT service dependencies.</p>
+</li>
+<li class="">
+<p>Add emergency controls for unsigned or unusual<code>.msi</code>execution, including downloads from commercial file-sharing services (Mega, Storj).</p>
+</li>
+<li class="">
+<p>Deploy and test a wiper-specific IR playbook.</p>
+</li>
+<li class="">
+<p>Expand monitoring for destructive pre-encryption behavior.</p>
+</li>
+<li class="">
+<p>Train comms + legal + SOC on claim-driven influence operations; establish a claim-scope deflation process before any public statement.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>**[R1]**Trellix,<em>Handala’s Wiper Targets Israel</em>. Published: July 26, 2024. Accessed: March 5, 2026.<a href="https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/" target="_blank" rel="noopener noreferrer" class="">https://www.trellix.com/en-gb/blogs/research/handalas-wiper-targets-israel/</a></p>
+</li>
+<li class="">
+<p>**[R2]**Check Point Research,<em>Bad Karma, No Justice: Void Manticore Destructive Activities in Israel</em>. Published: May 20, 2024. Accessed: March 5, 2026.<a href="https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/" target="_blank" rel="noopener noreferrer" class="">https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/</a></p>
+</li>
+<li class="">
+<p>**[R3]**Check Point Research,<em>6th January — Threat Intelligence Report</em>. Published: January 6, 2025. Accessed: March 5, 2026.<a href="https://research.checkpoint.com/2025/6th-january-threat-intelligence-report/" target="_blank" rel="noopener noreferrer" class="">https://research.checkpoint.com/2025/6th-january-threat-intelligence-report/</a></p>
+</li>
+<li class="">
+<p>**[R4]**Check Point Research,<em>3rd February — Threat Intelligence Report</em>. Published: February 3, 2025. Accessed: March 5, 2026.<a href="https://research.checkpoint.com/2025/3rd-february-threat-intelligence-report/" target="_blank" rel="noopener noreferrer" class="">https://research.checkpoint.com/2025/3rd-february-threat-intelligence-report/</a></p>
+</li>
+<li class="">
+<p>**[R5]**Check Point Research,<em>2025: The Untold Stories of Check Point Research</em>. Published: February 23, 2026. Accessed: March 5, 2026.<a href="https://research.checkpoint.com/2026/2025-the-untold-stories-of-check-point-research/" target="_blank" rel="noopener noreferrer" class="">https://research.checkpoint.com/2026/2025-the-untold-stories-of-check-point-research/</a></p>
+</li>
+<li class="">
+<p>**[R6]**Unit 42,<em>Threat Brief: March 2026 Escalation of Cyber Risk Related to Iran</em>. Published: March 2, 2026. Accessed: March 5, 2026.<a href="https://unit42.paloaltonetworks.com/iranian-cyberattacks-2026/" target="_blank" rel="noopener noreferrer" class="">https://unit42.paloaltonetworks.com/iranian-cyberattacks-2026/</a></p>
+</li>
+<li class="">
+<p>**[R7]**Microsoft Security Blog,<em>Microsoft investigates Iranian attacks against the Albanian government</em>. Published: September 8, 2022. Accessed: March 5, 2026.<a href="https://www.microsoft.com/en-us/security/blog/2022/09/08/microsoft-investigates-iranian-attacks-against-the-albanian-government/" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/en-us/security/blog/2022/09/08/microsoft-investigates-iranian-attacks-against-the-albanian-government/</a></p>
+</li>
+<li class="">
+<p>**[R8]**CISA/FBI,<em>AA22–264A Iranian State Actors Conduct Cyber Operations Against the Government of Albania</em>. Published: September 21, 2022. Accessed: March 5, 2026.<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a" target="_blank" rel="noopener noreferrer" class="">https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-264a</a></p>
+</li>
+<li class="">
+<p>**[R9]**Cyberint,<em>Handala Hack: What We Know About the Rising Threat Actor</em>. First published: July 16, 2024; updated: February 20, 2025. Accessed: March 5, 2026.<a href="https://cyberint.com/blog/threat-intelligence/handala-hack-what-we-know-about-the-rising-threat-actor/" target="_blank" rel="noopener noreferrer" class="">https://cyberint.com/blog/threat-intelligence/handala-hack-what-we-know-about-the-rising-threat-actor/</a></p>
+</li>
+<li class="">
+<p>**[R10]**Telegram channel (monitoring lead). Accessed: March 5, 2026. Note: Volatile source; content can change; use as monitoring lead only.<a href="https://t.me/HANDALA_RSS" target="_blank" rel="noopener noreferrer" class="">https://t.me/HANDALA_RSS</a></p>
+</li>
+<li class="">
+<p>**[R11]**Sophos Threat Profiles,<em>COBALT MYSTIQUE</em>(alias crosswalk context). Accessed: March 5, 2026.<a href="https://www.sophos.com/en-us/threat-profiles/cobalt-mystique" target="_blank" rel="noopener noreferrer" class="">https://www.sophos.com/en-us/threat-profiles/cobalt-mystique</a></p>
+</li>
+<li class="">
+<p><em>Note: COBALT MYSTIQUE is used here as a public alias-crosswalk anchor in relation to Void Manticore (Check Point naming) and Storm-0842 (Microsoft naming).</em></p>
+</li>
+<li class="">
+<p>**[R12]**The Record,<em>Handala’s X account banned; backup channel activity continued</em>. Published: August 21, 2024. Accessed: March 5, 2026.<a href="https://therecord.media/handala-x-account-banned-twitter-palestine-iran" target="_blank" rel="noopener noreferrer" class="">https://therecord.media/handala-x-account-banned-twitter-palestine-iran</a></p>
+</li>
+<li class="">
+<p>**[R13]**The Record,<em>Hackers hijack sirens in Israeli kindergartens</em>. Published: January 27, 2025. Accessed: March 5, 2026.<a href="https://therecord.media/hackers-hijack-sirens-iran-israel" target="_blank" rel="noopener noreferrer" class="">https://therecord.media/hackers-hijack-sirens-iran-israel</a></p>
+</li>
+<li class="">
+<p>**[R14]**BleepingComputer,<em>Fake CrowdStrike fixes target companies with malware/data wipers</em>. Published: July 21, 2024. Accessed: March 5, 2026.<a href="https://www.bleepingcomputer.com/news/security/fake-crowdstrike-fixes-target-companies-with-malware-data-wipers/" target="_blank" rel="noopener noreferrer" class="">https://www.bleepingcomputer.com/news/security/fake-crowdstrike-fixes-target-companies-with-malware-data-wipers/</a></p>
+</li>
+<li class="">
+<p>**[R15]**The Wall Street Journal,<em>Iran-linked cyberattack reporting involving former Israeli PM</em>. Accessed: March 5, 2026. Note: paywalled.<a href="https://www.wsj.com/world/middle-east/iran-hacks-former-israeli-prime-minister-in-new-tehran-linked-cyberattack-f1a959ca" target="_blank" rel="noopener noreferrer" class="">https://www.wsj.com/world/middle-east/iran-hacks-former-israeli-prime-minister-in-new-tehran-linked-cyberattack-f1a959ca</a></p>
+</li>
+<li class="">
+<p>*Editorial note:*Paywalled; used as contextual reference for the February 2025 leak/pressure operations phase. Specific claim supported: reporting on personal-data and weapons-holder data exposure themes attributed to Iran-linked actors. No unique technical artifacts or IOCs are sourced exclusively from this reference.</p>
+</li>
+<li class="">
+<p>**[R16]**International Institute for Counter-Terrorism (ICT),<em>Bibi Gate: Handala Hack Team — A Mask for Iranian Psychological Warfare</em>. Published: December 31, 2025. Accessed: March 5, 2026.<a href="https://ict.org.il/bibi-gate-handala-hack-team-a-mask-for-iranian-psychological-warfare/" target="_blank" rel="noopener noreferrer" class="">https://ict.org.il/bibi-gate-handala-hack-team-a-mask-for-iranian-psychological-warfare/</a><a href="https://ict.org.il/wp-content/uploads/2025/12/Download.pdf" target="_blank" rel="noopener noreferrer" class="">https://ict.org.il/wp-content/uploads/2025/12/Download.pdf</a></p>
+</li>
+<li class="">
+<p>**[R17]**Times of Israel, reporting on Iranian hackers broadcasting sirens in kindergartens. Published: January 26, 2025. Accessed: March 5, 2026.<a href="https://www.timesofisrael.com/iranian-hackers-broadcast-rocket-sirens-odes-to-terrorism-in-some-20-kindergartens/" target="_blank" rel="noopener noreferrer" class="">https://www.timesofisrael.com/iranian-hackers-broadcast-rocket-sirens-odes-to-terrorism-in-some-20-kindergartens/</a></p>
+</li>
+<li class="">
+<p>**[R18]**Telegram backup stream (monitoring lead). Accessed: March 5, 2026. Note: Volatile source; content can change; use as monitoring lead only.<a href="https://t.me/s/handala_backup_357" target="_blank" rel="noopener noreferrer" class="">https://t.me/s/handala_backup_357</a></p>
+</li>
+<li class="">
+<p>**[R19]**Microsoft Security Insider,<em>Iran surges cyber-enabled influence operations in support of Hamas</em>. Published: February 26, 2024. Accessed: March 5, 2026.<a href="https://www.microsoft.com/en-us/security/security-insider/threat-landscape/iran-surges-cyber-enabled-influence-operations-in-support-of-hamas/" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/en-us/security/security-insider/threat-landscape/iran-surges-cyber-enabled-influence-operations-in-support-of-hamas/</a></p>
+</li>
+<li class="">
+<p>**[R20]**ODNI/FBI/CISA,<em>Joint ODNI, FBI, and CISA Statement on Iranian Election Influence Efforts</em>. Published: August 19, 2024. Accessed: March 5, 2026.<a href="https://www.dni.gov/index.php/newsroom/press-releases/press-releases-2024/3981-joint-odni-fbi-and-cisa-statement-on-iranian-election-influence-efforts" target="_blank" rel="noopener noreferrer" class="">https://www.dni.gov/index.php/newsroom/press-releases/press-releases-2024/3981-joint-odni-fbi-and-cisa-statement-on-iranian-election-influence-efforts</a></p>
+</li>
+<li class="">
+<p>**[R21]**JNS,<em>Iranians claim they hacked former Israeli PM Bennett’s phone</em>. Published: (publication date not available; accessed March 5, 2026).<a href="https://www.jns.org/iranians-claim-they-hacked-former-israeli-pm-bennetts-phone/" target="_blank" rel="noopener noreferrer" class="">https://www.jns.org/iranians-claim-they-hacked-former-israeli-pm-bennetts-phone/</a></p>
+</li>
+<li class="">
+<p>**[R22]**Israel Hayom,<em>Handala hackers: Iranian cyber attacks on Israeli officials</em>. Published: December 28, 2025. Accessed: March 5, 2026.<a href="https://www.israelhayom.com/2025/12/28/handala-hackers-iranian-cyber-attacks-israel-officials/" target="_blank" rel="noopener noreferrer" class="">https://www.israelhayom.com/2025/12/28/handala-hackers-iranian-cyber-attacks-israel-officials/</a></p>
+</li>
+<li class="">
+<p>**[R23a]**OP Innovate,<em>Unpacking Handala</em>. Published: February 18, 2025. Accessed: March 5, 2026.
+<a href="https://op-c.net/blog/unpacking-handala/" target="_blank" rel="noopener noreferrer" class="">https://op-c.net/blog/unpacking-handala/</a></p>
+</li>
+<li class="">
+<p>**[R23b]**OP Innovate,*Did OP Innovate Disrupt Handala Cyber Threat?*Published: February 28, 2025. Accessed: March 5, 2026.
+<a href="https://op-c.net/blog/did-op-innovate-disrupt-handala-cyber-threat/" target="_blank" rel="noopener noreferrer" class="">https://op-c.net/blog/did-op-innovate-disrupt-handala-cyber-threat/</a></p>
+</li>
+<li class="">
+<p>**[R23c]**CrowdStrike,<em>BANISHED KITTEN</em>adversary profile. Accessed: March 5, 2026.
+<a href="https://www.crowdstrike.com/en-us/adversaries/banished-kitten/" target="_blank" rel="noopener noreferrer" class="">https://www.crowdstrike.com/en-us/adversaries/banished-kitten/</a></p>
+</li>
+<li class="">
+<p>**[R23d]**Global Affairs Canada (RRM Canada),<em>Backgrounder: Iran-linked hacker group doxes journalists and amplifies leaked information through AI chatbots</em>. Published: September 12, 2025. Accessed: March 5, 2026.
+<a href="https://www.international.gc.ca/transparency-transparence/rapid-response-mechanism-mecanisme-reponse-rapide/iran-hack-piratage-iranien.aspx?lang=eng" target="_blank" rel="noopener noreferrer" class="">https://www.international.gc.ca/transparency-transparence/rapid-response-mechanism-mecanisme-reponse-rapide/iran-hack-piratage-iranien.aspx?lang=eng</a></p>
+</li>
+<li class="">
+<p>**[R23e]**Recorded Future News,<em>The Retaliation Window: How State and Non-state Actors Could Exploit Escalation in the Middle East</em>. Published: September 10, 2025. Accessed: March 5, 2026.
+<a href="https://www.recordedfuture.com/blog/retaliation-window-middle-east-escalation" target="_blank" rel="noopener noreferrer" class="">https://www.recordedfuture.com/blog/retaliation-window-middle-east-escalation</a></p>
+</li>
+<li class="">
+<p>**[R23f]**Iran International, reporting on Handala/BANISHED KITTEN operation against journalists (Persian-language source cited by RRM Canada). Published: July 8, 2025. Accessed: March 5, 2026.
+<a href="https://www.iranintl.com/202507086458" target="_blank" rel="noopener noreferrer" class="">https://www.iranintl.com/202507086458</a></p>
+</li>
+<li class="">
+<p>**[R23g]**ICNA (Iran Cyber News Agency), reporting on Handala claim targeting Suvarnabhumi Airport systems (claim-tracking/OSINT context, not forensic confirmation). Published: October 2, 2025. Accessed: March 5, 2026.
+<a href="https://irancybernews.org/en/handala-hacking-group-exposes-confidential-access-to-suvarnabhumi-airport/" target="_blank" rel="noopener noreferrer" class="">https://irancybernews.org/en/handala-hacking-group-exposes-confidential-access-to-suvarnabhumi-airport/</a></p>
+</li>
+<li class="">
+<p>**[R23h]**The Jerusalem Post, reporting on Handala claim targeting Clalit systems. Published: February 25, 2026. Accessed: March 5, 2026.
+<a href="https://www.jpost.com/israel-news/article-887911/" target="_blank" rel="noopener noreferrer" class="">https://www.jpost.com/israel-news/article-887911/</a></p>
+</li>
+<li class="">
+<p>**[R23i]**eSecurity Planet,<em>Handala Leak Shows Telegram Account Risk, Not iPhone Hacks</em>. Published: January 29, 2026. Accessed: March 5, 2026.
+<a href="https://www.esecurityplanet.com/threats/handala-leak-shows-telegram-account-risk-not-iphone-hacks/" target="_blank" rel="noopener noreferrer" class="">https://www.esecurityplanet.com/threats/handala-leak-shows-telegram-account-risk-not-iphone-hacks/</a></p>
+</li>
+<li class="">
+<p>**[R23j]**CyberPress,<em>Telegram Account Compromise Used by Handala Hackers Against Israeli Officials</em>. Published: January 2, 2026. Accessed: March 5, 2026.
+<a href="https://cyberpress.org/telegram-account-compromise/" target="_blank" rel="noopener noreferrer" class="">https://cyberpress.org/telegram-account-compromise/</a></p>
+</li>
+<li class="">
+<p>*Evidence handling note:*No direct public URL to a standalone KELA primary technical write-up for the Bennett/Braverman scope finding was located at evidence cutoff. KELA-dependent statements in this report are therefore treated as secondary-reported (<code>Reported</code>), not<code>Observed</code>.</p>
+</li>
+</ul>
+<p>&gt; Editorial note — References with unconfirmed publication dates: One reference used in this report lacks a confirmed publication date: [R21] (JNS, date not available in public metadata). Claims sourced from this reference carry uncertain temporal anchoring and should be treated as accessed-date-only.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-03-01-basic-static-malware-analysis-from-triage-to-unpacking-explained-and-automated-9442ef3b11b8"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Basic Static Malware Analysis: From Triage to Unpacking — Explained and Automated</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-03-07-cti-research-sandworm-apt44-649332e8af44"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">CTI Research: Sandworm / APT44</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#evidence-labeled-threat-intelligence-assessment-and-soc-defensive-guidance-december-2023-to-march-2026" class="table-of-contents__link toc-highlight">Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (December 2023 to March 2026)</a></li></ul></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#report-metadata" class="table-of-contents__link toc-highlight">Report Metadata</a></li><li><a href="#methodology--evidence-labels" class="table-of-contents__link toc-highlight">Methodology &amp; Evidence Labels</a></li><li><a href="#confidence--what-changes-confidence" class="table-of-contents__link toc-highlight">Confidence &amp; What Changes Confidence</a></li><li><a href="#executive-summary" class="table-of-contents__link toc-highlight">Executive Summary</a></li><li><a href="#alias--cluster-crosswalk" class="table-of-contents__link toc-highlight">Alias / Cluster Crosswalk</a><ul><li><a href="#attribution-link-analysis-analyst-view" class="table-of-contents__link toc-highlight">Attribution Link Analysis (Analyst View)</a></li></ul></li><li><a href="#key-judgments" class="table-of-contents__link toc-highlight">Key Judgments</a></li><li><a href="#activity-timeline-20232026" class="table-of-contents__link toc-highlight">Activity Timeline (2023–2026)</a><ul><li><a href="#octobernovember-2023-pre-brand-operational-context" class="table-of-contents__link toc-highlight">October–November 2023 (Pre-Brand Operational Context)</a></li><li><a href="#december-2023-public-emergence-of-handala-persona" class="table-of-contents__link toc-highlight">December 2023 (Public Emergence of Handala Persona)</a></li><li><a href="#december-2023february-2024-early-claim-led-campaigning" class="table-of-contents__link toc-highlight">December 2023–February 2024 (Early Claim-Led Campaigning)</a></li><li><a href="#marchjune-2024-escalation-of-claimed-target-set" class="table-of-contents__link toc-highlight">March–June 2024 (Escalation of Claimed Target Set)</a></li><li><a href="#may-2024-attribution-convergence-and-void-manticore-framing" class="table-of-contents__link toc-highlight">May 2024 (Attribution Convergence and “Void Manticore” Framing)</a></li><li><a href="#july-2024-crowdstrike-lure-wiper-campaign" class="table-of-contents__link toc-highlight">July 2024 (CrowdStrike-Lure Wiper Campaign)</a></li><li><a href="#august-2024-platform-pressure-and-information-friction" class="table-of-contents__link toc-highlight">August 2024 (Platform Pressure and Information Friction)</a></li><li><a href="#septemberoctober-2024-high-impact-claims-against-strategic-targets" class="table-of-contents__link toc-highlight">September–October 2024 (High-Impact Claims Against Strategic Targets)</a></li><li><a href="#december-2024january-2025-reutone-supply-chain-style-campaign" class="table-of-contents__link toc-highlight">December 2024–January 2025 (ReutOne Supply-Chain Style Campaign)</a></li><li><a href="#january-2025-kindergarten-sirenpa-system-incident" class="table-of-contents__link toc-highlight">January 2025 (Kindergarten Siren/PA System Incident)</a></li><li><a href="#february-2025-leak-and-pressure-operations-final-self-claimed-phase" class="table-of-contents__link toc-highlight">February 2025 (Leak and Pressure Operations; Final Self-Claimed Phase)</a></li><li><a href="#june-2025-wiper-activity-during-iranisrael-escalation" class="table-of-contents__link toc-highlight">June 2025 (Wiper Activity During Iran–Israel Escalation)</a></li><li><a href="#july-2025-hack-and-leak-against-iran-international" class="table-of-contents__link toc-highlight">July 2025 (Hack-and-Leak Against Iran International)</a></li><li><a href="#october-2025-international-airport-claim" class="table-of-contents__link toc-highlight">October 2025 (International Airport Claim)</a></li><li><a href="#novemberdecember-2025-bennett-telegram-compromise-and-bibi-gate-wave" class="table-of-contents__link toc-highlight">November–December 2025 (Bennett Telegram Compromise and “Bibi Gate” Wave)</a></li><li><a href="#february-2026-technical-consolidation-clalit-healthcare-campaign" class="table-of-contents__link toc-highlight">February 2026 (Technical Consolidation; Clalit Healthcare Campaign)</a></li><li><a href="#march-2026-regional-escalation-and-claimed-cross-border-activity" class="table-of-contents__link toc-highlight">March 2026 (Regional Escalation and Claimed Cross-Border Activity)</a></li><li><a href="#timeline-synthesis" class="table-of-contents__link toc-highlight">Timeline Synthesis</a></li><li><a href="#operational-model-text-diagram" class="table-of-contents__link toc-highlight">Operational Model (Text Diagram)</a></li></ul></li><li><a href="#confirmed-vs-claimed-matrix" class="table-of-contents__link toc-highlight">Confirmed vs Claimed Matrix</a></li><li><a href="#public-presence-and-information-operations-footprint" class="table-of-contents__link toc-highlight">Public Presence and Information Operations Footprint</a></li><li><a href="#targeting-and-victimology" class="table-of-contents__link toc-highlight">Targeting and Victimology</a></li><li><a href="#tactics-techniques-and-procedures-observedreported" class="table-of-contents__link toc-highlight">Tactics, Techniques, and Procedures (Observed/Reported)</a><ul><li><a href="#initial-access-and-delivery" class="table-of-contents__link toc-highlight">Initial Access and Delivery</a></li><li><a href="#execution-and-operations" class="table-of-contents__link toc-highlight">Execution and Operations</a></li><li><a href="#impact-and-influence" class="table-of-contents__link toc-highlight">Impact and Influence</a></li></ul></li><li><a href="#attck-oriented-mapping-analyst-view" class="table-of-contents__link toc-highlight">ATT&amp;CK-Oriented Mapping (Analyst View)</a></li><li><a href="#detection-and-response-priorities" class="table-of-contents__link toc-highlight">Detection and Response Priorities</a></li><li><a href="#detection-engineering-pack-soc-ready" class="table-of-contents__link toc-highlight">Detection Engineering Pack (SOC-Ready)</a></li><li><a href="#wiper-first-30-minutes-defensive-mini-playbook" class="table-of-contents__link toc-highlight">Wiper First 30 Minutes (Defensive Mini-Playbook)</a></li><li><a href="#controls-mapping-nist-csf-lite" class="table-of-contents__link toc-highlight">Controls Mapping (NIST CSF-Lite)</a></li><li><a href="#comprehensive-ioc-compendium-public-reporting" class="table-of-contents__link toc-highlight">Comprehensive IOC Compendium (Public Reporting)</a><ul><li><a href="#network-iocs-ipcidr" class="table-of-contents__link toc-highlight">Network IOCs (IP/CIDR)</a></li><li><a href="#url-and-infrastructure-iocs" class="table-of-contents__link toc-highlight">URL and Infrastructure IOCs</a></li><li><a href="#actor-channel-and-messaging-iocs" class="table-of-contents__link toc-highlight">Actor Channel and Messaging IOCs</a></li><li><a href="#file-service-and-artifact-iocs" class="table-of-contents__link toc-highlight">File, Service, and Artifact IOCs</a></li><li><a href="#core-deliveryimpact-artifacts" class="table-of-contents__link toc-highlight">Core delivery/impact artifacts</a></li><li><a href="#wiper-and-destructive-lineage-artifacts" class="table-of-contents__link toc-highlight">Wiper and destructive lineage artifacts</a></li><li><a href="#hash-iocs-sha-256" class="table-of-contents__link toc-highlight">Hash IOCs (SHA-256)</a></li><li><a href="#hash-iocs-md5" class="table-of-contents__link toc-highlight">Hash IOCs (MD5)</a></li><li><a href="#command-line-and-behavioral-iocs" class="table-of-contents__link toc-highlight">Command-Line and Behavioral IOCs</a></li><li><a href="#defender-usage-notes" class="table-of-contents__link toc-highlight">Defender Usage Notes</a></li></ul></li><li><a href="#overall-statistics-common-patterns-and-cross-group-correlation" class="table-of-contents__link toc-highlight">Overall Statistics, Common Patterns, and Cross-Group Correlation</a></li><li><a href="#quantitative-snapshot" class="table-of-contents__link toc-highlight">Quantitative Snapshot</a><ul><li><a href="#common-operational-patterns" class="table-of-contents__link toc-highlight">Common Operational Patterns</a></li></ul></li><li><a href="#confidence-and-gaps" class="table-of-contents__link toc-highlight">Confidence and Gaps</a><ul><li><a href="#confidence" class="table-of-contents__link toc-highlight">Confidence</a></li><li><a href="#gaps" class="table-of-contents__link toc-highlight">Gaps</a></li></ul></li><li><a href="#practical-defensive-actions-next-30-days" class="table-of-contents__link toc-highlight">Practical Defensive Actions (Next 30 Days)</a></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Ecosystem</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://1200km.com/cti-analyst-field-manual/" target="_blank" rel="noopener noreferrer" class="footer__link-item">CTI Analyst Field Manual<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/CTI_as_a_Code/" target="_blank" rel="noopener noreferrer" class="footer__link-item">CTI as a Code<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/operation-desert-hydra/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Operation Desert Hydra<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/customer-driven-ai-cti-project/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Customer-Driven AI CTI<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/israel-government-threat-actors-cti/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Israel Threat Actors CTI<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/ai-vs-defense/" target="_blank" rel="noopener noreferrer" class="footer__link-item">AI vs Defense<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/0x4m4/hexstrike-ai" target="_blank" rel="noopener noreferrer" class="footer__link-item">HexStrike AI<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/adversarygraph-docs/" target="_blank" rel="noopener noreferrer" class="footer__link-item">AdversaryGraph Docs<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Author</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="footer__link-item">Medium<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Main Page<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Navigate</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/">Main Navigator</a></li><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/docs/analysis">Blog Analysis</a></li><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/docs/reading-paths">Reading Paths</a></li><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/docs/articles">Article Archive</a></li><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/docs/labs">Labs</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Profiles</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="footer__link-item">Medium<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Andrey Pautov. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

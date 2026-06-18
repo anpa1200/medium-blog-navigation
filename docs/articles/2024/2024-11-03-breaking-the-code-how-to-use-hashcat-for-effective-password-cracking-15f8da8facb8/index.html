@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Breaking the Code: How to Use Hashcat for Effective Password Cracking | Andrey Pautov Blog Navigator</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://1200km.com/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="Andrey Pautov blog, threat intelligence articles, CTI research, detection engineering articles, malware analysis, Medium security research, 1200km, InfoSec Write-ups, security blog"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Breaking the Code: How to Use Hashcat for Effective Password Cracking | Andrey Pautov Blog Navigator"><meta data-rh="true" name="description" content="Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex passwords."><meta data-rh="true" property="og:description" content="Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex passwords."><meta data-rh="true" property="og:image" content="https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH"><meta data-rh="true" name="twitter:image" content="https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH"><link data-rh="true" rel="icon" href="/medium-blog-navigation/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://1200km.com/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8"><link data-rh="true" rel="alternate" href="https://1200km.com/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8" hreflang="en"><link data-rh="true" rel="alternate" href="https://1200km.com/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Articles","item":"https://1200km.com/medium-blog-navigation/docs/articles/"},{"@type":"ListItem","position":2,"name":"Breaking the Code: How to Use Hashcat for Effective Password Cracking","item":"https://1200km.com/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMTG21RVHM"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-TMTG21RVHM",{anonymize_ip:!0})</script>
+
+
+
+<script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c5736a51.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.747630dc.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.f6557f21.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/medium-blog-navigation/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/medium-blog-navigation/"><div class="navbar__logo"><img src="/medium-blog-navigation/img/logo.svg" alt="1200km" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/medium-blog-navigation/img/logo.svg" alt="1200km" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Blog Navigator</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/medium-blog-navigation/">Navigator</a><a class="navbar__item navbar__link" href="/medium-blog-navigation/docs/analysis">Analysis</a><a class="navbar__item navbar__link" href="/medium-blog-navigation/docs/reading-paths">Reading Paths</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/medium-blog-navigation/docs/articles">Articles</a><a class="navbar__item navbar__link" href="/medium-blog-navigation/docs/labs">Labs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Projects</a><ul class="dropdown__menu"><li><a href="https://1200km.com/cti-analyst-field-manual/" target="_blank" rel="noopener noreferrer" class="dropdown__link">CTI Analyst Field Manual<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/CTI_as_a_Code/" target="_blank" rel="noopener noreferrer" class="dropdown__link">CTI as a Code<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/operation-desert-hydra/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Operation Desert Hydra<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/customer-driven-ai-cti-project/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Customer-Driven AI CTI<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/israel-government-threat-actors-cti/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Israel Threat Actors CTI<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/ai-vs-defense/" target="_blank" rel="noopener noreferrer" class="dropdown__link">AI vs Defense<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/0x4m4/hexstrike-ai" target="_blank" rel="noopener noreferrer" class="dropdown__link">HexStrike AI<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://1200km.com/adversarygraph-docs/" target="_blank" rel="noopener noreferrer" class="dropdown__link">AdversaryGraph Docs<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Medium<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://1200km.com/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-portfolio-btn">Main Page<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/medium-blog-navigation/docs/analysis"><span title="Blog Analysis" class="linkLabel_WmDU">Blog Analysis</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/medium-blog-navigation/docs/reading-paths"><span title="Reading Paths" class="linkLabel_WmDU">Reading Paths</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/medium-blog-navigation/docs/articles/"><span title="Articles" class="categoryLinkLabel_W154">Articles</span></a><button aria-label="Collapse sidebar category &#x27;Articles&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f"><span title="2024" class="categoryLinkLabel_W154">2024</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f"><span title="WiFi cracking with Aircrack-ng" class="linkLabel_WmDU">WiFi cracking with Aircrack-ng</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-20-accessing-remote-desktops-a-beginner-s-guide-to-rdp-cracking-with-crowbar-and-ppg-tools-5f50027115b7"><span title="Accessing Remote Desktops: A Beginner’s Guide to RDP Cracking with Crowbar and PPG tools" class="linkLabel_WmDU">Accessing Remote Desktops: A Beginner’s Guide to RDP Cracking with Crowbar and PPG tools</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c"><span title="Personal Pass Generator (PPG): The Ultimate Tool for Custom Password Lists" class="linkLabel_WmDU">Personal Pass Generator (PPG): The Ultimate Tool for Custom Password Lists</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-21-exploiting-ftp-vulnerabilities-for-effective-penetration-testing-a2810df78602"><span title="Exploiting FTP Vulnerabilities for Effective Penetration Testing" class="linkLabel_WmDU">Exploiting FTP Vulnerabilities for Effective Penetration Testing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-22-cracking-telnet-exploring-weaknesses-and-exploitation-techniques-af5d743abb09"><span title="Cracking Telnet: Exploring Weaknesses and Exploitation Techniques" class="linkLabel_WmDU">Cracking Telnet: Exploring Weaknesses and Exploitation Techniques</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-23-cracking-rtsp-security-a-comprehensive-guide-to-using-the-rtsp-brute-force-tool-ad1c29b9e5ee"><span title="Cracking RTSP Security: A Comprehensive Guide to Using the RTSP Brute Force Tool" class="linkLabel_WmDU">Cracking RTSP Security: A Comprehensive Guide to Using the RTSP Brute Force Tool</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-23-cracking-ssh-with-metasploit-a-step-by-step-guide-to-exploiting-weak-credentials-3ec6ef4cee5b"><span title="Cracking SSH with Metasploit: A Step-by-Step Guide to Exploiting Weak Credentials" class="linkLabel_WmDU">Cracking SSH with Metasploit: A Step-by-Step Guide to Exploiting Weak Credentials</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-cracking-web-interfaces-with-burp-suite-a-comprehensive-tutorial-33087bb286b0"><span title="Cracking Web Interfaces with Burp Suite: A Comprehensive Tutorial" class="linkLabel_WmDU">Cracking Web Interfaces with Burp Suite: A Comprehensive Tutorial</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe"><span title="Shodan , guide how you can find everything!" class="linkLabel_WmDU">Shodan , guide how you can find everything!</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0"><span title="Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 1" class="linkLabel_WmDU">Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-27-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-2-d5a95569031c"><span title="Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 2" class="linkLabel_WmDU">Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 2</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-3-450eec6e9db2"><span title="Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 3" class="linkLabel_WmDU">Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 3</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-office-file-doc-docx-ppt-password-cracking-guide-with-real-life-examples-f8e356144ca4"><span title="Office file (DOC, DOCX, PPT…) Password cracking. Guide with real life examples!" class="linkLabel_WmDU">Office file (DOC, DOCX, PPT…) Password cracking. Guide with real life examples!</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-pdf-file-password-cracking-guide-with-real-life-examples-901ee411a6f4"><span title="PDF file Password cracking. Guide with real life examples!" class="linkLabel_WmDU">PDF file Password cracking. Guide with real life examples!</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-zip-file-password-cracking-guide-with-real-life-examples-4e8705d51897"><span title="ZIP file Password cracking. Guide with real life examples!" class="linkLabel_WmDU">ZIP file Password cracking. Guide with real life examples!</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-29-passwords-cracking-zip-pdf-web-rdp-ssh-cameras-c1bacbd592cd"><span title="Passwords cracking.ZIP, PDF, WEB, RDP, SSH, Cameras…" class="linkLabel_WmDU">Passwords cracking.ZIP, PDF, WEB, RDP, SSH, Cameras…</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-10-30-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-4-s-5ec77704057f"><span title="Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 4. Scripts" class="linkLabel_WmDU">Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 4. Scripts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1"><span title="Mastering Hydra: The Ultimate Guide to Network Logon Cracking" class="linkLabel_WmDU">Mastering Hydra: The Ultimate Guide to Network Logon Cracking</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8"><span title="Breaking the Code: How to Use Hashcat for Effective Password Cracking" class="linkLabel_WmDU">Breaking the Code: How to Use Hashcat for Effective Password Cracking</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-04-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-1-basic-wizard-6dd540363c83"><span title="SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 1. (basic, wizard)" class="linkLabel_WmDU">SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 1. (basic, wizard)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-05-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-2-advanced-custom-setup-0136ac6ffe53"><span title="SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 2. (Advanced, custom setup)" class="linkLabel_WmDU">SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 2. (Advanced, custom setup)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-06-owasp-amass-project-guide-94bd55521f91"><span title="OWASP Amass Project guide" class="linkLabel_WmDU">OWASP Amass Project guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712"><span title="Sublist3r. Your Essential Tool for Subdomain Enumeration" class="linkLabel_WmDU">Sublist3r. Your Essential Tool for Subdomain Enumeration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3"><span title="theHarvester: Your Essential Tool for OSINT and Reconnaissance in Cybersecurity" class="linkLabel_WmDU">theHarvester: Your Essential Tool for OSINT and Reconnaissance in Cybersecurity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-09-mastering-the-basics-essential-cli-tools-for-reconnaissance-in-penetration-testing-ee7fd9e36394"><span title="Mastering the Basics: Essential CLI Tools for Reconnaissance in Penetration Testing" class="linkLabel_WmDU">Mastering the Basics: Essential CLI Tools for Reconnaissance in Penetration Testing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-10-censys-for-enhanced-cybersecurity-insight-533df14794bd"><span title="Censys for Enhanced Cybersecurity Insight" class="linkLabel_WmDU">Censys for Enhanced Cybersecurity Insight</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-10-mastering-dirbuster-a-strategic-approach-to-uncovering-hidden-web-assets-31c8406a892b"><span title="Mastering DirBuster: A Strategic Approach to Uncovering Hidden Web Assets" class="linkLabel_WmDU">Mastering DirBuster: A Strategic Approach to Uncovering Hidden Web Assets</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-10-unlocking-web-intelligence-a-deep-dive-into-whatweb-8ee4e64ce411"><span title="Unlocking Web Intelligence: A Deep Dive into WhatWeb" class="linkLabel_WmDU">Unlocking Web Intelligence: A Deep Dive into WhatWeb</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-10-web-applications-penetretion-testing-stage-1-reconnaissance-6b6b7aae0399"><span title="Web Applications Penetretion Testing. Stage 1: Reconnaissance" class="linkLabel_WmDU">Web Applications Penetretion Testing. Stage 1: Reconnaissance</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac"><span title="Mastering Burp Suite Vulnerability Scanner" class="linkLabel_WmDU">Mastering Burp Suite Vulnerability Scanner</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-12-nikto-uncovering-web-server-vulnerabilities-with-an-open-source-scanner-6d2d2fbc1e21"><span title="Nikto: Uncovering Web Server Vulnerabilities with an Open-Source Scanner" class="linkLabel_WmDU">Nikto: Uncovering Web Server Vulnerabilities with an Open-Source Scanner</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-12-owasp-zap-a-comprehensive-guide-to-web-application-security-testing-6c247f4be39b"><span title="OWASP ZAP: A Comprehensive Guide to Web Application Security Testing" class="linkLabel_WmDU">OWASP ZAP: A Comprehensive Guide to Web Application Security Testing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-13-web-applications-penetretion-testing-stage-2-scanning-and-vulnerability-assessment-15021e81c130"><span title="Web Applications Penetretion Testing. Stage 2: Scanning and Vulnerability Assessment" class="linkLabel_WmDU">Web Applications Penetretion Testing. Stage 2: Scanning and Vulnerability Assessment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-2john-9bb0bd44ed64"><span title="2John" class="linkLabel_WmDU">2John</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-john-the-ripper-hash-formats-f2ec958acaf8"><span title="John The Ripper Hash Formats" class="linkLabel_WmDU">John The Ripper Hash Formats</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71"><span title="Mastering John the Ripper: A Complete Guide to Password Cracking" class="linkLabel_WmDU">Mastering John the Ripper: A Complete Guide to Password Cracking</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-16-the-basic-toolkit-for-penetration-testing-303da9234d82"><span title="The Basic Toolkit for Penetration Testing" class="linkLabel_WmDU">The Basic Toolkit for Penetration Testing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df"><span title="The Ultimate Guide to Metasploit. Part 1." class="linkLabel_WmDU">The Ultimate Guide to Metasploit. Part 1.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-18-metasploit-modules-guide-auxiliary-1821db1712f0"><span title="Metasploit modules guide. Auxiliary" class="linkLabel_WmDU">Metasploit modules guide. Auxiliary</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-20-how-to-create-a-vulnerable-windows-virtual-machine-for-pentesting-training-with-scripts-6dc39f0b3bb3"><span title="How to Create a Vulnerable Windows Virtual Machine for Pentesting Training with scripts!" class="linkLabel_WmDU">How to Create a Vulnerable Windows Virtual Machine for Pentesting Training with scripts!</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/2024/2024-11-24-title-metasploit-modules-guide-exploit-73eecb50e3c3"><span title="Title Metasploit modules guide. Exploit" class="linkLabel_WmDU">Title Metasploit modules guide. Exploit</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/articles/2025/2025-02-24-soc-tier-1-the-complete-onboarding-guide-to-security-monitoring-and-incident-response-824a1dfe4476"><span title="2025" class="categoryLinkLabel_W154">2025</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/articles/2026/2026-01-02-burp-suite-mcp-gemini-cli-c1229edfe092"><span title="2026" class="categoryLinkLabel_W154">2026</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/articles/"><span title="Article Archive" class="linkLabel_WmDU">Article Archive</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/medium-blog-navigation/docs/labs/"><span title="Labs" class="categoryLinkLabel_W154">Labs</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/medium-blog-navigation/docs/labs/"><span title="Labs and Deployment Guides" class="linkLabel_WmDU">Labs and Deployment Guides</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/llm-agent-attack-lab"><span title="AI Security" class="categoryLinkLabel_W154">AI Security</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/hackerai-metasploitable-lab"><span title="AI-Assisted Pentest" class="categoryLinkLabel_W154">AI-Assisted Pentest</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/active-directory-manual-lab"><span title="Active Directory" class="categoryLinkLabel_W154">Active Directory</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/operation-dragonrx-attack-playbook"><span title="CTI Emulation" class="categoryLinkLabel_W154">CTI Emulation</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/ai-web-cloud-pentest-lab"><span title="Cloud" class="categoryLinkLabel_W154">Cloud</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/black-box-kubernetes-pentest-playbook"><span title="Kubernetes" class="categoryLinkLabel_W154">Kubernetes</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/android-app-analysis-lab"><span title="Mobile Security" class="categoryLinkLabel_W154">Mobile Security</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/dockerized-ai-host-vulnerability-assessment"><span title="Tooling" class="categoryLinkLabel_W154">Tooling</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/vulnerable-iis-sharepoint-fluent-bit-lab"><span title="Vulnerable Infrastructure" class="categoryLinkLabel_W154">Vulnerable Infrastructure</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/medium-blog-navigation/docs/labs/safe-dvwa-ansible-lab"><span title="Vulnerable Web" class="categoryLinkLabel_W154">Vulnerable Web</span></a></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/medium-blog-navigation/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/medium-blog-navigation/docs/articles/"><span>Articles</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">2024</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Breaking the Code: How to Use Hashcat for Effective Password Cracking</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Breaking the Code: How to Use Hashcat for Effective Password Cracking</h1></header>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH" alt="Cover image" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Article Metadata</div><div class="admonitionContent_BuS1"><ul>
+<li class=""><strong>Category:</strong> CTI</li>
+<li class=""><strong>Source article:</strong> <a href="https://medium.com/@1200km/breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8" target="_blank" rel="noopener noreferrer" class="">https://medium.com/@1200km/breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8</a></li>
+<li class=""><strong>Published:</strong> 2024-11-03</li>
+<li class=""><strong>Preserved media:</strong> 2 image(s), including cover images, screenshots, diagrams, and infographics where present.</li>
+<li class=""><strong>Preserved technical blocks:</strong> 17 code/configuration block(s).</li>
+</ul></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ecosystem-fit">Ecosystem Fit<a href="#ecosystem-fit" class="hash-link" aria-label="Direct link to Ecosystem Fit" title="Direct link to Ecosystem Fit" translate="no">​</a></h2>
+<p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="your-step-by-step-guide-to-mastering-hashcat-from-setting-it-up-on-your-system-to-deploying-it-against-complex-passwords">Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex passwords.<a href="#your-step-by-step-guide-to-mastering-hashcat-from-setting-it-up-on-your-system-to-deploying-it-against-complex-passwords" class="hash-link" aria-label="Direct link to Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex passwords." title="Direct link to Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex passwords." translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH" alt="Article image" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h3>
+<p>Hashcat stands as the premier password recovery tool, known for its robust performance across multiple platforms. It offers versatile attack modes, from brute-force to more sophisticated hybrid attacks, capitalizing on the power of GPUs to expedite password cracking. Ideal for both novices and experts, Hashcat not only cracks complex passwords but also serves as a critical tool for highlighting security vulnerabilities. This guide will navigate you through its setup, usage, and best practices, ensuring you harness Hashcat’s capabilities ethically and effectively.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="legal-and-ethical-use-disclaimer">Legal and Ethical Use Disclaimer<a href="#legal-and-ethical-use-disclaimer" class="hash-link" aria-label="Direct link to Legal and Ethical Use Disclaimer" title="Direct link to Legal and Ethical Use Disclaimer" translate="no">​</a></h3>
+<p>The information provided in this article about Hashcat is intended for educational purposes only and should be used with the utmost responsibility. The author does not endorse or promote the use of Hashcat or any password cracking tools for unauthorized or illegal activities. It is crucial to obtain explicit permission before testing or deploying these techniques on any systems or networks. Unauthorized access to computer systems and data is illegal under various laws and can lead to severe penalties including criminal prosecution. Users must adhere to all applicable laws and ethical guidelines when utilizing password recovery tools like Hashcat. By using this information, you agree to do so at your own risk and hold the author harmless from any and all repercussions or damages that may arise from such activities.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="table-of-contents">Table of contents:<a href="#table-of-contents" class="hash-link" aria-label="Direct link to Table of contents:" title="Direct link to Table of contents:" translate="no">​</a></h2>
+<p><strong>Introduction to Hashcat</strong></p>
+<p><strong>Core Features of Hashcat</strong></p>
+<p><strong>Modes of Operation</strong></p>
+<p><strong>Installation and Setup Guide for Hashcat</strong></p>
+<p><strong>Configuring Hashcat for Optimal Performance</strong></p>
+<p><strong>Basic Command Syntax for Hashcat</strong></p>
+<p><strong>Commonly Used Options in Hashcat</strong></p>
+<ul>
+<li class="">
+<p><strong>Mode Selector</strong></p>
+</li>
+<li class="">
+<p><strong>Attack Mode</strong></p>
+</li>
+<li class="">
+<p><strong>Output File</strong></p>
+</li>
+<li class="">
+<p><strong>Rules</strong></p>
+</li>
+<li class="">
+<p><strong>Workload Profile</strong></p>
+</li>
+<li class="">
+<p><a href="http://7fff" target="_blank" rel="noopener noreferrer" class=""><strong>Real life examples</strong></a></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction-to-hashcat">Introduction to Hashcat<a href="#introduction-to-hashcat" class="hash-link" aria-label="Direct link to Introduction to Hashcat" title="Direct link to Introduction to Hashcat" translate="no">​</a></h3>
+<p>Hashcat is the gold standard in password recovery, renowned for its ability to crack encrypted passwords at speeds unmatched by any other software. Primarily utilized by cybersecurity professionals and ethical hackers, Hashcat’s purpose is to assess security protocols by exposing vulnerabilities in password infrastructures. By recovering passwords, Hashcat helps users gauge the strength of these passwords and understand potential weaknesses in their security setups.</p>
+<p>The development of Hashcat began as a hobby project by Jens Steube under the alias “atom” in 2007. Initially designed for UNIX-like systems and exploiting the power of CPUs, the tool was first called “Ighashgpu.” As GPUs became more powerful, the project evolved, and in 2009 it was renamed “oclHashcat” to reflect its new capabilities using GPUs through OpenCL. The project continued to evolve, incorporating support for multiple platforms and a wide variety of hashing algorithms. In 2015, the tool was unified under the name “Hashcat,” dropping the distinction between CPU and GPU versions. Today, it remains open source, with a vibrant community supporting its ongoing development, ensuring it stays at the forefront of password recovery technology.</p>
+<p>Hashcat’s journey from a simple CPU-based password recovery tool to an advanced multi-platform utility illustrates not only the advancements in computing hardware but also the growing importance of cybersecurity tools in protecting digital information.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="core-features-of-hashcat">Core Features of Hashcat<a href="#core-features-of-hashcat" class="hash-link" aria-label="Direct link to Core Features of Hashcat" title="Direct link to Core Features of Hashcat" translate="no">​</a></h3>
+<p>Hashcat offers several powerful features that make it an indispensable tool for password recovery. Understanding its operational modes and hardware optimization capabilities can help users maximize their effectiveness in cracking passwords:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="modes-of-operation-">Modes of Operation :<a href="#modes-of-operation-" class="hash-link" aria-label="Direct link to Modes of Operation :" title="Direct link to Modes of Operation :" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Brute-Force Attack</strong>: This mode attempts every possible combination of characters to find the password. It’s highly effective but time-consuming, especially for complex passwords.</p>
+</li>
+<li class="">
+<p><strong>Dictionary Attack</strong>: Uses a list of pre-arranged words (a dictionary) to crack passwords. This mode is faster and effective against passwords that are simple words or common phrases.</p>
+</li>
+<li class="">
+<p><strong>Hybrid Attack</strong>: Combines the brute-force and dictionary approaches. For example, it might append or prepend numbers or symbols to dictionary words, bridging the gap between the two methods for a more refined attack.</p>
+</li>
+<li class="">
+<p><strong>Rule-Based Attack</strong>: This advanced mode applies various modification rules to base words from a dictionary to create new password guesses, allowing for complex pattern testing based on typical user behaviors in password creation.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware-acceleration-">Hardware Acceleration :<a href="#hardware-acceleration-" class="hash-link" aria-label="Direct link to Hardware Acceleration :" title="Direct link to Hardware Acceleration :" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GPUs and FPGAs</strong>: Hashcat is optimized to take advantage of the parallel processing power of modern GPUs and even Field-Programmable Gate Arrays (FPGAs), significantly accelerating the password cracking process. This capability allows Hashcat to perform at speeds many times faster than tools limited to CPU-based attacks.</p>
+</li>
+<li class="">
+<p><strong>Multi-Platform Support</strong>: Hashcat can run on a variety of operating systems and harnesses the power of different hardware architectures, making it versatile for various setups and user preferences.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="support-for-multiple-hashing-algorithms-">Support for Multiple Hashing Algorithms :<a href="#support-for-multiple-hashing-algorithms-" class="hash-link" aria-label="Direct link to Support for Multiple Hashing Algorithms :" title="Direct link to Support for Multiple Hashing Algorithms :" translate="no">​</a></h3>
+<ul>
+<li class="">Hashcat supports a wide array of hashing algorithms, including popular ones like MD5, SHA-1, and WPA2, to less common ones such as Kerberos AFS and NetNTLMv2. This extensive support ensures that Hashcat can be applied to virtually any password cracking scenario, from forensic computing to testing the security of corporate networks.</li>
+</ul>
+<p>These features position Hashcat as a highly versatile and powerful tool in the arsenal of cybersecurity professionals, capable of adapting to different security environments and cracking needs. By leveraging these capabilities, users can conduct thorough security assessments and ensure that password policies withstand the most rigorous tests.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="installation-and-setup-guide-for-hashcat">Installation and Setup Guide for Hashcat<a href="#installation-and-setup-guide-for-hashcat" class="hash-link" aria-label="Direct link to Installation and Setup Guide for Hashcat" title="Direct link to Installation and Setup Guide for Hashcat" translate="no">​</a></h2>
+<p>Hashcat is compatible with Windows, Linux, and macOS, making it accessible to a wide range of users. Below are the installation instructions for each operating system along with tips to configure Hashcat for optimal performance.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="windows-installation">Windows Installation:<a href="#windows-installation" class="hash-link" aria-label="Direct link to Windows Installation:" title="Direct link to Windows Installation:" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Download Hashcat</strong>: Visit the<a href="https://hashcat.net/hashcat/" target="_blank" rel="noopener noreferrer" class="">official Hashcat website</a>and download the latest version of Hashcat for Windows. Choose the version that matches your system architecture (32-bit or 64-bit).</p>
+</li>
+<li class="">
+<p><strong>Extract Files</strong>: Once downloaded, extract the zip file to a folder of your choice, typically<code>C:\Hashcat</code>is used for ease of access.</p>
+</li>
+<li class="">
+<p><strong>Open Command Prompt</strong>: Navigate to the Hashcat directory by opening Command Prompt and typing<code>cd C:\Hashcat</code>.</p>
+</li>
+<li class="">
+<p><strong>Test Installation</strong>: Test if Hashcat is installed correctly by running<code>hashcat -I</code>to display version information and available devices.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="linux-installation">Linux Installation:<a href="#linux-installation" class="hash-link" aria-label="Direct link to Linux Installation:" title="Direct link to Linux Installation:" translate="no">​</a></h3>
+<p>If you work with Kali repo, use:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install hashcat</span><br></div></code></pre></div></div>
+<ul>
+<li class=""><strong>Install Dependencies</strong>: Open a terminal and install necessary libraries with:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">get</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> install build-essential</span><br></div></code></pre></div></div>
+<p><strong>2. Clone Repository</strong>: Clone the Hashcat repository from GitHub using:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clone</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> https://github.com/hashcat/hashcat.git</span><br></div></code></pre></div></div>
+<p><strong>3. Navigate and Compile</strong>: Navigate to the cloned directory, and compile the source code using<code>make</code>.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashcat</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">make</span><br></div></code></pre></div></div>
+<p><strong>4. Test Installation</strong>: Verify the installation by running .</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">I</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*5NkF69cKgqmDwprXTjwB7A.png" alt="Article image" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-installation">macOS Installation:<a href="#macos-installation" class="hash-link" aria-label="Direct link to macOS Installation:" title="Direct link to macOS Installation:" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Install Homebrew</strong>: If not already installed, set up Homebrew by running:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">/bin/bash -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div></code></pre></div></div>
+<p><strong>2. Install Hashcat</strong>: Install Hashcat using Homebrew with:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">brew install hashcat</span><br></div></code></pre></div></div>
+<p><strong>3. Verify Installation</strong>: Check that Hashcat is installed correctly by typing<code>hashcat -I</code>in the terminal.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuring-hashcat-for-optimal-performance">Configuring Hashcat for Optimal Performance:<a href="#configuring-hashcat-for-optimal-performance" class="hash-link" aria-label="Direct link to Configuring Hashcat for Optimal Performance:" title="Direct link to Configuring Hashcat for Optimal Performance:" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Use Dedicated GPUs</strong>: For best performance, ensure Hashcat is running on dedicated GPU hardware. Integrated graphics can be significantly slower.</p>
+</li>
+<li class="">
+<p><strong>Adjust Workload Profiles</strong>: Hashcat offers various workload profiles ranging from 1 (low) to 4 (nightmare). These can be adjusted with the<code>-w</code>option, e.g.,<code>hashcat -w 3</code>. Select a profile based on your urgency and the thermal/energy constraints of your hardware.</p>
+</li>
+<li class="">
+<p><strong>Manage Temperature</strong>: Avoid overheating by using the<code>--hwmon-temp-abort=XX</code>option where<code>XX</code>is the maximum temperature in Celsius. It automatically stops the process at a safe temperature threshold.</p>
+</li>
+<li class="">
+<p><strong>Utilize Rule-Based Attacks</strong>: Improve the effectiveness of dictionary attacks by applying rules to adapt guesses to more complex password policies.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-command-syntax-for-hashcat">Basic Command Syntax for Hashcat<a href="#basic-command-syntax-for-hashcat" class="hash-link" aria-label="Direct link to Basic Command Syntax for Hashcat" title="Direct link to Basic Command Syntax for Hashcat" translate="no">​</a></h2>
+<p>The basic command structure for Hashcat consists of several components, which are typically concatenated in a single command line. Each component is prefixed with a dash (<code>-</code>) or double dash (<code>--</code>), followed by an identifier or a keyword. Here&#x27;s how it generally looks:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat [options] </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hashfile</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">wordlist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">
+<p><strong>hashcat</strong>: This is the command to run the Hashcat program.</p>
+</li>
+<li class="">
+<p><strong>[options]</strong>: These are various options you can set to customize Hashcat’s behavior. Each option changes how Hashcat performs the cracking process.<a href="https://hashcat.net/wiki/doku.php?id=hashcat#:~:text=48%3A24%202024-,Options,-hashcat%20%28v6.2.6%29%20starting" target="_blank" rel="noopener noreferrer" class=""><strong>Full options list here</strong></a>:</p>
+</li>
+<li class="">
+<p><strong>&lt;hashfile&gt;</strong>: This is the path to the file containing the hash values you wish to crack.</p>
+</li>
+<li class="">
+<p><strong>&lt;wordlist&gt;</strong>: This is the path to the wordlist file used for the attack, applicable in dictionary attack modes.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="commonly-used-options-in-hashcat">Commonly Used Options in Hashcat<a href="#commonly-used-options-in-hashcat" class="hash-link" aria-label="Direct link to Commonly Used Options in Hashcat" title="Direct link to Commonly Used Options in Hashcat" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-mode-selector---m-">1. Mode Selector ( -m ):<a href="#1-mode-selector---m-" class="hash-link" aria-label="Direct link to 1. Mode Selector ( -m ):" title="Direct link to 1. Mode Selector ( -m ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>-m &amp;lt;mode&amp;gt;</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Specifies the type of hash to crack. Each hash type, such as MD5, SHA-1, or WPA2, is assigned a unique number called a mode. For example,<code>-m 0</code>for MD5,<code>-m 1000</code>for NTLM, etc.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:<code>hashcat -m 1000 hashes.txt wordlist.txt</code></p>
+</li>
+<li class="">
+<p><strong>-m 0</strong>: MD5</p>
+</li>
+<li class="">
+<p><strong>-m 100</strong>: SHA-1</p>
+</li>
+<li class="">
+<p><strong>-m 1400</strong>: SHA-256</p>
+</li>
+<li class="">
+<p><strong>-m 1700</strong>: SHA-512</p>
+</li>
+<li class="">
+<p><strong>-m 1000</strong>: NTLM (Windows Hash)</p>
+</li>
+<li class="">
+<p><strong>-m 2500</strong>: WPA/WPA2 (WiFi Hash)</p>
+</li>
+<li class="">
+<p><strong>-m 200</strong>: MySQL323</p>
+</li>
+<li class="">
+<p><strong>-m 13600</strong>: WinZip</p>
+</li>
+<li class="">
+<p><strong>-m 9600</strong>: Office 2013 (DOCX)</p>
+</li>
+<li class="">
+<p><strong>-m 10400</strong>: PDF 1.4–1.6 (Acrobat 5–8)</p>
+</li>
+<li class="">
+<p><a href="https://hashcat.net/wiki/doku.php?id=hashcat#:~:text=session%2Dwhitelist%3D0x2ae611db-,%2D%20%5B%20Hash%20modes%20%5D%20%2D,-%23%20%7C%20Name%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7C%20Category%0A%20%20%3D%3D%3D%3D%3D%3D%2B%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%2B%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%20%20%20%20900" target="_blank" rel="noopener noreferrer" class=""><strong>Full list here</strong></a></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-attack-mode---a-">2. Attack Mode ( -a ):<a href="#2-attack-mode---a-" class="hash-link" aria-label="Direct link to 2. Attack Mode ( -a ):" title="Direct link to 2. Attack Mode ( -a ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>-a &amp;lt;attack-mode&amp;gt;</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Sets the attack mode. Common modes include 0 for straight (dictionary attack), 3 for brute force, and 1 for combination.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+<li class="">
+<p><strong>Full list is here</strong></p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-a-0-straight-dictionary-attack">-a 0: Straight (Dictionary attack)<a href="#-a-0-straight-dictionary-attack" class="hash-link" aria-label="Direct link to -a 0: Straight (Dictionary attack)" title="Direct link to -a 0: Straight (Dictionary attack)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Description</strong>: This mode uses a list of known words (dictionary) to attempt to crack passwords. It’s the simplest form of password recovery and relies on trying words directly from the wordlist without any modifications.</p>
+</li>
+<li class="">
+<p><strong>Common Use</strong>: Effective against passwords that are common words or straightforward combinations of dictionary words.</p>
+</li>
+<li class="">
+<p><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-29-passwords-cracking-zip-pdf-web-rdp-ssh-cameras-c1bacbd592cd">More about dictionary brute force attacks here</a></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-a-1-combination-attack">-a 1: Combination attack<a href="#-a-1-combination-attack" class="hash-link" aria-label="Direct link to -a 1: Combination attack" title="Direct link to -a 1: Combination attack" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Description</strong>: This attack combines words from two separate wordlists to form passwords. It concatenates words from the first list with words from the second, essentially multiplying the potential guesses based on the contents of both lists.</p>
+</li>
+<li class="">
+<p><strong>Common Use</strong>: Useful when passwords are expected to be compound words or when two common words are combined as a single password.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-a-3-brute-force-attack">-a 3: Brute-force attack<a href="#-a-3-brute-force-attack" class="hash-link" aria-label="Direct link to -a 3: Brute-force attack" title="Direct link to -a 3: Brute-force attack" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Description</strong>: In this mode, Hashcat tries all possible combinations of characters until the password is found. This method is comprehensive but can be time-consuming, especially for long passwords with a wide range of possible characters.</p>
+</li>
+<li class="">
+<p><strong>Common Use</strong>: Employed when there is no clue about the potential password, ensuring that all possible combinations are tested.</p>
+</li>
+<li class="">
+<p><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-29-passwords-cracking-zip-pdf-web-rdp-ssh-cameras-c1bacbd592cd">More about brute force attacks here</a></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-a-6-hybrid-wordlist--mask">-a 6: Hybrid Wordlist + Mask<a href="#-a-6-hybrid-wordlist--mask" class="hash-link" aria-label="Direct link to -a 6: Hybrid Wordlist + Mask" title="Direct link to -a 6: Hybrid Wordlist + Mask" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Description</strong>: This mode appends or prepends characters to words from a specified wordlist according to a mask. A mask defines a pattern of characters to add to the words, allowing for customized alterations like adding numbers or symbols at the beginning or end of dictionary words.</p>
+</li>
+<li class="">
+<p><strong>Common Use</strong>: Ideal for scenarios where passwords are known to follow common structures, such as a word followed by numbers (e.g., password2023).</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-a-7-hybrid-mask--wordlist">-a 7: Hybrid Mask + Wordlist<a href="#-a-7-hybrid-mask--wordlist" class="hash-link" aria-label="Direct link to -a 7: Hybrid Mask + Wordlist" title="Direct link to -a 7: Hybrid Mask + Wordlist" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Description</strong>: Similar to mode 6 but reverses the order; it starts with the mask and then appends or prepends words from the wordlist. This approach allows for prefixing words with characters specified by the mask.</p>
+</li>
+<li class="">
+<p><strong>Common Use</strong>: Useful when passwords are likely structured with a prefix followed by a common word (e.g., 123password).</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-output-file---o-">3. Output File ( -o ):<a href="#3-output-file---o-" class="hash-link" aria-label="Direct link to 3. Output File ( -o ):" title="Direct link to 3. Output File ( -o ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>-o &amp;lt;output-file&amp;gt;</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Directs Hashcat to write the results (cracked passwords) to a specified file.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -o cracked</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wordlist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div></code></pre></div></div>
+<ul>
+<li class="">
+<p><strong>hash</strong></p>
+</li>
+<li class="">
+<p><strong>Output</strong>:<code>user1hash:salt123</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Shows the hash and, if applicable, the salt.</p>
+</li>
+</ul>
+<p><strong>2. plain</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>password123</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Outputs the plaintext of the cracked password.</p>
+</li>
+</ul>
+<p><strong>3. hex_plain</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>70617373776f7264313233</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Displays the plaintext password in hexadecimal format.</p>
+</li>
+</ul>
+<p><strong>4. crack_pos</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>42</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Indicates the position where the password was found.</p>
+</li>
+</ul>
+<p><strong>5. timestamp absolute</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>2024-11-03 12:34:56</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Provides the exact date and time when the password was cracked.</p>
+</li>
+</ul>
+<p><strong>6. timestamp relative</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>00:00:42</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Shows the time elapsed from the start of the session to when the password was cracked.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-rules---r-">4. Rules ( -r ):<a href="#4-rules---r-" class="hash-link" aria-label="Direct link to 4. Rules ( -r ):" title="Direct link to 4. Rules ( -r ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>-r &amp;lt;rule-file&amp;gt;</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Applies rules to modify input words from a wordlist during a dictionary attack. This can greatly increase the effectiveness by simulating common password variations.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m 0 -a 0 -r rules/best64.rule hashes.txt wordlist.txt</span><br></div></code></pre></div></div>
+<p><strong>Finding-Rule</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>Rule1</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: This format outputs the name or identifier of the rule that successfully cracked the password.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:<code>Rule1</code>indicates the specific transformation rule applied to derive the password.</p>
+</li>
+</ul>
+<p><strong>Original-Word</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>password</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Displays the original word from the wordlist before any rules were applied.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:<code>password</code>shows the base word used to eventually crack the hash.</p>
+</li>
+</ul>
+<p><strong>Original-Word</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>password:Rule1</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Combines the original word with the rule that led to a successful crack.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:<code>password:Rule1</code>where<code>Rule1</code>might represent appending digits.</p>
+</li>
+</ul>
+<p><strong>Original-Word<!-- -->:Finding-Rule</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>password:Rule1:password123</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Outputs the original word, the rule applied, and the resulting processed word that cracked the hash.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:<code>password:Rule1:password123</code>illustrates the transformation from the original word to the cracked password.</p>
+</li>
+</ul>
+<p><strong>Original-Word:Finding-Rule<!-- -->:Processed-Word</strong></p>
+<ul>
+<li class="">
+<p><strong>Output</strong>:<code>password:Rule1:password123:wordlist.txt</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: This detailed format includes the original word, the applied rule, the processed word, and the wordlist file name used.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:<code>password:Rule1:password123:wordlist.txt</code>provides a comprehensive trace of how the cracking process unfolded from the original word to the successful result, specifying even the wordlist used.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-workload-profile---w-">5. Workload Profile ( -w ):<a href="#5-workload-profile---w-" class="hash-link" aria-label="Direct link to 5. Workload Profile ( -w ):" title="Direct link to 5. Workload Profile ( -w ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>-w &amp;lt;workload-profile&amp;gt;</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Adjusts the performance demand on the system by setting different workload profiles, where 1 is lightest and 4 is heaviest.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m 1000 -w 3 hashes.txt wordlist.txt</span><br></div></code></pre></div></div>
+<p><strong>Low (Profile 1)</strong></p>
+<ul>
+<li class="">
+<p><strong>Performance</strong>: Provides the lowest performance to minimize impact.</p>
+</li>
+<li class="">
+<p><strong>Runtime</strong>: Each operation or task takes about 2 milliseconds.</p>
+</li>
+<li class="">
+<p><strong>Power Consumption</strong>: Consumes the least amount of power.</p>
+</li>
+<li class="">
+<p><strong>Desktop Impact</strong>: Has minimal impact on desktop usage, allowing you to perform other tasks without noticeable slowdown.</p>
+</li>
+</ul>
+<p><strong>Default (Profile 2)</strong></p>
+<ul>
+<li class="">
+<p><strong>Performance</strong>: Offers balanced performance suitable for regular use.</p>
+</li>
+<li class="">
+<p><strong>Runtime</strong>: Typical runtime is around 12 milliseconds per operation.</p>
+</li>
+<li class="">
+<p><strong>Power Consumption</strong>: Optimized for economic power usage without excessive strain.</p>
+</li>
+<li class="">
+<p><strong>Desktop Impact</strong>: Noticeable impact, but generally manageable for multitasking.</p>
+</li>
+</ul>
+<p><strong>High (Profile 3)</strong></p>
+<ul>
+<li class="">
+<p><strong>Performance</strong>: High performance for faster cracking at the cost of higher resource use.</p>
+</li>
+<li class="">
+<p><strong>Runtime</strong>: A significant increase in runtime at 96 milliseconds per operation.</p>
+</li>
+<li class="">
+<p><strong>Power Consumption</strong>: High power usage, reflecting the increased processing effort.</p>
+</li>
+<li class="">
+<p><strong>Desktop Impact</strong>: May render the system unresponsive due to the intense resource demands.</p>
+</li>
+</ul>
+<p>Nightmare (Profile 4)</p>
+<ul>
+<li class="">
+<p><strong>Performance</strong>: Maximizes performance to achieve the fastest cracking times.</p>
+</li>
+<li class="">
+<p><strong>Runtime</strong>: Extremely high at 480 milliseconds per operation, focusing solely on cracking.</p>
+</li>
+<li class="">
+<p><strong>Power Consumption</strong>: Insane levels of power consumption, suitable only when system resources are dedicated solely to Hashcat.</p>
+</li>
+<li class="">
+<p><strong>Desktop Impact</strong>: Recommended for headless operation (no graphical desktop) as it will likely monopolize system resources, making other operations impractical.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-incremental-mode---i-">6. Incremental Mode ( -i ):<a href="#6-incremental-mode---i-" class="hash-link" aria-label="Direct link to 6. Incremental Mode ( -i ):" title="Direct link to 6. Incremental Mode ( -i ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>-i</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Enables incremental attack mode, which systematically tries password candidates from shorter to longer.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">i</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-show----show-">7. Show ( --show ):<a href="#7-show----show-" class="hash-link" aria-label="Direct link to 7. Show ( --show ):" title="Direct link to 7. Show ( --show ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>--show</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Displays the cracked passwords from a result file without retesting the hashes.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--show</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-session----session-">8. Session ( --session ):<a href="#8-session----session-" class="hash-link" aria-label="Direct link to 8. Session ( --session ):" title="Direct link to 8. Session ( --session ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>--session &amp;lt;session-name&amp;gt;</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Assigns a name to the session which allows for managing multiple concurrent or successive cracking tasks.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--session</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> mycrack -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-limit----limit-">9. Limit ( --limit ):<a href="#9-limit----limit-" class="hash-link" aria-label="Direct link to 9. Limit ( --limit ):" title="Direct link to 9. Limit ( --limit ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>--limit &amp;lt;limit&amp;gt;</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Limits the number of attempts to a specified number. Useful for testing or when time is a factor.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--limit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-skip----skip-">10. Skip ( --skip ):<a href="#10-skip----skip-" class="hash-link" aria-label="Direct link to 10. Skip ( --skip ):" title="Direct link to 10. Skip ( --skip ):" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Usage</strong>:<code>--skip &amp;lt;skip&amp;gt;</code></p>
+</li>
+<li class="">
+<p><strong>Description</strong>: Skips a certain number of attempts. This is useful when resuming a long attack process without starting over.</p>
+</li>
+<li class="">
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--skip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-life-examples">Real life examples:<a href="#real-life-examples" class="hash-link" aria-label="Direct link to Real life examples:" title="Direct link to Real life examples:" translate="no">​</a></h2>
+<p><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-zip-file-password-cracking-guide-with-real-life-examples-4e8705d51897">ZIP Files password recovery with hashcat</a></p>
+<p><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-pdf-file-password-cracking-guide-with-real-life-examples-901ee411a6f4">PDF Files password recovery with hashcat</a></p>
+<p><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-office-file-doc-docx-ppt-password-cracking-guide-with-real-life-examples-f8e356144ca4">Office Files password recovery with hashcat</a></p>
+<p><a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2024/2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Mastering Hydra: The Ultimate Guide to Network Logon Cracking</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2024/2024-11-04-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-1-basic-wizard-6dd540363c83"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 1. (basic, wizard)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#your-step-by-step-guide-to-mastering-hashcat-from-setting-it-up-on-your-system-to-deploying-it-against-complex-passwords" class="table-of-contents__link toc-highlight">Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex passwords.</a></li><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#legal-and-ethical-use-disclaimer" class="table-of-contents__link toc-highlight">Legal and Ethical Use Disclaimer</a></li></ul></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of contents:</a><ul><li><a href="#introduction-to-hashcat" class="table-of-contents__link toc-highlight">Introduction to Hashcat</a></li><li><a href="#core-features-of-hashcat" class="table-of-contents__link toc-highlight">Core Features of Hashcat</a></li><li><a href="#modes-of-operation-" class="table-of-contents__link toc-highlight">Modes of Operation :</a></li><li><a href="#hardware-acceleration-" class="table-of-contents__link toc-highlight">Hardware Acceleration :</a></li><li><a href="#support-for-multiple-hashing-algorithms-" class="table-of-contents__link toc-highlight">Support for Multiple Hashing Algorithms :</a></li></ul></li><li><a href="#installation-and-setup-guide-for-hashcat" class="table-of-contents__link toc-highlight">Installation and Setup Guide for Hashcat</a><ul><li><a href="#windows-installation" class="table-of-contents__link toc-highlight">Windows Installation:</a></li><li><a href="#linux-installation" class="table-of-contents__link toc-highlight">Linux Installation:</a></li><li><a href="#macos-installation" class="table-of-contents__link toc-highlight">macOS Installation:</a></li><li><a href="#configuring-hashcat-for-optimal-performance" class="table-of-contents__link toc-highlight">Configuring Hashcat for Optimal Performance:</a></li></ul></li><li><a href="#basic-command-syntax-for-hashcat" class="table-of-contents__link toc-highlight">Basic Command Syntax for Hashcat</a></li><li><a href="#commonly-used-options-in-hashcat" class="table-of-contents__link toc-highlight">Commonly Used Options in Hashcat</a><ul><li><a href="#1-mode-selector---m-" class="table-of-contents__link toc-highlight">1. Mode Selector ( -m ):</a></li><li><a href="#2-attack-mode---a-" class="table-of-contents__link toc-highlight">2. Attack Mode ( -a ):</a></li><li><a href="#-a-0-straight-dictionary-attack" class="table-of-contents__link toc-highlight">-a 0: Straight (Dictionary attack)</a></li><li><a href="#-a-1-combination-attack" class="table-of-contents__link toc-highlight">-a 1: Combination attack</a></li><li><a href="#-a-3-brute-force-attack" class="table-of-contents__link toc-highlight">-a 3: Brute-force attack</a></li><li><a href="#-a-6-hybrid-wordlist--mask" class="table-of-contents__link toc-highlight">-a 6: Hybrid Wordlist + Mask</a></li><li><a href="#-a-7-hybrid-mask--wordlist" class="table-of-contents__link toc-highlight">-a 7: Hybrid Mask + Wordlist</a></li><li><a href="#3-output-file---o-" class="table-of-contents__link toc-highlight">3. Output File ( -o ):</a></li><li><a href="#4-rules---r-" class="table-of-contents__link toc-highlight">4. Rules ( -r ):</a></li><li><a href="#5-workload-profile---w-" class="table-of-contents__link toc-highlight">5. Workload Profile ( -w ):</a></li><li><a href="#6-incremental-mode---i-" class="table-of-contents__link toc-highlight">6. Incremental Mode ( -i ):</a></li><li><a href="#7-show----show-" class="table-of-contents__link toc-highlight">7. Show ( --show ):</a></li><li><a href="#8-session----session-" class="table-of-contents__link toc-highlight">8. Session ( --session ):</a></li><li><a href="#9-limit----limit-" class="table-of-contents__link toc-highlight">9. Limit ( --limit ):</a></li><li><a href="#10-skip----skip-" class="table-of-contents__link toc-highlight">10. Skip ( --skip ):</a></li></ul></li><li><a href="#real-life-examples" class="table-of-contents__link toc-highlight">Real life examples:</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Ecosystem</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://1200km.com/cti-analyst-field-manual/" target="_blank" rel="noopener noreferrer" class="footer__link-item">CTI Analyst Field Manual<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/CTI_as_a_Code/" target="_blank" rel="noopener noreferrer" class="footer__link-item">CTI as a Code<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/operation-desert-hydra/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Operation Desert Hydra<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/customer-driven-ai-cti-project/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Customer-Driven AI CTI<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/israel-government-threat-actors-cti/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Israel Threat Actors CTI<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/ai-vs-defense/" target="_blank" rel="noopener noreferrer" class="footer__link-item">AI vs Defense<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/0x4m4/hexstrike-ai" target="_blank" rel="noopener noreferrer" class="footer__link-item">HexStrike AI<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/adversarygraph-docs/" target="_blank" rel="noopener noreferrer" class="footer__link-item">AdversaryGraph Docs<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Author</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="footer__link-item">Medium<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://1200km.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Main Page<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Navigate</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/">Main Navigator</a></li><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/docs/analysis">Blog Analysis</a></li><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/docs/reading-paths">Reading Paths</a></li><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/docs/articles">Article Archive</a></li><li class="footer__item"><a class="footer__link-item" href="/medium-blog-navigation/docs/labs">Labs</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Profiles</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="footer__link-item">Medium<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Andrey Pautov. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
