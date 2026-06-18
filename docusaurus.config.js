@@ -63,6 +63,8 @@ const config = {
         {to: '/', label: 'Navigator', position: 'left'},
         {to: '/docs/analysis', label: 'Analysis', position: 'left'},
         {to: '/docs/reading-paths', label: 'Reading Paths', position: 'left'},
+        {to: '/docs/articles', label: 'Articles', position: 'left'},
+        {to: '/docs/labs', label: 'Labs', position: 'left'},
                 {
           label: 'Projects',
           position: 'right',
@@ -113,6 +115,8 @@ const config = {
             {label: 'Main Navigator', to: '/'},
             {label: 'Blog Analysis', to: '/docs/analysis'},
             {label: 'Reading Paths', to: '/docs/reading-paths'},
+            {label: 'Article Archive', to: '/docs/articles'},
+            {label: 'Labs', to: '/docs/labs'},
           ],
         },
         {
