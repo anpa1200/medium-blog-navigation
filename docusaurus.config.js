@@ -1,14 +1,18 @@
 const lightCodeTheme = require('prism-react-renderer').themes.github;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
+const embeddedArchive = process.env.ARTICLE_ARCHIVE_EMBED === '1';
+const baseUrl = process.env.ARTICLE_BASE_URL || '/medium-blog-navigation/';
+const articleRouteBase = embeddedArchive ? 'read' : 'docs/articles';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Andrey Pautov Blog Navigator',
-  tagline: 'A structured map of Medium articles, guides, research notes, and reading paths.',
+  title: '1200km Security Research Articles',
+  tagline: 'A local archive of security research, technical guides, case studies, and lab notes.',
   favicon: 'img/favicon.svg',
 
   url: 'https://1200km.com',
-  baseUrl: '/medium-blog-navigation/',
+  baseUrl,
   scripts: [{src: 'https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3', defer: true}],
   organizationName: 'anpa1200',
   projectName: 'medium-blog-navigation',
@@ -31,6 +35,8 @@ const config = {
       'classic',
       {
         docs: {
+          path: embeddedArchive ? 'docs/articles' : 'docs',
+          routeBasePath: embeddedArchive ? 'read' : 'docs',
           sidebarPath: './sidebars.js',
         },
         blog: false,
@@ -53,13 +59,27 @@ const config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    announcementBar: embeddedArchive ? undefined : {
+      id: 'articles_moved_202607',
+      content: 'The canonical article archive now lives at <a href="https://1200km.com/articles/">1200km.com/articles/</a>.',
+      backgroundColor: '#0f62fe',
+      textColor: '#ffffff',
+      isCloseable: false,
+    },
     navbar: {
-      title: 'Blog Navigator',
+      title: embeddedArchive ? 'Articles' : 'Blog Navigator',
       logo: {
         alt: '1200km',
         src: 'img/logo.svg',
       },
-      items: [
+      items: embeddedArchive ? [
+        {to: '/', label: 'All Articles', position: 'left'},
+        {to: `/${articleRouteBase}`, label: 'Browse by Year', position: 'left'},
+        {href: 'https://1200km.com/guides.html', label: 'Guides', position: 'left'},
+        {href: 'https://1200km.com/projects.html', label: 'Projects', position: 'left'},
+        {href: 'https://1200km.com/search.html', label: 'Search 1200km', position: 'right'},
+        {href: 'https://1200km.com/', label: '1200km Home', position: 'right', className: 'navbar-portfolio-btn'},
+      ] : [
         {to: '/', label: 'Navigator', position: 'left'},
         {to: '/docs/analysis', label: 'Analysis', position: 'left'},
         {to: '/docs/reading-paths', label: 'Reading Paths', position: 'left'},
@@ -86,7 +106,26 @@ const config = {
     },
     footer: {
       style: 'dark',
-      links: [
+      links: embeddedArchive ? [
+        {
+          title: 'Explore',
+          items: [
+            {label: 'All Articles', to: '/'},
+            {label: 'Browse by Year', to: `/${articleRouteBase}`},
+            {label: 'Research', href: 'https://1200km.com/research.html'},
+            {label: 'Guides', href: 'https://1200km.com/guides.html'},
+          ],
+        },
+        {
+          title: '1200km',
+          items: [
+            {label: 'Projects', href: 'https://1200km.com/projects.html'},
+            {label: 'Privacy / Data Handling', href: 'https://1200km.com/privacy.html'},
+            {label: 'Contact', href: 'https://1200km.com/about.html#contact'},
+            {label: 'GitHub', href: 'https://github.com/anpa1200'},
+          ],
+        },
+      ] : [
           {
             title: 'Ecosystem',
             items: [
@@ -134,6 +173,10 @@ const config = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+  },
+  customFields: {
+    embeddedArchive,
+    articleRouteBase,
   },
 };
 

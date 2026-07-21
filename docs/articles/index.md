@@ -5,16 +5,31 @@ description: "Full local Docusaurus archive of exported Medium articles by Andre
 
 # Article Archive
 
-This archive contains `162` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.
+This archive contains `177` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.
 
-- Preserved images/screenshots/infographics: `1712`
-- Preserved code/configuration blocks: `3011`
+- Preserved images/screenshots/infographics: `2065`
+- Preserved code/configuration blocks: `3383`
 - Images are referenced from their original Medium CDN URLs so covers and inline screenshots render without lossy local recompression.
 
 ## Articles by Year
 
 ### 2026
 
+- [Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry](./2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556) - 2026-07-11 | CTI | 25 image(s) | 13 code block(s)
+- [When AI Coding Agents Say Yes Too Easily: Testing Suspicious Cybersecurity Prompts in Cursor](./2026/2026-07-07-when-ai-coding-agents-say-yes-too-easily-testing-suspicious-cybersecurity-prompts-in-curso-55eea06b69bd) - 2026-07-07 | CTI | 11 image(s) | 0 code block(s)
+- [Comprehensive Cyber Intelligence Research: Attacks Against Embedded Systems, Hardware, Firmware…](./2026/2026-07-03-comprehensive-cyber-intelligence-research-attacks-against-embedded-systems-hardware-firmwa-8a151f8d5f1b) - 2026-07-03 | CTI | 49 image(s) | 0 code block(s)
+- [AdversaryGraph v5.0: From CTI Mapping to Attack Simulation and SIEM Validation](./2026/2026-06-29-adversarygraph-v5-0-from-cti-mapping-to-attack-simulation-and-siem-validation-21873b2a6c39) - 2026-06-29 | CTI | 13 image(s) | 2 code block(s)
+- [AdversaryGraph v4.0: I Added a Full Malware Analysis Workbench to My Self-Hosted CTI Platform](./2026/2026-06-26-adversarygraph-v4-0-i-added-a-full-malware-analysis-workbench-to-my-self-hosted-cti-platfo-8dfbf1db2c9e) - 2026-06-26 | CTI | 21 image(s) | 25 code block(s)
+- [From Log to Report: Using AdversaryGraph!](./2026/2026-06-21-from-log-to-report-using-adversarygraph-eff2e1d8f2cd) - 2026-06-21 | CTI | 21 image(s) | 19 code block(s)
+- [AdversaryGraph Usecases](./2026/2026-06-19-adversarygraph-usecases-820d03c3a7ab) - 2026-06-19 | CTI | 21 image(s) | 0 code block(s)
+- [AdversaryGraph v2.5: New Name, New Release, Full AI CTI Platform Capability Map](./2026/2026-06-19-adversarygraph-v2-5-new-name-new-release-full-ai-cti-platform-capability-map-93cd9224127e) - 2026-06-19 | CTI | 16 image(s) | 9 code block(s)
+- [AdversaryGraph v2.0: I Built a Self-Hosted AI Threat Intelligence Platform](./2026/2026-06-16-adversarygraph-v2-0-i-built-a-self-hosted-ai-threat-intelligence-platform-941a80cc5a65) - 2026-06-16 | CTI | 25 image(s) | 18 code block(s)
+- [AdversaryGraph: I Built a Self-Hosted AI Threat Intelligence Platform — Here’s How to Use It](./2026/2026-06-07-adversarygraph-i-built-a-self-hosted-ai-threat-intelligence-platform-here-s-how-to-use-it-0aa7673e6bd8) - 2026-06-07 | CTI | 34 image(s) | 18 code block(s)
+- [CTI as a Code in Practice: Reactive Investigation — LifeTech Pharma](./2026/2026-05-30-cti-as-a-code-in-practice-reactive-investigation-lifetech-pharma-3e6574b7b85f) - 2026-05-30 | CTI | 43 image(s) | 120 code block(s)
+- [CTI as a Code: Complete Step-by-Step Methodology](./2026/2026-05-29-cti-as-a-code-complete-step-by-step-methodology-dda5ef496a46) - 2026-05-29 | CTI | 10 image(s) | 47 code block(s)
+- [Operation Desert Hydra — AI-Assisted CTI Pipeline: MuddyWater to Kibana](./2026/2026-05-23-operation-desert-hydra-ai-assisted-cti-pipeline-muddywater-to-kibana-34da7917acf0) - 2026-05-23 | CTI | 32 image(s) | 40 code block(s)
+- [One place for my cybersecurity projects, guides, articles, labs, tools, and research workflows](./2026/2026-05-22-one-place-for-my-cybersecurity-projects-guides-articles-labs-tools-and-research-workflows-5d358753c86c) - 2026-05-22 | CTI | 1 image(s) | 0 code block(s)
+- [The Intelligent Shield. OpenCTI](./2026/2026-05-21-the-intelligent-shield-opencti-057c9b4b9394) - 2026-05-21 | CTI | 31 image(s) | 61 code block(s)
 - [CTI Analyst Field Manual — Complete Reference](./2026/2026-05-18-cti-analyst-field-manual-complete-reference-ef2a370bb21f) - 2026-05-18 | CTI | 72 image(s) | 50 code block(s)
 - [Customer-Driven AI CTI Project](./2026/2026-05-13-customer-driven-ai-cti-project-c0db3cdc1830) - 2026-05-13 | CTI | 17 image(s) | 0 code block(s)
 - [Customer-Driven AI CTI Project Template. Part 2A: Phase-by-Phase Execution Guide](./2026/2026-05-12-customer-driven-ai-cti-project-template-part-2a-phase-by-phase-execution-guide-f9751a8bcb59) - 2026-05-12 | CTI | 25 image(s) | 37 code block(s)
