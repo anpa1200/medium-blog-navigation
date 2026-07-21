@@ -5,9 +5,10 @@ description: Source analysis and classification rules for the Medium blog naviga
 
 # Blog Analysis
 
-This project is a structured navigation layer for Andrey Pautov's Medium blog.
-It does not duplicate article bodies. It points readers to the canonical Medium
-posts and organizes them by topic, recency, role, and depth.
+This project maintains the local source archive for Andrey Pautov's security
+articles. It preserves article bodies, images, screenshots, and technical blocks
+and builds the canonical public collection at `https://1200km.com/articles/`.
+The original Medium or publication URL remains available as a source link.
 
 ## Sources Used
 
@@ -110,14 +111,16 @@ AI-assisted security operations, and practical tool-backed research.
 
 ## Maintenance Notes
 
-Medium RSS usually exposes the latest 10 posts. When new articles are published:
+The Docusaurus archive is generated from the local Medium export plus the live
+Medium RSS feed. When new articles are published:
 
-1. Add the new item to `latestArticles` in `src/pages/index.js`.
-2. Assign the correct depth label.
-3. Add it to a relevant topic group.
-4. Add it to `directLinks` if the article URL is verified.
-5. Run `npm run build`.
+1. Run `npm run generate:articles`.
+2. Review the generated Markdown and `src/data/article-catalog.json`.
+3. Run `npm run validate:archive` and `npm run validate:media:local`.
+4. Run `npm run build:embedded` to verify the canonical `/articles/` output.
+5. Run `npm run build:legacy` to verify the old project archive, its migration
+   notice, and its canonical/noindex metadata.
 
-The original Medium master index remains the broadest source for the full
-100+ article map. This Docusaurus site is intended to make that map easier to
-scan, filter, and publish as part of the `1200km.com` ecosystem.
+`src/data/article-catalog.json` is the maintained machine-readable inventory
+used by the archive homepage. The local collection is the preferred browsing
+surface; publication URLs document provenance and remain available to readers.

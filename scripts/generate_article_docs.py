@@ -1,18 +1,25 @@
 from __future__ import annotations
 
+from email.utils import parsedate_to_datetime
 import json
 import re
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
+from urllib.request import Request, urlopen
+from xml.etree import ElementTree as ET
 
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
 
-EXPORT_ROOT = Path(
-    "/home/andrey/Downloads/medium-export-e081169497ae0bce4a7b8c61527792cc22bc5635d98f9052a6a6422ae08a2c27 (1)/posts"
-)
 SITE_ROOT = Path(__file__).resolve().parents[1]
+EXPORT_ROOT = SITE_ROOT.parent / "medium-export" / "posts"
 ARTICLES_ROOT = SITE_ROOT / "docs" / "articles"
+CATALOG_PATH = SITE_ROOT / "src" / "data" / "article-catalog.json"
+MEDIUM_RSS_URL = "https://medium.com/feed/@1200km"
+RSS_NAMESPACES = {
+    "content": "http://purl.org/rss/1.0/modules/content/",
+}
 
 
 def md_escape(text: str) -> str:
@@ -54,6 +61,8 @@ def inline_md(node) -> str:
         if href.startswith("#"):
             return text
         href = href.rstrip(".,")
+        if not re.match(r"^(https?|mailto|tel):", href):
+            return text
         return f"[{text}]({href})"
     return text
 
@@ -75,13 +84,19 @@ def summary_for(soup: BeautifulSoup) -> str:
 
 
 def cover_image(soup: BeautifulSoup) -> str:
-    img = soup.select_one("section.e-content img") or soup.find("img")
+    img = next((item for item in soup.select("section.e-content img") if not is_tracking_image(item)), None)
+    img = img or next((item for item in soup.find_all("img") if not is_tracking_image(item)), None)
     return img.get("src", "") if img else ""
+
+
+def is_tracking_image(img: Tag) -> bool:
+    src = str(img.get("src") or "")
+    return "medium.com/_/stat" in src or (img.get("width") == "1" and img.get("height") == "1")
 
 
 def image_markdown(node: Tag) -> str:
     img = node if node.name == "img" else node.find("img")
-    if not img or not img.get("src"):
+    if not img or not img.get("src") or is_tracking_image(img):
         return ""
     figcaption = node.find("figcaption") if node.name == "figure" else None
     caption = md_escape(figcaption.get_text(" ", strip=True)) if figcaption else ""
@@ -104,6 +119,15 @@ def block_to_md(node: Tag, title: str, seen_title: list[bool]) -> str:
     if name == "blockquote" or "graf--blockquote" in classes:
         text = md_escape(node.get_text(" ", strip=True))
         return "\n".join(f"> {line}" for line in text.splitlines())
+    if name in {"ul", "ol"}:
+        lines = []
+        for index, item in enumerate(node.find_all("li", recursive=False), start=1):
+            text = inline_md(item)
+            if not text:
+                continue
+            marker = f"{index}." if name == "ol" else "-"
+            lines.append(f"{marker} {text}")
+        return "\n".join(lines)
     if name in {"h1", "h2", "h3", "h4"}:
         text = md_escape(node.get_text(" ", strip=True))
         if not text:
@@ -127,13 +151,26 @@ def block_to_md(node: Tag, title: str, seen_title: list[bool]) -> str:
 def article_body(soup: BeautifulSoup, title: str) -> str:
     content = soup.select_one("section.e-content") or soup
     nodes = content.select(".graf")
+    if not nodes:
+        nodes = [child for child in content.children if isinstance(child, Tag)]
     seen_title = [False]
     blocks: list[str] = []
+    seen_follow_section = False
     for node in nodes:
         text = node.get_text(" ", strip=True)
         if text in {"Follow My Work", "Andrey Pautov"}:
+            seen_follow_section = True
+            continue
+        if seen_follow_section and (
+            text.startswith("Portfolio / Knowledge Base:")
+            or text.startswith("Medium:")
+            or text.startswith("GitHub:")
+            or text.startswith("LinkedIn:")
+        ):
             continue
         if "Portfolio / Knowledge Base:" in text or "buy me a coffee" in text:
+            continue
+        if "was originally published in" in text and "on Medium" in text:
             continue
         block = block_to_md(node, title, seen_title).strip()
         if block:
@@ -143,6 +180,11 @@ def article_body(soup: BeautifulSoup, title: str) -> str:
 
 def medium_url(title: str, post_id: str) -> str:
     return f"https://medium.com/@1200km/{slugify(title)}-{post_id}"
+
+
+def clean_url(url: str) -> str:
+    parts = urlsplit(url)
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
 
 
 def category_for(title: str, text: str) -> str:
@@ -176,6 +218,7 @@ def sanitize_generated_markdown(path: Path) -> None:
             continue
         line = re.sub(r"\]\((https?://[^)]+?)\.\)", r"](\1)", line)
         line = re.sub(r"\[([^\]]+)\]\(#[0-9a-fA-F]{3,8}\)", r"\1", line)
+        line = re.sub(r"\[([^\]]+)\]\((?!https?://|mailto:|tel:|#)([^)]+)\)", r"\1", line)
         line = line.replace("<", "&lt;").replace(">", "&gt;")
         out.append(line)
     path.write_text("\n".join(out) + "\n", encoding="utf-8")
@@ -229,7 +272,9 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
         sanitize_generated_markdown(out_path)
 
     return {
+        "id": post_id,
         "title": title,
+        "summary": summary,
         "date": date,
         "year": year,
         "slug": slug,
@@ -237,6 +282,141 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
         "images": images,
         "code": code_blocks,
         "category": category,
+        "source_url": medium_url(title, post_id),
+        "cover_image": cover,
+    }
+
+
+def rss_items() -> list[dict]:
+    request = Request(MEDIUM_RSS_URL, headers={"User-Agent": "Mozilla/5.0"})
+    data = urlopen(request, timeout=30).read()
+    root = ET.fromstring(data)
+    items: list[dict] = []
+    for item in root.findall("./channel/item"):
+        title = item.findtext("title") or "Untitled"
+        guid = item.findtext("guid") or ""
+        post_id = guid.rsplit("/", 1)[-1]
+        if not re.fullmatch(r"[0-9a-f]{12,}", post_id):
+            continue
+        pub_date = item.findtext("pubDate") or ""
+        try:
+            date = parsedate_to_datetime(pub_date).date().isoformat()
+        except (TypeError, ValueError, IndexError):
+            date = "undated"
+        content = item.findtext("content:encoded", namespaces=RSS_NAMESPACES) or ""
+        items.append(
+            {
+                "title": md_escape(title),
+                "post_id": post_id,
+                "date": date,
+                "link": clean_url(item.findtext("link") or medium_url(title, post_id)),
+                "content": content,
+                "categories": [node.text or "" for node in item.findall("category")],
+            }
+        )
+    return items
+
+
+def write_rss_article(item: dict) -> dict:
+    soup = BeautifulSoup(item["content"], "html.parser")
+    post_id = item["post_id"]
+    title = item["title"]
+    summary = summary_for(soup)
+    date = item["date"]
+    year = date[:4] if date[:4].isdigit() else "undated"
+    slug = f"{date}-{slugify(title)}-{post_id}" if date != "undated" else f"{slugify(title)}-{post_id}"
+    out_dir = ARTICLES_ROOT / year
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"{slug}.md"
+    images = len([img for img in soup.find_all("img") if not is_tracking_image(img)])
+    code_blocks = len(soup.find_all("pre"))
+    cover = cover_image(soup)
+    body_text = soup.get_text(" ", strip=True)[:5000]
+    category = category_for(title, " ".join([body_text, *item.get("categories", [])]))
+    source_url = item["link"]
+
+    if not out_path.exists():
+        fm = {
+            "title": title,
+            "description": summary,
+        }
+        if cover:
+            fm["image"] = cover
+        frontmatter = "---\n" + "\n".join(f"{k}: {json.dumps(v)}" for k, v in fm.items()) + "\n---"
+        cover_block = f"\n\n![Cover image]({cover})\n" if cover else ""
+        content = f"""{frontmatter}
+
+# {title}
+{cover_block}
+:::info Article Metadata
+- **Category:** {category}
+- **Source article:** [{source_url}]({source_url})
+- **Published:** {date}
+- **Preserved media:** {images} image(s), including cover images, screenshots, diagrams, and infographics where present.
+- **Preserved technical blocks:** {code_blocks} code/configuration block(s).
+:::
+
+## Ecosystem Fit
+
+This page mirrors the original Medium RSS article into the 1200km.com Docusaurus ecosystem. The article flow, images, screenshots, infographics, and technical blocks are preserved from the Medium feed.
+
+{article_body(soup, title)}
+"""
+        out_path.write_text(content, encoding="utf-8")
+        sanitize_generated_markdown(out_path)
+
+    return {
+        "id": post_id,
+        "title": title,
+        "summary": summary,
+        "date": date,
+        "year": year,
+        "slug": slug,
+        "path": out_path,
+        "images": images,
+        "code": code_blocks,
+        "category": category,
+        "source_url": source_url,
+        "cover_image": cover,
+    }
+
+
+def frontmatter_value(text: str, key: str, default: str = "") -> str:
+    match = re.search(rf"^{re.escape(key)}:\s*(.+)$", text, re.MULTILINE)
+    if not match:
+        return default
+    raw = match.group(1).strip()
+    try:
+        value = json.loads(raw)
+        return str(value)
+    except json.JSONDecodeError:
+        return raw.strip("\"'")
+
+
+def read_existing_article(path: Path) -> dict:
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    post_id = path.stem.rsplit("-", 1)[-1]
+    date_match = re.match(r"(\d{4}-\d{2}-\d{2})-", path.stem)
+    date = date_match.group(1) if date_match else "undated"
+    year = date[:4] if date != "undated" else path.parent.name
+    category_match = re.search(r"^- \*\*Category:\*\*\s*(.+)$", text, re.MULTILINE)
+    source_match = re.search(r"^- \*\*Source article:\*\*\s*\[[^\]]*\]\((https?://[^)]+)\)", text, re.MULTILINE)
+    images_match = re.search(r"^- \*\*Preserved media:\*\*\s*(\d+)", text, re.MULTILINE)
+    code_match = re.search(r"^- \*\*Preserved technical blocks:\*\*\s*(\d+)", text, re.MULTILINE)
+    title = frontmatter_value(text, "title", path.stem)
+    return {
+        "id": post_id,
+        "title": title,
+        "summary": frontmatter_value(text, "description"),
+        "date": date,
+        "year": year,
+        "slug": path.stem,
+        "path": path,
+        "images": int(images_match.group(1)) if images_match else len(re.findall(r"!\[[^\]]*\]\(", text)),
+        "code": int(code_match.group(1)) if code_match else text.count("```") // 2,
+        "category": category_match.group(1).strip() if category_match else "Security Research",
+        "source_url": source_match.group(1) if source_match else medium_url(title, post_id),
+        "cover_image": frontmatter_value(text, "image"),
     }
 
 
@@ -279,12 +459,46 @@ def write_index(rows: list[dict]) -> None:
     (ARTICLES_ROOT / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_catalog(rows: list[dict]) -> None:
+    catalog = []
+    for row in sorted(rows, key=lambda item: (item["date"], item["title"]), reverse=True):
+        catalog.append(
+            {
+                "id": row["id"],
+                "title": row["title"],
+                "summary": row["summary"],
+                "published_at": row["date"],
+                "year": row["year"],
+                "category": row["category"],
+                "images": row["images"],
+                "code_blocks": row["code"],
+                "slug": row["slug"],
+                "local_path": f"{row['year']}/{row['slug']}",
+                "source_url": row["source_url"],
+                "cover_image": row["cover_image"],
+            }
+        )
+    CATALOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    CATALOG_PATH.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def main() -> None:
     ARTICLES_ROOT.mkdir(parents=True, exist_ok=True)
     posts = sorted(path for path in EXPORT_ROOT.glob("*.html") if not path.name.startswith("draft_"))
     rows = [write_article(path) for path in posts]
+    existing_ids = {post_id_from_path(path) for path in posts}
+    for item in rss_items():
+        if item["post_id"] not in existing_ids:
+            rows.append(write_rss_article(item))
+            existing_ids.add(item["post_id"])
+    for path in sorted(ARTICLES_ROOT.glob("*/*.md")):
+        post_id = path.stem.rsplit("-", 1)[-1]
+        if post_id not in existing_ids:
+            rows.append(read_existing_article(path))
+            existing_ids.add(post_id)
     write_category_files({row["year"] for row in rows})
     write_index(rows)
+    write_catalog(rows)
     print(f"Generated article archive for {len(rows)} posts.")
     print(f"Images: {sum(row['images'] for row in rows)}")
     print(f"Code blocks: {sum(row['code'] for row in rows)}")

@@ -6,8 +6,13 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
+    "build:legacy": "docusaurus build && python3 scripts/rewrite_legacy_canonicals.py",
+    "build:embedded": "ARTICLE_ARCHIVE_EMBED=1 ARTICLE_BASE_URL=/articles/ docusaurus build",
     "clear": "docusaurus clear",
-    "serve": "docusaurus serve"
+    "serve": "docusaurus serve",
+    "generate:articles": "python3 scripts/generate_article_docs.py",
+    "validate:media:local": "python3 scripts/validate_article_media.py --local-only",
+    "validate:archive": "python3 scripts/validate_article_archive.py"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",
