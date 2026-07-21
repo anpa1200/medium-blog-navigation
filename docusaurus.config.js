@@ -112,7 +112,7 @@ const config = {
           items: [
             {label: 'All Articles', to: '/'},
             {label: 'Browse by Year', to: `/${articleRouteBase}`},
-            {label: 'Research', href: 'https://1200km.com/research.html'},
+            {label: 'Research', href: 'https://1200km.com/cti.html'},
             {label: 'Guides', href: 'https://1200km.com/guides.html'},
           ],
         },
