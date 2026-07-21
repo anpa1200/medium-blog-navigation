@@ -1,6 +1,6 @@
 ---
 title: "When AI Coding Agents Say Yes Too Easily: Testing Suspicious Cybersecurity Prompts in Cursor"
-description: ""
+description: "I ran a small test inside Cursor to compare how different AI coding models react to the same suspicious cybersecurity prompt"
 image: "https://cdn-images-1.medium.com/max/1024/1*NezWwOLX9Mv2QjCu2TQMMw.png"
 ---
 

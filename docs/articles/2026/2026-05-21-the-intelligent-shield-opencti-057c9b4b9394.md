@@ -1,6 +1,6 @@
 ---
 title: "The Intelligent Shield. OpenCTI"
-description: ""
+description: "In an era of relentless and complex cyber attacks, traditional, manual threat intelligence cannot keep pace. Security teams are overwhelmed by data fragmentation and the critical lack of context. “The Intelligent Shie…"
 image: "https://cdn-images-1.medium.com/max/1024/1*yZJrYF0KW4x5gzDg6xNN6A.png"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "One place for my cybersecurity projects, guides, articles, labs, tools, and research workflows"
-description: ""
+description: "Andrey Pautov - CTI, Detection Engineering & Security Research"
 image: "https://cdn-images-1.medium.com/max/1024/1*Nh0FErKEzDdtl_JLFkUECg.png"
 ---
 

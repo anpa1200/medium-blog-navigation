@@ -1,6 +1,6 @@
 ---
 title: "AdversaryGraph v2.5: New Name, New Release, Full AI CTI Platform Capability Map"
-description: ""
+description: "This release marks an important transition for the project: the tool now has a new canonical name"
 image: "https://cdn-images-1.medium.com/max/1024/1*Be_05EN5NQl38dzTFo_8pg.png"
 ---
 

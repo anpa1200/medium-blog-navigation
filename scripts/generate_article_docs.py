@@ -224,6 +224,63 @@ def sanitize_generated_markdown(path: Path) -> None:
     path.write_text("\n".join(out) + "\n", encoding="utf-8")
 
 
+def fallback_markdown_summary(text: str, title: str) -> str:
+    in_frontmatter = False
+    in_code = False
+    for index, raw_line in enumerate(text.splitlines()):
+        line = raw_line.strip()
+        if index == 0 and line == "---":
+            in_frontmatter = True
+            continue
+        if in_frontmatter:
+            if line == "---":
+                in_frontmatter = False
+            continue
+        if line.startswith("```"):
+            in_code = not in_code
+            continue
+        if in_code or not line or line.startswith(("#", "- **", ":::", "![", ">")):
+            continue
+        plain = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", line)
+        plain = re.sub(r"[*_`]", "", plain).strip()
+        if plain.startswith("This page mirrors the original Medium RSS article"):
+            continue
+        if len(plain) >= 60:
+            return plain[:217].rstrip(" ,.;:") + ("…" if len(plain) > 217 else "")
+    return f"{title}. Full local security research article preserved in the 1200km archive."
+
+
+def maintain_generated_markdown(path: Path, title: str, supplied_summary: str) -> str:
+    text = path.read_text(encoding="utf-8")
+    supplied_summary = supplied_summary.strip()
+    if supplied_summary.startswith("This page mirrors the original Medium RSS article"):
+        supplied_summary = ""
+    summary = supplied_summary or fallback_markdown_summary(text, title)
+    summary = re.sub(r"\\([&*_#])", r"\1", summary)
+
+    def replace_description(match: re.Match[str]) -> str:
+        current = match.group(0)
+        value = current.partition(":")[2].strip()
+        needs_replacement = (
+            value in {'""', "''"}
+            or "This page mirrors the original Medium RSS article" in value
+            or bool(re.search(r'\\[^"\\/bfnrtu]', value))
+        )
+        if not needs_replacement:
+            return current
+        return f"description: {json.dumps(summary, ensure_ascii=False)}"
+
+    text = re.sub(
+        r'^description:[^\n]*$',
+        replace_description,
+        text,
+        count=1,
+        flags=re.MULTILINE,
+    )
+    path.write_text(text, encoding="utf-8")
+    return summary
+
+
 def write_article(path: Path) -> dict:
     soup = BeautifulSoup(path.read_text(errors="ignore"), "html.parser")
     post_id = post_id_from_path(path)
@@ -496,6 +553,8 @@ def main() -> None:
         if post_id not in existing_ids:
             rows.append(read_existing_article(path))
             existing_ids.add(post_id)
+    for row in rows:
+        row["summary"] = maintain_generated_markdown(row["path"], row["title"], row["summary"])
     write_category_files({row["year"] for row in rows})
     write_index(rows)
     write_catalog(rows)
