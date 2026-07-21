@@ -3733,7 +3733,7 @@ admin-password:
   
 aws-access-key:
  
-"AKIAIOSFODNN7EXAMPLE"
+"EXAMPLE_AWS_ACCESS_KEY_ID"
   
 aws-secret-key:
  
@@ -5053,7 +5053,7 @@ admin-password:
   
 aws-access-key:
  
-"AKIAIOSFODNN7EXAMPLE"
+"EXAMPLE_AWS_ACCESS_KEY_ID"
   
 aws-secret-key:
  
