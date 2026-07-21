@@ -1,6 +1,6 @@
 ---
 title: "Operation Desert Hydra \u2014 AI-Assisted CTI Pipeline: MuddyWater to Kibana"
-description: ""
+description: "Most threat actor writeups stop too early. They describe the group, list ATT&CK techniques, and paste some IoCs. Then the report sits in a folder while defenders wonder:what do I actually do with this on Monday?"
 image: "https://cdn-images-1.medium.com/max/1024/1*_HvRb4_s15JQ6FkA9ng-8w.png"
 ---
 

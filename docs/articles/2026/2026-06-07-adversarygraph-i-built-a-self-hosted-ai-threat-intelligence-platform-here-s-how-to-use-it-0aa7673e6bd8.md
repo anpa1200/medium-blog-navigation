@@ -1,6 +1,6 @@
 ---
 title: "AdversaryGraph: I Built a Self-Hosted AI Threat Intelligence Platform \u2014 Here\u2019s How to Use It"
-description: ""
+description: "GitHub - anpa1200/threatmapper: AI-powered MITRE ATT&CK threat intelligence platform - D3.js navigator, APT comparison, Claude/GPT-4o/Gemini analysis, PDF reports"
 image: "https://cdn-images-1.medium.com/max/1024/1*31Nq2VMJ9Mm9lgryHGJRQQ.png"
 ---
 

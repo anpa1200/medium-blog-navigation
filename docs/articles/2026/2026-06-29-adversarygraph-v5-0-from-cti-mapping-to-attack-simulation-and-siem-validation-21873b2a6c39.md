@@ -1,6 +1,6 @@
 ---
 title: "AdversaryGraph v5.0: From CTI Mapping to Attack Simulation and SIEM Validation"
-description: ""
+description: "How can a security team move from threat intelligence to detection engineering without losing the evidence trail?"
 image: "https://cdn-images-1.medium.com/max/1024/1*pE4s-eX1wFWMUOsnozr16w.png"
 ---
 

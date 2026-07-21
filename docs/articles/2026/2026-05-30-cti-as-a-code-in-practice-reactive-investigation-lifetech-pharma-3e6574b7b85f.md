@@ -1,6 +1,6 @@
 ---
 title: "CTI as a Code in Practice: Reactive Investigation \u2014 LifeTech Pharma"
-description: ""
+description: "All organizations, names, and data are fictional. This is training assignment A01 from the CTI as a Code repository"
 image: "https://cdn-images-1.medium.com/max/1024/1*l8B3xIJssFbBTn0IvOu6Ng.png"
 ---
 

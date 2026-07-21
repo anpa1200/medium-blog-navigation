@@ -1,6 +1,6 @@
 ---
 title: "Comprehensive Cyber Intelligence Research: Attacks Against Embedded Systems, Hardware, Firmware\u2026"
-description: ""
+description: "2. Post-compromise persistence is the real risk, not only initial CVE exploitation"
 image: "https://cdn-images-1.medium.com/max/1024/1*igBKySDQUuXS4X3AYyE0kg.png"
 ---
 

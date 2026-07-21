@@ -1,6 +1,6 @@
 ---
 title: "AdversaryGraph Usecases"
-description: ""
+description: "AdversaryGraph v2.5: New Name, New Release, Full AI CTI Platform Capability Map"
 image: "https://cdn-images-1.medium.com/max/700/0*uEhtrOMXUiTRj9_e.png"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "AdversaryGraph v2.0: I Built a Self-Hosted AI Threat Intelligence Platform"
-description: ""
+description: "A report is not enough. A PDF from a vendor, an incident response write-up, a malware analysis note, or a DFIR case study still needs to be translated into practical defensive work"
 image: "https://cdn-images-1.medium.com/max/700/0*za_SN-yImuGidw-0.png"
 ---
 

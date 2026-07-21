@@ -2,7 +2,7 @@
   {
     "id": "a5ccb46d5556",
     "title": "Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry",
-    "summary": "",
+    "summary": "7. Technique 4: Weak-Signal Aggregation and Risk-Based Alerting",
     "published_at": "2026-07-11",
     "year": "2026",
     "category": "CTI",
@@ -16,7 +16,7 @@
   {
     "id": "55eea06b69bd",
     "title": "When AI Coding Agents Say Yes Too Easily: Testing Suspicious Cybersecurity Prompts in Cursor",
-    "summary": "",
+    "summary": "I ran a small test inside Cursor to compare how different AI coding models react to the same suspicious cybersecurity prompt",
     "published_at": "2026-07-07",
     "year": "2026",
     "category": "CTI",
@@ -30,7 +30,7 @@
   {
     "id": "8a151f8d5f1b",
     "title": "Comprehensive Cyber Intelligence Research: Attacks Against Embedded Systems, Hardware, Firmware…",
-    "summary": "",
+    "summary": "2. Post-compromise persistence is the real risk, not only initial CVE exploitation",
     "published_at": "2026-07-03",
     "year": "2026",
     "category": "CTI",
@@ -44,7 +44,7 @@
   {
     "id": "21873b2a6c39",
     "title": "AdversaryGraph v5.0: From CTI Mapping to Attack Simulation and SIEM Validation",
-    "summary": "",
+    "summary": "How can a security team move from threat intelligence to detection engineering without losing the evidence trail?",
     "published_at": "2026-06-29",
     "year": "2026",
     "category": "CTI",
@@ -58,7 +58,7 @@
   {
     "id": "8dfbf1db2c9e",
     "title": "AdversaryGraph v4.0: I Added a Full Malware Analysis Workbench to My Self-Hosted CTI Platform",
-    "summary": "",
+    "summary": "You upload a sample to one tool for hash reputation. You open another tool for strings. You use a disassembler for functions. You check imports somewhere else. You copy indicators into a CTI platform. You build ATT&CK…",
     "published_at": "2026-06-26",
     "year": "2026",
     "category": "CTI",
@@ -72,7 +72,7 @@
   {
     "id": "eff2e1d8f2cd",
     "title": "From Log to Report: Using AdversaryGraph!",
-    "summary": "",
+    "summary": "The harder problem is turning scattered technical evidence into a defensible investigation",
     "published_at": "2026-06-21",
     "year": "2026",
     "category": "CTI",
@@ -86,7 +86,7 @@
   {
     "id": "93cd9224127e",
     "title": "AdversaryGraph v2.5: New Name, New Release, Full AI CTI Platform Capability Map",
-    "summary": "",
+    "summary": "This release marks an important transition for the project: the tool now has a new canonical name",
     "published_at": "2026-06-19",
     "year": "2026",
     "category": "CTI",
@@ -100,7 +100,7 @@
   {
     "id": "820d03c3a7ab",
     "title": "AdversaryGraph Usecases",
-    "summary": "",
+    "summary": "AdversaryGraph v2.5: New Name, New Release, Full AI CTI Platform Capability Map",
     "published_at": "2026-06-19",
     "year": "2026",
     "category": "CTI",
@@ -114,7 +114,7 @@
   {
     "id": "941a80cc5a65",
     "title": "AdversaryGraph v2.0: I Built a Self-Hosted AI Threat Intelligence Platform",
-    "summary": "",
+    "summary": "A report is not enough. A PDF from a vendor, an incident response write-up, a malware analysis note, or a DFIR case study still needs to be translated into practical defensive work",
     "published_at": "2026-06-16",
     "year": "2026",
     "category": "CTI",
@@ -128,7 +128,7 @@
   {
     "id": "0aa7673e6bd8",
     "title": "AdversaryGraph: I Built a Self-Hosted AI Threat Intelligence Platform — Here’s How to Use It",
-    "summary": "",
+    "summary": "GitHub - anpa1200/threatmapper: AI-powered MITRE ATT&CK threat intelligence platform - D3.js navigator, APT comparison, Claude/GPT-4o/Gemini analysis, PDF reports",
     "published_at": "2026-06-07",
     "year": "2026",
     "category": "CTI",
@@ -142,7 +142,7 @@
   {
     "id": "3e6574b7b85f",
     "title": "CTI as a Code in Practice: Reactive Investigation — LifeTech Pharma",
-    "summary": "",
+    "summary": "All organizations, names, and data are fictional. This is training assignment A01 from the CTI as a Code repository",
     "published_at": "2026-05-30",
     "year": "2026",
     "category": "CTI",
@@ -156,7 +156,7 @@
   {
     "id": "dda5ef496a46",
     "title": "CTI as a Code: Complete Step-by-Step Methodology",
-    "summary": "",
+    "summary": "The evidence problem.An analyst writes “the adversary used T1078” in a report. Six months later nobody can answer: what log line supports that claim? Was it confirmed or inferred? What alternative hypotheses were rule…",
     "published_at": "2026-05-29",
     "year": "2026",
     "category": "CTI",
@@ -170,7 +170,7 @@
   {
     "id": "34da7917acf0",
     "title": "Operation Desert Hydra — AI-Assisted CTI Pipeline: MuddyWater to Kibana",
-    "summary": "",
+    "summary": "Most threat actor writeups stop too early. They describe the group, list ATT&CK techniques, and paste some IoCs. Then the report sits in a folder while defenders wonder:what do I actually do with this on Monday?",
     "published_at": "2026-05-23",
     "year": "2026",
     "category": "CTI",
@@ -184,7 +184,7 @@
   {
     "id": "5d358753c86c",
     "title": "One place for my cybersecurity projects, guides, articles, labs, tools, and research workflows",
-    "summary": "",
+    "summary": "Andrey Pautov - CTI, Detection Engineering & Security Research",
     "published_at": "2026-05-22",
     "year": "2026",
     "category": "CTI",
@@ -198,7 +198,7 @@
   {
     "id": "057c9b4b9394",
     "title": "The Intelligent Shield. OpenCTI",
-    "summary": "",
+    "summary": "In an era of relentless and complex cyber attacks, traditional, manual threat intelligence cannot keep pace. Security teams are overwhelmed by data fragmentation and the critical lack of context. “The Intelligent Shie…",
     "published_at": "2026-05-21",
     "year": "2026",
     "category": "CTI",

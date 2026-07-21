@@ -1,6 +1,6 @@
 ---
 title: "From Log to Report: Using AdversaryGraph!"
-description: ""
+description: "The harder problem is turning scattered technical evidence into a defensible investigation"
 image: "https://cdn-images-1.medium.com/max/1024/1*dURBOrkZ0Lq5j-J_J4_KxQ.png"
 ---
 

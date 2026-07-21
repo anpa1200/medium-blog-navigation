@@ -1,6 +1,6 @@
 ---
 title: "CTI as a Code: Complete Step-by-Step Methodology"
-description: ""
+description: "The evidence problem.An analyst writes “the adversary used T1078” in a report. Six months later nobody can answer: what log line supports that claim? Was it confirmed or inferred? What alternative hypotheses were rule…"
 image: "https://cdn-images-1.medium.com/max/1024/1*Ygo9Os6SaZrumCm_Y08aKA.png"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry"
-description: ""
+description: "7. Technique 4: Weak-Signal Aggregation and Risk-Based Alerting"
 image: "https://cdn-images-1.medium.com/max/1024/1*PtjHgt5EKpMEspEmntakBw.png"
 ---
 
