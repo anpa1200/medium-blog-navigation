@@ -1,7 +1,7 @@
 @import url('https://1200km.com/assets/docusaurus-ecosystem.css?v=20260614-3');
 
 :root {
-  --ifm-color-primary: #0f62fe;
+  --ifm-color-primary: #0756d8;
   --ifm-color-primary-dark: #054ada;
   --ifm-color-primary-darker: #003fbd;
   --ifm-color-primary-darkest: #00348f;
@@ -16,11 +16,25 @@
 }
 
 [data-theme='dark'] {
+  --ifm-color-primary: #70a7ff;
+  --ifm-color-primary-dark: #5b96ef;
+  --ifm-color-primary-darker: #4d89df;
+  --ifm-color-primary-darkest: #3973c4;
+  --ifm-color-primary-light: #8fbbff;
+  --ifm-color-primary-lighter: #a4c8ff;
+  --ifm-color-primary-lightest: #dceaff;
   --surface: #111827;
   --surface-muted: #0f172a;
   --text-muted: #a8b3c7;
   --border: #263449;
   --shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
+}
+
+/* Prose links must remain identifiable without relying on colour alone. */
+.theme-doc-markdown :where(p, li) a:not(.button) {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
 }
 
 .hero--blog {
