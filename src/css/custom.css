@@ -264,7 +264,7 @@
 .archive-filters input,
 .archive-filters select {
   width: 100%;
-  min-height: 42px;
+  min-height: 44px;
   padding: 0.55rem 0.7rem;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -273,6 +273,11 @@
   font: inherit;
   font-size: 0.92rem;
   font-weight: 500;
+}
+
+.archive-filters .button,
+.load-more .button {
+  min-height: 44px;
 }
 
 .archive-filters input:focus-visible,
