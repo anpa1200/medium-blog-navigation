@@ -53,8 +53,8 @@ This article explains what is new in v5.0, how the architecture works, what the 
 
 Project links:
 
-- Project landing page:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
-- Documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
+- Project landing page:<a href="https://1200km.com/adversarygraph/" target="_self" target="_self" target="_self"><span>/adversarygraph/</span></a>
+- Documentation:<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/</span></a>
 - GitHub:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
 - Release v5.0.0:[https://github.com/anpa1200/adversarygraph/releases/tag/v5.0.0](https://github.com/anpa1200/adversarygraph/releases/tag/v5.0.0)
 
@@ -133,7 +133,7 @@ Release 5.0 builds on a broader platform. The major existing modules are still p
 
 **All capabilities here:**
 
-<a href="pathname://https://1200km.com/adversarygraph-docs/capabilities/" target="_self">Platform Capabilities | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
+<a href="https://1200km.com/adversarygraph-docs/capabilities/" target="_self" target="_self" target="_self">Platform Capabilities | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 ### AI-Assisted ATT&CK Mapping
 
@@ -639,7 +639,7 @@ That is the direction I want the platform to continue moving.
 
 If you want to explore the public interface:
 
-<a href="pathname://https://1200km.com/threat-matrix/" target="_self">AdversaryGraph Web - Public ATT&CK Workspace for AdversaryGraph | 1200km</a>
+<a href="https://1200km.com/threat-matrix/" target="_self" target="_self" target="_self">AdversaryGraph Web - Public ATT&CK Workspace for AdversaryGraph | 1200km</a>
 
 **If you want the full private platform:**
 
@@ -658,15 +658,15 @@ http://localhost:3000
 
 **Read the full documentation here:**
 
-<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self">AdversaryGraph - Self-Hosted CTI-to-Detection Workbench | 1200km | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
+<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self">AdversaryGraph - Self-Hosted CTI-to-Detection Workbench | 1200km | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 **Attack Simulation guide:**
 
-<a href="pathname://https://1200km.com/adversarygraph-docs/attack-simulation/" target="_self">Attack Simulation | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
+<a href="https://1200km.com/adversarygraph-docs/attack-simulation/" target="_self" target="_self" target="_self">Attack Simulation | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 **Project page:**
 
-<a href="pathname://https://1200km.com/adversarygraph/" target="_self">AdversaryGraph AI - CTI-to-Detection Platform</a>
+<a href="https://1200km.com/adversarygraph/" target="_self" target="_self" target="_self">AdversaryGraph AI - CTI-to-Detection Platform</a>
 
 **GitHub release:**
 
@@ -690,12 +690,12 @@ Project:
 
 Documentation:
 
-<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
+<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/</span></a>
 
 Live workspace:
 
-<a href="pathname://https://1200km.com/threat-matrix/" target="_self">AdversaryGraph Web - Public ATT&CK Workspace for AdversaryGraph | 1200km</a>
+<a href="https://1200km.com/threat-matrix/" target="_self" target="_self" target="_self">AdversaryGraph Web - Public ATT&CK Workspace for AdversaryGraph | 1200km</a>
 
 Main page:
 
-<a href="pathname://https://1200km.com/" target="_self">Andrey Pautov - CTI & Detection Engineering</a>
+<a href="https://1200km.com/" target="_self" target="_self" target="_self">Andrey Pautov - CTI & Detection Engineering</a>

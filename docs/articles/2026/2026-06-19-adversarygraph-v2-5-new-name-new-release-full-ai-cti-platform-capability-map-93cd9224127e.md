@@ -50,17 +50,17 @@ Project:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200
 
 [GitHub - anpa1200/adversarygraph: AI-powered MITRE ATT\&CK threat intelligence platform - D3.js navigator, APT comparison, Claude/GPT-4o/Gemini analysis, PDF reports](https://github.com/anpa1200/adversarygraph)
 
-Documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
+Documentation:<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/</span></a>
 
-<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self">AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
+<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self">AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
-Project hub:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
+Project hub:<a href="https://1200km.com/adversarygraph/" target="_self" target="_self" target="_self"><span>/adversarygraph/</span></a>
 
-<a href="pathname://https://1200km.com/adversarygraph/" target="_self">AdversaryGraph AI - MITRE ATT&CK CTI Workbench</a>
+<a href="https://1200km.com/adversarygraph/" target="_self" target="_self" target="_self">AdversaryGraph AI - MITRE ATT&CK CTI Workbench</a>
 
-Use cases:<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self"><span>/adversarygraph/use-cases.html</span></a>
+Use cases:<a href="https://1200km.com/adversarygraph/use-cases.html" target="_self" target="_self" target="_self"><span>/adversarygraph/use-cases.html</span></a>
 
-<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self">AdversaryGraph Use Cases</a>
+<a href="https://1200km.com/adversarygraph/use-cases.html" target="_self" target="_self" target="_self">AdversaryGraph Use Cases</a>
 
 ## Table of Contents
 
@@ -209,7 +209,7 @@ On first startup, AdversaryGraph downloads and ingests MITRE ATT&CK and MITRE AT
 
 The detailed installation and operations documentation is here:
 
-<a href="pathname://https://1200km.com/adversarygraph-docs/getting-started/" target="_self">Setup (10 Minutes) | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
+<a href="https://1200km.com/adversarygraph-docs/getting-started/" target="_self" target="_self" target="_self">Setup (10 Minutes) | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 ## What Is New In v2.5
 
@@ -568,7 +568,7 @@ If ATT&CK data is not loaded, an API key is missing, or a sync route fails, the 
 
 The public use-case page is here:
 
-<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self">AdversaryGraph Use Cases</a>
+<a href="https://1200km.com/adversarygraph/use-cases.html" target="_self" target="_self" target="_self">AdversaryGraph Use Cases</a>
 
 ## Licensing Change
 
@@ -650,10 +650,10 @@ Good CTI should become:
 
 Project:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
 
-Documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
+Documentation:<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/</span></a>
 
-Project hub:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
+Project hub:<a href="https://1200km.com/adversarygraph/" target="_self" target="_self" target="_self"><span>/adversarygraph/</span></a>
 
 Release:[https://github.com/anpa1200/adversarygraph/releases/tag/v2.5.0](https://github.com/anpa1200/adversarygraph/releases/tag/v2.5.0)
 
-Use cases:<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self"><span>/adversarygraph/use-cases.html</span></a>
+Use cases:<a href="https://1200km.com/adversarygraph/use-cases.html" target="_self" target="_self" target="_self"><span>/adversarygraph/use-cases.html</span></a>

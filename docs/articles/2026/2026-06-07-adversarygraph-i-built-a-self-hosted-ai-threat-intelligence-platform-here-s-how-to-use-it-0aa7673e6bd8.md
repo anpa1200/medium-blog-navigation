@@ -51,7 +51,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Docs :
 
-[ThreatMapper - Self-Hosted AI Threat Intelligence | ThreatMapper](https://anpa1200.github.io/threatmapper-docs/)
+<a href="https://1200km.com/threatmapper-docs/" target="_self" target="_self">ThreatMapper - Self-Hosted AI Threat Intelligence | ThreatMapper</a>
 
 ## The Problem
 

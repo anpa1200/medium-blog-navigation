@@ -44,12 +44,15 @@ def main() -> int:
         if "1200km Security Research Articles" in title or title.count("| 1200km") > 1:
             failures.append(f"{path.relative_to(BUILD)}: repetitive title suffix")
         for link in re.findall(r"<a\b[^>]*>", html, re.IGNORECASE):
-            if not re.search(r'\btarget=["\']_blank["\']', link, re.IGNORECASE):
-                continue
             href_match = re.search(r'\bhref=["\']([^"\']+)["\']', link, re.IGNORECASE)
             href = href_match.group(1) if href_match else ""
             parsed = urlsplit(href)
-            if href.startswith("/") or parsed.netloc == "1200km.com":
+            if parsed.scheme and parsed.scheme not in {"http", "https", "mailto", "tel"}:
+                failures.append(f"{path.relative_to(BUILD)}: unsupported link scheme ({href})")
+                break
+            if re.search(r'\btarget=["\']_blank["\']', link, re.IGNORECASE) and (
+                href.startswith("/") or parsed.netloc == "1200km.com"
+            ):
                 failures.append(f"{path.relative_to(BUILD)}: same-origin link opens a new tab ({href})")
                 break
 

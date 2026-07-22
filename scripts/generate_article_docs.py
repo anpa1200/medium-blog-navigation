@@ -63,8 +63,10 @@ def inline_md(node) -> str:
         href = href.rstrip(".,")
         if not re.match(r"^(https?|mailto|tel):", href):
             return text
+        if href.startswith("https://anpa1200.github.io/"):
+            href = href.replace("https://anpa1200.github.io/", "https://1200km.com/", 1)
         if href.startswith("https://1200km.com/"):
-            return f'<a href="pathname://{href}" target="_self">{text}</a>'
+            return f'<a href="{href}" target="_self">{text}</a>'
         return f"[{text}]({href})"
     return text
 

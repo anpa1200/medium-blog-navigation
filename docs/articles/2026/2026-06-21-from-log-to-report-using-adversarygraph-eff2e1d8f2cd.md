@@ -47,11 +47,11 @@ AdversaryGraph is my self-hosted AI-assisted CTI-to-detection workbench.
 
 - **AdversaryGraph platform page:**
 
-<a href="pathname://https://1200km.com/adversarygraph/" target="_self">AdversaryGraph AI - MITRE ATT&CK CTI Workbench</a>
+<a href="https://1200km.com/adversarygraph/" target="_self" target="_self" target="_self">AdversaryGraph AI - MITRE ATT&CK CTI Workbench</a>
 
 - **AdversaryGraph documentation:**
 
-<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self">AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
+<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self">AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 - **AdversaryGraph GitHub:**
 
@@ -821,10 +821,10 @@ It gives the analyst a faster way to build the case.
 
 AdversaryGraph is part of my broader 1200km cybersecurity research ecosystem: practical CTI workflows, detection engineering notes, malware-analysis projects, OpenCTI work, cloud and Kubernetes security research, AI-assisted security tooling, labs, and technical guides.
 
-- AdversaryGraph platform page:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
-- AdversaryGraph documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
+- AdversaryGraph platform page:<a href="https://1200km.com/adversarygraph/" target="_self" target="_self" target="_self"><span>/adversarygraph/</span></a>
+- AdversaryGraph documentation:<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/</span></a>
 - AdversaryGraph GitHub:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
-- 1200km portfolio / knowledge base:<a href="pathname://https://1200km.com/" target="_self"><span>/</span></a>
+- 1200km portfolio / knowledge base:<a href="https://1200km.com/" target="_self" target="_self" target="_self"><span>/</span></a>
 - Medium:[https://medium.com/@1200km](https://medium.com/@1200km)
 - GitHub:[https://github.com/anpa1200](https://github.com/anpa1200)
 - LinkedIn:[https://www.linkedin.com/in/andrey-pautov/](https://www.linkedin.com/in/andrey-pautov/)
