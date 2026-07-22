@@ -11,7 +11,7 @@
 
 
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.592295e9.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.2ed37664.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.e4b42757.js" defer="defer"></script>
 <script src="/medium-blog-navigation/assets/js/main.49309a02.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
@@ -285,9 +285,9 @@
 </ul>
 <p><a href="https://medium.com/@1200km/the-intelligent-shield-057c9b4b9394" target="_blank" rel="noopener noreferrer" class="">The Intelligent Shield. OpenCTI</a></p>
 <ul>
-<li class=""><strong>Main guide:</strong><a href="https://anpa1200.github.io/opencti-intelligent-shield/" target="_blank" rel="noopener noreferrer" class="">anpa1200.github.io/opencti-intelligent-shield</a></li>
+<li class=""><strong>Main guide:</strong><a href="https://1200km.com/opencti-intelligent-shield/" target="_self">anpa1200.github.io/opencti-intelligent-shield</a></li>
 </ul>
-<p><a href="https://anpa1200.github.io/opencti-intelligent-shield" target="_blank" rel="noopener noreferrer" class="">OpenCTI AI Enrichment | The Intelligent Shield</a></p>
+<a href="https://1200km.com/opencti-intelligent-shield" target="_self">OpenCTI AI Enrichment | The Intelligent Shield</a>
 <p>The Intelligent Shield project covers: OpenCTI core stack (Redis, Elasticsearch, MinIO, RabbitMQ, platform, workers), MITRE ATT&amp;CK connector, and a custom internal enrichment connector that uses Claude to automatically summarize and enrich threat objects. Docker Compose files, a sanitized .env.example, and full setup instructions are all version-controlled.</p>
 <p>To spin up the stack standalone (outside Operation Desert Hydra):</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/anpa1200/opencti-intelligent-shield.git openCTI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd openCTI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cp .env.example .env</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># fill in tokens and passwords</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">./scripts/start-all.sh   # OpenCTI at :8080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">./scripts/stop-all.sh    # halt, preserves volumes</span><br></div></code></pre></div></div>
