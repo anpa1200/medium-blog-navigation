@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*6r4g3udcM3RhWNY1OO2Agw.jpeg"
 # Building a USB Rubber Ducky with Arduino Leonardo with Cursor.
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*6r4g3udcM3RhWNY1OO2Agw.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*6r4g3udcM3RhWNY1OO2Agw.jpeg" alt="Cover image" width="1360" height="768" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,13 +23,13 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Integrating Cursor AI into your hardware hacking workflow is a game-changer. From Human Prompt to Working Code
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6r4g3udcM3RhWNY1OO2Agw.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*6r4g3udcM3RhWNY1OO2Agw.jpeg" alt="Article image" width="1360" height="768" loading="lazy" decoding="async" />
 
 ## Introduction
 
 The USB Rubber Ducky is a well-known penetration testing tool that emulates a USB keyboard to execute keystroke-based attacks. While the original Hak5 USB Rubber Ducky is a commercial device, you can build your own using an Arduino Leonardo or Arduino Micro for a fraction of the cost. Like this:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jJOCPmvZ7N9LUl0yWsZ0-w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jJOCPmvZ7N9LUl0yWsZ0-w.png" alt="Article image" width="1264" height="293" loading="lazy" decoding="async" />
 
 In this comprehensive guide, we’ll explore how to set up an Arduino-based Rubber Ducky, integrate it with Cursor IDE for seamless development, and discuss its applications in penetration testing.
 
@@ -83,7 +83,7 @@ cursor
 
 - In Cursor, use**plain-language prompts**to generate or improve your sketch.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yb-lC-Fntc43T5gigch9YA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yb-lC-Fntc43T5gigch9YA.png" alt="Article image" width="1915" height="1080" loading="lazy" decoding="async" />
 
 ## Project Timeline: From Human Prompt to Working Code
 

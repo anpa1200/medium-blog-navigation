@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*le-GPHh7adFR9iex1Ff7qQ.png"
 # Applying Sherman Kent’s Analytic Discipline to CTI: A Practical Analyst Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*le-GPHh7adFR9iex1Ff7qQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*le-GPHh7adFR9iex1Ff7qQ.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Estimative language, evidence discipline, and analytic integrity for cyber threat intelligence
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*le-GPHh7adFR9iex1Ff7qQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*le-GPHh7adFR9iex1Ff7qQ.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## Executive Summary
 
@@ -115,7 +115,7 @@ This is still not a formal source-grading model. Operational CTI should use a mo
 
 Kent argued that estimative words should not be left to normal conversational ambiguity. Different organizations use different probability bands, but a CTI team should publish and reuse one internal lexicon. A simple working version is:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*O5dwFHm_ncEOU61MI32nLw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*O5dwFHm_ncEOU61MI32nLw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Probability is not confidence. “Likely” says how probable the judgment is. “Moderate confidence” says how strong the evidentiary basis is.
 
@@ -123,7 +123,7 @@ These bands are illustrative, not universal; the important control is consistenc
 
 ## What Is Sherman Kent-Style Analytic Discipline?
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oXWwShvs3qtrUWIDyfreXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oXWwShvs3qtrUWIDyfreXQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Kent-style analytic discipline can be reduced to a practical standard: intelligence analysis should help decision-makers reason under uncertainty without hiding the uncertainty. The analyst’s job is not to sound certain. The analyst’s job is to make evidence, assumptions, probability, confidence, alternatives, and collection gaps visible enough that decision-makers understand the basis and limits of the judgment.
 
@@ -147,7 +147,7 @@ This is not a mechanical checklist. It is a writing and reasoning discipline: st
 
 ## What Maps From Traditional Intelligence to CTI — And What Does Not
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*P_kpV2peYBfbICkYx0HRhg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*P_kpV2peYBfbICkYx0HRhg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Traditional national-security intelligence and CTI share the same analytic problem: decisions must be made before evidence is complete. Kent-style discipline maps well to CTI in several areas:
 
@@ -175,7 +175,7 @@ Traditional national-security intelligence and CTI share the same analytic probl
 
 ## 1. Policy Relevance Without Policy Capture
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mBQ_-Mvq3kbMpUNRP3Dc0g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mBQ_-Mvq3kbMpUNRP3Dc0g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Kent argued for intelligence that mattered to national decisions. Relevance does not mean advocacy. In CTI terms, the analyst should understand the decision context — patch prioritization, detection engineering, executive risk, incident response, threat hunting, vendor exposure, or public communication — without forcing the evidence to support a preferred action.
 
@@ -219,7 +219,7 @@ The CTI translation is straightforward: a malware sample, intrusion timeline, or
 
 ## 2. Facts, Assumptions, and Judgments
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*f0Wu_l81Mk6vjtKsA73UQA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*f0Wu_l81Mk6vjtKsA73UQA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Kent-style analysis requires a visible boundary between what the analyst knows and what the analyst concludes. The most dangerous failures often occur when assumptions are written as if they are evidence.
 
@@ -287,7 +287,7 @@ The failure mode is converting “the regime has concealed WMD before” into �
 
 ## 3. Estimative Probability Language
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dOK04WErXA1j0WBJz5d0Xw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dOK04WErXA1j0WBJz5d0Xw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Kent’s “Words of Estimative Probability” addressed a persistent intelligence problem: analysts use words like “possible,” “probable,” and “likely,” but readers may assign different probabilities to the same words. This discipline does not require every estimate to become a math problem. It requires that probability language be intentional and consistent.
 
@@ -339,7 +339,7 @@ The first version preserves the source, the estimative term, and the fact that t
 
 ## 4. Confidence Is Not Probability
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PieOUrrsp4VbSGcRInnZpg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PieOUrrsp4VbSGcRInnZpg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Probability answers: “How likely is the judgment?” Confidence answers: “How strong is the basis for the judgment?” Analysts often blur these together. Kent-style discipline keeps them separate.
 
@@ -393,7 +393,7 @@ Probability answers: “How likely is the judgment?” Confidence answers: “Ho
 
 ## 5. Alternative Hypotheses
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OgBOQ_0sgEge7IwPdLOr7g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OgBOQ_0sgEge7IwPdLOr7g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Kent-style analysis does not require analysts to treat all hypotheses as equally plausible. It does require analysts to ask what else could explain the evidence and what collection would discriminate between explanations.
 
@@ -457,7 +457,7 @@ The evidence strongly supports destructive effect. It does not publicly prove th
 
 Kent-style analysis is not only retrospective. It should produce warning questions and collection requirements. A judgment with no collection gap is often a judgment that has not been examined carefully enough.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XkXGaxgF5xHc8p4jfSAsBg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XkXGaxgF5xHc8p4jfSAsBg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ### Example 1: Cuban Missile Crisis warning depended on collection timing and imagery interpretation
 
@@ -509,7 +509,7 @@ Kent-style analysis is not only retrospective. It should produce warning questio
 
 ## 7. Analytic Integrity in CTI
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*SjsMMnm-vjqrTKTrKl-QUA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*SjsMMnm-vjqrTKTrKl-QUA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 CTI reporting often mixes telemetry, malware family names, vendor clusters, infrastructure, attribution, and intent. Analytic integrity means refusing to compress those into a single confident story unless the evidence supports it.
 
@@ -575,7 +575,7 @@ CTI reporting often mixes telemetry, malware family names, vendor clusters, infr
 
 Kent-style discipline is partly about fighting predictable analytic failure modes. The CIA tradecraft primer emphasizes structured techniques because analysts working with incomplete and ambiguous information are vulnerable to cognitive bias ([CIA, A Tradecraft Primer](https://www.cia.gov/resources/csi/static/Tradecraft-Primer-apr09.pdf)).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_MKrRprTzQEF_CJcS2EefA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_MKrRprTzQEF_CJcS2EefA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Common CTI bias patterns:**
 
@@ -595,7 +595,7 @@ Structured analytic techniques are useful because they force friction into the a
 
 MITRE ATT&CK gives CTI teams a structured vocabulary for adversary tactics and techniques based on real-world observations ([MITRE ATT&CK](https://attack.mitre.org/)). The Pyramid of Pain, associated with David Bianco, explains why higher-level behavioral indicators and TTPs are usually harder for adversaries to change than hashes, IPs, and domains.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Avn2HMvyvckpmQTWnsCEiQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Avn2HMvyvckpmQTWnsCEiQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Kent-style discipline does not replace these frameworks. It tells analysts how to write about them:**
 
@@ -617,7 +617,7 @@ Example: “The intrusion used credential dumping” is a technique-level claim.
 
 Use this checklist before publishing an analytic judgment:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kZv6tiN5XkW8yiGJzvSiSA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kZv6tiN5XkW8yiGJzvSiSA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **Question:**What decision or intelligence requirement does this answer?
 

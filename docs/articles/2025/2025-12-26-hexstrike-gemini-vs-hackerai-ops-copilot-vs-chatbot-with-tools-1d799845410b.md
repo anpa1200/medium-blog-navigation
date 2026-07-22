@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*-OVxdqqlgwXjJbmbKplryA.png"
 # HexStrike + Gemini vs. HackerAI: “Ops Copilot” vs. “Chatbot with Tools”
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*-OVxdqqlgwXjJbmbKplryA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-OVxdqqlgwXjJbmbKplryA.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical lab comparison: Why orchestration quality beats raw model IQ in real-world workflows.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-OVxdqqlgwXjJbmbKplryA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-OVxdqqlgwXjJbmbKplryA.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## What is HackerAI?
 
@@ -37,7 +37,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 - **Best Use Case:**Rapid “first-pass” vulnerability scanning, automated reporting, and acting as a sounding board for junior testers who need a checklist of what to try next.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uvXFrZpuLg42yWV2T8eu1A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uvXFrZpuLg42yWV2T8eu1A.png" alt="Article image" width="1045" height="872" loading="lazy" decoding="async" />
 
 ### I tested HackerAI agent on similar objectives and compared it to HexStrike + Gemini CLI workflows I’ve already written about:
 

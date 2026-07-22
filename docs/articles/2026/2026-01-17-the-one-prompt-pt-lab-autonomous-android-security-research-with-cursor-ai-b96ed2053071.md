@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*8HbNgt1eC6BmBvGuVpzqqg.png"
 # The One-Prompt PT Lab: Autonomous Android Security Research with Cursor AI
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*8HbNgt1eC6BmBvGuVpzqqg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8HbNgt1eC6BmBvGuVpzqqg.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Bare Directory to Full Exploitation: A Case Study on OWASP UnCrackable L1
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8HbNgt1eC6BmBvGuVpzqqg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8HbNgt1eC6BmBvGuVpzqqg.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -1282,7 +1282,7 @@ adb shell screencap -p > screenshots/05_secret_verified.png
 
 - Message: “This is the correct secret.”
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dYEGlwyTrYHwSrAnYSfSEg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dYEGlwyTrYHwSrAnYSfSEg.png" alt="Article image" width="394" height="828" loading="lazy" decoding="async" />
 
 ## Full PT Report
 

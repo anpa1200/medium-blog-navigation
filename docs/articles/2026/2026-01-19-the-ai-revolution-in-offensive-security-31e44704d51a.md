@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*JziQruiKb9095W4Stkt81g.png"
 # The AI Revolution in Offensive Security
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*JziQruiKb9095W4Stkt81g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JziQruiKb9095W4Stkt81g.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Practical Hands-On Guide to AI-Accelerated Offensive Security: Burp Suite, Nmap, OSINT, Exploitation, and End-to-End Automation (LLMs + MCP, Cursor, HexStrike-AI)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JziQruiKb9095W4Stkt81g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JziQruiKb9095W4Stkt81g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -109,7 +109,7 @@ The simplest form of AI integration involves taking output from traditional secu
 [**Getting More from Burp Suite with LLMs**
 [How ChatGPT Accelerates Scan Analysis, Prioritization and Mitigation. Practical workflow and prompt recipes for turning…](../2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*SS7Id25MFauuMpw5PK91Uw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*SS7Id25MFauuMpw5PK91Uw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Burp Suite is one of the most widely used web application security testing tools, generating vast amounts of scan data and findings. By uploading Burp scan results to LLMs like ChatGPT or Gemini, security professionals can:
 
@@ -132,7 +132,7 @@ This simple approach transforms Burp Suite from a tool that requires deep expert
 [**Reinventing Recon: Nmap Meets ChatGPT**
 [How I leveled up penetration tests by pairing classic tools (NMAP) with LLMs like ChatGPT.](../2025/2025-11-24-reinventing-recon-nmap-meets-chatgpt-e2acb6130be5.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZLP5NFN99ierUaOOO-AfqQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZLP5NFN99ierUaOOO-AfqQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Network reconnaissance with Nmap generates complex output that can be difficult to interpret, especially for those new to penetration testing. By feeding Nmap scan results to ChatGPT, the process becomes significantly more accessible:
 
@@ -173,7 +173,7 @@ The detailed article provides practical examples of how ChatGPT can assist with 
 
 Moving beyond simple data upload, specialized LLM tools designed specifically for cybersecurity offer more robust capabilities. These tools understand security contexts, maintain operational awareness, and can provide more targeted assistance.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QdNL_BHstr5tbevSOq9JFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QdNL_BHstr5tbevSOq9JFQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Enhancing Penetration Testing with HackerAI
 
@@ -236,7 +236,7 @@ Model Context Protocol (MCP) represents a standardized way to connect AI assista
 [**Burp Suite MCP + Gemini CLI**
 [Connect Burp Suite to Gemini CLI using Model Context Protocol (MCP) and Turn Burp into an AI-callable toolset and…](2026-01-02-burp-suite-mcp-gemini-cli-c1229edfe092.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*M_wRiTBPsVhU1s0bLRm4Sw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*M_wRiTBPsVhU1s0bLRm4Sw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Burp Suite integration through MCP represents a significant step up from simple data upload. The MCP connection enables:
 
@@ -257,7 +257,7 @@ The detailed setup guide walks through configuring MCP to connect Burp Suite wit
 [**HexStrike-AI: A Force Multiplier for Red Teams — and a Dangerous Shift in the Threat Landscape**
 [Why AI-Orchestrated Pentesting Is a Force Multiplier for Red Teams — and a Warning Sign for Defenders](../2025/2025-12-25-hexstrike-ai-a-force-multiplier-for-red-teams-and-a-dangerous-shift-in-the-threat-landscap-3e1d4e86f3ae.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JSlq6MIVzl0_qbhQhkj0sg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JSlq6MIVzl0_qbhQhkj0sg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 HexStrike-AI represents the most comprehensive AI-driven security framework, integrating AI capabilities directly into security operations to enable autonomous reconnaissance, vulnerability assessment, and exploitation. What makes HexStrike-AI particularly powerful is its ability to understand context, adapt strategies in real-time, and execute complex multi-stage attacks with minimal human intervention.
 
@@ -343,7 +343,7 @@ The entire penetration test was initiated with**a single human language prompt**
 [**Integrating Shodan with HexStrike-AI Using Gemini-CLI**
 [A Practical Guide to AI-Driven External Reconnaissance and Vulnerability Analysis](../2025/2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pTik2hfYiFbWE1qBjVTypg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pTik2hfYiFbWE1qBjVTypg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 The Shodan integration through MCP showcases how HexStrike-AI can leverage external data sources to enhance reconnaissance capabilities. This integration enables the AI to:
 
@@ -360,7 +360,7 @@ The Shodan integration through MCP showcases how HexStrike-AI can leverage exter
 [**AI-Driven Wireless Penetration Testing. One Promt WIFI cracking**
 [Using Aircrack-ng with HexStrike-AI and Gemini-CLI](../2025/2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lCCAGtt7rn9UjHTd7sWW8w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lCCAGtt7rn9UjHTd7sWW8w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Perhaps one of the most dramatic demonstrations of AI’s capabilities was in wireless penetration testing. With a single prompt, HexStrike-AI was able to:
 
@@ -444,7 +444,7 @@ Document password recovery follows similar principles but requires understanding
 [**HexStrike+OpenAI Codex. AI-Driven Exploitation of Metasploitable.**
 [How I Used an LLM-Orchestrated Toolchain to Enumerate and Exploit a Deliberately Vulnerable Host (With Real Proofs)](2026-01-03-hexstrike-openai-codex-ai-driven-exploitation-of-metasploitable-b892c07be39f.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4ocd1zXdGiQZioUzdlPFXw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4ocd1zXdGiQZioUzdlPFXw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 One of the most impressive capabilities demonstrated was AI-driven exploit development. Using OpenAI Codex integrated with HexStrike-AI, the system was able to:
 
@@ -464,7 +464,7 @@ This represents a fundamental shift: instead of security professionals searching
 
 The most advanced level of AI integration combines MCP with development tools like Cursor AI, enabling complete workflow automation from environment setup through full penetration testing engagements. This represents the pinnacle of AI-assisted cybersecurity operations.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yaEKtemUPdg_uPV9ATI3fw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yaEKtemUPdg_uPV9ATI3fw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise
 
@@ -492,7 +492,7 @@ The detailed walkthrough provides step-by-step documentation of the entire proce
 [**HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map**
 [Why OSINT is harder than “hack the box,” what an AI-assisted workflow looks like in practice, and how to publish a real…](2026-01-11-hexstrike-cursor-for-osint-from-one-email-to-a-full-exposure-map-ffdfc7ba1b30.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*H6LZAeyo2ujtrKu9WtwKsA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*H6LZAeyo2ujtrKu9WtwKsA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Open Source Intelligence (OSINT) gathering demonstrates another powerful application of MCP + Cursor integration. Starting with just an email address, the AI was able to:
 
@@ -516,7 +516,7 @@ The detailed case study showed how a single email address led to discovery of as
 [**Building a USB Rubber Ducky with Arduino Leonardo with Cursor.**
 [Integrating Cursor AI into your hardware hacking workflow is a game-changer. From Human Prompt to Working Code](2026-01-15-building-a-usb-rubber-ducky-with-arduino-leonardo-with-cursor-a23dd64d1bbe.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*E99oa2LkXisxPhP3r3RdHA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*E99oa2LkXisxPhP3r3RdHA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Cursor AI represents a different category of AI application: code generation and assistance. When combined with MCP and security tools, it enables complete workflow automation including:
 
@@ -559,7 +559,7 @@ This workflow reduces development and deployment time from days or weeks to hour
 [**AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP.**
 [A Complete Guide to Modern AI-Powered Security Testing. From One Prompt to Full Attack Surface Coverage (Recon →…](2026-01-31-ai-assisted-web-and-cloud-penetration-testing-with-cursor-mcp-hexstrike-and-burp-suite-mcp-01c02eed5258.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*iHZmwTV7l4HO5Eth.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*iHZmwTV7l4HO5Eth.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -597,7 +597,7 @@ This article documents a comprehensive penetration test conducted using an innov
 
 AI is not only a productivity multiplier for defenders. It is also a capability amplifier for attackers — and the second-order effect is that the “average” attacker is getting dramatically more dangerous.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*v-xfdELv20VpQWw4cP56rA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*v-xfdELv20VpQWw4cP56rA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Lower Skill, Higher Impact
 

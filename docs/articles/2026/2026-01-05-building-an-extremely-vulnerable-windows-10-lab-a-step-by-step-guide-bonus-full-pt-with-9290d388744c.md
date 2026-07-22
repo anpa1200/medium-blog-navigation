@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*vxh21t1csfdILF-k8HgYBg.png"
 # Building an Extremely Vulnerable Windows 10 Lab: A Step-by-Step Guide (Bonus:Full PT with…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*vxh21t1csfdILF-k8HgYBg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vxh21t1csfdILF-k8HgYBg.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Hands-on guide to creating an intentionally insecure Windows 10 VM with open SSH, SMB, RDP, FTP, privilege escalation vectors, and sensitive data leaks
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vxh21t1csfdILF-k8HgYBg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vxh21t1csfdILF-k8HgYBg.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 - [**HexStrike on Kali Linux 2025.4: A Comprehensive Guide here**](../2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md)
 
@@ -84,7 +84,7 @@ As of 2025–2026,**VMware Workstation Player**(or the full Workstation Pro) is 
 
 ## Step 1: Download the Windows 10 ISO
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Tr0N_2V_E1UQnlVUGcyOfQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Tr0N_2V_E1UQnlVUGcyOfQ.png" alt="Article image" width="1917" height="1035" loading="lazy" decoding="async" />
 
 Microsoft provides official Windows 10 ISOs for free via their software download page. Windows 10 reached end-of-support in October 2025, but ISOs are still available for legacy or testing purposes as of January 2026.
 
@@ -404,7 +404,7 @@ Write-Host "Your lab is ready for EternalBlue, RDP, SSH brute-force, open shares
 # Write-Host "Verification complete." -ForegroundColor GreenPost-Script Steps:
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9_KCBqcAeUzhLb0j_br18Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9_KCBqcAeUzhLb0j_br18Q.png" alt="Article image" width="1904" height="860" loading="lazy" decoding="async" />
 
 ### Reboot the VM.
 
@@ -435,7 +435,7 @@ Windows 10 consumer editions (Home/Pro) do**not**support full scripted FTP site 
 
 **1-minute post-reboot step**:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Tj1swShejarsHJM0ztT0Bg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Tj1swShejarsHJM0ztT0Bg.png" alt="Article image" width="1291" height="551" loading="lazy" decoding="async" />
 
 - Search “IIS” → open Internet Information Services (IIS) Manager
 
@@ -531,7 +531,7 @@ Write-Host "REBOOT REQUIRED for full effect. Some protections may still partiall
 
 ## Quick Testing the Lab
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7pZZHH6usq4egw0fM_DDJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7pZZHH6usq4egw0fM_DDJw.png" alt="Article image" width="1105" height="556" loading="lazy" decoding="async" />
 
 ## Explanation of Introduced Vulnerabilities (Updated for v9.0 Script)
 
@@ -924,7 +924,7 @@ Gu3ss`                                                                          
  account disabled and use a different account for administrative tasks.
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vF6lByLRbEHDBkxpiZ_fEw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vF6lByLRbEHDBkxpiZ_fEw.png" alt="Article image" width="1644" height="707" loading="lazy" decoding="async" />
 
 ## Conclusion
 

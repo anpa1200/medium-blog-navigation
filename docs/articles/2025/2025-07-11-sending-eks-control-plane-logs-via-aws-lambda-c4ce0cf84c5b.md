@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*HpClsfPXDKrzN6kgTCD8zg.png"
 # Sending EKS Control Plane Logs via AWS Lambda
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*HpClsfPXDKrzN6kgTCD8zg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HpClsfPXDKrzN6kgTCD8zg.png" alt="Cover image" width="2048" height="2048" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A step-by-step guide to forwarding Amazon EKS control plane logs to SIEM/LogCOllector/XPLG using a lightweight AWS-native Lambda integration.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HpClsfPXDKrzN6kgTCD8zg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HpClsfPXDKrzN6kgTCD8zg.png" alt="Article image" width="2048" height="2048" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -67,7 +67,7 @@ These logs are**not logs from your application pods**, but from the**internal Ku
 
 Amazon EKS allows you to enable the following control plane log types:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QA7Y4qiVxTAueOmGYHycVw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QA7Y4qiVxTAueOmGYHycVw.png" alt="Article image" width="759" height="409" loading="lazy" decoding="async" />
 
 ### Why Use Control Plane Logs?
 
@@ -155,7 +155,7 @@ Unlike pod/application logs that reside inside your Kubernetes nodes,**EKS contr
 
 ## The Solution: Use AWS Lambda as a Bridge
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sFvcXg6_TQaDqCnzzfpwuA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sFvcXg6_TQaDqCnzzfpwuA.png" alt="Article image" width="2048" height="2048" loading="lazy" decoding="async" />
 
 - **CloudWatch → Lambda**
 Subscribe CloudWatch to trigger a Lambda function when logs arrive.
@@ -173,7 +173,7 @@ The Lambda function decodes, parses, and forwards the logs to XPLG over HTTP.
 
 ## What Is AWS Lambda?
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Wh0W0mplMyc2aZIHGljqMA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Wh0W0mplMyc2aZIHGljqMA.png" alt="Article image" width="2048" height="2048" loading="lazy" decoding="async" />
 
 **AWS Lambda**is a**serverless compute service**from Amazon Web Services that lets you**run code without provisioning or managing servers**.
 
@@ -181,7 +181,7 @@ You simply write your function code, and AWS runs it**in response to events**—
 
 ### Key concepts
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*STSkp73e04OcjhduLcSGgg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*STSkp73e04OcjhduLcSGgg.png" alt="Article image" width="757" height="333" loading="lazy" decoding="async" />
 
 ## Step-by-Step guide
 
@@ -189,13 +189,13 @@ You simply write your function code, and AWS runs it**in response to events**—
 
 Go to the AWS Lambda Console:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*661Md_kAWwzZToM2MWn6TQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*661Md_kAWwzZToM2MWn6TQ.png" alt="Article image" width="756" height="204" loading="lazy" decoding="async" />
 
 Open[AWS Lambda Console](https://console.aws.amazon.com/lambda).
 
 Click**“Create function”**.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Xc7LcdMEJdB4Ob8VAaCqwA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Xc7LcdMEJdB4Ob8VAaCqwA.png" alt="Article image" width="745" height="145" loading="lazy" decoding="async" />
 
 ### Configure the Function
 
@@ -209,7 +209,7 @@ Choose**“Create a new role with basic Lambda permissions”**.
 
 Click**Create function**.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*iI3bgdnqO5MgvjRHJSIAdA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*iI3bgdnqO5MgvjRHJSIAdA.png" alt="Article image" width="920" height="400" loading="lazy" decoding="async" />
 
 ### Create IAM Role for Lambda with Trust Policy
 
@@ -219,7 +219,7 @@ Specifically, this role is trusted by the Lambda service (i.e., Lambda can assum
 
 Once assumed, it gains any permissions you attach (like VPC access, logging, etc.).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MAMhVxHK9TdOrcqd2O-vzg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MAMhVxHK9TdOrcqd2O-vzg.png" alt="Article image" width="762" height="374" loading="lazy" decoding="async" />
 
 ```text
 aws iam 
@@ -256,7 +256,7 @@ create
 '
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OaswRdYFlTbRPwdmJCA4Rw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OaswRdYFlTbRPwdmJCA4Rw.png" alt="Article image" width="654" height="568" loading="lazy" decoding="async" />
 
 ### Attach Required Policies
 
@@ -385,7 +385,7 @@ configuration \
 --role <ROLE_ARN>
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Stm7FMBM0sLMjZop9PlF_A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Stm7FMBM0sLMjZop9PlF_A.png" alt="Article image" width="1235" height="797" loading="lazy" decoding="async" />
 
 **Get ARN by role name**
 
@@ -402,7 +402,7 @@ role \
 --output text
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7B4KDNcjqJxuu9xZBZ6FFg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7B4KDNcjqJxuu9xZBZ6FFg.png" alt="Article image" width="761" height="113" loading="lazy" decoding="async" />
 
 **Confirm Role is Attached. Check the attached role and policies:**
 
@@ -422,7 +422,7 @@ policies
 --role-name LambdaVPCAccessExecutionRole
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*SLIDdPWhFFT-LfsD3Z-tsg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*SLIDdPWhFFT-LfsD3Z-tsg.png" alt="Article image" width="1181" height="785" loading="lazy" decoding="async" />
 
 ### Configure VPC Access
 
@@ -444,9 +444,9 @@ Click**Save**.
 
 Or CLI version below
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*io7s_wpdI9j-3bR72tLBWA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*io7s_wpdI9j-3bR72tLBWA.png" alt="Article image" width="1148" height="551" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PRPDjHZ-PN1FBT57RmLkZQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PRPDjHZ-PN1FBT57RmLkZQ.png" alt="Article image" width="1006" height="779" loading="lazy" decoding="async" />
 
 **Get the Internal IP of the XpoLog Listener Pod**
 
@@ -456,7 +456,7 @@ get
  pods -l app=xpolog -o wide
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6jsbST35NpHL96OPx-hdqw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6jsbST35NpHL96OPx-hdqw.png" alt="Article image" width="1008" height="69" loading="lazy" decoding="async" />
 
 **Get container port:**
 
@@ -487,7 +487,7 @@ aws eks describe-cluster \
  text
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TcV2YAJXAcz5lhQh7sTvaw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TcV2YAJXAcz5lhQh7sTvaw.png" alt="Article image" width="1012" height="120" loading="lazy" decoding="async" />
 
 **Get private subnets in this VPC:**
 
@@ -504,7 +504,7 @@ subnets \
 --output table
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FVQt_yFu6KI7c8NfcSauEg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FVQt_yFu6KI7c8NfcSauEg.png" alt="Article image" width="1001" height="242" loading="lazy" decoding="async" />
 
 Choose any of the returned Subnet IDs for your Lambda.
 
@@ -520,7 +520,7 @@ query
  --output text
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PKxVyhF6wWVEB2tPWsbZHw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PKxVyhF6wWVEB2tPWsbZHw.png" alt="Article image" width="1007" height="38" loading="lazy" decoding="async" />
 
 You can reuse one of these SGs for the Lambda or create a new one.
 
@@ -554,7 +554,7 @@ ingress \
 --source-group sg-1234567890abcdef0
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ekhU2oHeXpue85qfOaCJsw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ekhU2oHeXpue85qfOaCJsw.png" alt="Article image" width="966" height="269" loading="lazy" decoding="async" />
 
 ```text
 aws ec2 authorize
@@ -597,13 +597,13 @@ configuration \
 --vpc-config SubnetIds=subnet-xxxxxxxx,subnet-yyyyyyyy,SecurityGroupIds=sg-xxxxxxxx
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*SG16GJX6aRQgV4tsLvnEwQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*SG16GJX6aRQgV4tsLvnEwQ.png" alt="Article image" width="1239" height="711" loading="lazy" decoding="async" />
 
 ## Code of Lambda:
 
 Open code bar and Insect code of your lambda
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NJk93Q75q7gcZISaIJ5JXg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NJk93Q75q7gcZISaIJ5JXg.png" alt="Article image" width="1236" height="808" loading="lazy" decoding="async" />
 
 ```text
 import
@@ -760,7 +760,7 @@ permission \
 
 Done!
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GzHH2iDsYC97-fKfNfTczw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GzHH2iDsYC97-fKfNfTczw.png" alt="Article image" width="1236" height="479" loading="lazy" decoding="async" />
 
 ## References
 

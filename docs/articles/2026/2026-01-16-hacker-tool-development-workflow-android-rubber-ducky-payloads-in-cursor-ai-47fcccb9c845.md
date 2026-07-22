@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*QaEmUvErtN2q4ES0W6xBXg.jpeg"
 # Hacker Tool Development Workflow: Android Rubber Ducky Payloads in Cursor AI
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*QaEmUvErtN2q4ES0W6xBXg.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*QaEmUvErtN2q4ES0W6xBXg.jpeg" alt="Cover image" width="1104" height="832" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From plain-English prompts to reliable HID flows — validated with emulator screenshots and telemetry
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QaEmUvErtN2q4ES0W6xBXg.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*QaEmUvErtN2q4ES0W6xBXg.jpeg" alt="Article image" width="1104" height="832" loading="lazy" decoding="async" />
 
 *When I needed to build a Rubber Ducky payload for Android, I didn’t just get code suggestions — I got a complete development workflow with visual validation, automated testing, and human-like troubleshooting.*
 
@@ -87,7 +87,7 @@ Next, Cursor configured and launched the Android emulator:
 
 **The AI’s approach:**Instead of assuming the emulator was ready, Cursor implemented a boot validation loop that checked`sys.boot_completed`and waited until Android was fully initialized before proceeding. This attention to detail prevented countless "device not ready" errors.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GpbsZo1Y9MOrwWBPLIfpKg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GpbsZo1Y9MOrwWBPLIfpKg.png" alt="Article image" width="1833" height="978" loading="lazy" decoding="async" />
 
 ## Part 2: Writing Code with Context Awareness
 
@@ -252,19 +252,19 @@ Validation: Search query successfully typed and visible
 
 ### Step 1 screenshot
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hBPrgqd759sekaXhfQi03g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hBPrgqd759sekaXhfQi03g.png" alt="Article image" width="1080" height="2280" loading="lazy" decoding="async" />
 
 ### Step 2 screenshot
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*36WgYASg_b1dzKdFCoEMBg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*36WgYASg_b1dzKdFCoEMBg.png" alt="Article image" width="1080" height="2280" loading="lazy" decoding="async" />
 
 ### Step 3 screenshot
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bd1kGksAP2XsKQyVB447Dg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bd1kGksAP2XsKQyVB447Dg.png" alt="Article image" width="1080" height="2280" loading="lazy" decoding="async" />
 
 ### Step 4 screenshot
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PaYeIxhOYlrWQrbFDz4Lmw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PaYeIxhOYlrWQrbFDz4Lmw.png" alt="Article image" width="1080" height="2280" loading="lazy" decoding="async" />
 
 **What this means:**Cursor used image analysis to verify:
 
@@ -444,7 +444,7 @@ This wasn’t “AI replacing developers” — it was**AI amplifying developer 
 
 **The result:**A fully validated, production-ready payload in hours instead of days
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8e1ySSAtORpx-2jSTJNdGQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8e1ySSAtORpx-2jSTJNdGQ.png" alt="Article image" width="1920" height="1070" loading="lazy" decoding="async" />
 
 .
 

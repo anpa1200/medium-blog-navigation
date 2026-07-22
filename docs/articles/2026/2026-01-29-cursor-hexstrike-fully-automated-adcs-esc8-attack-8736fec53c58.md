@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*npVtspHqp4Ac88UEt_5ziQ.png"
 # Cursor + Hexstrike. Fully Automated ADCS ESC8 Attack
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*npVtspHqp4Ac88UEt_5ziQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*npVtspHqp4Ac88UEt_5ziQ.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### One-Prompt Domain Compromise
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*npVtspHqp4Ac88UEt_5ziQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*npVtspHqp4Ac88UEt_5ziQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Abstract
 

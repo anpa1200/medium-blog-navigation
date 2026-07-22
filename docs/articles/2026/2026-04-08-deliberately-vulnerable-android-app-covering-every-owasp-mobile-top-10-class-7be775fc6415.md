@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*aOYKFwIgWfQhN6th500kng.png"
 # Deliberately Vulnerable Android App Covering Every OWASP Mobile Top 10 Class
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*aOYKFwIgWfQhN6th500kng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aOYKFwIgWfQhN6th500kng.png" alt="Cover image" width="1024" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A hands-on reference for mobile security researchers, bug bounty hunters, and anyone preparing for Android penetration testing.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aOYKFwIgWfQhN6th500kng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aOYKFwIgWfQhN6th500kng.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -51,7 +51,7 @@ So I built one from scratch.
 
 This article walks through what I built, why each vulnerability is interesting, and how to exploit every single one of them.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*xaKFrUmdndPfyuQz.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*xaKFrUmdndPfyuQz.png" alt="Article image" width="1280" height="720" loading="lazy" decoding="async" />
 
 [**GitHub - anpa1200/Vulnerable-APK**
 *Contribute to anpa1200/Vulnerable-APK development by creating an account on GitHub.*github.com](https://github.com/anpa1200/Vulnerable-APK)[](https://github.com/anpa1200/Vulnerable-APK)

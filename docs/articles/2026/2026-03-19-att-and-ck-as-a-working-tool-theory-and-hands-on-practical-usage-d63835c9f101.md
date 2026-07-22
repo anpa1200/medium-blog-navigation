@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*erhDw-Zg56_rlj9jR9y4bw.png"
 # ATT&CK as a Working Tool: Theory and Hands-On Practical Usage
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*erhDw-Zg56_rlj9jR9y4bw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*erhDw-Zg56_rlj9jR9y4bw.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practitioner’s guide for CTI analysts, detection engineers, and threat hunters
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*erhDw-Zg56_rlj9jR9y4bw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*erhDw-Zg56_rlj9jR9y4bw.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -169,13 +169,13 @@ ATT&CK is visualized as a matrix — a grid where columns are tactics and cells 
 
 **The four-level hierarchy of the framework:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*V78DoyZ3Ng6q-PoP9zpyCg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*V78DoyZ3Ng6q-PoP9zpyCg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Each level answers a different question. Tactics answer*why*. Techniques answer*what*. Sub-techniques answer*how, specifically*. Procedures answer*who did what, exactly, in which incident*.
 
 ### The Matrix Visualization
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*58NRU_k5_axHQ0x8ugkPIQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*58NRU_k5_axHQ0x8ugkPIQ.png" alt="Article image" width="1909" height="1005" loading="lazy" decoding="async" />
 
 Every cell in the matrix is a technique. Techniques that have sub-techniques appear with a small triangle indicator on the website — clicking expands the sub-technique list. Techniques without sub-techniques stand alone.
 
@@ -183,19 +183,19 @@ Every cell in the matrix is a technique. Techniques that have sub-techniques app
 
 When you click on any technique — for example, T1566.001 (Spearphishing Attachment) — you land on a page with a standardized structure. Understanding this structure is essential, because the technique page is your primary working document:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nv3QVONsBNbOOiCSIhXCkw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nv3QVONsBNbOOiCSIhXCkw.png" alt="Article image" width="1909" height="1005" loading="lazy" decoding="async" />
 
 **Description:**A detailed explanation of what the technique is, why adversaries use it, what variations exist in the wild, and what makes it effective. Read this section carefully. The description contains behavioral nuances that inform both detection logic and mapping decisions.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*21UxoiCvN_Xf6_XKp2sRXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*21UxoiCvN_Xf6_XKp2sRXQ.png" alt="Article image" width="936" height="570" loading="lazy" decoding="async" />
 
 **Procedure Examples:**A curated list of real-world usages by specific threat groups and malware families, each linked to the Groups or Software entry where the evidence originated. This is the empirical backbone of ATT&CK — every entry comes from a real incident with documented evidence. When you read “APT29 used spearphishing attachments in the following campaigns,” those claims are sourced to government advisories, vendor reports, or IR findings.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*glFqAf20GzO5pDxnPU6QtA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*glFqAf20GzO5pDxnPU6QtA.png" alt="Article image" width="1401" height="727" loading="lazy" decoding="async" />
 
 **Mitigations:**Recommended preventive controls, linked to ATT&CK’s Mitigation entries (M-codes). For T1566.001, mitigations include user training (M1017), antivirus/antimalware (M1049), and software configuration (M1054). These are useful for writing defensive recommendations in CTI reports.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rmVNzuzSGh9rRbSwXxnKGw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rmVNzuzSGh9rRbSwXxnKGw.png" alt="Article image" width="1400" height="493" loading="lazy" decoding="async" />
 
 **Detection:**The most actionable section for detection engineers and threat hunters. This section lists:
 
@@ -203,25 +203,25 @@ When you click on any technique — for example, T1566.001 (Spearphishing Attach
 
 - **Detection approaches**— what patterns, behaviors, or anomalies to look for in that telemetry
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nCnlFUXhMKzjNCVOu5uQiQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nCnlFUXhMKzjNCVOu5uQiQ.png" alt="Article image" width="1388" height="397" loading="lazy" decoding="async" />
 
 **References:**Every claim in ATT&CK is cited. The references section lists the primary sources — vendor threat reports, government advisories, academic papers, blog posts from reputable researchers. If you need to verify an ATT&CK claim or read the original evidence, start here.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*iYPm4hkZSzIpU82jEbqMcA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*iYPm4hkZSzIpU82jEbqMcA.png" alt="Article image" width="1457" height="656" loading="lazy" decoding="async" />
 
 ## The Groups and Software Pages
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6fcZobzWimWRGb4Cl1Y2dQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6fcZobzWimWRGb4Cl1Y2dQ.png" alt="Article image" width="1919" height="228" loading="lazy" decoding="async" />
 
 ATT&CK maintains two additional knowledge bases tightly integrated with the technique matrix:
 
 **Groups (G-codes):**Entries for known threat actor groups, organized by their ATT&CK ID. For example, G0016 is APT29, G0034 is Sandworm, G0065 is Leviathan/APT40. Each group page lists: all techniques observed being used by that group (with procedure examples), associated software/tools, and references. When you want to understand what a specific threat actor does, the Group page is your starting point.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7Tov_rgEv9Pi79mN4TKDow.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7Tov_rgEv9Pi79mN4TKDow.png" alt="Article image" width="1909" height="1013" loading="lazy" decoding="async" />
 
 **Software (S-codes):**Entries for malware families, tools, and utilities used by adversaries. For example, S0002 is Mimikatz, S0105 is dsquery, S0154 is Cobalt Strike. Each software entry lists which techniques it implements and which groups use it. This allows you to chain threat actor → tool → technique in both directions.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rQVlx1n9jSV-m3k5Ap5rvA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rQVlx1n9jSV-m3k5Ap5rvA.png" alt="Article image" width="1909" height="1013" loading="lazy" decoding="async" />
 
 Understanding these three linked knowledge bases — Techniques, Groups, Software — gives you a complete picture of adversary behavior that is far richer than the matrix alone.
 
@@ -235,7 +235,7 @@ This distinction is critical:**tactics are not sequential phases**. They are cat
 
 ### The 14 Enterprise Tactics in Depth
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uPpeUw9IVARgq3YL0IjhQg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uPpeUw9IVARgq3YL0IjhQg.png" alt="Article image" width="800" height="1064" loading="lazy" decoding="async" />
 
 Note that**Reconnaissance**and**Resource Development**are pre-compromise tactics — they describe what the adversary does*before*breaching the target environment. This is important for CTI analysts: intelligence about these tactics (infrastructure acquisition, typosquatting domains, persona creation) can enable*anticipatory*defense, not just reactive response.
 
@@ -376,7 +376,7 @@ shadow
         → Directly reading Linux credential files
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sVtqFmRcDqinefPg3OYZ3g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sVtqFmRcDqinefPg3OYZ3g.png" alt="Article image" width="1909" height="1013" loading="lazy" decoding="async" />
 
 Each sub-technique has its own detection profile, data sources, and procedure examples. T1003.001 (LSASS) is detected via Sysmon EventID 10 (process access). T1003.003 (NTDS) is detected via ntdsutil.exe execution, VSSAdmin commands, and NTDS.dit file access monitoring. T1003.006 (DCSync) is detected via Windows Event 4662 (directory service replication) on domain controllers. These are completely different detection approaches despite all belonging to the same parent technique.
 
@@ -458,7 +458,7 @@ In CTI report writing:**document procedures in your narrative, map them to techn
 
 ## 5. ATT&CK Domains: Enterprise, Mobile, ICS
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ifYb-t8FiWr9yhb5B5ABzg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ifYb-t8FiWr9yhb5B5ABzg.png" alt="Article image" width="1909" height="1013" loading="lazy" decoding="async" />
 
 ATT&CK is not a single matrix — it is three distinct knowledge bases, each organized around a different platform context. Failing to specify which domain you are mapping to is an analytical error.
 
@@ -480,7 +480,7 @@ For the majority of corporate threat intelligence work, Enterprise is the defaul
 
 ### Mobile ATT&CK
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*k4LgPzayCeM2TfB1_SE7IA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*k4LgPzayCeM2TfB1_SE7IA.png" alt="Article image" width="1909" height="1013" loading="lazy" decoding="async" />
 
 Mobile ATT&CK covers adversary behavior targeting**Android and iOS**devices. It includes tactics and techniques that have no Enterprise equivalent, reflecting the fundamentally different attack surface of mobile platforms:
 
@@ -494,7 +494,7 @@ Mobile ATT&CK is used primarily by teams tracking mobile surveillance tooling (P
 
 ### ICS ATT&CK
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jum8eXRqdOEi13EH5yNvYg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jum8eXRqdOEi13EH5yNvYg.png" alt="Article image" width="1909" height="1013" loading="lazy" decoding="async" />
 
 ICS (Industrial Control Systems) ATT&CK covers adversary behavior targeting operational technology environments: SCADA systems, PLCs (Programmable Logic Controllers), HMIs (Human-Machine Interfaces), engineering workstations, and safety systems.
 
@@ -537,7 +537,7 @@ In practice, a CTI analyst uses ATT&CK in five core workflows. These are not the
  COMMUNICATING — Writing intelligence that other teams can act on immediately
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*U1CjQkFlcCsPx9nOKac1qg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*U1CjQkFlcCsPx9nOKac1qg.png" alt="Article image" width="1376" height="768" loading="lazy" decoding="async" />
 
 Each workflow is covered in a dedicated use case section below. But before going hands-on, the most important thing to internalize is the analyst mindset that makes these workflows produce reliable results.
 
@@ -631,7 +631,7 @@ For each atomic behavior, identify:
 
 - The most specific sub-technique the evidence supports
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rrBJ4BvnPyUnuO5yjymQFw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rrBJ4BvnPyUnuO5yjymQFw.png" alt="Article image" width="800" height="674" loading="lazy" decoding="async" />
 
 **Step 4: Assign confidence labels consistently**
 
@@ -649,7 +649,7 @@ The password-protected ZIP in the example above gets Medium confidence not becau
 
 The output of mapping is a formatted table that lives in your report’s ATT&CK section. Minimum fields:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bA0cTR0EkbOowgveyqjkbg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bA0cTR0EkbOowgveyqjkbg.png" alt="Article image" width="800" height="246" loading="lazy" decoding="async" />
 
 This table, plus a Navigator layer export, constitutes a complete ATT&CK-mapped deliverable. Anyone on any team can read it and immediately know what tools they need, what data sources they need to check, and what detection rules they need to build.
 
@@ -657,7 +657,7 @@ This table, plus a Navigator layer export, constitutes a complete ATT&CK-mapped 
 
 Handala Hack Group (also tracked as Void Manticore / BANISHED KITTEN) provides a concrete real-world mapping exercise. From published threat reporting and the CTI research assessment:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IXs8HItM3gorKpntSyiFTA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IXs8HItM3gorKpntSyiFTA.png" alt="Article image" width="800" height="708" loading="lazy" decoding="async" />
 
 **References for this section:**
 
@@ -697,7 +697,7 @@ This level of rigor in evidence labeling is what distinguishes a production CTI 
 
 [https://mitre-attack.github.io/attack-navigator/](https://mitre-attack.github.io/attack-navigator/)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6cSY-TyisWgZuVO-j3siGQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6cSY-TyisWgZuVO-j3siGQ.png" alt="Article image" width="1915" height="592" loading="lazy" decoding="async" />
 
 **ATT&CK Navigator**is the official open-source visualization tool for the ATT&CK matrix. It is a browser-based application that lets you create, layer, and compare color-coded representations of the ATT&CK matrix. It is the primary tool for coverage analysis, threat actor profiling, and communicating detection status to both technical and non-technical audiences.
 
@@ -715,7 +715,7 @@ This workflow answers: “What does my current detection coverage look like agai
 
 - Open Navigator → click “Create New Layer” → select “ATT&CK Enterprise” and the current version
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nh9QZZgN_drS4eRJG0bJIA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nh9QZZgN_drS4eRJG0bJIA.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 2. You will see the full matrix with all techniques visible but uncolored (gray)
 
@@ -735,7 +735,7 @@ This workflow answers: “What does my current detection coverage look like agai
 
 - Uncolored cells = your blind spots
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*buccqEKYuD4aDF3oCs0Qkw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*buccqEKYuD4aDF3oCs0Qkw.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 The resulting green-yellow-gray heatmap is your**detection coverage layer**.
 
@@ -751,7 +751,7 @@ This workflow answers: “What techniques does my priority threat actor use?”
 
 - The layer automatically loads with the actor’s known techniques highlighted
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-i_KMpBXpK5tDFv86zxIhQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-i_KMpBXpK5tDFv86zxIhQ.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 Json:
 
@@ -2142,7 +2142,7 @@ false
 }
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CH7nOa6LZ5eKOOLltiqSkw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CH7nOa6LZ5eKOOLltiqSkw.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 Alternatively, for actors that MITRE doesn’t have a Group entry for (e.g., newly emerged groups, actors tracked under internal names), you can manually build a profile by creating a new layer and coloring techniques based on your own CTI analysis.
 
@@ -2156,7 +2156,7 @@ This is the most powerful Navigator workflow. It answers: “Which techniques do
 
 - Click the tab that says “new layer” → select “Create Layer from Other Layers”
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HE_VeO47o8iX9S35c2EcZQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HE_VeO47o8iX9S35c2EcZQ.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 4. In the layer operation dialog, select both layers and configure the scoring:
 
@@ -2170,9 +2170,9 @@ This is the most powerful Navigator workflow. It answers: “Which techniques do
 
 The resulting view reveals three categories:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OghOZ8PdNEg856xw8uGdCw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OghOZ8PdNEg856xw8uGdCw.png" alt="Article image" width="800" height="277" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pUmqRjpcmON-1wByU9qvKQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pUmqRjpcmON-1wByU9qvKQ.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 **Workflow 4: Prioritized gap output**
 
@@ -2533,11 +2533,11 @@ in
  your coverage tracking.
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*adamlaQ9vKWz4fz7HMBjDQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*adamlaQ9vKWz4fz7HMBjDQ.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ### ATT&CK Data Sources — The Underused Feature
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1NmCE9JZLzKsd1BoxQXJdQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1NmCE9JZLzKsd1BoxQXJdQ.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 The**Data Sources**section of every ATT&CK technique page is one of the most actionable parts of the framework, and one of the most frequently overlooked.
 
@@ -2869,7 +2869,7 @@ ATT&CK is the operational language that makes this collaboration work. The red t
 
 ### Atomic Red Team: The Foundational Library
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Ddh4uQiqfk1nwXiuSky0Kw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Ddh4uQiqfk1nwXiuSky0Kw.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 [https://www.atomicredteam.io/](https://www.atomicredteam.io/)
 
@@ -3015,7 +3015,7 @@ for
 
 ### VECTR for Tracking
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*LKoJHGiHtGcqX418)
+<img src="https://cdn-images-1.medium.com/max/800/0*LKoJHGiHtGcqX418" alt="Article image" width="431" height="117" loading="lazy" decoding="async" />
 
 **VECTR**(by Security Risk Advisors) is an open-source platform designed specifically for tracking adversary emulation and purple team exercise results. It stores campaigns, test cases, and outcomes organized by ATT&CK technique, and generates coverage metrics and trend reports over time.
 
@@ -3037,7 +3037,7 @@ The combination of Atomic Red Team (test execution) + VECTR (tracking) + Navigat
 
 [https://caldera.mitre.org/](https://caldera.mitre.org/)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OYq3Ws-W3e0iiqClSWDF0g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OYq3Ws-W3e0iiqClSWDF0g.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 **CALDERA**is MITRE’s own adversary emulation platform. Unlike Atomic Red Team (which runs discrete tests manually), CALDERA operates as a persistent C2 framework that autonomously chains techniques together, mimicking the behavior of an actual adversary making decisions in your environment.
 
@@ -4267,7 +4267,7 @@ Read through the scenario and list every discrete adversary action:
 
 **Or upload Navigator ready JSON from the previous step:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*qbnFpX-X_UTP6rrUN9c5iw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qbnFpX-X_UTP6rrUN9c5iw.png" alt="Article image" width="1920" height="1013" loading="lazy" decoding="async" />
 
 ### Step 4: Detection Priority Analysis
 
@@ -4671,11 +4671,11 @@ Each hunt hypothesis is directly derived from the ATT&CK mapping, provides a spe
 
 ### Core ATT&CK Knowledge Base Tools
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uBP9RhdrnzX-2P6oFx8Y7Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uBP9RhdrnzX-2P6oFx8Y7Q.png" alt="Article image" width="800" height="318" loading="lazy" decoding="async" />
 
 ### Detection Engineering
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*O8-1WzwzwCFrrlxOPto1qA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*O8-1WzwzwCFrrlxOPto1qA.png" alt="Article image" width="800" height="1481" loading="lazy" decoding="async" />
 
 **DeTT&CT in more detail:**Most Navigator coverage maps are aspirational — they show techniques where*a rule exists*, not techniques where*a rule has been validated against real telemetry*. DeTT&CT forces you to score separately:
 
@@ -4701,11 +4701,11 @@ dettect v -fd data_sources.yaml -fd detections.yaml -l
 
 ### Adversary Emulation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Jc2he5MZz-K5_chqutnBCw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Jc2he5MZz-K5_chqutnBCw.png" alt="Article image" width="800" height="558" loading="lazy" decoding="async" />
 
 ### Threat Intelligence Platforms with ATT&CK Integration
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Ya-nGNmMoKQmUSSFcVvXjg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Ya-nGNmMoKQmUSSFcVvXjg.png" alt="Article image" width="800" height="647" loading="lazy" decoding="async" />
 
 ## 14. Common Pitfalls and Analyst Mistakes
 
@@ -4771,7 +4771,7 @@ Understanding what goes wrong is as important as understanding what goes right. 
 
 ## 15. ATT&CK in a CTI Workflow: Putting It All Together
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BBSyywdLsnE3ToB7Jhh0GQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BBSyywdLsnE3ToB7Jhh0GQ.png" alt="Article image" width="1376" height="768" loading="lazy" decoding="async" />
 
 ### The Intelligence Cycle with ATT&CK Integration
 

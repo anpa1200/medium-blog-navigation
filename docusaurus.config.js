@@ -7,7 +7,7 @@ const articleRouteBase = embeddedArchive ? 'read' : 'docs/articles';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '1200km Security Research Articles',
+  title: '1200km',
   tagline: 'A local archive of security research, technical guides, case studies, and lab notes.',
   favicon: 'img/favicon.svg',
 
@@ -50,12 +50,6 @@ const config = {
 
   themeConfig: {
     image: 'img/favicon.svg',
-    metadata: [
-      {
-        name: 'keywords',
-        content: 'Andrey Pautov blog, threat intelligence articles, CTI research, detection engineering articles, malware analysis, Medium security research, 1200km, InfoSec Write-ups, security blog',
-      },
-    ],
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -75,10 +69,10 @@ const config = {
       items: embeddedArchive ? [
         {to: '/', label: 'All Articles', position: 'left'},
         {to: `/${articleRouteBase}`, label: 'Browse by Year', position: 'left'},
-        {href: 'https://1200km.com/guides.html', label: 'Guides', position: 'left'},
-        {href: 'https://1200km.com/projects.html', label: 'Projects', position: 'left'},
-        {href: 'https://1200km.com/search.html', label: 'Search 1200km', position: 'right'},
-        {href: 'https://1200km.com/', label: '1200km Home', position: 'right', className: 'navbar-portfolio-btn'},
+        {href: 'https://1200km.com/guides.html', target: '_self', label: 'Guides', position: 'left'},
+        {href: 'https://1200km.com/projects.html', target: '_self', label: 'Projects', position: 'left'},
+        {href: 'https://1200km.com/search.html', target: '_self', label: 'Search 1200km', position: 'right'},
+        {href: 'https://1200km.com/', target: '_self', label: '1200km Home', position: 'right', className: 'navbar-portfolio-btn'},
       ] : [
         {to: '/', label: 'Navigator', position: 'left'},
         {to: '/docs/analysis', label: 'Analysis', position: 'left'},
@@ -112,16 +106,16 @@ const config = {
           items: [
             {label: 'All Articles', to: '/'},
             {label: 'Browse by Year', to: `/${articleRouteBase}`},
-            {label: 'Research', href: 'https://1200km.com/cti.html'},
-            {label: 'Guides', href: 'https://1200km.com/guides.html'},
+            {label: 'Research', href: 'https://1200km.com/cti.html', target: '_self'},
+            {label: 'Guides', href: 'https://1200km.com/guides.html', target: '_self'},
           ],
         },
         {
           title: '1200km',
           items: [
-            {label: 'Projects', href: 'https://1200km.com/projects.html'},
-            {label: 'Privacy / Data Handling', href: 'https://1200km.com/privacy.html'},
-            {label: 'Contact', href: 'https://1200km.com/about.html#contact'},
+            {label: 'Projects', href: 'https://1200km.com/projects.html', target: '_self'},
+            {label: 'Privacy / Data Handling', href: 'https://1200km.com/privacy.html', target: '_self'},
+            {label: 'Contact', href: 'https://1200km.com/about.html#contact', target: '_self'},
             {label: 'GitHub', href: 'https://github.com/anpa1200'},
           ],
         },

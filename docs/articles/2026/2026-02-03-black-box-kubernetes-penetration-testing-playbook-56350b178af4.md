@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*OdO8A_MyNsWJmhj5lKNCew.png"
 # Black-Box Kubernetes Penetration Testing Playbook
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*OdO8A_MyNsWJmhj5lKNCew.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OdO8A_MyNsWJmhj5lKNCew.png" alt="Cover image" width="1024" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Manual, End-to-End Walkthrough from First Signal to Cluster Takeover
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OdO8A_MyNsWJmhj5lKNCew.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OdO8A_MyNsWJmhj5lKNCew.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -110,7 +110,7 @@ jq --version
 nmap --version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-MPJNP8v5MGNgl9KaGshyw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-MPJNP8v5MGNgl9KaGshyw.png" alt="Article image" width="1916" height="389" loading="lazy" decoding="async" />
 
 ## Pre-Testing Setup
 
@@ -199,7 +199,7 @@ min
 
 **What you’ll see**: nmap will show you a list of open ports. Here’s what we discovered during testing:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ahCaMVUi5ASX3JL7zjXCxg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ahCaMVUi5ASX3JL7zjXCxg.png" alt="Article image" width="1850" height="493" loading="lazy" decoding="async" />
 
 **Understanding the results**:
 
@@ -256,7 +256,7 @@ connect
 
 **Why this matters**: Web applications often have vulnerabilities. This looks like a search function, which might be vulnerable to SQL injection.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*37Abxu4YimGdTak1u3D9Uw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*37Abxu4YimGdTak1u3D9Uw.png" alt="Article image" width="1905" height="578" loading="lazy" decoding="async" />
 
 ### Testing Port 30081
 
@@ -287,7 +287,7 @@ connect
 
 **Why this matters**: An API that executes system commands is extremely dangerous. This is a command injection vulnerability waiting to be exploited.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CV5xNCL5jZd9h_hHH3-JEA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CV5xNCL5jZd9h_hHH3-JEA.png" alt="Article image" width="1915" height="501" loading="lazy" decoding="async" />
 
 ### Testing Port 30082 — THE GOLDMINE!
 
@@ -318,7 +318,7 @@ connect
 
 **Why this matters**: This is our**BEST ENTRY POINT**! If we can get a Kubernetes service account token, we can potentially access the entire cluster.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yagbxQc3TB4bpGakPt_KlQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yagbxQc3TB4bpGakPt_KlQ.png" alt="Article image" width="1900" height="386" loading="lazy" decoding="async" />
 
 ### Testing Port 8443 (Kubernetes API)
 
@@ -346,7 +346,7 @@ curl -k -s --connect-timeout
 
 **Why this matters**: Once we get a token from port 30082, we can use it here to access the cluster.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fylUXysFHLmXNatcygtdZQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fylUXysFHLmXNatcygtdZQ.png" alt="Article image" width="1911" height="249" loading="lazy" decoding="async" />
 
 ### Step 3: Save Your Findings
 
@@ -469,7 +469,7 @@ curl -s http://192.168.49.2:30082/api/token
 
 **Understanding the token**: The token is a JWT (JSON Web Token). It’s a long string of characters that represents our identity in the Kubernetes cluster. Think of it like a key card that gives us access.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*R0KPsneUvvMjY9ldpuPwnA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*R0KPsneUvvMjY9ldpuPwnA.png" alt="Article image" width="1916" height="187" loading="lazy" decoding="async" />
 
 ### Step 2: Extract Just the Token Value
 
@@ -603,7 +603,7 @@ https://192.168.49.2:8443/api/v1/namespaces
 }
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*J88dgos7BB5NqquaZ9IZgA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*J88dgos7BB5NqquaZ9IZgA.png" alt="Article image" width="1916" height="888" loading="lazy" decoding="async" />
 
 ### Step 4: Check What Permissions We Have
 
@@ -690,7 +690,7 @@ vulnerable-sa-1/vulnerable-lab
 
 **Why this is critical**: We just went from zero access to full cluster control in one step. This is a serious security issue.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zVhWLztr0mOhK8-IxXDKbw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zVhWLztr0mOhK8-IxXDKbw.png" alt="Article image" width="1916" height="888" loading="lazy" decoding="async" />
 
 ## Phase 2: Information Disclosure
 
@@ -730,7 +730,7 @@ $TOKEN
 '.items[].metadata.name'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OsG0jCmTx1kQBpHjG6u_Jg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OsG0jCmTx1kQBpHjG6u_Jg.png" alt="Article image" width="1597" height="143" loading="lazy" decoding="async" />
 
 **The command explained**:
 
@@ -796,7 +796,7 @@ vulnerable-lab/privileged-container-1-db8b64ccf-dfjkx
 ...
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*P2U_jY7LTL3ZLYlAGhx6cA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*P2U_jY7LTL3ZLYlAGhx6cA.png" alt="Article image" width="1573" height="577" loading="lazy" decoding="async" />
 
 **What this tells us**: We can see there are multiple vulnerable applications, a MySQL database, and some privileged containers (which are security risks).
 
@@ -818,7 +818,7 @@ $TOKEN
 '.items[] | "\(.metadata.namespace)/\(.metadata.name)"'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ayXVKhovStrVirSxeRNExQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ayXVKhovStrVirSxeRNExQ.png" alt="Article image" width="1900" height="54" loading="lazy" decoding="async" />
 
 **What you’ll get**: A list of secrets. During testing, we found secrets in the kube-system namespace.
 
@@ -844,7 +844,7 @@ $TOKEN
 
 **What you’ll get**: A list of service accounts. We’re particularly interested in the one we’re using:`vulnerable-lab/vulnerable-sa-1`.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4quywrtYt6lKcedLfZgk6g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4quywrtYt6lKcedLfZgk6g.png" alt="Article image" width="1912" height="822" loading="lazy" decoding="async" />
 
 ### Step 5: List Cluster Roles
 
@@ -864,7 +864,7 @@ $TOKEN
 '.items[].metadata.name'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*k4Cyx5ek1vy_KgblM85p-g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*k4Cyx5ek1vy_KgblM85p-g.png" alt="Article image" width="1897" height="534" loading="lazy" decoding="async" />
 
 **What you’ll get**: A list of cluster roles including:
 
@@ -927,7 +927,7 @@ curl -k -s -X POST \
 
 **What this confirms**: We have`"allowed": true`with cluster-admin permissions.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2aYoycyJao9D5c_5KGVbRg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2aYoycyJao9D5c_5KGVbRg.png" alt="Article image" width="1880" height="225" loading="lazy" decoding="async" />
 
 ### Step 2: Test Creating a Resource
 
@@ -982,7 +982,7 @@ curl -k -s -X POST \
   https://192.168.49.2:8443/api/v1/namespaces/vulnerable-lab/configmaps
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oAn_HoUSh1uLFUofbGKbxQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oAn_HoUSh1uLFUofbGKbxQ.png" alt="Article image" width="1696" height="798" loading="lazy" decoding="async" />
 
 **What this does**: Creates a ConfigMap resource in the vulnerable-lab namespace.
 
@@ -1043,7 +1043,7 @@ kubectl config use-context vulnerable-context
 
 - **use-context**— Makes this our active configuration
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3WPQmpGRmBBEGMcY9p_Fvg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3WPQmpGRmBBEGMcY9p_Fvg.png" alt="Article image" width="1435" height="369" loading="lazy" decoding="async" />
 
 ### Step 2: Test kubectl Access
 
@@ -1074,7 +1074,7 @@ get
 
 **Why this is better**: Now we can use simple commands instead of long curl requests!
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6s-huqrMqlAKrMbLqP0LfQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6s-huqrMqlAKrMbLqP0LfQ.png" alt="Article image" width="1249" height="942" loading="lazy" decoding="async" />
 
 ### Step 3: Get Detailed Information
 
@@ -1141,7 +1141,7 @@ get
 
 **What this shows us**: We can see the ClusterRoleBinding that gives our service account cluster-admin permissions. This is the misconfiguration that allows our attack.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6rR1SFyHlw1EFC5mQSJIhw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6rR1SFyHlw1EFC5mQSJIhw.png" alt="Article image" width="1325" height="939" loading="lazy" decoding="async" />
 
 ## Phase 5: Lateral Movement
 
@@ -1181,7 +1181,7 @@ id
 "}'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*km_-U4HVk7z7bXL4MzJFrw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*km_-U4HVk7z7bXL4MzJFrw.png" alt="Article image" width="1319" height="98" loading="lazy" decoding="async" />
 
 **What this does**:
 
@@ -1242,7 +1242,7 @@ curl -s -X POST http://192.168.49.2:30081/api/execute \
 '{"command":"env"}'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7b0w8mCRbgnnAD6jgS4WNw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7b0w8mCRbgnnAD6jgS4WNw.png" alt="Article image" width="1918" height="957" loading="lazy" decoding="async" />
 
 ### Step 2: Extract Environment Variables
 
@@ -1257,7 +1257,7 @@ curl -s -X POST http://192.168.49.2:30081/api/execute \
 curl -s http://192.168.49.2:30081/api/env
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jBoxjfcXU0Ib8de___n65Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jBoxjfcXU0Ib8de___n65Q.png" alt="Article image" width="1874" height="451" loading="lazy" decoding="async" />
 
 **What you’ll get**: A JSON response with all environment variables. During testing, we found:
 
@@ -1287,7 +1287,7 @@ curl -s
 "http://192.168.49.2:30080/?username=test"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9RdpTe9h2IBxDU2ttrKmpg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9RdpTe9h2IBxDU2ttrKmpg.png" alt="Article image" width="1857" height="734" loading="lazy" decoding="async" />
 
 **SQL injection test**:
 
@@ -1370,7 +1370,7 @@ true
 '
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kWCT0ljoDutnm-UL_SV7OQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kWCT0ljoDutnm-UL_SV7OQ.png" alt="Article image" width="1684" height="302" loading="lazy" decoding="async" />
 
 **What this does**:
 
@@ -1418,7 +1418,7 @@ ls
  -la /var/run/docker.sock
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Myp0iphzGKJr9BoeyAI7pA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Myp0iphzGKJr9BoeyAI7pA.png" alt="Article image" width="1655" height="214" loading="lazy" decoding="async" />
 
 **What this does**:
 
@@ -1456,7 +1456,7 @@ ls
  -la /host/etc
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XxqwCgWYVoAQcuaEforAQQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XxqwCgWYVoAQcuaEforAQQ.png" alt="Article image" width="1333" height="914" loading="lazy" decoding="async" />
 
 **What this does**: Accesses the host’s`/etc`directory through a mounted volume.
 
@@ -1575,7 +1575,7 @@ kubectl get pod attacker-pod -n vulnerable-lab
 
 **What this proves**: We can create any pod we want with any privileges. This is full cluster control.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LJdu4tYLXoVYfJqV7lnmYQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LJdu4tYLXoVYfJqV7lnmYQ.png" alt="Article image" width="1362" height="265" loading="lazy" decoding="async" />
 
 ### Step 2: Extract All Secrets
 
@@ -1774,7 +1774,7 @@ cat
 
 **What this proves**: We have complete access to the node’s filesystem. We can read any file, modify system configurations, or install backdoors.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4ganMN-iM_fHMicD6wcc1Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4ganMN-iM_fHMicD6wcc1Q.png" alt="Article image" width="1319" height="970" loading="lazy" decoding="async" />
 
 ### Step 4: Create a Persistent Backdoor
 
@@ -1874,7 +1874,7 @@ kubectl get daemonset backdoor -n vulnerable-lab
 kubectl get pods -n vulnerable-lab -l app=backdoor
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xue3GXs-sNMBtyEOgqcWUA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xue3GXs-sNMBtyEOgqcWUA.png" alt="Article image" width="1273" height="348" loading="lazy" decoding="async" />
 
 **What this does**: Creates a pod on every node in the cluster. Even if someone deletes one, it will be recreated automatically.
 

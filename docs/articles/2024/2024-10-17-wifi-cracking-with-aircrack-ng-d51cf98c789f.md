@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*0XqS3oQbLgBhWQl7.png"
 # WiFi cracking with Aircrack-ng
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*0XqS3oQbLgBhWQl7.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*0XqS3oQbLgBhWQl7.png" alt="Cover image" width="1980" height="1188" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### In this article, I am going to explain how you can crack a WiFi network using Aircrack-ng and the PPG — Personal Pass Generator tools.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*0XqS3oQbLgBhWQl7.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*0XqS3oQbLgBhWQl7.png" alt="Article image" width="1980" height="1188" loading="lazy" decoding="async" />
 
 - **AI-Driven Wireless Penetration Testing — One Prompt Wi-Fi Cracking**
 [../2025/2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md](../2025/2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md)
@@ -83,7 +83,7 @@ To check if your network card supports monitor mode on a Linux-based operating s
 
 List available network interfaces:
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*RnNwE_JFgPShCCek)
+<img src="https://cdn-images-1.medium.com/max/800/0*RnNwE_JFgPShCCek" alt="Article image" width="821" height="436" loading="lazy" decoding="async" />
 
 ### Enabling Monitor Mode:
 
@@ -132,7 +132,7 @@ iwconfig
 
 Check the output to see if the interface’s mode has changed to “Monitor.” If it has, this indicates that your network card supports monitor mode.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*vLxh_7R8xKtt652c)
+<img src="https://cdn-images-1.medium.com/max/800/0*vLxh_7R8xKtt652c" alt="Article image" width="808" height="413" loading="lazy" decoding="async" />
 
 ### What is Monitor Mode?
 
@@ -270,7 +270,7 @@ Monitor mode allows you to identify which channels are in use, the types of traf
 **No Internet Browsing:**When a network interface is in monitor mode, it cannot be used for regular internet browsing. If you need to browse the web during the process, ensure you have an additional network interface available.
 **Potential for Illegal Use:**Monitor mode can be misused for unlawful purposes, such as intercepting private data from other users on a network.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*VC98i_gAxqG2R7vn)
+<img src="https://cdn-images-1.medium.com/max/800/0*VC98i_gAxqG2R7vn" alt="Article image" width="808" height="342" loading="lazy" decoding="async" />
 
 **Check if the Interface is in Monitor Mode:
 **To verify that the interface is in monitor mode, use the following command:
@@ -279,7 +279,7 @@ Monitor mode allows you to identify which channels are in use, the types of traf
 iwconfig
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*5AKdZENiskLjRfTM)
+<img src="https://cdn-images-1.medium.com/max/800/0*5AKdZENiskLjRfTM" alt="Article image" width="711" height="96" loading="lazy" decoding="async" />
 
 **Take note:**after switching the interface to monitor mode, the name of the interface may also change (for example, from**wlan0**to something like**wlan0mon**). Always verify the new interface name after enabling monitor mode.
 
@@ -290,7 +290,7 @@ iwconfig
 sudo airodump-ng wlan0mon
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*mvtAMvNXlgsN7Gvp)
+<img src="https://cdn-images-1.medium.com/max/800/0*mvtAMvNXlgsN7Gvp" alt="Article image" width="1023" height="896" loading="lazy" decoding="async" />
 
 In this mode, you’ll see all the wireless networks in range, along with details such as their signal strength, encryption type, and associated clients. From here, you can choose the specific network you want to target for further analysis or testing.
 
@@ -320,14 +320,14 @@ FC
 09 wlan0mon
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*qNDsoT1-FehDTOpS)
+<img src="https://cdn-images-1.medium.com/max/800/0*qNDsoT1-FehDTOpS" alt="Article image" width="969" height="186" loading="lazy" decoding="async" />
 
 **Breakdown of the command:
 -c6:**Specifies the channel (CH) of the target network (in this case, channel 6).
 **-w NewCap:**Defines the name of the file where the captured network traffic will be saved (NewCap is the chosen filename).
 -**d FC:75:16:B0:09:**Specifies the BSSID (MAC address) of the target network, identifying the specific access point you want to capture traffic from.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*upQZoxbDyy3HX6nS)
+<img src="https://cdn-images-1.medium.com/max/800/0*upQZoxbDyy3HX6nS" alt="Article image" width="1114" height="658" loading="lazy" decoding="async" />
 
 ### Disconnect a Device:
 
@@ -374,7 +374,7 @@ The command sends Deauthentication packets from the access point (whose MAC addr
 ) to the client (whose MAC address is 66:26:1E:2B:E2
 ) on the wireless network. As a result, the client will be forcibly disconnected from the access point. Since the attack is specified with — deauth 0, it will continue indefinitely until you stop it manually.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*uEztyHl6RHf1fGSL)
+<img src="https://cdn-images-1.medium.com/max/800/0*uEztyHl6RHf1fGSL" alt="Article image" width="1600" height="161" loading="lazy" decoding="async" />
 
 ### Important Notes:
 
@@ -385,7 +385,7 @@ The command sends Deauthentication packets from the access point (whose MAC addr
 
 Once the Deauthentication attack is in progress and the target device disconnects from the network, you can capture the**handshake**when it reconnects. The handshake contains the encrypted data that includes the hash of the Wi-Fi password, which is essential for cracking the password later.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*bXRgGaiTY6_fyqZv)
+<img src="https://cdn-images-1.medium.com/max/800/0*bXRgGaiTY6_fyqZv" alt="Article image" width="1157" height="240" loading="lazy" decoding="async" />
 
 **EAPOL**(Extensible Authentication Protocol over LAN) is a communication protocol used during the authentication process of network devices in WPA/WPA2 wireless authentication protocols.
 
@@ -429,7 +429,7 @@ If a match is found between the encryption key created by aircrack-ng and the on
 If none of the passwords in the wordlist match, the process will finish without finding the password.
 Important Note: Success depends heavily on the strength and complexity of the password and the quality of your wordlist. Stronger or more complex passwords may require larger or more specific wordlists, or even a different method like brute-forcing.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*DFBy7D5mOnG2ygW6)
+<img src="https://cdn-images-1.medium.com/max/800/0*DFBy7D5mOnG2ygW6" alt="Article image" width="781" height="458" loading="lazy" decoding="async" />
 
 **Dictionary Attack:
 **A dictionary attack uses a precompiled list of common or potential passwords (often called a wordlist or dictionary) and systematically tests each one against the target until the correct password is found.

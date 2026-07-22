@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*3aT5ccS08ZmUK0Y6.png"
 # HexStrike-AI: A Force Multiplier for Red Teams — and a Dangerous Shift in the Threat Landscape
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*3aT5ccS08ZmUK0Y6.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*3aT5ccS08ZmUK0Y6.png" alt="Cover image" width="700" height="467" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Why AI-Orchestrated Pentesting Is a Force Multiplier for Red Teams — and a Warning Sign for Defenders
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*3aT5ccS08ZmUK0Y6.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*3aT5ccS08ZmUK0Y6.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 Over the past months, I’ve been deeply experimenting with**HexStrike-AI**in real,**authorized penetration-testing scenarios**:
 home networks, vulnerable web applications, OSINT workflows, wireless attacks, and controlled exploitation labs.

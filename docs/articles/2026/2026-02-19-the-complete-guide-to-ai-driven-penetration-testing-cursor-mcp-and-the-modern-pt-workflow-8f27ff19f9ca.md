@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*dDhsk11-rmAvlsJ_93jeUA.png"
 # The Complete Guide to AI-Driven Penetration Testing: Cursor, MCP, and the Modern PT Workflow
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*dDhsk11-rmAvlsJ_93jeUA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dDhsk11-rmAvlsJ_93jeUA.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A comprehensive, step-by-step guide to running penetration tests the way that actually works — faster, deeper, and more powerful — after hundreds of engagements and countless tools.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dDhsk11-rmAvlsJ_93jeUA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dDhsk11-rmAvlsJ_93jeUA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction
 

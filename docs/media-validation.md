@@ -4,7 +4,7 @@ title: "Media Validation"
 
 # Media Validation
 
-Generated: 2026-07-21 20:39:41 UTC
+Generated deterministically from the current source inventory.
 
 ## Summary
 

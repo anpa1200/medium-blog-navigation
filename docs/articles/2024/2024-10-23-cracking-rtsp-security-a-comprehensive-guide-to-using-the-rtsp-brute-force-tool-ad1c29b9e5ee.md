@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*ab02vUozKJHjZ440"
 # Cracking RTSP Security: A Comprehensive Guide to Using the RTSP Brute Force Tool
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*ab02vUozKJHjZ440)
+<img src="https://cdn-images-1.medium.com/max/800/0*ab02vUozKJHjZ440" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### This article introduces a powerful tool designed for ethical penetration testing — the RTSP Brute Force Tool — developed to help security professionals test and strengthen RTSP implementations against unauthorized access.
 
-![cameras rtsp password cracking](https://cdn-images-1.medium.com/max/800/0*ab02vUozKJHjZ440)
+<img src="https://cdn-images-1.medium.com/max/800/0*ab02vUozKJHjZ440" alt="cameras rtsp password cracking" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Understanding RTSP and Its Vulnerabilities
 
@@ -158,7 +158,7 @@ The**RTSP Brute Force Tool**is an advanced utility built to test the resilience 
 
 - `python3 rtsp_brute_force.py`
 
-![cameras rtsp password cracking](https://cdn-images-1.medium.com/max/800/1*ZQLAR5u6I4xr5fBps-ydjA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZQLAR5u6I4xr5fBps-ydjA.png" alt="cameras rtsp password cracking" width="900" height="544" loading="lazy" decoding="async" />
 
 **2. Input Details**: Follow the prompts to enter the RTSP URL, decide if you know the username or need to load it from a file, and specify the path to your password list.
 
@@ -169,7 +169,7 @@ The**RTSP Brute Force Tool**is an advanced utility built to test the resilience 
 
 - **How to gain passwords lists**[***here***](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
 
-![cameras rtsp password cracking](https://cdn-images-1.medium.com/max/800/1*GJXxPH8PB9CdWxMmwrRmzw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GJXxPH8PB9CdWxMmwrRmzw.png" alt="cameras rtsp password cracking" width="1150" height="154" loading="lazy" decoding="async" />
 
 ## Conclusion
 

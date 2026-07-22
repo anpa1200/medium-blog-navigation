@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*PtjHgt5EKpMEspEmntakBw.png"
 # Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*PtjHgt5EKpMEspEmntakBw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*PtjHgt5EKpMEspEmntakBw.png" alt="Cover image" width="1024" height="559" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Practical methods for identity, cloud, CI/CD, runtime, and AI-era threat detection
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*PtjHgt5EKpMEspEmntakBw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*PtjHgt5EKpMEspEmntakBw.png" alt="Article image" width="1024" height="559" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -61,7 +61,7 @@ That means the center of detection engineering moved.
 
 **Modern detection engineering is no longer only the engineering of rules. It is the engineering of a full defensive loop:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*5qpv5canCaUVxBe8_8qyeQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*5qpv5canCaUVxBe8_8qyeQ.png" alt="Article image" width="1024" height="1447" loading="lazy" decoding="async" />
 
 - What telemetry must exist?
 - Is the telemetry normalized and reliable?
@@ -77,7 +77,7 @@ MITRE ATT&CK is still the best common language for adversary behavior. MITRE CAR
 
 &gt; The newest detection engineering technique is not one algorithm. It is the combination of threat-informed logic, reliable telemetry, stateful correlation, continuous validation, and operational feedback.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*VxAr_qsi58JKZZ4wQ06Lgg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*VxAr_qsi58JKZZ4wQ06Lgg.png" alt="Article image" width="1024" height="1447" loading="lazy" decoding="async" />
 
 This article explains the techniques that matter most now, how they work, where they fail, and how to implement them with realistic examples.
 
@@ -117,11 +117,11 @@ On July 1, 2026, Sysdig reported JADEPUFFER, which it assessed as a documented a
 
 A mature detection program should look like this:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*7Ph_r23SP89sL-oI5TNukA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*7Ph_r23SP89sL-oI5TNukA.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 **Each stage has a concrete output.**
 
-![Article image](https://cdn-images-1.medium.com/max/795/1*sI0MQgl61dIgDu8TBD_lRw.png)
+<img src="https://cdn-images-1.medium.com/max/795/1*sI0MQgl61dIgDu8TBD_lRw.png" alt="Article image" width="795" height="336" loading="lazy" decoding="async" />
 
 This loop is the foundation for the rest of the article.
 
@@ -131,10 +131,10 @@ The most practical modern technique is also the least glamorous: start with tele
 
 **Relevant MITRE ATT&CK tags:**
 
-- [T1078 — Valid Accounts](https://1200km.com/threat-matrix/#/techniques/T1078)
-- [T1078.004 — Cloud Accounts](https://1200km.com/threat-matrix/#/techniques/T1078.004)
-- [T1530 — Data from Cloud Storage Object](https://1200km.com/threat-matrix/#/techniques/T1530)
-- [T1580 — Cloud Infrastructure Discovery](https://1200km.com/threat-matrix/#/techniques/T1580)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self">T1078.004 — Cloud Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1580" target="_self">T1580 — Cloud Infrastructure Discovery</a>
 
 **Real-world reports:**
 
@@ -169,11 +169,11 @@ Bad detection plan:
 
 **Better detection plan:**
 
-![Article image](https://cdn-images-1.medium.com/max/771/1*F7-01plyzGBNPVWYZ38OcA.png)
+<img src="https://cdn-images-1.medium.com/max/771/1*F7-01plyzGBNPVWYZ38OcA.png" alt="Article image" width="771" height="282" loading="lazy" decoding="async" />
 
 **Detection logic:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*J19kbDnDtLtpuye_cg4Rcw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*J19kbDnDtLtpuye_cg4Rcw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 1. Count object reads by principal and bucket.
 2. Compare against the same principal’s baseline.
@@ -235,10 +235,10 @@ Detection-as-code is now table stakes. But there is a trap.
 
 **Relevant MITRE ATT&CK tags:**
 
-- [T1059 — Command and Scripting Interpreter](https://1200km.com/threat-matrix/#/techniques/T1059)
-- [T1078 — Valid Accounts](https://1200km.com/threat-matrix/#/techniques/T1078)
-- [T1110.003 — Password Spraying](https://1200km.com/threat-matrix/#/techniques/T1110.003)
-- [T1190 — Exploit Public-Facing Application](https://1200km.com/threat-matrix/#/techniques/T1190)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1059" target="_self">T1059 — Command and Scripting Interpreter</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1190" target="_self">T1190 — Exploit Public-Facing Application</a>
 
 **Real-world reports:**
 
@@ -253,7 +253,7 @@ A mature detection-as-code pipeline should test behavior.
 
 Each detection should have:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*suP6l-GQMmaNpoC2M5PRdg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*suP6l-GQMmaNpoC2M5PRdg.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 - Rule ID.
 - Name.
@@ -323,10 +323,10 @@ Single-event detections still matter. LSASS dump access, suspicious child proces
 
 **Relevant MITRE ATT&CK tags:**
 
-- [T1110.003 — Password Spraying](https://1200km.com/threat-matrix/#/techniques/T1110.003)
-- [T1078 — Valid Accounts](https://1200km.com/threat-matrix/#/techniques/T1078)
-- [T1550.004 — Web Session Cookie](https://1200km.com/threat-matrix/#/techniques/T1550.004)
-- [T1213 — Data from Information Repositories](https://1200km.com/threat-matrix/#/techniques/T1213)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self">T1550.004 — Web Session Cookie</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1213" target="_self">T1213 — Data from Information Repositories</a>
 
 **Real-world reports:**
 
@@ -352,7 +352,7 @@ Elastic EQL supports ordered sequences. Google SecOps YARA-L supports multi-even
 
 ### Real-world scenario: password spray followed by successful login
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Iz3iW0wqaqGfOjE96CnK0g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Iz3iW0wqaqGfOjE96CnK0g.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Atomic rule:**
 
@@ -407,10 +407,10 @@ Alert fatigue often comes from treating every rule match as an incident.
 
 **Relevant MITRE ATT&CK tags:**
 
-- [T1078 — Valid Accounts](https://1200km.com/threat-matrix/#/techniques/T1078)
-- [T1098 — Account Manipulation](https://1200km.com/threat-matrix/#/techniques/T1098)
-- [T1550 — Use Alternate Authentication Material](https://1200km.com/threat-matrix/#/techniques/T1550)
-- [T1567 — Exfiltration Over Web Service](https://1200km.com/threat-matrix/#/techniques/T1567)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1098" target="_self">T1098 — Account Manipulation</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1550" target="_self">T1550 — Use Alternate Authentication Material</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1567" target="_self">T1567 — Exfiltration Over Web Service</a>
 
 **Real-world reports:**
 
@@ -434,7 +434,7 @@ Modern programs separate signal generation from analyst escalation.
 
 ### Risk scoring pattern
 
-![Article image](https://cdn-images-1.medium.com/max/659/1*AcQswl4c9EEgIFxyzlEn8g.png)
+<img src="https://cdn-images-1.medium.com/max/659/1*AcQswl4c9EEgIFxyzlEn8g.png" alt="Article image" width="659" height="245" loading="lazy" decoding="async" />
 
 **Illustrative SQL:**
 
@@ -470,7 +470,7 @@ GROUP BY entity_id
 HAVING SUM(risk_score) >= 100;
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Ccmkv1wAfaYag8ov-qhTzg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Ccmkv1wAfaYag8ov-qhTzg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 Production scoring needs per-signal deduplication or caps and time decay; a flat sum over a window is only the starting skeleton.
 
@@ -500,10 +500,10 @@ MFA is important, but modern identity attacks often target the session after aut
 
 **Relevant MITRE ATT&CK tags:**
 
-- [T1078 — Valid Accounts](https://1200km.com/threat-matrix/#/techniques/T1078)
-- [T1110.003 — Password Spraying](https://1200km.com/threat-matrix/#/techniques/T1110.003)
-- [T1528 — Steal Application Access Token](https://1200km.com/threat-matrix/#/techniques/T1528)
-- [T1550.004 — Web Session Cookie](https://1200km.com/threat-matrix/#/techniques/T1550.004)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1528" target="_self">T1528 — Steal Application Access Token</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self">T1550.004 — Web Session Cookie</a>
 
 **Real-world reports:**
 
@@ -526,7 +526,7 @@ Microsoft Entra sign-in logs now include interactive user sign-ins, non-interact
 
 ### Detection pattern: session context shift
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*dcMIm3IcdI0zXdCz8wmhew.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*dcMIm3IcdI0zXdCz8wmhew.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Hypothesis:**
 
@@ -612,10 +612,10 @@ This is a perfect weak-signal candidate. Device code flow alone may be legitimat
 
 **Relevant MITRE ATT&CK tags:**
 
-- [T1078.004 — Cloud Accounts](https://1200km.com/threat-matrix/#/techniques/T1078.004)
-- [T1213 — Data from Information Repositories](https://1200km.com/threat-matrix/#/techniques/T1213)
-- [T1530 — Data from Cloud Storage Object](https://1200km.com/threat-matrix/#/techniques/T1530)
-- [T1567.002 — Exfiltration to Cloud Storage](https://1200km.com/threat-matrix/#/techniques/T1567.002)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self">T1078.004 — Cloud Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1213" target="_self">T1213 — Data from Information Repositories</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1567.002" target="_self">T1567.002 — Exfiltration to Cloud Storage</a>
 
 **Real-world reports:**
 
@@ -626,11 +626,11 @@ The problem is cost and volume.**Data-plane logs can be expensive and noisy.**Th
 
 ### Practical cloud logging strategy
 
-![Article image](https://cdn-images-1.medium.com/max/659/1*sB6CKYaRU3VmKEMavE3XCw.png)
+<img src="https://cdn-images-1.medium.com/max/659/1*sB6CKYaRU3VmKEMavE3XCw.png" alt="Article image" width="659" height="245" loading="lazy" decoding="async" />
 
 ### Real-world pattern: Snowflake-style data theft
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*d25JbVYrseAz176JTpx4qw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*d25JbVYrseAz176JTpx4qw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Detection hypothesis:**
 
@@ -702,10 +702,10 @@ CI/CD is now production infrastructure.
 
 **Relevant MITRE ATT&CK tags:**
 
-- [T1195 — Supply Chain Compromise](https://1200km.com/threat-matrix/#/techniques/T1195)
-- [T1195.001 — Compromise Software Dependencies and Development Tools](https://1200km.com/threat-matrix/#/techniques/T1195.001)
-- [T1059 — Command and Scripting Interpreter](https://1200km.com/threat-matrix/#/techniques/T1059)
-- [T1552 — Unsecured Credentials](https://1200km.com/threat-matrix/#/techniques/T1552)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1195" target="_self">T1195 — Supply Chain Compromise</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1195.001" target="_self">T1195.001 — Compromise Software Dependencies and Development Tools</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1059" target="_self">T1059 — Command and Scripting Interpreter</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1552" target="_self">T1552 — Unsecured Credentials</a>
 
 **Real-world reports:**
 
@@ -726,7 +726,7 @@ GitHub warns that pull_request_target can be risky because workflows run in the 
 
 ### Detection pattern: privileged workflow touched by untrusted input
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*7Fm7TH18espcH5nE4l2otQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*7Fm7TH18espcH5nE4l2otQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Hypothesis**:
 
@@ -783,10 +783,10 @@ Kubernetes changed detection because workloads are ephemeral. A compromised pod 
 
 Relevant MITRE ATT&CK tags:
 
-- [T1059 — Command and Scripting Interpreter](https://1200km.com/threat-matrix/#/techniques/T1059)
-- [T1552.007 — Container and Cloud Credentials](https://1200km.com/threat-matrix/#/techniques/T1552.007)
-- [T1610 — Deploy Container](https://1200km.com/threat-matrix/#/techniques/T1610)
-- [T1611 — Escape to Host](https://1200km.com/threat-matrix/#/techniques/T1611)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1059" target="_self">T1059 — Command and Scripting Interpreter</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1552.007" target="_self">T1552.007 — Container and Cloud Credentials</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1610" target="_self">T1610 — Deploy Container</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1611" target="_self">T1611 — Escape to Host</a>
 
 Real-world reports:
 
@@ -810,7 +810,7 @@ Falco describes itself as a cloud-native runtime security tool for hosts, contai
 
 ### Example: shell in production container
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*ls0QMECYg_TPG5nVroQscQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*ls0QMECYg_TPG5nVroQscQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 Detection hypothesis:
 
@@ -859,10 +859,10 @@ Anomaly detection works best when it is narrow.
 
 Relevant MITRE ATT&CK tags:
 
-- [T1078 — Valid Accounts](https://1200km.com/threat-matrix/#/techniques/T1078)
-- [T1078.004 — Cloud Accounts](https://1200km.com/threat-matrix/#/techniques/T1078.004)
-- [T1098 — Account Manipulation](https://1200km.com/threat-matrix/#/techniques/T1098)
-- [T1530 — Data from Cloud Storage Object](https://1200km.com/threat-matrix/#/techniques/T1530)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self">T1078.004 — Cloud Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1098" target="_self">T1098 — Account Manipulation</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
 
 Real-world reports:
 
@@ -879,7 +879,7 @@ Better:
 
 ### Peer-group analytics
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*wbAx1x-nuXlN1BGns1LduA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*wbAx1x-nuXlN1BGns1LduA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Peer groups compare an entity to similar entities:**
 
@@ -962,10 +962,10 @@ Statistical detection is useful, but broad unsupervised anomaly detection is oft
 
 Relevant MITRE ATT&CK tags:
 
-- [T1030 — Data Transfer Size Limits](https://1200km.com/threat-matrix/#/techniques/T1030)
-- [T1041 — Exfiltration Over C2 Channel](https://1200km.com/threat-matrix/#/techniques/T1041)
-- [T1530 — Data from Cloud Storage Object](https://1200km.com/threat-matrix/#/techniques/T1530)
-- [T1567 — Exfiltration Over Web Service](https://1200km.com/threat-matrix/#/techniques/T1567)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1030" target="_self">T1030 — Data Transfer Size Limits</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1041" target="_self">T1041 — Exfiltration Over C2 Channel</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1567" target="_self">T1567 — Exfiltration Over Web Service</a>
 
 Real-world reports:
 
@@ -991,7 +991,7 @@ Real-world reports:
 
 ### Example: SaaS bulk download anomaly
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*S5HYG8GYB-HT1bLh8VJH5g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*S5HYG8GYB-HT1bLh8VJH5g.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 I used this pattern in a previous article: a count-based M365 download anomaly with baseline and z-score, with the explicit warning that OfficeObjectId is not a byte-count field.
 
@@ -1060,10 +1060,10 @@ Security data lakes are not magic. They are useful when they solve concrete prob
 
 Relevant MITRE ATT&CK tags:
 
-- [T1078 — Valid Accounts](https://1200km.com/threat-matrix/#/techniques/T1078)
-- [T1110.003 — Password Spraying](https://1200km.com/threat-matrix/#/techniques/T1110.003)
-- [T1195 — Supply Chain Compromise](https://1200km.com/threat-matrix/#/techniques/T1195)
-- [T1530 — Data from Cloud Storage Object](https://1200km.com/threat-matrix/#/techniques/T1530)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1195" target="_self">T1195 — Supply Chain Compromise</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
 
 Real-world reports:
 
@@ -1074,7 +1074,7 @@ OCSF is important because it gives a vendor-agnostic security schema. AWS Securi
 
 ### Practical architecture
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*tOdMhRVCBbnGvHkwskHvKQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*tOdMhRVCBbnGvHkwskHvKQ.png" alt="Article image" width="1024" height="1248" loading="lazy" decoding="async" />
 
 ### Practical rule portability strategy
 
@@ -1096,10 +1096,10 @@ LLM applications are now part of enterprise infrastructure.
 
 Relevant MITRE ATT&CK tags:
 
-- [T1190 — Exploit Public-Facing Application](https://1200km.com/threat-matrix/#/techniques/T1190)
-- [T1059 — Command and Scripting Interpreter](https://1200km.com/threat-matrix/#/techniques/T1059)
-- [T1552 — Unsecured Credentials](https://1200km.com/threat-matrix/#/techniques/T1552)
-- [T1486 — Data Encrypted for Impact](https://1200km.com/threat-matrix/#/techniques/T1486)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1190" target="_self">T1190 — Exploit Public-Facing Application</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1059" target="_self">T1059 — Command and Scripting Interpreter</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1552" target="_self">T1552 — Unsecured Credentials</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1486" target="_self">T1486 — Data Encrypted for Impact</a>
 
 Real-world reports:
 
@@ -1125,13 +1125,13 @@ The detection engineering problem is clear:
 
 ### Required telemetry for agent detection
 
-![Article image](https://cdn-images-1.medium.com/max/495/1*x8RuN7eQrd4yebT14V45iQ.png)
+<img src="https://cdn-images-1.medium.com/max/495/1*x8RuN7eQrd4yebT14V45iQ.png" alt="Article image" width="495" height="443" loading="lazy" decoding="async" />
 
 OpenTelemetry GenAI semantic conventions are relevant because they define common attributes for model requests, responses, tokens, tools, and system instructions, but they are still in development and not yet stable, so teams should expect attribute names to change and pin versions.
 
 ### Detection pattern: prompt injection leading to tool misuse
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*7Gn1qCZOy0Qogi9kTWB4mg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*7Gn1qCZOy0Qogi9kTWB4mg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Hypothesis**:
 
@@ -1205,10 +1205,10 @@ AI can help detection engineering. It should not own detection engineering.
 
 Relevant MITRE ATT&CK tags:
 
-- [T1078 — Valid Accounts](https://1200km.com/threat-matrix/#/techniques/T1078)
-- [T1110.003 — Password Spraying](https://1200km.com/threat-matrix/#/techniques/T1110.003)
-- [T1190 — Exploit Public-Facing Application](https://1200km.com/threat-matrix/#/techniques/T1190)
-- [T1550.004 — Web Session Cookie](https://1200km.com/threat-matrix/#/techniques/T1550.004)
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1190" target="_self">T1190 — Exploit Public-Facing Application</a>
+- <a href="pathname://https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self">T1550.004 — Web Session Cookie</a>
 
 Real-world reports:
 
@@ -1239,7 +1239,7 @@ Recent research such as RulePilot suggests LLM-based agents can assist rule crea
 
 ### Practical AI-assisted workflow
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*cvMvdl9g2v5Z90FVyvEbnQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*cvMvdl9g2v5Z90FVyvEbnQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 Useful guardrail:
 
@@ -1247,7 +1247,7 @@ Useful guardrail:
 
 ## A Practical 90-Day Implementation Plan
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*k8s6QUucor2h7eabqg9ecw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*k8s6QUucor2h7eabqg9ecw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 ### Days 1–15: Inventory reality
 
@@ -1330,7 +1330,7 @@ ATT&CK coverage percentage is not enough.
 
 **Better metrics:**
 
-![Article image](https://cdn-images-1.medium.com/max/660/1*hSSOkqlz92RersSyTyE9Pw.png)
+<img src="https://cdn-images-1.medium.com/max/660/1*hSSOkqlz92RersSyTyE9Pw.png" alt="Article image" width="660" height="400" loading="lazy" decoding="async" />
 
 The most important metric is usually not fancy:
 
@@ -1338,7 +1338,7 @@ The most important metric is usually not fancy:
 
 ## Common Failure Modes
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*OkL3m06GG8wTn3Nq4sWELA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*OkL3m06GG8wTn3Nq4sWELA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 ### 1. ATT&CK heatmap theater
 

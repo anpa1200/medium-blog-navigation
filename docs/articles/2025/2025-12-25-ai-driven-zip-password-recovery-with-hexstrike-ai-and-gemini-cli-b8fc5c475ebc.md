@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*ugjfFZjFfBwT__hh.png"
 # AI-Driven ZIP Password Recovery with HexStrike-AI and Gemini-CLI
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*ugjfFZjFfBwT__hh.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*ugjfFZjFfBwT__hh.png" alt="Cover image" width="700" height="467" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Encrypted Archive to Flag Using LLM-Orchestrated Tooling
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*ugjfFZjFfBwT__hh.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*ugjfFZjFfBwT__hh.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 ### Overview
 
@@ -80,7 +80,7 @@ using
  the provided password list.
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ANUdip5C59veqsAwPgXw1A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ANUdip5C59veqsAwPgXw1A.png" alt="Article image" width="1369" height="319" loading="lazy" decoding="async" />
 
 No commands.
 No tool selection.
@@ -96,7 +96,7 @@ HexStrike-AI:
 
 - Verifies tool availability on the system
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0gFo7D_MsfBgaWqvMS00aA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0gFo7D_MsfBgaWqvMS00aA.png" alt="Article image" width="1712" height="795" loading="lazy" decoding="async" />
 
 **Key point:**
 The AI does*environment discovery*before acting.
@@ -144,7 +144,7 @@ Password found:
 Israel123
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TRaSGxPOQBkXbiPg-xGREA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TRaSGxPOQBkXbiPg-xGREA.png" alt="Article image" width="1700" height="378" loading="lazy" decoding="async" />
 
 ## 5. First extraction attempt (failure handling)
 
@@ -183,7 +183,7 @@ zip
 
 Extraction succeeds.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8vRwcwtg6s_rZg_nplK6kw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8vRwcwtg6s_rZg_nplK6kw.png" alt="Article image" width="1703" height="616" loading="lazy" decoding="async" />
 
 ## 7. Flag retrieval
 
@@ -196,7 +196,7 @@ cat
 
 **Flag recovered**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XqUL-oAX4gre4MnjbaOb7Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XqUL-oAX4gre4MnjbaOb7Q.png" alt="Article image" width="1715" height="256" loading="lazy" decoding="async" />
 
 ```text
 Your

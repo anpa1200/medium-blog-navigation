@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*jH8aMiQT4FZxqA_IeqVL0w.png"
 # Detecting Malicious Insider Activity: A Technical Detection Engineering Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*jH8aMiQT4FZxqA_IeqVL0w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jH8aMiQT4FZxqA_IeqVL0w.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Detection logic, case evidence from 14 documented incidents, and a four-phase implementation programme — covering deterministic rules, behavioural heuristics, UEBA, exfiltration path coverage, and the telemetry required before any of it works.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jH8aMiQT4FZxqA_IeqVL0w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jH8aMiQT4FZxqA_IeqVL0w.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
 
@@ -88,7 +88,7 @@ External attacker detection relies on the contrast between attacker behaviour an
 
 ### Key structural differences from external threats
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Cg5P7o4YiFMT451DTCAwAA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Cg5P7o4YiFMT451DTCAwAA.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 - No initial access phase — the insider already has it
 
@@ -104,7 +104,7 @@ External attacker detection relies on the contrast between attacker behaviour an
 
 ### Statistical context
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*w4pJjGkoPB86KWKrOLvRyw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*w4pJjGkoPB86KWKrOLvRyw.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async" />
 
 The CERT/CMU Insider Threat Center has documented more than 1,500 cases across its research programme (as stated in the 7th edition[[4]](https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/); the database continues to grow), spanning IT sabotage, IP theft, fraud, and espionage categories. These cases form the empirical foundation for the detection patterns in this guide.
 
@@ -142,7 +142,7 @@ Detection differs materially by user type. CERT’s sabotage research found that
 
 ### 2.1 Threat Categories
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CTVSMEQo3YcOncStFzuoMw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CTVSMEQo3YcOncStFzuoMw.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 The CERT/CMU Division classifies insider threats across three primary types, based on analysis of more than 1,500 documented cases[[4]](https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/):
 
@@ -164,7 +164,7 @@ The CERT/CMU Division classifies insider threats across three primary types, bas
 
 ### 2.2 The CMU SEI Insider Threat Kill Chain
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JA5oMTWR7WKRcKdBDSqjJg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JA5oMTWR7WKRcKdBDSqjJg.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 The CERT Division’s kill chain model identifies the following phases[[4]](https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/). Phases are not strictly sequential and some may be skipped:
 
@@ -190,7 +190,7 @@ The following cases are drawn from DOJ press releases, criminal complaints, appe
 
 **Category:**Espionage / mass data exfiltration |**Organisation:**US Army
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*YIUMoQR9LRn4Rj6HQz7eJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YIUMoQR9LRn4Rj6HQz7eJw.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 Manning downloaded approximately 750,000 classified US government documents, diplomatic cables, and battlefield reports from the Secret Internet Protocol Router Network (SIPRNet) over several months, using a rewritable CD. The data was transmitted to WikiLeaks. [Documented — DOJ charging documents, US Army court-martial record]
 
@@ -206,7 +206,7 @@ Manning downloaded approximately 750,000 classified US government documents, dip
 
 **Category:**Espionage / data exfiltration |**Organisation:**NSA / Booz Allen Hamilton
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QHnWObapt7z8YegcoluOkQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QHnWObapt7z8YegcoluOkQ.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 Snowden, a system administrator contractor at the NSA, exfiltrated a large volume of classified files from NSA systems, primarily to removable media. He used his sysadmin access to reach files outside his operational assignment and, according to the NSA Inspector General report, obtained credentials from colleagues under the pretext of needing them for system administration tasks. [Documented — NSA Office of Inspector General, 2016]
 
@@ -222,7 +222,7 @@ Snowden, a system administrator contractor at the NSA, exfiltrated a large volum
 
 **Category:**Sabotage (logic bomb) |**Organisation:**UBS PaineWebber
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*25ZACt3luy2vrrbj27vx4w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*25ZACt3luy2vrrbj27vx4w.png" alt="Article image" width="1086" height="1448" loading="lazy" decoding="async" />
 
 Duronio, a disgruntled UBS systems administrator who had been denied a bonus, planted malicious code on more than 1,000 computers and servers across UBS’s network, timed to execute the morning after he resigned. The code deleted files, causing more than $3 million in damage and disrupting brokerage operations. Duronio also shorted UBS stock in anticipation of the attack. [Documented — DOJ press release, criminal complaint, sentencing record]
 
@@ -238,7 +238,7 @@ Duronio, a disgruntled UBS systems administrator who had been denied a bonus, pl
 
 **Category:**Departing employee / IP theft |**Organisation:**Waymo (Alphabet) → Otto → Uber
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Oj5YiMdszkorf_4mbSSSnA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Oj5YiMdszkorf_4mbSSSnA.png" alt="Article image" width="1086" height="1448" loading="lazy" decoding="async" />
 
 Levandowski, a senior Waymo engineer, downloaded more than 14,000 confidential files totalling approximately 9.7 GB from Waymo’s internal systems before resigning, connected removable media for an extended period, and reformatted his laptop shortly before departure. He subsequently founded a competing autonomous vehicle company that was acquired by Uber. He pleaded guilty to trade secret theft in 2020. [Documented — DOJ press release, criminal complaint; Waymo civil complaint]
 
@@ -254,7 +254,7 @@ Levandowski, a senior Waymo engineer, downloaded more than 14,000 confidential f
 
 **Category:**Sabotage / post-termination access |**Organisation:**Cisco Systems
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-VEZbfJx2bvzW_fEBnQuvQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-VEZbfJx2bvzW_fEBnQuvQ.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 Ramesh, a former Cisco engineer, retained access to Cisco’s AWS cloud environment for approximately five months after resignation because his credentials were not revoked. He deployed code from his personal Google Cloud account that deleted 456 virtual machines supporting the Cisco WebEx Teams platform, taking the service offline for approximately two weeks and affecting approximately 16,000 WebEx Teams accounts. Cisco’s remediation cost approximately $1.4 million. [Documented — DOJ press release, criminal complaint]
 
@@ -270,7 +270,7 @@ Ramesh, a former Cisco engineer, retained access to Cisco’s AWS cloud environm
 
 **Category:**Espionage / IP theft (nation-state adjacent) |**Organisation:**General Electric Aviation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ywqsICqF87_7mfyuaONE8A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ywqsICqF87_7mfyuaONE8A.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 Zheng, a GE turbine design engineer, stole proprietary turbine design files over an extended period of employment to benefit Chinese state-affiliated interests. His primary exfiltration method was steganography: he embedded GE proprietary files inside ordinary-looking image files and emailed them to his personal Hotmail account. He was indicted in 2019 and convicted at trial in 2023. [Documented — DOJ indictment; DOJ trial press release]
 
@@ -286,7 +286,7 @@ Zheng, a GE turbine design engineer, stole proprietary turbine design files over
 
 **Category:**Disgruntled insider / data exfiltration |**Organisation:**Morrisons (UK supermarket)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*O7NobBg6igx5kgItElIvIw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*O7NobBg6igx5kgItElIvIw.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 Skelton, a Morrisons internal auditor who held a grievance over a prior disciplinary matter, extracted payroll data for 99,998 Morrisons employees from the PeopleSoft HR system and posted it to a file-sharing site, then mailed it on CD to three newspapers. Skelton was convicted of fraud, computer misuse, and unlawful disclosure of personal data. In civil proceedings, the High Court and Court of Appeal initially found Morrisons vicariously liable; the UK Supreme Court reversed those decisions and found Morrisons was NOT vicariously liable for the deliberate wrongdoing of an employee acting to harm the employer — a landmark ruling narrowing vicarious liability for deliberate employee wrongdoing. [Documented — UK Supreme Court judgment [2020] UKSC 12]
 
@@ -302,7 +302,7 @@ Skelton, a Morrisons internal auditor who held a grievance over a prior discipli
 
 **Category:**Privilege abuse / personal misuse |**Organisation:**Yahoo
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*d2NbAw8Y5LL8sPUUnBfymw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*d2NbAw8Y5LL8sPUUnBfymw.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Ruiz, a Yahoo software engineer, used his work access to compromise approximately 6,000 user accounts, searching for intimate images and videos. He then used Yahoo credentials to pivot into external accounts (iCloud, Facebook, Gmail, Dropbox) belonging to the same users. Upon detection, he destroyed the laptop and external hard drive used to store the material. [Documented — DOJ press release, criminal complaint]
 
@@ -318,7 +318,7 @@ Ruiz, a Yahoo software engineer, used his work access to compromise approximatel
 
 **Category:**Data theft / extortion / insider posing as external attacker |**Organisation:**Ubiquiti Networks
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-bIS7UPq7mgJsWQ12se7eA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-bIS7UPq7mgJsWQ12se7eA.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Sharp, a senior developer with cloud admin access, cloned hundreds of GitHub repositories and exfiltrated substantial data from Ubiquiti’s AWS infrastructure using his own administrative credentials. He then posed as an anonymous external attacker, sent a ransom demand for approximately $1.9 million in Bitcoin, and simultaneously acted as a “whistleblower” to journalists, claiming the breach was more severe than Ubiquiti disclosed — while participating in Ubiquiti’s internal incident response as a senior employee. He was sentenced to six years in federal prison. [Documented — DOJ press release, criminal complaint]
 
@@ -332,7 +332,7 @@ Sharp, a senior developer with cloud admin access, cloned hundreds of GitHub rep
 
 **Category:**Financial fraud |**Organisation:**Microsoft
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eQAjSHxgEpp5q3O2guCguw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eQAjSHxgEpp5q3O2guCguw.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Kvashuk, a software engineer with access to Microsoft’s testing environment, stole approximately $10 million in digital gift cards by abusing test-account access to generate and redeem them at scale. He used coworkers’ credentials to mask his activity, routed proceeds through Bitcoin mixing services, and misrepresented the Bitcoin proceeds as a family gift on a mortgage application. He was sentenced to nine years in federal prison. [Documented — DOJ press release; Ninth Circuit opinion, US v. Kvashuk]
 
@@ -348,7 +348,7 @@ Kvashuk, a software engineer with access to Microsoft’s testing environment, s
 
 **Category:**Data exfiltration / downstream fraud |**Organisation:**Desjardins Group (Canada)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8fKGVZJVXJ6yl0465U2JcQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8fKGVZJVXJ6yl0465U2JcQ.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Over at least 26 months, a malicious employee copied sensitive personal information — names, addresses, birth dates, social insurance numbers, email addresses, and financial data — from a marketing shared drive to a work computer and then to USB keys. The data was shared with criminal organisations for downstream fraud. Approximately 4.2 million current members and approximately 173,000 former members and business members were affected. The Office of the Privacy Commissioner of Canada found Desjardins’ controls insufficient on multiple dimensions and issued a remediation order. [Documented — OPC PIPEDA Investigation Report 2020–001]
 
@@ -364,7 +364,7 @@ Over at least 26 months, a malicious employee copied sensitive personal informat
 
 **Category:**Departing employee / data exfiltration |**Organisation:**Tesla
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZkVaiKtNliPXx_tsDZB8-Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZkVaiKtNliPXx_tsDZB8-Q.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Two former Tesla employees leaked approximately 100 GB of confidential data — including personal data on approximately 75,000 current and former employees, customer financial information, and production details — to the German newspaper Handelsblatt. Tesla attributed the disclosure to departing employees and pursued legal action. [Documented — Tesla legal filings; Handelsblatt reporting]
 
@@ -378,7 +378,7 @@ Two former Tesla employees leaked approximately 100 GB of confidential data — 
 
 **Category:**Insider espionage / state-sponsored collusion |**Organisation:**Twitter
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cY9_5jx33C0E9E09VCqQnQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cY9_5jx33C0E9E09VCqQnQ.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Ahmad Abouammo (a former media partnerships manager) and Ali Alzabarah (a former site reliability engineer) used internal Twitter user-information tools to retrieve private account details — including phone numbers and IP addresses — belonging to Saudi dissidents and government critics, and passed the information to Saudi intelligence officials. Alzabarah accessed data associated with more than 6,000 Twitter accounts on a single day. Abouammo received a watch and monetary payments; Alzabarah received gifts and a payment. Abouammo was convicted at trial; Alzabarah fled to Saudi Arabia before arrest. [Documented — DOJ criminal complaint; verdict in US v. Abouammo]
 
@@ -394,7 +394,7 @@ Ahmad Abouammo (a former media partnerships manager) and Ali Alzabarah (a former
 
 **Category:**Sabotage / post-termination destructive access |**Organisation:**New York credit union (unnamed in public record)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WH44v-JhpSJys3NZuQsuGA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WH44v-JhpSJys3NZuQsuGA.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Barile, a former employee at a New York credit union, was terminated on 19 May 2021. Her remote access credentials were not revoked at the time of departure. Two days after termination, on 21 May 2021, she remotely accessed the credit union’s file servers without authorisation and deleted approximately 21.3 GB of data — approximately 20,000 files and 3,500 directories — in apparent retaliation. She was charged in June 2021 with intentional damage to a protected computer under the Computer Fraud and Abuse Act (18 U.S.C. § 1030(a)(5)(A)) and subsequently pleaded guilty. [Documented — DOJ USAO SDNY press release, June 2021[[18]](https://www.justice.gov/usao-sdny/pr/former-employee-new-york-credit-union-charged-unauthorized-computer-access-and)]
 
@@ -408,7 +408,7 @@ Barile, a former employee at a New York credit union, was terminated on 19 May 2
 
 ## 4. Detection Methods
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*U2XaAEBYgIuSp4LwiJ5fmg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*U2XaAEBYgIuSp4LwiJ5fmg.png" alt="Article image" width="935" height="1683" loading="lazy" decoding="async" />
 
 The detection logic below is defender-operable guidance. Where logic is directly supported by a documented case or primary source, it is cited. Where the correlation is an engineering synthesis, it is marked**[Inferred]**. Windows Event IDs listed below are standard audit policy outputs; they require correct audit policy configuration and are not produced by default on all systems. Validate all event IDs and M365 operation names in your environment — audit policy settings, licence tier, and tenant configuration affect what is actually generated. Specific thresholds listed are illustrative starting points; production values must be calibrated to your environment.
 
@@ -416,7 +416,7 @@ The detection logic below is defender-operable guidance. Where logic is directly
 
 These rules fire on specific artefact patterns with near-zero legitimate prevalence in a properly configured environment. They require no baseline period and produce the highest signal-to-noise ratio available for this problem class. Deploy these first.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vLXhMx7NwJAnZPDXmf1Now.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vLXhMx7NwJAnZPDXmf1Now.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 ### Post-termination access attempts
 
@@ -506,7 +506,7 @@ False positives: Support desk documentation, training materials. Allowlist expec
 
 These detections require a baseline period (typically 30–90 days) and produce more false positives than deterministic rules. They are essential for catching “authorised but abnormal” behaviour that deterministic rules cannot reach. Tune against your environment before enabling automated alerting.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XCFLYiuAogLGbmYInmiHTA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XCFLYiuAogLGbmYInmiHTA.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async" />
 
 ### After-hours access
 
@@ -594,7 +594,7 @@ Note: The print vector is under-represented in publicly documented prosecution r
 
 ## 4.3 Identity and Privilege Anomalies
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vVA1mvTcNghlIPQmMPGp-g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vVA1mvTcNghlIPQmMPGp-g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### New admin account creation outside change windows
 
@@ -648,7 +648,7 @@ False positives: IT support engineers, automation scripts. Scope to non-automati
 
 A complete programme must monitor all meaningful exfiltration channels. Email DLP is a common starting point, but the case evidence shows most documented exfiltrations used channels other than email as the primary path.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*d9GTVI5dFizrDfTbKBbAwQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*d9GTVI5dFizrDfTbKBbAwQ.png" alt="Article image" width="1617" height="973" loading="lazy" decoding="async" />
 
 **Email to personal domain.**Monitor: Exchange UAL`Send`operation (the M365 UAL operation for messages sent by the mailbox owner — verify the exact operation name in your tenant, as it varies by client and licence) where recipient domain is a consumer provider, combined with attachment size threshold or DLP classification match. Key signal: sensitive attachment to personal domain, volume spikes, departure flag. Primary limitation: steganography and encryption are undetectable by content-based DLP, as demonstrated in the GE/Zheng case over an extended period. Behavioural controls (volume, domain, attachment frequency) are effective where content controls are not. [Documented — case record]
 
@@ -668,7 +668,7 @@ A complete programme must monitor all meaningful exfiltration channels. Email DL
 
 Sabotage detection requires monitoring of control-plane actions separately from standard data access monitoring. Standard email and file-access DLP does not cover this threat category.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pclLBmKh7GOLAFvtsBF7mw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pclLBmKh7GOLAFvtsBF7mw.png" alt="Article image" width="1624" height="969" loading="lazy" decoding="async" />
 
 **Mass deletion event.**Catches bulk deletion of VMs, repository contents, S3 objects, database records, or file server directories. Log source: AWS CloudTrail`TerminateInstances`,`DeleteBucket`,`DeleteObject`at bulk scale; Azure Activity Log VM deletion events; File server audit Event 4660 correlated with Event 4663 at high volume; database audit`DROP TABLE`/ unqualified`DELETE`. Detection logic: alert when deletion operation count from a single identity exceeds a threshold within a defined window — specific values must be calibrated per role and environment. [Inferred] Real case: Cisco/Ramesh — 456 VMs deleted in a concentrated burst visible in CloudTrail. [Documented]
 
@@ -684,7 +684,7 @@ Sabotage detection requires monitoring of control-plane actions separately from 
 
 UEBA addresses the “authorised but anomalous” problem that deterministic rules cannot reach. Its value is not in replacing deterministic rules but in providing a corroborating risk layer that requires multiple weak signals to converge before generating an analyst alert.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cHcNAmvbgc56GIcOAmD4yg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cHcNAmvbgc56GIcOAmD4yg.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 ### Entity risk scoring
 
@@ -728,7 +728,7 @@ Research context: Graph-based approaches to insider threat detection have been e
 
 Covering-tracks activity typically occurs in Phase 6, after the primary harmful act. Detecting it provides a second detection opportunity, and the forensic trail preserved before covering-tracks activity completes often determines whether prosecution is viable.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eHER4dRA0Z7r4PqXq_-kSw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eHER4dRA0Z7r4PqXq_-kSw.png" alt="Article image" width="1656" height="950" loading="lazy" decoding="async" />
 
 **Windows Event log clearing.**Windows Security Event 1102 (“The audit log was cleared” — Security channel); Microsoft-Windows-Eventlog/Operational Event 104 (log cleared for System, Application, or other non-Security channels). Alert on any occurrence outside a documented decommission or gold-image rebuild. There is no legitimate automated process that clears the Security Event Log on a production system. Extend to cloud logging disablement: AWS`StopLogging`,`DeleteTrail`; Azure Diagnostic Settings deletion; GCP audit log sink deletion; SIEM forwarding agent silence.
 
@@ -744,7 +744,7 @@ Covering-tracks activity typically occurs in Phase 6, after the primary harmful 
 
 Rated on implementation effort (licensing, configuration, integration complexity) and detection coverage (signal-to-noise ratio against the threat categories in §3), under realistic enterprise conditions.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yz8hxe_IWtZtCKUmMxtPQA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yz8hxe_IWtZtCKUmMxtPQA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Tier 1 — Deploy immediately (Low effort, High signal, Very low FP rate)
 
@@ -808,7 +808,7 @@ Appropriate only after Tier 1–3 are operational and tuned.
 
 No detection programme compensates for missing telemetry. The analytics in §4 require the following log sources to be collected, forwarded to SIEM, and retained for the minimum periods shown.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kfUlFqNEHNOs6-cegW1T-Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kfUlFqNEHNOs6-cegW1T-Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Identity and access (foundation)**
 
@@ -912,7 +912,7 @@ The Australian Privacy Principles require transparency about data collection reg
 
 This phased approach prioritises the highest-value, lowest-effort controls first. Do not skip Phase 1 to reach Phase 3 — the foundational telemetry and legal framework established in Phase 1 are prerequisites for everything that follows.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oViABucODehs-EicYI4UAQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oViABucODehs-EicYI4UAQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Phase 1 — Foundations (Months 1–3)
 
@@ -984,7 +984,7 @@ Target outcome: Comprehensive coverage including sophisticated, long-dwell actor
 
 ### What the evidence shows
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nY-7iz_bw1DCBOxR2RfaQQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nY-7iz_bw1DCBOxR2RfaQQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Human detection still leads.**CERT’s banking-and-finance sector study found 61% of insider incidents were detected by non-security personnel and only 22% by auditing or monitoring procedures[[4]](https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/). The case studies in §3 — drawn predominantly from technology, government, defense, and financial services sectors — are consistent with this directional finding: of the 14 individual incident cases documented in §3.1–3.14 (§3.15 is a CERT pattern set without a specific detection trigger), initial detection came from human observation, external notification, law enforcement referral, or operational failure in the large majority of cases; internal technical monitoring was the primary trigger in at most two to three (Kvashuk, and arguably Twitter/Alzabarah and Yahoo/Ruiz). [Inferred from case records] This is not a statistically representative sample, and the banking-sector percentages should not be read as precise estimates for other industries; however, the pattern is directionally consistent across sectors.
 
@@ -998,7 +998,7 @@ Target outcome: Comprehensive coverage including sophisticated, long-dwell actor
 
 ### Coverage gaps — what standard enterprise tooling cannot currently detect
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gcpJRH3OVYEZTwwzDi8oSA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gcpJRH3OVYEZTwwzDi8oSA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Steganographic exfiltration.**Files hidden in image, audio, or video payloads. No standard DLP product detects this without specialised statistical content analysis. The GE/Zheng case ran over a decade without internal detection.
 

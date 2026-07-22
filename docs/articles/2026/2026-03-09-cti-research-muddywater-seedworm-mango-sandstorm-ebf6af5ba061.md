@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*JX0SIm-8jz5EP_OXL6soMQ.png"
 # CTI Research: MuddyWater/Seedworm (Mango Sandstorm)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*JX0SIm-8jz5EP_OXL6soMQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JX0SIm-8jz5EP_OXL6soMQ.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (2017 — March 2026)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JX0SIm-8jz5EP_OXL6soMQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JX0SIm-8jz5EP_OXL6soMQ.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 **PDF here:**
 
@@ -166,7 +166,7 @@ MuddyWater (MITRE ATT&CK G0069) is one of the most active cyber-espionage cluste
 
 **[Assessed] Key defender takeaway.**MuddyWater changes its primary intrusion toolset approximately every 6–12 months. Signature/IOC-only detection with long update cycles will consistently lag behind. Behavioral analytics, strict RMM governance, and identity hardening are the most durable defensive investments.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OH89bfRcs3a7DKCe6wGtbg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OH89bfRcs3a7DKCe6wGtbg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Actor: Identifiers and Aliases
 
@@ -231,7 +231,7 @@ Vendor source: Group-IB.
 Primary report/profile: Group-IB infrastructure report, 2025[R13](https://www.group-ib.com/blog/muddywater-infrastructure-malware/).
 Notes: Used in current Group-IB reporting.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bn5T-51WB9etiRdnM4t3ag.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bn5T-51WB9etiRdnM4t3ag.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Key Judgments with Confidence Levels
 
@@ -384,7 +384,7 @@ In parallel with phishing, Group-IB reported active exploitation of recently dis
 
 **Telegram telemetry:**Group-IB tracked bot`stager_51_bot`, enabling direct observation of post-exploitation commands. The bot also showed activity in late 2025, indicating infrastructure reuse.[R21](https://www.group-ib.com/blog/muddywater-operation-olalampo/)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WiaQgwmFzmq6jpCEKsnJEg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WiaQgwmFzmq6jpCEKsnJEg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Confirmed vs Unconfirmed Facts Matrix
 
@@ -513,7 +513,7 @@ Primary sources: Frequent media error; MuddyWater (MOIS, G0069) is not APT34 (IR
 
 ### PowGoop
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UBG7eS1iFm1gSU9xCGJyFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UBG7eS1iFm1gSU9xCGJyFQ.png" alt="Article image" width="1315" height="636" loading="lazy" decoding="async" />
 
 **Function**: Loader with DLL side-loading.
 **Key technical characteristics**: masquerades as Google Update; encrypted C2 commands; variant used in Operation Quicksand.
@@ -569,7 +569,7 @@ Primary sources:[R11](https://www.trendmicro.com/en_us/research/21/c/earth-vetal
 
 **BugSleep / MuddyRot**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*n8idBbbPbPomUqDEX5jhoA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*n8idBbbPbPomUqDEX5jhoA.png" alt="Article image" width="1315" height="636" loading="lazy" decoding="async" />
 
 **Period**: since May 2024.
 **Function**: C/C++ backdoor.
@@ -579,7 +579,7 @@ Primary sources:[R11](https://www.trendmicro.com/en_us/research/21/c/earth-vetal
 
 **StealthCache**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Qvq3yfeMpofOcDvxwzYCNQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Qvq3yfeMpofOcDvxwzYCNQ.png" alt="Article image" width="1315" height="636" loading="lazy" decoding="async" />
 
 **Period**: 2024–2025.
 **Function**: Advanced backdoor.
@@ -589,7 +589,7 @@ Primary sources:[R11](https://www.trendmicro.com/en_us/research/21/c/earth-vetal
 
 **Fooder**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*tSM7tPy2n9ozORid_8YRfA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*tSM7tPy2n9ozORid_8YRfA.png" alt="Article image" width="1315" height="636" loading="lazy" decoding="async" />
 
 **Period**: September 2024 to March 2025.
 **Function**: 64-bit C/C++ loader.
@@ -629,7 +629,7 @@ Primary sources**: ESET[R16](https://www.welivesecurity.com/en/eset-research/mud
 
 **Phoenix v4**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*b9v31J1Wq9tNG2aF4EZwbQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*b9v31J1Wq9tNG2aF4EZwbQ.png" alt="Article image" width="1315" height="636" loading="lazy" decoding="async" />
 
 **Period**: October 2025.
 **Function**: Backdoor.
@@ -646,7 +646,7 @@ Primary sources**: ESET[R16](https://www.welivesecurity.com/en/eset-research/mud
 
 **RUSTRIC / RustyWater / Archer RAT**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HRsENuD-NOtTKHF1X9mONg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HRsENuD-NOtTKHF1X9mONg.png" alt="Article image" width="1315" height="636" loading="lazy" decoding="async" />
 
 **Period**: since November 2025.
 **Function**: Rust RAT.

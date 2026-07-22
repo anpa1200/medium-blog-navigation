@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*yZJrYF0KW4x5gzDg6xNN6A.png"
 # The Intelligent Shield. OpenCTI
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*yZJrYF0KW4x5gzDg6xNN6A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*yZJrYF0KW4x5gzDg6xNN6A.png" alt="Cover image" width="1024" height="572" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Beyond Ingestion Subtitle: Deploying AI-Driven Enrichment in OpenCTI
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*yZJrYF0KW4x5gzDg6xNN6A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*yZJrYF0KW4x5gzDg6xNN6A.png" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
 
 ## Transforming Threat Data into High-Confidence Intelligence
 
@@ -49,7 +49,7 @@ This guide demonstrates how to integrate state-of-the-art Large Language Models 
 
 ## 1. What is OpenCTI?
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*fSYjMAN2q5yyUccU6F6daQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*fSYjMAN2q5yyUccU6F6daQ.png" alt="Article image" width="1024" height="538" loading="lazy" decoding="async" />
 
 **OpenCTI**(Open Cyber Threat Intelligence) is an open-source platform developed by Filigran (formerly a project of ANSSI, the French national cybersecurity agency) for structuring, storing, organizing, visualizing, and sharing cyber threat intelligence (CTI).
 
@@ -60,15 +60,15 @@ It implements the**STIX 2.1**(Structured Threat Information eXpression) standard
 
 ## Why OpenCTI?
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*1a3jOT66dfRuy3XvkQJ5NQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*1a3jOT66dfRuy3XvkQJ5NQ.png" alt="Article image" width="1024" height="614" loading="lazy" decoding="async" />
 
 ## 2. Core Capabilities
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*uj2dA3oWyo03XyrbjkNrGg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*uj2dA3oWyo03XyrbjkNrGg.png" alt="Article image" width="1024" height="615" loading="lazy" decoding="async" />
 
 ### 2.1 Knowledge Graph
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*YvoudJ_c2ItEwEgTZ8TGaQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*YvoudJ_c2ItEwEgTZ8TGaQ.png" alt="Article image" width="1024" height="538" loading="lazy" decoding="async" />
 
 - Entities: Threat Actors, Intrusion Sets, Campaigns, Malware, Tools, Vulnerabilities (CVE), Attack Patterns (MITRE ATT&CK), Courses of Action, Sectors, Countries, Organizations
 - Relationships modelled as first-class STIX SROs with confidence scores, date ranges, and TLP markings
@@ -76,7 +76,7 @@ It implements the**STIX 2.1**(Structured Threat Information eXpression) standard
 
 ### 2.2 Indicator Management
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*pGfNRDKffBczwNJeMydW8w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*pGfNRDKffBczwNJeMydW8w.png" alt="Article image" width="1024" height="538" loading="lazy" decoding="async" />
 
 - IOC lifecycle: valid_from / valid_until with automatic expiry
 - Detection rule generation (Sigma, YARA, Snort)
@@ -85,7 +85,7 @@ It implements the**STIX 2.1**(Structured Threat Information eXpression) standard
 
 ### 2.3 MITRE ATT&CK Navigator Integration
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*_jOEvP3job4uFFPBnXLIkA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*_jOEvP3job4uFFPBnXLIkA.png" alt="Article image" width="1024" height="538" loading="lazy" decoding="async" />
 
 - Full ATT&CK Enterprise / Mobile / ICS matrices
 - Heatmaps of technique usage per threat actor or campaign
@@ -93,7 +93,7 @@ It implements the**STIX 2.1**(Structured Threat Information eXpression) standard
 
 ### 2.4 Threat Actor Profiling
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*N98FeMPaxF2ZYnhLF8kEGQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*N98FeMPaxF2ZYnhLF8kEGQ.png" alt="Article image" width="1024" height="542" loading="lazy" decoding="async" />
 
 - Attributed aliases, motivations (financial, espionage, hacktivism)
 - Geo and sector targeting mapped on world map
@@ -121,13 +121,13 @@ It implements the**STIX 2.1**(Structured Threat Information eXpression) standard
 
 ## 3. Architecture Overview
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*xAFxmmcNnaHdD8ZDbXIbDw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*xAFxmmcNnaHdD8ZDbXIbDw.png" alt="Article image" width="1024" height="965" loading="lazy" decoding="async" />
 
 ## 4. Threat Intelligence Feeds
 
 ### 4.1 Free / Open-Source Feeds
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*zamxLo7VEhjGX0cOnZvRJQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*zamxLo7VEhjGX0cOnZvRJQ.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
 
 - [**MITRE ATT&CK**](https://attack.mitre.org/?utm_source=chatgpt.com)— Connector: opencti/connector-mitre — Data: Techniques, mitigations, groups, software — Setup: API key not needed.
 - [**CVE / NVD**](https://nvd.nist.gov/?utm_source=chatgpt.com)— Connector: opencti/connector-cve — Data: Vulnerabilities — Setup:[NVD API key](https://nvd.nist.gov/developers/request-an-api-key)recommended/required depending on configuration.
@@ -143,7 +143,7 @@ It implements the**STIX 2.1**(Structured Threat Information eXpression) standard
 
 ### 4.2 Commercial Feeds (require license/API key)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*dMgCc4cuy0X9LxEAcR0PiQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*dMgCc4cuy0X9LxEAcR0PiQ.png" alt="Article image" width="1024" height="615" loading="lazy" decoding="async" />
 
 - [**MISP — self-hosted**](https://www.misp-project.org/)— Connector: opencti/connector-misp — Strengths: community sharing, custom events, internal/private CTI exchange. The OpenCTI repo lists both misp and misp-feed; use misp for a live MISP instance with API access, and misp-feed for static MISP feed URLs.
 - [**VirusTotal / Google Threat Intelligence**](https://www.virustotal.com/)— Connector: opencti/connector-virustotal — Strengths: file, URL, domain, and IP enrichment. The connector is under internal-enrichment, not external-import.
@@ -156,7 +156,7 @@ It implements the**STIX 2.1**(Structured Threat Information eXpression) standard
 
 ### 4.3 ISAC / Government Feeds
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*dtrgjORW-h5AoEi0rOMBHw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*dtrgjORW-h5AoEi0rOMBHw.png" alt="Article image" width="1024" height="615" loading="lazy" decoding="async" />
 
 - [**CISA Automated Indicator Sharing / AIS**](https://www.cisa.gov/resources-tools/services/automated-indicator-sharing-ais-service?utm_source=chatgpt.com)— Method: TAXII/STIX client, AIS 2.0 uses TAXII 2.1 — Access: free service for eligible participants; contact CISA to onboard.
 - [**FS-ISAC**](https://www.fsisac.com/?utm_source=chatgpt.com)— Method: STIX/TAXII and MISP automated feeds — Access: financial-sector membership; automated-feed credentials/licensing must be explicitly requested.
@@ -166,7 +166,7 @@ It implements the**STIX 2.1**(Structured Threat Information eXpression) standard
 
 ### 4.4 Feed Priority and TLP Assignment
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*XhNw0PBdOVuwb9zHT37S5Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*XhNw0PBdOVuwb9zHT37S5Q.png" alt="Article image" width="1024" height="615" loading="lazy" decoding="async" />
 
 ```text
 # Recommended TLP assignment by source
@@ -219,7 +219,7 @@ New Report ingested
 
 ### 6.1 Hardware (minimum production)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Ics48TK_7nXqH-diy8Uzng.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Ics48TK_7nXqH-diy8Uzng.png" alt="Article image" width="1024" height="615" loading="lazy" decoding="async" />
 
 ### 6.2 Software
 
@@ -243,7 +243,7 @@ newgrp docker
 docker compose version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/698/1*eM3O8rdQsyvwxf-0WEZX8w.png)
+<img src="https://cdn-images-1.medium.com/max/698/1*eM3O8rdQsyvwxf-0WEZX8w.png" alt="Article image" width="698" height="118" loading="lazy" decoding="async" />
 
 ### 6.3 System Tuning (required for ElasticSearch)
 
@@ -700,9 +700,9 @@ docker compose -f docker-compose.connectors.yml ps
 
 ### 8.3 Verify in UI
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*bgDghte5c5Hd2tKbutvP8A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*bgDghte5c5Hd2tKbutvP8A.png" alt="Article image" width="1024" height="437" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*fIQLlAGqYjzNesmSnRw2QQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*fIQLlAGqYjzNesmSnRw2QQ.png" alt="Article image" width="1024" height="557" loading="lazy" decoding="async" />
 
 ```text
 http://localhost:8080
@@ -811,7 +811,7 @@ RuleEffectattribution_attributionIf APT-X is attributed to Country-A, and APT-Y 
 
 The connector sends the report’s description text to Claude with a structured prompt. Claude returns JSON. The connector then maps each field to STIX operations:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*f1BfkVeUO3Qlt9Kj6-MkFg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*f1BfkVeUO3Qlt9Kj6-MkFg.png" alt="Article image" width="1024" height="615" loading="lazy" decoding="async" />
 
 Claude output fieldSTIX actionsummaryCreates a Note object attached to the report (object_refs)threat_actors[]Looks up ThreatActor by name in graph → creates related-to relationship to reportmalware_families[]Looks up Malware by name → creates related-to relationship to reportattack_techniques[]Looks up AttackPattern by external_id (T1059.001) → creates uses relationship to reporttargeted_sectors[]Looks up Identity (sector) → creates targets relationshiptargeted_countries[]Looks up Location by ISO code → creates targets relationshipconfidenceSets x_opencti_score on the report (0–100)
 
@@ -1170,7 +1170,7 @@ done
 
 **What these rules do automatically once data arrives:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*epLGa3gwJILd0FyMKdsQQg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*epLGa3gwJILd0FyMKdsQQg.png" alt="Article image" width="1024" height="615" loading="lazy" decoding="async" />
 
 RuleEffectattribution_attributionIf APT-X is attributed to Country-A, and APT-Y is a sub-group of APT-X → APT-Y also attributed to Country-Asighting_incidentIf an indicator is sighted, automatically raise an Incidentindicate_sightedIf indicator is sighted → infer the targeted entity from the indicator's relationshipreport_ref_indicator_based_onIf a Report references Observable X, and X has an Indicator → auto-link the Indicator to the Reportobservable_relatedIf two objects share a common Observable → infer a related-to relationshipparent_technique_useIf a sub-technique (T1059.001) is used → auto-link parent technique (T1059) as used
 
@@ -1230,7 +1230,7 @@ echo "Backup completed: $BACKUP_DIR"
 
 ### 10.3 Security Checklist
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*hjQWso4p7MIiBfcRr15oZw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*hjQWso4p7MIiBfcRr15oZw.png" alt="Article image" width="1024" height="659" loading="lazy" decoding="async" />
 
 - Change all default passwords in .env
 - Generate unique UUID4 tokens for every connector
@@ -1258,7 +1258,7 @@ curl -s -X POST http://localhost:8080/graphql \
 # Should return 500+ techniques
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*V2XGUwLrUpe1XNLUono5Ng.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*V2XGUwLrUpe1XNLUono5Ng.png" alt="Article image" width="1024" height="461" loading="lazy" decoding="async" />
 
 ### Common Operations
 
@@ -1279,7 +1279,7 @@ docker exec $(docker ps -qf name=rabbitmq) rabbitmqctl list_queues name messages
 
 ### Monitoring Metrics to Watch
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*dn9gJsZa98wedqD6PdcrQA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*dn9gJsZa98wedqD6PdcrQA.png" alt="Article image" width="1024" height="623" loading="lazy" decoding="async" />
 
 ### Quick Reference
 
@@ -1411,7 +1411,7 @@ You received an alert from your SIEM about suspicious outbound traffic to 103.11
 Search → type 103.113.70.102
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*2k7QE2Urnr8tw_xJ2MyAPA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*2k7QE2Urnr8tw_xJ2MyAPA.png" alt="Article image" width="1024" height="290" loading="lazy" decoding="async" />
 
 If AlienVault or URLhaus has seen it, you’ll find:
 
@@ -1431,7 +1431,7 @@ curl -s -X POST http://localhost:8080/graphql \
   -d '{"query": "{ stixCyberObservables(filters: {mode: and, filters: [{key: \"value\", values: [\"https://103.113.70.102/bin/support.client.exe\"]}], filterGroups: []}) { edges { node { id entity_type ... on Url { value } } } } }"}' | python3 -m json.tool
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*fe53xHSxwntH5knkGjSO6g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*fe53xHSxwntH5knkGjSO6g.png" alt="Article image" width="1024" height="251" loading="lazy" decoding="async" />
 
 ### Example 2 — Build an APT profile
 
@@ -1441,7 +1441,7 @@ You want to understand everything known about Lazarus Group before a threat brie
 Threats → Intrusion Sets → search "Lazarus"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*S-QNk2tNF4lgs9q6-YaTUQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*S-QNk2tNF4lgs9q6-YaTUQ.png" alt="Article image" width="1024" height="526" loading="lazy" decoding="async" />
 
 The profile shows:
 
@@ -1453,7 +1453,7 @@ The profile shows:
 - **Campaigns:**Operation AppleJeus, Dream Job, etc.
 - **Timeline:**chronological view of all activity
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Gmvuu4OUs0uIgRZDt9p3fA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Gmvuu4OUs0uIgRZDt9p3fA.png" alt="Article image" width="1024" height="526" loading="lazy" decoding="async" />
 
 Click**“ATT&CK Patterns”**tab → heatmap showing which techniques Lazarus uses most.
 
@@ -1475,9 +1475,9 @@ OpenCTI parses it and creates a Report object. The AI enrichment connector then 
 
 All as STIX relationships, visible immediately in the UI.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*zPViHJ6GKjMeHMtM8240gg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*zPViHJ6GKjMeHMtM8240gg.png" alt="Article image" width="1024" height="506" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*YQBdTFlcQ_q9NcblRik5pw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*YQBdTFlcQ_q9NcblRik5pw.png" alt="Article image" width="1024" height="506" loading="lazy" decoding="async" />
 
 ### Example 4 — Track a CVE across your environment
 
@@ -1487,7 +1487,7 @@ CVE-2024–21762 (Fortinet FortiOS RCE) was just published. Check what you know 
 Arsenal → Vulnerabilities → search "CVE-2024-21762"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*G9LM5wxYywcTYVdLC331jw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*G9LM5wxYywcTYVdLC331jw.png" alt="Article image" width="1024" height="455" loading="lazy" decoding="async" />
 
 After the CVE connector syncs, you’ll see:
 
@@ -1511,7 +1511,7 @@ Activities → Incidents → Create
   Add observable: add the C2 IP
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Zm8Mi5l-QnFsTb0jAia32A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Zm8Mi5l-QnFsTb0jAia32A.png" alt="Article image" width="1024" height="506" loading="lazy" decoding="async" />
 
 With sighting_incident rule enabled, future detections of the same C2 IP automatically raise new incidents without manual work.
 
@@ -1545,7 +1545,7 @@ Cross-reference the list with your SIEM detection rules. Techniques with no dete
 
 Export the filtered list as CSV and import into ATT&CK Navigator for a visual heatmap of covered vs uncovered techniques.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*mPwgsMfkEtXK1y1rnlj0Hw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*mPwgsMfkEtXK1y1rnlj0Hw.png" alt="Article image" width="1024" height="506" loading="lazy" decoding="async" />
 
 ### Example 8 — Pivot from malware to infrastructure
 

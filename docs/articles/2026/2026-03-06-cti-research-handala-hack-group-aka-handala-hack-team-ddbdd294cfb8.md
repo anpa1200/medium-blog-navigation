@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png"
 # CTI Research: Handala Hack Group (aka Handala Hack Team)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png" alt="Cover image" width="3556" height="1184" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (December 2023 to March 2026)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png" alt="Article image" width="3556" height="1184" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -133,19 +133,19 @@ Bottom line: Handala should be treated as a persistent regional threat persona w
 
 &gt; This report does not independently validate victim compromise and should be read as structured normalization of open-source reporting. Attribution statements are strongest at cluster level and should not be interpreted as exclusive proof for every actor-branded incident.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*U1BpulRAhDMpSJZBRnaLeg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*U1BpulRAhDMpSJZBRnaLeg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Alias / Cluster Crosswalk
 
 &gt; [Assessed] Cross-vendor naming crosswalks indicate overlap, not identity at every incident level; operator, infrastructure, and campaign boundaries may differ by vendor model. The cluster-level equivalence between Void Manticore, BANISHED KITTEN, Dune, and the Handala Hack persona is directly stated by multiple primary sources and should be treated as high-confidence at the persona/cluster level.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TwJNWefkeNvLm8-q6RPSFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TwJNWefkeNvLm8-q6RPSFQ.png" alt="Article image" width="698" height="569" loading="lazy" decoding="async" />
 
 ### Attribution Link Analysis (Analyst View)
 
 `Handala Hack Persona (public claims/leaks channels) ↔ Void Manticore (Check Point) ↔ Storm-0842/842 (Microsoft) ↔ COBALT MYSTIQUE (Sophos) ↔ BANISHED KITTEN (CrowdStrike) ↔ Dune (Recorded Future)`
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*huioUHzqdEeDvfu_sQM8QQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*huioUHzqdEeDvfu_sQM8QQ.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 `Cluster-confidence anchor:`Check Point direct equivalence statement`Void Manticore (Handala Hack)`+ cross-vendor naming convergence + recurring infrastructure intersections in reported operations (for example,`64.176.172.0/24`set).[R2][R5][R11][R19][R23c][R23d][R23e]
 
@@ -173,7 +173,7 @@ Bottom line: Handala should be treated as a persistent regional threat persona w
 
 ## Activity Timeline (2023–2026)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IG9iqbGgoEfqokU1dMi-gQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IG9iqbGgoEfqokU1dMi-gQ.png" alt="Article image" width="1908" height="943" loading="lazy" decoding="async" />
 
 &gt; Default evidence handling for this section:
 
@@ -247,7 +247,7 @@ Bottom line: Handala should be treated as a persistent regional threat persona w
 
 - Monitor abrupt actor-branded victim naming bursts in channel timelines.[R1][R9]
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Ynb4V542wi_-Q8z0Zt6YFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Ynb4V542wi_-Q8z0Zt6YFQ.png" alt="Article image" width="1919" height="641" loading="lazy" decoding="async" />
 
 ### December 2023–February 2024 (Early Claim-Led Campaigning)
 
@@ -357,7 +357,7 @@ Bottom line: Handala should be treated as a persistent regional threat persona w
 
 - **Channel migration/resilience (**`**T1585.001**`**— operational use of alternate channels on both Telegram and X platform):**Post-ban activity migrated to`@Handala_Backup`on X and continued via pre-existing Telegram infrastructure (`t.me/HANDALA_RSS`,`t.me/s/handala_backup_357`). These are separate platform assets, not a single unified channel.[R9][R10][R12][R18]
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4Qaner8OxsOlsuBr5KSMKA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4Qaner8OxsOlsuBr5KSMKA.png" alt="Article image" width="1919" height="641" loading="lazy" decoding="async" />
 
 **TTPs (Assessed)**
 
@@ -643,7 +643,7 @@ Bottom line: Handala should be treated as a persistent regional threat persona w
 
 `Access → Stage Payload (via Storj / Mega / other commercial hosting) → Impact (Disrupt/Wipe/Leak) → Public Claim → Amplify Across Channels → Repeat`
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Goj7JhwzZ08fgG_DaEZNxg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Goj7JhwzZ08fgG_DaEZNxg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Confirmed vs Claimed Matrix
 
@@ -659,7 +659,7 @@ Bottom line: Handala should be treated as a persistent regional threat persona w
 
 - [Assessed]**Post-February 2025 framing:**activity attributed to Handala after approximately February 9, 2025 is primarily vendor/researcher cluster attribution (Void Manticore / BANISHED KITTEN) rather than actor self-published claims. This does not reduce operational risk but affects how confidence should be calibrated for specific incidents.[R23a][R23b][R23c][R23d]
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fV-9L7MpOqjK3Bxok_Jvmw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fV-9L7MpOqjK3Bxok_Jvmw.png" alt="Article image" width="1618" height="967" loading="lazy" decoding="async" />
 
 ## Targeting and Victimology
 
@@ -733,7 +733,7 @@ Observed victim focus in open reporting includes:
 
 ## Detection Engineering Pack (SOC-Ready)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Wbeo8i3T5LyAIORjGFGOMg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Wbeo8i3T5LyAIORjGFGOMg.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 - **Current-event lure + archive/installer chain
 - Data sources:**secure email gateway, M365/Google mail logs, endpoint process tree.
@@ -821,7 +821,7 @@ Observed victim focus in open reporting includes:
 
 ## Wiper First 30 Minutes (Defensive Mini-Playbook)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*J-qhvEY46BBuFeLppY-zTw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*J-qhvEY46BBuFeLppY-zTw.png" alt="Article image" width="1408" height="768" loading="lazy" decoding="async" />
 
 - Declare destructive-activity severity and open incident command.
 
@@ -1017,7 +1017,7 @@ Observed victim focus in open reporting includes:
 
 ## Quantitative Snapshot
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*iy1MSwtIDPDFW3kBTYSWpg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*iy1MSwtIDPDFW3kBTYSWpg.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ### Common Operational Patterns
 
@@ -1033,9 +1033,9 @@ Observed victim focus in open reporting includes:
 
 - [Assessed]**Communications gap ≠ operational halt.**The silence of Handala’s own public channels from approximately February 9 to July 2025 did not prevent cluster operations; wiper activity (June 2025) and hack-and-leak operations (July 2025) continued under vendor cluster attribution.[R5][R23a][R23b][R23d][R23f]
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ElDHOIabUMYADITamboeQQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ElDHOIabUMYADITamboeQQ.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rOMLRFo5qOucEPuXiMlU_g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rOMLRFo5qOucEPuXiMlU_g.png" alt="Article image" width="467" height="816" loading="lazy" decoding="async" />
 
 ## Confidence and Gaps
 

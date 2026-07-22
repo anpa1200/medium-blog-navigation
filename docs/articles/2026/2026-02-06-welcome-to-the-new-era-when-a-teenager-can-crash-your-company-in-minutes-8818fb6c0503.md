@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*YP2vQadLDfPGcoMYbT-R9g.png"
 # Welcome to the New Era: When a Teenager Can Crash Your Company in Minutes
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*YP2vQadLDfPGcoMYbT-R9g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YP2vQadLDfPGcoMYbT-R9g.png" alt="Cover image" width="1024" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### An Urgent Message for CISOs and C-Level Executives. The threat landscape has fundamentally changed. Your legacy security assumptions are not just outdated — they’re dangerous.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*YP2vQadLDfPGcoMYbT-R9g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YP2vQadLDfPGcoMYbT-R9g.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ## Executive Summary
 

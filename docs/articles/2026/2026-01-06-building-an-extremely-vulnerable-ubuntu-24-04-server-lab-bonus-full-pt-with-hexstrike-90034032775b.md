@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*BXEZxGFa7d08ft9ktYNq_A.png"
 # Building an Extremely Vulnerable Ubuntu 24.04 Server Lab (Bonus: Full PT with Hexstrike)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*BXEZxGFa7d08ft9ktYNq_A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BXEZxGFa7d08ft9ktYNq_A.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Step-by-Step Guide: Hands-on guide to creating an intentionally insecure Ubuntu 24.04.3 Server VM with open SSH, FTP, Samba, NFS, Apache/PHP, MariaDB, privilege escalation vectors, vulnerable web apps, and sensitive data leaks
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BXEZxGFa7d08ft9ktYNq_A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BXEZxGFa7d08ft9ktYNq_A.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 This guide will walk you through creating a vulnerable Ubuntu 24.04.3 Server virtual machine (VM) lab for ethical penetration testing, security research, or educational purposes. Important Safety Note: This setup intentionally introduces severe security flaws, making the system highly exploitable. Only run this in an isolated virtual environment (e.g., a VM on your local machine). Do not deploy this on production systems, public networks, or without explicit permission. Always comply with laws and ethical guidelines — use for authorized testing only (e.g., CTFs, bug bounties, or personal labs). The vulnerabilities introduced here are based on common real-world exploits but are amplified for demonstration.
 
@@ -85,7 +85,7 @@ We’ll use VirtualBox or VMware as the hypervisor, download a legitimate Ubuntu
 
 - Finish and power on.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-PPf5vehqf7QohBy1n4bBw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-PPf5vehqf7QohBy1n4bBw.png" alt="Article image" width="1671" height="889" loading="lazy" decoding="async" />
 
 ### Step 3: Install Ubuntu 24.04.3 Server
 
@@ -138,7 +138,7 @@ open
 sudo reboot
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GsxDbtudG9XFKLfgQ17lGQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GsxDbtudG9XFKLfgQ17lGQ.png" alt="Article image" width="1300" height="813" loading="lazy" decoding="async" />
 
 ### Step 4: Configure Basic Networking and Access
 
@@ -561,7 +561,7 @@ chmod
 sudo /tmp/post_reboot.sh
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*o9L68FSF08YQRs4gvRpGmg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*o9L68FSF08YQRs4gvRpGmg.png" alt="Article image" width="1024" height="926" loading="lazy" decoding="async" />
 
 ## TAKE NEW SNAPSHOT!
 

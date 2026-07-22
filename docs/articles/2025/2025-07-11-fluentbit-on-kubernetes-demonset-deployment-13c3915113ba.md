@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*jfXMZcfailmpZh01"
 # FluentBit on Kubernetes DemonSet Deployment.
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*jfXMZcfailmpZh01)
+<img src="https://cdn-images-1.medium.com/max/800/0*jfXMZcfailmpZh01" alt="Cover image" width="700" height="700" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Cluster-wide log collection using Fluent Bit on every node
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*jfXMZcfailmpZh01)
+<img src="https://cdn-images-1.medium.com/max/800/0*jfXMZcfailmpZh01" alt="Article image" width="700" height="700" loading="lazy" decoding="async" />
 
 ## Description:
 
@@ -31,7 +31,7 @@ This guide explains how to deploy Fluent Bit as a DaemonSet in a Kubernetes clus
 
 Official documentation about DemonSet:[https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XS43YvHyWqRD6QdB_9Ny3A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XS43YvHyWqRD6QdB_9Ny3A.png" alt="Article image" width="1511" height="1292" loading="lazy" decoding="async" />
 
 ## Fluent Bit Offset Persistence
 
@@ -112,7 +112,7 @@ Example for configuration file:[Here](https://raw.githubusercontent.com/aws-samp
 
 [Persistent storage for container logging using Fluent Bit and Amazon EFS | Amazon Web Services](https://aws.amazon.com/ru/blogs/storage/persistent-storage-for-container-logging-using-fluent-bit-and-amazon-efs/)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3GM62dc7yTcW5Qkcx3dBvQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3GM62dc7yTcW5Qkcx3dBvQ.png" alt="Article image" width="802" height="911" loading="lazy" decoding="async" />
 
 ## Deploying Fluent Bit with Cluster-Wide Persistence on Kubernetes (EKS + EFS)
 

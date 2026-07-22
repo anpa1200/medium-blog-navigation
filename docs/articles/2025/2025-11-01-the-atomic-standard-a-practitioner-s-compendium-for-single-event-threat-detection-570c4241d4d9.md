@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*2inr9ILQRagXXQ_88TLc9A.png"
 # The Atomic Standard: A Practitioner’s Compendium for Single-Event Threat Detection
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*2inr9ILQRagXXQ_88TLc9A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2inr9ILQRagXXQ_88TLc9A.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Part 1: The Theoretical Foundation of Atomic Detection
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2inr9ILQRagXXQ_88TLc9A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2inr9ILQRagXXQ_88TLc9A.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## 1.1 Deconstructing the “Single-Event” Rule: The Professional’s Middle Ground
 

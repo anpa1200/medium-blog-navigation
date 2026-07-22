@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*DOUf58XPpv4azYsnZXsQHg.png"
 # Correlation-Based Detection Rules in Cybersecurity: From Atomic Events to Behavioral Insight
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*DOUf58XPpv4azYsnZXsQHg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DOUf58XPpv4azYsnZXsQHg.png" alt="Cover image" width="2816" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A comprehensive exploration of multi-event analytics, temporal logic, and rule chaining for advanced threat detection across modern SIEM and XDR ecosystems.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DOUf58XPpv4azYsnZXsQHg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DOUf58XPpv4azYsnZXsQHg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Introduction
 

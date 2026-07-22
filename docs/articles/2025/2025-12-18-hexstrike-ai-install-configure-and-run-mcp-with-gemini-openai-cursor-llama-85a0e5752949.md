@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*xVOL0ffrnBvXhmCNie1Tlg.png"
 # HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*xVOL0ffrnBvXhmCNie1Tlg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xVOL0ffrnBvXhmCNie1Tlg.png" alt="Cover image" width="1600" height="840" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical, end-to-end guide to installing HexStrike AI, wiring it as an MCP server, and running real tool-driven workflows (recon → enumeration → validation) with Gemini, OpenAI, Cursor, and Llama.
 
-![Hexstrike AI MCP Orchestration Cursor Gemini OpenAI Codex llama](https://cdn-images-1.medium.com/max/800/1*xVOL0ffrnBvXhmCNie1Tlg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xVOL0ffrnBvXhmCNie1Tlg.png" alt="Hexstrike AI MCP Orchestration Cursor Gemini OpenAI Codex llama" width="1600" height="840" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -126,11 +126,11 @@ sudo apt install hexstrike
 ai
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9-QmXpnALbdVDLB_hGXQaw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9-QmXpnALbdVDLB_hGXQaw.png" alt="Article image" width="665" height="214" loading="lazy" decoding="async" />
 
 This will pull in all required dependencies (Python3,`python3-mcp`,`requests`, etc.) automatically. If a dependency fails, you can try installing missing Python libraries manually or use pip inside a virtualenv (the GitHub repo also provides a`requirements.txt`and demo scripts).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*l23WMEIE4xiyadfaoh1ZEQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*l23WMEIE4xiyadfaoh1ZEQ.png" alt="Article image" width="667" height="128" loading="lazy" decoding="async" />
 
 **Browser Agent (optional):**To use HexStrike’s advanced headless-browser module, install Chrome or Chromium and its WebDriver. For example:
 
@@ -146,7 +146,7 @@ ai
 
 to verify availability. Also, ensure essential tools are installed: run commands like`which nmap gobuster nuclei`. If any are missing, install them via`apt`(e.g.,`sudo apt install nmap gobuster nuclei`). HexStrike will warn of “Security Tools Not Found” if required tools aren’t in your PATH.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zXA5gMrUB4RhuxIIMDAG1A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zXA5gMrUB4RhuxIIMDAG1A.png" alt="Article image" width="667" height="128" loading="lazy" decoding="async" />
 
 ## Configuration Guide
 
@@ -168,7 +168,7 @@ hexstrike_server
 8090
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*b8i-prJb8660_i1NmgN7LA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*b8i-prJb8660_i1NmgN7LA.png" alt="Article image" width="1341" height="778" loading="lazy" decoding="async" />
 
 A successful start will print info like “Server starting on 127.0.0.1:8888”. For the first-time setup, you may append`--debug`to get verbose logging. After starting, you can verify the server is up by checking its health endpoint:
 
@@ -176,11 +176,11 @@ A successful start will print info like “Server starting on 127.0.0.1:8888”.
 curl http://localhost:8888/health
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VMHJAFtlsXUb9PSlYIpRuw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VMHJAFtlsXUb9PSlYIpRuw.png" alt="Article image" width="1915" height="306" loading="lazy" decoding="async" />
 
 ## Connecting to Codex (OpenAI API)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*1KtMBHg7ApS_b5Ih.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*1KtMBHg7ApS_b5Ih.jpeg" alt="Article image" width="1920" height="1080" loading="lazy" decoding="async" />
 
 HexStrike itself does not bundle an LLM; you connect it to an external model via the MCP interface. To use**OpenAI’s ChatGPT**, obtain an API key from OpenAI and set it in your environment. For example:
 
@@ -198,7 +198,7 @@ tform.openai.com/api-
 keys
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*L4ngx1RnfNGqwxR8uHzaTQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*L4ngx1RnfNGqwxR8uHzaTQ.png" alt="Article image" width="1909" height="701" loading="lazy" decoding="async" />
 
 HexStrike (or any LLM client you use) will use this key to call the ChatGPT API. You may need to install the OpenAI Python library (`pip install openai`If you plan to write custom scripts or use an LLM shell. With the key set, HexStrike can issue ChatCompletion requests to OpenAI’s servers. (Ensure your Kali VM has internet access; check firewall/proxy settings if needed.)
 
@@ -221,7 +221,7 @@ node -v
 npm -v
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*spf41MjRaPcLPqls4gXk4Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*spf41MjRaPcLPqls4gXk4Q.png" alt="Article image" width="1212" height="98" loading="lazy" decoding="async" />
 
 ### Install Codex CLI (global)
 
@@ -242,7 +242,7 @@ codex
 --version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OPnD_YzKvUQyzv4P8jeLEw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OPnD_YzKvUQyzv4P8jeLEw.png" alt="Article image" width="1579" height="53" loading="lazy" decoding="async" />
 
 ### First run (and sign-in)
 
@@ -252,7 +252,7 @@ Start Codex:
 codex
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KDE_zIijv-sMOxHIW0Bp_g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KDE_zIijv-sMOxHIW0Bp_g.png" alt="Article image" width="1214" height="361" loading="lazy" decoding="async" />
 
 **OpenAI Codex (v0.77.0)**
 
@@ -265,7 +265,7 @@ codex login
 --device-auth
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*tzHK3BwTsfrVyDrDsQGsWQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*tzHK3BwTsfrVyDrDsQGsWQ.png" alt="Article image" width="1386" height="339" loading="lazy" decoding="async" />
 
 ### Add HexStrike as an MCP server in Codex (SSH → MCP STDIO)
 
@@ -369,7 +369,7 @@ Inside the Codex UI, run:
 /mcp
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Y29vz5e7sFUWpiHjEnWYXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Y29vz5e7sFUWpiHjEnWYXQ.png" alt="Article image" width="1915" height="691" loading="lazy" decoding="async" />
 
 MCP Tools →`hexstrike`
 
@@ -410,11 +410,11 @@ to
 .129
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*p-ZinESQxzGfzx-fSgOAXg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*p-ZinESQxzGfzx-fSgOAXg.png" alt="Article image" width="1603" height="292" loading="lazy" decoding="async" />
 
 ## Connecting to Google Gemini
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*wUYpdgCXk2xGCpa4.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*wUYpdgCXk2xGCpa4.png" alt="Article image" width="2000" height="601" loading="lazy" decoding="async" />
 
 For Google’s Gemini (via the Google GenAI API), the setup is similar. You’ll need a Google Cloud project with the Gemini API enabled and an API key. Then set:
 
@@ -453,7 +453,7 @@ Alternatively, you can use**gemini-cli**, Google’s open-source LLM CLI. In Kal
 sudo apt install gemini-cli
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*W20ikvwVkfjhYb04NL4sTg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*W20ikvwVkfjhYb04NL4sTg.png" alt="Article image" width="1717" height="363" loading="lazy" decoding="async" />
 
 This provides a`gemini`command. To integrate HexStrike, edit the Gemini settings file (`~/.gemini/settings.json`) and add an MCP server entry. For example:
 
@@ -505,9 +505,9 @@ gemini-cli
 "Say hello"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QM4eIoKdaJzDWg7IH1uaiA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QM4eIoKdaJzDWg7IH1uaiA.png" alt="Article image" width="1919" height="148" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lNd6J7vcUn5dqud8f-6JUg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lNd6J7vcUn5dqud8f-6JUg.png" alt="Article image" width="1913" height="430" loading="lazy" decoding="async" />
 
 Other Configuration Files
 
@@ -515,7 +515,7 @@ HexStrike doesn’t have a heavy config file by default — most settings are vi
 
 ## Configure Cursor MCP to talk to HexStrike
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*uSyCz0iZLRSSUQA6.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*uSyCz0iZLRSSUQA6.png" alt="Article image" width="1080" height="800" loading="lazy" decoding="async" />
 
 **HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough**)
 
@@ -583,9 +583,9 @@ This mirrors the working MCP pattern used with other LLM clients (same`hexstrike
 
 **Or in a GUI:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UMEPqpkQkAg4_K8ju1U_EQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UMEPqpkQkAg4_K8ju1U_EQ.png" alt="Article image" width="700" height="678" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HGSKEeb5u6_w5x_k9JU6Gw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HGSKEeb5u6_w5x_k9JU6Gw.png" alt="Article image" width="694" height="329" loading="lazy" decoding="async" />
 
 ### Validate the connection inside Cursor
 
@@ -599,13 +599,13 @@ You should now be able to reference the MCP tool namespace (your naming may show
 
 - confirm the`hexstrike_mcp.py`path is correct
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Px3oIaX6KB5BtO5nxOfzeA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Px3oIaX6KB5BtO5nxOfzeA.png" alt="Article image" width="463" height="637" loading="lazy" decoding="async" />
 
 ## HexStrike real use light example. A Full-Lifecycle Pentesting Guide for Metasploitable
 
 For this guide, I run MetasploitableVM:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FbEXfbZ436LN5bUOcMw-sg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FbEXfbZ436LN5bUOcMw-sg.png" alt="Article image" width="858" height="445" loading="lazy" decoding="async" />
 
 ### Phase 1: Reconnaissance (Attack Surface Mapping)
 
@@ -623,11 +623,11 @@ and categorize each service by its 'Exploitation Confidence'
 (High/Medium/Low) based on known vulnerabilities."
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4VrS7Sde8Ec9dLX_yc5UoA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4VrS7Sde8Ec9dLX_yc5UoA.png" alt="Article image" width="1518" height="150" loading="lazy" decoding="async" />
 
 - **What HexStrike does:**It will autonomously run`nmap -sV`and use its**CVEIntelligenceManager**to cross-reference every version it finds against real-time vulnerability data.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IDdWLqrPJDICmEEgXct1vw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IDdWLqrPJDICmEEgXct1vw.png" alt="Article image" width="1500" height="685" loading="lazy" decoding="async" />
 
 ### Phase 2: Vulnerability Discovery (The “Hit List”)
 
@@ -641,7 +641,7 @@ HexStrike excels at finding “chainable” flaws that manual testers might miss
 
 - **What HexStrike does:**It will confirm exploitability using tools like`searchsploit`or specialized scripts, providing you with a high-confidence attack path.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vW9EPQDlODRWybqv8soy5w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vW9EPQDlODRWybqv8soy5w.png" alt="Article image" width="1510" height="473" loading="lazy" decoding="async" />
 
 ### Phase 3: Exploitation (Gaining Access)
 
@@ -653,7 +653,7 @@ In this phase, HexStrike translates your intent into precise, technical executio
 
 - “Exploit the Samba vulnerability on**172.16.59.128**. Use a reverse shell payload targeting my local IP on port 4444. Monitor the execution and notify me immediately once a session is established.”
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*a9GE2oK_iFVIiv77Udwubw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*a9GE2oK_iFVIiv77Udwubw.png" alt="Article image" width="1513" height="664" loading="lazy" decoding="async" />
 
 - **What HexStrike does:**It manages the RPC API for Metasploit, setting all required options (RHOST, LHOST, Payload) and executing the exploit autonomously.
 
@@ -669,7 +669,7 @@ Once you have access, use HexStrike to pillage the target for credentials and se
 
 - **What HexStrike does:**It runs commands through the established shell, exfiltrates sensitive files, and automatically initializes cracking tools like`john`or`hashcat`.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*h1b-Lo_1GbW980jiUJPNuQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*h1b-Lo_1GbW980jiUJPNuQ.png" alt="Article image" width="1503" height="447" loading="lazy" decoding="async" />
 
 ## Essential Safety & Performance Tips
 

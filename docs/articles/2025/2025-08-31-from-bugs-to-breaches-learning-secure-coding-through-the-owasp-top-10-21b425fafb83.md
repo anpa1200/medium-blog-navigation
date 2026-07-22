@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*aSbjsHaLXv6vx5pwkrhiLg.png"
 # From Bugs to Breaches: Learning Secure Coding Through the OWASP Top 10
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*aSbjsHaLXv6vx5pwkrhiLg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aSbjsHaLXv6vx5pwkrhiLg.png" alt="Cover image" width="2048" height="2048" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Practical scenarios that show how small developer mistakes lead to big security incidents.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aSbjsHaLXv6vx5pwkrhiLg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aSbjsHaLXv6vx5pwkrhiLg.png" alt="Article image" width="2048" height="2048" loading="lazy" decoding="async" />
 
 Most security incidents don’t come from zero-day exploits or elite hackers. They come from simple, well-known mistakes in everyday code. That’s why the OWASP Top 10 exists: a globally recognized list of the most critical security risks in modern applications.
 
@@ -37,7 +37,7 @@ The**OWASP Top 10**is not just a list of technical bugs. It’s a**global standa
 
 [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Pr1QNiY1Q7B2ci3i.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*Pr1QNiY1Q7B2ci3i.png" alt="Article image" width="1754" height="959" loading="lazy" decoding="async" />
 
 ## How It’s Made
 

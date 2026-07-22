@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*AGZ7Se-X2ML3kPX6"
 # Accessing Remote Desktops: A Beginner’s Guide to RDP Cracking with Crowbar and PPG tools
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*AGZ7Se-X2ML3kPX6)
+<img src="https://cdn-images-1.medium.com/max/800/0*AGZ7Se-X2ML3kPX6" alt="Cover image" width="1024" height="800" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Master the Techniques: Unveiling the Power of Crowbar and PPG to Unlock Remote Desktop Protocols
 
-![RDP](https://cdn-images-1.medium.com/max/800/0*AGZ7Se-X2ML3kPX6)
+<img src="https://cdn-images-1.medium.com/max/800/0*AGZ7Se-X2ML3kPX6" alt="RDP" width="1024" height="800" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -149,11 +149,11 @@ crowbar -b rdp -C /home/sulik/Documents/PasswordCracking/Dictionaries/short_pass
 
 - `**-v**`: This is the verbosity flag. Including`-v`means the output of the Crowbar tool will be more detailed, providing more information about the ongoing attack process. This can be useful for debugging or understanding more about how the attack is proceeding.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*C9oxb9QgdWCCoG8tJ9u70A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*C9oxb9QgdWCCoG8tJ9u70A.png" alt="Article image" width="1920" height="731" loading="lazy" decoding="async" />
 
 Succsessfull attempt:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZP5SFrURLFZPZF7lEHmjjQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZP5SFrURLFZPZF7lEHmjjQ.png" alt="Article image" width="684" height="119" loading="lazy" decoding="async" />
 
 Username: “Malware” Password: “1”
 

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*_T6ELO-c0UjB3bOQNyDpJg.png"
 # Cyberattacks on 4G/LTE Telecom Networks: Threat Mapping and Defense
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*_T6ELO-c0UjB3bOQNyDpJg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_T6ELO-c0UjB3bOQNyDpJg.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### This research provides an in-depth analysis of cyber threats targeting LTE telecom core networks, mapping real-world and theoretical attack techniques to the MITRE ATT&CK and FiGHT frameworks. It includes practical detection methods and mitigation strategies, tailored specifically for Ericsson systems and infrastructure.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_T6ELO-c0UjB3bOQNyDpJg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_T6ELO-c0UjB3bOQNyDpJg.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -33,7 +33,7 @@ Telecommunications providers are prime targets for cyberattacks, from nation-sta
 
 A 4G/LTE network’s Evolved Packet Core (EPC) comprises functions like the Mobility Management Entity (MME), Serving Gateway (SGW), Packet Gateway (PGW), Home Subscriber Server (HSS), and Policy and Charging Rules Function (PCRF). Key interfaces include the radio link (Uu) between UE and eNodeB, S1-MME (control plane between eNodeB and MME), S1-U (user plane between eNodeB and SGW), S6a (MME–HSS via Diameter protocol), S11 (MME–SGW), S5/S8 (SGW–PGW GTP tunnel), SGi (PGW–Internet), and Gx (PGW–PCRF via Diameter). Below, we break down the connection process into stages and map threats at each stage.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mi2f0YWJM9iKhsEgdvLjdA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mi2f0YWJM9iKhsEgdvLjdA.png" alt="Article image" width="1184" height="440" loading="lazy" decoding="async" />
 
 ## Stage 1: Access Network (UE to eNodeB via Uu)
 
@@ -41,7 +41,7 @@ A 4G/LTE network’s Evolved Packet Core (EPC) comprises functions like the Mobi
 
 In the RAN stage, adversaries may target the wireless link and base station. A common threat is the use of rogue base stations or**IMSI-catchers**: fake eNodeBs that trick nearby phones into connecting, forcing them to reveal their IMSI (subscriber ID) or downgrade security. Classic IMSI-catchers broadcast a stronger signal to lure UEs and then issue an identity request to collect IMSIs, impersonating a legitimate cell tower[eff.org](https://www.eff.org/wp/gotta-catch-em-all-understanding-how-imsi-catchers-exploit-cell-networks#:~:text=Classic%20%E2%80%9CIMSI,how%20they%20work%20in%20more).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*q_Pk6Wz5dMWtWlEKE4HBww.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*q_Pk6Wz5dMWtWlEKE4HBww.png" alt="Article image" width="758" height="298" loading="lazy" decoding="async" />
 
 This enables**Location Tracking**of subscribers in real time by obtaining IMSI/TMSI and cell info[p1sec.com](https://www.p1sec.com/blog/understanding-the-vulnerabilities-of-the-diameter-protocol-in-4g-networks#:~:text=Misconfigurations%20result%20in%20several%20potential,attack%20vectors)[p1sec.com](https://www.p1sec.com/blog/understanding-the-vulnerabilities-of-the-diameter-protocol-in-4g-networks#:~:text=1,be%20leveraged%20for%20further%20attacks). In some cases, attackers can even cause**downgrade attacks**(forcing devices from LTE to insecure 2G/3G) to intercept calls or SMS (since GSM has weaker or no encryption)[eff.org](https://www.eff.org/wp/gotta-catch-em-all-understanding-how-imsi-catchers-exploit-cell-networks#:~:text=Section%203)[eff.org](https://www.eff.org/wp/gotta-catch-em-all-understanding-how-imsi-catchers-exploit-cell-networks#:~:text=Imagine%20that%20the%20CSS%20is,MitM%29%20attack).
 
@@ -49,13 +49,13 @@ Another threat is**Radio jamming**— flooding the air interface with noise to d
 
 They align with MITRE ATT&CK techniques for network denial-of-service (e.g.,**Network DoS — T1498**for jamming) and credential/access collection (IMSI catching for tracking). In MITRE FiGHT, IMSI-catcher and rogue base station attacks are documented as well (e.g., obtaining subscriber identifiers) under tactics like Network Access or Collection. An adversary setting up malicious base stations or sniffing unencrypted radio data exemplifies**Network Sniffing (ATT&CK T1040)**if they capture data, and can be seen as**Network Service Discovery/Scanning (ATT&CK T1046, FiGHT FGT1046)**if scanning for network signals or vulnerabilities in RAN[fight.mitre.org](https://fight.mitre.org/techniques/#:~:text=Techniques%20List%20,hosts%20and%20local%20network).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VAVgDFvP4Q0flQC-KzGQDw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VAVgDFvP4Q0flQC-KzGQDw.png" alt="Article image" width="510" height="439" loading="lazy" decoding="async" />
 
 ### Adversary Exploitation:
 
 To execute an IMSI-catcher attack, an attacker (often using hardware like a software-defined radio) configures a fake cell site that advertises as a legitimate network (possibly pretending to be an MNC/MCC that UEs trust).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zGcLlvWgEdk3s8IB4i4Ljw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zGcLlvWgEdk3s8IB4i4Ljw.png" alt="Article image" width="485" height="361" loading="lazy" decoding="async" />
 
 The fake eNodeB may initially accept connections without enforcing encryption, then send a**“Identity Request”**message causing the UE to respond with its IMSI[eff.org](https://www.eff.org/wp/gotta-catch-em-all-understanding-how-imsi-catchers-exploit-cell-networks#:~:text=Once%20a%20phone%20has%20identified,3)[eff.org](https://www.eff.org/wp/gotta-catch-em-all-understanding-how-imsi-catchers-exploit-cell-networks#:~:text=After%20this%2C%20the%20base%20station,IMSI%20from%20a%20nearby%20phone). The rogue node can then drop the connection or pass the UE back to the real network — by that time it has “caught” the IMSI (and thus identified the subscriber)[eff.org](https://www.eff.org/wp/gotta-catch-em-all-understanding-how-imsi-catchers-exploit-cell-networks#:~:text=phones)[eff.org](https://www.eff.org/wp/gotta-catch-em-all-understanding-how-imsi-catchers-exploit-cell-networks#:~:text=From%20here%2C%20many%20more%20sophisticated,on%20to%20their%20next%20target). More advanced malicious base stations may perform**downgrade**: jamming LTE bands to push UEs onto 2G, then acting as a false 2G BTS to intercept calls/SMS (since 4G itself uses strong mutual authentication and encryption post-attach, direct interception is not feasible without downgrade)[eff.org](https://www.eff.org/wp/gotta-catch-em-all-understanding-how-imsi-catchers-exploit-cell-networks#:~:text=Section%203). Jamming attacks are simpler — an attacker uses a radio transmitter to emit continuous or modulated noise on LTE frequencies, disrupting the UE’s ability to communicate with genuine towers (a broad**Denial of Service**on the RF layer).
 
@@ -75,7 +75,7 @@ Once a UE connects to a legitimate eNodeB, it initiates an**attach procedure**. 
 
 A major threat here is a**Signaling Storm or Attach Flood**— where an adversary floods the MME with a high volume of attach requests or bogus signaling messages to overwhelm its processing capacity (**Network DoS — ATT&CK T1498.001: Direct Network Flood**[center-for-threat-informed-defense.github.io](https://center-for-threat-informed-defense.github.io/mappings-explorer/attack/attack-14.1/domain-enterprise/techniques/T1498.001/#:~:text=ATT%26CK%20Technique%20T1498.001%20,network%20traffic%20to%20a%20target)). For example, a botnet of compromised IoT devices or UEs could simultaneously send repeated attach/detach or authentication requests, consuming MME and HSS resources. Researchers have noted that an attacker controlling a few UEs or a rogue femtocell could send many false requests (e.g. using fake or stolen IMSIs) to overload the MME/HSS, leading to denial of service for legitimate users[journals.riverpublishers.com](https://journals.riverpublishers.com/index.php/JICTS/article/view/6405/5139#:~:text=Networks%20journals,Especially)[juniper.net](https://www.juniper.net/content/dam/www/assets/white-papers/us/en/lte-security-for-mobile-service-provider-networks.pdf#:~:text=Paper%20www,intentioned).
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*W_JMEKfc-HYIM2Wf)
+<img src="https://cdn-images-1.medium.com/max/800/0*W_JMEKfc-HYIM2Wf" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 Another threat in this stage is**exploitation of control-plane protocol vulnerabilities**. The S1AP protocol or MME software might have implementation bugs — a crafted S1-AP message or malformed NAS packet could potentially crash the MME (a form of exploitation aligning with ATT&CK**Exploitation for DoS (T1499)**or more generally**Exploitation of Remote Services (T1210)**if code execution). Similarly, if the Diameter interface (S6a) is misconfigured, adversaries from other networks might send malicious Diameter messages.**Diameter attacks**include sending false Update-Location or Cancel-Location messages (to detach users or reroute their service), or rapid authentication queries to burden the HSS/MME. Since Diameter often lacks encryption or proper filtering between roaming partners, attackers can perform**subscriber information disclosure**and**fraud**via this channel[p1sec.com](https://www.p1sec.com/blog/understanding-the-vulnerabilities-of-the-diameter-protocol-in-4g-networks#:~:text=The%20Misconfiguration%20Problem)[p1sec.com](https://www.p1sec.com/blog/understanding-the-vulnerabilities-of-the-diameter-protocol-in-4g-networks#:~:text=1,This%20could%20include%20information%20about). For instance, a rogue roaming partner or an intruder with access to the IPX network can query subscriber data (IMSI, location) or even issue rogue commands to change subscriber profiles. This abuse of inter-operator trust corresponds to**MITRE FiGHT technique FGT5016 (Abuse of Inter-Operator Interfaces)**, reflecting that attackers can leverage roaming interfaces (Diameter/SS7) to gather info or disrupt service[fight.mitre.org](https://fight.mitre.org/techniques/FGT5016/#:~:text=This%20is%20a%20FiGHT%20Technique,Access%20required%3A%20N%2FA). Real-world criminal groups have exploited SS7 (the 3G predecessor to Diameter) to intercept OTP SMS by issuing location and routing requests for target numbers, illustrating the risk on Diameter too[eff.org](https://www.eff.org/deeplinks/2024/07/eff-fcc-ss7-vulnerable-and-telecoms-must-acknowledge#:~:text=EFF%20to%20FCC%3A%20SS7%20is,as%20SS7%2C%20such%20as)[cyble.com](https://cyble.com/blog/us-telecom-networks-security/#:~:text=U,themselves%20downgraded%20to%20SS7). An**Insider threat**is also pertinent at this stage: a malicious or bribed insider (with access to core management systems) could directly query HSS for subscriber data or disable certain security features. Such insider activity would map to**Valid Accounts (T1078)**or**Endpoint Admin Compromise**, but its effect shows in this stage by bypassing normal attach controls (e.g., whitelisting a device or SIM without authorization).
 
@@ -83,7 +83,7 @@ Another threat in this stage is**exploitation of control-plane protocol vulnerab
 
 To conduct an attach flood, an adversary might use a modified firmware or malware on UEs to send continuous attach requests, or operate a rogue base station that generates fake UE identities en masse. The MME, seeing what looks like a massive surge of new UEs, tries to authenticate each — causing a cascade where the HSS is bombarded with authentication vector requests and the MME’s NAS signaling processing is maxed out[journals.riverpublishers.com](https://journals.riverpublishers.com/index.php/JICTS/article/view/6405/5139#:~:text=Networks%20journals,Especially),[juniper.net](https://www.juniper.net/content/dam/www/assets/white-papers/us/en/lte-security-for-mobile-service-provider-networks.pdf#:~:text=Paper%20www,intentioned). In a lab test, it was shown that flooding the MME with even a moderate rate of bogus sign-in requests can degrade service or crash it[ndss-symposium.org](https://www.ndss-symposium.org/wp-content/uploads/2017/09/practical-attacks-against-privacy-availability-4g-lte-mobile-communication-systems.pdf#:~:text=,However). For Diameter attacks, an attacker with access to the Diameter signaling network (often via compromised roaming partner systems or by purchasing access to an interconnect) can send crafted messages. For example, they could use a tool (like the publicly known**SigPloit**[https://github.com/SigPloiter/SigPloit](https://github.com/SigPloiter/SigPloit)for SS7/Diameter exploitation) to send a**Diameter Update Location**for a subscriber, causing the real MME to think the user moved to a different network — potentially forcing a detach. They may also exploit misconfigurations: many operators still do not enforce Diameter TLS/IPSec, relying on implicit trust[p1sec.com](https://www.p1sec.com/blog/understanding-the-vulnerabilities-of-the-diameter-protocol-in-4g-networks#:~:text=The%20Misconfiguration%20Problem). Attackers abuse this by sending**Diameter messages with spoofed identities**or unexpected AVPs to extract data or confuse state. As P1 Security reports, misconfigured Diameter allows attackers to obtain IMSIs, subscriber addresses and even intercept communications by triggering fallbacks (e.g., sending a message to downgrade a 4G session so it can be tapped via SS7)[p1sec.com](https://www.p1sec.com/blog/understanding-the-vulnerabilities-of-the-diameter-protocol-in-4g-networks#:~:text=1,This%20could%20include%20information%20about)[p1sec.com](https://www.p1sec.com/blog/understanding-the-vulnerabilities-of-the-diameter-protocol-in-4g-networks#:~:text=leveraged%20for%20further%20attacks,parameters%20or%20overriding%20service%20restrictions). In an observed case, Chinese APT groups (e.g. operation “Soft Cell”) compromised telco servers and could query subscriber databases for Call Detail Records and credentials[cybereason.com](https://www.cybereason.com/blog/research/operation-soft-cell-a-worldwide-campaign-against-telecommunications-providers#:~:text=The%20attack%20was%20aiming%20to,of%20a%20large%20telecommunications%20provider)[cybereason.com](https://www.cybereason.com/blog/research/operation-soft-cell-a-worldwide-campaign-against-telecommunications-providers#:~:text=The%20threat%20actor%20mainly%20sought,of%20nation%20state%20threat%20actors)— essentially using stolen admin access to exploit these interfaces from the inside.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*p5fUzGhTe8dDtWF7Z65sNA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*p5fUzGhTe8dDtWF7Z65sNA.png" alt="Article image" width="655" height="592" loading="lazy" decoding="async" />
 
 ### Detection:
 
@@ -97,7 +97,7 @@ Protecting the control-plane signaling requires capacity hardening and strict fi
 
 After initial attach and authentication, the network establishes user session context. In LTE, the MME creates a default bearer by communicating with the SGW (via S11 GTP-C) and PGW (via S5/S8 GTP-C if the PGW is in the home network or different domain). The PGW interacts with the PCRF over the Gx (Diameter) interface to apply policy/QoS rules. This stage involves both GTP control messages (session creation, modification) and Diameter messages (for policy and charging).
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*4dw4xRh9r72S_qNq)
+<img src="https://cdn-images-1.medium.com/max/800/0*4dw4xRh9r72S_qNq" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ### Threats & Techniques:
 
@@ -119,7 +119,7 @@ GTP anomalies can often be detected by a**GTP-aware firewall or IDS**. Many oper
 
 In this stage, the user’s IP traffic flows from the UE, through the eNodeB (over the GTP-U tunnel on S1-U to the SGW, and then to PGW), and exits to the public internet via the SGi interface (the connection between PGW and data network). While previous stages cover signaling, this stage concerns data payload and its exposure both within the carrier network and externally.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*LUX_eFvtS4rZ7-ZZ)
+<img src="https://cdn-images-1.medium.com/max/800/0*LUX_eFvtS4rZ7-ZZ" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ### Threats & Techniques:
 

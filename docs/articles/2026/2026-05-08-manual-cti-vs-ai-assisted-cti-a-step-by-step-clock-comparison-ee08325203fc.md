@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*C2eB6rsSdqigWjLMUAIWmw.png"
 # Manual CTI vs. AI-Assisted CTI: A Step-by-Step Clock Comparison
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*C2eB6rsSdqigWjLMUAIWmw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*C2eB6rsSdqigWjLMUAIWmw.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Which steps compress, which do not, and what you risk if you do not understand the difference.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*C2eB6rsSdqigWjLMUAIWmw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*C2eB6rsSdqigWjLMUAIWmw.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## The Same Investigation, Twice
 
@@ -126,7 +126,7 @@ a 39-row proxy log CSV with timestamps, source hosts, destination IPs, ports, by
 
 ## Where the 111 minutes go
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wZCsySfeiP3fQk78-WbPwg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wZCsySfeiP3fQk78-WbPwg.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async" />
 
 Before the step-by-step walkthrough, here is the aggregate view by phase.
 
@@ -176,7 +176,7 @@ The Microsoft framing is actor-specific where the CISA advisory is technique-foc
 
 *Volt Typhoon · living-off-the-land · LOLbins · wmic · certutil · ntdsutil · SOHO router botnet · KV-botnet · traffic proxying · Fortinet CVE · web shell · credential dumping · TEMP staging · pre-positioning · long dwell time · no malware signature · behavioural baseline needed · Taiwan strait · geopolitical crisis · critical infrastructure · defence contractor · pharmaceutical logistics · supply chain value · beaconing · regular interval · port 443 blend-in · Uncategorised proxy · bytes_out anomaly · exfiltration · data staging · forensics · GreyNoise · Shodan · VT reputation · IP enrichment · MITRE ATT&CK · T1003 credential dumping · T1078 valid accounts · network segmentation · VPN audit · edge device inventory · insider threat? · misattribution risk · false positive*
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WHyGuwLaUze9N4iYlMw-TQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WHyGuwLaUze9N4iYlMw-TQ.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async" />
 
 The timer ends at exactly ten minutes. That is the exercise.
 
@@ -184,7 +184,7 @@ The timer ends at exactly ten minutes. That is the exercise.
 
 *“I am a CTI analyst at Meridian Freight Group, a European logistics operator with defence contractor and pharmaceutical clients. I have read CISA AA23–144A [key facts: LOLbin TTPs, SOHO botnet, Fortinet initial access, no-malware approach, pre-positioning goal] and the Microsoft Volt Typhoon advisory [key facts: active since 2021, Fortinet CVE, credential dumping, TEMP staging, logistics targeting]. My CISO asks whether this actor is a concern for our organisation. Use simple brainstorming: generate every relevant variable by category. Volume over judgement — do not filter yet.”*
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GW7PkPQqnY_5DKON0cOKCA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GW7PkPQqnY_5DKON0cOKCA.png" alt="Article image" width="1916" height="994" loading="lazy" decoding="async" />
 
 Prompt writing: 1 minute. Generation: seconds. A categorised list of 40+ items appears. Then read every item — ask whether each one is sourced in the actual reports or is training-data content added without a source, what the model missed, what is misleading for this specific context. The model added “reduced staff attention due to remote work” — reasonable inference, but not in either advisory. Label it as analyst inference. It missed the KV-botnet framing. Add it manually.
 
@@ -258,7 +258,7 @@ The technique is Sorting: load the dataset, apply sequential sorts and filters t
 
 **Manual approach:**Open Excel. File → Open the CSV. Confirm 39 data rows plus one header. Freeze the top row. Widen columns. Save a working copy as`.xlsx`. Mechanical, necessary, unremarkable.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_1sxNIs6mI_raIQL1O1FdA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_1sxNIs6mI_raIQL1O1FdA.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async" />
 
 **AI-era approach:**
 
@@ -311,7 +311,7 @@ print
 (summary)
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_24QhtojVs9BC0z5MMjUuQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_24QhtojVs9BC0z5MMjUuQ.png" alt="Article image" width="1106" height="876" loading="lazy" decoding="async" />
 
 Seconds to run.`185.220.101.47`at the top: 23 rows, Uncategorised, Engineering only. Read and confirm: 50 seconds.
 
@@ -381,7 +381,7 @@ print
 ].dropna().median())
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oJU9WiQDCXfTRI8ZWIL_Aw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oJU9WiQDCXfTRI8ZWIL_Aw.png" alt="Article image" width="519" height="495" loading="lazy" decoding="async" />
 
 Seconds to run. Median: 183 minutes. Read and interpret: 90 seconds.
 
@@ -430,7 +430,7 @@ print
 (top5)
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1_AccxUAKXaSjMYB92jnvQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1_AccxUAKXaSjMYB92jnvQ.png" alt="Article image" width="663" height="137" loading="lazy" decoding="async" />
 
 Seconds. MRDN-ENG-07, April 10 13:47, 1.395 GB to`185.220.101.47`. Same finding.
 
@@ -483,7 +483,7 @@ print
 ]])
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pCYuERXqpc2kh0_JAJrwYA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pCYuERXqpc2kh0_JAJrwYA.png" alt="Article image" width="722" height="196" loading="lazy" decoding="async" />
 
 Seconds. One row. Same finding.
 
@@ -1097,7 +1097,7 @@ The human analyst who finds the nation-state story too clean, who has seen this 
 
 ## What nearly two hours actually buys
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wZCsySfeiP3fQk78-WbPwg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wZCsySfeiP3fQk78-WbPwg.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async" />
 
 In the manual approach, the analyst spent 150 minutes and produced an assessment with two [BLOCKER] gaps still open — the IP reputation unknown, the process responsible for the port-80 connection unconfirmed. Not because the analyst did not know those gaps existed. Because there was no time left.
 

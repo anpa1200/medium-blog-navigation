@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*pYlSvXaZuWA0X8-qcTuWKg.png"
 # ADCS ESC8 Attack: Certificate-Based Domain Compromise — Complete Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*pYlSvXaZuWA0X8-qcTuWKg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pYlSvXaZuWA0X8-qcTuWKg.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -21,7 +21,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*pYlSvXaZuWA0X8-qcTuWKg.png"
 
 This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pYlSvXaZuWA0X8-qcTuWKg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pYlSvXaZuWA0X8-qcTuWKg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Abstract
 
@@ -460,7 +460,7 @@ nmap -sV -sC -p 53,88,135,139,389,445,636,3268,3269,5985,5986 192.168.56.10
 
 **Expected Output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ViDm2rAXqfwk-JQ1jb6XNA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ViDm2rAXqfwk-JQ1jb6XNA.png" alt="Article image" width="1078" height="981" loading="lazy" decoding="async" />
 
 **Analysis:**
 
@@ -486,7 +486,7 @@ smbclient -L
 //192.168.56.10 -N
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Ibp3xeZP4czrrroEc4jZ4g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Ibp3xeZP4czrrroEc4jZ4g.png" alt="Article image" width="990" height="138" loading="lazy" decoding="async" />
 
 **Method 2: RPC Null Session**
 
@@ -504,7 +504,7 @@ rpcclient -U
 exit
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*X8KN1HUHLElLwDdyP_w0sA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*X8KN1HUHLElLwDdyP_w0sA.png" alt="Article image" width="465" height="281" loading="lazy" decoding="async" />
 
 **Method 3: LDAP Anonymous Bind**
 
@@ -518,7 +518,7 @@ ldapsearch -x -H ldap:
 
 **Expected Output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*iASnWIfXL2AKVKQqFOK_fA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*iASnWIfXL2AKVKQqFOK_fA.png" alt="Article image" width="1137" height="519" loading="lazy" decoding="async" />
 
 **Analysis:**
 
@@ -573,7 +573,7 @@ kerbrute userenum
 
 Press enter or click to view image in full size
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*mdOn25OpN8Su2XYq.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*mdOn25OpN8Su2XYq.png" alt="Article image" width="700" height="218" loading="lazy" decoding="async" />
 
 ### Technique 2: SMB User Enumeration
 
@@ -631,7 +631,7 @@ ldapsearch -x -H
 
 Press enter or click to view image in full size
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*lTvQltO0MnbM2UzU.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*lTvQltO0MnbM2UzU.png" alt="Article image" width="700" height="218" loading="lazy" decoding="async" />
 
 ### Technique 4: AS-REP Roasting for User Discovery
 
@@ -660,7 +660,7 @@ format
 
 Press enter or click to view image in full size
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*1cOKo6-tK0PMi-2-.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*1cOKo6-tK0PMi-2-.png" alt="Article image" width="700" height="242" loading="lazy" decoding="async" />
 
 Your run is successful. The important line is this one:
 
@@ -714,7 +714,7 @@ head
 
 Press enter or click to view image in full size
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*6cgGgYsn0d90hkIl.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*6cgGgYsn0d90hkIl.png" alt="Article image" width="700" height="52" loading="lazy" decoding="async" />
 
 ### 2) Crack with hashcat (AS-REP roast)
 
@@ -740,7 +740,7 @@ to
 
 Press enter or click to view image in full size
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*D87Buy90Hup7z3Fn.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*D87Buy90Hup7z3Fn.png" alt="Article image" width="700" height="223" loading="lazy" decoding="async" />
 
 ### Cracked: TestUser@Password123!
 
@@ -789,7 +789,7 @@ crackmapexec smb
 
 **Expected Output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EK_9iyuhhnIumCBYEzN-lw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EK_9iyuhhnIumCBYEzN-lw.png" alt="Article image" width="1643" height="761" loading="lazy" decoding="async" />
 
 ```text
 SMB         
@@ -960,7 +960,7 @@ local
 
 **Expected Output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3AKXuxdsb7Z6_sNfPsxovQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3AKXuxdsb7Z6_sNfPsxovQ.png" alt="Article image" width="1071" height="518" loading="lazy" decoding="async" />
 
 **Analysis:**
 
@@ -1019,7 +1019,7 @@ curl -k http://192.168.56.10/certsrv/
 
 **Expected Response:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gtndtcHVA3gFXEvRe_kA6g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gtndtcHVA3gFXEvRe_kA6g.png" alt="Article image" width="1173" height="694" loading="lazy" decoding="async" />
 
 - HTTP 401 (Unauthorized) — Endpoint is accessible
 
@@ -1106,7 +1106,7 @@ local
 
 **Expected Output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*47VhYPpUGsWf0so1IJSFpQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*47VhYPpUGsWf0so1IJSFpQ.png" alt="Article image" width="1120" height="409" loading="lazy" decoding="async" />
 
 **Result:**
 
@@ -1138,7 +1138,7 @@ pfx
 
 - Private key is included
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*urkdv2aGaE2vqOFa9nEHjw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*urkdv2aGaE2vqOFa9nEHjw.png" alt="Article image" width="1017" height="846" loading="lazy" decoding="async" />
 
 ## Phase 3: Certificate-Based Authentication
 
@@ -1172,7 +1172,7 @@ local
 
 **Expected Output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5WpkUomEqYwT-_3RUzMMhQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5WpkUomEqYwT-_3RUzMMhQ.png" alt="Article image" width="1301" height="369" loading="lazy" decoding="async" />
 
 **Key Results:**
 
@@ -1212,7 +1212,7 @@ Administrator
 
 **Expected Output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*e4IrqWvQ3Z6qDcMy1NjeBQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*e4IrqWvQ3Z6qDcMy1NjeBQ.png" alt="Article image" width="1301" height="369" loading="lazy" decoding="async" />
 
 **Success Indicators:**
 
@@ -1264,7 +1264,7 @@ Administrator
 
 **Expected Output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hEzDeMrbl1aqHlrJeVJ51g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hEzDeMrbl1aqHlrJeVJ51g.png" alt="Article image" width="1263" height="915" loading="lazy" decoding="async" />
 
 **Critical Findings:**
 
@@ -1308,7 +1308,7 @@ x
 # (Only if you want to demonstrate full control)
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9XigbXY1nCmTORhO0xZs5A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9XigbXY1nCmTORhO0xZs5A.png" alt="Article image" width="1263" height="915" loading="lazy" decoding="async" />
 
 **Success Indicators:**
 

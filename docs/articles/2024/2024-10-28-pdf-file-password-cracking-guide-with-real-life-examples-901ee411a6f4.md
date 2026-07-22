@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*nLmr4BnY7tL0Nq6pBO1fFQ.png"
 # PDF file Password cracking. Guide with real life examples!
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*nLmr4BnY7tL0Nq6pBO1fFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nLmr4BnY7tL0Nq6pBO1fFQ.png" alt="Cover image" width="827" height="670" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -36,7 +36,7 @@ The information provided in this article, is intended for educational purposes o
 
 I have a password-protected PDF file.**secretfile.pdf**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nLmr4BnY7tL0Nq6pBO1fFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nLmr4BnY7tL0Nq6pBO1fFQ.png" alt="Article image" width="827" height="670" loading="lazy" decoding="async" />
 
 ### Brute force/Dictionary Brute force
 
@@ -94,7 +94,7 @@ hash
 .txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uH4xf0A4FOS49rWM7GigyQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uH4xf0A4FOS49rWM7GigyQ.png" alt="Article image" width="1072" height="382" loading="lazy" decoding="async" />
 
 ### Command Breakdown
 
@@ -168,7 +168,7 @@ a
  ?d?d?d?d?d?d?d 
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2UPPUSIPqgtSgtqKOgr45g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2UPPUSIPqgtSgtqKOgr45g.png" alt="Article image" width="1591" height="673" loading="lazy" decoding="async" />
 
 **Detailed Breakdown of the Command**
 
@@ -194,7 +194,7 @@ a
 
 - **?d?d?d?d?d?d?d**: This mask pattern tells`hashcat`to use digits (0-9) for the password attempts. In the context of this command,`hashcat`will start with the first`?d`and incrementally add more up to a total of seven digits as specified.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GnBBe4ETx6EQLd6-pcpwCA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GnBBe4ETx6EQLd6-pcpwCA.png" alt="Article image" width="1908" height="553" loading="lazy" decoding="async" />
 
 ## Done! Password was found — “123456”
 
@@ -213,7 +213,7 @@ hashcat -a 3 -m 10500 --increment --increment-min 1 --increment-max 7 hash.txt ?
 
 Download or create file with passwords (dictionary)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*PFNNXzqvQx-uqw73.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*PFNNXzqvQx-uqw73.png" alt="Article image" width="700" height="346" loading="lazy" decoding="async" />
 
 Use this list with “hashcat” to Dictionary Attack
 
@@ -223,7 +223,7 @@ Use this list with “hashcat” to Dictionary Attack
 hashcat -a 0 -m 10500 ./hash.txt ./best1050.txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Fbo_wuLs-tPR35VLLMoAtw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Fbo_wuLs-tPR35VLLMoAtw.png" alt="Article image" width="1806" height="810" loading="lazy" decoding="async" />
 
 **Detailed Breakdown of the Command**
 
@@ -243,7 +243,7 @@ hashcat -a 0 -m 10500 ./hash.txt ./best1050.txt
 
 - **best1050.txt**: This represents the wordlist or dictionary file that`hashcat`will use as the source of potential passwords. The file`"best1050.txt"`should contain a list of passwords that`hashcat`will try against the hash. Each line in the file should represent a different password attempt.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*l8R5UQel6WgZ58TGwLiIoA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*l8R5UQel6WgZ58TGwLiIoA.png" alt="Article image" width="1910" height="550" loading="lazy" decoding="async" />
 
 ### Done! Password was found — “Password1234”
 

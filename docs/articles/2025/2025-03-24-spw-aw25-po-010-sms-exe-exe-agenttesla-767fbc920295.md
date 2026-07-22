@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*b5wShQn46BSJdxLI"
 # SPW AW25 — PO.010 SMS.exe.exe (AgentTesla)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*b5wShQn46BSJdxLI)
+<img src="https://cdn-images-1.medium.com/max/800/0*b5wShQn46BSJdxLI" alt="Cover image" width="700" height="291" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -27,7 +27,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 1200km@gmail.com
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*b5wShQn46BSJdxLI)
+<img src="https://cdn-images-1.medium.com/max/800/0*b5wShQn46BSJdxLI" alt="Article image" width="700" height="291" loading="lazy" decoding="async" />
 
 ### Summary
 
@@ -61,7 +61,7 @@ AgentTesla’s ability to**evade traditional antivirus solutions**, coupled with
 
 [(Link to this tool here)](https://github.com/anpa1200/Malware_analysis/blob/main/Basic_inf_gathering)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*t7tmz2lZUCCW7NA0m7bXDg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*t7tmz2lZUCCW7NA0m7bXDg.png" alt="Article image" width="800" height="265" loading="lazy" decoding="async" />
 
 **File Name**: SPW AW25 — PO.010 SMS.exe.exe
 **File Path**: /home/sulik/Documents/MalwareAnalysis/SPW AW25 — PO.010 SMS.exe.exe
@@ -78,19 +78,19 @@ AgentTesla’s ability to**evade traditional antivirus solutions**, coupled with
 
 **Basic file information (CFF)**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3-mIu9ILdrtEUNFt1a92Tw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3-mIu9ILdrtEUNFt1a92Tw.png" alt="Article image" width="722" height="658" loading="lazy" decoding="async" />
 
 DOS header:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wfFckGcLFBpG1ir3Bmynvg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wfFckGcLFBpG1ir3Bmynvg.png" alt="Article image" width="719" height="82" loading="lazy" decoding="async" />
 
 File header (NT)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Lc9rHtwWIRWbguU50EacaA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Lc9rHtwWIRWbguU50EacaA.png" alt="Article image" width="722" height="540" loading="lazy" decoding="async" />
 
 The import table contains only a limited number of DLL references.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*b4iH-mrcN8klg3fh_MiAIw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*b4iH-mrcN8klg3fh_MiAIw.png" alt="Article image" width="722" height="540" loading="lazy" decoding="async" />
 
 This file is probably packed or obfuscated. You can try one of my favorite platforms to unpack this file:[https://www.unpac.me/](https://www.unpac.me/)
 
@@ -98,27 +98,27 @@ This file is probably packed or obfuscated. You can try one of my favorite platf
 
 **UnpacMe**is an**online malware unpacking and analysis platform**. It’s designed to**automatically unpack**packed or obfuscated**PE (Portable Executable)**files and provide**cleaned, unpacked samples**for deeper analysis.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RXmFEKOUREzSeODYBeNt6g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RXmFEKOUREzSeODYBeNt6g.png" alt="Article image" width="570" height="654" loading="lazy" decoding="async" />
 
 Upload file:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eMYQZC6KFDcKnJ-vFxNXGw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eMYQZC6KFDcKnJ-vFxNXGw.png" alt="Article image" width="1130" height="961" loading="lazy" decoding="async" />
 
 ### The unpacked files are now available for download and further analysis.
 
 First: d1f4761e2e1e15fe454a70864c3aa1da7d6dc90582222bbd7e6d53d0bbee6f62
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*m1b5jiHgh94kI7ee6pG4FA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*m1b5jiHgh94kI7ee6pG4FA.png" alt="Article image" width="817" height="338" loading="lazy" decoding="async" />
 
 Rename the file to a more concise name, for example, Example1.exe.
 
 The file was subsequently scanned on VirusTotal to determine its detection status and gather preliminary threat intelligence.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WrRFIrVj5ig2RFlYpMdE8g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WrRFIrVj5ig2RFlYpMdE8g.png" alt="Article image" width="1315" height="185" loading="lazy" decoding="async" />
 
 This file is obfuscated using SmartAssembly, a .NET obfuscator and packer developed by Red Gate Software.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7X9COC0ldilGS9xMMFm3hg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7X9COC0ldilGS9xMMFm3hg.png" alt="Article image" width="721" height="467" loading="lazy" decoding="async" />
 
 **SmartAssembly**is a**.NET obfuscator and packer**developed by**Red Gate Software**. It’s designed to**protect .NET applications**from reverse engineering by making the code**harder to decompile or analyze**.
 
@@ -126,15 +126,15 @@ For deobfuscation of this file, utilize de4dot, a well-regarded open-source tool
 
 **de4dot**is an**open-source .NET deobfuscator**used to**reverse obfuscation**applied to**.NET assemblies**. It’s popular among malware analysts and reverse engineers to**unpack and clean**obfuscated .NET malware for easier analysis.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EU1ep2CHn8w7ci8xCyBLNA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EU1ep2CHn8w7ci8xCyBLNA.png" alt="Article image" width="1338" height="186" loading="lazy" decoding="async" />
 
 No dedicated protector has been detected at this stage.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*O8jVdYl4U15jvp0lR67ajg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*O8jVdYl4U15jvp0lR67ajg.png" alt="Article image" width="717" height="432" loading="lazy" decoding="async" />
 
 Next, we will extract the deobfuscated strings using a straightforward tool.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6pVhzS7OtNeFoEdgvwR2Fw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6pVhzS7OtNeFoEdgvwR2Fw.png" alt="Article image" width="877" height="31" loading="lazy" decoding="async" />
 
 The deobfuscated strings will be further analyzed using AI-driven techniques to identify hidden patterns and potential indicators of malicious behavior.
 
@@ -188,60 +188,60 @@ This DLL appears to have capabilities for:
 
 **1f4334739853d5429d42f45cad3420878dea54aa1399c2d2461cd2b5e7862459**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MdgWg7K8-9TA7PDJtacAXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MdgWg7K8-9TA7PDJtacAXQ.png" alt="Article image" width="1126" height="130" loading="lazy" decoding="async" />
 
 The file has been renamed to exampe2.exe for clarity in subsequent analysis.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*tI4t3aLO7-M-F2kqL1mQ1A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*tI4t3aLO7-M-F2kqL1mQ1A.png" alt="Article image" width="1317" height="191" loading="lazy" decoding="async" />
 
 Open in CFF:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Rq5TJGe5i-_N6hs7bP_XSA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Rq5TJGe5i-_N6hs7bP_XSA.png" alt="Article image" width="944" height="646" loading="lazy" decoding="async" />
 
 The original filename is**ChomeSetup(1).exe**; let’s rename the file for clarity.
 A suspiciously high level of entropy was observed, indicating potential packing or obfuscation.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QSwwQEcdbF0BUkqyyFj_BA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QSwwQEcdbF0BUkqyyFj_BA.png" alt="Article image" width="813" height="310" loading="lazy" decoding="async" />
 
 The .text section, containing the raw executable code, appears to be packed, suggesting an additional layer of obfuscation that may require further unpacking for detailed analysis.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ApmlW8S_9cMgYQK6LRMioQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ApmlW8S_9cMgYQK6LRMioQ.png" alt="Article image" width="762" height="633" loading="lazy" decoding="async" />
 
 Next, the de4dot tool was applied to attempt deobfuscation of the packed code.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_Q2Wy8V7Ri6-NkjS0U-7AQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_Q2Wy8V7Ri6-NkjS0U-7AQ.png" alt="Article image" width="957" height="163" loading="lazy" decoding="async" />
 
 DeepSea Obfuscator was found and cleaned
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QOrUhNE0N49LUDbhW9Wsgw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QOrUhNE0N49LUDbhW9Wsgw.png" alt="Article image" width="728" height="184" loading="lazy" decoding="async" />
 
 DeepSea Obfuscator was detected and its obfuscation layer was successfully removed.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hp7rCQDff98HpYWDK5IxhQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hp7rCQDff98HpYWDK5IxhQ.png" alt="Article image" width="768" height="629" loading="lazy" decoding="async" />
 
 An additional tier of packing was detected, necessitating further unpacking to expose the underlying code structure.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NkmCF2eQhg_VZXNvHYcstw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NkmCF2eQhg_VZXNvHYcstw.png" alt="Article image" width="1127" height="716" loading="lazy" decoding="async" />
 
 The next file, exhibiting similar characteristics to those from the previous tier of packing, was downloaded and renamed to Tyrone.dll for further analysis.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ByKjrQ6W1iV1QJywnlgB1g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ByKjrQ6W1iV1QJywnlgB1g.png" alt="Article image" width="1122" height="178" loading="lazy" decoding="async" />
 
 A quick scan was performed using VirusTotal to assess the file’s detection status.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WwStwB80k9qs9EHHlOYzjA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WwStwB80k9qs9EHHlOYzjA.png" alt="Article image" width="1297" height="701" loading="lazy" decoding="async" />
 
 Analysis using DIE (Detect It Easy) indicates that the file is obfuscated.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RkTk1XLx3QmENaWAoY4HZg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RkTk1XLx3QmENaWAoY4HZg.png" alt="Article image" width="723" height="470" loading="lazy" decoding="async" />
 
 The file was then processed with de4dot to remove the obfuscation, revealing its underlying structure and clarifying the embedded metadata for further analysis.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vM9pBwymQXutqPtGOYRtFg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vM9pBwymQXutqPtGOYRtFg.png" alt="Article image" width="783" height="155" loading="lazy" decoding="async" />
 
 Next, extract the strings from both the obfuscated and deobfuscated files, then perform a comparative analysis to highlight differences in structure and reveal critical insights into the malware’s underlying functionality.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0cTjT4ATqkwIDzZn2vkXsQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0cTjT4ATqkwIDzZn2vkXsQ.png" alt="Article image" width="801" height="47" loading="lazy" decoding="async" />
 
 ### Tyron1.txt — Obfuscated/Baseline State
 
@@ -303,23 +303,23 @@ Next, extract the strings from both the obfuscated and deobfuscated files, then 
 
 ### Lets download and analyse next file:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MTxhWbErpJu8gWLlBstfyQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MTxhWbErpJu8gWLlBstfyQ.png" alt="Article image" width="1128" height="264" loading="lazy" decoding="async" />
 
 Perform a quick analysis using VirusTotal to assess the file’s detection status and gather initial threat intelligence.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*F1UDgoy66l8JFUNLa6U5rQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*F1UDgoy66l8JFUNLa6U5rQ.png" alt="Article image" width="1326" height="867" loading="lazy" decoding="async" />
 
 &gt; The file is confirmed to be obfuscated, indicating efforts to evade analysis or detection.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ax69I2C7M4TwD7VcvCnscg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ax69I2C7M4TwD7VcvCnscg.png" alt="Article image" width="735" height="477" loading="lazy" decoding="async" />
 
 Lets rename this file to AgentTesla.exe
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*YEx9FQ4HV3cKYNoK3Ek1ew.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YEx9FQ4HV3cKYNoK3Ek1ew.png" alt="Article image" width="1136" height="487" loading="lazy" decoding="async" />
 
 Attempt deobfuscation using de4dot (or your chosen tool).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ha-16kalJdiEQ-oG4ENgJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ha-16kalJdiEQ-oG4ENgJw.png" alt="Article image" width="912" height="62" loading="lazy" decoding="async" />
 
 ### Comparative Analysis of AgentTesla.txt vs AgentTesla2.txt
 
@@ -405,11 +405,11 @@ FileStateKey Differences**AgentTesla.txtPartially Obfuscated**Raw method tokens,
 
 After complete unpacking, three files named Tyrone.dll were identified. However, a hash comparison revealed that one of these files has a different hash, suggesting potential variations in functionality or configuration that merit further investigation.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0XN2n3UyorEWctemVbHLxA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0XN2n3UyorEWctemVbHLxA.png" alt="Article image" width="1467" height="128" loading="lazy" decoding="async" />
 
 One of the Tyrone.dll files has already been analyzed, so the next step is to examine the remaining file for further discrepancies.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JTgm43Z88vrsxxvo0pPbxw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JTgm43Z88vrsxxvo0pPbxw.png" alt="Article image" width="735" height="465" loading="lazy" decoding="async" />
 
 The remaining Tyrone.dll sample is also obfuscated. Preliminary analysis indicates that it appears to exhibit similar functionality to the previously analyzed Tyrone.dll files, suggesting a consistent operational role across these components.
 
@@ -423,7 +423,7 @@ Upon depacking the primary executable, five separate files were extracted. The h
 - **Second Tier (Inner Layer):**
 Among the extracted files, one was found to be further packed. This secondary packed file required an additional round of unpacking, revealing deeper nested code structures and embedded resources. This process highlights the multi-layered approach employed by the malware to complicate analysis.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xsgUjzu2EPSFBH32E_dqpw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xsgUjzu2EPSFBH32E_dqpw.png" alt="Article image" width="719" height="382" loading="lazy" decoding="async" />
 
 ### Multiple Layers of Obfuscation
 
@@ -548,7 +548,7 @@ Ensure the system snapshot is intact and all necessary monitoring tools are oper
 
 **Process tree:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UnwJ525zGq1hMk9X8IWLag.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UnwJ525zGq1hMk9X8IWLag.png" alt="Article image" width="1610" height="421" loading="lazy" decoding="async" />
 
 ### Performed a drill-down to the processes:
 
@@ -642,29 +642,29 @@ XML "C:\Users\Malware\AppData\Local\Temp\tmpBF68.tmp"
 
 **Task scheduler:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1JOAMMg3MGVopxp_3cIFQw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1JOAMMg3MGVopxp_3cIFQw.png" alt="Article image" width="1522" height="513" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lEK-ccu85gMIVl_-XLdHPw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lEK-ccu85gMIVl_-XLdHPw.png" alt="Article image" width="821" height="352" loading="lazy" decoding="async" />
 
 **Found two identical files (same hash):**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IgkK41SQj0uzhNofz6Ek6w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IgkK41SQj0uzhNofz6Ek6w.png" alt="Article image" width="777" height="377" loading="lazy" decoding="async" />
 
 **This file was excluded from Defender scanning in a previous task.**
 
 Virus total check:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*s45-whBfhIapslq9e1PO1g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*s45-whBfhIapslq9e1PO1g.png" alt="Article image" width="1347" height="688" loading="lazy" decoding="async" />
 
 The file, likely a version of ChromeSetup(1).exe, was analyzed during the Static Analysis stage.
 
 **“Execution of the child file demonstrates identical functionality.”**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Qwu0IHbAMV_MxDuCcyXRVQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Qwu0IHbAMV_MxDuCcyXRVQ.png" alt="Article image" width="1610" height="421" loading="lazy" decoding="async" />
 
 The behavior diagram below illustrates the file’s execution flow.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fjF4kjDG5YE9aLSXYrbenw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fjF4kjDG5YE9aLSXYrbenw.png" alt="Article image" width="1268" height="445" loading="lazy" decoding="async" />
 
 Network:
 
@@ -673,11 +673,11 @@ Network:
 
 fakeNet
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EJ4G9eqbSYCJkM-spOvM5A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EJ4G9eqbSYCJkM-spOvM5A.png" alt="Article image" width="879" height="40" loading="lazy" decoding="async" />
 
 Real Net:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8G_A5f_KTW12RXeQHE3z6g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8G_A5f_KTW12RXeQHE3z6g.png" alt="Article image" width="440" height="188" loading="lazy" decoding="async" />
 
 ### Below is the summary of the dynamic analysis conducted on the sample.
 

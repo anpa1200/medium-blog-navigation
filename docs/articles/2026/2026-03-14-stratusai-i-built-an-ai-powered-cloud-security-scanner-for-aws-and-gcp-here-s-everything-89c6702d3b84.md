@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*W2IxFbd-UqrT9iixkhMqWw.png"
 # StratusAI: I Built an AI-Powered Cloud Security Scanner for AWS and GCP — Here’s Everything
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*W2IxFbd-UqrT9iixkhMqWw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*W2IxFbd-UqrT9iixkhMqWw.png" alt="Cover image" width="2206" height="1952" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A complete engineering walkthrough of building, testing, and deploying an intelligent multi-cloud security assessment tool using Python, Claude AI, and Terraform
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*W2IxFbd-UqrT9iixkhMqWw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*W2IxFbd-UqrT9iixkhMqWw.png" alt="Article image" width="2206" height="1952" loading="lazy" decoding="async" />
 
 [**GitHub - anpa1200/stratus-ai: AI-powered cloud security assessment tool - automated scanning…**
 *AI-powered cloud security assessment tool - automated scanning, Claude AI analysis, Terraform ECS deployment …*github.com](https://github.com/anpa1200/stratus-ai)[](https://github.com/anpa1200/stratus-ai)
@@ -127,7 +127,7 @@ The result: an interactive HTML report you can share with your CISO, showing exa
 
 ## Architecture Overview
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*USqAO85ycDG0cjh5gWUiew.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*USqAO85ycDG0cjh5gWUiew.png" alt="Article image" width="2206" height="1952" loading="lazy" decoding="async" />
 
 **Two-stage AI pipeline:**
 
@@ -2584,7 +2584,7 @@ For GCP, StratusAI runs as a**Cloud Run Job**— a serverless batch container th
 
 ### GCP Architecture
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hMr8toNYmgGKq0PkfrBiyA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hMr8toNYmgGKq0PkfrBiyA.png" alt="Article image" width="2206" height="1952" loading="lazy" decoding="async" />
 
 One non-obvious design point: Cloud Run’s filesystem is ephemeral — files written during the job are gone when the container exits. The`start.sh`entrypoint wrapper solves this by running`gsutil cp`to upload`/tmp/output/*`to GCS immediately after the CLI completes.
 
@@ -2950,7 +2950,7 @@ chmod
 ./wizard.sh
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nfV99E9f9kWOfbQfzZvgmw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nfV99E9f9kWOfbQfzZvgmw.png" alt="Article image" width="762" height="271" loading="lazy" decoding="async" />
 
 The first thing the wizard asks is what you want to do:
 
@@ -3065,7 +3065,7 @@ requires
     Prints full configuration summary → asks for confirmation → launches
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MZt-eRqywC2rp7uyNug0dg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MZt-eRqywC2rp7uyNug0dg.png" alt="Article image" width="1002" height="560" loading="lazy" decoding="async" />
 
 After the scan, the wizard prints clickable`file://`links to every generated report and auto-opens the HTML in your browser:
 
@@ -3091,7 +3091,7 @@ ser/output/
     📋  file:///home/user/output/report_2026-03-14T10-00-00Z.json
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xR51gcfu7EY7pQvVtdM_wA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xR51gcfu7EY7pQvVtdM_wA.png" alt="Article image" width="1917" height="733" loading="lazy" decoding="async" />
 
 ## Deploy path (option 2) — 9 steps
 
@@ -3253,9 +3253,9 @@ Both deploy paths write a`terraform.tfvars`file, show a full summary before appl
 
 ### When to use the wizard vs the CLI directly
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NfcXtl_KY3C7tialxQ0Upg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NfcXtl_KY3C7tialxQ0Upg.png" alt="Article image" width="762" height="271" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XRQMlt9hAJ4_G1U6OD10Ug.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XRQMlt9hAJ4_G1U6OD10Ug.png" alt="Article image" width="1917" height="962" loading="lazy" decoding="async" />
 
 **Reports:**
 
@@ -4847,7 +4847,7 @@ details
 >
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pvo0XFGF3vO-BeRExEfDrw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pvo0XFGF3vO-BeRExEfDrw.png" alt="Article image" width="1917" height="962" loading="lazy" decoding="async" />
 
 ## Lessons Learned
 

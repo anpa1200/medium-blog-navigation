@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*2LAz8wipeZU3V1keDIOB9Q.png"
 # AI in Offensive Operations: How Threat Actors Use Artificial Intelligence
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*2LAz8wipeZU3V1keDIOB9Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2LAz8wipeZU3V1keDIOB9Q.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A CTI assessment of documented malicious and dual-use AI activity through April 12, 2026, with a 2019–2025 comparison and forward forecast.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2LAz8wipeZU3V1keDIOB9Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2LAz8wipeZU3V1keDIOB9Q.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 &gt; Evidence cutoff: April 12, 2026. Year-over-year comparison tables run through full-year 2025. 2026 is treated separately as a partial-year update.
 
@@ -171,7 +171,7 @@ This assessment uses publicly available material only. Historical findings are b
 Criminals used AI-generated voice impersonation in a CEO fraud / BEC-style scheme and induced a transfer of EUR220,000.
 *Why it matters:*Earliest public open-source case in this review of generative-AI-enabled fraud.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Z222VsegABJvm03QqWOABg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Z222VsegABJvm03QqWOABg.png" alt="Article image" width="800" height="346" loading="lazy" decoding="async" />
 
 ### 2020
 
@@ -179,7 +179,7 @@ Criminals used AI-generated voice impersonation in a CEO fraud / BEC-style schem
 Court-document-based reporting described the use of “deep voice” impersonation alongside forged emails in a fraud totaling roughly USD35 million.
 *Why it matters:*Demonstrated scale and cross-border coordination far beyond the 2019 case.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kQhJsk249Undi3LusEQVgw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kQhJsk249Undi3LusEQVgw.png" alt="Article image" width="800" height="282" loading="lazy" decoding="async" />
 
 ### 2021
 
@@ -187,7 +187,7 @@ Court-document-based reporting described the use of “deep voice” impersonati
 Singapore government researchers presented evidence that GPT-3-generated phishing emails could outperform or match human-crafted phishing in controlled conditions.
 *Why it matters:*Early high-signal proof that LLMs could compress phishing labor and improve social-engineering quality before mass-market LLM access.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4uTgGTAvbCk5za4v9k4sLw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4uTgGTAvbCk5za4v9k4sLw.png" alt="Article image" width="1148" height="536" loading="lazy" decoding="async" />
 
 ### 2022
 
@@ -195,13 +195,13 @@ Singapore government researchers presented evidence that GPT-3-generated phishin
 The U.S. Department of State, Treasury, and FBI warned that DPRK IT workers were using false personas, stolen identities, and obfuscation to obtain remote technical work.
 *Why it matters:*Not an AI case by itself, but important context for later AI-assisted identity fraud concerns.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yEaAVqoDzc5CduO4yLS3Vw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yEaAVqoDzc5CduO4yLS3Vw.png" alt="Article image" width="800" height="460" loading="lazy" decoding="async" />
 
 **November 2022 — ChatGPT public release***Actor:*Global enabling event |*Evidence:*CONFIRMED
 OpenAI publicly released ChatGPT, making capable conversational LLM access mass-market.
 *Why it matters:*Democratization event, not an attack event; it materially lowered access barriers for phishing, fraud scripting, and translation support.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*rD4PjE5I78hBymM0.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*rD4PjE5I78hBymM0.png" alt="Article image" width="800" height="445" loading="lazy" decoding="async" />
 
 ### 2023
 
@@ -217,7 +217,7 @@ IBM showed that a generative-AI-assisted phishing workflow could produce persuas
 IBM showed that a generative-AI-assisted phishing workflow could produce persuasive phishing emails in minutes rather than many hours.
 *Why it matters:*Useful empirical signal for attacker productivity gains.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yTQVRLnoGpruZZWmBk6mmg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yTQVRLnoGpruZZWmBk6mmg.png" alt="Article image" width="800" height="431" loading="lazy" decoding="async" />
 
 ### 2024
 
@@ -225,7 +225,7 @@ IBM showed that a generative-AI-assisted phishing workflow could produce persuas
 NCSC assessed that AI would almost certainly increase the volume and impact of cyber attacks and that the near-term threat would come mainly from evolution of existing TTPs.
 *Why it matters:*Baseline government assessment, methodologically rigorous and explicit on uncertainty.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bsEC1Ksv882ctNfzd0RXKQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bsEC1Ksv882ctNfzd0RXKQ.png" alt="Article image" width="1400" height="953" loading="lazy" decoding="async" />
 
 **February 7, 2024 — Hong Kong police case summarized by HKCERT***Actor:*Unknown criminal operators |*Evidence:*REPORTED
 Hong Kong police statements, as summarized by HKCERT and reported in the media, described a deepfake-enabled video-conference fraud that induced transfers totaling HKD200 million to five accounts.
@@ -257,7 +257,7 @@ FinCEN documented deepfake-enabled fraud as an emerging financial-sector risk.
 Google assessed that Gemini misuse involved APT groups from more than 20 countries and spanned reconnaissance, vulnerability research, scripting, phishing content, and post-compromise support.
 *Why it matters:*First broad provider-backed mapping of state-linked AI use across much of the attack lifecycle.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*YckdnBxV3RaXe2zKEbUpTg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YckdnBxV3RaXe2zKEbUpTg.png" alt="Article image" width="1529" height="710" loading="lazy" decoding="async" />
 
 **February 21, 2025 — OpenAI updates malicious-use reporting***Actor:*Multiple networks |*Evidence:*CONFIRMED
 OpenAI’s February 2025 report continued the pattern of AI abuse across scams, covert influence, and malicious cyber support activity.
@@ -305,7 +305,7 @@ OpenAI emphasized that threat actors often combine AI with websites, social plat
 Microsoft assessed that threat actors were operationalizing AI across reconnaissance, phishing, malware support, post-compromise analysis, and identity fraud while humans retained control over objectives and deployment decisions.
 *Why it matters:*Strong 2026 articulation of the “AI as accelerator, not replacement” pattern.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KrNncdyHE7ITDRhCnCTY5A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KrNncdyHE7ITDRhCnCTY5A.png" alt="Article image" width="1756" height="637" loading="lazy" decoding="async" />
 
 **March 24, 2026 — TeamPCP compromises LiteLLM***Actor:*TeamPCP |*Evidence:*CONFIRMED
 Wiz documented a supply-chain compromise affecting LiteLLM, demonstrating that AI middleware and proxy infrastructure had become a target in its own right.
@@ -416,12 +416,12 @@ Microsoft described a widespread device-code-phishing campaign that used AI-gene
 
 &gt; Framework note: MITRE ATLAS is the primary technical framework in this section. ATT&CK is referenced only where it still adds conventional enterprise cyber context. Some ATLAS techniques and mitigations cited below were formalized after some of the incidents discussed here; they are used as a current taxonomy, not as evidence that the historical events were labeled this way at the time.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*qkvyLOazkeJE7MgwzVFXaw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qkvyLOazkeJE7MgwzVFXaw.png" alt="Article image" width="1902" height="641" loading="lazy" decoding="async" />
 
 [**MITRE ATLAS™**
 *Edit description*atlas.mitre.org](https://atlas.mitre.org/)[](https://atlas.mitre.org/)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*tCIBAK7MFO59t1EChewazA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*tCIBAK7MFO59t1EChewazA.png" alt="Article image" width="1901" height="962" loading="lazy" decoding="async" />
 
 ### 1. Observed and Assessed AI-Enabled Activity Through April 2026
 
@@ -577,7 +577,7 @@ The 2026 year-to-date evidence does**not**show a clean break to generalized auto
 
 ### 3. Hard Numbers
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TlI4BDjwT0k-QAtA6DJSgA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TlI4BDjwT0k-QAtA6DJSgA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **March 2019 voice-cloning case:**EUR220,000 loss.
 
@@ -601,7 +601,7 @@ The 2026 year-to-date evidence does**not**show a clean break to generalized auto
 
 ### 4. Comparative Interpretation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fkxXkyrxgnhzse296dFZ9g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fkxXkyrxgnhzse296dFZ9g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **2019–2020:**High-impact fraud appears first; visibility is low and evidence is mostly secondary.
 
@@ -617,7 +617,7 @@ The 2026 year-to-date evidence does**not**show a clean break to generalized auto
 
 ### 1. What AI Is Genuinely Changing
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Co21EAxlh1A7CS2tfdWs_w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Co21EAxlh1A7CS2tfdWs_w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **Social engineering quality.**AI reduces grammar, translation, and tone defects that historically exposed phishing and fraud.
 
@@ -631,7 +631,7 @@ The 2026 year-to-date evidence does**not**show a clean break to generalized auto
 
 ### 2. What the Evidence Does Not Support Through April 2026
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CY3B1eLfj_w4p_QU-wnMGQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CY3B1eLfj_w4p_QU-wnMGQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **Fully autonomous advanced intrusion at operational scale.**Even by April 2026, the public record does not support that claim with strong, independently corroborated evidence.
 
@@ -647,7 +647,7 @@ The 2026 year-to-date evidence does**not**show a clean break to generalized auto
 
 The most important distinction is this:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Lb_TOKR_DEXojczcDAOanA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Lb_TOKR_DEXojczcDAOanA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **AI as an attacker productivity amplifier:**confirmed
 
@@ -661,7 +661,7 @@ The most important distinction is this:
 
 ## Actor Segmentation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nE5F0exvFdbbnTCYnhMR1g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nE5F0exvFdbbnTCYnhMR1g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### 1. Financially Motivated Fraud Operators
 
@@ -697,11 +697,11 @@ The most important distinction is this:
 
 &gt; Defensive framing note: The historical record now runs through April 12, 2026, but this section still uses current ATLAS and OWASP 2025 language to organize defensive risk across the modern AI stack.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PxxOFTDOhKrXaund8dR99w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PxxOFTDOhKrXaund8dR99w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Technical Evolution (Last 24 Months)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CFmkTWuduwjbYKPM2scZ0g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CFmkTWuduwjbYKPM2scZ0g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### 1. 2024 — Provider Telemetry and Application-Layer Risk
 
@@ -717,7 +717,7 @@ By early 2026, the emerging pattern was consolidation rather than novelty for no
 
 ## Forecast (Post-April 2026)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IuykJELRv-8uRrXApxGh3Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IuykJELRv-8uRrXApxGh3Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 &gt; This section projects forward from the April 12, 2026 evidence baseline.
 
@@ -743,7 +743,7 @@ Rationale: device-code phishing, workforce fraud, and synthetic-identity operati
 
 ### 2. What Remains Less Likely in the Near Term
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4bH3tJ6cToHCduZwzYr4OQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4bH3tJ6cToHCduZwzYr4OQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Projected Threat 7**[Unlikely] —**Fully autonomous, end-to-end advanced intrusion at operational scale.**
 Rationale: stealth, target-specific judgment, deconfliction, error recovery, and operational security still benefit heavily from skilled humans.

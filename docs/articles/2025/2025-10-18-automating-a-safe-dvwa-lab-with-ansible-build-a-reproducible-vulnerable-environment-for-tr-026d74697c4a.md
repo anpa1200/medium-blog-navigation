@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*wvO5egTw1leS9tVpNEPXYg.jpeg"
 # Automating a Safe DVWA Lab with Ansible: Build a Reproducible Vulnerable Environment for Training…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*wvO5egTw1leS9tVpNEPXYg.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*wvO5egTw1leS9tVpNEPXYg.jpeg" alt="Cover image" width="1024" height="585" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How to deploy Damn Vulnerable Web App in minutes inside an isolated Docker lab — repeatable, auditable, and safe for every cybersecurity team.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wvO5egTw1leS9tVpNEPXYg.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*wvO5egTw1leS9tVpNEPXYg.jpeg" alt="Article image" width="1024" height="585" loading="lazy" decoding="async" />
 
 **TL;DR:**I show you how to automate the deployment of a Damn Vulnerable Web App (DVWA) lab inside Docker using a single Ansible playbook. You’ll get repeatable, auditable labs that are safe by default (bound to`127.0.0.1`, internal Docker network), easy to snapshot/rollback, and ideal for training, tests, demos, and developer education. This article explains the business and technical benefits, step-by-step usage, hardening & OPSEC guidance, and suggested next steps for teams and CISO owners.
 
@@ -2690,7 +2690,7 @@ tail
 =120 dvwa_db
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aLm6bnvjp8u-V734FAZwAA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aLm6bnvjp8u-V734FAZwAA.png" alt="Article image" width="1913" height="521" loading="lazy" decoding="async" />
 
 ## 7) Initialize DVWA
 
@@ -2702,7 +2702,7 @@ On the host (or via SSH tunnel) open:
 http://127.0.0.1:8081/setup.php
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pk3WsMzwxRybWiTWbZJggw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pk3WsMzwxRybWiTWbZJggw.png" alt="Article image" width="1913" height="521" loading="lazy" decoding="async" />
 
 Click**Create / Reset Database**, then go to:
 
@@ -2825,7 +2825,7 @@ rm
 true
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wyfgrmY9qrW6T5MAjpp2vw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wyfgrmY9qrW6T5MAjpp2vw.png" alt="Article image" width="1870" height="258" loading="lazy" decoding="async" />
 
 If you built`local/dvwa:latest`:
 

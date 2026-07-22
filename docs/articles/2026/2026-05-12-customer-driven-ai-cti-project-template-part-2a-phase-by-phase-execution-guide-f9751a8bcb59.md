@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*oajUaMGHCUlODowBWstSFQ.png"
 # Customer-Driven AI CTI Project Template. Part 2A: Phase-by-Phase Execution Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*oajUaMGHCUlODowBWstSFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oajUaMGHCUlODowBWstSFQ.png" alt="Cover image" width="2528" height="1696" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From pure CTI to hands-on detection engineering with strict validation gates.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oajUaMGHCUlODowBWstSFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oajUaMGHCUlODowBWstSFQ.png" alt="Article image" width="2528" height="1696" loading="lazy" decoding="async" />
 
 ## This article is one part of a four-part series covering the full customer-driven AI-CTI project lifecycle.
 
@@ -123,7 +123,7 @@ The binding rule throughout Part 2A is unchanged from Part 1: no CTI output is a
 
 ## System map
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yIHza0R-qUmxBcS_hecb2Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yIHza0R-qUmxBcS_hecb2Q.png" alt="Article image" width="887" height="1774" loading="lazy" decoding="async" />
 
 ## Phase 0: Project Charter and Guardrails
 
@@ -133,7 +133,7 @@ Define scope, success criteria, data handling, AI rules, stakeholders, and deliv
 
 ### Required Inputs
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*G0SVgupPo-hYl9b-hu21iw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*G0SVgupPo-hYl9b-hu21iw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - customer business objectives;
 
@@ -275,7 +275,7 @@ If the sprint contradicts the assumed readiness, the mode must be escalated or d
 
 ### AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_dRYjDdW1MUypjrcZ-2KHQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_dRYjDdW1MUypjrcZ-2KHQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed**:
 
@@ -299,7 +299,7 @@ If the sprint contradicts the assumed readiness, the mode must be escalated or d
 
 ### Success Metric Floors
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UxdcrXAzQmeEf2lIu-a4BA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UxdcrXAzQmeEf2lIu-a4BA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Each success metric defined in Activity 7 must meet the following minimum floor requirements. Metrics that do not meet these floors must be revised before Phase 0 exits.
 
@@ -337,7 +337,7 @@ A quality reviewer (not the analyst who defined the metrics) must confirm that a
 
 ### Exit Criteria
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HYwVpXb_qF_9J9hf3O2H-A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HYwVpXb_qF_9J9hf3O2H-A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Signed project charter.
 
@@ -1141,7 +1141,7 @@ assignments.
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fk8_bHutgtM93ozn9U3mOA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fk8_bHutgtM93ozn9U3mOA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -1234,7 +1234,7 @@ Known gaps:
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VAxQwhL8TvKXZ0Twv3Utfw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VAxQwhL8TvKXZ0Twv3Utfw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed**:
 
@@ -1375,7 +1375,7 @@ Critical log source means any source required by a Critical or High Risk scenari
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XVPCkhue9UQmkFGZJWg5VQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XVPCkhue9UQmkFGZJWg5VQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -1591,7 +1591,7 @@ If all checks are NO, proceed to AI Usage below. If any check is YES and legal/p
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Y-f_c08-cydgCYOOIgD0pw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Y-f_c08-cydgCYOOIgD0pw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -1704,7 +1704,7 @@ Review date:
 
 ### IOC Blocking Risk Assessment
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IrYe5iytB_Ez0iOKCAVT-Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IrYe5iytB_Ez0iOKCAVT-Q.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 No IOC may be recommended for blocking until this assessment is complete.
 
@@ -1866,7 +1866,7 @@ Each priority scenario must be represented in:
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ccJGT_iOQvchVtFyZ9fsvw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ccJGT_iOQvchVtFyZ9fsvw.png" alt="Article image" width="1535" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -2003,7 +2003,7 @@ Negative results must not be written as “no compromise” unless the visibilit
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*O9kDRneVLPxXQ3OIezM00Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*O9kDRneVLPxXQ3OIezM00Q.png" alt="Article image" width="1535" height="1024" loading="lazy" decoding="async" />
 
 **Allowed**:
 
@@ -2235,7 +2235,7 @@ Expiry or retirement criteria:
 
 ### Required Detection Types
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*S8CaBJLPwkEH8HbyY25-rw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*S8CaBJLPwkEH8HbyY25-rw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Use different detection patterns based on the behavior:
 
@@ -2259,7 +2259,7 @@ Use different detection patterns based on the behavior:
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*znAPpR1dmIrcCgYau_OU4w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*znAPpR1dmIrcCgYau_OU4w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -2414,7 +2414,7 @@ Each detection must include:
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7em6CtyR1w3DyYowkGrDag.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7em6CtyR1w3DyYowkGrDag.png" alt="Article image" width="1535" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -2681,7 +2681,7 @@ Validation requirements:
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LrPFsFMAS10yTLkbO1PsHQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LrPFsFMAS10yTLkbO1PsHQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed**:
 
@@ -2763,7 +2763,7 @@ Feedback fields:
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*emkeEYucVD4VPtJxGyrS5w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*emkeEYucVD4VPtJxGyrS5w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -2815,7 +2815,7 @@ Feedback fields:
 
 If a hunt, detection, source review, or workshop uncovers credible evidence of active compromise, the project must pause the affected workstream and transition to incident handling.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uY6lwAu9jLiF1yGymJTYSA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uY6lwAu9jLiF1yGymJTYSA.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 **Escalation triggers:**
 
@@ -2896,7 +2896,7 @@ Run detections in controlled mode before full production.
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8I_2EsP1k0tGHS-ru5Qvug.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8I_2EsP1k0tGHS-ru5Qvug.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -3078,7 +3078,7 @@ Review date assigned:
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*doXx_KteOjSbV-HFrp1l1A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*doXx_KteOjSbV-HFrp1l1A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed:**
 
@@ -3233,7 +3233,7 @@ Next engineering work:
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*e-YlaqjXMDsAhkPowfOvPA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*e-YlaqjXMDsAhkPowfOvPA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed**:
 
@@ -3317,7 +3317,7 @@ Make CTI and detection engineering a repeatable operating cycle.
 
 ### PIR Feedback Loop
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JgMikTqdJe5KBfjOz0VqYw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JgMikTqdJe5KBfjOz0VqYw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 The PIR Feedback Loop is the structured process by which findings from the current cycle directly shape the intelligence requirements for the next. It closes the gap between delivery and decision-making and prevents PIRs from drifting into static, unreviewed placeholders.
 
@@ -3435,7 +3435,7 @@ The PIR Feedback Loop is the structured process by which findings from the curre
 
 ## AI Usage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wJ6Hq53Yp1dehDrkVbzGgw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wJ6Hq53Yp1dehDrkVbzGgw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Allowed**:
 
@@ -3613,7 +3613,7 @@ Every weekly project checkpoint must review:
 
 ## Master Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*p5U3BA5ILIEYC9yTd4_tFw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*p5U3BA5ILIEYC9yTd4_tFw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ```text
 1. Charter and guardrails

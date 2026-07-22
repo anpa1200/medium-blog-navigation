@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*VMTBL8KlqZebIFD1.jpg"
 # Mastering DirBuster: A Strategic Approach to Uncovering Hidden Web Assets
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*VMTBL8KlqZebIFD1.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*VMTBL8KlqZebIFD1.jpg" alt="Cover image" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -27,7 +27,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 **DirBuster**, an open-source tool from the Open Web Application Security Project (OWASP), is a critical asset for uncovering hidden files and directories on web servers. Designed to perform brute-force attacks, DirBuster helps identify potential security vulnerabilities by testing for common and less-known directory names. This tool is indispensable for penetration testers and cybersecurity professionals aiming to enhance their security assessments and protect web applications from unseen risks.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*VMTBL8KlqZebIFD1.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*VMTBL8KlqZebIFD1.jpg" alt="Article image" width="1280" height="720" loading="lazy" decoding="async" />
 
 ## Legal Disclaimer
 
@@ -147,13 +147,13 @@ jar
 dirbuster
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Fm7EQXmZg78UhvEEAQopwQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Fm7EQXmZg78UhvEEAQopwQ.png" alt="Article image" width="781" height="584" loading="lazy" decoding="async" />
 
 **Choosing the Wordlist**:
 
 - DirBuster allows you to select from a variety of pre-configured wordlists, which contain possible directory and file names. You can also create or import custom wordlists tailored to your specific testing needs.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FLVjc_K3AOEQSMzd50ck3Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FLVjc_K3AOEQSMzd50ck3Q.png" alt="Article image" width="781" height="584" loading="lazy" decoding="async" />
 
 - You can use lists “Out of the box” or download lists from web, for example[here](https://github.com/daviddias/node-dirbuster/blob/master/lists/directory-list-2.3-medium.txt)or from SecList[here](https://github.com/danielmiessler/SecLists)
 
@@ -171,7 +171,7 @@ dirbuster
 
 Once configured, the scan begins. DirBuster makes HTTP or HTTPS requests by appending each entry from the selected wordlist to the target URL and checking the server’s response.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*y-0GvovDjEaqBorp1GM_RA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*y-0GvovDjEaqBorp1GM_RA.png" alt="Article image" width="781" height="584" loading="lazy" decoding="async" />
 
 ### Analyzing Responses
 
@@ -191,7 +191,7 @@ DirBuster uses HTTP status codes to infer the existence and accessibility of web
 
 - All discovered paths are logged, including their response codes. DirBuster can also provide a graphical representation of the discovered directory structure.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MGMXsXZd1qr3ZPJ9rf3ASQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MGMXsXZd1qr3ZPJ9rf3ASQ.png" alt="Article image" width="781" height="584" loading="lazy" decoding="async" />
 
 ## Good luck!
 

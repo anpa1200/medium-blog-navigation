@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*Ygo9Os6SaZrumCm_Y08aKA.png"
 # CTI as a Code: Complete Step-by-Step Methodology
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*Ygo9Os6SaZrumCm_Y08aKA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Ygo9Os6SaZrumCm_Y08aKA.png" alt="Cover image" width="1024" height="572" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Version-controlled threat intelligence — from first call to deployed Sigma rule.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Ygo9Os6SaZrumCm_Y08aKA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Ygo9Os6SaZrumCm_Y08aKA.png" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
 
 ## Why This Methodology Exists
 
@@ -71,7 +71,7 @@ CTI as a Code solves all three. Every claim traces to evidence. Every detection 
 
 Before picking up a tool, identify which mode you are in:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*09U-tRkFVOmP2S1zQVDk3A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*09U-tRkFVOmP2S1zQVDk3A.png" alt="Article image" width="1024" height="1447" loading="lazy" decoding="async" />
 
 The four modes share the same scaffold, the same analytical discipline, and the same git workflow. The difference is which steps you run and in what order.
 
@@ -131,9 +131,9 @@ docker compose up -d
 
 Once running:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*nNaWz-7T0T3H17eNc7DeRA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*nNaWz-7T0T3H17eNc7DeRA.png" alt="Article image" width="1024" height="372" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*6Vk-MOSzNyILrQqlDeMxTg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*6Vk-MOSzNyILrQqlDeMxTg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 You do not need the lab to run the methodology. The minimum-viable path at the end of this article covers what to use instead.
 
@@ -308,7 +308,7 @@ The timeline is a chronological log of every relevant event with three things th
 
 **Evidence label system — every event gets one:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*nig_2_h62AbfTNhj8HVnQQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*nig_2_h62AbfTNhj8HVnQQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Why labels matter:**Without them, analysts conflate what they saw with what they inferred. The label forces explicit acknowledgment of how strong each piece of evidence is. When an executive asks “are you sure they took the data?”, the answer is “CONFIRMED — two independent sources (DB audit log and netflow) both show 892 MB outbound” not “we think so.”
 
@@ -370,7 +370,7 @@ The claims ledger is the single most important document in the investigation. It
 | CL-005 | No confirmed evidence of access after 2025-03-17 07:02 IST (Sysmon restart) | All log sources show no activity from 185.234.x.x after 03:21 | Medium | Adversary using different infrastructure after initial exfil — cannot rule out; recommend threat hunt | PIR-003 |
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*yONlPrE838ua7WNi6ho5Zg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*yONlPrE838ua7WNi6ho5Zg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 The claims ledger drives everything downstream:
 
@@ -390,7 +390,7 @@ git commit -m "PROJ-001: analysis — 16-event timeline, 5 claims; PIR-001 YES (
 
 The ATT&CK mapping has two purposes: documenting what happened (intelligence) and measuring detection coverage (operations). The**Gap Type**column is the operational output — it tells the SOC and engineering teams exactly what kind of work is needed for each missed technique.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*rvDNkZD3SroVie2Jw28HgA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*rvDNkZD3SroVie2Jw28HgA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 ```text
 | # | Tactic | Technique | Sub | Evidence | Confidence | Rule Fired? | Gap Type | Remediation |
@@ -405,7 +405,7 @@ The ATT&CK mapping has two purposes: documenting what happened (intelligence) an
 
 **Gap taxonomy (each type requires different remediation):**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*J6GUO2cJkmFyqSUGMS2pdQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*J6GUO2cJkmFyqSUGMS2pdQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 Export the Navigator layer and commit it:
 
@@ -461,7 +461,7 @@ Write the attribution section only after the claims ledger is complete. Attribut
 
 **The confidence ladder — use the correct language for the evidence you have:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*rvLOfrTbbnV3ctLoJbzwbQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*rvLOfrTbbnV3ctLoJbzwbQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 Infrastructure pivoting for attribution — run from the C2 IP before enrichment ages:
 
@@ -935,7 +935,7 @@ git commit -m "PROJ-001: deliverables - executive brief and SOC handoff; INCD no
 
 The full methodology runs without Docker. Replace each lab component:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*tR6BsLsvAFquFYPRJMsbAA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*tR6BsLsvAFquFYPRJMsbAA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 The intake template, evidence labels, claims ledger, ATT&CK gap taxonomy, and git commit discipline apply identically with or without the lab stack.
 

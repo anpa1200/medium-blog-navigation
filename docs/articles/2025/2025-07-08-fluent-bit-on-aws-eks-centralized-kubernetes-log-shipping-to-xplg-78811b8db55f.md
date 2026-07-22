@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*sCHNfQMmGuw3ynGB"
 # Fluent Bit on AWS-EKS: Centralized Kubernetes Log Shipping to XPLG
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*sCHNfQMmGuw3ynGB)
+<img src="https://cdn-images-1.medium.com/max/800/0*sCHNfQMmGuw3ynGB" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,13 +23,13 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Deploy Fluent Bit as a DaemonSet with full metadata enrichment, RBAC, and HTTP output to XPLG for real-time observability
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*sCHNfQMmGuw3ynGB)
+<img src="https://cdn-images-1.medium.com/max/800/0*sCHNfQMmGuw3ynGB" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## What is Fluent Bit?
 
 **Fluent Bit**is a lightweight and high-performance log processor and forwarder. It collects logs from files, systemd, or containers (like Docker or Kubernetes pods), enriches them with metadata, transforms if needed, and routes them to various destinations (e.g., Elasticsearch, S3, HTTP APIs).
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*w7UvnKiL64QEygPS.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*w7UvnKiL64QEygPS.png" alt="Article image" width="800" height="583" loading="lazy" decoding="async" />
 
 **Key Features:**
 
@@ -57,7 +57,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 **XPLG**is an advanced observability and log analytics platform built to provide full visibility into your applications, infrastructure, and security landscape. It enables real-time log collection, storage, search, visualization, and alerting across hybrid and cloud-native environments.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*rdiYK510JdUG-gp1.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*rdiYK510JdUG-gp1.png" alt="Article image" width="852" height="329" loading="lazy" decoding="async" />
 
 Key Capabilities:
 
@@ -119,7 +119,7 @@ Kubernetes objects like DaemonSets are cluster-scoped and cannot be shared acros
 
 Even if all your clusters send logs to a centralized log destination (like XPLG, CloudWatch, or S3), each cluster still requires its own Fluent Bit DaemonSet to collect logs from local nodes.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XS43YvHyWqRD6QdB_9Ny3A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XS43YvHyWqRD6QdB_9Ny3A.png" alt="Article image" width="1511" height="1292" loading="lazy" decoding="async" />
 
 ### 1. Connect to AWS & Your Cluster
 
@@ -129,7 +129,7 @@ Configure AWS credentials:
 aws configure
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jUWHnTvat36KeP-Dyxw-vQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jUWHnTvat36KeP-Dyxw-vQ.png" alt="Article image" width="492" height="124" loading="lazy" decoding="async" />
 
 ### 2. Connect kubectl to EKS:
 
@@ -141,7 +141,7 @@ aws eks update-kubeconfig
  <cluster_name>
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CR6g-occ5-89D_-N1wdDNw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CR6g-occ5-89D_-N1wdDNw.png" alt="Article image" width="1284" height="65" loading="lazy" decoding="async" />
 
 **Optional: Set environment variables:**
 
@@ -168,7 +168,7 @@ kubectl create namespace logging
 kubectl create serviceaccount fluent-bit-controlplane -n logging
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EbAtPR0P-K87PiJ5KDCOGQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EbAtPR0P-K87PiJ5KDCOGQ.png" alt="Article image" width="745" height="185" loading="lazy" decoding="async" />
 
 ### 4. Configure RBAC
 

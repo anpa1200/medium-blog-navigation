@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*hR4E7AMKl1dOo1rZDj-Dfg.png"
 # Active Directory Penetration Testing
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*hR4E7AMKl1dOo1rZDj-Dfg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hR4E7AMKl1dOo1rZDj-Dfg.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Deep Dive into GOAD-Mini Lab Assessment. Step-by-step guide.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hR4E7AMKl1dOo1rZDj-Dfg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hR4E7AMKl1dOo1rZDj-Dfg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Abstract
 
@@ -237,7 +237,7 @@ p
 
 The scan revealed 14 open ports, indicating a fully configured domain controller:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ugYMa3B3MuqCbHmd-UEQMQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ugYMa3B3MuqCbHmd-UEQMQ.png" alt="Article image" width="1367" height="978" loading="lazy" decoding="async" />
 
 **Key Findings:**
 
@@ -266,7 +266,7 @@ Hostname:
 
 This information confirmed the target was indeed a domain controller for the`sevenkingdoms.local`domain.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TmylXLirh-TJ1qAgbE8Arw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TmylXLirh-TJ1qAgbE8Arw.png" alt="Article image" width="693" height="315" loading="lazy" decoding="async" />
 
 ### SSL/TLS Certificate Analysis
 
@@ -280,7 +280,7 @@ The scan also revealed SSL certificates for LDAP services:
 
 - **SAN:**DNS:kingslanding.sevenkingdoms.local
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eYpS5qBQSoomIHKLUoDEzQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eYpS5qBQSoomIHKLUoDEzQ.png" alt="Article image" width="1344" height="139" loading="lazy" decoding="async" />
 
 **Proof:**Network scan results documented in`nmap/full_scan.txt`
 
@@ -331,7 +331,7 @@ a
 
 The discovery that anonymous sessions were allowed is significant. While this doesn’t immediately grant access, it can be used for information gathering. However, the requirement for SMB signing is a positive security control that prevents man-in-the-middle attacks.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PZD0ELsVnjTmpOqJ2in8BA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PZD0ELsVnjTmpOqJ2in8BA.png" alt="Article image" width="1292" height="457" loading="lazy" decoding="async" />
 
 ### Enum4linux-ng Advanced Enumeration
 
@@ -465,7 +465,7 @@ kerbrute userenum
 
 - Works even with anonymous enumeration disabled
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fw4hsVAKGS5j1Dk7Z3wYjQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fw4hsVAKGS5j1Dk7Z3wYjQ.png" alt="Article image" width="1307" height="407" loading="lazy" decoding="async" />
 
 ### Technique 2: SMB User Enumeration
 
@@ -521,7 +521,7 @@ ldapsearch -x -H
 
 **Result:**Typically fails in properly configured AD environments (authentication required)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*77EydMhfxGFZV6jYOVr98Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*77EydMhfxGFZV6jYOVr98Q.png" alt="Article image" width="1307" height="407" loading="lazy" decoding="async" />
 
 ### Technique 4: AS-REP Roasting for User Discovery
 
@@ -548,7 +548,7 @@ format
 
 **Benefit:**Discovers both valid usernames AND vulnerable accounts simultaneously.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*w6yYXJQIoMjamOrSFK8MCg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*w6yYXJQIoMjamOrSFK8MCg.png" alt="Article image" width="1921" height="663" loading="lazy" decoding="async" />
 
 Your run is successful. The important line is this one:
 
@@ -600,7 +600,7 @@ head
  -n 5 asrep_hashes.txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*m2aZKSmpZBd4Nu_Xyfz1uQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*m2aZKSmpZBd4Nu_Xyfz1uQ.png" alt="Article image" width="1913" height="143" loading="lazy" decoding="async" />
 
 ### 2) Crack with hashcat (AS-REP roast)
 
@@ -624,7 +624,7 @@ to
 .txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*swNSuvNyqID-ENH86JCm5A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*swNSuvNyqID-ENH86JCm5A.png" alt="Article image" width="1914" height="609" loading="lazy" decoding="async" />
 
 Cracked: TestUser@Password123!
 
@@ -747,7 +747,7 @@ format
   -outputfile asrep_hashes.txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FnoXINC21R8PgEfEp9SiBA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FnoXINC21R8PgEfEp9SiBA.png" alt="Article image" width="1913" height="323" loading="lazy" decoding="async" />
 
 And
 
@@ -755,7 +755,7 @@ And
 hashcat -m 18200 -a 0 asrep_hashes.txt ./passlist.txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cyQFtSRGjjO5PxgCt-hNeg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cyQFtSRGjjO5PxgCt-hNeg.png" alt="Article image" width="1922" height="790" loading="lazy" decoding="async" />
 
 **Cracker 2 additional users:
 **ASREPUser1:Password123!
@@ -789,7 +789,7 @@ hydra -L users.txt -P goad-passwords.txt \
   -t 4 -V
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Zfd-GkkWQ7X2L7NZ8P2Eng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Zfd-GkkWQ7X2L7NZ8P2Eng.png" alt="Article image" width="1913" height="228" loading="lazy" decoding="async" />
 
 ### Why Hydra SMB Fails
 
@@ -904,7 +904,7 @@ local
 
 - Any account with SPNs registered
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jV2aTIwHLbBmkppvl8Rmuw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jV2aTIwHLbBmkppvl8Rmuw.png" alt="Article image" width="1845" height="277" loading="lazy" decoding="async" />
 
 **Cracking the Hashes:**
 
@@ -1570,7 +1570,7 @@ fi
 
 - Includes delays (1 second) to avoid account lockouts
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wUQXPewYQX3v0CRmia7bzQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wUQXPewYQX3v0CRmia7bzQ.png" alt="Article image" width="1294" height="481" loading="lazy" decoding="async" />
 
 ## Using CrackMapExec / NetExec
 
@@ -1605,7 +1605,7 @@ netexec smb 192.168.56.10 \
   --continue-on-success
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fwXnLpc56ZYRQ_wKOIHxZw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fwXnLpc56ZYRQ_wKOIHxZw.png" alt="Article image" width="1294" height="118" loading="lazy" decoding="async" />
 
 **Advantages:**
 
@@ -1640,7 +1640,7 @@ medusa -h 192.168.56.10 \
 
 - `-M smbnt`: SMB authentication module
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*u7YmdcHWKlTtn6vkXtrJXA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*u7YmdcHWKlTtn6vkXtrJXA.png" alt="Article image" width="1303" height="166" loading="lazy" decoding="async" />
 
 Medusa error: Same issue as Hydra — outdated SMB implementation that doesn’t work with modern Windows Server 2019.
 
@@ -1903,7 +1903,7 @@ Through dictionary brute force and Kerberoasting, we identified valid credential
 
 **Analysis:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RYAgCmax8twRPk3KhkLQXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RYAgCmax8twRPk3KhkLQXQ.png" alt="Article image" width="1660" height="281" loading="lazy" decoding="async" />
 
 This single credential provided significant access to the domain. The Administrator account has full domain privileges, enabling authenticated enumeration and further exploitation.
 
@@ -2029,7 +2029,7 @@ x
 
 - Last logon information
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*w-r7KB4mso5dqvieL1xR9Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*w-r7KB4mso5dqvieL1xR9Q.png" alt="Article image" width="1324" height="806" loading="lazy" decoding="async" />
 
 ### Group Enumeration
 
@@ -2066,7 +2066,7 @@ x
 
 - Group descriptions
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_w24Z0JuMtmmlBPzKw03gg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_w24Z0JuMtmmlBPzKw03gg.png" alt="Article image" width="1303" height="892" loading="lazy" decoding="async" />
 
 ### Computer Enumeration
 
@@ -2103,7 +2103,7 @@ x
 
 - Computer descriptions
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*57xPt6BzUQYiM8OLveP1XA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*57xPt6BzUQYiM8OLveP1XA.png" alt="Article image" width="1294" height="842" loading="lazy" decoding="async" />
 
 ### Organizational Unit (OU) Structure
 
@@ -2140,7 +2140,7 @@ x
 
 - Security boundaries
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lw3kyg4VAUFl-u3lri0d6Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lw3kyg4VAUFl-u3lri0d6Q.png" alt="Article image" width="1286" height="847" loading="lazy" decoding="async" />
 
 ## Complete Domain Dump
 
@@ -2176,9 +2176,9 @@ o ldap_dump
 
 **Output Files Generated:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sAbO27JVsP_EcAwAeVXm3Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sAbO27JVsP_EcAwAeVXm3Q.png" alt="Article image" width="1463" height="140" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*r9hErGp-5BM-X2xH99kPCA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*r9hErGp-5BM-X2xH99kPCA.png" alt="Article image" width="1448" height="92" loading="lazy" decoding="async" />
 
 - `domain_users.json`- All user accounts
 
@@ -2254,7 +2254,7 @@ DCSync requires specific permissions:
 
 These permissions should be carefully audited and restricted.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*B7zd8oTQjzXO1k1ce_BBzQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*B7zd8oTQjzXO1k1ce_BBzQ.png" alt="Article image" width="1294" height="870" loading="lazy" decoding="async" />
 
 ## Authenticated Enumeration
 
@@ -2274,7 +2274,7 @@ crackmapexec smb
 --shares
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6LCB2mRr7SIzEGL1McJlXw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6LCB2mRr7SIzEGL1McJlXw.png" alt="Article image" width="1672" height="343" loading="lazy" decoding="async" />
 
 ### RPC User Enumeration:
 
@@ -2288,7 +2288,7 @@ rpcclient -U
 > enumdomusers
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Qs1Pfch93Aadw2fpUEZgxA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Qs1Pfch93Aadw2fpUEZgxA.png" alt="Article image" width="1171" height="671" loading="lazy" decoding="async" />
 
 **This authenticated enumeration provided:**
 

@@ -7,12 +7,14 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "build:legacy": "python3 scripts/clean_build.py && docusaurus build && python3 scripts/normalize_built_article_headings.py && python3 scripts/rewrite_legacy_canonicals.py",
-    "build:embedded": "python3 scripts/clean_build.py && ARTICLE_ARCHIVE_EMBED=1 ARTICLE_BASE_URL=/articles/ docusaurus build && python3 scripts/prune_embedded_build.py && python3 scripts/normalize_built_article_headings.py",
+    "build:embedded": "python3 scripts/build_archive_governance.py && python3 scripts/clean_build.py && ARTICLE_ARCHIVE_EMBED=1 ARTICLE_BASE_URL=/articles/ docusaurus build && python3 scripts/prune_embedded_build.py && python3 scripts/normalize_built_article_headings.py && python3 scripts/validate_built_archive.py",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "generate:articles": "python3 scripts/generate_article_docs.py",
+    "generate:articles": "python3 scripts/generate_article_docs.py && python3 scripts/capture_image_dimensions.py",
     "validate:media:local": "python3 scripts/validate_article_media.py --local-only",
-    "validate:archive": "python3 scripts/validate_article_archive.py"
+    "validate:archive": "python3 scripts/validate_article_archive.py && python3 scripts/build_archive_governance.py",
+    "governance:sync": "python3 scripts/build_archive_governance.py --update-catalog && python3 scripts/rewrite_same_origin_links.py",
+    "images:dimensions": "python3 scripts/capture_image_dimensions.py"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",

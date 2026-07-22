@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png"
 # Malicious Activity as a Statistical Signal: A Detection Engineering Analysis of Anomaly-Based…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -27,7 +27,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 &gt; Epistemic labels used throughout: [Documented] = the cited source explicitly states this fact or detection opportunity. [Inferred] = the source documents the underlying tradecraft; the detection derivation is the author’s reasoned conclusion. Claims without a label are general statements with consensus support in the cited literature.
 
@@ -63,7 +63,7 @@ The hypothesis is**substantially true, but bounded**. It holds for specific atta
 
 ### 1.1 Definitions
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gvZi-quN2EbEi1VH4x84dg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gvZi-quN2EbEi1VH4x84dg.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 **Anomaly.**NIST SP 800–94 defines anomaly-based intrusion detection as the comparison of normal activity profiles against observed events to identify significant deviations[[1]](https://csrc.nist.gov/pubs/sp/800/94/final). In operational terms, an anomaly is a measurable deviation from one or more baselines: an entity baseline (this user, this host), a peer baseline (users in this role, hosts in this class), a temporal baseline (activity at this time of day), a relationship model (who normally communicates with whom), or an event-sequence model (what normally follows what).
 
@@ -86,11 +86,11 @@ Anomaly detection produces operational value only when the baseline is tight, th
 
 ## 2. Taxonomy of Anomaly Types
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0gsdLTrvWS3EmSAu5WoL0w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0gsdLTrvWS3EmSAu5WoL0w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882), NIST SP 800–94[[1]](https://csrc.nist.gov/pubs/sp/800/94/final), Microsoft MSTIC publications[[4]](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/)[[5]](https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/)[[6]](https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/), Mandiant reporting[[7]](https://cloud.google.com/blog/topics/threat-intelligence/responding-to-exchange-server-zero-days)[[8]](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications)[[9]](https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2025), CISA/NSA joint advisories[[10]](https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a)[[11]](https://www.cisa.gov/resources-tools/resources/guide-securing-microsoft-windows-10-and-windows-11-audit-and-monitoring-events), and the Australian Cyber Security Centre (ACSC)[[12]](https://www.cyber.gov.au/resources-business-and-government/maintaining-devices-and-systems/system-hardening-and-administration/system-administration/detecting-and-mitigating-active-directory-compromises).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oARxu_lgKxAuI5EgXuuleQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oARxu_lgKxAuI5EgXuuleQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Volumetric**— Unusual absolute volume of data or events vs. entity baseline.**Telemetry**: NetFlow, firewall egress, DNS, file/object access, cloud audit.**Approach**: rolling threshold + percentile baseline (Z-score, IQR, moving average).
 **Stability**: high for exfiltration/impact stages; lower on shared infrastructure.
@@ -107,7 +107,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A file server that normally changes 1–2 GB of data daily suddenly shows mass file modifications and deletions consistent with ransomware impact.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bWJ5BNtuFu_v_bw6FoMwTg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bWJ5BNtuFu_v_bw6FoMwTg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Frequency / Rate**— Unusual rate of repeated events within a time window.**Telemetry**: auth logs, API logs, process start logs, DNS.
 **Approach**: count-by-entity over rolling window; Poisson model.
@@ -124,7 +124,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A service account that usually accesses one mailbox at a time suddenly performs repeated read operations across dozens of mailboxes in a short window.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*W-zn-qJkeLtk9sZ-6jmw5g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*W-zn-qJkeLtk9sZ-6jmw5g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Temporal**— Activity at unusual times relative to entity, business cycle, or service baseline.
 **Telemetry:**auth logs, SaaS audit, admin actions, EDR.
@@ -143,7 +143,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A user with a stable daytime pattern starts authenticating from the same device every night for several consecutive days, outside their historical baseline.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*SXg5h8_qdQB4flYPkQHVWw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*SXg5h8_qdQB4flYPkQHVWw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Peer-Group**— Entity deviates materially from its peer cohort (same role, department, host class).
 **Telemetry:**identity logs, HR data, endpoint inventory, SaaS access.**Approach:**clustering (K-Means, TF-IDF), peer distribution percentiles.**Stability:**medium–high when peer groups are cleanly defined.
@@ -160,7 +160,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - One employee in a peer group of standard Microsoft 365 users starts creating mailbox forwarding rules and performing eDiscovery-like searches, unlike comparable users with the same role.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Kj_pfrlqCnOviRu8wfTW8g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Kj_pfrlqCnOviRu8wfTW8g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Sequence**— Events occur in an unusual order relative to normal operational paths.
 **Telemetry:**process trees, auth chains, API sequences, session logs.**Approach:**finite-state models, Markov chains, LSTM, provenance graphs.**Stability**: high for stable server roles; lower for developer environments.
@@ -177,7 +177,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A workstation process tree shows Office opening a script interpreter, then a credential access tool, then an archive utility — an event sequence inconsistent with normal user productivity flows.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bYcMULfRE30SoE9bMYFlgQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bYcMULfRE30SoE9bMYFlgQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Graph / Relationship**— Unexpected edges, bridges, or paths in identity, network, or resource graphs.
 **Telemetry:**Active Directory, IAM, SaaS permissions, NetFlow.
@@ -195,7 +195,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A service account becomes the bridge between two previously separate environments by authenticating to both the on-prem domain and cloud admin plane, creating an unusual cross-environment path.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bE0culxVhjiWdTIK4ibzOw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bE0culxVhjiWdTIK4ibzOw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Geographic / ASN**— Access from new, implausible, or inconsistent locations or network providers.
 **Telemetry:**IdP logs, VPN, SaaS, cloud console.
@@ -213,7 +213,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A privileged user who normally connects only through a known enterprise VPN starts logging in from a newly observed anonymization provider or VPS-hosting ASN.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UgEMTfLrLmcJscxWKxJFTw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UgEMTfLrLmcJscxWKxJFTw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Identity / Access**— Unusual auth properties, factor changes, app consents, or token behaviour.
 **Telemetry:**IdP, MFA, Entra/Okta, cloud audit, OAuth logs.
@@ -231,7 +231,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A user with stable sign-in behavior suddenly shows unusual token reuse across multiple applications or sessions inconsistent with their normal access pattern.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5D_-BYWLKjb5JQ1sOucfUw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5D_-BYWLKjb5JQ1sOucfUw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Rare Process / Service**— Execution of a binary or service with low prevalence on that host or host class.
 **Telemetry:**EDR, Sysmon Event ID 1, Linux auditd, software inventory.**Approach:**prevalence scoring, allowlist comparison, digital signature analysis.
@@ -249,7 +249,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A production database host executes`rclone`, a utility not previously observed on similar servers, followed by outbound network activity.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*d70XgpYA5npUiQDRYxIphg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*d70XgpYA5npUiQDRYxIphg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Parent-Child Execution**— A parent process spawning children it rarely or never should.
 **Telemetry:**EDR, Sysmon Event ID 1, auditd.
@@ -268,7 +268,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A business application service suddenly spawns`7z.exe`or`rar.exe`, an unusual child process for that parent and host role.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZsGfnUZGQSora4S3f-woFA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZsGfnUZGQSora4S3f-woFA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Data Movement**— Unusual read/write/copy/export/sync behaviour vs. entity or data-class baseline.
 **Telemetry:**DLP, file access logs, object storage audit, SaaS export logs.**Approach:**volume + destination + object-type + peer baseline.
@@ -286,7 +286,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A cloud admin account that usually performs management actions begins bulk snapshot export or cross-region object replication involving sensitive data classes.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BikTV0gLj4MlEv7hg8Q_Ug.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BikTV0gLj4MlEv7hg8Q_Ug.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Protocol / Application Usage**— Non-standard use of ports, protocols, or application features.
 **Telemetry:**proxy logs, DNS, NetFlow, SaaS/IdP API logs.
@@ -304,7 +304,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A cloud application account that usually performs routine API reads begins using bulk export, synchronization, or token-management features rarely seen in that application context.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*P1Hy0CJdFiXnI94Ph-lZvA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*P1Hy0CJdFiXnI94Ph-lZvA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Negative Anomaly (Absence)**— Expected telemetry stops appearing — logs cleared, agent silenced, process absent.
 **Telemetry:**SIEM heartbeat monitoring, log volume baselines, EDR health.**Approach:**volume baseline on log source; absence detection.
@@ -322,7 +322,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A backup service process that is normally always present on a server is no longer running, followed by unexpected file encryption or deletion activity.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*j-OXWbgJAG8QHjCjJzjjNw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*j-OXWbgJAG8QHjCjJzjjNw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **State-Change**— Rarely occurring control-plane changes that materially alter trust or exposure.
 **Telemetry:**cloud audit, AD audit, IdP audit, SaaS admin logs.
@@ -341,7 +341,7 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 - A cloud storage bucket that was private is suddenly changed to public or cross-account accessible, materially increasing exposure.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HSqc4Tgp2Djx-GZxe6Tb4A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HSqc4Tgp2Djx-GZxe6Tb4A.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Multi-Event Correlation**— Several individually weak signals combining into an anomalous chain against one entity.
 **Telemetry:**SIEM / XDR across all sources.
@@ -361,28 +361,28 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 ## 3. Mapping Anomalies to the ATT&CK Lifecycle
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WsUqdnCVq_mdtkRKIAGZPw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WsUqdnCVq_mdtkRKIAGZPw.png" alt="Article image" width="1907" height="613" loading="lazy" decoding="async" />
 
 Anomaly detection is most useful when an attacker must create measurable change in an environment. It is least useful when the attacker operates within accepted identity, protocol, and administrative boundaries.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lZJB9pgfW1e_5WdTZmsLVw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lZJB9pgfW1e_5WdTZmsLVw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Reconnaissance
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aimdYjy2yJ4aTvesiCSKOQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aimdYjy2yJ4aTvesiCSKOQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Poor — perimeter telemetry only) — A**nomaly types:**rate(active scanning),geographic/ASN(unfamiliar source), rare URI (web/directory fuzzing). Passive reconnaissance (OSINT, LinkedIn, Shodan, certificate transparency) produces no defender-observable signal. Active scanning (T1595) produces signals only in perimeter and external-facing infrastructure: aggressive Nmap generates rate anomalies in firewall deny logs; Burp / ffuf / Dirbuster produce high HTTP 404 rates with anomalous or absent User-Agent strings in web server and WAF logs. Detection requires perimeter log collection and alerting tuned specifically for external-facing infrastructure — not the internal/identity focus of most SIEM deployments. Most useful as a*context enrichment signal*: external scanning followed days later by an authentication anomaly from a different IP raises combined confidence materially. Standalone, the alert has low actionability.
 **Limitation:**commodity scanners (Shodan, Censys, Masscan) produce identical patterns continuously — distinguishing targeted pre-attack scanning from background internet noise is not reliably possible without threat intelligence enrichment; attackers can trivially slow-scan or rotate IPs to stay below per-source thresholds.**[Inferred]**
 
 ## Resource Development
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xyHr2wkv1ZMZm3xCKXujLA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xyHr2wkv1ZMZm3xCKXujLA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: None, defender-side) —**Anomaly types:**none observable. Infrastructure acquisition, domain registration, VPS provisioning, and credential staging occur entirely outside defender-controlled environments. No defender-observable signal is generated at the time the activity occurs. The only indirect opportunity is out-of-band threat intelligence: domain monitoring for typosquatting registrations, or certificate transparency log alerts for lookalike certificates. These are TI enrichment sources, not anomaly detection. Limitation: the entire tactic is pre-intrusion and outside the defender’s telemetry boundary.**[Inferred]**
 
 ## Initial Access
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ra0nKuChB9pMu5ZY0N_B9w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ra0nKuChB9pMu5ZY0N_B9w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Poor–Moderate) —**Anomaly types:**geographic,ASN,rate.
 **Evidence:**Midnight Blizzard residential-proxy spray[[4]](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/).
@@ -390,34 +390,34 @@ Anomaly detection is most useful when an attacker must create measurable change 
 
 ## Execution
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dYKcIi0C8T52jhDJL13Qwg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dYKcIi0C8T52jhDJL13Qwg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Moderate) —**Anomaly types**:parent-child,rare process,sequence.**Evidence:**HAFNIUM`w3wp.exe`→`cmd.exe`[[5]](https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/); Conti ADFind execution[[13]](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/).**Limitation:**LOTL tools, fileless execution, in-process abuse.
 
 ## Persistence
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QWW9hIVmF8ZUA4OH0Qt3zw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QWW9hIVmF8ZUA4OH0Qt3zw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Moderate) —**Anomaly types**:state-change,identity/access,rare event.
 **Evidence:**Storm-1283 OAuth app + VM creation[[6]](https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/); UNC3944 MFA reset[[8]](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications).**Limitation:**noisy from legitimate admin; requires enrichment.
 
 ## Privilege Escalation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TF97AhQGLF4i0tdB1oN_4g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TF97AhQGLF4i0tdB1oN_4g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Moderate) —**Anomaly types:**rare process,sequence,identity/access.
 **Evidence:**Kerberoasting RC4 TGS in modern environments[[14]](https://adsecurity.org/?p=3458).**Limitation:**legitimate RC4 compatibility needs; privilege changes are common.
 
 ## Defense Evasion
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Wt6n1iG4OOGvKdIJwkmL0g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Wt6n1iG4OOGvKdIJwkmL0g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Weak) —**Anomaly types:**negative anomaly (absence),rare event.**Evidence:**Conti disabling Defender;`wevtutil cl`log clearing.
 **Limitation:**evasion is specifically designed to reduce anomaly surface.
 
 ## Credential Access
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Zm2KZ8YA0K1MvIO2zCnkyQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Zm2KZ8YA0K1MvIO2zCnkyQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Moderate–High, concentrated) —**Anomaly types:**frequency/rate,rare process,sequence.
 **Evidence:**password spray Event 4625 clustering; Kerberoasting; DCSync via Impacket[[20]](https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a).
@@ -425,13 +425,13 @@ Anomaly detection is most useful when an attacker must create measurable change 
 
 ## Discovery
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JIcigvanUn7CA1DA5dV9dQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JIcigvanUn7CA1DA5dV9dQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Moderate) —**Anomaly types:**rare process,peer-group,sequence.**Evidence:**ADFind/BloodHound execution[[13]](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/); LDAP query volume spikes.**Limitation:**heavy overlap with legitimate admin tooling.
 
 ## Lateral Movement
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gyRgxUYLGcOgYZgUNi0NdA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gyRgxUYLGcOgYZgUNi0NdA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Moderate) —**Anomaly types:**graph/relationship,peer-group,sequence.
 **Evidence:**Conti PsExec + ADMIN$[[13]](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/); NTLM network logon anomalies[[16]](https://blog.binarydefense.com/reliably-detecting-pass-the-hash-through-event-log-analysis).
@@ -439,21 +439,21 @@ Anomaly detection is most useful when an attacker must create measurable change 
 
 ## Command and Control
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*R4gExN2nictTQZz-BXeu0w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*R4gExN2nictTQZz-BXeu0w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Moderate–High) —**Anomaly types**:temporal,protocol, DNS entropy,volumetric.
 **Evidence**: SUNBURST DGA DNS[[3]](https://www.mandiant.com/resources/sunburst-additional-technical-details); APT34 DNSpionage TXT records[[17]](https://unit42.paloaltonetworks.com/unit42-oilrig-targets-middle-eastern-telecommunications-organization/).**Limitation**: jitter, dormancy, protocol masquerading.
 
 ## Collection / Exfiltration
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aGqnYeF_Sm2daueK0A96Cg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aGqnYeF_Sm2daueK0A96Cg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: High) —**Anomaly types**:volumetric,data movement,state-change.**Evidence**: APT41 SQLULDR2 + PINEGROVE exfiltration[[9]](https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2025); Rclone campaigns[[13]](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/).
 **Limitation:**SaaS-native exfil generates no signals in perimeter telemetry.
 
 ## Impact
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RTX7AO7qc93wBio4CIOWqQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RTX7AO7qc93wBio4CIOWqQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: High) —**Anomaly types**:volumetric,rare process,sequence.**Evidence**: VSS deletion; mass file encryption pattern.
 **Limitation:**often detected only after damage has commenced.
@@ -796,7 +796,7 @@ Detection signal: A known-trusted application (`3CXDesktopApp.exe`) making HTTP 
 
 ### 5.1 Windows Security Event Log
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*33nFt4BqdnfK6EKgvnBhwQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*33nFt4BqdnfK6EKgvnBhwQ.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Effective anomaly detection on Windows requires enabling Advanced Audit Policy settings beyond defaults. The table below uses the correct audit policy paths from Microsoft’s documentation.
 
@@ -854,7 +854,7 @@ Effective anomaly detection on Windows requires enabling Advanced Audit Policy s
 
 ### 5.2 Sysmon
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eJL6NhduQ6_DkUsxHEArQg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eJL6NhduQ6_DkUsxHEArQg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Sysmon (System Monitor, part of Sysinternals) provides endpoint telemetry beyond the native Windows Security log. It requires explicit deployment and a configuration file.
 
@@ -1112,7 +1112,7 @@ SaaS audit logs are the primary — and in many intrusion scenarios the only —
 
 ### 5.9 Detection Source Prioritization Matrix
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RoB5bhSZ4IunaZM3DJKEFg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RoB5bhSZ4IunaZM3DJKEFg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Ratings reflect the effort required for a competent team starting from zero deployment and the detection fidelity achievable against documented adversary TTPs once fully operational. Implementation Effort covers licensing, configuration, tuning, and baseline establishment. Detection Fidelity reflects signal-to-noise ratio on targeted threat categories under realistic conditions — not theoretical maximum coverage.
 
@@ -1160,7 +1160,7 @@ Ratings reflect the effort required for a competent team starting from zero depl
 
 ## 6.1 Kerberoasting
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*iLzeuns7bfYSgavTllVs5w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*iLzeuns7bfYSgavTllVs5w.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **What it is:**An attacker with a valid domain user account requests Kerberos service tickets (TGS) for accounts with Service Principal Names (SPNs). The TGS ticket is encrypted with the service account’s NTLM hash and can be cracked offline.
 
@@ -1219,7 +1219,7 @@ where
 
 ## 6.2 DCSync
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nFXxFcm5dNEeH4P1MC6xTA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nFXxFcm5dNEeH4P1MC6xTA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **What it is:**An attacker with DS-Replication-Get-Changes and DS-Replication-Get-Changes-All directory permissions mimics Active Directory replication to extract NTLM hashes and Kerberos keys for any domain account, including`krbtgt`. Implemented in Mimikatz (`lsadump::dcsync`) and Impacket's`secretsdump.py`.
 
@@ -1277,7 +1277,7 @@ This query surfaces a high-confidence but not infallible signal. Review all resu
 
 ## 6.3 Pass-the-Hash
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6gfxvyR8ILtJsC4hjnmFUQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6gfxvyR8ILtJsC4hjnmFUQ.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **What it is:**An attacker uses a captured NTLM hash to authenticate to a remote system without the cleartext password. The hash is presented directly to NTLM authentication.
 
@@ -1326,7 +1326,7 @@ Highest-value targets for correlation: PTH against domain controllers (Event 462
 
 ## 6.4 LSASS Credential Dumping (Sysmon Event 10)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aKEDQh--BV1kNrI0Bkea_Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aKEDQh--BV1kNrI0Bkea_Q.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **What it is:**Tools such as Mimikatz, ProcDump, or custom loaders access LSASS (Local Security Authority Subsystem Service) memory to extract NTLM hashes, Kerberos tickets, or WDigest credentials.
 
@@ -1356,7 +1356,7 @@ Do not build a static allowlist from documentation alone — profile your enviro
 
 ## 7. How Attackers Suppress Anomaly Visibility
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2K62HrIf19EIC0IgXH6jXg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2K62HrIf19EIC0IgXH6jXg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Advanced threat actors apply documented techniques to reduce their anomaly footprint.
 
@@ -1394,7 +1394,7 @@ Each example is labelled with its analytical type.
 
 *Type: Heuristic analytic. Thresholds are illustrative starting points; calibrate per tenant before production deployment.*
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IBfgmROIE6IFT-AjWjw7qQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IBfgmROIE6IFT-AjWjw7qQ.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ```text
 // Sentinel / KQL
@@ -1612,7 +1612,7 @@ Finally, the flagged events are displayed in a clean, readable table for investi
 
 - `SPNs`: The actual list of the service names that were requested.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hy6wXNOM0M-yGh9MTRKVRg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hy6wXNOM0M-yGh9MTRKVRg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ### DCSync — Replication GUIDs from Non-DC Account
 
@@ -2107,7 +2107,7 @@ No anomaly programme compensates for missing telemetry. Before deploying any ano
 
 Deploy analytics in order of baseline tightness and signal stability:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NhNgD8Ajq_7Ama5VhR8e0Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NhNgD8Ajq_7Ama5VhR8e0Q.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 - **Deterministic or near-deterministic rules first**— webshell parent-child lineage (`w3wp.exe`→`cmd.exe`on production internet-facing servers), VSS shadow copy deletion (`vssadmin delete shadows`on workstations — near-zero legitimate prevalence). No baseline needed.
 

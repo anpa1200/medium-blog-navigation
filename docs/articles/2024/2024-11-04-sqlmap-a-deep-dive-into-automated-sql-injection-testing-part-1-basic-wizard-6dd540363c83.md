@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC"
 # SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 1. (basic, wizard)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC)
+<img src="https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 [**Part 2 here**](2024-11-05-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-2-advanced-custom-setup-0136ac6ffe53.md)
 
-![SQLMAP](https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC)
+<img src="https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC" alt="SQLMAP" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction to SQLMap
 
@@ -131,7 +131,7 @@ or
 puthon3 path/to/sqlmap/sqlmap.py
 ```
 
-![SQLMAP](https://cdn-images-1.medium.com/max/800/1*u7-p_L9PYwgFCSCZjl9DsQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*u7-p_L9PYwgFCSCZjl9DsQ.png" alt="SQLMAP" width="1871" height="266" loading="lazy" decoding="async" />
 
 Use -h for basic and -hh for advanced help
 
@@ -139,7 +139,7 @@ Use -h for basic and -hh for advanced help
 sqlmap -h
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*G_GbGU3KzG40AnfcW-kLCg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*G_GbGU3KzG40AnfcW-kLCg.png" alt="Article image" width="1394" height="891" loading="lazy" decoding="async" />
 
 ```text
 sqlmap -hh
@@ -163,7 +163,7 @@ sqlmap --wizard
 
 After wizard launch you’ll see next questions:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*h5VYaGt5m3pjJK9l91hS8A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*h5VYaGt5m3pjJK9l91hS8A.png" alt="Article image" width="343" height="26" loading="lazy" decoding="async" />
 
 ```text
 Please enter full target 
@@ -175,7 +175,7 @@ URL
 
 Enter full URL of WebSite/Service with DB
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*roFinT3KTLYjvzlWAwYW8w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*roFinT3KTLYjvzlWAwYW8w.png" alt="Article image" width="373" height="27" loading="lazy" decoding="async" />
 
 ```text
 POST data (
@@ -260,7 +260,7 @@ In wizard mode just enter:
 "email=user@example.com&message=Great site!&subscribe=yes"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QtzUenqKLExhAXdbcbgl8w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QtzUenqKLExhAXdbcbgl8w.png" alt="Article image" width="634" height="95" loading="lazy" decoding="async" />
 
 The`--level`and`--risk`options in SQLMap are used to specify the intensity and type of SQL injection tests that SQLMap will perform on the target. These options allow users to fine-tune how aggressive and invasive their testing should be. Here’s an explanation of the different settings for these options when SQLMap prompts you with "Injection difficulty (--level/--risk). Please choose:":
 
@@ -296,7 +296,7 @@ When prompted to choose a level of injection difficulty, your choice should be b
 
 By adjusting the`--level`and`--risk`, you can control the thoroughness of the SQL injection testing and minimize potential disruptions or damages to the target application. These settings help cater the testing process to match specific security objectives and operational constraints.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3B7r70_BxYj5lWWANS6E2A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3B7r70_BxYj5lWWANS6E2A.png" alt="Article image" width="634" height="95" loading="lazy" decoding="async" />
 
 ## Enumeration Options
 
@@ -350,11 +350,11 @@ The level of enumeration you choose should depend on your specific goals, the sc
 
 **Enumeration:**3 — All
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CgDe-g7p2Cl0pw3GVxVVbQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CgDe-g7p2Cl0pw3GVxVVbQ.png" alt="Article image" width="1896" height="668" loading="lazy" decoding="async" />
 
 ### Questions while scanning:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NMzmEkl_JX0p7-5N7woinQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NMzmEkl_JX0p7-5N7woinQ.png" alt="Article image" width="871" height="49" loading="lazy" decoding="async" />
 
 ```text
 Edit POST data 
@@ -386,7 +386,7 @@ Following the initial prompt, SQLMap offers an option to automatically fill any 
 
 In practice, if you’re unsure about what values to use for testing or want to ensure a thorough examination of how the application handles unexpected or varied input, allowing SQLMap to fill in random values can be a beneficial choice. However, if the test’s scope is to see how the application behaves with no input or specific input values, you should opt to enter those values manually or choose ‘No’ to random filling.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aAZn7KsGOKDJ0dhJgsdaMQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aAZn7KsGOKDJ0dhJgsdaMQ.png" alt="Article image" width="1123" height="56" loading="lazy" decoding="async" />
 
 do you want to store hashes to a temporary file for eventual further processing with other tools [y/N] N do you want to perform a dictionary-based attack against retrieved password hashes? [Y/n/q] Y
 
@@ -412,7 +412,7 @@ After hashes are retrieved, SQLMap can attempt to crack them using a dictionary-
 
 - **n (No)**: Selecting ‘No’ skips the cracking attempt, which might be preferable if you plan to use a more specialized tool for the task or if cracking is not within the scope of your authorized test.
 
-![SQLMAP](https://cdn-images-1.medium.com/max/800/1*3CThwwzf4mddsVx9dQrPCQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3CThwwzf4mddsVx9dQrPCQ.png" alt="SQLMAP" width="1374" height="694" loading="lazy" decoding="async" />
 
 ### Done!
 

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*1ehWz4-YEZTo-PXo4FwemA.png"
 # Infrastructure Pivoting: How CTI Analysts Expand From a Single IOC to a Full Attacker Network
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*1ehWz4-YEZTo-PXo4FwemA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1ehWz4-YEZTo-PXo4FwemA.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### The field manual for tracing attacker infrastructure — from one domain to dozens
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1ehWz4-YEZTo-PXo4FwemA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1ehWz4-YEZTo-PXo4FwemA.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -133,7 +133,7 @@ An attacker who has compromised 100 targets has used the same C2 infrastructure 
 
 The core workflow is a branching chain. Each pivot point generates new observables, each of which opens new pivot paths. The goal is to follow every thread until you reach diminishing returns — infrastructure that is shared with too many unrelated actors to be attributable.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pQwJu2e1WBcC6gZgwJZKYg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pQwJu2e1WBcC6gZgwJZKYg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Each step generates artifacts that feed the next step. The workflow terminates when:
 
@@ -145,7 +145,7 @@ Each step generates artifacts that feed the next step. The workflow terminates w
 
 ### Tools by Workflow Stage
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lDsxSoyNiCZy7j4MVBRK9w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lDsxSoyNiCZy7j4MVBRK9w.png" alt="Article image" width="2382" height="1792" loading="lazy" decoding="async" />
 
 ## Pivot Type 1: Domain → IP Resolution
 
@@ -161,7 +161,7 @@ dig example.com A +
 short
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OmbeLnFALXVzGCQMd32BRA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OmbeLnFALXVzGCQMd32BRA.png" alt="Article image" width="1375" height="67" loading="lazy" decoding="async" />
 
 ```text
 # 
@@ -171,14 +171,14 @@ dig example.com
 ANY
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FZ1m1rp0Pjt4Ytdsm3LGfg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FZ1m1rp0Pjt4Ytdsm3LGfg.png" alt="Article image" width="1913" height="509" loading="lazy" decoding="async" />
 
 ```text
 # MX records (mail infrastructure - attackers use for phishing)
 dig example.com MX
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-2Y_Nx7eH3qYD2agz4MabQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-2Y_Nx7eH3qYD2agz4MabQ.png" alt="Article image" width="1916" height="468" loading="lazy" decoding="async" />
 
 ```text
 # Check TTL (short TTL = fast-flux; attacker is rotating IPs frequently)
@@ -188,7 +188,7 @@ grep
 "IN\s+A"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cfNNoXZQv32XPyH2umbOfg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cfNNoXZQv32XPyH2umbOfg.png" alt="Article image" width="1874" height="88" loading="lazy" decoding="async" />
 
 ```text
 # dnsx - fast bulk resolution (ProjectDiscovery)
@@ -198,26 +198,26 @@ echo
  | dnsx -a -resp -silent
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Ym04jYhfB2iWqeHt51J82g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Ym04jYhfB2iWqeHt51J82g.png" alt="Article image" width="1827" height="84" loading="lazy" decoding="async" />
 
 ```text
 # host - simpler alternative to dig
 host example.com
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XbeB5LNCm0rMKaTdskt4Uw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XbeB5LNCm0rMKaTdskt4Uw.png" alt="Article image" width="1811" height="148" loading="lazy" decoding="async" />
 
 MXToolbox online (no install):[https://mxtoolbox.com/SuperTool.aspx](https://mxtoolbox.com/SuperTool.aspx)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dX5oppUPOpSsbn5921bZ8Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dX5oppUPOpSsbn5921bZ8Q.png" alt="Article image" width="1914" height="987" loading="lazy" decoding="async" />
 
 DNSlytics full DNS record view:[https://dnslytics.com/domain/example.com](https://dnslytics.com/domain/example.com)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*niHJtm0CWAEtqyubrBEoAg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*niHJtm0CWAEtqyubrBEoAg.png" alt="Article image" width="1914" height="987" loading="lazy" decoding="async" />
 
 VirusTotal DNS tab:[https://www.virustotal.com/gui/domain/example.com/details](https://www.virustotal.com/gui/domain/example.com/details)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aeauiFQcQHMu9NTGUNoGpg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aeauiFQcQHMu9NTGUNoGpg.png" alt="Article image" width="1914" height="987" loading="lazy" decoding="async" />
 
 **What TTL tells you:**
 
@@ -237,7 +237,7 @@ dig example.com NS +
 short
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*qwzV5QYvGHQPutwd2ZcDoQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qwzV5QYvGHQPutwd2ZcDoQ.png" alt="Article image" width="1777" height="77" loading="lazy" decoding="async" />
 
 ```text
 elliott.
@@ -259,16 +259,16 @@ com
 Lookup: who else uses this nameserver?
 → SecurityTrails:[https://securitytrails.com/list/ns/elliott.ns.cloudflare.com](https://securitytrails.com/list/ns/elliott.ns.cloudflare.com)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pIbACPu9Ns3CSXxq9Ga10g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pIbACPu9Ns3CSXxq9Ga10g.png" alt="Article image" width="1910" height="984" loading="lazy" decoding="async" />
 
 → PassiveTotal: Subdomains/Infrastructure query on the NS record
 → DNSlytics reverse NS:[https://dnslytics.com/reverse-ns/elliott.ns.cloudflare.com](https://dnslytics.com/reverse-ns/elliott.ns.cloudflare.com)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*y7BSDTg_5jAm5bwFZwatyQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*y7BSDTg_5jAm5bwFZwatyQ.png" alt="Article image" width="1912" height="581" loading="lazy" decoding="async" />
 
 → ViewDNS reverse NS:[https://viewdns.info/reversens/?ns=hera.ns.cloudflare.com](https://viewdns.info/reversens/?ns=hera.ns.cloudflare.com)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eAPzYbpw8QsFtvO2uU-TCg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eAPzYbpw8QsFtvO2uU-TCg.png" alt="Article image" width="1917" height="916" loading="lazy" decoding="async" />
 
 SpyOnWeb:[https://spyonweb.com/](https://spyonweb.com/ns1.custom-nameserver.example)elliott.ns.cloudflare.com
 
@@ -507,7 +507,7 @@ shodan search
 https://app.binaryedge.io/services/query?query=asn:ASXXXXX
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lVHwo5xyCtwXtvX2jKsiCQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lVHwo5xyCtwXtvX2jKsiCQ.png" alt="Article image" width="1907" height="725" loading="lazy" decoding="async" />
 
 [AS13335](https://bgp.he.net/AS13335)
 
@@ -562,7 +562,7 @@ search
  "asn:AS12345 product:Cobalt Strike Beacon"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XiXoI0zcxmY7sYyTjTR-XA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XiXoI0zcxmY7sYyTjTR-XA.png" alt="Article image" width="1906" height="997" loading="lazy" decoding="async" />
 
 ### Hosting Provider Pattern Analysis
 
@@ -634,7 +634,7 @@ sort
  -u
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aJim1_IhONAQi3UiblIXew.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aJim1_IhONAQi3UiblIXew.png" alt="Article image" width="1906" height="997" loading="lazy" decoding="async" />
 
 **certstream**— Real-time CT log streaming (catch new actor certs as they are issued):
 
@@ -728,7 +728,7 @@ AND services.tls.certificates.leaf_data.subject.common_name:
 "evil-domain.com"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zgWByEd4U5ZbB0sZzPDQJA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zgWByEd4U5ZbB0sZzPDQJA.png" alt="Article image" width="1906" height="997" loading="lazy" decoding="async" />
 
 **Shodan TLS pivoting:**
 
@@ -920,7 +920,7 @@ from
 1
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gOKGgXGQGVRQEznVeUzrFA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gOKGgXGQGVRQEznVeUzrFA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ### Let’s Encrypt as an Attacker Fingerprint
 
@@ -1231,7 +1231,7 @@ cert
 "US"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_ykgKdeRNXIgp48TE-eZxQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_ykgKdeRNXIgp48TE-eZxQ.png" alt="Article image" width="1920" height="813" loading="lazy" decoding="async" />
 
 ### ZoomEye — Chinese Internet Intelligence (Broader Asian Coverage)
 
@@ -1253,7 +1253,7 @@ ip:
 443
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rLzF9EPcxtoYz7_X2Q4bxw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rLzF9EPcxtoYz7_X2Q4bxw.png" alt="Article image" width="1920" height="813" loading="lazy" decoding="async" />
 
 ### BinaryEdge — Alternative Port Scanning Database
 
@@ -1492,17 +1492,17 @@ AND NOT historical_malicious_flag
 
 ### Free Tier Tools (Sufficient for Most Analysis)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PSTEpCTu2-EW2nrfUboWeQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PSTEpCTu2-EW2nrfUboWeQ.png" alt="Article image" width="2394" height="1760" loading="lazy" decoding="async" />
 
 ### Paid / Subscription Tools (Enterprise Standard)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JgcV86ZslnkGgvj_7oxw9w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JgcV86ZslnkGgvj_7oxw9w.png" alt="Article image" width="2394" height="1760" loading="lazy" decoding="async" />
 
 ### The Analyst’s Minimum Viable Stack (Free)
 
 For a CTI analyst without budget access, this combination covers the core workflow:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*53lQccGeyQzcyOh9M9fF_Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*53lQccGeyQzcyOh9M9fF_Q.png" alt="Article image" width="2394" height="1760" loading="lazy" decoding="async" />
 
 ```text
 DNS RESOLUTION:

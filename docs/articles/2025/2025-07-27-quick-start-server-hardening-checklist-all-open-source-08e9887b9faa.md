@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*e2ISiMIzXiuutPsOO0Ycdw.png"
 # Quick‑Start Server Hardening Checklist (all open‑source)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*e2ISiMIzXiuutPsOO0Ycdw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*e2ISiMIzXiuutPsOO0Ycdw.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### ISO 27001-Based Server Hardening Plan
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*e2ISiMIzXiuutPsOO0Ycdw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*e2ISiMIzXiuutPsOO0Ycdw.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## 1. Access Control (ISO 27001 — A.9)
 
@@ -229,7 +229,7 @@ enable
  fail2ban
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oWxtmJGT8OTSvrRgCYXf4g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oWxtmJGT8OTSvrRgCYXf4g.png" alt="Article image" width="780" height="208" loading="lazy" decoding="async" />
 
 **4. Check if jail is working:**
 
@@ -239,7 +239,7 @@ status
  sshd
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LhJNvRjgcC2WERd0AWVxRQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LhJNvRjgcC2WERd0AWVxRQ.png" alt="Article image" width="903" height="225" loading="lazy" decoding="async" />
 
 ### 2. System & Network Hardening (ISO 27001 — A.13, A.12.6.1)
 
@@ -287,7 +287,7 @@ sudo dpkg-reconfigure
 --priority=low unattended-upgrades
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_B5aS6YHsNSpvy-LL6f1Ng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_B5aS6YHsNSpvy-LL6f1Ng.png" alt="Article image" width="1733" height="265" loading="lazy" decoding="async" />
 
 - Log file:`/var/log/unattended-upgrades/unattended-upgrades.log`
 

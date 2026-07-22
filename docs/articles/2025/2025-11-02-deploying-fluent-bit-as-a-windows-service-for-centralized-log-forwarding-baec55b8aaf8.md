@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*vuUYM2SZXzjvFRMo9PkK2A.png"
 # Deploying Fluent Bit as a Windows Service for Centralized Log Forwarding
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*vuUYM2SZXzjvFRMo9PkK2A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vuUYM2SZXzjvFRMo9PkK2A.png" alt="Cover image" width="1078" height="261" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -66,9 +66,9 @@ by
 - Download the latest**Fluent Bit Windows zip**from
 [https://fluentbit.io/download/](https://fluentbit.io/download/)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vuUYM2SZXzjvFRMo9PkK2A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vuUYM2SZXzjvFRMo9PkK2A.png" alt="Article image" width="1078" height="261" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9xWw5bNpolbteAC8TrJNrQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9xWw5bNpolbteAC8TrJNrQ.png" alt="Article image" width="1038" height="502" loading="lazy" decoding="async" />
 
 2. Extract the archive into`C:\fluent-bit\`.
 
@@ -311,7 +311,7 @@ cd
 
 You should see log lines like:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7HxD6wOGrHsx42dPe5Z5eA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7HxD6wOGrHsx42dPe5Z5eA.png" alt="Article image" width="957" height="758" loading="lazy" decoding="async" />
 
 Stop with**Ctrl + C**when ready.
 
@@ -362,7 +362,7 @@ restart
 900
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*H4vQKGkt_p_6IvRXNuZbNQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*H4vQKGkt_p_6IvRXNuZbNQ.png" alt="Article image" width="930" height="467" loading="lazy" decoding="async" />
 
 Then start it:
 
@@ -384,7 +384,7 @@ query
 
 You should see:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JKvSnKrVAbggnC1GMa-3fA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JKvSnKrVAbggnC1GMa-3fA.png" alt="Article image" width="921" height="346" loading="lazy" decoding="async" />
 
 ### 5. GUI Verification
 
@@ -398,7 +398,7 @@ Open**Services (services.msc)**→ locate**fluent-bit**
 - **Path to executable**=
 “C:\fluent-bit\bin\fluent-bit.exe” -c “C:\fluent-bit\conf\fluent-bit.conf”
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NKtcbgatw7yhwTy5iGUo8A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NKtcbgatw7yhwTy5iGUo8A.png" alt="Article image" width="777" height="576" loading="lazy" decoding="async" />
 
 ## Troubleshooting: Error 1057 / Error 1067
 
@@ -479,7 +479,7 @@ Use**absolute paths**only — relative paths often cause Error 1057 (bad command
 
 ## Extra quick checks
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*q6sGj8kf8OgXuxdk7E0LHw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*q6sGj8kf8OgXuxdk7E0LHw.png" alt="Article image" width="948" height="753" loading="lazy" decoding="async" />
 
 ## If all above fails
 

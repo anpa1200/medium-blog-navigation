@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*uc4qewXjjEC8q9Q6Ag_j8A.png"
 # A Complete Cloud Penetration Testing Walkthrough
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*uc4qewXjjEC8q9Q6Ag_j8A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uc4qewXjjEC8q9Q6Ag_j8A.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How I Discovered Critical Vulnerabilities in a Cloud Environment Using Basic Tools and Methodical Testing
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uc4qewXjjEC8q9Q6Ag_j8A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uc4qewXjjEC8q9Q6Ag_j8A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 *In this detailed walkthrough, I’ll take you through a real-world penetration test that uncovered multiple critical vulnerabilities in a cloud-hosted web application. You’ll learn the methodology, tools, and thought process behind each step of the assessment.*
 
@@ -161,7 +161,7 @@ Burp Suite is invaluable for web application testing. Here’s a quick setup:
 
 Burp will intercept, analyze, and allow you to manipulate HTTP requests, making it essential for thorough web application testing.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vS9434xTeYDOtbVyROnRQQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vS9434xTeYDOtbVyROnRQQ.png" alt="Article image" width="1910" height="1019" loading="lazy" decoding="async" />
 
 ## Phase 1: Initial Reconnaissance — Mapping the Attack Surface
 
@@ -229,7 +229,7 @@ in
  28.13 seconds
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yQH79-NxwEWy0Wp4L3XjpQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yQH79-NxwEWy0Wp4L3XjpQ.png" alt="Article image" width="1185" height="685" loading="lazy" decoding="async" />
 
 **Initial Assessment:**The target is running a web server on port 80. This is our primary attack surface.
 
@@ -250,7 +250,7 @@ short
 .196
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WGNqUfyzWea25AExS3Cxfw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WGNqUfyzWea25AExS3Cxfw.png" alt="Article image" width="1062" height="120" loading="lazy" decoding="async" />
 
 **Key Finding:**The hostname`196.191.121.34.bc.googleusercontent.com`reveals this is hosted on**Google Cloud Platform**.
 
@@ -280,7 +280,7 @@ A simple HTTP request to the login page revealed important information:
 curl -I http://34.121.191.196/login.php
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gBmDcCRJ7gLyobyapO0uFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gBmDcCRJ7gLyobyapO0uFQ.png" alt="Article image" width="1434" height="302" loading="lazy" decoding="async" />
 
 **Headers revealed:**
 
@@ -763,7 +763,7 @@ This revealed:
 
 - Internal infrastructure details
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZxL_h8vPtrpLIbhzMQ3ihQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZxL_h8vPtrpLIbhzMQ3ihQ.png" alt="Article image" width="1434" height="302" loading="lazy" decoding="async" />
 
 ## Phase 4: Cloud Service Testing — Pivoting to a Weaker Target
 
@@ -782,7 +782,7 @@ curl -s
 
 **Critical Vulnerability Confirmed!**The application was executing user-supplied commands without validation.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ufUPjRFFIpBpgbfj8X1MDQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ufUPjRFFIpBpgbfj8X1MDQ.png" alt="Article image" width="1491" height="52" loading="lazy" decoding="async" />
 
 I escalated my testing:
 
@@ -831,7 +831,7 @@ etc
 passwd file contents
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Bs12jeJnrsLaPxf0fsl38g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Bs12jeJnrsLaPxf0fsl38g.png" alt="Article image" width="1612" height="545" loading="lazy" decoding="async" />
 
 **Impact Assessment:**
 
@@ -865,7 +865,7 @@ curl -s
 
 - Port scanning from the cloud infrastructure
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*COSJOfhiW_keCNq-p9sNyw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*COSJOfhiW_keCNq-p9sNyw.png" alt="Article image" width="1612" height="545" loading="lazy" decoding="async" />
 
 ### Exposing Environment Variables and Secrets
 
@@ -885,7 +885,7 @@ curl -s
 
 - **SECRET_KEY exposed:**`exposed-secret-39ca4c40`
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*AtMB-F8i_IQt-b3bucplXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*AtMB-F8i_IQt-b3bucplXQ.png" alt="Article image" width="1686" height="60" loading="lazy" decoding="async" />
 
 - **All environment variables leaked:**Including project details, paths, service names
 
@@ -901,7 +901,7 @@ curl -s
 
 - Access to other services using the same secrets
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zoSZdQkKKeTYoEguQjVoog.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zoSZdQkKKeTYoEguQjVoog.png" alt="Article image" width="1708" height="494" loading="lazy" decoding="async" />
 
 ## Phase 5: Cloud Function Exploitation — Gaining Cloud Access
 
@@ -981,7 +981,7 @@ curl -s
 
 **Result:**XML listing showing all files in the bucket, including:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4_WVy0xhv0kXdEha69JwLQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4_WVy0xhv0kXdEha69JwLQ.png" alt="Article image" width="1917" height="122" loading="lazy" decoding="async" />
 
 - `function-code.zip`(Cloud Function source code)
 
@@ -1008,9 +1008,9 @@ code
 zip
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*qmRb0dI1r4yUPG1v_av1tg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qmRb0dI1r4yUPG1v_av1tg.png" alt="Article image" width="1904" height="60" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oCZAG2VeK07X1n5ahd-fbQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oCZAG2VeK07X1n5ahd-fbQ.png" alt="Article image" width="1854" height="121" loading="lazy" decoding="async" />
 
 **Exposed Credentials:**
 

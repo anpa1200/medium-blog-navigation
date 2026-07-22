@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*Tg_wtLG0ROKhLS2I"
 # Web Applications Penetretion Testing. Stage 1: Reconnaissance
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*Tg_wtLG0ROKhLS2I)
+<img src="https://cdn-images-1.medium.com/max/800/0*Tg_wtLG0ROKhLS2I" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -31,7 +31,7 @@ Reconnaissance, or ‘recon’ as it is commonly known in the cyber security com
 
 In this post, we will dive into the tools and techniques essential for effective reconnaissance, illustrating how thorough initial research can pave the way for deeper insights and more effective security measures in later stages of penetration testing.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Tg_wtLG0ROKhLS2I)
+<img src="https://cdn-images-1.medium.com/max/800/0*Tg_wtLG0ROKhLS2I" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Legal Disclaimer
 

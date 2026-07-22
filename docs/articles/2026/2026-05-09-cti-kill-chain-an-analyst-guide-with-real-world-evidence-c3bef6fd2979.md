@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*trppHfN_PJLI9uPpIA358Q.png"
 # CTI Kill Chain: An Analyst Guide With Real-World Evidence
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*trppHfN_PJLI9uPpIA358Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*trppHfN_PJLI9uPpIA358Q.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Mapping adversary behavior from preparation to impact without overstating the evidence
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*trppHfN_PJLI9uPpIA358Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*trppHfN_PJLI9uPpIA358Q.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## Executive Summary
 
@@ -87,7 +87,7 @@ This is not a formal source-grading model. Operational CTI should separately eva
 
 ## What Is the Attack Kill Chain?
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xeZXkLY8zy7fHl_w6upM7w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xeZXkLY8zy7fHl_w6upM7w.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async" />
 
 The Attack Kill Chain is a structured way to describe how an adversary moves from intent to impact. Instead of treating an intrusion as a flat list of alerts, malware names, domains, and indicators, the Kill Chain asks the analyst to place evidence into a sequence of adversary activity. This helps defenders identify where the operation could have been detected, disrupted, or better understood.
 
@@ -111,7 +111,7 @@ For CTI work, the Kill Chain is not a claim that every intrusion is perfectly li
 
 ## 1. Reconnaissance and Precursors
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VgAnE2HgHab_Q1fMVZL25w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VgAnE2HgHab_Q1fMVZL25w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Reconnaissance and precursors include target selection, business research, credential collection, infrastructure preparation, supplier research, and operational planning. Public reporting often gives only indirect visibility into this phase. Victimology can support an assessment of deliberate targeting, but it does not prove the exact reconnaissance methods used.
 
@@ -155,7 +155,7 @@ The public evidence supports that the operation affected utility environments an
 
 ## 2. Weaponization
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9nFxOVVt146ePzDjbHaBmw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9nFxOVVt146ePzDjbHaBmw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Weaponization is the creation, selection, modification, or staging of a capability for later use. This may be malware, an exploit chain, a phishing document, a trojanized update, or an OT-specific payload.
 
@@ -191,7 +191,7 @@ Use this source cautiously. GRIZZLY STEPPE is a broad U.S. government reporting 
 
 ## 3. Delivery
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KfZ8T6Wq4Tt18dEWuAKTTQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KfZ8T6Wq4Tt18dEWuAKTTQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Delivery is how an adversary capability reaches a target. Delivery may use email, links, software updates, removable media, watering holes, exposed services, or partner and supplier channels. In worm activity, delivery and exploitation can be tightly coupled.
 
@@ -237,7 +237,7 @@ Caveat: WannaCry is not a clean single-phase delivery example. The same SMB mech
 
 ## 4. Exploitation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VoTzaA9yh1QcmsLvxgzH9A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VoTzaA9yh1QcmsLvxgzH9A.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Exploitation is the point where the adversary obtains execution or access by abusing a vulnerability, identity trust, user action, or trusted process.
 
@@ -275,7 +275,7 @@ Credential capture is exploitation of identity trust. The caveat is that GRIZZLY
 
 ## 5. Installation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pbTl5Fh3CVUK8FxjROhPKQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pbTl5Fh3CVUK8FxjROhPKQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Installation is the process of placing malware, persistence mechanisms, tooling, accounts, web shells, scheduled tasks, services, wipers, or other access mechanisms into the environment.
 
@@ -313,7 +313,7 @@ This installation example includes both access-supporting malware and destructiv
 
 ## 6. Command and Control
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0E1NAtAgl_WFOArtKOm57Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0E1NAtAgl_WFOArtKOm57Q.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Command and control, or C2, is how the adversary communicates with compromised systems. C2 evidence can include domains, IP addresses, protocols, timing, staging servers, legitimate-service abuse, decoy traffic, or high-reputation infrastructure.
 
@@ -357,7 +357,7 @@ Stuxnet’s PLC manipulation logic was hardcoded to target a specific industrial
 
 ## 7. Actions on Objectives
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-BP53JBM4vbUzpb-6iYzKg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-BP53JBM4vbUzpb-6iYzKg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Actions on objectives are what the adversary ultimately sought to do: steal data, encrypt systems, disrupt operations, manipulate industrial processes, publish stolen material, maintain espionage access, or prepare future access.
 
@@ -407,13 +407,13 @@ Both are relevant to actions on objectives, but they are not the same incident o
 
 ## Cross-Case Pattern Matrix
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0TjHOOQ7VKGFyfSt-v8RQQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0TjHOOQ7VKGFyfSt-v8RQQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## ATT&CK Mapping Table
 
 This table is not a complete detection plan. It maps selected behaviors to ATT&CK techniques where the public reporting supports a reasonable mapping. When the public source describes a broad malware role rather than a specific behavior, the table marks the mapping as artifact-dependent instead of forcing precision.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lU6U0i2n_SVUc7Ce-P_X8w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lU6U0i2n_SVUc7Ce-P_X8w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## How CTI Analysts Should Use the Kill Chain
 

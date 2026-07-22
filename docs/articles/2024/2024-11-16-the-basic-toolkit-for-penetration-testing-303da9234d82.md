@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*vpcuMQzXsepR78_C.jpg"
 # The Basic Toolkit for Penetration Testing
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*vpcuMQzXsepR78_C.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*vpcuMQzXsepR78_C.jpg" alt="Cover image" width="1120" height="1120" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Unlocking Vulnerabilities: A Comprehensive Guide to Essential Tools for Pen Testing
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*vpcuMQzXsepR78_C.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*vpcuMQzXsepR78_C.jpg" alt="Article image" width="1120" height="1120" loading="lazy" decoding="async" />
 
 ### Introduction
 
@@ -37,7 +37,7 @@ Penetration testers often use Linux as their base OS. Here are essential tools f
 
 ## Kali Linux: The Standard for Penetration Testing
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*BT4NPbYBnOXkgId5.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*BT4NPbYBnOXkgId5.png" alt="Article image" width="1980" height="1320" loading="lazy" decoding="async" />
 
 **What is Kali Linux?**
 Kali Linux is a Debian-based Linux distribution designed specifically for penetration testing and security auditing. It comes pre-installed with hundreds of tools for various security tasks.
@@ -64,7 +64,7 @@ Kali Linux is a Debian-based Linux distribution designed specifically for penetr
 
 ## Parrot Security OS: Lightweight and Privacy-Focused
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*tqNC8Xf-BhBM7egr)
+<img src="https://cdn-images-1.medium.com/max/800/0*tqNC8Xf-BhBM7egr" alt="Article image" width="800" height="533" loading="lazy" decoding="async" />
 
 **What is Parrot Security OS?**
 Parrot Security OS is another Debian-based distribution tailored for penetration testers and security researchers, with a strong emphasis on privacy and anonymity.
@@ -91,7 +91,7 @@ Parrot Security OS is another Debian-based distribution tailored for penetration
 
 ## BlackArch Linux: A Robust Choice for Advanced Penetration Testers
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*9zGohcPcxemjHELI.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*9zGohcPcxemjHELI.png" alt="Article image" width="512" height="512" loading="lazy" decoding="async" />
 
 In addition to**Kali Linux**,**Parrot Security OS**, and custom setups with Debian/Ubuntu,**BlackArch Linux**is a powerful option for penetration testers, especially those looking for a highly customizable and extensive toolkit.
 
@@ -135,7 +135,7 @@ BlackArch Linux is a lightweight, Arch Linux-based distribution tailored for pen
 
 ## Debian/Ubuntu + Custom Setup: Build Your Own Toolkit
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*QT8CVUqJIZqH8LV1.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*QT8CVUqJIZqH8LV1.png" alt="Article image" width="350" height="350" loading="lazy" decoding="async" />
 
 **What is a Custom Debian/Ubuntu Setup?**
 A custom setup allows you to use Debian or Ubuntu as the base OS and selectively install only the tools you need, creating a streamlined, personalized pen-testing environment.
@@ -178,7 +178,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **OWASP Amass:**is an open-source tool for in-depth domain reconnaissance, asset discovery, and network mapping.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*L0lpOJGf4aw1N0cv)
+<img src="https://cdn-images-1.medium.com/max/800/0*L0lpOJGf4aw1N0cv" alt="Article image" width="225" height="225" loading="lazy" decoding="async" />
 
 [**Full guide to OWASP Amass here**](2024-11-06-owasp-amass-project-guide-94bd55521f91.md)
 
@@ -186,7 +186,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 [**theHarvester:**](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md)is an open-source reconnaissance tool for gathering domain-related data, including emails, subdomains, and IPs.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*t_oaaW3j8CifxRzdBXwt3g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*t_oaaW3j8CifxRzdBXwt3g.png" alt="Article image" width="174" height="189" loading="lazy" decoding="async" />
 
 [**Full guide to theHarvester here**](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md)
 
@@ -194,7 +194,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **Sublist3r**:An open-source reconnaissance tool for discovering subdomains associated with a target domain.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5kjErqH4pCMm2laIwET0xA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5kjErqH4pCMm2laIwET0xA.png" alt="Article image" width="289" height="111" loading="lazy" decoding="async" />
 
 [**Full guide to Sublist3r here**](2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712.md)**:**
 
@@ -202,7 +202,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 [**Shodan**](2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe.md): is a search engine for internet-connected devices, enabling users to discover exposed servers, IoT devices, webcams, and industrial systems.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*zhQ6FlZnHSECUDrW)
+<img src="https://cdn-images-1.medium.com/max/800/0*zhQ6FlZnHSECUDrW" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 [**Full explanation about Shodan here:**](2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe.md)
 
@@ -210,7 +210,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **Censys:**a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CvXmoHe66ZiCHgZY4a9bmw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CvXmoHe66ZiCHgZY4a9bmw.png" alt="Article image" width="187" height="188" loading="lazy" decoding="async" />
 
 [**Full explanation about Cencys here**](2024-11-10-censys-for-enhanced-cybersecurity-insight-533df14794bd.md)**:**
 
@@ -236,7 +236,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **Nmap**: Nmap (Network Mapper) is an open-source Powerful tool used for network discovery and security auditing, allowing users to scan for open ports, identify services, and detect operating systems on target systems. (**Zenmap**: GUI version of Nmap.)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*jwHMlTNwJgCUSiy0.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*jwHMlTNwJgCUSiy0.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 [**Full explanation about Nmap here:**](2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)
 
@@ -244,7 +244,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **WhatWeb**: Command-line tool for tech stack fingerprinting.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NdxsRw0Xb-dmCNPTd2p02Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NdxsRw0Xb-dmCNPTd2p02Q.png" alt="Article image" width="202" height="186" loading="lazy" decoding="async" />
 
 [**Full explanation about WhatWeb here**](2024-11-10-unlocking-web-intelligence-a-deep-dive-into-whatweb-8ee4e64ce411.md)
 
@@ -252,7 +252,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **Nikto:**A web server scanner which performs comprehensive tests against web servers for multiple items, including over 6700 potentially dangerous files/programs.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*svW8hPvEdycxkU46.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*svW8hPvEdycxkU46.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 [**Full guide to scanning Web App with Nikto here:**](2024-11-12-nikto-uncovering-web-server-vulnerabilities-with-an-open-source-scanner-6d2d2fbc1e21.md)
 
@@ -260,7 +260,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **OWASP ZAP:**Provides automated scanners and a set of tools for manual vulnerability testing.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*PvyGz4m5hLK5ZB6O.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*PvyGz4m5hLK5ZB6O.png" alt="Article image" width="230" height="200" loading="lazy" decoding="async" />
 
 [**Full guide to scanning Web App with OWASP ZAP here:**](2024-11-12-owasp-zap-a-comprehensive-guide-to-web-application-security-testing-6c247f4be39b.md)
 
@@ -268,7 +268,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **SQLMap**: Automates SQL injection testing and even allows exploitation of detected vulnerabilities.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*NNxKHUU7WIHzauVu)
+<img src="https://cdn-images-1.medium.com/max/800/0*NNxKHUU7WIHzauVu" alt="Article image" width="225" height="225" loading="lazy" decoding="async" />
 
 [**Full explanation about SQLMap here**](2024-11-04-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-1-basic-wizard-6dd540363c83.md)
 
@@ -276,7 +276,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **Dirbuster**: Brute-forces directories and files using wordlists.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*f4PiJAClDULPwCeMhcXYlg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*f4PiJAClDULPwCeMhcXYlg.png" alt="Article image" width="192" height="185" loading="lazy" decoding="async" />
 
 - [**Full explanation about Dirbuster here**](2024-11-10-mastering-dirbuster-a-strategic-approach-to-uncovering-hidden-web-assets-31c8406a892b.md)
 
@@ -284,7 +284,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **Burp Suite:**Burp Suite is a comprehensive web application security testing platform developed by PortSwigger. It is designed to provide a variety of tools that allow security professionals to perform extensive testing of web applications.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*a3CjGA-FDHRNZzoH.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*a3CjGA-FDHRNZzoH.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 [**Full guide to scanning Web App with BurpSuite here:**](2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac.md)
 
@@ -302,7 +302,7 @@ Very good and powerfull but not free.
 
 **Aircrack-ng**: Suite for WiFi network security testing and password recovery
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*P51NE3MJQS5kmA38.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*P51NE3MJQS5kmA38.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 [**Full guide to Aircrack-ng here:**](2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md)
 
@@ -310,7 +310,7 @@ Very good and powerfull but not free.
 
 **John the Ripper**: Ultimate Password cracking tool.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*nJbgsF4HyneRKKFr.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*nJbgsF4HyneRKKFr.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 [**Full guide to John the Ripper here:**](2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71.md)
 
@@ -318,7 +318,7 @@ Very good and powerfull but not free.
 
 **Hashcat**: GPU-accelerated password recovery tool.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*tU6a8mjfGXwgVyeK.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*tU6a8mjfGXwgVyeK.jpeg" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 [**Full guide to Hashcat here:**](2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8.md)
 
@@ -326,7 +326,7 @@ Very good and powerfull but not free.
 
 **Hydra**: Network logon cracker supporting different protocols.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*2xGfRZy9aHUMlAQk.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*2xGfRZy9aHUMlAQk.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 [**Full guide to Hydra here:**](2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1.md)
 
@@ -336,7 +336,7 @@ Very good and powerfull but not free.
 
 **Metasploit Framework**: Comprehensive tool for finding and exploiting vulnerabilities.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*CQzEDc_187sMj1ci.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*CQzEDc_187sMj1ci.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 **Full guide to Metasploit is under construction**
 

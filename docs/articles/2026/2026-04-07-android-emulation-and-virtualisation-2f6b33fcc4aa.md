@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*Y4o8-OsIxH3kLi85LkGGIw.png"
 # Android Emulation & Virtualisation
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*Y4o8-OsIxH3kLi85LkGGIw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Y4o8-OsIxH3kLi85LkGGIw.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Complete Research Lab Guide. From Zero to a Fully Instrumented Android Research Environment
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Y4o8-OsIxH3kLi85LkGGIw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Y4o8-OsIxH3kLi85LkGGIw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 &gt; Who this is for: Security researchers, bug bounty hunters, and pentesters who need a reliable, repeatable Android lab. Assumes basic Linux comfort; no prior Android development experience required.
 
@@ -69,21 +69,21 @@ Building an Android research lab sounds straightforward — install Android Stud
 
 ### What “Android emulation” actually means
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ti8ATaDRIXswEyGjUaIO2Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ti8ATaDRIXswEyGjUaIO2Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 The practical consequence:**always use x86_64 images**. KVM turns QEMU from a software interpreter into a thin hypervisor shim, giving you an emulator that feels as fast as a real device. ARM images are only necessary when you need to observe actual ARM instruction behaviour (e.g., ROP gadget research, JIT compiler bugs).
 
 ### The two decisions that shape every other choice
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bLtvG72lRLhrV6Lu2gHmkw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bLtvG72lRLhrV6Lu2gHmkw.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 - **Image variant**— which Android system image you install:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aEzjl9QvcTp57GAEeeooPQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aEzjl9QvcTp57GAEeeooPQ.png" alt="Article image" width="769" height="286" loading="lazy" decoding="async" />
 
 **2. Launch mode**— how you start the emulator:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GAJgJOsnbBVjNYIEBotujw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GAJgJOsnbBVjNYIEBotujw.png" alt="Article image" width="770" height="130" loading="lazy" decoding="async" />
 
 These two decisions — image variant and launch mode — determine what is possible in a given session. Everything else (Frida, Burp, ADB root) flows from them.
 
@@ -97,13 +97,13 @@ The guide follows the natural setup sequence: host prerequisites → SDK → ima
 
 The Android Emulator is**not pure emulation**— it is a layered hybrid:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4Wo7RWzk9Ze1Zdii3UTWIg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4Wo7RWzk9Ze1Zdii3UTWIg.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 **Key insight:**x86_64 images + KVM = near-native speed. ARM images = full software emulation = slow. For research, always use x86_64 images unless you specifically need ARM instruction-level behaviour.
 
 ### 2. Emulation Variants at a Glance
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*k1rg5SMMaLvyTkCDrUSjXw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*k1rg5SMMaLvyTkCDrUSjXw.png" alt="Article image" width="770" height="548" loading="lazy" decoding="async" />
 
 ### 3. The Writable-System Distinction
 
@@ -305,7 +305,7 @@ Set the same environment variables as above, pointing to this path.
 
 ### 3. Key SDK Tools Reference
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VNor2W_8x3Pu6jlGK2ky8A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VNor2W_8x3Pu6jlGK2ky8A.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ## System Image Selection
 
@@ -328,7 +328,7 @@ grep
 #   android-wear         - Wear OS
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sjTSnSqy1LE0mjHs2aEhcQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sjTSnSqy1LE0mjHs2aEhcQ.png" alt="Article image" width="1555" height="755" loading="lazy" decoding="async" />
 
 ### 2. Recommended Images for Research
 
@@ -352,7 +352,7 @@ sdkmanager
 
 ### 3. API Level Reference
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QeyXUZTTCzZ5V23Nwlyr6A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QeyXUZTTCzZ5V23Nwlyr6A.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ## AVD Creation & Management
 
@@ -440,7 +440,7 @@ cat
  ~/.android/avd/research_api33.avd/config.ini
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Oypg-oFjLwgPQXcQYH1x_w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Oypg-oFjLwgPQXcQYH1x_w.png" alt="Article image" width="1129" height="491" loading="lazy" decoding="async" />
 
 ### 3. Customising AVD config.ini
 
@@ -512,7 +512,7 @@ echo
 "[+] Emulator ready"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*301MwyIZi1zMMM5CiAymCA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*301MwyIZi1zMMM5CiAymCA.png" alt="Article image" width="1897" height="1030" loading="lazy" decoding="async" />
 
 ### 2. Variant B — Writable-System Boot
 
@@ -683,7 +683,7 @@ no
 
 ### 1. The ADB Architecture
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*f88WU8WnadMR-Yjk7A9vZg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*f88WU8WnadMR-Yjk7A9vZg.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 The server runs on port 5037 on the host. Multiple clients (terminal windows) all talk to the same server instance.
 
@@ -883,11 +883,11 @@ all adb devices
 
 ## Frida Integration
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*kKMWQkN396WXy2or)
+<img src="https://cdn-images-1.medium.com/max/800/0*kKMWQkN396WXy2or" alt="Article image" width="514" height="98" loading="lazy" decoding="async" />
 
 ### 1. How Frida Connects to Android
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rnkT9p-WikW2h32zZbOO8Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rnkT9p-WikW2h32zZbOO8Q.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 **Three rules:**
 
@@ -909,7 +909,7 @@ frida --version
 # e.g.: 16.3.3
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rYsVYPGntUF6JCRl1odZPA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rYsVYPGntUF6JCRl1odZPA.png" alt="Article image" width="1152" height="54" loading="lazy" decoding="async" />
 
 ### 3. Downloading frida-server
 
@@ -972,7 +972,7 @@ frida-ps -U
 adb shell pkill frida-server
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8SVaNYR7fVKxU0GU-p3imQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8SVaNYR7fVKxU0GU-p3imQ.png" alt="Article image" width="1121" height="604" loading="lazy" decoding="async" />
 
 **Verification**:
 
@@ -982,7 +982,7 @@ ls
  -l /data/local/tmp/frida-server
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hI518xXCtO6eONKBh6uE3w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hI518xXCtO6eONKBh6uE3w.png" alt="Article image" width="1122" height="51" loading="lazy" decoding="async" />
 
 ### Variant 2 — Writable-System Emulator (Persistent Across Reboots)
 
@@ -1266,7 +1266,7 @@ id
 
 ### 3. Magisk Modules for Research
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*K4d8_6C5XbCCHOviSS2WZg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*K4d8_6C5XbCCHOviSS2WZg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### 4. MagiskTrustUserCerts (Easiest System CA Method for Physical Device)
 
@@ -1281,7 +1281,7 @@ id
 
 ### 1. Overview
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5UVrVzmoR6G5FtQtzAYhjA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5UVrVzmoR6G5FtQtzAYhjA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### 2. Genymotion (Best Third-Party Option)
 
@@ -1463,7 +1463,7 @@ adb shell pkill frida-server
 
 ### 1. ADB Issues
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wxreNnzaxJCceB-2uZDc8Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wxreNnzaxJCceB-2uZDc8Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **udev rules fix for Linux:**
 
@@ -1486,15 +1486,15 @@ sudo udevadm trigger
 
 ### 2. Emulator Issues
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*iBkmh4jtCTCEj-bbQZU78A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*iBkmh4jtCTCEj-bbQZU78A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### 3. Frida Issues
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*msxuLqzCn5z6BHMRy9fhdA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*msxuLqzCn5z6BHMRy9fhdA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Decision Matrix
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MMvvzxbgEixc-vEdATh5ig.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MMvvzxbgEixc-vEdATh5ig.png" alt="Article image" width="2816" height="1504" loading="lazy" decoding="async" />
 
 ## Quick-Reference Cheat Sheet
 

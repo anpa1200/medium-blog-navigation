@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*mrrMowrm5nNgN0S5nWRyPg.png"
 # Enhancing Penetration Testing with HackerAI: Step-by-Step Guide (Metasploitable Lab)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*mrrMowrm5nNgN0S5nWRyPg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mrrMowrm5nNgN0S5nWRyPg.png" alt="Cover image" width="2816" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Learn how to integrate AI into every phase of the penetration testing kill chain with classic tools and a vulnerable lab VM.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mrrMowrm5nNgN0S5nWRyPg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mrrMowrm5nNgN0S5nWRyPg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -33,7 +33,7 @@ Penetration testing often involves a sequence of steps — from reconnaissance a
 
 [**Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing here**](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*p1v-HMt8a40uZHRoRB-x9w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*p1v-HMt8a40uZHRoRB-x9w.png" alt="Article image" width="1602" height="874" loading="lazy" decoding="async" />
 
 HackerAI (comparable to tools like PentestGPT) can interactively guide a tester through reconnaissance, vulnerability identification, exploitation, and more. It won’t replace your tools — rather, it**augments**them by suggesting which commands to run, parsing outputs, and providing next-step recommendations. In the example below, we’ll see how HackerAI’s AI assistance can improve the process of attacking Metasploitable 2 step-by-step.
 
@@ -43,7 +43,7 @@ Before diving in, ensure you have the following ready:
 
 - **Metasploitable 2 VM:**Deployed and running (note its IP address). This Ubuntu-based VM has many open services and known flaws for practice.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Nyqcq4vF8KbHRCBRhYIxNg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Nyqcq4vF8KbHRCBRhYIxNg.png" alt="Article image" width="993" height="532" loading="lazy" decoding="async" />
 
 - **Attacker Machine:**A Kali Linux VM or any system with pentesting tools (Nmap, Metasploit, etc.) installed.
 
@@ -57,7 +57,7 @@ Throughout this guide, we will use*HackerAI’s advice*alongside traditional too
 
 The first phase is to gather information about the target. Rather than jumping in blindly, start by consulting HackerAI for a recon strategy. For example, you might prompt HackerAI with something like:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2ED-x3zsAa6b2AfyIOi4eA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2ED-x3zsAa6b2AfyIOi4eA.png" alt="Article image" width="993" height="532" loading="lazy" decoding="async" />
 
 ```text
 User
@@ -321,9 +321,9 @@ nmap -sC
 
 This command will probe the target and list all open ports, detected services, versions, and the OS guess. In our Metasploitable example, Nmap should discover numerous open ports (since the VM is intentionally full of services). Typical results will show ports like:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*YIXcvgs3-TXfHvd4T27Naw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YIXcvgs3-TXfHvd4T27Naw.png" alt="Article image" width="1395" height="894" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wliNdGf8ArCnIFBtMIUYTQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wliNdGf8ArCnIFBtMIUYTQ.png" alt="Article image" width="1391" height="948" loading="lazy" decoding="async" />
 
 For brevity, focus on a few interesting findings. In particular, note that**FTP (port 21)**is running**vsftpd version 2.3.4**. HackerAI (or your own experience) will flag this immediately: vsftpd 2.3.4 is a*“known vulnerable version”*. In fact, this version famously contains a backdoor planted by an attacker in the source code. We’ll target this service shortly. Also take note of other services — HackerAI can help enumerate them later (for example, SMB might hint at a file share vulnerability, an outdated**UnrealIRCd**on port 6667 has a backdoor, etc., as documented by Rapid7). At this stage, you have a basic**attack surface**mapped out.
 
@@ -831,7 +831,7 @@ msfconsole
 
 - This brings up the`msf&gt;`prompt. (It may take a minute to load the modules.)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*i1vZZ7AYVNKwfrJAaunnAw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*i1vZZ7AYVNKwfrJAaunnAw.png" alt="Article image" width="746" height="410" loading="lazy" decoding="async" />
 
 **2. Search for Exploit:**We know the target service is vsftpd 2.3.4. Use Metasploit’s search:
 
@@ -842,7 +842,7 @@ search
 .4
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LbhKnFIYyiya0XxP2f62Eg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LbhKnFIYyiya0XxP2f62Eg.png" alt="Article image" width="1136" height="256" loading="lazy" decoding="async" />
 
 Metasploit will list any matching modules. You should see an exploit named`**exploit/unix/ftp/vsftpd_234_backdoor**`in the results[medium.com](https://medium.com/@josegpach/exploiting-ftp-vulnerabilities-on-metasploitable-2-bbd935d42e23#:~:text=Metasploit%20Launch%20and%20Search%20Results). This is exactly what we need – a module specifically designed to exploit the malicious backdoor in vsftpd 2.3.4[medium.com](https://medium.com/@josegpach/exploiting-ftp-vulnerabilities-on-metasploitable-2-bbd935d42e23#:~:text=,set%20it%20up%20for%20use).
 
@@ -852,7 +852,7 @@ Metasploit will list any matching modules. You should see an exploit named`**exp
 use exploit/unix/ftp/vsftpd_234_backdoor
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gx1-41wQNz6e1QchkSIIaw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gx1-41wQNz6e1QchkSIIaw.png" alt="Article image" width="1336" height="73" loading="lazy" decoding="async" />
 
 The prompt should change to indicate the module is active (e.g.,`msf exploit(vsftpd_234_backdoor) &gt;`).
 
@@ -863,7 +863,7 @@ show
  options
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*R2qqJTPXLS5OVuResW8cig.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*R2qqJTPXLS5OVuResW8cig.png" alt="Article image" width="1301" height="446" loading="lazy" decoding="async" />
 
 In this case, the module likely only needs the target host (`RHOSTS`) and a listening port (`RPORT`, which defaults to 21) to be set. The output confirms`RHOSTS`is required and currently empty.
 
@@ -884,7 +884,7 @@ exploit
 
 The module will attempt to connect to FTP and trigger the backdoor. If successful, you should see a new**session opened**in the msfconsole. Metasploit might print something like “Command shell session X opened…” indicating that a shell has been obtained.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rHaGyoafx4-qSACQfvv6fg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rHaGyoafx4-qSACQfvv6fg.png" alt="Article image" width="1293" height="213" loading="lazy" decoding="async" />
 
 **7. Verify Access:**You are now (hopefully) in an interactive shell on the remote system. To confirm, run some basic commands in the shell:
 
@@ -893,7 +893,7 @@ whoami
 ifconfig
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*a21EoecroxsYKXlggSY15w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*a21EoecroxsYKXlggSY15w.png" alt="Article image" width="1069" height="401" loading="lazy" decoding="async" />
 
 The`whoami`result will likely show`root`because this particular exploit yields root privileges immediate (the backdoor was planted to create a root shell).
 
@@ -902,7 +902,7 @@ uname
  -a
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-AJAb0vXXlXH8UvxCw9dJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-AJAb0vXXlXH8UvxCw9dJw.png" alt="Article image" width="956" height="66" loading="lazy" decoding="async" />
 
 Will show the system info (e.g., Linux metasploitable 2.6.24). HackerAI might advise these verification steps automatically; it often reminds you to verify what user you compromised and gather system info. In our case, the*vsftpd*backdoor is so powerful that we already have**root-level access**to the target system. 🎉
 
@@ -913,7 +913,7 @@ cat
  /etc/passwd
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PTw3DGVkDMZ1px6R3EXtNw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PTw3DGVkDMZ1px6R3EXtNw.png" alt="Article image" width="956" height="691" loading="lazy" decoding="async" />
 
 This shows the user accounts on the system — which in a real scenario could help in further attacks (though in Metasploitable it’s mostly for demonstration) You could also try`pwd`(print working directory),`ls -la`to see where you landed (likely the root directory, since the backdoor drops you in a root shell). HackerAI can help here too: you might ask*“What should I do now that I have a root shell?”*The assistant could suggest checking for*proof-of-concept flags*, extracting password hashes (e.g., from`/etc/shadow`if accessible), or demonstrating impact by creating a file, etc. It might also mention setting up persistence (like adding a new user or an SSH key) – though be mindful since this is a lab VM.
 

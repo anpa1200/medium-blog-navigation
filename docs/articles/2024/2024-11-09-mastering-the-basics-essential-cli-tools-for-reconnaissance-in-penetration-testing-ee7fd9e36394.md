@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*1SreAXDf7sxcy0JR"
 # Mastering the Basics: Essential CLI Tools for Reconnaissance in Penetration Testing
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*1SreAXDf7sxcy0JR)
+<img src="https://cdn-images-1.medium.com/max/800/0*1SreAXDf7sxcy0JR" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Comprehensive Guide to Command Line Tools for Network Exploration: How to Effectively Use Ping, Netdiscover, Whois, and More to Uncover Web Vulnerabilities and Strengthen Security Defenses
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*1SreAXDf7sxcy0JR)
+<img src="https://cdn-images-1.medium.com/max/800/0*1SreAXDf7sxcy0JR" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Title of contact
 
@@ -84,7 +84,7 @@ from
  ms
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-nhs-JN-kPqKhWINX_Vstw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-nhs-JN-kPqKhWINX_Vstw.png" alt="Article image" width="649" height="72" loading="lazy" decoding="async" />
 
 - **Details**: Shows the size of the packet, the IP address of the sender, the ICMP sequence number, the time-to-live (TTL), and the round-trip time.
 
@@ -105,7 +105,7 @@ From
  Destination Host Unreachable
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_Fap-a2NaJc-QrHppNKZ5Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_Fap-a2NaJc-QrHppNKZ5Q.png" alt="Article image" width="649" height="72" loading="lazy" decoding="async" />
 
 - **Details**: Indicates problems in the network path or that the target system is off.
 
@@ -193,7 +193,7 @@ a
 
 **In Linux/Unix use -4 flag**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*AAVibaFJ5dkdd1oJI0j5bA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*AAVibaFJ5dkdd1oJI0j5bA.png" alt="Article image" width="914" height="94" loading="lazy" decoding="async" />
 
 - **Use Case**:
 
@@ -255,7 +255,7 @@ Basic command:
 sudo netdiscover
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RjQs4d_1bcLVl3DW5fUYrQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RjQs4d_1bcLVl3DW5fUYrQ.png" alt="Article image" width="881" height="297" loading="lazy" decoding="async" />
 
 ### help
 
@@ -263,7 +263,7 @@ sudo netdiscover
 netdiscover -h
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GD4913ur799aLRiSYeyJIQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GD4913ur799aLRiSYeyJIQ.png" alt="Article image" width="1235" height="496" loading="lazy" decoding="async" />
 
 ### -i Use other interface:
 
@@ -273,7 +273,7 @@ i
  vmnet8
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zAO8iTA1iip6yb1solWriQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zAO8iTA1iip6yb1solWriQ.png" alt="Article image" width="910" height="236" loading="lazy" decoding="async" />
 
 ## Whois
 
@@ -305,11 +305,11 @@ i
 
 - **Domain Research:**`whois google.com`would reveal information about the registrant, contact details, registration dates, and name servers of Google. This information can be used to identify additional domains owned by the company or to prepare for further DNS-based or network-level attacks.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rWTTEPuTtU6UP3m9S_Z8UQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rWTTEPuTtU6UP3m9S_Z8UQ.png" alt="Article image" width="946" height="585" loading="lazy" decoding="async" />
 
 - **IP Research:**`whois 172.217.0.0`can provide details about the IP addresses that Google owns. This helps in creating a map of network infrastructure and can lead to the discovery of less secure or neglected network segments.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*K41GISV7hD491Y_mtXcUww.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*K41GISV7hD491Y_mtXcUww.png" alt="Article image" width="1902" height="937" loading="lazy" decoding="async" />
 
 ## NSLookup
 
@@ -335,13 +335,13 @@ i
 
 - By querying A and AAAA records, penetration testers can identify all the associated IP addresses with a domain. This is crucial for network mapping and subsequent vulnerability scanning.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ulbSrWK-uZnH5QQNhBoN3Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ulbSrWK-uZnH5QQNhBoN3Q.png" alt="Article image" width="587" height="335" loading="lazy" decoding="async" />
 
 **2. Mail Server Discovery:**
 
 - MX records can be queried to identify mail servers, which can be targeted in further attacks such as phishing or spamming.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0qB6NShkULDSmPGcAteUSA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0qB6NShkULDSmPGcAteUSA.png" alt="Article image" width="787" height="190" loading="lazy" decoding="async" />
 
 **3. Name Server Enumeration:**
 

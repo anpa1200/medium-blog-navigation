@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*E59E7CkPeHIgNMTZEzPDoQ.png"
 # Kubernetes Logging and Monitoring: Complete Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*E59E7CkPeHIgNMTZEzPDoQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*E59E7CkPeHIgNMTZEzPDoQ.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A comprehensive reference for every major log type in Kubernetes: what it is, what you can monitor with it, how to include or exclude it, and why it matters.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*E59E7CkPeHIgNMTZEzPDoQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*E59E7CkPeHIgNMTZEzPDoQ.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -585,16 +585,16 @@ The DaemonSet uses:
 `kubectl get daemonset -n logging`
 `kubectl get pods -n logging -l app=fluent-bit`
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9YzYXfJHtoxEF-n9gzH-sA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9YzYXfJHtoxEF-n9gzH-sA.png" alt="Article image" width="797" height="57" loading="lazy" decoding="async" />
 
 - Check Fluent Bit logs:
 `kubectl logs -n logging -l app=fluent-bit --tail=50`
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*19scGnoJV0RfNPHuvfWbDw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*19scGnoJV0RfNPHuvfWbDw.png" alt="Article image" width="750" height="257" loading="lazy" decoding="async" />
 
 If the config points to`log-listener.logging.svc:8080`, ensure the log-listener Deployment and Service are deployed (see[Example Training Cluster](https://markdown2medium.vercel.app/#12-example-training-cluster)); then you can port-forward and open`/events/hierarchy`or`/xplg-style`to see events.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WQG14W84atoZT_291Hi2tQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WQG14W84atoZT_291Hi2tQ.png" alt="Article image" width="545" height="220" loading="lazy" decoding="async" />
 
 ## 3. Fluent Bit DB and Chunk Storage
 
@@ -714,7 +714,7 @@ Use one volume (hostPath or PVC) mounted at`/fluent-bit/data`so that both`DB /fl
 
 ### What you can monitor with this log
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*F-4PidqwxwqflOOrhKO7mA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*F-4PidqwxwqflOOrhKO7mA.png" alt="Article image" width="545" height="220" loading="lazy" decoding="async" />
 
 ### How to include or exclude this log
 
@@ -808,7 +808,7 @@ Possible with a Lua or record_modifier filter that checks`kubernetes.labels.logg
 
 - **etcd**— Storage layer for the API (often logged separately).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UtYkLnPHePmoM-9R1KApLg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UtYkLnPHePmoM-9R1KApLg.png" alt="Article image" width="453" height="315" loading="lazy" decoding="async" />
 
 **Format:**Plain text or structured (e.g. klog-style with level and timestamp).
 
@@ -1211,9 +1211,9 @@ kubectl get nodes -o wide
 kubectl describe nodes
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hcc7dGQfgie2ghAkn1LVQQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hcc7dGQfgie2ghAkn1LVQQ.png" alt="Article image" width="908" height="94" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sZzzL67hg3BlpQk0W2K6bw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sZzzL67hg3BlpQk0W2K6bw.png" alt="Article image" width="1353" height="828" loading="lazy" decoding="async" />
 
 ### Namespaces and workloads
 
@@ -1266,7 +1266,7 @@ get
 n logging
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*qRiR_A4v31NInl9G8ZISng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qRiR_A4v31NInl9G8ZISng.png" alt="Article image" width="1353" height="828" loading="lazy" decoding="async" />
 
 ### Fluent Bit configuration
 

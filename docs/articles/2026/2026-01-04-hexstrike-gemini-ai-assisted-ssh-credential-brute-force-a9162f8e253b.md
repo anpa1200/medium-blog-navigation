@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*BFm-ZoQNHk5Kp-pl.png"
 # HexStrike + Gemini. AI-Assisted SSH Credential Brute-Force
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*BFm-ZoQNHk5Kp-pl.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*BFm-ZoQNHk5Kp-pl.png" alt="Cover image" width="700" height="467" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Service Validation → Dependency Fixes → Findings → Defensive Takeaways
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*BFm-ZoQNHk5Kp-pl.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*BFm-ZoQNHk5Kp-pl.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 ## Overview
 
@@ -76,17 +76,17 @@ This guide documents a**fully authorized lab**workflow where an AI-orchestrated 
  find ssh port, do bruteforce for credentials with password dictionaries
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WTVKVELBsiaU5HwO5IGXgA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WTVKVELBsiaU5HwO5IGXgA.png" alt="Article image" width="1382" height="514" loading="lazy" decoding="async" />
 
 **Key point:**The operator provides intent; the agent decides execution order.
 
 ## 2) Port scanning
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PGkBW3RGZzs2h3qqWRKl_Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PGkBW3RGZzs2h3qqWRKl_Q.png" alt="Article image" width="1723" height="421" loading="lazy" decoding="async" />
 
 ## 3) Custom small lists succeeded (and exposed weak credentials)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bUZwzZAWqh-3ZCLoeMHKwA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bUZwzZAWqh-3ZCLoeMHKwA.png" alt="Article image" width="1741" height="644" loading="lazy" decoding="async" />
 
 **Important note (reporting hygiene)**
 I recommend**not publishing raw credentials**even for labs. In reports, redact passwords and keep only:

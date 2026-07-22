@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*BDe41fzpmr9R53fn5CbjcQ.png"
 # Burp Suite MCP + Gemini CLI
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*BDe41fzpmr9R53fn5CbjcQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BDe41fzpmr9R53fn5CbjcQ.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Connect Burp Suite to Gemini CLI using Model Context Protocol (MCP) and Turn Burp into an AI-callable toolset and accelerate recon, analysis, and reporting in authorized tests.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BDe41fzpmr9R53fn5CbjcQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BDe41fzpmr9R53fn5CbjcQ.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 This guide walks you through connecting**Burp Suite**to**Gemini CLI**using PortSwigger’s official**MCP Server**extension. Once wired, Gemini can invoke Burp as a set of**callable tools**(via MCP) to review proxy history, push requests into Intruder, and accelerate**recon, analysis, and reporting**during a web assessment.
 **Authorization & privacy note:**Use this only on systems you’re explicitly permitted to test. If you connect Burp to an external AI service, you are responsible for understanding what data may be transmitted and how it is handled under that provider’s policies.
@@ -50,7 +50,7 @@ Gemini CLI supports multiple MCP transports, including**SSE**and**stdio**, confi
 sudo apt install gemini-cli
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_J5i599Xo9-GiSA1tj6ZmA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_J5i599Xo9-GiSA1tj6ZmA.png" alt="Article image" width="1907" height="791" loading="lazy" decoding="async" />
 
 ## 3) Install the Burp MCP Server extension
 
@@ -62,7 +62,7 @@ sudo apt install gemini-cli
 
 - Search for**“MCP Server”**and install it
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_l8sqAtpBw5lXgBGYfXdCw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_l8sqAtpBw5lXgBGYfXdCw.png" alt="Article image" width="1601" height="880" loading="lazy" decoding="async" />
 
 ### Option B: Build from source (offline / repeatable)
 
@@ -82,7 +82,7 @@ Key settings (from the official README):
 
 **Important**: Keep the server bound to`127.0.0.1`unless you*fully*understand the exposure risks.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-FkdlCZ_mS4UA13uTAzP6w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-FkdlCZ_mS4UA13uTAzP6w.png" alt="Article image" width="1920" height="1003" loading="lazy" decoding="async" />
 
 ## 5) Configure Gemini CLI to connect to Burp MCP
 
@@ -164,7 +164,7 @@ If the first URL doesn’t work in Gemini CLI, switch to the other.
 
 You should see the**burp**server and its available tools/resources.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9yIPrzwpYCVJBNsckhHs8g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9yIPrzwpYCVJBNsckhHs8g.png" alt="Article image" width="1889" height="636" loading="lazy" decoding="async" />
 
 ## 7) Practical starter prompts
 
@@ -384,7 +384,7 @@ Open services include Samba, IMAP, Tomcat, Jetty, and Java serialization (port 5
 
 - Workspace write restrictions impacted artifact generation during the run
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uelY5fsu1eeG8td3ncRGrg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uelY5fsu1eeG8td3ncRGrg.png" alt="Article image" width="1909" height="999" loading="lazy" decoding="async" />
 
 ## Conclusion
 

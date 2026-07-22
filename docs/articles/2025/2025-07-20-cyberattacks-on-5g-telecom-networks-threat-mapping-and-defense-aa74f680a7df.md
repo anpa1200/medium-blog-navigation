@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*J0wNA8CBQ3ewW8eL2P8-iQ.png"
 # Cyberattacks on 5G Telecom Networks: Threat Mapping and Defense
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*J0wNA8CBQ3ewW8eL2P8-iQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*J0wNA8CBQ3ewW8eL2P8-iQ.png" alt="Cover image" width="2048" height="2048" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### This research provides an in-depth analysis of cyber threats targeting 5G telecom core networks, mapping real-world and theoretical attack techniques to the MITRE ATT&CK and FiGHT frameworks. It includes practical detection methods and mitigation strategies, tailored specifically for Ericsson systems and infrastructure.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*J0wNA8CBQ3ewW8eL2P8-iQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*J0wNA8CBQ3ewW8eL2P8-iQ.png" alt="Article image" width="2048" height="2048" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -35,7 +35,7 @@ Telecommunications providers are prime targets for cyberattacks, from nation-sta
 
 5G’s core network introduces a Service-Based Architecture (SBA) with new functions and interfaces. The key network functions include the Access and Mobility Management Function (AMF, analogous to 4G MME), Session Management Function (SMF, analogous to MME/SGW control-plane), User Plane Function (UPF, analogous to SGW/PGW user-plane), Unified Data Management (UDM, similar to HSS), Authentication Server Function (AUSF), Policy Control Function (PCF, akin to PCRF), and others like NEF, NRF, etc. Instead of many point-to-point interfaces, 5G uses service-based interfaces (HTTP/2 APIs within the core) and reference points (N1, N2, etc.) between access and core or core and UE. Major interfaces:**N1**(UE–AMF NAS signalling),**N2**(gNB–AMF control plane, replacing S1-MME),**N3**(gNB–UPF user plane, replacing S1-U),**N4**(SMF–UPF, replacing S11),**N6**(UPF–Data network, replacing SGi),**N7**(SMF–PCF, replacing Gx),**N8**(UDM–AMF, similar to HSS connection),**N10**(UDM–SMF),**N11**(AMF–SMF), etc., plus the service-based interfaces among core functions via an API bus (often secured with TLS and OAuth2). Many threats from LTE carry over, but 5G also has new attack surfaces due to virtualization, slicing, and the SBA’s reliance on web technologies.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Bj4y9_R4tzVo80RMNl3xrg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Bj4y9_R4tzVo80RMNl3xrg.png" alt="Article image" width="922" height="447" loading="lazy" decoding="async" />
 
 &gt; Note: We structure 5G threats by analogous stages (Access, Registration, Session, User-Plane, and new considerations like slicing). Many 4G threats remain relevant, but 5G has enhanced security (e.g. SUPI concealment, mutual authentication between NFs) that mitigate some attacks; meanwhile new services can introduce fresh vulnerabilities.
 

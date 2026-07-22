@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*dURBOrkZ0Lq5j-J_J4_KxQ.png"
 # From Log to Report: Using AdversaryGraph!
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*dURBOrkZ0Lq5j-J_J4_KxQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*dURBOrkZ0Lq5j-J_J4_KxQ.png" alt="Cover image" width="1024" height="576" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### To Turn Firewall and EDR Noise Into a CTI Investigation
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*dURBOrkZ0Lq5j-J_J4_KxQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*dURBOrkZ0Lq5j-J_J4_KxQ.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
 
 **Most security tools can show alerts.**
 
@@ -47,11 +47,11 @@ AdversaryGraph is my self-hosted AI-assisted CTI-to-detection workbench.
 
 - **AdversaryGraph platform page:**
 
-[AdversaryGraph AI - MITRE ATT&CK CTI Workbench](https://1200km.com/adversarygraph/)
+<a href="pathname://https://1200km.com/adversarygraph/" target="_self">AdversaryGraph AI - MITRE ATT&CK CTI Workbench</a>
 
 - **AdversaryGraph documentation:**
 
-[AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km](https://1200km.com/adversarygraph-docs/)
+<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self">AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 - **AdversaryGraph GitHub:**
 
@@ -65,7 +65,7 @@ raw evidence -> IOC extraction -> enrichment -> relationship graph -> ATT&CK map
 
 **The platform is designed for:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*c8bbhsrMqRZXvNsD6Vxq2w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*c8bbhsrMqRZXvNsD6Vxq2w.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - CTI analysts who need to turn reports, feeds, and observables into structured intelligence
 - SOC analysts who need to triage logs, IOCs, and suspicious infrastructure
@@ -112,7 +112,7 @@ AdversaryGraph does not replace analyst judgment. It is a workbench for building
 
 The objective is to simulate what an analyst often receives during an investigation:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*wuuEKVmjkP9QAGa2-o3UIw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*wuuEKVmjkP9QAGa2-o3UIw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - a firewall log showing suspicious outbound C2-like traffic
 - EDR telemetry showing suspicious PowerShell, rundll32, remote execution, and discovery behavior
@@ -206,7 +206,7 @@ This is exactly where AdversaryGraph becomes useful.
 
 ## Full flow presentation:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*gMI_-wB4wFcJnJ8U.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*gMI_-wB4wFcJnJ8U.gif" alt="Article image" width="1920" height="1033" loading="lazy" decoding="async" />
 
 ## Step 1: Create a New Investigation
 
@@ -220,7 +220,7 @@ Investigation
 
 Create a new investigation before running analysis. This gives every later result a destination:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*tX0qd4NThhLZp3snCkt-QQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*tX0qd4NThhLZp3snCkt-QQ.png" alt="Article image" width="1024" height="510" loading="lazy" decoding="async" />
 
 - firewall log analysis
 - EDR log analysis
@@ -234,7 +234,7 @@ This avoids disconnected analysis results and keeps the whole case auditable.
 
 ## Step 2: Analyze Firewall Logs
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*yAYEEyERzezQgP8l.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*yAYEEyERzezQgP8l.gif" alt="Article image" width="1919" height="1015" loading="lazy" decoding="async" />
 
 Open AdversaryGraph and go to:
 
@@ -275,7 +275,7 @@ This saves the firewall result as structured case evidence.
 
 ## Step 4: Analyze EDR Logs
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*VN9gDjk7I8Ba4LG-.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*VN9gDjk7I8Ba4LG-.gif" alt="Article image" width="1919" height="1015" loading="lazy" decoding="async" />
 
 Return to:
 
@@ -314,17 +314,17 @@ The AI analyst results should extract structured evidence from each log source.
 
 **Expected IOC extraction:**
 
-![Article image](https://cdn-images-1.medium.com/max/830/1*yUpR2V3S9XA48nRfQ4BqYA.png)
+<img src="https://cdn-images-1.medium.com/max/830/1*yUpR2V3S9XA48nRfQ4BqYA.png" alt="Article image" width="830" height="287" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/694/1*CJvNwdUohHcgxwisukNFDA.png)
+<img src="https://cdn-images-1.medium.com/max/694/1*CJvNwdUohHcgxwisukNFDA.png" alt="Article image" width="694" height="692" loading="lazy" decoding="async" />
 
 **Expected suspicious behaviors:**
 
-![Article image](https://cdn-images-1.medium.com/max/871/1*7EPPy_hd113MFJh17eSfww.png)
+<img src="https://cdn-images-1.medium.com/max/871/1*7EPPy_hd113MFJh17eSfww.png" alt="Article image" width="871" height="692" loading="lazy" decoding="async" />
 
 **Expected ATT&CK technique leads:**
 
-![Article image](https://cdn-images-1.medium.com/max/861/1*SfTGsLlRAY8VBts4_8OR_A.png)
+<img src="https://cdn-images-1.medium.com/max/861/1*SfTGsLlRAY8VBts4_8OR_A.png" alt="Article image" width="861" height="472" loading="lazy" decoding="async" />
 
 **Not every technique is equally strong.**
 
@@ -344,11 +344,11 @@ IOC Investigation
 103.119.47.104
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*c6uRSih-IpMKRWiBdrTCZw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*c6uRSih-IpMKRWiBdrTCZw.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*PsDeEKelSWSKeuQAZ6SJtg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*PsDeEKelSWSKeuQAZ6SJtg.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*7e1NwAqbfvDJ-IsyRspljA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*7e1NwAqbfvDJ-IsyRspljA.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 **Then investigate:**
 
@@ -395,7 +395,7 @@ Again: this is not attribution. It is source-backed clustering and lead generati
 
 ## Step 8: Review the Relationship Graph
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*OY6GOBSwKE0wrNk4snneuA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*OY6GOBSwKE0wrNk4snneuA.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 ### In the IOC Investigation result, open the relationship graph.
 
@@ -472,7 +472,7 @@ After IOC Investigation identifies TTP leads, use the Investigation action:
 Put TTPs on matrix
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*otGNm3fIgA5ZO1wBnKUiPQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*otGNm3fIgA5ZO1wBnKUiPQ.png" alt="Article image" width="1024" height="525" loading="lazy" decoding="async" />
 
 This creates a Navigator-like layer from all TTPs saved in the active investigation, not only the current screen.
 
@@ -513,7 +513,7 @@ It still does not prove attribution.
 
 From the Investigation page, run:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*uQNLbFtdJgjiGJJiG40IYw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*uQNLbFtdJgjiGJJiG40IYw.png" alt="Article image" width="1024" height="525" loading="lazy" decoding="async" />
 
 ```text
 Compare + save result
@@ -536,7 +536,7 @@ This comparison is useful for prioritization. It is not attribution.
 
 After log analysis, IOC investigation, TTP mapping, and actor comparison are saved, run:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*VYLcA_fvURfjRrf8hPUOWQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*VYLcA_fvURfjRrf8hPUOWQ.png" alt="Article image" width="1024" height="525" loading="lazy" decoding="async" />
 
 ```text
 Complete AI analysis
@@ -604,9 +604,9 @@ Export as:
 
 ## AdversaryGraph Investigation Report
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*1Wr3KqAMIEsqvUp_QMOkRw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*1Wr3KqAMIEsqvUp_QMOkRw.png" alt="Article image" width="1024" height="551" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*FuPmvu1Crw6QSfaM-os8pA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*FuPmvu1Crw6QSfaM-os8pA.png" alt="Article image" width="1024" height="551" loading="lazy" decoding="async" />
 
 ### Executive Summary
 
@@ -793,7 +793,7 @@ As a methodological note for when actor data is added: any overlap should be tre
 
 This use case is important because it shows AdversaryGraph working as an investigation bridge:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*oekrxWic5vh-jAay.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*oekrxWic5vh-jAay.gif" alt="Article image" width="1920" height="1033" loading="lazy" decoding="async" />
 
 ```text
 Create investigation -> firewall log analysis -> add result -> EDR log analysis -> add result -> IOC Investigation -> add IOC result -> TTP layer on matrix -> actor comparison -> AI summary -> investigation report
@@ -821,10 +821,10 @@ It gives the analyst a faster way to build the case.
 
 AdversaryGraph is part of my broader 1200km cybersecurity research ecosystem: practical CTI workflows, detection engineering notes, malware-analysis projects, OpenCTI work, cloud and Kubernetes security research, AI-assisted security tooling, labs, and technical guides.
 
-- AdversaryGraph platform page:[https://1200km.com/adversarygraph/](https://1200km.com/adversarygraph/)
-- AdversaryGraph documentation:[https://1200km.com/adversarygraph-docs/](https://1200km.com/adversarygraph-docs/)
+- AdversaryGraph platform page:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
+- AdversaryGraph documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
 - AdversaryGraph GitHub:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
-- 1200km portfolio / knowledge base:[https://1200km.com/](https://1200km.com/)
+- 1200km portfolio / knowledge base:<a href="pathname://https://1200km.com/" target="_self"><span>/</span></a>
 - Medium:[https://medium.com/@1200km](https://medium.com/@1200km)
 - GitHub:[https://github.com/anpa1200](https://github.com/anpa1200)
 - LinkedIn:[https://www.linkedin.com/in/andrey-pautov/](https://www.linkedin.com/in/andrey-pautov/)

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*Be_05EN5NQl38dzTFo_8pg.png"
 # AdversaryGraph v2.5: New Name, New Release, Full AI CTI Platform Capability Map
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*Be_05EN5NQl38dzTFo_8pg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Be_05EN5NQl38dzTFo_8pg.png" alt="Cover image" width="1024" height="576" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### From ThreatMapper To AdversaryGraph
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Be_05EN5NQl38dzTFo_8pg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Be_05EN5NQl38dzTFo_8pg.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
 
 This release marks an important transition for the project: t**he tool now has a new canonical name.**
 
@@ -33,7 +33,7 @@ The project is now:
 
 The rename was necessary because the previous name overlapped with an existing product/company name. Rather than create confusion, I changed the project identity and rebuilt the public references around a clearer name.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*UMIF7jfJ0y9U8BeRrtDqfQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*UMIF7jfJ0y9U8BeRrtDqfQ.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 **AdversaryGraph**is a better name for what the platform actually does:
 
@@ -42,7 +42,7 @@ The rename was necessary because the previous name overlapped with an existing p
 - it supports investigation, enrichment, comparison, and detection engineering handoff;
 - it is not just a map of threats, but a working graph of adversary behavior and evidence.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*XFisNHC1lqdFRYlMwr4lBQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*XFisNHC1lqdFRYlMwr4lBQ.png" alt="Article image" width="1024" height="509" loading="lazy" decoding="async" />
 
 The repository, documentation, release notes, public project hub, article links, and ecosystem pages were updated to use the new name. Legacy public links are preserved where possible through redirects or compatibility pages.
 
@@ -50,17 +50,17 @@ Project:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200
 
 [GitHub - anpa1200/adversarygraph: AI-powered MITRE ATT\&CK threat intelligence platform - D3.js navigator, APT comparison, Claude/GPT-4o/Gemini analysis, PDF reports](https://github.com/anpa1200/adversarygraph)
 
-Documentation:[https://1200km.com/adversarygraph-docs/](https://1200km.com/adversarygraph-docs/)
+Documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
 
-[AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km](https://1200km.com/adversarygraph-docs/)
+<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self">AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
-Project hub:[https://1200km.com/adversarygraph/](https://1200km.com/adversarygraph/)
+Project hub:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
 
-[AdversaryGraph AI - MITRE ATT&CK CTI Workbench](https://1200km.com/adversarygraph/)
+<a href="pathname://https://1200km.com/adversarygraph/" target="_self">AdversaryGraph AI - MITRE ATT&CK CTI Workbench</a>
 
-Use cases:[https://1200km.com/adversarygraph/use-cases.html](https://1200km.com/adversarygraph/use-cases.html)
+Use cases:<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self"><span>/adversarygraph/use-cases.html</span></a>
 
-[AdversaryGraph Use Cases](https://1200km.com/adversarygraph/use-cases.html)
+<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self">AdversaryGraph Use Cases</a>
 
 ## Table of Contents
 
@@ -88,7 +88,7 @@ Use cases:[https://1200km.com/adversarygraph/use-cases.html](https://1200km.com/
 
 ## What AdversaryGraph Is
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*2ID1PvcCkkbK25Q1QmrFNA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*2ID1PvcCkkbK25Q1QmrFNA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 AdversaryGraph is a self-hosted AI-assisted CTI-to-detection workbench.
 
@@ -209,7 +209,7 @@ On first startup, AdversaryGraph downloads and ingests MITRE ATT&CK and MITRE AT
 
 The detailed installation and operations documentation is here:
 
-[Setup (10 Minutes) | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km](https://1200km.com/adversarygraph-docs/getting-started/)
+<a href="pathname://https://1200km.com/adversarygraph-docs/getting-started/" target="_self">Setup (10 Minutes) | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 ## What Is New In v2.5
 
@@ -238,7 +238,7 @@ The major additions are:
 
 The new IOC Library is the central observable workspace.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*rBHf8LiW22AmXz4goV7AYw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*rBHf8LiW22AmXz4goV7AYw.png" alt="Article image" width="1024" height="509" loading="lazy" decoding="async" />
 
 It allows analysts to search, filter, sort, enrich, and export indicators from multiple sources.
 
@@ -272,7 +272,7 @@ AdversaryGraph keeps these observables searchable in one place while preserving 
 
 Version 2.5 adds a cleaner VirusTotal lookup workflow.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*gGkZzoL1QGQhhmXrwTqkgg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*gGkZzoL1QGQhhmXrwTqkgg.png" alt="Article image" width="1024" height="509" loading="lazy" decoding="async" />
 
 An analyst can check:
 
@@ -312,7 +312,7 @@ The important part is not just checking if an IOC is malicious.
 
 ## STIX, TAXII, MISP, And Custom Feeds
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*ATUC2w-j6slX1jPnH-yrog.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*ATUC2w-j6slX1jPnH-yrog.png" alt="Article image" width="1024" height="534" loading="lazy" decoding="async" />
 
 AdversaryGraph v2.5 adds more ways to exchange and ingest structured intelligence.
 
@@ -334,7 +334,7 @@ AdversaryGraph does not force all data into one external platform first. It lets
 
 ## YARA, Sigma, And Sandbox Behavior
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Kev4TuRN3BiDVBpi_JZF7g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Kev4TuRN3BiDVBpi_JZF7g.png" alt="Article image" width="1024" height="534" loading="lazy" decoding="async" />
 
 The release also adds rule-feed and sandbox-behavior context.
 
@@ -355,7 +355,7 @@ This moves the platform further away from simple IOC lookup and closer to CTI-to
 
 ## AI Report Analysis
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*HLIjpNLtUOLXPnOKQyycEw.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/1*HLIjpNLtUOLXPnOKQyycEw.gif" alt="Article image" width="1915" height="1007" loading="lazy" decoding="async" />
 
 AdversaryGraph still includes the AI-assisted report analysis workflow.
 
@@ -386,7 +386,7 @@ The purpose is to reduce repetitive extraction work while keeping analyst review
 
 ## ATT&CK And ATLAS Navigator
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*ax_4cw5HNVejvxu2Z03dAg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*ax_4cw5HNVejvxu2Z03dAg.png" alt="Article image" width="1024" height="534" loading="lazy" decoding="async" />
 
 AdversaryGraph includes matrix support for:
 
@@ -410,7 +410,7 @@ This makes the matrix a working tool instead of a static image.
 
 ## Actor And Campaign Comparison
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*pLZJWyrwr-yn9WjMUfEl1A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*pLZJWyrwr-yn9WjMUfEl1A.png" alt="Article image" width="1024" height="534" loading="lazy" decoding="async" />
 
 AdversaryGraph can compare selected TTPs against known actor and campaign profiles.
 
@@ -433,7 +433,7 @@ Many actors share common techniques. The analyst still needs corroborating evide
 
 ## Sector Intelligence
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*yhBiYKGEjvcFr0SID2ibtQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*yhBiYKGEjvcFr0SID2ibtQ.png" alt="Article image" width="1024" height="534" loading="lazy" decoding="async" />
 
 AdversaryGraph includes sector-focused actor relevance workflows.
 
@@ -464,7 +464,7 @@ This is especially useful for customer-facing CTI, vCISO-style reporting, SOC pl
 
 Version 2.5 improves the ability to connect observables back to behavior.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*UEMmRXBRefpRprRXV6yxLA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*UEMmRXBRefpRprRXV6yxLA.png" alt="Article image" width="1024" height="534" loading="lazy" decoding="async" />
 
 IOC-to-TTP mapping can come from:
 
@@ -500,7 +500,7 @@ to:
 
 The platform also includes DFIR report examples.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*GVP8DqoR2L-n-ATnmUgrLQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*GVP8DqoR2L-n-ATnmUgrLQ.png" alt="Article image" width="1024" height="534" loading="lazy" decoding="async" />
 
 These are useful for:
 
@@ -516,7 +516,7 @@ The DFIR Examples workflow is useful because teams often need safe public materi
 
 AdversaryGraph is not only a single analysis screen.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*SqVDmemoVikXH03eOA2Oig.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*SqVDmemoVikXH03eOA2Oig.png" alt="Article image" width="1024" height="534" loading="lazy" decoding="async" />
 
 The platform includes operational workflow concepts:
 
@@ -568,7 +568,7 @@ If ATT&CK data is not loaded, an API key is missing, or a sync route fails, the 
 
 The public use-case page is here:
 
-[AdversaryGraph Use Cases](https://1200km.com/adversarygraph/use-cases.html)
+<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self">AdversaryGraph Use Cases</a>
 
 ## Licensing Change
 
@@ -615,7 +615,7 @@ The platform is most useful when the analyst needs to connect:
 
 AdversaryGraph is useful for:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*j8Ku9OywQQkesuEW2_dacA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*j8Ku9OywQQkesuEW2_dacA.png" alt="Article image" width="1024" height="617" loading="lazy" decoding="async" />
 
 - CTI analysts;
 - SOC analysts;
@@ -650,10 +650,10 @@ Good CTI should become:
 
 Project:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
 
-Documentation:[https://1200km.com/adversarygraph-docs/](https://1200km.com/adversarygraph-docs/)
+Documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
 
-Project hub:[https://1200km.com/adversarygraph/](https://1200km.com/adversarygraph/)
+Project hub:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
 
 Release:[https://github.com/anpa1200/adversarygraph/releases/tag/v2.5.0](https://github.com/anpa1200/adversarygraph/releases/tag/v2.5.0)
 
-Use cases:[https://1200km.com/adversarygraph/use-cases.html](https://1200km.com/adversarygraph/use-cases.html)
+Use cases:<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self"><span>/adversarygraph/use-cases.html</span></a>

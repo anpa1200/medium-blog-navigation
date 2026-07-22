@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*DPJxbuIm6siiwQcC.png"
 # HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*DPJxbuIm6siiwQcC.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*DPJxbuIm6siiwQcC.png" alt="Cover image" width="700" height="467" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A real end-to-end lab engagement: recon → credential discovery → share abuse → lateral movement → multi-host compromise → reporting
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*DPJxbuIm6siiwQcC.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*DPJxbuIm6siiwQcC.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -138,7 +138,7 @@ Target:
 59.144
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gbLWeOji8jSP0_3TFMg8Sg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gbLWeOji8jSP0_3TFMg8Sg.png" alt="Article image" width="871" height="425" loading="lazy" decoding="async" />
 
 ## Raw Penetration Test Log with Reasoning
 
@@ -9010,7 +9010,7 @@ successfully.
 ================================================================================
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NpnWfU-yZR-NxvBnjG9bgg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NpnWfU-yZR-NxvBnjG9bgg.png" alt="Article image" width="1899" height="864" loading="lazy" decoding="async" />
 
 ## Conclusion
 

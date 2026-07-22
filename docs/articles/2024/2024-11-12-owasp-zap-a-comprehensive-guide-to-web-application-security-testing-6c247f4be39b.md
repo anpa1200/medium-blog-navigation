@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*az_DZk6OYkOUj_Bq"
 # OWASP ZAP: A Comprehensive Guide to Web Application Security Testing
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*az_DZk6OYkOUj_Bq)
+<img src="https://cdn-images-1.medium.com/max/800/0*az_DZk6OYkOUj_Bq" alt="Cover image" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Using OWASP ZAP for Identifying and Mitigating Web Application Vulnerabilities
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*az_DZk6OYkOUj_Bq)
+<img src="https://cdn-images-1.medium.com/max/800/0*az_DZk6OYkOUj_Bq" alt="Article image" width="1280" height="720" loading="lazy" decoding="async" />
 
 ## Introduction to OWASP ZAP
 
@@ -59,7 +59,7 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 - Open ZAP and configure your browser’s proxy settings to route through ZAP’s local proxy (usually`localhost:8080`) to intercept traffic.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OS6pzG8N7LZLnMjgOxy-6g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OS6pzG8N7LZLnMjgOxy-6g.png" alt="Article image" width="1924" height="1049" loading="lazy" decoding="async" />
 
 ## Basic Automated Scan
 
@@ -69,9 +69,9 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 - On the**Quick Start**tab, you’ll see options for different types of scans, including the Automated Scan.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4O3qswkItttACntogOu1sw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4O3qswkItttACntogOu1sw.png" alt="Article image" width="1915" height="231" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IDnSqPC1M_C4BmD-TF2FRQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IDnSqPC1M_C4BmD-TF2FRQ.png" alt="Article image" width="1917" height="615" loading="lazy" decoding="async" />
 
 ### For ZAP to capture traffic and run scans effectively, configure your browser to use ZAP as a proxy.
 
@@ -79,7 +79,7 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 - Alternatively, you can use the**OWASP ZAP Browser Extension**if available for your browser, which will automatically set up the proxy configuration.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5vdceVb4mrvMkGFmP6Bo-w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5vdceVb4mrvMkGFmP6Bo-w.png" alt="Article image" width="860" height="516" loading="lazy" decoding="async" />
 
 ### Step 3: Enter the Target URL
 
@@ -89,7 +89,7 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 - Select the**Attack Mode**as**Active Scan**for ZAP to perform an active vulnerability scan on the target.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PB9EURvvjdONOo2aOVnRYw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PB9EURvvjdONOo2aOVnRYw.png" alt="Article image" width="1214" height="182" loading="lazy" decoding="async" />
 
 ### Step 4: Run the Basic Scan
 
@@ -105,11 +105,11 @@ In the**Sites**and**Alerts**panels:
 
 - **Sites Panel**: Shows the structure of the target site, including all discovered URLs and resources.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Mg1_0pAvEkcwr602MwL4Zg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Mg1_0pAvEkcwr602MwL4Zg.png" alt="Article image" width="627" height="577" loading="lazy" decoding="async" />
 
 - **Alerts Panel**: Displays identified vulnerabilities as the scan progresses. Each alert includes details on the issue, risk level (high, medium, low), and recommendations.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*m2JM0BrIvO1paFXLOVkZgg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*m2JM0BrIvO1paFXLOVkZgg.png" alt="Article image" width="1912" height="430" loading="lazy" decoding="async" />
 
 ### Step 6: Review the Results
 
@@ -117,7 +117,7 @@ In the**Sites**and**Alerts**panels:
 
 - Click on each alert to see more details, including:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*u7PfF3sSrVPYNHj5gtSlfg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*u7PfF3sSrVPYNHj5gtSlfg.png" alt="Article image" width="1930" height="696" loading="lazy" decoding="async" />
 
 - **Description**: Information about the vulnerability.
 
@@ -133,11 +133,11 @@ To generate a report for documentation or analysis:
 
 - Go to**Report &gt; Generate Report**.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Apt6Jo9f-lrPOpe8SPLNcw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Apt6Jo9f-lrPOpe8SPLNcw.png" alt="Article image" width="1066" height="623" loading="lazy" decoding="async" />
 
 - Choose your preferred format (HTML, XML, etc.) and save it.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2dUweUwDViZtb4_LYXStbQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2dUweUwDViZtb4_LYXStbQ.png" alt="Article image" width="1917" height="1049" loading="lazy" decoding="async" />
 
 ## Deep Scan
 
@@ -153,11 +153,11 @@ To generate a report for documentation or analysis:
 
 - **Increase Depth Levels**: By default, the spidering (crawling) depth may be limited. Go to**Tools &gt; Options &gt; Spider**and adjust the depth level by setting it to a higher value, such as`5`or more, to explore the site more deeply. Maximum Depth to Crawl — 0.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zJ1YzWz5xIBlCBiQmqnz1g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zJ1YzWz5xIBlCBiQmqnz1g.png" alt="Article image" width="1156" height="668" loading="lazy" decoding="async" />
 
 **Enable AJAX Spidering**: For JavaScript-heavy sites or Single Page Applications (SPAs), enable**AJAX Spidering**under**Tools &gt; Options &gt; AJAX Spider**. This will allow ZAP to find pages and resources loaded dynamically with JavaScript.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fGygERmk3aEgaqhbr7JuAw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fGygERmk3aEgaqhbr7JuAw.png" alt="Article image" width="1156" height="668" loading="lazy" decoding="async" />
 
 **Active Scan Policy**:
 
@@ -173,7 +173,7 @@ To generate a report for documentation or analysis:
 
 - Be aware that this can significantly increase scan time and server load.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JYLOkxhqpT-CflrA8TQAUw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JYLOkxhqpT-CflrA8TQAUw.png" alt="Article image" width="779" height="434" loading="lazy" decoding="async" />
 
 ### Step 3: Initiate the Full Automated Scan
 

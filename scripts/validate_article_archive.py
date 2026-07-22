@@ -5,6 +5,12 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 
+MIGRATION_STATUSES = {
+    "local-confirmed", "external-still-canonical", "migration-pending",
+    "external-uncontrolled", "local-noindex", "historical-copy",
+}
+
+
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "src" / "data" / "article-catalog.json"
 ARTICLES = ROOT / "docs" / "articles"
@@ -21,6 +27,11 @@ def main() -> int:
         required = {
             "id", "title", "published_at", "year", "category", "slug",
             "local_path", "source_url", "images", "code_blocks",
+            "canonical_url", "canonical_owner", "preferred_canonical_url",
+            "original_publication_url", "original_publication_platform",
+            "canonical_migration_status", "external_canonical_verified",
+            "external_canonical_verified_at", "migration_note", "source_platform",
+            "source_repository", "collection_tier", "updated_at",
         }
         missing = sorted(required - set(row))
         if missing:
@@ -40,6 +51,26 @@ def main() -> int:
         source = urlsplit(row["source_url"])
         if source.scheme != "https" or not source.netloc:
             errors.append(f"{label}: invalid source_url")
+        canonical = urlsplit(row["canonical_url"])
+        expected_canonical = f"https://1200km.com/articles/read/{row['local_path']}"
+        if row["canonical_url"] != expected_canonical:
+            errors.append(f"{label}: canonical_url is not the local article route")
+        if row["preferred_canonical_url"] != row["canonical_url"]:
+            errors.append(f"{label}: preferred canonical disagrees with canonical_url")
+        if canonical.scheme != "https" or canonical.netloc != "1200km.com":
+            errors.append(f"{label}: canonical_url is not on the public origin")
+        if row["original_publication_url"] != row["source_url"]:
+            errors.append(f"{label}: source and original publication disagree")
+        if row["canonical_migration_status"] not in MIGRATION_STATUSES:
+            errors.append(f"{label}: unknown canonical migration status")
+        if not isinstance(row["external_canonical_verified"], bool):
+            errors.append(f"{label}: external_canonical_verified must be boolean")
+        if row["external_canonical_verified"] and not row["external_canonical_verified_at"]:
+            errors.append(f"{label}: verified external canonical has no verification date")
+        if not row["external_canonical_verified"] and row["canonical_migration_status"] == "local-confirmed":
+            errors.append(f"{label}: local-confirmed requires external canonical verification")
+        if row["collection_tier"] not in {"core", "reference", "archive"}:
+            errors.append(f"{label}: unknown collection tier")
         if not isinstance(row["images"], int) or row["images"] < 0:
             errors.append(f"{label}: invalid image count")
         if not isinstance(row["code_blocks"], int) or row["code_blocks"] < 0:

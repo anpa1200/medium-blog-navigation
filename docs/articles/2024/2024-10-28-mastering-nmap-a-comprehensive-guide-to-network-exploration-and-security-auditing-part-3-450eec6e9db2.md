@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*DAlacppUem6Le_K_.jpeg"
 # Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 3
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*DAlacppUem6Le_K_.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*DAlacppUem6Le_K_.jpeg" alt="Cover image" width="700" height="400" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -29,7 +29,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Part 4 is here
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*DAlacppUem6Le_K_.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*DAlacppUem6Le_K_.jpeg" alt="Article image" width="700" height="400" loading="lazy" decoding="async" />
 
 **About author**
 
@@ -174,7 +174,7 @@ nmap -sV
 .1
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ShdpXA1EyIFK6EpfVPfLWg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ShdpXA1EyIFK6EpfVPfLWg.png" alt="Article image" width="1055" height="312" loading="lazy" decoding="async" />
 
 - **Typical Usage**: Essential for vulnerability assessment and compliance auditing, as knowing the service and version can help identify known vulnerabilities and outdated software.
 
@@ -265,7 +265,7 @@ nmap -O
 .1
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Z6ABqmOqe03wZZSYFkxBJg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Z6ABqmOqe03wZZSYFkxBJg.png" alt="Article image" width="1920" height="399" loading="lazy" decoding="async" />
 
 This command will initiate OS detection on the IP address 192.168.1.1, providing detailed information about the operating system if detectable.
 
