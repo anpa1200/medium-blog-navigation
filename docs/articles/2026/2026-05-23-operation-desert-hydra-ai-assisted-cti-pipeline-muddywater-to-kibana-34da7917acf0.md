@@ -437,9 +437,9 @@ The stack used in this project is documented and publicly reproducible. The full
 
 [The Intelligent Shield. OpenCTI](https://medium.com/@1200km/the-intelligent-shield-057c9b4b9394)
 
-- **Main guide:**[anpa1200.github.io/opencti-intelligent-shield](https://anpa1200.github.io/opencti-intelligent-shield/)
+- **Main guide:**<a href="https://1200km.com/opencti-intelligent-shield/" target="_self" target="_self">anpa1200.github.io/opencti-intelligent-shield</a>
 
-[OpenCTI AI Enrichment | The Intelligent Shield](https://anpa1200.github.io/opencti-intelligent-shield)
+<a href="https://1200km.com/opencti-intelligent-shield" target="_self" target="_self">OpenCTI AI Enrichment | The Intelligent Shield</a>
 
 The Intelligent Shield project covers: OpenCTI core stack (Redis, Elasticsearch, MinIO, RabbitMQ, platform, workers), MITRE ATT&CK connector, and a custom internal enrichment connector that uses Claude to automatically summarize and enrich threat objects. Docker Compose files, a sanitized .env.example, and full setup instructions are all version-controlled.
 

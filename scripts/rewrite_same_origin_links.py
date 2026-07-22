@@ -16,14 +16,14 @@ def rewrite(text: str) -> tuple[str, int]:
         nonlocal count
         count += 1
         path = match.group(2) or "/"
-        return f'<a href="pathname://https://1200km.com{path}" target="_self">{match.group(1)}</a>'
+        return f'<a href="https://1200km.com{path}" target="_self">{match.group(1)}</a>'
 
     def html(match: re.Match[str]) -> str:
         nonlocal count
         count += 1
         prefix = re.sub(r'\s+target=["\'][^"\']*["\']', '', match.group(1), flags=re.IGNORECASE)
         path = match.group(2)
-        return f'{prefix}href="pathname://https://1200km.com{path}" target="_self"'
+        return f'{prefix}href="https://1200km.com{path}" target="_self"'
 
     def visible_url(match: re.Match[str]) -> str:
         nonlocal count
@@ -40,18 +40,20 @@ def rewrite(text: str) -> tuple[str, int]:
         visible = match.group("path") or "/"
         return f'{match.group("open")}<span>{visible}</span></a>'
 
+    text = text.replace("pathname://https://1200km.com", "https://1200km.com")
+    text = text.replace("https://anpa1200.github.io/", "https://1200km.com/")
     text = re.sub(r"\[([^\]]+)\]\(https://1200km\.com(/[^)\s]*)?\)", markdown, text)
     text = re.sub(r'(<a\b[^>]*?)href=["\']https://1200km\.com(/[^"\']*)["\']', html, text, flags=re.IGNORECASE)
     text = re.sub(r'(<a\b(?![^>]*\btarget=)[^>]*?)href=["\'](/[^"\']*)["\']', html, text, flags=re.IGNORECASE)
     text = re.sub(r'(<a\b[^>]*?)href=["\'](/[^"\']*)["\']\s+target=["\']_self["\']', html, text, flags=re.IGNORECASE)
     text = re.sub(
-        r'(<a\b[^>]*href=["\']pathname://https://1200km\.com[^"\']*["\'][^>]*>)(https://1200km\.com[^<]*)(</a>)',
+        r'(<a\b[^>]*href=["\']https://1200km\.com[^"\']*["\'][^>]*>)(https://1200km\.com[^<]*)(</a>)',
         visible_url,
         text,
         flags=re.IGNORECASE,
     )
     text = re.sub(
-        r'(?P<open><a\b[^>]*href=["\']pathname://https://1200km\.com(?P<path>/[^"\']*)["\'][^>]*>)(?P<body>[\s\S]*?)</a>',
+        r'(?P<open><a\b[^>]*href=["\']https://1200km\.com(?P<path>/[^"\']*)["\'][^>]*>)(?P<body>[\s\S]*?)</a>',
         wrapped_visible_url,
         text,
         flags=re.IGNORECASE,

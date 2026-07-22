@@ -704,11 +704,11 @@ Full guide:
 
 Project hub:
 
-<a href="pathname://https://1200km.com/threatmapper/" target="_self"><span>/threatmapper/</span></a>AdversaryGraph<a href="pathname://https://1200km.com/threatmapper/" target="_self">/</a>
+<a href="https://1200km.com/threatmapper/" target="_self" target="_self" target="_self"><span>/threatmapper/</span></a>AdversaryGraph<a href="https://1200km.com/threatmapper/" target="_self" target="_self" target="_self">/</a>
 
 **Public ATT&CK workspace:**
 
-<a href="pathname://https://1200km.com/threat-matrix/" target="_self">ThreatMapper Web - MITRE ATT&CK CTI Workspace | 1200km</a>
+<a href="https://1200km.com/threat-matrix/" target="_self" target="_self" target="_self">ThreatMapper Web - MITRE ATT&CK CTI Workspace | 1200km</a>
 
 ## Final Thoughts
 

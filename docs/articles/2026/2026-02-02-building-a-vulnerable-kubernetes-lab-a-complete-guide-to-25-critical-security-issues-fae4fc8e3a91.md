@@ -2729,11 +2729,11 @@ send
             <h1>Vulnerable App #3 - K8S Token Exposure</h1>
             <h2>Endpoints:</h2>
             <ul>
-                <li><a href="pathname://https://1200km.com/api/token" target="_self">GET /api/token</a> - Expose service account token</li>
-                <li><a href="pathname://https://1200km.com/api/namespace" target="_self">GET /api/namespace</a> - Expose namespace</li>
-                <li><a href="pathname://https://1200km.com/api/k8s/pods" target="_self">GET /api/k8s/pods</a> - Access K8S API (pods)</li>
-                <li><a href="pathname://https://1200km.com/api/k8s/secrets" target="_self">GET /api/k8s/secrets</a> - Access K8S API (secrets)</li>
-                <li><a href="pathname://https://1200km.com/api/logs" target="_self">GET /api/logs</a> - View logs with sensitive data</li>
+                <li><a href="https://1200km.com/api/token" target="_self" target="_self" target="_self">GET /api/token</a> - Expose service account token</li>
+                <li><a href="https://1200km.com/api/namespace" target="_self" target="_self" target="_self">GET /api/namespace</a> - Expose namespace</li>
+                <li><a href="https://1200km.com/api/k8s/pods" target="_self" target="_self" target="_self">GET /api/k8s/pods</a> - Access K8S API (pods)</li>
+                <li><a href="https://1200km.com/api/k8s/secrets" target="_self" target="_self" target="_self">GET /api/k8s/secrets</a> - Access K8S API (secrets)</li>
+                <li><a href="https://1200km.com/api/logs" target="_self" target="_self" target="_self">GET /api/logs</a> - View logs with sensitive data</li>
             </ul>
         </body>
         </html>

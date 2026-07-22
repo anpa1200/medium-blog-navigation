@@ -15,7 +15,7 @@ complete topic list.
 3. [ATT&CK as a Working Tool](https://medium.com/@1200km/att-ck-as-a-working-tool-theory-and-hands-on-practical-usage-d63835c9f101)
 4. [Attribution Methodology](https://medium.com/@1200km/attribution-methodology-how-to-build-defend-and-challenge-a-threat-actor-attribution-071066437ced)
 5. [Manual CTI vs. AI-Assisted CTI](https://medium.com/@1200km/manual-cti-vs-ai-assisted-cti-a-step-by-step-clock-comparison-ee08325203fc)
-6. <a href="pathname://https://1200km.com/articles/adversarygraph-v2-self-hosted-ai-cti-platform.html" target="_self">AdversaryGraph - Self-Hosted AI Threat Intelligence Platform</a>
+6. <a href="https://1200km.com/articles/adversarygraph-v2-self-hosted-ai-cti-platform.html" target="_self" target="_self" target="_self">AdversaryGraph - Self-Hosted AI Threat Intelligence Platform</a>
 
 ## CTI-to-Detection Builder
 
@@ -35,7 +35,7 @@ complete topic list.
 
 1. [AI in Offensive Operations](https://medium.com/@1200km/ai-in-offensive-operations-how-threat-actors-use-artificial-intelligence-4eaeeaf029a9)
 2. [The AI Revolution in Cybersecurity](https://medium.com/@1200km/the-ai-revolution-in-cybersecurity-31e44704d51a)
-3. <a href="pathname://https://1200km.com/articles/adversarygraph-v2-self-hosted-ai-cti-platform.html" target="_self">AdversaryGraph - Self-Hosted AI Threat Intelligence Platform</a>
+3. <a href="https://1200km.com/articles/adversarygraph-v2-self-hosted-ai-cti-platform.html" target="_self" target="_self" target="_self">AdversaryGraph - Self-Hosted AI Threat Intelligence Platform</a>
 4. [HexStrike-AI: A Force Multiplier for Red Teams](https://medium.com/@1200km/hexstrike-ai-a-force-multiplier-for-red-teams-and-a-dangerous-shift-in-the-threat-landscape-3e1d4e86f3ae)
 5. [The Intelligent Shield. OpenCTI](https://medium.com/@1200km/the-intelligent-shield-057c9b4b9394)
 
@@ -57,5 +57,5 @@ complete topic list.
 ## Vulnerability Management
 
 1. [CVSS v4.0: The Practical Field Guide for Vulnerability Management](https://medium.com/bugbountywriteup/cvss-v4-0-the-practical-field-guide-for-vulnerability-management-5b5a59728456)
-2. Open the <a href="pathname://https://1200km.com/cvss/" target="_self">CVSS v4.0 Field Guide Docusaurus site</a>
+2. Open the <a href="https://1200km.com/cvss/" target="_self" target="_self" target="_self">CVSS v4.0 Field Guide Docusaurus site</a>
 3. Open the [cvss_4.0 repository](https://github.com/anpa1200/cvss_4.0)

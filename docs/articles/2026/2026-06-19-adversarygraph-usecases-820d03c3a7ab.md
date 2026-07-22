@@ -34,11 +34,11 @@ The main idea is simple: an analyst should be able to take a report, IOC, log ex
 Relevant links:
 
 - GitHub repository:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
-- Official documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
-- Getting started guide:<a href="pathname://https://1200km.com/adversarygraph-docs/get-started.html" target="_self"><span>/adversarygraph-docs/get-started.html</span></a>
-- Capabilities overview:<a href="pathname://https://1200km.com/adversarygraph-docs/capabilities.html" target="_self"><span>/adversarygraph-docs/capabilities.html</span></a>
-- Public project page:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
-- 1200km research ecosystem:<a href="pathname://https://1200km.com/" target="_self"><span>/</span></a>
+- Official documentation:<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/</span></a>
+- Getting started guide:<a href="https://1200km.com/adversarygraph-docs/get-started.html" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/get-started.html</span></a>
+- Capabilities overview:<a href="https://1200km.com/adversarygraph-docs/capabilities.html" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/capabilities.html</span></a>
+- Public project page:<a href="https://1200km.com/adversarygraph/" target="_self" target="_self" target="_self"><span>/adversarygraph/</span></a>
+- 1200km research ecosystem:<a href="https://1200km.com/" target="_self" target="_self" target="_self"><span>/</span></a>
 
 This article is not a generic feature list. It is a practical use-case map for the platform. Each use case starts from a real analyst situation, shows where to begin in AdversaryGraph, and defines the expected output. You can read it from top to bottom, but it is more useful as a workflow menu:
 
@@ -387,5 +387,5 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 ## Public Links
 
 - Project:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
-- Documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
-- Public use-case page:<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self"><span>/adversarygraph/use-cases.html</span></a>
+- Documentation:<a href="https://1200km.com/adversarygraph-docs/" target="_self" target="_self" target="_self"><span>/adversarygraph-docs/</span></a>
+- Public use-case page:<a href="https://1200km.com/adversarygraph/use-cases.html" target="_self" target="_self" target="_self"><span>/adversarygraph/use-cases.html</span></a>
