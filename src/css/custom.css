@@ -31,7 +31,8 @@
 }
 
 /* Prose links must remain identifiable without relying on colour alone. */
-.theme-doc-markdown :where(p, li) a:not(.button) {
+.theme-doc-markdown :where(p, li) a:not(.button),
+.theme-doc-markdown > a:not(.button):not(.hash-link) {
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.16em;
