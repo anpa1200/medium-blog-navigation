@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*YCJpJe__74gYC00w"
 # Authenticator.exe/DearSteeler
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*YCJpJe__74gYC00w)
+<img src="https://cdn-images-1.medium.com/max/800/0*YCJpJe__74gYC00w" alt="Cover image" width="1461" height="608" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,9 +23,9 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Malware research report
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*YCJpJe__74gYC00w)
+<img src="https://cdn-images-1.medium.com/max/800/0*YCJpJe__74gYC00w" alt="Article image" width="1461" height="608" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*TpJ-_5OqJ-FXezrb)
+<img src="https://cdn-images-1.medium.com/max/800/0*TpJ-_5OqJ-FXezrb" alt="Article image" width="80" height="89" loading="lazy" decoding="async" />
 
 ### Summary
 
@@ -63,7 +63,7 @@ Basic information about sample I get with my own simple tool:
 
 [(Link to this tool here)](https://github.com/anpa1200/Malware_analysis/blob/main/Basic_inf_gathering)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*tSsZ3K1Sey2NmgTt)
+<img src="https://cdn-images-1.medium.com/max/800/0*tSsZ3K1Sey2NmgTt" alt="Article image" width="1017" height="154" loading="lazy" decoding="async" />
 
 **File Name:**Authenticator.exe
 
@@ -81,7 +81,7 @@ Basic information about sample I get with my own simple tool:
 
 ### Virus Total:
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*HXTQWsp3Ncx2kn8a.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*HXTQWsp3Ncx2kn8a.png" alt="Article image" width="1280" height="248" loading="lazy" decoding="async" />
 
 VirusTotal is a free online service that analyzes files and URLs for potential malware by scanning them with numerous antivirus engines and website scanners. Launched in 2004 by the Spanish company Hispasec Sistemas, it was acquired by Google in 2012 and later became part of Chronicle, a subsidiary of Alphabet Inc., in 2018. citeturn0search10
 
@@ -101,15 +101,15 @@ For more information or to use the service, visit the official VirusTotal websit
 
 ### Upload file to VT
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*GbrQEMuj03yMShIG)
+<img src="https://cdn-images-1.medium.com/max/800/0*GbrQEMuj03yMShIG" alt="Article image" width="1317" height="190" loading="lazy" decoding="async" />
 
 In Virus Total we can see much more information. But for this Lab I will do it manually with other tools.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*jNv8f9a2qqr-35KF)
+<img src="https://cdn-images-1.medium.com/max/800/0*jNv8f9a2qqr-35KF" alt="Article image" width="1320" height="521" loading="lazy" decoding="async" />
 
 ## CFF Explorer
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*nzo7nSbGUaJ-TFeU.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*nzo7nSbGUaJ-TFeU.png" alt="Article image" width="448" height="448" loading="lazy" decoding="async" />
 
 ​CFF Explorer is a free, comprehensive tool designed for examining and editing Portable Executable (PE) files, which are standard for executables in Windows environments. Part of the Explorer Suite developed by NTCore, it offers a user-friendly interface for both novice and advanced users. ​
 
@@ -131,21 +131,21 @@ While CFF Explorer is a powerful tool for inspecting and modifying PE files, it 
 
 For more information or to download CFF Explorer, visit NTCore’s official website. ​[here](https://cyberwarehub.com/tools/cff-explorer)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*albF1Xt-4gw5Ovn6)
+<img src="https://cdn-images-1.medium.com/max/800/0*albF1Xt-4gw5Ovn6" alt="Article image" width="928" height="625" loading="lazy" decoding="async" />
 
 ### DOS Header:
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*69dyTTXhtCVt6dAz)
+<img src="https://cdn-images-1.medium.com/max/800/0*69dyTTXhtCVt6dAz" alt="Article image" width="451" height="103" loading="lazy" decoding="async" />
 
 ### In Hex
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*ojIXaWP-cDM_ptR-)
+<img src="https://cdn-images-1.medium.com/max/800/0*ojIXaWP-cDM_ptR-" alt="Article image" width="636" height="251" loading="lazy" decoding="async" />
 
 ### Imports & Exports:
 
 The Authenticator.exe imports a range of Windows API libraries consistent with an infostealer’s functionality.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*F_pdpG7B6Rcq6vZx)
+<img src="https://cdn-images-1.medium.com/max/800/0*F_pdpG7B6Rcq6vZx" alt="Article image" width="1301" height="566" loading="lazy" decoding="async" />
 
 **Key imported DLLs include:**
 
@@ -168,19 +168,19 @@ possibly to query version info of system or browser files (a fingerprinting tech
 
 **Export:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*W6ARiABxVDZjv49O)
+<img src="https://cdn-images-1.medium.com/max/800/0*W6ARiABxVDZjv49O" alt="Article image" width="1293" height="646" loading="lazy" decoding="async" />
 
 ### Sections & Structure:
 
 The PE file contains standard sections such as:
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*9rhpzqC_kMJHIUml)
+<img src="https://cdn-images-1.medium.com/max/800/0*9rhpzqC_kMJHIUml" alt="Article image" width="952" height="624" loading="lazy" decoding="async" />
 
 ### Indicators of Packing/Obfuscation:
 
 I’ll user other tool —**Detect It Easy**
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*amQ87xfX1IqLNGWf.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*amQ87xfX1IqLNGWf.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 **​Detect It Easy**(DiE) is a free, open-source utility designed to identify and analyze executable files across multiple platforms, including Windows, Linux, and macOS. Developed by NTInfo, DiE is widely utilized by malware analysts, cybersecurity professionals, and reverse engineers for its robust capabilities in detecting compilers, packers, and protectors embedded within executable files.
 
@@ -196,7 +196,7 @@ I’ll user other tool —**Detect It Easy**
 
 [More information and download this tool here:](https://www.majorgeeks.com/files/details/detect_it_easy.html)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*KWijZrCrxV3r1PZ3)
+<img src="https://cdn-images-1.medium.com/max/800/0*KWijZrCrxV3r1PZ3" alt="Article image" width="699" height="150" loading="lazy" decoding="async" />
 
 ### Entropy
 
@@ -208,7 +208,7 @@ For example, a study analyzing approximately 500,000 Windows executable files fo
 
 Therefore, entropy analysis serves as a valuable technique in malware detection, aiding in the identification of files that may be packed, encrypted, or obfuscated to hide malicious content.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*sGVhEXVCyHWhqsTC)
+<img src="https://cdn-images-1.medium.com/max/800/0*sGVhEXVCyHWhqsTC" alt="Article image" width="878" height="751" loading="lazy" decoding="async" />
 
 **Verdict**: Normal entropy level. File not packed.
 
@@ -216,17 +216,17 @@ Other way to check if PE is packed, and (if true) unpack it:
 
 [www.unpac.me](http://www.unpac.me)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XQ5gr5bWY_3wEIT782HodA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XQ5gr5bWY_3wEIT782HodA.png" alt="Article image" width="1159" height="445" loading="lazy" decoding="async" />
 
 ### Signature Analysis:
 
 Signed file, valid signature.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*9fQBpqO9hHISz9YI)
+<img src="https://cdn-images-1.medium.com/max/800/0*9fQBpqO9hHISz9YI" alt="Article image" width="1037" height="346" loading="lazy" decoding="async" />
 
 ### But Revoked.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*P_87DRNKx9Mar42p)
+<img src="https://cdn-images-1.medium.com/max/800/0*P_87DRNKx9Mar42p" alt="Article image" width="758" height="188" loading="lazy" decoding="async" />
 
 **Signature Validity:**As of the analysis, the certificate’s reputation has changed. The code signing certificate used here has been**revoked**by the issuer. Security scans now flag the signature as**revoked/untrusted**​, meaning the certificate was likely canceled once its misuse was reported.
 
@@ -235,7 +235,7 @@ Signed file, valid signature.
 There are so many string in this file. For sorting this string I can use my**own tool: String_Analyser
 **[(Link to this tool)](https://github.com/anpa1200/Malware_analysis/blob/main/string_analyser.py)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*x2g5ajvGA8nP0hx8)
+<img src="https://cdn-images-1.medium.com/max/800/0*x2g5ajvGA8nP0hx8" alt="Article image" width="1600" height="633" loading="lazy" decoding="async" />
 
 ### Threat Intelligence Lookup
 
@@ -245,15 +245,15 @@ The sample did not explicitly carry a known malware family tag in the PE (no cle
 
 **AnyRun**
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*tASLsES2rCXP81hw)
+<img src="https://cdn-images-1.medium.com/max/800/0*tASLsES2rCXP81hw" alt="Article image" width="1125" height="332" loading="lazy" decoding="async" />
 
 **VirusTotal**
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Ht3EehwV6jhVyNOw)
+<img src="https://cdn-images-1.medium.com/max/800/0*Ht3EehwV6jhVyNOw" alt="Article image" width="1176" height="71" loading="lazy" decoding="async" />
 
 **Information about DeerStealer:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*jkskH4ziGyV5OtMR)
+<img src="https://cdn-images-1.medium.com/max/800/0*jkskH4ziGyV5OtMR" alt="Article image" width="1247" height="348" loading="lazy" decoding="async" />
 
 ## Threat Intelligence Lookup
 
@@ -337,7 +337,7 @@ In summary, external intelligence confirms that*Authenticator.exe*is indeed mali
 
 ### Procmon
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*0SwY6Rvs325H8LuT.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*0SwY6Rvs325H8LuT.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
 Process Monitor, commonly known as ProcMon, is an advanced monitoring tool developed by Sysinternals (now part of Microsoft) that provides real-time visibility into file system, registry, and process/thread activities on Windows operating systems. It combines the functionalities of two legacy utilities, Filemon and Regmon, offering a comprehensive solution for system troubleshooting and malware analysis. ​[patchmypc.com+3thomsonreuters.com+3learn.microsoft.com+3](https://www.thomsonreuters.com/content/helpandsupp/en-us/help/gofileroom/get-started/set-up/process-monitor-procmon-installation.html)[en.wikipedia.org+2learn.microsoft.com+2thomsonreuters.com+2](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon)
 
@@ -391,35 +391,35 @@ RegSetValue, RegCreateKey, RegDeleteKey —*Checks if malware modifies system se
 
 TCP Connect, UDP Send —*Detects malware trying to communicate with external servers.*
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*UJhbmktjbQ7VzWTh)
+<img src="https://cdn-images-1.medium.com/max/800/0*UJhbmktjbQ7VzWTh" alt="Article image" width="932" height="606" loading="lazy" decoding="async" />
 
 - Authenticator.exe run with no open subprocesses and closed after 2 minutes
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*afSwvL1Z2jYXzrQ5)
+<img src="https://cdn-images-1.medium.com/max/800/0*afSwvL1Z2jYXzrQ5" alt="Article image" width="1029" height="106" loading="lazy" decoding="async" />
 
 **Loaded DLLs:**Authenticator.exe loads numerous Windows system libraries, indicating a broad range of capabilities. Key DLLs include:
 
 - **Core OS Libraries:**ntdll.dll, kernel32.dll, KernelBase.dll — fundamental Windows APIs for process execution and memory management. These are expected for any program.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Upjxfp9Wz9fDywC1)
+<img src="https://cdn-images-1.medium.com/max/800/0*Upjxfp9Wz9fDywC1" alt="Article image" width="446" height="32" loading="lazy" decoding="async" />
 
 - **Networking:**
 
 ws2_32.dll (Winsock TCP/IP stack),
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*VC-0bVv6iiZ26EI0)
+<img src="https://cdn-images-1.medium.com/max/800/0*VC-0bVv6iiZ26EI0" alt="Article image" width="467" height="29" loading="lazy" decoding="async" />
 
 winhttp.dll (HTTP client services),
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*2Jc7eGfANw7bpkjd)
+<img src="https://cdn-images-1.medium.com/max/800/0*2Jc7eGfANw7bpkjd" alt="Article image" width="467" height="29" loading="lazy" decoding="async" />
 
 dnsapi.dll (DNS resolution),
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*sl_l5kHEblWJLvO0)
+<img src="https://cdn-images-1.medium.com/max/800/0*sl_l5kHEblWJLvO0" alt="Article image" width="467" height="25" loading="lazy" decoding="async" />
 
 and webio.dll
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*aaKEQ1MNz04nqykB)
+<img src="https://cdn-images-1.medium.com/max/800/0*aaKEQ1MNz04nqykB" alt="Article image" width="467" height="25" loading="lazy" decoding="async" />
 
 – suggesting the malware performs web communications. The presence of WinHTTP and DNS APIs shows it can perform web requests and domain lookups (used later for contacting its C2).
 
@@ -427,15 +427,15 @@ and webio.dll
 
 crypt32.dll
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Ep2A6F8bQEH7T-4V)
+<img src="https://cdn-images-1.medium.com/max/800/0*Ep2A6F8bQEH7T-4V" alt="Article image" width="467" height="25" loading="lazy" decoding="async" />
 
 (enabling SSL/TLS),
 
 bcrypt.dll/bcryptPrimitives.dll (crypto primitives)
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*BrtHdYCtVf9Onmwj)
+<img src="https://cdn-images-1.medium.com/max/800/0*BrtHdYCtVf9Onmwj" alt="Article image" width="503" height="26" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*gxQZBbRU5WoULD-v)
+<img src="https://cdn-images-1.medium.com/max/800/0*gxQZBbRU5WoULD-v" alt="Article image" width="503" height="26" loading="lazy" decoding="async" />
 
 – the Data Protection API library. Loading DPAPI implies the malware may decrypt stored credentials (e.g. browser passwords) by leveraging Windows credential vaults.
 
@@ -447,19 +447,19 @@ This suggests a code-signing evasion tactic to appear legitimate​
 
 user32.dll,
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*uB13b5fv-4WUPc14)
+<img src="https://cdn-images-1.medium.com/max/800/0*uB13b5fv-4WUPc14" alt="Article image" width="503" height="26" loading="lazy" decoding="async" />
 
 comctl32.dll,
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*RiO9C0rfsoaaI4uT)
+<img src="https://cdn-images-1.medium.com/max/800/0*RiO9C0rfsoaaI4uT" alt="Article image" width="687" height="25" loading="lazy" decoding="async" />
 
 GdiPlus.dll,
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*nfUHFNJSTc8RFliC)
+<img src="https://cdn-images-1.medium.com/max/800/0*nfUHFNJSTc8RFliC" alt="Article image" width="741" height="28" loading="lazy" decoding="async" />
 
 wtsapi32.dll, winsta.dll.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*gb4ZSqPC2WQbv5kw)
+<img src="https://cdn-images-1.medium.com/max/800/0*gb4ZSqPC2WQbv5kw" alt="Article image" width="475" height="41" loading="lazy" decoding="async" />
 
 These support GUI and user session interactions. Their presence hints the stealer may employ user-level interactions — for example, user32 for potential keylogging or clipboard access, and GDI+ for graphics/screenshot capture. wtsapi32/winsta allow enumeration of user sessions (possibly to find the active session or gather system info).
 
@@ -467,19 +467,19 @@ These support GUI and user session interactions. Their presence hints the steale
 
 advapi32.dll
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*USGmefFb4UatyaQF)
+<img src="https://cdn-images-1.medium.com/max/800/0*USGmefFb4UatyaQF" alt="Article image" width="474" height="26" loading="lazy" decoding="async" />
 
 and sechost.dll (registry and security functions),
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*VYCQj9jO_DH3xes8)
+<img src="https://cdn-images-1.medium.com/max/800/0*VYCQj9jO_DH3xes8" alt="Article image" width="474" height="26" loading="lazy" decoding="async" />
 
 ole32.dll/oleaut32.dll (COM automation),
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*YxhFpVzvYrtfKFDS)
+<img src="https://cdn-images-1.medium.com/max/800/0*YxhFpVzvYrtfKFDS" alt="Article image" width="474" height="26" loading="lazy" decoding="async" />
 
 psapi.dll (process enumeration).
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*_ckyujkc--squ-8W)
+<img src="https://cdn-images-1.medium.com/max/800/0*_ckyujkc--squ-8W" alt="Article image" width="474" height="26" loading="lazy" decoding="async" />
 
 The malware leveraged these to query system information and perhaps enumerate running processes or security software. There are signs of extensive registry querying (over 2,000 RegQuery calls captured) — likely to gather system config, installed applications, or anti-virus status.
 
@@ -491,7 +491,7 @@ The malware likely scanned for browser data (e.g. Chrome/Brave user data folders
 
 No file writes or new files were created by the malware (Procmon shows**no successful WriteFile**or file creation events). This indicates it didn’t implant itself elsewhere or drop config files. It likely collected data and held it in memory for exfiltration.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*wXOyntB5DCZqZEEC)
+<img src="https://cdn-images-1.medium.com/max/800/0*wXOyntB5DCZqZEEC" alt="Article image" width="438" height="123" loading="lazy" decoding="async" />
 
 One minor filesystem artifact: the Windows**Prefetch**was queried (AUTHENTICATOR.EXE-*.pf), as is normal on first run (no prefetch existed, so it was just the OS looking to create one).
 
@@ -501,7 +501,7 @@ In summary,*Authenticator.exe*’s behavior in the file system was**profiling th
 
 ### Regshot
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*kTb2r3ZcHVlPElmp)
+<img src="https://cdn-images-1.medium.com/max/800/0*kTb2r3ZcHVlPElmp" alt="Article image" width="448" height="448" loading="lazy" decoding="async" />
 
 ​Regshot is a free, open-source utility that allows users to monitor changes in the Windows registry and file system. By taking “snapshots” before and after system modifications, such as software installations or configurations, Regshot identifies and reports all alterations, aiding in system analysis and troubleshooting. ​
 
@@ -539,15 +539,15 @@ For more detailed information and to access the source code, visit the official 
 
 **The malware**did not create any persistent autostart entries in the registry. No new Run/RunOnce keys or Scheduled Task registrations were observed. Regshot comparison shows no Run key added. Instead, registry changes were mostly related to Windows internals: e.g. AuthRoot certificate entries were added under HKLM\SOFTWARE\Microsoft\SystemCertificates\AuthRoot\Certificates\…​
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*6p7p3wBJuBmoWZE0)
+<img src="https://cdn-images-1.medium.com/max/800/0*6p7p3wBJuBmoWZE0" alt="Article image" width="1489" height="463" loading="lazy" decoding="async" />
 
 This corresponds to the OS installing a root certificate (matching the malware’s code signature) — a side-effect of running a signed binary.
 
 Another change was under HKLM\SOFTWARE\Microsoft\IdentityCRL\ThrottleCache\… (for both machine and user SID)​
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*ieWPw6zyt72IRfem)
+<img src="https://cdn-images-1.medium.com/max/800/0*ieWPw6zyt72IRfem" alt="Article image" width="1349" height="67" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*vk-13uQk_6ZNVFA7)
+<img src="https://cdn-images-1.medium.com/max/800/0*vk-13uQk_6ZNVFA7" alt="Article image" width="1600" height="208" loading="lazy" decoding="async" />
 
 These keys are used by Microsoft’s identity services to throttle repeated network requests. Their creation here suggests Windows was caching network authentication info or telemetry related to this process (possibly when it attempted Microsoft endpoints). Crucially, no registry keys indicative of persistence (startup) were set by the malware. This is consistent with many stealers that operate in-memory/on-demand and do not implant persistent hooks to avoid leaving obvious traces.
 
@@ -555,7 +555,7 @@ These keys are used by Microsoft’s identity services to throttle repeated netw
 
 ### Fakenet
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*z-m-FTqz_QN0_fko)
+<img src="https://cdn-images-1.medium.com/max/800/0*z-m-FTqz_QN0_fko" alt="Article image" width="519" height="327" loading="lazy" decoding="async" />
 
 FakeNet-NG is an open-source dynamic network analysis tool designed for malware analysts and penetration testers. It intercepts and redirects network traffic, simulating legitimate network services to observe and analyze malware behavior in a controlled environment. ​
 
@@ -583,7 +583,7 @@ The primary network indicator is the domain**vaniloin.fun**, which the malware a
 
 The malware performed DNS lookups for this domain and established TCP connections to it. An IDS rule (Emerging Threats) specifically flags**DNS queries for “vaniloin.fun”**as indicative of DeerStealer C2 traffic​
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*MlTh_la7j25f1kz9)
+<img src="https://cdn-images-1.medium.com/max/800/0*MlTh_la7j25f1kz9" alt="Article image" width="593" height="250" loading="lazy" decoding="async" />
 
 **No HTTP requests to the malicious domain**were seen in plaintext, because the malware uses HTTPS. We did not capture an explicit POST or data upload in our sandbox network logs — likely because the TLS handshake succeeded but the fake server didn’t properly continue the dialog, so the malware retried without ever sending application-layer data. In a real infection, after the TLS handshake, we would expect an HTTP POST (or series of them) to https://vaniloin.fun/&lt;endpoint&gt; carrying stolen information (credentials, etc.). That content would be encrypted inside TLS.
 
@@ -652,11 +652,11 @@ The malware performed DNS lookups for this domain and established TCP connection
 
 ## Indicators of Compromise (IoCs)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Dzy-t-NNPH8ykBdzhQcIzw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Dzy-t-NNPH8ykBdzhQcIzw.png" alt="Article image" width="629" height="675" loading="lazy" decoding="async" />
 
 ## Yara rules:
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*d0t_7-9ELEXTv-8t)
+<img src="https://cdn-images-1.medium.com/max/800/0*d0t_7-9ELEXTv-8t" alt="Article image" width="1293" height="442" loading="lazy" decoding="async" />
 
 ```text
 rule 

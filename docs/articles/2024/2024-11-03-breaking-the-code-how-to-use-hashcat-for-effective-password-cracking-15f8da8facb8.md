@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH"
 # Breaking the Code: How to Use Hashcat for Effective Password Cracking
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH)
+<img src="https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH" alt="Cover image" width="677" height="336" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex passwords.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH)
+<img src="https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH" alt="Article image" width="677" height="336" loading="lazy" decoding="async" />
 
 ### Overview
 
@@ -148,7 +148,7 @@ hashcat -
 I
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5NkF69cKgqmDwprXTjwB7A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5NkF69cKgqmDwprXTjwB7A.png" alt="Article image" width="892" height="560" loading="lazy" decoding="async" />
 
 ### macOS Installation:
 

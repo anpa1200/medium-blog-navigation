@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*n7RTCZjXHET8XCgI"
 # OWASP Amass Project guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*n7RTCZjXHET8XCgI)
+<img src="https://cdn-images-1.medium.com/max/800/0*n7RTCZjXHET8XCgI" alt="Cover image" width="1545" height="869" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 The**OWASP Amass Project**is a prominent open-source initiative under the Open Web Application Security Project (OWASP), designed to help with in-depth reconnaissance, network mapping, and identifying assets associated with a target domain. It’s particularly valuable in the reconnaissance phase of penetration testing and red teaming exercises, providing cybersecurity professionals with a comprehensive understanding of a target’s external infrastructure.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*n7RTCZjXHET8XCgI)
+<img src="https://cdn-images-1.medium.com/max/800/0*n7RTCZjXHET8XCgI" alt="Article image" width="1545" height="869" loading="lazy" decoding="async" />
 
 ## Key Features of OWASP Amass
 
@@ -71,7 +71,7 @@ Basic command:
 amass
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*SOIaHZPuCEIv1wlF8paBSA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*SOIaHZPuCEIv1wlF8paBSA.png" alt="Article image" width="1135" height="938" loading="lazy" decoding="async" />
 
 ## Amass Intel
 
@@ -310,7 +310,7 @@ enum
  -active -d juice-shop.herokuapp.com 
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Rc0FdvfM22-Rd-drSlxGvQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Rc0FdvfM22-Rd-drSlxGvQ.png" alt="Article image" width="1058" height="285" loading="lazy" decoding="async" />
 
 ## Amass DB
 

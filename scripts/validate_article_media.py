@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 from dataclasses import dataclass
-from datetime import datetime, timezone
 import re
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -143,7 +142,7 @@ def write_report(
         "",
         "# Media Validation",
         "",
-        f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}",
+        "Generated deterministically from the current source inventory.",
         "",
         "## Summary",
         "",

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*CEihhwPyac_RsY7p_uSmLA.jpeg"
 # The Invisible Pipeline: Defending CI/CD from Targeted Attacks
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*CEihhwPyac_RsY7p_uSmLA.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*CEihhwPyac_RsY7p_uSmLA.jpeg" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How adversaries weaponize build systems — and the concrete tools & controls you can use to stop them
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CEihhwPyac_RsY7p_uSmLA.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*CEihhwPyac_RsY7p_uSmLA.jpeg" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 CI/CD pipelines are the nervous system of modern software delivery: automated, highly privileged, and — until recently — under-monitored. That combination makes them an attractive target for attackers who want persistent, high-impact access to source code, secrets, artifact registries, and production systems. This longform guide dives deeper than the usual “secure your tokens” advice. You’ll get concrete attack patterns, realistic examples, and direct recommendations (with tool names and config snippets) you can apply today.
 

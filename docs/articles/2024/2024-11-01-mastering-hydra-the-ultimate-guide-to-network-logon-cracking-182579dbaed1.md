@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*4vYSQJDGT2c8We2s"
 # Mastering Hydra: The Ultimate Guide to Network Logon Cracking
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*4vYSQJDGT2c8We2s)
+<img src="https://cdn-images-1.medium.com/max/800/0*4vYSQJDGT2c8We2s" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Unlocking the Gates of Network Security: An In-Depth Exploration into Mastering Hydra for Advanced Logon Cracking, Penetration Testing, and Ensuring System Integrity in the Digital Age
 
-![hydra password cracking tool](https://cdn-images-1.medium.com/max/800/0*4vYSQJDGT2c8We2s)
+<img src="https://cdn-images-1.medium.com/max/800/0*4vYSQJDGT2c8We2s" alt="hydra password cracking tool" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -149,7 +149,7 @@ After installation, it’s a good idea to test Hydra to ensure it’s working co
 hydra -h
 ```
 
-![Hydra](https://cdn-images-1.medium.com/max/800/1*J-zS_wQ6BX4tj075ENNidA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*J-zS_wQ6BX4tj075ENNidA.png" alt="Hydra" width="1713" height="984" loading="lazy" decoding="async" />
 
 This command should display all the command-line options available with Hydra, indicating that the tool is ready for use. Always ensure you have permission before attempting to penetrate a network or system.
 
@@ -266,7 +266,7 @@ This command tries to log in as “admin” using a list of passwords from`passw
 hydra -L Documents/PasswordCracking/Dictionaries/1000_usernames.txt -P Documents/PasswordCracking/Dictionaries/short_pass_list.txt ftp://192.168.126.143
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Xt5UjbzH5wYOSk70.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*Xt5UjbzH5wYOSk70.png" alt="Article image" width="770" height="136" loading="lazy" decoding="async" />
 
 ### Telnet
 
@@ -276,7 +276,7 @@ hydra -L Documents/PasswordCracking/Dictionaries/1000_usernames.txt -P Documents
 hydra -L Documents/PasswordCracking/Dictionaries/1000_usernames.txt -P Documents/PasswordCracking/Dictionaries/short_pass_list.txt telnet://192.168.126.143
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*sKVNQE8xaBB6kycb.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*sKVNQE8xaBB6kycb.png" alt="Article image" width="770" height="208" loading="lazy" decoding="async" />
 
 ### SMTP
 
@@ -652,7 +652,7 @@ rdp
 //192.168.126.143
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bKZi5NJXjS_4479c_FuMDA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bKZi5NJXjS_4479c_FuMDA.png" alt="Article image" width="1891" height="453" loading="lazy" decoding="async" />
 
 ### SSH
 

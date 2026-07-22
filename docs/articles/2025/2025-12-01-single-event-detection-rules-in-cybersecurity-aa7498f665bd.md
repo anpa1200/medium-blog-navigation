@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png"
 # Single-Event Detection Rules in Cybersecurity
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png" alt="Cover image" width="2816" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -21,7 +21,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png"
 
 This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -45,13 +45,13 @@ In summary, single-event rules are the “tripwires” for obvious malicious act
 
 ## Attack Categories Detectable via Single Event
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*bPl1lltTeIC42i04.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*bPl1lltTeIC42i04.jpg" alt="Article image" width="1280" height="720" loading="lazy" decoding="async" />
 
 Single-event rules can detect a wide range of attack steps where one log entry is sufficiently indicative of malicious activity. Below we present 15 categories of attacks (spanning multiple ATT&CK tactics) that can be caught with atomic detections. For each, we describe example log sources, the attack technique, a pseudo-rule logic, the relevant MITRE ATT&CK technique, and an example alert.
 
 ## 1. Privilege Escalation (Root/Sudo Usage)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0jYsKCSrhmN3PPEzr0e--w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0jYsKCSrhmN3PPEzr0e--w.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**On Linux systems, the use of`sudo`or`su`to gain root privileges is a critical event. For example, the**auth log**or**Sysmon for Linux**will record when a user invokes`sudo`. Attackers who have obtained credentials often try`sudo su -`to elevate.
 
@@ -63,7 +63,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 2. Unauthorized Remote Access (SSH/RDP/VPN Login)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JHHNmi79DP6AC_N5JtqGzw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JHHNmi79DP6AC_N5JtqGzw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Authentication logs (Windows Security Event Log, VPN gateway logs, SSH daemon logs) often show remote login events. Adversaries might obtain credentials and log in via RDP, SSH, or VPN from unusual locations.
 
@@ -75,7 +75,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 3. Persistence Creation (Service Installed / Startup Script Edited)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XSe39wjRjiucAY7oQH3cgw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XSe39wjRjiucAY7oQH3cgw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Adversaries establish persistence by installing services or editing autorun scripts. In Windows, creating a new service is recorded in the System event log (Event ID**7045**: “A service was installed”) and Security log (Event ID**4697**if auditing enabled)[detect.fyi](https://detect.fyi/threat-hunting-suspicious-windows-service-names-2f0dceea204c?gi=c740198b0229#:~:text=,was%20installed%20in%20the%20system). On Linux, adding a script to`/etc/init.d/`or enabling a systemd service, or editing`~/.bashrc`, leaves traces in auditd or file integrity logs.
 
@@ -87,7 +87,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 4. Malware Execution (Suspicious Process or Hash)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pflsofVZFHEnkeQOppV9Zw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pflsofVZFHEnkeQOppV9Zw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Endpoint logs (EDR, AV, Sysmon) that record process executions can catch malware by name or known hash. For instance, if an attacker runs Mimikatz on a host, EDR will log a process`**mimikatz.exe**`or a memory signature; many antivirus solutions log detection of malware file hashes.
 
@@ -99,7 +99,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 5. Suspicious Command-Line (PowerShell Download String)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*THp5n_B-pEZXLc8E4IZcTw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*THp5n_B-pEZXLc8E4IZcTw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Command-line auditing (process creation events with full command line) often surfaces malicious usage of admin tools. A common attacker trick is using PowerShell to download and execute a payload from the internet (e.g. via`Invoke-WebClient`or`DownloadString`). This shows up in process logs as PowerShell with a long base64 string or a URL.
 
@@ -111,7 +111,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 6. Data Exfiltration (Netcat or cURL to External IP)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*s9BigBj1KWDF8d5Ayk5wOw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*s9BigBj1KWDF8d5Ayk5wOw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**If an attacker is exfiltrating data, they might use tools like**netcat**(raw network utility) or**cURL**to send data to an external server. These actions can be caught via process logs on the host or network logs at egress points.
 
@@ -125,7 +125,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 7. Defense Evasion (Disabling Security Tools or Logs)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_qbJo82v1yCdwsaTFCJCWg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_qbJo82v1yCdwsaTFCJCWg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Many adversaries try to disable logging or security software to avoid detection — for example, clearing Windows event logs, turning off Windows Defender, or stopping SIEM agents. These actions often generate their own log entries. Windows systems log an event when the Security log is cleared (Event ID**1102**in Security log) or when someone runs`**wevtutil cl**`to clear logs (which is captured in Sysmon or PowerShell logs). On Linux, running`history -c`or modifying log files might be caught by auditd.
 
@@ -137,7 +137,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 8. Credential Dumping (LSASS Access)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QZVLnr-3GUMUXMtormAZrw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QZVLnr-3GUMUXMtormAZrw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**A hallmark of credential dumping (like using Mimikatz) is unauthorized access to the LSASS process memory on Windows. Sysmon’s**Process Access (Event ID 10)**and Security audit events can catch this. When a process opens LSASS with read memory permissions, Sysmon logs it. On domain controllers, any process doing this is very suspicious.
 
@@ -149,7 +149,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 9. New Admin Account Creation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6uOcoCi1KsZODr6hnPUHbw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6uOcoCi1KsZODr6hnPUHbw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Creating new user accounts, especially adding them to administrative groups, is a common persistence and privilege escalation technique. Domain Controller Security logs (Windows Event IDs**4720**for user creation and**4728/4732**for group membership changes) are primary sources. In cloud environments, CloudTrail logs for IAM user creation or policy changes play a similar role.
 
@@ -161,7 +161,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 10. Public Exploit Indicators (Scanning for Known Paths)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*L3XuERDoE-LDC0Lzq6GyIA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*L3XuERDoE-LDC0Lzq6GyIA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Web server access logs and application logs often show attackers probing known vulnerable files or endpoints. For example, repeated requests to`**/wp-login.php**`(WordPress login page) or`**/manager/html**`(Tomcat admin) could indicate an attacker looking for weak points or performing password spraying.
 
@@ -173,7 +173,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 11. Suspicious File Write (Web Shell in Web Directory)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3D5-0f7hVEsN-1EXYzM_dQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3D5-0f7hVEsN-1EXYzM_dQ.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**File monitoring logs (FIM solutions, OS security logs) can catch unauthorized file creations. A common persistence or exploitation is uploading a**web shell**— e.g., an attacker manages to upload a`.php`or`.jsp`file into a web server’s document root (`/var/www/html/`or`C:\inetpub\wwwroot\`). This is a single filesystem event that can be detected.
 
@@ -185,7 +185,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 12. Cloud Misuse (IAM Policy Changed or API Key Created)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vtv2JtFx8to15XR3nd72aA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vtv2JtFx8to15XR3nd72aA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**In cloud environments (AWS, Azure, GCP), changes to identity and access configurations are logged via services like AWS CloudTrail or Azure AD logs. Attackers who gain cloud access may create new access keys, add roles to themselves, or modify IAM policies to maintain persistence or escalate privileges.
 
@@ -197,7 +197,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 13. Network Scanning (Nmap User-Agent or SYN Scan)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5bjzcmAcVmWTm-VQ3AK03g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5bjzcmAcVmWTm-VQ3AK03g.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Adversaries often perform port scans and service enumeration (using tools like Nmap). While many IDS/IPS solutions detect scans by correlation (many ports probed in short time), sometimes a single event stands out — e.g., an application log where the User-Agent reveals the scan tool, or an IDS signature triggers on a specific pattern.
 
@@ -209,7 +209,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 14. Suspicious DNS Query (Known C2 or Random Domain)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BhCgGjgBVITSntV0e_80UA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BhCgGjgBVITSntV0e_80UA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**DNS queries from internal hosts can reveal malware beacons or command-and-control channels. Notably, malware using Domain Generation Algorithms (DGAs) will produce DNS queries for bizarre, random-looking domain names. Also, beaconing to known bad domains (from threat intel) is catchable with one DNS lookup event.
 
@@ -223,7 +223,7 @@ Single-event rules can detect a wide range of attack steps where one log entry i
 
 ## 15. Exploit Attempts (SQL Injection or XSS Patterns)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_tpWvgM5FwtJXcmCFpGRyg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_tpWvgM5FwtJXcmCFpGRyg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Log Source & Attack:**Web application logs and WAF logs record input parameters and URLs requested by clients. When an attacker attempts SQL Injection (SQLi) or Cross-Site Scripting (XSS), the malicious payload often appears as a distinctive pattern in a single HTTP request.
 
@@ -257,7 +257,7 @@ In practice, an effective detection program uses**both**: atomic rules to catch 
 
 ## Best Practices for Single-Event Rules
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*D3XbC9nW9m6VoHjJIVFvdg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*D3XbC9nW9m6VoHjJIVFvdg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Designing effective single-event detection rules requires careful thought to maximize true positives and minimize false positives:
 
@@ -279,7 +279,7 @@ In summary, the best practices are: choose the**right atomic indicators**, filte
 
 ## Real-World Case Studies
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3IIyqOVvR0-u5yaJZzqkbQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3IIyqOVvR0-u5yaJZzqkbQ.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Real intrusions have been uncovered (or could have been detected) by single-event clues in logs. Here are a few notable examples that highlight the value of atomic detection:
 

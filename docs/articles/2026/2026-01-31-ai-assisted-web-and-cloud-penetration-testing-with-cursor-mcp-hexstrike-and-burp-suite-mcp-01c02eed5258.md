@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*A1OtUodkuog3T-EllA0oRw.png"
 # AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP.
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*A1OtUodkuog3T-EllA0oRw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*A1OtUodkuog3T-EllA0oRw.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Complete Guide to Modern AI-Powered Security Testing. From One Prompt to Full Attack Surface Coverage (Recon → Exploit → Report).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*A1OtUodkuog3T-EllA0oRw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*A1OtUodkuog3T-EllA0oRw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -203,9 +203,9 @@ false
 
 - **Repeater/Intruder:**Manual testing and fuzzing capabilities
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*urfIlqtk0dlWhvSJIY8M5w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*urfIlqtk0dlWhvSJIY8M5w.png" alt="Article image" width="1247" height="654" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*d4s68TfVGGopNxO19-bDEA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*d4s68TfVGGopNxO19-bDEA.png" alt="Article image" width="1247" height="654" loading="lazy" decoding="async" />
 
 ```text
 {
@@ -352,7 +352,7 @@ curl http://127.0.0.1:8889/health
 # In Cursor, check available tools via MCP
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bYkl0wHKC98CjkJFp3u6_Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bYkl0wHKC98CjkJFp3u6_Q.png" alt="Article image" width="1709" height="755" loading="lazy" decoding="async" />
 
 ### Step 3: Configure Burp Suite MCP
 
@@ -388,7 +388,7 @@ Once both MCP servers are configured, Cursor AI should have access to:
 
 - **From Burp:**HTTP proxy, scanner, repeater, intruder capabilities You can verify by asking Cursor to list available tools or by attempting to use a tool. — -
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*swhB2jBeqw-uxeQSZkHK6A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*swhB2jBeqw-uxeQSZkHK6A.png" alt="Article image" width="938" height="350" loading="lazy" decoding="async" />
 
 ## Complete Penetration Test Flow: AI Reasoning in Action
 

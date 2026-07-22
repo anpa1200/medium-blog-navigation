@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*4k2JO228OJrMxfGMortHQA.png"
 # CTI Research: Sandworm / APT44
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*4k2JO228OJrMxfGMortHQA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4k2JO228OJrMxfGMortHQA.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (2009 — March 2026)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4k2JO228OJrMxfGMortHQA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4k2JO228OJrMxfGMortHQA.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -146,7 +146,7 @@ Recent reporting (2024–2026) reveals four parallel trends:
 
 **Bottom line:**APT44 remains a persistent, high-severity threat to critical infrastructure and strategic sectors globally. Defenders need architecture-level controls (edge, AD, OT segmentation) and behavior-based detection of administrative abuse — not IOC-only postures.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*o7N4ZIKZOYK4obnLWWKn2Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*o7N4ZIKZOYK4obnLWWKn2Q.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## Actor Overview
 
@@ -166,7 +166,7 @@ Recent reporting (2024–2026) reveals four parallel trends:
 
 ## Alias / Cluster Crosswalk
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*f-RirHf2jl2vS7SyqZxTNg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*f-RirHf2jl2vS7SyqZxTNg.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 **APT44**is tracked under a large number of designations across vendors and government agencies. The following covers all publicly documented labels.
 
@@ -224,11 +224,11 @@ Recent reporting (2024–2026) reveals four parallel trends:
 
 Attribution to the GRU Main Center for Special Technologies (GTsST — Главный центр специальных технологий), Military Unit 74455, is among the strongest in modern public cyber-intelligence for a destructive actor cluster.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*22riGGiEEYKXEXvMREXVcQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*22riGGiEEYKXEXvMREXVcQ.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 &gt; Note: GTsST (Главный центр специальных технологий) is a Centre (organizational unit) within the Main Directorate of the General Staff of the Armed Forces of the Russian Federation (GU), commonly referred to in the West as the GRU. The correct formal structure is: GTsST → GU (Main Directorate) → General Staff. GTsST is not itself a “directorate” — it is a subordinate Centre within GU/GRU.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*5kUBwRBF0WtYrUCy.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*5kUBwRBF0WtYrUCy.png" alt="Article image" width="1023" height="575" loading="lazy" decoding="async" />
 
 ### Attribution Pillars
 
@@ -258,7 +258,7 @@ The DOJ indictment[R4]names six GRU Unit 74455 officers tied to disruptive opera
 
 [Assessed] This level of public legal granularity materially strengthens attribution confidence versus vendor-only clustering, especially for long-horizon historical campaigns.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*vOykGbw8pSuqdYkI)
+<img src="https://cdn-images-1.medium.com/max/800/0*vOykGbw8pSuqdYkI" alt="Article image" width="1000" height="1294" loading="lazy" decoding="async" />
 
 ## Important Caveat: Incident-Level Attribution
 
@@ -270,7 +270,7 @@ The DOJ indictment[R4]names six GRU Unit 74455 officers tied to disruptive opera
 
 &gt; Timeline entries are [Reported] unless explicitly marked [Assessed] or [Observed/Reported] .
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*AKc9nwZ6mDSaoe-06MYPXA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*AKc9nwZ6mDSaoe-06MYPXA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### 2009–2014 (Pre-Blackout Development Period)
 
@@ -280,7 +280,7 @@ The DOJ indictment[R4]names six GRU Unit 74455 officers tied to disruptive opera
 
 - [Reported] Sandworm exploited a Windows zero-day[(CVE-2014–4114)](https://nvd.nist.gov/vuln/detail/CVE-2014-4114)via weaponized Microsoft Office documents, affecting Windows Vista through 8.1. This was the first publicly documented Sandworm zero-day.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*o1z9DZ7bXhpvSrJ_WtkJxw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*o1z9DZ7bXhpvSrJ_WtkJxw.png" alt="Article image" width="1010" height="510" loading="lazy" decoding="async" />
 
 ### December 2015 (Ukraine Grid Disruption)
 
@@ -414,7 +414,7 @@ The DOJ indictment[R4]names six GRU Unit 74455 officers tied to disruptive opera
 
 Each entry records the corroboration status of a significant reported operation or activity.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RBQj9cKEb4ObctBVktuTBQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RBQj9cKEb4ObctBVktuTBQ.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ### 2015/2016 Ukraine grid disruptions
 
@@ -485,7 +485,7 @@ Each entry records the corroboration status of a significant reported operation 
 
 Observed targeting concentration:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rVI8NXCHUlDASKWCuBQkdg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rVI8NXCHUlDASKWCuBQkdg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 - [Reported]**Energy and utilities (IT+OT):**grid operations, substations, CHP, renewable interconnect points, hydroelectric facilities.[R1][R3][R9][R23]
 

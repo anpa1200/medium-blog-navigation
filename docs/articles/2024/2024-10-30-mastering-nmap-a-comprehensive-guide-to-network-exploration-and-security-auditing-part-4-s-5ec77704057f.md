@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*mfxnb9oTBVXZF2oX.jpeg"
 # Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 4. Scripts
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*mfxnb9oTBVXZF2oX.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*mfxnb9oTBVXZF2oX.jpeg" alt="Cover image" width="700" height="400" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -29,7 +29,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 [**Part 3 is here**](2024-10-28-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-3-450eec6e9db2.md)
 
-![Nmap project guide](https://cdn-images-1.medium.com/max/800/0*mfxnb9oTBVXZF2oX.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*mfxnb9oTBVXZF2oX.jpeg" alt="Nmap project guide" width="700" height="400" loading="lazy" decoding="async" />
 
 ### About author
 
@@ -89,7 +89,7 @@ nmap -sC
 .144
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wuJAjngtVwvwFQKj5ch75Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wuJAjngtVwvwFQKj5ch75Q.png" alt="Article image" width="1910" height="758" loading="lazy" decoding="async" />
 
 ## Categories of NSE Scripts
 
@@ -108,7 +108,7 @@ nmap
 126.144
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HoTt3gBsUWRO3itdUQJ6zg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HoTt3gBsUWRO3itdUQJ6zg.png" alt="Article image" width="1917" height="933" loading="lazy" decoding="async" />
 
 ### You can also merge two categories if required:
 
@@ -131,7 +131,7 @@ nmap --script
  192.168.126.130
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*H8f2phFEtpSEyYNGTDaJ_w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*H8f2phFEtpSEyYNGTDaJ_w.png" alt="Article image" width="1217" height="958" loading="lazy" decoding="async" />
 
 ### Execute a specific Nmap script
 
@@ -143,7 +143,7 @@ nmap -p80 --script=
  192.168.126.144
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*--MabYTCKV32NyTSrG0W9Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*--MabYTCKV32NyTSrG0W9Q.png" alt="Article image" width="1158" height="248" loading="lazy" decoding="async" />
 
 ### Execute custom scripts
 
@@ -203,7 +203,7 @@ nmap
 --script=http-auth-finder 192.168.126.145
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CpNoQ6Ogk16SI3VQd7YURQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CpNoQ6Ogk16SI3VQd7YURQ.png" alt="Article image" width="1146" height="453" loading="lazy" decoding="async" />
 
 This command scans the IP`192.168.126.145`to locate HTTP authentication forms, which can help in pinpointing pages that are potential targets for more detailed security assessments.
 
@@ -222,7 +222,7 @@ enum
 .130
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*89J1PxMURCj_dqhe3q12bA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*89J1PxMURCj_dqhe3q12bA.png" alt="Article image" width="1668" height="889" loading="lazy" decoding="async" />
 
 This command specifically targets the SMB service running on port 445 of the IP address`192.168.126.130`. It aims to list all users on the system, which can be crucial for understanding the target environment and planning further penetration tests or audits.**Command Example**:
 
@@ -237,7 +237,7 @@ nmap -p443
 --script=http-wordpress-users 192.168.122.1
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KfcyBxIMYn9PlzGEK-X6dQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KfcyBxIMYn9PlzGEK-X6dQ.png" alt="Article image" width="1286" height="200" loading="lazy" decoding="async" />
 
 This command scans port 443 (typically used for HTTPS) of the IP address`192.168.122.1`, specifically focusing on detecting WordPress user accounts. This is particularly useful for penetration testing scenarios where gaining insight into potential usernames could facilitate further exploitation attempts.
 
@@ -256,7 +256,7 @@ nmap
 --script=broadcast-dhcp-discover 192.168.126.1/24
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*m8PMdqFSqquRWriPwOpbFg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*m8PMdqFSqquRWriPwOpbFg.png" alt="Article image" width="1187" height="887" loading="lazy" decoding="async" />
 
 This command can reveal information about DHCP servers in your network, including the IP address range they are offering, lease time, DNS servers, and more. It’s useful for network mapping and troubleshooting DHCP configurations.
 
@@ -335,13 +335,13 @@ txt
 .130
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TvPJepArxT0HS5VxqqBPDQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TvPJepArxT0HS5VxqqBPDQ.png" alt="Article image" width="1624" height="588" loading="lazy" decoding="async" />
 
 - `**userdb=~/Documents/PasswordCracking/Dictionaries/short.txt**`: This argument specifies the path to a text file containing a list of usernames to use during the brute-force attempt. The path is given as a relative path from the user's home directory (`~`), which expands to the current user's home directory.
 
 - `**passdb=/home/sulik/Documents/PasswordCracking/Dictionaries/short.txt**`: This argument specifies the path to a text file containing a list of passwords to try during the brute-force attempt. This path is an absolute path.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*poc2bwhTGHvnNQTPCaHuQw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*poc2bwhTGHvnNQTPCaHuQw.png" alt="Article image" width="1425" height="424" loading="lazy" decoding="async" />
 
 ### smb-brute
 
@@ -356,7 +356,7 @@ nmap
 --script=smb-brute -p445 192.168.126.130
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-8UIcK14WRZijcznvfZCgw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-8UIcK14WRZijcznvfZCgw.png" alt="Article image" width="1624" height="260" loading="lazy" decoding="async" />
 
 - This command applies brute force to the SMB service on port 445 of the IP`192.168.122.1`, using a username and password list to potentially crack login credentials. This is particularly useful in penetration testing scenarios where SMB is widely used for file sharing and network communication on Windows networks.
 
@@ -388,7 +388,7 @@ txt
 .130
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*AJ9HY3-g06rCwZRdxXgBng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*AJ9HY3-g06rCwZRdxXgBng.png" alt="Article image" width="1672" height="300" loading="lazy" decoding="async" />
 
 - `**userdb=~/Documents/PasswordCracking/Dictionaries/short.txt**`: This argument specifies the path to a text file containing a list of usernames to use during the brute-force attempt. The path is given as a relative path from the user's home directory (`~`), which expands to the current user's home directory.
 
@@ -407,7 +407,7 @@ nmap -sC
 .144
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wuJAjngtVwvwFQKj5ch75Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wuJAjngtVwvwFQKj5ch75Q.png" alt="Article image" width="1910" height="758" loading="lazy" decoding="async" />
 
 ## More scripts in next Nmap guide…
 

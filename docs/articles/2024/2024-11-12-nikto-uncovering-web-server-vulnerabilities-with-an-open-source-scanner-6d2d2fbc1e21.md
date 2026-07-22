@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*uM8MMKHMinUh4-Uq.jpg"
 # Nikto: Uncovering Web Server Vulnerabilities with an Open-Source Scanner
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*uM8MMKHMinUh4-Uq.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*uM8MMKHMinUh4-Uq.jpg" alt="Cover image" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -31,7 +31,7 @@ Primarily, Nikto scans web servers to detect outdated software, misconfiguration
 
 Due to its simplicity and effectiveness, Nikto has become a mainstay in penetration testing toolkits, providing a fast and straightforward way to identify server vulnerabilities and strengthen web security.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*uM8MMKHMinUh4-Uq.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*uM8MMKHMinUh4-Uq.jpg" alt="Article image" width="1600" height="900" loading="lazy" decoding="async" />
 
 ## Legal Use Disclaimer
 
@@ -184,7 +184,7 @@ Basic command
 nikto
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*k0LVINSaOvlMKCQnmq9y3A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*k0LVINSaOvlMKCQnmq9y3A.png" alt="Article image" width="956" height="638" loading="lazy" decoding="async" />
 
 ### Single Port
 
@@ -195,7 +195,7 @@ nikto -h http:
 //18.158.46.251:30540
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xGf6OexoRm6dn8803EiLXw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xGf6OexoRm6dn8803EiLXw.png" alt="Article image" width="1559" height="510" loading="lazy" decoding="async" />
 
 To check on a different port, specify the port number with the -p (-port) option. This will scan the IP 192.168.0.1 on TCP port 443:
 
@@ -251,7 +251,7 @@ path
 
 - **Usage**: Adjust display to show only relevant information.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JyN9pogyYKG-1WlYE4QIpA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JyN9pogyYKG-1WlYE4QIpA.png" alt="Article image" width="771" height="225" loading="lazy" decoding="async" />
 
 - **Example**: Verbose output
 
@@ -261,7 +261,7 @@ Display
  V -h <target>
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*YtJubeXQjoWtJY-vJ3Ddhg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YtJubeXQjoWtJY-vJ3Ddhg.png" alt="Article image" width="767" height="822" loading="lazy" decoding="async" />
 
 ### -dbcheck
 
@@ -275,7 +275,7 @@ Display
 nikto -dbcheck
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cRH4VYv7dR6BPS6VQRphLA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cRH4VYv7dR6BPS6VQRphLA.png" alt="Article image" width="756" height="700" loading="lazy" decoding="async" />
 
 ### -Format
 
@@ -292,7 +292,7 @@ html
 .html
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TV5I5DUf1ix46Gs8Fea2Jg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TV5I5DUf1ix46Gs8Fea2Jg.png" alt="Article image" width="1092" height="888" loading="lazy" decoding="async" />
 
 ### -Help
 
@@ -306,7 +306,7 @@ html
 nikto -Help
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*up3jW6sleavCZE0G6gpAIQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*up3jW6sleavCZE0G6gpAIQ.png" alt="Article image" width="1164" height="1002" loading="lazy" decoding="async" />
 
 ### -host
 
@@ -349,7 +349,7 @@ id
 nikto -list-plugins
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*R7EoQYrQ0UbGX3VNp793TQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*R7EoQYrQ0UbGX3VNp793TQ.png" alt="Article image" width="1092" height="888" loading="lazy" decoding="async" />
 
 ### -output
 
@@ -460,7 +460,7 @@ nikto -h <target> -Tuning 1
 # To scan for interesting file types
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7JyUyYII83zkviOp7x-JLQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7JyUyYII83zkviOp7x-JLQ.png" alt="Article image" width="703" height="337" loading="lazy" decoding="async" />
 
 ```text
 nikto -h <target> -Tuning 1  
@@ -526,7 +526,7 @@ sub
 
 Reading a Nikto report effectively involves understanding its structure and interpreting the scan findings to assess the security of a web server. Here’s a breakdown of how to read a typical Nikto report and what to look for in each section.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7UQ7IzXLHPs3_dBrtRngBA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7UQ7IzXLHPs3_dBrtRngBA.png" alt="Article image" width="1646" height="513" loading="lazy" decoding="async" />
 
 ### 1. Report Header
 
@@ -540,7 +540,7 @@ The report usually begins with a header that includes essential details about th
 
 - **Nikto Version**: The version of Nikto used for the scan.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_YZ97DKe0dCuGSYjx4BTuA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_YZ97DKe0dCuGSYjx4BTuA.png" alt="Article image" width="807" height="174" loading="lazy" decoding="async" />
 
 ### 2. Server Information
 
@@ -550,13 +550,13 @@ This section gives insights into the server’s configuration and the technology
 
 - **Operating System**: Sometimes includes the OS information if the server reveals it.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5HM37X9ujPNS0aJ2AYoEYw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5HM37X9ujPNS0aJ2AYoEYw.png" alt="Article image" width="783" height="34" loading="lazy" decoding="async" />
 
 **Assessment Tip**: Outdated server software is a red flag, as it may contain unpatched vulnerabilities. Check the version information and confirm if it’s still supported by the vendor.
 
 ### HTML report example:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZAe2Nrx6c1jVGgOxjz-sQg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZAe2Nrx6c1jVGgOxjz-sQg.png" alt="Article image" width="1102" height="139" loading="lazy" decoding="async" />
 
 ### 3. Vulnerability Findings
 
@@ -572,11 +572,11 @@ Each finding generally includes:
 
 - **Additional Info**: Often contains more technical details, references, or suggestions for mitigation.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*X5Odzv5YMBVbPjTMzHXybw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*X5Odzv5YMBVbPjTMzHXybw.png" alt="Article image" width="1619" height="229" loading="lazy" decoding="async" />
 
 ### HTML report example:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oJ9DT4mqs-hJLqMVVDqXeQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oJ9DT4mqs-hJLqMVVDqXeQ.png" alt="Article image" width="1164" height="681" loading="lazy" decoding="async" />
 
 **Assessment Tips**:
 
@@ -594,7 +594,7 @@ Nikto identifies various server misconfigurations or deviations from security be
 
 - **Default Files/Directories**: Presence of default files (e.g.,`/index.html`,`/admin/`) may indicate areas that need better access controls.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gfWz5Y0Z_tam5gX7qX-8Fg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gfWz5Y0Z_tam5gX7qX-8Fg.png" alt="Article image" width="1020" height="35" loading="lazy" decoding="async" />
 
 ### 5. Report Summary and Recommendations
 
@@ -604,11 +604,11 @@ After reviewing the vulnerabilities, the report typically includes a summary or 
 
 - **Prioritize Recommendations**: Address high-severity issues (e.g., file exposure, weak authentication) first
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_uU_3lto1ukkg45zsKAFRA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_uU_3lto1ukkg45zsKAFRA.png" alt="Article image" width="1007" height="92" loading="lazy" decoding="async" />
 
 HTML report:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2aH0bignWsGKI53rgAVqcg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2aH0bignWsGKI53rgAVqcg.png" alt="Article image" width="1021" height="328" loading="lazy" decoding="async" />
 
 **Limitations of Nikto**
 

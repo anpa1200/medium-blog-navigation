@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*1dn9h-_X8_E_EoVV9LR5Zw.png"
 # AI-Driven Black Box Active Directory Penetration Testing
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*1dn9h-_X8_E_EoVV9LR5Zw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1dn9h-_X8_E_EoVV9LR5Zw.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Fully Automated AD Discovery and Exploitation with Cursor AI and HexStrike-ai MCP. From IP to Full dump.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1dn9h-_X8_E_EoVV9LR5Zw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1dn9h-_X8_E_EoVV9LR5Zw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Abstract
 

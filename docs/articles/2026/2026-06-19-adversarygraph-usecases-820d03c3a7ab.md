@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/700/0*uEhtrOMXUiTRj9_e.png"
 # AdversaryGraph Usecases
 
 
-![Cover image](https://cdn-images-1.medium.com/max/700/0*uEhtrOMXUiTRj9_e.png)
+<img src="https://cdn-images-1.medium.com/max/700/0*uEhtrOMXUiTRj9_e.png" alt="Cover image" width="700" height="394" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### 30 Practical AdversaryGraph Use Cases
 
-![Article image](https://cdn-images-1.medium.com/max/700/0*uEhtrOMXUiTRj9_e.png)
+<img src="https://cdn-images-1.medium.com/max/700/0*uEhtrOMXUiTRj9_e.png" alt="Article image" width="700" height="394" loading="lazy" decoding="async" />
 
 [AdversaryGraph v2.5: New Name, New Release, Full AI CTI Platform Capability Map](https://medium.com/@1200km/adversarygraph-v2-5-new-name-new-release-full-ai-cti-platform-capability-map-93cd9224127e)
 
@@ -34,11 +34,11 @@ The main idea is simple: an analyst should be able to take a report, IOC, log ex
 Relevant links:
 
 - GitHub repository:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
-- Official documentation:[https://1200km.com/adversarygraph-docs/](https://1200km.com/adversarygraph-docs/)
-- Getting started guide:[https://1200km.com/adversarygraph-docs/get-started.html](https://1200km.com/adversarygraph-docs/get-started.html)
-- Capabilities overview:[https://1200km.com/adversarygraph-docs/capabilities.html](https://1200km.com/adversarygraph-docs/capabilities.html)
-- Public project page:[https://1200km.com/adversarygraph/](https://1200km.com/adversarygraph/)
-- 1200km research ecosystem:[https://1200km.com/](https://1200km.com/)
+- Official documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
+- Getting started guide:<a href="pathname://https://1200km.com/adversarygraph-docs/get-started.html" target="_self"><span>/adversarygraph-docs/get-started.html</span></a>
+- Capabilities overview:<a href="pathname://https://1200km.com/adversarygraph-docs/capabilities.html" target="_self"><span>/adversarygraph-docs/capabilities.html</span></a>
+- Public project page:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
+- 1200km research ecosystem:<a href="pathname://https://1200km.com/" target="_self"><span>/</span></a>
 
 This article is not a generic feature list. It is a practical use-case map for the platform. Each use case starts from a real analyst situation, shows where to begin in AdversaryGraph, and defines the expected output. You can read it from top to bottom, but it is more useful as a workflow menu:
 
@@ -92,7 +92,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “1” — Check One IOC
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*bMw9Xpzgy6mw_Z1J.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*bMw9Xpzgy6mw_Z1J.gif" alt="Article image" width="1910" height="985" loading="lazy" decoding="async" />
 
 **Scenario:**SOC triage receives a single IP, domain, URL, or hash from an EDR alert, firewall log, phishing ticket, or customer report.
 
@@ -102,7 +102,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “2” — Open One Actor Profile
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*M2AXVIy5z5pXA5Mr.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*M2AXVIy5z5pXA5Mr.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A customer asks whether a named actor in a report is relevant to their environment or sector.
 
@@ -112,7 +112,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “3” — Show Actor TTPs On The Matrix
 
-![Article image](https://cdn-images-1.medium.com/proxy/0*M2AXVIy5z5pXA5Mr.gif)
+<img src="https://cdn-images-1.medium.com/proxy/0*M2AXVIy5z5pXA5Mr.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A detection engineer needs a quick visual view of one actor behavior before planning coverage work.
 
@@ -122,7 +122,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “4” — Search The IOC Library
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*Y8r9ttvPW80-gNZP.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*Y8r9ttvPW80-gNZP.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A SOC analyst wants to know whether an indicator has already appeared in local or synchronized intelligence.
 
@@ -132,7 +132,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “5” — Sync ThreatFox IOCs
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*iX6YZVoEnGlsZ6xSm7Aoyg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*iX6YZVoEnGlsZ6xSm7Aoyg.png" alt="Article image" width="1024" height="537" loading="lazy" decoding="async" />
 
 **Scenario:**The local IOC library needs current malware infrastructure before the team starts daily triage.
 
@@ -142,7 +142,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “6” — Import A Navigator Layer
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*9l3J9KkiI5R7CVH5.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*9l3J9KkiI5R7CVH5.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A team already has an ATT&CK Navigator layer from a previous assessment or another tool.
 
@@ -152,7 +152,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “7” — Export A PDF Report
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*t5z2k2fJe8dpx075.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*t5z2k2fJe8dpx075.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A customer or manager needs a clean summary of reviewed investigation output.
 
@@ -162,7 +162,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “8” — Run Deployment Selftest
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*qoQEuRzMpNI74a6A.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*qoQEuRzMpNI74a6A.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A new Docker deployment starts, but the analyst needs to know whether API keys, database, and sync services are ready.
 
@@ -172,7 +172,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “9” — Add A Custom IOC Feed
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*gVbCIjrpWlwONXng.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*gVbCIjrpWlwONXng.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A private customer or internal team publishes a JSON, CSV, or TXT feed that must stay inside the local environment.
 
@@ -182,7 +182,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “10” — Open Troubleshooting For An Error
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*j1X3LDwfvekJshnSS02qow.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*j1X3LDwfvekJshnSS02qow.png" alt="Article image" width="1024" height="537" loading="lazy" decoding="async" />
 
 **Scenario:**An analyst sees an API error, missing key warning, failed sync, or failed enrichment request.
 
@@ -194,7 +194,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “11” — Map A Report To ATT&CK
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*fSu2bLtUH2lDf2vC.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*fSu2bLtUH2lDf2vC.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A CTI analyst receives a vendor report or incident write-up and needs to convert narrative text into ATT&CK evidence.
 
@@ -204,7 +204,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “12” — Compare Incident TTPs To Actors
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*DQclpOhQqVzBOD69.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*DQclpOhQqVzBOD69.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**An incident shows a known set of behaviors, but attribution is not clear.
 
@@ -214,7 +214,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “13” — Build A Sector Threat Brief
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*r54OzR8J_DXVZzGO.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*r54OzR8J_DXVZzGO.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A telecom, cloud, finance, healthcare, or industrial customer asks which actors are most relevant now.
 
@@ -224,7 +224,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “14” — Enrich Actor IOCs
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*DDIG2htQYpZN4T1K.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*DDIG2htQYpZN4T1K.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**An actor profile has only partial IOC coverage and the analyst needs current infrastructure context.
 
@@ -234,7 +234,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “15” — Import MISP JSON
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*lFOK6J8EBpfTXkEQ.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*lFOK6J8EBpfTXkEQ.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**A partner shares a MISP event or attribute export that needs to be used inside the local investigation workflow.
 
@@ -244,7 +244,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “16” — Pull TAXII Or Import STIX
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*El0DnDFymDfSll5e4pU0IA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*El0DnDFymDfSll5e4pU0IA.png" alt="Article image" width="1024" height="537" loading="lazy" decoding="async" />
 
 **Scenario:**A team receives STIX/TAXII intelligence from a sharing community or internal platform.
 
@@ -254,7 +254,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “17” — Sync YARA, YARA-L, And Sigma Feeds
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*-zEIeRs01h_8X0bjBkBzIw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*-zEIeRs01h_8X0bjBkBzIw.png" alt="Article image" width="1024" height="537" loading="lazy" decoding="async" />
 
 **Scenario:**Detection engineers need current public and private rule sources available while building detections.
 
@@ -264,7 +264,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “18” — Compare Two Reports
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*a0kHtiaVAmoHN18x.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*a0kHtiaVAmoHN18x.gif" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 **Scenario:**Two reports may describe related campaigns but use different names, IOCs, and writing styles.
 
@@ -274,7 +274,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “19” — Review One Coverage Gap
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*m79gvMFKAoqSY6LZAzcgRg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*m79gvMFKAoqSY6LZAzcgRg.png" alt="Article image" width="1024" height="537" loading="lazy" decoding="async" />
 
 **Scenario:**A SOC manager asks whether a specific ATT&CK technique is covered by current detections.
 
@@ -284,7 +284,7 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 
 ## Usecase number “20” — Use A Local LLM For Private Reports
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*V0Z-imYAMXuUr4WQEhkEsg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*V0Z-imYAMXuUr4WQEhkEsg.png" alt="Article image" width="1024" height="537" loading="lazy" decoding="async" />
 
 **Scenario:**A sensitive incident report cannot be sent to external AI providers.
 
@@ -387,5 +387,5 @@ Use this article as a checklist when demonstrating, testing, documenting, or imp
 ## Public Links
 
 - Project:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
-- Documentation:[https://1200km.com/adversarygraph-docs/](https://1200km.com/adversarygraph-docs/)
-- Public use-case page:[https://1200km.com/adversarygraph/use-cases.html](https://1200km.com/adversarygraph/use-cases.html)
+- Documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
+- Public use-case page:<a href="pathname://https://1200km.com/adversarygraph/use-cases.html" target="_self"><span>/adversarygraph/use-cases.html</span></a>

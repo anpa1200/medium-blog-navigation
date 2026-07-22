@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*TFVy46jCnT48wbkRZR6yAg.png"
 # Protocol-Level Network Threat Hunting: A Wireshark-Centric Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*TFVy46jCnT48wbkRZR6yAg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TFVy46jCnT48wbkRZR6yAg.png" alt="Cover image" width="2816" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Uncovering Stealthy Attacks Through IOCs, Anomaly Detection, and Practical Playbooks
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TFVy46jCnT48wbkRZR6yAg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TFVy46jCnT48wbkRZR6yAg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Executive Summary
 
@@ -59,7 +59,7 @@ Network IOCs can be grouped into**host-based vs. network-based**, but here we fo
 dns.qry.name contains "badguy.net"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mBKKytn2uYN7KZyTS5f9vQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mBKKytn2uYN7KZyTS5f9vQ.png" alt="Article image" width="1911" height="240" loading="lazy" decoding="async" />
 
 - **TLS Fingerprints (JA3/JA3S):**The MD5 hash of a client’s TLS ClientHello (JA3) or ServerHello (JA3S) is a reproducible fingerprint. Many malware/tools use distinct TLS parameters, so a rare JA3 hash is an IOC. Wireshark plugins can display JA3 values for filtering.
 
@@ -102,19 +102,19 @@ answers
 12
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*i_17NAka99Zek3mjRzOtyA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*i_17NAka99Zek3mjRzOtyA.png" alt="Article image" width="1911" height="303" loading="lazy" decoding="async" />
 
 - **DNS Tunneling:**Query patterns often involve very long or random-looking subdomains. A simple display filter is`dns.qry.name.len &gt; 15 and !mdns`to capture long query names (excluding mDNS). Known tunnel domains (e.g. dnscat2, iodine) can be filtered by name: e.g.`dns contains "dnscat2"`. Monitor for clusters of queries to a single unusual domain (e.g. many TXT or CNAME responses from one server).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mng7fJlRWIqYvORtJFjAoQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mng7fJlRWIqYvORtJFjAoQ.png" alt="Article image" width="1858" height="507" loading="lazy" decoding="async" />
 
 - **Exfil Patterns:**Attackers may encode data in DNS (hex/base32). After filtering suspicious queries, one can extract them with Tshark: for example,`tshark -Y "dns" -T fields -e dns.qry.name`lists all query names. One might then strip out fixed parts (e.g. suffix domain) and decode the remainder. (See*Hunting Playbook*below.)
 
 - **NXDOMAIN Spikes:**A sudden burst of queries yielding NXDOMAIN (`dns.flags.rcode == 3`) often indicates a DGA or misconfigured C2. Plotting DNS response codes (IO Graphs can chart counts of NXDOMAIN over time) can reveal this anomaly.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sljKXS3w0E3HimzsoZ9IrQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sljKXS3w0E3HimzsoZ9IrQ.png" alt="Article image" width="1917" height="932" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6AC6FMOGhbyPEyno9aZ1lw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6AC6FMOGhbyPEyno9aZ1lw.png" alt="Article image" width="1110" height="681" loading="lazy" decoding="async" />
 
 ## DHCP
 
@@ -139,15 +139,15 @@ len
 64
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*E2HnXUHvrxkiRsVYI1aUPA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*E2HnXUHvrxkiRsVYI1aUPA.png" alt="Article image" width="1915" height="932" loading="lazy" decoding="async" />
 
 - **Ping Flood:**Excessive ICMP Echo Request (type 8) or Reply floods can be spotted by filtering`icmp.type==8`(requests) or`icmp.type==0`(replies) and counting. In tshark:`-Y "icmp.type==8" -z io,stat,0,icmp`shows echo rate. Sudden spikes in ping traffic are a red flag.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9kP-7pLOShUy81c-bDiJeA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9kP-7pLOShUy81c-bDiJeA.png" alt="Article image" width="1915" height="932" loading="lazy" decoding="async" />
 
 - **Unreachable Flood:**Many “Destination Unreachable” messages (type 3) from one IP indicate scanning or routing issues. Use`icmp.type==3`to filter these and see if a host is sending a torrent of unreachable replies.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*g_JRMhaQ_LpKlop4mCKnrw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*g_JRMhaQ_LpKlop4mCKnrw.png" alt="Article image" width="1917" height="604" loading="lazy" decoding="async" />
 
 ## ICMP Type 3 — Destination Unreachable (codes 0–15)
 
@@ -298,15 +298,15 @@ Wireshark offers powerful views and filters for hunting:
 
 - *Protocol Hierarchy:*(Statistics → Protocol Hierarchy) shows a breakdown of protocols present and their relative byte/packet counts. A sudden appearance of an obscure protocol signals investigation.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WpS0f3DyfbgDuKVWVAjwjA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WpS0f3DyfbgDuKVWVAjwjA.png" alt="Article image" width="1917" height="604" loading="lazy" decoding="async" />
 
 - *Endpoints/Conversations:*(Statistics → Endpoints or Conversations) lists all IPs/hosts and their traffic volumes or all sessions. You can sort by bytes or packets to find high-volume or unusual peers.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OYYHc7ToJly_0zp58c7_wg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OYYHc7ToJly_0zp58c7_wg.png" alt="Article image" width="1917" height="604" loading="lazy" decoding="async" />
 
 - *IO Graphs:*(Statistics → I/O Graphs) plots metrics over time. You can graph total packets, bits, or apply a display filter as a series. For example, plot*All Packets*(line) vs*TCP Errors*(dots) or*DNS requests*(dots). This quickly highlights bursts or anomalies (see figure below).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BSIfH5YmyZhQBeW8IvrhTA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BSIfH5YmyZhQBeW8IvrhTA.png" alt="Article image" width="1915" height="861" loading="lazy" decoding="async" />
 
 *Figure: Wireshark I/O Graph plotting packet rates over time (line) with overlaid events (colored dots). This visual helps spot bursts (spikes) or periodic behavior (e.g. beacon intervals).*
 

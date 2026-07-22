@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*Nh0FErKEzDdtl_JLFkUECg.png"
 # One place for my cybersecurity projects, guides, articles, labs, tools, and research workflows
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*Nh0FErKEzDdtl_JLFkUECg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Nh0FErKEzDdtl_JLFkUECg.png" alt="Cover image" width="1024" height="559" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,11 +23,11 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### From Scattered Research to a Structured Cybersecurity Knowledge Base
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Nh0FErKEzDdtl_JLFkUECg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Nh0FErKEzDdtl_JLFkUECg.png" alt="Article image" width="1024" height="559" loading="lazy" decoding="async" />
 
 ### Recently, I built something I had needed for a long time:
 
-[Andrey Pautov - CTI, Detection Engineering & Security Research](https://1200km.com)
+<a href="pathname://https://1200km.com/" target="_self">Andrey Pautov - CTI, Detection Engineering & Security Research</a>
 
 **At first I thought of it as a personal portfolio.**
 

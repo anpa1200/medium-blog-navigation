@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*C8s7mebRGm7A7mmzALwq1A.png"
 # Customer-Driven AI CTI Project Template:Part 2B: Reference Toolkit
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*C8s7mebRGm7A7mmzALwq1A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*C8s7mebRGm7A7mmzALwq1A.png" alt="Cover image" width="2528" height="1696" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From pure CTI to hands-on detection engineering with strict validation gates
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*C8s7mebRGm7A7mmzALwq1A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*C8s7mebRGm7A7mmzALwq1A.png" alt="Article image" width="2528" height="1696" loading="lazy" decoding="async" />
 
 ## This article is one part of a four-part series covering the full customer-driven AI-CTI project lifecycle.
 

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*_HvRb4_s15JQ6FkA9ng-8w.png"
 # Operation Desert Hydra — AI-Assisted CTI Pipeline: MuddyWater to Kibana
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*_HvRb4_s15JQ6FkA9ng-8w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*_HvRb4_s15JQ6FkA9ng-8w.png" alt="Cover image" width="1024" height="559" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### 11 validated detections from public sources, OpenCTI graph, and a one-command lab Table of Contents
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*_HvRb4_s15JQ6FkA9ng-8w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*_HvRb4_s15JQ6FkA9ng-8w.png" alt="Article image" width="1024" height="559" loading="lazy" decoding="async" />
 
 Most threat actor writeups stop too early. They describe the group, list ATT&CK techniques, and paste some IoCs. Then the report sits in a folder while defenders wonder:*what do I actually do with this on Monday?*
 
@@ -60,7 +60,7 @@ Three reasons:
 
 The project enforces a chain from source to Kibana screenshot:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*NDsnhzE7S-lzy0fSIOZrsw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*NDsnhzE7S-lzy0fSIOZrsw.png" alt="Article image" width="1024" height="1447" loading="lazy" decoding="async" />
 
 ```text
 source → claim → procedure → ATT&CK mapping → telemetry requirement
@@ -159,7 +159,7 @@ A few decisions worth explaining:
 
 ### The Review Gate
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*p--8CFcThnLuDmZiNyOdQg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*p--8CFcThnLuDmZiNyOdQg.png" alt="Article image" width="1024" height="1447" loading="lazy" decoding="async" />
 
 Every source that came out of the AI output went through this checklist before being promoted into data/sources.yaml:
 
@@ -194,7 +194,7 @@ Supporting vendor sources: ClearSky, Deep Instinct, Group-IB, Mandiant, Proofpoi
 
 The reliability assessment used a two-axis rubric:**Source Reliability (A–F)**separating publication discipline from content, and**Information Credibility (1–6)**rating how well each claim is grounded.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*672ETgk4DFDJDE0G2-sLgA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*672ETgk4DFDJDE0G2-sLgA.png" alt="Article image" width="1024" height="1447" loading="lazy" decoding="async" />
 
 **CISA AA22–055A — Reliability A, Credibility 2**
 
@@ -212,7 +212,7 @@ The three sources share a common characteristic: they are not secondary aggregat
 
 ### Steps After Deduplication: What Actually Happened to All 71 Sources
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*XeokisYTU_DGw6UH7bLB3w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*XeokisYTU_DGw6UH7bLB3w.png" alt="Article image" width="1024" height="1280" loading="lazy" decoding="async" />
 
 After the AI outputs were merged and deduplicated, 71 candidate sources remained. Here is what happened to them across Steps 5–9:
 
@@ -352,7 +352,7 @@ This is the deduplicated list produced after comparing Gemini and OpenAI outputs
 
 ## Phase 2: Procedure Dataset
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Ji8MQqr4SpW620AV3QN67A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Ji8MQqr4SpW620AV3QN67A.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 A procedure record is not an ATT&CK technique. ATT&CK describes what a class of actors*can*do. A procedure record describes what*this actor*did, in*this campaign*, as documented by*this source*, with a specific evidence label attached.
 
@@ -464,7 +464,7 @@ bash start.sh --skip-lab   # starts OpenCTI + Elasticsearch + Kibana only
 
 All 12 core containers start: Redis, Elasticsearch, MinIO, RabbitMQ, OpenCTI platform, 3 workers, and the MITRE ATT&CK connector.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*_8pjCgFqyge4o-bahQTX6Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*_8pjCgFqyge4o-bahQTX6Q.png" alt="Article image" width="1024" height="885" loading="lazy" decoding="async" />
 
 **Result:**OpenCTI reachable at http://localhost:8080. All containers healthy.
 
@@ -472,7 +472,7 @@ All 12 core containers start: Redis, Elasticsearch, MinIO, RabbitMQ, OpenCTI pla
 
 The MITRE ATT&CK connector loads 846 techniques into the graph. This sync must complete before the import script can link procedures to techniques.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*k4o9xri96voJcB0EUQPqfg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*k4o9xri96voJcB0EUQPqfg.png" alt="Article image" width="1024" height="446" loading="lazy" decoding="async" />
 
 **Result:**846 ATT&CK patterns loaded. Connector state: ACTIVE.
 
@@ -757,9 +757,9 @@ print(f"Import complete - malware: {len(MALWARE_IDS)}, tools: {len(TOOL_IDS)}, "
       f"reports: {len(REPORT_IDS)}, ATT&CK links: {len(linked)}, stubs: {len(stubs)}")
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*WMvnfWfF50hj3Rk60DBAxA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*WMvnfWfF50hj3Rk60DBAxA.png" alt="Article image" width="1024" height="775" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*XMTEbgDPokzU9iTK3sjEww.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*XMTEbgDPokzU9iTK3sjEww.png" alt="Article image" width="1024" height="775" loading="lazy" decoding="async" />
 
 **Result:**All objects created. Re-run confirms idempotency (no duplicates).
 
@@ -767,37 +767,37 @@ print(f"Import complete - malware: {len(MALWARE_IDS)}, tools: {len(TOOL_IDS)}, "
 
 **Result:**MuddyWater entity with all aliases, Iran MOIS attribution relationship, campaign links, and malware/tool associations confirmed in OpenCTI.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*5KWUHIP3nkUhF6wpQpDa3g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*5KWUHIP3nkUhF6wpQpDa3g.png" alt="Article image" width="1024" height="537" loading="lazy" decoding="async" />
 
 ### Step 14: Knowledge Graph
 
 **Result:**Graph shows MuddyWater → 9 malware, 4 tools, 3 campaigns, 21 ATT&CK techniques — all with source-annotated relationship edges.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*-B2D00HhbhmdA5rtGm7klA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*-B2D00HhbhmdA5rtGm7klA.png" alt="Article image" width="1024" height="537" loading="lazy" decoding="async" />
 
 ### Step 15: ATT&CK Matrix Coverage
 
 **Result:**21 techniques highlighted across 8 tactics in the ATT&CK Enterprise matrix.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*4XphzS2vtf-peVJ-ArTglg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*4XphzS2vtf-peVJ-ArTglg.png" alt="Article image" width="1024" height="646" loading="lazy" decoding="async" />
 
 ### Step 16: BugSleep Malware Detail
 
 **Result:**BugSleep malware object with INCD 2024 source annotation, T1053.005 relationship (43-minute task), and C2 technique links confirmed.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*3rt63a6jCO_-fk-BLdyaTw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*3rt63a6jCO_-fk-BLdyaTw.png" alt="Article image" width="1024" height="514" loading="lazy" decoding="async" />
 
 ### Step 17: Reports List
 
 **Result:**20 report objects, one per promoted source. Each report links to the procedures and techniques it evidences.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*-Ej71hGDspW3ahdqZWATAA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*-Ej71hGDspW3ahdqZWATAA.png" alt="Article image" width="1024" height="514" loading="lazy" decoding="async" />
 
 ### Step 19: OpenCTI Dashboard
 
 **Result:**Custom dashboard showing technique frequency heatmap by source tier — highest-corroborated techniques visible at a glance.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*_HccHBJxzb-ZZu93WImMhg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*_HccHBJxzb-ZZu93WImMhg.png" alt="Article image" width="1024" height="514" loading="lazy" decoding="async" />
 
 ## Phase 4: Detection Atlas
 
@@ -817,7 +817,7 @@ Before any detection went to validation, every record went through a review pass
 
 ### det_mw_0001 — Email Delivery Correlated with Process Spawn
 
-![Article image](https://cdn-images-1.medium.com/max/796/1*ycAoCbrkdxo6oxx4X0Gkhw.png)
+<img src="https://cdn-images-1.medium.com/max/796/1*ycAoCbrkdxo6oxx4X0Gkhw.png" alt="Article image" width="796" height="959" loading="lazy" decoding="async" />
 
 *Techniques: T1566.001, T1566.002 · Score: 5 (lab-validated)*
 
@@ -1120,7 +1120,7 @@ script_block_text MATCHES "(Win32_ComputerSystem|Win32_UserAccount|UserName)"
 
 ### det_mw_0010 — LSASS Memory Access and Credential Tool Execution
 
-![Article image](https://cdn-images-1.medium.com/max/699/1*J0Q8ExDAG7jBY7duoI35MA.png)
+<img src="https://cdn-images-1.medium.com/max/699/1*J0Q8ExDAG7jBY7duoI35MA.png" alt="Article image" width="699" height="960" loading="lazy" decoding="async" />
 
 *Techniques: T1003.001, T1003.004, T1003.005 · Score: 5 (lab-validated)*
 
@@ -1164,7 +1164,7 @@ file_path MATCHES "(\\AppData\\|\\Temp\\|\\Users\\|\\ProgramData\\)"
 
 ### Architecture
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*8U-N2gM0mGw6qRI7SG06dw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*8U-N2gM0mGw6qRI7SG06dw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 ### Deploy in One Command
 
@@ -1190,7 +1190,7 @@ The Ansible playbook (lab/ansible/playbooks/validate.yml) runs each simulation, 
 
 ### Step 21: det_mw_0001 — Spearphishing Delivery Chain
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*8bLoGgU_easNlOr4ZndCgg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*8bLoGgU_easNlOr4ZndCgg.png" alt="Article image" width="1024" height="412" loading="lazy" decoding="async" />
 
 **What MuddyWater does:**Delivers a ZIP or Office file via email or Egnyte/OneDrive link. The attachment contains a VBScript or WSF file that spawns a hidden encoded PowerShell loader (PowGoop/POWERSTATS).
 
@@ -1222,7 +1222,7 @@ AND winlog.event_data.Image: *cmd.exe*
 AND winlog.event_data.CommandLine: (*whoami* OR *hostname* OR *ipconfig*)
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*PdbeaS4qAhZO0Abz1vnxlw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*PdbeaS4qAhZO0Abz1vnxlw.png" alt="Article image" width="1024" height="412" loading="lazy" decoding="async" />
 
 **Result: PASS**— Sysmon EID 1 captured wscript.exe → cmd.exe with recon commands in CommandLine.
 
@@ -1240,7 +1240,7 @@ AND winlog.event_data.CommandLine: *-e*
 AND winlog.event_data.CommandLine: *[A-Za-z0-9+/]{40,}*
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*t-a6QvN0QQMAwrYTgedLgw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*t-a6QvN0QQMAwrYTgedLgw.png" alt="Article image" width="1024" height="412" loading="lazy" decoding="async" />
 
 **Rule A Result: PASS**— 4 events captured. PowerShell with Base64 blob visible in command line.
 
@@ -1254,7 +1254,7 @@ AND winlog.event_data.ScriptBlockText: *IEX*
 AND winlog.event_data.ScriptBlockText: *DownloadString*
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*-VDCsOq78LyTENKxOUQjJg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*-VDCsOq78LyTENKxOUQjJg.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 **Rule B Result: PASS**— 16 EID 4104 events. Script Block Logging decoded the IEX + DownloadString pattern.
 
@@ -1283,7 +1283,7 @@ AND winlog.event_data.TargetObject: *CurrentVersion\Run\OutlookMicrosift*
 
 **Rule A Result: PASS**— 3 Sysmon EID 13 events. OutlookMicrosift Run key captured.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*RTAU8BoEU41ydMrali20PA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*RTAU8BoEU41ydMrali20PA.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 **Rule C simulation:**Copy a benign .wsf file to %APPDATA%\...\Start Menu\Programs\Startup\
 
@@ -1295,7 +1295,7 @@ AND winlog.event_data.TargetFilename: *\Startup\*
 AND winlog.event_data.TargetFilename: *.wsf*
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*C6VaYiU1W6t9P7VM9Uyq6Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*C6VaYiU1W6t9P7VM9Uyq6Q.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 **Rule C Result: PASS**— 3 Sysmon EID 11 events. WSF file creation in Startup folder captured.
 
@@ -1313,7 +1313,7 @@ AND winlog.event_data.Image: *\schtasks.exe*
 AND winlog.event_data.CommandLine: */mo 43*
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*8a6plhGCKeJFpgCePxizDA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*8a6plhGCKeJFpgCePxizDA.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 **Result: PASS**— 3 Sysmon EID 1 events. schtasks.exe /mo 43 captured. The 43-minute interval in the command line is the exact BugSleep artifact.
 
@@ -1334,7 +1334,7 @@ AND winlog.event_data.Image: *\Temp\ScreenConnect*
 
 **Result: PASS**— 6 Sysmon EID 1 events. RMM binary executing from \Temp\ captured.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*U9wgP3tZtCZYaEGIct6woQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*U9wgP3tZtCZYaEGIct6woQ.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 &gt; Production requirement: This detection requires a baseline of authorized RMM deployments per endpoint. Without the baseline, it generates noise. With it, any out-of-baseline RMM execution is an immediate high-confidence alert.
 
@@ -1359,7 +1359,7 @@ winlog.event_id: 22
 AND winlog.event_data.QueryName: *.test.internal*
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*yt5HdYyG3lGJi-pY88VPXA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*yt5HdYyG3lGJi-pY88VPXA.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 **Result: PASS**— 180 Sysmon EID 22 events captured. 42-character random labels visible in QueryName field. Volume threshold (Rule A) and label-length threshold (Rule B) would both trigger in a production deployment.
 
@@ -1378,7 +1378,7 @@ AND winlog.event_data.ScriptBlockText: *SecurityCenter2*
 
 **Rule A Result: PASS**— 21 PS EID 4104 events. SecurityCenter2 visible in decoded ScriptBlockText.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*wpLAuTyJkLgoqezMzJWISA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*wpLAuTyJkLgoqezMzJWISA.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 &gt; Detection value: SecurityCenter2 + AntiVirusProduct is one of the highest-specificity behavioral signals in this dataset. Its legitimate caller population is tiny: only AV management consoles and a few inventory tools query this namespace. A PowerShell process making this query outside those exceptions warrants immediate investigation.
 
@@ -1396,7 +1396,7 @@ AND winlog.event_data.TargetImage: *lsass.exe*
 AND winlog.event_data.GrantedAccess: 0x1400
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*G-oMtjgeEzuCIKfTDznKzA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*G-oMtjgeEzuCIKfTDznKzA.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 **Rule A Result: PASS**— 3,398 Sysmon EID 10 events with GrantedAccess: 0x1400 and TargetImage: lsass.exe. The high event count is expected — LSASS receives many legitimate handle requests from AV, EDR, and Windows system processes. Production deployment requires an allowlist of known-good callers.
 
@@ -1410,7 +1410,7 @@ AND winlog.event_data.TargetFilename: *.dmp*
 AND winlog.event_data.TargetFilename: *Temp*
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*TrCWgKcujqKdBRCX-OG26w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*TrCWgKcujqKdBRCX-OG26w.png" alt="Article image" width="1024" height="498" loading="lazy" decoding="async" />
 
 **Rule C Result: PASS**— 6 Sysmon EID 11 events. C:\Temp\dh-lab\lsass_test.dmp creation captured.
 
@@ -1418,7 +1418,7 @@ AND winlog.event_data.TargetFilename: *Temp*
 
 ## Phase 5 Validation Results Summary
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Yl6Y0h2_ePVKH3i8einFDQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Yl6Y0h2_ePVKH3i8einFDQ.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Full run: ansible-playbook playbooks/validate.yml —**ok=70 changed=42 failed=0**
 

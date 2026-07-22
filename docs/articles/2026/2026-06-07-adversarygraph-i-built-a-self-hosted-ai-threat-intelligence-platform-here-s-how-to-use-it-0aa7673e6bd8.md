@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*31Nq2VMJ9Mm9lgryHGJRQQ.png"
 # AdversaryGraph: I Built a Self-Hosted AI Threat Intelligence Platform — Here’s How to Use It
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*31Nq2VMJ9Mm9lgryHGJRQQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*31Nq2VMJ9Mm9lgryHGJRQQ.png" alt="Cover image" width="1024" height="572" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Map adversary behaviour to MITRE ATT&CK in seconds, compare against 160+ APT groups, and generate PDF reports — all running locally with your own LLM keys.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*31Nq2VMJ9Mm9lgryHGJRQQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*31Nq2VMJ9Mm9lgryHGJRQQ.png" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -55,7 +55,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ## The Problem
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*69nMwI7Xj8eNIWHv_C_KVg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*69nMwI7Xj8eNIWHv_C_KVg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 Every threat intelligence analyst knows the workflow: you receive a malware report, an IR summary, or a threat feed entry, and you need to translate it into ATT&CK technique IDs so you can slot it into a detection backlog or a purple-team plan.
 
@@ -67,41 +67,41 @@ AdversaryGraph is my attempt to solve this for analysts who want a self-hosted, 
 
 ## What AdversaryGraph Does
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*7jquz_YKO0Odni3r3InzYw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*7jquz_YKO0Odni3r3InzYw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 In one sentence:**you give it a threat report, it gives you ATT&CK technique IDs, APT group matches, confidence scores, and a PDF.**
 
 **Concretely:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*VAfpLRWhfkB0pwRR5C4Nlw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*VAfpLRWhfkB0pwRR5C4Nlw.png" alt="Article image" width="1024" height="539" loading="lazy" decoding="async" />
 
 - **AI Analysis**— upload a PDF, DOCX, or TXT file (or paste text), pick Claude, GPT-4o, or Gemini, and get a streamed extraction of every ATT&CK technique the LLM identifies with evidence snippets and confidence scores
 
-![Article image](https://cdn-images-1.medium.com/max/502/1*Up-LNxuga22bScwyZiFuHA.png)
+<img src="https://cdn-images-1.medium.com/max/502/1*Up-LNxuga22bScwyZiFuHA.png" alt="Article image" width="502" height="1007" loading="lazy" decoding="async" />
 
 - **ATT&CK Navigator**— an interactive heatmap of the full ATT&CK matrix (Enterprise, Mobile, ICS) where you build and explore your TTP layer
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*4zLLN71CBFHIMCEPOrTxmw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*4zLLN71CBFHIMCEPOrTxmw.png" alt="Article image" width="1024" height="423" loading="lazy" decoding="async" />
 
 - **APT Attribution**— automatic Jaccard similarity ranking of every extraction against 174+ named ATT&CK threat groups and 56+ named campaigns (e.g. “Operation Ghost”, “SolarWinds Compromise”)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Dw7KTqHRijCEkYvUrdBMbQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Dw7KTqHRijCEkYvUrdBMbQ.png" alt="Article image" width="1024" height="407" loading="lazy" decoding="async" />
 
 - **Compare**— deep side-by-side comparison of your TTP set against groups, MITRE named campaigns, or your own stored report library; with visual matrix diff, tactic breakdown chart, and gap analysis
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*07j05Kn78RJY96S3Ga4IVQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*07j05Kn78RJY96S3Ga4IVQ.png" alt="Article image" width="1024" height="423" loading="lazy" decoding="async" />
 
 - **Export**— ATT&CK Navigator-compatible JSON layers and multi-page PDF reports suitable for executive briefings
 
 Everything runs locally in Docker. Your threat reports never leave your machine.(With local or private LLM)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*z711T5SOrORpjITlM2IY9A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*z711T5SOrORpjITlM2IY9A.png" alt="Article image" width="1024" height="146" loading="lazy" decoding="async" />
 
 ## Architecture in Brief
 
 AdversaryGraph is four containers:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*a6c9YTdIktlPk1w0FRQHaA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*a6c9YTdIktlPk1w0FRQHaA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 The backend ingests ATT&CK STIX 2.1 bundles directly from MITRE’s GitHub repository using pure Python — no third-party ATT&CK library, fully compatible with Python 3.12. All three ATT&CK domains (Enterprise, Mobile, ICS) are parsed and stored in PostgreSQL with JSONB arrays for the STIX arrays.
 
@@ -157,7 +157,7 @@ docker compose logs -f api
 
 You’ll see something like:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*z4L2KcZIixQjdkrcBt8OlA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*z4L2KcZIixQjdkrcBt8OlA.png" alt="Article image" width="1024" height="205" loading="lazy" decoding="async" />
 
 ```text
 Parsing enterprise-attack-19.1.json ...
@@ -172,11 +172,11 @@ This takes 5–15 minutes depending on your network speed. Subsequent startups a
 
 - Frontend:[http://localhost:3000](http://localhost:3000)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*l_EPylZmZEnAaDF6JjQE4w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*l_EPylZmZEnAaDF6JjQE4w.png" alt="Article image" width="1024" height="538" loading="lazy" decoding="async" />
 
 - API docs (Swagger UI):[http://localhost:8000/docs](http://localhost:8000/docs)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*CsGSK7APVQvnvTDCLxXKNA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*CsGSK7APVQvnvTDCLxXKNA.png" alt="Article image" width="1024" height="662" loading="lazy" decoding="async" />
 
 ## Core Workflow: Analysing a Threat Report
 
@@ -186,7 +186,7 @@ This is the killer feature and what most analysts will use day-to-day.
 
 Navigate to**Analyze**in the sidebar. You’ll see:
 
-![Article image](https://cdn-images-1.medium.com/max/496/1*EsC2UAT23n0xRDPv29oEWg.png)
+<img src="https://cdn-images-1.medium.com/max/496/1*EsC2UAT23n0xRDPv29oEWg.png" alt="Article image" width="496" height="1006" loading="lazy" decoding="async" />
 
 1. A provider dropdown (Claude / GPT-4o / Gemini)
 2. An optional model override (defaults to claude-opus-4-8, gpt-4o, gemini-2.0-flash)
@@ -202,17 +202,17 @@ For a PDF analysis report:
 
 You’ll immediately see the LLM’s response streaming in the output box — token by token, just like ChatGPT. This is not a spinner that makes you wait: you can read the thinking as it happens.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*89fT-TuOac6OMSNdZ61vag.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*89fT-TuOac6OMSNdZ61vag.png" alt="Article image" width="1024" height="536" loading="lazy" decoding="async" />
 
 ### Reading the results
 
 When the stream completes, three tabs appear:
 
-![Article image](https://cdn-images-1.medium.com/max/273/1*FpAXPkiL1j3fiuOkL7tp8A.png)
+<img src="https://cdn-images-1.medium.com/max/273/1*FpAXPkiL1j3fiuOkL7tp8A.png" alt="Article image" width="273" height="47" loading="lazy" decoding="async" />
 
 **Techniques tab**— the core output. Each row shows:
 
-![Article image](https://cdn-images-1.medium.com/max/675/1*aSqu_irokLlGQa1Njwa0fQ.png)
+<img src="https://cdn-images-1.medium.com/max/675/1*aSqu_irokLlGQa1Njwa0fQ.png" alt="Article image" width="675" height="785" loading="lazy" decoding="async" />
 
 FieldExampleATT&CK IDT1059.001NamePowerShellTacticExecutionConfidence92%Evidence*”executed a base64-encoded PowerShell payload”*
 
@@ -220,7 +220,7 @@ The evidence field is a direct quote or paraphrase from your source document —
 
 **APT Matches tab**— the attribution layer. Computed locally using Jaccard similarity between your extracted techniques and every named ATT&CK group’s known TTP set. The top 10 are shown with:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*RL5VY8-RMrIQv_SIZpwPQQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*RL5VY8-RMrIQv_SIZpwPQQ.png" alt="Article image" width="1024" height="502" loading="lazy" decoding="async" />
 
 - Similarity score (0–100%)
 - Shared technique count
@@ -230,13 +230,13 @@ A match above 25–30% is worth investigating. Don’t treat this as definitive 
 
 **Raw Response**— the LLM’s full JSON output. Useful for debugging when the model outputs something unexpected.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*T8D25vI8Mt2T7iWmqEJkfA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*T8D25vI8Mt2T7iWmqEJkfA.png" alt="Article image" width="1024" height="502" loading="lazy" decoding="async" />
 
 ## Inject into Navigator
 
 Click**→ Inject into Navigator**to push all extracted techniques into your live Navigator layer. You can then:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*q9LHKlOmbS1119qTlPKjIA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*q9LHKlOmbS1119qTlPKjIA.png" alt="Article image" width="1024" height="510" loading="lazy" decoding="async" />
 
 - See the techniques highlighted on the full ATT&CK matrix
 - Overlay an APT group to visualise the behavioural overlap
@@ -250,7 +250,7 @@ The Navigator is the central hub. It renders the full ATT&CK matrix as an intera
 
 Click any technique cell to add it to your layer (it turns red). Click again to deselect. For sub-techniques, click the small ▶ arrow to expand the parent cell and see the sub-technique rows.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*QkMDTHSy82_j4PA96Q3j6A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*QkMDTHSy82_j4PA96Q3j6A.png" alt="Article image" width="1024" height="510" loading="lazy" decoding="async" />
 
 **Practical tip:**use the search box to find techniques by name or ID without manually scanning the matrix. Type T1059 to jump to all Command and Scripting Interpreter techniques, or type phish to find all phishing-related techniques.
 
@@ -260,7 +260,7 @@ Click any technique cell to add it to your layer (it turns red). Click again to 
 2. Click**Overlay on Navigator**
 3. Return to**Navigator**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*62_zstQMYPoqj4kSTn4nBg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*62_zstQMYPoqj4kSTn4nBg.png" alt="Article image" width="1024" height="161" loading="lazy" decoding="async" />
 
 The matrix now uses three colours:
 
@@ -268,7 +268,7 @@ The matrix now uses three colours:
 - **Blue**— in the APT group’s profile only
 - **Amber**— in both (the overlap)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*XfbZTKCAGTSArnhi3tiMOA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*XfbZTKCAGTSArnhi3tiMOA.png" alt="Article image" width="1024" height="437" loading="lazy" decoding="async" />
 
 This visual immediately answers:*“Which of this group’s known techniques am I not already detecting?”*
 
@@ -280,7 +280,7 @@ If you already have ATT&CK Navigator layers from previous work, click**↑ Impor
 
 Once you have built a TTP layer — whether through AI analysis, manual selection, or an APT campaign overlay — you can save it to the database with a name and reload it in any future session.
 
-![Article image](https://cdn-images-1.medium.com/max/584/1*m1Zh30Hm7e6wmzZq1Mjdog.png)
+<img src="https://cdn-images-1.medium.com/max/584/1*m1Zh30Hm7e6wmzZq1Mjdog.png" alt="Article image" width="584" height="108" loading="lazy" decoding="async" />
 
 ### Why this matters
 
@@ -312,7 +312,7 @@ To delete a layer you no longer need, click the**✕**button next to it in the L
 
 The Compare view has three modes selectable from a switcher at the top of the page.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*lKoiwInK4AuBHDFSINWekA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*lKoiwInK4AuBHDFSINWekA.png" alt="Article image" width="1024" height="131" loading="lazy" decoding="async" />
 
 ### Mode 1 — Groups (DB 1)
 
@@ -320,17 +320,17 @@ With techniques selected in Navigator (or injected from an AI analysis), navigat
 
 Click any group to open the four-tab detail view:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*aJW4II93D-bLqFMexDlW1g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*aJW4II93D-bLqFMexDlW1g.png" alt="Article image" width="1024" height="408" loading="lazy" decoding="async" />
 
 **Overview**— similarity score, shared technique chips (amber), techniques only in your layer (red). Answers:*“How much of our observed behaviour matches this group’s known playbook?”*
 
 **Tactic Breakdown**— stacked bar per kill-chain phase: shared / user-only / APT-only. Reveals*where*in the kill chain the overlap is concentrated.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*_Dlqijzjnt_Ehr1ULHPmrg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*_Dlqijzjnt_Ehr1ULHPmrg.png" alt="Article image" width="1024" height="408" loading="lazy" decoding="async" />
 
 **Visual Diff**— compact colour-strip matrix. Best for presentations.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*lLkb-oRUX5Tns2S85SS16g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*lLkb-oRUX5Tns2S85SS16g.png" alt="Article image" width="1024" height="408" loading="lazy" decoding="async" />
 
 **Gap Analysis**— every technique in the group’s known profile not in your layer. This is your detection backlog.
 
@@ -338,7 +338,7 @@ Click any group to open the four-tab detail view:
 
 Switch to**Campaigns (DB 1)**and click**Compare vs Campaigns**. This ranks all 56+ named MITRE operations by Jaccard similarity.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*0dTCvSgZ4dMeQDXkbutXPA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*0dTCvSgZ4dMeQDXkbutXPA.png" alt="Article image" width="1024" height="408" loading="lazy" decoding="async" />
 
 **Why this is more precise than group comparison:**A group’s aggregate profile spans years. A campaign profile is one specific attack. Matching your TTPs against C0024 (SolarWinds Compromise) at 40% is a sharper lead than matching against G0016 (APT29) at 15%.
 
@@ -346,13 +346,13 @@ Switch to**Campaigns (DB 1)**and click**Compare vs Campaigns**. This ranks all 5
 
 Switch to**Reports (DB 2)**. The left panel lists every AI analysis you have ever run. Click any report to re-run Jaccard comparison against all ATT&CK groups — without re-calling the LLM.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*ecTDnydMYwWX8-Ncuk8GfQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*ecTDnydMYwWX8-Ncuk8GfQ.png" alt="Article image" width="1024" height="408" loading="lazy" decoding="async" />
 
 Use this for retrospective attribution after ATT&CK releases new group data, or to cluster multiple incidents under a common actor.
 
 ### Practical attribution workflow
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*JDE0azpONj0OVW95p9yZkg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*JDE0azpONj0OVW95p9yZkg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 1. Run AI analysis on your incident data (give it a descriptive name)
 2. Inject extracted techniques into Navigator
@@ -458,7 +458,7 @@ curl "http://localhost:8000/api/apt/campaigns?domain=enterprise-attack&group_id=
 
 AdversaryGraph generates two types of PDF reports.
 
-![Article image](https://cdn-images-1.medium.com/max/581/1*oyHjzN-tAx7Lx19Xg0IPyA.png)
+<img src="https://cdn-images-1.medium.com/max/581/1*oyHjzN-tAx7Lx19Xg0IPyA.png" alt="Article image" width="581" height="802" loading="lazy" decoding="async" />
 
 ### Analysis report
 
@@ -480,7 +480,7 @@ Every technique in the detail panel has an embedded AI chat. This is not a gener
 
 **Practical prompts that work well:**
 
-![Article image](https://cdn-images-1.medium.com/max/433/1*Rai3eOrk1Upsd4zeHxtroA.png)
+<img src="https://cdn-images-1.medium.com/max/433/1*Rai3eOrk1Upsd4zeHxtroA.png" alt="Article image" width="433" height="877" loading="lazy" decoding="async" />
 
 For detection engineering:
 
@@ -506,7 +506,7 @@ The**context**field at the bottom of the chat lets you paste additional informat
 
 ## Working with All Three ATT&CK Domains
 
-![Article image](https://cdn-images-1.medium.com/max/466/1*lp9MmZunILgId0X7JHQVbw.png)
+<img src="https://cdn-images-1.medium.com/max/466/1*lp9MmZunILgId0X7JHQVbw.png" alt="Article image" width="466" height="116" loading="lazy" decoding="async" />
 
 AdversaryGraph supports Enterprise, Mobile, and ICS ATT&CK out of the box.
 

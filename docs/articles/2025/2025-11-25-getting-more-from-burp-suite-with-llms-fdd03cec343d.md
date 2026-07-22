@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*cE0-LdPYh7JiYvc2jlyppQ.jpeg"
 # Getting More from Burp Suite with LLMs
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*cE0-LdPYh7JiYvc2jlyppQ.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*cE0-LdPYh7JiYvc2jlyppQ.jpeg" alt="Cover image" width="1024" height="572" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How ChatGPT Accelerates Scan Analysis, Prioritization and Mitigation. Practical workflow and prompt recipes for turning Burp scan output into actionable findings, prioritized remediation, and next-step playbooks for penetration testers.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cE0-LdPYh7JiYvc2jlyppQ.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*cE0-LdPYh7JiYvc2jlyppQ.jpeg" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
 
 ## Intro
 
@@ -62,13 +62,13 @@ Burp Suite is a powerhouse for active web vulnerability discovery. But raw scan 
 
 For this guide I’ll use**DVWA**(Damn Vulnerable Web Application) is a perfect demo target. Running on docker.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JiuHw_mC5MtJ0GzxdKd4dg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JiuHw_mC5MtJ0GzxdKd4dg.png" alt="Article image" width="1425" height="129" loading="lazy" decoding="async" />
 
 ## 1) Run a new scan in Burp Suite
 
 - Open**Burp Suite**and configure proxy in your browser.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aDemowGKthiLnK1OUtvkgQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aDemowGKthiLnK1OUtvkgQ.png" alt="Article image" width="1097" height="890" loading="lazy" decoding="async" />
 
 2. Set the target scope to the app you’re testing (e.g.,`http://localhost:4280`for DVWA).
 
@@ -76,7 +76,7 @@ For this guide I’ll use**DVWA**(Damn Vulnerable Web Application) is a perfect 
 
 ## 2) When the scan finishes — export selected issues
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ajiZg7Tw5ToD9dhHINPUDQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ajiZg7Tw5ToD9dhHINPUDQ.png" alt="Article image" width="1602" height="874" loading="lazy" decoding="async" />
 
 - In Burp go to the**Scanner → Issues**(or**Target → Site map → right pane → Issues**).
 

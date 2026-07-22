@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*pE4s-eX1wFWMUOsnozr16w.png"
 # AdversaryGraph v5.0: From CTI Mapping to Attack Simulation and SIEM Validation
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*pE4s-eX1wFWMUOsnozr16w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*pE4s-eX1wFWMUOsnozr16w.png" alt="Cover image" width="1024" height="576" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### A self-hosted CTI-to-detection workbench for ATT&CK mapping, IOC investigation, malware analysis, asset attack-surface mapping, attack simulation, and detection engineering validation.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*pE4s-eX1wFWMUOsnozr16w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*pE4s-eX1wFWMUOsnozr16w.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -53,8 +53,8 @@ This article explains what is new in v5.0, how the architecture works, what the 
 
 Project links:
 
-- Project landing page:[https://1200km.com/adversarygraph/](https://1200km.com/adversarygraph/)
-- Documentation:[https://1200km.com/adversarygraph-docs/](https://1200km.com/adversarygraph-docs/)
+- Project landing page:<a href="pathname://https://1200km.com/adversarygraph/" target="_self"><span>/adversarygraph/</span></a>
+- Documentation:<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
 - GitHub:[https://github.com/anpa1200/adversarygraph](https://github.com/anpa1200/adversarygraph)
 - Release v5.0.0:[https://github.com/anpa1200/adversarygraph/releases/tag/v5.0.0](https://github.com/anpa1200/adversarygraph/releases/tag/v5.0.0)
 
@@ -125,7 +125,7 @@ The high-level workflow is:
 4. **Validate**coverage using lab telemetry and SIEM forwarding.
 5. **Report**findings in analyst-ready form.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*sMubTyaMt5F9zU2t.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*sMubTyaMt5F9zU2t.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 ## Core Capabilities Before v5.0
 
@@ -133,7 +133,7 @@ Release 5.0 builds on a broader platform. The major existing modules are still p
 
 **All capabilities here:**
 
-[Platform Capabilities | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km](https://1200km.com/adversarygraph-docs/capabilities/)
+<a href="pathname://https://1200km.com/adversarygraph-docs/capabilities/" target="_self">Platform Capabilities | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 ### AI-Assisted ATT&CK Mapping
 
@@ -147,7 +147,7 @@ The important part is not simply “ask AI for TTPs.” The useful part is that 
 - Extracted TTPs can be pushed into the Navigator.
 - Results can be compared with groups, campaigns, and stored reports.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*YMWb4u7m0Ogpsb6T.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*YMWb4u7m0Ogpsb6T.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 ### ATT&CK Navigator and Group Context
 
@@ -167,7 +167,7 @@ TTP overlap can help prioritize research. It can suggest which actor profiles or
 
 The IOC workflow lets analysts pivot from observable data into reputation and relationship context. IPs, domains, URLs, hashes, and other observables can be investigated with feed context and ATT&CK leads.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*SHhDv7Qw2exVtviQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*SHhDv7Qw2exVtviQ.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 ### Malware Analysis
 
@@ -175,7 +175,7 @@ The Malware Analysis module connects static triage, hash checks, unpacking, stri
 
 The point is not to replace a reverse engineer. The point is to help analysts preserve malware-derived evidence and map it into ATT&CK, IOCs, and investigation outputs.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*W0QBOK9La3Q3mirM.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*W0QBOK9La3Q3mirM.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 ### Asset Attack-Surface Mapping
 
@@ -218,7 +218,7 @@ The v5.0 release adds:
 - Explain Attack panel.
 - Source-shaped Windows, Sysmon, EDR, DNS, proxy, firewall, web, and WAF event generation for SIEM parser and rule validation.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*6nP-gwkSId3d917_.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*6nP-gwkSId3d917_.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 ## TTP-First Simulation Workflow
 
@@ -239,7 +239,7 @@ The basic flow is:
 9. Confirm whether detections fired.
 10. Record validation gaps.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*1RZJyK6gkRejmuv0.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*1RZJyK6gkRejmuv0.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 Each scenario explains:
 
@@ -269,7 +269,7 @@ The analyst can then inspect real target-side telemetry such as:
 - Run-specific JSONL logs.
 - Merged attacked-server events.
 
-![Article image](https://cdn-images-1.medium.com/max/988/0*CPDdyF-3kyqCleFB.png)
+<img src="https://cdn-images-1.medium.com/max/988/0*CPDdyF-3kyqCleFB.png" alt="Article image" width="988" height="584" loading="lazy" decoding="async" />
 
 This is different from simply printing a row that looks like an access log. The request is sent to the lab server, and the server emits the log.
 
@@ -318,11 +318,11 @@ Supported controls include:
 - Custom token header.
 - Source selection: access, auth, endpoint, WAF/security, error, structured JSONL, run JSONL, or all attacked-server events.
 
-![Article image](https://cdn-images-1.medium.com/max/988/0*DYOx-cPX4OK1g66v.png)
+<img src="https://cdn-images-1.medium.com/max/988/0*DYOx-cPX4OK1g66v.png" alt="Article image" width="988" height="731" loading="lazy" decoding="async" />
 
 The platform also keeps the last 10 non-secret SIEM destinations for reuse. This is useful during repeated parser testing, rule tuning, and dashboard validation.
 
-![Article image](https://cdn-images-1.medium.com/max/988/0*vpv4bXcWuUgvV4Hx.png)
+<img src="https://cdn-images-1.medium.com/max/988/0*vpv4bXcWuUgvV4Hx.png" alt="Article image" width="988" height="731" loading="lazy" decoding="async" />
 
 Credentials are not stored as part of the saved destination history. The saved address is intended to reduce typing friction, not to become a secret store.
 
@@ -352,7 +352,7 @@ There is also a**Complicated attack**option. When enabled, the assistant builds 
 
 The goal is not to normalize everything into one generic schema. For complicated scenarios, the assistant should preserve source/vendor-shaped event patterns so the SIEM parser and rule logic are tested more realistically.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*R2jz_jH_4T-N9__R.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*R2jz_jH_4T-N9__R.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 ## Coherent Kill Chains, Not Random Events
 
@@ -373,7 +373,7 @@ That is much more useful than a single failed-login event.
 
 The Attack Chain Graph makes this visible.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*-bkB_LbIx9r5Ro35.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*-bkB_LbIx9r5Ro35.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 Each phase can show:
 
@@ -401,7 +401,7 @@ This panel explains:
 - Which false positives or tuning points should be considered.
 - What success criteria should be used.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*H7lfS2NaR1B5hvEV.png)
+<img src="https://cdn-images-1.medium.com/max/1024/0*H7lfS2NaR1B5hvEV.png" alt="Article image" width="1024" height="640" loading="lazy" decoding="async" />
 
 This is useful for training and validation. It turns generated events into an exercise that a SOC analyst, detection engineer, or CTI analyst can actually follow.
 
@@ -639,7 +639,7 @@ That is the direction I want the platform to continue moving.
 
 If you want to explore the public interface:
 
-[AdversaryGraph Web - Public ATT&CK Workspace for AdversaryGraph | 1200km](https://1200km.com/threat-matrix/)
+<a href="pathname://https://1200km.com/threat-matrix/" target="_self">AdversaryGraph Web - Public ATT&CK Workspace for AdversaryGraph | 1200km</a>
 
 **If you want the full private platform:**
 
@@ -658,15 +658,15 @@ http://localhost:3000
 
 **Read the full documentation here:**
 
-[AdversaryGraph - Self-Hosted CTI-to-Detection Workbench | 1200km | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km](https://1200km.com/adversarygraph-docs/)
+<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self">AdversaryGraph - Self-Hosted CTI-to-Detection Workbench | 1200km | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 **Attack Simulation guide:**
 
-[Attack Simulation | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km](https://1200km.com/adversarygraph-docs/attack-simulation/)
+<a href="pathname://https://1200km.com/adversarygraph-docs/attack-simulation/" target="_self">Attack Simulation | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km</a>
 
 **Project page:**
 
-[AdversaryGraph AI - CTI-to-Detection Platform](https://1200km.com/adversarygraph/)
+<a href="pathname://https://1200km.com/adversarygraph/" target="_self">AdversaryGraph AI - CTI-to-Detection Platform</a>
 
 **GitHub release:**
 
@@ -690,12 +690,12 @@ Project:
 
 Documentation:
 
-[https://1200km.com/adversarygraph-docs/](https://1200km.com/adversarygraph-docs/)
+<a href="pathname://https://1200km.com/adversarygraph-docs/" target="_self"><span>/adversarygraph-docs/</span></a>
 
 Live workspace:
 
-[AdversaryGraph Web - Public ATT&CK Workspace for AdversaryGraph | 1200km](https://1200km.com/threat-matrix/)
+<a href="pathname://https://1200km.com/threat-matrix/" target="_self">AdversaryGraph Web - Public ATT&CK Workspace for AdversaryGraph | 1200km</a>
 
 Main page:
 
-[Andrey Pautov - CTI & Detection Engineering](https://1200km.com)
+<a href="pathname://https://1200km.com/" target="_self">Andrey Pautov - CTI & Detection Engineering</a>

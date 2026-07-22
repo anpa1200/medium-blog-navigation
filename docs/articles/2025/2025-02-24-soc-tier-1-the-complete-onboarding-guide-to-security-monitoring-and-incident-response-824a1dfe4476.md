@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*IK2qcLkDcCpK5lhp"
 # SOC Tier 1: The Complete Onboarding Guide to Security Monitoring and Incident Response
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*IK2qcLkDcCpK5lhp)
+<img src="https://cdn-images-1.medium.com/max/800/0*IK2qcLkDcCpK5lhp" alt="Cover image" width="1792" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ Part 1.
 
 ### Essential Tools, Techniques, and Knowledge for Entry-Level SOC Analysts with No Prior Experience
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*IK2qcLkDcCpK5lhp)
+<img src="https://cdn-images-1.medium.com/max/800/0*IK2qcLkDcCpK5lhp" alt="Article image" width="1792" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction
 

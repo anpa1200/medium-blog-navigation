@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*No6vYBwr0bvT5zmY0Fm5jg.png"
 # Building a Vulnerable Kubernetes Lab: A Complete Guide to 25 Critical Security Issues
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*No6vYBwr0bvT5zmY0Fm5jg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*No6vYBwr0bvT5zmY0Fm5jg.png" alt="Cover image" width="2816" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Learn Kubernetes security by building a comprehensive penetration testing lab with 25 real-world vulnerabilities
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*No6vYBwr0bvT5zmY0Fm5jg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*No6vYBwr0bvT5zmY0Fm5jg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -187,7 +187,7 @@ kubectl version
 --client
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Nt9xZM6zWqbBhVlfGHZtSQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Nt9xZM6zWqbBhVlfGHZtSQ.png" alt="Article image" width="812" height="79" loading="lazy" decoding="async" />
 
 ### 3. Install Kubernetes Cluster Tool
 
@@ -253,7 +253,7 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MwkUuvDTYcio1lug8_iOfQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MwkUuvDTYcio1lug8_iOfQ.png" alt="Article image" width="1192" height="383" loading="lazy" decoding="async" />
 
 **macOS:**
 
@@ -356,7 +356,7 @@ k3s
 --version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*u6OClbaXmyOQUf-q0N_NbA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*u6OClbaXmyOQUf-q0N_NbA.png" alt="Article image" width="1107" height="98" loading="lazy" decoding="async" />
 
 ### Quick Installation Script
 
@@ -2729,11 +2729,11 @@ send
             <h1>Vulnerable App #3 - K8S Token Exposure</h1>
             <h2>Endpoints:</h2>
             <ul>
-                <li><a href="/api/token">GET /api/token</a> - Expose service account token</li>
-                <li><a href="/api/namespace">GET /api/namespace</a> - Expose namespace</li>
-                <li><a href="/api/k8s/pods">GET /api/k8s/pods</a> - Access K8S API (pods)</li>
-                <li><a href="/api/k8s/secrets">GET /api/k8s/secrets</a> - Access K8S API (secrets)</li>
-                <li><a href="/api/logs">GET /api/logs</a> - View logs with sensitive data</li>
+                <li><a href="pathname://https://1200km.com/api/token" target="_self">GET /api/token</a> - Expose service account token</li>
+                <li><a href="pathname://https://1200km.com/api/namespace" target="_self">GET /api/namespace</a> - Expose namespace</li>
+                <li><a href="pathname://https://1200km.com/api/k8s/pods" target="_self">GET /api/k8s/pods</a> - Access K8S API (pods)</li>
+                <li><a href="pathname://https://1200km.com/api/k8s/secrets" target="_self">GET /api/k8s/secrets</a> - Access K8S API (secrets)</li>
+                <li><a href="pathname://https://1200km.com/api/logs" target="_self">GET /api/logs</a> - View logs with sensitive data</li>
             </ul>
         </body>
         </html>
@@ -7415,7 +7415,7 @@ lab
 
 You should see:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ik0E2VxRIZBHx6_ZDUdNdw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ik0E2VxRIZBHx6_ZDUdNdw.png" alt="Article image" width="856" height="576" loading="lazy" decoding="async" />
 
 Get your node IP:
 
@@ -7836,7 +7836,7 @@ head
 sudo nmap -sT -p 30080,30081,30082,30443 192.168.49.2
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sz1YoM0lR1WO9mvwhqJUdQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sz1YoM0lR1WO9mvwhqJUdQ.png" alt="Article image" width="1083" height="320" loading="lazy" decoding="async" />
 
 ### Complete Setup Script
 

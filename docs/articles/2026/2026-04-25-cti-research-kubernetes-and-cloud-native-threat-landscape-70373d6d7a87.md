@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*SsNoAqQAOVrns20T8UJufQ.png"
 # CTI Research: Kubernetes & Cloud-Native Threat Landscape
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*SsNoAqQAOVrns20T8UJufQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*SsNoAqQAOVrns20T8UJufQ.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Technical Kill Chain Analysis, Detection Engineering, and Defensive Architecture (2023 — Q2 2026)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*SsNoAqQAOVrns20T8UJufQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*SsNoAqQAOVrns20T8UJufQ.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 **Classification:**TLP:WHITE — Unrestricted Distribution
 **Author:**Andrey Pautov
@@ -106,7 +106,7 @@ The report covers:
 
 The report is organized around four interdependent pillars:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UwdsKJoGUbouxMmjthSfxw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UwdsKJoGUbouxMmjthSfxw.png" alt="Article image" width="1491" height="1055" loading="lazy" decoding="async" />
 
 The Takeaways section at the end synthesizes the ten highest-leverage actions derived from the full analysis, ordered by expected impact on detection coverage and adversary friction.
 
@@ -130,7 +130,7 @@ Detection rules and defensive configurations were reviewed across multiple revis
 
 All substantive claims in this document carry one of the following labels. Inline citations follow every labeled claim.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ULXZZCDIParX1PeCamrmIg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ULXZZCDIParX1PeCamrmIg.png" alt="Article image" width="1491" height="1055" loading="lazy" decoding="async" />
 
 Every code example is either syntactically valid for its named target platform or explicitly labeled**[PSEUDOCODE]**or**[PARSER-SPECIFIC EXAMPLE]**. Detection rules include an*Assumptions / normalization dependencies*note. Mitigation sections include*What this blocks*,*What this does not block*, and*Platform caveats*.
 
@@ -148,7 +148,7 @@ Effective detection requires layering Kubernetes API audit logs — which must b
 
 ## 1.1 Threat Actor Taxonomy
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*74x7Dh8wKI9TgthCuCbcCA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*74x7Dh8wKI9TgthCuCbcCA.png" alt="Article image" width="1491" height="1055" loading="lazy" decoding="async" />
 
 &gt; Note: Slow Pisces/TraderTraitor and FAMOUS CHOLLIMA are distinct DPRK-linked clusters with different tradecraft profiles and should not be merged into a single narrative. They are addressed in separate subsections below.
 
@@ -160,7 +160,7 @@ SCARLETEEL is documented by Sysdig TRT as a financially motivated intrusion set 
 
 ### Kill Chain (Reported [R2] )
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fE724PFL6jPS8IAv7695uQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fE724PFL6jPS8IAv7695uQ.png" alt="Article image" width="1491" height="1055" loading="lazy" decoding="async" />
 
 ```text
 Phase 
@@ -340,7 +340,7 @@ Aqua Nautilus documented this campaign using Kubernetes honeypots over a three-m
 
 ### Kill Chain (Reported [R8] )
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7nemPqgg944AXpkJO2mx5g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7nemPqgg944AXpkJO2mx5g.png" alt="Article image" width="1491" height="1055" loading="lazy" decoding="async" />
 
 ```text
 Phase
@@ -719,7 +719,7 @@ resources:
 
 **Evidence label:**Observed/Reported (primary sources: Microsoft[[R9]](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/initial-access-techniques-in-kubernetes-environments-used-by-kinsing-malware/3697975), Aqua Nautilus[[R8]](https://www.aquasec.com/blog/leveraging-kubernetes-rbac-to-backdoor-clusters/), Wiz[[R7]](https://www.wiz.io/vulnerability-database/cve/cve-2024-21626))
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gO1-lv4xyLFcT-E-wzKqgg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gO1-lv4xyLFcT-E-wzKqgg.png" alt="Article image" width="1491" height="1055" loading="lazy" decoding="async" />
 
 Kinsing has been tracked since 2019 and continues to evolve. Its userland rootkit, which hooks`ps`,`ls`, and`netstat`output, is the primary reason kernel-level telemetry is operationally necessary in environments where Kinsing activity is a concern.
 
@@ -782,7 +782,7 @@ echo
 **Evidence label:**Reported (primary source: Palo Alto Unit 42[[R3]](https://unit42.paloaltonetworks.com/modern-kubernetes-threats/))
 **Attribution:**North Korean state-sponsored; tracked by Unit 42 as Slow Pisces and by FBI/CISA as TraderTraitor[[R3]](https://unit42.paloaltonetworks.com/modern-kubernetes-threats/).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XEzUYnt3Tn4SFEqsoX3c-g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XEzUYnt3Tn4SFEqsoX3c-g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Unit 42 documented a 2025 intrusion at a cryptocurrency exchange in which a Kubernetes environment served as a post-exploitation pivot layer. Losses were assessed at approximately $1.5 billion in Ethereum[[R3]](https://unit42.paloaltonetworks.com/modern-kubernetes-threats/). This campaign illustrates that Kubernetes is targeted as an identity transit layer in DPRK financial operations.
 
@@ -809,7 +809,7 @@ Unit 42 documented a 2025 intrusion at a cryptocurrency exchange in which a Kube
 **Evidence label:**Reported (primary source: CrowdStrike 2025 Threat Hunting Report[[R4]](https://www.crowdstrike.com/en-us/resources/reports/threat-hunting-report/))
 **Attribution:**DPRK-nexus, attributed by CrowdStrike[[R4]](https://www.crowdstrike.com/en-us/resources/reports/threat-hunting-report/).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*e04kZbqH7OHG2Habi9ku2g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*e04kZbqH7OHG2Habi9ku2g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 &gt; This cluster is operationally distinct from Slow Pisces/TraderTraitor (Section 1.5) and should not be presented as the same campaign or blended kill chain.
 
@@ -829,7 +829,7 @@ Unit 42 documented a 2025 intrusion at a cryptocurrency exchange in which a Kube
 
 **Evidence label:**Reported (primary source: Sysdig TRT[[R5]](https://sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack/))
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xh3ura3pa1cvyxavcD7gtQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xh3ura3pa1cvyxavcD7gtQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 &gt; Scope: LLMjacking is a cloud credential and API-key abuse pattern. It targets hosted AI inference services (AWS Bedrock, Anthropic Claude API, OpenAI API). It is not inherently a Kubernetes-native attack category . Its intersection with Kubernetes occurs when compromised credentials originate from Kubernetes-hosted workloads.
 
@@ -857,7 +857,7 @@ Unit 42 documented a 2025 intrusion at a cryptocurrency exchange in which a Kube
 
 **Evidence label:**Reported (primary source: Microsoft Security Blog[[R10]](https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/))
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JdDED6t-rno6MReEcPjy5g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JdDED6t-rno6MReEcPjy5g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 CVE-2025–55182 is a pre-authentication remote code execution vulnerability in React Server Components / Next.js, disclosed December 2025. It is a**web application vulnerability**. Its Kubernetes relevance is conditional: when the vulnerable application runs inside a Kubernetes pod, the resulting code execution occurs within that pod’s security context.
 
@@ -900,7 +900,7 @@ in
 
 The following techniques appear in primary source post-mortem reporting:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*y5J-pmmLOSzua1YMux82-A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*y5J-pmmLOSzua1YMux82-A.png" alt="Article image" width="1426" height="1103" loading="lazy" decoding="async" />
 
 **Architectural implication (Assessed):**Detection relying solely on userspace process enumeration or file scanning is structurally blind to Kinsing’s rootkit and SCARLETEEL’s in-memory exfiltration. Kernel-level telemetry — particularly eBPF-based tools that intercept syscalls before any userspace filtering occurs — is a high-value complement. This does not mean eBPF is the only viable approach;`auditd`with syscall rules, kernel module-based agents, and commercial EDR products with privileged kernel drivers provide comparable visibility with different deployment and performance tradeoffs.
 
@@ -912,7 +912,7 @@ Kubernetes audit logs are the authoritative record of interactions with the kube
 
 **Audit event lifecycle:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dR-9IB2bcIiYWG3AOTSX4g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dR-9IB2bcIiYWG3AOTSX4g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Omitting`RequestReceived`reduces event volume without losing security-relevant data, because every request that completes also generates a`ResponseComplete`record.
 
@@ -1059,7 +1059,7 @@ group
 
 ### Security-relevant audit log fields:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CSqwuzUQHosWmC8AVKXc6w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CSqwuzUQHosWmC8AVKXc6w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## 2.2 eBPF Runtime Telemetry
 
@@ -1069,7 +1069,7 @@ eBPF is not the only approach to this class of visibility.`auditd`with`EXECVE`an
 
 ### How eBPF Captures Container Attacks
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*t2cFK357zfV2G9zXC0_6Fg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*t2cFK357zfV2G9zXC0_6Fg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ```text
 Kernel space                          Userspace
@@ -1104,7 +1104,7 @@ to
 
 Quantitative figures (CPU overhead percentages, exact kernel version thresholds) vary by kernel version, workload characteristics, probe type, and rule complexity. The values below are qualitative; consult each project’s current official documentation before selecting a tool[[R12]](https://falco.org/docs/setup/download/)[[R13]](https://aquasecurity.github.io/tracee/latest/)[[R14]](https://tetragon.io/docs/).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DtAXXxtOiAL7LiDCfHVaeQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DtAXXxtOiAL7LiDCfHVaeQ.png" alt="Article image" width="1448" height="1086" loading="lazy" decoding="async" />
 
 **Recommended deployment:**Falco and Tetragon are complementary. Falco provides the widest rule coverage and integrates readily with Fluent Bit, AWS Firelens, and standard SIEM pipeline tooling. Tetragon provides in-kernel enforcement at defined kill-chain steps where detect-only is insufficient.
 
@@ -1303,7 +1303,7 @@ Fargate completely abstracts the underlying node. AWS documentation explicitly s
 
 - **EKS Pod Identity**— not supported on Fargate; use IAM Roles for Service Accounts (IRSA) instead[[R19]](https://docs.aws.amazon.com/eks/latest/userguide/pod-id-how-it-works.html)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9K18q8WwvqI9nb_4j1JOnQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9K18q8WwvqI9nb_4j1JOnQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Fargate conclusion:**The control plane (audit logs) remains fully visible. Data-plane runtime telemetry is severely constrained. Compensate with strict egress Network Policies, IMDS blocking (see Section 4.2), and document this gap explicitly in your threat model.
 
@@ -1323,7 +1323,7 @@ Fields are labeled as follows:
 
 - **[PARSER-DEFINED]**— must be explicitly populated by a custom parser; not standard UDM taxonomy
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zqZveZ-1i6zM7J_e3FwkJQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zqZveZ-1i6zM7J_e3FwkJQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 &gt; metadata.event_type note: UDM defines an EVENT_TYPE enum with values such as USER_RESOURCE_CREATION and USER_RESOURCE_ACCESS . A custom parser assigns these values based on Kubernetes verb and resource type (e.g., verb=create + resource=pods → USER_RESOURCE_CREATION ). These are parser-defined conventions , not values that Chronicle populates automatically from Kubernetes audit events.
 
@@ -2449,7 +2449,7 @@ Admission controllers evaluate workload specifications at API submission time, b
 
 **Control-to-technique mapping:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ImW8Zkv9XDpdOmciQ6V39g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ImW8Zkv9XDpdOmciQ6V39g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 &gt; CVE-2024–21626 clarification: Denying hostPath volumes does not mitigate CVE-2024-21626. That vulnerability exploits an internal runc file descriptor leak and does not require a hostPath volume mount. Denying hostPath mitigates attacks that use explicit host filesystem mounts to access node-level credentials, binaries, or container runtime sockets.
 
@@ -3363,7 +3363,7 @@ port:
 
 All three vulnerabilities require an attacker to already have code execution inside a container. None are remotely exploitable in isolation[[R6]](https://nvd.nist.gov/vuln/detail/CVE-2025-31133).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wtP00LfGSCbTVECTsRhoiA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wtP00LfGSCbTVECTsRhoiA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Applying`RuntimeDefault`Seccomp reduces attack surface and may reduce exploitability for some of these escape paths; the specific syscall-level benefit for each CVE has not been independently verified in this paper. The primary mitigation for all three is upgrading runc to a patched version.
 
@@ -3772,7 +3772,7 @@ r '
 
 ## Takeaways for the SOC
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-wQd57iSkXq7QgEMfPHu7w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-wQd57iSkXq7QgEMfPHu7w.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **1. Enable Kubernetes audit logs and confirm they reach your SIEM before any other action.**
 The default enablement state differs by platform: EKS requires explicit CloudWatch configuration; AKS requires enabling`kube-audit`in Diagnostic Settings; GKE requires explicit Data Access log enablement for sensitive operations. Without logs covering`serviceaccounts/token`creates at`RequestResponse`level, SA token theft as documented in Slow Pisces and SCARLETEEL is invisible.
@@ -3806,7 +3806,7 @@ In a dedicated test namespace with all egress blocked: submit a pod manifest wit
 
 ## MITRE ATT&CK Mapping
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*78HBSCocTCxu8tuM1ne2yg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*78HBSCocTCxu8tuM1ne2yg.png" alt="Article image" width="1491" height="1055" loading="lazy" decoding="async" />
 
 ## References
 

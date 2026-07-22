@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*gr17iVx1rveoNFu3.jpg"
 # Mastering John the Ripper: A Complete Guide to Password Cracking
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*gr17iVx1rveoNFu3.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*gr17iVx1rveoNFu3.jpg" alt="Cover image" width="750" height="422" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -31,7 +31,7 @@ John the Ripper primarily serves to test the strength of passwords against commo
 
 In this guide, we’ll explore how to install and operate John the Ripper, discuss its various modes and configurations, and provide insights on advanced techniques for effective password cracking, ensuring you are well-equipped to use this tool proficiently in your security assessments.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*gr17iVx1rveoNFu3.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*gr17iVx1rveoNFu3.jpg" alt="Article image" width="750" height="422" loading="lazy" decoding="async" />
 
 ## Installation
 
@@ -95,7 +95,7 @@ You can find this tools in your PC:
 cd /snap/john-the-ripper/639/run/
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xDmkFf46L9ISDMUnim5Uwg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xDmkFf46L9ISDMUnim5Uwg.png" alt="Article image" width="1901" height="596" loading="lazy" decoding="async" />
 
 [List with this tools with short explanations here:](2024-11-15-2john-9bb0bd44ed64.md)
 
@@ -145,7 +145,7 @@ John the Ripper is primarily a command-line tool, offering powerful options for 
 john
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*OaRLAN80UgK9dzRWGucmUA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*OaRLAN80UgK9dzRWGucmUA.png" alt="Article image" width="1141" height="181" loading="lazy" decoding="async" />
 
 ### Basic Command Structure:
 
@@ -165,9 +165,9 @@ I have file with hash of password from office file:
 john /path/to/your/hashes.txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*S58u40vaw81QpN3t4LAGzA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*S58u40vaw81QpN3t4LAGzA.png" alt="Article image" width="1135" height="377" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9wzwU-_k58BWzVVr2TU7SQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9wzwU-_k58BWzVVr2TU7SQ.png" alt="Article image" width="1019" height="379" loading="lazy" decoding="async" />
 
 When you use a default configuration, John use basic password list:**/usr/share/john/password.lst**, you can add more passwords for this list if you want, or use external lists.
 
@@ -325,7 +325,7 @@ Displays the cracked passwords.
 john --show /path/to/hashes.txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PiECFLpr4FRNrIJ-F-GGwg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PiECFLpr4FRNrIJ-F-GGwg.png" alt="Article image" width="778" height="208" loading="lazy" decoding="async" />
 
 **Checking the Status:**While John the Ripper is running, you can check the progress by pressing any key. To see more detailed status information, press`Ctrl + C`to pause the cracking process, and John will display the current status, including the speed of attempts and how many passwords have been cracked so far.
 

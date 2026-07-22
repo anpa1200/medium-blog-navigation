@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*d-5w6-fJrDWfK8gG"
 # Cloud-Native Security Threats, Attacks, and Detection Strategies
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*d-5w6-fJrDWfK8gG)
+<img src="https://cdn-images-1.medium.com/max/800/0*d-5w6-fJrDWfK8gG" alt="Cover image" width="784" height="1168" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Securing Cloud‑Native Environments — A Comprehensive Guide to Kubernetes Threats, Detection Techniques, Real‑World Attack Insights, and Top Security Certifications. This option delivers an authoritative, matter-of-fact summary of the article’s scope. It clearly enumerates the coverage of cloud-native threat analysis, detection methods, case studies of real attacks, and guidance on industry-leading certifications, signaling a thorough and credible resource for security professionals
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*d-5w6-fJrDWfK8gG)
+<img src="https://cdn-images-1.medium.com/max/800/0*d-5w6-fJrDWfK8gG" alt="Article image" width="784" height="1168" loading="lazy" decoding="async" />
 
 ## Introduction
 

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*GxbfTqjJ8rppi_s3.jpeg"
 # Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 2
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*GxbfTqjJ8rppi_s3.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*GxbfTqjJ8rppi_s3.jpeg" alt="Cover image" width="700" height="400" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -29,7 +29,7 @@ This a second part of comprehensive Medium post will delve into the powerful net
 
 ### Part 4 is here
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*GxbfTqjJ8rppi_s3.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*GxbfTqjJ8rppi_s3.jpeg" alt="Article image" width="700" height="400" loading="lazy" decoding="async" />
 
 **About author**
 
@@ -385,7 +385,7 @@ nmap -sO
 
 This command initiates an IP protocol scan against the host at`192.168.1.1`, probing to see which IP protocols are supported or allowed through the network.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EsoNrSm7R392iWciY-aYuw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EsoNrSm7R392iWciY-aYuw.png" alt="Article image" width="703" height="294" loading="lazy" decoding="async" />
 
 Nmap utilizes the standard IP protocol numbers as defined by the Internet Assigned Numbers Authority (IANA). These protocol numbers are used to specify the protocol carried in the IP datagram’s protocol field.
 

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*yXM97MUIp61fs-MVNamcJw.png"
 # CTI Analyst Field Manual — Complete Reference
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*yXM97MUIp61fs-MVNamcJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yXM97MUIp61fs-MVNamcJw.png" alt="Cover image" width="1536" height="2752" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practitioner field manual for cyber threat intelligence: from collection requirements to production detection.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yXM97MUIp61fs-MVNamcJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yXM97MUIp61fs-MVNamcJw.png" alt="Article image" width="1536" height="2752" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -71,7 +71,7 @@ This manual is one part of a three-book CTI ecosystem. Use CTI Project Ecosystem
 
 ### What This Manual Is
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gJsAJE_k458vDGoNknoBKg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gJsAJE_k458vDGoNknoBKg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 This is a practitioner field manual. It is designed to help an analyst produce repeatable, reviewable CTI outputs rather than disconnected research notes.
 
@@ -83,7 +83,7 @@ This is not a beginner glossary, an exploit guide, a malware analysis lab, an IO
 
 ### Operating Principles
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*evtYrkbzGGxZ3QlZRg69Yw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*evtYrkbzGGxZ3QlZRg69Yw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - State the intelligence question before collecting sources.
 
@@ -125,7 +125,7 @@ Start with CTI Foundations, then move into analytic discipline, frameworks, attr
 
 ## Known Limitations
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*w98PD21A7pS-Ldj7_YuZlA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*w98PD21A7pS-Ldj7_YuZlA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Purpose
 
@@ -157,7 +157,7 @@ Do not add malware samples, exploit instructions, leaked data, credentials, vict
 
 ## What Is CTI?
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*z129oOZR2VlJAhyvwbup4A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*z129oOZR2VlJAhyvwbup4A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Purpose
 
@@ -201,7 +201,7 @@ Good CTI helps teams prioritize limited defensive resources. It answers question
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1k2UQmdC5EFo3Dslb68-hA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1k2UQmdC5EFo3Dslb68-hA.png" alt="Article image" width="1718" height="916" loading="lazy" decoding="async" />
 
 - Define the decision or question.
 
@@ -249,7 +249,7 @@ A vendor reports that an actor abuses remote monitoring and management tools aft
 
 ## Intelligence Cycle
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*v6rk1gcYncWhXsT1YfJgEw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*v6rk1gcYncWhXsT1YfJgEw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Purpose
 
@@ -279,7 +279,7 @@ A CTI team should be able to trace a finished product backward to the requiremen
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7zYhIBHsHx3gJVFBh2Ix8g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7zYhIBHsHx3gJVFBh2Ix8g.png" alt="Article image" width="1693" height="929" loading="lazy" decoding="async" />
 
 - **Direction:**Define PIRs, SIRs, and decision owners.
 
@@ -327,7 +327,7 @@ A SOC lead asks whether recent reporting on an actor should change monitoring. T
 
 ## PIR, SIR, and EEI
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*K5h4mr-VVFXgtqA4Fxayrg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*K5h4mr-VVFXgtqA4Fxayrg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Purpose
 
@@ -359,7 +359,7 @@ Well-written requirements prevent unfocused collection and make it easier to dec
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*chzBlRxvFoUWr-HYMjJAsg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*chzBlRxvFoUWr-HYMjJAsg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Identify the decision owner.
 
@@ -429,7 +429,7 @@ Evidence labels make analytic status explicit. They prevent analysts from writin
 
 **This manual uses six labels:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xGWBY9BjXP1N51pkHWqjLA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xGWBY9BjXP1N51pkHWqjLA.png" alt="Article image" width="1619" height="972" loading="lazy" decoding="async" />
 
 Labels do not replace prose. The analyst still needs to explain source quality, confidence, contradictions, and limitations.
 
@@ -461,7 +461,7 @@ Evidence labels are useful across the whole CTI workflow:
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*th9JsO8lgsOKC8QCE2k4uQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*th9JsO8lgsOKC8QCE2k4uQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Extract one claim per row or paragraph.
 
@@ -549,7 +549,7 @@ The notation is not mathematical. It is a**review prompt**that forces the analys
 
 ### Source Reliability: A through F
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*d3U2og9IbI2_RsVe8ZTNzg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*d3U2og9IbI2_RsVe8ZTNzg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Guidance:**
 
@@ -563,7 +563,7 @@ The notation is not mathematical. It is a**review prompt**that forces the analys
 
 ### Information Credibility: 1 through 6
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nIxTLaoKF4fI2QHoqxoadw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nIxTLaoKF4fI2QHoqxoadw.png" alt="Article image" width="1690" height="931" loading="lazy" decoding="async" />
 
 **Guidance:**
 
@@ -575,7 +575,7 @@ The notation is not mathematical. It is a**review prompt**that forces the analys
 
 ### Combined Notation and Examples
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1zQMY9LP6KeIVBQXgOYLXg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1zQMY9LP6KeIVBQXgOYLXg.png" alt="Article image" width="1666" height="944" loading="lazy" decoding="async" />
 
 ### Common Mistakes
 
@@ -595,7 +595,7 @@ An A-rated source can make a weak claim. A weak source can report something that
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TCUhXGI_dVT3HSelft08Sg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TCUhXGI_dVT3HSelft08Sg.png" alt="Article image" width="1641" height="958" loading="lazy" decoding="async" />
 
 - Identify the source type and publisher.
 
@@ -655,7 +655,7 @@ Confidence language allows CTI teams to be useful without overclaiming. It gives
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KX1UvWH97lq0Gjf9U0l_6g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KX1UvWH97lq0Gjf9U0l_6g.png" alt="Article image" width="1624" height="969" loading="lazy" decoding="async" />
 
 - State the judgment.
 
@@ -721,7 +721,7 @@ This distinction is critical in CTI-to-detection work. A detection engineer does
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*piWYpA6PUR5Y7zbjiZ4s9Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*piWYpA6PUR5Y7zbjiZ4s9Q.png" alt="Article image" width="1618" height="972" loading="lazy" decoding="async" />
 
 - Keep research notes separate from finished outputs.
 
@@ -830,7 +830,7 @@ The two pillars are:
 
 The following table adapts the Sherman Kent Words of Estimative Probability (WEP) tradition to CTI usage. The approximate probability ranges are guideposts, not mathematical bounds. The decisive factor is evidence quality, not word choice.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZVHF8y5_6U8hyc80nAU_7w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZVHF8y5_6U8hyc80nAU_7w.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Critical rule:**The term used must be tied to a reason. “Likely” with no reason is not calibrated language. “Likely because three independent government advisories describe the same behavior” is.
 
@@ -1046,7 +1046,7 @@ or
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VxHmQ3mWHIv7rY-MIEZUcA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VxHmQ3mWHIv7rY-MIEZUcA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Write the key judgment first in one sentence.
 
@@ -1102,7 +1102,7 @@ Avoid dramatic or vague words. “The actor is dangerous” is not an estimate. 
 
 ### Calibrated Wording Reference
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-6E1VBhESa6OjwyBDEyK_Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-6E1VBhESa6OjwyBDEyK_Q.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 See Sherman Kent for CTI for the full calibration table and worked examples.
 
@@ -1324,7 +1324,7 @@ is
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*D69gLENIIMF55jDgoBPM5Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*D69gLENIIMF55jDgoBPM5Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Define the judgment in one sentence.
 
@@ -1378,7 +1378,7 @@ Alternative hypotheses are essential for attribution, infrastructure clustering,
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dsEQt-KW7nE7HmMwbqtA9Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dsEQt-KW7nE7HmMwbqtA9Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - State the main hypothesis.
 
@@ -1434,7 +1434,7 @@ Assumption and gap handling is essential for attribution, threat prioritization,
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hwOSS6eYpTHIR1hbsNPdgw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hwOSS6eYpTHIR1hbsNPdgw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - List assumptions before writing the judgment.
 
@@ -1490,7 +1490,7 @@ Contradiction handling prevents weak actor merges, stale claims, and detection w
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0p62a8VFX-0srF9StB1zHQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0p62a8VFX-0srF9StB1zHQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Extract both claims separately.
 
@@ -1546,7 +1546,7 @@ Consistent review improves trust between CTI, SOC, detection engineering, IR, an
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RZ96Y6tQcQGz83kv1VBZHA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RZ96Y6tQcQGz83kv1VBZHA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Confirm the PIR or decision.
 
@@ -1608,7 +1608,7 @@ ATT&CK turns CTI into operational language for hunts, detections, and coverage d
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Gi5FUFt6RNeX7CBzMgZlVQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Gi5FUFt6RNeX7CBzMgZlVQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Extract a behavior, not an actor label.
 
@@ -1672,7 +1672,7 @@ This page helps reviewers challenge weak mappings before they become dashboards,
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CS3kJkZJboM0di8GhTNlNw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CS3kJkZJboM0di8GhTNlNw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Start with a source claim.
 
@@ -1706,7 +1706,7 @@ A report says a tool can capture credentials. Do not map credential dumping unle
 
 ## Cyber Kill Chain
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Bc3E7e6Oy6pWlpKc9cJpzg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Bc3E7e6Oy6pWlpKc9cJpzg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Purpose
 
@@ -1734,7 +1734,7 @@ Kill-chain analysis helps convert a long report into phases, observables, teleme
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CEnm3_orhDR-xpWaBrJ30g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CEnm3_orhDR-xpWaBrJ30g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - List observed or reported behaviors.
 
@@ -1762,7 +1762,7 @@ A phishing campaign may have delivery evidence from email logs, execution eviden
 
 ## Diamond Model
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1SbgprmFAbOdaN8w8Nem7A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1SbgprmFAbOdaN8w8Nem7A.png" alt="Article image" width="1624" height="969" loading="lazy" decoding="async" />
 
 ### Purpose
 
@@ -1790,7 +1790,7 @@ The model is especially useful for infrastructure pivoting, actor clustering, an
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*tuSPKCHOY0q0VvHaSBZb7g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*tuSPKCHOY0q0VvHaSBZb7g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Define the event or activity cluster.
 
@@ -1820,7 +1820,7 @@ A domain, certificate, lure theme, and payload family may define a campaign clus
 
 ## Pyramid of Pain
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DWsLDUh67VOWZTwN-SwoTw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DWsLDUh67VOWZTwN-SwoTw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Purpose
 
@@ -1906,7 +1906,7 @@ Attribution affects response priority, legal/comms posture, executive reporting,
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HkTWKDQkORqHCeoXcX_0PA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HkTWKDQkORqHCeoXcX_0PA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Define what is being attributed: event, campaign, tool, infrastructure, persona, or sponsor.
 
@@ -1966,7 +1966,7 @@ Evidence weighting prevents overclaiming and makes attribution review possible.
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*URoM6fNbIAuzWC0sJVy67Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*URoM6fNbIAuzWC0sJVy67Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - List evidence items.
 
@@ -2022,7 +2022,7 @@ This distinction prevents decision-makers from misunderstanding how much trust t
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7YZB6VF2GTt5m01W493gOA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7YZB6VF2GTt5m01W493gOA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Write the judgment.
 
@@ -2076,7 +2076,7 @@ False-flag analysis is especially important for hack-and-leak personas, politica
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kmpmrO-owhMw79acsClTnA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kmpmrO-owhMw79acsClTnA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Identify the suspicious signal.
 
@@ -2132,7 +2132,7 @@ Worked examples help analysts practice defensible reasoning before working on re
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9cjsm6UTlHWVyrFPVr8YzQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9cjsm6UTlHWVyrFPVr8YzQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Define the event.
 
@@ -2192,7 +2192,7 @@ Infrastructure pivoting supports scoping, attribution hypotheses, detection idea
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DaPMYZwrHLB7ZJ7LbKx9Ng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DaPMYZwrHLB7ZJ7LbKx9Ng.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Record the seed IOC and source.
 
@@ -2250,7 +2250,7 @@ Passive DNS helps identify campaign infrastructure, historical exposure, and pos
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*X8ajCAvjPD8p6yeJ3AI5uA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*X8ajCAvjPD8p6yeJ3AI5uA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Start with domain or IP.
 
@@ -2306,7 +2306,7 @@ Certificate pivots support infrastructure clustering, detection enrichment, and 
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JOoebOkLiKw9rsYj2m8uKQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JOoebOkLiKw9rsYj2m8uKQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Collect certificate fields.
 
@@ -2362,7 +2362,7 @@ Hosting pivots support enrichment, blocking decisions, provider abuse reporting,
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*e9elW2vHxtpD1UEZQnv8Tg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*e9elW2vHxtpD1UEZQnv8Tg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Identify ASN and provider.
 
@@ -2418,7 +2418,7 @@ Limitations protect downstream teams from treating weak pivots as blocklists, at
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nSgmL-nvj5LeY4NQPYUGsA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nSgmL-nvj5LeY4NQPYUGsA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Define pivot objective.
 
@@ -2474,7 +2474,7 @@ Worked cases help analysts learn when to stop pivoting and how to explain cluste
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fAaad_n9Z6SMbvQqwlSt_Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fAaad_n9Z6SMbvQqwlSt_Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Record seed domain example[.]com.
 
@@ -2534,7 +2534,7 @@ Consistent actor profiles help CTI teams compare actors, prioritize research, an
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*F-zDNuDIgucHM8bDH3_sxA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*F-zDNuDIgucHM8bDH3_sxA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Create alias and source table.
 
@@ -2594,7 +2594,7 @@ Actor update discipline keeps CTI repositories accurate and prevents stale actor
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*q0ZYSdFQV7Ft4lK2PI2Wqg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*q0ZYSdFQV7Ft4lK2PI2Wqg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Check latest primary sources.
 
@@ -3060,7 +3060,7 @@ This workflow is the bridge between CTI and operational defense. It makes intell
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zw_cyMn_3gC-tpyM-t1WFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zw_cyMn_3gC-tpyM-t1WFQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Extract behavior from source reporting.
 
@@ -3110,15 +3110,15 @@ Only**DRL-9**can be called production detection coverage. Anything below DRL-9 i
 
 ### DRL Scale
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*akxenErkiDj879krCPhoUw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*akxenErkiDj879krCPhoUw.png" alt="Article image" width="1535" height="1024" loading="lazy" decoding="async" />
 
 ### Required Validation Artifacts
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cd0bZ1EkU_gbPAJjCu6dZA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cd0bZ1EkU_gbPAJjCu6dZA.png" alt="Article image" width="1402" height="1122" loading="lazy" decoding="async" />
 
 ### Examples
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WobcOc-7FJ6p0jbsRvB4HQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WobcOc-7FJ6p0jbsRvB4HQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Bad Example / Corrected Example
 
@@ -3257,43 +3257,43 @@ The tables below list the data sources most commonly required for endpoint, netw
 
 ### Windows Security Event Log
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*27dgVYwOQB8gsQMIsA9mPQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*27dgVYwOQB8gsQMIsA9mPQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Common gap:**CommandLine is not logged by default on most Windows versions. Requires Audit Process Creation with command-line inclusion via GPO or registry.
 
 ### Sysmon (System Monitor)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UJ4ZRIJ0t5OFUzhZIp3VXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UJ4ZRIJ0t5OFUzhZIp3VXQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Common gap:**Sysmon is not deployed by default. Configuration must enable the required event types and filters. Noisy rules without filters will generate excessive volume and cause tuning paralysis.
 
 ### EDR Process Telemetry (platform-generic)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wnZHYDumcdm1g2s9V-zDSg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wnZHYDumcdm1g2s9V-zDSg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Common gap:**Parent process chain may not be available in all EDR configurations. Verify whether your EDR records grandparent process context.
 
 ### DNS Telemetry
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6Q_g0K3HqccjUi33ZCvTnQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6Q_g0K3HqccjUi33ZCvTnQ.png" alt="Article image" width="1635" height="962" loading="lazy" decoding="async" />
 
 **Common gap:**DNS logging is frequently incomplete. Recursive resolvers may not log internal resolution. Encrypted DNS (DoH, DoT) bypasses traditional DNS logging entirely.
 
 ### Proxy / Web Gateway
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mtSeMx3-4X7X4VJVEvIkZw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mtSeMx3-4X7X4VJVEvIkZw.png" alt="Article image" width="1538" height="1023" loading="lazy" decoding="async" />
 
 **Common gap:**TLS inspection may not be enabled, making encrypted channel contents invisible. User-agent fields can be spoofed and should not be used as primary detection criteria.
 
 ### Identity Provider (Entra ID / Okta / similar)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0QjUps5fVzIsal9cY9Lasg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0QjUps5fVzIsal9cY9Lasg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Common gap:**Legacy authentication protocols may not log MFA result or conditional access enforcement.
 
 ### Cloud Audit Logs (AWS CloudTrail / Azure Monitor / GCP Audit Logs)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wLxk8URFqS3jLSHGzUdKkQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wLxk8URFqS3jLSHGzUdKkQ.png" alt="Article image" width="1606" height="979" loading="lazy" decoding="async" />
 
 **Common gap:**Management plane logs (e.g., CloudTrail) are separate from data plane logs (e.g., S3 object access). Both must be enabled if the detection requires full coverage.
 
@@ -3315,7 +3315,7 @@ This prevents detection engineering from building fragile rules against unavaila
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*qulaAG83L2Wsx6cq04rajQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qulaAG83L2Wsx6cq04rajQ.png" alt="Article image" width="1619" height="972" loading="lazy" decoding="async" />
 
 - List the specific behavior to observe.
 
@@ -3337,7 +3337,7 @@ This prevents detection engineering from building fragile rules against unavaila
 
 Behavior: New RMM tool installed on non-IT endpoint followed by external remote session.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HuNxxYjo8KBYlqqr5OUcXQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HuNxxYjo8KBYlqqr5OUcXQ.png" alt="Article image" width="1612" height="975" loading="lazy" decoding="async" />
 
 ### Analyst Checklist
 
@@ -3381,7 +3381,7 @@ Hypotheses make CTI actionable without prematurely creating noisy alerts.
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*E0mduXDsUj-TRy_ixcKQvQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*E0mduXDsUj-TRy_ixcKQvQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 - Start with a source-backed behavior.
 
@@ -3439,7 +3439,7 @@ Backlogs connect CTI priorities to engineering capacity and SOC readiness.
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*j4gm6vrROVXF2IoLf4NClw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*j4gm6vrROVXF2IoLf4NClw.png" alt="Article image" width="1774" height="887" loading="lazy" decoding="async" />
 
 - Create one row per detection idea.
 
@@ -4128,7 +4128,7 @@ _time
 
 Before any example can move from DRL-4 to DRL-5 or higher, the following must be documented:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cIIkwjO3xImS8qwpiJao9w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cIIkwjO3xImS8qwpiJao9w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 No example on this page has passed DRL-5. None may be deployed as a production alert.
 
@@ -4182,7 +4182,7 @@ SOC handoff reduces alert fatigue, improves triage quality, and captures feedbac
 
 ## Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*H7gS55-TBnbyPIJCy6uh_w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*H7gS55-TBnbyPIJCy6uh_w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Summarize behavior and risk.
 
@@ -4244,7 +4244,7 @@ AI-assisted CTI can reduce mechanical effort while preserving evidence disciplin
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cMU9dlrDOP5pGS6vzX5DDA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cMU9dlrDOP5pGS6vzX5DDA.png" alt="Article image" width="1602" height="982" loading="lazy" decoding="async" />
 
 - Define the analyst task.
 
@@ -4288,13 +4288,13 @@ AI output cannot independently create attribution, confidence, or production-rea
 
 Before any AI use, classify the data:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Z6h081B54xCzCLxCP7YDAQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Z6h081B54xCzCLxCP7YDAQ.png" alt="Article image" width="1551" height="1014" loading="lazy" decoding="async" />
 
 If data classification is unclear, treat it as internal sensitive and do not process it in public AI tools.
 
 ### Task Control Matrix
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jf7I9jzD_6ofe02dFb1iLQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jf7I9jzD_6ofe02dFb1iLQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Prompt-Injection Controls
 
@@ -4316,13 +4316,13 @@ Source documents, webpages, and vendor reports are untrusted input. They may con
 
 Test your workflow against these known injection patterns before trusting model output from untrusted documents:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UYOo6G-qhjEeCZpI5ryS9A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UYOo6G-qhjEeCZpI5ryS9A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Hallucination Failure Examples
 
 These are documented failure modes in CTI-context AI use.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Zvnwnib27thC-E_hEH4L9A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Zvnwnib27thC-E_hEH4L9A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### AI Review Log Template
 
@@ -4642,7 +4642,7 @@ gap
 
 ### Prohibited Use Summary
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MWyJfrbWxf1LWYlsv2ytuA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MWyJfrbWxf1LWYlsv2ytuA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 The following are prohibited regardless of context. No policy exception or urgent deadline overrides these prohibitions:
 
@@ -4727,7 +4727,7 @@ CTI is especially vulnerable to hallucination because actor names, aliases, tool
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QfowBzuuP4x3KH7Tc2x6fQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QfowBzuuP4x3KH7Tc2x6fQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 - Require citations for every claim.
 
@@ -4783,7 +4783,7 @@ Quality gates prevent hallucinations and weak claims from entering reports, dete
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Ak6SVd9cx5PaE5NH0ljyXw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Ak6SVd9cx5PaE5NH0ljyXw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 - Check data handling.
 
@@ -4899,7 +4899,7 @@ Good prompts reduce rework and make AI outputs easier to validate.
 
 ### Practical Workflow
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WkdczkYFRs3G0KQ6JW6vgA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WkdczkYFRs3G0KQ6JW6vgA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Choose the task type.
 

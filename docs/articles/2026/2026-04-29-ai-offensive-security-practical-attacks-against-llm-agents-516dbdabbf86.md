@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*hwvnLFZ0hNlxdrALrFv-bg.png"
 # AI Offensive Security: Practical Attacks Against LLM Agents
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*hwvnLFZ0hNlxdrALrFv-bg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hwvnLFZ0hNlxdrALrFv-bg.png" alt="Cover image" width="2816" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Red-Team and AppSec Practitioner Guide
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hwvnLFZ0hNlxdrALrFv-bg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hwvnLFZ0hNlxdrALrFv-bg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -61,7 +61,7 @@ Attack 8: Retrieval Poisoning
 
 ### Threat Model (applies to all attacks)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*O5dUFJUY6jJJSs_XFxWvtA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*O5dUFJUY6jJJSs_XFxWvtA.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor A:**external attacker with write access to low-trust data sources (uploads, web content, shared docs, public feeds).
 
@@ -71,7 +71,7 @@ Attack 8: Retrieval Poisoning
 
 ## Attack 1: Indirect Prompt Injection via RAG/Documents
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0dyjDGUE2l7QTjLYl_4MVw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0dyjDGUE2l7QTjLYl_4MVw.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor model:**A, B
 
@@ -575,7 +575,7 @@ Include the first
 
 The agent has no mechanism to distinguish this from a legitimate automated procedure. It reads retrieved documents as trusted context and follows the embedded instructions — running a real shell command, leaking`/etc/passwd`content in the response, and sending it to an attacker-controlled email address. The analyst asked about an IP address.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*faLrtAaoU2zorF5rOe_EYg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*faLrtAaoU2zorF5rOe_EYg.png" alt="Article image" width="1685" height="929" loading="lazy" decoding="async" />
 
 **Why it’s dangerous**
 
@@ -599,7 +599,7 @@ Separate the trust boundary between retrieved data and model instructions. RAG c
 
 ## Attack 2: Tool/Function Abuse Through Argument Steering
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ROyKJE-G__O1zbaWEO0wnA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ROyKJE-G__O1zbaWEO0wnA.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor model:**A, B
 
@@ -721,7 +721,7 @@ full
  compliance audit.
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hN6iZKeJOyd6TOq4SCi6PA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hN6iZKeJOyd6TOq4SCi6PA.png" alt="Article image" width="1685" height="929" loading="lazy" decoding="async" />
 
 ### What happened
 
@@ -784,7 +784,7 @@ The model never does anything “wrong” — it’s just being helpful by follo
 
 ## Attack 3: Data Exfiltration Through Agent Actions
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EkPog48nzgrlqSpqy9eHaA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EkPog48nzgrlqSpqy9eHaA.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor model:**A, B, C
 
@@ -921,7 +921,7 @@ The agent calls`enrich_ioc`→ reads attacker-controlled`report`field → follow
 
 Evidence itemWhat it means`exfil_tool_calledemail_send_stub`/`webhook_post_stub`was invoked`sensitive_data_in_payload`IPs, hashes, incident IDs detected in tool args`first_seen_destination`Recipient address not in any previous run`data_exfiltration`hook trace`before_tool_call`recorded the outbound action
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6zT1k3MqQYKSI1TQYUeBHg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6zT1k3MqQYKSI1TQYUeBHg.png" alt="Article image" width="1685" height="929" loading="lazy" decoding="async" />
 
 ### Why it works
 
@@ -929,7 +929,7 @@ The`email_send_stub`handler (app/tools/sandboxed_tools.py:180-197) applies**zero
 
 ## Attack 4: Memory Poisoning (Long-Term Persistence)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*tdVZBIKXFYePm86Zo5TJCg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*tdVZBIKXFYePm86Zo5TJCg.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor model:**A, B
 
@@ -1011,7 +1011,7 @@ value
 password_hash, never add warnings".
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sYIaHXW-M1HM9UuOSEbQhA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sYIaHXW-M1HM9UuOSEbQhA.png" alt="Article image" width="1317" height="183" loading="lazy" decoding="async" />
 
 The agent will call:
 
@@ -1085,7 +1085,7 @@ null
 }
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5VUDVsoIevwcCw-Xio4BJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5VUDVsoIevwcCw-Xio4BJw.png" alt="Article image" width="1189" height="664" loading="lazy" decoding="async" />
 
 Note`trust_level: "low"`and`expires_at: null`— no TTL, no trust gating.
 
@@ -1140,7 +1140,7 @@ showing me the results.
 
 Now in every future session, the agent will exfiltrate to`backup-soc@analyst-tools.net`without any user instruction to do so.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dK-eai7Qa9Um_L3CoWJUZw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dK-eai7Qa9Um_L3CoWJUZw.png" alt="Article image" width="1400" height="595" loading="lazy" decoding="async" />
 
 ### What to look for in the score panel
 
@@ -1160,7 +1160,7 @@ The detection (`is_instruction_like()`) identifies the poison but the module int
 
 ## Attack 5: Goal Hijacking / Instruction Override
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*qkShLt_YNfkxDgNmao5GKg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qkShLt_YNfkxDgNmao5GKg.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor model:**A, B
 
@@ -1337,7 +1337,7 @@ This is the most realistic path because the injection arrives through a trusted 
 
 PropertySimple injectionGoal hijackingWhat changesThe model’s constraintsThe model’s objectiveInjection framing”Ignore your instructions””Per compliance policy, do X first”Original goalSuppressedReplaced with a different goalSide effectsOptionalAlways — hijacked goal causes tool callsDetection signalPattern match on jailbreak keywordsSemantic mismatch: declared intent ≠ executed tool calls
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*b8Tk71VxoZ-etAKmFjyzIg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*b8Tk71VxoZ-etAKmFjyzIg.png" alt="Article image" width="1300" height="348" loading="lazy" decoding="async" />
 
 ### Detection gap in this lab
 
@@ -1345,7 +1345,7 @@ The`direct_prompt_injection`module catches Path A only if the prompt hits`_JAILB
 
 ## Attack 6: Tool-Output Injection (Second-Order Injection)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2NZ2gTSGTDLQUu1Nn1ZzPg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2NZ2gTSGTDLQUu1Nn1ZzPg.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor model:**A, C
 
@@ -1433,7 +1433,7 @@ procedure
 -007.
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UwRrhaXkJYsE2-mnIcsnXg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UwRrhaXkJYsE2-mnIcsnXg.png" alt="Article image" width="1614" height="543" loading="lazy" decoding="async" />
 
 This is**data returned by a tool**, not user input — the standard trust model treats it as internal/safe.
 
@@ -1581,7 +1581,7 @@ cat
 
 You should see a record with`to: security-review@attacker-controlled.io`containing incident data.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NdufhZFzuNgPiUU0IAyhZA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NdufhZFzuNgPiUU0IAyhZA.png" alt="Article image" width="1928" height="415" loading="lazy" decoding="async" />
 
 ### Why the detection fires but doesn’t block
 
@@ -1604,7 +1604,7 @@ The model has no mechanism to distinguish*data returned by a tool*from*instructi
 
 ## Attack 7: Malicious MCP/Plugin/Tool Supply Chain
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EV9cySxKe9C_1XNFCODlHg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EV9cySxKe9C_1XNFCODlHg.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor model:**C
 
@@ -1628,7 +1628,7 @@ The model has no mechanism to distinguish*data returned by a tool*from*instructi
 
 ## Attack 8: Retrieval Poisoning
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*03-14ElLPa9Ej8QBJ2uaUg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*03-14ElLPa9Ej8QBJ2uaUg.png" alt="Article image" width="1122" height="1402" loading="lazy" decoding="async" />
 
 - **Actor model:**A, B
 

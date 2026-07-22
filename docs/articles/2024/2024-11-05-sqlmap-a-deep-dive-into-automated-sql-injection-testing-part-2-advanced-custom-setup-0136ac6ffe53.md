@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC"
 # SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 2. (Advanced, custom setup)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC)
+<img src="https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Part 1 here
 
-![SQLMAP](https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC)
+<img src="https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC" alt="SQLMAP" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction to SQLMap
 
@@ -175,7 +175,7 @@ y
 
 - This command uses Google search to find URLs containing`index.php?id=`and tests them for vulnerabilities.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*adl-AWf9U3YWkif6oDYrvg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*adl-AWf9U3YWkif6oDYrvg.png" alt="Article image" width="1684" height="747" loading="lazy" decoding="async" />
 
 ### 7. -c CONFIGFILE
 

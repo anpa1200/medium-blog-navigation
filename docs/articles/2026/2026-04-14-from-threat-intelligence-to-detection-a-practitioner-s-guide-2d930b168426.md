@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*gmEglWovk7wD4MTGoNpZ5A.png"
 # From Threat Intelligence to Detection: A Practitioner’s Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*gmEglWovk7wD4MTGoNpZ5A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gmEglWovk7wD4MTGoNpZ5A.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Building atomic, collection, correlational, TTP-based, and anomaly detection rules from real adversary behavior.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gmEglWovk7wD4MTGoNpZ5A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gmEglWovk7wD4MTGoNpZ5A.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
 
@@ -65,7 +65,7 @@ The problem is structural. IOC-based detection operates at the very bottom of th
 
 This guide builds all five layers of detection from the behavior of three well-documented, sophisticated adversary groups. Each layer answers a different question:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fnI8RxFwojz98-N-tQx_5Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fnI8RxFwojz98-N-tQx_5Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 A detection program that only runs at the top row is noisy and incomplete. One that only runs at the bottom row misses everything that has rotated its indicators. The goal is to run all five layers simultaneously, with increasing alert confidence as you move up.
 
@@ -75,7 +75,7 @@ Three adversary groups were selected on four criteria: technical sophistication,
 
 ### 1. APT29 — Midnight Blizzard / Cozy Bear (Russia, SVR)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gldCo66m82KDzhxcn2IY6A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gldCo66m82KDzhxcn2IY6A.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Classification:**Russian Foreign Intelligence Service (SVR), active since at least 2008
 **MITRE ATT&CK:**[G0016](https://attack.mitre.org/groups/G0016/)
@@ -113,7 +113,7 @@ Three adversary groups were selected on four criteria: technical sophistication,
 
 ### 2. APT41 — Double Dragon / Winnti (China, MSS-linked)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mstTspG5RXN5MoPN0SWUPw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mstTspG5RXN5MoPN0SWUPw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Classification:**China Ministry of State Security contractor/affiliated group, active since at least 2012
 **MITRE ATT&CK:**[G0096](https://attack.mitre.org/groups/G0096/)
@@ -153,7 +153,7 @@ Three adversary groups were selected on four criteria: technical sophistication,
 
 ### 3. Lazarus Group — HIDDEN COBRA / Diamond Sleet / TraderTraitor (DPRK, RGB)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ysYb5qRjFAzwP3VadqiVpw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ysYb5qRjFAzwP3VadqiVpw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Classification:**North Korean Reconnaissance General Bureau (RGB), active since at least 2009
 **MITRE ATT&CK:**[G0032](https://attack.mitre.org/groups/G0032/)
@@ -211,15 +211,15 @@ Before building rules, it helps to be precise about what each tier detects and w
 
 ## Required Log Sources by Layer
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*y03pLVXGi0Uzye-xLoylAA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*y03pLVXGi0Uzye-xLoylAA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Rule format guide:**This article uses four distinct formats, indicated in each section header or code block:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5gGeoPzVINn-urOKl5hEmg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5gGeoPzVINn-urOKl5hEmg.png" alt="Article image" width="996" height="420" loading="lazy" decoding="async" />
 
 ## Atomic Event Rules
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5eBhQDr_e0Y6gJjO4NWppw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5eBhQDr_e0Y6gJjO4NWppw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Atomic rules are the foundation. They are fast, deterministic, and directly traceable to a specific observable from a threat report. The key discipline is:**every atomic rule must cite its source**, have a defined false-positive profile, and be reviewed for continued relevance because indicators age out.
 
@@ -1385,7 +1385,7 @@ k ptrace_peek
 
 ## Collection-Based Rules
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fGlrzWGOf3AwYr8VuQTCwA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fGlrzWGOf3AwYr8VuQTCwA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Collection rules introduce temporal context. Rather than a single event, they watch for a pattern of events of the same type accumulating over a time window. The key design decisions are: what to count, what entity to group by, and what threshold to use.
 
@@ -1397,7 +1397,7 @@ Thresholds should be derived from your baseline, not invented. If you don’t kn
 
 APT29’s 2023–2024 Microsoft intrusion abused OAuth device-code flow to obtain tokens for Microsoft Graph API access. The pattern involved a single source IP generating many token requests across multiple accounts. A collection rule catches the volume before a correlational rule catches the sequence.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XfGKRtl0vOt40q69iUvS0Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XfGKRtl0vOt40q69iUvS0Q.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ```text
 title: OAuth Token Request Spike from Single Source IP
@@ -1520,7 +1520,7 @@ level
 
 ### 2. APT41 — Repeated Exploitation Attempts Against Same Service
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eEd2RG1fTtv-uazt0KnDRA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eEd2RG1fTtv-uazt0KnDRA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 APT41 systematically probes and exploits public-facing services. Their pattern frequently shows multiple exploitation payloads in rapid succession against the same endpoint — testing different bypass variants — before a successful shell. A collection rule on WAF/IDS events or web server error logs catches this preparatory phase.
 
@@ -1714,7 +1714,7 @@ high
 
 ### 3. Lazarus — Bulk File Staging Before Exfiltration
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7EO2MlYyLKkeHOFma8LocQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7EO2MlYyLKkeHOFma8LocQ.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Before exfiltrating cryptocurrency wallet files or financial documents, Lazarus operators stage data by compressing it into archives. A collection rule watching for rapid creation of multiple archive files by a single process catches this staging behavior regardless of the specific archiver used.
 
@@ -1907,7 +1907,7 @@ medium
 
 ## Correlational Rules
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uKopqTQlPjlUUiPpqJ-J4w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uKopqTQlPjlUUiPpqJ-J4w.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Correlational rules are where detection becomes genuinely difficult for an adversary to evade without restructuring their operation. They require a SIEM capable of joining events across different log sources on a common entity — typically hostname, username, or process ID — within a defined time window.
 
@@ -1939,7 +1939,7 @@ The 2024 Midnight Blizzard intrusion into Microsoft’s corporate network follow
 
 **Confidence when fires:**Critical — device-code token grant → privileged Graph access within 5 minutes is highly anomalous.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xXHz2Q-h6dqjjlwecKBygA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xXHz2Q-h6dqjjlwecKBygA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ```text
 // Platform: Microsoft Sentinel
@@ -2043,7 +2043,7 @@ APT41’s intrusion pattern is highly predictable: exploit a public-facing servi
 
 **Confidence when fires:**Critical — three-phase chain within 30 minutes is high-confidence APT41-style post-exploitation.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_e3ARiP5xwBwaqR8JkBhQg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_e3ARiP5xwBwaqR8JkBhQg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ```text
 |
@@ -2304,7 +2304,7 @@ Dream Job and TraderTraitor operations follow a documented sequence: user opens 
 
 **Confidence when fires:**Critical — three-stage chain on same host within 15 minutes.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Qmh5-p-M-wY65Xm3yWEaaw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Qmh5-p-M-wY65Xm3yWEaaw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ```text
 /* Platform: Elastic Security (EQL Rule)
@@ -3213,7 +3213,7 @@ high_priv_accounts
 
 ## Anomaly Detection Rules
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HCiyQyalZrZxWRsojwSrWg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HCiyQyalZrZxWRsojwSrWg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 Anomaly detection moves from “did this specific bad thing happen” to “did this entity behave in a way inconsistent with its established baseline.” These rules are the hardest to build, require the most tuning, and produce the most initial noise — but they are also the hardest for a sophisticated adversary to evade in an environment where baselines are maintained.
 
@@ -3223,7 +3223,7 @@ The prerequisite for every anomaly rule: a meaningful baseline period (minimum 3
 
 APT29 uses compromised service accounts for long-dwell lateral movement. Service accounts have extremely predictable behavioral patterns — they typically authenticate at the same times, from the same systems, accessing the same resources. Any deviation is high-signal.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*egqFnts-q_QWspkEFKXfJA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*egqFnts-q_QWspkEFKXfJA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ```text
 Anomaly Rule: Service Account Temporal Deviation
@@ -4621,7 +4621,7 @@ At each tier, the analyst answers a different question — illustrated here usin
 
 A practical approach to managing alert volume across all five tiers is a per-incident risk score. Rather than treating each rule as a binary alert, assign a base score and let the score accumulate:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TjDyv_zpElGLZZOkBmQR6g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TjDyv_zpElGLZZOkBmQR6g.png" alt="Article image" width="1081" height="624" loading="lazy" decoding="async" />
 
 Multiple simultaneous rule fires on the same entity within a time window should be multiplicatively weighted, not additively: an atomic IOC hit plus a TTP rule fire plus an anomaly alert on the same user, same hour, is almost certainly a real incident.
 
@@ -4671,7 +4671,7 @@ The failure mode for atomic and collection rules is high false positive rate, le
 
 Tune in this order:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nIX7fXxF21nWUyS5XphLyA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nIX7fXxF21nWUyS5XphLyA.png" alt="Article image" width="803" height="1002" loading="lazy" decoding="async" />
 
 - **Start with the TTP-based rules.**They generate the fewest alerts but the most actionable ones. Tune the filter lists based on your legitimate software inventory.
 
@@ -4687,7 +4687,7 @@ Tune in this order:
 
 Every rule should be tested before production deployment and periodically thereafter. The minimum validation set for each detection layer:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1IdiSknrbY4opqL3uF3Fhg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1IdiSknrbY4opqL3uF3Fhg.png" alt="Article image" width="748" height="815" loading="lazy" decoding="async" />
 
 Reference datasets for validation:
 
@@ -4776,7 +4776,7 @@ version:
 
 **Five-tier review cadence**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pc92jx7M1daZNZ5qMKrHEw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pc92jx7M1daZNZ5qMKrHEw.png" alt="Article image" width="625" height="720" loading="lazy" decoding="async" />
 
 **Deprecation criteria**
 

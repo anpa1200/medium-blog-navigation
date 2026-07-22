@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*YNm0OWb5n-DQv4Tm9kz5oA.png"
 # Phishing Email Awareness: Protecting Employees and Organizations
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*YNm0OWb5n-DQv4Tm9kz5oA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YNm0OWb5n-DQv4Tm9kz5oA.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 Email**phishing**is a form of social engineering where attackers send fraudulent emails that appear to come from trustworthy sources. The goal is to trick recipients into revealing sensitive information (like passwords or financial details) or into clicking links/attachments that install malware[cisa.gov](https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks#:~:text=Phishing%20is%20a%20form%20of,gain%20access%20to%20the%20accounts). Phishing is**extremely common**because it exploits human trust and curiosity rather than technical vulnerabilities — in other words, it targets the**“human element”**. Numerous breach investigations show that phishing is one of the top entry points for attackers; in fact, Verizon’s data indicates the three primary ways intruders get into organizations are stolen credentials, phishing, and exploiting vulnerabilities[verizon.com](https://www.verizon.com/business/resources/Ta5a/reports/2023-dbir-public-sector-snapshot.pdf#:~:text=Looking%20for%20access%20on%20multiple,Report%20Public%20Sector%20Snapshot%205). Attackers favor phishing for a simple reason:**it works**[ibm.com](https://www.ibm.com/think/x-force/2023-x-force-threat-intelligence-index-report#:~:text=Phishing%20isn%E2%80%99t%20a%20new%20initial,an%20obvious%20reason%3A%20it%20works). By sending carefully crafted emails to many targets, cybercriminals can bypass technical defenses by persuading an unwary employee to**open the door for them**.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*YNm0OWb5n-DQv4Tm9kz5oA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*YNm0OWb5n-DQv4Tm9kz5oA.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## The Scale of the Phishing Threat (By the Numbers)
 
@@ -43,7 +43,7 @@ Phishing isn’t a minor nuisance — it is a massive and growing threat. Recent
 
 In short, phishing is**widespread**and has a**significant impact**on both individuals and companies worldwide. It’s not only the volume of attacks that’s concerning, but the fact that phishing is the opening move for many larger cyberattacks, as we explore next.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FXP31NaciXWqVyOey_vLJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FXP31NaciXWqVyOey_vLJw.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Notable Phishing Attacks in Recent Years
 
@@ -63,7 +63,7 @@ These examples (among many others) illustrate the range of damage that can resul
 
 ## Phishing as a Gateway to Bigger Threats
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CBZhNdxa5-7V3Z2xl_uj8w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CBZhNdxa5-7V3Z2xl_uj8w.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 Phishing is often just**phase one**of a larger attack. A single click on a phishy link or a moment of trust in a fake email can**open the door to major cyber threats**:
 
@@ -79,7 +79,7 @@ In summary, phishing is not an isolated threat; it is**interconnected with virtu
 
 ## Common Phishing Techniques and Tactics
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*B3AAXDlpcJWuqxGcublRyg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*B3AAXDlpcJWuqxGcublRyg.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 Phishers have developed a variety of tricks to make their emails convincing. Here are some of the most common tactics attackers use to lure their victims:
 
@@ -103,9 +103,9 @@ Attackers mix and match these techniques to craft emails that**bait employees in
 
 ## Spotting a Phishing Email: Anatomy of an Attack
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*LKUjdpdiZjletTf2.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*LKUjdpdiZjletTf2.png" alt="Article image" width="760" height="519" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*0IQBeUjrspioQ5Ty.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*0IQBeUjrspioQ5Ty.jpg" alt="Article image" width="1500" height="934" loading="lazy" decoding="async" />
 
 *Figure: Example of a phishing email impersonating a known brand (PayPal), with telltale signs highlighted: a deceptive sender address, urgent language, generic greeting, and a misleading hyperlink (hovering reveals a mismatched URL).*
 

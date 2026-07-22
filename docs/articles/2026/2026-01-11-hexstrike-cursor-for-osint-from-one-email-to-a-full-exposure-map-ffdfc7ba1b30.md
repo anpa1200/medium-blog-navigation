@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*nJTueyo4IxR8Nw8jYLDS-g.png"
 # HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*nJTueyo4IxR8Nw8jYLDS-g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nJTueyo4IxR8Nw8jYLDS-g.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Why OSINT is harder than “hack the box,” what an AI-assisted workflow looks like in practice, and how to publish a real report without doxxing yourself or your family.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nJTueyo4IxR8Nw8jYLDS-g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nJTueyo4IxR8Nw8jYLDS-g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 I started OSINT on myself from a single email address. Within a short time, I could correlate a surprising amount of information.
 

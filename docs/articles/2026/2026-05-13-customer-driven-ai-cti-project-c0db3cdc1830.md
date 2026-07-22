@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*VQGM4kDVKCqhTDkmQRZkqA.png"
 # Customer-Driven AI CTI Project
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*VQGM4kDVKCqhTDkmQRZkqA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VQGM4kDVKCqhTDkmQRZkqA.png" alt="Cover image" width="2528" height="1696" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Full Workflow Quick Reference
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VQGM4kDVKCqhTDkmQRZkqA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VQGM4kDVKCqhTDkmQRZkqA.png" alt="Article image" width="2528" height="1696" loading="lazy" decoding="async" />
 
 Most cyber threat intelligence programs fail at the same point: they produce reports nobody uses. The analyst delivers a threat summary; the SOC ignores it; the CISO asks why the budget exists. The gap is not effort — it is structure. Intelligence that cannot be traced from a customer decision all the way to a fired detection rule, a tuned alert, and a measurable outcome is not intelligence. It is research.
 
@@ -96,7 +96,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - **Task Cards**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Qtk3g5J-PnrCq1LD4pIHpw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Qtk3g5J-PnrCq1LD4pIHpw.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async" />
 
 ## Phase 0: Project Charter and Guardrails
 
@@ -112,7 +112,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Get customer sponsor sign-off on charter
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fGY1_YnMjTr_qplOhPsX2g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fGY1_YnMjTr_qplOhPsX2g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 1: Customer Decision and PIR Definition
 
@@ -132,7 +132,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Submit evidence pack and pass[**Gate A: PIR Approval**](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*e_mCstkhVEjhjNZ7EmXzbg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*e_mCstkhVEjhjNZ7EmXzbg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 2: Crown-Jewel and Business-Impact Mapping
 
@@ -150,7 +150,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Get customer owner approval on final crown-jewel list (no self-classification)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*akD_ZC6k1lcWCz8sXNLE0g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*akD_ZC6k1lcWCz8sXNLE0g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 3: Telemetry and Data Readiness Assessment
 
@@ -168,7 +168,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Flag any SIR that has no telemetry source at DRL ≥ 2 as a blocker before Phase 5
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LL5L2VB4iSKSssmr7KX5yg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LL5L2VB4iSKSssmr7KX5yg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 4: External CTI Source Intake and Validation
 
@@ -188,7 +188,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Resolve all inter-rater disagreements &gt; 1 letter or number before closing phase
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*x8n3W0FZUiKqdalqOz5adw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*x8n3W0FZUiKqdalqOz5adw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 5: Threat Scenario Development
 
@@ -208,7 +208,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Submit evidence pack and pass[**Gate B: Scenario Approval**](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JwWOeLaJ4WKYhvnJRCAWvw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JwWOeLaJ4WKYhvnJRCAWvw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 6: Hypothesis-Driven Threat Hunting Backlog
 
@@ -224,7 +224,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Submit evidence pack and pass[**Gate C: Hunt Approval**](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bo7rihxAoXcsIsLkgKV0iQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bo7rihxAoXcsIsLkgKV0iQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 7: Detection Engineering Design
 
@@ -246,7 +246,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Submit evidence pack and pass[**Gate D: Detection Design Approval**](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XZU0y9f76enIlDsLOsX0kg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XZU0y9f76enIlDsLOsX0kg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 8: Detection-as-Code Implementation
 
@@ -262,7 +262,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Advance DRL to 4 on successful merge and CI pass
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rJ-d2lP2zYCqlxixvHNOOQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rJ-d2lP2zYCqlxixvHNOOQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 9: Test Data, Simulation, and Replay
 
@@ -284,7 +284,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Advance DRL to 6 on test pass
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6ajdoBb87qeRLJG8aW8dQg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6ajdoBb87qeRLJG8aW8dQg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 10: SOC Triage and Incident Workflow
 
@@ -302,7 +302,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Conduct SOC dry-run against the detection; advance DRL to 7 after playbook approved and dry-run completed per[Detection Readiness Levels](2026-05-11-customer-driven-ai-cti-project-template-part-1-foundations-745861507d03.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sJ6sUGcFqRvH8MbZVFJ8Tw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sJ6sUGcFqRvH8MbZVFJ8Tw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 11: Pilot Deployment and Tuning
 
@@ -320,7 +320,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Submit evidence pack and pass[**Gate E: Production Approval**](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yxYygKtOgDxsVTW-s4hpVA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yxYygKtOgDxsVTW-s4hpVA.png" alt="Article image" width="2730" height="1536" loading="lazy" decoding="async" />
 
 ## Phase 12: Production Deployment
 
@@ -336,7 +336,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Advance DRL to 9 after sustained production pass: owner assigned, monitoring active, review date set, rollback and health tracking confirmed per[Detection Readiness Levels](2026-05-11-customer-driven-ai-cti-project-template-part-1-foundations-745861507d03.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gak53wtvopgvV53rCKPpow.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gak53wtvopgvV53rCKPpow.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 13: Executive and Technical Reporting
 
@@ -354,7 +354,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Complete[Task Card 10: Executive Report Draft](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_Pp_46xibYT2RQMSVOJRfQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_Pp_46xibYT2RQMSVOJRfQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Phase 14: Continuous Improvement and Maturity Loop
 
@@ -374,7 +374,7 @@ See also:[Minimum Viable Customer Delivery](2026-05-12-customer-driven-ai-cti-pr
 
 - Deliver[Final Customer Delivery Package](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*B4HvwpMwai-YJksBSNNzGg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*B4HvwpMwai-YJksBSNNzGg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Quality Gates
 

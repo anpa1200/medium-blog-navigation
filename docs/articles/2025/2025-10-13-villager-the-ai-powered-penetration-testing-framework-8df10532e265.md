@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*P6rDNkPr58rLM8Mo7l7QMA.jpeg"
 # Villager: The AI-Powered Penetration Testing Framework
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*P6rDNkPr58rLM8Mo7l7QMA.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*P6rDNkPr58rLM8Mo7l7QMA.jpeg" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 **By Andrey Pautov — October 2025**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*P6rDNkPr58rLM8Mo7l7QMA.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*P6rDNkPr58rLM8Mo7l7QMA.jpeg" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## A New Generation of Offensive AI
 
@@ -98,4 +98,4 @@ In any case, the message is clear:
 **Reference:**
 [ITPro: DeepSeek-powered pen-testing tool “Villager” could be a Cobalt Strike successor](https://www.itpro.com/technology/artificial-intelligence/this-deepseek-powered-pen-testing-tool-could-be-a-cobalt-strike-successor-and-hackers-have-downloaded-it-10-000-times-since-july?utm_source=chatgpt.com)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yqPIdPrrbfl5oVbyjMsXWg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yqPIdPrrbfl5oVbyjMsXWg.png" alt="Article image" width="934" height="497" loading="lazy" decoding="async" />

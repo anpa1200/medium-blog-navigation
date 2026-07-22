@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*xUfDuZSpwqyzCSbfxoOe5Q.png"
 # Navigate My Blog: All Articles by Topic
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*xUfDuZSpwqyzCSbfxoOe5Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xUfDuZSpwqyzCSbfxoOe5Q.png" alt="Cover image" width="2816" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A single entry point to 100+ articles on offensive security, AI-driven pentesting, red team, labs, and defense. Use the groups below to jump to what you need.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*xUfDuZSpwqyzCSbfxoOe5Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*xUfDuZSpwqyzCSbfxoOe5Q.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -77,7 +77,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## AI in Cybersecurity & HexStrike-AI
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9hosIjf0UO7Ri59y86f1Iw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9hosIjf0UO7Ri59y86f1Iw.png" alt="Article image" width="1008" height="1024" loading="lazy" decoding="async" />
 
 **What’s in this group:**High-level view of AI in security — from simple “paste tool output into an LLM” to full MCP + Cursor workflows. Here you’ll find the flagship overview (The AI Revolution in Cybersecurity), why HexStrike-AI acts as a force multiplier for red teams, and how it differs from chatbot-style tools like HackerAI. Also included: step-by-step install and config for HexStrike-AI with Gemini, OpenAI, Cursor, and Llama; the Kali Linux setup guide; and the 20x Employee framework for using AI to scale your work. Start here if you want the big picture before diving into specific AI-driven pentests or tool guides.
 
@@ -95,7 +95,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## AI-Driven Pentesting & Exploitation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DKgfbG-OT1l4aZ6cYoEIFw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DKgfbG-OT1l4aZ6cYoEIFw.png" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
 
 **What’s in this group:**Real engagements and labs where AI drives the workflow. Articles cover full-scope pentests (e.g. home network with HexStrike-AI), web and wireless testing with one-prompt or MCP-driven flows, and Cursor + HexStrike from a single target to full subnet compromise or from one email to a full OSINT exposure map. You’ll also find AI-assisted credential attacks (SMB, SSH), password and file recovery (ZIP, PDF, Office) with HexStrike + Gemini, and AI-driven exploitation of Metasploitable (including Codex). HackerAI walkthroughs, StratusAI for cloud scanning, the Villager framework, and the “human-language malware” warning round out this section. Use these when you want concrete examples and step-by-step flows, not just theory.
 
@@ -133,7 +133,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Burp Suite, Web Scanners & LLM/MCP
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*ObT5dcc_r_co-Xc6)
+<img src="https://cdn-images-1.medium.com/max/800/0*ObT5dcc_r_co-Xc6" alt="Article image" width="317" height="159" loading="lazy" decoding="async" />
 
 **What’s in this group:**Everything around Burp Suite and AI. That includes using LLMs to interpret and prioritize Burp scan results, generate payloads, and plan multi-step attacks; wiring Burp to Gemini CLI via MCP so the AI can drive scans and read findings; and the classic “Mastering Burp Suite” vulnerability-scanner guide. There’s also a tutorial on cracking web interfaces with Burp. If you do web app testing and want to add LLM or MCP into the loop, this is the section to use.
 
@@ -171,7 +171,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Nmap & Network Scanning
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*FBzKxd0RNJb3r-k5.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*FBzKxd0RNJb3r-k5.jpg" alt="Article image" width="650" height="347" loading="lazy" decoding="async" />
 
 **What’s in this group:**A full Nmap series from basics to advanced use. Part 1 covers network exploration and security auditing fundamentals; later parts go deeper into service detection, version probing, and scripting (Part 4). These are the go-to references when you need correct syntax, scan strategies, or script usage for internal or external network assessments — with or without AI on top.
 
@@ -203,7 +203,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Metasploit & Exploitation
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*mCm6JdFKvjD84tHd.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*mCm6JdFKvjD84tHd.png" alt="Article image" width="1600" height="722" loading="lazy" decoding="async" />
 
 **What’s in this group:**Metasploit from first use to module-level detail. The Ultimate Guide (Part 1) sets the foundation; separate articles cover auxiliary and exploit modules so you can choose and tune the right one. Step-by-step walkthroughs show SSH credential exploitation, FTP abuse, and Telnet cracking in real scenarios. Use this section when you’re building or refining your exploitation workflow or need a quick reference for module types and options.
 

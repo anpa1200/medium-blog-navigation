@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*FEND4twn4pGNlLPNTCr6zQ.png"
 # HexStrike MCP Orchestration with Ollama: Ubuntu Host, Kali VM, SSH Bridging, and Performance…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*FEND4twn4pGNlLPNTCr6zQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FEND4twn4pGNlLPNTCr6zQ.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How to wire Ubuntu (Ollama) to Kali (HexStrike) with MCP over SSH, what models actually behaved (Qwen3 8B/14B), and when you should move to GPU or cloud models.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FEND4twn4pGNlLPNTCr6zQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FEND4twn4pGNlLPNTCr6zQ.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 Below is a practical, end-to-end setup that keeps the**LLM on Ubuntu (host)**and runs**HexStrike on Kali (VM)**, then bridges them so your local model can “drive” HexStrike tool calls.
 
@@ -126,7 +126,7 @@ Latitude 7420 is typically CPU-bound for local LLMs (often Intel i5/i7 + integra
 
 Why: HexStrike can run heavy tools; keeping Kali at 2 vCPU prevents it from stealing cycles from the host LLM.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PdA_2FAMUoTEwkHamX9Atg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PdA_2FAMUoTEwkHamX9Atg.png" alt="Article image" width="863" height="679" loading="lazy" decoding="async" />
 
 ## 2) Ubuntu (host): install Ollama + pull a model
 
@@ -138,7 +138,7 @@ sudo apt install -y curl
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2v6HvBv_itqU1VRD-IyCqQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2v6HvBv_itqU1VRD-IyCqQ.png" alt="Article image" width="1148" height="291" loading="lazy" decoding="async" />
 
 Verify:
 
@@ -147,7 +147,7 @@ ollama
 --version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sBh84Ho6RiAjAkRfuSHWEg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sBh84Ho6RiAjAkRfuSHWEg.png" alt="Article image" width="877" height="72" loading="lazy" decoding="async" />
 
 ### 2.2 Pull a laptop-friendly model
 
@@ -167,7 +167,7 @@ ollama pull qwen3:14b
 ollama pull qwen3:8b
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UTLS3B91WoZ4yTr6AbSK3A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UTLS3B91WoZ4yTr6AbSK3A.png" alt="Article image" width="1682" height="200" loading="lazy" decoding="async" />
 
 Run a quick test:
 
@@ -176,7 +176,7 @@ ollama run qwen3:14b
 "Explain what nmap -sV does in one paragraph."
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Y8g7V1hslZGKDY93iJitDw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Y8g7V1hslZGKDY93iJitDw.png" alt="Article image" width="1529" height="153" loading="lazy" decoding="async" />
 
 ### 2.3 Laptop optimization (recommended defaults)
 
@@ -227,7 +227,7 @@ hexstrike_mcp -h
 hexstrike_server -h
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KJZnnlLp2poewZqk4d3aPw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KJZnnlLp2poewZqk4d3aPw.png" alt="Article image" width="897" height="769" loading="lazy" decoding="async" />
 
 (These flags and defaults are documented in Kali’s package page.) ([Kali Linux](https://www.kali.org/tools/hexstrike-ai/))
 
@@ -244,7 +244,7 @@ hexstrike_server
 
 You should see it start on`127.0.0.1:8888`. ([Kali Linux](https://www.kali.org/tools/hexstrike-ai/))
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LVV55RZI-QcrrVU_la9fJg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LVV55RZI-QcrrVU_la9fJg.png" alt="Article image" width="1775" height="639" loading="lazy" decoding="async" />
 
 ## 4) Kali VM — Networking + SSH (so Ubuntu can run HexStrike tools inside Kali)
 
@@ -263,7 +263,7 @@ ip
 a
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*w6LebpT1UBDVkAuwWuSPfg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*w6LebpT1UBDVkAuwWuSPfg.png" alt="Article image" width="890" height="397" loading="lazy" decoding="async" />
 
 Note the**host-only**IP (example:`172.16.59.132`).
 
@@ -289,7 +289,7 @@ ssh andrey
 .16.59.132
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2Qj7uyDh8SLZndzkTN05zg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2Qj7uyDh8SLZndzkTN05zg.png" alt="Article image" width="945" height="360" loading="lazy" decoding="async" />
 
 ## 5) Host (Ubuntu) — Install mcphost (terminal MCP host) and wire it to HexStrike
 
@@ -322,7 +322,7 @@ $(go env GOPATH)
 mcphost -h
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-zp6omdM2HI_v9Y6cHQeeA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-zp6omdM2HI_v9Y6cHQeeA.png" alt="Article image" width="987" height="282" loading="lazy" decoding="async" />
 
 ## 6) SSH key auth (recommended) + prevent SSH banners from breaking MCP stdio
 
@@ -359,7 +359,7 @@ i
 "echo ok"
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WGcR15hfphnOYHTo7pXrSA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WGcR15hfphnOYHTo7pXrSA.png" alt="Article image" width="969" height="49" loading="lazy" decoding="async" />
 
 ## 6.2 Disable MOTD/banner output for this Kali user (important)
 
@@ -447,7 +447,7 @@ mcphost --debug -m ollama:qwen3:8b
 /tools
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*L7hFrkmDBij7g2FTP-iI4g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*L7hFrkmDBij7g2FTP-iI4g.png" alt="Article image" width="1653" height="965" loading="lazy" decoding="async" />
 
 ## 8) “Like ollama run …” — one-liner usage from Ubuntu terminal
 
@@ -462,7 +462,7 @@ b -p
 '@hexstrike list all available tools'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9kjK-2jyPOUbxIDOSi36mg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9kjK-2jyPOUbxIDOSi36mg.png" alt="Article image" width="1421" height="950" loading="lazy" decoding="async" />
 
 ### 8.2 Tool-using prompt (HexStrike via MCP)
 
@@ -473,7 +473,7 @@ mcphost
 --debug -m ollama:qwen3:14b -p '@hexstrike: You must call exactly one tool: hexstrike__nmap_scan. Scan network 192.168.1.0/24. Use minimal flags for speed (no scripts). After the tool returns, output a 2-column table: IP | Open Ports. Do not call any other tools.'
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aIvIkyETWgXm6Jf3SmruZQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aIvIkyETWgXm6Jf3SmruZQ.png" alt="Article image" width="1872" height="892" loading="lazy" decoding="async" />
 
 ## 9) Recommended hardening (do this)
 

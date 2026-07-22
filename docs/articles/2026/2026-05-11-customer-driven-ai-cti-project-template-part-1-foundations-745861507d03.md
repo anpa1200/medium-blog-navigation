@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*egk7YDLtI9JGChlqptGRDQ.jpeg"
 # Customer-Driven AI CTI Project Template. Part 1: Foundations
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*egk7YDLtI9JGChlqptGRDQ.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*egk7YDLtI9JGChlqptGRDQ.jpeg" alt="Cover image" width="1168" height="784" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From pure CTI to hands-on detection engineering with strict validation gates
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*egk7YDLtI9JGChlqptGRDQ.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*egk7YDLtI9JGChlqptGRDQ.jpeg" alt="Article image" width="1168" height="784" loading="lazy" decoding="async" />
 
 ## This article is one part of a four-part series covering the full customer-driven AI-CTI project lifecycle.
 
@@ -146,7 +146,7 @@ This template supports projects that start with pure CTI and mature into hands-o
 
 These rules are mandatory for the whole project.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DoW2kDCj9XMtWBW_o_DmNA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DoW2kDCj9XMtWBW_o_DmNA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **Customer decision first:**Every CTI task must map to a decision, risk, asset, detection, hunt, or operational workflow.
 
@@ -186,7 +186,7 @@ These rules are mandatory for the whole project.
 
 Every major output must follow this chain:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rdyHArGaVshmDdPUWopBig.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rdyHArGaVshmDdPUWopBig.png" alt="Article image" width="1774" height="887" loading="lazy" decoding="async" />
 
 ```text
 Source 
@@ -250,7 +250,7 @@ The chain prevents the project from becoming a document factory. If an item cann
 
 Use these labels in all work products:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*oO58Fo-YUpwMQn_PJLi06w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*oO58Fo-YUpwMQn_PJLi06w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **Observed:**directly confirmed in customer telemetry, logs, malware analysis, configuration, or source documents.
 
@@ -268,7 +268,7 @@ Use these labels in all work products:
 
 ## Confidence Language
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*41aM1xXxsPm_10X35_VUug.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*41aM1xXxsPm_10X35_VUug.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Use confidence on every important judgment.
 
@@ -294,7 +294,7 @@ High confidence is not allowed for actor attribution unless evidence includes at
 
 Every external CTI claim must carry three separate ratings:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vSPZIuZ05tH59iz4rNc20Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vSPZIuZ05tH59iz4rNc20Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ```text
 Source Reliability:
@@ -358,7 +358,7 @@ Source reliability describes the producer. Information credibility describes the
 
 ## Combined Rating Notation
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1IbcRvukePrk1RC_Nfg6Sw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1IbcRvukePrk1RC_Nfg6Sw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Express both ratings as a two-character code:`[Source Reliability][Information Credibility]`— for example,`A2`means a historically reliable source providing probably-true information. Record the combined code in the Source Register Rating column alongside the written rationale.
 
@@ -466,7 +466,7 @@ Score
 
 - Engineering Priority Score must not be used as a substitute for business risk.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*W1RD35l8Pvw6go5ZKsoPbg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*W1RD35l8Pvw6go5ZKsoPbg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Example Score Table
 
@@ -488,7 +488,7 @@ The first scenario is lower engineering priority because the logs are weak, but 
 
 ## Customer Readiness Assessment
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gaA0aH2Jf4qniLykIdB-VQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gaA0aH2Jf4qniLykIdB-VQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Run this before choosing delivery scope. A customer with low maturity may need a lightweight assessment before a CTI-to-detection engineering project.
 
@@ -520,7 +520,7 @@ Run this before choosing delivery scope. A customer with low maturity may need a
 
 Use implementation modes to keep the project executable.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dqw3QH6sMz6082nATgCoKg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dqw3QH6sMz6082nATgCoKg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Mode 1: Lightweight Assessment
 
@@ -644,7 +644,7 @@ CTI
 
 ## AI Governance Model
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4DAonnj7CZ2a4Z4vTYgUgA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4DAonnj7CZ2a4Z4vTYgUgA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **AI is allowed for:**
 
@@ -684,7 +684,7 @@ CTI
 
 ## AI OPSEC Classification
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1Jh8xss3Gj14o6eSpkMvqw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1Jh8xss3Gj14o6eSpkMvqw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Before any data enters an AI workflow, classify it against the data tiers in §Pre-Screening Data Classification Tiers. In addition to tier classification, apply the following OPSEC assessment to identify information that must never be submitted to any AI tool regardless of tier:
 
@@ -784,7 +784,7 @@ Detection of forbidden data in a session must be logged in the RAID Register as 
 
 ## AI Quality Tests
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*6Itgc_jNYhqvXhq5aPnzNw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*6Itgc_jNYhqvXhq5aPnzNw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Use these tests for every AI output:**
 
@@ -859,7 +859,7 @@ as
 
 ## AI Data Handling Matrix
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*d0lVqEdjw9gHotumT3MSMQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*d0lVqEdjw9gHotumT3MSMQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 The AI use log itself is a sensitive artifact. It must never store raw secrets, credentials, sensitive logs, or unrestricted customer identifiers.
 
@@ -956,7 +956,7 @@ AI Use Log entry ID:
 
 ## AI Data Rules
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*UaWWR1GHZzENCMhvg5g46w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*UaWWR1GHZzENCMhvg5g46w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Use approved AI tools only.
 
@@ -996,7 +996,7 @@ No AI workflow may be executed unless the selected model or tool appears in the 
 
 ## AI Tool Approval Checklist
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Q3kfVmnA7qRXNdfN1Ayg5g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Q3kfVmnA7qRXNdfN1Ayg5g.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 - **Environment identified:**Public SaaS, private tenant, local, customer-hosted, or vendor-managed environment documented.
 
@@ -1018,7 +1018,7 @@ AI tool approval must be completed within 5 business days of project charter sig
 
 ## Public AI SaaS Acceptability Decision Table
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hKaYYGeFwUaGzbsFxpV5uA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hKaYYGeFwUaGzbsFxpV5uA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Use this table to decide whether a public SaaS AI tool requires additional controls or is prohibited before completing the AI Tool Approval Checklist.
 
@@ -1038,7 +1038,7 @@ Use this table to decide whether a public SaaS AI tool requires additional contr
 
 ## Project Roles
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hjA4Zb4D6N3vd0amEcOCDQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hjA4Zb4D6N3vd0amEcOCDQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **Executive sponsor:**Owns business risk decisions and prioritization.
 
@@ -1066,7 +1066,7 @@ The AI-assisted workflow owner must be the domain owner or must work under direc
 
 ## RACI Matrix
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kGXCkAvb987532pgIO4uYw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kGXCkAvb987532pgIO4uYw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 RACI values:
 
@@ -1125,7 +1125,7 @@ A/R on the same person is allowed only for small Mode 1 assessments where indepe
 
 The project should produce the following controlled artifacts:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*cnEY7aNsknD33LTKr-0gug.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*cnEY7aNsknD33LTKr-0gug.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 - project charter;
 
@@ -1187,7 +1187,7 @@ The project should produce the following controlled artifacts:
 
 ## CTI Information Sharing Standards
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5qMc56kwcIhHgf2kxu8Zcw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5qMc56kwcIhHgf2kxu8Zcw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 All deliverables, source materials, and shared intelligence items produced or exchanged during this engagement must carry a Traffic Light Protocol (TLP) 2.0 classification. TLP is applied at the point of creation and must be preserved when materials are forwarded.
 
@@ -1233,7 +1233,7 @@ When the customer has an operational threat intelligence platform (e.g., MISP, O
 
 ## Intelligence Requirements
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*p850NUNBgXk6rQD9G8AL8w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*p850NUNBgXk6rQD9G8AL8w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Definitions
 
@@ -1301,7 +1301,7 @@ Both sources reinforce the same operational constraint: a PIR that cannot name a
 
 Threat scenarios must be grounded in the customer’s actual architecture. Create this artifact before finalizing priority detections.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NigEuMswbg6UH6I6CxFHIA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NigEuMswbg6UH6I6CxFHIA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Required boundaries to evaluate:
 
@@ -1407,7 +1407,7 @@ ATT&CK and D3FEND are used to structure behavior and defensive coverage. They ar
 
 ### ATT&CK Mapping Table
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wkVJqrPQEsrN-Gz6SHxvCQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wkVJqrPQEsrN-Gz6SHxvCQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Mapping Type values:**
 
@@ -1460,7 +1460,7 @@ Gap
 
 ## D3FEND Countermeasure Mapping
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7HjMEHWmosyStsNjN_ejUA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7HjMEHWmosyStsNjN_ejUA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 D3FEND maps adversary ATT&CK techniques to concrete defensive countermeasures. Use it to connect behavior to defensive actions, not as a decorative metadata field. A D3FEND entry is only valid when it links a specific ATT&CK technique to a specific, implemented or planned defensive capability.
 
@@ -1504,7 +1504,7 @@ D3FEND maps adversary ATT&CK techniques to concrete defensive countermeasures. U
 
 ## Detection Readiness Levels
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*17Xa2FIpI6-I42PbAu2Zuw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*17Xa2FIpI6-I42PbAu2Zuw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Detection Readiness Levels define what “done” means.
 
@@ -1610,7 +1610,7 @@ The False-Negative Register tracks cases where a detection rule failed to fire o
 
 ## Detection CI/CD Requirements
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MeqY6q0cHlJFw22RjR6kyw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MeqY6q0cHlJFw22RjR6kyw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 Detection-as-code must be operated through controlled review and deployment.
 
@@ -1698,7 +1698,7 @@ Emergency disable owner must be a named SOC lead, platform owner, detection engi
 
 ## Operational SLAs
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4KYpBZSlYh2iW-jmhB9ASg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4KYpBZSlYh2iW-jmhB9ASg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 SLAs should be adjusted for customer contracts and severity levels, but they must be explicit.
 
@@ -1740,7 +1740,7 @@ SLAs should be adjusted for customer contracts and severity levels, but they mus
 
 Use this for planning, not as a fixed promise. Complexity depends on access, customer maturity, tooling, stakeholders, and data quality.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QnhvvMecTpvs08ShW832Ag.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QnhvvMecTpvs08ShW832Ag.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Complexity Decision Matrix
 

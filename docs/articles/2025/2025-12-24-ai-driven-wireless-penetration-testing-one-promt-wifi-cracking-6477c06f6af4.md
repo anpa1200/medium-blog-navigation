@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*Gzu2GZ7sMF5IJg52.png"
 # AI-Driven Wireless Penetration Testing. One Promt WIFI cracking
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*Gzu2GZ7sMF5IJg52.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*Gzu2GZ7sMF5IJg52.png" alt="Cover image" width="700" height="467" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Using Aircrack-ng with HexStrike-AI and Gemini-CLI
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Gzu2GZ7sMF5IJg52.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*Gzu2GZ7sMF5IJg52.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -152,7 +152,7 @@ and
  remediation.
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lAvwkgVq89m2Uzb-bTV14A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lAvwkgVq89m2Uzb-bTV14A.png" alt="Article image" width="1650" height="589" loading="lazy" decoding="async" />
 
 ## What happened (step by step)
 
@@ -162,7 +162,7 @@ and
 
 - **Result:**`wlan0`was identified as the only usable wireless interface (RTL8821AU chipset).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BA-PixA3rZED8oQKzThyzQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BA-PixA3rZED8oQKzThyzQ.png" alt="Article image" width="1761" height="261" loading="lazy" decoding="async" />
 
 ## 2. Monitor mode enablement
 
@@ -172,7 +172,7 @@ and
 
 - **Result:**`wlan0`entered monitor mode and was usable for capture/injection.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uemVkzoYmBD3zXbt4ojI9Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uemVkzoYmBD3zXbt4ojI9Q.png" alt="Article image" width="1749" height="332" loading="lazy" decoding="async" />
 
 ## 3. Initial wireless scan
 
@@ -182,7 +182,7 @@ and
 
 - Encryption observed:**WPA2-PSK**.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HShvm8_-v2S3fW4QadzsuQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HShvm8_-v2S3fW4QadzsuQ.png" alt="Article image" width="1749" height="332" loading="lazy" decoding="async" />
 
 ## 4. Target selection (first attempt)
 
@@ -214,7 +214,7 @@ and
 
 - `aireplay-ng`deauthentication was executed against an active client.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*4Oxj0b4jN41LpMkuoYqpAw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4Oxj0b4jN41LpMkuoYqpAw.png" alt="Article image" width="1728" height="414" loading="lazy" decoding="async" />
 
 - This time, the deauth succeeded.
 
@@ -226,7 +226,7 @@ Verification:
 
 - Output confirmed:**“WPA (1 handshake)”**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1jpmbN-iLA2BybvP-Hw69Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1jpmbN-iLA2BybvP-Hw69Q.png" alt="Article image" width="1737" height="434" loading="lazy" decoding="async" />
 
 ## 7. Offline cracking
 
@@ -245,7 +245,7 @@ A0542553383
 #
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Tui0PlJVq-ocozToiX6K9g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Tui0PlJVq-ocozToiX6K9g.png" alt="Article image" width="1723" height="425" loading="lazy" decoding="async" />
 
 ## Final result
 
@@ -297,6 +297,6 @@ A0542553383
 
 - Clean reporting
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*tMeUNlwRgYEngnN4-sC76A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*tMeUNlwRgYEngnN4-sC76A.png" alt="Article image" width="1805" height="753" loading="lazy" decoding="async" />
 
 ## This was not a single-command crack — it was a full, adaptive PT flow .

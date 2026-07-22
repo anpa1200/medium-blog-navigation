@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*Ypuw5uO7-BaQdPS4.jpg"
 # theHarvester: Your Essential Tool for OSINT and Reconnaissance in Cybersecurity
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*Ypuw5uO7-BaQdPS4.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*Ypuw5uO7-BaQdPS4.jpg" alt="Cover image" width="1920" height="900" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Learn how to leverage theHarvester to gather emails, subdomains, IPs, and more from open sources
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Ypuw5uO7-BaQdPS4.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*Ypuw5uO7-BaQdPS4.jpg" alt="Article image" width="1920" height="900" loading="lazy" decoding="async" />
 
 ## Introduction to theHarvester
 
@@ -58,7 +58,7 @@ Due to its comprehensive data-gathering capabilities, theHarvester is widely use
 theHarvester -h
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*f3mOwZaCEGZlDLaDJOJMBw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*f3mOwZaCEGZlDLaDJOJMBw.png" alt="Article image" width="1744" height="380" loading="lazy" decoding="async" />
 
 ### On Other Systems
 
@@ -144,7 +144,7 @@ virustotal:
 
 **4. Save and Exit**: Save the changes and exit the editor (for nano, press`CTRL + O`to save, then`CTRL + X`to exit).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*unVM57MNkw72e5ef1VVcbw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*unVM57MNkw72e5ef1VVcbw.png" alt="Article image" width="1075" height="996" loading="lazy" decoding="async" />
 
 ## Usage
 
@@ -312,11 +312,11 @@ b
 all
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_DPTnPcnAuJuZjHskekQKw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_DPTnPcnAuJuZjHskekQKw.png" alt="Article image" width="1899" height="616" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DKgBLVJuBrBokf8Gsey_Mg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DKgBLVJuBrBokf8Gsey_Mg.png" alt="Article image" width="1899" height="616" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*d7Oxd-qtgJ0t5gH_ZvleYg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*d7Oxd-qtgJ0t5gH_ZvleYg.png" alt="Article image" width="1867" height="352" loading="lazy" decoding="async" />
 
 ## Good luck!
 

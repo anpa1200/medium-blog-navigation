@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*bA9-nZNsHxH1RJI1"
 # Cracking Web Interfaces with Burp Suite: A Comprehensive Tutorial
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*bA9-nZNsHxH1RJI1)
+<img src="https://cdn-images-1.medium.com/max/800/0*bA9-nZNsHxH1RJI1" alt="Cover image" width="1201" height="603" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -35,7 +35,7 @@ The information and tools provided in this guide are for educational and authori
 
 **Tool Overview**
 
-![burpsuite](https://cdn-images-1.medium.com/max/800/0*bA9-nZNsHxH1RJI1)
+<img src="https://cdn-images-1.medium.com/max/800/0*bA9-nZNsHxH1RJI1" alt="burpsuite" width="1201" height="603" loading="lazy" decoding="async" />
 
 Burp Suite is a comprehensive platform for performing security testing of web applications. It includes various tools bundled into one suite, including a scanner, proxy, repeater, and intruder. The intruder component is particularly useful for conducting brute force attacks on web interfaces.
 
@@ -57,7 +57,7 @@ Burp Suite is a powerful tool used in security testing and cybersecurity fields 
 
 - Configure your browser to use Burp Suite as its proxy server (usually localhost with port 8080).
 
-![burp proxy setup](https://cdn-images-1.medium.com/max/800/1*XF1U05HDPJw3qEM4QVbBAg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XF1U05HDPJw3qEM4QVbBAg.png" alt="burp proxy setup" width="1378" height="822" loading="lazy" decoding="async" />
 
 **Step 2: Configure Proxy Management in Your Browser**
 
@@ -67,17 +67,17 @@ Burp Suite is a powerful tool used in security testing and cybersecurity fields 
 
 - **Install Proxy Management Tool**: Download and install a proxy management extension like Proxy Foxy from the Firefox Add-ons store.
 
-![proxy foxy browser add-on](https://cdn-images-1.medium.com/max/800/1*EezxUOopMq6xwumOD5CMFQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EezxUOopMq6xwumOD5CMFQ.png" alt="proxy foxy browser add-on" width="1365" height="455" loading="lazy" decoding="async" />
 
 **2. Add New Proxy Configuration**: Set up a new proxy profile in the tool, specifying the IP address and port (usually 127.0.0.1 and 8080 for local Burp Suite proxy).
 
-![proxu foxy setup](https://cdn-images-1.medium.com/max/800/1*q1xA-qrYyfT3i1UETUH_AQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*q1xA-qrYyfT3i1UETUH_AQ.png" alt="proxu foxy setup" width="1354" height="497" loading="lazy" decoding="async" />
 
 **3. Switch Proxies Easily**: Use the extension to switch quickly between using Burp Suite as a proxy and direct internet access, enhancing your testing workflow without changing your browser settings manually each time.
 
 Or you can use burpsuite browser:
 
-![burpsute interceptor](https://cdn-images-1.medium.com/max/800/1*es_KZ8Z6ebJmQfRVgqaybg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*es_KZ8Z6ebJmQfRVgqaybg.png" alt="burpsute interceptor" width="651" height="340" loading="lazy" decoding="async" />
 
 **Step 3: Identify the Login Form**
 
@@ -85,11 +85,11 @@ Or you can use burpsuite browser:
 
 This is the most common authentication interface:
 
-![standart web login](https://cdn-images-1.medium.com/max/800/1*ZLK03RdtVY18xrSIwlKzJQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZLK03RdtVY18xrSIwlKzJQ.png" alt="standart web login" width="783" height="351" loading="lazy" decoding="async" />
 
 If you try to insert random username you can see reflection: invalid username. We can use it for cracking username
 
-![portswiggers web security academy](https://cdn-images-1.medium.com/max/800/1*b6RGuPuhRB0h0LClD3h0fw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*b6RGuPuhRB0h0LClD3h0fw.png" alt="portswiggers web security academy" width="1104" height="670" loading="lazy" decoding="async" />
 
 - **Objective**: Capture the request made when a login form is submitted.
 
@@ -101,7 +101,7 @@ If you try to insert random username you can see reflection: invalid username. W
 
 - Burp Suite will capture the request in the “HTTP history” tab under the “Proxy” tab.
 
-![intercept password burp suite](https://cdn-images-1.medium.com/max/800/1*GwdN8sZjavKzHOZ4RV3yjQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GwdN8sZjavKzHOZ4RV3yjQ.png" alt="intercept password burp suite" width="1047" height="705" loading="lazy" decoding="async" />
 
 **Step 4: Use Intruder**
 
@@ -117,7 +117,7 @@ If you try to insert random username you can see reflection: invalid username. W
 
 - Highlight the username in the request and click “Add §” to set these as payload positions.
 
-![burp suite intruder](https://cdn-images-1.medium.com/max/800/1*DU3S4EEds-Lhpsp1Q0jjOQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DU3S4EEds-Lhpsp1Q0jjOQ.png" alt="burp suite intruder" width="1132" height="626" loading="lazy" decoding="async" />
 
 **Step 5: Set Payloads**
 
@@ -137,7 +137,7 @@ Now we can try to bruteforce username based response.
 
 *How to gain lists with usernames and passwords*[*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
 
-![burp suite intruder brute force payload](https://cdn-images-1.medium.com/max/800/1*HDILTb5mokzhtuMR7AeCxg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HDILTb5mokzhtuMR7AeCxg.png" alt="burp suite intruder brute force payload" width="851" height="520" loading="lazy" decoding="async" />
 
 **Step 6: Start the Attack**
 
@@ -151,7 +151,7 @@ Now we can try to bruteforce username based response.
 
 - Burp Suite will attempt to log in using all combinations from your payload lists.
 
-![burp suite intruder brute force username](https://cdn-images-1.medium.com/max/800/1*qKKRvZ1RsquHUok1IwQWog.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qKKRvZ1RsquHUok1IwQWog.png" alt="burp suite intruder brute force username" width="1608" height="572" loading="lazy" decoding="async" />
 
 ## Step 7: Analyze the Results
 
@@ -167,7 +167,7 @@ Now we can try to bruteforce username based response.
 
 - Look for outliers where the response length significantly differs from others. A different response length can indicate a different server behavior, which may occur if the username is correct but the password is wrong, or vice versa.
 
-![burp suite intruder brute force response](https://cdn-images-1.medium.com/max/800/1*796XGTPrzBYReEkvB0PhOQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*796XGTPrzBYReEkvB0PhOQ.png" alt="burp suite intruder brute force response" width="1606" height="862" loading="lazy" decoding="async" />
 
 **So correct user name is “au”.**
 
@@ -183,7 +183,7 @@ Now we can try to bruteforce username based response.
 
 - Use the same request you captured initially, but this time, remove the payload position from the username field and keep it only on the password field. The username should be set to the one you identified as potentially valid.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FpBUTYyUl7XGHnfAKzusQw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FpBUTYyUl7XGHnfAKzusQw.png" alt="Article image" width="1132" height="626" loading="lazy" decoding="async" />
 
 **2. Load Password List:**
 
@@ -209,7 +209,7 @@ Now we can try to bruteforce username based response.
 
 - Sort and filter the results in the Intruder output to identify successful login attempts. Successful attempts are usually indicated by significantly different response lengths, or by other status codes like 302/200 OK (if they are not used misleadingly by the application).
 
-![burp suite intruder brute force succsess](https://cdn-images-1.medium.com/max/800/1*4FJBTnXXuNzFzdttMl0M5w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*4FJBTnXXuNzFzdttMl0M5w.png" alt="burp suite intruder brute force succsess" width="1611" height="834" loading="lazy" decoding="async" />
 
 Success: username:**au**, password:**football**
 

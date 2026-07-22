@@ -63,6 +63,8 @@ def inline_md(node) -> str:
         href = href.rstrip(".,")
         if not re.match(r"^(https?|mailto|tel):", href):
             return text
+        if href.startswith("https://1200km.com/"):
+            return f'<a href="pathname://{href}" target="_self">{text}</a>'
         return f"[{text}]({href})"
     return text
 
@@ -185,6 +187,39 @@ def medium_url(title: str, post_id: str) -> str:
 def clean_url(url: str) -> str:
     parts = urlsplit(url)
     return urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
+
+
+def publication_platform(url: str) -> str:
+    host = urlsplit(url).netloc.lower().removeprefix("www.")
+    if host == "medium.com":
+        return "Medium"
+    if host == "infosecwriteups.com":
+        return "InfoSec Write-ups"
+    if host == "bugbountywriteup.com":
+        return "Bug Bounty Writeups"
+    return host
+
+
+def canonical_governance(row: dict) -> dict:
+    local_url = f"https://1200km.com/articles/read/{row['year']}/{row['slug']}"
+    return {
+        "canonical_url": local_url,
+        "canonical_owner": "1200km.com",
+        "preferred_canonical_url": local_url,
+        "original_publication_url": row["source_url"],
+        "original_publication_platform": publication_platform(row["source_url"]),
+        "canonical_migration_status": "migration-pending",
+        "external_canonical_verified": False,
+        "external_canonical_verified_at": None,
+        "migration_note": (
+            "Local self-canonical is deliberate. The external publication canonical "
+            "has not been verified or changed, so migration remains pending."
+        ),
+        "source_platform": publication_platform(row["source_url"]),
+        "source_repository": "anpa1200/medium-blog-navigation",
+        "collection_tier": "archive",
+        "updated_at": row["date"],
+    }
 
 
 def category_for(title: str, text: str) -> str:
@@ -519,8 +554,7 @@ def write_index(rows: list[dict]) -> None:
 def write_catalog(rows: list[dict]) -> None:
     catalog = []
     for row in sorted(rows, key=lambda item: (item["date"], item["title"]), reverse=True):
-        catalog.append(
-            {
+        item = {
                 "id": row["id"],
                 "title": row["title"],
                 "summary": row["summary"],
@@ -534,7 +568,8 @@ def write_catalog(rows: list[dict]) -> None:
                 "source_url": row["source_url"],
                 "cover_image": row["cover_image"],
             }
-        )
+        item.update(canonical_governance(row))
+        catalog.append(item)
     CATALOG_PATH.parent.mkdir(parents=True, exist_ok=True)
     CATALOG_PATH.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 

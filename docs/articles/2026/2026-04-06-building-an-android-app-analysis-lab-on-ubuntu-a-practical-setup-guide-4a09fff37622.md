@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*KWFhUdIci3EDAGck-OqX6Q.png"
 # Building an Android App Analysis Lab on Ubuntu: A Practical Setup Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*KWFhUdIci3EDAGck-OqX6Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KWFhUdIci3EDAGck-OqX6Q.png" alt="Cover image" width="1024" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical step-by-step guide to building an Android malware analysis and security testing lab on Ubuntu
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KWFhUdIci3EDAGck-OqX6Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KWFhUdIci3EDAGck-OqX6Q.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -33,7 +33,7 @@ But before any of that, there is a much more basic problem:**building a lab that
 
 **A good Android analysis lab should let you do three things well:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Xx6ECk4bRx1_60W17C9WHg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Xx6ECk4bRx1_60W17C9WHg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 - **Static analysis**— inspect APK structure, manifest, resources, code, and native libraries.
 
@@ -108,7 +108,7 @@ It also reduces one of the biggest hidden costs in mobile research:**environment
 
 I prefer to think about the lab in layers:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VYFBRK5zeBHsTpr5ijgWAw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VYFBRK5zeBHsTpr5ijgWAw.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ### Layer 1 — Core platform
 
@@ -177,7 +177,7 @@ sudo apt install -y openjdk-17-jdk
 java -version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_VGT_30Y97asDuUrx1youA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_VGT_30Y97asDuUrx1youA.png" alt="Article image" width="1450" height="91" loading="lazy" decoding="async" />
 
 ## Step 2: Install the Android SDK and platform tools
 
@@ -231,7 +231,7 @@ Check that it worked:
 adb version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dHfoEd1LteKKBhhf9cILNg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dHfoEd1LteKKBhhf9cILNg.png" alt="Article image" width="1449" height="116" loading="lazy" decoding="async" />
 
 ## Step 2.1: Install Android SDK Command-Line Tools and Build-Tools
 
@@ -354,7 +354,7 @@ chmod
 apktool --version
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vC5hnYFAKkxR8sn4fmSFXw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vC5hnYFAKkxR8sn4fmSFXw.png" alt="Article image" width="1293" height="55" loading="lazy" decoding="async" />
 
 **Practical note:**in a blog post, I would avoid hardcoding one specific jar version unless I am documenting a known-good lab snapshot. The official release stream changes, and Apktool’s latest GitHub release is newer than 3.0.1. ([GitHub](https://github.com/ibotpeaches/apktool/releases?utm_source=chatgpt.com))
 
@@ -390,7 +390,7 @@ Again, for publication, I would recommend this wording:
 
 &gt; Download the latest stable release from the official JADX releases page and unpack it under ~/tools/jadx .
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JnHuhJ_pG93WyY3VeEaEpA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JnHuhJ_pG93WyY3VeEaEpA.png" alt="Article image" width="1541" height="49" loading="lazy" decoding="async" />
 
 That keeps the guide from aging badly.
 
@@ -414,7 +414,7 @@ objection
 --help
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*AwgfQfwYkEXIhurEMGJmvA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*AwgfQfwYkEXIhurEMGJmvA.png" alt="Article image" width="1410" height="865" loading="lazy" decoding="async" />
 
 If you plan to instrument Android apps on a device, you will also need the matching Frida server or a Gadget-based workflow depending on whether the device is rooted or you are patching the app. Frida’s Android documentation explicitly discusses device communication through`adb`and rooted-device setup details. ([frida.re](https://frida.re/docs/android/?utm_source=chatgpt.com))
 
@@ -441,7 +441,7 @@ rm
  -p 8000:8000 opensecurity/mobile-security-framework-mobsf
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*L2sJmJw0dS-EhVDPvZyqQg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*L2sJmJw0dS-EhVDPvZyqQg.png" alt="Article image" width="1905" height="892" loading="lazy" decoding="async" />
 
 Then browse to:
 
@@ -450,7 +450,7 @@ http:
 //127.0.0.1:8000
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*eJhwNdvUEj78O1ZG2lrnvA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*eJhwNdvUEj78O1ZG2lrnvA.png" alt="Article image" width="1915" height="815" loading="lazy" decoding="async" />
 
 Default creds: mobsf/mobsf
 
@@ -464,7 +464,7 @@ drozer --
 help
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BdtsAH1KJjIKHf6XzEOAKQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BdtsAH1KJjIKHf6XzEOAKQ.png" alt="Article image" width="803" height="356" loading="lazy" decoding="async" />
 
 You will also need the Drozer agent APK for some workflows:
 
@@ -487,11 +487,11 @@ androguard --
 help
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ySo4wqbagdGbVC1R6vdXkA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ySo4wqbagdGbVC1R6vdXkA.png" alt="Article image" width="850" height="490" loading="lazy" decoding="async" />
 
 ## Step 9: Install Ghidra
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*Wc7ck9hWUmyYD8DU.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*Wc7ck9hWUmyYD8DU.png" alt="Article image" width="1400" height="949" loading="lazy" decoding="async" />
 
 For many Android apps, Java-level inspection is not enough. Native libraries often contain the most interesting logic:
 

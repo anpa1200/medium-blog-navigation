@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*1qoucOs9A9WusKaW"
 # Passwords cracking.ZIP, PDF, WEB, RDP, SSH, Cameras…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*1qoucOs9A9WusKaW)
+<img src="https://cdn-images-1.medium.com/max/800/0*1qoucOs9A9WusKaW" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Dive into the art of password cracking with our guide that covers everything from brute force to advanced cryptanalytic attacks. Featuring real-life examples, we explore how these techniques work and offer tips on safeguarding your digital security. Perfect for cybersecurity enthusiasts and professionals alike.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*1qoucOs9A9WusKaW)
+<img src="https://cdn-images-1.medium.com/max/800/0*1qoucOs9A9WusKaW" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Disclaimer: Educational Purpose Only
 
@@ -107,23 +107,23 @@ Hashed passwords are typically found in database management systems where user c
 
 - **User Databases**: In web applications, user passwords are stored in databases as hashes. These can be part of the backend of nearly any system requiring user authentication, from small websites to large corporate networks.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QSKllyHefPb0z_blDXUd6Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QSKllyHefPb0z_blDXUd6Q.png" alt="Article image" width="610" height="395" loading="lazy" decoding="async" />
 
 - **Operating System Authentication**: Systems like Linux and Windows store user password hashes locally. For example, Linux stores these hashes in the`/etc/shadow`file, which is accessible only by privileged users.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*3G_iIwKWDo_KSbKG.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*3G_iIwKWDo_KSbKG.png" alt="Article image" width="1040" height="586" loading="lazy" decoding="async" />
 
 - Here is my own shadow file:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*inAaW0opRfdYvYUTlCAkGA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*inAaW0opRfdYvYUTlCAkGA.png" alt="Article image" width="1329" height="51" loading="lazy" decoding="async" />
 
 - **Network Authentication Servers**: Technologies like RADIUS and LDAP, which are used for managing network authentication, store password hashes to verify user credentials during the authentication process.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*s2mZU1lFE0MIBvI0.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*s2mZU1lFE0MIBvI0.jpg" alt="Article image" width="950" height="296" loading="lazy" decoding="async" />
 
 - **Data Breaches**: Unfortunately, hashed passwords can also be found in datasets that become available after a data breach. These are often distributed on hacker forums or dark web marketplaces.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bwXOCH4jwwLv-r_teWeByw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bwXOCH4jwwLv-r_teWeByw.png" alt="Article image" width="486" height="267" loading="lazy" decoding="async" />
 
 ## Importance of Understanding Cracking Techniques
 
@@ -163,7 +163,7 @@ A brute force attack is one of the simplest yet most aggressive methods to crack
 
 In a brute force attack, an attacker uses software that continuously inputs passwords into a system until it achieves success. The process starts with the shortest possible password and typically uses a predetermined sequence to attempt every possible combination of characters from the defined character set (letters, numbers, symbols).
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*yClMbZITnXAOH8_q.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*yClMbZITnXAOH8_q.jpg" alt="Article image" width="1500" height="1125" loading="lazy" decoding="async" />
 
 ### Character Sets and Complexity
 

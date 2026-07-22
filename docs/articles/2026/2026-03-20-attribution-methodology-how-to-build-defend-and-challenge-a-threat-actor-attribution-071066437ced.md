@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*kC1D5UaV5h0FEWQXdKS4_Q.png"
 # Attribution Methodology: How to Build, Defend, and Challenge a Threat Actor Attribution
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*kC1D5UaV5h0FEWQXdKS4_Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kC1D5UaV5h0FEWQXdKS4_Q.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practitioner’s guide for CTI analysts — from evidence collection to defensible conclusions
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kC1D5UaV5h0FEWQXdKS4_Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kC1D5UaV5h0FEWQXdKS4_Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -91,7 +91,7 @@ The discipline of attribution methodology exists precisely to prevent these outc
 
 Attribution does not snap between “unknown” and “attributed.” It moves along a spectrum that can be described as five levels:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*x2JOPkzCIx_uQFvuLnl2vA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*x2JOPkzCIx_uQFvuLnl2vA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ```text
 LEVEL 
@@ -189,7 +189,7 @@ financial trace, legal process. Rarely achieved publicly.
 
 Most CTI work operates between Levels 2 and 4. Level 5 requires resources and access that very few organizations possess. The goal of a CTI analyst is to be honest about which level their evidence supports — and to resist the organizational or media pressure to claim a higher level than the evidence warrants.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LS0Q9g2yjsDaVjJwbnRGaA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LS0Q9g2yjsDaVjJwbnRGaA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## 2. Evidence Type 1: IOC Overlap — Why It Is the Weakest Signal
 
@@ -417,7 +417,7 @@ A robust CTI attribution uses a structured confidence model. Without it, “high
 
 ### Three-Tier Confidence Framework
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ajWvgps6c9jEP3tlY66jxQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ajWvgps6c9jEP3tlY66jxQ.png" alt="Article image" width="2624" height="1618" loading="lazy" decoding="async" />
 
 ### Applying the Model
 
@@ -495,7 +495,7 @@ False flags are not theoretical. They have been executed by sophisticated nation
 
 ## 9. Practical Exercise: Attributing APT29 / Cozy Bear / SVR
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BKrHd6psYfH555O84FsGsw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BKrHd6psYfH555O84FsGsw.png" alt="Article image" width="2048" height="2048" loading="lazy" decoding="async" />
 
 ### Why APT29 for This Exercise
 
@@ -573,7 +573,7 @@ During the active phase of SUNBURST, the malware beaconed out to C2 infrastructu
 
 This is the core analytical discipline of attribution. Every piece of evidence must be categorized before it can be included in an attribution case.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PvToJdlYH32hT3bmaEd-0A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PvToJdlYH32hT3bmaEd-0A.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ### The Four Categories
 
@@ -589,19 +589,19 @@ This is the core analytical discipline of attribution. Every piece of evidence m
 
 ### CONFIRMED
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*W89fTglCiY_mnd-DDU-O1Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*W89fTglCiY_mnd-DDU-O1Q.png" alt="Article image" width="800" height="527" loading="lazy" decoding="async" />
 
 ### ASSESSED
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LoHPABQE_f2rhOG_Ib-_oA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LoHPABQE_f2rhOG_Ib-_oA.png" alt="Article image" width="800" height="486" loading="lazy" decoding="async" />
 
 ### WEAK (Contributes only in aggregate)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*qSnXQbqXF0vUnam1N85rbQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*qSnXQbqXF0vUnam1N85rbQ.png" alt="Article image" width="800" height="366" loading="lazy" decoding="async" />
 
 ### NOISE
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dENb4PwBK4iBkEZtujbZ4w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dENb4PwBK4iBkEZtujbZ4w.png" alt="Article image" width="800" height="342" loading="lazy" decoding="async" />
 
 ## 11. How to Articulate Attribution: Valid and Uncertain
 
@@ -742,7 +742,7 @@ SENTENCE 5 - THE IMPLICATION:
 "For defenders, this means [actionable implication]."
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kkalHqmUq2IP-48W7--dZA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kkalHqmUq2IP-48W7--dZA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **Example — APT29 / SolarWinds:**
 

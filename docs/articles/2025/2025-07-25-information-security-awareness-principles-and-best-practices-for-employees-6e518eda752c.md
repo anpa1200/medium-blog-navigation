@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*LxRRJZqoKo62qjtjcDkdCA.png"
 # Information Security Awareness: Principles and Best Practices for Employees
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*LxRRJZqoKo62qjtjcDkdCA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LxRRJZqoKo62qjtjcDkdCA.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### What Is Information Security and Why Does It Matter
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LxRRJZqoKo62qjtjcDkdCA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LxRRJZqoKo62qjtjcDkdCA.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 Information security (often called**InfoSec**) is the practice of protecting information and information systems from unauthorized access, misuse, disclosure, destruction, or disruption[en.wikipedia.org](https://en.wikipedia.org/wiki/Information_security#:~:text=Information%20security%20,of%20%20123%2C%20integrity%2C%20and). In essence, it aims to**preserve the confidentiality, integrity, and availability**of an organization’s data. This is critically important because modern organizations handle vast amounts of sensitive information — from personal customer data to financial records — that must be safeguarded against ever-present cyber threats and leaks. A failure in security can lead to**financial losses, legal penalties, operational downtime, and reputational damage**[numberanalytics.com](https://www.numberanalytics.com/blog/ultimate-guide-information-security-risk-communication#:~:text=Q%3A%20What%20is%20the%20importance,information%20security%20in%20risk%20communication).
 
@@ -31,7 +31,7 @@ Equally important,**information security is not just an IT concern — it’s ev
 
 ## Core Principles: The CIA Triad (Confidentiality, Integrity, Availability)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZoPG3uYr2f2xP0UL4YMRWw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZoPG3uYr2f2xP0UL4YMRWw.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 The foundation of information security is often illustrated by the**CIA Triad**— the three core principles of**Confidentiality**,**Integrity**, and**Availability**. All security measures and policies are ultimately meant to uphold one or more of these principles:
 
@@ -45,7 +45,7 @@ Maintaining a balance of**CIA**is the goal of an effective security program[iso.
 
 ## Common Threats to Information Security
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LmBxTcPnbHEE8m2M8VMUzg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LmBxTcPnbHEE8m2M8VMUzg.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 Modern organizations face a wide array of threats that can exploit weaknesses in technology**and**human behavior. Some of the most common threats employees should be aware of include**external cyber-attacks, insider risks, social engineering scams, and malware**[numberanalytics.com](https://www.numberanalytics.com/blog/ultimate-guide-information-security-risk-communication#:~:text=Q%3A%20What%20are%20some%20common,information%20security%20in%20risk%20communication). Key examples are:
 
@@ -61,7 +61,7 @@ Other threats include**password breaches**,**network eavesdropping**,**denial-of
 
 ## The ISO/IEC 27000 Series and Information Security Management Systems (ISMS)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KUcVDR7Z4LEIRj6uoov8ng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KUcVDR7Z4LEIRj6uoov8ng.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 To manage security in a comprehensive way, many organizations rely on standards and frameworks. One of the most important is**ISO/IEC 27001**, an internationally recognized standard for establishing an**Information Security Management System (ISMS)**. An ISMS is a structured approach to managing sensitive data and the associated security processes and controls.**ISO/IEC 27001:2022**provides a**risk-based framework**to help organizations systematically protect their information assets[iso.org](https://www.iso.org/standard/27001#:~:text=An%20information%20security%20management%20system,that%20risks%20are%20adequately%20managed). Implementing ISO 27001 means a company has put in place a coherent set of policies, procedures, and technologies to preserve the confidentiality, integrity, and availability of information, and continually improves those controls through a formal management process.
 

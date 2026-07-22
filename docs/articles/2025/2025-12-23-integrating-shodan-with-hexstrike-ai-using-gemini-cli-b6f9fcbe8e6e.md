@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*6vfRYJKmCCBTdj7r.png"
 # Integrating Shodan with HexStrike-AI Using Gemini-CLI
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*6vfRYJKmCCBTdj7r.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*6vfRYJKmCCBTdj7r.png" alt="Cover image" width="700" height="467" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Practical Guide to AI-Driven External Reconnaissance and Vulnerability Analysis
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*6vfRYJKmCCBTdj7r.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*6vfRYJKmCCBTdj7r.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -406,7 +406,7 @@ admin :
 
 No speculation —**this was a real, confirmed attack chain**.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Oi1g3oXGgNKHuSgX9cWJCA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Oi1g3oXGgNKHuSgX9cWJCA.png" alt="Article image" width="1697" height="736" loading="lazy" decoding="async" />
 
 ## Why this flow matters (important insight)
 

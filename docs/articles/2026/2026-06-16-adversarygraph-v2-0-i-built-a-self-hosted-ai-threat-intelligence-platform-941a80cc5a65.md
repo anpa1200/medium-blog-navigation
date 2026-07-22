@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/700/0*za_SN-yImuGidw-0.png"
 # AdversaryGraph v2.0: I Built a Self-Hosted AI Threat Intelligence Platform
 
 
-![Cover image](https://cdn-images-1.medium.com/max/700/0*za_SN-yImuGidw-0.png)
+<img src="https://cdn-images-1.medium.com/max/700/0*za_SN-yImuGidw-0.png" alt="Cover image" width="700" height="391" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Now With Local LLMs, DFIR Examples, and OpenCTI Export.
 
-![Article image](https://cdn-images-1.medium.com/max/700/0*za_SN-yImuGidw-0.png)
+<img src="https://cdn-images-1.medium.com/max/700/0*za_SN-yImuGidw-0.png" alt="Article image" width="700" height="391" loading="lazy" decoding="async" />
 
 ### Threat intelligence is useful only when it becomes operational.
 
@@ -89,7 +89,7 @@ Version 2.0 adds the features that make it much more useful in real analyst work
 
 ## What AdversaryGraph Is
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*5BAil6-2JBdt5lXHFzHS5g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*5BAil6-2JBdt5lXHFzHS5g.png" alt="Article image" width="1024" height="539" loading="lazy" decoding="async" />
 
 AdversaryGraph is not a SIEM.
 
@@ -101,7 +101,7 @@ It is a workbench for the middle part of CTI work: the place where an analyst ta
 
 **The core workflow is:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*xr5Zmb3ktv-Y7k8ZIBrwhQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*xr5Zmb3ktv-Y7k8ZIBrwhQ.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
 
 This matters because most threat intelligence still arrives as prose. Someone has to read it, extract behaviors, map them to ATT&CK, check the evidence, and make the result useful for detection teams.
 
@@ -118,7 +118,7 @@ AdversaryGraph runs as a self-hosted Docker Compose stack:
 - scheduled MITRE ATT&CK synchronization
 - optional embedded reference book
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*JlSFA-ngLsvqqBozc7d8cw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*JlSFA-ngLsvqqBozc7d8cw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 The Docker deployment is the full version. It supports private report analysis, configured LLM providers, local LLM gateways, report storage, API workflows, and exports.
 
@@ -141,7 +141,7 @@ cp .env.example .env
 
 Configure at least one AI provider:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*KqM73yAhXTsl0P7QmbWlcQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*KqM73yAhXTsl0P7QmbWlcQ.png" alt="Article image" width="1024" height="805" loading="lazy" decoding="async" />
 
 ```text
 ANTHROPIC_API_KEY=
@@ -156,7 +156,7 @@ GEMINI_API_KEY=
 docker compose up -d --build
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*J7enQ_9rjDBKw1AFMPYoXw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*J7enQ_9rjDBKw1AFMPYoXw.png" alt="Article image" width="1024" height="137" loading="lazy" decoding="async" />
 
 **Open the UI:**
 
@@ -164,7 +164,7 @@ docker compose up -d --build
 http://localhost:3000
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*R73KC5KlEUmZMqFoDI60Cg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*R73KC5KlEUmZMqFoDI60Cg.png" alt="Article image" width="1024" height="559" loading="lazy" decoding="async" />
 
 **Open the API docs:**
 
@@ -172,7 +172,7 @@ http://localhost:3000
 http://localhost:8000/docs
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Lx89-Hhn_pqynvp1KqH4cA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Lx89-Hhn_pqynvp1KqH4cA.png" alt="Article image" width="1024" height="540" loading="lazy" decoding="async" />
 
 **Check health:**
 
@@ -225,7 +225,7 @@ Use a capable model. Small models may fail to produce clean JSON or may produce 
 
 The Discover page is the starting point.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*V2HFXbWD_Cq2wvlkhFArqw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*V2HFXbWD_Cq2wvlkhFArqw.png" alt="Article image" width="1024" height="540" loading="lazy" decoding="async" />
 
 **It shows:**
 
@@ -248,7 +248,7 @@ This page is for orientation. It helps you decide where to start.
 
 ## AI Analysis
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*2BVElEGopNHjDXZNsyaOJQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*2BVElEGopNHjDXZNsyaOJQ.png" alt="Article image" width="1024" height="540" loading="lazy" decoding="async" />
 
 The AI Analysis page accepts:
 
@@ -259,9 +259,9 @@ The AI Analysis page accepts:
 
 **The workflow:**
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*n62xnWPHrf3Ar81A1SCGDg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*n62xnWPHrf3Ar81A1SCGDg.png" alt="Article image" width="1024" height="512" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/1024/0*Qa-B7ZsVFPuPQ1JS.gif)
+<img src="https://cdn-images-1.medium.com/max/1024/0*Qa-B7ZsVFPuPQ1JS.gif" alt="Article image" width="1915" height="1007" loading="lazy" decoding="async" />
 
 1. Select ATT&CK domain: Enterprise, Mobile, or ICS.
 2. Select provider: Claude, OpenAI, Gemini, or Local.
@@ -292,7 +292,7 @@ For example, an actor name in a report does not automatically prove the techniqu
 
 AdversaryGraph supports analyst review states:
 
-![Article image](https://cdn-images-1.medium.com/max/852/1*DOAqvTXmqV7KcChRyr98vA.png)
+<img src="https://cdn-images-1.medium.com/max/852/1*DOAqvTXmqV7KcChRyr98vA.png" alt="Article image" width="852" height="374" loading="lazy" decoding="async" />
 
 - suggested
 - accepted
@@ -309,7 +309,7 @@ That distinction matters when the output is sent to another analyst, a SOC team,
 
 Navigator is the ATT&CK matrix workspace.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*9zy4TK1QTtqDpgnF9VOZuw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*9zy4TK1QTtqDpgnF9VOZuw.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 **You can:**
 
@@ -332,7 +332,7 @@ This is important because ATT&CK analysis is rarely finished after one model res
 
 AdversaryGraph v2.0 improves the ATT&CK Group Library.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Vr7NjEyokQS07n2RXGRPMg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Vr7NjEyokQS07n2RXGRPMg.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 Actor pages now include:
 
@@ -389,7 +389,7 @@ AdversaryGraph helps you find overlap worth investigating.
 
 The Compare page has three modes.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*p8hsefYszX2B-_Yphxcb0g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*p8hsefYszX2B-_Yphxcb0g.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 ### Groups
 
@@ -422,7 +422,7 @@ Use this for:
 
 The Group vs Group page compares multiple ATT&CK group profiles at once.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*xYvANp9tCwggth3oLx4KyA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*xYvANp9tCwggth3oLx4KyA.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 It includes:
 
@@ -436,7 +436,7 @@ This is useful when you want to understand which behaviors are shared across act
 
 AdversaryGraph v2.0 adds DFIR Examples.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*B03aiGYuiOtD9WeqPv-lGw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*B03aiGYuiOtD9WeqPv-lGw.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 **The page indexes public DFIR Report metadata:**
 
@@ -463,7 +463,7 @@ This gives analysts a practical way to test the workflow with public material wh
 
 ## Reference Sync
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*w_vygjxxz2_zd0jy5vMnCA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*w_vygjxxz2_zd0jy5vMnCA.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 ATT&CK changes over time.
 
@@ -528,11 +528,11 @@ It is about reports, TTPs, ATT&CK mapping, evidence review, and detection handof
 
 The OpenCTI export reflects that. It moves report and behavior context into a CTI platform without pretending that similarity equals attribution.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*rawh0LiTBWOUpsfjcexQLg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*rawh0LiTBWOUpsfjcexQLg.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 ## PDF Export
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*K2wcaF_1I7kOkQt3nOSd8w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*K2wcaF_1I7kOkQt3nOSd8w.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 AdversaryGraph can export a completed AI analysis as a PDF report.
 
@@ -548,13 +548,13 @@ The PDF includes:
 - group similarity leads
 - tactic coverage
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*IkDKWo3ml4fAGMY-MYO2jQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*IkDKWo3ml4fAGMY-MYO2jQ.png" alt="Article image" width="1024" height="558" loading="lazy" decoding="async" />
 
 This is useful for analyst handoff, internal review, and detection backlog discussions.
 
 ## ATT&CK Navigator Export
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*gU5W5h-wX_TegmZo32W7AA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*gU5W5h-wX_TegmZo32W7AA.png" alt="Article image" width="1024" height="176" loading="lazy" decoding="async" />
 
 Navigator layers can be exported in ATT&CK Navigator-compatible JSON format.
 
@@ -566,7 +566,7 @@ You can also import existing Navigator layers into AdversaryGraph.
 
 AdversaryGraph exposes API endpoints for integration.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*8PIoxgr3toNjfu3r0wvq-w.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*8PIoxgr3toNjfu3r0wvq-w.png" alt="Article image" width="1024" height="556" loading="lazy" decoding="async" />
 
 Swagger:
 
@@ -662,7 +662,7 @@ Use similarity as a lead. Use evidence for conclusions.
 
 AdversaryGraph v2.0.0 includes:
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*w6pE7Z2-QELNMdExGJv2OQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*w6pE7Z2-QELNMdExGJv2OQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - Docker Compose deployment
 - FastAPI backend
@@ -704,11 +704,11 @@ Full guide:
 
 Project hub:
 
-[https://1200km.com/](https://1200km.com/threatmapper/)AdversaryGraph[/](https://1200km.com/threatmapper/)
+<a href="pathname://https://1200km.com/threatmapper/" target="_self"><span>/threatmapper/</span></a>AdversaryGraph<a href="pathname://https://1200km.com/threatmapper/" target="_self">/</a>
 
 **Public ATT&CK workspace:**
 
-[ThreatMapper Web - MITRE ATT&CK CTI Workspace | 1200km](https://1200km.com/threat-matrix/)
+<a href="pathname://https://1200km.com/threat-matrix/" target="_self">ThreatMapper Web - MITRE ATT&CK CTI Workspace | 1200km</a>
 
 ## Final Thoughts
 

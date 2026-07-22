@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*9DRk9CvqSr58LPUZ"
 # Censys for Enhanced Cybersecurity Insight
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*9DRk9CvqSr58LPUZ)
+<img src="https://cdn-images-1.medium.com/max/800/0*9DRk9CvqSr58LPUZ" alt="Cover image" width="1980" height="1036" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -27,15 +27,15 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 In the realm of cybersecurity, having access to detailed, accurate, and timely information about the digital environment is crucial. Censys, a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure, providing security professionals with the tools needed to identify, analyze, and respond to vulnerabilities across global networks. As a robust search engine and data platform, Censys scans the internet continuously, capturing a snapshot of every connected device and service, from web servers to IoT devices. This post explores how Censys can be integrated into cybersecurity strategies to enhance visibility, improve asset management, and bolster overall security posture. Whether you are a security analyst, network administrator, or a cybersecurity researcher, understanding the capabilities of Censys is essential for navigating the complex landscape of digital threats.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*9DRk9CvqSr58LPUZ)
+<img src="https://cdn-images-1.medium.com/max/800/0*9DRk9CvqSr58LPUZ" alt="Article image" width="1980" height="1036" loading="lazy" decoding="async" />
 
 **Key Features of Censys**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XUW9Y_2S5nQVbJxODEVoHw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XUW9Y_2S5nQVbJxODEVoHw.png" alt="Article image" width="1716" height="652" loading="lazy" decoding="async" />
 
 **Hosts search**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rbZ0cBb4J6aztdS-x9TO5A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rbZ0cBb4J6aztdS-x9TO5A.png" alt="Article image" width="1280" height="907" loading="lazy" decoding="async" />
 
 The “Hosts” search feature in Censys is a powerful tool designed to help users investigate and monitor the security configurations of internet-facing devices and services. This functionality allows for granular searches of hosts across the internet based on various attributes such as IP addresses, domain names, services, and geolocations. Here’s a deeper look into how it works and the benefits it offers:
 
@@ -45,19 +45,19 @@ The “Hosts” search feature in Censys is a powerful tool designed to help use
 
 **Filtering Capabilities**: Users can filter their searches based on specific criteria like ports, protocols (HTTP, SSH, FTP, etc.), SSL/TLS configurations, and even by specific vulnerabilities or banners that are detected during Censys’s scans.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8DpTDtGXZqOL7mWNQ3PrkQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8DpTDtGXZqOL7mWNQ3PrkQ.png" alt="Article image" width="1247" height="497" loading="lazy" decoding="async" />
 
 **Historical Data**: Censys also maintains historical data for hosts, allowing users to see how a host’s configuration and exposed services have changed over time. This can be critical for tracking the effectiveness of security improvements or detecting when a host may have been compromised.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TH0m8OuLDTBc7tLLoitp1g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TH0m8OuLDTBc7tLLoitp1g.png" alt="Article image" width="1233" height="914" loading="lazy" decoding="async" />
 
 **Certificate Search**: Censys allows users to search for SSL/TLS certificates using various attributes such as issuer information, the subject name, fingerprint, and expiry dates. This can be particularly useful for tracking certificates issued by a specific authority or certificates issued to a particular organization.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jury9Uq4d6uTrL0cWk2JuA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jury9Uq4d6uTrL0cWk2JuA.png" alt="Article image" width="1254" height="770" loading="lazy" decoding="async" />
 
 **Analyzing Certificate Chains**: Censys provides detailed insights into the entire certificate chain, helping users understand the trust hierarchy and verify if the certificates are chained correctly to trusted root certificates. This is crucial for ensuring the integrity and trustworthiness of secure communications.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*nfnXBsvNZ2_8Hdp0bDI4zA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*nfnXBsvNZ2_8Hdp0bDI4zA.png" alt="Article image" width="1233" height="914" loading="lazy" decoding="async" />
 
 **IPv4 and IPv6 Mapping
 **Censys maintains a detailed map of both IPv4 and IPv6 address spaces, providing comprehensive visibility into the internet’s architecture. This helps in understanding how networks are interconnected and how data flows across them.

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*sjBP9-xQ0Dbjh6O_ErSANw.jpeg"
 # Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 1
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*sjBP9-xQ0Dbjh6O_ErSANw.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*sjBP9-xQ0Dbjh6O_ErSANw.jpeg" alt="Cover image" width="1792" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### This comprehensive post will delve into the powerful network scanning tool, Nmap, exploring its capabilities from basic to advanced levels. It includes practical tutorials on using Nmap’s various commands, the Nmap Scripting Engine, and integration with other security tools. The guide aims to equip readers with the skills to conduct thorough network explorations and security audits.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sjBP9-xQ0Dbjh6O_ErSANw.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*sjBP9-xQ0Dbjh6O_ErSANw.jpeg" alt="Article image" width="1792" height="1024" loading="lazy" decoding="async" />
 
 **About author**
 
@@ -107,7 +107,7 @@ Nmap, short for Network Mapper, is a powerful network scanning tool that helps s
 
 - Once installed, you can run Nmap from the Command Prompt or through the Zenmap GUI.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*a8ztl9pm-asGjZo5.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*a8ztl9pm-asGjZo5.png" alt="Article image" width="668" height="365" loading="lazy" decoding="async" />
 
 **Linux:**
 
@@ -121,7 +121,7 @@ Nmap, short for Network Mapper, is a powerful network scanning tool that helps s
 
 - After installation, you can run Nmap from the terminal.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DnLKLDQSb4vIY9AyXFU7DA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DnLKLDQSb4vIY9AyXFU7DA.png" alt="Article image" width="867" height="465" loading="lazy" decoding="async" />
 
 **macOS:**
 
@@ -170,7 +170,7 @@ com
 254
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mya6-jQ3og4XsdceQ25UTg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mya6-jQ3og4XsdceQ25UTg.png" alt="Article image" width="830" height="288" loading="lazy" decoding="async" />
 
 ### IP address scanning:
 
@@ -181,7 +181,7 @@ nmap
 .156
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*hfyVw-fAPq1mzASuYUpcKQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*hfyVw-fAPq1mzASuYUpcKQ.png" alt="Article image" width="830" height="271" loading="lazy" decoding="async" />
 
 ### Output of basic nmap scanning:
 
@@ -208,7 +208,7 @@ nmap
 24
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1ih47YxCphWFy3eTpcAWhw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1ih47YxCphWFy3eTpcAWhw.png" alt="Article image" width="745" height="822" loading="lazy" decoding="async" />
 
 ### Range of IP addresses:
 
@@ -221,7 +221,7 @@ nmap
 150
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*MJZG0TP8sxErNvoc_Qm9Zw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*MJZG0TP8sxErNvoc_Qm9Zw.png" alt="Article image" width="707" height="493" loading="lazy" decoding="async" />
 
 ### Input from list of hosts/networks
 
@@ -233,7 +233,7 @@ with
  list>
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2hHzsf8Bo8Vg-jBJGvelrA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2hHzsf8Bo8Vg-jBJGvelrA.png" alt="Article image" width="607" height="63" loading="lazy" decoding="async" />
 
 ### Choose random targets
 
@@ -337,7 +337,7 @@ nmap -sL
 24
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*w1bs2OYIr4PDPEmxKgLeaw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*w1bs2OYIr4PDPEmxKgLeaw.png" alt="Article image" width="572" height="672" loading="lazy" decoding="async" />
 
 ### 2. -sn
 
@@ -352,7 +352,7 @@ nmap -sn
 24
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bbdXocdKyirinKkpktDAuw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bbdXocdKyirinKkpktDAuw.png" alt="Article image" width="608" height="133" loading="lazy" decoding="async" />
 
 ### 3. -Pn
 
@@ -373,7 +373,7 @@ Pn
 
 - **You can see difference here:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*zMsiEv6hm-Aj7HGAcwhHGg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*zMsiEv6hm-Aj7HGAcwhHGg.png" alt="Article image" width="679" height="241" loading="lazy" decoding="async" />
 
 - **Stealth Scanning**: Useful for penetration testers and red teams who wish to avoid any preliminary interaction that could alert a target system’s intrusion detection systems (IDS) before more discreet scanning techniques are employed.
 
@@ -421,7 +421,7 @@ The`-PS`,`-PA`,`-PU`, and`-PY`options in Nmap are used for conducting more targe
 
 - This sends SCTP INIT chunks to ports 9901 and 9902.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*A_KKq_3eqdSA0uCCxZcxdg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*A_KKq_3eqdSA0uCCxZcxdg.png" alt="Article image" width="675" height="187" loading="lazy" decoding="async" />
 
 ## Use Cases and Considerations:
 
@@ -690,7 +690,7 @@ p
 
 This command will perform a scan on port 80 of the host at IP address`192.168.1.1`, followed by a traceroute to that host. The output will include information about each hop along the path that packets take to reach the target, including the IP addresses of the intermediate routers.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8WxmY9_8NQrUBO3tN00ZRg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8WxmY9_8NQrUBO3tN00ZRg.png" alt="Article image" width="646" height="441" loading="lazy" decoding="async" />
 
 ### Detailed Output:
 

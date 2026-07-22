@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*rJhQNIYp8Kpj1Acwmljrhg.png"
 # CTI-Led Defensive Strategy for a Cellular Provider (Case Study)
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*rJhQNIYp8Kpj1Acwmljrhg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rJhQNIYp8Kpj1Acwmljrhg.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -27,7 +27,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 **Handling:**Public / educational
 **Audience:**CTI analysts, SOC leads, NOC leads, cloud security, identity teams, telecom core engineers, security architects, incident commanders, and executives
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rJhQNIYp8Kpj1Acwmljrhg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rJhQNIYp8Kpj1Acwmljrhg.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -146,7 +146,7 @@ The defensive answer is to make CTI the operating layer that connects strategy, 
 
 ## How to Read This Guide
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2YDuJLXdHXFXdSURL1rX9A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*2YDuJLXdHXFXdSURL1rX9A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - **Intelligence requirements:**every workstream maps to a decision.
 
@@ -192,7 +192,7 @@ The Israel-specific logic is therefore bounded:
 
 ## Evidence and Risk Model
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*y8m__rA2GbdFYi8ViBJurQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*y8m__rA2GbdFYi8ViBJurQ.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 **This article uses these evidence labels:**
 
@@ -230,13 +230,13 @@ Likelihood is estimated from public sector targeting, technical feasibility, exp
 
 These are not actuarial probabilities. They are sector-level planning anchors for a fictional case. Confidence would increase only with victim-specific telemetry, partner reporting, regulator reporting, or incident evidence.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5MLZXbuZOoPJqxVxxr2VNQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5MLZXbuZOoPJqxVxxr2VNQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 This matrix is why the article prioritizes long-dwell telecom espionage and destructive management-plane compromise. Commodity incidents may be more frequent, but the telecom-specific scenarios create higher strategic risk.
 
 ## Fictional Operating Model: MagenCell
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Lznmp5imSn1Qz_BI5T1XKw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Lznmp5imSn1Qz_BI5T1XKw.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 MagenCell is a fictional Israeli mobile network operator with nationwide 4G/5G services and business connectivity products. It operates:
 
@@ -258,7 +258,7 @@ The business mission is not “secure everything equally.” The mission is:
 
 MagenCell should plan around four threat families.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-4TARXqKfvnIdYRvCxz-cw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-4TARXqKfvnIdYRvCxz-cw.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ### 1. State-aligned telecom espionage
 
@@ -380,7 +380,7 @@ Treat network security appliances, hypervisors, virtualization management, Forti
 
 Use these notes before turning public reporting into internal priority.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IIBx7MMnzGVgFT6qlExf_g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IIBx7MMnzGVgFT6qlExf_g.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 **Salt Typhoon / PRC telecom activity:**strong relevance to telecom network visibility, network devices, lawful-intercept-sensitive paths, call data, and management-plane hardening. The public official reporting cited here is strongest for U.S. telecommunications compromise and global victim targeting, not direct Israeli telecom targeting[[1]](https://www.cisa.gov/resources-tools/resources/enhanced-visibility-and-hardening-guidance-communications-infrastructure),[[3]](https://www.fbi.gov/investigate/cyber/alerts/2025/fbi-seeking-tips-about-prc-targeting-of-us-telecommunications).
 
@@ -402,7 +402,7 @@ Use these notes before turning public reporting into internal priority.
 
 These cases point to one central conclusion: a telecom defense strategy cannot focus only on endpoints, web applications, malware hashes, or commodity IOCs.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rz02eSyrqmpAKgYMxtHdNA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rz02eSyrqmpAKgYMxtHdNA.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 For MagenCell, the highest-value defensive priorities are:
 
@@ -570,7 +570,7 @@ For every PIR, define:
 
 If no one will act on the answer, it is not a priority intelligence requirement.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9ZHBvt8ydEi9dRlc8tiXZw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9ZHBvt8ydEi9dRlc8tiXZw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Step 2: Define Crown Jewels as Adversary Objectives
 
@@ -594,11 +594,11 @@ Most asset inventories describe business ownership. CTI needs a second view: why
 
 - **Continuity systems:**backups, recovery orchestration, monitoring, logging, SIEM, EDR management, golden images, emergency communications workflows.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*LSQSOD0umoca0nEtZP2YJw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*LSQSOD0umoca0nEtZP2YJw.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ## Analyst rule
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*gex7J36neb0LLHXJRTojaA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*gex7J36neb0LLHXJRTojaA.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 Do not mark an asset as critical only because it is expensive. Mark it critical when compromise enables one of the following:
 
@@ -622,7 +622,7 @@ Do not mark an asset as critical only because it is expensive. Mark it critical 
 
 A normal enterprise attack surface inventory is not enough for a cellular provider. Build four views.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PWPIojhxrh2v8insXEGpdg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PWPIojhxrh2v8insXEGpdg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### View 1: Public and customer-facing exposure
 
@@ -887,7 +887,7 @@ Confidence in actor intent against MagenCell: Moderate, because the public evide
 
 ## Step 6: Build a Threat-Informed Detection Backlog
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CCRvpWcI8p63YOoToIjnIA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CCRvpWcI8p63YOoToIjnIA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Theory anchor:**The Pyramid of Pain says durable behavior is more valuable than fragile indicators[[22]](https://www.threathunting.net/files/A%20Framework%20for%20Cyber%20Threat%20Hunting%20Part%201_%20The%20Pyramid%20of%20Pain%20_%20Sqrrl.pdf). ATT&CK gives defenders a shared vocabulary for behavior, but a technique mapping is not attribution[[20]](https://attack.mitre.org/),[[21]](https://www.mitre.org/focus-areas/cybersecurity/mitre-attack). The detection backlog should therefore prioritize adversary behaviors that matter to MagenCell’s crown jewels.
 
@@ -1145,7 +1145,7 @@ Use the right matrix:
 
 Do**not**map telecom-core activity to Mobile or ICS only because the victim is a mobile operator.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*I10vAdrNcViz89awJYIuRQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*I10vAdrNcViz89awJYIuRQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Mapping Examples
 
@@ -1311,7 +1311,7 @@ Public IOCs from telecom cases should not be blindly blocklisted. Hashes, IPs, a
 
 Threat hunting should answer PIRs, not generate random findings.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*9NMjxPUizj6vF-OOExJFng.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*9NMjxPUizj6vF-OOExJFng.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### First 30 days: visibility and compromise assessment
 
@@ -1457,7 +1457,7 @@ Use the Kill Chain to decide where MagenCell can disrupt the adversary earliest.
 [**CTI Kill Chain: An Analyst Guide With Real-World Evidence**
 [Mapping adversary behavior from preparation to impact without overstating the evidence](2026-05-09-cti-kill-chain-an-analyst-guide-with-real-world-evidence-c3bef6fd2979.md)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wSjRcQGAnOae_0nm-pjU8A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wSjRcQGAnOae_0nm-pjU8A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Reconnaissance and precursors
 
@@ -1627,7 +1627,7 @@ Use the Kill Chain to decide where MagenCell can disrupt the adversary earliest.
 
 **Theory anchor:**The Diamond Model keeps four analytic features visible: adversary, capability, infrastructure, and victim[[25]](https://www.activeresponse.org/wp-content/uploads/2013/07/diamond.pdf). This prevents CTI from collapsing a tool name, IP address, vendor label, and victim sector into one overconfident story.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*D3pbI0I5UaC8VNej7bfyzw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*D3pbI0I5UaC8VNej7bfyzw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 For every suspicious event, record:
 
@@ -2695,7 +2695,7 @@ by
 
 ## IOC and Sandbox Output Analysis Example
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QO7bJjqWmALpw7lVyI93mQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QO7bJjqWmALpw7lVyI93mQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 An IOC should not move directly from a public report, sandbox run, or threat feed into a production blocklist. The analyst should turn the IOC into a scoped judgment and, where useful, a hunt hypothesis.
 
@@ -2747,7 +2747,7 @@ The domain is assessed as suspicious with moderate confidence. It appeared in sa
 
 Use this workflow to prevent CTI from becoming either a passive feed or an unreviewed blocklist.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HAFUgOys4YzPelw0giCSjg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HAFUgOys4YzPelw0giCSjg.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 ```text
 Public CTI / vendor report / sandbox output
@@ -2850,7 +2850,7 @@ The first customer engagement should create a shared operating picture before wr
 
 ## Before and After Example
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_qKQA5Bmrdx9wetUEogyIQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_qKQA5Bmrdx9wetUEogyIQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ### Before:
 

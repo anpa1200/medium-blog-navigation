@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*NEMwBOBGpCmEwBNd.png"
 # AI-Driven Office Documents Password Recovery with HexStrike-AI and Gemini-CLI
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*NEMwBOBGpCmEwBNd.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*NEMwBOBGpCmEwBNd.png" alt="Cover image" width="700" height="467" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Encrypted Document to Readable Content Using LLM-Orchestrated Tooling
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*NEMwBOBGpCmEwBNd.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*NEMwBOBGpCmEwBNd.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 ## Overview
 
@@ -59,12 +59,12 @@ This is a fully authorized, local scenario.
 - Encrypted file:
 `/home/andrey/my_secret_file.txt`
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kduNgL5-qOphNtjqD8Y5Gw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kduNgL5-qOphNtjqD8Y5Gw.png" alt="Article image" width="574" height="587" loading="lazy" decoding="async" />
 
 - Password Dictionary:
 `/home/andrey/Documents/passwords_list.txt`
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lMl1ct5sA5HuWnB6xkYy6g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lMl1ct5sA5HuWnB6xkYy6g.png" alt="Article image" width="897" height="538" loading="lazy" decoding="async" />
 
 ## Step-by-Step Execution Flow
 
@@ -74,7 +74,7 @@ This is a fully authorized, local scenario.
 hexstrike_server
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*TogAVXnHW6s_p2I_SU9lUw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*TogAVXnHW6s_p2I_SU9lUw.png" alt="Article image" width="1527" height="748" loading="lazy" decoding="async" />
 
 - Run Gemini-CLI
 
@@ -82,7 +82,7 @@ hexstrike_server
 gemeni-cli
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KSvr7YDPe9YldkqTmp52rQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KSvr7YDPe9YldkqTmp52rQ.png" alt="Article image" width="1730" height="550" loading="lazy" decoding="async" />
 
 ### Promt:
 
@@ -102,7 +102,7 @@ You issued one objective:
 
 No manual tool selection, no pre-planned commands.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lU5QSvvGyWBxHEsz1IC6xg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lU5QSvvGyWBxHEsz1IC6xg.png" alt="Article image" width="1268" height="318" loading="lazy" decoding="async" />
 
 ### 2) Tool capability gap identified
 
@@ -122,7 +122,7 @@ The helper utility needed for extraction wasn’t callable directly (**command n
 
 **Pivot:**the AI performed filesystem discovery, located the tool in a non-PATH location, and re-ran it using the full path.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*PvX9xRmJWkkf2_3NJ9quIQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*PvX9xRmJWkkf2_3NJ9quIQ.png" alt="Article image" width="1710" height="259" loading="lazy" decoding="async" />
 
 ### 5) Extraction succeeded (hash/verification artifact produced)
 
@@ -146,7 +146,7 @@ After correcting the wordlist filename, the run completed and returned a valid p
 
 - **Recovered password:**`MyStrongPass`
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*39QwyfsDFB64CHq4YCLJag.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*39QwyfsDFB64CHq4YCLJag.png" alt="Article image" width="1733" height="792" loading="lazy" decoding="async" />
 
 ## Conclusion
 

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*rVY4lVkBZTmxWL8v7ISIdA.png"
 # What AI-Assisted Offensive Work Actually Means for Your Detection Program: A Practitioner’s…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*rVY4lVkBZTmxWL8v7ISIdA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rVY4lVkBZTmxWL8v7ISIdA.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### What the public record supports, what it does not, and how to audit the analytics most likely to fail under cheaper variation.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*rVY4lVkBZTmxWL8v7ISIdA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*rVY4lVkBZTmxWL8v7ISIdA.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
 
@@ -107,7 +107,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 ## 2. The Two Frameworks You Need and Why They Answer Different Questions
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*hkLIV9YaGDLvpTC5.jpg)
+<img src="https://cdn-images-1.medium.com/max/800/0*hkLIV9YaGDLvpTC5.jpg" alt="Article image" width="1170" height="658" loading="lazy" decoding="async" />
 
 **[Documented]**Bianco’s Pyramid of Pain asks one question: how much does it hurt the adversary when defenders force replacement? Hashes, IPs, and domains are low because replacement is cheap. Tools and TTPs are higher because replacement costs more time, retraining, and rework. ([1](https://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html))
 
@@ -137,7 +137,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 ### Class 1 — Artifact-dependent
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pVQEBwXZVsYEKyuj7A8Heg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pVQEBwXZVsYEKyuj7A8Heg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **[Inferred]**An artifact-dependent dependency requires an exact string, hash, path, tool name, mutex, user agent, or narrow regex fragment. In Windows process telemetry, that is`process_name = "mimikatz.exe"`in Sysmon Event ID 1 or Windows Security Event ID 4688. In proxy or firewall logs, that is an exact user agent or exact destination path.
 
@@ -147,7 +147,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 ### Class 2 — Behaviorally anchored
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*vPNbPjC5at9hiusWxR3OGw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*vPNbPjC5at9hiusWxR3OGw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **[Inferred]**A behaviorally anchored dependency encodes a security-relevant action or state transition. Examples include a document-handling process spawning a script interpreter, a service account logging on interactively, or a non-system process reading LSASS memory.
 
@@ -157,7 +157,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 ### Class 3 — Implementation-spanning
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*78XWRnKuXgLPvSXwEMuRjA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*78XWRnKuXgLPvSXwEMuRjA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **[Documented]**MITRE CTID’s spanning-observable idea points to dependencies that survive multiple implementations of the same behavior because the observable is structurally required by the behavior itself. ([2](https://ctid.mitre.org/blog/2024/12/16/summiting-the-pyramid-bring-the-pain/))
 
@@ -167,7 +167,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 ### Class 4 — Entity-baseline
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*pQD_-06AIYsyvbsNVocmZA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*pQD_-06AIYsyvbsNVocmZA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 **[Inferred]**An entity-baseline dependency requires prior behavioral history of a user, host, or service principal to score, suppress, or prioritize. In process telemetry, that may be “this host has never run PowerShell from Office.” In proxy logs, that may be “this user has no prior Assistants API traffic.”
 
@@ -179,7 +179,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 **[Inferred]**In many real programs, infrastructure-controlled dependencies break as many or more analytics than attacker-side variation does. Record them separately. Fix them first when they are the actual failure point.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*mWHn4LGYQapNFk5lleQ-zA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*mWHn4LGYQapNFk5lleQ-zA.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## 4. The Classification Rule: Apply It Per Dependency, Not Per Analytic
 
@@ -187,7 +187,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 [Inferred] Splunk Security Content’s “Malicious PowerShell Process — Encoded Command” is a good example because the title sounds broader than the implementation really is. The example below is illustrative and only partially replayable from the published dataset. ([8](https://research.splunk.com/endpoint/c4db14d9-7909-48b4-a054-aa14d89dbb19/))
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZyGOEvhb4u49mpAxv_p7vg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZyGOEvhb4u49mpAxv_p7vg.png" alt="Article image" width="773" height="471" loading="lazy" decoding="async" />
 
 **[Inferred]**Dependency 1 is artifact-dependent. A simple rename may not break it if`original_file_name`still resolves to the PowerShell family. The gate fails when PowerShell family identification no longer survives the variation, or when the actor shifts to a different launcher.
 
@@ -231,11 +231,11 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 - **[Inferred]**Hold telemetry source, parser version, normalized field mapping, and correlation window constant. If these drift, you are measuring collection failure, not implementation variation.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8yDX63QGSitRVgCmvkB0bg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8yDX63QGSitRVgCmvkB0bg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*l_tsjDSqu4s0lufPainOAQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*l_tsjDSqu4s0lufPainOAQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NiySpgllw34gGi7r6ZG9Fg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NiySpgllw34gGi7r6ZG9Fg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **[Inferred]**`High`is not just a larger sprint. A new detection class or new telemetry source can mean weeks of work. Treat it as an architectural change, not a tuning task.
 
@@ -243,7 +243,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 **[Inferred]**The second non-baseline case below is schematic. It represents the point where the PowerShell family no longer resolves in the identifying fields the rule uses.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*8tjD8JYGvpJ_i88MjLU3YQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*8tjD8JYGvpJ_i88MjLU3YQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **Decision rule**
 
@@ -259,7 +259,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 ## 6. Prioritization: Where to Start When You Have 300 Analytics
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*7JuDsVHuaOEGgJrRneq4uA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*7JuDsVHuaOEGgJrRneq4uA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 - Pull every analytic tagged or documented as`durable`,`high-confidence`,`TTP-based`, or`behavioral`. [Inferred] These are the highest-risk mislabeling candidates. Teams suppress or deprioritize alerts from rules they think are solid. A mislabeled tripwire in this tier can be suppressed, deprioritized, or misinterpreted in incident review. Record the rule ID, owner, tag source, and current suppression or severity settings. Decide which ones enter the first audit tier.
 
@@ -275,7 +275,7 @@ You know this failure mode already. A rule tagged “behavioral” stops firing 
 
 ## 7. What This Does Not Tell You
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*XoRsmd6JsF-cIj7peGurZg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*XoRsmd6JsF-cIj7peGurZg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 **[Inferred]**This method tests simple, single-layer implementation variation first. Real adversaries combine layers. They rename the binary, change the path, swap the parent, and lose the command line in one move. Multi-layer testing should follow single-layer testing. It should not replace it.
 

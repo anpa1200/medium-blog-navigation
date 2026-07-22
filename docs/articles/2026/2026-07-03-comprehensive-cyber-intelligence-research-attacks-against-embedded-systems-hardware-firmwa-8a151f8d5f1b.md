@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/1024/1*igBKySDQUuXS4X3AYyE0kg.png"
 # Comprehensive Cyber Intelligence Research: Attacks Against Embedded Systems, Hardware, Firmware…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/1024/1*igBKySDQUuXS4X3AYyE0kg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*igBKySDQUuXS4X3AYyE0kg.png" alt="Cover image" width="1024" height="683" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 Date: 2026–07–02 Version: Final source-verified edition
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*igBKySDQUuXS4X3AYyE0kg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*igBKySDQUuXS4X3AYyE0kg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 &gt; Confidence scale used in this report:
 
@@ -72,7 +72,7 @@ Incident-response priorities
 
 The dominant security risk for embedded and hardware-adjacent environments is no longer theoretical firmware compromise. It is operational compromise of high-trust devices that sit outside normal endpoint telemetry: VPN gateways, firewalls, routers, BMCs, UEFI boot paths, GPU/AI accelerators, SOHO infrastructure, and OT/IoT devices.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*WmVtMkZWR1elwgbgnYZsAw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*WmVtMkZWR1elwgbgnYZsAw.png" alt="Article image" width="1024" height="1447" loading="lazy" decoding="async" />
 
 The highest-confidence trend across government advisories, vendor incident reports, and research-lab disclosures is that adversaries increasingly use these systems as initial-access points, covert relay infrastructure, persistence anchors, and surveillance positions.
 
@@ -80,7 +80,7 @@ The most urgent enterprise risk is internet-facing network edge infrastructure. 
 
 The second strategic risk is below-OS compromise.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*LxYMY83fOVVO3zAD3pLq0A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*LxYMY83fOVVO3zAD3pLq0A.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 UEFI bootkits, Secure Boot bypasses,[PixieFail](https://thehackernews.com/2024/01/pixiefail-uefi-flaws-expose-millions-of.html)-style preboot network bugs,[LogoFAIL](https://www.kaspersky.com/blog/logofail-uefi-vulnerabilities/50160/)image-parser vulnerabilities, AMI MegaRAC BMC[authentication bypass](https://beyondmachines.net/event_details/critical-authentication-bypass-vulnerability-in-ami-megarac-bmc-software-r-z-3-c-r),[Cisco FIRESTARTER persistence](https://www.cisa.gov/news-events/analysis-reports/ar26-113a), and[FortiGate symlink persistence](https://www.sentinelone.com/vulnerability-database/cve-2025-68686/)show that patching the primary OS or applying a single vendor update may not evict an attacker. Some compromise scenarios require reimage, clean firmware replacement, credential rotation, certificate rotation, and attestation review.
 
@@ -99,7 +99,7 @@ This report covers cyber intelligence on attacks and vulnerabilities affecting:
 
 ### What adversaries want from embedded and hardware systems
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*1x86Shq6jHmz-FQc98HJTA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*1x86Shq6jHmz-FQc98HJTA.png" alt="Article image" width="1024" height="1280" loading="lazy" decoding="async" />
 
 1. **Initial access:**exploit exposed VPN, firewall, router, mail-security, MDM, and management appliances before defenders see endpoint alerts.
 2. **Credential access:**steal VPN secrets, firewall configs, authentication cookies, certificates, local admin hashes, SSH keys, cloud integration credentials, and service-account secrets.
@@ -111,7 +111,7 @@ This report covers cyber intelligence on attacks and vulnerabilities affecting:
 
 ### Why embedded systems are attractive
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*YQx3yfjfxU80ZbMD-Hj0wQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*YQx3yfjfxU80ZbMD-Hj0wQ.png" alt="Article image" width="1024" height="1280" loading="lazy" decoding="async" />
 
 - They sit at trust boundaries and often face the internet.
 - They are rarely covered by normal EDR.
@@ -128,7 +128,7 @@ This report covers cyber intelligence on attacks and vulnerabilities affecting:
 
 [Mandiant M-Trends 2025](https://services.google.com/fh/files/misc/m-trends-2025-en.pdf)reported that the most frequently exploited vulnerabilities in its 2024 investigations affected security devices typically placed at the network edge, and that several were zero-days (Confirmed).
 
-![Article image](https://cdn-images-1.medium.com/max/672/1*TfMDubGVQrHsJF8tGSjgxQ.png)
+<img src="https://cdn-images-1.medium.com/max/672/1*TfMDubGVQrHsJF8tGSjgxQ.png" alt="Article image" width="672" height="376" loading="lazy" decoding="async" />
 
 [CISA’s BOD 26–02](https://www.cisa.gov/news-events/directives/bod-26-02-mitigating-risk-end-support-edge-devices)escalates the same issue to federal operational policy: unsupported firewalls, routers, load balancers, VPN gateways, and similar edge assets must be inventoried, upgraded, replaced, or otherwise mitigated on a defined two-year timeline (Confirmed).
 
@@ -136,27 +136,27 @@ This report covers cyber intelligence on attacks and vulnerabilities affecting:
 
 - Palo Alto PAN-OS GlobalProtect[**CVE-2024–3400**](https://security.paloaltonetworks.com/CVE-2024-3400), used in[Operation MidnightEclipse](https://unit42.paloaltonetworks.com/cve-2024-3400/).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*YSWyTJddFB_kl1nicb3s-g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*YSWyTJddFB_kl1nicb3s-g.png" alt="Article image" width="1024" height="768" loading="lazy" decoding="async" />
 
 Ivanti Connect Secure and Policy Secure exploitation chains, including**CVE-2023–46805 + CVE-2024–21887**and later[**CVE-2025–22457**](https://forums.ivanti.com/s/article/April-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-CVE-2025-22457).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*rHkg8_mMNjKrqoaahIjUHg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*rHkg8_mMNjKrqoaahIjUHg.png" alt="Article image" width="1024" height="768" loading="lazy" decoding="async" />
 
 [Cisco IOS XE**CVE-2023–20198 + CVE-2023–20273**.](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-webui-privesc-j22SaA4z)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*N5aowm60lUnsZCLUqeWAcg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*N5aowm60lUnsZCLUqeWAcg.png" alt="Article image" width="1024" height="768" loading="lazy" decoding="async" />
 
 Cisco ASA/FTD[ArcaneDoor](https://blog.talosintelligence.com/arcanedoor-new-espionage-focused-campaign-found-targeting-perimeter-network-devices/)and later**CVE-2025–20333 / CVE-2025–20362**/[FIRESTARTER](https://www.cisa.gov/news-events/analysis-reports/ar26-113a)activity. Per[CISA AR26–113A](https://www.cisa.gov/news-events/analysis-reports/ar26-113a), CVE-2025–20333 is a missing-authorization flaw (CWE-862) and CVE-2025–20362 is a buffer overflow (CWE-120); some press coverage labels them in the reverse order, so cite CISA’s classification.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*BgKYz_CHBUjpWHF2NuUhuA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*BgKYz_CHBUjpWHF2NuUhuA.png" alt="Article image" width="1024" height="768" loading="lazy" decoding="async" />
 
 Fortinet FortiOS/FortiProxy SSL-VPN exploitation and symlink persistence.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*zwVZYUac3mqQE3Vo8_SBxA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*zwVZYUac3mqQE3Vo8_SBxA.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
 
 Barracuda ESG[**CVE-2023–2868**](https://www.barracuda.com/company/legal/esg-vulnerability), where replacement rather than patch-only remediation became necessary.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*CYATdQ__-9pVJ3ylw69HxA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*CYATdQ__-9pVJ3ylw69HxA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Assessment:**exposed edge appliances should be classified as Tier-0. They are closer to domain controllers than to ordinary infrastructure because compromise can reveal identity material and traffic secrets.
 
@@ -166,33 +166,33 @@ Several incidents show attackers altering device state in ways that survive norm
 
 [**Cisco FIRESTARTER**](https://www.cisa.gov/news-events/analysis-reports/ar26-113a)**(Confirmed).**A Linux ELF backdoor for Cisco ASA/FTD/Firepower disclosed jointly by CISA and NCSC-UK on April 23, 2026 (AR26–113A). Initial access was via CVE-2025–20333 and/or CVE-2025–20362; the actor first deployed the**LINE VIPER**user-mode shellcode loader, then dropped**FIRESTARTER**as the durable foothold. FIRESTARTER hooks LINA (the core ASA process), re-launches on termination, and survives reboots, software upgrades, and patching. Per[CISA](https://www.cisa.gov/news-events/news/cisa-warns-firestarter-malware-targeting-cisco-asa-including-firepower-and-secure-firewall-products)/[Cisco](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-persist-CISAED25-03), reliable removal requires a hard power cycle**plus**reimage to fixed software. Activity was observed as recently as March 2026. Attributed to UAT-4356 ([Cisco Talos](https://blog.talosintelligence.com/uat-4356-firestarter/)) / Storm-1849 (Microsoft), overlapping[ArcaneDoor](https://blog.talosintelligence.com/arcanedoor-new-espionage-focused-campaign-found-targeting-perimeter-network-devices/).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*yu6k3Wqkwijw1StXpkvbkw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*yu6k3Wqkwijw1StXpkvbkw.png" alt="Article image" width="1024" height="768" loading="lazy" decoding="async" />
 
 [**Fortinet SSL-VPN symlink persistence**](https://fortiguard.fortinet.com/psirt/FG-IR-25-934)**.**Prior exploitation could leave read-only filesystem access surviving ordinary patching (Confirmed; FG-IR-25–934, CVE-2025–68686).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*Ka33eziBsdAQKEHhE_qBUw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*Ka33eziBsdAQKEHhE_qBUw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**Barracuda ESG**](https://www.barracuda.com/company/legal/esg-vulnerability)**.**Vendor recommended replacement of affected appliances after CVE-2023–2868 compromise (Confirmed).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*4tdu0VvpzS1ZVctHXsH74A.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*4tdu0VvpzS1ZVctHXsH74A.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**BlackLotus**](https://www.eset.com/us/about/newsroom/research/eset-research-analyzes-blacklotus-a-uefi-bootkit-that-can-bypass-uefi-secure-boot-on-fully-patched-systems/)**.**Used Secure Boot bypass ([CVE-2022–21894](https://www.microsoft.com/en-us/security/blog/2023/04/11/guidance-for-investigating-attacks-using-cve-2022-21894-the-blacklotus-campaign/)) and boot-chain manipulation (Confirmed).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*rGPY4AyUo3lKreMXmkmKLQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*rGPY4AyUo3lKreMXmkmKLQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**UNC3886**](https://attack.mitre.org/groups/G1048/)**.**Deployed TINYSHELL-based backdoors on Juniper Junos routers and disabled logging (Confirmed;[MITRE C0056 “RedPenguin”](https://attack.mitre.org/campaigns/C0056/)).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*WNPtOrShogejGlWQ53KYdA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*WNPtOrShogejGlWQ53KYdA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**Cyclops Blink**](https://media.defense.gov/2022/Feb/23/2002943421/-1/-1/0/CSA_NEW_SANDWORM_MALWARE_CYCLOPS_BLINK_REPLACES_VPNFILTER_20220223.PDF)**.**Modular network-device malware with persistence on firewall/router appliances (Confirmed).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*_bFIN029krOUVCSou3n6TA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*_bFIN029krOUVCSou3n6TA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Assessment:**IR playbooks must separate “vulnerability remediation” from “attacker eviction.” For embedded assets, eviction may require reimaging, clean firmware replacement, factory reset, config rebuild, credential rotation, and forensic validation.
 
 ### 3. BMC compromise has become a practical enterprise concern
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*6jmTAtyW-qSVBXkpzVIQgA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*6jmTAtyW-qSVBXkpzVIQgA.png" alt="Article image" width="1024" height="768" loading="lazy" decoding="async" />
 
 **AMI MegaRAC SPx**[**CVE-2024–54085**](https://nvd.nist.gov/vuln/detail/CVE-2024-54085)**(Confirmed).**A remote authentication-bypass-by-spoofing in the Redfish Host Interface, CVSS v4.0 10.0.[Eclypsium](https://eclypsium.com/blog/ami-megarac-vulnerabilities-bmc-part-3/)disclosed it and AMI shipped fixes in March 2025; CISA added it to the[KEV catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)on June 25, 2025 based on evidence of active exploitation — the first BMC vulnerability in the KEV. It affects BMC firmware used across many downstream server OEMs.
 
@@ -213,19 +213,19 @@ BlackLotus, LogoFAIL, PixieFail, Bootkitty, and the 2026 Secure Boot certificate
 
 [**BlackLotus**](https://www.eset.com/us/about/newsroom/research/eset-research-analyzes-blacklotus-a-uefi-bootkit-that-can-bypass-uefi-secure-boot-on-fully-patched-systems/)exploited[CVE-2022–21894](https://www.microsoft.com/en-us/security/blog/2023/04/11/guidance-for-investigating-attacks-using-cve-2022-21894-the-blacklotus-campaign/)to bypass Secure Boot and install a UEFI bootkit.
 
-![Article image](https://cdn-images-1.medium.com/proxy/1*rGPY4AyUo3lKreMXmkmKLQ.png)
+<img src="https://cdn-images-1.medium.com/proxy/1*rGPY4AyUo3lKreMXmkmKLQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 [**LogoFAIL**](https://www.binarly.io/reports/logofail)exposed UEFI image-parser vulnerabilities across firmware supply chains.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*1ZSKpJbKe8GazYUSVvYobw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*1ZSKpJbKe8GazYUSVvYobw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**PixieFail**](https://blog.quarkslab.com/pixiefail-nine-vulnerabilities-in-tianocores-edk-ii-ipv6-network-stack.html)exposed nine vulnerabilities in EDK II’s IPv6 network stack used during PXE/preboot.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*BPUhdhGrV2CQ-kgQ2e3r0Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*BPUhdhGrV2CQ-kgQ2e3r0Q.png" alt="Article image" width="1024" height="768" loading="lazy" decoding="async" />
 
 [**Bootkitty**](https://www.binarly.io/blog/logofail-exploited-deploy-bootkitty-first-uefi-bootkit-linux)demonstrated a Linux UEFI bootkit and LogoFAIL-related exploitation paths.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*JHgKRBKO0E4FfigYXei9dg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*JHgKRBKO0E4FfigYXei9dg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**Secure Boot 2011 certificate expiry**](https://support.microsoft.com/en-us/topic/windows-secure-boot-certificate-expiration-and-ca-updates-7ff40d33-95dc-4c3c-8725-a9b95457578e)**.**Microsoft Corporation**KEK CA 2011**expired**June 24, 2026**;**Microsoft Corporation UEFI CA 2011**on**June 27, 2026**;**Microsoft Windows Production PCA 2011**expires**October 19, 2026**. Devices without the 2023 CAs keep booting but lose the ability to receive future Secure Boot db/dbx and revocation updates, and Linux shim binaries signed only with the 2023 key will not boot on un-migrated firmware.
 
@@ -237,27 +237,27 @@ Recent CPU/GPU research shows hardware isolation assumptions can fail:
 
 [**AMD EntrySign / CVE-2024–36347 (AMD-SB-7033)**](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7033.html)**(Confirmed).**Improper microcode signature verification (weak AES-CMAC-based hashing, reused NIST example key) lets a ring-0 attacker load malicious/forged microcode on Zen 1–5. The companion SEV-firmware issue is[CVE-2024–56161 (AMD-SB-3019)](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3019.html). Full fix requires an OEM BIOS/PI firmware update.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*0lEXSglpGqlpyYbG2jgMVg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*0lEXSglpGqlpyYbG2jgMVg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**AMD SEV-SNP “Fabricked” / CVE-2025–54510 (AMD-SB-3034)**](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3034.html)**(Confirmed).**A missing-lock check in AMD Secure Processor firmware lets a privileged attacker alter MMIO routing and compromise SEV-SNP guest integrity; researchers (ETH Zurich) confirmed on Zen 5 EPYC, with firmware fixes also listed for Zen 3/4. CVSS 5.9 (Medium).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*cW2equc_u5eU5_rAR4JS0Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*cW2equc_u5eU5_rAR4JS0Q.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**Intel Downfall / Gather Data Sampling / CVE-2022–40982**](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/gather-data-sampling.html)**(Confirmed).**Local side-channel can infer stale vector-register data across security boundaries.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*-SrLnGOKJ3G55spnE8jSLg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*-SrLnGOKJ3G55spnE8jSLg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **AMD Zenbleed and Inception (Confirmed).**Speculative-execution / microarchitectural leakage across AMD CPU families.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*osM1py7Jd1K8Hkfxs7G0mw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*osM1py7Jd1K8Hkfxs7G0mw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**Trail of Bits LeftoverLocals / CVE-2023–4969**](https://blog.trailofbits.com/2024/01/16/leftoverlocals-listening-to-llm-responses-through-leaked-gpu-local-memory/)**(Confirmed).**GPU local-memory leakage across Apple, Qualcomm, AMD, and Imagination GPUs, with special relevance to LLM/ML inference confidentiality.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*ZTSx7QuU535_5kQjWyyNcw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*ZTSx7QuU535_5kQjWyyNcw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [**NVIDIA Jetson Linux/NvGPU bulletins**show embedded GPU stacks can contain privilege-escalation and isolation flaws.](https://www.sentinelone.com/vulnerability-database/cve-2024-0126/)
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*WMnTcZi6KkSE8jJToQ81RA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*WMnTcZi6KkSE8jJToQ81RA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Assessment:**hardware isolation is not binary. For cloud, AI, and edge compute, firmware/microcode currency and tenant-isolation policy are part of the security boundary. Note most of these require local/privileged access — they are trust-boundary and confidential-computing risks, not remote pre-auth RCE.
 
@@ -269,19 +269,19 @@ PRC-linked[Volt Typhoon](https://www.cisa.gov/news-events/cybersecurity-advisori
 
 [KV Botnet](https://attack.mitre.org/campaigns/C0035/)activity against end-of-life Cisco, NETGEAR, DrayTek, and similar SOHO equipment.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*fhxZd0RNKqSDRqxj-eokiQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*fhxZd0RNKqSDRqxj-eokiQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [Cyclops Blink](https://www.trendmicro.com/en_us/research/22/c/cyclops-blink-sets-sights-on-asus-routers--.html)on WatchGuard and ASUS devices, linked to Sandworm.
 
-![Article image](https://cdn-images-1.medium.com/proxy/1*_bFIN029krOUVCSou3n6TA.png)
+<img src="https://cdn-images-1.medium.com/proxy/1*_bFIN029krOUVCSou3n6TA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 [InfectedSlurs](https://www.akamai.com/blog/security-research/new-rce-botnet-spreads-mirai-via-zero-days)Mirai-derived botnet exploiting router and NVR zero-days.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*wNpidsK9is7u81MHbLvkbA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*wNpidsK9is7u81MHbLvkbA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 [AcidRain](https://www.sentinelone.com/labs/acidrain-a-modem-wiper-rains-down-on-europe/)wiper against Viasat KA-SAT modems, with spillover effects across Europe.
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*smAw5LVJzhsf_0hdIMlacQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*smAw5LVJzhsf_0hdIMlacQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 **Assessment:**do not ignore home-office routers and unmanaged ISP devices when employees, executives, admins, or OT maintainers access sensitive environments remotely.
 
@@ -291,7 +291,7 @@ Forescout, Claroty, Nozomi, and CISA ICS advisories show persistent risk in OT/I
 
 Forescout’s[*Rough Around the Edges*](https://www.forescout.com/press-releases/ot-iot-router-firmware-outdated-software-vulnerabilities/)research found popular OT/IoT router firmware images containing outdated components and many exploitable n-day vulnerabilities (Confirmed).
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*83TA1F_C-IAPwv2uux1Mdw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*83TA1F_C-IAPwv2uux1Mdw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-report-exploitation-grows-across-it-iot-and-ot/)highlights growing exploitation across IT, IoT, OT, and IoMT (Confirmed).
 
@@ -303,13 +303,13 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ## Vendor and ecosystem risk matrix
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*nRCGtn7_5n1vYXZKEBpyGg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*nRCGtn7_5n1vYXZKEBpyGg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 ## Campaign and case-study intelligence
 
 ## Volt Typhoon and KV Botnet
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*uzS055AQuoa7uSlMVpdJ3g.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*uzS055AQuoa7uSlMVpdJ3g.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - **Actor type:**PRC state-sponsored.
 - **Targets:**critical infrastructure — communications, energy, transportation, water, Guam-related and other strategic networks.
@@ -319,7 +319,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ## ArcaneDoor and FIRESTARTER
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*ukq-jk8I7OFeMUgF2eBVOg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*ukq-jk8I7OFeMUgF2eBVOg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - **Actor type:**state-sponsored, tracked as UAT-4356 ([Cisco Talos](https://blog.talosintelligence.com/uat-4356-firestarter/)) / Storm-1849 (Microsoft).
 - **Targets:**Cisco ASA, FTD, Firepower, perimeter devices.
@@ -328,7 +328,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ## UNC3886 on Juniper routers
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*olfebpY46JWZkGYupa1EcA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*olfebpY46JWZkGYupa1EcA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - **Actor type:**China-nexus espionage ([MITRE G1048](https://attack.mitre.org/groups/G1048/); Campaign[C0056 “RedPenguin”](https://attack.mitre.org/campaigns/C0056/)).
 - **Targets:**Juniper Junos routers, especially older/EOL MX devices.
@@ -337,7 +337,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ## UNC5221 and Ivanti Connect Secure
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*SO3I5JMOAgh9OlqoyepYqQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*SO3I5JMOAgh9OlqoyepYqQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - **Actor type:**suspected China-nexus espionage.
 - **Targets:**Ivanti Connect Secure VPN appliances.
@@ -346,7 +346,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ## UNC4841 and Barracuda ESG
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*ZzzZ9IBztOUnsohk-lZs9Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*ZzzZ9IBztOUnsohk-lZs9Q.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
 - **Actor type:**suspected China-nexus espionage.
 - **Targets:**Barracuda Email Security Gateway appliances.
@@ -355,7 +355,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ## Sandworm, Cyclops Blink, and AcidRain
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*95RlSU3LpMPqjSpx7doIvQ.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*95RlSU3LpMPqjSpx7doIvQ.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - **Actor type:**Russian state-linked; wartime destructive activity.
 - **Targets:**WatchGuard/ASUS routers, firewalls, modems, communications infrastructure.
@@ -364,13 +364,13 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ## Vulnerability classes that matter most
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*uUo7K9N2_G4CVgrViPrSQw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*uUo7K9N2_G4CVgrViPrSQw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 ## Priority collection requirements
 
 ### Asset inventory
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*gNlB0wVnlgpSlw9M4EcbWw.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*gNlB0wVnlgpSlw9M4EcbWw.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - Vendor, model, hardware revision, serial number.
 - Firmware, BIOS/UEFI, bootloader, BMC, microcode, GPU driver, and OS versions.
@@ -382,7 +382,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ### Threat-intelligence monitoring
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*cdLoG62qcA4CgwtNfS3_tA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*cdLoG62qcA4CgwtNfS3_tA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - CISA KEV additions for appliance, firmware, OT/IoT, and hardware vendors.
 - Vendor PSIRT feeds: Cisco, Fortinet, Palo Alto, Ivanti, Juniper, Barracuda, AMI, Supermicro, Gigabyte, AMD, Intel, NVIDIA, Arm, Qualcomm, Apple.
@@ -392,7 +392,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ### Detection telemetry
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*6_QX2y5QctoD2PlWislTxA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*6_QX2y5QctoD2PlWislTxA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 - Appliance config changes.
 - New admin users, SSH keys, API tokens, certificates, VPN accounts.
@@ -409,7 +409,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ### Immediate priorities
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*OqIWcsQxRCpWPS5hGwNIHg.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*OqIWcsQxRCpWPS5hGwNIHg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 1. Identify all internet-facing VPNs, firewalls, routers, mail gateways, load balancers, MDM appliances, and BMCs.
 2. Remove or restrict public management interfaces.
@@ -421,7 +421,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ### Firmware and hardware priorities
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*1BVA9iNryrPfHLP1xNvJ8Q.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*1BVA9iNryrPfHLP1xNvJ8Q.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 1. Build a firmware-aware inventory.
 2. Track UEFI, BMC, microcode, GPU firmware/driver, bootloader, dbx, and Secure Boot certificate states.
@@ -433,7 +433,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ### Incident-response priorities
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*acynDT25BEHe636NWdDvcA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*acynDT25BEHe636NWdDvcA.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
 
 1. Preserve volatile evidence before patch/reboot/reimage where possible (for FIRESTARTER, avoid hard power cycles before core-dump collection).
 2. Determine whether the vendor has warned about persistence.
@@ -445,7 +445,7 @@ Forescout’s[2025 threat report](https://www.forescout.com/blog/2025-threat-rep
 
 ## Prioritized risk ranking
 
-![Article image](https://cdn-images-1.medium.com/max/1024/1*NsS6TiHyCuBYCoTL79ictA.png)
+<img src="https://cdn-images-1.medium.com/max/1024/1*NsS6TiHyCuBYCoTL79ictA.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
 
 ## Intelligence gaps and validation tasks
 

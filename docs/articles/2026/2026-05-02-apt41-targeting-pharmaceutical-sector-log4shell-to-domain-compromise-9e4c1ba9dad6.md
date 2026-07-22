@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*Yx8PYav8kdkweKZ9U1Jftw.png"
 # APT41 Targeting Pharmaceutical Sector: Log4Shell to Domain Compromise
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*Yx8PYav8kdkweKZ9U1Jftw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Yx8PYav8kdkweKZ9U1Jftw.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Threat Intelligence Report | Operation DragonRx
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Yx8PYav8kdkweKZ9U1Jftw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Yx8PYav8kdkweKZ9U1Jftw.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
 
 **Classification:**TLP:CLEAR — Unrestricted distribution (FIRST TLP 2.0)
 **Report ID:**CTI-2026-APT41–001
@@ -122,7 +122,7 @@ This report documents the technical analysis of an APT41-pattern intrusion again
 
 ### Identity
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*DrTW5f1z6nLGqk6OekioKg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*DrTW5f1z6nLGqk6OekioKg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ### Operational Duality
 
@@ -138,7 +138,7 @@ PlugX, CROSSWALK, MESSAGETAP, ShadowPad, Cobalt Strike (shared/rented), custom G
 
 ## 3. Campaign Overview
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*aQAPIcGzAKzK1GOSpx2tvw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*aQAPIcGzAKzK1GOSpx2tvw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ### Target Network Architecture (In Lab env for simulation)
 
@@ -223,7 +223,7 @@ H2 - Researcher workstation (jsmith)
 
 The Diamond Model below describes the adversary cluster emulating APT41 TTPs in this campaign. “Basis” identifies the documented APT41 reporting each capability element derives from.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bSe-mbDLp4IISMsttRzByw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bSe-mbDLp4IISMsttRzByw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Capability notes:**[2]**documented in Mandiant Double Dragon;**[3]**documented in Mandiant Log4Shell/APT41 report; unmarked capabilities are generic techniques with low APT41-specific attribution value.
 
@@ -233,7 +233,7 @@ Capability notes:**[2]**documented in Mandiant Double Dragon;**[3]**documented i
 
 The actor conducted passive external reconnaissance before any direct interaction with target systems, consistent with documented APT41 pre-compromise behavior [2]. The reconnaissance phase produced near-certain vulnerability confirmation without generating any alerts on the target.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*kEFPXBG_OlGO38N0iF8Ryw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*kEFPXBG_OlGO38N0iF8Ryw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Critical observation:**The application error page returned a full Java stack trace in production, including the classpath entry`log4j-core-2.14.1.jar`. This misconfiguration — development-mode error handling left in production — provided near-certain Log4Shell confirmation before any exploit code was executed.
 
@@ -247,7 +247,7 @@ The actor conducted passive external reconnaissance before any direct interactio
 
 **Attack chain:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*JSDecoAGnx84UJE7I68Drg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*JSDecoAGnx84UJE7I68Drg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ```text
 Attacker (curl) → WEB01 HTTP header logged 
@@ -337,7 +337,7 @@ Operating from the`www-data`shell on WEB01, the actor conducted systematic inter
 
 A ping sweep and targeted Nmap scan of the RFC 1918 /24 identified three Windows hosts:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*KnQpee6qeEDhhIMsfeA_XA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*KnQpee6qeEDhhIMsfeA_XA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **Detection signal:**Zeek`conn.log`records a port scan pattern sourced from`192.168.10.100`. Medium-confidence alert, Day 2.
 
@@ -375,7 +375,7 @@ Using the recovered`svc_ldap`credentials, the actor queried Active Directory via
 
 **Key accounts identified:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*uvftEb-cBV_C4riu_GmRvg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*uvftEb-cBV_C4riu_GmRvg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ### 5.5 Credential Access — T1558.003, T1003.001, T1003.006
 
@@ -426,7 +426,7 @@ With Domain Admin credentials from the LSASS dump, the actor issued replication 
 
 **Full pivot chain:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*yLyPDKCksOANr7gFBHMsVQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*yLyPDKCksOANr7gFBHMsVQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ```text
 WEB01 (Linux, www-data)
@@ -522,23 +522,23 @@ The actor followed a documented pre-ransomware sequence: disable Windows Defende
 
 ### Attacker Tooling
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*EYICw6_-hcgqEJ2ADHIG8Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*EYICw6_-hcgqEJ2ADHIG8Q.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ### C2 Infrastructure (Lab env)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Y5yCc8zkwqnOfehwRS5FPQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Y5yCc8zkwqnOfehwRS5FPQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## 7. Full ATT&CK TTP Matrix
 
 38 technique-rows across 11 tactic categories. 37 unique MITRE IDs — T1574.002 mapped under both Persistence and Defense Evasion per ATT&CK guidance for dual-purpose techniques.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ZG9lI2TDtlahOqwCR8C2Cw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ZG9lI2TDtlahOqwCR8C2Cw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## 8. Indicators of Compromise
 
 &gt; All IOCs below correspond to the Operation DragonRx research scenario. They are fictional and have no correlation to real threat actor infrastructure.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GzRryHnA9aq6qOayprR8GQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GzRryHnA9aq6qOayprR8GQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ### YARA Rule (RxPhage scenario)
 
@@ -617,7 +617,7 @@ $pclntab
 
 ### Alert Timeline vs. Review Timeline
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*HQdHXYaGgcltRVK4RQc5UA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*HQdHXYaGgcltRVK4RQc5UA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 **12 actionable alerts. All generated. None reviewed until Day 6. Detection failed at triage, not tooling.**
 
@@ -1103,7 +1103,7 @@ events:
 
 ### Prioritized Mitigations
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*bHLxoCY8kcK09XOvkL6vhw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*bHLxoCY8kcK09XOvkL6vhw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## The Compound Failure Pattern
 
@@ -1164,7 +1164,7 @@ Each control, independently, would not have stopped the attack. Combined, they w
 
 **Dwell time: 4 days, 17 hours, 37 minutes.**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*QIankHWPenU3FJ6-E24hUw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*QIankHWPenU3FJ6-E24hUw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Mandiant M-Trends 2025 (covering 2024 investigations) reports a global median dwell time of 11 days [8]. This campaign at 4.7 days is below median — conservative, not typical. The key metric is not overall dwell time; it is**time from first Critical alert to analyst acknowledgement.**
 
@@ -1306,13 +1306,13 @@ The exfiltration completed 15 hours and 42 minutes before the SOC escalation tha
 
 Before attributing to APT41, the same technical chain is consistent with the following:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*FjWhCWt-lbnWwBb0H50-kA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*FjWhCWt-lbnWwBb0H50-kA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 Attribution to APT41 (G0096) in a real incident requires evidence beyond technique overlap: infrastructure overlap with known APT41 clusters, malware code-sharing with confirmed APT41 samples (PlugX, CROSSWALK, MESSAGETAP), or intelligence not available from open-source reporting alone.
 
 ## TTP Confidence Assessment
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*o3BrTY74_mBrJbV5o85neg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*o3BrTY74_mBrJbV5o85neg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
 ## Sourcing Limitations
 

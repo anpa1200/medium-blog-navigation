@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*0XkpqupihwSTwWVA0KRXvA.png"
 # SpiderFoot Deep Dive: Installation, Scans, and Practical Use Cases
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*0XkpqupihwSTwWVA0KRXvA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0XkpqupihwSTwWVA0KRXvA.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How to run SpiderFoot, pick the right modules, interpret results, and use it responsibly for threat intelligence and reconnaissance.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*0XkpqupihwSTwWVA0KRXvA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*0XkpqupihwSTwWVA0KRXvA.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## TL;DR
 
@@ -113,7 +113,7 @@ python3 sf.py -l 127.0.0.1:8888
 
 Then open[http://127.0.0.1:8888](http://127.0.0.1:8888)in your browser:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*CRT3QxMnmSCjzxG_WT7XVg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*CRT3QxMnmSCjzxG_WT7XVg.png" alt="Article image" width="1918" height="537" loading="lazy" decoding="async" />
 
 Or use CLI:
 
@@ -121,11 +121,11 @@ Or use CLI:
 spiderfoot -h
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*A8_fv0pH1L9RnVKTsGhHag.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*A8_fv0pH1L9RnVKTsGhHag.png" alt="Article image" width="1057" height="981" loading="lazy" decoding="async" />
 
 ## Basic Configuration and API Keys
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*-EpB6qOiME1iyF361UzpTw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*-EpB6qOiME1iyF361UzpTw.png" alt="Article image" width="1919" height="979" loading="lazy" decoding="async" />
 
 Before running scans, it’s wise to configure SpiderFoot’s settings. The web GUI offers a**Settings**page where you can tweak global options (like DNS resolver, request throttling, using Tor for anonymity, etc.). A particularly important setup step is**adding API keys**for various OSINT services. SpiderFoot integrates with data sources like Shodan, VirusTotal, HaveIBeenPwned, etc., which often require API keys for full access. By registering for free or commercial API keys and plugging them into*Settings &gt; API Keys*, you unlock SpiderFoot modules that query those services (for example, DNS data from SecurityTrails, breach data from HaveIBeenPwned, IP info from Shodan, and more). With API keys added, SpiderFoot can retrieve**much deeper intelligence**from those sources, greatly enhancing the depth and accuracy of your scan results. It’s worth the few minutes to set these up before a big scan.
 
@@ -133,7 +133,7 @@ Before running scans, it’s wise to configure SpiderFoot’s settings. The web 
 
 With installation done, let’s run our first SpiderFoot scan via the web GUI. After starting the web interface, navigate to the**“New Scan”**page (usually the default homepage in the GUI).
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*NUS_IO56XnWlTgY76fVaig.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*NUS_IO56XnWlTgY76fVaig.png" alt="Article image" width="1919" height="979" loading="lazy" decoding="async" />
 
 **1. Define the Target:**SpiderFoot can investigate a variety of target types: domains, subdomains, IP addresses, CIDR subnets, ASNs, email addresses, usernames, phone numbers, names, and more. For this tutorial, let’s consider a domain as the target (since that’s common in red team recon). In the*New Scan*form, enter the target domain name (or IP, email, etc. as needed).
 
@@ -153,7 +153,7 @@ Select the profile that fits your goal. For initial reconnaissance on a domain, 
 
 **3. Select Modules (Optional):**If you prefer granular control, you can manually pick which modules to run. SpiderFoot has**over 200 modules**categorized by function. By default, choosing a profile auto-selects the relevant modules, but you can click on “Modules” or “Module Selection” in the GUI to review or tweak them. Some key module categories (and examples) include:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*1_MQb6g0tQXzxRk6yuW8zQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*1_MQb6g0tQXzxRk6yuW8zQ.png" alt="Article image" width="1919" height="979" loading="lazy" decoding="async" />
 
 - **Network & Infrastructure:**e.g.`sfp_dnsresolve`(DNS lookups),`sfp_dnsbrute`(brute-force subdomain enumeration),`sfp_whois`(WHOIS info),`sfp_ports`(open port detection via services like Shodan). These help map the target’s domain-IP-address infrastructure.
 
@@ -169,7 +169,7 @@ Each module is designed to query a specific source or perform a specific analysi
 
 **4. Run the Scan:**Double-check your target and module selection, then hit the**“Run Scan”**button. SpiderFoot will queue the scan and begin executing all selected modules. You’ll be redirected to the**Scans**page where you can monitor progress. The interface will show the scan status (running/completed) and how many data “elements” have been found so far.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*VmnuLg5JQJTypiwXAijpnA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*VmnuLg5JQJTypiwXAijpnA.png" alt="Article image" width="1910" height="497" loading="lazy" decoding="async" />
 
 While a scan is running, you can click into it to see live updates. SpiderFoot will show a log of modules executing and the data being collected. Active modules will update in real-time, and SpiderFoot’s engine will automatically**correlate findings**(i.e. feed output from one module into others). For example, if one module finds a new subdomain, other modules will take that subdomain and run with it (do whois, check leaks, etc.), all within the same scan. This chained, automated discovery is what makes SpiderFoot so powerful — it’s like having a team of research bots crawling through OSINT sources for you.
 
@@ -181,17 +181,17 @@ Once the scan completes, the real work for the red teamer begins:**analyzing the
 
 - **Browse/Raw Data View:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Lq9CabYcwPCUbTi5b_CQJQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Lq9CabYcwPCUbTi5b_CQJQ.png" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 This is a list or tree view of every piece of data SpiderFoot collected. Data is typically organized by type (e.g. all IP addresses found, all email addresses found, all hostnames, etc.). You can click on any item to see which module produced it and any linked entities. There’s also a search box for filtering specific keywords or patterns. The raw data view is useful for a deep dive or exporting specific items.
 
 - **Graph View:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*fkXBgmAFjDZQa4AQ4SSfew.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*fkXBgmAFjDZQa4AQ4SSfew.png" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 Use Force Layout:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Hx_i6urXydxigtO15Nh1QA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Hx_i6urXydxigtO15Nh1QA.png" alt="Article image" width="1912" height="1003" loading="lazy" decoding="async" />
 
 SpiderFoot can generate an interactive graph visualization of the entities and how they are connected. For example, you might see your target domain in the center, with lines connecting out to discovered subdomains, which connect to IP addresses, which connect to other domains, emails, etc. The graph helps you spot relationships (like “this IP is shared by these 3 domains” or “these discovered emails all belong to the same domain”) at a glance. You can zoom, drag, and click nodes on the graph for details.
 

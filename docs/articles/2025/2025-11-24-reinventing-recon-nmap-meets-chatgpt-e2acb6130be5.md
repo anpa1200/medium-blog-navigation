@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*sBs386jxQTGGRIarvIEpxw.png"
 # Reinventing Recon: Nmap Meets ChatGPT
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*sBs386jxQTGGRIarvIEpxw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sBs386jxQTGGRIarvIEpxw.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How I leveled up penetration tests by pairing classic tools (NMAP) with LLMs like ChatGPT.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sBs386jxQTGGRIarvIEpxw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sBs386jxQTGGRIarvIEpxw.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 Penetration testing has always been a mix of methodical reconnaissance, manual reasoning, and a little creativity. Nmap, still the reconnaissance workhorse, gives you clear facts — open ports, banners, certificates. LLMs like ChatGPT give you fluent, contextual interpretation: triage, remediation playbooks, human-readable reports, and rapid hypothesis generation. Together they transform raw scans into higher-value outcomes (faster triage, better reporting, smarter attack paths).
 
@@ -45,7 +45,7 @@ Below I describe a practical workflow I used, with examples, prompts, and automa
 
 For this guide I use a legal training platform:[www.hackthissite.org](http://www.hackthissite.org)
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*i88-4IUimguzAb_V2J7FfA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*i88-4IUimguzAb_V2J7FfA.png" alt="Article image" width="1507" height="662" loading="lazy" decoding="async" />
 
 - **Scan — gather facts**
 
@@ -69,7 +69,7 @@ A
 
 - Save a machine-readable copy:`-oX`(XML). Example file I used:`/mnt/data/hackthissite_scan.xml`.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*sSiTwbBeod_bLZLoIeUJ5w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*sSiTwbBeod_bLZLoIeUJ5w.png" alt="Article image" width="1670" height="913" loading="lazy" decoding="async" />
 
 **2. Hand-off to the LLM**
 

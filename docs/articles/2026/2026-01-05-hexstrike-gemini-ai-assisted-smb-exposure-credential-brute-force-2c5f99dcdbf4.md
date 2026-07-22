@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*zoac8Nswk63Txu1T.png"
 # HexStrike + Gemini. AI-Assisted SMB Exposure Credential Brute-Force
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*zoac8Nswk63Txu1T.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*zoac8Nswk63Txu1T.png" alt="Cover image" width="700" height="467" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Toolchain Failures → Service Fingerprinting → Authentication Findings → Share Risk
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*zoac8Nswk63Txu1T.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*zoac8Nswk63Txu1T.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
 
 ## Overview
 
@@ -68,7 +68,7 @@ dictionaries
 :  ~/Documents/passwords_list.txt ~/Documents/users_list.txt
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*58m_3RUriTgxwZfi7v8_pQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*58m_3RUriTgxwZfi7v8_pQ.png" alt="Article image" width="1486" height="331" loading="lazy" decoding="async" />
 
 ## Execution flow (what actually happened)
 
@@ -92,7 +92,7 @@ The agent recovered correctly by switching to**Nmap service detection**, which p
 
 - Host fingerprint suggests Windows 10 / Server 2019 family
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*5LRXp03c-23FoZw3K2eDjw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*5LRXp03c-23FoZw3K2eDjw.png" alt="Article image" width="1703" height="666" loading="lazy" decoding="async" />
 
 **Takeaway:**Your lab target is an intentionally “wide-open” Windows surface: SMB + RDP + SSH simultaneously, which is a high-risk posture in any real network.
 
@@ -110,7 +110,7 @@ This looks like a**wrapper/parameter bug**, where legacy enum4linux flags are be
 
 - Use a different enumeration primitive (as you did), or update/patch the wrapper.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*BTJl_KCgKrvZ7o9Gj3Emgw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*BTJl_KCgKrvZ7o9Gj3Emgw.png" alt="Article image" width="1711" height="584" loading="lazy" decoding="async" />
 
 ## 3) SMBMap unauthenticated run produced a transport/read error
 
@@ -142,7 +142,7 @@ In a real enterprise, this combination is a red flag and typically violates base
 
 ## 5) Hydra Attack
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*GF-wE8qxoVaaevDXbbcgRw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*GF-wE8qxoVaaevDXbbcgRw.png" alt="Article image" width="1701" height="450" loading="lazy" decoding="async" />
 
 ## 6) Credential hygiene test succeeded (but reveals systemic weakness)
 
@@ -162,7 +162,7 @@ Several accounts also returned a notable message:
 
 - and still represent password reuse / lateral movement risk.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*lJ3-KK72SWLpHRNDAvpnSA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*lJ3-KK72SWLpHRNDAvpnSA.png" alt="Article image" width="1701" height="450" loading="lazy" decoding="async" />
 
 ## 7) Authenticated share enumeration succeeded
 
@@ -192,7 +192,7 @@ In real environments, the risk is not “empty vs not empty,” but**R/W on mult
 
 ## Findings summary
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ThfCkYxlr2PPaUzI0cIAAg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ThfCkYxlr2PPaUzI0cIAAg.png" alt="Article image" width="1793" height="799" loading="lazy" decoding="async" />
 
 ```text
   Security Assessment Report

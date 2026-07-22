@@ -83,8 +83,9 @@ export default function Home() {
       title="Security Research Articles"
       description="Read the complete local 1200km archive of security research articles, guides, labs, and case studies."
     >
-      <header className="hero hero--blog">
-        <div className="container">
+      <main id="main-content">
+        <header className="hero hero--blog">
+          <div className="container">
           <p className="eyebrow">1200km research library</p>
           <h1>Security research articles, available locally.</h1>
           <p className="hero-subtitle">
@@ -102,15 +103,15 @@ export default function Home() {
             <Link className="button button--secondary button--lg" to={`/${routeBase}`}>Browse by year</Link>
             <a className="button button--outline button--lg" href="https://1200km.com/search.html">Search all 1200km research</a>
           </div>
-        </div>
-      </header>
+          </div>
+        </header>
 
-      <main id="article-library" className="section">
-        <div className="container">
+        <section id="article-library" className="section" aria-labelledby="article-library-title">
+          <div className="container">
           <div className="section-heading">
             <div>
               <p className="eyebrow">Full archive</p>
-              <h2>Find an article</h2>
+              <h2 id="article-library-title">Find an article</h2>
             </div>
             <p id="article-result-count" aria-live="polite">
               {filtered.length} {filtered.length === 1 ? 'article' : 'articles'} found
@@ -168,7 +169,8 @@ export default function Home() {
               <button className="button button--primary" type="button" onClick={resetFilters}>Clear filters</button>
             </div>
           )}
-        </div>
+          </div>
+        </section>
       </main>
     </Layout>
   );

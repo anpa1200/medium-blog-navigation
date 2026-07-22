@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*g2oqWT5DdWuZvbcN-pABkw.png"
 # Meet syscheck_beauty: a colorful Linux system report with deep storage insights (and exportable…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*g2oqWT5DdWuZvbcN-pABkw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*g2oqWT5DdWuZvbcN-pABkw.png" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### TL;DR : I built a single-file Python tool that prints a beautiful, color-coded snapshot of your Linux machine — CPU, memory, GPU, disks, filesystems — and can optionally scan for the heaviest directories/files. It also exports a polished, responsive HTML report you can share with teammates or stash in tickets.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*g2oqWT5DdWuZvbcN-pABkw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*g2oqWT5DdWuZvbcN-pABkw.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Why another system report tool?
 
@@ -41,7 +41,7 @@ Admins and developers jump between`lscpu`,`free`,`df`,`du`,`lsblk`,`nvidia-smi`,
 
 ## What it shows
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*jxyUB-r06vVDfdAXFzZh8Q.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*jxyUB-r06vVDfdAXFzZh8Q.png" alt="Article image" width="783" height="1123" loading="lazy" decoding="async" />
 
 ### System & OS
 
@@ -109,7 +109,7 @@ xdg-open report.html
 
 Generate a responsive, well-styled HTML report:
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*Wng0RfDsEFKHIILhWLSovg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*Wng0RfDsEFKHIILhWLSovg.png" alt="Article image" width="1157" height="913" loading="lazy" decoding="async" />
 
 ```text
 ./syscheck_beauty.py --html --html-file report.html

@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*2DUOdzljRMWmtn8XZzNLQw.jpeg"
 # GCP Penetration Testing: A Step-by-Step Attack Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*2DUOdzljRMWmtn8XZzNLQw.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*2DUOdzljRMWmtn8XZzNLQw.jpeg" alt="Cover image" width="1024" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical GCP lab case study: overprivileged identities, leaked creds, weak controls — and how it all chains together
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*2DUOdzljRMWmtn8XZzNLQw.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/1*2DUOdzljRMWmtn8XZzNLQw.jpeg" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
 
 ## Introduction
 
@@ -68,11 +68,11 @@ The target environment was intentionally misconfigured to demonstrate common clo
 
 **How to check your lab ip:**
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*f1D8naH_Bhdokd2CyfFJoQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*f1D8naH_Bhdokd2CyfFJoQ.png" alt="Article image" width="1919" height="967" loading="lazy" decoding="async" />
 
 The penetration test began with a single IP address as the only known information about the target. This IP address represents a publicly accessible web server hosted on Google Cloud Platform’s Compute Engine service. The target has no domain name or additional context — just a raw IP address, which is a common scenario in real-world penetration testing where attackers may discover exposed services through network scanning, data breaches, or other reconnaissance activities.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*ms2R6CioW26M_JHb0GOZHQ.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*ms2R6CioW26M_JHb0GOZHQ.png" alt="Article image" width="1910" height="577" loading="lazy" decoding="async" />
 
 ## 1. Reconnaissance
 
@@ -101,7 +101,7 @@ nmap -sV
 
 - **Port 443:**Closed — No HTTPS service
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*d3SIeQXYI-5WtxJsw3BjaA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*d3SIeQXYI-5WtxJsw3BjaA.png" alt="Article image" width="819" height="357" loading="lazy" decoding="async" />
 
 **Analysis:**The presence of SSH on port 22 suggests we might be able to gain shell access if credentials are discovered. The nginx web server on port 80 is our primary target for web application vulnerabilities.
 
@@ -116,7 +116,7 @@ curl http:
 
 **Results:**The server returned a default nginx welcome page, indicating a standard installation without obvious customizations. This suggests the actual application might be on a different path or subdomain.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*IjXLyriKAryzt4FZnuTaSg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*IjXLyriKAryzt4FZnuTaSg.png" alt="Article image" width="828" height="600" loading="lazy" decoding="async" />
 
 ### Cloud Service Discovery
 

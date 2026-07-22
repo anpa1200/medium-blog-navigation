@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*ADa5nrvprt-F6cYe.jpeg"
 # Tools by MITRE ATT&CK Guide
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*ADa5nrvprt-F6cYe.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*ADa5nrvprt-F6cYe.jpeg" alt="Cover image" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -31,7 +31,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 Adversaries may execute active reconnaissance scans to gather information that can be used during targeting. Active scans are those where the adversary probes victim infrastructure via network traffic, as opposed to other forms of reconnaissance that do not involve direct interaction.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*ADa5nrvprt-F6cYe.jpeg)
+<img src="https://cdn-images-1.medium.com/max/800/0*ADa5nrvprt-F6cYe.jpeg" alt="Article image" width="1280" height="720" loading="lazy" decoding="async" />
 
 Adversaries may perform different forms of active scanning depending on what information they seek to gather. These scans can also be performed in various ways, including using native features of network protocols such as ICMP. Information from these scans may reveal opportunities for other forms of reconnaissance (ex: Search Open Websites/Domains or Search Open Technical Databases), establishing operational resources (ex: Develop Capabilities or Obtain Capabilities), and/or initial access (ex: External Remote Services or Exploit Public-Facing Application).
 

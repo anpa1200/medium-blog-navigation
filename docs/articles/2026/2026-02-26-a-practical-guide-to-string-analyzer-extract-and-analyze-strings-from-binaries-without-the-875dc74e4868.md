@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*WcSOfC4HLGU5VqurtWnEnw.png"
 # A Practical Guide to String Analyzer: Extract and Analyze Strings from Binaries (Without the…
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*WcSOfC4HLGU5VqurtWnEnw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WcSOfC4HLGU5VqurtWnEnw.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Turn executables, memory dumps, and disk images into actionable intelligence in minutes — with one Python tool and zero extra dependencies.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*WcSOfC4HLGU5VqurtWnEnw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*WcSOfC4HLGU5VqurtWnEnw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Table of Contents
 
@@ -95,7 +95,7 @@ pip install -e .
 
 After that you have the`string-analyzer`command. From the project root you can also run`python -m string_analyzer`. That’s the only entry point — no second script to remember.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*t2oueLWrLmTjWlbEC6PVpw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*t2oueLWrLmTjWlbEC6PVpw.png" alt="Article image" width="1797" height="289" loading="lazy" decoding="async" />
 
 ## Three ways to run it
 
@@ -112,7 +112,7 @@ path
 
 Open`report.txt`: you’ll see file entropy at the top, then sections like`### URLS`,`### IPS`,`### WINDOWS API COMMANDS`, and so on. Empty categories are omitted.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*_qOu_CjI3Sv3kZhY3VRy-g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*_qOu_CjI3Sv3kZhY3VRy-g.png" alt="Article image" width="1707" height="952" loading="lazy" decoding="async" />
 
 ### 2. Unfiltered string dump
 
@@ -142,7 +142,7 @@ path
 
 Paste`prompt.md`into your favorite AI assistant. The prompt includes entropy, a “possibly packed/obfuscated” note when the heuristic triggers, and all the categorized strings — so the model can summarize behavior without you rewriting everything.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*j3uzFjVqHjG_AMOaA1bjkw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*j3uzFjVqHjG_AMOaA1bjkw.png" alt="Article image" width="1887" height="917" loading="lazy" decoding="async" />
 
 ### LLM Response:
 

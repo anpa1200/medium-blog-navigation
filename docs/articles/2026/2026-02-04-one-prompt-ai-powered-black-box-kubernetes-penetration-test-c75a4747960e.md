@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*32h8cwOpQ848Zp5BexnK-w.png"
 # One-Prompt AI-Powered Black-Box Kubernetes Penetration Test
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*32h8cwOpQ848Zp5BexnK-w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*32h8cwOpQ848Zp5BexnK-w.png" alt="Cover image" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How Cursor + HexStrike MCP Automatically Discovers and Exploits Vulnerabilities. From single entry point to full cluster compromise
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*32h8cwOpQ848Zp5BexnK-w.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*32h8cwOpQ848Zp5BexnK-w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 ## Executive Summary
 

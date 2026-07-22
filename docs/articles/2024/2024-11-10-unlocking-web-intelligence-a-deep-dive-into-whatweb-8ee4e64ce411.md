@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/0*G_BvP5Z8aDo3VtnL.png"
 # Unlocking Web Intelligence: A Deep Dive into WhatWeb
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/0*G_BvP5Z8aDo3VtnL.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*G_BvP5Z8aDo3VtnL.png" alt="Cover image" width="640" height="308" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -27,9 +27,9 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 In the vast and ever-evolving landscape of web technologies, understanding the underlying components that power a website is crucial for a variety of professionals — from cybersecurity experts to market analysts. Enter**WhatWeb**, a robust command-line tool that excels in identifying the technologies used on websites. With the capability to recognize over 1700 different items, WhatWeb provides an essential service in the toolkit of digital professionals. Whether it’s pinpointing which content management system (CMS) a site uses, discovering the JavaScript libraries in operation, or identifying the server software hosting the pages, WhatWeb covers an extensive range of technologies. This powerful tool offers a window into the digital makeup of websites, providing valuable insights that aid in security assessments, competitive analysis, and much more.
 
-![Article image](https://cdn-images-1.medium.com/max/800/0*G_BvP5Z8aDo3VtnL.png)
+<img src="https://cdn-images-1.medium.com/max/800/0*G_BvP5Z8aDo3VtnL.png" alt="Article image" width="640" height="308" loading="lazy" decoding="async" />
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*dfhH3jPOqTx5anjsr5BC2A.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*dfhH3jPOqTx5anjsr5BC2A.png" alt="Article image" width="801" height="221" loading="lazy" decoding="async" />
 
 ### Legal Disclaimer
 
@@ -106,7 +106,7 @@ whatweb
 
 - This command should return the version of WhatWeb installed on your system, confirming that the installation was successful.
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*RzvIkYJgOZ9FtdkQtBVZmg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*RzvIkYJgOZ9FtdkQtBVZmg.png" alt="Article image" width="840" height="850" loading="lazy" decoding="async" />
 
 ## Basic Usage
 
@@ -123,7 +123,7 @@ For example, to scan[https://juice-shop.herokuapp.com](https://juice-shop.heroku
 whatweb https://juice-shop.herokuapp.com
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*wVJVNLE1PGFjA4721_Y69g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*wVJVNLE1PGFjA4721_Y69g.png" alt="Article image" width="1912" height="71" loading="lazy" decoding="async" />
 
 This command will output a list of technologies detected on the website, such as the web server, CMS, JavaScript libraries, and more.
 
@@ -153,7 +153,7 @@ WhatWeb comes with a variety of options that allow for more customized scanning:
 whatweb -a1 https://juice-shop.herokuapp.com
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*x9HtrgCC5ZQYM2z3OCzBQg.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*x9HtrgCC5ZQYM2z3OCzBQg.png" alt="Article image" width="1912" height="71" loading="lazy" decoding="async" />
 
 - **Verbose Output**: For more detailed output, including plugin descriptions and full HTTP request and response headers, use the`--verbose`option:
 
@@ -161,7 +161,7 @@ whatweb -a1 https://juice-shop.herokuapp.com
 whatweb -v https://juice-shop.herokuapp.com
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3YutNHwokKNM6_oMNY-34g.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3YutNHwokKNM6_oMNY-34g.png" alt="Article image" width="1923" height="953" loading="lazy" decoding="async" />
 
 - **Custom User-Agent**: To specify a custom User-Agent in your HTTP requests, use the`--user-agent`option:
 
@@ -186,7 +186,7 @@ com
 com
 ```
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*T04f3xipFACx6wRX1F7viA.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*T04f3xipFACx6wRX1F7viA.png" alt="Article image" width="1910" height="226" loading="lazy" decoding="async" />
 
 - **Scanning IP Ranges**: WhatWeb can scan entire IP ranges. Specify the range in the command:
 

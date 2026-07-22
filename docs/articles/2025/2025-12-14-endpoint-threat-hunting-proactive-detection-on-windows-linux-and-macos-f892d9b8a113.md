@@ -7,7 +7,7 @@ image: "https://cdn-images-1.medium.com/max/800/1*3t3LgpwNhth-BHTkM_ueuw.png"
 # Endpoint Threat Hunting: Proactive Detection on Windows, Linux, and macOS
 
 
-![Cover image](https://cdn-images-1.medium.com/max/800/1*3t3LgpwNhth-BHTkM_ueuw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3t3LgpwNhth-BHTkM_ueuw.png" alt="Cover image" width="2816" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
 - **Category:** CTI
@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Uncovering Advanced Compromises Through Telemetry, Artifacts, MITRE ATT&CK Tactics, and Practical Playbooks
 
-![Article image](https://cdn-images-1.medium.com/max/800/1*3t3LgpwNhth-BHTkM_ueuw.png)
+<img src="https://cdn-images-1.medium.com/max/800/1*3t3LgpwNhth-BHTkM_ueuw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
 
 ## Executive Summary
 
