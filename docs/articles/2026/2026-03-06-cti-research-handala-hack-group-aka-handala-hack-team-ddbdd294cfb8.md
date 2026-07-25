@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (December 2023 to March 2026)
 
-<img src="https://cdn-images-1.medium.com/max/800/1*EjRmditTOBYitSBhWIvq6Q.png" alt="Article image" width="3556" height="1184" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Report Metadata**

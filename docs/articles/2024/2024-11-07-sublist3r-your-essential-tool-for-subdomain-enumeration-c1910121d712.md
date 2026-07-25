@@ -26,8 +26,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 **Introduction to Sublist3r**
 Sublist3r is an open-source reconnaissance tool designed to discover subdomains associated with a target domain. By aggregating data from multiple sources, Sublist3r helps cybersecurity professionals quickly map a domain’s external footprint, revealing potential entry points for further investigation. It’s a powerful tool used in the early stages of penetration testing and OSINT (Open Source Intelligence) for identifying overlooked or forgotten assets.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*3fpDOJlfpfeYpIau" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 **Disclaimer:**
 Sublist3r is intended solely for ethical and authorized use. Before using Sublist3r, obtain explicit permission from the domain owner or conduct testing within a legally approved scope, such as a bug bounty program or authorized penetration test. Unauthorized use of Sublist3r may violate laws and lead to serious legal consequences. Always ensure compliance with legal and ethical standards when using reconnaissance tools.
 

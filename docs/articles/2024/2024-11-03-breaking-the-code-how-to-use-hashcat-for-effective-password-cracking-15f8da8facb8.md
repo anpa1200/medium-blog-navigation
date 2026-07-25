@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex passwords.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*kI_7z7ucKQmIcpEH" alt="Article image" width="677" height="336" loading="lazy" decoding="async" />
-
 ### Overview
 
 Hashcat stands as the premier password recovery tool, known for its robust performance across multiple platforms. It offers versatile attack modes, from brute-force to more sophisticated hybrid attacks, capitalizing on the power of GPUs to expedite password cracking. Ideal for both novices and experts, Hashcat not only cracks complex passwords but also serves as a critical tool for highlighting security vulnerabilities. This guide will navigate you through its setup, usage, and best practices, ensuring you harness Hashcat’s capabilities ethically and effectively.

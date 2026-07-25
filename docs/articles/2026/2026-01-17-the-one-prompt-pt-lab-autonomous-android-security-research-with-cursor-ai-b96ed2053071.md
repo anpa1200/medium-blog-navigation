@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Bare Directory to Full Exploitation: A Case Study on OWASP UnCrackable L1
 
-<img src="https://cdn-images-1.medium.com/max/800/1*8HbNgt1eC6BmBvGuVpzqqg.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Introduction
 
 In modern cybersecurity, the integration of Large Language Models (LLMs) with integrated development environments (like**Cursor**) has revolutionized the “Time-to-Exploit.” This article documents a groundbreaking scenario:**A single human-language prompt**triggers a chain of autonomous actions — deploying a Linux-based Android lab, fetching targets, reverse engineering code, and generating a verified Proof of Concept (PoC).

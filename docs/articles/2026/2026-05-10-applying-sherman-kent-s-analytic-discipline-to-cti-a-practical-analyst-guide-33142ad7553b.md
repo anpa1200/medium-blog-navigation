@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Estimative language, evidence discipline, and analytic integrity for cyber threat intelligence
 
-<img src="https://cdn-images-1.medium.com/max/800/1*le-GPHh7adFR9iex1Ff7qQ.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 ## Executive Summary
 
 This is an analyst guide, not a formal CTI report. It does not answer a single priority intelligence requirement, assess one actor or campaign end to end, provide an IOC package, or produce a defensive detection plan. Its purpose is narrower: show how cyber threat intelligence analysts can apply Sherman Kent-style analytic discipline to public evidence without overstating what the evidence proves.

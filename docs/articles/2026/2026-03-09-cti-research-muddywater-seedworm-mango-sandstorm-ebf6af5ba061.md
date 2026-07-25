@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Evidence-Labeled Threat Intelligence Assessment and SOC Defensive Guidance (2017 — March 2026)
 
-<img src="https://cdn-images-1.medium.com/max/800/1*JX0SIm-8jz5EP_OXL6soMQ.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 **PDF here:**
 
 [**CTI/muddywater-seedworm at main · anpa1200/CTI**

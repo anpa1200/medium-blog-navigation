@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Learn how to leverage theHarvester to gather emails, subdomains, IPs, and more from open sources
 
-<img src="https://cdn-images-1.medium.com/max/800/0*Ypuw5uO7-BaQdPS4.jpg" alt="Article image" width="1920" height="900" loading="lazy" decoding="async" />
-
 ## Introduction to theHarvester
 
 **theHarvester**is an open-source reconnaissance tool used to gather information about domains, including email addresses, subdomains, IPs, and employee details, by leveraging multiple public data sources. It’s particularly useful in the early stages of penetration testing and OSINT (Open Source Intelligence) investigations.

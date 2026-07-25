@@ -27,8 +27,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 **Handling:**Public / educational
 **Audience:**CTI analysts, SOC leads, NOC leads, cloud security, identity teams, telecom core engineers, security architects, incident commanders, and executives
 
-<img src="https://cdn-images-1.medium.com/max/800/1*rJhQNIYp8Kpj1Acwmljrhg.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Executive Summary**

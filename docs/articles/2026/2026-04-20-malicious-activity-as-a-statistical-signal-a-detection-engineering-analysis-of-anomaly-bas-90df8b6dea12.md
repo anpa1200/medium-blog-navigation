@@ -27,8 +27,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
 
-<img src="https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 &gt; Epistemic labels used throughout: [Documented] = the cited source explicitly states this fact or detection opportunity. [Inferred] = the source documents the underlying tradecraft; the detection derivation is the author’s reasoned conclusion. Claims without a label are general statements with consensus support in the cited literature.
 
 ## Table of Contents

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Why AI-Orchestrated Pentesting Is a Force Multiplier for Red Teams — and a Warning Sign for Defenders
 
-<img src="https://cdn-images-1.medium.com/max/800/0*3aT5ccS08ZmUK0Y6.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
-
 Over the past months, I’ve been deeply experimenting with**HexStrike-AI**in real,**authorized penetration-testing scenarios**:
 home networks, vulnerable web applications, OSINT workflows, wireless attacks, and controlled exploitation labs.
 

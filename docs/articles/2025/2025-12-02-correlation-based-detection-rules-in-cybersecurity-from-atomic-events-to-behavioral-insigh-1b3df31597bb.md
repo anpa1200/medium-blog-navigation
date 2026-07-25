@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A comprehensive exploration of multi-event analytics, temporal logic, and rule chaining for advanced threat detection across modern SIEM and XDR ecosystems.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*DOUf58XPpv4azYsnZXsQHg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Correlation-based detection rules analyze relationships between multiple events across systems to identify attack patterns that single-event (atomic) rules cannot. Unlike an atomic rule that fires on one alert (e.g., a single malware signature match), correlation rules group and sequence log entries by shared attributes (user, host, IP, etc.) and time windows to uncover multi-step behaviors. In SIEM and security platforms, correlation provides context and reduces noise by linking related alerts. For example, a SIEM may correlate one failed login with other failed logins across accounts/IPs to reveal a brute-force attack. XDR/UEBA platforms similarly track entity behavior over time, building “living timelines” of user/device actions, so that even long-duration or stealthy attacks are detected. SOAR tools often consume correlated alerts for incident response.

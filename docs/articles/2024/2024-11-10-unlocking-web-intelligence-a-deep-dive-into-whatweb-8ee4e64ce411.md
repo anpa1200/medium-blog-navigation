@@ -27,8 +27,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 In the vast and ever-evolving landscape of web technologies, understanding the underlying components that power a website is crucial for a variety of professionals — from cybersecurity experts to market analysts. Enter**WhatWeb**, a robust command-line tool that excels in identifying the technologies used on websites. With the capability to recognize over 1700 different items, WhatWeb provides an essential service in the toolkit of digital professionals. Whether it’s pinpointing which content management system (CMS) a site uses, discovering the JavaScript libraries in operation, or identifying the server software hosting the pages, WhatWeb covers an extensive range of technologies. This powerful tool offers a window into the digital makeup of websites, providing valuable insights that aid in security assessments, competitive analysis, and much more.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*G_BvP5Z8aDo3VtnL.png" alt="Article image" width="640" height="308" loading="lazy" decoding="async" />
-
 <img src="https://cdn-images-1.medium.com/max/800/1*dfhH3jPOqTx5anjsr5BC2A.png" alt="Article image" width="801" height="221" loading="lazy" decoding="async" />
 
 ### Legal Disclaimer

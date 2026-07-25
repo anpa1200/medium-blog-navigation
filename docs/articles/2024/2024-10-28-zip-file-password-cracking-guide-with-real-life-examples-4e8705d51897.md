@@ -36,8 +36,6 @@ The information provided in this article, is intended for educational purposes o
 
 I have a password-protected ZIP file.**secretfile.zip**
 
-<img src="https://cdn-images-1.medium.com/max/800/1*XrF-4L6t7UurS8m75yI6Vw.png" alt="Article image" width="935" height="384" loading="lazy" decoding="async" />
-
 ### Brute force/Dictionary Brute force
 
 **1. Extraction of Encrypted Data**

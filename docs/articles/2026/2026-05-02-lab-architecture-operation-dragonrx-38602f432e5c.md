@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Part of the Operation DragonRx series · Overview · Lab Architecture · Attack Playbook · DFIR Walkthrough
 
-<img src="https://cdn-images-1.medium.com/max/800/1*RbXPLislKRT4nLittXgygA.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 **A fully automated, reproducible APT41 detection lab.**Docker + Vagrant + Ansible provisioned in a single command. Three Windows VMs (Active Directory, file server, workstation), eight Linux containers (attacker tooling, Log4Shell target, Wazuh/Elastic/Zeek SIEM), and custom attack simulation tooling. Built for security researchers studying Log4Shell exploitation, Kerberoasting, DCSync, and lateral movement — with full SIEM telemetry from day one.
 
 **Estimated deploy time:**~25 min (boxes cached) ·**Host requirements:**24 GB RAM, 8 cores, 120 GB SSD

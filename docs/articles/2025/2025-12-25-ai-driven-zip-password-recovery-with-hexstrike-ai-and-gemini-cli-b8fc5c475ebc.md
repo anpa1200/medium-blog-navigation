@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Encrypted Archive to Flag Using LLM-Orchestrated Tooling
 
-<img src="https://cdn-images-1.medium.com/max/800/0*ugjfFZjFfBwT__hh.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
-
 ### Overview
 
 &gt; This guide demonstrates how HexStrike-AI , orchestrated through Gemini-CLI , can autonomously solve a common security / CTF task:

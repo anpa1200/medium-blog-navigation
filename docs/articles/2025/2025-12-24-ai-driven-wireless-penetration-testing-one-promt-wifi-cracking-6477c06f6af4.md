@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Using Aircrack-ng with HexStrike-AI and Gemini-CLI
 
-<img src="https://cdn-images-1.medium.com/max/800/0*Gzu2GZ7sMF5IJg52.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Wireless penetration testing is traditionally a**manual, error-prone process**:

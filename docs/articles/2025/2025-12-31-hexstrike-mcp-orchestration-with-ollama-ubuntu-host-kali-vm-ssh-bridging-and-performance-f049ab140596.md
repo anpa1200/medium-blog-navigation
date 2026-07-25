@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How to wire Ubuntu (Ollama) to Kali (HexStrike) with MCP over SSH, what models actually behaved (Qwen3 8B/14B), and when you should move to GPU or cloud models.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*FEND4twn4pGNlLPNTCr6zQ.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 Below is a practical, end-to-end setup that keeps the**LLM on Ubuntu (host)**and runs**HexStrike on Kali (VM)**, then bridges them so your local model can “drive” HexStrike tool calls.
 
 ## Additional guides:

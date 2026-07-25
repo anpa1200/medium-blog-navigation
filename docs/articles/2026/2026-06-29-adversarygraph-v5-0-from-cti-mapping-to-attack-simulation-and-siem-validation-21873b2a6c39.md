@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### A self-hosted CTI-to-detection workbench for ATT&CK mapping, IOC investigation, malware analysis, asset attack-surface mapping, attack simulation, and detection engineering validation.
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*pE4s-eX1wFWMUOsnozr16w.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
-
 ## Introduction
 
 AdversaryGraph started as a practical question:

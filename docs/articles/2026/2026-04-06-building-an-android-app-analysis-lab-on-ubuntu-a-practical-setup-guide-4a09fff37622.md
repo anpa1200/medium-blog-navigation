@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical step-by-step guide to building an Android malware analysis and security testing lab on Ubuntu
 
-<img src="https://cdn-images-1.medium.com/max/800/1*KWFhUdIci3EDAGck-OqX6Q.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
-
 ## Introduction
 
 When people talk about Android security testing or malware analysis, they often jump straight into reversing, hooking, bypassing protections, or writing detection logic.

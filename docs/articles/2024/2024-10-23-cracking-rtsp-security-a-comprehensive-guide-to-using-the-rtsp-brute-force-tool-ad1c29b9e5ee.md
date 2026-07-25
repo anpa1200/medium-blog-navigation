@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### This article introduces a powerful tool designed for ethical penetration testing — the RTSP Brute Force Tool — developed to help security professionals test and strengthen RTSP implementations against unauthorized access.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*ab02vUozKJHjZ440" alt="cameras rtsp password cracking" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Understanding RTSP and Its Vulnerabilities
 
 RTSP plays a pivotal role in media streaming but often remains poorly secured, making it a target for cyberattacks. A common vulnerability arises from weak authentication mechanisms, which can be exploited using brute force techniques. This underscores the necessity for rigorous security practices, including the use of strong, hard-to-guess credentials.

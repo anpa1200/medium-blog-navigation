@@ -36,8 +36,6 @@ The information provided in this article, is intended for educational purposes o
 
 I have a password-protected PDF file.**secretfile.pdf**
 
-<img src="https://cdn-images-1.medium.com/max/800/1*nLmr4BnY7tL0Nq6pBO1fFQ.png" alt="Article image" width="827" height="670" loading="lazy" decoding="async" />
-
 ### Brute force/Dictionary Brute force
 
 **1. Extraction of Encrypted Data**

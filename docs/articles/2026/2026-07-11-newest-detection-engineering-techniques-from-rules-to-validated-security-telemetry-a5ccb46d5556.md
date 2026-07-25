@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Practical methods for identity, cloud, CI/CD, runtime, and AI-era threat detection
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*PtjHgt5EKpMEspEmntakBw.png" alt="Article image" width="1024" height="559" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 1. **Introduction**

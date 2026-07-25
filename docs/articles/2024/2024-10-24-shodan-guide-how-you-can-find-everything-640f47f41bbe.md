@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### In this guide, we’ll explore how to navigate Shodan, understand the information it provides, and, most importantly, how to make use of the data you find. From identifying exposed critical infrastructure to locating everyday devices, Shodan opens a window into the connected world. Let’s dive in and learn how to uncover and leverage this powerful resource!
 
-<img src="https://cdn-images-1.medium.com/max/800/1*MPg_QaElDaz_n8yS2OQ2Qg.jpeg" alt="shodan" width="1792" height="1024" loading="lazy" decoding="async" />
-
 The internet is more than just websites; it’s a vast network of devices, from industrial control systems to home security cameras, all of which can be discovered with the right tools.**Shodan**is that tool — a powerful search engine for the Internet of Things (IoT). Whether you’re a cyber security professional, researcher, or curious tech enthusiast, Shodan can reveal what devices are exposed to the internet and potentially vulnerable.
 
 **About the Author:**

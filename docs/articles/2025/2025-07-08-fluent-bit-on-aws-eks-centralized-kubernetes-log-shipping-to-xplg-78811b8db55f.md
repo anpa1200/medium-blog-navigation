@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Deploy Fluent Bit as a DaemonSet with full metadata enrichment, RBAC, and HTTP output to XPLG for real-time observability
 
-<img src="https://cdn-images-1.medium.com/max/800/0*sCHNfQMmGuw3ynGB" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## What is Fluent Bit?
 
 **Fluent Bit**is a lightweight and high-performance log processor and forwarder. It collects logs from files, systemd, or containers (like Docker or Kubernetes pods), enriches them with metadata, transforms if needed, and routes them to various destinations (e.g., Elasticsearch, S3, HTTP APIs).

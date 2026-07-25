@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Practical scenarios that show how small developer mistakes lead to big security incidents.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*aSbjsHaLXv6vx5pwkrhiLg.png" alt="Article image" width="2048" height="2048" loading="lazy" decoding="async" />
-
 Most security incidents don’t come from zero-day exploits or elite hackers. They come from simple, well-known mistakes in everyday code. That’s why the OWASP Top 10 exists: a globally recognized list of the most critical security risks in modern applications.
 
 In this post, we won’t just list them. Instead, we’ll walk through ten real-world scenarios — how each vulnerability can be exploited, what it looks like in practice, and what every developer can do to prevent it.

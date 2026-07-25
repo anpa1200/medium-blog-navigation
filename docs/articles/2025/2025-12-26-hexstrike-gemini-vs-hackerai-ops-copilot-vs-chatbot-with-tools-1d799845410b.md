@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical lab comparison: Why orchestration quality beats raw model IQ in real-world workflows.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*-OVxdqqlgwXjJbmbKplryA.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## What is HackerAI?
 
 **HackerAI**is an AI-powered penetration testing assistant designed to automate the initial discovery and reporting phases of a security audit.

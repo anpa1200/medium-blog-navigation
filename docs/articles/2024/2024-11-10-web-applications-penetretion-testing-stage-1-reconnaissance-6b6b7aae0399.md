@@ -31,8 +31,6 @@ Reconnaissance, or ‘recon’ as it is commonly known in the cyber security com
 
 In this post, we will dive into the tools and techniques essential for effective reconnaissance, illustrating how thorough initial research can pave the way for deeper insights and more effective security measures in later stages of penetration testing.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*Tg_wtLG0ROKhLS2I" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Legal Disclaimer
 
 The information in this blog post is for educational and informational purposes only and is not intended as legal advice. The techniques discussed are meant for ethical use by professionals with proper authorization. The author assumes no responsibility for any misuse of the information contained herein or any resulting consequences. Users are advised to comply with applicable laws and conduct all activities responsibly.

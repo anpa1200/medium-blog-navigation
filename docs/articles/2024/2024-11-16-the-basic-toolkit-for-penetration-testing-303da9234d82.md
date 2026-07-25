@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Unlocking Vulnerabilities: A Comprehensive Guide to Essential Tools for Pen Testing
 
-<img src="https://cdn-images-1.medium.com/max/800/0*vpcuMQzXsepR78_C.jpg" alt="Article image" width="1120" height="1120" loading="lazy" decoding="async" />
-
 ### Introduction
 
 - Penetration testing is the cornerstone of identifying and addressing vulnerabilities in systems.

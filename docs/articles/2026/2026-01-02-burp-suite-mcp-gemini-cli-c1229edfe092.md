@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Connect Burp Suite to Gemini CLI using Model Context Protocol (MCP) and Turn Burp into an AI-callable toolset and accelerate recon, analysis, and reporting in authorized tests.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*BDe41fzpmr9R53fn5CbjcQ.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 This guide walks you through connecting**Burp Suite**to**Gemini CLI**using PortSwigger’s official**MCP Server**extension. Once wired, Gemini can invoke Burp as a set of**callable tools**(via MCP) to review proxy history, push requests into Intruder, and accelerate**recon, analysis, and reporting**during a web assessment.
 **Authorization & privacy note:**Use this only on systems you’re explicitly permitted to test. If you connect Burp to an external AI service, you are responsible for understanding what data may be transmitted and how it is handled under that provider’s policies.
 

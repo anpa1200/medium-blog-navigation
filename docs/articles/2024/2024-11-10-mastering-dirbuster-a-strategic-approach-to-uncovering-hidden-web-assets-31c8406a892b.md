@@ -27,8 +27,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 **DirBuster**, an open-source tool from the Open Web Application Security Project (OWASP), is a critical asset for uncovering hidden files and directories on web servers. Designed to perform brute-force attacks, DirBuster helps identify potential security vulnerabilities by testing for common and less-known directory names. This tool is indispensable for penetration testers and cybersecurity professionals aiming to enhance their security assessments and protect web applications from unseen risks.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*VMTBL8KlqZebIFD1.jpg" alt="Article image" width="1280" height="720" loading="lazy" decoding="async" />
-
 ## Legal Disclaimer
 
 The content provided in this post is for educational purposes only. DirBuster is a powerful tool intended for use in authorized security assessments and penetration testing environments. Unauthorized use of DirBuster to scan websites, servers, or networks without explicit permission from the rightful owners is illegal and may violate local, national, or international law. Users are advised to ensure all activities conducted with DirBuster comply with applicable legal standards and ethical guidelines. The author of this post disclaims any liability for misuse of the information provided or for any damage resulting from such misuse.

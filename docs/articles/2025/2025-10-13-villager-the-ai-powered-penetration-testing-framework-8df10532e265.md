@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 **By Andrey Pautov — October 2025**
 
-<img src="https://cdn-images-1.medium.com/max/800/1*P6rDNkPr58rLM8Mo7l7QMA.jpeg" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## A New Generation of Offensive AI
 
 Artificial intelligence has now entered the offensive side of cybersecurity.

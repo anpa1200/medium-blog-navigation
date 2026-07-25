@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Cluster-wide log collection using Fluent Bit on every node
 
-<img src="https://cdn-images-1.medium.com/max/800/0*jfXMZcfailmpZh01" alt="Article image" width="700" height="700" loading="lazy" decoding="async" />
-
 ## Description:
 
 This guide explains how to deploy Fluent Bit as a DaemonSet in a Kubernetes cluster to collect container logs from all nodes, enrich them with metadata, and forward them to an external log collector like XPLG.

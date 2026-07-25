@@ -29,8 +29,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 [**Part 3 is here**](2024-10-28-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-3-450eec6e9db2.md)
 
-<img src="https://cdn-images-1.medium.com/max/800/0*mfxnb9oTBVXZF2oX.jpeg" alt="Nmap project guide" width="700" height="400" loading="lazy" decoding="async" />
-
 ### About author
 
 Hello and welcome to my article.

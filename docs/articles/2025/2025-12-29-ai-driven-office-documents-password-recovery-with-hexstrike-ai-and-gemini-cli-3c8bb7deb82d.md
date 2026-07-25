@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Encrypted Document to Readable Content Using LLM-Orchestrated Tooling
 
-<img src="https://cdn-images-1.medium.com/max/800/0*NEMwBOBGpCmEwBNd.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
-
 ## Overview
 
 This guide shows how HexStrike-AI, orchestrated through Gemini-CLI, can autonomously handle a common,**authorized**security task:

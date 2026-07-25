@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Integrating Cursor AI into your hardware hacking workflow is a game-changer. From Human Prompt to Working Code
 
-<img src="https://cdn-images-1.medium.com/max/800/1*6r4g3udcM3RhWNY1OO2Agw.jpeg" alt="Article image" width="1360" height="768" loading="lazy" decoding="async" />
-
 ## Introduction
 
 The USB Rubber Ducky is a well-known penetration testing tool that emulates a USB keyboard to execute keystroke-based attacks. While the original Hak5 USB Rubber Ducky is a commercial device, you can build your own using an Arduino Leonardo or Arduino Micro for a fraction of the cost. Like this:

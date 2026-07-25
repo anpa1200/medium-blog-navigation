@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A complete engineering walkthrough of building, testing, and deploying an intelligent multi-cloud security assessment tool using Python, Claude AI, and Terraform
 
-<img src="https://cdn-images-1.medium.com/max/800/1*W2IxFbd-UqrT9iixkhMqWw.png" alt="Article image" width="2206" height="1952" loading="lazy" decoding="async" />
-
 [**GitHub - anpa1200/stratus-ai: AI-powered cloud security assessment tool - automated scanning…**
 *AI-powered cloud security assessment tool - automated scanning, Claude AI analysis, Terraform ECS deployment …*github.com](https://github.com/anpa1200/stratus-ai)[](https://github.com/anpa1200/stratus-ai)
 

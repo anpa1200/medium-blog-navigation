@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A hands-on reference for mobile security researchers, bug bounty hunters, and anyone preparing for Android penetration testing.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*aOYKFwIgWfQhN6th500kng.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Introduction**

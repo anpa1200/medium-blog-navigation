@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### This comprehensive post will delve into the powerful network scanning tool, Nmap, exploring its capabilities from basic to advanced levels. It includes practical tutorials on using Nmap’s various commands, the Nmap Scripting Engine, and integration with other security tools. The guide aims to equip readers with the skills to conduct thorough network explorations and security audits.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*sjBP9-xQ0Dbjh6O_ErSANw.jpeg" alt="Article image" width="1792" height="1024" loading="lazy" decoding="async" />
-
 **About author**
 
 Hello and welcome to my article.

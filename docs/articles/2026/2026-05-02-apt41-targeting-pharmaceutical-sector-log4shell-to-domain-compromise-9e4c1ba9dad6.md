@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Threat Intelligence Report | Operation DragonRx
 
-<img src="https://cdn-images-1.medium.com/max/800/1*Yx8PYav8kdkweKZ9U1Jftw.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 **Classification:**TLP:CLEAR — Unrestricted distribution (FIRST TLP 2.0)
 **Report ID:**CTI-2026-APT41–001
 **Date:**2026–04–25

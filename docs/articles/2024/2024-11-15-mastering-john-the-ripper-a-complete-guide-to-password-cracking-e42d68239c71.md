@@ -31,8 +31,6 @@ John the Ripper primarily serves to test the strength of passwords against commo
 
 In this guide, we’ll explore how to install and operate John the Ripper, discuss its various modes and configurations, and provide insights on advanced techniques for effective password cracking, ensuring you are well-equipped to use this tool proficiently in your security assessments.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*gr17iVx1rveoNFu3.jpg" alt="Article image" width="750" height="422" loading="lazy" decoding="async" />
-
 ## Installation
 
 **1. Installing on Linux:**John the Ripper is readily available in the repositories of most Linux distributions, making it easy to install via package management systems.

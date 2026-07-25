@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practitioner’s guide for CTI analysts — from evidence collection to defensible conclusions
 
-<img src="https://cdn-images-1.medium.com/max/800/1*kC1D5UaV5h0FEWQXdKS4_Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Introduction: Why Attribution Is Hard and Why It Matters**

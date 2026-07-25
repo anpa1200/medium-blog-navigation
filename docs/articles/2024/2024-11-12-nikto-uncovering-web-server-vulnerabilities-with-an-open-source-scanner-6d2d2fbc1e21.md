@@ -31,8 +31,6 @@ Primarily, Nikto scans web servers to detect outdated software, misconfiguration
 
 Due to its simplicity and effectiveness, Nikto has become a mainstay in penetration testing toolkits, providing a fast and straightforward way to identify server vulnerabilities and strengthen web security.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*uM8MMKHMinUh4-Uq.jpg" alt="Article image" width="1600" height="900" loading="lazy" decoding="async" />
-
 ## Legal Use Disclaimer
 
 Nikto is a security tool intended for authorized testing purposes only. Unauthorized scanning or probing of systems, networks, or web servers without explicit permission from the owner is illegal and may be considered a violation of cybersecurity laws. Users must ensure they have obtained the necessary consent to perform scans and assessments on target systems before using Nikto.

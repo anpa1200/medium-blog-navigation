@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practitioner field manual for cyber threat intelligence: from collection requirements to production detection.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*yXM97MUIp61fs-MVNamcJw.png" alt="Article image" width="1536" height="2752" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Introduction**

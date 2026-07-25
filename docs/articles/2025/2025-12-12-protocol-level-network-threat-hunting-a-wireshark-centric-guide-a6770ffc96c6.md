@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Uncovering Stealthy Attacks Through IOCs, Anomaly Detection, and Practical Playbooks
 
-<img src="https://cdn-images-1.medium.com/max/800/1*TFVy46jCnT48wbkRZR6yAg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
-
 ## Executive Summary
 
 Network threat hunting at the protocol level zeroes in on unusual patterns in network traffic rather than just endpoint artifacts. Key network IOCs include malicious domains and IP addresses, TLS fingerprints (JA3/JA3S hashes, certificate thumbprints), anomalous Server Name Indication (SNI) or HTTP headers, odd User-Agent strings, and signs of data exfiltration (e.g. unusually large DNS queries or HTTP POSTs). Protocols often abused in C2 and exfil attacks — DNS, HTTP/HTTPS/TLS, and legacy protocols like NetBIOS/NTP — require focused inspection. Hunters use both signature matches (IOCs) and behavioral analysis: for example, spotting*fast-flux*DNS (many answers, low TTL) or*DNS tunneling*(random, high-entropy subdomains). Anomaly detection (e.g. sudden spikes in NXDOMAINs or ICMP echoes) complements IOC searches. Detailed packet analysis (via Wireshark/tshark) provides “ground truth” of every byte exchanged. In practice, analysts formulate hypotheses (e.g. “malware is exfiltrating via DNS”) and then query packet captures or live feeds for telltale signs, often guided by threat intelligence. This protocol-level visibility is critical because it can reveal stealthy or novel threats that evade higher-level logs and signature-based tools.

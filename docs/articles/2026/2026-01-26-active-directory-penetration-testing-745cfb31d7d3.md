@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Deep Dive into GOAD-Mini Lab Assessment. Step-by-step guide.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*hR4E7AMKl1dOo1rZDj-Dfg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Abstract
 
 This article documents a comprehensive penetration test conducted against a Game of Active Directory (GOAD) Mini lab environment. The assessment demonstrates real-world Active Directory attack techniques, from initial reconnaissance through advanced exploitation, including user enumeration, password attacks, and credential extraction. This hands-on approach provides valuable insights into AD security vulnerabilities and defensive strategies.

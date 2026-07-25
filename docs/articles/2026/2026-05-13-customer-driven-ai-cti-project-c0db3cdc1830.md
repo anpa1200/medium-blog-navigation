@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Full Workflow Quick Reference
 
-<img src="https://cdn-images-1.medium.com/max/800/1*VQGM4kDVKCqhTDkmQRZkqA.png" alt="Article image" width="2528" height="1696" loading="lazy" decoding="async" />
-
 Most cyber threat intelligence programs fail at the same point: they produce reports nobody uses. The analyst delivers a threat summary; the SOC ignores it; the CISO asks why the budget exists. The gap is not effort — it is structure. Intelligence that cannot be traced from a customer decision all the way to a fired detection rule, a tuned alert, and a measurable outcome is not intelligence. It is research.
 
 This project template exists to close that gap. It is a 15-phase, gate-controlled methodology for delivering CTI that ends in production detections, executive metrics, and a customer who can articulate exactly what changed in their security posture. AI accelerates every phase — source extraction, hypothesis generation, detection drafting, report writing — but the methodology enforces analytic discipline that no AI can shortcut: source rating, evidence labeling, confidence calibration, quality gate sign-off, and chain integrity from the first PIR to the last deliverable.

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### ISO 27001-Based Server Hardening Plan
 
-<img src="https://cdn-images-1.medium.com/max/800/1*e2ISiMIzXiuutPsOO0Ycdw.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## 1. Access Control (ISO 27001 — A.9)
 
 ### Disable Root Login via SSH ( PermitRootLogin no )

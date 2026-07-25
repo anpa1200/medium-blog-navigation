@@ -30,6 +30,19 @@
   --shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
 }
 
+/*
+ * Infima's base reset applies `max-width: 100%` to every <img> but never
+ * resets `height`, so an <img width height> whose declared attributes are
+ * wider than the content column keeps its declared height while the browser
+ * shrinks its width to fit — every such image renders visibly squashed.
+ * Preserved article images carry real (often oversized) width/height
+ * attributes from the Medium export, so this is not cosmetic: without an
+ * explicit `height: auto`, most embedded article images render distorted.
+ */
+.theme-doc-markdown img {
+  height: auto;
+}
+
 /* Prose links must remain identifiable without relying on colour alone. */
 .theme-doc-markdown :where(p, li) a:not(.button),
 .theme-doc-markdown > a:not(.button):not(.hash-link) {

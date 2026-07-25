@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Service Validation → Dependency Fixes → Findings → Defensive Takeaways
 
-<img src="https://cdn-images-1.medium.com/max/800/0*BFm-ZoQNHk5Kp-pl.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
-
 ## Overview
 
 This guide documents a**fully authorized lab**workflow where an AI-orchestrated toolchain attempted to validate SSH exposure and assess**credential hygiene**on a target host. The value here is not “running tools,” but how the workflow**handles failures**, corrects environment issues (missing resources, permissions), and produces a**defender-usable outcome**.

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Learn how to integrate AI into every phase of the penetration testing kill chain with classic tools and a vulnerable lab VM.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*mrrMowrm5nNgN0S5nWRyPg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Penetration testing often involves a sequence of steps — from reconnaissance and scanning to exploitation and post-exploitation — commonly referred to as the*kill chain*. This guide demonstrates how to use**HackerAI**, an AI-powered penetration testing assistant, to streamline each phase of an attack on a vulnerable target. We’ll walk through a real-world example using the Metasploitable 2 lab VM (an intentionally vulnerable Linux server) and legacy tools like Nmap and Metasploit. By integrating HackerAI into the workflow, even beginners can get expert guidance on commands and techniques at each step, while experienced pentesters can work more efficiently.*(Note: Only perform these steps on systems you own or have permission to test. Metasploitable is a safe lab target designed for practice.)*

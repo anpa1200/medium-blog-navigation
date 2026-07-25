@@ -21,8 +21,6 @@ image: "https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png"
 
 This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Single-event detection rules — often called**atomic detections**— are alerting rules that trigger on*one*log or telemetry event indicative of malicious activity, without needing correlation with other events. In a SOC/blue team context, these rules are the straightforward “if X happens, alert” tools in the detection toolbox. For example, an alert on**MS Word spawning**`**cmd.exe**`or**a process named**`**mimikatz.exe**`**running**would be single-event rules: a*single*occurrence is enough to warrant analyst attention. These atomic detections contrast with correlation or multi-event rules (also called composite or stateful detections) that require*patterns of multiple events*(e.g.*1000 failed logins in 5 minutes*) to fire.

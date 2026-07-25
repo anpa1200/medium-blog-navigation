@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practitioner’s guide for CTI analysts, detection engineers, and threat hunters
 
-<img src="https://cdn-images-1.medium.com/max/800/1*erhDw-Zg56_rlj9jR9y4bw.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Introduction: Why You Need This Guide**

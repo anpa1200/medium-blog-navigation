@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Turn executables, memory dumps, and disk images into actionable intelligence in minutes — with one Python tool and zero extra dependencies.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*WcSOfC4HLGU5VqurtWnEnw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Introdaction**

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Detection logic, case evidence from 14 documented incidents, and a four-phase implementation programme — covering deterministic rules, behavioural heuristics, UEBA, exfiltration path coverage, and the telemetry required before any of it works.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*jH8aMiQT4FZxqA_IeqVL0w.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
 
 &gt; Epistemic labels: [Documented] = a cited source explicitly states this. [Inferred] = a reasonable analytic conclusion derived from documented facts or established detection engineering practice. Unlabelled claims have consensus support in the cited literature. This guide is not legal advice.

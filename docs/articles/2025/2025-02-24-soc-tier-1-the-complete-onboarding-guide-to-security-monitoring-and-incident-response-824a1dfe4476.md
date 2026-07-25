@@ -25,8 +25,6 @@ Part 1.
 
 ### Essential Tools, Techniques, and Knowledge for Entry-Level SOC Analysts with No Prior Experience
 
-<img src="https://cdn-images-1.medium.com/max/800/0*IK2qcLkDcCpK5lhp" alt="Article image" width="1792" height="1024" loading="lazy" decoding="async" />
-
 ## Introduction
 
 In today’s digital landscape, organizations face an ever-increasing number of cyber threats, ranging from phishing attacks to advanced persistent threats (APTs). To effectively defend against these risks, businesses rely on a**Security Operations Center (SOC)**— the central hub for monitoring, detecting, and responding to security incidents in real time.

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Uncovering Advanced Compromises Through Telemetry, Artifacts, MITRE ATT&CK Tactics, and Practical Playbooks
 
-<img src="https://cdn-images-1.medium.com/max/800/1*3t3LgpwNhth-BHTkM_ueuw.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
-
 ## Executive Summary
 
 Endpoint threat hunting aims to**proactively detect advanced compromises**on Windows, Linux, and macOS hosts before alerts fire. Hunters search for key Indicators of Compromise (IoCs) — such as known malicious file hashes, domains, IPs, unusual process names or registry entries — and anomalous behaviors that evade signature-based defenses.

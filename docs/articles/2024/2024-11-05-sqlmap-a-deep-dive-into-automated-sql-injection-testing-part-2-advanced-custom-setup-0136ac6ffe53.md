@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Part 1 here
 
-<img src="https://cdn-images-1.medium.com/max/800/0*-Cv-DujDMmYVNtNC" alt="SQLMAP" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Introduction to SQLMap
 
 In the vast landscape of cybersecurity tools, SQLMap holds a distinct position as the go-to solution for automating the detection and exploitation of one of the most dangerous vulnerabilities in web applications: SQL injection. This open-source tool offers a robust framework designed to penetrate database layers, uncovering flaws that could potentially compromise sensitive data.

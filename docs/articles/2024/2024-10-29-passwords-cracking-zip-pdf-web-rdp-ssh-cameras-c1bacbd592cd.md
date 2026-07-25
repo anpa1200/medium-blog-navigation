@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Dive into the art of password cracking with our guide that covers everything from brute force to advanced cryptanalytic attacks. Featuring real-life examples, we explore how these techniques work and offer tips on safeguarding your digital security. Perfect for cybersecurity enthusiasts and professionals alike.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*1qoucOs9A9WusKaW" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Disclaimer: Educational Purpose Only
 
 The information provided in this article, “Passwords Cracking: Full Guide with Real-Life Examples,” is intended for educational purposes only. The techniques and methods described herein are discussed as a means to understand and improve security measures and should not be used for illegal purposes. The author and publisher disclaim any liability from the misuse of this information. Readers are urged to use this knowledge to enhance their cybersecurity defenses and are reminded that unauthorized hacking into any system is illegal and unethical.

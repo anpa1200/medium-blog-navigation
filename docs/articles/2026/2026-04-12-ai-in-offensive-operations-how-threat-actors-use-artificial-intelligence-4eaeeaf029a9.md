@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A CTI assessment of documented malicious and dual-use AI activity through April 12, 2026, with a 2019–2025 comparison and forward forecast.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*2LAz8wipeZU3V1keDIOB9Q.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 &gt; Evidence cutoff: April 12, 2026. Year-over-year comparison tables run through full-year 2025. 2026 is treated separately as a partial-year update.
 
 ## Confidence Scale

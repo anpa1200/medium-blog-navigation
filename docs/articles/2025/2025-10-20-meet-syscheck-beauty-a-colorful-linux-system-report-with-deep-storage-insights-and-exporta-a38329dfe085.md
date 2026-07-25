@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### TL;DR : I built a single-file Python tool that prints a beautiful, color-coded snapshot of your Linux machine — CPU, memory, GPU, disks, filesystems — and can optionally scan for the heaviest directories/files. It also exports a polished, responsive HTML report you can share with teammates or stash in tickets.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*g2oqWT5DdWuZvbcN-pABkw.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Why another system report tool?
 
 Admins and developers jump between`lscpu`,`free`,`df`,`du`,`lsblk`,`nvidia-smi`, and friends. That’s fast when you know where to look… until you’re on a different distro, a container, or a laptop with hybrid graphics. I wanted:

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### An Urgent Message for CISOs and C-Level Executives. The threat landscape has fundamentally changed. Your legacy security assumptions are not just outdated — they’re dangerous.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*YP2vQadLDfPGcoMYbT-R9g.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
-
 ## Executive Summary
 
 In 2024, a 17-year-old with access to ChatGPT and free AI security tools successfully breached a Fortune 500 company’s cloud infrastructure in under 3 hours. The attack wasn’t sophisticated — it was automated. The teenager didn’t understand Kubernetes architecture, didn’t know Python beyond basic syntax, and had never taken a cybersecurity course. Yet, they achieved what would have required a team of experienced penetration testers just two years ago.

@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### 11 validated detections from public sources, OpenCTI graph, and a one-command lab Table of Contents
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*_HvRb4_s15JQ6FkA9ng-8w.png" alt="Article image" width="1024" height="559" loading="lazy" decoding="async" />
-
 Most threat actor writeups stop too early. They describe the group, list ATT&CK techniques, and paste some IoCs. Then the report sits in a folder while defenders wonder:*what do I actually do with this on Monday?*
 
 Operation Desert Hydra is an answer to that question.

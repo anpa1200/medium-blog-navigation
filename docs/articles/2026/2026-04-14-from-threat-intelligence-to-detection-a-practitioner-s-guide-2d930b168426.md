@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Building atomic, collection, correlational, TTP-based, and anomaly detection rules from real adversary behavior.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*gmEglWovk7wD4MTGoNpZ5A.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
 
 ## Table of Contents

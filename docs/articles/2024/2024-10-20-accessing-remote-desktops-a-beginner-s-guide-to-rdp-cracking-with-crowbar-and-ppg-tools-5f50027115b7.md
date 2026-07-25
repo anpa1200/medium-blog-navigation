@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Master the Techniques: Unveiling the Power of Crowbar and PPG to Unlock Remote Desktop Protocols
 
-<img src="https://cdn-images-1.medium.com/max/800/0*AGZ7Se-X2ML3kPX6" alt="RDP" width="1024" height="800" loading="lazy" decoding="async" />
-
 ## Introduction
 
 ### Brief Overview

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Learn Kubernetes security by building a comprehensive penetration testing lab with 25 real-world vulnerabilities
 
-<img src="https://cdn-images-1.medium.com/max/800/1*No6vYBwr0bvT5zmY0Fm5jg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Kubernetes has become the de facto standard for container orchestration, but with great power comes great responsibility — and significant security risks. Understanding these vulnerabilities is crucial for both security professionals and DevOps engineers.

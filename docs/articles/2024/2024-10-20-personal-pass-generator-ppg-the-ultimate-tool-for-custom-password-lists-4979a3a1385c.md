@@ -130,8 +130,6 @@ Visit my GitHub repository and download the script:
 **Run the Script in Python 3**
 Open your terminal or command prompt, navigate to the directory where you downloaded the script, and run the following command in your Python 3 environment:**python3 ./PPG_personal_pass_generator.py**
 
-<img src="https://cdn-images-1.medium.com/max/800/1*OFik0O1fjDJ-tNsVdSip4w.png" alt="Article image" width="858" height="745" loading="lazy" decoding="async" />
-
 **Input Information About Your Target**
 The script will prompt you to enter relevant information about your target (e.g., password length, character set, etc.). Based on this input, the tool will generate a custom wordlist.
 

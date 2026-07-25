@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Red-Team and AppSec Practitioner Guide
 
-<img src="https://cdn-images-1.medium.com/max/800/1*hwvnLFZ0hNlxdrALrFv-bg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
-
 ## Introduction
 
 LLM agents merge low-trust data ingestion, probabilistic planning, and high-impact tool execution into a single runtime path. That collapses traditional control boundaries: untrusted content can influence planning, planning can invoke privileged actions, and side effects can occur before deterministic policy checks are applied. For red teams and AppSec, the attack surface is no longer only APIs and code; it is the instruction supply chain across prompts, retrieval, memory, and tools.[[1]](https://arxiv.org/abs/2302.12173)This broadly aligns with OWASP LLM risks and MITRE ATLAS adversary behaviors.[[2]](https://owasp.org/www-project-top-10-for-large-language-model-applications/)[[3]](https://atlas.mitre.org/)

@@ -21,8 +21,6 @@ image: "https://cdn-images-1.medium.com/max/800/1*pYlSvXaZuWA0X8-qcTuWKg.png"
 
 This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*pYlSvXaZuWA0X8-qcTuWKg.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Abstract
 
 This article provides a comprehensive guide to the**ADCS ESC8 attack**(Active Directory Certificate Services Exploitation Scenario 8), one of the most sophisticated and dangerous Active Directory attack vectors. The ESC8 vulnerability allows attackers to relay NTLM authentication to ADCS HTTP endpoints, obtain certificates for high-privilege accounts, and achieve complete domain compromise through certificate-based Kerberos authentication.

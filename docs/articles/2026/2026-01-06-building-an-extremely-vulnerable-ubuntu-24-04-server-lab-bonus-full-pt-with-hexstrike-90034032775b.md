@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Step-by-Step Guide: Hands-on guide to creating an intentionally insecure Ubuntu 24.04.3 Server VM with open SSH, FTP, Samba, NFS, Apache/PHP, MariaDB, privilege escalation vectors, vulnerable web apps, and sensitive data leaks
 
-<img src="https://cdn-images-1.medium.com/max/800/1*BXEZxGFa7d08ft9ktYNq_A.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 This guide will walk you through creating a vulnerable Ubuntu 24.04.3 Server virtual machine (VM) lab for ethical penetration testing, security research, or educational purposes. Important Safety Note: This setup intentionally introduces severe security flaws, making the system highly exploitable. Only run this in an isolated virtual environment (e.g., a VM on your local machine). Do not deploy this on production systems, public networks, or without explicit permission. Always comply with laws and ethical guidelines — use for authorized testing only (e.g., CTFs, bug bounties, or personal labs). The vulnerabilities introduced here are based on common real-world exploits but are amplified for demonstration.
 
 We’ll use VirtualBox or VMware as the hypervisor, download a legitimate Ubuntu Server 24.04.3 ISO, install Ubuntu, and then apply an enhanced bash script to introduce vulnerabilities. The script disables defenses, opens services, creates weak accounts, sets up privilege escalation paths, installs vulnerable software (including a backdoored vsftpd, DVWA, phpMyAdmin), adds dummy sensitive data, and more.

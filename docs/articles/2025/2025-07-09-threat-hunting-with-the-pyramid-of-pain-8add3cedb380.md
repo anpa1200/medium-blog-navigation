@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical guide to using threat indicators that actually hurt your attackers, based on David J. Bianco’s model. Why detecting TTPs is more powerful than blocking IPs — and how to use that to your advantage
 
-<img src="https://cdn-images-1.medium.com/max/800/0*4MGxnmKxvKTWSyem.png" alt="Article image" width="720" height="405" loading="lazy" decoding="async" />
-
 Every security team knows that blocking malicious IPs or blacklisting hashes is only part of the battle. But what if you could force your adversaries back to the drawing board, slow them down, or even break their momentum entirely? Enter the**Pyramid of Pain**, a framework created by David J. Bianco that ranks common indicators of compromise (IOCs) by how much they “hurt” an attacker when you deny their use. By shifting our focus up the pyramid, we can inflict the maximum operational cost on threat actors — and make our defenses truly effective.
 
 ### What Is the Pyramid of Pain?

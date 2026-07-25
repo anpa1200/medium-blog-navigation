@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### This research provides an in-depth analysis of cyber threats targeting 5G telecom core networks, mapping real-world and theoretical attack techniques to the MITRE ATT&CK and FiGHT frameworks. It includes practical detection methods and mitigation strategies, tailored specifically for Ericsson systems and infrastructure.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*J0wNA8CBQ3ewW8eL2P8-iQ.png" alt="Article image" width="2048" height="2048" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Telecommunications providers are prime targets for cyberattacks, from nation-state espionage to criminal fraud. Modern mobile networks (4G LTE EPC and 5G core) carry critical voice and data traffic, making any compromise potentially devastating. This report analyzes known and theoretical threats across the end-to-end connection flow — from user equipment (UE) through the Radio Access Network (RAN) and Core, out to the Internet. We map each threat to specific network functions and interfaces (e.g. S1-MME in 4G, N2/N3 in 5G, SGi/N6 towards the internet, etc.), and align adversary tactics with the MITRE ATT&CK® framework and the MITRE FiGHT™ 5G threat framework. Real-world examples (nation-state APT campaigns, criminal exploits, insider abuse) are included alongside theoretical attack models. For each stage, we discuss how adversaries execute attacks, how to detect them using logs (including Ericsson event logs) and monitoring tools (SIEM, NIDS, DPI), and how to prevent or mitigate these threats. The analysis is tailored to Ericsson’s infrastructure where applicable, highlighting relevant security features and best practices.

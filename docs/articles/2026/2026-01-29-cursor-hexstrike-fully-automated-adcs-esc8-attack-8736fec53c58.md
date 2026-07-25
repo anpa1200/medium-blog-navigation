@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### One-Prompt Domain Compromise
 
-<img src="https://cdn-images-1.medium.com/max/800/1*npVtspHqp4Ac88UEt_5ziQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Abstract
 
 This article documents a**fully automated, single-prompt penetration test**that achieves complete domain compromise through the ADCS ESC8 vulnerability. Starting from nothing more than an IP address, an AI-powered attack framework successfully executed the entire attack chain — from reconnaissance to domain compromise — in a single automated session.

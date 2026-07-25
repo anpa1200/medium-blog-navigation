@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### The field manual for tracing attacker infrastructure — from one domain to dozens
 
-<img src="https://cdn-images-1.medium.com/max/800/1*1ehWz4-YEZTo-PXo4FwemA.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Introduction: Why Infrastructure Pivoting Is a Core CTI Skill**

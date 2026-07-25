@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From pure CTI to hands-on detection engineering with strict validation gates
 
-<img src="https://cdn-images-1.medium.com/max/800/1*egk7YDLtI9JGChlqptGRDQ.jpeg" alt="Article image" width="1168" height="784" loading="lazy" decoding="async" />
-
 ## This article is one part of a four-part series covering the full customer-driven AI-CTI project lifecycle.
 
 ### Full Workflow Quick Reference

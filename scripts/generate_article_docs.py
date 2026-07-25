@@ -152,7 +152,7 @@ def block_to_md(node: Tag, title: str, seen_title: list[bool]) -> str:
     return ""
 
 
-def article_body(soup: BeautifulSoup, title: str) -> str:
+def article_body(soup: BeautifulSoup, title: str, cover: str = "") -> str:
     content = soup.select_one("section.e-content") or soup
     nodes = content.select(".graf")
     if not nodes:
@@ -160,6 +160,7 @@ def article_body(soup: BeautifulSoup, title: str) -> str:
     seen_title = [False]
     blocks: list[str] = []
     seen_follow_section = False
+    cover_pending = bool(cover)
     for node in nodes:
         text = node.get_text(" ", strip=True)
         if text in {"Follow My Work", "Andrey Pautov"}:
@@ -176,6 +177,11 @@ def article_body(soup: BeautifulSoup, title: str) -> str:
             continue
         if "was originally published in" in text and "on Medium" in text:
             continue
+        if cover_pending:
+            image = node if node.name == "img" else node.find("img")
+            if image and image.get("src") == cover:
+                cover_pending = False
+                continue
         block = block_to_md(node, title, seen_title).strip()
         if block:
             blocks.append(block)
@@ -360,7 +366,7 @@ def write_article(path: Path) -> dict:
 
 This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.
 
-{article_body(soup, title)}
+{article_body(soup, title, cover)}
 """
         out_path.write_text(content, encoding="utf-8")
         sanitize_generated_markdown(out_path)
@@ -454,7 +460,7 @@ def write_rss_article(item: dict) -> dict:
 
 This page mirrors the original Medium RSS article into the 1200km.com Docusaurus ecosystem. The article flow, images, screenshots, infographics, and technical blocks are preserved from the Medium feed.
 
-{article_body(soup, title)}
+{article_body(soup, title, cover)}
 """
         out_path.write_text(content, encoding="utf-8")
         sanitize_generated_markdown(out_path)

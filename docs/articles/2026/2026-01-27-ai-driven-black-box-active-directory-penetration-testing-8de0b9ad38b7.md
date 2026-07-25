@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Fully Automated AD Discovery and Exploitation with Cursor AI and HexStrike-ai MCP. From IP to Full dump.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*1dn9h-_X8_E_EoVV9LR5Zw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Abstract
 
 This article documents a groundbreaking**black box penetration test**orchestrated entirely by**Cursor AI**(an advanced AI coding assistant) integrated with**HexStrike-ai MCP**(Model Context Protocol) tools. Unlike traditional manual or scripted penetration tests, this assessment demonstrates how artificial intelligence can autonomously discover, analyze, and exploit an unknown target environment, making real-time decisions and self-correcting when encountering issues.

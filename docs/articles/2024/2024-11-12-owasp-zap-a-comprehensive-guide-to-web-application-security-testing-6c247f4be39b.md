@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Using OWASP ZAP for Identifying and Mitigating Web Application Vulnerabilities
 
-<img src="https://cdn-images-1.medium.com/max/800/0*az_DZk6OYkOUj_Bq" alt="Article image" width="1280" height="720" loading="lazy" decoding="async" />
-
 ## Introduction to OWASP ZAP
 
 OWASP ZAP (Zed Attack Proxy) is a powerful, open-source tool designed for web application security testing. Created by the Open Web Application Security Project (OWASP), ZAP helps identify common vulnerabilities, including SQL injection, cross-site scripting (XSS), and more. It is widely used by developers, security professionals, and testers, thanks to its user-friendly interface and extensive feature set, which includes automated scanners, passive scanning, and manual testing tools.

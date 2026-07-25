@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical GCP lab case study: overprivileged identities, leaked creds, weak controls — and how it all chains together
 
-<img src="https://cdn-images-1.medium.com/max/800/1*2DUOdzljRMWmtn8XZzNLQw.jpeg" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Introduction
 
 This article documents a comprehensive penetration test of a vulnerable Google Cloud Platform (GCP) lab environment. The test successfully identified and exploited 12 critical vulnerabilities, achieving Owner-level project access and establishing persistent backdoor access. This guide provides detailed explanations of each attack step, the reasoning behind the techniques used, and the impact of each vulnerability.

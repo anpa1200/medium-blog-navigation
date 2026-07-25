@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Map adversary behaviour to MITRE ATT&CK in seconds, compare against 160+ APT groups, and generate PDF reports — all running locally with your own LLM keys.
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*31Nq2VMJ9Mm9lgryHGJRQQ.png" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 1. **The Problem**

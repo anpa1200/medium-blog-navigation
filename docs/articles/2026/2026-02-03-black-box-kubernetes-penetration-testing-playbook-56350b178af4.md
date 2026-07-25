@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Manual, End-to-End Walkthrough from First Signal to Cluster Takeover
 
-<img src="https://cdn-images-1.medium.com/max/800/1*OdO8A_MyNsWJmhj5lKNCew.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
-
 ## Introduction
 
 This guide walks you through a**complete black-box penetration test**of a Kubernetes cluster. We start with**zero knowledge**and work step-by-step until we achieve**full cluster compromise**. Every command has been tested and verified.

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Comprehensive Guide to Command Line Tools for Network Exploration: How to Effectively Use Ping, Netdiscover, Whois, and More to Uncover Web Vulnerabilities and Strengthen Security Defenses
 
-<img src="https://cdn-images-1.medium.com/max/800/0*1SreAXDf7sxcy0JR" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Title of contact
 
 Ping

@@ -27,8 +27,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 In the realm of cybersecurity, having access to detailed, accurate, and timely information about the digital environment is crucial. Censys, a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure, providing security professionals with the tools needed to identify, analyze, and respond to vulnerabilities across global networks. As a robust search engine and data platform, Censys scans the internet continuously, capturing a snapshot of every connected device and service, from web servers to IoT devices. This post explores how Censys can be integrated into cybersecurity strategies to enhance visibility, improve asset management, and bolster overall security posture. Whether you are a security analyst, network administrator, or a cybersecurity researcher, understanding the capabilities of Censys is essential for navigating the complex landscape of digital threats.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*9DRk9CvqSr58LPUZ" alt="Article image" width="1980" height="1036" loading="lazy" decoding="async" />
-
 **Key Features of Censys**
 
 <img src="https://cdn-images-1.medium.com/max/800/1*XUW9Y_2S5nQVbJxODEVoHw.png" alt="Article image" width="1716" height="652" loading="lazy" decoding="async" />

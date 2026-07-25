@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Version-controlled threat intelligence — from first call to deployed Sigma rule.
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*Ygo9Os6SaZrumCm_Y08aKA.png" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
-
 ## Why This Methodology Exists
 
 Most CTI work degrades in three predictable ways:

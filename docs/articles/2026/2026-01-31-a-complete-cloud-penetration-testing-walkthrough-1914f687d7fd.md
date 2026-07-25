@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How I Discovered Critical Vulnerabilities in a Cloud Environment Using Basic Tools and Methodical Testing
 
-<img src="https://cdn-images-1.medium.com/max/800/1*uc4qewXjjEC8q9Q6Ag_j8A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 *In this detailed walkthrough, I’ll take you through a real-world penetration test that uncovered multiple critical vulnerabilities in a cloud-hosted web application. You’ll learn the methodology, tools, and thought process behind each step of the assessment.*
 
 ## Introduction

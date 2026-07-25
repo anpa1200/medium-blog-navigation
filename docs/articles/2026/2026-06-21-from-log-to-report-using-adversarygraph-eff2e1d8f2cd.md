@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### To Turn Firewall and EDR Noise Into a CTI Investigation
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*dURBOrkZ0Lq5j-J_J4_KxQ.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
-
 **Most security tools can show alerts.**
 
 The harder problem is turning scattered technical evidence into a defensible investigation:

@@ -29,8 +29,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Part 4 is here
 
-<img src="https://cdn-images-1.medium.com/max/800/0*DAlacppUem6Le_K_.jpeg" alt="Article image" width="700" height="400" loading="lazy" decoding="async" />
-
 **About author**
 
 Hello and welcome to my article.

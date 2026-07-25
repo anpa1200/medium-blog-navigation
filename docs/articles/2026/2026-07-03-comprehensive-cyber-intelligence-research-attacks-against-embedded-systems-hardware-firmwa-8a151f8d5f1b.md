@@ -25,8 +25,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 Date: 2026–07–02 Version: Final source-verified edition
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*igBKySDQUuXS4X3AYyE0kg.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async" />
-
 &gt; Confidence scale used in this report:
 
 - **Confirmed**— corroborated by a primary/authoritative source (vendor PSIRT, CISA, NVD, MITRE, named research lab).

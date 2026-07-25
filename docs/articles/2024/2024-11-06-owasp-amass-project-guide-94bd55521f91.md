@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 The**OWASP Amass Project**is a prominent open-source initiative under the Open Web Application Security Project (OWASP), designed to help with in-depth reconnaissance, network mapping, and identifying assets associated with a target domain. It’s particularly valuable in the reconnaissance phase of penetration testing and red teaming exercises, providing cybersecurity professionals with a comprehensive understanding of a target’s external infrastructure.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*n7RTCZjXHET8XCgI" alt="Article image" width="1545" height="869" loading="lazy" decoding="async" />
-
 ## Key Features of OWASP Amass
 
 - **Domain Enumeration**: Amass excels at discovering subdomains associated with a target domain. It leverages passive, active, and third-party services, as well as data sources, to enumerate as many subdomains as possible.

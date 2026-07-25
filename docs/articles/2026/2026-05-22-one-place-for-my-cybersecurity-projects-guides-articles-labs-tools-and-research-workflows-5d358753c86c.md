@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### From Scattered Research to a Structured Cybersecurity Knowledge Base
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*Nh0FErKEzDdtl_JLFkUECg.png" alt="Article image" width="1024" height="559" loading="lazy" decoding="async" />
-
 ### Recently, I built something I had needed for a long time:
 
 <a href="https://1200km.com/" target="_self" target="_self" target="_self">Andrey Pautov - CTI, Detection Engineering & Security Research</a>

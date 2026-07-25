@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Complete Guide to Modern AI-Powered Security Testing. From One Prompt to Full Attack Surface Coverage (Recon → Exploit → Report).
 
-<img src="https://cdn-images-1.medium.com/max/800/1*A1OtUodkuog3T-EllA0oRw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Introduction**

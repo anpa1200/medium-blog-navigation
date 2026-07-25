@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Malware research report
 
-<img src="https://cdn-images-1.medium.com/max/800/0*YCJpJe__74gYC00w" alt="Article image" width="1461" height="608" loading="lazy" decoding="async" />
-
 <img src="https://cdn-images-1.medium.com/max/800/0*TpJ-_5OqJ-FXezrb" alt="Article image" width="80" height="89" loading="lazy" decoding="async" />
 
 ### Summary

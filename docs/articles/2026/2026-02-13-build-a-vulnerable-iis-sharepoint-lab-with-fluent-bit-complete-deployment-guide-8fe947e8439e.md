@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A full step-by-step guide with all scripts to deploy a vulnerable SharePoint-style site on Windows IIS and ship its logs with Fluent Bit — from scratch.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*pwc7f0RsYREasW7vYQJEWQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Most people learn IIS and “SharePoint” pentesting the hard way: in production, under pressure, with incomplete logs, and with zero room to break things. That’s backwards.

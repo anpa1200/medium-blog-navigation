@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### 30 Practical AdversaryGraph Use Cases
 
-<img src="https://cdn-images-1.medium.com/max/700/0*uEhtrOMXUiTRj9_e.png" alt="Article image" width="700" height="394" loading="lazy" decoding="async" />
-
 [AdversaryGraph v2.5: New Name, New Release, Full AI CTI Platform Capability Map](https://medium.com/@1200km/adversarygraph-v2-5-new-name-new-release-full-ai-cti-platform-capability-map-93cd9224127e)
 
 AdversaryGraph is a self-hosted AI CTI and detection engineering platform for analysts who need to move from raw intelligence to reviewed action. It connects report analysis, log and PCAP triage, IOC enrichment, actor context, MITRE ATT&CK mapping, feed synchronization, matrix visualization, detection generation, and exportable evidence in one workflow.

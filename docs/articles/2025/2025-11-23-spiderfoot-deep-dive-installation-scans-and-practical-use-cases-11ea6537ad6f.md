@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How to run SpiderFoot, pick the right modules, interpret results, and use it responsibly for threat intelligence and reconnaissance.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*0XkpqupihwSTwWVA0KRXvA.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## TL;DR
 
 SpiderFoot is an open-source OSINT automation tool that collects, correlates, and visualizes information about domains, IPs, emails, and other entities from hundreds of public data sources. Use it to map attack surface, enrich threat intel, or validate exposures — but only on assets you own or are authorized to test.

@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Now With Local LLMs, DFIR Examples, and OpenCTI Export.
 
-<img src="https://cdn-images-1.medium.com/max/700/0*za_SN-yImuGidw-0.png" alt="Article image" width="700" height="391" loading="lazy" decoding="async" />
-
 ### Threat intelligence is useful only when it becomes operational.
 
 A report is not enough. A PDF from a vendor, an incident response write-up, a malware analysis note, or a DFIR case study still needs to be translated into practical defensive work:

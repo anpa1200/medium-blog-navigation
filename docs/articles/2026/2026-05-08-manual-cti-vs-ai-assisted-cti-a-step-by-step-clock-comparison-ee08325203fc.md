@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Which steps compress, which do not, and what you risk if you do not understand the difference.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*C2eB6rsSdqigWjLMUAIWmw.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 ## The Same Investigation, Twice
 
 *I ran the same threat intelligence investigation twice — once manually, once with AI. I tracked the clock at every step. Here is where the time actually goes — and where it does not.*

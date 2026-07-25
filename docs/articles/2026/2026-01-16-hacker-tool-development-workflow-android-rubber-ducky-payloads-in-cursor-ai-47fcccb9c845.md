@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From plain-English prompts to reliable HID flows — validated with emulator screenshots and telemetry
 
-<img src="https://cdn-images-1.medium.com/max/800/1*QaEmUvErtN2q4ES0W6xBXg.jpeg" alt="Article image" width="1104" height="832" loading="lazy" decoding="async" />
-
 *When I needed to build a Rubber Ducky payload for Android, I didn’t just get code suggestions — I got a complete development workflow with visual validation, automated testing, and human-like troubleshooting.*
 
 ## The Challenge

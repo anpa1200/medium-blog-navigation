@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Complete Explanation of Auxiliary Mode in Metasploit
 
-<img src="https://cdn-images-1.medium.com/max/800/0*K7UGyUTHvpwefq4a.png" alt="Article image" width="370" height="208" loading="lazy" decoding="async" />
-
 [Comprehensive Guide to Metasploit. Part 1](2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df.md)
 
 The Ultimate Guide to Metasploit. Part 2

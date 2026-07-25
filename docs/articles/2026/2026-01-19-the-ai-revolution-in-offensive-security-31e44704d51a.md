@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Practical Hands-On Guide to AI-Accelerated Offensive Security: Burp Suite, Nmap, OSINT, Exploitation, and End-to-End Automation (LLMs + MCP, Cursor, HexStrike-AI)
 
-<img src="https://cdn-images-1.medium.com/max/800/1*JziQruiKb9095W4Stkt81g.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Table of Contents
 
 - **Introduction**

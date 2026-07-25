@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Practical Guide to AI-Driven External Reconnaissance and Vulnerability Analysis
 
-<img src="https://cdn-images-1.medium.com/max/800/0*6vfRYJKmCCBTdj7r.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
-
 ## Introduction
 
 External reconnaissance is one of the most time-consuming phases of penetration testing and security assessments.

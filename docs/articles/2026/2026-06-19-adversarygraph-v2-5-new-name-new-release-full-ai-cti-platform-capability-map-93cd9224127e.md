@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### From ThreatMapper To AdversaryGraph
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*Be_05EN5NQl38dzTFo_8pg.png" alt="Article image" width="1024" height="576" loading="lazy" decoding="async" />
-
 This release marks an important transition for the project: t**he tool now has a new canonical name.**
 
 The project is now:

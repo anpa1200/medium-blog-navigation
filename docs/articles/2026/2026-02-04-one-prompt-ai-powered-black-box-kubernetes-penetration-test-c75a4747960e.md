@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How Cursor + HexStrike MCP Automatically Discovers and Exploits Vulnerabilities. From single entry point to full cluster compromise
 
-<img src="https://cdn-images-1.medium.com/max/800/1*32h8cwOpQ848Zp5BexnK-w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Executive Summary
 
 ### The Power of One Prompt

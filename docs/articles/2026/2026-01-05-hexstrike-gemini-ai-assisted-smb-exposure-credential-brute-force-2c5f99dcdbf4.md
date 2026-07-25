@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### From Toolchain Failures → Service Fingerprinting → Authentication Findings → Share Risk
 
-<img src="https://cdn-images-1.medium.com/max/800/0*zoac8Nswk63Txu1T.png" alt="Article image" width="700" height="467" loading="lazy" decoding="async" />
-
 ## Overview
 
 This session aimed to validate whether a Windows host exposed SMB, then assess**credential hygiene**using a controlled test dataset, and finally confirm what level of**share access**those credentials provide.

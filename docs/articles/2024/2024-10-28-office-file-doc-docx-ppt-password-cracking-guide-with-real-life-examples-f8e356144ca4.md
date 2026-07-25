@@ -36,8 +36,6 @@ The information provided in this article, is intended for educational purposes o
 
 I have a password-protected Office file.**Secret.docx**
 
-<img src="https://cdn-images-1.medium.com/max/800/1*dxbcR0x4_TktTWf2s3wvWw.png" alt="Article image" width="825" height="545" loading="lazy" decoding="async" />
-
 ## Brute force/Dictionary Brute force
 
 **1. Extraction of Encrypted Data**

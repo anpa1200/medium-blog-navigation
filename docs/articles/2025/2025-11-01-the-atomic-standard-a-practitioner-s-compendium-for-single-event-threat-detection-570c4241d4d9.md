@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Part 1: The Theoretical Foundation of Atomic Detection
 
-<img src="https://cdn-images-1.medium.com/max/800/1*2inr9ILQRagXXQ_88TLc9A.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## 1.1 Deconstructing the “Single-Event” Rule: The Professional’s Middle Ground
 
 In contemporary security operations, threat detection is not a single practice but a spectrum of methodologies. This spectrum has evolved from rudimentary, static systems to the intelligent, adaptive mechanisms now available.1 At one end lies the classic, static Indicator of Compromise (IOC) — a file hash, an IP address, or a domain name. This detection method is fast and precise but brittle; as security principle dictates, attackers can “easily change” these static indicators, rendering the detection logic obsolete.

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A practical, end-to-end guide to installing HexStrike AI, wiring it as an MCP server, and running real tool-driven workflows (recon → enumeration → validation) with Gemini, OpenAI, Cursor, and Llama.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*xVOL0ffrnBvXhmCNie1Tlg.png" alt="Hexstrike AI MCP Orchestration Cursor Gemini OpenAI Codex llama" width="1600" height="840" loading="lazy" decoding="async" />
-
 ## Introduction
 
 HexStrike -AI acts as a Model Context Protocol (MCP) server, bridging LLMs (like ChatGPT or Google’s Gemini) to real-world security utilities. In practice, you can issue natural-language prompts, and HexStrike will autonomously run tools such as Nmap, Burp Suite, Ghidra, or Metasploit in sequence. With an arsenal of 150+ tools, enabling**automated penetration testing and vulnerability research**. Its goal is to transform LLMs into “world-class cybersecurity experts” by having them conduct multi-stage attack chains and recon tasks with minimal human intervention.

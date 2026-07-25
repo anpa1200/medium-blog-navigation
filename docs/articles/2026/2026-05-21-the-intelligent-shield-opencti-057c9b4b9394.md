@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Beyond Ingestion Subtitle: Deploying AI-Driven Enrichment in OpenCTI
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*yZJrYF0KW4x5gzDg6xNN6A.png" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
-
 ## Transforming Threat Data into High-Confidence Intelligence
 
 In an era of relentless and complex cyber attacks, traditional, manual threat intelligence cannot keep pace. Security teams are overwhelmed by data fragmentation and the critical lack of context. “The Intelligent Shield” introduces a new paradigm: beyond simply ingesting data, it’s about deploying advanced, automated machine learning pipelines for**AI-driven enrichment.**

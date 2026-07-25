@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Mapping adversary behavior from preparation to impact without overstating the evidence
 
-<img src="https://cdn-images-1.medium.com/max/800/1*trppHfN_PJLI9uPpIA358Q.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 ## Executive Summary
 
 This is an analyst guide, not a formal CTI report. It does not answer a single priority intelligence requirement, grade sources formally, or produce an adversary-specific assessment. Its purpose is narrower: show how a CTI analyst can use the Cyber Kill Chain to organize public evidence from real APT and complex intrusion reporting without overstating what the evidence proves.

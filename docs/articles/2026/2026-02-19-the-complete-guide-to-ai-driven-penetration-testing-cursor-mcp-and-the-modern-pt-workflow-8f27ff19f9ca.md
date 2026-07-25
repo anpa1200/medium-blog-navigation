@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A comprehensive, step-by-step guide to running penetration tests the way that actually works — faster, deeper, and more powerful — after hundreds of engagements and countless tools.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*dDhsk11-rmAvlsJ_93jeUA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Penetration testing hasn’t changed because of AI. The kill chain is still the kill chain: scope → recon → enumeration → exploitation → post-exploitation → reporting. What*has*changed is the execution layer — how fast you can move, how consistently you can capture artifacts, and how well you can turn raw output into decisions.

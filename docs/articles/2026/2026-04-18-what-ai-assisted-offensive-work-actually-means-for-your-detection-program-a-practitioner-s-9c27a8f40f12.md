@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### What the public record supports, what it does not, and how to audit the analytics most likely to fail under cheaper variation.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*rVY4lVkBZTmxWL8v7ISIdA.png" alt="Article image" width="2752" height="1536" loading="lazy" decoding="async" />
-
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
 
 You know this failure mode already. A rule tagged “behavioral” stops firing after a renamed binary, a parser change, or a missing command-line field. The label survived. The coverage did not.

@@ -25,8 +25,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Hands-on guide to creating an intentionally insecure Windows 10 VM with open SSH, SMB, RDP, FTP, privilege escalation vectors, and sensitive data leaks
 
-<img src="https://cdn-images-1.medium.com/max/800/1*vxh21t1csfdILF-k8HgYBg.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 - [**HexStrike on Kali Linux 2025.4: A Comprehensive Guide here**](../2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md)
 
 - [**Building an Extremely Vulnerable Ubuntu 24.04 Server Lab (Bonus: Full PT with Hexstrike)**](2026-01-06-building-an-extremely-vulnerable-ubuntu-24-04-server-lab-bonus-full-pt-with-hexstrike-90034032775b.md)

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How I leveled up penetration tests by pairing classic tools (NMAP) with LLMs like ChatGPT.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*sBs386jxQTGGRIarvIEpxw.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 Penetration testing has always been a mix of methodical reconnaissance, manual reasoning, and a little creativity. Nmap, still the reconnaissance workhorse, gives you clear facts — open ports, banners, certificates. LLMs like ChatGPT give you fluent, contextual interpretation: triage, remediation playbooks, human-readable reports, and rapid hypothesis generation. Together they transform raw scans into higher-value outcomes (faster triage, better reporting, smarter attack paths).
 
 Below I describe a practical workflow I used, with examples, prompts, and automation patterns so you can adopt it today.

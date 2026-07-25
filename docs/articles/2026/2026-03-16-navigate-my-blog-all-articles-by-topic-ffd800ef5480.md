@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A single entry point to 100+ articles on offensive security, AI-driven pentesting, red team, labs, and defense. Use the groups below to jump to what you need.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*xUfDuZSpwqyzCSbfxoOe5Q.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async" />
-
 ## Introduction
 
 This blog has grown into a large collection of hands-on guides, walkthroughs, and research notes — from classic penetration testing tools to AI-driven workflows that change how we run assessments. Whether you’re building a lab, learning a new tool, or wiring HexStrike-AI and Cursor into your process, it can be hard to know where to start.

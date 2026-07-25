@@ -29,8 +29,6 @@ This a second part of comprehensive Medium post will delve into the powerful net
 
 ### Part 4 is here
 
-<img src="https://cdn-images-1.medium.com/max/800/0*GxbfTqjJ8rppi_s3.jpeg" alt="Article image" width="700" height="400" loading="lazy" decoding="async" />
-
 **About author**
 
 Hello and welcome to my article.

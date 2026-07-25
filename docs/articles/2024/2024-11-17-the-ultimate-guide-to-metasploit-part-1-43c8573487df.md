@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A Complete Guide to Exploiting Vulnerabilities and Strengthening Security with Metasploit
 
-<img src="https://cdn-images-1.medium.com/max/800/0*mfNYbBlGNjBfV5cH" alt="Article image" width="705" height="423" loading="lazy" decoding="async" />
-
 ### What is Metasploit?
 
 Metasploit is one of the most powerful and widely used penetration testing frameworks in the world. Designed to help security professionals identify and exploit vulnerabilities, Metasploit serves as a comprehensive toolkit for ethical hacking and offensive security. Its purpose is twofold: to aid in uncovering weaknesses in systems and networks and to demonstrate how attackers can exploit those vulnerabilities.

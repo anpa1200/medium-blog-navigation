@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Technical Guide for Usage, Attack Testing, Scenario Authoring, and Vulnerability Module Development
 
-<img src="https://cdn-images-1.medium.com/max/800/1*E4guyvifHYTmD_H8XKxi3Q.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
-
 [**GitHub - anpa1200/AI-PT-Lab**
 *Contribute to anpa1200/AI-PT-Lab development by creating an account on GitHub.*github.com](https://github.com/anpa1200/AI-PT-Lab)[](https://github.com/anpa1200/AI-PT-Lab)
 

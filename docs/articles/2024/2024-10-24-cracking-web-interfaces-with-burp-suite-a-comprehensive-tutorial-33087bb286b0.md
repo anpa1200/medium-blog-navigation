@@ -35,8 +35,6 @@ The information and tools provided in this guide are for educational and authori
 
 **Tool Overview**
 
-<img src="https://cdn-images-1.medium.com/max/800/0*bA9-nZNsHxH1RJI1" alt="burpsuite" width="1201" height="603" loading="lazy" decoding="async" />
-
 Burp Suite is a comprehensive platform for performing security testing of web applications. It includes various tools bundled into one suite, including a scanner, proxy, repeater, and intruder. The intruder component is particularly useful for conducting brute force attacks on web interfaces.
 
 *You can download this tool from official site*[*here*](https://portswigger.net/users/youraccount/licenses)

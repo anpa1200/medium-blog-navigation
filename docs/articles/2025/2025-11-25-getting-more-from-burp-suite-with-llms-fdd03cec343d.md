@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### How ChatGPT Accelerates Scan Analysis, Prioritization and Mitigation. Practical workflow and prompt recipes for turning Burp scan output into actionable findings, prioritized remediation, and next-step playbooks for penetration testers.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*cE0-LdPYh7JiYvc2jlyppQ.jpeg" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
-
 ## Intro
 
 Burp Suite is a powerhouse for active web vulnerability discovery. But raw scan output can be noisy: many findings are low-risk, some require manual validation, and triage eats time. Modern LLMs such as ChatGPT are excellent at turning semi-structured text into concise summaries, risk-ranked actions, and remediation writeups — accelerating the triage → validate → exploit → report loop. This article shows a practical, safe way to integrate an LLM into your Burp workflow, with prompt templates, examples, and guardrails for professional penetration testing.

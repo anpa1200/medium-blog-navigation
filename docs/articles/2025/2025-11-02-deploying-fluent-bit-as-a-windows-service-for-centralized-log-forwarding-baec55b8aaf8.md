@@ -66,8 +66,6 @@ by
 - Download the latest**Fluent Bit Windows zip**from
 [https://fluentbit.io/download/](https://fluentbit.io/download/)
 
-<img src="https://cdn-images-1.medium.com/max/800/1*vuUYM2SZXzjvFRMo9PkK2A.png" alt="Article image" width="1078" height="261" loading="lazy" decoding="async" />
-
 <img src="https://cdn-images-1.medium.com/max/800/1*9xWw5bNpolbteAC8TrJNrQ.png" alt="Article image" width="1038" height="502" loading="lazy" decoding="async" />
 
 2. Extract the archive into`C:\fluent-bit\`.

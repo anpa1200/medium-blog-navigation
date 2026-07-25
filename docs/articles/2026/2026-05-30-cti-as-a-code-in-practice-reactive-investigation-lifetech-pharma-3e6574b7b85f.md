@@ -23,8 +23,6 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### A complete walkthrough of the methodology applied to a real training scenario: pharmaceutical IP theft, dual entry points, and a DCSync that changes everything.
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*l8B3xIJssFbBTn0IvOu6Ng.png" alt="Article image" width="1024" height="571" loading="lazy" decoding="async" />
-
 *All organizations, names, and data are fictional. This is training assignment A01 from the CTI as a Code repository.*
 
 ## Based on the methodology: “CTI as a Code”

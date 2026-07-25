@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Complete Research Lab Guide. From Zero to a Fully Instrumented Android Research Environment
 
-<img src="https://cdn-images-1.medium.com/max/800/1*Y4o8-OsIxH3kLi85LkGGIw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
-
 &gt; Who this is for: Security researchers, bug bounty hunters, and pentesters who need a reliable, repeatable Android lab. Assumes basic Linux comfort; no prior Android development experience required.
 
 &gt; What you will have at the end: Two configured AVDs (standard + writable-system), ADB working across all connection modes, Frida attached and scripting, and a snapshot workflow that lets you reset to a clean state in under five seconds.

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### A comprehensive reference for every major log type in Kubernetes: what it is, what you can monitor with it, how to include or exclude it, and why it matters.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*E59E7CkPeHIgNMTZEzPDoQ.png" alt="Article image" width="1024" height="1024" loading="lazy" decoding="async" />
-
 ## Introduction
 
 Kubernetes does not produce “logs” as a single stream. It produces**signals across layers**— applications, control plane, nodes, infrastructure add-ons, Events, and audit trails — each answering a different operational or security question.

@@ -23,8 +23,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### In this article, I am going to explain how you can crack a WiFi network using Aircrack-ng and the PPG — Personal Pass Generator tools.
 
-<img src="https://cdn-images-1.medium.com/max/800/0*0XqS3oQbLgBhWQl7.png" alt="Article image" width="1980" height="1188" loading="lazy" decoding="async" />
-
 - **AI-Driven Wireless Penetration Testing — One Prompt Wi-Fi Cracking**
 [../2025/2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md](../2025/2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md)
 

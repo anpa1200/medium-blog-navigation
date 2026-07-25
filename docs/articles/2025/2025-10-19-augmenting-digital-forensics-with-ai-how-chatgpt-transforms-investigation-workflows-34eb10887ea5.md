@@ -33,8 +33,6 @@ The focus of*Sherlok*is not complex exploitation but**analytical reasoning**: un
 
 It’s the perfect environment to demonstrate how**AI tools like ChatGPT**can assist investigators — from artifact triage and log interpretation to timeline reconstruction and report drafting.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*6SWfX1VpZQBqtka1ZLBL8g.png" alt="Article image" width="1909" height="605" loading="lazy" decoding="async" />
-
 **Brutus**simulates a realistic but compact incident: an SSH brute-force against a Unix server that eventually yields a successful login (including root access), followed by the attacker reconnecting, creating a new account and escalating privileges. The challenge’s primary artifacts are`auth.log`(authentication events) and the`wtmp`login/logout record — ideal for teaching timeline reconstruction, brute-force detection, session correlation, and basic account persistence analysis. Because its scope is small and focused, Brutus is perfect to demonstrate how an AI assistant (ChatGPT) can help triage logs, extract timelines, suggest hypotheses (e.g., credential reuse, lateral access), and draft a concise forensic narrative — all while the analyst validates and extends those leads with tools.
 
 **Step 1 — Upload and Analyze the Evidence with AI**

@@ -21,8 +21,6 @@ image: "https://cdn-images-1.medium.com/max/1024/1*NezWwOLX9Mv2QjCu2TQMMw.png"
 
 This page mirrors the original Medium RSS article into the 1200km.com Docusaurus ecosystem. The article flow, images, screenshots, infographics, and technical blocks are preserved from the Medium feed.
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*NezWwOLX9Mv2QjCu2TQMMw.png" alt="Article image" width="1024" height="559" loading="lazy" decoding="async" />
-
 ## A short experiment with Composer 2.5, Cursor Auto mode, Codex 5.5, and Opus 4.8
 
 I ran a small test inside Cursor to compare how different AI coding models react to the same suspicious cybersecurity prompt.

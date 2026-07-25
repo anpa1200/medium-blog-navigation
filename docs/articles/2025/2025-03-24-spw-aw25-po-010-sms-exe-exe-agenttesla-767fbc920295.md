@@ -27,8 +27,6 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 1200km@gmail.com
 
-<img src="https://cdn-images-1.medium.com/max/800/0*b5wShQn46BSJdxLI" alt="Article image" width="700" height="291" loading="lazy" decoding="async" />
-
 ### Summary
 
 ### Malware Overview
