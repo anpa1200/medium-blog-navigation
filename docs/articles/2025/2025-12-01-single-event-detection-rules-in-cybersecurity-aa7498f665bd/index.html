@@ -10,8 +10,8 @@
 
 
 
-<script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.e9655c0d.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.e4b42757.js" defer="defer"></script>
+<script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.9ef869f2.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.d3025322.js" defer="defer"></script>
 <script src="/medium-blog-navigation/assets/js/main.49309a02.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
@@ -30,7 +30,6 @@
 </ul></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ecosystem-fit">Ecosystem Fit<a href="#ecosystem-fit" class="hash-link" aria-label="Direct link to Ecosystem Fit" title="Direct link to Ecosystem Fit" translate="no">​</a></h2>
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
-<img src="https://cdn-images-1.medium.com/max/800/1*TZmLQ1CaoXbszih1-TxTyg.png" alt="Article image" width="2816" height="1536" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
 <p>Single-event detection rules — often called<strong>atomic detections</strong>— are alerting rules that trigger on<em>one</em>log or telemetry event indicative of malicious activity, without needing correlation with other events. In a SOC/blue team context, these rules are the straightforward “if X happens, alert” tools in the detection toolbox. For example, an alert on<strong>MS Word spawning</strong><code>**cmd.exe**</code>or<strong>a process named</strong><code>**mimikatz.exe**</code><strong>running</strong>would be single-event rules: a<em>single</em>occurrence is enough to warrant analyst attention. These atomic detections contrast with correlation or multi-event rules (also called composite or stateful detections) that require<em>patterns of multiple events</em>(e.g.<em>1000 failed logins in 5 minutes</em>) to fire.</p>
 <p>In modern SIEM, XDR, and log-based detection platforms (Splunk, Sentinel, Chronicle, XPLG, etc.), both single-event and correlation rules play important roles. Single-event rules provide<strong>low-latency, immediate alerts</strong>— as soon as a matching log arrives, an alert can be raised without waiting for other events. This makes them ideal for catching clear-cut malicious actions or atomic Indicators of Compromise (IoCs) quickly. They are typically simpler to implement and<strong>vendor-agnostic</strong>(e.g. Sigma rules can express many atomic detections across platforms. Chronicle, for instance, supports thousands of single-event YARA-L rules, reflecting that most detections are atomic, with far fewer multi-event rules allowed.</p>

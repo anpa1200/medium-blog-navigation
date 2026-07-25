@@ -10,8 +10,8 @@
 
 
 
-<script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.e9655c0d.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.e4b42757.js" defer="defer"></script>
+<script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.9ef869f2.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.d3025322.js" defer="defer"></script>
 <script src="/medium-blog-navigation/assets/js/main.49309a02.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
@@ -36,7 +36,6 @@
 <p>In this challenge, participants receive a few digital traces — such as<strong>system logs, memory snapshots, or network captures</strong>— and are tasked with reconstructing the attacker’s actions, identifying indicators of compromise (IoCs), and answering investigative questions.</p>
 <p>The focus of<em>Sherlok</em>is not complex exploitation but<strong>analytical reasoning</strong>: understanding how to extract, correlate, and interpret forensic data to build a clear narrative of what happened.</p>
 <p>It’s the perfect environment to demonstrate how<strong>AI tools like ChatGPT</strong>can assist investigators — from artifact triage and log interpretation to timeline reconstruction and report drafting.</p>
-<img src="https://cdn-images-1.medium.com/max/800/1*6SWfX1VpZQBqtka1ZLBL8g.png" alt="Article image" width="1909" height="605" loading="lazy" decoding="async">
 <p><strong>Brutus</strong>simulates a realistic but compact incident: an SSH brute-force against a Unix server that eventually yields a successful login (including root access), followed by the attacker reconnecting, creating a new account and escalating privileges. The challenge’s primary artifacts are<code>auth.log</code>(authentication events) and the<code>wtmp</code>login/logout record — ideal for teaching timeline reconstruction, brute-force detection, session correlation, and basic account persistence analysis. Because its scope is small and focused, Brutus is perfect to demonstrate how an AI assistant (ChatGPT) can help triage logs, extract timelines, suggest hypotheses (e.g., credential reuse, lateral access), and draft a concise forensic narrative — all while the analyst validates and extends those leads with tools.</p>
 <p><strong>Step 1 — Upload and Analyze the Evidence with AI</strong>
 <em>Using ChatGPT to perform initial forensic triage on log files with next promt:</em></p>
