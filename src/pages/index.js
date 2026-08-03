@@ -74,6 +74,10 @@ export default function Home() {
         article.title,
         article.summary,
         article.category,
+        article.author,
+        article.domain,
+        article.mode,
+        ...(article.tags || []),
         article.published_at,
       ].join(' ').toLowerCase().includes(needle);
       return matchesQuery
