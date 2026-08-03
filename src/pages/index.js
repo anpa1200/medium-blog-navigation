@@ -3,13 +3,19 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import articleCatalog from '../data/article-catalog.json';
+import trainsecCatalog from '../data/trainsec-catalog.json';
 
 const PAGE_SIZE = 24;
 
 function ArticleCard({article, routeBase}) {
-  const articleUrl = `/${routeBase}/${article.local_path}`;
+  const articleUrl = article.is_trainsec ? `/articles/${article.local_path}` : `/${routeBase}/${article.local_path}`;
   return (
     <article className="article-card">
+      {article.cover_image && (
+        <Link className="article-card__cover" to={articleUrl} aria-label={`Read ${article.title}`}>
+          <img src={article.cover_image} alt="" loading="lazy" />
+        </Link>
+      )}
       <div className="article-card__topline">
         <span className="category-badge">{article.category}</span>
         <time className="article-date" dateTime={article.published_at}>
@@ -18,10 +24,14 @@ function ArticleCard({article, routeBase}) {
       </div>
       <h2><Link to={articleUrl}>{article.title}</Link></h2>
       {article.summary && <p>{article.summary}</p>}
-      <dl className="article-evidence" aria-label="Preserved article material">
-        <div><dt>Images</dt><dd>{article.images}</dd></div>
-        <div><dt>Code blocks</dt><dd>{article.code_blocks}</dd></div>
-      </dl>
+      {article.is_trainsec ? (
+        <p className="article-card__attribution">By {article.author} · permitted TrainSec mirror</p>
+      ) : (
+        <dl className="article-evidence" aria-label="Preserved article material">
+          <div><dt>Images</dt><dd>{article.images}</dd></div>
+          <div><dt>Code blocks</dt><dd>{article.code_blocks}</dd></div>
+        </dl>
+      )}
       <div className="article-actions">
         <Link className="article-primary-link" to={articleUrl}>Read on 1200km</Link>
         <a href={article.source_url} rel="noopener noreferrer">Original source ↗</a>
@@ -33,17 +43,18 @@ function ArticleCard({article, routeBase}) {
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   const routeBase = siteConfig.customFields.articleRouteBase;
+  const allArticles = useMemo(() => [...articleCatalog, ...trainsecCatalog], []);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
   const [year, setYear] = useState('all');
   const [visible, setVisible] = useState(PAGE_SIZE);
 
   const categories = useMemo(
-    () => [...new Set(articleCatalog.map((article) => article.category))].sort(),
+    () => [...new Set(allArticles.map((article) => article.category))].sort(),
     [],
   );
   const years = useMemo(
-    () => [...new Set(articleCatalog.map((article) => article.year))].sort().reverse(),
+    () => [...new Set(allArticles.map((article) => article.year))].filter(Boolean).sort().reverse(),
     [],
   );
   const totals = useMemo(
@@ -58,7 +69,7 @@ export default function Home() {
   );
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase();
-    return articleCatalog.filter((article) => {
+    return allArticles.filter((article) => {
       const matchesQuery = !needle || [
         article.title,
         article.summary,
@@ -69,7 +80,7 @@ export default function Home() {
         && (category === 'all' || article.category === category)
         && (year === 'all' || article.year === year);
     });
-  }, [category, query, year]);
+  }, [allArticles, category, query, year]);
 
   const resetFilters = () => {
     setQuery('');
@@ -94,7 +105,7 @@ export default function Home() {
             secondary source link.
           </p>
           <dl className="archive-stats" aria-label="Article archive totals">
-            <div><dt>Articles</dt><dd>{articleCatalog.length}</dd></div>
+            <div><dt>Articles</dt><dd>{allArticles.length}</dd></div>
             <div><dt>Preserved images</dt><dd>{totals.images.toLocaleString()}</dd></div>
             <div><dt>Code/config blocks</dt><dd>{totals.code.toLocaleString()}</dd></div>
           </dl>

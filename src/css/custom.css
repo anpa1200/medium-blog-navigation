@@ -160,10 +160,35 @@
 .topic-card {
   min-width: 0;
   padding: 1.15rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: var(--shadow);
+}
+
+.article-card__cover {
+  display: block;
+  height: 150px;
+  margin: -1.15rem -1.15rem 0.9rem;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background: var(--surface-muted);
+}
+
+.article-card__cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-card__attribution {
+  margin-top: auto !important;
+  padding-top: 0.8rem;
+  font-size: 0.82rem;
 }
 
 .article-card h3,
@@ -446,6 +471,12 @@
 
   .archive-filters {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .article-card__cover {
+    height: 170px;
   }
 }
 
