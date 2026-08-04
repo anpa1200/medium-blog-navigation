@@ -1,4 +1,5 @@
 @import url('https://1200km.com/assets/docusaurus-ecosystem.css?v=20260614-3');
+@import url('https://1200km.com/assets/site-theme.css?v=20260721-shell');
 
 :root {
   --ifm-color-primary: #0756d8;
@@ -13,6 +14,28 @@
   --text-muted: #5d6678;
   --border: #dce4f0;
   --shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+}
+
+/* Docusaurus normally owns this shell. The archive uses the shared 1200km
+ * shell instead, while retaining Docusaurus content and document navigation. */
+.navbar,
+.footer {
+  display: none !important;
+}
+
+body {
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.main-wrapper {
+  min-width: 0;
+  padding-top: 0 !important;
+}
+
+.site-header,
+.site-footer {
+  display: block;
 }
 
 [data-theme='dark'] {
