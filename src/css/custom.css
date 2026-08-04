@@ -18,7 +18,6 @@
 
 /* Docusaurus normally owns this shell. The archive uses the shared 1200km
  * shell instead, while retaining Docusaurus content and document navigation. */
-.navbar,
 .footer {
   display: none !important;
 }
