@@ -7,8 +7,8 @@ import React from 'react';
  */
 export default function Navbar() {
   return (
-    <header className="site-header" data-site-shell="standalone" data-site-shell-version="2026-07-24.1">
-      <a className="skip-link" href="#main-content">Skip to main content</a>
+    <header id="top" className="site-header" data-site-shell="standalone" data-site-shell-version="2026-07-24.1">
+      <a className="skip-link" href="#__docusaurus_skipToContent_fallback">Skip to main content</a>
       <nav className="nav" aria-label="Primary navigation">
         <a className="brand" href="/">
           <img src="/assets/ap-logo.png" alt="" width="36" height="36" loading="lazy" decoding="async" />
