@@ -9,6 +9,8 @@ from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
 
 from bs4 import BeautifulSoup
+
+from article_taxonomy import category_for_taxonomy, tags_for
 from bs4.element import Tag
 
 
@@ -231,20 +233,7 @@ def canonical_governance(row: dict) -> dict:
 
 
 def category_for(title: str, text: str) -> str:
-    hay = f"{title} {text}".lower()
-    if any(k in hay for k in ["cti", "threat intelligence", "apt", "attribution", "ioc"]):
-        return "CTI"
-    if any(k in hay for k in ["malware", "apk", "reverse", "static analysis", "unpacker"]):
-        return "Malware"
-    if any(k in hay for k in ["kubernetes", "eks", "cloud", "aws", "gcp", "terraform"]):
-        return "Cloud & Kubernetes"
-    if any(k in hay for k in ["active directory", "adcs", "windows lab", "metasploitable", "pentest", "burp", "nmap", "hydra", "sqlmap"]):
-        return "Offensive Security"
-    if any(k in hay for k in ["detection", "sigma", "soc", "siem", "hunting", "fluent bit"]):
-        return "Detection Engineering"
-    if any(k in hay for k in ["ai", "llm", "gemini", "hexstrike", "cursor"]):
-        return "AI Security"
-    return "Security Research"
+    return category_for_taxonomy(title, text)
 
 
 def sanitize_generated_markdown(path: Path) -> None:
@@ -568,7 +557,8 @@ def write_catalog(rows: list[dict]) -> None:
                 "summary": row["summary"],
                 "published_at": row["date"],
                 "year": row["year"],
-                "category": row["category"],
+                "category": category_for_taxonomy(row["title"], row["summary"]),
+                "tags": tags_for(row["title"], row["summary"]),
                 "images": row["images"],
                 "code_blocks": row["code"],
                 "slug": row["slug"],

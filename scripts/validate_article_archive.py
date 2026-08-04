@@ -71,6 +71,10 @@ def main() -> int:
             errors.append(f"{label}: local-confirmed requires external canonical verification")
         if row["collection_tier"] not in {"core", "reference", "archive"}:
             errors.append(f"{label}: unknown collection tier")
+        if not isinstance(row.get("tags"), list) or not row["tags"] or len(set(row["tags"])) != len(row["tags"]):
+            errors.append(f"{label}: tags must be a non-empty unique list")
+        if row.get("category") == "Security Research":
+            errors.append(f"{label}: generic Security Research category is not allowed")
         if not isinstance(row["images"], int) or row["images"] < 0:
             errors.append(f"{label}: invalid image count")
         if not isinstance(row["code_blocks"], int) or row["code_blocks"] < 0:

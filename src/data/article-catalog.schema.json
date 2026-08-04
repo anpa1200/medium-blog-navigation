@@ -9,7 +9,7 @@
     "additionalProperties": false,
     "required": [
       "id", "title", "summary", "published_at", "updated_at", "year", "category",
-      "images", "code_blocks", "slug", "local_path", "source_url", "cover_image",
+      "images", "code_blocks", "slug", "local_path", "source_url", "cover_image", "tags",
       "canonical_url", "canonical_owner", "preferred_canonical_url",
       "original_publication_url", "original_publication_platform",
       "canonical_migration_status", "external_canonical_verified",
@@ -24,6 +24,7 @@
       "updated_at": {"type": "string", "format": "date"},
       "year": {"type": "string", "pattern": "^[0-9]{4}$"},
       "category": {"type": "string", "minLength": 1},
+      "tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
       "images": {"type": "integer", "minimum": 0},
       "code_blocks": {"type": "integer", "minimum": 0},
       "slug": {"type": "string", "minLength": 1},

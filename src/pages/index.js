@@ -7,7 +7,7 @@ import trainsecCatalog from '../data/trainsec-catalog.json';
 
 const PAGE_SIZE = 24;
 
-function ArticleCard({article, routeBase}) {
+function ArticleCard({article, routeBase, onTagClick}) {
   const articleUrl = article.is_trainsec ? `/articles/${article.local_path}` : `/${routeBase}/${article.local_path}`;
   return (
     <article className="article-card">
@@ -24,6 +24,13 @@ function ArticleCard({article, routeBase}) {
       </div>
       <h2><Link to={articleUrl}>{article.title}</Link></h2>
       {article.summary && <p>{article.summary}</p>}
+      {article.tags?.length > 0 && (
+        <div className="article-tags" aria-label="Article tags">
+          {article.tags.map((tag) => (
+            <button key={tag} type="button" onClick={() => onTagClick(tag)}>{tag}</button>
+          ))}
+        </div>
+      )}
       {article.is_trainsec ? (
         <p className="article-card__attribution">By {article.author} · permitted TrainSec mirror</p>
       ) : (
@@ -46,6 +53,7 @@ export default function Home() {
   const allArticles = useMemo(() => [...articleCatalog, ...trainsecCatalog], []);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
+  const [tag, setTag] = useState('all');
   const [year, setYear] = useState('all');
   const [visible, setVisible] = useState(PAGE_SIZE);
 
@@ -56,6 +64,10 @@ export default function Home() {
   const years = useMemo(
     () => [...new Set(allArticles.map((article) => article.year))].filter(Boolean).sort().reverse(),
     [],
+  );
+  const tags = useMemo(
+    () => [...new Set(allArticles.flatMap((article) => article.tags || []))].sort(),
+    [allArticles],
   );
   const totals = useMemo(
     () => articleCatalog.reduce(
@@ -82,13 +94,15 @@ export default function Home() {
       ].join(' ').toLowerCase().includes(needle);
       return matchesQuery
         && (category === 'all' || article.category === category)
+        && (tag === 'all' || (article.tags || []).includes(tag))
         && (year === 'all' || article.year === year);
     });
-  }, [allArticles, category, query, year]);
+  }, [allArticles, category, query, tag, year]);
 
   const resetFilters = () => {
     setQuery('');
     setCategory('all');
+    setTag('all');
     setYear('all');
     setVisible(PAGE_SIZE);
   };
@@ -117,6 +131,7 @@ export default function Home() {
             <a className="button button--primary button--lg" href="#article-library">Browse articles</a>
             <Link className="button button--secondary button--lg" to={`/${routeBase}`}>Browse by year</Link>
             <a className="button button--outline button--lg" href="https://1200km.com/search.html">Search all 1200km research</a>
+            <a className="button button--outline button--lg" href="https://1200km.com/articles/trainsec-library.html">TrainSec Knowledge Library</a>
           </div>
           </div>
         </header>
@@ -158,6 +173,13 @@ export default function Home() {
                 {years.map((option) => <option key={option} value={option}>{option}</option>)}
               </select>
             </label>
+            <label>
+              <span>Topic tag</span>
+              <select value={tag} onChange={(event) => { setTag(event.target.value); setVisible(PAGE_SIZE); }}>
+                <option value="all">All tags</option>
+                {tags.map((option) => <option key={option} value={option}>{option}</option>)}
+              </select>
+            </label>
             <button className="button button--secondary" type="button" onClick={resetFilters}>Clear filters</button>
           </form>
 
@@ -165,7 +187,12 @@ export default function Home() {
             <>
               <div className="article-grid">
                 {filtered.slice(0, visible).map((article) => (
-                  <ArticleCard key={article.id} article={article} routeBase={routeBase} />
+                  <ArticleCard
+                    key={article.id}
+                    article={article}
+                    routeBase={routeBase}
+                    onTagClick={(selectedTag) => { setTag(selectedTag); setVisible(PAGE_SIZE); }}
+                  />
                 ))}
               </div>
               {visible < filtered.length && (

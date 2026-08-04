@@ -241,6 +241,31 @@
   font-weight: 800;
 }
 
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+.article-tags button {
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 35%, var(--border));
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  background: color-mix(in srgb, var(--ifm-color-primary) 8%, var(--surface));
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.article-tags button:hover,
+.article-tags button:focus-visible {
+  background: var(--ifm-color-primary);
+  color: #ffffff;
+}
+
 .article-evidence {
   display: flex;
   flex-wrap: wrap;
@@ -281,7 +306,7 @@
 
 .archive-filters {
   display: grid;
-  grid-template-columns: minmax(260px, 2fr) minmax(170px, 1fr) minmax(130px, 0.65fr) auto;
+  grid-template-columns: minmax(260px, 2fr) repeat(3, minmax(150px, 1fr)) auto;
   align-items: end;
   gap: 0.8rem;
   margin-bottom: 1.3rem;
