@@ -241,11 +241,11 @@ The differentiator is the bridge:
 
 - Main product page:
 
-&lt;a href="https://1200km.com/adversarygraph" target="_self"&gt;AdversaryGraph - CTI-to-Detection Platform&lt;/a&gt;
+<a href="https://1200km.com/adversarygraph" target="_self">AdversaryGraph - CTI-to-Detection Platform</a>
 
 - Documentation:
 
-&lt;a href="https://1200km.com/adversarygraph-docs/" target="_self"&gt;AdversaryGraph - Self-Hosted CTI-to-Detection Workbench | 1200km | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km&lt;/a&gt;
+<a href="https://1200km.com/adversarygraph-docs/" target="_self">AdversaryGraph - Self-Hosted CTI-to-Detection Workbench | 1200km</a>
 
 - GitHub repository:
 
@@ -257,6 +257,6 @@ The differentiator is the bridge:
 
 - Case studies and validation:
 
-&lt;a href="https://1200km.com/adversarygraph-docs/case-studies-validation/" target="_self"&gt;Case Studies And Validation Examples | AdversaryGraph Documentation - CTI-to-Detection Workbench | 1200km&lt;/a&gt;
+<a href="https://1200km.com/adversarygraph-docs/case-studies-validation/" target="_self">Case Studies And Validation Examples</a>
 
-[Andrey Pautov - CTI & Detection Engineering](https://1200km.com)
+<a href="https://1200km.com" target="_self">Andrey Pautov - CTI & Detection Engineering</a>
