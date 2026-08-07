@@ -257,7 +257,7 @@ The next article covers neural networks, optimization, and adversarial machine l
 
 *AI Security Engineering Course — under construction. New chapters will be published as they are developed.*
 
-[1200km.com](https://1200km.com)·[Main course article on Medium](https://medium.com/@1200km/im-building-an-ai-security-engineering-course-55e29e6c035e)
+<a href="https://1200km.com" target="_self">1200km.com</a> · [Main course article on Medium](https://medium.com/@1200km/im-building-an-ai-security-engineering-course-55e29e6c035e)
 
 ## Follow My Work
 

@@ -288,4 +288,4 @@ The next chapter will explain neural networks and optimization: forward passes, 
 
 **AI Security Engineering Course — under construction.**The syllabus, examples, references, labs, and assessment criteria may change during creation.
 
-[1200km.com](https://1200km.com)·[Main course article on Medium](https://medium.com/@1200km/im-building-an-ai-security-engineering-course-55e29e6c035e)
+<a href="https://1200km.com" target="_self">1200km.com</a> · [Main course article on Medium](https://medium.com/@1200km/im-building-an-ai-security-engineering-course-55e29e6c035e)
