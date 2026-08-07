@@ -5,18 +5,24 @@ description: "Full local Docusaurus archive of exported Medium articles by Andre
 
 # Article Archive
 
-This archive contains `177` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.
+This archive contains `183` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.
 
-- Preserved images/screenshots/infographics: `2065`
-- Preserved code/configuration blocks: `3383`
+- Preserved images/screenshots/infographics: `2132`
+- Preserved code/configuration blocks: `3426`
 - Images are referenced from their original Medium CDN URLs so covers and inline screenshots render without lossy local recompression.
 
 ## Articles by Year
 
 ### 2026
 
-- [Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry](./2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556) - 2026-07-11 | CTI | 25 image(s) | 13 code block(s)
-- [When AI Coding Agents Say Yes Too Easily: Testing Suspicious Cybersecurity Prompts in Cursor](./2026/2026-07-07-when-ai-coding-agents-say-yes-too-easily-testing-suspicious-cybersecurity-prompts-in-curso-55eea06b69bd) - 2026-07-07 | CTI | 11 image(s) | 0 code block(s)
+- [How to Build a Safe Malware Analysis Lab with FLARE-VM, REMnux, and INetSim](./2026/2026-08-07-how-to-build-a-safe-malware-analysis-lab-with-flare-vm-remnux-and-inetsim-0287d3964602) - 2026-08-07 | Malware Analysis | 17 image(s) | 38 code block(s)
+- [What Is Malware?](./2026/2026-08-06-what-is-malware-93746950ce9a) - 2026-08-06 | Malware Analysis | 14 image(s) | 0 code block(s)
+- [AI Security Course, Module 00 — Part 2](./2026/2026-08-02-ai-security-course-module-00-part-2-69381c74a59c) - 2026-08-02 | CTI | 19 image(s) | 4 code block(s)
+- [AI Security Course, Module 00 — Part 1: Introduction, AI/ML Taxonomy](./2026/2026-08-01-ai-security-course-module-00-part-1-introduction-ai-ml-taxonomy-2e26c0740a17) - 2026-08-01 | AI Security | 9 image(s) | 1 code block(s)
+- [I’m Building an AI Security Engineering Course](./2026/2026-07-31-i-m-building-an-ai-security-engineering-course-55e29e6c035e) - 2026-07-31 | CTI | 2 image(s) | 0 code block(s)
+- [AdversaryGraph](./2026/2026-07-23-adversarygraph-40df3439b90c) - 2026-07-23 | CTI | 6 image(s) | 0 code block(s)
+- [Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry](./2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556) - 2026-07-11 | AI Security | 25 image(s) | 13 code block(s)
+- [When AI Coding Agents Say Yes Too Easily: Testing Suspicious Cybersecurity Prompts in Cursor](./2026/2026-07-07-when-ai-coding-agents-say-yes-too-easily-testing-suspicious-cybersecurity-prompts-in-curso-55eea06b69bd) - 2026-07-07 | AI Security | 11 image(s) | 0 code block(s)
 - [Comprehensive Cyber Intelligence Research: Attacks Against Embedded Systems, Hardware, Firmware…](./2026/2026-07-03-comprehensive-cyber-intelligence-research-attacks-against-embedded-systems-hardware-firmwa-8a151f8d5f1b) - 2026-07-03 | CTI | 49 image(s) | 0 code block(s)
 - [AdversaryGraph v5.0: From CTI Mapping to Attack Simulation and SIEM Validation](./2026/2026-06-29-adversarygraph-v5-0-from-cti-mapping-to-attack-simulation-and-siem-validation-21873b2a6c39) - 2026-06-29 | CTI | 13 image(s) | 2 code block(s)
 - [AdversaryGraph v4.0: I Added a Full Malware Analysis Workbench to My Self-Hosted CTI Platform](./2026/2026-06-26-adversarygraph-v4-0-i-added-a-full-malware-analysis-workbench-to-my-self-hosted-cti-platfo-8dfbf1db2c9e) - 2026-06-26 | CTI | 21 image(s) | 25 code block(s)
