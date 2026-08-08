@@ -5,16 +5,17 @@ description: "Full local Docusaurus archive of exported Medium articles by Andre
 
 # Article Archive
 
-This archive contains `183` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.
+This archive contains `184` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.
 
-- Preserved images/screenshots/infographics: `2132`
-- Preserved code/configuration blocks: `3426`
+- Preserved images/screenshots/infographics: `2155`
+- Preserved code/configuration blocks: `3431`
 - Images are referenced from their original Medium CDN URLs so covers and inline screenshots render without lossy local recompression.
 
 ## Articles by Year
 
 ### 2026
 
+- [AI Security Course, Module 00 — Chapter 3: Neural Networks and Optimization](./2026/2026-08-08-ai-security-course-module-00-chapter-3-1bf0411472f6) - 2026-08-08 | AI Security | 23 image(s) | 5 code block(s)
 - [How to Build a Safe Malware Analysis Lab with FLARE-VM, REMnux, and INetSim](./2026/2026-08-07-how-to-build-a-safe-malware-analysis-lab-with-flare-vm-remnux-and-inetsim-0287d3964602) - 2026-08-07 | Malware Analysis | 17 image(s) | 38 code block(s)
 - [What Is Malware?](./2026/2026-08-06-what-is-malware-93746950ce9a) - 2026-08-06 | Malware Analysis | 14 image(s) | 0 code block(s)
 - [AI Security Course, Module 00 — Part 2](./2026/2026-08-02-ai-security-course-module-00-part-2-69381c74a59c) - 2026-08-02 | CTI | 19 image(s) | 4 code block(s)
