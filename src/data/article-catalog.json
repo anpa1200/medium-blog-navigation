@@ -1,5 +1,37 @@
 [
   {
+    "id": "1bf0411472f6",
+    "title": "AI Security Course, Module 00 — Chapter 3: Neural Networks and Optimization",
+    "summary": "This chapter explains neural-network computation, optimization, reproducibility, attacker access, adversarial claims, and defensible evidence for security practitioners without a calculus prerequisite",
+    "published_at": "2026-08-08",
+    "year": "2026",
+    "category": "AI Security",
+    "tags": [
+      "AI Security",
+      "Network Security",
+      "Digital Forensics"
+    ],
+    "images": 23,
+    "code_blocks": 5,
+    "slug": "2026-08-08-ai-security-course-module-00-chapter-3-1bf0411472f6",
+    "local_path": "2026/2026-08-08-ai-security-course-module-00-chapter-3-1bf0411472f6",
+    "source_url": "https://medium.com/@1200km/ai-security-course-module-00-chapter-3-1bf0411472f6",
+    "cover_image": "https://cdn-images-1.medium.com/max/1024/1*gXR3KHwzAI1sQsIQDVyRNA.png",
+    "canonical_url": "https://1200km.com/articles/read/2026/2026-08-08-ai-security-course-module-00-chapter-3-1bf0411472f6",
+    "canonical_owner": "1200km.com",
+    "preferred_canonical_url": "https://1200km.com/articles/read/2026/2026-08-08-ai-security-course-module-00-chapter-3-1bf0411472f6",
+    "original_publication_url": "https://medium.com/@1200km/ai-security-course-module-00-chapter-3-1bf0411472f6",
+    "original_publication_platform": "Medium",
+    "canonical_migration_status": "migration-pending",
+    "external_canonical_verified": false,
+    "external_canonical_verified_at": null,
+    "migration_note": "Local self-canonical is deliberate. The external publication canonical has not been verified or changed, so migration remains pending.",
+    "source_platform": "Medium",
+    "source_repository": "anpa1200/medium-blog-navigation",
+    "collection_tier": "archive",
+    "updated_at": "2026-08-08"
+  },
+  {
     "id": "0287d3964602",
     "title": "How to Build a Safe Malware Analysis Lab with FLARE-VM, REMnux, and INetSim",
     "summary": "This guide turns lessons 2–4 of TrainSec's Malware Analyst Professional — Level 1 into a repeatable lab-preparation procedure. The course demonstrates the topology and deployment process; this version adds explicit co…",
@@ -33,14 +65,12 @@
   {
     "id": "93746950ce9a",
     "title": "What Is Malware?",
-    "summary": "Malware, short formalicious software, is software or code intentionally used to compromise the confidentiality, integrity, or availability of a device, application, network, or data. Attackers may use malware to steal…",
+    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1WQ9mso4SbaVsTYujN86dcQ.png\" alt=\"Cover image\" width=\"1024\" height=\"576\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
     "published_at": "2026-08-06",
     "year": "2026",
     "category": "Malware Analysis",
     "tags": [
-      "Malware Analysis",
-      "Network Security",
-      "Security Labs & Training"
+      "Malware Analysis"
     ],
     "images": 14,
     "code_blocks": 0,
@@ -65,14 +95,12 @@
   {
     "id": "69381c74a59c",
     "title": "AI Security Course, Module 00 — Part 2",
-    "summary": "Data, features, labels, parameters, hyperparameters, training, validation, testing, and inference are different security objects. This chapter turns that vocabulary into an evidence-preserving workflow for AI security…",
+    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1rAH1xSKZP28Iw6vZGWEA.png\" alt=\"Cover image\" width=\"1024\" height=\"768\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
     "published_at": "2026-08-02",
     "year": "2026",
     "category": "AI Security",
     "tags": [
-      "AI Security",
-      "Digital Forensics",
-      "Security Labs & Training"
+      "AI Security"
     ],
     "images": 19,
     "code_blocks": 4,
@@ -97,13 +125,13 @@
   {
     "id": "2e26c0740a17",
     "title": "AI Security Course, Module 00 — Part 1: Introduction, AI/ML Taxonomy",
-    "summary": "AI security conversations often begin with prompt injection, jailbreaks, or a new red-team tool. That is understandable, but it creates a dangerous starting point",
+    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1iXjLTeK5gtBdXKgVpUFBMw.png\" alt=\"Cover image\" width=\"1024\" height=\"682\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
     "published_at": "2026-08-01",
     "year": "2026",
     "category": "AI Security",
     "tags": [
       "AI Security",
-      "Security Tooling"
+      "Network Security"
     ],
     "images": 9,
     "code_blocks": 1,
@@ -128,7 +156,7 @@
   {
     "id": "55e29e6c035e",
     "title": "I’m Building an AI Security Engineering Course",
-    "summary": "AI security has moved beyond a narrow conversation about prompt injection",
+    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/10V1atQwOKtY2BXdKheNDCA.jpeg\" alt=\"Cover image\" width=\"1024\" height=\"687\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
     "published_at": "2026-07-31",
     "year": "2026",
     "category": "AI Security",
@@ -158,14 +186,12 @@
   {
     "id": "40df3439b90c",
     "title": "AdversaryGraph",
-    "summary": "AdversaryGraph is a self-hosted security intelligence workbench for teams that need to move from threat reports and observables to reviewed detection work. It helps analysts connect IOCs, ATT&CK techniques, malware fi…",
+    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1ML9xzyAJOr2u6l1Dy4RpdA.png\" alt=\"Cover image\" width=\"1024\" height=\"576\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
     "published_at": "2026-07-23",
     "year": "2026",
     "category": "CTI",
     "tags": [
-      "CTI",
-      "Malware Analysis",
-      "Detection Engineering"
+      "CTI"
     ],
     "images": 6,
     "code_blocks": 0,
@@ -281,13 +307,14 @@
   {
     "id": "21873b2a6c39",
     "title": "AdversaryGraph v5.0: From CTI Mapping to Attack Simulation and SIEM Validation",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1pE4s-eX1wFWMUOsnozr16w.png\" alt=\"Cover image\" width=\"1024\" height=\"576\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "How can a security team move from threat intelligence to detection engineering without losing the evidence trail?",
     "published_at": "2026-06-29",
     "year": "2026",
     "category": "CTI",
     "tags": [
       "CTI",
-      "Detection Engineering"
+      "Detection Engineering",
+      "Digital Forensics"
     ],
     "images": 13,
     "code_blocks": 2,
