@@ -1,5 +1,38 @@
 [
   {
+    "id": "be0679241940",
+    "title": "Assembly for Malware Analysis: A Practical x86/x64 Guide",
+    "summary": "Learn to recover meaning from x86 and x64 assembly with real AIDebug examples covering registers, memory, flags, calling conventions, control flow, Windows API behavior, decompilation, and a repeatable malware-analysis workflow.",
+    "published_at": "2026-08-09",
+    "year": "2026",
+    "category": "Malware Analysis",
+    "tags": [
+      "Malware Analysis",
+      "Windows Security",
+      "Security Labs & Training",
+      "Security Tooling"
+    ],
+    "images": 27,
+    "code_blocks": 44,
+    "slug": "2026-08-09-assembly-for-malware-analysis-be0679241940",
+    "local_path": "2026/2026-08-09-assembly-for-malware-analysis-be0679241940",
+    "source_url": "https://medium.com/@1200km/assembly-for-malware-analysis-be0679241940",
+    "cover_image": "https://1200km.com/cyber-knowledge/short-guides/assembly-for-malware-analysis/cover.png",
+    "canonical_url": "https://1200km.com/articles/read/2026/2026-08-09-assembly-for-malware-analysis-be0679241940",
+    "canonical_owner": "1200km.com",
+    "preferred_canonical_url": "https://1200km.com/articles/read/2026/2026-08-09-assembly-for-malware-analysis-be0679241940",
+    "original_publication_url": "https://medium.com/@1200km/assembly-for-malware-analysis-be0679241940",
+    "original_publication_platform": "Medium",
+    "canonical_migration_status": "migration-pending",
+    "external_canonical_verified": false,
+    "external_canonical_verified_at": null,
+    "migration_note": "Local self-canonical is deliberate. The external publication canonical has not been verified or changed, so migration remains pending.",
+    "source_platform": "Medium",
+    "source_repository": "anpa1200/medium-blog-navigation",
+    "collection_tier": "reference",
+    "updated_at": "2026-08-09"
+  },
+  {
     "id": "1bf0411472f6",
     "title": "AI Security Course, Module 00 — Chapter 3: Neural Networks and Optimization",
     "summary": "This chapter explains neural-network computation, optimization, reproducibility, attacker access, adversarial claims, and defensible evidence for security practitioners without a calculus prerequisite",
