@@ -5,16 +5,17 @@ description: "Full local Docusaurus archive of exported Medium articles by Andre
 
 # Article Archive
 
-This archive contains `185` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.
+This archive contains `186` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.
 
-- Preserved images/screenshots/infographics: `2182`
-- Preserved code/configuration blocks: `3475`
+- Preserved images/screenshots/infographics: `2216`
+- Preserved code/configuration blocks: `3498`
 - Publication media is preserved at its source quality; key Cyber Knowledge guides also use locally hosted copies so essential visuals do not depend on an external CDN.
 
 ## Articles by Year
 
 ### 2026
 
+- [PE File Structure for Malware Analysis: A Practical Guide](./2026/2026-08-10-pe-file-structure-for-malware-analysis-d93acb97d9f3) - 2026-08-10 | Malware Analysis | 34 image(s) | 23 code block(s)
 - [Assembly for Malware Analysis: A Practical x86/x64 Guide](./2026/2026-08-09-assembly-for-malware-analysis-be0679241940) - 2026-08-09 | Malware Analysis | 27 image(s) | 44 code block(s)
 - [AI Security Course, Module 00 — Chapter 3: Neural Networks and Optimization](./2026/2026-08-08-ai-security-course-module-00-chapter-3-1bf0411472f6) - 2026-08-08 | AI Security | 23 image(s) | 5 code block(s)
 - [How to Build a Safe Malware Analysis Lab with FLARE-VM, REMnux, and INetSim](./2026/2026-08-07-how-to-build-a-safe-malware-analysis-lab-with-flare-vm-remnux-and-inetsim-0287d3964602) - 2026-08-07 | Malware Analysis | 17 image(s) | 38 code block(s)
