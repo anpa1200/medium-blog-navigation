@@ -60,6 +60,8 @@ def main() -> int:
     main = re.search(r'<main\b[^>]*id=["\']main-content["\'][^>]*>([\s\S]*)</main>', index, re.IGNORECASE)
     if not main or not re.search(r'<header\b[^>]*class=["\'][^"\']*hero', main.group(1), re.IGNORECASE) or 'id="article-library"' not in main.group(1):
         failures.append("archive index hero and library are not contained in the main landmark")
+    if re.search(r'&lt;img\b|<p>\s*&lt;img\b', index, re.IGNORECASE):
+        failures.append("archive index exposes image markup as card summary text")
 
     if failures:
         print(f"Built archive validation failed ({len(failures)}):")

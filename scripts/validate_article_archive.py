@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 from urllib.parse import urlsplit
 
 
@@ -79,6 +80,8 @@ def main() -> int:
             errors.append(f"{label}: invalid image count")
         if not isinstance(row["code_blocks"], int) or row["code_blocks"] < 0:
             errors.append(f"{label}: invalid code-block count")
+        if not isinstance(row.get("summary"), str) or re.search(r"<[^>]+>", row["summary"]):
+            errors.append(f"{label}: summary must be plain text without HTML tags")
 
     article_files = {
         str(path.relative_to(ARTICLES).with_suffix(""))

@@ -167,7 +167,7 @@
   {
     "id": "93746950ce9a",
     "title": "What Is Malware?",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1WQ9mso4SbaVsTYujN86dcQ.png\" alt=\"Cover image\" width=\"1024\" height=\"576\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "Malware is software or code intentionally used to compromise the confidentiality, integrity, or availability of devices, applications, networks, or data.",
     "published_at": "2026-08-06",
     "year": "2026",
     "category": "Malware Analysis",
@@ -197,7 +197,7 @@
   {
     "id": "69381c74a59c",
     "title": "AI Security Course, Module 00 — Part 2",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1rAH1xSKZP28Iw6vZGWEA.png\" alt=\"Cover image\" width=\"1024\" height=\"768\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "Data, features, labels, parameters, training, validation, testing, and inference become an evidence-preserving workflow for AI security engineering.",
     "published_at": "2026-08-02",
     "year": "2026",
     "category": "AI Security",
@@ -227,7 +227,7 @@
   {
     "id": "2e26c0740a17",
     "title": "AI Security Course, Module 00 — Part 1: Introduction, AI/ML Taxonomy",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1iXjLTeK5gtBdXKgVpUFBMw.png\" alt=\"Cover image\" width=\"1024\" height=\"682\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "Before securing an AI system, build a precise vocabulary for AI, machine learning, models, data, and the boundaries between them.",
     "published_at": "2026-08-01",
     "year": "2026",
     "category": "AI Security",
@@ -258,7 +258,7 @@
   {
     "id": "55e29e6c035e",
     "title": "I’m Building an AI Security Engineering Course",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/10V1atQwOKtY2BXdKheNDCA.jpeg\" alt=\"Cover image\" width=\"1024\" height=\"687\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "A practical, evidence-grounded path from AI fundamentals to secure agentic systems and modern AI security engineering.",
     "published_at": "2026-07-31",
     "year": "2026",
     "category": "AI Security",
@@ -288,7 +288,7 @@
   {
     "id": "40df3439b90c",
     "title": "AdversaryGraph",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1ML9xzyAJOr2u6l1Dy4RpdA.png\" alt=\"Cover image\" width=\"1024\" height=\"576\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "AdversaryGraph is a self-hosted security intelligence workbench that connects observables, ATT&CK, malware findings, detection validation, and reporting.",
     "published_at": "2026-07-23",
     "year": "2026",
     "category": "CTI",
@@ -318,7 +318,7 @@
   {
     "id": "a5ccb46d5556",
     "title": "Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1PtjHgt5EKpMEspEmntakBw.png\" alt=\"Cover image\" width=\"1024\" height=\"559\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "Practical detection engineering methods for identity, cloud, CI/CD, runtime, telemetry validation, and AI-era threats.",
     "published_at": "2026-07-11",
     "year": "2026",
     "category": "Detection Engineering",
@@ -348,7 +348,7 @@
   {
     "id": "55eea06b69bd",
     "title": "When AI Coding Agents Say Yes Too Easily: Testing Suspicious Cybersecurity Prompts in Cursor",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1NezWwOLX9Mv2QjCu2TQMMw.png\" alt=\"Cover image\" width=\"1024\" height=\"559\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "A controlled comparison of how AI coding models respond to the same suspicious cybersecurity prompt inside Cursor.",
     "published_at": "2026-07-07",
     "year": "2026",
     "category": "AI Security",
@@ -378,7 +378,7 @@
   {
     "id": "8a151f8d5f1b",
     "title": "Comprehensive Cyber Intelligence Research: Attacks Against Embedded Systems, Hardware, Firmware…",
-    "summary": "<img src=\"https://cdn-images-1.medium.com/max/1024/1igBKySDQUuXS4X3AYyE0kg.png\" alt=\"Cover image\" width=\"1024\" height=\"683\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" />",
+    "summary": "Evidence-led cyber intelligence research into attacks against embedded systems, hardware, firmware, edge devices, and their vendors.",
     "published_at": "2026-07-03",
     "year": "2026",
     "category": "CTI",
