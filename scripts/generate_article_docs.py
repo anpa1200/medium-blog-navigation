@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from email.utils import parsedate_to_datetime
+from html import unescape
 import json
 import re
 from pathlib import Path
@@ -29,6 +30,13 @@ def md_escape(text: str) -> str:
     text = text.replace("<", "&lt;").replace(">", "&gt;")
     text = text.replace("{", "&#123;").replace("}", "&#125;")
     return text.strip()
+
+
+def plain_summary(text: str) -> str:
+    """Return catalog-safe prose and discard image-only/markup-only summaries."""
+    decoded = unescape(text or "")
+    plain = BeautifulSoup(decoded, "html.parser").get_text(" ", strip=True)
+    return re.sub(r"\s+", " ", plain).strip()
 
 
 def slugify(text: str) -> str:
@@ -284,7 +292,7 @@ def fallback_markdown_summary(text: str, title: str) -> str:
 
 def maintain_generated_markdown(path: Path, title: str, supplied_summary: str) -> str:
     text = path.read_text(encoding="utf-8")
-    supplied_summary = supplied_summary.strip()
+    supplied_summary = plain_summary(supplied_summary)
     if supplied_summary.startswith("This page mirrors the original Medium RSS article"):
         supplied_summary = ""
     summary = supplied_summary or fallback_markdown_summary(text, title)

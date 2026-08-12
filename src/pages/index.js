@@ -7,8 +7,18 @@ import trainsecCatalog from '../data/trainsec-catalog.json';
 
 const PAGE_SIZE = 24;
 
+function plainTextSummary(value) {
+  if (!value) return '';
+  return value
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function ArticleCard({article, routeBase, onTagClick}) {
   const articleUrl = article.is_trainsec ? `/articles/${article.local_path}` : `/${routeBase}/${article.local_path}`;
+  const summary = plainTextSummary(article.summary);
   return (
     <article className="article-card">
       {article.cover_image && (
@@ -23,7 +33,7 @@ function ArticleCard({article, routeBase, onTagClick}) {
         </time>
       </div>
       <h2><Link to={articleUrl}>{article.title}</Link></h2>
-      {article.summary && <p>{article.summary}</p>}
+      {summary && <p>{summary}</p>}
       {article.tags?.length > 0 && (
         <div className="article-tags" aria-label="Article tags">
           {article.tags.map((tag) => (
