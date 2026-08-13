@@ -1,12 +1,14 @@
 ---
 title: "AIDebug 3.1 Full Release Review: From Binary Intake to String Intelligence"
 description: "A complete, evidence-first review of AIDebug 3.1 covering static triage, PE structure, strings, disassembly, Ghidra, learning mode, AI review, debugging, history, and defensive outputs."
-image: "https://1200km.com/cyber-knowledge/short-guides/strings-analysis/cover.png"
+image: "https://1200km.com/cyber-knowledge/short-guides/aidebug-3-1/cover.png"
 ---
 
 # AIDebug 3.1 Full Release Review: From Binary Intake to String Intelligence
 
 **A practical, evidence-first walkthrough of AIDebug's complete malware-analysis workflow, including the new occurrence-aware String Intelligence workspace.**
+
+![AIDebug 3.1 full release review cover showing an isolated malware artifact surrounded by analysis workspaces](/cyber-knowledge/short-guides/aidebug-3-1/cover.png)
 
 :::info Article Metadata
 
@@ -14,7 +16,7 @@ image: "https://1200km.com/cyber-knowledge/short-guides/strings-analysis/cover.p
 - **Topics:** Malware Analysis, Reverse Engineering, AIDebug, String Analysis, PE Analysis, AI Security, Digital Forensics, Security Tooling
 - **Source article:** [1200km canonical edition](/articles/read/2026/2026-08-13-aidebug-3-1-full-release-review/)
 - **Published:** 2026-08-13
-- **Preserved media:** 12 AIDebug screenshots reused from the published 1200km malware-analysis guides.
+- **Preserved media:** 13 images, including the dedicated AIDebug 3.1 cover and 12 screenshots reused from the published 1200km malware-analysis guides.
 - **Canonical edition:** This 1200km page is the maintained, self-canonical article.
 
 :::
