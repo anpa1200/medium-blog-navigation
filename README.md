@@ -3,6 +3,12 @@
 Docusaurus source for the complete local security-research archive published at
 `https://1200km.com/articles/`.
 
+The archive includes native 1200km publications as well as preserved external
+articles. The current native feature is the
+[AIDebug 3.1 full release review](https://1200km.com/articles/read/2026/2026-08-13-aidebug-3-1-full-release-review/),
+integrated with the malware-analysis learning path and its PE, assembly, strings,
+and safe-lab guides.
+
 The generator combines the maintained Medium export, the current Medium RSS
 window, and already-preserved local articles. Original publication URLs are kept
 as provenance links, while article reading links remain on 1200km.com.
