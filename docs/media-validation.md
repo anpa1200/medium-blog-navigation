@@ -8,8 +8,8 @@ Generated deterministically from the current source inventory.
 
 ## Summary
 
-- Markdown documents checked: 223
-- Media references checked: 2737
+- Markdown documents checked: 224
+- Media references checked: 2750
 - Unique remote image URLs: 2089
 - Unique local image/CSS paths: 93
 - Missing local files: 0
