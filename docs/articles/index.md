@@ -5,16 +5,17 @@ description: "Full local Docusaurus archive of exported Medium articles by Andre
 
 # Article Archive
 
-This archive contains `188` preserved and native articles converted into Docusaurus pages inside the 1200km.com ecosystem.
+This archive contains `189` preserved and native articles converted into Docusaurus pages inside the 1200km.com ecosystem.
 
-- Preserved images/screenshots/infographics: `2243`
-- Preserved code/configuration blocks: `3535`
+- Preserved images/screenshots/infographics: `2269`
+- Preserved code/configuration blocks: `3546`
 - Publication media is preserved at its source quality; key Cyber Knowledge guides also use locally hosted copies so essential visuals do not depend on an external CDN.
 
 ## Articles by Year
 
 ### 2026
 
+- [AI Security Course, Module 00 — Chapter 4](./2026/2026-08-15-ai-security-course-module-00-chapter-4-b8e3de0c3a9d) - 2026-08-15 | AI Security | 26 image(s) | 11 code block(s)
 - [AIDebug 3.1 Full Release Review: From Binary Intake to String Intelligence](./2026/2026-08-13-aidebug-3-1-full-release-review) - 2026-08-13 | Malware Analysis | 13 image(s) | 21 code block(s)
 - [Strings Analysis for Malware Analysis: Turning Binary Text into Defensible Hypotheses](./2026/2026-08-12-strings-analysis-for-malware-analysis-turning-391815ee35e2) - 2026-08-12 | Malware Analysis | 14 image(s) | 16 code block(s)
 - [PE File Structure for Malware Analysis: A Practical Guide](./2026/2026-08-10-pe-file-structure-for-malware-analysis-d93acb97d9f3) - 2026-08-10 | Malware Analysis | 34 image(s) | 23 code block(s)

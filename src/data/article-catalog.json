@@ -1,5 +1,36 @@
 [
   {
+    "id": "b8e3de0c3a9d",
+    "title": "AI Security Course, Module 00 — Chapter 4",
+    "summary": "Trace an LLM request from structured messages to generated output, then place authorization, validation, and forensic evidence at the boundaries that actually enforce security.",
+    "published_at": "2026-08-15",
+    "year": "2026",
+    "category": "AI Security",
+    "tags": [
+      "AI Security",
+      "Digital Forensics"
+    ],
+    "images": 26,
+    "code_blocks": 11,
+    "slug": "2026-08-15-ai-security-course-module-00-chapter-4-b8e3de0c3a9d",
+    "local_path": "2026/2026-08-15-ai-security-course-module-00-chapter-4-b8e3de0c3a9d",
+    "source_url": "https://medium.com/@1200km/ai-security-course-module-00-chapter-4-b8e3de0c3a9d",
+    "cover_image": "https://cdn-images-1.medium.com/max/1024/1*PiU5Dcp4IIFmqoGIor37Iw.png",
+    "canonical_url": "https://1200km.com/articles/read/2026/2026-08-15-ai-security-course-module-00-chapter-4-b8e3de0c3a9d",
+    "canonical_owner": "1200km.com",
+    "preferred_canonical_url": "https://1200km.com/articles/read/2026/2026-08-15-ai-security-course-module-00-chapter-4-b8e3de0c3a9d",
+    "original_publication_url": "https://medium.com/@1200km/ai-security-course-module-00-chapter-4-b8e3de0c3a9d",
+    "original_publication_platform": "Medium",
+    "canonical_migration_status": "migration-pending",
+    "external_canonical_verified": false,
+    "external_canonical_verified_at": null,
+    "migration_note": "Local self-canonical is deliberate. The external publication canonical has not been verified or changed, so migration remains pending.",
+    "source_platform": "Medium",
+    "source_repository": "anpa1200/medium-blog-navigation",
+    "collection_tier": "archive",
+    "updated_at": "2026-08-15"
+  },
+  {
     "id": "024914c8670f",
     "title": "AIDebug 3.1 Full Release Review: From Binary Intake to String Intelligence",
     "summary": "Review AIDebug 3.1 from evidence-first binary intake through PE and ELF triage, String Intelligence, disassembly, Ghidra, optional AI analysis, controlled debugging, history, and reports.",
