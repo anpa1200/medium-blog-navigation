@@ -1,5 +1,37 @@
 [
   {
+    "id": "203ca89b76a2",
+    "title": "Course Review — TrainSec Malware Analyst Professional — Level 1",
+    "summary": "A practical review of TrainSec's Malware Analyst Professional Level 1 course, its learning path, workload, lab depth, and companion research guides.",
+    "published_at": "2026-08-19",
+    "year": "2026",
+    "category": "Malware Analysis",
+    "tags": [
+      "Course Review",
+      "Malware Analysis",
+      "Security Labs & Training"
+    ],
+    "images": 1,
+    "code_blocks": 0,
+    "slug": "2026-08-19-course-review-trainsec-malware-analyst-professional-level-1-203ca89b76a2",
+    "local_path": "2026/2026-08-19-course-review-trainsec-malware-analyst-professional-level-1-203ca89b76a2",
+    "source_url": "https://medium.com/@1200km/course-review-trainsec-malware-analyst-professional-level-1-203ca89b76a2",
+    "cover_image": "https://cdn-images-1.medium.com/max/1024/1*LYSr864CNPTR__4JPq4ybQ.png",
+    "canonical_url": "https://1200km.com/articles/read/2026/2026-08-19-course-review-trainsec-malware-analyst-professional-level-1-203ca89b76a2",
+    "canonical_owner": "1200km.com",
+    "preferred_canonical_url": "https://1200km.com/articles/read/2026/2026-08-19-course-review-trainsec-malware-analyst-professional-level-1-203ca89b76a2",
+    "original_publication_url": "https://medium.com/@1200km/course-review-trainsec-malware-analyst-professional-level-1-203ca89b76a2",
+    "original_publication_platform": "Medium",
+    "canonical_migration_status": "migration-pending",
+    "external_canonical_verified": false,
+    "external_canonical_verified_at": null,
+    "migration_note": "Local self-canonical is deliberate. The external publication canonical has not been verified or changed, so migration remains pending.",
+    "source_platform": "Medium",
+    "source_repository": "anpa1200/medium-blog-navigation",
+    "collection_tier": "reference",
+    "updated_at": "2026-08-19"
+  },
+  {
     "id": "b8e3de0c3a9d",
     "title": "AI Security Course, Module 00 — Chapter 4",
     "summary": "Trace an LLM request from structured messages to generated output, then place authorization, validation, and forensic evidence at the boundaries that actually enforce security.",
