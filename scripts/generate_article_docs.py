@@ -24,6 +24,10 @@ RSS_NAMESPACES = {
     "content": "http://purl.org/rss/1.0/modules/content/",
 }
 
+# This RSS item has a maintained, expanded 1200km edition with a stable local
+# route. Importing the later syndication entry would create a second article.
+CURATED_RSS_POST_IDS = {"788626373781"}
+
 
 def md_escape(text: str) -> str:
     text = text.replace("\u00a0", " ").replace("\u200a", " ")
@@ -395,6 +399,8 @@ def rss_items() -> list[dict]:
         post_id = guid.rsplit("/", 1)[-1]
         if not re.fullmatch(r"[0-9a-f]{12,}", post_id):
             continue
+        if post_id in CURATED_RSS_POST_IDS:
+            continue
         pub_date = item.findtext("pubDate") or ""
         try:
             date = parsedate_to_datetime(pub_date).date().isoformat()
@@ -431,6 +437,12 @@ def write_rss_article(item: dict) -> dict:
     body_text = soup.get_text(" ", strip=True)[:5000]
     category = category_for(title, " ".join([body_text, *item.get("categories", [])]))
     source_url = item["link"]
+
+    # Once an RSS article has been curated locally, its front matter and
+    # metadata block become the archive source of truth. This preserves title,
+    # description, taxonomy, and media-count corrections on repeat imports.
+    if out_path.exists():
+        return read_existing_article(out_path)
 
     if not out_path.exists():
         fm = {
@@ -528,6 +540,13 @@ def write_category_files(years: set[str]) -> None:
 def write_index(rows: list[dict]) -> None:
     total_images = sum(row["images"] for row in rows)
     total_code = sum(row["code"] for row in rows)
+    existing_lines: dict[str, str] = {}
+    index_path = ARTICLES_ROOT / "index.md"
+    if index_path.exists():
+        for line in index_path.read_text(encoding="utf-8").splitlines():
+            match = re.search(r"\]\((\./[^)]+)\)", line)
+            if line.startswith("- [") and match:
+                existing_lines[match.group(1)] = line
     lines = [
         "---",
         'title: "Article Archive"',
@@ -536,11 +555,11 @@ def write_index(rows: list[dict]) -> None:
         "",
         "# Article Archive",
         "",
-        f"This archive contains `{len(rows)}` exported Medium articles converted into Docusaurus pages inside the 1200km.com ecosystem.",
+        f"This archive contains `{len(rows)}` preserved and native articles converted into Docusaurus pages inside the 1200km.com ecosystem.",
         "",
         f"- Preserved images/screenshots/infographics: `{total_images}`",
         f"- Preserved code/configuration blocks: `{total_code}`",
-        "- Images are referenced from their original Medium CDN URLs so covers and inline screenshots render without lossy local recompression.",
+        "- Publication media is preserved at its source quality; key Cyber Knowledge guides also use locally hosted copies so essential visuals do not depend on an external CDN.",
         "",
         "## Articles by Year",
         "",
@@ -549,9 +568,10 @@ def write_index(rows: list[dict]) -> None:
         lines.extend([f"### {year}", ""])
         for row in sorted([item for item in rows if item["year"] == year], key=lambda item: item["date"], reverse=True):
             rel = f"./{row['year']}/{row['slug']}"
-            lines.append(
-                f"- [{row['title']}]({rel}) - {row['date']} | {row['category']} | {row['images']} image(s) | {row['code']} code block(s)"
-            )
+            lines.append(existing_lines.get(
+                rel,
+                f"- [{row['title']}]({rel}) - {row['date']} | {row['category']} | {row['images']} image(s) | {row['code']} code block(s)",
+            ))
         lines.append("")
     (ARTICLES_ROOT / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
@@ -575,9 +595,57 @@ def write_catalog(rows: list[dict]) -> None:
                 "cover_image": row["cover_image"],
             }
         item.update(canonical_governance(row))
+        prior = row.get("_prior_catalog")
+        if isinstance(prior, dict):
+            for key in (
+                "id", "title", "summary", "category", "tags", "images",
+                "code_blocks", "source_url", "cover_image", "canonical_url",
+                "canonical_owner", "preferred_canonical_url",
+                "original_publication_url", "original_publication_platform",
+                "canonical_migration_status", "external_canonical_verified",
+                "external_canonical_verified_at", "migration_note",
+                "source_platform", "source_repository", "collection_tier",
+                "updated_at",
+            ):
+                if key in prior:
+                    item[key] = prior[key]
         catalog.append(item)
     CATALOG_PATH.parent.mkdir(parents=True, exist_ok=True)
     CATALOG_PATH.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def preserve_catalog_editorial_metadata(rows: list[dict]) -> list[dict]:
+    """Keep reviewed metadata stable when refreshing RSS-backed source files."""
+    if not CATALOG_PATH.exists():
+        return rows
+    try:
+        existing = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return rows
+    by_path = {
+        item.get("local_path"): item
+        for item in existing
+        if isinstance(item, dict) and isinstance(item.get("local_path"), str)
+    }
+    for row in rows:
+        local_path = f"{row['year']}/{row['slug']}"
+        prior = by_path.get(local_path)
+        if not prior:
+            continue
+        row["_prior_catalog"] = prior
+        for catalog_key, row_key in (
+            ("id", "id"),
+            ("title", "title"),
+            ("summary", "summary"),
+            ("images", "images"),
+            ("code_blocks", "code"),
+            ("category", "category"),
+            ("source_url", "source_url"),
+            ("cover_image", "cover_image"),
+        ):
+            if catalog_key in prior:
+                row[row_key] = prior[catalog_key]
+    return rows
 
 
 def main() -> None:
@@ -596,6 +664,7 @@ def main() -> None:
             existing_ids.add(post_id)
     for row in rows:
         row["summary"] = maintain_generated_markdown(row["path"], row["title"], row["summary"])
+    rows = preserve_catalog_editorial_metadata(rows)
     write_category_files({row["year"] for row in rows})
     write_index(rows)
     write_catalog(rows)

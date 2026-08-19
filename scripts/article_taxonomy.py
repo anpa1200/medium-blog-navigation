@@ -6,6 +6,7 @@ import re
 
 
 TAXONOMY_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("Course Review", ("course review", "completed the course", "course exceeded my expectations")),
     ("CTI", (
         "cti", "threat intelligence", "cyber intelligence", "adversarygraph", "apt", "muddywater",
         "sandworm", "handala", "threat actor", "ioc", "attribution", "kill chain", "pyramid of pain",
@@ -96,7 +97,7 @@ def category_for_taxonomy(title: str, summary: str = "") -> str:
     if "CTI" in tags:
         return "CTI"
     for preferred in (
-        "AI Security", "Malware Analysis", "Cloud & Kubernetes", "Mobile Security",
+        "AI Security", "Malware Analysis", "Course Review", "Cloud & Kubernetes", "Mobile Security",
         "Web Application Security", "Detection Engineering", "Offensive Security",
         "Password Security", "OSINT & Reconnaissance", "Network Security",
         "Vulnerability Management", "Digital Forensics", "Security Awareness",
