@@ -128,7 +128,7 @@ export default function Home() {
           <p className="eyebrow">1200km research library</p>
           <h1>Security research articles, available locally.</h1>
           <p className="hero-subtitle">
-            Browse the complete local archive of technical articles, including 84 permitted
+            Browse the complete local archive of technical articles, including {trainsecCatalog.length} permitted
             full mirrors from TrainSec.net. Every card opens the locally hosted article on
             1200km.com; the original publication remains the source and attribution link.
           </p>
