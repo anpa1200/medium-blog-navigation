@@ -941,13 +941,13 @@ The intake template, evidence labels, claims ledger, ATT&CK gap taxonomy, and gi
 
 CTI as a Code is one part of a practitioner ecosystem:
 
-- <a href="https://1200km.com/CTI_as_a_Code/" target="_self" target="_self">CTI as a Code</a>— Lab stack, investigation scaffolds, and training assignments. Use when running an investigation or building detection coverage.
-- <a href="https://1200km.com/cti-analyst-field-manual/" target="_self" target="_self">CTI Analyst Field Manual</a>— Analytic tradecraft standard. Use when you need the full methodology behind evidence labels, PIR design, attribution, and CTI-to-detection.
-- <a href="https://1200km.com/israel-government-threat-actors-cti/" target="_self" target="_self">Israel Government Threat Actors CTI</a>— Israeli sector threat knowledge base. Use when working on any Israeli government, CII, or public sector engagement.
-- <a href="https://1200km.com/customer-driven-ai-cti-project/" target="_self" target="_self">Customer-Driven AI CTI</a>— CTI delivery methodology. Use when turning CTI work into a managed customer engagement with quality gates.
-- <a href="https://1200km.com/CTI_as_a_Code/ecosystem" target="_self" target="_self">Ecosystem page</a>— End-to-end cross-project workflows.
+- <a href="https://1200km.com/CTI_as_a_Code/" target="_self">CTI as a Code</a>— Lab stack, investigation scaffolds, and training assignments. Use when running an investigation or building detection coverage.
+- <a href="https://1200km.com/cti-analyst-field-manual/" target="_self">CTI Analyst Field Manual</a>— Analytic tradecraft standard. Use when you need the full methodology behind evidence labels, PIR design, attribution, and CTI-to-detection.
+- <a href="https://1200km.com/israel-government-threat-actors-cti/" target="_self">Israel Government Threat Actors CTI</a>— Israeli sector threat knowledge base. Use when working on any Israeli government, CII, or public sector engagement.
+- <a href="https://1200km.com/customer-driven-ai-cti-project/" target="_self">Customer-Driven AI CTI</a>— CTI delivery methodology. Use when turning CTI work into a managed customer engagement with quality gates.
+- <a href="https://1200km.com/CTI_as_a_Code/ecosystem" target="_self">Ecosystem page</a>— End-to-end cross-project workflows.
 
-See the<a href="https://1200km.com/CTI_as_a_Code/ecosystem" target="_self" target="_self">Ecosystem page</a>for end-to-end cross-project workflows.
+See the<a href="https://1200km.com/CTI_as_a_Code/ecosystem" target="_self">Ecosystem page</a>for end-to-end cross-project workflows.
 
 ## Where to Start
 

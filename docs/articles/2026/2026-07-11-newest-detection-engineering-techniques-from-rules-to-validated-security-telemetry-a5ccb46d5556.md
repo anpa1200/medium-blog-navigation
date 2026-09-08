@@ -129,10 +129,10 @@ The most practical modern technique is also the least glamorous: start with tele
 
 **Relevant MITRE ATT&CK tags:**
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self" target="_self" target="_self">T1078 — Valid Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self" target="_self" target="_self">T1078.004 — Cloud Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self" target="_self" target="_self">T1530 — Data from Cloud Storage Object</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1580" target="_self" target="_self" target="_self">T1580 — Cloud Infrastructure Discovery</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self">T1078.004 — Cloud Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1580" target="_self">T1580 — Cloud Infrastructure Discovery</a>
 
 **Real-world reports:**
 
@@ -233,10 +233,10 @@ Detection-as-code is now table stakes. But there is a trap.
 
 **Relevant MITRE ATT&CK tags:**
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1059" target="_self" target="_self" target="_self">T1059 — Command and Scripting Interpreter</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self" target="_self" target="_self">T1078 — Valid Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self" target="_self" target="_self">T1110.003 — Password Spraying</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1190" target="_self" target="_self" target="_self">T1190 — Exploit Public-Facing Application</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1059" target="_self">T1059 — Command and Scripting Interpreter</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1190" target="_self">T1190 — Exploit Public-Facing Application</a>
 
 **Real-world reports:**
 
@@ -321,10 +321,10 @@ Single-event detections still matter. LSASS dump access, suspicious child proces
 
 **Relevant MITRE ATT&CK tags:**
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self" target="_self" target="_self">T1110.003 — Password Spraying</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self" target="_self" target="_self">T1078 — Valid Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self" target="_self" target="_self">T1550.004 — Web Session Cookie</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1213" target="_self" target="_self" target="_self">T1213 — Data from Information Repositories</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self">T1550.004 — Web Session Cookie</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1213" target="_self">T1213 — Data from Information Repositories</a>
 
 **Real-world reports:**
 
@@ -405,10 +405,10 @@ Alert fatigue often comes from treating every rule match as an incident.
 
 **Relevant MITRE ATT&CK tags:**
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self" target="_self" target="_self">T1078 — Valid Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1098" target="_self" target="_self" target="_self">T1098 — Account Manipulation</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1550" target="_self" target="_self" target="_self">T1550 — Use Alternate Authentication Material</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1567" target="_self" target="_self" target="_self">T1567 — Exfiltration Over Web Service</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1098" target="_self">T1098 — Account Manipulation</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1550" target="_self">T1550 — Use Alternate Authentication Material</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1567" target="_self">T1567 — Exfiltration Over Web Service</a>
 
 **Real-world reports:**
 
@@ -498,10 +498,10 @@ MFA is important, but modern identity attacks often target the session after aut
 
 **Relevant MITRE ATT&CK tags:**
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self" target="_self" target="_self">T1078 — Valid Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self" target="_self" target="_self">T1110.003 — Password Spraying</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1528" target="_self" target="_self" target="_self">T1528 — Steal Application Access Token</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self" target="_self" target="_self">T1550.004 — Web Session Cookie</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1528" target="_self">T1528 — Steal Application Access Token</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self">T1550.004 — Web Session Cookie</a>
 
 **Real-world reports:**
 
@@ -610,10 +610,10 @@ This is a perfect weak-signal candidate. Device code flow alone may be legitimat
 
 **Relevant MITRE ATT&CK tags:**
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self" target="_self" target="_self">T1078.004 — Cloud Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1213" target="_self" target="_self" target="_self">T1213 — Data from Information Repositories</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self" target="_self" target="_self">T1530 — Data from Cloud Storage Object</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1567.002" target="_self" target="_self" target="_self">T1567.002 — Exfiltration to Cloud Storage</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self">T1078.004 — Cloud Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1213" target="_self">T1213 — Data from Information Repositories</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1567.002" target="_self">T1567.002 — Exfiltration to Cloud Storage</a>
 
 **Real-world reports:**
 
@@ -700,10 +700,10 @@ CI/CD is now production infrastructure.
 
 **Relevant MITRE ATT&CK tags:**
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1195" target="_self" target="_self" target="_self">T1195 — Supply Chain Compromise</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1195.001" target="_self" target="_self" target="_self">T1195.001 — Compromise Software Dependencies and Development Tools</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1059" target="_self" target="_self" target="_self">T1059 — Command and Scripting Interpreter</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1552" target="_self" target="_self" target="_self">T1552 — Unsecured Credentials</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1195" target="_self">T1195 — Supply Chain Compromise</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1195.001" target="_self">T1195.001 — Compromise Software Dependencies and Development Tools</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1059" target="_self">T1059 — Command and Scripting Interpreter</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1552" target="_self">T1552 — Unsecured Credentials</a>
 
 **Real-world reports:**
 
@@ -781,10 +781,10 @@ Kubernetes changed detection because workloads are ephemeral. A compromised pod 
 
 Relevant MITRE ATT&CK tags:
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1059" target="_self" target="_self" target="_self">T1059 — Command and Scripting Interpreter</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1552.007" target="_self" target="_self" target="_self">T1552.007 — Container and Cloud Credentials</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1610" target="_self" target="_self" target="_self">T1610 — Deploy Container</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1611" target="_self" target="_self" target="_self">T1611 — Escape to Host</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1059" target="_self">T1059 — Command and Scripting Interpreter</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1552.007" target="_self">T1552.007 — Container and Cloud Credentials</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1610" target="_self">T1610 — Deploy Container</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1611" target="_self">T1611 — Escape to Host</a>
 
 Real-world reports:
 
@@ -857,10 +857,10 @@ Anomaly detection works best when it is narrow.
 
 Relevant MITRE ATT&CK tags:
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self" target="_self" target="_self">T1078 — Valid Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self" target="_self" target="_self">T1078.004 — Cloud Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1098" target="_self" target="_self" target="_self">T1098 — Account Manipulation</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self" target="_self" target="_self">T1530 — Data from Cloud Storage Object</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078.004" target="_self">T1078.004 — Cloud Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1098" target="_self">T1098 — Account Manipulation</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
 
 Real-world reports:
 
@@ -960,10 +960,10 @@ Statistical detection is useful, but broad unsupervised anomaly detection is oft
 
 Relevant MITRE ATT&CK tags:
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1030" target="_self" target="_self" target="_self">T1030 — Data Transfer Size Limits</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1041" target="_self" target="_self" target="_self">T1041 — Exfiltration Over C2 Channel</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self" target="_self" target="_self">T1530 — Data from Cloud Storage Object</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1567" target="_self" target="_self" target="_self">T1567 — Exfiltration Over Web Service</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1030" target="_self">T1030 — Data Transfer Size Limits</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1041" target="_self">T1041 — Exfiltration Over C2 Channel</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1567" target="_self">T1567 — Exfiltration Over Web Service</a>
 
 Real-world reports:
 
@@ -1058,10 +1058,10 @@ Security data lakes are not magic. They are useful when they solve concrete prob
 
 Relevant MITRE ATT&CK tags:
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self" target="_self" target="_self">T1078 — Valid Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self" target="_self" target="_self">T1110.003 — Password Spraying</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1195" target="_self" target="_self" target="_self">T1195 — Supply Chain Compromise</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self" target="_self" target="_self">T1530 — Data from Cloud Storage Object</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1195" target="_self">T1195 — Supply Chain Compromise</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1530" target="_self">T1530 — Data from Cloud Storage Object</a>
 
 Real-world reports:
 
@@ -1094,10 +1094,10 @@ LLM applications are now part of enterprise infrastructure.
 
 Relevant MITRE ATT&CK tags:
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1190" target="_self" target="_self" target="_self">T1190 — Exploit Public-Facing Application</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1059" target="_self" target="_self" target="_self">T1059 — Command and Scripting Interpreter</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1552" target="_self" target="_self" target="_self">T1552 — Unsecured Credentials</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1486" target="_self" target="_self" target="_self">T1486 — Data Encrypted for Impact</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1190" target="_self">T1190 — Exploit Public-Facing Application</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1059" target="_self">T1059 — Command and Scripting Interpreter</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1552" target="_self">T1552 — Unsecured Credentials</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1486" target="_self">T1486 — Data Encrypted for Impact</a>
 
 Real-world reports:
 
@@ -1203,10 +1203,10 @@ AI can help detection engineering. It should not own detection engineering.
 
 Relevant MITRE ATT&CK tags:
 
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self" target="_self" target="_self">T1078 — Valid Accounts</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self" target="_self" target="_self">T1110.003 — Password Spraying</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1190" target="_self" target="_self" target="_self">T1190 — Exploit Public-Facing Application</a>
-- <a href="https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self" target="_self" target="_self">T1550.004 — Web Session Cookie</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1078" target="_self">T1078 — Valid Accounts</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1110.003" target="_self">T1110.003 — Password Spraying</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1190" target="_self">T1190 — Exploit Public-Facing Application</a>
+- <a href="https://1200km.com/threat-matrix/#/techniques/T1550.004" target="_self">T1550.004 — Web Session Cookie</a>
 
 Real-world reports:
 
