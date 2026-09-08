@@ -1,8 +1,9 @@
 {
-  "article_count": 187,
+  "article_count": 190,
   "catalog_path": "src/data/article-catalog.json",
   "canonical_status_counts": {
-    "migration-pending": 187
+    "migration-pending": 189,
+    "local-confirmed": 1
   },
-  "external_canonical_verified": 0
+  "external_canonical_verified": 1
 }
