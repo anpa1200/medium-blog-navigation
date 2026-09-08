@@ -117,7 +117,7 @@ The security boundary includes the model file, serialization format, loader, reg
 
 JFrog’s research,[Data Scientists Targeted by Malicious Hugging Face ML Models](https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/), documented a public model whose loading could execute embedded code through an unsafe serialization path. This was security research, not proof that every public model is malicious. Its evidence-based lesson is precise: a model download is a software-supply-chain event, not merely the transfer of inert data.
 
-MITRE ATLAS also records[Poison Training Data (AML.T0020)](https://atlas.mitre.org/techniques/AML.T0020)and related model-supply-chain techniques. Use the technique as a vocabulary and mapping aid; use the underlying report, artifact, or telemetry to establish what actually happened.
+MITRE ATLAS also records[Poison Training Data (AML.T0020)](https://github.com/mitre-atlas/atlas-data/blob/v2026.07/dist/v6/ATLAS-2026.07.yaml#L1764-L1791)and related model-supply-chain techniques. Use the technique as a vocabulary and mapping aid; use the underlying report, artifact, or telemetry to establish what actually happened.
 
 ### Minimum model-artifact record
 
@@ -233,7 +233,7 @@ An attacker does not need to “hack the neural network” to influence the outc
 
 <img src="https://cdn-images-1.medium.com/max/918/1*5Azaed4CMfWrm4iMvB0p_g.png" alt="Article image" width="918" height="280" loading="lazy" decoding="async" />
 
-NIST describes poisoning attacks as interference during training, including malicious data or changes to the training process. MITRE ATLAS maps the behavior to techniques such as[Poison Training Data](https://atlas.mitre.org/techniques/AML.T0020). These references help an analyst name the behavior, but a defensible case still needs the local data manifest, label history, model digest, configuration, and event timeline.
+NIST describes poisoning attacks as interference during training, including malicious data or changes to the training process. MITRE ATLAS maps the behavior to techniques such as[Poison Training Data](https://github.com/mitre-atlas/atlas-data/blob/v2026.07/dist/v6/ATLAS-2026.07.yaml#L1764-L1791). These references help an analyst name the behavior, but a defensible case still needs the local data manifest, label history, model digest, configuration, and event timeline.
 
 &gt; Evidence standard: Report what is observed, what is reproduced, what is inferred, and what remains unknown. A research demonstration of poisoning is not automatically a confirmed intrusion. A provider report of abuse is not automatically evidence that your tenant was affected.
 
@@ -275,7 +275,7 @@ You have completed this chapter when you can explain why a changed prediction do
 - [NIST AI 100–2 E2025 — Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations](https://csrc.nist.gov/pubs/ai/100/2/e2025/final)
 - [NIST AI 100–3 — The Language of Trustworthy AI](https://doi.org/10.6028/NIST.AI.100-3)
 - [MITRE ATLAS — Adversarial Threat Landscape for Artificial-Intelligence Systems](https://atlas.mitre.org/)
-- [MITRE ATLAS AML.T0020 — Poison Training Data](https://atlas.mitre.org/techniques/AML.T0020)
+- [MITRE ATLAS dataset — AML.T0020 Poison Training Data](https://github.com/mitre-atlas/atlas-data/blob/v2026.07/dist/v6/ATLAS-2026.07.yaml#L1764-L1791)
 - [Google Cloud — Monitor models for training-serving skew](https://cloud.google.com/blog/topics/developers-practitioners/monitor-models-training-serving-skew-vertex-ai)
 - [Google Machine Learning Crash Course — Overfitting and generalization](https://developers.google.com/machine-learning/crash-course/overfitting/)
 - [JFrog Security Research — Malicious Hugging Face ML Models](https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/)
