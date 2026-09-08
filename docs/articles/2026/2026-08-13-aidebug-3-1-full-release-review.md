@@ -14,7 +14,7 @@ image: "https://1200km.com/cyber-knowledge/short-guides/aidebug-3-1/cover.png"
 
 - **Category:** Malware Analysis
 - **Topics:** Malware Analysis, Reverse Engineering, AIDebug, String Analysis, PE Analysis, AI Security, Digital Forensics, Security Tooling
-- **Source article:** [1200km canonical edition](/articles/read/2026/2026-08-13-aidebug-3-1-full-release-review/)
+- **Source article:** <a href="https://1200km.com/articles/read/2026/2026-08-13-aidebug-3-1-full-release-review/" target="_self">1200km canonical edition</a>
 - **Published:** 2026-08-13
 - **Preserved media:** 13 images, including the dedicated AIDebug 3.1 cover and 12 screenshots reused from the published 1200km malware-analysis guides.
 - **Canonical edition:** This 1200km page is the maintained, self-canonical article.
@@ -23,7 +23,7 @@ image: "https://1200km.com/cyber-knowledge/short-guides/aidebug-3-1/cover.png"
 
 ## Ecosystem Fit
 
-This review is the AIDebug platform layer of the 1200km malware-analysis learning path. Start with the <a href="https://1200km.com/cyber-knowledge/malware-analysis.html" target="_self">Malware Analysis field guide</a>, build an isolated environment with the [safe malware-analysis lab guide](/articles/read/2026/2026-08-07-how-to-build-a-safe-malware-analysis-lab-with-flare-vm-remnux-and-inetsim-0287d3964602/), then use the [PE structure](/articles/read/2026/2026-08-10-pe-file-structure-for-malware-analysis-d93acb97d9f3/), [assembly](/articles/read/2026/2026-08-09-assembly-for-malware-analysis-be0679241940/), and [strings-analysis](/articles/read/2026/2026-08-12-strings-analysis-for-malware-analysis-turning-391815ee35e2/) guides for deeper evidence interpretation. The original [AIDebug introduction](/articles/read/2026/2026-03-14-ai-powered-malware-debugger-that-explains-every-function-it-sees-2a28ef75df8a/) remains useful historical context; this review is the current full-platform companion.
+This review is the AIDebug platform layer of the 1200km malware-analysis learning path. Start with the <a href="https://1200km.com/cyber-knowledge/malware-analysis.html" target="_self">Malware Analysis field guide</a>, build an isolated environment with the <a href="https://1200km.com/articles/read/2026/2026-08-07-how-to-build-a-safe-malware-analysis-lab-with-flare-vm-remnux-and-inetsim-0287d3964602/" target="_self">safe malware-analysis lab guide</a>, then use the <a href="https://1200km.com/articles/read/2026/2026-08-10-pe-file-structure-for-malware-analysis-d93acb97d9f3/" target="_self">PE structure</a>, <a href="https://1200km.com/articles/read/2026/2026-08-09-assembly-for-malware-analysis-be0679241940/" target="_self">assembly</a>, and <a href="https://1200km.com/articles/read/2026/2026-08-12-strings-analysis-for-malware-analysis-turning-391815ee35e2/" target="_self">strings-analysis</a> guides for deeper evidence interpretation. The original <a href="https://1200km.com/articles/read/2026/2026-03-14-ai-powered-malware-debugger-that-explains-every-function-it-sees-2a28ef75df8a/" target="_self">AIDebug introduction</a> remains useful historical context; this review is the current full-platform companion.
 
 Malware triage rarely fails because analysts lack tools. It fails because evidence becomes fragmented across a file-identification utility, PE parser, strings extractor, disassembler, decompiler, debugger, notebook, and several disconnected exports. The analyst then has to reconstruct which observation came from which artifact and which conclusion was only a hypothesis.
 
@@ -581,10 +581,10 @@ That distinction is the real value of the release. A malware-analysis tool becom
 4. [AIDebug validation plan](https://github.com/anpa1200/AIDebug/blob/cd81ef242db0bcea3296970d45c241a4228d2d27/docs/validation-plan.md)
 5. [AIDebug releases](https://github.com/anpa1200/AIDebug/releases)
 6. [1200km-aidebug on PyPI](https://pypi.org/project/1200km-aidebug/)
-7. [Strings Analysis for Malware Analysis: Turning Binary Text into Defensible Hypotheses](/articles/read/2026/2026-08-12-strings-analysis-for-malware-analysis-turning-391815ee35e2/)
-8. [PE File Structure for Malware Analysis: A Practical Guide](/articles/read/2026/2026-08-10-pe-file-structure-for-malware-analysis-d93acb97d9f3/)
-9. [Assembly for Malware Analysis: A Practical x86/x64 Guide](/articles/read/2026/2026-08-09-assembly-for-malware-analysis-be0679241940/)
-10. [AI-Powered Malware Debugger That Explains Every Function It Sees](/articles/read/2026/2026-03-14-ai-powered-malware-debugger-that-explains-every-function-it-sees-2a28ef75df8a/)
+7. <a href="https://1200km.com/articles/read/2026/2026-08-12-strings-analysis-for-malware-analysis-turning-391815ee35e2/" target="_self">Strings Analysis for Malware Analysis: Turning Binary Text into Defensible Hypotheses</a>
+8. <a href="https://1200km.com/articles/read/2026/2026-08-10-pe-file-structure-for-malware-analysis-d93acb97d9f3/" target="_self">PE File Structure for Malware Analysis: A Practical Guide</a>
+9. <a href="https://1200km.com/articles/read/2026/2026-08-09-assembly-for-malware-analysis-be0679241940/" target="_self">Assembly for Malware Analysis: A Practical x86/x64 Guide</a>
+10. <a href="https://1200km.com/articles/read/2026/2026-03-14-ai-powered-malware-debugger-that-explains-every-function-it-sees-2a28ef75df8a/" target="_self">AI-Powered Malware Debugger That Explains Every Function It Sees</a>
 11. Microsoft, [Windows API documentation](https://learn.microsoft.com/windows/win32/api/)
 12. IANA, [Root Zone Database](https://www.iana.org/domains/root/db)
 13. [Capstone Engine documentation](https://www.capstone-engine.org/documentation.html)

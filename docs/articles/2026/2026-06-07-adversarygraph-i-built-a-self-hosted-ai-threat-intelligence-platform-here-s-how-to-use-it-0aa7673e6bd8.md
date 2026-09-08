@@ -49,7 +49,7 @@ This page mirrors the original Medium RSS article into the 1200km.com Docusaurus
 
 ### Docs :
 
-<a href="https://1200km.com/threatmapper-docs/" target="_self" target="_self">ThreatMapper - Self-Hosted AI Threat Intelligence | ThreatMapper</a>
+<a href="https://1200km.com/threatmapper-docs/" target="_self">ThreatMapper - Self-Hosted AI Threat Intelligence | ThreatMapper</a>
 
 ## The Problem
 

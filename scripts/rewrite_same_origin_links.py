@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import re
 from pathlib import Path
 
@@ -18,12 +19,32 @@ def rewrite(text: str) -> tuple[str, int]:
         path = match.group(2) or "/"
         return f'<a href="https://1200km.com{path}" target="_self">{match.group(1)}</a>'
 
-    def html(match: re.Match[str]) -> str:
+    def markdown_image(match: re.Match[str]) -> str:
         nonlocal count
         count += 1
-        prefix = re.sub(r'\s+target=["\'][^"\']*["\']', '', match.group(1), flags=re.IGNORECASE)
-        path = match.group(2)
-        return f'{prefix}href="https://1200km.com{path}" target="_self"'
+        return f'![{match.group(2)}]({match.group(1)})'
+
+    def html_tag(match: re.Match[str]) -> str:
+        nonlocal count
+        tag = match.group(0)
+        href = re.search(
+            r'\bhref=["\'](?:https://1200km\.com)?(/[^"\']*)["\']',
+            tag,
+            flags=re.IGNORECASE,
+        )
+        if not href:
+            return tag
+        count += 1
+        path = href.group(1)
+        tag = re.sub(r'\s+target=["\'][^"\']*["\']', '', tag, flags=re.IGNORECASE)
+        tag = re.sub(
+            r'\bhref=["\'][^"\']*["\']',
+            f'href="https://1200km.com{path}"',
+            tag,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+        return f'{tag[:-1].rstrip()} target="_self">'
 
     def visible_url(match: re.Match[str]) -> str:
         nonlocal count
@@ -42,10 +63,18 @@ def rewrite(text: str) -> tuple[str, int]:
 
     text = text.replace("pathname://https://1200km.com", "https://1200km.com")
     text = text.replace("https://anpa1200.github.io/", "https://1200km.com/")
-    text = re.sub(r"\[([^\]]+)\]\(https://1200km\.com(/[^)\s]*)?\)", markdown, text)
-    text = re.sub(r'(<a\b[^>]*?)href=["\']https://1200km\.com(/[^"\']*)["\']', html, text, flags=re.IGNORECASE)
-    text = re.sub(r'(<a\b(?![^>]*\btarget=)[^>]*?)href=["\'](/[^"\']*)["\']', html, text, flags=re.IGNORECASE)
-    text = re.sub(r'(<a\b[^>]*?)href=["\'](/[^"\']*)["\']\s+target=["\']_self["\']', html, text, flags=re.IGNORECASE)
+    text = re.sub(
+        r'!<a\s+href="https://1200km\.com(/[^"\s]+)"\s+target="_self">([^<]+)</a>',
+        markdown_image,
+        text,
+        flags=re.IGNORECASE,
+    )
+    text = re.sub(
+        r"(?<!!)\[([^\]]+)\]\((?:https://1200km\.com)?(/[^)\s]*)\)",
+        markdown,
+        text,
+    )
+    text = re.sub(r'<a\b[^>]*>', html_tag, text, flags=re.IGNORECASE)
     text = re.sub(
         r'(<a\b[^>]*href=["\']https://1200km\.com[^"\']*["\'][^>]*>)(https://1200km\.com[^<]*)(</a>)',
         visible_url,
@@ -62,16 +91,27 @@ def rewrite(text: str) -> tuple[str, int]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Normalize links that target the 1200km origin.")
+    parser.add_argument("--check", action="store_true", help="Fail instead of writing when normalization is required.")
+    args = parser.parse_args()
     changed = 0
     replacements = 0
+    drifted: list[Path] = []
     for path in sorted(DOCS.rglob("*.md")):
         before = path.read_text(encoding="utf-8")
         after, count = rewrite(before)
-        if count:
-            path.write_text(after, encoding="utf-8")
+        if after != before:
             changed += 1
-            replacements += count
-    print(f"Rewrote {replacements} same-origin links in {changed} Markdown files.")
+            drifted.append(path.relative_to(ROOT))
+            if not args.check:
+                path.write_text(after, encoding="utf-8")
+        replacements += count
+    if args.check and drifted:
+        print("Same-origin link normalization is required:")
+        for path in drifted[:20]:
+            print(f"- {path}")
+        return 1
+    print(f"Inspected {replacements} same-origin links; changed {changed} Markdown files.")
     return 0
 
 
