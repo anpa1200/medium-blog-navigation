@@ -401,7 +401,7 @@ Throughout this process, Wireshark’s GUI aids exploration (hover over packets 
 
 ## Related 1200km research
 
-- [AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test](/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/) applies packet and protocol analysis across six malicious captures and documents accuracy, timing, limitations, and human-review requirements.
+- <a href="https://1200km.com/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/" target="_self">AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test</a> applies packet and protocol analysis across six malicious captures and documents accuracy, timing, limitations, and human-review requirements.
 
 ## Further Reading and References
 

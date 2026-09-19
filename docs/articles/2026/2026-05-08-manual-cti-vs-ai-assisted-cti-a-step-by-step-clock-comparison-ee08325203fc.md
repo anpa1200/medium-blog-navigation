@@ -1111,7 +1111,7 @@ The AI-era approach does not produce better analysis automatically. It produces 
 
 ## Related 1200km research
 
-- [AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test](/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/) extends the human-versus-AI comparison to six malicious packet captures with pre-answer evidence, correction tracking, timing, and explicit limitations.
+- <a href="https://1200km.com/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/" target="_self">AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test</a> extends the human-versus-AI comparison to six malicious packet captures with pre-answer evidence, correction tracking, timing, and explicit limitations.
 
 ## Follow for practical cybersecurity research
 
