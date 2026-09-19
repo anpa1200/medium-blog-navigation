@@ -1109,6 +1109,10 @@ The AI-era approach does not produce better analysis automatically. It produces 
 
 *Source reports:*[*CISA Advisory AA23–144A*](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a)*(24 May 2023) and*[*Microsoft Volt Typhoon advisory*](https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/)*(24 May 2023). The Meridian Freight Group scenario and dataset are original — no course-proprietary material is reproduced.*
 
+## Related 1200km research
+
+- [AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test](/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/) extends the human-versus-AI comparison to six malicious packet captures with pre-answer evidence, correction tracking, timing, and explicit limitations.
+
 ## Follow for practical cybersecurity research
 
 If you’re interested in**Offensive security,****AI security, real-world attack simulations, CTI, and detection engineering**— this is exactly what I focus on.
