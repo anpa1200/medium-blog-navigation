@@ -399,6 +399,10 @@ cat
 
 Throughout this process, Wireshark’s GUI aids exploration (hover over packets to see full query names, use**Statistics → DNS**to list top queried names), while tshark or text tools automate extraction. By stepping through these stages, the hunter turns raw capture data into proof of DNS-based exfiltration and captures the exfil contents.
 
+## Related 1200km research
+
+- [AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test](/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/) applies packet and protocol analysis across six malicious captures and documents accuracy, timing, limitations, and human-review requirements.
+
 ## Further Reading and References
 
 - **SANS & CERT:**SANS courses on Network Forensics (SEC503, FOR572) provide in-depth tactics for packet analysis. CERT advisories (e.g. ICS-CERT bulletins on Mirai) describe network IOCs.
