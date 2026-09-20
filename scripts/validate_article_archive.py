@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 
 
 MIGRATION_STATUSES = {
+    "local-original",
     "local-confirmed", "external-still-canonical", "migration-pending",
     "external-uncontrolled", "local-noindex", "historical-copy",
 }
@@ -70,6 +71,11 @@ def main() -> int:
             errors.append(f"{label}: verified external canonical has no verification date")
         if not row["external_canonical_verified"] and row["canonical_migration_status"] == "local-confirmed":
             errors.append(f"{label}: local-confirmed requires external canonical verification")
+        if row["canonical_migration_status"] == "local-original":
+            if row["source_url"] != row["canonical_url"]:
+                errors.append(f"{label}: local-original must originate at its local canonical URL")
+            if row["external_canonical_verified"] or row["external_canonical_verified_at"]:
+                errors.append(f"{label}: local-original cannot assert external canonical verification")
         if row["collection_tier"] not in {"core", "reference", "archive"}:
             errors.append(f"{label}: unknown collection tier")
         if not isinstance(row.get("tags"), list) or not row["tags"] or len(set(row["tags"])) != len(row["tags"]):

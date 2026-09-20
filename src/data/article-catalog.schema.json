@@ -36,7 +36,7 @@
       "preferred_canonical_url": {"type": "string", "format": "uri"},
       "original_publication_url": {"type": "string", "format": "uri"},
       "original_publication_platform": {"type": "string", "minLength": 1},
-      "canonical_migration_status": {"enum": ["local-confirmed", "external-still-canonical", "migration-pending", "external-uncontrolled", "local-noindex", "historical-copy"]},
+      "canonical_migration_status": {"enum": ["local-original", "local-confirmed", "external-still-canonical", "migration-pending", "external-uncontrolled", "local-noindex", "historical-copy"]},
       "external_canonical_verified": {"type": "boolean"},
       "external_canonical_verified_at": {"type": ["string", "null"], "format": "date"},
       "migration_note": {"type": "string", "minLength": 1},
