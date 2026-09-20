@@ -75,7 +75,7 @@ def main() -> int:
                 "migration_status": status,
                 "external_verified": str(verified).lower(),
                 "verified_at": row.get("external_canonical_verified_at") or "",
-                "action_required": "none" if verified and status == "local-confirmed" else "verify external rendered canonical and update publication settings",
+                "action_required": "none" if (verified and status == "local-confirmed") or status == "local-original" else "verify external rendered canonical and update publication settings",
             })
 
     facts = {
