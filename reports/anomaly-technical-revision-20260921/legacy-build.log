@@ -1,0 +1,13 @@
+
+> medium-blog-navigation@0.1.0 build:legacy
+> python3 scripts/clean_build.py && docusaurus build && python3 scripts/normalize_built_article_headings.py && python3 scripts/rewrite_legacy_canonicals.py
+
+[INFO] [en] Creating an optimized production build...
+[info] [webpackbar] Compiling Client
+[info] [webpackbar] Compiling Server
+[success] [webpackbar] Server: Compiled successfully in 1.01m
+[success] [webpackbar] Client: Compiled successfully in 1.06m
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.
+Normalized 67 rendered headings across 3 article pages.
+Rewrote canonical metadata for 194 legacy archive pages from https://1200km.com/medium-blog-navigation to https://1200km.com/articles.

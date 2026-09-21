@@ -7,12 +7,18 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
-const reportDir = resolve(root, 'reports/anomaly-incidents-20260921');
+const revision = process.argv.includes('--revision');
+const reportDir = resolve(root, revision ? 'reports/anomaly-technical-revision-20260921' : 'reports/anomaly-incidents-20260921');
 mkdirSync(reportDir, {recursive: true});
 const commands = [
+  ...(revision && process.argv.includes('--engine') ? [
+    ['kql-engine', 'npm', ['run', 'research:validation:engine']],
+    ['refresh-evidence', 'npm', ['run', 'research:revision:render']],
+  ] : []),
   ['archive', 'npm', ['run', 'validate:archive']],
   ['media-local', 'npm', ['run', 'validate:media:local']],
   ['research-source', 'npm', ['run', 'research:anomalies:check']],
+  ...(revision ? [['offline-and-unit', 'npm', ['run', 'research:validation:offline']]] : []),
   ...(process.argv.includes('--live') ? [['public-links', 'npm', ['run', 'research:anomalies:links']]] : []),
   ['legacy-build', 'npm', ['run', 'build:legacy']],
   ['embedded-build', 'npm', ['run', 'build:embedded']],

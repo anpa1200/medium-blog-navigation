@@ -1,0 +1,268 @@
+{
+  "recorded_at": "2026-09-21T09:35:46.908Z",
+  "scope": "Temporary containers created for this research only; no production containers or host bind mounts.",
+  "containers": [
+    {
+      "name": "anomaly-research-kusto-query-20260921",
+      "id": "13d637f86be00cd46fc121bb475ff9d1a99a1e37c1a7ee9c7591235f338883f9",
+      "image": "mcr.microsoft.com/azuredataexplorer/kustainer-linux@sha256:21516f47b7877707cd603ad7dbc372d4cf0ac0d2b758f2c192f5266c4214d363",
+      "state": "running",
+      "exit_code": 0,
+      "created": "2026-09-21T09:14:00.945891229Z",
+      "labels": {
+        "com.visualstudio.msazure.image.build.buildnumber": "2026.09.18.0929-2637-37dbc56-master",
+        "com.visualstudio.msazure.image.build.builduri": "vstfs:///Build/Build/181726796",
+        "com.visualstudio.msazure.image.build.containerTask": "v1",
+        "com.visualstudio.msazure.image.build.definitionname": "Azure-Kusto-Service-Official-OB",
+        "com.visualstudio.msazure.image.build.dockerfilePath": "dst/Tools/kustainer/linux/Dockerfile",
+        "com.visualstudio.msazure.image.build.pipelineTemplate": "OneBranch.Official",
+        "com.visualstudio.msazure.image.build.repository.name": "Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.repository.uri": "https://msazure.visualstudio.com/One/_git/Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.sourcebranchname": "master",
+        "com.visualstudio.msazure.image.build.sourceversion": "37dbc5615f2de8bacc010cdedddc4c99872b04ce",
+        "com.visualstudio.msazure.image.system.teamfoundationcollectionuri": "https://msazure.visualstudio.com/",
+        "com.visualstudio.msazure.image.system.teamproject": "One",
+        "image.base.digest": "sha256:4ecd6b297db85c54ec2df07145a28536c3655a3e98e54eb2364189bc4e6eac23",
+        "image.base.ref.name": "mcr.microsoft.com/azurelinux/base/core:3.0.20260728",
+        "purpose": "anomaly-research-functional-tests"
+      },
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18921"
+          }
+        ]
+      }
+    },
+    {
+      "name": "anomaly-research-kusto-interactive-20260921",
+      "id": "2a0113344cdf6573d34151c5b2de782ebea77749f09e0aa3ac618153fa807a42",
+      "image": "mcr.microsoft.com/azuredataexplorer/kustainer-linux@sha256:21516f47b7877707cd603ad7dbc372d4cf0ac0d2b758f2c192f5266c4214d363",
+      "state": "exited",
+      "exit_code": 134,
+      "created": "2026-09-21T09:09:59.198515267Z",
+      "labels": {
+        "com.visualstudio.msazure.image.build.buildnumber": "2026.09.18.0929-2637-37dbc56-master",
+        "com.visualstudio.msazure.image.build.builduri": "vstfs:///Build/Build/181726796",
+        "com.visualstudio.msazure.image.build.containerTask": "v1",
+        "com.visualstudio.msazure.image.build.definitionname": "Azure-Kusto-Service-Official-OB",
+        "com.visualstudio.msazure.image.build.dockerfilePath": "dst/Tools/kustainer/linux/Dockerfile",
+        "com.visualstudio.msazure.image.build.pipelineTemplate": "OneBranch.Official",
+        "com.visualstudio.msazure.image.build.repository.name": "Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.repository.uri": "https://msazure.visualstudio.com/One/_git/Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.sourcebranchname": "master",
+        "com.visualstudio.msazure.image.build.sourceversion": "37dbc5615f2de8bacc010cdedddc4c99872b04ce",
+        "com.visualstudio.msazure.image.system.teamfoundationcollectionuri": "https://msazure.visualstudio.com/",
+        "com.visualstudio.msazure.image.system.teamproject": "One",
+        "image.base.digest": "sha256:4ecd6b297db85c54ec2df07145a28536c3655a3e98e54eb2364189bc4e6eac23",
+        "image.base.ref.name": "mcr.microsoft.com/azurelinux/base/core:3.0.20260728",
+        "purpose": "anomaly-research-functional-tests"
+      },
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18921"
+          }
+        ]
+      }
+    },
+    {
+      "name": "anomaly-research-kusto-test-20260921",
+      "id": "cbe92ac4f62f79c639dfca785bbbd782f6287772bb6ea0ccc6b933b0f68d6d4c",
+      "image": "mcr.microsoft.com/azuredataexplorer/kustainer-linux@sha256:21516f47b7877707cd603ad7dbc372d4cf0ac0d2b758f2c192f5266c4214d363",
+      "state": "exited",
+      "exit_code": 134,
+      "created": "2026-09-21T09:07:00.819113986Z",
+      "labels": {
+        "com.visualstudio.msazure.image.build.buildnumber": "2026.09.18.0929-2637-37dbc56-master",
+        "com.visualstudio.msazure.image.build.builduri": "vstfs:///Build/Build/181726796",
+        "com.visualstudio.msazure.image.build.containerTask": "v1",
+        "com.visualstudio.msazure.image.build.definitionname": "Azure-Kusto-Service-Official-OB",
+        "com.visualstudio.msazure.image.build.dockerfilePath": "dst/Tools/kustainer/linux/Dockerfile",
+        "com.visualstudio.msazure.image.build.pipelineTemplate": "OneBranch.Official",
+        "com.visualstudio.msazure.image.build.repository.name": "Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.repository.uri": "https://msazure.visualstudio.com/One/_git/Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.sourcebranchname": "master",
+        "com.visualstudio.msazure.image.build.sourceversion": "37dbc5615f2de8bacc010cdedddc4c99872b04ce",
+        "com.visualstudio.msazure.image.system.teamfoundationcollectionuri": "https://msazure.visualstudio.com/",
+        "com.visualstudio.msazure.image.system.teamproject": "One",
+        "image.base.digest": "sha256:4ecd6b297db85c54ec2df07145a28536c3655a3e98e54eb2364189bc4e6eac23",
+        "image.base.ref.name": "mcr.microsoft.com/azurelinux/base/core:3.0.20260728",
+        "purpose": "anomaly-research-functional-tests"
+      },
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18921"
+          }
+        ]
+      }
+    },
+    {
+      "name": "anomaly-research-kusto-ready-20260921",
+      "id": "2f98988d9b5b06b5bbf03b231763c30d643187b1595fce4898cc2910e09b52ad",
+      "image": "mcr.microsoft.com/azuredataexplorer/kustainer-linux@sha256:21516f47b7877707cd603ad7dbc372d4cf0ac0d2b758f2c192f5266c4214d363",
+      "state": "exited",
+      "exit_code": 134,
+      "created": "2026-09-21T09:03:09.222265401Z",
+      "labels": {
+        "com.visualstudio.msazure.image.build.buildnumber": "2026.09.18.0929-2637-37dbc56-master",
+        "com.visualstudio.msazure.image.build.builduri": "vstfs:///Build/Build/181726796",
+        "com.visualstudio.msazure.image.build.containerTask": "v1",
+        "com.visualstudio.msazure.image.build.definitionname": "Azure-Kusto-Service-Official-OB",
+        "com.visualstudio.msazure.image.build.dockerfilePath": "dst/Tools/kustainer/linux/Dockerfile",
+        "com.visualstudio.msazure.image.build.pipelineTemplate": "OneBranch.Official",
+        "com.visualstudio.msazure.image.build.repository.name": "Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.repository.uri": "https://msazure.visualstudio.com/One/_git/Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.sourcebranchname": "master",
+        "com.visualstudio.msazure.image.build.sourceversion": "37dbc5615f2de8bacc010cdedddc4c99872b04ce",
+        "com.visualstudio.msazure.image.system.teamfoundationcollectionuri": "https://msazure.visualstudio.com/",
+        "com.visualstudio.msazure.image.system.teamproject": "One",
+        "image.base.digest": "sha256:4ecd6b297db85c54ec2df07145a28536c3655a3e98e54eb2364189bc4e6eac23",
+        "image.base.ref.name": "mcr.microsoft.com/azurelinux/base/core:3.0.20260728",
+        "purpose": "anomaly-research-functional-tests"
+      },
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18921"
+          }
+        ]
+      }
+    },
+    {
+      "name": "anomaly-research-kusto-functional-20260921",
+      "id": "8eab12cad8cb237b803e71ef0284eb6119805075c269733c63ba137e439158df",
+      "image": "mcr.microsoft.com/azuredataexplorer/kustainer-linux@sha256:21516f47b7877707cd603ad7dbc372d4cf0ac0d2b758f2c192f5266c4214d363",
+      "state": "exited",
+      "exit_code": 1,
+      "created": "2026-09-21T08:57:44.511475173Z",
+      "labels": {
+        "com.visualstudio.msazure.image.build.buildnumber": "2026.09.18.0929-2637-37dbc56-master",
+        "com.visualstudio.msazure.image.build.builduri": "vstfs:///Build/Build/181726796",
+        "com.visualstudio.msazure.image.build.containerTask": "v1",
+        "com.visualstudio.msazure.image.build.definitionname": "Azure-Kusto-Service-Official-OB",
+        "com.visualstudio.msazure.image.build.dockerfilePath": "dst/Tools/kustainer/linux/Dockerfile",
+        "com.visualstudio.msazure.image.build.pipelineTemplate": "OneBranch.Official",
+        "com.visualstudio.msazure.image.build.repository.name": "Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.repository.uri": "https://msazure.visualstudio.com/One/_git/Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.sourcebranchname": "master",
+        "com.visualstudio.msazure.image.build.sourceversion": "37dbc5615f2de8bacc010cdedddc4c99872b04ce",
+        "com.visualstudio.msazure.image.system.teamfoundationcollectionuri": "https://msazure.visualstudio.com/",
+        "com.visualstudio.msazure.image.system.teamproject": "One",
+        "image.base.digest": "sha256:4ecd6b297db85c54ec2df07145a28536c3655a3e98e54eb2364189bc4e6eac23",
+        "image.base.ref.name": "mcr.microsoft.com/azurelinux/base/core:3.0.20260728",
+        "purpose": "anomaly-research-functional-tests"
+      },
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18921"
+          }
+        ]
+      }
+    },
+    {
+      "name": "anomaly-research-kusto-user-20260921",
+      "id": "692dded80b91ee1ace66ae4b6bc586df702428eb238c3bf4498c33444cde1569",
+      "image": "mcr.microsoft.com/azuredataexplorer/kustainer-linux@sha256:21516f47b7877707cd603ad7dbc372d4cf0ac0d2b758f2c192f5266c4214d363",
+      "state": "exited",
+      "exit_code": 1,
+      "created": "2026-09-21T08:56:10.406632208Z",
+      "labels": {
+        "com.visualstudio.msazure.image.build.buildnumber": "2026.09.18.0929-2637-37dbc56-master",
+        "com.visualstudio.msazure.image.build.builduri": "vstfs:///Build/Build/181726796",
+        "com.visualstudio.msazure.image.build.containerTask": "v1",
+        "com.visualstudio.msazure.image.build.definitionname": "Azure-Kusto-Service-Official-OB",
+        "com.visualstudio.msazure.image.build.dockerfilePath": "dst/Tools/kustainer/linux/Dockerfile",
+        "com.visualstudio.msazure.image.build.pipelineTemplate": "OneBranch.Official",
+        "com.visualstudio.msazure.image.build.repository.name": "Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.repository.uri": "https://msazure.visualstudio.com/One/_git/Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.sourcebranchname": "master",
+        "com.visualstudio.msazure.image.build.sourceversion": "37dbc5615f2de8bacc010cdedddc4c99872b04ce",
+        "com.visualstudio.msazure.image.system.teamfoundationcollectionuri": "https://msazure.visualstudio.com/",
+        "com.visualstudio.msazure.image.system.teamproject": "One",
+        "image.base.digest": "sha256:4ecd6b297db85c54ec2df07145a28536c3655a3e98e54eb2364189bc4e6eac23",
+        "image.base.ref.name": "mcr.microsoft.com/azurelinux/base/core:3.0.20260728",
+        "purpose": "anomaly-research-functional-tests"
+      },
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18921"
+          }
+        ]
+      }
+    },
+    {
+      "name": "anomaly-research-kusto-20260921",
+      "id": "0581d3d729b21066e9900afc9aedb0c518838c4f06d39d66c70189da485fd43b",
+      "image": "mcr.microsoft.com/azuredataexplorer/kustainer-linux:latest",
+      "state": "exited",
+      "exit_code": 134,
+      "created": "2026-09-21T08:49:25.592821249Z",
+      "labels": {
+        "com.visualstudio.msazure.image.build.buildnumber": "2026.09.18.0929-2637-37dbc56-master",
+        "com.visualstudio.msazure.image.build.builduri": "vstfs:///Build/Build/181726796",
+        "com.visualstudio.msazure.image.build.containerTask": "v1",
+        "com.visualstudio.msazure.image.build.definitionname": "Azure-Kusto-Service-Official-OB",
+        "com.visualstudio.msazure.image.build.dockerfilePath": "dst/Tools/kustainer/linux/Dockerfile",
+        "com.visualstudio.msazure.image.build.pipelineTemplate": "OneBranch.Official",
+        "com.visualstudio.msazure.image.build.repository.name": "Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.repository.uri": "https://msazure.visualstudio.com/One/_git/Azure-Kusto-Service",
+        "com.visualstudio.msazure.image.build.sourcebranchname": "master",
+        "com.visualstudio.msazure.image.build.sourceversion": "37dbc5615f2de8bacc010cdedddc4c99872b04ce",
+        "com.visualstudio.msazure.image.system.teamfoundationcollectionuri": "https://msazure.visualstudio.com/",
+        "com.visualstudio.msazure.image.system.teamproject": "One",
+        "image.base.digest": "sha256:4ecd6b297db85c54ec2df07145a28536c3655a3e98e54eb2364189bc4e6eac23",
+        "image.base.ref.name": "mcr.microsoft.com/azurelinux/base/core:3.0.20260728",
+        "purpose": "anomaly-research-functional-tests"
+      },
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18921"
+          }
+        ]
+      }
+    }
+  ],
+  "cleanup": [
+    {
+      "name": "anomaly-research-kusto-query-20260921",
+      "removed": true
+    },
+    {
+      "name": "anomaly-research-kusto-interactive-20260921",
+      "removed": true
+    },
+    {
+      "name": "anomaly-research-kusto-test-20260921",
+      "removed": true
+    },
+    {
+      "name": "anomaly-research-kusto-ready-20260921",
+      "removed": true
+    },
+    {
+      "name": "anomaly-research-kusto-functional-20260921",
+      "removed": true
+    },
+    {
+      "name": "anomaly-research-kusto-user-20260921",
+      "removed": true
+    },
+    {
+      "name": "anomaly-research-kusto-20260921",
+      "removed": true
+    }
+  ],
+  "finished_at": "2026-09-21T09:35:57.372Z"
+}

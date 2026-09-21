@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "engine": "Kusto Query Language; functional execution in the isolated Kusto emulator, not Sentinel ingestion or production validation",
+  "clock": "UTC event time. The adapter retains raw record identifiers. Kusto datetime precision may exceed Python datetime precision; no sub-millisecond join inference is made.",
+  "identity": "TenantId is the actual identity tenant, not a workspace ID. UserId is immutable provider identity. Windows Principal uses SID where available, otherwise domain-qualified name. Normalize computer names and numeric logon identifiers before joining; never join across DCs on LogonId alone.",
+  "tables": {
+    "SigninEvents": "TimeGenerated:datetime,TenantId:string,UserId:string,EventId:string,IPAddress:string,ResultType:string",
+    "WindowsEvents": "TimeGenerated:datetime,Computer:string,EvidenceId:string,EventID:int,Principal:string,SourceIP:string,LogonId:string,AccessMask:long,ObjectType:string,Properties:string,ServiceName:string,EncryptionType:string,ResultCode:string,LogonType:int,LogonProcess:string,AuthenticationPackage:string",
+    "EndpointEvents": "TimeGenerated:datetime,Computer:string,EvidenceId:string,Provider:string,EventID:int,Image:string,ParentImage:string,TargetImage:string,GrantedAccess:long,CallTrace:string,CommandLine:string,HostRole:string",
+    "DnsLabels": "TimeGenerated:datetime,Sensor:string,EvidenceId:string,Label:string",
+    "DailyDownloads": "TenantId:string,UserId:string,Day:datetime,Count:long,Complete:bool"
+  },
+  "required_adapters": {
+    "SigninEvents": "Map actual identity-tenant and immutable user identifiers; keep ResultType as a string. 0 is completed success; 50126 is the example's selected invalid-credential class, not all failure classes. A missing immutable user ID is outside scope and must be counted as a coverage gap.",
+    "WindowsEvents": "See normalize_xml in run_validation.py. Numeric masks and status codes are parsed from decimal or hex. 4662 source addresses remain blank unless correlated from another event. Preserve provider/channel metadata in raw evidence; accept only Microsoft-Windows-Security-Auditing Security events.",
+    "EndpointEvents": "The public XML adapter only accepts Microsoft-Windows-Sysmon events. HostRole requires inventory and defaults to unknown, not web-server. PID/process GUID data should be retained in the source platform for investigation even where the example projects a smaller output.",
+    "DnsLabels": "ASCII normalized label extraction is an upstream contract. The example permits letters, digits, hyphen and underscore, excludes empty/non-ASCII/overlength labels, and does not group by registrable domain. Retain raw QNAME and extraction method separately.",
+    "DailyDownloads": "Exactly one row per actual tenant/user/UTC day. Count deduplicated download audit events, not unique files or bytes. Complete must come from independent collection monitoring. Only fill an observed zero when collection and entity coverage are established. Duplicate or non-midnight rows are rejected by the harness. EvaluationDay is supplied explicitly."
+  },
+  "deployment_boundary": "Local normalized-schema tests do not establish native Sentinel/Splunk parser compatibility, live connector health, correct identity enrichment, production thresholds, alert precision or incident recall. No legacy SPL example is claimed to have passed Splunk execution."
+}

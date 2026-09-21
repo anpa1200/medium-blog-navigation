@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-21T09:37:20.055832+00:00",
+  "scope": "Functional correctness and bounded public-recording replay; not an engine benchmark or production-performance evaluation.",
+  "image_digest": "mcr.microsoft.com/azuredataexplorer/kustainer-linux@sha256:21516f47b7877707cd603ad7dbc372d4cf0ac0d2b758f2c192f5266c4214d363",
+  "query_sha256": {
+    "bulk-download.kql": "710cf763725c0eca8a5382cc93b92ba5521eeee5bc84bc9286b1b5e1abb5dcfc",
+    "dcsync.kql": "8d1b9689a13b6d415c1faa8b2c75a31cf08fc4f34fc2ff1d3edd841f5435f022",
+    "dns-entropy.kql": "9f16c6db8b9dc1cfbff75cec099c212fe836d036e6c70d193a7970b2a6d7568f",
+    "kerberoasting.kql": "6ef33de862f4b7fd819eab4126b91a3a55f9ed9d72a42d14ae5e2e7543087ec3",
+    "lsass-access.kql": "1ffbd69e348afb253002f8875f5e5562b55651ac1f276f36e7001367843fff3f",
+    "pass-the-hash.kql": "9503a4f8b8214e24e46d2b1c2f25e91b28b4829b8aa04dfb1949daba65862da7",
+    "password-spray.kql": "171ab510580177116f585446d3467d6f4cacc8a828ca7cd79b6d9e1b4613491a",
+    "web-shell-lineage.kql": "26d1c2688796bcf4d0fd0a9eafd81917966808860b438cb5d64269cf224684a5"
+  },
+  "implementation_sha256": {
+    "run_validation.py": "7faa7d9d886ab966558e8f3525c3b4e54ca241da0ee1863724f6683560c0aa84",
+    "contracts.json": "6e0279d6c444d8cab0208376b8de1df27ac25a50f7e5c5a95026648c8f398a16",
+    "datasets.json": "fc311a83fcbe9747100e7fe54f4a4dd3726bef633e7d0ccad6a37502b63857d2"
+  },
+  "offline_checks": [
+    {
+      "name": "base-rate-arithmetic",
+      "passed": true
+    },
+    {
+      "name": "entropy-short-label-bound",
+      "passed": true
+    },
+    {
+      "name": "structured-distinct-characters-high-entropy",
+      "passed": true
+    },
+    {
+      "name": "gating-can-lose-true-positives",
+      "passed": true
+    },
+    {
+      "name": "hex-normalization",
+      "passed": true
+    },
+    {
+      "name": "ipv4-mapped-normalization",
+      "passed": true
+    },
+    {
+      "name": "duplicate-daily-rows-rejected",
+      "passed": true
+    },
+    {
+      "name": "rolling-day-bin-rejected",
+      "passed": true
+    }
+  ],
+  "synthetic_tests": [],
+  "public_recordings": [],
+  "engine_status": "not-run",
+  "sentinel_ingestion_tested": false,
+  "splunk_execution_tested": false,
+  "production_precision": null,
+  "production_recall": null,
+  "errors": [],
+  "functional_passed": false
+}

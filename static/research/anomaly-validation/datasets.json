@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/splunk/attack_data",
+  "commit": "6bc794b7f65562148c872fde1e7412ab3c173f4c",
+  "license": "Apache-2.0",
+  "scope": "Public lab recordings, not victim data or a representative benign corpus. No sample selection based on detector output.",
+  "selection": "Three small XML recordings, one per credential-access analytic; selected by technique path and file size before running queries.",
+  "datasets": [
+    {"id":"dcsync", "path":"datasets/attack_techniques/T1003.006/mimikatz/xml-windows-security.log", "sha256":"a6aae604a62bc25f84851071a28b5acf63bb23a7246749f38d69bf0b180ed2b2", "bytes":16106, "query":"dcsync"},
+    {"id":"lsass-access", "path":"datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon_creddump.log", "sha256":"a37b69dce32eaff6b5c1fdb4bb9cbea6dec78a4fbd22cd41362ab0e377f075ef", "bytes":65428, "query":"lsass-access"},
+    {"id":"kerberoasting", "path":"datasets/attack_techniques/T1558.003/kerberoasting_spn_request_with_rc4_encryption/windows-xml.log", "sha256":"fd4d9e35bd90964710a2f67bd90476ac69301310256bb319b16662aa04821d79", "bytes":1127, "query":"kerberoasting"}
+  ]
+}

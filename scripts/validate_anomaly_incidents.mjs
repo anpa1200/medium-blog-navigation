@@ -79,14 +79,19 @@ for (const id of relatedArticles) {
   assert.ok(other, `Missing article ${id}`);
   assert.ok(read(`docs/articles/${other.local_path}.md`).includes(`/articles/read/${article.local_path}/#anomaly-`), `Missing return link ${id}`);
 }
-// This is a content expansion, not a route/canonical migration or a query rewrite.
+// Technical revision is authorized; routes/canonicals and historical evidence stay intact.
 assert.deepEqual(catalog.map(row => [row.id, row.slug, row.local_path, row.canonical_url, row.preferred_canonical_url, row.published_at]), oldCatalog.map(row => [row.id, row.slug, row.local_path, row.canonical_url, row.preferred_canonical_url, row.published_at]));
 const images = text => matches(text, /<img\b[^>]*\bsrc="([^"]+)"[^>]*>/g).map(match => match[1]);
 const code = text => matches(text, /^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm).map(match => match[0]);
 assert.deepEqual(images(markdown), images(original), 'Original media changed');
 assert.equal(images(markdown).length, 44);
-assert.deepEqual(code(markdown), code(original), 'Original technical blocks changed');
-assert.equal(code(markdown).length, 11);
+const historical = read('static/research/anomaly-historical-code.md');
+assert.deepEqual(code(historical), code(original), 'Historical technical evidence changed');
+assert.equal(code(historical).length, 11);
+assert.equal(matches(markdown, /^```kusto$/gm).length, 8, 'Missing maintained query examples');
+for (const block of matches(markdown, /<!-- query-source:([a-z-]+):start -->\n```kusto\n([\s\S]*?)\n```\n<!-- query-source:\1:end -->/g)) {
+  assert.equal(block[2], read(`research/anomaly-validation/queries/${block[1]}.kql`).trim(), `Query drift ${block[1]}`);
+}
 assert.equal(matches(markdown.replace(/^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm, ''), /^# /gm).length, 1);
 assert.ok(article.tags.includes('Anomaly Detection') && article.tags.includes('MITRE ATT&CK'));
 assert.ok(markdown.includes(`title: "${article.title}"`));
@@ -96,7 +101,7 @@ const explicitIDs = matches(markdown, /\{#([^}]+)\}|<span id="([^"]+)">/g).map(m
 unique(explicitIDs, 'explicit anchors');
 console.log(`PASS evidence: ${data.types.length} types, ${mappings} mappings, ${usedCases.size} distinct cases, ${usedSources.size} sources, ${usedTechniques.size} techniques.`);
 console.log(`PASS integration: ${relatedArticles.size} reciprocal article links, linked tags, source/asset parity, one authored H1.`);
-console.log(`PASS preservation: all ${catalog.length} article routes/canonicals unchanged; 44 images and 11 code blocks byte-preserved.`);
+console.log(`PASS preservation: all ${catalog.length} article routes/canonicals unchanged; 44 historical images retained, 11 superseded blocks archived, 8 maintained KQL examples.`);
 
 if (process.argv.includes('--built')) {
   const candidatePaths = [`build/read/${article.local_path}.html`, `build/read/${article.local_path}/index.html`];

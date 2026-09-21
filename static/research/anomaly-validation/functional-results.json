@@ -1,0 +1,1252 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-21T09:32:18.936074+00:00",
+  "scope": "Functional correctness and bounded public-recording replay; not an engine benchmark or production-performance evaluation.",
+  "image_digest": "mcr.microsoft.com/azuredataexplorer/kustainer-linux@sha256:21516f47b7877707cd603ad7dbc372d4cf0ac0d2b758f2c192f5266c4214d363",
+  "query_sha256": {
+    "bulk-download.kql": "710cf763725c0eca8a5382cc93b92ba5521eeee5bc84bc9286b1b5e1abb5dcfc",
+    "dcsync.kql": "8d1b9689a13b6d415c1faa8b2c75a31cf08fc4f34fc2ff1d3edd841f5435f022",
+    "dns-entropy.kql": "9f16c6db8b9dc1cfbff75cec099c212fe836d036e6c70d193a7970b2a6d7568f",
+    "kerberoasting.kql": "6ef33de862f4b7fd819eab4126b91a3a55f9ed9d72a42d14ae5e2e7543087ec3",
+    "lsass-access.kql": "1ffbd69e348afb253002f8875f5e5562b55651ac1f276f36e7001367843fff3f",
+    "pass-the-hash.kql": "9503a4f8b8214e24e46d2b1c2f25e91b28b4829b8aa04dfb1949daba65862da7",
+    "password-spray.kql": "171ab510580177116f585446d3467d6f4cacc8a828ca7cd79b6d9e1b4613491a",
+    "web-shell-lineage.kql": "26d1c2688796bcf4d0fd0a9eafd81917966808860b438cb5d64269cf224684a5"
+  },
+  "implementation_sha256": {
+    "run_validation.py": "7faa7d9d886ab966558e8f3525c3b4e54ca241da0ee1863724f6683560c0aa84",
+    "contracts.json": "6e0279d6c444d8cab0208376b8de1df27ac25a50f7e5c5a95026648c8f398a16",
+    "datasets.json": "fc311a83fcbe9747100e7fe54f4a4dd3726bef633e7d0ccad6a37502b63857d2"
+  },
+  "offline_checks": [
+    {
+      "name": "base-rate-arithmetic",
+      "passed": true
+    },
+    {
+      "name": "entropy-short-label-bound",
+      "passed": true
+    },
+    {
+      "name": "structured-distinct-characters-high-entropy",
+      "passed": true
+    },
+    {
+      "name": "gating-can-lose-true-positives",
+      "passed": true
+    },
+    {
+      "name": "hex-normalization",
+      "passed": true
+    },
+    {
+      "name": "ipv4-mapped-normalization",
+      "passed": true
+    },
+    {
+      "name": "duplicate-daily-rows-rejected",
+      "passed": true
+    },
+    {
+      "name": "rolling-day-bin-rejected",
+      "passed": true
+    }
+  ],
+  "synthetic_tests": [
+    {
+      "name": "spray-success-after-own-failures",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [
+        [
+          "tenant1",
+          "u0",
+          "s1"
+        ]
+      ],
+      "actual": [
+        [
+          "tenant1",
+          "u0",
+          "s1"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "spray-unrelated-user",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "spray-other-tenant",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "spray-50140-not-success",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "spray-reversed-order",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "spray-expired-followup",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "spray-policy-errors-not-password-failures",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "spray-duplicate-events-not-extra-failures",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "spray-fixed-bin-boundary-known-blind-spot",
+      "query": "password-spray",
+      "fields": [
+        "TenantId",
+        "UserId",
+        "SuccessEventId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "kerberoast-aes-breadth",
+      "query": "kerberoasting",
+      "fields": [
+        "Principal",
+        "DistinctServices"
+      ],
+      "expected": [
+        [
+          "user",
+          5
+        ]
+      ],
+      "actual": [
+        [
+          "user",
+          5
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "kerberoast-machine-principal-not-hidden",
+      "query": "kerberoasting",
+      "fields": [
+        "Principal",
+        "DistinctServices"
+      ],
+      "expected": [
+        [
+          "computer$",
+          5
+        ]
+      ],
+      "actual": [
+        [
+          "computer$",
+          5
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "kerberoast-low-volume-known-blind-spot",
+      "query": "kerberoasting",
+      "fields": [
+        "Principal"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "kerberoast-krbtgt-not-counted",
+      "query": "kerberoasting",
+      "fields": [
+        "Principal"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "kerberoast-repeated-service-not-breadth",
+      "query": "kerberoasting",
+      "fields": [
+        "Principal"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "replication-same-dc-logon",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId",
+        "SourceStatus",
+        "SourceIP"
+      ],
+      "expected": [
+        [
+          "r1",
+          "correlated",
+          "192.0.2.10"
+        ]
+      ],
+      "actual": [
+        [
+          "r1",
+          "correlated",
+          "192.0.2.10"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "replication-missing-logon-retained",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId",
+        "SourceStatus",
+        "SourceIP"
+      ],
+      "expected": [
+        [
+          "r1",
+          "unresolved",
+          ""
+        ]
+      ],
+      "actual": [
+        [
+          "r1",
+          "unresolved",
+          ""
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "replication-other-dc-not-joined",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId",
+        "SourceStatus",
+        "SourceIP"
+      ],
+      "expected": [
+        [
+          "r1",
+          "unresolved",
+          ""
+        ]
+      ],
+      "actual": [
+        [
+          "r1",
+          "unresolved",
+          ""
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "replication-future-logon-not-joined",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId",
+        "SourceStatus",
+        "SourceIP"
+      ],
+      "expected": [
+        [
+          "r1",
+          "unresolved",
+          ""
+        ]
+      ],
+      "actual": [
+        [
+          "r1",
+          "unresolved",
+          ""
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "replication-stale-logon-not-joined",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId",
+        "SourceStatus",
+        "SourceIP"
+      ],
+      "expected": [
+        [
+          "r1",
+          "unresolved",
+          ""
+        ]
+      ],
+      "actual": [
+        [
+          "r1",
+          "unresolved",
+          ""
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "replication-ambiguous-addresses-retained",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId",
+        "SourceStatus",
+        "SourceIP"
+      ],
+      "expected": [
+        [
+          "r1",
+          "ambiguous",
+          ""
+        ]
+      ],
+      "actual": [
+        [
+          "r1",
+          "ambiguous",
+          ""
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "replication-separate-rights-not-and-same-event",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId"
+      ],
+      "expected": [
+        [
+          "r1"
+        ],
+        [
+          "r2"
+        ]
+      ],
+      "actual": [
+        [
+          "r1"
+        ],
+        [
+          "r2"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "replication-wrong-access-bit",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId"
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "replication-additional-access-bits-accepted",
+      "query": "dcsync",
+      "fields": [
+        "EvidenceId"
+      ],
+      "expected": [
+        [
+          "r1"
+        ]
+      ],
+      "actual": [
+        [
+          "r1"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "pth-two-views-not-proof",
+      "query": "pass-the-hash",
+      "fields": [
+        "EvidenceId",
+        "EvidenceClass"
+      ],
+      "expected": [
+        [
+          "p1",
+          "source-new-credentials"
+        ],
+        [
+          "p2",
+          "target-ntlm-network"
+        ]
+      ],
+      "actual": [
+        [
+          "p1",
+          "source-new-credentials"
+        ],
+        [
+          "p2",
+          "target-ntlm-network"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "lsass-read-bit-and-trusted-path-retained",
+      "query": "lsass-access",
+      "fields": [
+        "EvidenceId"
+      ],
+      "expected": [
+        [
+          "a1"
+        ]
+      ],
+      "actual": [
+        [
+          "a1"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "web-child-role-scoped",
+      "query": "web-shell-lineage",
+      "fields": [
+        "EvidenceId"
+      ],
+      "expected": [
+        [
+          "w1"
+        ]
+      ],
+      "actual": [
+        [
+          "w1"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "dns-frequency-entropy-not-randomness",
+      "query": "dns-entropy",
+      "fields": [
+        "EvidenceId",
+        "Entropy"
+      ],
+      "expected": [
+        [
+          "d1",
+          0.0
+        ],
+        [
+          "d2",
+          2.0
+        ],
+        [
+          "d3",
+          0.0
+        ]
+      ],
+      "actual": [
+        [
+          "d1",
+          0.0
+        ],
+        [
+          "d2",
+          2.0
+        ],
+        [
+          "d3",
+          0.0
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "bulk-zero-mad-spike",
+      "query": "bulk-download",
+      "fields": [
+        "Status"
+      ],
+      "expected": [
+        [
+          "above-baseline"
+        ]
+      ],
+      "actual": [
+        [
+          "above-baseline"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "bulk-zero-mad-small-change",
+      "query": "bulk-download",
+      "fields": [
+        "Status"
+      ],
+      "expected": [
+        [
+          "within-baseline"
+        ]
+      ],
+      "actual": [
+        [
+          "within-baseline"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "bulk-cold-start",
+      "query": "bulk-download",
+      "fields": [
+        "Status"
+      ],
+      "expected": [
+        [
+          "insufficient-history"
+        ]
+      ],
+      "actual": [
+        [
+          "insufficient-history"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "bulk-missing-history-not-zero",
+      "query": "bulk-download",
+      "fields": [
+        "Status"
+      ],
+      "expected": [
+        [
+          "insufficient-history"
+        ]
+      ],
+      "actual": [
+        [
+          "insufficient-history"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "bulk-current-outage",
+      "query": "bulk-download",
+      "fields": [
+        "Status"
+      ],
+      "expected": [
+        [
+          "missing-telemetry"
+        ]
+      ],
+      "actual": [
+        [
+          "missing-telemetry"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "bulk-current-null-count",
+      "query": "bulk-download",
+      "fields": [
+        "Status"
+      ],
+      "expected": [
+        [
+          "missing-telemetry"
+        ]
+      ],
+      "actual": [
+        [
+          "missing-telemetry"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "bulk-minimum-observed-days",
+      "query": "bulk-download",
+      "fields": [
+        "Status"
+      ],
+      "expected": [
+        [
+          "above-baseline"
+        ]
+      ],
+      "actual": [
+        [
+          "above-baseline"
+        ]
+      ],
+      "passed": true
+    }
+  ],
+  "public_recordings": [
+    {
+      "id": "dcsync",
+      "source_commit": "6bc794b7f65562148c872fde1e7412ab3c173f4c",
+      "source_path": "datasets/attack_techniques/T1003.006/mimikatz/xml-windows-security.log",
+      "sha256": "a6aae604a62bc25f84851071a28b5acf63bb23a7246749f38d69bf0b180ed2b2",
+      "input_records": 11,
+      "query": "dcsync",
+      "output_rows": 4,
+      "output": [
+        {
+          "Computer": "ar-win-dc.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Security-Auditing:Security:15108561:2024-01-05T06:05:57.798760500Z",
+          "ReplicationTime": "2024-01-05T06:05:57.7987605Z",
+          "Principal": "s-1-5-21-390003789-444691441-1275789787-500",
+          "LogonId": "3224154",
+          "Properties": "%%7688\n\t\t{1131f6aa-9c07-11d1-f79f-00c04fc2dcd2}\n\t{19195a5b-6da0-11d0-afd3-00c04fd930c9}\n",
+          "SourceIP": "10.0.1.15",
+          "SourceStatus": "correlated"
+        },
+        {
+          "Computer": "ar-win-dc.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Security-Auditing:Security:15108562:2024-01-05T06:05:57.799904100Z",
+          "ReplicationTime": "2024-01-05T06:05:57.7999041Z",
+          "Principal": "s-1-5-21-390003789-444691441-1275789787-500",
+          "LogonId": "3224154",
+          "Properties": "%%7688\n\t\t{1131f6aa-9c07-11d1-f79f-00c04fc2dcd2}\n\t{19195a5b-6da0-11d0-afd3-00c04fd930c9}\n",
+          "SourceIP": "10.0.1.15",
+          "SourceStatus": "correlated"
+        },
+        {
+          "Computer": "ar-win-dc.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Security-Auditing:Security:15108563:2024-01-05T06:05:57.800538500Z",
+          "ReplicationTime": "2024-01-05T06:05:57.8005385Z",
+          "Principal": "s-1-5-21-390003789-444691441-1275789787-500",
+          "LogonId": "3224154",
+          "Properties": "%%7688\n\t\t{89e95b76-444d-4c62-991a-0facbeda640c}\n\t{19195a5b-6da0-11d0-afd3-00c04fd930c9}\n",
+          "SourceIP": "10.0.1.15",
+          "SourceStatus": "correlated"
+        },
+        {
+          "Computer": "ar-win-dc.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Security-Auditing:Security:15108564:2024-01-05T06:05:57.800597900Z",
+          "ReplicationTime": "2024-01-05T06:05:57.8005979Z",
+          "Principal": "s-1-5-21-390003789-444691441-1275789787-500",
+          "LogonId": "3224154",
+          "Properties": "%%7688\n\t\t{1131f6ad-9c07-11d1-f79f-00c04fc2dcd2}\n\t{19195a5b-6da0-11d0-afd3-00c04fd930c9}\n",
+          "SourceIP": "10.0.1.15",
+          "SourceStatus": "correlated"
+        }
+      ],
+      "record_manifest": [
+        {
+          "ordinal": 0,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108564:2024-01-05T06:05:57.800597900Z",
+          "event_id": 4662,
+          "sha256": "5507fa864f34bc8d2378ff8cf02ba8c5fa7d3a84221b0437110e4b5618423a73"
+        },
+        {
+          "ordinal": 1,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108563:2024-01-05T06:05:57.800538500Z",
+          "event_id": 4662,
+          "sha256": "3b338500d8da195f3d3de79b84b4416cfc070825408a8981fcef1d7738676ec7"
+        },
+        {
+          "ordinal": 2,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108562:2024-01-05T06:05:57.799904100Z",
+          "event_id": 4662,
+          "sha256": "3a9b82db2cc6ddc31be2b62d61b7b0c89f5a13f7c4fcc404498aeca88e30ebcc"
+        },
+        {
+          "ordinal": 3,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108561:2024-01-05T06:05:57.798760500Z",
+          "event_id": 4662,
+          "sha256": "56c3997bde3d8f248b50560370616c21284976ae8f83b5a20c0e2b28a647fadf"
+        },
+        {
+          "ordinal": 4,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108560:2024-01-05T06:05:57.789446600Z",
+          "event_id": 4662,
+          "sha256": "a064ab19f105d573dde6d86de98db6f9054f2522a6da12c61cc9814203414229"
+        },
+        {
+          "ordinal": 5,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108559:2024-01-05T06:05:57.789413000Z",
+          "event_id": 4662,
+          "sha256": "ef0e16a0b298b8174bac69b1471f038b0ee93d030fb420e73e3f9589cc97f4d2"
+        },
+        {
+          "ordinal": 6,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108558:2024-01-05T06:05:57.789380600Z",
+          "event_id": 4662,
+          "sha256": "73cd9584adbeea454a535591a9d56a04021760a436f2d2ae176fd1149cfee00a"
+        },
+        {
+          "ordinal": 7,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108557:2024-01-05T06:05:57.788072400Z",
+          "event_id": 4662,
+          "sha256": "2fea516f848bc72392fed11c86bfec8cb81d668e51e3f535e98933404a24803d"
+        },
+        {
+          "ordinal": 8,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108556:2024-01-05T06:05:57.788034300Z",
+          "event_id": 4662,
+          "sha256": "0606e29cba799cd65f14f35b207d323189123ec0e6ab582bbfeb6cdea6ac7d08"
+        },
+        {
+          "ordinal": 9,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108555:2024-01-05T06:05:57.787954000Z",
+          "event_id": 4662,
+          "sha256": "475170b3b2165b0a9cf40db8f286d0c33ac3682cbc3d11b9a6cce1ee61a5384b"
+        },
+        {
+          "ordinal": 10,
+          "id": "Microsoft-Windows-Security-Auditing:Security:15108553:2024-01-05T06:05:57.784803000Z",
+          "event_id": 4624,
+          "sha256": "65674670590254ef2454ab6d359d6fc784aa8e610f73ddd9e51f527f9eee4ca7"
+        }
+      ],
+      "interpretation": "Output is a query observation, not a labeled true-positive count. Unmatched events are not automatically benign."
+    },
+    {
+      "id": "lsass-access",
+      "source_commit": "6bc794b7f65562148c872fde1e7412ab3c173f4c",
+      "source_path": "datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon_creddump.log",
+      "sha256": "a37b69dce32eaff6b5c1fdb4bb9cbea6dec78a4fbd22cd41362ab0e377f075ef",
+      "input_records": 32,
+      "query": "lsass-access",
+      "output_rows": 24,
+      "output": [
+        {
+          "TimeGenerated": "2022-01-12T16:29:39.4344221Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40595646:2022-01-12T16:29:39.434422100Z",
+          "Image": "C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 4112,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+c0612|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+c09e9|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+c0551|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+85738|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+85570|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+852a3|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+c7435|C:\\Windows\\System32\\KERNEL32.DLL+84d4|C:\\Windows\\SYSTEM32\\ntdll.dll+51791"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:39.7461874Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40595850:2022-01-12T16:29:39.746187400Z",
+          "Image": "C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 4112,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+c0612|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+c0e27|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+85738|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+85570|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+852a3|C:\\Users\\Administrator\\Downloads\\mimikatz_trunk\\x64\\mimikatz.exe+c7435|C:\\Windows\\System32\\KERNEL32.DLL+84d4|C:\\Windows\\SYSTEM32\\ntdll.dll+51791"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:41.0671166Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40596161:2022-01-12T16:29:41.067116600Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:41.3414879Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40596237:2022-01-12T16:29:41.341487900Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:41.6118002Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40596310:2022-01-12T16:29:41.611800200Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:45.9747616Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40597812:2022-01-12T16:29:45.974761600Z",
+          "Image": "C:\\Windows\\System32\\rundll32.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\windows\\System32\\comsvcs.dll+3a17f|C:\\Windows\\System32\\rundll32.exe+3b0c|C:\\Windows\\System32\\rundll32.exe+6097|C:\\Windows\\System32\\KERNEL32.DLL+84d4|C:\\Windows\\SYSTEM32\\ntdll.dll+51791"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:47.1882719Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40598201:2022-01-12T16:29:47.188271900Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:47.4648646Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40598275:2022-01-12T16:29:47.464864600Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:47.7439681Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40598346:2022-01-12T16:29:47.743968100Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:50.7229956Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40599949:2022-01-12T16:29:50.722995600Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:50.9908794Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40600017:2022-01-12T16:29:50.990879400Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:51.2525553Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40600084:2022-01-12T16:29:51.252555300Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:53.8998Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40601309:2022-01-12T16:29:53.899800000Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:54.1751733Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40601379:2022-01-12T16:29:54.175173300Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:54.4507097Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40601446:2022-01-12T16:29:54.450709700Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:56.5300397Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40602661:2022-01-12T16:29:56.530039700Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:57.2845657Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40603035:2022-01-12T16:29:57.284565700Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:57.557574Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40603103:2022-01-12T16:29:57.557574000Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:57.8358902Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40603170:2022-01-12T16:29:57.835890200Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:59.804416Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604380:2022-01-12T16:29:59.804416000Z",
+          "Image": "C:\\Windows\\Temp\\xordump.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 2047999,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\Temp\\xordump.exe+688be"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:29:59.9054238Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604410:2022-01-12T16:29:59.905423800Z",
+          "Image": "C:\\Windows\\Temp\\xordump.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 2097151,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\SYSTEM32\\ntdll.dll+6cd1a|C:\\Windows\\System32\\KERNEL32.DLL+1cff8|C:\\Windows\\System32\\KERNEL32.DLL+25a87|C:\\Windows\\SYSTEM32\\dbgcore.DLL+15a38|C:\\Windows\\SYSTEM32\\dbgcore.DLL+e3f5|C:\\Windows\\SYSTEM32\\dbgcore.DLL+b027|C:\\Windows\\SYSTEM32\\dbgcore.DLL+5db1|C:\\Windows\\SYSTEM32\\dbgcore.DLL+67d3|C:\\Windows\\Temp\\xordump.exe+688be"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:30:01.2396221Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604473:2022-01-12T16:30:01.239622100Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:30:01.5199094Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604543:2022-01-12T16:30:01.519909400Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        },
+        {
+          "TimeGenerated": "2022-01-12T16:30:01.8020489Z",
+          "Computer": "win-dc-137.attackrange.local",
+          "EvidenceId": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604613:2022-01-12T16:30:01.802048900Z",
+          "Image": "C:\\Windows\\system32\\wbem\\wmiprvse.exe",
+          "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+          "GrantedAccess": 5136,
+          "CallTrace": "C:\\Windows\\SYSTEM32\\ntdll.dll+a6144|C:\\Windows\\System32\\KERNELBASE.dll+221bd|C:\\Windows\\system32\\wbem\\cimwin32.dll+6fb3|C:\\Windows\\system32\\wbem\\cimwin32.dll+7471|C:\\Windows\\SYSTEM32\\framedynos.dll+5899|C:\\Windows\\SYSTEM32\\framedynos.dll+adc4|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a731|C:\\Windows\\system32\\wbem\\wmiprvse.exe+a344|C:\\Windows\\System32\\RPCRT4.dll+7a583|C:\\Windows\\System32\\RPCRT4.dll+22b4b|C:\\Windows\\System32\\combase.dll+2800|C:\\Windows\\System32\\RPCRT4.dll+62d8b|C:\\Windows\\System32\\combase.dll+6536c|C:\\Windows\\System32\\combase.dll+65022|C:\\Windows\\System32\\combase.dll+63938|C:\\Windows\\System32\\combase.dll+6169d|C:\\Windows\\System32\\combase.dll+60d6f|C:\\Windows\\System32\\combase.dll+7c2c9|C:\\Windows\\System32\\RPCRT4.dll+4a284|C:\\Windows\\System32\\RPCRT4.dll+4919d|C:\\Windows\\System32\\RPCRT4.dll+49cee|C:\\Windows\\System32\\RPCRT4.dll+30ed7|C:\\Windows\\System32\\RPCRT4.dll+3152c|C:\\Windows\\System32\\RPCRT4.dll+1ae1c"
+        }
+      ],
+      "record_manifest": [
+        {
+          "ordinal": 0,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40591054:2022-01-12T16:25:27.967136500Z",
+          "event_id": 10,
+          "sha256": "934f46d4c38807b84c7e2902969740986416b0bc808a9381b313c8a4643494a6"
+        },
+        {
+          "ordinal": 1,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40590627:2022-01-12T16:25:27.413605500Z",
+          "event_id": 10,
+          "sha256": "1ae7e8458e0f773f91d7fa7b12602f22f1fda7d36020684bee6794552dfc9998"
+        },
+        {
+          "ordinal": 2,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40591864:2022-01-12T16:25:28.767696500Z",
+          "event_id": 10,
+          "sha256": "db13bdce1dff20dd9dda26a3eb075e0456ba76db1d642b3e90656f49eac43de0"
+        },
+        {
+          "ordinal": 3,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40591801:2022-01-12T16:25:28.762282400Z",
+          "event_id": 10,
+          "sha256": "6fd7dd584358d5e24a3d7fbfa41235d98af40a08d8653c5e2677a475dde48ed2"
+        },
+        {
+          "ordinal": 4,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40592769:2022-01-12T16:26:27.303235900Z",
+          "event_id": 10,
+          "sha256": "441538a146b61224ca294aa3c189cca0df2ce170bc56f4abc02e0e07c724f21c"
+        },
+        {
+          "ordinal": 5,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40592768:2022-01-12T16:26:27.303145400Z",
+          "event_id": 10,
+          "sha256": "220ecaa6d5d12524935c73d0f0ee6f8fa7b0ce5cfa8408598eb35c2d3114e688"
+        },
+        {
+          "ordinal": 6,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40595850:2022-01-12T16:29:39.746187400Z",
+          "event_id": 10,
+          "sha256": "9ae7db69adde10e66e2c28563e8546b506ef56f09e656ee96cc3ecd714b2cfa4"
+        },
+        {
+          "ordinal": 7,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40595646:2022-01-12T16:29:39.434422100Z",
+          "event_id": 10,
+          "sha256": "8c477a1648a167acf4f486937cba83e0128d1330297686f0e8aaca686dcef035"
+        },
+        {
+          "ordinal": 8,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40596110:2022-01-12T16:29:40.868150800Z",
+          "event_id": 10,
+          "sha256": "4087ea0616003f6811d870c406a707f43af7c63f4c6608a69251523319432c9c"
+        },
+        {
+          "ordinal": 9,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40596109:2022-01-12T16:29:40.868074200Z",
+          "event_id": 10,
+          "sha256": "b4c1d645d1c7716ea84fbb24fca1405ee3afe3bcd3b809705813dde9318006c7"
+        },
+        {
+          "ordinal": 10,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40596310:2022-01-12T16:29:41.611800200Z",
+          "event_id": 10,
+          "sha256": "ffc93d5f5e8109f777d30161eef8a9808c0d969b4cb86e664abe8f8ebad29218"
+        },
+        {
+          "ordinal": 11,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40596237:2022-01-12T16:29:41.341487900Z",
+          "event_id": 10,
+          "sha256": "1075682426ee16ef70a9238b3bee431123aed464698f827e0410bdc7b71a1345"
+        },
+        {
+          "ordinal": 12,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40596161:2022-01-12T16:29:41.067116600Z",
+          "event_id": 10,
+          "sha256": "82e8213ed2509881f3329124d2974e7118f027100e26a43b88bf09cf6589cb08"
+        },
+        {
+          "ordinal": 13,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40597812:2022-01-12T16:29:45.974761600Z",
+          "event_id": 10,
+          "sha256": "789e9f765ce9259045d62172ab69e05e970b6f27424d4d9a4671c4e909096868"
+        },
+        {
+          "ordinal": 14,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40598346:2022-01-12T16:29:47.743968100Z",
+          "event_id": 10,
+          "sha256": "e7fde3bb9063f6ad5c156d61995168fee3a227838bd6b7c4b2ddbf6571d447d5"
+        },
+        {
+          "ordinal": 15,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40598275:2022-01-12T16:29:47.464864600Z",
+          "event_id": 10,
+          "sha256": "34c57c464dd2fbe08d0fb0c3dd75c132e149bd3e8e1210f16354d707acd70180"
+        },
+        {
+          "ordinal": 16,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40598201:2022-01-12T16:29:47.188271900Z",
+          "event_id": 10,
+          "sha256": "6529003da30d249ba951e8b32eefaccad79d7ea2211769acb4b5def55ad26b42"
+        },
+        {
+          "ordinal": 17,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40600017:2022-01-12T16:29:50.990879400Z",
+          "event_id": 10,
+          "sha256": "50699bdd8feacacfa6c7d66a8f532310d189bd3c438a678fcd7412a907faf3fb"
+        },
+        {
+          "ordinal": 18,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40599949:2022-01-12T16:29:50.722995600Z",
+          "event_id": 10,
+          "sha256": "b60f6a402c1f022ea21525673dec16549b10af89fddc4e653db6d6c0b78cbd10"
+        },
+        {
+          "ordinal": 19,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40600084:2022-01-12T16:29:51.252555300Z",
+          "event_id": 10,
+          "sha256": "3b9b86f7559935d34429bb5a6230c47d03032497740f6e248f53b02c52a4699d"
+        },
+        {
+          "ordinal": 20,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40601309:2022-01-12T16:29:53.899800000Z",
+          "event_id": 10,
+          "sha256": "f840bfa38beec00b942534fb1a96808018631540aaea1aaa60cc30c5e44c4871"
+        },
+        {
+          "ordinal": 21,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40601446:2022-01-12T16:29:54.450709700Z",
+          "event_id": 10,
+          "sha256": "67c87c487fc488ff21e96a439dc00654615c94bf397edc36b096e903c651995a"
+        },
+        {
+          "ordinal": 22,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40601379:2022-01-12T16:29:54.175173300Z",
+          "event_id": 10,
+          "sha256": "c69315b0da9a12dd0e16e627a0f01c17ae0f211364eaf081cc9e34f004f3ff70"
+        },
+        {
+          "ordinal": 23,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40602661:2022-01-12T16:29:56.530039700Z",
+          "event_id": 10,
+          "sha256": "a7562e04079048d56ee7d7381224f9434d986d19d297df61a7183f9d5465fa49"
+        },
+        {
+          "ordinal": 24,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40603170:2022-01-12T16:29:57.835890200Z",
+          "event_id": 10,
+          "sha256": "c24b95e90373c12e26662d9525ca4fac7912b35441f15af0ee55a4e99279a3c3"
+        },
+        {
+          "ordinal": 25,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40603103:2022-01-12T16:29:57.557574000Z",
+          "event_id": 10,
+          "sha256": "e58cc34f8b63b175cf4a8366de0b89d4584fbe5b520fc913707968728bfe07f0"
+        },
+        {
+          "ordinal": 26,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40603035:2022-01-12T16:29:57.284565700Z",
+          "event_id": 10,
+          "sha256": "736babcdc9183ba129194b2492f60e1bbebcdfd977615044e5d45a157967ea59"
+        },
+        {
+          "ordinal": 27,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604410:2022-01-12T16:29:59.905423800Z",
+          "event_id": 10,
+          "sha256": "41a26a47762a835e063595e6464938dd803efd25a82b71ec9cad2b73dc971d07"
+        },
+        {
+          "ordinal": 28,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604380:2022-01-12T16:29:59.804416000Z",
+          "event_id": 10,
+          "sha256": "e50bbcc0150ff368c1a90e8459f04bfbbc0cd85746410f90b6c56fe531c7814f"
+        },
+        {
+          "ordinal": 29,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604613:2022-01-12T16:30:01.802048900Z",
+          "event_id": 10,
+          "sha256": "bd6416978331a6dc35b44f215cfe965efe25cc7bc7787fe61c3b5be6b0523d74"
+        },
+        {
+          "ordinal": 30,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604543:2022-01-12T16:30:01.519909400Z",
+          "event_id": 10,
+          "sha256": "4bbfdad3d0ec31f91d68bb152cea6804fedac22af67bdec70a02c798e5c2b1f0"
+        },
+        {
+          "ordinal": 31,
+          "id": "Microsoft-Windows-Sysmon:Microsoft-Windows-Sysmon/Operational:40604473:2022-01-12T16:30:01.239622100Z",
+          "event_id": 10,
+          "sha256": "cfbd5fdc98b14992997db12529a490a758d283c7a7033588ba3b228759a190d6"
+        }
+      ],
+      "interpretation": "Output is a query observation, not a labeled true-positive count. Unmatched events are not automatically benign."
+    },
+    {
+      "id": "kerberoasting",
+      "source_commit": "6bc794b7f65562148c872fde1e7412ab3c173f4c",
+      "source_path": "datasets/attack_techniques/T1558.003/kerberoasting_spn_request_with_rc4_encryption/windows-xml.log",
+      "sha256": "fd4d9e35bd90964710a2f67bd90476ac69301310256bb319b16662aa04821d79",
+      "input_records": 1,
+      "query": "kerberoasting",
+      "output_rows": 0,
+      "output": [],
+      "record_manifest": [
+        {
+          "ordinal": 0,
+          "id": "Microsoft-Windows-Security-Auditing:Security:148484:2024-04-08T23:56:13.253708900Z",
+          "event_id": 4769,
+          "sha256": "d4f9166d5dff5608f3bd9f7ac40103591743bfc76022a462143a4e2249c58143"
+        }
+      ],
+      "interpretation": "Output is a query observation, not a labeled true-positive count. Unmatched events are not automatically benign."
+    }
+  ],
+  "engine_status": "executed",
+  "sentinel_ingestion_tested": false,
+  "splunk_execution_tested": false,
+  "production_precision": null,
+  "production_recall": null,
+  "errors": [],
+  "engine_version": [
+    {
+      "BuildVersion": "1.0.9757.17386",
+      "BuildTime": "2026-09-18T09:39:32Z",
+      "ServiceType": "Engine",
+      "ProductVersion": "2026.09.18.0929-2637-37dbc56-master",
+      "ServiceOffering": ""
+    }
+  ],
+  "functional_passed": true
+}

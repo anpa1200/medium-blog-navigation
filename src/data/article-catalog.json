@@ -1532,7 +1532,8 @@
       "Anomaly: Multi-Event Correlation"
     ],
     "images": 44,
-    "code_blocks": 11,
+    "code_blocks": 10,
+    "historical_code_blocks": 11,
     "slug": "2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12",
     "local_path": "2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12",
     "source_url": "https://medium.com/@1200km/malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12",

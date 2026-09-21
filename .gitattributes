@@ -1,0 +1,7 @@
+# Preserve the exact bytes of the hash-bound CSV evidence (RFC 4180 CRLF).
+research/anomaly-validation/results/synthetic-study.csv -text whitespace=cr-at-eol
+static/research/anomaly-validation/synthetic-study.csv -text whitespace=cr-at-eol
+
+# Verbatim historical exports intentionally retain their original trailing spaces.
+# This exception does not apply to the maintained queries or article source.
+static/research/anomaly-historical-code.md -text whitespace=-blank-at-eol

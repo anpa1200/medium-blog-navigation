@@ -1,0 +1,10 @@
+
+> medium-blog-navigation@0.1.0 research:validation:offline
+> python3 research/anomaly-validation/run_validation.py && python3 -m unittest discover -s research/anomaly-validation -p 'test_*.py'
+
+Report: /home/andrey/wireshark/anomaly-validated-revision/research/anomaly-validation/results/offline-results.json
+................
+----------------------------------------------------------------------
+Ran 16 tests in 0.579s
+
+OK
