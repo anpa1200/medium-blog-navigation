@@ -21,6 +21,8 @@ image: "https://cdn-images-1.medium.com/max/800/1*jH8aMiQT4FZxqA_IeqVL0w.png"
 
 This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.
 
+For the distinction between unusual access and evidence of insider misuse, see the <a href="https://1200km.com/articles/read/2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12/#anomaly-peer-group" target="_self">peer-group anomaly cases and role-based evidence boundaries</a>, including the Abouammo conviction and its limits as a detector-validation example.
+
 ### Detection logic, case evidence from 14 documented incidents, and a four-phase implementation programme — covering deterministic rules, behavioural heuristics, UEBA, exfiltration path coverage, and the telemetry required before any of it works.
 
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026
