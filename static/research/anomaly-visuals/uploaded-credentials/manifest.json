@@ -1,0 +1,34 @@
+[
+  {
+    "section": "6.1",
+    "title": "Kerberoasting \u2014 Service-Ticket Evidence",
+    "file": "individual/6_1_kerberoasting.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "ec5ce685e2b3c48375f0d80c33fa72d8f8e55263357d5abdad5398ef032eab13"
+  },
+  {
+    "section": "6.2",
+    "title": "DCSync \u2014 Directory Replication Evidence",
+    "file": "individual/6_2_dcsync.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "7b59d8f067154f360d3e1c2502f03b3ffabd11ed37e5dee355dc539552b565d6"
+  },
+  {
+    "section": "6.3",
+    "title": "Pass-the-Hash \u2014 Two Hunting Views",
+    "file": "individual/6_3_pass_the_hash.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "aadc9b65ab97cc7030ab61a90a0bd3efe856ba9271a9f2484942dc6351cdde7b"
+  },
+  {
+    "section": "6.4",
+    "title": "LSASS Credential Dumping \u2014 Sysmon Event 10",
+    "file": "individual/6_4_lsass_credential_dumping.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "f04a18cbde5e9077d40eff7e3d9435473e0b302d2585c83455adbea1ef6cdafe"
+  }
+]

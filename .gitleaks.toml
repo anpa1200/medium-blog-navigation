@@ -2,9 +2,12 @@
 useDefault = true
 
 [allowlist]
-description = "Verified SHA-256 digests of maintained public LSASS-access and password-spray query files, not credentials. Query/result binding is also enforced by tests."
+description = "Verified SHA-256 digests of maintained public query files, reviewed credential-figure specifications and supplied accessible-text files, not credentials. Evidence binding is also enforced by tests."
 regexTarget = "secret"
 regexes = [
   '''^1ffbd69e348afb253002f8875f5e5562b55651ac1f276f36e7001367843fff3f$''',
   '''^171ab510580177116f585446d3467d6f4cacc8a828ca7cd79b6d9e1b4613491a$''',
+  '''^ca90d5c98be8ddf009c4bac7d31d11ca8cc712f2b669a3a217604e2d968ec137$''',
+  '''^1e921626c1e638664a65377f5cf572b81b10eb60ad8903699396e3dee4237b2f$''',
+  '''^eebc4420c62eb0d27df467c577ed4037f9ae01d96672c9ef4d05f2d79b547439$''',
 ]

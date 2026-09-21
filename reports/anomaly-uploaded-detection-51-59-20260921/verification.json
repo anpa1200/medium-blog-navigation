@@ -1,0 +1,74 @@
+{
+  "started_at": "2026-09-21T17:38:37.994Z",
+  "scope": "Local source, build, asset and browser checks; no deployment or new engine run.",
+  "steps": [
+    {
+      "id": "research-and-visuals",
+      "command": "npm run research:anomalies:check",
+      "exit_code": 0,
+      "seconds": 1,
+      "log": "research-and-visuals.log",
+      "sha256": "7d6c55cb8a873b2c5b8825b4d7c73d942af967e43d03886188b44fd8b94389dd"
+    },
+    {
+      "id": "archive",
+      "command": "npm run validate:archive",
+      "exit_code": 0,
+      "seconds": 1,
+      "log": "archive.log",
+      "sha256": "e8c391294fe935ac27e7c03152fa6b22bf1d6ded76f35123ad6db3593a270a43"
+    },
+    {
+      "id": "media",
+      "command": "npm run validate:media:local",
+      "exit_code": 0,
+      "seconds": 0,
+      "log": "media.log",
+      "sha256": "2025cd1b2256ccacdc8e02d545b678216e6ae486734557192a551ee6e3376535"
+    },
+    {
+      "id": "legacy-build",
+      "command": "npm run build:legacy",
+      "exit_code": 0,
+      "seconds": 96,
+      "log": "legacy-build.log",
+      "sha256": "0130d64c16529a9fd1775321921fab9b90a2b45b6fac28bd0f86a5de01e19ac9",
+      "identical_visual_assets": 136
+    },
+    {
+      "id": "embedded-build",
+      "command": "npm run build:embedded",
+      "exit_code": 0,
+      "seconds": 75,
+      "log": "embedded-build.log",
+      "sha256": "51d482d12a08caaef3f190e5c0ff4ca4187c36ddd19615f4187c948187b37cba",
+      "identical_visual_assets": 136
+    },
+    {
+      "id": "rendered-article",
+      "command": "node scripts/validate_anomaly_incidents.mjs --built",
+      "exit_code": 0,
+      "seconds": 0,
+      "log": "rendered-article.log",
+      "sha256": "97c77623c4b9053ae71e172ddbbdb84c34aa4f4652a0d95f3e0d9f75a7227159"
+    },
+    {
+      "id": "visual-browser",
+      "command": "node scripts/check_anomaly_visuals_browser.mjs --report-dir /home/andrey/wireshark/anomaly-validated-revision/reports/anomaly-uploaded-detection-51-59-20260921",
+      "exit_code": 0,
+      "seconds": 96,
+      "log": "visual-browser.log",
+      "sha256": "d12bea25b34d21cda3e1d00980c6c08c65f3b141636baf312c0dcfe83d3d901c"
+    },
+    {
+      "id": "whitespace",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "seconds": 0,
+      "log": "whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "passed": true,
+  "finished_at": "2026-09-21T17:43:06.637Z"
+}

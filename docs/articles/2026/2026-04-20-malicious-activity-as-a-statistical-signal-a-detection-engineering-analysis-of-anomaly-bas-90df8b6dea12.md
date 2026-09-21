@@ -25,7 +25,7 @@ This September 2026 technical revision retains the incident register and topic c
 - **Source article:** [https://medium.com/@1200km/malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12](https://medium.com/@1200km/malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12)
 - **Published:** 2026-04-20
 - **Research updated:** 2026-09-21
-- **Visual revision:** 43 evidence-linked diagrams appear inline, with narrow-screen layouts, text equivalents and full-size SVGs. Calculated figures are generated from the committed evidence.
+- **Visual revision:** 55 evidence-linked figures appear inline: 45 reviewed, user-supplied infographics and 10 generated diagrams. All have text equivalents and full-size links; the generated diagrams also have separate narrow-screen layouts. Calculated research-result figures remain bound to the committed evidence.
 - **Historical media:** All 44 original images, including the old cover, remain in Section 9.8; they are not current technical guidance.
 - **Implementation revision:** canonical KQL examples, explicit telemetry contracts and downloadable validation evidence replace the broken operational snippets.
 :::
@@ -83,19 +83,25 @@ The operational hypothesis is conditional: some malicious behavior differs measu
 A single data instance that is anomalous relative to the rest of the data (Chandola et al., 2009)[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Synthetic example:** one observation lies far outside the rest of a fixed, explicitly defined univariate distribution. If its unusualness depends on that host's history or role, the analysis is also contextual; these interpretations need not be mutually exclusive.
 
+<ResearchFigure id="statistical-forms" />
+
 #### Contextual anomaly {#anomaly-form-contextual}
 
 An instance that is anomalous only in a specific context[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Synthetic example:** an IFM backup operation on a domain controller outside the approved maintenance context differs from the same operation during a verified backup job. The host role, principal and purpose matter; the executable name alone is not a verdict.
+
+<ResearchFigure id="definition-contextual" />
 
 #### Collective anomaly {#anomaly-form-collective}
 
 A collection of related instances that is anomalous together, even if each individual instance is not[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Synthetic example:** a sequence of individually ordinary authentication, permission and data-access events departs from an expected workflow when considered together. The sequence still needs benign alternatives and reliable event/entity correlation.
 
+<ResearchFigure id="definition-collective" />
+
 **Malicious-behaviour correlation.** The analytical step that links an observed anomaly to an attacker goal, technique, or intrusion stage. An anomaly is not a verdict — it is evidence. A detection becomes operationally useful when that evidence is correlated with asset context, identity state, companion telemetry, or known adversary tradecraft.
 
-<ResearchFigure id="statistical-forms" />
+<ResearchFigure id="definition-correlation" />
 
 ### 1.2 The Central Tension
 
@@ -1064,6 +1070,8 @@ This expansion covers **14 operational anomaly families plus multi-event correla
 
 **Scope:** Fourteen headings describe operational feature families; the fifteenth, multi-event correlation, is a composition pattern that combines them. The companion Atlas has a broader statistical taxonomy; its linked categories explain the statistical concept and do not imply one-to-one equivalence. The existing generic example bullets remain illustrative scenarios, not extra documented incidents.
 
+<ResearchFigure id="incident-register" />
+
 | Case / campaign record | Attribution boundary | Crosslinked analytical views |
 |---|---|---|
 | UNC5537 and Snowflake customer data theft (2024) | UNC5537, as tracked by Mandiant; customer-account compromise, not a demonstrated compromise of Snowflake itself | [Volumetric](#case-volumetric-unc5537-snowflake-2024) · [Geographic / ASN](#case-geographic-asn-unc5537-snowflake-2024) · [Data Movement](#case-data-movement-unc5537-snowflake-2024) |
@@ -1299,11 +1307,15 @@ Do not infer effective audit settings from a universal default. OS version, mach
 
 Field definitions: [4688](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4688), [4662](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4662), [4776](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4776). Verify fields against raw XML rather than assuming that an indexer's aliases are universal.
 
+<ResearchFigure id="source-windows" />
+
 ### 5.2 Sysmon
 
 Use the [Sysmon event reference](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) and record the installed version and configuration hash. Useful event families include process creation (1), network connections (3), driver/image loads (6/7), remote threads (8), process access (10), file creation (11), registry changes (12–14), pipes (17/18), DNS (22) and supported process-tampering observations (25).
 
 Collection and filtering determine availability. Image-load events do not guarantee coverage of manual mapping. Event 8's inferred start-module/function fields can be empty; an empty field or parser-generated `Unknown` is not proof of shellcode. Likewise an unresolved event-10 call trace is not proof of injected code. Named pipes associated with tooling are leads, not immutable tool identities.
+
+<ResearchFigure id="source-sysmon" />
 
 ### 5.3 EDR Platforms
 
@@ -1313,6 +1325,8 @@ EDR can supply process, file, memory, identity and network evidence that raw aud
 
 For example, Microsoft documents `DeviceProcessEvents` as an advanced-hunting table. Confirm the available columns and ingestion before porting a process-lineage analytic. Exact sensor-event counts, proprietary model inventories and unsupported release-year claims have been removed from the operational guidance. [Microsoft table reference](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-deviceprocessevents-table).
 
+<ResearchFigure id="source-edr" />
+
 ### 5.4 Network Detection and Response
 
 <span id="zeek--corelight"></span><span id="vectra-ai"></span>
@@ -1321,11 +1335,15 @@ For Zeek, record sensor placement, packet loss, version, loaded scripts and pack
 
 TLS-extension randomization weakens order-sensitive JA3 stability for affected browsers. JA4 addresses extension-order sensitivity, but neither fingerprint is an actor identity or proof of malware; libraries are shared and fingerprints can be imitated. Record the implementation and normalize consistently before comparing sensors. [Cloudflare's JA4 explanation](https://blog.cloudflare.com/ja4-signals/).
 
+<ResearchFigure id="source-ndr" />
+
 ### 5.5 Identity and Access Management Platforms
 
 Entra risk detections mix behavioral analytics, threat intelligence, leaked credentials and user reporting. Do not describe every detection as an anomaly model or every denied MFA challenge as a user fraud report. Verify the actual detection type, licensing, configuration and retained events. [Entra risk catalog](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks).
 
 Okta's catalog includes `user.mfa.factor.update`, `user.session.impersonation.initiate` and `user.account.privilege.grant`. Their identifiers are not invented. Interpret outcome, reason, factor, actor and target together; a generic failure does not establish MFA fatigue. [Okta event catalog](https://developer.okta.com/docs/reference/api/event-types/).
+
+<ResearchFigure id="source-iam" />
 
 ### 5.6 Cloud Security Services
 
@@ -1336,6 +1354,8 @@ Cloud analytics require the relevant accounts, regions, event categories and res
 <span id="microsoft-sentinel--anomaly-analytics"></span>
 
 Sentinel anomaly rules provide deviations for investigation and correlation. Use the selected template's documented requirements rather than asserting a universal learning period or assuming that an anomaly is an incident. [Sentinel anomaly-rule guidance](https://learn.microsoft.com/en-us/azure/sentinel/work-with-anomaly-rules).
+
+<ResearchFigure id="source-cloud" />
 
 ### 5.7 DNS Security
 
@@ -1355,6 +1375,8 @@ Separate event counts, distinct objects, records and bytes. The example below co
 
 For Microsoft 365, verify workload auditing and retention for operations such as `MailItemsAccessed`, `FileDownloaded` and `FileSyncDownloadedFull`. Current mailbox auditing must not inherit historical licensing assumptions. Application grants and service-principal activity may require Entra audit data in addition to workload logs. [Mailbox investigation guidance](https://learn.microsoft.com/en-us/purview/audit-log-investigate-accounts), [OfficeActivity schema](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/officeactivity).
 
+<ResearchFigure id="source-saas" />
+
 ### 5.9 Detection Source Prioritization Matrix
 
 Unmeasured fidelity ratings have been replaced with a planning matrix. No universal deployment order is implied.
@@ -1366,6 +1388,8 @@ Unmeasured fidelity ratings have been replaced with a planning matrix. No univer
 | Can operations sustain the source? | Measured volume, storage/retention, privacy needs and ownership |
 | Does the analytic add value? | Held-out alerts, legitimate workload controls, missed cases and analyst workload |
 | Is prioritization justified? | Local benefit and cost, not a vendor name or an unsupported High/Medium/Low score |
+
+<ResearchFigure id="source-prioritization" />
 
 ## 6. Credential-Based Attacks: Detection Engineering Deep Dive
 
@@ -1758,7 +1782,7 @@ The canonical URL, case anchors and topic tags are retained. Tags indicate relev
 
 ### 9.8 Historical illustrations and corrected navigation
 
-The current edition has **43 new inline diagrams** beside the relevant explanations: statistical concepts, all 14 operational anomaly families and multi-event correlation, incident evidence, telemetry, credential analytics and evaluation. Each includes an evidence label, nearby sources, a text equivalent and a full-size SVG. Numerical charts are generated from the committed results, not manually transcribed. The downloadable <a href="https://1200km.com/articles/research/anomaly-visuals/manifest.json" target="_self">visual manifest</a> records placement, data and source hashes. This is an author-reviewed replacement set, not independent correctness certification.
+The current edition has **55 inline figures** beside the relevant explanations: 45 reviewed, user-supplied infographics and 10 generated diagrams. The supplied images provide four definition illustrations, cover Sections 2.1–2.16, replace the incident figures in Sections 4.1–4.12 and illustrate every detection-source subsection in Sections 5.1–5.9 and replace the credential-attack figures in Sections 6.1–6.4. Each figure includes an evidence label, nearby sources, a text equivalent and a full-size link. Definition and taxonomy examples are synthetic or conceptual; the register records checked scope counts, and incident graphics separate source reporting from proposed detection hypotheses. Detection-source guides distinguish documentation, exact synthetic arithmetic and planning advice from verified local collection. These are not private victim-telemetry reconstructions or product benchmarks. The calculated research-result figures still use the committed results. The downloadable <a href="https://1200km.com/articles/research/anomaly-visuals/manifest.json" target="_self">visual manifest</a> records placement, data and source hashes. Original PNG and JPEG files are unchanged, and previous SVG asset URLs remain available. This is an author-reviewed replacement set, not independent correctness certification.
 
 The original media are retained below for historical continuity, **not as validated technical guidance**. Older diagrams can contain superseded taxonomy, field assumptions or claims. The corrected text, source-specific citations, telemetry contracts and test artifacts take precedence. This avoids leaving an old infographic to silently contradict a corrected paragraph. No image file or existing article URL was deleted.
 

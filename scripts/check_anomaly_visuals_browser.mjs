@@ -8,16 +8,24 @@ import {createServer} from 'node:http';
 import {createHash} from 'node:crypto';
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const arg=(name,fallback)=>process.argv.includes(name)?process.argv[process.argv.indexOf(name)+1]:fallback;
-const report=resolve(root,'reports/anomaly-visuals-20260921');mkdirSync(report,{recursive:true});
+const report=resolve(root,arg('--report-dir','reports/anomaly-uploaded-credentials-61-64-20260921'));mkdirSync(report,{recursive:true});
 const {chromium}=await import(pathToFileURL(arg('--playwright','/home/andrey/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/index.mjs')).href);
 const manifest=JSON.parse(readFileSync(resolve(root,'static/research/anomaly-visuals/manifest.json')));
-const result={scope:'Local rendered SVG assets and, unless assets-only, embedded article. Not a deployment or new KQL execution.',checked_at:new Date().toISOString(),assets:[],article:[],failures:[],passed:false};
+const result={scope:'Local rendered SVG assets, decoded original PNG/JPEG uploads and, unless assets-only, embedded article. Not a deployment or new KQL execution.',checked_at:new Date().toISOString(),assets:[],article:[],failures:[],passed:false};
 const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
 let server;
 try{
   const page=await browser.newPage({viewport:{width:820,height:1000},deviceScaleFactor:1});
   for(const f of manifest.figures)for(const [variant,a] of Object.entries(f.assets)){
     const file=resolve(root,'static/research/anomaly-visuals',a.name);
+    if(f.upload){
+      await page.setContent(`<html><body><img src="data:image/${a.format};base64,${readFileSync(file).toString('base64')}"/></body></html>`);
+      await page.locator('img').evaluate(i=>i.decode());
+      const size=await page.locator('img').evaluate(i=>[i.naturalWidth,i.naturalHeight]);
+      assert.deepEqual(size,[a.width,a.height]);
+      result.assets.push({figure:f.id,variant,format:a.format,width:a.width,height:a.height,decoded:true});
+      continue;
+    }
     await page.setContent(`<!doctype html><html><body style="margin:0;background:#0b1426">${readFileSync(file,'utf8')}</body></html>`);
     const problems=await page.evaluate(()=>{
       const errors=[],svg=document.querySelector('svg'),vb=svg.viewBox.baseVal;
@@ -50,13 +58,13 @@ try{
   for(let start=0;start<manifest.figures.length;start+=8){
     const rows=manifest.figures.slice(start,start+8);
     await page.setViewportSize({width:1440,height:1000});
-    await page.setContent(`<html><body style="margin:0;background:#dce4ef;font-family:Arial"><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:12px">${rows.map(f=>`<div><p>${f.number}. ${f.title}</p><img style="width:100%" src="data:image/svg+xml;base64,${readFileSync(resolve(root,'static/research/anomaly-visuals',f.assets.desktop.name)).toString('base64')}"/></div>`).join('')}</div></body></html>`);
+    await page.setContent(`<html><body style="margin:0;background:#dce4ef;font-family:Arial"><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:12px">${rows.map(f=>`<div><p>${f.number}. ${f.title}</p><img style="width:100%" src="data:image/${f.upload?f.assets.desktop.format:'svg+xml'};base64,${readFileSync(resolve(root,'static/research/anomaly-visuals',f.assets.desktop.name)).toString('base64')}"/></div>`).join('')}</div></body></html>`);
     await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     await page.screenshot({path:resolve(report,`contact-sheet-${1+start/8}.png`),fullPage:true});
   }
   if(!process.argv.includes('--assets-only')){
     const build=resolve(root,'build'),site=resolve(arg('--site-root','../anomaly-revision-release'));
-    const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.json':'application/json','.woff2':'font/woff2'};
+    const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.json':'application/json','.woff2':'font/woff2'};
     function local(url){
       const p=decodeURIComponent(new URL(url,'http://localhost').pathname);
       const base=p.startsWith('/articles/')?build:p.startsWith('/assets/')?site:null;if(!base)return null;
@@ -79,7 +87,9 @@ try{
     assert.equal((await page.goto(origin+path,{waitUntil:'networkidle'})).status(),200);
     await page.addScriptTag({path:resolve(site,'node_modules/axe-core/axe.min.js')});
     assert.equal(await page.locator('h1').count(),1);
-    assert.equal(await page.locator('[data-research-figure]').count(),43);
+    assert.equal(await page.locator('[data-research-figure]').count(),manifest.figures.length);
+    const inventory=JSON.parse(readFileSync(resolve(root,'research/anomaly-revision/original-inventory.json')));
+    for(const id of inventory.anchors)assert.equal(await page.locator(`[id="${id}"]`).count(),1,id);
     assert.equal(await page.locator('details [data-research-figure]').count(),0);
     const historical=page.locator('details').filter({has:page.locator('summary').filter({hasText:'Historical figures from the original edition'})});
     assert.equal(await historical.locator('img').count(),44);
@@ -93,7 +103,8 @@ try{
         const info=await fig.locator('img').evaluate(img=>({width:img.clientWidth,height:img.clientHeight,naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,src:img.currentSrc}));
         assert.ok(info.width>0&&info.naturalWidth>0,f.id);
         assert.ok(Math.abs(info.width/info.height-info.naturalWidth/info.naturalHeight)<.02,`Aspect ratio ${width} ${f.id}`);
-        assert.ok(width<=1100?info.src.includes('-mobile.svg'):!info.src.includes('-mobile.svg'),f.id);
+        const expected=f.assets[width<=1100?'mobile':'desktop'].name;
+        assert.ok(info.src.endsWith('/'+expected),f.id);
       }
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`Overflow ${width} ${theme}`);
       await page.locator('.anomaly-figure-transcript').evaluateAll(nodes=>nodes.forEach(n=>{n.open=true;}));
@@ -105,11 +116,16 @@ try{
       const scrollTables=await page.locator('main table').evaluateAll(nodes=>nodes.filter(n=>n.scrollWidth>n.clientWidth+1).map(n=>({focusable:n.tabIndex>=0})));
       assert.ok(scrollTables.every(t=>t.focusable),`Keyboard-focusable tables ${width}`);
       await page.locator('.anomaly-figure-transcript').evaluateAll(nodes=>nodes.forEach(n=>{n.open=false;}));
-      result.article.push({width,theme,figures_loaded:43,aspect_ratios:true,overflow:false,accessibility_violations:accessibility,expanded_transcripts_checked:43,keyboard_scroll_tables:scrollTables.length});
+      result.article.push({width,theme,figures_loaded:manifest.figures.length,aspect_ratios:true,overflow:false,accessibility_violations:accessibility,expanded_transcripts_checked:manifest.figures.length,keyboard_scroll_tables:scrollTables.length});
     }
     for(const [width,id] of [[1440,'family-graph-relationship'],[1440,'case-storm'],[390,'family-volumetric'],[390,'study-results']]){
       await page.setViewportSize({width,height:1000});const fig=page.locator(`[data-research-figure="${id}"]`);await fig.scrollIntoViewIfNeeded();
       await page.screenshot({path:resolve(report,`article-${id}-${width}.png`)});
+    }
+    for(const width of [390,1440])for(const f of manifest.figures.filter(f=>f.upload)){
+      await page.setViewportSize({width,height:1000});
+      const fig=page.locator(`[data-research-figure="${f.id}"]`);await fig.scrollIntoViewIfNeeded();
+      await fig.screenshot({path:resolve(report,`uploaded-${f.id}-${width}.png`),style:`body * {visibility:hidden!important} [data-research-figure="${f.id}"], [data-research-figure="${f.id}"] * {visibility:visible!important}`});
     }
     assert.deepEqual(errors,[]);result.article.push({javascript_errors:errors});
   }

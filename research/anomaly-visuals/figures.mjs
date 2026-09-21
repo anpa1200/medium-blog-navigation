@@ -1,9 +1,13 @@
 // Authored visual specifications. Numerical figures are computed from evidence,
 // never transcribed from a screenshot. No production-accuracy claim is implied.
 import {readFileSync} from 'node:fs';
+import {definitionUploads,familyUploads,registerUpload,validateRegisterSnapshot,incidentUploads} from './uploaded-figures.mjs';
+import {detectionUploads,validateDetectionCalculations} from './uploaded-detection-sources.mjs';
+import {credentialUploads,validateCredentialMasks} from './uploaded-credentials.mjs';
 const root = new URL('../../', import.meta.url);
 const json = p => JSON.parse(readFileSync(new URL(p, root)));
 const incidents = json('research/anomaly-incidents.json');
+validateRegisterSnapshot(incidents);
 const study = json('research/anomaly-validation/results/synthetic-study.json');
 const functional = json('research/anomaly-validation/results/functional-results.json');
 const source = (label, url) => ({label, url});
@@ -26,11 +30,8 @@ add('research-map', 'From anomaly to investigation', 'Introduction', ':::info Ar
   boundary: 'An anomaly is a lead, not an intrusion verdict or actor attribution.',
   sources: [nist], caption: 'A detection-engineering workflow, not a chronological attack lifecycle. Validation and analyst judgment are required before operational action.'
 });
-add('statistical-forms', 'Three statistical forms', '1.1 Definitions', '### 1.2 The Central Tension', 'forms', {
-  panels: [panel('Point', 'One observation differs from a stated comparison distribution.'), panel('Contextual', 'The same action differs in meaning across role, time or workload context.'), panel('Collective', 'Related observations form an unusual pattern when considered together.')],
-  boundary: 'Forms can overlap. None establishes malicious intent.',
-  sources: [source('Chandola et al. (2009)', 'https://dl.acm.org/doi/10.1145/1541880.1541882'), nist],
-  caption: 'Schematic examples of statistical forms. Dot positions and shapes are illustrations, not incident measurements.'
+for(const f of definitionUploads)add(f.id,f.title,f.section,f.before,'uploaded',{
+  ...f,upload:f.file,evidence:f.id==='definition-correlation'?'CONCEPTUAL WORKFLOW · USER-SUPPLIED':'SYNTHETIC ILLUSTRATION · USER-SUPPLIED'
 });
 const base = {benign: 1000000, malicious: 100, fpr: 0.01, recall: 0.9};
 base.fp = base.benign * base.fpr; base.tp = base.malicious * base.recall;
@@ -82,6 +83,14 @@ for (const [id, title, motif, labels, measure, compare, limit] of familySpecs) {
     sources: [nist], caption: `${t.label}: ${id === 'multi-event-correlation' ? 'a composition pattern, not an additional independent anomaly family' : 'one operational feature family, not a mutually exclusive statistical class'}. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.`
   });
 }
+for(const replacement of familyUploads){
+  const f=figures.find(f=>f.id===replacement.id);
+  Object.assign(f,replacement,{kind:'uploaded',upload:replacement.file,evidence:'SYNTHETIC ILLUSTRATION · USER-SUPPLIED'});
+  delete f.panels;delete f.labels;delete f.motif;
+}
+add(registerUpload.id,registerUpload.title,registerUpload.section,registerUpload.before,'uploaded',{
+  ...registerUpload,upload:registerUpload.file
+});
 
 add('attack-mapping', 'Map behavior, then ask what is measurable', '3. ATT&CK mapping', '## 4. Evidence Register', 'flow', {
   steps: [step('Observed behavior', 'Keep the source and its limits.'), step('ATT&CK mapping', 'Explain why the behavior fits.'), step('Candidate feature', 'Name fields, units and context.')],
@@ -148,6 +157,13 @@ campaign('case-3cx', '3CX: a signature is not a benign verdict', '4.12 3CX', '##
   'Investigate new destinations and later execution associated with a normally trusted application.',
   'The icons were not described as executable payloads. Vendor-reported detection is not an independent EDR benchmark.', [source('SentinelOne 3CX investigation', 'https://www.sentinelone.com/blog/smoothoperator-ongoing-campaign-trojanizes-3cx-software-in-software-supply-chain-attack/')]);
 
+for(const replacement of incidentUploads){
+  const f=figures.find(f=>f.id===replacement.id);
+  if(!f||!f.section.startsWith('4.'))throw Error('Missing incident placement: '+replacement.id);
+  Object.assign(f,replacement,{kind:'uploaded',upload:replacement.file,evidence:'SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED'});
+  delete f.panels;
+}
+
 add('telemetry-contract', 'A field name is not a collection guarantee', '5. Telemetry contracts', '### 5.1 Windows', 'flow', {
   steps: [step('Source', 'Provider, channel, event version.'), step('Collection', 'Policy, filters, delivery health.'), step('Normalization', 'Parser, units, keys, clock.'), step('Analytic', 'Tested fields and explicit gaps.')],
   panels: [panel('Distinct pipelines', 'Security 4688 and Sysmon 1 are separate process-creation sources. Validate each adapter.'), panel('Missing observations', 'No event can mean no activity, disabled auditing, filtering, delay or failed collection.', 'amber')],
@@ -158,37 +174,15 @@ const entropy = label => {
   const counts = new Map(); for (const c of label) counts.set(c, (counts.get(c) || 0) + 1);
   return -[...counts.values()].reduce((sum,n) => sum + n / label.length * Math.log2(n / label.length), 0);
 };
-add('dns-entropy', 'High entropy is not proof of tunneling', '5.7 DNS entropy', '### 5.8 SaaS', 'entropy', {
-  evidence: 'EXACT MATH · SYNTHETIC LABELS',
-  data: ['aaaa', 'abab', 'abcd'].map(label => ({label, value: entropy(label)})),
-  panels: [panel('Definition', 'H = −Σ p(c) log₂ p(c), in bits per character. Count characters in the selected label.'), panel('Bound', 'For length n and alphabet A: H ≤ log₂(min(n, |A|)). Label selection and case normalization matter.')],
-  boundary: 'abcd is structured, yet has 2 bits/character. This feature does not measure intent.',
-  sources: [artifact('dns-entropy.kql')], caption: 'The values are computed from the displayed strings. The maintained query is an ASCII-label feature extractor; it is not a SUNBURST detector or a universal tunneling threshold.'
+const detectionData=validateDetectionCalculations(json('static/research/anomaly-visuals/uploaded-detection/synthetic_calculations.json'),entropy);
+for(const f of detectionUploads)add(f.id,f.title,f.section,f.before,'uploaded',{
+  ...f,upload:f.file,
+  ...(f.id==='dns-entropy'?{data:detectionData.dns}:f.id==='source-saas'?{data:detectionData.saas}:{})
 });
 
-add('credential-kerberoast', 'Kerberoasting: request evidence versus outcome', '6.1 Kerberoasting', '### 6.2 DCSync', 'flow', {
-  steps: [step('4769 on the DC', 'Requester, service, result, encryption type.'), step('Breadth / novelty', 'Compare service requests in context.'), step('Investigation', 'Ticket requests do not prove offline recovery.')],
-  panels: [panel('Encryption scope', 'RC4 is 0x17; AES types include 0x11 and 0x12. RC4-only filters miss AES activity.'), panel('Known blind spot', 'The public one-record replay produces no match for the service-breadth rule.', 'amber')],
-  boundary: 'No blanket exclusion for every account or service whose name ends in $.',
-  sources: [source('MITRE T1558.003', 'https://attack.mitre.org/techniques/T1558/003/'), artifact('functional-results.json')], caption: 'The statistic is distinct-service breadth, not proof that a ticket was cracked. The displayed blind spot is retained from the existing replay report.'
-});
-add('credential-dcsync', 'DCSync: keep source correlation honest', '6.2 DCSync', '### 6.3 Pass-the-Hash', 'flow', {
-  steps: [step('4662 on the DC', 'Audited replication-right access.'), step('Bounded join', 'Same DC + normalized logon ID + event time.'), step('4624 context', 'Use a suitable matching logon, if available.')],
-  panels: [panel('Prerequisite', 'Directory Service Access auditing + applicable SACL. A SACL selects auditing; it does not grant rights.'), panel('Unresolved is a valid result', '4662 has no native client-IP field. Retain candidates when source enrichment is missing or ambiguous.', 'amber')],
-  boundary: 'One matching replication right does not prove successful credential extraction.',
-  sources: [event(4662), event(4624), artifact('dcsync.kql')], caption: 'Arrows show an enrichment workflow, not the temporal order of the Windows events. Approved replication needs scoped inventory-backed context, not a name-based exemption.'
-});
-add('credential-pth', 'Pass-the-Hash: two hunting views, no single verdict', '6.3 Pass-the-Hash', '### 6.4 LSASS', 'evidence', {
-  evidence: 'TELEMETRY MODEL · NOT CLASSIFICATION',
-  panels: [panel('Target-side view', '4624 type 3 with NTLM can describe ordinary network authentication.', 'teal'), panel('Source-side view', 'Type 9 NewCredentials with seclogo can appear in some implementations and legitimate alternate-credential workflows.')],
-  boundary: 'The NTLM hash is not sent as the password. Context and implementation-specific evidence are required.',
-  sources: [event(4624), source('MITRE T1550.002', 'https://attack.mitre.org/techniques/T1550/002/')], caption: 'Neither view proves PtH, and not every implementation produces both. Correlate account, source process, destination and authorized administration.'
-});
-add('credential-lsass', 'LSASS process access needs provenance', '6.4 LSASS', '## 7. How Attackers', 'flow', {
-  steps: [step('Sysmon 10', 'Source, target, time and access mask.'), step('Process context', 'Signer, hash, ancestry and call trace.'), step('Investigation', 'Compare authorized security and diagnostic tools.')],
-  panels: [panel('0x1010', 'VM read + limited query information.'), panel('0x1410', 'The same rights plus query information.')],
-  boundary: 'An access mask or unresolved call trace alone does not establish dumping or injection.',
-  sources: [sysmon, source('Microsoft process access rights', 'https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights')], caption: 'Bitmask meanings are separate from malicious intent. A familiar filename, signer or directory is not a universal safe exclusion.'
+const credentialMasks=validateCredentialMasks(json('static/research/anomaly-visuals/uploaded-credentials/bitmask_checks.json'));
+for(const f of credentialUploads)add(f.id,f.title,f.section,f.before,'uploaded',{
+  ...f,upload:f.file,...(f.id==='credential-lsass'?{data:credentialMasks}:{})
 });
 add('visibility-limits', 'A detector can miss at different layers', '7. Visibility limits', '## 8. Detection Engineering', 'flow', {
   steps: [step('Behavior', 'Low-rate or in-process activity.'), step('Sensor', 'Wrong position or missing source.'), step('Data pipeline', 'Drops, filters, clock or parser errors.'), step('Model', 'Wrong cohort or contaminated baseline.')],

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Historical first-edition report. For uploaded replacements use report_anomaly_uploads.mjs.
 import {readFileSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
@@ -6,6 +7,7 @@ const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const read=p=>readFileSync(resolve(root,p),'utf8'),json=p=>JSON.parse(read(p));
 const dir='reports/anomaly-visuals-20260921';
 const manifest=json('static/research/anomaly-visuals/manifest.json'),checks=json(dir+'/verification.json');
+if(manifest.figures.length!==43||manifest.figures.some(f=>f.upload))throw Error('This report is a historical 43-SVG-figure snapshot. Use report_anomaly_uploads.mjs for the current edition.');
 const browser=json(dir+'/browser-validation.json');
 const safe=s=>s.replaceAll('|','\\|');
 let text=`# Anomaly research: inline infographic replacement\n\nLocal implementation and verification report. **Not committed, pushed or deployed by this task.** The already published edition remains unchanged until a separate release.\n\n## Delivered\n\n- ${manifest.figures.length} new source-linked figures, placed inline in reading order: concepts and base rates, 14 operational families plus multi-event correlation, ATT&CK mapping, 12 campaign summaries, telemetry, DNS entropy, four credential techniques, observability, analytic validation and statistical results.\n- 86 self-contained SVGs: an 800-pixel desktop layout and a separately reflowed 400-pixel narrow layout for every figure.\n- One local PNG cover, bound to its source SVG by SHA-256; no raster-image generation model was used.\n- Every figure has an evidence label, caption, source links, accessible text equivalent and full-size link. Current figures are not hidden in accordions.\n- All 44 original images, including the old cover, remain in the historical appendix. The catalog correctly counts 87 image instances: 43 current + 44 historical. Existing URLs, anchors, topic tags, incident cards and maintained query files are preserved.\n\nThe writer skill informed the distinction between source-reported incidents, author-proposed detection interpretations, exact explanatory arithmetic, recorded execution results and synthetic statistics. The graphics do not upgrade the evidence status of their inputs.\n\n## Validation\n\nOverall local gate: **${checks.passed&&browser.passed?'PASS':'FAIL / INCOMPLETE'}**.\n\n| Check | Result | Evidence |\n|---|---|---|\n`;

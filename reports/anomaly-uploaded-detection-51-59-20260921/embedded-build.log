@@ -1,0 +1,17 @@
+
+> medium-blog-navigation@0.1.0 build:embedded
+> python3 scripts/build_archive_governance.py && python3 scripts/clean_build.py && ARTICLE_ARCHIVE_EMBED=1 ARTICLE_BASE_URL=/articles/ docusaurus build && python3 scripts/prune_embedded_build.py && python3 scripts/normalize_built_article_headings.py && python3 scripts/validate_built_archive.py
+
+Archive governance report written for 192 articles; 1 external canonicals verified.
+
+ ------------------------------------------------------------------------------                                                                                                         Update available 3.10.1 → 3.10.2                                                                                                                To upgrade Docusaurus packages with the latest version, run the                                       following command:                                        `npm i @docusaurus/core@latest @docusaurus/preset-classic@latest                @docusaurus/module-type-aliases@latest @docusaurus/types@latest`                                                                                         ------------------------------------------------------------------------------ 
+
+[INFO] [en] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 51.33s
+[webpackbar] ✔ Client: Compiled successfully in 53.95s
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.
+Normalized 49 rendered headings across 2 article pages.
+Built archive validation passed for 192 articles and 195 HTML documents.
