@@ -82,6 +82,11 @@ test('the supplied cover is byte-bound and consistent across hero, preview and c
   assert.equal(bytes.length,p.bytes);
   assert.deepEqual(imageMetadata(bytes),{format:p.format,width:p.width,height:p.height});
   assert.deepEqual(manifest.cover,p);
+  const display=readFileSync(new URL('static/research/anomaly-visuals/'+p.display.file,root));
+  assert.equal(hash(display),p.display.sha256);assert.equal(display.length,p.display.bytes);
+  assert.ok(display.length<256*1024,'Cover delivery derivative must stay within 256 KiB');
+  assert.match(read('src/components/ResearchCover/index.js'),/cover\.display\.file/);
+  assert.match(read('src/components/ResearchCover/index.js'),/href=\{original\}/);
   assert.equal(article.cover_image,'https://1200km.com/articles/research/anomaly-visuals/'+p.file);
   assert.ok(text.includes(`image: "/research/anomaly-visuals/${p.file}"`));
   assert.equal((text.match(/<ResearchCover \/>/g)||[]).length,1);

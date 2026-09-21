@@ -64,7 +64,7 @@ try{
   }
   if(!process.argv.includes('--assets-only')){
     const build=resolve(root,'build'),site=resolve(arg('--site-root','../anomaly-revision-release'));
-    const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.json':'application/json','.woff2':'font/woff2'};
+    const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.jpeg':'image/jpeg','.json':'application/json','.woff2':'font/woff2'};
     function local(url){
       const p=decodeURIComponent(new URL(url,'http://localhost').pathname);
       const base=p.startsWith('/articles/')?build:p.startsWith('/assets/')?site:null;if(!base)return null;
@@ -106,7 +106,8 @@ try{
       await coverImage.evaluate(img=>img.decode());
       const coverInfo=await coverImage.evaluate(img=>({width:img.clientWidth,height:img.clientHeight,naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,src:img.currentSrc,loading:img.loading,priority:img.fetchPriority}));
       assert.deepEqual([coverInfo.naturalWidth,coverInfo.naturalHeight],[manifest.cover.width,manifest.cover.height]);
-      assert.ok(coverInfo.src.endsWith('/'+manifest.cover.file));
+      assert.ok(coverInfo.src.endsWith('/'+manifest.cover.display.file));
+      assert.ok((await cover.locator('a').getAttribute('href')).endsWith('/'+manifest.cover.file));
       assert.equal(coverInfo.loading,'eager');assert.equal(coverInfo.priority,'high');
       assert.ok(Math.abs(coverInfo.width/coverInfo.height-manifest.cover.width/manifest.cover.height)<.02);
       assert.equal(await coverImage.getAttribute('alt'),manifest.cover.alt);
