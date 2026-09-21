@@ -7,6 +7,13 @@
   "width": 1672,
   "height": 941,
   "format": "png",
+  "display": {
+    "file": "malicious-activity-statistical-signal-cover.webp",
+    "sha256": "98353ce20a473f646ce1ca633e49b2fb11388002481ba114273ffad2865cafeb",
+    "bytes": 185982,
+    "format": "webp",
+    "encoding": "ffmpeg -i malicious-activity-statistical-signal-cover.png -frames:v 1 -c:v libwebp -quality 82 -compression_level 6 malicious-activity-statistical-signal-cover.webp; same dimensions, lossy web delivery derivative; original PNG retained for download and social preview"
+  },
   "alt": "Malicious Activity as a Statistical Signal: identity, endpoint, network, cloud, application and data telemetry illustrated as blue baselines and red deviations. An anomaly is evidence, not a verdict.",
   "caption": "Illustrative cover artwork, not measured telemetry. Malicious activity can resemble ordinary behavior; an anomaly alone does not establish an intrusion."
 }
