@@ -21,10 +21,10 @@ Overall local gate: **PASS**.
 | research-and-visuals | PASS (1s) | [research-and-visuals.log](research-and-visuals.log) |
 | archive | PASS (1s) | [archive.log](archive.log) |
 | media | PASS (0s) | [media.log](media.log) |
-| legacy-build | PASS (74s); 89 identical build assets | [legacy-build.log](legacy-build.log) |
-| embedded-build | PASS (69s); 89 identical build assets | [embedded-build.log](embedded-build.log) |
+| legacy-build | PASS (109s); 89 identical build assets | [legacy-build.log](legacy-build.log) |
+| embedded-build | PASS (84s); 89 identical build assets | [embedded-build.log](embedded-build.log) |
 | rendered-article | PASS (0s) | [rendered-article.log](rendered-article.log) |
-| visual-browser | PASS (17s) | [visual-browser.log](visual-browser.log) |
+| visual-browser | PASS (23s) | [visual-browser.log](visual-browser.log) |
 | whitespace | PASS (0s) | [whitespace.log](whitespace.log) |
 
 Browser asset checks: 86 SVG variants; 0 clipping/overlap failures. Article configurations: 6, covering 390, 768 and 1440 pixels in light/dark themes. The checker verifies image loading, responsive variants, aspect ratios, page overflow, 43 inline figures, all 44 preserved historical images and JavaScript errors. See [machine-readable gate](verification.json), [browser report](browser-validation.json), and contact sheets [1](contact-sheet-1.png), [2](contact-sheet-2.png), [3](contact-sheet-3.png), [4](contact-sheet-4.png), [5](contact-sheet-5.png), [6](contact-sheet-6.png).
@@ -98,3 +98,7 @@ See [visual-authoring instructions](../../research/anomaly-visuals/README.md), [
 ## Limits
 
 This is an author/assistant factual and rendering review, not independent certification of absolute correctness. The operational-family diagrams are a proposed taxonomy, not a NIST standard. Historical raster images remain unvalidated and explicitly superseded. The Medium edition, native Sentinel ingestion, real-world detection accuracy, automatic containment safety and the previously documented AWS source conflict are unchanged.
+
+## Release-gate accessibility follow-up
+
+The first website CI run exposed color-only caption links and non-focusable horizontal tables. The source now underlines caption citations and uses a keyboard-focusable Markdown table component with a visible focus outline. The browser report includes focused axe checks for both rules in all six viewport/theme configurations. This report remains a pre-release verification snapshot; final deployment status is recorded separately.

@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-09-21T11:25:50.930Z",
+  "started_at": "2026-09-21T12:00:00.732Z",
   "scope": "Local source, build, asset and browser checks; no deployment or new engine run.",
   "steps": [
     {
@@ -8,7 +8,7 @@
       "exit_code": 0,
       "seconds": 1,
       "log": "research-and-visuals.log",
-      "sha256": "dbeb15ebc18be20a32586d2979e8305cad7c08261ab46aed1c1a76a65b11f41c"
+      "sha256": "733d0f36b78a51792348ce1249bc3f849ea388fb5ceed4a676e6601db55f67eb"
     },
     {
       "id": "archive",
@@ -16,7 +16,7 @@
       "exit_code": 0,
       "seconds": 1,
       "log": "archive.log",
-      "sha256": "a11dd31ae06d4f2f4d7b956ae3d490bf1ebd12cee4cc61f714074c6510866c06"
+      "sha256": "5668dd145d8178fe3cdc792a7caa596bda1a36be1901f60ec57275df220e8a48"
     },
     {
       "id": "media",
@@ -30,18 +30,18 @@
       "id": "legacy-build",
       "command": "npm run build:legacy",
       "exit_code": 0,
-      "seconds": 74,
+      "seconds": 109,
       "log": "legacy-build.log",
-      "sha256": "78022b12ca7e0a874b5864adebb92730d5b3abe1fe2ccc86ec4339173945f978",
+      "sha256": "707b85de403c4222e5fc8152f46add7c2b0b07e6a8af20974e1c50fafc7b35c1",
       "identical_visual_assets": 89
     },
     {
       "id": "embedded-build",
       "command": "npm run build:embedded",
       "exit_code": 0,
-      "seconds": 69,
+      "seconds": 84,
       "log": "embedded-build.log",
-      "sha256": "ba920bef7aa6451d0b508e00b7622f7ec3b656433fb7dc61061a6b9526f0277d",
+      "sha256": "c351ead21860d88e8fc67b7c917e80743663de41cb1c86d9a26b8d3640acf436",
       "identical_visual_assets": 89
     },
     {
@@ -56,9 +56,9 @@
       "id": "visual-browser",
       "command": "node scripts/check_anomaly_visuals_browser.mjs",
       "exit_code": 0,
-      "seconds": 17,
+      "seconds": 23,
       "log": "visual-browser.log",
-      "sha256": "10a1c50cb56ecf1519df9aa5e829243a2237d96b4d1ebf26a9d2e41544d1fbe8"
+      "sha256": "49b06da77ac46b03ffc3224c4d199c3f8e7dbefe2248d2ffbb5a4d2b98d136be"
     },
     {
       "id": "whitespace",
@@ -70,5 +70,5 @@
     }
   ],
   "passed": true,
-  "finished_at": "2026-09-21T11:28:33.249Z"
+  "finished_at": "2026-09-21T12:03:38.854Z"
 }

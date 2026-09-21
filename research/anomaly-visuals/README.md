@@ -26,6 +26,8 @@ The browser checker needs Playwright and Chromium/Google Chrome. Its defaults ma
 
 The release runner stores full command output under `reports/anomaly-visuals-20260921/`. Browser checks cover actual text bounds and overlap in all 86 SVGs, local loading of all 43 figures in six viewport/theme combinations, aspect ratios, page overflow and JavaScript errors. Contact sheets and full-size screenshots support manual review. These checks establish rendering and consistency, not an independent factual certification.
 
+The checker also uses `axe-core` from the website checkout to reject color-only text links and non-focusable scroll regions. Markdown tables use the shared MDX table component with keyboard focus and a visible outline; figure-caption links are underlined. These are regression checks added after the first release CI exposed accessibility gaps.
+
 ## Editing discipline
 
 Edit the authored figure specification, not generated SVG or manifest files. Keep figure numbers in reading order and insertions outside managed incident blocks. Run the evidence checks after changing the research data. Preserve existing URLs, anchors, incident cards, queries and historical media. Do not silently replace missing measurements with schematic numbers. A new fact or incident requires a supporting primary source and review of both the text and diagram.

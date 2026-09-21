@@ -110,11 +110,17 @@ body {
 }
 
 /* Prose links must remain identifiable without relying on colour alone. */
+.anomaly-figure figcaption a,
 .theme-doc-markdown :where(p, li) a:not(.button),
 .theme-doc-markdown > a:not(.button):not(.hash-link) {
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.16em;
+}
+
+.theme-doc-markdown table:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
 .hero--blog {
