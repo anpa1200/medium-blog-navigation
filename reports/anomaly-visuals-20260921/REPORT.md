@@ -21,8 +21,8 @@ Overall local gate: **PASS**.
 | research-and-visuals | PASS (1s) | [research-and-visuals.log](research-and-visuals.log) |
 | archive | PASS (1s) | [archive.log](archive.log) |
 | media | PASS (0s) | [media.log](media.log) |
-| legacy-build | PASS (109s); 89 identical build assets | [legacy-build.log](legacy-build.log) |
-| embedded-build | PASS (84s); 89 identical build assets | [embedded-build.log](embedded-build.log) |
+| legacy-build | PASS (80s); 89 identical build assets | [legacy-build.log](legacy-build.log) |
+| embedded-build | PASS (70s); 89 identical build assets | [embedded-build.log](embedded-build.log) |
 | rendered-article | PASS (0s) | [rendered-article.log](rendered-article.log) |
 | visual-browser | PASS (23s) | [visual-browser.log](visual-browser.log) |
 | whitespace | PASS (0s) | [whitespace.log](whitespace.log) |
@@ -102,3 +102,5 @@ This is an author/assistant factual and rendering review, not independent certif
 ## Release-gate accessibility follow-up
 
 The first website CI run exposed color-only caption links and non-focusable horizontal tables. The source now underlines caption citations and uses a keyboard-focusable Markdown table component with a visible focus outline. The browser report includes focused axe checks for both rules in all six viewport/theme configurations. This report remains a pre-release verification snapshot; final deployment status is recorded separately.
+
+The final local follow-up opens all 43 text-equivalent panels before running these checks. It also corrected the wide statistics JSON block so keyboard users can focus and scroll it. The recorded browser results explicitly include expanded-panel coverage.

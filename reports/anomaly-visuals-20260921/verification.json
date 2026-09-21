@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-09-21T12:00:00.732Z",
+  "started_at": "2026-09-21T12:07:29.656Z",
   "scope": "Local source, build, asset and browser checks; no deployment or new engine run.",
   "steps": [
     {
@@ -8,7 +8,7 @@
       "exit_code": 0,
       "seconds": 1,
       "log": "research-and-visuals.log",
-      "sha256": "733d0f36b78a51792348ce1249bc3f849ea388fb5ceed4a676e6601db55f67eb"
+      "sha256": "fd374b6d526e3b4a924109f882c6697edd964354edcf77c36e84ca4ac6a94895"
     },
     {
       "id": "archive",
@@ -30,18 +30,18 @@
       "id": "legacy-build",
       "command": "npm run build:legacy",
       "exit_code": 0,
-      "seconds": 109,
+      "seconds": 80,
       "log": "legacy-build.log",
-      "sha256": "707b85de403c4222e5fc8152f46add7c2b0b07e6a8af20974e1c50fafc7b35c1",
+      "sha256": "79f70c3e4d0d9e139ef6ff0f19f9358059c2d68f2916d68001d1149087c7237d",
       "identical_visual_assets": 89
     },
     {
       "id": "embedded-build",
       "command": "npm run build:embedded",
       "exit_code": 0,
-      "seconds": 84,
+      "seconds": 70,
       "log": "embedded-build.log",
-      "sha256": "c351ead21860d88e8fc67b7c917e80743663de41cb1c86d9a26b8d3640acf436",
+      "sha256": "360925b1f77d0711f7464324a88f4404926038fe010c803ef5d0e8d35c98b82a",
       "identical_visual_assets": 89
     },
     {
@@ -58,7 +58,7 @@
       "exit_code": 0,
       "seconds": 23,
       "log": "visual-browser.log",
-      "sha256": "49b06da77ac46b03ffc3224c4d199c3f8e7dbefe2248d2ffbb5a4d2b98d136be"
+      "sha256": "45c397310aebf1c44a33aa1bfdd7170e9874a6b9ea3ca3632822d26123e9847d"
     },
     {
       "id": "whitespace",
@@ -70,5 +70,5 @@
     }
   ],
   "passed": true,
-  "finished_at": "2026-09-21T12:03:38.854Z"
+  "finished_at": "2026-09-21T12:10:24.812Z"
 }

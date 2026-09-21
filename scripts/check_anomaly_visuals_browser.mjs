@@ -96,6 +96,7 @@ try{
         assert.ok(width<=1100?info.src.includes('-mobile.svg'):!info.src.includes('-mobile.svg'),f.id);
       }
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`Overflow ${width} ${theme}`);
+      await page.locator('.anomaly-figure-transcript').evaluateAll(nodes=>nodes.forEach(n=>{n.open=true;}));
       const accessibility=await page.evaluate(async()=>{
         const audit=await window.axe.run(document.querySelector('main'),{runOnly:{type:'rule',values:['link-in-text-block','scrollable-region-focusable']}});
         return audit.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}));
@@ -103,7 +104,8 @@ try{
       assert.deepEqual(accessibility,[],`Accessible links and scroll regions: ${width} ${theme}`);
       const scrollTables=await page.locator('main table').evaluateAll(nodes=>nodes.filter(n=>n.scrollWidth>n.clientWidth+1).map(n=>({focusable:n.tabIndex>=0})));
       assert.ok(scrollTables.every(t=>t.focusable),`Keyboard-focusable tables ${width}`);
-      result.article.push({width,theme,figures_loaded:43,aspect_ratios:true,overflow:false,accessibility_violations:accessibility,keyboard_scroll_tables:scrollTables.length});
+      await page.locator('.anomaly-figure-transcript').evaluateAll(nodes=>nodes.forEach(n=>{n.open=false;}));
+      result.article.push({width,theme,figures_loaded:43,aspect_ratios:true,overflow:false,accessibility_violations:accessibility,expanded_transcripts_checked:43,keyboard_scroll_tables:scrollTables.length});
     }
     for(const [width,id] of [[1440,'family-graph-relationship'],[1440,'case-storm'],[390,'family-volumetric'],[390,'study-results']]){
       await page.setViewportSize({width,height:1000});const fig=page.locator(`[data-research-figure="${id}"]`);await fig.scrollIntoViewIfNeeded();

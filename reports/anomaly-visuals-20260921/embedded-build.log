@@ -9,8 +9,8 @@ Archive governance report written for 192 articles; 1 external canonicals verifi
 [INFO] [en] Creating an optimized production build...
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
-[webpackbar] ✔ Server: Compiled successfully in 48.70s
-[webpackbar] ✔ Client: Compiled successfully in 1.06m
+[webpackbar] ✔ Server: Compiled successfully in 48.21s
+[webpackbar] ✔ Client: Compiled successfully in 51.14s
 [SUCCESS] Generated static files in "build".
 [INFO] Use `npm run serve` command to test your build locally.
 Normalized 49 rendered headings across 2 article pages.

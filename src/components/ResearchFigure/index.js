@@ -23,7 +23,7 @@ export default function ResearchFigure({id}) {
       {f.steps&&<ol>{f.steps.map((s,i)=><li key={i}><strong>{s.label}.</strong> {s.text}</li>)}</ol>}
       {f.labels&&<p>Illustrated relationship: {f.labels.join(' → ')}. Schematic, not observed incident data.</p>}
       {f.panels&&<ul>{f.panels.map((p,i)=><li key={i}><strong>{p.label}.</strong> {p.text}</li>)}</ul>}
-      {f.data&&<pre aria-label="Exact data used in this diagram">{JSON.stringify(f.data,null,2)}</pre>}
+      {f.data&&<pre tabIndex={0} aria-label="Exact data used in this diagram">{JSON.stringify(f.data,null,2)}</pre>}
       <p><a href={desktop} target="_self">Open full-size SVG</a>{' · '}<a href={mobile} target="_self">Open narrow-layout SVG</a></p>
     </details>
   </figure>;
