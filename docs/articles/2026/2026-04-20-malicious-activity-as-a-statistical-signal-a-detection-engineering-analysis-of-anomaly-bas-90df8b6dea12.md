@@ -1,16 +1,19 @@
 ---
 title: "Malicious Activity as a Statistical Signal: Anomaly Detection Engineering"
 description: "Explore anomaly detection and multi-event correlation through real incidents, with telemetry, ATT&CK mappings and explicit evidence limits."
-image: "/research/anomaly-visuals/research-map.png"
+image: "/research/anomaly-visuals/malicious-activity-statistical-signal-cover.png"
 ---
 
 import ResearchFigure from '@site/src/components/ResearchFigure';
+import ResearchCover from '@site/src/components/ResearchCover';
 
 <span id="malicious-activity-as-a-statistical-signal-anomaly-detection-engineering"></span>
 
 # Malicious Activity as a Statistical Signal: Anomaly Detection Engineering
 
 **Fourteen anomaly families, multi-event correlation, and the telemetry needed to distinguish suspicious behavior from legitimate change.**
+
+<ResearchCover />
 
 An unusual login, a new process relationship, or a sudden data export can be an investigation lead. None proves an intrusion on its own. This research connects statistical anomaly concepts to documented attacker behavior, explains which logs could expose that behavior, and makes the limits of each interpretation explicit.
 
