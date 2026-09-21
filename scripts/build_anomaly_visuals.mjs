@@ -12,6 +12,8 @@ const cover=JSON.parse(readFileSync(new URL(out+'uploaded-cover-provenance.json'
 const coverBytes=readFileSync(new URL(out+cover.file,root));
 const coverSize=imageMetadata(coverBytes);
 if(hash(coverBytes)!==cover.sha256||coverBytes.length!==cover.bytes||coverSize.width!==cover.width||coverSize.height!==cover.height||coverSize.format!==cover.format)throw Error('Changed supplied cover artwork');
+const displayBytes=readFileSync(new URL(out+cover.display.file,root));
+if(hash(displayBytes)!==cover.display.sha256||displayBytes.length!==cover.display.bytes)throw Error('Changed cover delivery derivative');
 const manifest={schema_version:1,revision:'2026-09-21',scope:'Author-reviewed diagrams tied to the revised manuscript and versioned evidence. Not independent certification or production validation.',source_sha256:{},figures:[]};
 manifest.cover=cover;
 manifest.source_sha256['research/anomaly-visuals/uploaded-credentials.mjs']=hash(readFileSync(new URL('research/anomaly-visuals/uploaded-credentials.mjs',root)));
