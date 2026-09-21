@@ -18,6 +18,7 @@
     "research:revision:render": "node scripts/build_anomaly_visuals.mjs && node scripts/render_anomaly_incidents.mjs && node scripts/build_anomaly_revision.mjs && node scripts/build_anomaly_audit.mjs",
     "research:visuals:render": "node scripts/build_anomaly_visuals.mjs",
     "research:visuals:check": "node scripts/build_anomaly_visuals.mjs --check && node --test tests/anomaly-visuals.test.mjs",
+    "research:uploads:verify": "node scripts/verify_anomaly_visuals.mjs --report-dir reports/anomaly-uploaded-credentials-61-64-20260921 && node scripts/report_anomaly_credential_uploads.mjs",
     "research:validation:offline": "python3 research/anomaly-validation/run_validation.py && python3 -m unittest discover -s research/anomaly-validation -p 'test_*.py'",
     "research:validation:engine": "python3 research/anomaly-validation/run_validation.py --endpoint http://127.0.0.1:18921 --public-recordings",
     "research:study": "python3 research/anomaly-validation/statistical_study.py",

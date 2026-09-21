@@ -20,11 +20,13 @@ export default function ResearchFigure({id}) {
     </figcaption>
     <details className="anomaly-figure-transcript"><summary>Text equivalent and full-size diagram</summary>
       <p>{f.boundary}</p>
+      {f.transcript&&f.transcript.map((paragraph,i)=><p key={i}>{paragraph}</p>)}
       {f.steps&&<ol>{f.steps.map((s,i)=><li key={i}><strong>{s.label}.</strong> {s.text}</li>)}</ol>}
       {f.labels&&<p>Illustrated relationship: {f.labels.join(' → ')}. Schematic, not observed incident data.</p>}
       {f.panels&&<ul>{f.panels.map((p,i)=><li key={i}><strong>{p.label}.</strong> {p.text}</li>)}</ul>}
       {f.data&&<pre tabIndex={0} aria-label="Exact data used in this diagram">{JSON.stringify(f.data,null,2)}</pre>}
-      <p><a href={desktop} target="_self">Open full-size SVG</a>{' · '}<a href={mobile} target="_self">Open narrow-layout SVG</a></p>
+      <p><a href={desktop} target="_self">{f.upload?`Open original full-size ${f.assets.desktop.format.toUpperCase()}`:'Open full-size SVG'}</a>{!f.upload&&<>{' · '}<a href={mobile} target="_self">Open narrow-layout SVG</a></>}</p>
     </details>
+    {f.upload&&<p className="anomaly-figure-original"><a href={desktop} target="_self">Open original infographic at full resolution</a>. Small-screen readers can also use the text equivalent above.</p>}
   </figure>;
 }

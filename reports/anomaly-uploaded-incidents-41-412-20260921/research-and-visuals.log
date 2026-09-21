@@ -1,0 +1,195 @@
+
+> medium-blog-navigation@0.1.0 research:anomalies:check
+> node scripts/build_anomaly_visuals.mjs --check && node scripts/render_anomaly_incidents.mjs --check && node scripts/build_anomaly_revision.mjs --check && node scripts/build_anomaly_audit.mjs --check && node scripts/validate_anomaly_incidents.mjs && node --test tests/anomaly-revision.test.mjs tests/anomaly-visuals.test.mjs
+
+Verified 47 figures: 30 active SVG variants and 32 unchanged uploaded images.
+Incident rendering current: 15 types, 30 mappings, 17 cases.
+Revision current: 8 canonical queries, 44 preserved historical images, 17 legacy anchor aliases.
+Reconciled audit: 59 entries; {"corrected_in_revision":54,"documented_conflict_not_resolved_upstream":1,"historical_not_revalidated":1,"not_established":2,"requires_publication_access":1}
+PASS evidence: 15 types, 30 mappings, 17 distinct cases, 17 sources, 17 techniques.
+PASS integration: 4 reciprocal article links, linked tags, source/asset parity, one authored H1.
+PASS preservation: all 192 article routes/canonicals unchanged; 44 historical images retained, 11 superseded blocks archived, 8 maintained KQL examples.
+TAP version 13
+# Subtest: all previous article anchors are retained without duplicates
+ok 1 - all previous article anchors are retained without duplicates
+  ---
+  duration_ms: 5.437592
+  type: 'test'
+  ...
+# Subtest: local TOC fragments resolve
+ok 2 - local TOC fragments resolve
+  ---
+  duration_ms: 2.061677
+  type: 'test'
+  ...
+# Subtest: one title, subtitle, meaningful footer and no orphaned query placeholders
+ok 3 - one title, subtitle, meaningful footer and no orphaned query placeholders
+  ---
+  duration_ms: 1.012252
+  type: 'test'
+  ...
+# Subtest: all original findings and review rows have reconciled dispositions
+ok 4 - all original findings and review rows have reconciled dispositions
+  ---
+  duration_ms: 0.445637
+  type: 'test'
+  ...
+# Subtest: rendered KQL is exactly the tested canonical query source
+ok 5 - rendered KQL is exactly the tested canonical query source
+  ---
+  duration_ms: 2.222459
+  type: 'test'
+  ...
+# Subtest: public replay preserves the single-ticket miss and real source correlation
+ok 6 - public replay preserves the single-ticket miss and real source correlation
+  ---
+  duration_ms: 0.548606
+  type: 'test'
+  ...
+# Subtest: synthetic study is labeled and does not hide gate recall loss
+ok 7 - synthetic study is labeled and does not hide gate recall loss
+  ---
+  duration_ms: 1.228541
+  type: 'test'
+  ...
+# Subtest: corrected guidance does not regress to known dangerous claims
+ok 8 - corrected guidance does not regress to known dangerous claims
+  ---
+  duration_ms: 1.399774
+  type: 'test'
+  ...
+# Subtest: all historical images and code remain available but explicitly superseded
+ok 9 - all historical images and code remain available but explicitly superseded
+  ---
+  duration_ms: 3.048194
+  type: 'test'
+  ...
+# Subtest: caption links and scrolling tables retain keyboard and non-color affordances
+ok 10 - caption links and scrolling tables retain keyboard and non-color affordances
+  ---
+  duration_ms: 2.210045
+  type: 'test'
+  ...
+# Subtest: 47 distinct figures cover four definitions, all 15 topics, the register and 12 campaign subsections
+ok 11 - 47 distinct figures cover four definitions, all 15 topics, the register and 12 campaign subsections
+  ---
+  duration_ms: 1.299551
+  type: 'test'
+  ...
+# Subtest: every figure is inline exactly once, in numbered reading order, before the historical appendix
+ok 12 - every figure is inline exactly once, in numbered reading order, before the historical appendix
+  ---
+  duration_ms: 20.513759
+  type: 'test'
+  ...
+# Subtest: figure placements fail closed if a required boundary changes
+ok 13 - figure placements fail closed if a required boundary changes
+  ---
+  duration_ms: 18.789815
+  type: 'test'
+  ...
+# Subtest: each graphic has evidence labels, source links, a boundary and accessible metadata
+ok 14 - each graphic has evidence labels, source links, a boundary and accessible metadata
+  ---
+  duration_ms: 43.210961
+  type: 'test'
+  ...
+# Subtest: 30 active SVG variants and 32 original PNG/JPEG uploads match evidence hashes
+ok 15 - 30 active SVG variants and 32 original PNG/JPEG uploads match evidence hashes
+  ---
+  duration_ms: 94.309782
+  type: 'test'
+  ...
+# Subtest: base-rate arithmetic and entropy examples are exact
+ok 16 - base-rate arithmetic and entropy examples are exact
+  ---
+  duration_ms: 0.382418
+  type: 'test'
+  ...
+# Subtest: the social-preview PNG is bound to the current SVG and catalog metadata
+ok 17 - the social-preview PNG is bound to the current SVG and catalog metadata
+  ---
+  duration_ms: 0.527881
+  type: 'test'
+  ...
+# Subtest: measured visuals use the recorded outputs without concealing the zero-match case
+ok 18 - measured visuals use the recorded outputs without concealing the zero-match case
+  ---
+  duration_ms: 2.380041
+  type: 'test'
+  ...
+# Subtest: no old images or measured query evidence is overwritten by the visual replacement
+ok 19 - no old images or measured query evidence is overwritten by the visual replacement
+  ---
+  duration_ms: 0.962697
+  type: 'test'
+  ...
+# Subtest: all user originals have unchanged bytes and verified PNG/JPEG dimensions
+ok 20 - all user originals have unchanged bytes and verified PNG/JPEG dimensions
+  ---
+  duration_ms: 24.892405
+  type: 'test'
+  ...
+# Subtest: uploaded concepts and taxonomy figures appear in their exact sections
+ok 21 - uploaded concepts and taxonomy figures appear in their exact sections
+  ---
+  duration_ms: 1.58103
+  type: 'test'
+  ...
+# Subtest: malformed or truncated raster headers fail closed
+ok 22 - malformed or truncated raster headers fail closed
+  ---
+  duration_ms: 0.323022
+  type: 'test'
+  ...
+# Subtest: the register image is tied to real counts and fails closed on count/date changes
+ok 23 - the register image is tied to real counts and fails closed on count/date changes
+  ---
+  duration_ms: 2.73672
+  type: 'test'
+  ...
+# Subtest: absence timing and correlation caveats match the supplied illustrations
+ok 24 - absence timing and correlation caveats match the supplied illustrations
+  ---
+  duration_ms: 0.266946
+  type: 'test'
+  ...
+# Subtest: replaced SVG asset URLs and the old combined-figure anchor remain available
+ok 25 - replaced SVG asset URLs and the old combined-figure anchor remain available
+  ---
+  duration_ms: 0.784264
+  type: 'test'
+  ...
+# Subtest: critical incident corrections retain the right source and scope
+ok 26 - critical incident corrections retain the right source and scope
+  ---
+  duration_ms: 0.223517
+  type: 'test'
+  ...
+# Subtest: all 12 incident uploads replace only their matching Section 4 figures
+ok 27 - all 12 incident uploads replace only their matching Section 4 figures
+  ---
+  duration_ms: 2.243916
+  type: 'test'
+  ...
+# Subtest: supplied source key stays byte-bound and all S01-S14 codes resolve near their images
+ok 28 - supplied source key stays byte-bound and all S01-S14 codes resolve near their images
+  ---
+  duration_ms: 0.746965
+  type: 'test'
+  ...
+# Subtest: incident captions qualify channel overlap, separate reports, source limits and attribution
+ok 29 - incident captions qualify channel overlap, separate reports, source limits and attribution
+  ---
+  duration_ms: 0.278433
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 342.436993

@@ -20,7 +20,7 @@ const catalog=JSON.parse(readFileSync(resolve(root,'src/data/article-catalog.jso
 const row=catalog.find(x=>x.id==='90df8b6dea12');
 const path=`/articles/read/${row.local_path}/`;
 const inventory=JSON.parse(readFileSync(resolve(root,'research/anomaly-revision/original-inventory.json')));
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.md':'text/plain; charset=utf-8'};
+const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.woff2':'font/woff2','.md':'text/plain; charset=utf-8'};
 function shellAsset(pathname){
   if(!pathname.startsWith('/assets/'))return null;
   const file=resolve(site,pathname.slice(1));
@@ -74,8 +74,9 @@ try{
   assert.equal(await historical.count(),1);
   assert.equal(await historical.getAttribute('open'),null);
   assert.equal(await historical.locator('img').count(),44);
-  assert.equal(await page.locator('[data-research-figure]').count(),43);
-  checks.push('44 superseded images retained; 43 new figures are inline with their own evidence labels.');
+  const figureCount=JSON.parse(readFileSync(resolve(root,'static/research/anomaly-visuals/manifest.json'))).figures.length;
+  assert.equal(await page.locator('[data-research-figure]').count(),figureCount);
+  checks.push(`44 superseded images retained; ${figureCount} figures are inline with their own evidence labels.`);
   const downloads=await page.locator('main a[href*="/articles/research/"]').evaluateAll(nodes=>[...new Set(nodes.map(n=>n.href))]);
   for(const url of downloads){
     const remote=new URL(url),response=await fetch(origin+remote.pathname);

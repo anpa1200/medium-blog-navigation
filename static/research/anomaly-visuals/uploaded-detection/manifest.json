@@ -1,0 +1,83 @@
+[
+  {
+    "section": "5.1",
+    "title": "Windows Security Event Log",
+    "filename": "5_1_windows_security_event_log.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "a2c64643abcdef1cd6c6ef8a189d84fdaa236210d2a04de27cf5821ed4dbe19b",
+    "sources": "[A, W1\u2013W3]"
+  },
+  {
+    "section": "5.2",
+    "title": "Sysmon",
+    "filename": "5_2_sysmon.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "29507bce8480ed7242c4c244a8cf3a2e60e8b1de78a3a1ec92d8fd391f8666e5",
+    "sources": "[A, S1]"
+  },
+  {
+    "section": "5.3",
+    "title": "EDR Platforms",
+    "filename": "5_3_edr_platforms.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "9e05628c26494d7ed11a5ec5b8cb6a3b2dcffbcfe2e2aa0bf97f2faccd34a720",
+    "sources": "[A, E1]"
+  },
+  {
+    "section": "5.4",
+    "title": "Network Detection and Response",
+    "filename": "5_4_network_detection_response.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "db16117c6b7b3dedf1608af148edab6cdf5384548fb97978f473300ab6872b18",
+    "sources": "[A, N1\u2013N3]"
+  },
+  {
+    "section": "5.5",
+    "title": "Identity and Access Management Platforms",
+    "filename": "5_5_identity_access_management.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "9dd80ba590da502e0721437ddedaad5236c319e6d4788f730c9b16f55a432837",
+    "sources": "[A, I1, I2]"
+  },
+  {
+    "section": "5.6",
+    "title": "Cloud Security Services",
+    "filename": "5_6_cloud_security_services.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "59b48d66ca6c02250981b69a4792565754645a412e394470000440863621b990",
+    "sources": "[A, C1\u2013C3]"
+  },
+  {
+    "section": "5.7",
+    "title": "DNS Security",
+    "filename": "5_7_dns_security.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "30f973d02bf2a30ea165028749a888536af6d0a2362069fc330410a05303e64e",
+    "sources": "[A, N1, D1]"
+  },
+  {
+    "section": "5.8",
+    "title": "SaaS Audit Logs",
+    "filename": "5_8_saas_audit_logs.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "4b1c82dc144925edde6aba73a4648b0129762584589406dc3eadb4eea8d864b8",
+    "sources": "[A, O1]"
+  },
+  {
+    "section": "5.9",
+    "title": "Detection Source Prioritization Matrix",
+    "filename": "5_9_detection_source_prioritization_matrix.png",
+    "width": 2400,
+    "height": 3000,
+    "sha256": "45ba8e6150e4fce2fff5f403326cc6181ba0870525c1c7f1d9cd330a08ca2a7e",
+    "sources": "[A, P1]"
+  }
+]

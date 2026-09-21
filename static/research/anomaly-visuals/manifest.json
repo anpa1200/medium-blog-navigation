@@ -3,12 +3,30 @@
   "revision": "2026-09-21",
   "scope": "Author-reviewed diagrams tied to the revised manuscript and versioned evidence. Not independent certification or production validation.",
   "source_sha256": {
-    "research/anomaly-visuals/figures.mjs": "928d03f6587c2177d3e54126d19bd06ed6531923d7ace8d20cfa7bb343e29c1f",
+    "research/anomaly-visuals/uploaded-credentials.mjs": "ca90d5c98be8ddf009c4bac7d31d11ca8cc712f2b669a3a217604e2d968ec137",
+    "research/anomaly-visuals/figures.mjs": "388162eceda1dfde687aae30739b6936fb5b6a7dd0e7a949b6a5360271e6a5ac",
+    "research/anomaly-visuals/uploaded-figures.mjs": "675f5808b6653cfe4dafbc1360260aee024e6aa03f5e4752f6e1cd4c27b837d1",
+    "research/anomaly-visuals/uploaded-taxonomy-continuation.mjs": "0da5de7958694a893b085261b51062280f7957e5725326dff83ae970aa4e8bec",
+    "research/anomaly-visuals/uploaded-incidents.mjs": "253bf67338598835566d3c8de2d3d3f2462ceafe3503886589b90ff3b6fb52ee",
+    "research/anomaly-visuals/uploaded-detection-sources.mjs": "5de1c73c492aa97f34335816b0f10bbf16f7346548eb48639dd18915183698e4",
+    "research/anomaly-visuals/uploads-provenance.json": "06249f62106fce43dea9313938463a1c05ca42d316a3633d68ca4b06bd3be85a",
+    "scripts/lib/uploaded-image-metadata.mjs": "5153680218632937f41ed6c8ddeddc9de07faf2880e86163ccd659d66bd33d3c",
     "scripts/lib/anomaly-visuals.mjs": "d3f42c22aefe270fa0f8994dac3bfc309f60c24691349ee6a379379f3cb6acc6",
     "research/anomaly-revision/family-contracts.json": "518f7f2ecbc2ccf699848bb3065fe0f30268f2d7e964ea1f1b3b83c3b5fe5bc9",
     "research/anomaly-incidents.json": "3fe2cbb1eedd62e6e195d9a6ad6ee630513f3f2d20e17e12343386e06d840c1d",
     "research/anomaly-validation/results/functional-results.json": "3a868b49d7f9f702d68e495caecb1b2985c21522838c67d68136caebf7631795",
-    "research/anomaly-validation/results/synthetic-study.json": "014d712d0e7d1f8bd0ff22a23b590ecc77f88d8a99e6b7af21d3194ef159b2fe"
+    "research/anomaly-validation/results/synthetic-study.json": "014d712d0e7d1f8bd0ff22a23b590ecc77f88d8a99e6b7af21d3194ef159b2fe",
+    "static/research/anomaly-visuals/uploaded-incident-sources.md": "e490ecddc60bd921d9925c154835657292f0d67ac0e0bf68389d778be5f5f85d",
+    "static/research/anomaly-visuals/uploaded-detection/README.md": "8779ae2bf1fbdadc2f334c3a10a05adcb5c1aa242841f948864937c1d16be009",
+    "static/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md": "21f782e9d55fe6a8237f2d2eafa13bc20b3114c6908b0c533cb5dc5b80145c7f",
+    "static/research/anomaly-visuals/uploaded-detection/manifest.json": "54a643b7a4c1db131b25329fb7455ff511b9ab4f094ea73feb1864b7c13fc150",
+    "static/research/anomaly-visuals/uploaded-detection/accessible_text.json": "1e921626c1e638664a65377f5cf572b81b10eb60ad8903699396e3dee4237b2f",
+    "static/research/anomaly-visuals/uploaded-detection/synthetic_calculations.json": "ecd374efd64d42bceb7d14fe2276dbde2933489dc07c4d22f42aa5ea49f4731f",
+    "static/research/anomaly-visuals/uploaded-credentials/README.md": "d18db6450761d37b92c3425a5e9c23a98225bbfdcde726672c610e8f57210846",
+    "static/research/anomaly-visuals/uploaded-credentials/SOURCES_AND_EVIDENCE_NOTES.md": "76082b7b6bea739dca7e5749128ed4ce9b46ecbeb3071f46bcff0229d1d1aa94",
+    "static/research/anomaly-visuals/uploaded-credentials/accessible_text.json": "eebc4420c62eb0d27df467c577ed4037f9ae01d96672c9ef4d05f2d79b547439",
+    "static/research/anomaly-visuals/uploaded-credentials/bitmask_checks.json": "64480120abcfb955784a98042aac04a6e30780088045ba5f3a44d4ce74abb3c7",
+    "static/research/anomaly-visuals/uploaded-credentials/manifest.json": "583ec0ce0f5ce34da4dae4feb8bfd64b8efa6872d44c1fbe7f5f11d8f599331d"
   },
   "figures": [
     {
@@ -75,54 +93,189 @@
     },
     {
       "id": "statistical-forms",
-      "title": "Three statistical forms",
-      "section": "1.1 Definitions",
-      "before": "### 1.2 The Central Tension",
-      "kind": "forms",
-      "evidence": "CONCEPTUAL MODEL",
-      "panels": [
-        {
-          "label": "Point",
-          "text": "One observation differs from a stated comparison distribution.",
-          "tone": "blue"
-        },
-        {
-          "label": "Contextual",
-          "text": "The same action differs in meaning across role, time or workload context.",
-          "tone": "blue"
-        },
-        {
-          "label": "Collective",
-          "text": "Related observations form an unusual pattern when considered together.",
-          "tone": "blue"
-        }
+      "title": "Point anomaly",
+      "section": "1.1 Point anomaly",
+      "before": "#### Contextual anomaly {#anomaly-form-contextual}",
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
+      "file": "uploaded-point-anomaly.png",
+      "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (1).png",
+      "caption": "Synthetic point-anomaly illustration: one value is separated from a stated comparison distribution. The observation axis is an illustrative index, not a second security feature; the dots are not a measured dataset.",
+      "boundary": "Distance from a reference distribution does not establish malicious intent. The plot is schematic, not a numerical detection threshold.",
+      "transcript": [
+        "A single instance differs markedly from the reference data. The schematic shows a blue cluster and one higher red value.",
+        "Synthetic example: a value lies outside a fixed, defined univariate distribution. If host history or role determines the comparison, the interpretation can also be contextual.",
+        "Key idea: one point can stand out by itself. Neither the colored points nor the axis values are observations from an incident."
       ],
-      "boundary": "Forms can overlap. None establishes malicious intent.",
       "sources": [
         {
           "label": "Chandola et al. (2009)",
-          "url": "https://dl.acm.org/doi/10.1145/1541880.1541882"
+          "url": "https://arindam.cs.illinois.edu/papers/09/anomaly.pdf"
+        }
+      ],
+      "upload": "uploaded-point-anomaly.png",
+      "number": 2,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-point-anomaly.png",
+          "format": "png",
+          "width": 1122,
+          "height": 1402,
+          "sha256": "40f11f9f184ecd7ad763a0b16cc0f82bda00d2ee6ae92fb6d889eca0502817d5"
         },
+        "mobile": {
+          "name": "uploaded-point-anomaly.png",
+          "format": "png",
+          "width": 1122,
+          "height": 1402,
+          "sha256": "40f11f9f184ecd7ad763a0b16cc0f82bda00d2ee6ae92fb6d889eca0502817d5"
+        }
+      },
+      "provenance": {
+        "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (1).png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "definition-contextual",
+      "title": "Contextual anomaly",
+      "section": "1.1 Contextual anomaly",
+      "before": "#### Collective anomaly {#anomaly-form-collective}",
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
+      "file": "uploaded-contextual-anomaly.png",
+      "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (2).png",
+      "caption": "Synthetic comparison of the same ntdsutil IFM operation inside and outside approved maintenance. IFM means Install From Media: creating AD DS installation media, not a complete domain-controller recovery backup. The clock positions are illustrative.",
+      "boundary": "An unscheduled operation is a lead, not proof of credential theft. Validate the host role, account, approval and actual command purpose.",
+      "transcript": [
+        "The same action can have different significance in different contexts. The diagram labels an example domain controller DC-01.",
+        "A scheduled ntdsutil.exe IFM operation appears inside an approved maintenance window; a second appears outside it. These are synthetic times, not a real incident timeline.",
+        "The image uses the shorthand IFM backup operation. More precisely, IFM creates installation media for adding a domain controller; it does not replace a full recovery backup.",
+        "Host role, principal and purpose matter. The executable name alone is not a verdict."
+      ],
+      "sources": [
+        {
+          "label": "Chandola et al. (2009)",
+          "url": "https://arindam.cs.illinois.edu/papers/09/anomaly.pdf"
+        },
+        {
+          "label": "Microsoft: IFM command",
+          "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc732530(v=ws.11)"
+        }
+      ],
+      "upload": "uploaded-contextual-anomaly.png",
+      "number": 3,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-contextual-anomaly.png",
+          "format": "png",
+          "width": 1122,
+          "height": 1402,
+          "sha256": "f25a7ad5b0c652df838f5088a52767e61427b48bc31c1a6ef014b887f5893f39"
+        },
+        "mobile": {
+          "name": "uploaded-contextual-anomaly.png",
+          "format": "png",
+          "width": 1122,
+          "height": 1402,
+          "sha256": "f25a7ad5b0c652df838f5088a52767e61427b48bc31c1a6ef014b887f5893f39"
+        }
+      },
+      "provenance": {
+        "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (2).png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "definition-collective",
+      "title": "Collective anomaly",
+      "section": "1.1 Collective anomaly",
+      "before": "**Malicious-behaviour correlation.**",
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
+      "file": "uploaded-collective-anomaly.png",
+      "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (3).png",
+      "caption": "Synthetic collective-anomaly example: authentication, a permission change, data access and export form an unexpected workflow under the stated baseline. The individual “Normal” labels are assumptions for this example, not a universal classification of those actions.",
+      "boundary": "Events need not be individually benign for a collective anomaly. Ordering is one possible relationship; a verified baseline and reliable entity correlation are still required.",
+      "transcript": [
+        "Related events can be anomalous together even when individual events are not anomalous on their own.",
+        "The illustrated sequence is: login from a known device; expanded access rights; sensitive-file access; export to an external location. The graphic assumes each event can occur legitimately in the chosen environment.",
+        "The combined workflow differs from that environment’s expected pattern. Investigate benign alternatives and verify event and entity links.",
+        "The emphasis on pattern and order applies to this example. It does not mean a single event can never be decisive."
+      ],
+      "sources": [
+        {
+          "label": "Chandola et al. (2009)",
+          "url": "https://arindam.cs.illinois.edu/papers/09/anomaly.pdf"
+        }
+      ],
+      "upload": "uploaded-collective-anomaly.png",
+      "number": 4,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-collective-anomaly.png",
+          "format": "png",
+          "width": 1122,
+          "height": 1402,
+          "sha256": "ff908757987bc655f4ef2d237c86f0825171e4d3649910f589576e0ad8967f7a"
+        },
+        "mobile": {
+          "name": "uploaded-collective-anomaly.png",
+          "format": "png",
+          "width": 1122,
+          "height": 1402,
+          "sha256": "ff908757987bc655f4ef2d237c86f0825171e4d3649910f589576e0ad8967f7a"
+        }
+      },
+      "provenance": {
+        "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (3).png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "definition-correlation",
+      "title": "Malicious-behaviour correlation",
+      "section": "1.1 Malicious-behaviour correlation",
+      "before": "### 1.2 The Central Tension",
+      "kind": "uploaded",
+      "evidence": "CONCEPTUAL WORKFLOW · USER-SUPPLIED",
+      "file": "uploaded-malicious-behaviour-correlation.png",
+      "original": "ChatGPT Image Sep 21, 2026, 05_05_05 PM (4).png",
+      "caption": "Conceptual investigation workflow: combine an anomaly with asset context, identity state, companion telemetry and adversary tradecraft. Correlation supports a testable investigative hypothesis; it does not automatically produce a correct detection or attribution.",
+      "boundary": "Correlation is an analytical step, not a fourth statistical anomaly form. Independent corroboration and analyst validation remain necessary.",
+      "transcript": [
+        "Asset context includes the device, system, network location and criticality. Identity state includes the account, privileges and recent activity.",
+        "Companion telemetry includes logs, network activity, endpoint observations and cloud records. Adversary tradecraft provides candidate techniques and threat-intelligence context.",
+        "These inputs help interpret an observed anomaly and form an investigative hypothesis. An anomaly is evidence, not a verdict.",
+        "Operational value must still be tested. Adding a correlation condition can remove true alerts as well as false alerts."
+      ],
+      "sources": [
         {
           "label": "NIST SP 800-94",
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Schematic examples of statistical forms. Dot positions and shapes are illustrations, not incident measurements.",
-      "number": 2,
+      "upload": "uploaded-malicious-behaviour-correlation.png",
+      "number": 5,
       "assets": {
         "desktop": {
-          "name": "statistical-forms.svg",
-          "width": 800,
-          "height": 1009,
-          "sha256": "e89689439938fcc24198d157cdc283300c36cac80d7fd38de15f39c224b9b96c"
+          "name": "uploaded-malicious-behaviour-correlation.png",
+          "format": "png",
+          "width": 1122,
+          "height": 1402,
+          "sha256": "c29ee6d4be99ccbb7605eed8ad4bf6c45c8700ad1a8e34e723ea0236e8017a3b"
         },
         "mobile": {
-          "name": "statistical-forms-mobile.svg",
-          "width": 400,
-          "height": 1156,
-          "sha256": "487228e28f6fa7661d7443456bdc7a712c492133520a951e3a2ed6747eb4b6bd"
+          "name": "uploaded-malicious-behaviour-correlation.png",
+          "format": "png",
+          "width": 1122,
+          "height": 1402,
+          "sha256": "c29ee6d4be99ccbb7605eed8ad4bf6c45c8700ad1a8e34e723ea0236e8017a3b"
         }
+      },
+      "provenance": {
+        "original": "ChatGPT Image Sep 21, 2026, 05_05_05 PM (4).png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
@@ -151,7 +304,7 @@
         }
       ],
       "caption": "Precision uses all alerts as its denominator; false-positive rate uses all benign events. A 1% false-positive rate does not mean 99% alert precision.",
-      "number": 3,
+      "number": 6,
       "assets": {
         "desktop": {
           "name": "base-rate.svg",
@@ -169,29 +322,12 @@
     },
     {
       "id": "family-volumetric",
-      "title": "How much moved?",
+      "title": "Volumetric anomaly",
       "section": "2.1 Volumetric",
       "before": "<!-- anomaly-evidence:volumetric:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "volume",
-      "labels": [
-        "Volume in aligned windows",
-        "Same role / same units"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Volumetric",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Count bytes, objects, rows or events; do not substitute one for another.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Compare like workloads over equal observation windows.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "Backups, reporting and recovery can produce legitimate spikes.",
       "sources": [
         {
@@ -199,48 +335,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Volumetric: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 4,
+      "caption": "Equal 30-minute windows for the same user and workload contain 90, 120, 110, 100, 130 and 650 download audit events. These are synthetic counts, not the Snowflake or DDoS incident measurements below.",
+      "original": "2_1_volumetric.png",
+      "file": "uploaded-volumetric.png",
+      "transcript": [
+        "W1: 90; W2: 120; W3: 110; W4: 100; W5: 130; W6: 650 download audit events. Every window is 30 minutes.",
+        "Compare like units and workloads. Audit events are not necessarily unique files; backups and reporting can explain spikes.",
+        "Measure how much, then establish why."
+      ],
+      "upload": "uploaded-volumetric.png",
+      "number": 7,
       "assets": {
         "desktop": {
-          "name": "family-volumetric.svg",
-          "width": 800,
-          "height": 866,
-          "sha256": "90677c45e472f9cd0ba39d70257a52d1fafa9a5410270a7391259ca601b09db3"
+          "name": "uploaded-volumetric.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "61742a3b9711e6f568350baf782f2014afaa62d240d41a7cbb42aec1aaf67f99"
         },
         "mobile": {
-          "name": "family-volumetric-mobile.svg",
-          "width": 400,
-          "height": 947,
-          "sha256": "125a3d10aa9fd4044213ab535d1f7b5df4ced1dd697166fca0f01b89abe9b8bf"
+          "name": "uploaded-volumetric.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "61742a3b9711e6f568350baf782f2014afaa62d240d41a7cbb42aec1aaf67f99"
         }
+      },
+      "provenance": {
+        "original": "2_1_volumetric.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-frequency-rate",
-      "title": "How often did it happen?",
+      "title": "Frequency / rate anomaly",
       "section": "2.2 Frequency / Rate",
       "before": "<!-- anomaly-evidence:frequency-rate:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "rate",
-      "labels": [
-        "Fixed-duration windows",
-        "Events / elapsed time"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Frequency / Rate",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Count occurrences and state the time denominator.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Evaluate rate with source and target diversity.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "Retries, polling and releases can create bursts; sparse attacks may not.",
       "sources": [
         {
@@ -248,48 +381,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Frequency / Rate: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 5,
+      "caption": "The same synthetic API client produces 3, 2, 3, 4, 3 and 24 requests in six equal one-minute intervals. The time denominator is explicit; the example does not prescribe an alert threshold.",
+      "original": "2_2_frequency_rate.png",
+      "file": "uploaded-frequency-rate.png",
+      "transcript": [
+        "M1: 3; M2: 2; M3: 3; M4: 4; M5: 3; M6: 24 requests per observed minute.",
+        "Deduplicate events and verify observation time. Retries, outages and load tests can create benign bursts.",
+        "Count occurrences and state the time denominator."
+      ],
+      "upload": "uploaded-frequency-rate.png",
+      "number": 8,
       "assets": {
         "desktop": {
-          "name": "family-frequency-rate.svg",
-          "width": 800,
-          "height": 804,
-          "sha256": "db15a350ad782c5031cb47f2715fe7ba14de18f364292639ee70e60c2aa32979"
+          "name": "uploaded-frequency-rate.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "a6087c3151cff61c8238ed5279494a85ed7821a2f332df3d4460f3a7c5d1bc8c"
         },
         "mobile": {
-          "name": "family-frequency-rate-mobile.svg",
-          "width": 400,
-          "height": 989,
-          "sha256": "663f2a03edd36b535ee40be60617ea9e704eb0df8001e4ea0bef6f1282297a7e"
+          "name": "uploaded-frequency-rate.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "a6087c3151cff61c8238ed5279494a85ed7821a2f332df3d4460f3a7c5d1bc8c"
         }
+      },
+      "provenance": {
+        "original": "2_2_frequency_rate.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-temporal",
-      "title": "Does the timing fit the task?",
+      "title": "Temporal anomaly",
       "section": "2.3 Temporal",
       "before": "<!-- anomaly-evidence:temporal:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "time",
-      "labels": [
-        "Usual work context",
-        "Activity to investigate"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Temporal",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Preserve event time, time zone, shift and schedule.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Compare equivalent calendar periods, not just clock hours.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "On-call work, travel and daylight-saving changes can explain timing.",
       "sources": [
         {
@@ -297,48 +427,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Temporal: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 6,
+      "caption": "A synthetic weekday-only account acts at 03:00 on Sunday, outside its stated schedule. The heatmap is a schedule illustration, not measured event intensity or a real incident timeline.",
+      "original": "2_3_temporal.png",
+      "file": "uploaded-temporal.png",
+      "transcript": [
+        "The weekday work-context cells contrast with a highlighted Sunday 03:00 cell, in example local time.",
+        "Check time zone, shifts, on-call duties and approved changes. Event time and ingestion time are different.",
+        "Unusual timing is a question, not an explanation."
+      ],
+      "upload": "uploaded-temporal.png",
+      "number": 9,
       "assets": {
         "desktop": {
-          "name": "family-temporal.svg",
-          "width": 800,
-          "height": 835,
-          "sha256": "09bb45aa49e19e83981f63eb31d14401a0b770542a46cabec19218d9b083c38d"
+          "name": "uploaded-temporal.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "989c4faf717533fa1bd74f3602dbde0ab6e8c67014a05f49ff9ad72c87fd8c61"
         },
         "mobile": {
-          "name": "family-temporal-mobile.svg",
-          "width": 400,
-          "height": 989,
-          "sha256": "f55978eacfa339d3f85118e781fb068f4db1608f3da52b4e03a8601b4f57df26"
+          "name": "uploaded-temporal.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "989c4faf717533fa1bd74f3602dbde0ab6e8c67014a05f49ff9ad72c87fd8c61"
         }
+      },
+      "provenance": {
+        "original": "2_3_temporal.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-peer-group",
-      "title": "Compare the right peers",
+      "title": "Peer-group anomaly",
       "section": "2.4 Peer-Group",
       "before": "<!-- anomaly-evidence:peer-group:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "peers",
-      "labels": [
-        "Role-matched cohort",
-        "Entity under review"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Peer-Group",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Define role and cohort membership before scoring.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Compare like entities; reassess after a legitimate role change.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "Small cohorts and incomplete inventory can manufacture an outlier.",
       "sources": [
         {
@@ -346,49 +473,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Peer-Group: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 7,
+      "caption": "Four synthetic employees have comparable finance roles. A–C access the finance application and CRM; D also accesses a code repository. That deviation depends on how the peer group was defined.",
+      "original": "2_4_peer_group.png",
+      "file": "uploaded-peer-group.png",
+      "transcript": [
+        "Employees A, B and C: finance application and CRM. Employee D: the same two resources plus a code repository.",
+        "Verify duties and cohort membership. A temporary project or legitimate role change may explain the difference.",
+        "Compare like with like and validate the cohort first."
+      ],
+      "upload": "uploaded-peer-group.png",
+      "number": 10,
       "assets": {
         "desktop": {
-          "name": "family-peer-group.svg",
-          "width": 800,
-          "height": 835,
-          "sha256": "aa79c6b78b0e31f46a83d2e5d52bf178df5f520dcd338c8dea7268680d60ab95"
+          "name": "uploaded-peer-group.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "dba19899e2e78aae00d5a2b944bff60c52426cf70ec658e2ee9ec8787e490780"
         },
         "mobile": {
-          "name": "family-peer-group-mobile.svg",
-          "width": 400,
-          "height": 989,
-          "sha256": "399aaa391cb2f4baff9a03369d38e8e57e8a763916a05cf37f28a2ce5ff444ab"
+          "name": "uploaded-peer-group.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "dba19899e2e78aae00d5a2b944bff60c52426cf70ec658e2ee9ec8787e490780"
         }
+      },
+      "provenance": {
+        "original": "2_4_peer_group.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-sequence",
-      "title": "Order adds context",
+      "title": "Sequence anomaly",
       "section": "2.5 Sequence",
       "before": "<!-- anomaly-evidence:sequence:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "sequence",
-      "labels": [
-        "Authentication",
-        "Permission change",
-        "Sensitive access"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Sequence",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Join a defined entity or session across ordered events.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Declare permitted gaps, missing steps and late arrival.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "This illustrative workflow can also be legitimate; timing alone is not causality.",
       "sources": [
         {
@@ -396,49 +519,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Sequence: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 8,
+      "caption": "A synthetic session contains sign-in at 09:00, a permission grant at 09:03 and sensitive access at 09:05, without a matching approval yet observed. Missing approval telemetry is not proof that approval never occurred.",
+      "original": "2_5_sequence.png",
+      "file": "uploaded-sequence.png",
+      "transcript": [
+        "Expected workflow: approved request, permission grant, sensitive access.",
+        "Illustrated session for one verified identity: sign-in 09:00, permission grant 09:03, sensitive access 09:05. Approval has not yet been observed.",
+        "Check identity, session, ordering, allowed gaps and record completeness before inferring an unauthorized sequence."
+      ],
+      "upload": "uploaded-sequence.png",
+      "number": 11,
       "assets": {
         "desktop": {
-          "name": "family-sequence.svg",
-          "width": 800,
-          "height": 707,
-          "sha256": "b8801a2093559959f28704d889576a4087656f668a7f9c9c4cf23652b5730194"
+          "name": "uploaded-sequence.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "376d366607be22541e6393c76c42afc2823a1b25c383827ff8a399c1e7b05f25"
         },
         "mobile": {
-          "name": "family-sequence-mobile.svg",
-          "width": 400,
-          "height": 989,
-          "sha256": "577eab162c5d16e03a0b8a7ba246627dd20f176858ed3e0fdf19f46a679ccf59"
+          "name": "uploaded-sequence.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "376d366607be22541e6393c76c42afc2823a1b25c383827ff8a399c1e7b05f25"
         }
+      },
+      "provenance": {
+        "original": "2_5_sequence.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-graph-relationship",
-      "title": "A new edge is a question",
+      "title": "Graph / relationship anomaly",
       "section": "2.6 Graph / Relationship",
       "before": "<!-- anomaly-evidence:graph-relationship:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "graph",
-      "labels": [
-        "Identity",
-        "Resource",
-        "New resource"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Graph / Relationship",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Define the direction and meaning of each edge.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Compare with a past-only relationship graph.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "Projects and migrations create legitimate edges; novelty is not attribution.",
       "sources": [
         {
@@ -446,49 +565,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Graph / Relationship: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 9,
+      "caption": "The synthetic graph adds a permission edge from a service identity to an administrative resource. Its established Application A relationship is also a permission edge; neither arrow proves actual resource use.",
+      "original": "2_6_graph_relationship.png",
+      "file": "uploaded-graph-relationship.png",
+      "transcript": [
+        "One service identity has an established permission relationship with Application A and a newly observed grant to an administrative resource.",
+        "Edges point from the identity to the resource and represent permission, not network traffic or successful access.",
+        "Compare against a past-only graph. Migrations and new projects can explain new edges; verify use separately."
+      ],
+      "upload": "uploaded-graph-relationship.png",
+      "number": 12,
       "assets": {
         "desktop": {
-          "name": "family-graph-relationship.svg",
-          "width": 800,
-          "height": 849,
-          "sha256": "43e0a3a9279d4f29a81698b75ca47f0e9a9c0e8a3700a4522ea7f88b9344cd2d"
+          "name": "uploaded-graph-relationship.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "fcf1cf84cef86fa1f094d38e58fff3be9bcd59fa4f45dc130a6d6b1138cc35bd"
         },
         "mobile": {
-          "name": "family-graph-relationship-mobile.svg",
-          "width": 400,
-          "height": 1034,
-          "sha256": "95621e731db3528b10820362b3982f0f184bbcecb2ad8c9a31bdef9e34923489"
+          "name": "uploaded-graph-relationship.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "fcf1cf84cef86fa1f094d38e58fff3be9bcd59fa4f45dc130a6d6b1138cc35bd"
         }
+      },
+      "provenance": {
+        "original": "2_6_graph_relationship.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-geographic-asn",
-      "title": "Network location is uncertain",
+      "title": "Geographic / ASN anomaly",
       "section": "2.7 Geographic / ASN",
       "before": "<!-- anomaly-evidence:geographic-asn:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "network",
-      "labels": [
-        "Identity + device",
-        "VPN / proxy / mobile egress",
-        "Observed IP / ASN"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Geographic / ASN",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Retain the source IP and enrichment version.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Correlate device, session and account history.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "IP geolocation is not a measurement of the person’s physical location.",
       "sources": [
         {
@@ -496,49 +611,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Geographic / ASN: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 10,
+      "caption": "The same synthetic account reaches an identity provider through an unfamiliar provider ASN rather than its usual corporate egress. The drawing shows alternative paths, not proof of two simultaneous sessions or physical travel.",
+      "original": "2_7_geographic_asn.png",
+      "file": "uploaded-geographic-asn.png",
+      "transcript": [
+        "The account and device can appear through corporate egress or a new provider network before reaching the identity provider.",
+        "ASN means Autonomous System Number. Observed source-IP location is uncertain and need not be the person’s location.",
+        "Correlate device and session evidence; VPNs, mobile routing, travel and privacy relays can change the apparent exit."
+      ],
+      "upload": "uploaded-geographic-asn.png",
+      "number": 13,
       "assets": {
         "desktop": {
-          "name": "family-geographic-asn.svg",
-          "width": 800,
-          "height": 677,
-          "sha256": "8d4b1daa289bc8fbb4a8a4102eb8e121a0819491df61cc32b138cf5cc4338830"
+          "name": "uploaded-geographic-asn.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "67e691207596f3777a211689a170e4b09a119945331ff92fb4ff9592b90e6b28"
         },
         "mobile": {
-          "name": "family-geographic-asn-mobile.svg",
-          "width": 400,
-          "height": 1030,
-          "sha256": "5142d1bcd6d85e896379a33622290f331fb1573c703f69136e6c6d20f2cf4557"
+          "name": "uploaded-geographic-asn.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "67e691207596f3777a211689a170e4b09a119945331ff92fb4ff9592b90e6b28"
         }
+      },
+      "provenance": {
+        "original": "2_7_geographic_asn.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-identity-access",
-      "title": "Review identity and access changes",
+      "title": "Identity / access anomaly",
       "section": "2.8 Identity / Access",
       "before": "<!-- anomaly-evidence:identity-access:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "sequence",
-      "labels": [
-        "Identity or factor",
-        "Grant / session",
-        "Workload action"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Identity / Access",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Collect factor lifecycle, consent and workload audit records.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Separate a recorded change from an inferred anomaly.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "Recovery and delegated administration can be authorized.",
       "sources": [
         {
@@ -546,48 +657,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Identity / Access: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 11,
+      "caption": "A synthetic account registers a new MFA factor, receives an elevated role and accesses a protected application. The sequence needs an authorization and recovery-context check; a recorded change alone is not a compromise finding.",
+      "original": "2_8_identity_access.png",
+      "file": "uploaded-identity-access.png",
+      "transcript": [
+        "Recorded changes for one account: new MFA factor, elevated role, protected-application access.",
+        "Check whether an approved recovery or role change explains the sequence. Verify the support ticket, actor and device.",
+        "Recovery and delegated administration can produce similar records."
+      ],
+      "upload": "uploaded-identity-access.png",
+      "number": 14,
       "assets": {
         "desktop": {
-          "name": "family-identity-access.svg",
-          "width": 800,
-          "height": 677,
-          "sha256": "84e86d36798f53e82f4439414fa6ecde0d05b9777df7b1b537202a7358faec1c"
+          "name": "uploaded-identity-access.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "a9c15e0f4ce7558e64eada5bf102fa8ee9e40c080844edd27622318e9e44ea94"
         },
         "mobile": {
-          "name": "family-identity-access-mobile.svg",
-          "width": 400,
-          "height": 1005,
-          "sha256": "00cd0bb1f2ec582d259f6691896c16abc151b6b3093babf81e2e59f33c868b8c"
+          "name": "uploaded-identity-access.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "a9c15e0f4ce7558e64eada5bf102fa8ee9e40c080844edd27622318e9e44ea94"
         }
+      },
+      "provenance": {
+        "original": "2_8_identity_access.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-rare-process-service",
-      "title": "Rare does not mean malicious",
+      "title": "Rare process / service anomaly",
       "section": "2.9 Rare Process / Service",
       "before": "<!-- anomaly-evidence:rare-process-service:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "peers",
-      "labels": [
-        "Observed software population",
-        "Low-prevalence process"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Rare Process / Service",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Measure prevalence within a role and observation window.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Check signer, hash, owner and collection coverage.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "New software, diagnostics and newly enabled telemetry can all look rare.",
       "sources": [
         {
@@ -595,49 +703,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Rare Process / Service: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 12,
+      "caption": "A utility appears on 1 of 20 monitored database hosts over seven days: 5% observed host prevalence. That is not a 5% attack probability, detector precision or enterprise-wide prevalence estimate.",
+      "original": "2_9_rare_process_service.png",
+      "file": "uploaded-rare-process-service.png",
+      "transcript": [
+        "Defined example population: 20 monitored database hosts over seven days. The utility is observed on host 20 only: 1/20 = 5%.",
+        "Check hash, signer, owner and deployment history. Newly enabled logging can make familiar software look new.",
+        "Rare means uncommon in the observations, not malicious."
+      ],
+      "upload": "uploaded-rare-process-service.png",
+      "number": 15,
       "assets": {
         "desktop": {
-          "name": "family-rare-process-service.svg",
-          "width": 800,
-          "height": 835,
-          "sha256": "1af4c50120736faab5625e2b105f5700a5dada41090380383ab67e948adba793"
+          "name": "uploaded-rare-process-service.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "e6beb0f57559802651fd54b04ec0ad9666545b3d93f129f8495c7ccd248be6cf"
         },
         "mobile": {
-          "name": "family-rare-process-service-mobile.svg",
-          "width": 400,
-          "height": 989,
-          "sha256": "6718c8f19da5d03f0494e7bd5403ce53378f09d9c80136463ca2db5ab26c5f18"
+          "name": "uploaded-rare-process-service.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "e6beb0f57559802651fd54b04ec0ad9666545b3d93f129f8495c7ccd248be6cf"
         }
+      },
+      "provenance": {
+        "original": "2_9_rare_process_service.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-parent-child",
-      "title": "Direct child is not any descendant",
+      "title": "Parent–child execution anomaly",
       "section": "2.10 Parent-Child Execution",
       "before": "<!-- anomaly-evidence:parent-child:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "lineage",
-      "labels": [
-        "Web worker",
-        "Shell child",
-        "Later descendant"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Parent-Child Execution",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Use stable process identifiers and parent identifiers.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Declare direct-child matching or an ancestry search.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "PID reuse, missing ancestry and in-process execution limit coverage.",
       "sources": [
         {
@@ -645,49 +749,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Parent-Child Execution: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 13,
+      "caption": "In the synthetic w3wp.exe → cmd.exe → powershell.exe chain, cmd.exe is the web worker’s direct child; PowerShell is its later descendant and cmd.exe’s direct child. This is not a reconstruction of the Exchange incidents below.",
+      "original": "2_10_parent_child_execution.png",
+      "file": "uploaded-parent-child.png",
+      "transcript": [
+        "Direct relationship 1: w3wp.exe starts cmd.exe. Direct relationship 2: cmd.exe starts powershell.exe.",
+        "Relative to w3wp.exe, PowerShell is a descendant, not a direct child.",
+        "Use stable process identifiers, host role and command lines. Verify legitimate automation; in-process activity may create no child process."
+      ],
+      "upload": "uploaded-parent-child.png",
+      "number": 16,
       "assets": {
         "desktop": {
-          "name": "family-parent-child.svg",
-          "width": 800,
-          "height": 785,
-          "sha256": "b494cad6b38a8fccaad1bbdf9df09292d6bbb798ace9923fd51c4aac50b960fe"
+          "name": "uploaded-parent-child.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "9c9ef2bf2f476fdfe9bc510eb7cb9c712aef2b803673743cc32c6198186df78a"
         },
         "mobile": {
-          "name": "family-parent-child-mobile.svg",
-          "width": 400,
-          "height": 1122,
-          "sha256": "55f3457aeb66317f96fda38cc3802b352c0f440b8d2911c33bbb799ec8363819"
+          "name": "uploaded-parent-child.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "9c9ef2bf2f476fdfe9bc510eb7cb9c712aef2b803673743cc32c6198186df78a"
         }
+      },
+      "provenance": {
+        "original": "2_10_parent_child_execution.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-data-movement",
-      "title": "Track source, destination and units",
+      "title": "Data movement anomaly",
       "section": "2.11 Data Movement",
       "before": "<!-- anomaly-evidence:data-movement:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "sequence",
-      "labels": [
-        "Data source",
-        "Export / copy / sync",
-        "Destination account"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Data Movement",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Keep audit events, unique objects, records and bytes distinct.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Review destination ownership and access authorization.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "Approved migration and backup can resemble exfiltration.",
       "sources": [
         {
@@ -695,49 +795,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Data Movement: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 14,
+      "caption": "Synthetic transfer of customer records through an export or sync job to a new storage account. Destination ownership and approval are unresolved; a changed route is an investigation lead, not confirmed exfiltration. Audit events, distinct objects, records and bytes are different measurements.",
+      "original": "2_11_data_movement.jpg",
+      "file": "uploaded-data-movement.jpg",
+      "transcript": [
+        "Customer records are the defined source. An export or sync job, linked to an actor and session, transfers them to a new storage account whose ownership needs review.",
+        "The synthetic service identity uses a destination outside its previous workflow. Check whether that destination is approved for this data and verify who controls it.",
+        "Keep audit-event counts, distinct objects, rows or records, and bytes separate. Match source, actor, job and destination; backups, migrations and collaboration can explain the transfer."
+      ],
+      "upload": "uploaded-data-movement.jpg",
+      "number": 17,
       "assets": {
         "desktop": {
-          "name": "family-data-movement.svg",
-          "width": 800,
-          "height": 677,
-          "sha256": "8747577bd51b688652f02741e7c809139aa405312fc8debae0355e3f37a1197d"
+          "name": "uploaded-data-movement.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "4cee1e17bfce9bae2835aee137aaf6e9c3c96985ea7ed65ab00230df27a3eabb"
         },
         "mobile": {
-          "name": "family-data-movement-mobile.svg",
-          "width": 400,
-          "height": 1030,
-          "sha256": "a2e98d4935484163feee9726f572db92969ff3c7a1af472476f0e6bd642b6d87"
+          "name": "uploaded-data-movement.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "4cee1e17bfce9bae2835aee137aaf6e9c3c96985ea7ed65ab00230df27a3eabb"
         }
+      },
+      "provenance": {
+        "original": "2_11_data_movement.jpg",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-protocol-application",
-      "title": "Inspect usage, not just the port",
+      "title": "Protocol / application usage anomaly",
       "section": "2.12 Protocol / Application Usage",
       "before": "<!-- anomaly-evidence:protocol-application:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "sequence",
-      "labels": [
-        "Observed protocol",
-        "Defined feature",
-        "Entity / application context"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Protocol / Application Usage",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Record parser version, sensor location and feature definition.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Compare the entity’s application and destination history.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "New clients and legitimate encoded identifiers can shift a baseline.",
       "sources": [
         {
@@ -745,49 +841,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Protocol / Application Usage: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 15,
+      "caption": "Synthetic comparison for the same account, application and HTTPS transport: routine reads change to a first-observed bulk export. The illustrated difference is the application operation, not a changed port or a claim that encrypted flow metadata reveals the action.",
+      "original": "2_12_protocol_application_usage.jpg",
+      "file": "uploaded-protocol-application.jpg",
+      "transcript": [
+        "Historical use consists of routine application-data reads. Current use is a bulk export first observed for the account; the application and HTTPS transport are unchanged.",
+        "Candidate evidence includes API operations, parser and sensor context, and process and destination information. Encrypted flow metadata alone may not reveal the application action.",
+        "Inspect application audit or available parsed fields. Client upgrades, approved jobs and integrations are alternatives; port numbers and entropy alone are not verdicts."
+      ],
+      "upload": "uploaded-protocol-application.jpg",
+      "number": 18,
       "assets": {
         "desktop": {
-          "name": "family-protocol-application.svg",
-          "width": 800,
-          "height": 738,
-          "sha256": "8f72c7373b58e36dcd8f3039281a34d4993b600a0241ce3077bfc006356e14d3"
+          "name": "uploaded-protocol-application.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "6b7ecf874cc33c631e95b7fe889e776eb484b32236a0834d827ac59b94aa49b9"
         },
         "mobile": {
-          "name": "family-protocol-application-mobile.svg",
-          "width": 400,
-          "height": 1030,
-          "sha256": "a4894796ad4f0c5c1a815616fcd6315f4da4b0cf991d7e59c70c5438745a7ea4"
+          "name": "uploaded-protocol-application.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "6b7ecf874cc33c631e95b7fe889e776eb484b32236a0834d827ac59b94aa49b9"
         }
+      },
+      "provenance": {
+        "original": "2_12_protocol_application_usage.jpg",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-negative-absence",
-      "title": "No event is not the same as no activity",
+      "title": "Negative / absence anomaly",
       "section": "2.13 Negative Anomaly (Absence)",
       "before": "<!-- anomaly-evidence:negative-absence:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "absence",
-      "labels": [
-        "Expected heartbeat",
-        "Missing observation",
-        "Independent health check"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Negative Anomaly (Absence)",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Define when a source is expected to report.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Check delivery, asset state, filters and retention separately.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "An outage or parser failure can look like deliberate impairment.",
       "sources": [
         {
@@ -795,49 +887,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Negative Anomaly (Absence): one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 16,
+      "caption": "Synthetic heartbeat schedule: reports at minutes 0, 5 and 10, then none observed at 15, 20 or 25. At minute 28, each missing report is beyond the illustrative two-minute delivery allowance. These assumed timings are not a universal alert threshold or proof of sensor tampering.",
+      "original": "2_13_negative_absence.jpg",
+      "file": "uploaded-negative-absence.jpg",
+      "transcript": [
+        "The example expects one heartbeat every five minutes. Reports were received at minutes 0, 5 and 10; reports expected at 15, 20 and 25 are not observed.",
+        "Assessment occurs at minute 28 with a two-minute delivery allowance, so the three example deadlines were 17, 22 and 27. An independent host monitor still reports the server online.",
+        "Check the expected-asset roster, source and collector health, delivery delays, filters and retention. Missing telemetry is unknown, not evidence of zero activity or automatically a benign state."
+      ],
+      "upload": "uploaded-negative-absence.jpg",
+      "number": 19,
       "assets": {
         "desktop": {
-          "name": "family-negative-absence.svg",
-          "width": 800,
-          "height": 838,
-          "sha256": "712a2ce27ffa6fa6649c1861ec7a7658b4853babd9224b112332f37878818ece"
+          "name": "uploaded-negative-absence.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "8d10809b122caf31d345c8bce6b315d7c5efd1ca4ac55849e6e2f62dd2578922"
         },
         "mobile": {
-          "name": "family-negative-absence-mobile.svg",
-          "width": 400,
-          "height": 1097,
-          "sha256": "a1b3ddc32b45838906ed51f9648195175ed8dd02020239183b4f163e36926556"
+          "name": "uploaded-negative-absence.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "8d10809b122caf31d345c8bce6b315d7c5efd1ca4ac55849e6e2f62dd2578922"
         }
+      },
+      "provenance": {
+        "original": "2_13_negative_absence.jpg",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-state-change",
-      "title": "Compare before and after",
+      "title": "State-change anomaly",
       "section": "2.14 State-Change",
       "before": "<!-- anomaly-evidence:state-change:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "state",
-      "labels": [
-        "Prior state",
-        "Recorded change",
-        "New effective state"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "State-Change",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Retain actor, object, timestamp and old/new values.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Check effective permissions and approved change records.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "A first-seen configuration change can be legitimate administration.",
       "sources": [
         {
@@ -845,49 +933,45 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "State-Change: one operational feature family, not a mutually exclusive statistical class. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 17,
+      "caption": "Synthetic change on Repo-07 by Admin-12 at 10:04 UTC: internal-only access changes to allowing external sharing. No approval has yet been matched. Verify effective access separately; enabling sharing does not establish public exposure, data access or an unauthorized change.",
+      "original": "2_14_state_change.jpg",
+      "file": "uploaded-state-change.jpg",
+      "transcript": [
+        "The same repository object, Repo-07, changes from internal users only to external sharing enabled. The diagram names a synthetic actor Admin-12 and event time 10:04 UTC.",
+        "Approval has not yet been matched. This is not proof that the change lacked authorization.",
+        "Retain old and new values, object identity, actor and time. Check effective exposure and the approved change record; legitimate administration can create the same setting change."
+      ],
+      "upload": "uploaded-state-change.jpg",
+      "number": 20,
       "assets": {
         "desktop": {
-          "name": "family-state-change.svg",
-          "width": 800,
-          "height": 707,
-          "sha256": "915a8689a529b00d12903c4176f1bc8e2eddc973296857aee355f6a4d4b90007"
+          "name": "uploaded-state-change.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "16b8815a2f2268dcfb680e25bea6daa77714523cf12fc8135fe107a8f0fc7a69"
         },
         "mobile": {
-          "name": "family-state-change-mobile.svg",
-          "width": 400,
-          "height": 1030,
-          "sha256": "4fa9392f58048e7b21c927afebba9700006b0a24e3d0f82589c7bd455502f3f3"
+          "name": "uploaded-state-change.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "16b8815a2f2268dcfb680e25bea6daa77714523cf12fc8135fe107a8f0fc7a69"
         }
+      },
+      "provenance": {
+        "original": "2_14_state_change.jpg",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "family-multi-event-correlation",
-      "title": "Join evidence without inventing a chain",
+      "title": "Multi-event correlation",
       "section": "2.15 Multi-Event Correlation",
       "before": "<!-- anomaly-evidence:multi-event-correlation:start -->",
-      "kind": "family",
-      "evidence": "SCHEMATIC · NOT OBSERVED DATA",
-      "motif": "correlation",
-      "labels": [
-        "Identity event",
-        "Process event",
-        "Application event"
-      ],
+      "kind": "uploaded",
+      "evidence": "SYNTHETIC ILLUSTRATION · USER-SUPPLIED",
       "subtitle": "Multi-Event Correlation",
-      "panels": [
-        {
-          "label": "Measure",
-          "text": "Join tenant, account, host or session with bounded event time.",
-          "tone": "blue"
-        },
-        {
-          "label": "Compare",
-          "text": "Retain missing or ambiguous links; deduplicate shared evidence.",
-          "tone": "blue"
-        }
-      ],
       "boundary": "Adding a gate can remove true positives as well as false positives.",
       "sources": [
         {
@@ -895,21 +979,89 @@
           "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
         }
       ],
-      "caption": "Multi-Event Correlation: a composition pattern, not an additional independent anomaly family. The incident cards below provide separate source-reported examples; this schematic does not reconstruct those incidents.",
-      "number": 18,
+      "caption": "Synthetic identity, application and storage records become one investigation candidate only after tenant, account, session or asset, and timing checks support the join. Correlation is a composition pattern, not another anomaly family; repeated alerts from one event are not independent evidence.",
+      "original": "2_15_multi_event_correlation.jpg",
+      "file": "uploaded-multi-event-correlation.jpg",
+      "transcript": [
+        "Identity audit reports a new factor registration, application audit a new privileged session, and storage audit an unusual export destination.",
+        "Check matching tenant and account, verified session or asset links, and allowed event order and gaps. Preserve unresolved links rather than inventing a chain.",
+        "Deduplicate shared evidence and reject ambiguous joins. Measure how added gates change false alerts and missed attacks; do not add uncalibrated scores. The output is an investigation candidate, not a verdict."
+      ],
+      "upload": "uploaded-multi-event-correlation.jpg",
+      "number": 21,
       "assets": {
         "desktop": {
-          "name": "family-multi-event-correlation.svg",
-          "width": 800,
-          "height": 807,
-          "sha256": "e5739f729c760ce98222d1bef3d7b9389328de3b5686b0171fcd55eb81c396ee"
+          "name": "uploaded-multi-event-correlation.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "13927221e68bb286824c7dc8c6f5a2e3d8ae3dc336d703750e39a41a7939ab14"
         },
         "mobile": {
-          "name": "family-multi-event-correlation-mobile.svg",
-          "width": 400,
-          "height": 1097,
-          "sha256": "2a8077fef44b2a0c64e56754dfd3fdc7439826c671e487c8f986ec40d5444d1f"
+          "name": "uploaded-multi-event-correlation.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "13927221e68bb286824c7dc8c6f5a2e3d8ae3dc336d703750e39a41a7939ab14"
         }
+      },
+      "provenance": {
+        "original": "2_15_multi_event_correlation.jpg",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "incident-register",
+      "title": "Incident register: evidence boundaries",
+      "section": "2.16 Incident register, tags and evidence boundaries",
+      "before": "| Case / campaign record | Attribution boundary | Crosslinked analytical views |",
+      "kind": "uploaded",
+      "evidence": "ARTICLE SCOPE SNAPSHOT · USER-SUPPLIED",
+      "original": "2_16_incident_register_evidence_boundaries.jpg",
+      "file": "uploaded-incident-register.jpg",
+      "caption": "Article-register snapshot reviewed 2026-09-21: 14 operational families plus correlation, 15 navigation tags, 17 distinct case/campaign records and 30 incident-to-topic mappings. These counts match the maintained register; they are not individual breach counts, independent confirmations or detector-performance measurements.",
+      "boundary": "Reported observations, author-inferred mappings and proposed telemetry have different evidence status. This register is not an anomaly type or a detector benchmark.",
+      "transcript": [
+        "Scope snapshot: 14 operational anomaly families plus one correlation pattern; 15 navigation tags; 17 distinct case or campaign records; 30 incident-to-topic mappings. Reviewed 2026-09-21.",
+        "Reported: a named investigator reports an observation; the article has not independently reproduced it. Inferred: the author maps behavior to an analytical view; a topic tag is not attribution or detector validation.",
+        "Proposed: suggested telemetry requires validation; a collection plan does not prove that the original victim had that visibility.",
+        "Keep each case identifier, investigator and source attached to every mapping. A repeated case is not independent evidence, and a campaign can include several victims. Neither counts nor topic tags establish precision, recall or successful detection."
+      ],
+      "registerSnapshot": {
+        "families": 14,
+        "correlationPatterns": 1,
+        "navigationTags": 15,
+        "cases": 17,
+        "mappings": 30,
+        "reviewedAt": "2026-09-21"
+      },
+      "sources": [
+        {
+          "label": "Maintained incident register and source citations",
+          "url": "https://1200km.com/articles/research/anomaly-incidents.json"
+        }
+      ],
+      "upload": "uploaded-incident-register.jpg",
+      "number": 22,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-incident-register.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "260a6431c38c7dabbce3a379c4e791ebf724facf0295548df9ac7ced19bb5223"
+        },
+        "mobile": {
+          "name": "uploaded-incident-register.jpg",
+          "format": "jpeg",
+          "width": 880,
+          "height": 1100,
+          "sha256": "260a6431c38c7dabbce3a379c4e791ebf724facf0295548df9ac7ced19bb5223"
+        }
+      },
+      "provenance": {
+        "original": "2_16_incident_register_evidence_boundaries.jpg",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
@@ -957,7 +1109,7 @@
         }
       ],
       "caption": "The article’s tactic matrix is a set of proposed observation opportunities. It is not a ranking of detector performance.",
-      "number": 19,
+      "number": 23,
       "assets": {
         "desktop": {
           "name": "attack-mapping.svg",
@@ -975,534 +1127,664 @@
     },
     {
       "id": "case-sunburst",
-      "title": "SUNBURST: observation is not an entropy score",
+      "title": "SUNBURST: encoded DNS is evidence, not a verdict",
       "section": "4.1 SUNBURST",
       "before": "### 4.2 HAFNIUM",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "A trojanized SolarWinds component used delayed activation and encoded information in DNS names.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Correlate DNS-label structure, destination novelty and the originating process.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "No measured victim entropy range or universal DNS cutoff is established here.",
       "sources": [
         {
-          "label": "Mandiant",
+          "label": "S01 · Mandiant: SUNBURST technical details",
           "url": "https://cloud.google.com/blog/topics/threat-intelligence/sunburst-additional-technical-details/"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 20,
+      "caption": "Source-reported SUNBURST behavior, with a separate proposed detection hypothesis. The arrows summarize a mechanism, not a replay of one victim’s timeline. No measured entropy cutoff or validation of the author’s proposed detector is implied.",
+      "original": "4_1_sunburst_unc2452.png",
+      "file": "uploaded-case-sunburst.png",
+      "sourceCodes": [
+        "S01"
+      ],
+      "transcript": [
+        "Reported activity: a trojanized SolarWinds component activated after a delay and communicated encoded information through DNS names. The solid panel describes public reporting, not newly collected telemetry.",
+        "Proposed hypothesis: investigate the combination of DNS-label structure, destination novelty and originating-process context. These features require locally defined baselines and collection coverage.",
+        "Technical boundary: missing image-load records do not rule out manual loading. An executable name, a long label or an entropy value alone does not identify SUNBURST.",
+        "Interpretation: combine evidence and test benign alternatives. The dashed hypothesis panel is an analytical proposal, not a measured detector result."
+      ],
+      "upload": "uploaded-case-sunburst.png",
+      "number": 24,
       "assets": {
         "desktop": {
-          "name": "case-sunburst.svg",
-          "width": 800,
-          "height": 720,
-          "sha256": "3f34135d4112d582a4fd6318669aa79f391a351c5599cb40e714ad0ce1552e2e"
+          "name": "uploaded-case-sunburst.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "8435c6f7ca35925e3efa4a057d9adec6b645dd1b85f9422c98266bb933a69ef3"
         },
         "mobile": {
-          "name": "case-sunburst-mobile.svg",
-          "width": 400,
-          "height": 797,
-          "sha256": "229fb0d02c67c47e60a72e7b1319fc86f5a247f3e24e8526fd4f95728ea9781d"
+          "name": "uploaded-case-sunburst.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "8435c6f7ca35925e3efa4a057d9adec6b645dd1b85f9422c98266bb933a69ef3"
         }
+      },
+      "provenance": {
+        "original": "4_1_sunburst_unc2452.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-exchange",
-      "title": "Exchange: keep campaign evidence separate",
+      "title": "Exchange: distinguish HAFNIUM from broader exploitation",
       "section": "4.2 HAFNIUM / Exchange",
       "before": "### 4.3 Conti",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "Microsoft described Exchange exploitation and webshell deployment. Broader post-exploitation reporting includes multiple actors.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Join unusual web requests, ASPX writes and shell ancestry with the server’s role.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "Do not assign every post-exploitation observation to HAFNIUM. Standard IIS logs do not expose arbitrary request bodies.",
       "sources": [
         {
-          "label": "Microsoft HAFNIUM investigation",
+          "label": "S02 · Microsoft: initial HAFNIUM investigation",
           "url": "https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/"
         },
         {
-          "label": "Microsoft",
+          "label": "Supplement · Microsoft: broader Exchange post-exploitation",
           "url": "https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 21,
+      "caption": "The initial Microsoft report attributes Exchange exploitation and webshells to HAFNIUM; the separately linked post-exploitation report covers multiple actors. Do not assign every later observation to HAFNIUM. The detection panel is a proposal, not a reproduced intrusion.",
+      "original": "4_2_hafnium_exchange_proxylogon.png",
+      "file": "uploaded-case-exchange.png",
+      "sourceCodes": [
+        "S02"
+      ],
+      "transcript": [
+        "Reported activity: exploitation of on-premises Exchange servers enabled webshell deployment and subsequent access. Original HAFNIUM reporting and broader Exchange exploitation are distinct evidence scopes.",
+        "Proposed hypothesis: correlate unusual HTTP activity, ASPX file writes and a web-worker process spawning a shell or a later descendant, using the server role and application context.",
+        "Technical boundary: ordinary IIS access logs do not capture arbitrary request bodies. Security 4688, Sysmon process-creation events and EDR records have different schemas and collection requirements.",
+        "Interpretation: verify process ancestry and legitimate administration. The same process names or HTTP status do not establish an intrusion or actor attribution."
+      ],
+      "upload": "uploaded-case-exchange.png",
+      "number": 25,
       "assets": {
         "desktop": {
-          "name": "case-exchange.svg",
-          "width": 800,
-          "height": 781,
-          "sha256": "cf4aa35384a83b5391b79df3050f1fe25de3ff46fa665535ae2d985b2fab060a"
+          "name": "uploaded-case-exchange.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "528af59590231deb88fa48401e5d5a2c83ce8b1b4c957b597b9041c869717225"
         },
         "mobile": {
-          "name": "case-exchange-mobile.svg",
-          "width": 400,
-          "height": 873,
-          "sha256": "284998faf6d40cebb850cf292776a5c724c174ff3d9a54eb21a23f6deb9b97b2"
+          "name": "uploaded-case-exchange.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "528af59590231deb88fa48401e5d5a2c83ce8b1b4c957b597b9041c869717225"
         }
+      },
+      "provenance": {
+        "original": "4_2_hafnium_exchange_proxylogon.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-conti",
-      "title": "BazarCall to Conti: one intrusion account",
+      "title": "BazarCall to Conti: one documented investigation",
       "section": "4.3 Conti",
       "before": "### 4.4 APT34",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "The selected investigation describes BazarCall, Trickbot, Cobalt Strike and Conti in one intrusion.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Correlate enumeration, remote administration, share access and security changes by host and identity.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "This is not every affiliate’s timeline. Administrative tools and backup changes can be legitimate.",
       "sources": [
         {
-          "label": "The DFIR Report",
+          "label": "S03 · The DFIR Report: BazarCall to Conti",
           "url": "https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/"
+        },
+        {
+          "label": "Supplement · Microsoft: Defender event meanings",
+          "url": "https://learn.microsoft.com/en-us/defender-endpoint/troubleshoot-microsoft-defender-antivirus"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 22,
+      "caption": "The illustrated BazarCall, Trickbot, Cobalt Strike and Conti activity belongs to the selected investigation, not a universal affiliate playbook. Defender 5001 reports disabled real-time protection; 5007 reports configuration changes. Neither event alone proves malicious intent.",
+      "original": "4_3_conti_bazarcall.png",
+      "file": "uploaded-case-conti.png",
+      "sourceCodes": [
+        "S03"
+      ],
+      "transcript": [
+        "Reported activity: The DFIR Report documented a BazarCall intrusion involving Trickbot, Cobalt Strike and eventual Conti ransomware activity. This is one investigation, not an aggregate sequence observed in every Conti case.",
+        "Proposed hypothesis: join enumeration, remote administration, share access, security changes and subsequent activity using the relevant host and account, with bounded event time.",
+        "Technical boundary: Defender event 5001 concerns real-time protection being disabled; event 5007 concerns configuration changes. The provider, event fields and before/after state matter.",
+        "Interpretation: approved administrative tools, maintenance and backup changes can resemble parts of the pattern. The hypothesis has not been replayed against the private victim environment."
+      ],
+      "upload": "uploaded-case-conti.png",
+      "number": 26,
       "assets": {
         "desktop": {
-          "name": "case-conti.svg",
-          "width": 800,
-          "height": 720,
-          "sha256": "bd672d9a662faa6e0373de32fbe0e44b53d62a7fee1ae4f45cd8ebfb16b518da"
+          "name": "uploaded-case-conti.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "8436a77b1f2ab499043fb99fe33c2b82cea918cc45044d8b9edb9fe28d0d25f0"
         },
         "mobile": {
-          "name": "case-conti-mobile.svg",
-          "width": 400,
-          "height": 781,
-          "sha256": "f7f9316b5cd8d3caf159f8e74a46e23019660b3e1a08986ff22afaa6ab793adf"
+          "name": "uploaded-case-conti.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "8436a77b1f2ab499043fb99fe33c2b82cea918cc45044d8b9edb9fe28d0d25f0"
         }
+      },
+      "provenance": {
+        "original": "4_3_conti_bazarcall.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-oilrig",
-      "title": "OilRig-associated RDAT: variants matter",
+      "title": "OilRig-associated RDAT: identify the actual channel",
       "section": "4.4 OilRig",
       "before": "### 4.5 MOVEit",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "Unit 42 described RDAT communication mechanisms, including an email/steganography variant.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Inspect protocol structure, timing, destinations and endpoint context for the specific sample.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "Do not collapse every variant into DNS tunneling or treat a TXT:A ratio as a verdict.",
       "sources": [
         {
-          "label": "Palo Alto Networks Unit 42",
+          "label": "S04 · Unit 42: RDAT channels and steganography",
           "url": "https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 23,
+      "caption": "Read the HTTP, DNS and email/EWS branches as available mechanisms, not mandatory successive stages or mutually exclusive variants: Unit 42 reports that the same EWS sample also supported HTTP and DNS tunneling. The channel must be established for the actual sample and activity.",
+      "original": "4_4_oilrig_rdat_dns.png",
+      "file": "uploaded-case-oilrig.png",
+      "sourceCodes": [
+        "S04"
+      ],
+      "transcript": [
+        "Reported activity: Unit 42 investigated OilRig-associated RDAT at a telecommunications organization. The graphic separates HTTP, DNS and email/EWS communication, including a BMP steganography mechanism.",
+        "Clarification to the graphic’s different-variants shorthand: these are not mutually exclusive capabilities. Unit 42 explicitly reports HTTP and DNS support in the same EWS-capable sample. Available capabilities do not prove every channel was used in one intrusion.",
+        "Proposed hypothesis: inspect the relevant protocol structure, timing, destinations and endpoint evidence for that sample. A DNS-only analytic does not cover an email channel.",
+        "Technical boundary: a TXT-to-A query ratio is not a verdict, and DNSpionage is not interchangeable with this RDAT attribution. The hypothesis panel does not establish a measured threshold."
+      ],
+      "upload": "uploaded-case-oilrig.png",
+      "number": 27,
       "assets": {
         "desktop": {
-          "name": "case-oilrig.svg",
-          "width": 800,
-          "height": 720,
-          "sha256": "f7e059825de44f46123f76a06f6ffbac410d11d4a8b14c531e129675a83edcde"
+          "name": "uploaded-case-oilrig.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "ac2fa4856bbfdce432dcbe8e1d587d6255e925e28b4911f00cf7d53115c99847"
         },
         "mobile": {
-          "name": "case-oilrig-mobile.svg",
-          "width": 400,
-          "height": 797,
-          "sha256": "7396e959b34febd04d5935fd3e905860145028ccf1b1f980dbefa2634e731ca1"
+          "name": "uploaded-case-oilrig.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "ac2fa4856bbfdce432dcbe8e1d587d6255e925e28b4911f00cf7d53115c99847"
         }
+      },
+      "provenance": {
+        "original": "4_4_oilrig_rdat_dns.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-moveit",
-      "title": "MOVEit: application account, not Windows user",
+      "title": "MOVEit: follow application and database evidence",
       "section": "4.5 MOVEit",
       "before": "### 4.6 Midnight",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "LEMURLOOT interacted with the MOVEit database and created a MOVEit application account.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Correlate webshell access, application sessions, database changes and exports.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "Windows Security 4720 does not describe this SQL-backed application-account creation.",
       "sources": [
         {
-          "label": "Mandiant",
+          "label": "S05 · Mandiant: MOVEit and LEMURLOOT",
           "url": "https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 24,
+      "caption": "LEMURLOOT’s Health Check Service account is a MOVEit application account, not a Windows local account. Windows Security 4720 does not represent this SQL-backed operation. Access to Azure settings in the application database is not evidence of a particular configuration-file read.",
+      "original": "4_5_moveit_cl0p_lemurloot.png",
+      "file": "uploaded-case-moveit.png",
+      "sourceCodes": [
+        "S05"
+      ],
+      "transcript": [
+        "Reported activity: Mandiant described exploitation of MOVEit Transfer and the LEMURLOOT webshell, database interactions, an application account and data theft.",
+        "Proposed hypothesis: correlate webshell access, application-account or session changes, database activity and exports. Establish the entity joins rather than assuming one HTTP request explains every later event.",
+        "Technical boundary: Health Check Service is the application-account name in this account of the intrusion. A familiar-looking name is not independently malicious, and Windows account-creation event 4720 is the wrong expected source.",
+        "Interpretation: use MOVEit and database records for application changes. Distinguish application settings, actual exports and destination ownership; no query performance or victim replay is claimed."
+      ],
+      "upload": "uploaded-case-moveit.png",
+      "number": 28,
       "assets": {
         "desktop": {
-          "name": "case-moveit.svg",
-          "width": 800,
-          "height": 720,
-          "sha256": "ded75b4bb02dab49e0a0aae15467ef189a3dbcc6aaf658961c9b9ba5539f4c21"
+          "name": "uploaded-case-moveit.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "6d96a2646a75dc1c83284082a2c4bd7a1feb811231f3143b5a2b1240a2d091d2"
         },
         "mobile": {
-          "name": "case-moveit-mobile.svg",
-          "width": 400,
-          "height": 772,
-          "sha256": "445fa144de49fb0d269086f698301e3325c1f101912db895d8ec60e54e0ce066"
+          "name": "uploaded-case-moveit.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "6d96a2646a75dc1c83284082a2c4bd7a1feb811231f3143b5a2b1240a2d091d2"
         }
+      },
+      "provenance": {
+        "original": "4_5_moveit_cl0p_lemurloot.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-midnight",
-      "title": "Midnight Blizzard: preserve the actual permission",
+      "title": "Midnight Blizzard: preserve identity and permission context",
       "section": "4.6 Midnight Blizzard",
       "before": "### 4.7 Scattered",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "Microsoft reported password spraying, residential proxies and Exchange full_access_as_app permission abuse.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Join account failures, application consent and ownership, credentials and EWS activity.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "Do not substitute generic Graph mail scopes. Missing history is a cold start, not evidence of innocence.",
       "sources": [
         {
-          "label": "Microsoft",
+          "label": "S06 · Microsoft: Midnight Blizzard responder guidance",
           "url": "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 25,
+      "caption": "Microsoft reported password spraying against a legacy test account without MFA, residential proxies and abuse of Exchange full_access_as_app access. This is not a generic Graph mail-scope example. Missing account history is a cold-start limitation, not evidence that activity is benign.",
+      "original": "4_6_midnight_blizzard_cozy_bear.png",
+      "file": "uploaded-case-midnight.png",
+      "sourceCodes": [
+        "S06"
+      ],
+      "transcript": [
+        "Reported activity: the investigation connects a compromised legacy test account, password spraying and residential proxy infrastructure to application-mediated mailbox access.",
+        "Permission detail: the relevant Exchange permission was full_access_as_app, with EWS activity. Do not silently substitute a Microsoft Graph permission with a similar-looking purpose.",
+        "Proposed hypothesis: correlate authentication failures, application consent, ownership and credential changes with subsequent mailbox actions using real tenant and account identifiers.",
+        "Interpretation: sparse account history limits anomaly baselines. A new network location is not proof of the person’s physical location, and the graphic does not independently resolve vendor actor-name equivalence."
+      ],
+      "upload": "uploaded-case-midnight.png",
+      "number": 29,
       "assets": {
         "desktop": {
-          "name": "case-midnight.svg",
-          "width": 800,
-          "height": 720,
-          "sha256": "2bf1f1f74d584a7fd1e8f2890716c337fe861f3dc625de036561ae2f684d8a8c"
+          "name": "uploaded-case-midnight.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "335f7bd169083405f72c3beac3dfab693b7b4bb1069934beb940a199c6ffce35"
         },
         "mobile": {
-          "name": "case-midnight-mobile.svg",
-          "width": 400,
-          "height": 848,
-          "sha256": "6c5662807dd72f27dbf9cff28eb09226d54f701e7fc72ebc58aba7abf0275db4"
+          "name": "uploaded-case-midnight.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "335f7bd169083405f72c3beac3dfab693b7b4bb1069934beb940a199c6ffce35"
         }
+      },
+      "provenance": {
+        "original": "4_6_midnight_blizzard_cozy_bear.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-unc3944",
-      "title": "UNC3944: look across identity and SaaS",
+      "title": "UNC3944: correlate identity changes and SaaS activity",
       "section": "4.7 UNC3944",
       "before": "### 4.8 Storm",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "Mandiant described help-desk social engineering, identity abuse and SaaS data theft using legitimate integration tools.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Join factor changes to sessions and sensitive application actions with real tenant/account keys.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "A transfer can bypass endpoint sensors without leaving every provider or application blind.",
       "sources": [
         {
-          "label": "Mandiant",
+          "label": "S07 · Mandiant: UNC3944 targets SaaS",
           "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 26,
+      "caption": "This graphic summarizes Mandiant’s June 2024 campaign reporting, which includes 2023 observations; it is not a single dated victim timeline. Scattered Spider and UNC3944 naming does not establish identical cluster membership. Cloud-to-cloud transfers may bypass endpoint visibility while leaving identity, application or provider records.",
+      "original": "4_7_scattered_spider_unc3944.png",
+      "file": "uploaded-case-unc3944.png",
+      "sourceCodes": [
+        "S07"
+      ],
+      "transcript": [
+        "Reported activity: Mandiant described help-desk social engineering, identity abuse and SaaS data theft, including use of legitimate integration services such as Airbyte and Fivetran.",
+        "Proposed hypothesis: join factor changes, authenticated sessions, new application relationships and sensitive actions with verified tenant, identity and resource keys.",
+        "Technical boundary: a provider-mediated transfer need not cross a monitored workstation. This does not mean every provider, identity or application audit source is blind.",
+        "Interpretation: approved recovery, migration and integration can create similar records. Vendor threat-cluster labels are not automatically exact membership equivalents, and this is not a measured detection result."
+      ],
+      "upload": "uploaded-case-unc3944.png",
+      "number": 30,
       "assets": {
         "desktop": {
-          "name": "case-unc3944.svg",
-          "width": 800,
-          "height": 751,
-          "sha256": "02b40ac8644bc8213527b4d40ede9e08ecac398b4e859175e3dfc67f9a46c039"
+          "name": "uploaded-case-unc3944.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "905cf3773f6822317f013dd8dd3f9554109c71a7e434e3e445d91f69a4982771"
         },
         "mobile": {
-          "name": "case-unc3944-mobile.svg",
-          "width": 400,
-          "height": 797,
-          "sha256": "4c2b2cd934d5aef9b23a5f687ce560155584716710c318f8d6a4184243d70c95"
+          "name": "uploaded-case-unc3944.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "905cf3773f6822317f013dd8dd3f9554109c71a7e434e3e445d91f69a4982771"
         }
+      },
+      "provenance": {
+        "original": "4_7_scattered_spider_unc3944.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-storm",
-      "title": "Storm-0558: customer-side detection did work",
+      "title": "Storm campaigns: keep token abuse and OAuth cases separate",
       "section": "4.8 Storm-0558",
       "before": "### 4.9 Volt",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "An acquired signing key was used to forge tokens. The CSRB describes State Department discovery using Big Yellow Taxi and MailItemsAccessed.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Use workload audit data and identity context; evaluate any proposed local analytic separately.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "The private rule and performance denominator are not published here. Storm-1283 OAuth cryptomining is a separate campaign.",
       "sources": [
         {
-          "label": "CSRB investigation",
-          "url": "https://www.cisa.gov/sites/default/files/2024-03/CSRB%20Review%20of%20the%20Summer%202023%20MEO%20Intrusion%20Final_508c.pdf"
-        },
-        {
-          "label": "Microsoft Storm-0558 analysis",
+          "label": "S08 · Microsoft: Storm-0558 email intrusion",
           "url": "https://www.microsoft.com/en-us/msrc/blog/2023/07/microsoft-mitigates-china-based-threat-actor-storm-0558-targeting-of-customer-email"
         },
         {
-          "label": "Microsoft OAuth campaigns",
+          "label": "S09 · Microsoft: separate OAuth campaigns",
           "url": "https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/"
+        },
+        {
+          "label": "Supplement · CSRB: customer-side detection account",
+          "url": "https://www.cisa.gov/sites/default/files/2024-03/CSRB%20Review%20of%20the%20Summer%202023%20MEO%20Intrusion%20Final_508c.pdf"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 27,
+      "caption": "Storm-0558 forged tokens using an acquired signing key; it did not forge the key. The CSRB account of Big Yellow Taxi and MailItemsAccessed is linked separately from S08/S09. Storm-1283 OAuth cryptomining is a separate campaign, not a later attack stage. No validation of the author’s proposed detector is implied.",
+      "original": "4_8_storm0558_oauth_campaigns.png",
+      "file": "uploaded-case-storm.png",
+      "sourceCodes": [
+        "S08",
+        "S09"
+      ],
+      "transcript": [
+        "Reported Storm-0558 activity: access to a signing key enabled forged tokens and mailbox access. The graphic distinguishes the attacker workflow from the customer-side detection account.",
+        "Source-attributed detection account: the CSRB describes State Department discovery involving Big Yellow Taxi and MailItemsAccessed. Its PDF could not be retrieved for a fresh full-text review during this integration; this account is retained from the sourced article, not newly independently verified here.",
+        "Separate report: Microsoft’s Storm-1283 OAuth-abuse account concerns a financially motivated campaign including Azure cryptomining. It is not a continuation of the Storm-0558 intrusion.",
+        "Proposed hypothesis: combine workload audit events, identity context and application activity. The private customer query and its performance denominator are not published here; no benchmark or victim replay is asserted."
+      ],
+      "upload": "uploaded-case-storm.png",
+      "number": 31,
       "assets": {
         "desktop": {
-          "name": "case-storm.svg",
-          "width": 800,
-          "height": 781,
-          "sha256": "e0983e78f1da0b563d69f465a2b057960408a895d8fbbbcbb480cf5811e1fc4b"
+          "name": "uploaded-case-storm.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "6ec4e607848f5d1c84dc183730194291d5c42dde9f2ffd03e4725afae7ad6767"
         },
         "mobile": {
-          "name": "case-storm-mobile.svg",
-          "width": 400,
-          "height": 898,
-          "sha256": "932a9dc066c746865eb79df6e6b6871a5f5f9f08a1ce6992b0b7eebbc2139a3a"
+          "name": "uploaded-case-storm.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "6ec4e607848f5d1c84dc183730194291d5c42dde9f2ffd03e4725afae7ad6767"
         }
+      },
+      "provenance": {
+        "original": "4_8_storm0558_oauth_campaigns.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-volt",
-      "title": "Volt Typhoon: the execution host matters",
+      "title": "Volt Typhoon: distinguish initiation and execution hosts",
       "section": "4.9 Volt Typhoon",
       "before": "### 4.10 APT41",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "Microsoft described ntdsutil IFM credential extraction against domain controllers, with living-off-the-land activity.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Review IFM creation on the DC, its principal, approved backup context and subsequent data movement.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "A non-DC-only filter misses this execution context. A remote initiation host is not necessarily the execution host.",
       "sources": [
         {
-          "label": "Microsoft Volt Typhoon investigation",
+          "label": "S10 · Microsoft: Volt Typhoon investigation",
           "url": "https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/"
+        },
+        {
+          "label": "Supplement · Microsoft: IFM command",
+          "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc732530(v=ws.11)"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 28,
+      "caption": "IFM means Install From Media: creating domain-controller installation media, not a complete recovery backup. The execution host for the illustrated ntdsutil operation is the domain controller; remote initiation can occur elsewhere. A non-DC-only filter would miss that execution context.",
+      "original": "4_9_volt_typhoon.png",
+      "file": "uploaded-case-volt.png",
+      "sourceCodes": [
+        "S10"
+      ],
+      "transcript": [
+        "Reported activity: Microsoft described living-off-the-land operations, including ntdsutil IFM use to obtain sensitive Active Directory data on domain controllers.",
+        "Proposed hypothesis: review IFM creation on the DC, the principal, approved maintenance purpose and subsequent movement of generated data. Distinguish where remote activity is initiated from where the process actually runs.",
+        "Technical clarification: the graphic’s backup-capability shorthand refers to IFM installation media, not a full recovery backup. It is a legitimate administrative capability whose purpose and handling must be established.",
+        "Telemetry boundary: Security event 1102 and System / Eventlog event 104 are channel-specific log-clear records, not interchangeable universal evidence of all clearing. Approved maintenance is a competing explanation."
+      ],
+      "upload": "uploaded-case-volt.png",
+      "number": 32,
       "assets": {
         "desktop": {
-          "name": "case-volt.svg",
-          "width": 800,
-          "height": 781,
-          "sha256": "817a143ac99a1484bd92b989693c08d6901d43eb7067692cba7b810c60a301b0"
+          "name": "uploaded-case-volt.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "db52c65865dae382a50176c30c996be1701ccd49d7c3ad8314c43a13f4cefb25"
         },
         "mobile": {
-          "name": "case-volt-mobile.svg",
-          "width": 400,
-          "height": 848,
-          "sha256": "0ef87b77c52a8ad7166599e72a3da39d83bae89a73847ee3e9e6644f84abf0fb"
+          "name": "uploaded-case-volt.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "db52c65865dae382a50176c30c996be1701ccd49d7c3ad8314c43a13f4cefb25"
         }
+      },
+      "provenance": {
+        "original": "4_9_volt_typhoon.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-apt41",
-      "title": "APT41: two accounts, not one invented chain",
+      "title": "APT41: two investigations, not one constructed chain",
       "section": "4.10 APT41",
       "before": "### 4.11 CISA",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "2019: MESSAGETAP was an ELF data miner on Linux SMS servers. 2024: SQLULDR2 exports and PINEGROVE transfers appear in a separate investigation.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Check process provenance and capture outputs for the first case; database exports and storage destinations for the second.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "Loading libpcap or using cloud storage is not proof of theft. These are separate reports, not sequential stages.",
       "sources": [
         {
-          "label": "Mandiant",
+          "label": "S11 · Mandiant: MESSAGETAP (2019)",
           "url": "https://cloud.google.com/blog/topics/threat-intelligence/messagetap-who-is-reading-your-text-messages/"
         },
         {
-          "label": "Mandiant APT41 investigation",
+          "label": "S12 · Mandiant: APT41 database theft (2024)",
           "url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-arisen-from-dust"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 29,
+      "caption": "The 2019 MESSAGETAP and 2024 SQLULDR2/PINEGROVE reports describe separate investigations, not consecutive stages. MESSAGETAP’s configuration files were read and then removed; their later absence would not disprove execution. Neither libpcap loading nor cloud-storage use alone proves theft.",
+      "original": "4_10_apt41_messagetap_database.png",
+      "file": "uploaded-case-apt41.png",
+      "sourceCodes": [
+        "S11",
+        "S12"
+      ],
+      "transcript": [
+        "2019 account: MESSAGETAP was an ELF data-mining tool on Linux SMS servers, using packet capture and configured selection criteria. Its configuration was consumed and then removed.",
+        "2024 account: a separate investigation described SQLULDR2 exports from Oracle databases and PINEGROVE transfers to OneDrive. Do not combine these accounts into a single observed intrusion sequence.",
+        "Proposed hypotheses: for the first case, inspect process provenance, capture activity and outputs; for the second, correlate database exports, staging and destination-account evidence.",
+        "Interpretation: legitimate capture libraries, database export tools and cloud storage need context. APT41 and Winnti naming is not independent proof of exact group membership, and no detector benchmark is shown."
+      ],
+      "upload": "uploaded-case-apt41.png",
+      "number": 33,
       "assets": {
         "desktop": {
-          "name": "case-apt41.svg",
-          "width": 800,
-          "height": 781,
-          "sha256": "19b5aa0892dbb63451dc03ac3f5f3b1cf7d126ab33fe1d7cbf8e8b98c2c0aa70"
+          "name": "uploaded-case-apt41.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "7a60edbafae1f89e30da2d4dc3c459f53035460747a2d70063ee8795e2a61382"
         },
         "mobile": {
-          "name": "case-apt41-mobile.svg",
-          "width": 400,
-          "height": 923,
-          "sha256": "b077003b9b187061f0caf8cb8584605ecbb13ba5a86cd1a58503684b272a27c9"
+          "name": "uploaded-case-apt41.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "7a60edbafae1f89e30da2d4dc3c459f53035460747a2d70063ee8795e2a61382"
         }
+      },
+      "provenance": {
+        "original": "4_10_apt41_messagetap_database.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-impacket",
-      "title": "Impacket is a toolkit, not an attribution",
+      "title": "CISA AA22-277A: tool use is not attribution",
       "section": "4.11 CISA AA22-277A",
       "before": "### 4.12 Lazarus",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "CISA AA22-277A reports Impacket and data theft without assigning a named actor.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Correlate remote logons, process ancestry and mode-specific evidence.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "secretsdump is not synonymous with DCSync. Ordinary wmiexec is not a permanent WMI subscription.",
       "sources": [
         {
-          "label": "CISA AA22-277A",
+          "label": "S13 · CISA / FBI / NSA: AA22-277A",
           "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 30,
+      "caption": "A source-attributed summary of AA22-277A, not a named-actor attribution or exact causal timeline. The official advisory and PDF returned access errors during this integration, so its full text was not independently re-read. The proposed analytic still requires mode-specific evidence: secretsdump does not always mean DCSync.",
+      "original": "4_11_cisa_aa22_277a_impacket.png",
+      "file": "uploaded-case-impacket.png",
+      "sourceCodes": [
+        "S13"
+      ],
+      "transcript": [
+        "Source-attributed activity: the article’s CISA AA22-277A account concerns Impacket use and data theft at a defense-industrial-base organization without assigning a named threat actor.",
+        "The diagram groups reported observations for teaching; it does not prove that every observation occurred in the illustrated order or shares a single causal chain. Full advisory access was unavailable for this integration review.",
+        "Proposed hypothesis: correlate remote logons, process ancestry and credential-access or export evidence for the actual execution mode and host.",
+        "Technical boundary: secretsdump can operate without DCSync. Ordinary wmiexec does not imply a permanent WMI subscription, and WMI 5861 subscription evidence is not a generic wmiexec event. Ports alone do not prove DRSUAPI use."
+      ],
+      "upload": "uploaded-case-impacket.png",
+      "number": 34,
       "assets": {
         "desktop": {
-          "name": "case-impacket.svg",
-          "width": 800,
-          "height": 720,
-          "sha256": "8da93d8035bd61eb4b27c55479f401918095a485d2674bd354254b00a4a2c838"
+          "name": "uploaded-case-impacket.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "fb1b683046bfffb16dbf99cda7f853296b5a39f871969175fe3acb35d6ccbcc3"
         },
         "mobile": {
-          "name": "case-impacket-mobile.svg",
-          "width": 400,
-          "height": 755,
-          "sha256": "fc10c5a44c496b32e83444230ffe2c45d7ce6b036ac202d0a6d53830a2845b04"
+          "name": "uploaded-case-impacket.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "fb1b683046bfffb16dbf99cda7f853296b5a39f871969175fe3acb35d6ccbcc3"
         }
+      },
+      "provenance": {
+        "original": "4_11_cisa_aa22_277a_impacket.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "case-3cx",
-      "title": "3CX: a signature is not a benign verdict",
+      "title": "3CX: a valid signature is not a benign verdict",
       "section": "4.12 3CX",
       "before": "## 5. Detection",
-      "kind": "evidence",
-      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE",
-      "panels": [
-        {
-          "label": "Source-reported",
-          "text": "SentinelOne reported behavioral detections before public disclosure. GitHub-hosted icons carried encoded C2 information in the Windows chain.",
-          "tone": "teal"
-        },
-        {
-          "label": "Detection hypothesis",
-          "text": "Investigate new destinations and later execution associated with a normally trusted application.",
-          "tone": "blue"
-        }
-      ],
+      "kind": "uploaded",
+      "evidence": "SOURCE-REPORTED + AUTHOR INFERENCE · USER-SUPPLIED",
       "boundary": "The icons were not described as executable payloads. Vendor-reported detection is not an independent EDR benchmark.",
       "sources": [
         {
-          "label": "SentinelOne 3CX investigation",
+          "label": "S14 · SentinelOne: 3CX investigation",
           "url": "https://www.sentinelone.com/blog/smoothoperator-ongoing-campaign-trojanizes-3cx-software-in-software-supply-chain-attack/"
+        },
+        {
+          "label": "Supplied source key: S01–S14",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-incident-sources.md"
         }
       ],
-      "caption": "The solid evidence panel summarizes cited reporting; the dashed hypothesis panel is author inference. No victim-telemetry replay or validation of the author’s proposed detector is implied.",
-      "number": 31,
+      "caption": "SentinelOne reported behavioral detections from 22 March 2023, before its 29 March disclosure. In the Windows chain, GitHub-hosted icons carried encoded C2 information, not executable payloads. That initial report did not settle actor attribution; the article’s DPRK/Lazarus label is not independently established by this graphic.",
+      "original": "4_12_3cx_supply_chain.png",
+      "file": "uploaded-case-3cx.png",
+      "sourceCodes": [
+        "S14"
+      ],
+      "transcript": [
+        "Reported activity: the trojanized 3CX desktop application participated in a supply-chain attack despite signed binaries. SentinelOne reported behavioral detections before its public write-up.",
+        "Windows mechanism: icon files hosted on GitHub contained appended encoded information that the malware decoded into command-and-control addresses. The icons were not themselves the later executable payloads.",
+        "Proposed hypothesis: investigate changes in destinations and later execution associated with a normally trusted application, retaining signer, process and network context.",
+        "Interpretation: a signature validates a signing relationship, not benign behavior. The initial vendor investigation left attribution open; its detection account is not an independently reproduced comparison of EDR products."
+      ],
+      "upload": "uploaded-case-3cx.png",
+      "number": 35,
       "assets": {
         "desktop": {
-          "name": "case-3cx.svg",
-          "width": 800,
-          "height": 781,
-          "sha256": "495aa7ef5dfaf99a94113d08448bef8396ea9265c89bf9061f6dd908157bc62c"
+          "name": "uploaded-case-3cx.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "9d9730c9164de6c14b01b606c3501a84ceccacb8b9adb1e4c4eaef5fa7d809f4"
         },
         "mobile": {
-          "name": "case-3cx-mobile.svg",
-          "width": 400,
-          "height": 831,
-          "sha256": "bfdf95adafb98a69adcd859292931a1f0df4e1ee3c047320b5ac2e73b908c718"
+          "name": "uploaded-case-3cx.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "9d9730c9164de6c14b01b606c3501a84ceccacb8b9adb1e4c4eaef5fa7d809f4"
         }
+      },
+      "provenance": {
+        "original": "4_12_3cx_supply_chain.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
@@ -1558,7 +1840,7 @@
         }
       ],
       "caption": "A telemetry contract connects source meaning to query assumptions. This diagram does not imply that a SIEM enables collection automatically.",
-      "number": 32,
+      "number": 36,
       "assets": {
         "desktop": {
           "name": "telemetry-contract.svg",
@@ -1575,12 +1857,403 @@
       }
     },
     {
+      "id": "source-windows",
+      "title": "Windows events: verify channel and effective audit policy",
+      "section": "5.1 Windows Security Event Log",
+      "before": "### 5.2 Sysmon",
+      "kind": "uploaded",
+      "evidence": "SOURCE REFERENCE · COLLECTION-DEPENDENT · USER-SUPPLIED",
+      "original": "individual/5_1_windows_security_event_log.png",
+      "sourceCodes": [
+        "A",
+        "W1",
+        "W2",
+        "W3"
+      ],
+      "caption": "Selected Windows Security events, with System 7045 explicitly separated. Event 4688 command-line capture requires its own policy; 4662 requires Directory Service Access auditing and a relevant SACL. These are collection prerequisites, not evidence that a particular environment is collecting the events.",
+      "boundary": "A SACL selects auditing; it does not grant permissions. A successful logon or privileged session is not by itself evidence of credential theft.",
+      "transcript": [
+        "Selected Security-channel reference: 4624 is successful logon; 4625 is failed logon; 4648 is a logon attempt using explicit credentials; 4672 records special privileges assigned to a new logon.",
+        "4688 records a new process, with separate command-line inclusion policy. 4662 records directory-service object access when the applicable auditing and SACL conditions are met. 4769 concerns service-ticket requests; 4776 concerns credential validation.",
+        "4720 records creation of a Windows user. 4728, 4732 and 4756 concern addition to global, local and universal security groups, respectively. These are Windows objects, not arbitrary application accounts.",
+        "4697 records service installation and 4698 scheduled-task creation in Security. 1102 records Security-log clearing. System 7045 is a separate Service Control Manager source for service installation.",
+        "Verify effective audit policy, host role, event version and forwarding. Keep actor and session context. A cleared log and failed forwarding are different observations; this table is selected guidance, not a complete event inventory."
+      ],
+      "file": "uploaded-detection/individual/5_1_windows_security_event_log.png",
+      "sources": [
+        {
+          "label": "W1 · Microsoft: Security 4688",
+          "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4688"
+        },
+        {
+          "label": "W2 · Microsoft: Security 4662",
+          "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4662"
+        },
+        {
+          "label": "W3 · Microsoft: AD event reference",
+          "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_1_windows_security_event_log.png",
+      "number": 37,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-detection/individual/5_1_windows_security_event_log.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "a2c64643abcdef1cd6c6ef8a189d84fdaa236210d2a04de27cf5821ed4dbe19b"
+        },
+        "mobile": {
+          "name": "uploaded-detection/individual/5_1_windows_security_event_log.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "a2c64643abcdef1cd6c6ef8a189d84fdaa236210d2a04de27cf5821ed4dbe19b"
+        }
+      },
+      "provenance": {
+        "original": "individual/5_1_windows_security_event_log.png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "source-sysmon",
+      "title": "Sysmon: event availability depends on configuration",
+      "section": "5.2 Sysmon",
+      "before": "### 5.3 EDR",
+      "kind": "uploaded",
+      "evidence": "SOURCE REFERENCE · COLLECTION-DEPENDENT · USER-SUPPLIED",
+      "original": "individual/5_2_sysmon.png",
+      "sourceCodes": [
+        "A",
+        "S1"
+      ],
+      "caption": "Ten selected Sysmon event families, not an exhaustive inventory or guaranteed local collection. Verify the installed version and filters. Empty inferred start-module fields and unresolved call traces do not, by themselves, prove injected code; image-load records do not guarantee manual-mapping coverage.",
+      "boundary": "A documented event type is not proof that your sensor generates, forwards or retains it. Test the actual configuration before claiming detection coverage.",
+      "transcript": [
+        "Event 1: process creation, including ProcessGuid and command line. Event 3: process-linked TCP/UDP network connections. Events 6 and 7: driver and image loads.",
+        "Event 8: CreateRemoteThread, with potentially empty inferred start-module/function fields. Event 10: process access, with access rights and available call trace. Event 11: file creation or overwrite.",
+        "Events 12–14: registry object creation/deletion, value setting and renaming. Events 17/18: named-pipe creation/connection. Event 22: DNS queries. Event 25: supported process-image tampering observations.",
+        "Record the installed version and configuration hash. Exercise inclusion and exclusion filters; inspect actual network and image-load records rather than assuming availability.",
+        "The ten grouped rows are a selection. Correlate process identity, host role and timing; missing metadata, unfamiliar pipes or a single access event are investigation leads, not automatic attack verdicts."
+      ],
+      "file": "uploaded-detection/individual/5_2_sysmon.png",
+      "sources": [
+        {
+          "label": "S1 · Microsoft: Sysmon events",
+          "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_2_sysmon.png",
+      "number": 38,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-detection/individual/5_2_sysmon.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "29507bce8480ed7242c4c244a8cf3a2e60e8b1de78a3a1ec92d8fd391f8666e5"
+        },
+        "mobile": {
+          "name": "uploaded-detection/individual/5_2_sysmon.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "29507bce8480ed7242c4c244a8cf3a2e60e8b1de78a3a1ec92d8fd391f8666e5"
+        }
+      },
+      "provenance": {
+        "original": "individual/5_2_sysmon.png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "source-edr",
+      "title": "EDR: separate event identity from process correlation",
+      "section": "5.3 EDR Platforms",
+      "before": "### 5.4 Network",
+      "kind": "uploaded",
+      "evidence": "SOURCE REFERENCE · COLLECTION-DEPENDENT · USER-SUPPLIED",
+      "original": "individual/5_3_edr_platforms.png",
+      "sourceCodes": [
+        "A",
+        "E1"
+      ],
+      "caption": "DeviceProcessEvents is a Microsoft-specific example. Its documented unique-event key is ReportId + DeviceName + Timestamp; the displayed DeviceId + Timestamp pair is context, not a replacement event key. ProcessUniqueId and InitiatingProcessUniqueId identify process instances, not individual event records.",
+      "boundary": "A table name or vendor alert does not establish complete telemetry or a confirmed intrusion. Missing fields must remain unknown, not silently fabricated.",
+      "transcript": [
+        "Conceptual workflow: sensor observations become hunting records, which support analyst review and testing of competing explanations. This is not a ranking of EDR products.",
+        "The image lists DeviceId and Timestamp for context, plus ProcessUniqueId and InitiatingProcessUniqueId for process correlation. They are Microsoft schema examples, not universal field names.",
+        "Key clarification: ReportId is a repeating counter. Microsoft documents using it together with DeviceName and Timestamp for unique event identification. Do not deduplicate solely by ReportId, DeviceId plus time, or a process-instance identifier.",
+        "Confirm sensor deployment, health, retention and actual populated columns. Scope process-lineage joins to the correct device and time; ordinary process IDs can be reused. Preserve the original source record and distinguish vendor detection from the analyst’s finding."
+      ],
+      "file": "uploaded-detection/individual/5_3_edr_platforms.png",
+      "sources": [
+        {
+          "label": "E1 · Microsoft: DeviceProcessEvents",
+          "url": "https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-deviceprocessevents-table"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_3_edr_platforms.png",
+      "number": 39,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-detection/individual/5_3_edr_platforms.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "9e05628c26494d7ed11a5ec5b8cb6a3b2dcffbcfe2e2aa0bf97f2faccd34a720"
+        },
+        "mobile": {
+          "name": "uploaded-detection/individual/5_3_edr_platforms.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "9e05628c26494d7ed11a5ec5b8cb6a3b2dcffbcfe2e2aa0bf97f2faccd34a720"
+        }
+      },
+      "provenance": {
+        "original": "individual/5_3_edr_platforms.png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "source-ndr",
+      "title": "Network visibility depends on the observation point",
+      "section": "5.4 Network Detection and Response",
+      "before": "### 5.5 Identity",
+      "kind": "uploaded",
+      "evidence": "SOURCE REFERENCE · COLLECTION-DEPENDENT · USER-SUPPLIED",
+      "original": "individual/5_4_network_detection_response.png",
+      "sourceCodes": [
+        "A",
+        "N1",
+        "N2",
+        "N3"
+      ],
+      "caption": "The Zeek sensor receives a TAP/SPAN traffic copy; the drawing does not place it inline. dns.log uses TTLs, not TTL. TLS fields and fingerprints depend on protocol, analyzers and configuration. A JA3/JA4 fingerprint is neither an actor identity nor proof of malware.",
+      "boundary": "Placement, packet loss and encryption constrain visibility. Connection metadata alone cannot reveal encrypted application payloads or establish estate-wide coverage.",
+      "transcript": [
+        "The monitored path runs from a client or service, through a network link, to a destination. A TAP/SPAN copy feeds a Zeek sensor; traffic need not pass through the sensor itself.",
+        "conn.log supplies directional connection metadata; dns.log supplies available queries, answers and TTLs; ssl.log supplies observable TLS metadata. Missing fields must be interpreted against the analyzer and event schema.",
+        "Record sensor placement, packet loss, Zeek version, scripts and packages. Certificates, hashes and fingerprints are not guaranteed in every protocol or configuration.",
+        "Shared libraries, client changes and imitation limit fingerprint attribution. The supplied notes reference the moving master DNS page; the caption links the verified 8.2.1 DNS reference and 8.2.0 TLS reference instead of claiming one universal schema."
+      ],
+      "file": "uploaded-detection/individual/5_4_network_detection_response.png",
+      "sources": [
+        {
+          "label": "N1 · Zeek DNS reference (pinned 8.2.1)",
+          "url": "https://docs.zeek.org/en/v8.2.1/reference/logs/dns.html"
+        },
+        {
+          "label": "N2 · Zeek TLS reference (8.2.0)",
+          "url": "https://docs.zeek.org/en/v8.2.0/reference/logs/ssl.html"
+        },
+        {
+          "label": "N3 · Cloudflare: JA4",
+          "url": "https://blog.cloudflare.com/ja4-signals/"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_4_network_detection_response.png",
+      "number": 40,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-detection/individual/5_4_network_detection_response.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "db16117c6b7b3dedf1608af148edab6cdf5384548fb97978f473300ab6872b18"
+        },
+        "mobile": {
+          "name": "uploaded-detection/individual/5_4_network_detection_response.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "db16117c6b7b3dedf1608af148edab6cdf5384548fb97978f473300ab6872b18"
+        }
+      },
+      "provenance": {
+        "original": "individual/5_4_network_detection_response.png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "source-iam",
+      "title": "Identity events: inspect the actor, target and outcome",
+      "section": "5.5 Identity and Access Management Platforms",
+      "before": "### 5.6 Cloud",
+      "kind": "uploaded",
+      "evidence": "SOURCE REFERENCE · COLLECTION-DEPENDENT · USER-SUPPLIED",
+      "original": "individual/5_5_identity_access_management.png",
+      "sourceCodes": [
+        "A",
+        "I1",
+        "I2"
+      ],
+      "caption": "The three Okta event names are catalog entries, not attack verdicts. Read outcome and actor/target context before inferring abuse. Entra risk detections combine different signal types; denying an MFA challenge is not automatically a suspicious-activity report or proof of MFA fatigue.",
+      "boundary": "Approved support, recovery and privilege changes can produce similar records. Validate the tenant, session, configuration and retained events before correlating activity.",
+      "transcript": [
+        "Interpret the actor, action and result, and target together: who performed the action, what succeeded or failed, and whose state changed.",
+        "Okta examples: user.mfa.factor.update concerns factor updates; user.session.impersonation.initiate concerns starting an impersonation session; user.account.privilege.grant concerns changes to a user’s administrative privileges.",
+        "Retain the literal event type, outcome, reason, actor, target and available session keys. Correlate within the correct tenant, identity and bounded time; inspect approved support and role changes.",
+        "Entra detections are not all statistical anomaly models. A denied MFA prompt and an explicit user report are distinct, and a generic authentication failure does not demonstrate an MFA-fatigue attack. Local licensing, collection and retention still need verification."
+      ],
+      "file": "uploaded-detection/individual/5_5_identity_access_management.png",
+      "sources": [
+        {
+          "label": "I1 · Microsoft: Entra risk detections",
+          "url": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks"
+        },
+        {
+          "label": "I2 · Okta: event catalog",
+          "url": "https://developer.okta.com/docs/reference/api/event-types/"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_5_identity_access_management.png",
+      "number": 41,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-detection/individual/5_5_identity_access_management.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "9dd80ba590da502e0721437ddedaad5236c319e6d4788f730c9b16f55a432837"
+        },
+        "mobile": {
+          "name": "uploaded-detection/individual/5_5_identity_access_management.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "9dd80ba590da502e0721437ddedaad5236c319e6d4788f730c9b16f55a432837"
+        }
+      },
+      "provenance": {
+        "original": "individual/5_5_identity_access_management.png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "source-cloud",
+      "title": "Cloud evidence: distinguish raw events and provider findings",
+      "section": "5.6 Cloud Security Services",
+      "before": "### 5.7 DNS",
+      "kind": "uploaded",
+      "evidence": "SOURCE REFERENCE · COLLECTION-DEPENDENT · USER-SUPPLIED",
+      "original": "individual/5_6_cloud_security_services.png",
+      "sourceCodes": [
+        "A",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "caption": "Control-plane events, resource data events and native findings need separate collection checks. AWS documentation still lists GenerateDbAuthToken in GuardDuty guidance while RDS states CloudTrail does not track token generation. This unresolved discrepancy is not permission to assume an exported event exists.",
+      "boundary": "A native finding is not a raw audit record. No cloud account was exercised here, and no detector dependent on the disputed token-generation event was implemented.",
+      "transcript": [
+        "Three separate evidence streams: configuration and management activity; resource-level access and actions; provider-generated findings. Validate each stream independently.",
+        "Scope accounts, regions, resources, categories and delivery. CloudTrail data events require explicit collection choices; a management log is not automatically a full record of data access.",
+        "Provider-native analytics may use context absent from exported logs. A local query cannot claim to reproduce that proprietary context without evidence.",
+        "Documentation boundary: the GuardDuty IAM finding reference names GenerateDbAuthToken, while the RDS IAM-authentication limitations say CloudTrail does not track token generation. Both statements were located during this review; the implementation does not resolve them by inventing a raw event."
+      ],
+      "file": "uploaded-detection/individual/5_6_cloud_security_services.png",
+      "sources": [
+        {
+          "label": "C1 · AWS: CloudTrail data events",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+        },
+        {
+          "label": "C2 · AWS: GuardDuty IAM findings",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-iam.html"
+        },
+        {
+          "label": "C3 · AWS: RDS IAM authentication limits",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_6_cloud_security_services.png",
+      "number": 42,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-detection/individual/5_6_cloud_security_services.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "59b48d66ca6c02250981b69a4792565754645a412e394470000440863621b990"
+        },
+        "mobile": {
+          "name": "uploaded-detection/individual/5_6_cloud_security_services.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "59b48d66ca6c02250981b69a4792565754645a412e394470000440863621b990"
+        }
+      },
+      "provenance": {
+        "original": "individual/5_6_cloud_security_services.png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
       "id": "dns-entropy",
-      "title": "High entropy is not proof of tunneling",
-      "section": "5.7 DNS entropy",
+      "title": "DNS entropy measures symbol distribution, not intent",
+      "section": "5.7 DNS Security",
       "before": "### 5.8 SaaS",
-      "kind": "entropy",
-      "evidence": "EXACT MATH · SYNTHETIC LABELS",
+      "kind": "uploaded",
+      "evidence": "EXACT MATH · SYNTHETIC LABELS · USER-SUPPLIED",
+      "original": "individual/5_7_dns_security.png",
+      "sourceCodes": [
+        "A",
+        "N1",
+        "D1"
+      ],
+      "caption": "The synthetic labels aaaa, abab and abcd have empirical character entropies of 0, 1 and 2 bits per character. These exact calculations match the supplied bars and are not incident measurements or alert thresholds. A structured string can have high empirical entropy.",
+      "boundary": "For nonempty labels of length n over alphabet A, H ≤ log₂(min(n, |A|)). This bound and the three examples do not establish a useful tunneling detector.",
+      "transcript": [
+        "The plotted quantity is empirical character-frequency entropy: H = −Σ p(c) log₂ p(c), measured in bits per character. All three illustrated labels contain four characters.",
+        "aaaa: one symbol with probability 1, giving 0 bits per character. abab: two equally frequent symbols, giving 1. abcd: four equally frequent symbols, giving 2. The last label is plainly structured despite its higher value.",
+        "Choose which label or labels to score before analysis. Normalize case, handle internationalized names explicitly, use public-suffix-aware parsing for registrable-domain grouping, and keep length alongside entropy.",
+        "Resolver, endpoint and network logs observe different parts of DNS activity. Caching and encrypted DNS can limit particular observation points. Include legitimate encoded-name controls; this is not a SUNBURST-specific entropy range or universal maliciousness cutoff."
+      ],
+      "file": "uploaded-detection/individual/5_7_dns_security.png",
+      "sources": [
+        {
+          "label": "N1 · Zeek DNS reference (pinned 8.2.1)",
+          "url": "https://docs.zeek.org/en/v8.2.1/reference/logs/dns.html"
+        },
+        {
+          "label": "D1 · Supplied synthetic calculations",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/synthetic_calculations.json"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_7_dns_security.png",
       "data": [
         {
           "label": "aaaa",
@@ -1595,166 +2268,331 @@
           "value": 2
         }
       ],
-      "panels": [
-        {
-          "label": "Definition",
-          "text": "H = −Σ p(c) log₂ p(c), in bits per character. Count characters in the selected label.",
-          "tone": "blue"
-        },
-        {
-          "label": "Bound",
-          "text": "For length n and alphabet A: H ≤ log₂(min(n, |A|)). Label selection and case normalization matter.",
-          "tone": "blue"
-        }
-      ],
-      "boundary": "abcd is structured, yet has 2 bits/character. This feature does not measure intent.",
-      "sources": [
-        {
-          "label": "dns-entropy.kql",
-          "url": "https://1200km.com/articles/research/anomaly-validation/dns-entropy.kql"
-        }
-      ],
-      "caption": "The values are computed from the displayed strings. The maintained query is an ASCII-label feature extractor; it is not a SUNBURST detector or a universal tunneling threshold.",
-      "number": 33,
+      "number": 43,
       "assets": {
         "desktop": {
-          "name": "dns-entropy.svg",
-          "width": 800,
-          "height": 839,
-          "sha256": "eea47c9101e644630d870a00c54d9e3e79337c86c362350bfe2bb3b2b6c88159"
+          "name": "uploaded-detection/individual/5_7_dns_security.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "30f973d02bf2a30ea165028749a888536af6d0a2362069fc330410a05303e64e"
         },
         "mobile": {
-          "name": "dns-entropy-mobile.svg",
-          "width": 400,
-          "height": 932,
-          "sha256": "b87ecbc235611aa9c46ef447639336321092d23b662b57b65f0de183adecba8b"
+          "name": "uploaded-detection/individual/5_7_dns_security.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "30f973d02bf2a30ea165028749a888536af6d0a2362069fc330410a05303e64e"
         }
+      },
+      "provenance": {
+        "original": "individual/5_7_dns_security.png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "source-saas",
+      "title": "SaaS audit: events, objects and transferred bytes differ",
+      "section": "5.8 SaaS Audit Logs",
+      "before": "### 5.9 Detection",
+      "kind": "uploaded",
+      "evidence": "EXACT ARITHMETIC · SYNTHETIC RECORDS · USER-SUPPLIED",
+      "original": "individual/5_8_saas_audit_logs.png",
+      "sourceCodes": [
+        "A",
+        "O1"
+      ],
+      "caption": "Three synthetic, distinct FileDownloaded audit records refer to object A: three events, one distinct object identifier, and unknown transferred bytes—not zero. This is not a tenant replay. OfficeObjectId is not a byte counter, and object size alone may not equal the bytes actually transferred.",
+      "boundary": "Deduplicate evidence records separately from counting objects. Quantify bytes only from validated counters or explicitly qualified enrichment, retaining unknown values.",
+      "transcript": [
+        "Illustrative records E1, E2 and E3 each have operation FileDownloaded and object identifier A. The event identifiers are distinct; the object identifier is shared.",
+        "The resulting counts are 3 audit events and 1 distinct object. Transferred bytes are unknown. The example does not establish three full transfers, one full transfer, or zero transferred bytes.",
+        "Verify MailItemsAccessed, FileDownloaded and FileSyncDownloadedFull against their workload’s auditing and retention. The figure’s O1 schema source is supplemented here with the operation catalog and mailbox guidance.",
+        "Keep record identity, object identity and units separate. Entra application-consent and service-principal evidence may complement workload logs. Validate transfer counters or document the limits of size enrichment rather than treating an identifier as a size."
+      ],
+      "extraSources": [
+        {
+          "label": "Supplement · Microsoft: audit operations",
+          "url": "https://learn.microsoft.com/en-us/purview/audit-log-activities"
+        },
+        {
+          "label": "Supplement · Microsoft: MailItemsAccessed",
+          "url": "https://learn.microsoft.com/en-us/purview/audit-log-investigate-accounts"
+        },
+        {
+          "label": "Synthetic event-count calculation",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/synthetic_calculations.json"
+        }
+      ],
+      "file": "uploaded-detection/individual/5_8_saas_audit_logs.png",
+      "sources": [
+        {
+          "label": "O1 · Microsoft: OfficeActivity schema",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/officeactivity"
+        },
+        {
+          "label": "Supplement · Microsoft: audit operations",
+          "url": "https://learn.microsoft.com/en-us/purview/audit-log-activities"
+        },
+        {
+          "label": "Supplement · Microsoft: MailItemsAccessed",
+          "url": "https://learn.microsoft.com/en-us/purview/audit-log-investigate-accounts"
+        },
+        {
+          "label": "Synthetic event-count calculation",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/synthetic_calculations.json"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_8_saas_audit_logs.png",
+      "data": {
+        "records": [
+          {
+            "illustrative_event_id": "E1",
+            "operation": "FileDownloaded",
+            "object_id": "A"
+          },
+          {
+            "illustrative_event_id": "E2",
+            "operation": "FileDownloaded",
+            "object_id": "A"
+          },
+          {
+            "illustrative_event_id": "E3",
+            "operation": "FileDownloaded",
+            "object_id": "A"
+          }
+        ],
+        "audit_events": 3,
+        "distinct_objects": 1,
+        "transferred_bytes": null,
+        "unknown_is_not_zero": true
+      },
+      "number": 44,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-detection/individual/5_8_saas_audit_logs.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "4b1c82dc144925edde6aba73a4648b0129762584589406dc3eadb4eea8d864b8"
+        },
+        "mobile": {
+          "name": "uploaded-detection/individual/5_8_saas_audit_logs.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "4b1c82dc144925edde6aba73a4648b0129762584589406dc3eadb4eea8d864b8"
+        }
+      },
+      "provenance": {
+        "original": "individual/5_8_saas_audit_logs.png",
+        "import": "byte-for-byte; no image edits"
+      }
+    },
+    {
+      "id": "source-prioritization",
+      "title": "Prioritize sources using measured local value",
+      "section": "5.9 Detection Source Prioritization Matrix",
+      "before": "## 6. Credential-Based",
+      "kind": "uploaded",
+      "evidence": "PROPOSED PLANNING FRAMEWORK · USER-SUPPLIED",
+      "original": "individual/5_9_detection_source_prioritization_matrix.png",
+      "sourceCodes": [
+        "A",
+        "P1"
+      ],
+      "caption": "Five planning questions, not measured product rankings, fidelity scores or a universal rollout sequence. The matrix summarizes the article’s proposed framework; NIST supports general IDPS planning, not an endorsement or validation of this exact five-row design.",
+      "boundary": "Pilot a defined use case, measure local costs and outcomes, and assign collection ownership. A numbered planning row is not a calibrated priority score.",
+      "transcript": [
+        "Visibility gap: identify important assets, the threat model and currently unobserved behavior. Collectability: obtain raw samples and verify policy, schema, sensor health and required entitlements.",
+        "Operational fit: measure volume, retention needs, privacy requirements and ownership. Analytic value: examine held-out candidates, benign controls, missed cases and analyst workload.",
+        "Priority justification: record local benefit and cost without unsupported source-fidelity ratings. The five numbered questions are not a vendor ranking or mandatory deployment order.",
+        "Pilot one defined use case on important assets before scaling. Include ordinary workload changes and known misses; measure retained evidence and review effort. Assign an owner and recurring health check while documenting remaining blind spots."
+      ],
+      "file": "uploaded-detection/individual/5_9_detection_source_prioritization_matrix.png",
+      "sources": [
+        {
+          "label": "P1 · NIST SP 800-94",
+          "url": "https://csrc.nist.gov/pubs/sp/800/94/final"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-detection/individual/5_9_detection_source_prioritization_matrix.png",
+      "number": 45,
+      "assets": {
+        "desktop": {
+          "name": "uploaded-detection/individual/5_9_detection_source_prioritization_matrix.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "45ba8e6150e4fce2fff5f403326cc6181ba0870525c1c7f1d9cd330a08ca2a7e"
+        },
+        "mobile": {
+          "name": "uploaded-detection/individual/5_9_detection_source_prioritization_matrix.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "45ba8e6150e4fce2fff5f403326cc6181ba0870525c1c7f1d9cd330a08ca2a7e"
+        }
+      },
+      "provenance": {
+        "original": "individual/5_9_detection_source_prioritization_matrix.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "credential-kerberoast",
-      "title": "Kerberoasting: request evidence versus outcome",
+      "title": "Kerberoasting: service-ticket evidence is not recovery",
       "section": "6.1 Kerberoasting",
       "before": "### 6.2 DCSync",
-      "kind": "flow",
-      "evidence": "CONCEPTUAL MODEL",
-      "steps": [
-        {
-          "label": "4769 on the DC",
-          "text": "Requester, service, result, encryption type."
-        },
-        {
-          "label": "Breadth / novelty",
-          "text": "Compare service requests in context."
-        },
-        {
-          "label": "Investigation",
-          "text": "Ticket requests do not prove offline recovery."
-        }
+      "kind": "uploaded",
+      "evidence": "CONCEPTUAL DETECTION GUIDE · USER-SUPPLIED",
+      "original": "individual/6_1_kerberoasting.png",
+      "sourceCodes": [
+        "A",
+        "K1",
+        "K2"
       ],
-      "panels": [
-        {
-          "label": "Encryption scope",
-          "text": "RC4 is 0x17; AES types include 0x11 and 0x12. RC4-only filters miss AES activity.",
-          "tone": "blue"
-        },
-        {
-          "label": "Known blind spot",
-          "text": "The public one-record replay produces no match for the service-breadth rule.",
-          "tone": "amber"
-        }
+      "caption": "Event 4769 supports investigation of service-ticket requests, not proof of offline password recovery. Ticket-encryption values 0x17, 0x11 and 0x12 denote RC4-HMAC, AES128 and AES256; they are not the supported-encryption-types bitmask. An RC4-only filter misses AES requests. The existing one-record replay still returns zero matches for the service-breadth rule; no new replay was run.",
+      "boundary": "Breadth and novelty need a workload baseline. Low-volume targeting can evade breadth rules, and a name ending in $ is not a blanket safe exclusion.",
+      "transcript": [
+        "The arrows describe an analyst workflow: observe 4769 on a domain controller; compare request breadth and novelty against role and workload; corroborate source-process activity, authorization and purpose. They are not a mandatory attack sequence.",
+        "Preserve requester, source address, target service, result, event version and ticket encryption type. Verify the service identifier actually emitted: native ServiceName describes an account or computer, not necessarily a unique SPN.",
+        "For TicketEncryptionType, RC4-HMAC is 0x17; AES128-CTS-HMAC-SHA1-96 is 0x11; AES256-CTS-HMAC-SHA1-96 is 0x12. RC4 and AES do not share the same NTLM-hash key derivation. Do not use these enum values as a supported-types bitmask.",
+        "Enable and validate relevant DC auditing. Routine requests are legitimate, sparse targeting may not exceed breadth thresholds, and no universal count threshold is given. The zero-match public replay remains visible in the existing results, not retested by importing artwork."
       ],
-      "boundary": "No blanket exclusion for every account or service whose name ends in $.",
-      "sources": [
+      "extraSources": [
         {
-          "label": "MITRE T1558.003",
-          "url": "https://attack.mitre.org/techniques/T1558/003/"
-        },
-        {
-          "label": "functional-results.json",
+          "label": "Existing replay results — not rerun",
           "url": "https://1200km.com/articles/research/anomaly-validation/functional-results.json"
         }
       ],
-      "caption": "The statistic is distinct-service breadth, not proof that a ticket was cracked. The displayed blind spot is retained from the existing replay report.",
-      "number": 34,
+      "file": "uploaded-credentials/individual/6_1_kerberoasting.png",
+      "sources": [
+        {
+          "label": "K1 · Microsoft: Security 4769",
+          "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4769"
+        },
+        {
+          "label": "K2 · MITRE: Kerberoasting",
+          "url": "https://attack.mitre.org/techniques/T1558/003/"
+        },
+        {
+          "label": "Existing replay results — not rerun",
+          "url": "https://1200km.com/articles/research/anomaly-validation/functional-results.json"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-credentials/SOURCES_AND_EVIDENCE_NOTES.md"
+        }
+      ],
+      "upload": "uploaded-credentials/individual/6_1_kerberoasting.png",
+      "number": 46,
       "assets": {
         "desktop": {
-          "name": "credential-kerberoast.svg",
-          "width": 800,
-          "height": 841,
-          "sha256": "80bfaccdd4c759038fc9c2bfe110ddec14b88c9a8b663ef28d6120b4e5b1785d"
+          "name": "uploaded-credentials/individual/6_1_kerberoasting.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "ec5ce685e2b3c48375f0d80c33fa72d8f8e55263357d5abdad5398ef032eab13"
         },
         "mobile": {
-          "name": "credential-kerberoast-mobile.svg",
-          "width": 400,
-          "height": 1237,
-          "sha256": "22a420b51314b7ce19f99da9dd8070394dd65d0a6b03aa02eeb60f7e76915bb7"
+          "name": "uploaded-credentials/individual/6_1_kerberoasting.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "ec5ce685e2b3c48375f0d80c33fa72d8f8e55263357d5abdad5398ef032eab13"
         }
+      },
+      "provenance": {
+        "original": "individual/6_1_kerberoasting.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "credential-dcsync",
-      "title": "DCSync: keep source correlation honest",
+      "title": "DCSync: retain uncertain source attribution",
       "section": "6.2 DCSync",
       "before": "### 6.3 Pass-the-Hash",
-      "kind": "flow",
-      "evidence": "CONCEPTUAL MODEL",
-      "steps": [
-        {
-          "label": "4662 on the DC",
-          "text": "Audited replication-right access."
-        },
-        {
-          "label": "Bounded join",
-          "text": "Same DC + normalized logon ID + event time."
-        },
-        {
-          "label": "4624 context",
-          "text": "Use a suitable matching logon, if available."
-        }
+      "kind": "uploaded",
+      "evidence": "CONCEPTUAL DETECTION GUIDE · USER-SUPPLIED",
+      "original": "individual/6_2_dcsync.png",
+      "sourceCodes": [
+        "A",
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "W1"
       ],
-      "panels": [
-        {
-          "label": "Prerequisite",
-          "text": "Directory Service Access auditing + applicable SACL. A SACL selects auditing; it does not grant rights.",
-          "tone": "blue"
-        },
-        {
-          "label": "Unresolved is a valid result",
-          "text": "4662 has no native client-IP field. Retain candidates when source enrichment is missing or ambiguous.",
-          "tone": "amber"
-        }
+      "caption": "The arrows show enrichment, not event chronology. Correlate 4662 SubjectLogonId with a suitable preceding 4624 TargetLogonId on the same DC, with normalized identifiers, consistent identity and bounded time. Event 4662 has no native client-IP field; retain unresolved or ambiguous matches. One replication-right observation does not prove credential extraction.",
+      "boundary": "A SACL selects auditing; effective permissions govern access. Verify approved principal–source relationships without treating an approved source as uncompromisable.",
+      "transcript": [
+        "Directory-access record 4662 contributes principal, SubjectLogonId, object, rights and AccessMask. A suitable 4624 record contributes TargetLogonId and source address only when available. These are separate source records.",
+        "Join on the same DC and normalized logon ID, check identity consistency, preceding bounded event time and identifier reuse. Preserve correlated, unresolved and ambiguous outcomes instead of manufacturing a source address.",
+        "Evaluate extended rights with the control-access bit 0x100: Get-Changes = 1131f6aa-9c07-11d1-f79f-00c04fc2dcd2; Get-Changes-All = 1131f6ad-9c07-11d1-f79f-00c04fc2dcd2; Get-Changes-In-Filtered-Set = 89e95b76-444d-4c62-991a-0facbeda640c. All three need not appear in one event.",
+        "Configure Directory Service Access auditing and an applicable SACL on the domain object. A SACL is not a permission grant. Audit records are not direct proof of secret extraction. Validate exceptions against current principal/source inventory, scope and time; avoid blanket account-name exclusions."
       ],
-      "boundary": "One matching replication right does not prove successful credential extraction.",
+      "file": "uploaded-credentials/individual/6_2_dcsync.png",
       "sources": [
         {
-          "label": "Microsoft event 4662",
+          "label": "D1 · Microsoft: Security 4662",
           "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4662"
         },
         {
-          "label": "Microsoft event 4624",
+          "label": "D2 · MITRE: DCSync",
+          "url": "https://attack.mitre.org/techniques/T1003/006/"
+        },
+        {
+          "label": "D3 · Microsoft: Get-Changes",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/adschema/r-ds-replication-get-changes"
+        },
+        {
+          "label": "D4 · Microsoft: Get-Changes-All",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/adschema/r-ds-replication-get-changes-all"
+        },
+        {
+          "label": "D5 · Microsoft: Get-Changes-In-Filtered-Set",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/adschema/r-ds-replication-get-changes-in-filtered-set"
+        },
+        {
+          "label": "W1 · Microsoft: Security 4624",
           "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4624"
         },
         {
-          "label": "dcsync.kql",
-          "url": "https://1200km.com/articles/research/anomaly-validation/dcsync.kql"
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-credentials/SOURCES_AND_EVIDENCE_NOTES.md"
         }
       ],
-      "caption": "Arrows show an enrichment workflow, not the temporal order of the Windows events. Approved replication needs scoped inventory-backed context, not a name-based exemption.",
-      "number": 35,
+      "upload": "uploaded-credentials/individual/6_2_dcsync.png",
+      "number": 47,
       "assets": {
         "desktop": {
-          "name": "credential-dcsync.svg",
-          "width": 800,
-          "height": 841,
-          "sha256": "ba621226936638bff531edf8c43af2c0c69d9d429b656a8eb1aeddc1eb4ec8f9"
+          "name": "uploaded-credentials/individual/6_2_dcsync.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "7b59d8f067154f360d3e1c2502f03b3ffabd11ed37e5dee355dc539552b565d6"
         },
         "mobile": {
-          "name": "credential-dcsync-mobile.svg",
-          "width": 400,
-          "height": 1245,
-          "sha256": "df6451270d951ee3bdf056e47f1b7c8f7c368aa32ccc189be72f474e439bb003"
+          "name": "uploaded-credentials/individual/6_2_dcsync.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "7b59d8f067154f360d3e1c2502f03b3ffabd11ed37e5dee355dc539552b565d6"
         }
+      },
+      "provenance": {
+        "original": "individual/6_2_dcsync.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
@@ -1762,107 +2600,163 @@
       "title": "Pass-the-Hash: two hunting views, no single verdict",
       "section": "6.3 Pass-the-Hash",
       "before": "### 6.4 LSASS",
-      "kind": "evidence",
-      "evidence": "TELEMETRY MODEL · NOT CLASSIFICATION",
-      "panels": [
-        {
-          "label": "Target-side view",
-          "text": "4624 type 3 with NTLM can describe ordinary network authentication.",
-          "tone": "teal"
-        },
-        {
-          "label": "Source-side view",
-          "text": "Type 9 NewCredentials with seclogo can appear in some implementations and legitimate alternate-credential workflows.",
-          "tone": "blue"
-        }
+      "kind": "uploaded",
+      "evidence": "CONCEPTUAL DETECTION GUIDE · USER-SUPPLIED",
+      "original": "individual/6_3_pass_the_hash.png",
+      "sourceCodes": [
+        "A",
+        "H1",
+        "H2",
+        "W1",
+        "W2"
       ],
-      "boundary": "The NTLM hash is not sent as the password. Context and implementation-specific evidence are required.",
+      "caption": "Source-side 4624 type 9 with seclogo and target-side type 3 with NTLM are distinct hunting views, not two required stages or a binary PtH classifier. Type 9 outbound-account fields can differ from the local identity. Logon IDs are host-local, not cross-host join keys; neither view alone establishes hash reuse.",
+      "boundary": "NTLM uses challenge–response; the stored hash is not transmitted as a password. Validate authorization and collection before assigning intent or interpreting missing events.",
+      "transcript": [
+        "The source-side card shows 4624 type 9, NewCredentials, with LogonProcess seclogo. This pattern can appear with some implementations and with legitimate alternate-credential workflows. It is not required for every PtH implementation.",
+        "The target-side card shows 4624 type 3, Network, with AuthenticationPackage NTLM. Ordinary network authentication can produce the same view. The two cards are evidence classes, not a complete implementation inventory.",
+        "Correlate outbound identity, source process, destination and authorized administration within bounded time. Type 9 can retain the local identity while specifying different outbound credentials. A local logon identifier is not a global identity or cross-host join key.",
+        "Null Subject SID, zero key length or a missing earlier logon does not establish PtH. Verify collection, retention and clock alignment. The NTLM exchange uses a response computed from credential material rather than sending the stored hash as a password."
+      ],
+      "file": "uploaded-credentials/individual/6_3_pass_the_hash.png",
       "sources": [
         {
-          "label": "Microsoft event 4624",
+          "label": "H1 · MITRE: Pass the Hash",
+          "url": "https://attack.mitre.org/techniques/T1550/002/"
+        },
+        {
+          "label": "H2 · Microsoft: NTLM",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/secauthn/microsoft-ntlm"
+        },
+        {
+          "label": "W1 · Microsoft: Security 4624",
           "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4624"
         },
         {
-          "label": "MITRE T1550.002",
-          "url": "https://attack.mitre.org/techniques/T1550/002/"
+          "label": "W2 · Microsoft: local logon sessions",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/secauthn/lsa-logon-sessions"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-credentials/SOURCES_AND_EVIDENCE_NOTES.md"
         }
       ],
-      "caption": "Neither view proves PtH, and not every implementation produces both. Correlate account, source process, destination and authorized administration.",
-      "number": 36,
+      "upload": "uploaded-credentials/individual/6_3_pass_the_hash.png",
+      "number": 48,
       "assets": {
         "desktop": {
-          "name": "credential-pth.svg",
-          "width": 800,
-          "height": 751,
-          "sha256": "66aee83e500b420d59e4303cf24ac7c38d6e7a348850e06e79a48a2536f50dd8"
+          "name": "uploaded-credentials/individual/6_3_pass_the_hash.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "aadc9b65ab97cc7030ab61a90a0bd3efe856ba9271a9f2484942dc6351cdde7b"
         },
         "mobile": {
-          "name": "credential-pth-mobile.svg",
-          "width": 400,
-          "height": 822,
-          "sha256": "7636ce795455c27a8ea2efeacfb9903297804325a487ac756dac1b8586d432bb"
+          "name": "uploaded-credentials/individual/6_3_pass_the_hash.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "aadc9b65ab97cc7030ab61a90a0bd3efe856ba9271a9f2484942dc6351cdde7b"
         }
+      },
+      "provenance": {
+        "original": "individual/6_3_pass_the_hash.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
       "id": "credential-lsass",
-      "title": "LSASS process access needs provenance",
-      "section": "6.4 LSASS",
+      "title": "LSASS: decode access rights, then establish provenance",
+      "section": "6.4 LSASS Credential Dumping (Sysmon Event 10)",
       "before": "## 7. How Attackers",
-      "kind": "flow",
-      "evidence": "CONCEPTUAL MODEL",
-      "steps": [
+      "kind": "uploaded",
+      "evidence": "CONCEPTUAL DETECTION GUIDE · USER-SUPPLIED",
+      "original": "individual/6_4_lsass_credential_dumping.png",
+      "sourceCodes": [
+        "A",
+        "S1",
+        "P1",
+        "L1"
+      ],
+      "caption": "Sysmon Event 10 records process access, not each memory read or successful credential extraction. The displayed masks decompose exactly: 0x1010 = 0x1000 | 0x0010; 0x1410 = 0x1000 | 0x0400 | 0x0010. Arithmetic is independently checked, but granted rights do not prove they were exercised. Signer, hash and ancestry may require separate telemetry enrichment.",
+      "boundary": "These masks are examples, not exhaustive coverage. An unresolved call trace or familiar signer is not a verdict; validate provenance, collection and scoped exceptions.",
+      "transcript": [
+        "A source process opens lsass.exe with GrantedAccess. Preserve the source and target process GUIDs and images, access rights and call trace. The arrow depicts an access relationship, not confirmed memory dumping.",
+        "PROCESS_VM_READ = 0x0010; PROCESS_QUERY_INFORMATION = 0x0400; PROCESS_QUERY_LIMITED_INFORMATION = 0x1000. Bitwise OR gives 0x1010 from limited query plus VM read, and 0x1410 when query information is also set.",
+        "Read-capable access is not proof of memory reads or recovered credentials. Other access paths and masks exist. Validate Sysmon filtering and sensor health; join process-creation context, signer/hash, ancestry and available memory evidence rather than assuming every enrichment field is native to Event 10.",
+        "Security and diagnostic tools can access LSASS legitimately. Missing call-trace resolution does not establish injection. A familiar filename, signature or directory is not a universal safe exclusion; review exceptions with an owner, scope and expiry."
+      ],
+      "extraSources": [
         {
-          "label": "Sysmon 10",
-          "text": "Source, target, time and access mask."
-        },
-        {
-          "label": "Process context",
-          "text": "Signer, hash, ancestry and call trace."
-        },
-        {
-          "label": "Investigation",
-          "text": "Compare authorized security and diagnostic tools."
+          "label": "Supplied bitmask examples — independently recalculated",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-credentials/bitmask_checks.json"
         }
       ],
-      "panels": [
-        {
-          "label": "0x1010",
-          "text": "VM read + limited query information.",
-          "tone": "blue"
-        },
-        {
-          "label": "0x1410",
-          "text": "The same rights plus query information.",
-          "tone": "blue"
-        }
-      ],
-      "boundary": "An access mask or unresolved call trace alone does not establish dumping or injection.",
+      "file": "uploaded-credentials/individual/6_4_lsass_credential_dumping.png",
       "sources": [
         {
-          "label": "Microsoft Sysmon",
-          "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon"
+          "label": "S1 · Microsoft: Sysmon ProcessAccess",
+          "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-10-processaccess"
         },
         {
-          "label": "Microsoft process access rights",
+          "label": "P1 · Microsoft: process-access rights",
           "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights"
+        },
+        {
+          "label": "L1 · MITRE: LSASS Memory",
+          "url": "https://attack.mitre.org/techniques/T1003/001/"
+        },
+        {
+          "label": "Supplied bitmask examples — independently recalculated",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-credentials/bitmask_checks.json"
+        },
+        {
+          "label": "Supplied source key and evidence notes",
+          "url": "https://1200km.com/articles/research/anomaly-visuals/uploaded-credentials/SOURCES_AND_EVIDENCE_NOTES.md"
         }
       ],
-      "caption": "Bitmask meanings are separate from malicious intent. A familiar filename, signer or directory is not a universal safe exclusion.",
-      "number": 37,
+      "upload": "uploaded-credentials/individual/6_4_lsass_credential_dumping.png",
+      "data": [
+        {
+          "mask": "0x1010",
+          "components": [
+            "0x1000",
+            "0x0010"
+          ],
+          "decimal": 4112,
+          "meaning": "Access rights only; not observed memory reads or credential extraction."
+        },
+        {
+          "mask": "0x1410",
+          "components": [
+            "0x1000",
+            "0x0400",
+            "0x0010"
+          ],
+          "decimal": 5136,
+          "meaning": "Access rights only; not observed memory reads or credential extraction."
+        }
+      ],
+      "number": 49,
       "assets": {
         "desktop": {
-          "name": "credential-lsass.svg",
-          "width": 800,
-          "height": 779,
-          "sha256": "1910f7dc330f2ed11c02b5a410c7b6292595d4c009dbe88919f5e6154714988a"
+          "name": "uploaded-credentials/individual/6_4_lsass_credential_dumping.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "f04a18cbde5e9077d40eff7e3d9435473e0b302d2585c83455adbea1ef6cdafe"
         },
         "mobile": {
-          "name": "credential-lsass-mobile.svg",
-          "width": 400,
-          "height": 1186,
-          "sha256": "d841e5f1d7104b094b55abd16b44a8979ec919757ca777377645d9ce5a362779"
+          "name": "uploaded-credentials/individual/6_4_lsass_credential_dumping.png",
+          "format": "png",
+          "width": 2400,
+          "height": 3000,
+          "sha256": "f04a18cbde5e9077d40eff7e3d9435473e0b302d2585c83455adbea1ef6cdafe"
         }
+      },
+      "provenance": {
+        "original": "individual/6_4_lsass_credential_dumping.png",
+        "import": "byte-for-byte; no image edits"
       }
     },
     {
@@ -1910,7 +2804,7 @@
         }
       ],
       "caption": "Different failure layers require different remedies. More complex scoring cannot recover events the pipeline never collected.",
-      "number": 38,
+      "number": 50,
       "assets": {
         "desktop": {
           "name": "visibility-limits.svg",
@@ -1963,7 +2857,7 @@
         }
       ],
       "caption": "Passing syntax and functional fixtures is one stage. Native ingestion, field compatibility and production value remain separate validation tasks.",
-      "number": 39,
+      "number": 51,
       "assets": {
         "desktop": {
           "name": "analytic-contract.svg",
@@ -2021,7 +2915,7 @@
         }
       ],
       "caption": "Counts are read from the committed execution report, not rerun by drawing the figure. The zero-match Kerberoasting case remains visible.",
-      "number": 40,
+      "number": 52,
       "assets": {
         "desktop": {
           "name": "validation-levels.svg",
@@ -2074,7 +2968,7 @@
         }
       ],
       "caption": "A proposed operational workflow. This article has not completed a representative production trial or certified automated containment safety.",
-      "number": 41,
+      "number": 53,
       "assets": {
         "desktop": {
           "name": "operational-workflow.svg",
@@ -2125,7 +3019,7 @@
         }
       ],
       "caption": "Chronological train, validation and test partitions are disjoint. The gated-MAD model reuses the ungated threshold; the test is not used for tuning.",
-      "number": 42,
+      "number": 54,
       "assets": {
         "desktop": {
           "name": "study-splits.svg",
@@ -2210,7 +3104,7 @@
         }
       ],
       "caption": "Confusion counts and precision/recall are computed from the committed study. Compared with ungated entity-MAD, the gate removes both false and true alerts; it is not a free improvement.",
-      "number": 43,
+      "number": 55,
       "assets": {
         "desktop": {
           "name": "study-results.svg",

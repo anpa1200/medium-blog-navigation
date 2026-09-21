@@ -1,0 +1,589 @@
+{
+  "schema_version": 2,
+  "reviewed_at": "2026-09-21",
+  "origin": "User-supplied images; review and limitations in uploaded-figures.mjs, uploaded-taxonomy-continuation.mjs, uploaded-incidents.mjs, uploaded-detection-sources.mjs and uploaded-credentials.mjs",
+  "archives": [
+    {
+      "name": "anomaly_taxonomy_2_1_to_2_10.zip",
+      "sha256": "cfa274cc9925a57f2b2a77a317f6b99207c6c18863cfc22054063e45d9dcc470"
+    },
+    {
+      "name": "anomaly_taxonomy_2_11_to_2_16.zip",
+      "sha256": "a7ac222a3cb9679174f2f06176f4e63a4df977d510f1f8c1f7bb059467154f17"
+    },
+    {
+      "name": "incident_infographics_4_1_to_4_12.zip",
+      "sha256": "29a91eb8e0242a0817a6d3187ddd7f6f56f08b1a79df61507471e32e50b91d04"
+    },
+    {
+      "name": "detection_sources_5_1_to_5_9.zip",
+      "sha256": "84591587a1a9b1d6703aecfdd9e9ad3fc397153572264669668d14784c0c4a5d"
+    },
+    {
+      "name": "credential_attacks_6_1_to_6_4.zip",
+      "sha256": "1cd4e18499e8cc3d0d638215102db2fc70944fc6fe605f68f3eba34283ecc1c9"
+    }
+  ],
+  "images": [
+    {
+      "id": "statistical-forms",
+      "file": "uploaded-point-anomaly.png",
+      "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (1).png",
+      "sha256": "40f11f9f184ecd7ad763a0b16cc0f82bda00d2ee6ae92fb6d889eca0502817d5",
+      "bytes": 1522141,
+      "width": 1122,
+      "height": 1402,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "definition-contextual",
+      "file": "uploaded-contextual-anomaly.png",
+      "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (2).png",
+      "sha256": "f25a7ad5b0c652df838f5088a52767e61427b48bc31c1a6ef014b887f5893f39",
+      "bytes": 1577268,
+      "width": 1122,
+      "height": 1402,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "definition-collective",
+      "file": "uploaded-collective-anomaly.png",
+      "original": "ChatGPT Image Sep 21, 2026, 05_05_04 PM (3).png",
+      "sha256": "ff908757987bc655f4ef2d237c86f0825171e4d3649910f589576e0ad8967f7a",
+      "bytes": 1590344,
+      "width": 1122,
+      "height": 1402,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "definition-correlation",
+      "file": "uploaded-malicious-behaviour-correlation.png",
+      "original": "ChatGPT Image Sep 21, 2026, 05_05_05 PM (4).png",
+      "sha256": "c29ee6d4be99ccbb7605eed8ad4bf6c45c8700ad1a8e34e723ea0236e8017a3b",
+      "bytes": 1590707,
+      "width": 1122,
+      "height": 1402,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-volumetric",
+      "file": "uploaded-volumetric.png",
+      "original": "2_1_volumetric.png",
+      "sha256": "61742a3b9711e6f568350baf782f2014afaa62d240d41a7cbb42aec1aaf67f99",
+      "bytes": 277584,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-frequency-rate",
+      "file": "uploaded-frequency-rate.png",
+      "original": "2_2_frequency_rate.png",
+      "sha256": "a6087c3151cff61c8238ed5279494a85ed7821a2f332df3d4460f3a7c5d1bc8c",
+      "bytes": 252296,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-temporal",
+      "file": "uploaded-temporal.png",
+      "original": "2_3_temporal.png",
+      "sha256": "989c4faf717533fa1bd74f3602dbde0ab6e8c67014a05f49ff9ad72c87fd8c61",
+      "bytes": 263868,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-peer-group",
+      "file": "uploaded-peer-group.png",
+      "original": "2_4_peer_group.png",
+      "sha256": "dba19899e2e78aae00d5a2b944bff60c52426cf70ec658e2ee9ec8787e490780",
+      "bytes": 286303,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-sequence",
+      "file": "uploaded-sequence.png",
+      "original": "2_5_sequence.png",
+      "sha256": "376d366607be22541e6393c76c42afc2823a1b25c383827ff8a399c1e7b05f25",
+      "bytes": 287030,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-graph-relationship",
+      "file": "uploaded-graph-relationship.png",
+      "original": "2_6_graph_relationship.png",
+      "sha256": "fcf1cf84cef86fa1f094d38e58fff3be9bcd59fa4f45dc130a6d6b1138cc35bd",
+      "bytes": 290437,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-geographic-asn",
+      "file": "uploaded-geographic-asn.png",
+      "original": "2_7_geographic_asn.png",
+      "sha256": "67e691207596f3777a211689a170e4b09a119945331ff92fb4ff9592b90e6b28",
+      "bytes": 290149,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-identity-access",
+      "file": "uploaded-identity-access.png",
+      "original": "2_8_identity_access.png",
+      "sha256": "a9c15e0f4ce7558e64eada5bf102fa8ee9e40c080844edd27622318e9e44ea94",
+      "bytes": 269496,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-rare-process-service",
+      "file": "uploaded-rare-process-service.png",
+      "original": "2_9_rare_process_service.png",
+      "sha256": "e6beb0f57559802651fd54b04ec0ad9666545b3d93f129f8495c7ccd248be6cf",
+      "bytes": 301158,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-parent-child",
+      "file": "uploaded-parent-child.png",
+      "original": "2_10_parent_child_execution.png",
+      "sha256": "9c9ef2bf2f476fdfe9bc510eb7cb9c712aef2b803673743cc32c6198186df78a",
+      "bytes": 275808,
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-data-movement",
+      "file": "uploaded-data-movement.jpg",
+      "original": "2_11_data_movement.jpg",
+      "sha256": "4cee1e17bfce9bae2835aee137aaf6e9c3c96985ea7ed65ab00230df27a3eabb",
+      "bytes": 214768,
+      "format": "jpeg",
+      "width": 880,
+      "height": 1100,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-protocol-application",
+      "file": "uploaded-protocol-application.jpg",
+      "original": "2_12_protocol_application_usage.jpg",
+      "sha256": "6b7ecf874cc33c631e95b7fe889e776eb484b32236a0834d827ac59b94aa49b9",
+      "bytes": 234601,
+      "format": "jpeg",
+      "width": 880,
+      "height": 1100,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-negative-absence",
+      "file": "uploaded-negative-absence.jpg",
+      "original": "2_13_negative_absence.jpg",
+      "sha256": "8d10809b122caf31d345c8bce6b315d7c5efd1ca4ac55849e6e2f62dd2578922",
+      "bytes": 216470,
+      "format": "jpeg",
+      "width": 880,
+      "height": 1100,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-state-change",
+      "file": "uploaded-state-change.jpg",
+      "original": "2_14_state_change.jpg",
+      "sha256": "16b8815a2f2268dcfb680e25bea6daa77714523cf12fc8135fe107a8f0fc7a69",
+      "bytes": 213349,
+      "format": "jpeg",
+      "width": 880,
+      "height": 1100,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "family-multi-event-correlation",
+      "file": "uploaded-multi-event-correlation.jpg",
+      "original": "2_15_multi_event_correlation.jpg",
+      "sha256": "13927221e68bb286824c7dc8c6f5a2e3d8ae3dc336d703750e39a41a7939ab14",
+      "bytes": 226369,
+      "format": "jpeg",
+      "width": 880,
+      "height": 1100,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "incident-register",
+      "file": "uploaded-incident-register.jpg",
+      "original": "2_16_incident_register_evidence_boundaries.jpg",
+      "sha256": "260a6431c38c7dabbce3a379c4e791ebf724facf0295548df9ac7ced19bb5223",
+      "bytes": 243990,
+      "format": "jpeg",
+      "width": 880,
+      "height": 1100,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-sunburst",
+      "file": "uploaded-case-sunburst.png",
+      "original": "4_1_sunburst_unc2452.png",
+      "sha256": "8435c6f7ca35925e3efa4a057d9adec6b645dd1b85f9422c98266bb933a69ef3",
+      "bytes": 360616,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-exchange",
+      "file": "uploaded-case-exchange.png",
+      "original": "4_2_hafnium_exchange_proxylogon.png",
+      "sha256": "528af59590231deb88fa48401e5d5a2c83ce8b1b4c957b597b9041c869717225",
+      "bytes": 360052,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-conti",
+      "file": "uploaded-case-conti.png",
+      "original": "4_3_conti_bazarcall.png",
+      "sha256": "8436a77b1f2ab499043fb99fe33c2b82cea918cc45044d8b9edb9fe28d0d25f0",
+      "bytes": 363133,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-oilrig",
+      "file": "uploaded-case-oilrig.png",
+      "original": "4_4_oilrig_rdat_dns.png",
+      "sha256": "ac2fa4856bbfdce432dcbe8e1d587d6255e925e28b4911f00cf7d53115c99847",
+      "bytes": 367747,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-moveit",
+      "file": "uploaded-case-moveit.png",
+      "original": "4_5_moveit_cl0p_lemurloot.png",
+      "sha256": "6d96a2646a75dc1c83284082a2c4bd7a1feb811231f3143b5a2b1240a2d091d2",
+      "bytes": 357933,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-midnight",
+      "file": "uploaded-case-midnight.png",
+      "original": "4_6_midnight_blizzard_cozy_bear.png",
+      "sha256": "335f7bd169083405f72c3beac3dfab693b7b4bb1069934beb940a199c6ffce35",
+      "bytes": 368172,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-unc3944",
+      "file": "uploaded-case-unc3944.png",
+      "original": "4_7_scattered_spider_unc3944.png",
+      "sha256": "905cf3773f6822317f013dd8dd3f9554109c71a7e434e3e445d91f69a4982771",
+      "bytes": 360760,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-storm",
+      "file": "uploaded-case-storm.png",
+      "original": "4_8_storm0558_oauth_campaigns.png",
+      "sha256": "6ec4e607848f5d1c84dc183730194291d5c42dde9f2ffd03e4725afae7ad6767",
+      "bytes": 407673,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-volt",
+      "file": "uploaded-case-volt.png",
+      "original": "4_9_volt_typhoon.png",
+      "sha256": "db52c65865dae382a50176c30c996be1701ccd49d7c3ad8314c43a13f4cefb25",
+      "bytes": 360281,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-apt41",
+      "file": "uploaded-case-apt41.png",
+      "original": "4_10_apt41_messagetap_database.png",
+      "sha256": "7a60edbafae1f89e30da2d4dc3c459f53035460747a2d70063ee8795e2a61382",
+      "bytes": 397385,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-impacket",
+      "file": "uploaded-case-impacket.png",
+      "original": "4_11_cisa_aa22_277a_impacket.png",
+      "sha256": "fb1b683046bfffb16dbf99cda7f853296b5a39f871969175fe3acb35d6ccbcc3",
+      "bytes": 374852,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "case-3cx",
+      "file": "uploaded-case-3cx.png",
+      "original": "4_12_3cx_supply_chain.png",
+      "sha256": "9d9730c9164de6c14b01b606c3501a84ceccacb8b9adb1e4c4eaef5fa7d809f4",
+      "bytes": 379662,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "source-windows",
+      "file": "uploaded-detection/individual/5_1_windows_security_event_log.png",
+      "original": "individual/5_1_windows_security_event_log.png",
+      "sha256": "a2c64643abcdef1cd6c6ef8a189d84fdaa236210d2a04de27cf5821ed4dbe19b",
+      "bytes": 1595479,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "source-sysmon",
+      "file": "uploaded-detection/individual/5_2_sysmon.png",
+      "original": "individual/5_2_sysmon.png",
+      "sha256": "29507bce8480ed7242c4c244a8cf3a2e60e8b1de78a3a1ec92d8fd391f8666e5",
+      "bytes": 1574958,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "source-edr",
+      "file": "uploaded-detection/individual/5_3_edr_platforms.png",
+      "original": "individual/5_3_edr_platforms.png",
+      "sha256": "9e05628c26494d7ed11a5ec5b8cb6a3b2dcffbcfe2e2aa0bf97f2faccd34a720",
+      "bytes": 1530805,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "source-ndr",
+      "file": "uploaded-detection/individual/5_4_network_detection_response.png",
+      "original": "individual/5_4_network_detection_response.png",
+      "sha256": "db16117c6b7b3dedf1608af148edab6cdf5384548fb97978f473300ab6872b18",
+      "bytes": 1529579,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "source-iam",
+      "file": "uploaded-detection/individual/5_5_identity_access_management.png",
+      "original": "individual/5_5_identity_access_management.png",
+      "sha256": "9dd80ba590da502e0721437ddedaad5236c319e6d4788f730c9b16f55a432837",
+      "bytes": 1517490,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "source-cloud",
+      "file": "uploaded-detection/individual/5_6_cloud_security_services.png",
+      "original": "individual/5_6_cloud_security_services.png",
+      "sha256": "59b48d66ca6c02250981b69a4792565754645a412e394470000440863621b990",
+      "bytes": 1528900,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "dns-entropy",
+      "file": "uploaded-detection/individual/5_7_dns_security.png",
+      "original": "individual/5_7_dns_security.png",
+      "sha256": "30f973d02bf2a30ea165028749a888536af6d0a2362069fc330410a05303e64e",
+      "bytes": 1516756,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "source-saas",
+      "file": "uploaded-detection/individual/5_8_saas_audit_logs.png",
+      "original": "individual/5_8_saas_audit_logs.png",
+      "sha256": "4b1c82dc144925edde6aba73a4648b0129762584589406dc3eadb4eea8d864b8",
+      "bytes": 1532064,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "source-prioritization",
+      "file": "uploaded-detection/individual/5_9_detection_source_prioritization_matrix.png",
+      "original": "individual/5_9_detection_source_prioritization_matrix.png",
+      "sha256": "45ba8e6150e4fce2fff5f403326cc6181ba0870525c1c7f1d9cd330a08ca2a7e",
+      "bytes": 1606093,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "credential-kerberoast",
+      "file": "uploaded-credentials/individual/6_1_kerberoasting.png",
+      "original": "individual/6_1_kerberoasting.png",
+      "sha256": "ec5ce685e2b3c48375f0d80c33fa72d8f8e55263357d5abdad5398ef032eab13",
+      "bytes": 1418656,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "credential-dcsync",
+      "file": "uploaded-credentials/individual/6_2_dcsync.png",
+      "original": "individual/6_2_dcsync.png",
+      "sha256": "7b59d8f067154f360d3e1c2502f03b3ffabd11ed37e5dee355dc539552b565d6",
+      "bytes": 1510060,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "credential-pth",
+      "file": "uploaded-credentials/individual/6_3_pass_the_hash.png",
+      "original": "individual/6_3_pass_the_hash.png",
+      "sha256": "aadc9b65ab97cc7030ab61a90a0bd3efe856ba9271a9f2484942dc6351cdde7b",
+      "bytes": 1429423,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    },
+    {
+      "id": "credential-lsass",
+      "file": "uploaded-credentials/individual/6_4_lsass_credential_dumping.png",
+      "original": "individual/6_4_lsass_credential_dumping.png",
+      "sha256": "f04a18cbde5e9077d40eff7e3d9435473e0b302d2585c83455adbea1ef6cdafe",
+      "bytes": 1463829,
+      "format": "png",
+      "width": 2400,
+      "height": 3000,
+      "import": "byte-for-byte; no image edits"
+    }
+  ],
+  "documents": [
+    {
+      "file": "uploaded-incident-sources.md",
+      "original": "SOURCES.md",
+      "sha256": "e490ecddc60bd921d9925c154835657292f0d67ac0e0bf68389d778be5f5f85d",
+      "bytes": 6127,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-detection/README.md",
+      "original": "README.md",
+      "sha256": "8779ae2bf1fbdadc2f334c3a10a05adcb5c1aa242841f948864937c1d16be009",
+      "bytes": 1224,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-detection/SOURCES_AND_EVIDENCE_NOTES.md",
+      "original": "SOURCES_AND_EVIDENCE_NOTES.md",
+      "sha256": "21f782e9d55fe6a8237f2d2eafa13bc20b3114c6908b0c533cb5dc5b80145c7f",
+      "bytes": 6125,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-detection/manifest.json",
+      "original": "manifest.json",
+      "sha256": "54a643b7a4c1db131b25329fb7455ff511b9ab4f094ea73feb1864b7c13fc150",
+      "bytes": 2421,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-detection/accessible_text.json",
+      "original": "accessible_text.json",
+      "sha256": "1e921626c1e638664a65377f5cf572b81b10eb60ad8903699396e3dee4237b2f",
+      "bytes": 13568,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-detection/synthetic_calculations.json",
+      "original": "synthetic_calculations.json",
+      "sha256": "ecd374efd64d42bceb7d14fe2276dbde2933489dc07c4d22f42aa5ea49f4731f",
+      "bytes": 1140,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-credentials/README.md",
+      "original": "README.md",
+      "sha256": "d18db6450761d37b92c3425a5e9c23a98225bbfdcde726672c610e8f57210846",
+      "bytes": 832,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-credentials/SOURCES_AND_EVIDENCE_NOTES.md",
+      "original": "SOURCES_AND_EVIDENCE_NOTES.md",
+      "sha256": "76082b7b6bea739dca7e5749128ed4ce9b46ecbeb3071f46bcff0229d1d1aa94",
+      "bytes": 5777,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-credentials/accessible_text.json",
+      "original": "accessible_text.json",
+      "sha256": "eebc4420c62eb0d27df467c577ed4037f9ae01d96672c9ef4d05f2d79b547439",
+      "bytes": 5850,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-credentials/bitmask_checks.json",
+      "original": "bitmask_checks.json",
+      "sha256": "64480120abcfb955784a98042aac04a6e30780088045ba5f3a44d4ce74abb3c7",
+      "bytes": 374,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    },
+    {
+      "file": "uploaded-credentials/manifest.json",
+      "original": "manifest.json",
+      "sha256": "583ec0ce0f5ce34da4dae4feb8bfd64b8efa6872d44c1fbe7f5f11d8f599331d",
+      "bytes": 1044,
+      "import": "byte-for-byte; supplied source notes, not instructions or independent validation"
+    }
+  ]
+}
