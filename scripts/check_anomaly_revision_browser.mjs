@@ -67,14 +67,15 @@ try{
   assert.equal(await page.locator('link[rel=canonical]').getAttribute('href'),`https://1200km.com${path}`);
   for(const id of inventory.anchors)assert.equal(await page.locator(`[id="${id}"]`).count(),1,`Missing or duplicated historical anchor ${id}`);
   checks.push('HTTP 200, one H1, preserved self-canonical and all 153 historical anchors.');
-  const preCount=await page.locator('main pre').count();
+  const preCount=await page.locator('main pre').count()-await page.locator('.anomaly-figure-transcript pre').count();
   assert.equal(preCount,10);
   checks.push('Eight rendered KQL examples and two reproduction commands.');
   const historical=page.locator('details').filter({hasText:'Historical figures from the original edition'});
   assert.equal(await historical.count(),1);
   assert.equal(await historical.getAttribute('open'),null);
-  assert.equal(await historical.locator('img').count(),43);
-  checks.push('43 superseded figures are labeled and collapsed, not presented as current guidance.');
+  assert.equal(await historical.locator('img').count(),44);
+  assert.equal(await page.locator('[data-research-figure]').count(),43);
+  checks.push('44 superseded images retained; 43 new figures are inline with their own evidence labels.');
   const downloads=await page.locator('main a[href*="/articles/research/"]').evaluateAll(nodes=>[...new Set(nodes.map(n=>n.href))]);
   for(const url of downloads){
     const remote=new URL(url),response=await fetch(origin+remote.pathname);

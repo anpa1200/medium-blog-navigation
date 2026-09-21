@@ -533,7 +533,7 @@
       "priority": "P1",
       "original_finding": "Historical infographics can contradict corrected prose",
       "status": "historical_not_revalidated",
-      "resolution": "All 44 media references retained; 43 non-cover figures moved into an explicitly superseded historical appendix, not used as current guidance.",
+      "resolution": "All 44 original media references, including the old cover, are retained in the superseded historical appendix. A separate set of 43 author-reviewed, source-linked inline diagrams replaces their instructional role. Numerical figures are generated from versioned evidence. The old raster illustrations themselves remain unvalidated; replacement does not certify their contents.",
       "location": "§9.8"
     },
     {

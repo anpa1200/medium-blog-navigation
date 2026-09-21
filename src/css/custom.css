@@ -65,6 +65,50 @@ body {
   height: auto;
 }
 
+/* Scoped research figures: keep labels readable in both article shells. */
+.anomaly-figure {
+  margin: 2rem 0;
+  max-width: 100%;
+  min-width: 0;
+}
+.anomaly-figure-image,
+.anomaly-figure picture,
+.anomaly-figure img {
+  display: block;
+  width: 100%;
+}
+.anomaly-figure img {
+  height: auto;
+  border-radius: 12px;
+  background: #0b1426;
+}
+.anomaly-figure-image:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 5px;
+  border-radius: 12px;
+}
+.anomaly-figure figcaption {
+  margin-top: .8rem;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+.anomaly-figure-evidence,
+.anomaly-figure-sources {
+  display: block;
+  margin-top: .45rem;
+}
+.anomaly-figure-evidence {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .025em;
+}
+.anomaly-figure-transcript {
+  margin-top: .65rem;
+}
+.anomaly-figure-transcript summary {
+  cursor: pointer;
+}
+
 /* Prose links must remain identifiable without relying on colour alone. */
 .theme-doc-markdown :where(p, li) a:not(.button),
 .theme-doc-markdown > a:not(.button):not(.hash-link) {

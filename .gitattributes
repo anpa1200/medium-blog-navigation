@@ -5,3 +5,7 @@ static/research/anomaly-validation/synthetic-study.csv -text whitespace=cr-at-eo
 # Verbatim historical exports intentionally retain their original trailing spaces.
 # This exception does not apply to the maintained queries or article source.
 static/research/anomaly-historical-code.md -text whitespace=-blank-at-eol
+
+# Keep hash-bound compiler output verbatim, including its padded update banner.
+reports/anomaly-visuals-20260921/legacy-build.log -text whitespace=-blank-at-eol
+reports/anomaly-visuals-20260921/embedded-build.log -text whitespace=-blank-at-eol
