@@ -1,0 +1,98 @@
+{
+  "started_at": "2026-09-21T06:29:24.270Z",
+  "completed_at": "2026-09-21T06:31:31.483Z",
+  "deployment_performed": false,
+  "source_sha256": {
+    "research/anomaly-incidents.json": "3fe2cbb1eedd62e6e195d9a6ad6ee630513f3f2d20e17e12343386e06d840c1d",
+    "src/data/article-catalog.json": "c9fb2377eabe8a21a435d89fa6196bc3a612caa9392489d8f0537d098fa71247",
+    "docs/articles/2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12.md": "436e13a84d4bd9c8b0e19a2aaeaffdce86e01a70347393e4a6afddf39a8ac324"
+  },
+  "planned_checks": 7,
+  "results": [
+    {
+      "name": "archive",
+      "command": [
+        "npm",
+        "run",
+        "validate:archive"
+      ],
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 816,
+      "log": "archive.log"
+    },
+    {
+      "name": "media-local",
+      "command": [
+        "npm",
+        "run",
+        "validate:media:local"
+      ],
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 407,
+      "log": "media-local.log"
+    },
+    {
+      "name": "research-source",
+      "command": [
+        "npm",
+        "run",
+        "research:anomalies:check"
+      ],
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 258,
+      "log": "research-source.log"
+    },
+    {
+      "name": "legacy-build",
+      "command": [
+        "npm",
+        "run",
+        "build:legacy"
+      ],
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 38005,
+      "log": "legacy-build.log"
+    },
+    {
+      "name": "embedded-build",
+      "command": [
+        "npm",
+        "run",
+        "build:embedded"
+      ],
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 87516,
+      "log": "embedded-build.log"
+    },
+    {
+      "name": "research-rendered",
+      "command": [
+        "node",
+        "scripts/validate_anomaly_incidents.mjs",
+        "--built"
+      ],
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 153,
+      "log": "research-rendered.log"
+    },
+    {
+      "name": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "error": null,
+      "elapsed_ms": 46,
+      "log": "whitespace.log"
+    }
+  ],
+  "passed": true
+}

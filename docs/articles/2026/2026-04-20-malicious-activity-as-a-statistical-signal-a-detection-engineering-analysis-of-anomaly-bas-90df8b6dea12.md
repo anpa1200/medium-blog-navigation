@@ -1,57 +1,66 @@
 ---
-title: "Malicious Activity as a Statistical Signal: A Detection Engineering Analysis of Anomaly-Based\u2026"
-description: "An evidence-based examination of the hypothesis that suspicious and malicious activity produces measurable deviations from normal behaviour\u2026"
+title: "Malicious Activity as a Statistical Signal: Anomaly Detection Engineering"
+description: "Explore anomaly detection and multi-event correlation through real incidents, with telemetry, ATT&CK mappings and explicit evidence limits."
 image: "https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png"
 ---
 
-# Malicious Activity as a Statistical Signal: A Detection Engineering Analysis of Anomaly-Based…
+# Malicious Activity as a Statistical Signal: Anomaly Detection Engineering
 
+**Fourteen anomaly families, multi-event correlation, and the telemetry needed to distinguish suspicious behavior from legitimate change.**
+
+An unusual login, a new process relationship, or a sudden data export can be an investigation lead. None proves an intrusion on its own. This research connects statistical anomaly concepts to documented attacker behavior, explains which logs could expose that behavior, and makes the limits of each interpretation explicit.
+
+The September 2026 expansion adds two source-backed examples to each operational anomaly type, a deduplicated incident register, linked topic tags, and connections to the Anomaly Detection Atlas and Threat Matrix. These are evidence mappings, not a benchmark claiming that all incidents would have been detected.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 :::info Article Metadata
-- **Category:** CTI
+- **Category:** Detection Engineering
 - **Source article:** [https://medium.com/@1200km/malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12](https://medium.com/@1200km/malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12)
 - **Published:** 2026-04-20
+- **Research updated:** 2026-09-21
 - **Preserved media:** 44 image(s), including cover images, screenshots, diagrams, and infographics where present.
 - **Preserved technical blocks:** 11 code/configuration block(s).
 :::
 
 ## Ecosystem Fit
 
-This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.
+This is the expanded 1200km.com edition of the original Medium article. Its 44 images and 11 technical blocks are preserved. The new incident evidence is maintained locally; the Medium version is not automatically updated. Use the [incident and tag index](#anomaly-evidence-index) to navigate across cases, telemetry domains, statistical concepts, and related research.
 
 ## Malicious Activity as a Statistical Signal: A Detection Engineering Analysis of Anomaly-Based Detection
 
-### An evidence-based examination of the hypothesis that suspicious and malicious activity produces measurable deviations from normal behaviour — with documented examples from real APT campaigns, specific log sources, security device detection capabilities, and detection engineering patterns.
+An evidence-based examination of the hypothesis that suspicious and malicious activity produces measurable deviations from normal behaviour — with documented examples from real campaigns, specific log sources, security device detection capabilities, and detection engineering patterns.
 
-By[Andrey Pautov](https://medium.com/@1200km)— April 2026
+By [Andrey Pautov](https://medium.com/@1200km) — first published April 2026; incident expansion September 2026.
 
-&gt; Epistemic labels used throughout: [Documented] = the cited source explicitly states this fact or detection opportunity. [Inferred] = the source documents the underlying tradecraft; the detection derivation is the author’s reasoned conclusion. Claims without a label are general statements with consensus support in the cited literature.
+> Evidence labels: **[Documented] / [source-reported]** = the cited source reports the observation; it was not independently reproduced here. **[Inferred]** = the detection interpretation is the author's reasoning from that observation. A documented intrusion does not establish that a proposed anomaly detector would have detected it.
 
 ## Table of Contents
 
-- **The Hypothesis — Scope and Definitions**
+:::warning Technical review status — September 2026
+The full review found factual, citation and query-logic problems in the older technical sections. The new incident cards do not validate those retained claims or queries. Read the <a href="https://1200km.com/articles/research/anomaly-fact-audit.md" target="_self">claim-by-claim factual and logic audit</a> before using this article as implementation guidance. The eleven original code blocks remain historical examples, not tested production detections. Anomaly tags indicate relevance, not accuracy certification.
+:::
 
-- **Taxonomy of Anomaly Types**
-
-- **Mapping Anomalies to the ATT&CK Lifecycle**
-
-- **Evidence Register: Real APT Campaigns and Documented Anomaly Patterns**
-
-- **Detection by Log Source and Security Device**
-
-- **Credential-Based Attacks: Detection Engineering Deep Dive**
-
-- **How Attackers Suppress Anomaly Visibility**
-
-- **Detection Engineering Patterns and Logic Examples**
-
-- **Implementation Guidance**
-
-- **Conclusion**
-
-- **References**
+- [1. The Hypothesis — Scope and Definitions](#1-the-hypothesis--scope-and-definitions)
+- [2. Taxonomy of Anomaly Types](#2-taxonomy-of-anomaly-types)
+  - [Volumetric](#anomaly-volumetric) · [Frequency / Rate](#anomaly-frequency-rate) · [Temporal](#anomaly-temporal)
+  - [Peer Group](#anomaly-peer-group) · [Sequence](#anomaly-sequence) · [Graph / Relationship](#anomaly-graph-relationship)
+  - [Geographic / ASN](#anomaly-geographic-asn) · [Identity / Access](#anomaly-identity-access)
+  - [Rare Process / Service](#anomaly-rare-process-service) · [Parent–Child](#anomaly-parent-child)
+  - [Data Movement](#anomaly-data-movement) · [Protocol / Application](#anomaly-protocol-application)
+  - [Negative / Absence](#anomaly-negative-absence) · [State Change](#anomaly-state-change)
+  - [Multi-Event Correlation](#anomaly-multi-event-correlation)
+  - [Incident register, tags and evidence boundaries](#anomaly-evidence-index)
+- [3. Mapping Anomalies to the ATT&CK Lifecycle](#3-mapping-anomalies-to-the-attck-lifecycle)
+- [4. Evidence Register: Real APT Campaigns and Documented Anomaly Patterns](#4-evidence-register-real-apt-campaigns-and-documented-anomaly-patterns)
+- [5. Detection by Log Source and Security Device](#5-detection-by-log-source-and-security-device)
+- [6. Credential-Based Attacks: Detection Engineering Deep Dive](#6-credential-based-attacks-detection-engineering-deep-dive)
+- [7. How Attackers Suppress Anomaly Visibility](#7-how-attackers-suppress-anomaly-visibility)
+- [8. Detection Engineering Patterns and Logic Examples](#8-detection-engineering-patterns-and-logic-examples)
+- [9. Implementation Guidance](#9-implementation-guidance)
+- [10. Conclusion](#10-conclusion)
+- [11. References](#11-references) and [incident primary sources](#incident-primary-sources)
+- [Follow My Work](#follow-my-work)
 
 ## 1. The Hypothesis — Scope and Definitions
 
@@ -65,20 +74,26 @@ The hypothesis is**substantially true, but bounded**. It holds for specific atta
 
 **Anomaly.**NIST SP 800–94 defines anomaly-based intrusion detection as the comparison of normal activity profiles against observed events to identify significant deviations[[1]](https://csrc.nist.gov/pubs/sp/800/94/final). In operational terms, an anomaly is a measurable deviation from one or more baselines: an entity baseline (this user, this host), a peer baseline (users in this role, hosts in this class), a temporal baseline (activity at this time of day), a relationship model (who normally communicates with whom), or an event-sequence model (what normally follows what).
 
-**Point anomaly.**A single data instance that is anomalous relative to the rest of the data (Chandola et al., 2009)[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
+#### Point anomaly {#anomaly-form-point}
+
+A single data instance that is anomalous relative to the rest of the data (Chandola et al., 2009)[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Example:**a workstation that has never generated outbound DNS queries to high-entropy subdomain strings doing so for the first time.
 
-**Contextual anomaly.**An instance that is anomalous only in a specific context[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
+#### Contextual anomaly {#anomaly-form-contextual}
+
+An instance that is anomalous only in a specific context[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Example:**`ntdsutil`executed by an administrator account is routine on a domain controller used for backup and anomalous on a developer workstation.
 
-**Collective anomaly.**A collection of related instances that is anomalous together, even if each individual instance is not[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
+#### Collective anomaly {#anomaly-form-collective}
+
+A collection of related instances that is anomalous together, even if each individual instance is not[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Example:**in the SUNBURST campaign, no single DNS query to`avsvmcloud[.]com`subdomains was inherently suspicious. The collective anomaly emerged in two distinct phases: first, a 12–14 day dormancy window during which the implant performed only local environment checks and generated no C2 traffic; second, once dormancy ended, periodic callback queries to actor-controlled DNS infrastructure encoding victim-specific data in subdomain labels. The dormancy phase itself produces no observable signal; the anomaly only becomes detectable once callback activity begins.[[3]](https://www.mandiant.com/resources/sunburst-additional-technical-details)
 
 **Malicious-behaviour correlation.**The analytical step that links an observed anomaly to an attacker goal, technique, or intrusion stage. An anomaly is not a verdict — it is evidence. A detection becomes operationally useful when that evidence is correlated with asset context, identity state, companion telemetry, or known adversary tradecraft.
 
 ### 1.2 The Central Tension
 
-In a typical enterprise environment, the ratio of malicious events to benign events approaches zero. A detection system with 99% precision will still produce thousands of false positives daily if it processes millions of benign events. This is the base-rate fallacy applied to security operations; NIST SP 800–94 identified it explicitly: “complex environments are difficult to model accurately, and benign deviations can trigger large numbers of false positives”[[1]](https://csrc.nist.gov/pubs/sp/800/94/final).
+Malicious activity can be rare relative to ordinary enterprise events. **Precision and false-positive rate are different quantities:** precision is TP / (TP + FP), while false-positive rate is FP / (FP + TN). In an illustrative population of 1,000,000 benign events, a 1% false-positive rate produces 10,000 false alerts. If 100 malicious events are present and recall is 90%, the resulting 90 true alerts yield about 0.89% precision. These are explanatory numbers, not measured results. NIST SP 800–94 discusses the false positives caused by benign deviations from normal profiles[[1]](https://csrc.nist.gov/pubs/sp/800/94/final).
 
 Anomaly detection produces operational value only when the baseline is tight, the signal is stable, and the anomaly is rare in legitimate traffic. Where those conditions hold, the approach is useful. Where they do not, false positive rates erode analyst confidence faster than they generate detections.
 
@@ -86,14 +101,54 @@ Anomaly detection produces operational value only when the baseline is tight, th
 
 <img src="https://cdn-images-1.medium.com/max/800/1*0gsdLTrvWS3EmSAu5WoL0w.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
-The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882), NIST SP 800–94[[1]](https://csrc.nist.gov/pubs/sp/800/94/final), Microsoft MSTIC publications[[4]](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/)[[5]](https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/)[[6]](https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/), Mandiant reporting[[7]](https://cloud.google.com/blog/topics/threat-intelligence/responding-to-exchange-server-zero-days)[[8]](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications)[[9]](https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2025), CISA/NSA joint advisories[[10]](https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a)[[11]](https://www.cisa.gov/resources-tools/resources/guide-securing-microsoft-windows-10-and-windows-11-audit-and-monitoring-events), and the Australian Cyber Security Centre (ACSC)[[12]](https://www.cyber.gov.au/resources-business-and-government/maintaining-devices-and-systems/system-hardening-and-administration/system-administration/detecting-and-mitigating-active-directory-compromises).
+The taxonomy below is an operational synthesis, not a standardized list of mutually exclusive classes. Its statistical foundation comes from [Chandola et al.](https://dl.acm.org/doi/10.1145/1541880.1541882) [2] and [NIST SP 800–94](https://csrc.nist.gov/pubs/sp/800/94/final) [1]. The [incident-source register](#incident-primary-sources) supplies primary investigations for each type. One intrusion can produce several signals, and a proposed statistical interpretation is not itself a reported detector result.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*oARxu_lgKxAuI5EgXuuleQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Volumetric**— Unusual absolute volume of data or events vs. entity baseline.**Telemetry**: NetFlow, firewall egress, DNS, file/object access, cloud audit.**Approach**: rolling threshold + percentile baseline (Z-score, IQR, moving average).
+### 2.1 Volumetric {#anomaly-volumetric}
+
+Unusual absolute volume of data or events vs. entity baseline.**Telemetry**: NetFlow, firewall egress, DNS, file/object access, cloud audit.**Approach**: rolling threshold + percentile baseline (Z-score, IQR, moving average).
 **Stability**: high for exfiltration/impact stages; lower on shared infrastructure.
 **FP risk:**Medium.
-**Examples:**
+<!-- anomaly-evidence:volumetric:start -->
+**Evidence tags:** [Cloud and SaaS](#tag-cloud) · [Network telemetry](#tag-network). **Statistical forms:** [point](#anomaly-form-point), [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-volumetric" target="_self">Browse articles and guides: Volumetric</a>.
+
+**Reported incidents and detection interpretations**
+
+#### UNC5537 and Snowflake customer data theft {#case-volumetric-unc5537-snowflake-2024}
+
+**Period:** 2024. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Mandiant investigated stolen customer credentials used to access Snowflake instances and exfiltrate database records. [Mandiant: UNC5537 Targets Snowflake Customer Instances for Data Theft and Extortion](https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion).
+
+**Anomaly interpretation [inferred]:** Compare exported rows or bytes with that account's job and warehouse workload. A large legitimate reporting job remains a competing explanation.
+
+**Telemetry to validate:** Snowflake query and access history; export destinations; identity and warehouse context.
+
+**Boundary / competing explanation:** The report does not provide a universal per-account volume threshold or a measured anomaly-detector success rate.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1078.004/" target="_self">T1078.004 — Valid Accounts: Cloud Accounts</a>
+
+#### HTTP/2 Rapid Reset DDoS campaign {#case-volumetric-rapid-reset-2023}
+
+**Period:** August 2023. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Cloudflare reported HTTP/2 attacks reaching just above 201 million requests per second and automatic detection and mitigation. [Cloudflare: HTTP/2 Rapid Reset: deconstructing the record-breaking attack](https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/).
+
+**Anomaly interpretation [inferred]:** This is a documented extreme-load event. Separate total resource load from rate and compare it with service capacity and normal demand.
+
+**Telemetry to validate:** Edge request counters, connection statistics, origin saturation and mitigation events.
+
+**Boundary / competing explanation:** This is Cloudflare's measurement, not a generic enterprise threshold or independent validation of a particular model.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1499/" target="_self">T1499 — Endpoint Denial of Service</a>
+
+**Crosslinks:** [Frequency / Rate](#anomaly-frequency-rate) · [Data Movement](#anomaly-data-movement). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#12-magnitude-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/" target="_self">AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test</a>.
+<!-- anomaly-evidence:volumetric:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A finance user who normally uploads 20–50 files per day suddenly downloads 8,000 SharePoint documents in 40 minutes.
 
@@ -107,10 +162,50 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*bWJ5BNtuFu_v_bw6FoMwTg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Frequency / Rate**— Unusual rate of repeated events within a time window.**Telemetry**: auth logs, API logs, process start logs, DNS.
+### 2.2 Frequency / Rate {#anomaly-frequency-rate}
+
+Unusual rate of repeated events within a time window.**Telemetry**: auth logs, API logs, process start logs, DNS.
 **Approach**: count-by-entity over rolling window; Poisson model.
 **Stability:**high when concentrated in one source; weak when distributed.**FP risk:**Medium.
-**Examples:**
+<!-- anomaly-evidence:frequency-rate:start -->
+**Evidence tags:** [Identity and access](#tag-identity) · [Network telemetry](#tag-network). **Statistical forms:** [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-frequency-rate" target="_self">Browse articles and guides: Frequency / Rate</a>.
+
+**Reported incidents and detection interpretations**
+
+#### HTTP/2 Rapid Reset DDoS campaign {#case-frequency-rate-rapid-reset-2023}
+
+**Period:** August 2023. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** The HTTP/2 campaign repeatedly opened and reset streams, letting relatively few connections generate exceptional request rates. [Cloudflare: HTTP/2 Rapid Reset: deconstructing the record-breaking attack](https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/).
+
+**Anomaly interpretation [inferred]:** Measure stream creation and cancellation per connection and per target, not just source-IP counts. Distribution shape complements aggregate rate.
+
+**Telemetry to validate:** HTTP/2-aware edge telemetry, reset counters and time-aligned request rates.
+
+**Boundary / competing explanation:** Ordinary access logs may not expose frame-level resets; encrypted packet metadata alone is insufficient for this feature.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1499/" target="_self">T1499 — Endpoint Denial of Service</a>
+
+#### Midnight Blizzard compromise of Microsoft {#case-frequency-rate-midnight-blizzard-2024}
+
+**Period:** Reported January 2024. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** Microsoft described low-count password attempts against selected accounts through distributed residential proxies. [Microsoft: Midnight Blizzard: Guidance for responders on nation-state attack](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/).
+
+**Anomaly interpretation [inferred]:** This is an evasion case for simple rate thresholds. Aggregate repeated targeting across sources, retaining the affected identities and observation window.
+
+**Telemetry to validate:** Identity sign-in results, account IDs, source networks and provider risk signals.
+
+**Boundary / competing explanation:** Do not claim that every tenant-local detector must fail or that unrelated successful logins prove compromise.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1110.003/" target="_self">T1110.003 — Brute Force: Password Spraying</a>
+
+**Crosslinks:** [Volumetric](#anomaly-volumetric) · [Geographic / ASN](#anomaly-geographic-asn). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#14-rate-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426/" target="_self">From Threat Intelligence to Detection: A Practitioner’s Guide</a>.
+<!-- anomaly-evidence:frequency-rate:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A single user account generates 45 failed VPN logins in 6 minutes, far above its normal authentication rate.
 
@@ -124,12 +219,52 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*W-zn-qJkeLtk9sZ-6jmw5g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Temporal**— Activity at unusual times relative to entity, business cycle, or service baseline.
+### 2.3 Temporal {#anomaly-temporal}
+
+Activity at unusual times relative to entity, business cycle, or service baseline.
 **Telemetry:**auth logs, SaaS audit, admin actions, EDR.
 **Approach:**working-hours baseline; time-series decomposition; seasonality models.
 **Stability:**medium; highly context-dependent.
 **FP risk**: Medium–High.
-**Examples:**
+<!-- anomaly-evidence:temporal:start -->
+**Evidence tags:** [Network telemetry](#tag-network) · [Endpoint telemetry](#tag-endpoint) · [Operational technology](#tag-ot). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-temporal" target="_self">Browse articles and guides: Temporal</a>.
+
+**Reported incidents and detection interpretations**
+
+#### SUNBURST in the SolarWinds supply-chain compromise {#case-temporal-sunburst-2020}
+
+**Period:** 2020. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** SUNBURST delayed activation and subsequently used DNS coordination and command-and-control traffic. [Mandiant: SUNBURST Additional Technical Details](https://cloud.google.com/blog/topics/threat-intelligence/sunburst-additional-technical-details/).
+
+**Anomaly interpretation [inferred]:** Relate software installation, delayed first contact and later callbacks. The delay is an event-sequence feature, not an observable DNS anomaly while the implant is silent.
+
+**Telemetry to validate:** Software deployment records, process-attributed network events and DNS timestamps.
+
+**Boundary / competing explanation:** Dormancy without emitted telemetry cannot be scored from network traffic; normal update delays can look similar.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1071.004/" target="_self">T1071.004 — Application Layer Protocol: DNS</a>
+
+#### Industroyer2 attempted disruption of a Ukrainian energy provider {#case-temporal-industroyer2-2022}
+
+**Period:** 8 April 2022. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** ESET documented Industroyer2 execution scheduled for 8 April 2022 at 16:10 UTC in an attempted attack on a Ukrainian energy provider. [ESET: Industroyer2: Industroyer reloaded](https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/).
+
+**Anomaly interpretation [inferred]:** Correlate the task's creation and scheduled execution with approved OT work and operational commands. Clock time alone does not make an event anomalous.
+
+**Telemetry to validate:** Scheduled-task records, engineering-host process logs, OT commands and maintenance approvals.
+
+**Boundary / competing explanation:** The public report establishes the scheduled time, not the site's full maintenance baseline or a successful temporal detection.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1053.005/" target="_self">T1053.005 — Scheduled Task/Job: Scheduled Task</a>
+
+**Crosslinks:** [Sequence](#anomaly-sequence) · [Protocol / Application Usage](#anomaly-protocol-application). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#21-temporal-context-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556/" target="_self">Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry</a>.
+<!-- anomaly-evidence:temporal:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - An HR employee who normally logs in between 08:00–17:00 starts downloading sensitive employee records at 02:43 on a Sunday.
 
@@ -143,10 +278,50 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*SXg5h8_qdQB4flYPkQHVWw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Peer-Group**— Entity deviates materially from its peer cohort (same role, department, host class).
+### 2.4 Peer-Group {#anomaly-peer-group}
+
+Entity deviates materially from its peer cohort (same role, department, host class).
 **Telemetry:**identity logs, HR data, endpoint inventory, SaaS access.**Approach:**clustering (K-Means, TF-IDF), peer distribution percentiles.**Stability:**medium–high when peer groups are cleanly defined.
 **FP risk:**Medium.
-**Examples:**
+<!-- anomaly-evidence:peer-group:start -->
+**Evidence tags:** [Identity and access](#tag-identity) · [Insider risk](#tag-insider) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [contextual](#anomaly-form-contextual).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-peer-group" target="_self">Browse articles and guides: Peer-Group</a>.
+
+**Reported incidents and detection interpretations**
+
+#### Twitter insider access for a foreign official {#case-peer-group-twitter-insider}
+
+**Period:** Conduct addressed in the 2022 Abouammo conviction. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** A jury convicted former Twitter media-partnerships manager Ahmad Abouammo over unlawful access and disclosure of user information. The indictment explains the job-duty boundary. [US Department of Justice: Former Twitter Employee Found Guilty of Acting as an Agent of a Foreign Government and Unlawfully Sharing Twitter User Information](https://www.justice.gov/archives/opa/pr/former-twitter-employee-found-guilty-acting-agent-foreign-government-and-unlawfully-sharing); [US Department of Justice: Superseding indictment, United States v. Abouammo et al., filed July 28, 2020](https://www.justice.gov/usao-ndca/page/file/1299331/dl?inline=).
+
+**Anomaly interpretation [inferred]:** Compare sensitive-record access with employees having the same responsibilities, not with all staff who technically possess access.
+
+**Telemetry to validate:** Internal user-data access logs, role assignments, case authorization and HR role history.
+
+**Boundary / competing explanation:** Peer-group detection is an author-derived opportunity; the sources do not say a UEBA model discovered this case.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** Not forced: the public role-misuse evidence does not justify a specific technique mapping here.
+
+#### Storm-1283 OAuth-enabled cryptomining {#case-peer-group-storm1283-2023}
+
+**Period:** Reported December 2023. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Microsoft reported that compromised access was used to create an OAuth application and deploy virtual machines for cryptomining. [Microsoft: Threat actors misuse OAuth applications to automate financially driven attacks](https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/).
+
+**Anomaly interpretation [inferred]:** Compare application activity with applications having the same business function. VM creation may be abnormal for one cohort and routine for deployment automation.
+
+**Telemetry to validate:** Application inventory, workload-identity logs, Azure Activity and approved deployment records.
+
+**Boundary / competing explanation:** The comparison cohort and expected activity are not supplied by the incident report and must be established locally.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1496/" target="_self">T1496 — Resource Hijacking</a>
+
+**Crosslinks:** [Identity / Access](#anomaly-identity-access) · [Data Movement](#anomaly-data-movement). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#8-peer-group-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-22-detecting-malicious-insider-activity-a-technical-detection-engineering-guide-3c3b41e95e82/" target="_self">Detecting Malicious Insider Activity: A Technical Detection Engineering Guide</a>.
+<!-- anomaly-evidence:peer-group:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - One finance employee accesses source code repositories and DevOps dashboards that no one else in the finance peer group normally uses.
 
@@ -160,10 +335,50 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Kj_pfrlqCnOviRu8wfTW8g.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Sequence**— Events occur in an unusual order relative to normal operational paths.
+### 2.5 Sequence {#anomaly-sequence}
+
+Events occur in an unusual order relative to normal operational paths.
 **Telemetry:**process trees, auth chains, API sequences, session logs.**Approach:**finite-state models, Markov chains, LSTM, provenance graphs.**Stability**: high for stable server roles; lower for developer environments.
 **FP risk**: Medium.
-**Examples:**
+<!-- anomaly-evidence:sequence:start -->
+**Evidence tags:** [Identity and access](#tag-identity) · [Endpoint telemetry](#tag-endpoint) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [collective](#anomaly-form-collective), [contextual](#anomaly-form-contextual).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-sequence" target="_self">Browse articles and guides: Sequence</a>.
+
+**Reported incidents and detection interpretations**
+
+#### UNC3944 help-desk compromise and SaaS data theft {#case-sequence-unc3944-saas}
+
+**Period:** 2023–2024 investigations reported June 2024. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Mandiant described help-desk impersonation, MFA changes and subsequent access to privileged accounts and SaaS applications across its investigations. [Mandiant: UNC3944 Targets SaaS Applications](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/).
+
+**Anomaly interpretation [inferred]:** Correlate reset, new-device enrollment, sign-in and expanded access on the same identity. Preserve ordering rather than merely counting co-occurring alerts.
+
+**Telemetry to validate:** Help-desk tickets, IdP factor events, session records and SaaS audit logs.
+
+**Boundary / competing explanation:** The report synthesizes multiple engagements; do not invent one victim timeline containing every reported technique.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1098.005/" target="_self">T1098.005 — Account Manipulation: Device Registration</a>
+
+#### BazarCall to Conti intrusion {#case-sequence-bazarcall-conti}
+
+**Period:** 2021 case reported on 1 August. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** The DFIR Report traced a workbook-led intrusion through Trickbot, Cobalt Strike, discovery and lateral movement to later Conti deployment. [The DFIR Report: BazarCall to Conti Ransomware via Trickbot and Cobalt Strike](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/).
+
+**Anomaly interpretation [inferred]:** Link execution, discovery and remote activity by host and identity. A multi-stage sequence can warrant investigation before ransomware appears.
+
+**Telemetry to validate:** Process trees, authentication records, service creation and endpoint/network timestamps.
+
+**Boundary / competing explanation:** A rigid sequence requiring every stage will miss partial telemetry and different attack paths; evaluate missing-stage tolerance.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1087.002/" target="_self">T1087.002 — Account Discovery: Domain Account</a>
+
+**Crosslinks:** [Identity / Access](#anomaly-identity-access) · [Parent-Child Execution](#anomaly-parent-child). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#60-sequence-order-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426/" target="_self">From Threat Intelligence to Detection: A Practitioner’s Guide</a>.
+<!-- anomaly-evidence:sequence:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A user authenticates to a SaaS tenant, creates a new OAuth app, grants high-risk permissions, and then performs bulk data access in a sequence not seen in normal admin workflows.
 
@@ -177,11 +392,51 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*bYcMULfRE30SoE9bMYFlgQ.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Graph / Relationship**— Unexpected edges, bridges, or paths in identity, network, or resource graphs.
+### 2.6 Graph / Relationship {#anomaly-graph-relationship}
+
+Unexpected edges, bridges, or paths in identity, network, or resource graphs.
 **Telemetry:**Active Directory, IAM, SaaS permissions, NetFlow.
 **Approach:**graph analytics, community detection, link-prediction scoring.**Stability:**high for privilege-path changes; moderate for network paths.
 **FP risk:**Medium.
-**Examples:**
+<!-- anomaly-evidence:graph-relationship:start -->
+**Evidence tags:** [Identity and access](#tag-identity) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-graph-relationship" target="_self">Browse articles and guides: Graph / Relationship</a>.
+
+**Reported incidents and detection interpretations**
+
+#### Midnight Blizzard compromise of Microsoft {#case-graph-relationship-midnight-blizzard-2024}
+
+**Period:** Reported January 2024. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** Microsoft described a compromised legacy OAuth application being used to grant malicious applications Exchange full_access_as_app access. [Microsoft: Midnight Blizzard: Guidance for responders on nation-state attack](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/).
+
+**Anomaly interpretation [inferred]:** Model principal, application, consent and mailbox-access edges. Investigate a new privileged path rather than treating each grant as an isolated event.
+
+**Telemetry to validate:** Application credentials, consent and role-assignment audit history; EWS access.
+
+**Boundary / competing explanation:** A new graph edge is not proof of abuse, and the report does not establish that graph analytics detected the intrusion.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1098/" target="_self">T1098 — Account Manipulation</a>
+
+#### Storm-1283 OAuth-enabled cryptomining {#case-graph-relationship-storm1283-2023}
+
+**Period:** Reported December 2023. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** The compromised subscription owner granted the attacker-created application Contributor permissions, enabling subsequent VM deployment. [Microsoft: Threat actors misuse OAuth applications to automate financially driven attacks](https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/).
+
+**Anomaly interpretation [inferred]:** Trace the new user-to-application-to-subscription path and its first resource actions. Link authorization changes to what the newly authorized principal actually did.
+
+**Telemetry to validate:** Directory audit, Azure role assignments and resource deployment activity.
+
+**Boundary / competing explanation:** Infrastructure-as-code can produce similar edges; compare ownership, approval and expected resource scope.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1098/" target="_self">T1098 — Account Manipulation</a>
+
+**Crosslinks:** [State-Change](#anomaly-state-change) · [Identity / Access](#anomaly-identity-access). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#75-graph-evolution-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426/" target="_self">From Threat Intelligence to Detection: A Practitioner’s Guide</a>.
+<!-- anomaly-evidence:graph-relationship:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A low-privilege user is suddenly added to a group that creates a new privilege path to domain admin through nested Active Directory memberships.
 
@@ -195,11 +450,51 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*bE0culxVhjiWdTIK4ibzOw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Geographic / ASN**— Access from new, implausible, or inconsistent locations or network providers.
+### 2.7 Geographic / ASN {#anomaly-geographic-asn}
+
+Access from new, implausible, or inconsistent locations or network providers.
 **Telemetry:**IdP logs, VPN, SaaS, cloud console.
 **Approach:**geo-baseline + impossible-travel logic + ASN peer history.**Stability:**medium alone; stronger with enrichment.
 **FP risk:**High if used alone.
-**Examples:**
+<!-- anomaly-evidence:geographic-asn:start -->
+**Evidence tags:** [Identity and access](#tag-identity) · [Network telemetry](#tag-network) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [contextual](#anomaly-form-contextual).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-geographic-asn" target="_self">Browse articles and guides: Geographic / ASN</a>.
+
+**Reported incidents and detection interpretations**
+
+#### UNC5537 and Snowflake customer data theft {#case-geographic-asn-unc5537-snowflake-2024}
+
+**Period:** 2024. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Mandiant observed VPN-origin access and separate VPS infrastructure associated with exfiltration in the Snowflake customer campaign. [Mandiant: UNC5537 Targets Snowflake Customer Instances for Data Theft and Extortion](https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion).
+
+**Anomaly interpretation [inferred]:** Compare source networks with each account's approved access paths and subsequent queries. ASN category is context, not an identity or maliciousness verdict.
+
+**Telemetry to validate:** Snowflake login history, timestamped IP/ASN enrichment, query history and destination ownership.
+
+**Boundary / competing explanation:** VPNs are common legitimate infrastructure. Neither a country nor an ASN identifies the human operator.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1078.004/" target="_self">T1078.004 — Valid Accounts: Cloud Accounts</a>
+
+#### Midnight Blizzard compromise of Microsoft {#case-geographic-asn-midnight-blizzard-2024}
+
+**Period:** Reported January 2024. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** Midnight Blizzard used residential proxies also used by legitimate customers, reducing the usefulness of static IP indicators. [Microsoft: Midnight Blizzard: Guidance for responders on nation-state attack](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/).
+
+**Anomaly interpretation [inferred]:** Evaluate unfamiliar sign-in properties and source diversity alongside the account's behavior. Residential-looking traffic can conceal an intrusion.
+
+**Telemetry to validate:** Historical sign-in properties, IP/ASN observations, device and application context.
+
+**Boundary / competing explanation:** Impossible-travel logic is vulnerable to VPN and proxy artifacts; no fixed travel threshold is asserted here.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1110.003/" target="_self">T1110.003 — Brute Force: Password Spraying</a>
+
+**Crosslinks:** [Frequency / Rate](#anomaly-frequency-rate) · [Identity / Access](#anomaly-identity-access). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#80-spatial-context-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-22-detecting-malicious-insider-activity-a-technical-detection-engineering-guide-3c3b41e95e82/" target="_self">Detecting Malicious Insider Activity: A Technical Detection Engineering Guide</a>.
+<!-- anomaly-evidence:geographic-asn:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A user who has only ever logged in from Israel suddenly authenticates to Microsoft 365 from Vietnam and then accesses sensitive SharePoint content minutes later.
 
@@ -213,11 +508,51 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*UgEMTfLrLmcJscxWKxJFTw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Identity / Access**— Unusual auth properties, factor changes, app consents, or token behaviour.
+### 2.8 Identity / Access {#anomaly-identity-access}
+
+Unusual auth properties, factor changes, app consents, or token behaviour.
 **Telemetry:**IdP, MFA, Entra/Okta, cloud audit, OAuth logs.
 **Approach:**risk detections, peer-baseline comparison, rare-event scoring.**Stability:**high with complete IdP telemetry.
 **FP risk:**Medium.
-**Examples:**
+<!-- anomaly-evidence:identity-access:start -->
+**Evidence tags:** [Identity and access](#tag-identity) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-identity-access" target="_self">Browse articles and guides: Identity / Access</a>.
+
+**Reported incidents and detection interpretations**
+
+#### UNC3944 help-desk compromise and SaaS data theft {#case-identity-access-unc3944-saas}
+
+**Period:** 2023–2024 investigations reported June 2024. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** UNC3944 persuaded help desks to change MFA controls and used compromised privileged identities to reach protected applications. [Mandiant: UNC3944 Targets SaaS Applications](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/).
+
+**Anomaly interpretation [inferred]:** Prioritize factor changes followed by unfamiliar access, accounting for the support ticket and strength of identity verification.
+
+**Telemetry to validate:** IdP factor lifecycle, device enrollment, sign-ins, application assignments and support records.
+
+**Boundary / competing explanation:** Legitimate device replacement produces similar events; a reset alone does not establish an account takeover.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1098.005/" target="_self">T1098.005 — Account Manipulation: Device Registration</a>
+
+#### Storm-0558 forged-token mailbox access {#case-identity-access-storm0558-2023}
+
+**Period:** 2023. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Storm-0558 used an acquired Microsoft consumer signing key to forge tokens accepted for enterprise mailbox access. [Microsoft: Microsoft mitigates China-based threat actor Storm-0558 targeting of customer email](https://www.microsoft.com/en-us/msrc/blog/2023/07/microsoft-mitigates-china-based-threat-actor-storm-0558-targeting-of-customer-email).
+
+**Anomaly interpretation [inferred]:** Correlate mailbox access with identity and token context. Absence of an expected tenant sign-in can be a lead, not proof of token forgery.
+
+**Telemetry to validate:** Mailbox-access audit, application/session context and provider-side token-validation evidence where available.
+
+**Boundary / competing explanation:** The key was acquired, not forged. Tenant logs do not necessarily expose the token material or all provider validation decisions.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1550.001/" target="_self">T1550.001 — Use Alternate Authentication Material: Application Access Token</a>
+
+**Crosslinks:** [Sequence](#anomaly-sequence) · [Graph / Relationship](#anomaly-graph-relationship). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#3-contextual-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-22-detecting-malicious-insider-activity-a-technical-detection-engineering-guide-3c3b41e95e82/" target="_self">Detecting Malicious Insider Activity: A Technical Detection Engineering Guide</a>.
+<!-- anomaly-evidence:identity-access:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A user who normally authenticates with MFA suddenly registers a new authentication factor and then performs privileged actions within the same session.
 
@@ -231,11 +566,51 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*5D_-BYWLKjb5JQ1sOucfUw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Rare Process / Service**— Execution of a binary or service with low prevalence on that host or host class.
+### 2.9 Rare Process / Service {#anomaly-rare-process-service}
+
+Execution of a binary or service with low prevalence on that host or host class.
 **Telemetry:**EDR, Sysmon Event ID 1, Linux auditd, software inventory.**Approach:**prevalence scoring, allowlist comparison, digital signature analysis.
 **Stability:**high on stable server roles; lower on developer workstations.
 **FP risk:**Low–Medium.
-**Examples:**
+<!-- anomaly-evidence:rare-process-service:start -->
+**Evidence tags:** [Endpoint telemetry](#tag-endpoint) · [Network telemetry](#tag-network). **Statistical forms:** [point](#anomaly-form-point), [contextual](#anomaly-form-contextual).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-rare-process-service" target="_self">Browse articles and guides: Rare Process / Service</a>.
+
+**Reported incidents and detection interpretations**
+
+#### BazarCall to Conti intrusion {#case-rare-process-service-bazarcall-conti}
+
+**Period:** 2021 case reported on 1 August. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** The investigators recorded AdFind deployment and execution for domain enumeration on compromised hosts. [The DFIR Report: BazarCall to Conti Ransomware via Trickbot and Cobalt Strike](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/).
+
+**Anomaly interpretation [inferred]:** Measure first-seen execution within the host role and inspect the associated account and discovery output. Tool presence alone cannot distinguish administration from intrusion.
+
+**Telemetry to validate:** Process image, hash, command line, account and host-class software history.
+
+**Boundary / competing explanation:** The report documents execution, not a measured enterprise prevalence distribution or a guaranteed rarity alert.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1087.002/" target="_self">T1087.002 — Account Discovery: Domain Account</a>
+
+#### MESSAGETAP on telecommunications SMS servers {#case-rare-process-service-messagetap-2019}
+
+**Period:** 2019. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Mandiant found MESSAGETAP on Linux SMS-center servers, capturing network traffic with libpcap and selecting SMS data. [Mandiant: MESSAGETAP: Who's Reading Your Text Messages?](https://cloud.google.com/blog/topics/threat-intelligence/messagetap-who-is-reading-your-text-messages/).
+
+**Anomaly interpretation [inferred]:** Compare capture-capable executables with the approved SMS-server software inventory and investigate unknown binaries in that role.
+
+**Telemetry to validate:** Executable inventory, process execution, package integrity and packet-capture capability use.
+
+**Boundary / competing explanation:** libpcap also supports legitimate monitoring; the proposed rarity baseline is not a result published by the investigators.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1040/" target="_self">T1040 — Network Sniffing</a>
+
+**Crosslinks:** [Parent-Child Execution](#anomaly-parent-child) · [Peer-Group](#anomaly-peer-group). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#84-rare-category-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556/" target="_self">Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry</a>.
+<!-- anomaly-evidence:rare-process-service:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A domain controller suddenly executes`7z.exe`, a binary never before seen on that host class, shortly before large archive creation.
 
@@ -249,12 +624,52 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*d70XgpYA5npUiQDRYxIphg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Parent-Child Execution**— A parent process spawning children it rarely or never should.
+### 2.10 Parent-Child Execution {#anomaly-parent-child}
+
+A parent process spawning children it rarely or never should.
 **Telemetry:**EDR, Sysmon Event ID 1, auditd.
 **Approach:**process lineage rules + rarity modelling by parent.
 **Stability:**high on tightly managed servers.
 **FP risk:**Low–Medium.
-**Examples:**
+<!-- anomaly-evidence:parent-child:start -->
+**Evidence tags:** [Endpoint telemetry](#tag-endpoint). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-parent-child" target="_self">Browse articles and guides: Parent-Child Execution</a>.
+
+**Reported incidents and detection interpretations**
+
+#### Lemon Duck exploitation of Exchange servers {#case-parent-child-lemon-duck-exchange}
+
+**Period:** March 2021 reporting. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Microsoft associated Exchange IIS-worker spawning of PowerShell with observed Lemon Duck activity and supplied a corresponding hunting query. [Microsoft: Analyzing attacks taking advantage of the Exchange Server vulnerabilities](https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/).
+
+**Anomaly interpretation [inferred]:** Investigate w3wp.exe to powershell.exe lineage in the Exchange context, then inspect the command, deployment history and network activity.
+
+**Telemetry to validate:** MDE DeviceProcessEvents or equivalent parent/child process events with command lines.
+
+**Boundary / competing explanation:** Microsoft's query is a hunting starting point, not proof that every matching parent-child pair is malicious.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1059.001/" target="_self">T1059.001 — Command and Scripting Interpreter: PowerShell</a>
+
+#### DoejoCrypt activity after Exchange exploitation {#case-parent-child-doejocrypt-exchange}
+
+**Period:** March 2021 reporting. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Microsoft described DoejoCrypt-associated batch-script credential theft and published lineage-oriented queries for post-exploitation activity. [Microsoft: Analyzing attacks taking advantage of the Exchange Server vulnerabilities](https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/).
+
+**Anomaly interpretation [inferred]:** Follow the web-server, command-shell and credential-access chain instead of alerting on cmd.exe globally. Corroborate with script content and resulting files.
+
+**Telemetry to validate:** Process ancestry, batch command lines, sensitive-registry access and file creation.
+
+**Boundary / competing explanation:** The report covers several exploiting actors; do not attribute every Exchange child process to HAFNIUM or DoejoCrypt.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1059.003/" target="_self">T1059.003 — Command and Scripting Interpreter: Windows Command Shell</a>
+
+**Crosslinks:** [Rare Process / Service](#anomaly-rare-process-service) · [Sequence](#anomaly-sequence). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#60-sequence-order-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556/" target="_self">Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry</a>.
+<!-- anomaly-evidence:parent-child:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - `winword.exe`spawns`powershell.exe`, even though Office applications on that workstation normally never launch script interpreters.
 
@@ -268,11 +683,51 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*ZsGfnUZGQSora4S3f-woFA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Data Movement**— Unusual read/write/copy/export/sync behaviour vs. entity or data-class baseline.
+### 2.11 Data Movement {#anomaly-data-movement}
+
+Unusual read/write/copy/export/sync behaviour vs. entity or data-class baseline.
 **Telemetry:**DLP, file access logs, object storage audit, SaaS export logs.**Approach:**volume + destination + object-type + peer baseline.
 **Stability:**high when export paths are fully instrumented.
 **FP risk:**Medium.
-**Examples:**
+<!-- anomaly-evidence:data-movement:start -->
+**Evidence tags:** [Cloud and SaaS](#tag-cloud) · [Identity and access](#tag-identity). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-data-movement" target="_self">Browse articles and guides: Data Movement</a>.
+
+**Reported incidents and detection interpretations**
+
+#### UNC5537 and Snowflake customer data theft {#case-data-movement-unc5537-snowflake-2024}
+
+**Period:** 2024. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** The campaign moved stolen database content out of customer environments and used external hosting or storage infrastructure. [Mandiant: UNC5537 Targets Snowflake Customer Instances for Data Theft and Extortion](https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion).
+
+**Anomaly interpretation [inferred]:** Compare source data, export operation and destination ownership with normal business flows. An authorized account can execute an unauthorized transfer.
+
+**Telemetry to validate:** Database queries, export commands, storage destinations and identity-to-session correlation.
+
+**Boundary / competing explanation:** A dataset's sensitivity and the destination's authorization must come from customer context, not its public hostname alone.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1078.004/" target="_self">T1078.004 — Valid Accounts: Cloud Accounts</a>
+
+#### UNC3944 help-desk compromise and SaaS data theft {#case-data-movement-unc3944-saas}
+
+**Period:** 2023–2024 investigations reported June 2024. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Mandiant obtained victim Airbyte logs and described Airbyte/Fivetran transfers from SaaS data sources to attacker-owned storage. [Mandiant: UNC3944 Targets SaaS Applications](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/).
+
+**Anomaly interpretation [inferred]:** Join connector creation and authorization to source objects, destination account ownership and transfer activity, even when the transport is normal cloud traffic.
+
+**Telemetry to validate:** Connector job logs, SaaS audit, consent records and cloud-storage access history.
+
+**Boundary / competing explanation:** A legitimate sync product is not an IOC. Visibility depends on where the connector runs and which logs are collected.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1567.002/" target="_self">T1567.002 — Exfiltration Over Web Service: Exfiltration to Cloud Storage</a>
+
+**Crosslinks:** [Volumetric](#anomaly-volumetric) · [Peer-Group](#anomaly-peer-group). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#48-multivariate-combination-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-22-detecting-malicious-insider-activity-a-technical-detection-engineering-guide-3c3b41e95e82/" target="_self">Detecting Malicious Insider Activity: A Technical Detection Engineering Guide</a>.
+<!-- anomaly-evidence:data-movement:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A user who usually views a few HR documents per week suddenly exports entire employee folders to a ZIP archive and syncs them to a personal cloud storage destination.
 
@@ -286,11 +741,51 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*BikTV0gLj4MlEv7hg8Q_Ug.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Protocol / Application Usage**— Non-standard use of ports, protocols, or application features.
+### 2.12 Protocol / Application Usage {#anomaly-protocol-application}
+
+Non-standard use of ports, protocols, or application features.
 **Telemetry:**proxy logs, DNS, NetFlow, SaaS/IdP API logs.
 **Approach:**rare-protocol analytics, entropy analysis, user-agent baseline.**Stability:**medium–high.
 **FP risk:**Medium.
-**Examples:**
+<!-- anomaly-evidence:protocol-application:start -->
+**Evidence tags:** [Network telemetry](#tag-network) · [Endpoint telemetry](#tag-endpoint). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-protocol-application" target="_self">Browse articles and guides: Protocol / Application Usage</a>.
+
+**Reported incidents and detection interpretations**
+
+#### SUNBURST in the SolarWinds supply-chain compromise {#case-protocol-application-sunburst-2020}
+
+**Period:** 2020. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Mandiant decoded SUNBURST DNS subdomain formats carrying victim information and other coordination data. [Mandiant: SUNBURST Additional Technical Details](https://cloud.google.com/blog/topics/threat-intelligence/sunburst-additional-technical-details/).
+
+**Anomaly interpretation [inferred]:** Combine domain novelty, label structure and the originating process. DNS that is syntactically valid can still carry application data unrelated to normal resolution.
+
+**Telemetry to validate:** Full QNAME, response details, timing and endpoint process attribution.
+
+**Boundary / competing explanation:** Entropy alone is not a discriminator; the cited analysis does not establish the article's proposed numeric entropy range as a benchmark.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1071.004/" target="_self">T1071.004 — Application Layer Protocol: DNS</a>
+
+#### OilRig-associated RDAT at a telecommunications organization {#case-protocol-application-oilrig-rdat-2020}
+
+**Period:** April 2020 activity. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** Unit 42 analyzed RDAT deployed against a telecommunications organization, including variants with DNS tunneling over A and AAAA queries. [Palo Alto Networks Unit 42: OilRig Targets Middle Eastern Telecommunications Organization and Adds Novel C2 Channel with Steganography to Its Inventory](https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/).
+
+**Anomaly interpretation [inferred]:** Inspect encoded-label structure and repeated exchanges by process and domain. Restricting detection to TXT queries would miss these documented variants.
+
+**Telemetry to validate:** DNS queries and responses, label lengths, per-domain patterns and endpoint context.
+
+**Boundary / competing explanation:** Different RDAT variants use different channels; do not assign one DNS signature to every OilRig intrusion.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1071.004/" target="_self">T1071.004 — Application Layer Protocol: DNS</a>
+
+**Crosslinks:** [Temporal](#anomaly-temporal) · [Data Movement](#anomaly-data-movement). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#48-multivariate-combination-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/" target="_self">AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test</a>.
+<!-- anomaly-evidence:protocol-application:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A workstation starts making large HTTPS uploads over port 8443 to an external host, even though that port and destination are not part of its normal application profile.
 
@@ -304,11 +799,51 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*P1Hy0CJdFiXnI94Ph-lZvA.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Negative Anomaly (Absence)**— Expected telemetry stops appearing — logs cleared, agent silenced, process absent.
+### 2.13 Negative Anomaly (Absence) {#anomaly-negative-absence}
+
+Expected telemetry stops appearing — logs cleared, agent silenced, process absent.
 **Telemetry:**SIEM heartbeat monitoring, log volume baselines, EDR health.**Approach:**volume baseline on log source; absence detection.
 **Stability:**medium — requires baseline of expected “presence”.
 **FP risk:**Medium.
-**Examples:**
+<!-- anomaly-evidence:negative-absence:start -->
+**Evidence tags:** [Cloud and SaaS](#tag-cloud) · [Endpoint telemetry](#tag-endpoint) · [Telemetry health](#tag-telemetry-health). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-negative-absence" target="_self">Browse articles and guides: Negative Anomaly (Absence)</a>.
+
+**Reported incidents and detection interpretations**
+
+#### SCARLETEEL cloud intrusion {#case-negative-absence-scarleteel-2023}
+
+**Period:** 2023 reporting. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** Sysdig reported attackers disabling CloudTrail logging during SCARLETEEL and described StopLogging-based detection. [Sysdig: How to Detect SCARLETEEL with Sysdig Secure](https://www.sysdig.com/blog/detect-scarleteel-sysdig-secure).
+
+**Anomaly interpretation [inferred]:** Combine an explicit logging change with loss of an otherwise expected event stream. Monitor the collection path independently of the source being disabled.
+
+**Telemetry to validate:** CloudTrail control-plane changes, trail configuration, delivery health and downstream ingestion counters.
+
+**Boundary / competing explanation:** StopLogging is a positive state-change event; missing logs are a separate inferred signal. Outages and configuration changes are competing explanations.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1685.002/" target="_self">T1685.002 — Disable or Modify Tools: Disable or Modify Cloud Log</a>
+
+#### AuKill use before ransomware deployment {#case-negative-absence-aukill-2023}
+
+**Period:** January–February 2023 incidents. **Evidence:** incident series reported by the cited source.
+
+**Observed [source-reported]:** Sophos investigated ransomware incidents where AuKill abused a Process Explorer driver to disable EDR processes before payload deployment. [Sophos: AuKill EDR killer malware abuses Process Explorer driver](https://www.sophos.com/en-us/blog/aukill-edr-killer-malware-abuses-process-explorer-driver).
+
+**Anomaly interpretation [inferred]:** Correlate unexpected security-service loss with driver installation and other independent host activity. A running host with a silent agent deserves investigation.
+
+**Telemetry to validate:** EDR health, service state, driver-load events and independent management/network heartbeats.
+
+**Boundary / competing explanation:** The source documents defense impairment, not a demonstrated heartbeat detector. Agent maintenance and host shutdown must be distinguished.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1685/" target="_self">T1685 — Disable or Modify Tools</a>
+
+**Crosslinks:** [State-Change](#anomaly-state-change) · [Temporal](#anomaly-temporal). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#101-missingness-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556/" target="_self">Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry</a>.
+<!-- anomaly-evidence:negative-absence:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - An EDR agent on a critical server that normally checks in every few minutes stops reporting immediately before suspicious outbound activity begins.
 
@@ -322,12 +857,52 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*j-OXWbgJAG8QHjCjJzjjNw.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**State-Change**— Rarely occurring control-plane changes that materially alter trust or exposure.
+### 2.14 State-Change {#anomaly-state-change}
+
+Rarely occurring control-plane changes that materially alter trust or exposure.
 **Telemetry:**cloud audit, AD audit, IdP audit, SaaS admin logs.
 **Approach:**alert on first-occurrence or infrequent-occurrence for a scoped object class.
 **Stability:**high for tightly scoped privileged objects.
 **FP risk:**Low when scope is narrow.
-**Examples:**
+<!-- anomaly-evidence:state-change:start -->
+**Evidence tags:** [Identity and access](#tag-identity) · [Cloud and SaaS](#tag-cloud) · [Application audit](#tag-application). **Statistical forms:** [point](#anomaly-form-point), [contextual](#anomaly-form-contextual).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-state-change" target="_self">Browse articles and guides: State-Change</a>.
+
+**Reported incidents and detection interpretations**
+
+#### Storm-1283 OAuth-enabled cryptomining {#case-state-change-storm1283-2023}
+
+**Period:** Reported December 2023. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** The actor added credentials and permissions to OAuth applications and used application access for resource deployment. [Microsoft: Threat actors misuse OAuth applications to automate financially driven attacks](https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/).
+
+**Anomaly interpretation [inferred]:** Track changes to authentication material and authorization separately from subsequent consumption. Connect the changed application to its first unusual resource operations.
+
+**Telemetry to validate:** Application credential additions, consent/role changes and Azure resource activity.
+
+**Boundary / competing explanation:** Secret rotation and application provisioning are ordinary operations; ownership, approvals and deployment scope determine risk.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1098/" target="_self">T1098 — Account Manipulation</a>; <a href="https://1200km.com/threat-matrix/techniques/T1496/" target="_self">T1496 — Resource Hijacking</a>
+
+#### LEMURLOOT in MOVEit data-theft intrusions {#case-state-change-moveit-lemurloot}
+
+**Period:** May–June 2023. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Mandiant described LEMURLOOT creating a MOVEit application account with Health Check Service names through database operations. [Mandiant: Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft](https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft).
+
+**Anomaly interpretation [inferred]:** Investigate unauthorized application-account creation and session insertion, correlating database changes with webshell access.
+
+**Telemetry to validate:** MOVEit application/database evidence, web requests and web-root file changes.
+
+**Boundary / competing explanation:** This is not inherently a Windows account. Windows Event 4720 is not the correct expected artifact for this application-database operation.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1505.003/" target="_self">T1505.003 — Server Software Component: Web Shell</a>
+
+**Crosslinks:** [Graph / Relationship](#anomaly-graph-relationship) · [Negative Anomaly (Absence)](#anomaly-negative-absence). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#75-graph-evolution-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426/" target="_self">From Threat Intelligence to Detection: A Practitioner’s Guide</a>.
+<!-- anomaly-evidence:state-change:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A new trust policy is added to an IAM role, allowing a previously unrelated principal to assume it for the first time.
 
@@ -341,11 +916,51 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 
 <img src="https://cdn-images-1.medium.com/max/800/1*HSqc4Tgp2Djx-GZxe6Tb4A.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Multi-Event Correlation**— Several individually weak signals combining into an anomalous chain against one entity.
+### 2.15 Multi-Event Correlation {#anomaly-multi-event-correlation}
+
+Several individually weak signals combining into an anomalous chain against one entity.
 **Telemetry:**SIEM / XDR across all sources.
 **Approach:**correlation rules, graph/session stitching, entity risk scoring.**Stability:**high when carefully tuned.
 **FP risk:**Low–Medium.
-**Examples:**
+<!-- anomaly-evidence:multi-event-correlation:start -->
+**Evidence tags:** [Identity and access](#tag-identity) · [Endpoint telemetry](#tag-endpoint) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [collective](#anomaly-form-collective), [contextual](#anomaly-form-contextual).
+
+<a href="https://1200km.com/search.html?f.anomaly=anomaly-multi-event-correlation" target="_self">Browse articles and guides: Multi-Event Correlation</a>.
+
+**Reported incidents and detection interpretations**
+
+#### UNC3944 help-desk compromise and SaaS data theft {#case-multi-event-correlation-unc3944-saas}
+
+**Period:** 2023–2024 investigations reported June 2024. **Evidence:** campaign reported by the cited source.
+
+**Observed [source-reported]:** Mandiant reported identity manipulation, privileged SaaS access and cloud connector use for data theft across UNC3944 investigations. [Mandiant: UNC3944 Targets SaaS Applications](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/).
+
+**Anomaly interpretation [inferred]:** Join identity-control changes to application sessions and connector transfers where entity and timestamp evidence supports the link. Correlation combines signal families; ordered sequence analysis is one possible component.
+
+**Telemetry to validate:** Support records, IdP factor events, application sessions, connector jobs and destination ownership.
+
+**Boundary / competing explanation:** A campaign synthesis is not one victim's complete timeline. Do not merge unrelated users or tenants because their events share a time window.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1098.005/" target="_self">T1098.005 — Account Manipulation: Device Registration</a>; <a href="https://1200km.com/threat-matrix/techniques/T1567.002/" target="_self">T1567.002 — Exfiltration Over Web Service: Exfiltration to Cloud Storage</a>
+
+#### BazarCall to Conti intrusion {#case-multi-event-correlation-bazarcall-conti}
+
+**Period:** 2021 case reported on 1 August. **Evidence:** incident reported by the cited source.
+
+**Observed [source-reported]:** The DFIR Report documented an intrusion progressing from initial execution through discovery and lateral activity to Conti ransomware deployment. [The DFIR Report: BazarCall to Conti Ransomware via Trickbot and Cobalt Strike](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/).
+
+**Anomaly interpretation [inferred]:** Correlate endpoint execution, discovery and remote-service activity using stable host and account identifiers. Evaluate the linked evidence, not an uncalibrated sum of anomaly scores.
+
+**Telemetry to validate:** Process trees, authenticated sessions, service events and network connections, with collection delays recorded.
+
+**Boundary / competing explanation:** Two alerts generated from the same event are not independent corroboration. Missing sensors can break the join without making the behavior benign.
+
+**ATT&CK [author-mapped behavior, not actor attribution]:** <a href="https://1200km.com/threat-matrix/techniques/T1087.002/" target="_self">T1087.002 — Account Discovery: Domain Account</a>
+
+**Crosslinks:** [Sequence](#anomaly-sequence) · [State-Change](#anomaly-state-change) · [Data Movement](#anomaly-data-movement). <a href="https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#48-multivariate-combination-anomaly" target="_self">Statistical foundation in the Anomaly Detection Atlas</a>. Related research: <a href="https://1200km.com/articles/read/2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426/" target="_self">From Threat Intelligence to Detection: A Practitioner’s Guide</a>.
+<!-- anomaly-evidence:multi-event-correlation:end -->
+
+**Illustrative scenarios (not additional incidents):**
 
 - A user shows a new login location, registers a new MFA factor, and then downloads an unusually large number of files in the same session.
 
@@ -356,6 +971,82 @@ The taxonomy below draws on Chandola et al.[[2]](https://dl.acm.org/doi/10.1145/
 - A mailbox account creates a forwarding rule, shows unusual sign-in properties, and then performs repeated message access and deletion activity.
 
 - A server begins executing a rare binary, stops sending normal EDR heartbeats, and then generates abnormal outbound traffic to an external IP.
+
+<!-- anomaly-evidence:index:start -->
+### 2.16 Incident register, tags and evidence boundaries {#anomaly-evidence-index}
+
+This expansion covers **14 operational anomaly families plus multi-event correlation: 15 navigation tags, 30 incident-to-topic mappings and 17 distinct case/campaign records**, reviewed on 2026-09-21. A campaign record may summarize multiple victims; this is not a count of individual breaches. A repeated case is not independent evidence.
+
+**Reading the labels:** “Observed” means reported by the named investigator, not reproduced in this research. Each anomaly interpretation and ATT&CK association is an author-derived mapping. Suggested telemetry is a collection plan, not a claim that it was available to the original victim. No new precision, recall, threshold or successful-detection result is asserted.
+
+**Scope:** Fourteen headings describe operational feature families; the fifteenth, multi-event correlation, is a composition pattern that combines them. The companion Atlas has a broader statistical taxonomy; its linked categories explain the statistical concept and do not imply one-to-one equivalence. The existing generic example bullets remain illustrative scenarios, not extra documented incidents.
+
+| Case / campaign record | Attribution boundary | Crosslinked analytical views |
+|---|---|---|
+| UNC5537 and Snowflake customer data theft (2024) | UNC5537, as tracked by Mandiant; customer-account compromise, not a demonstrated compromise of Snowflake itself | [Volumetric](#case-volumetric-unc5537-snowflake-2024) · [Geographic / ASN](#case-geographic-asn-unc5537-snowflake-2024) · [Data Movement](#case-data-movement-unc5537-snowflake-2024) |
+| HTTP/2 Rapid Reset DDoS campaign (August 2023) | Operators not named in the cited report | [Volumetric](#case-volumetric-rapid-reset-2023) · [Frequency / Rate](#case-frequency-rate-rapid-reset-2023) |
+| Midnight Blizzard compromise of Microsoft (Reported January 2024) | Midnight Blizzard, as attributed by Microsoft | [Frequency / Rate](#case-frequency-rate-midnight-blizzard-2024) · [Graph / Relationship](#case-graph-relationship-midnight-blizzard-2024) · [Geographic / ASN](#case-geographic-asn-midnight-blizzard-2024) |
+| SUNBURST in the SolarWinds supply-chain compromise (2020) | UNC2452 in contemporaneous Mandiant reporting; a malware observation is not by itself group attribution | [Temporal](#case-temporal-sunburst-2020) · [Protocol / Application Usage](#case-protocol-application-sunburst-2020) |
+| Industroyer2 attempted disruption of a Ukrainian energy provider (8 April 2022) | Sandworm, as assessed by ESET and CERT-UA | [Temporal](#case-temporal-industroyer2-2022) |
+| Twitter insider access for a foreign official (Conduct addressed in the 2022 Abouammo conviction) | Ahmad Abouammo, named in the conviction report; indictment allegations about other people are not treated as convictions | [Peer-Group](#case-peer-group-twitter-insider) |
+| Storm-1283 OAuth-enabled cryptomining (Reported December 2023) | Storm-1283, as tracked by Microsoft | [Peer-Group](#case-peer-group-storm1283-2023) · [Graph / Relationship](#case-graph-relationship-storm1283-2023) · [State-Change](#case-state-change-storm1283-2023) |
+| UNC3944 help-desk compromise and SaaS data theft (2023–2024 investigations reported June 2024) | UNC3944, as tracked by Mandiant; overlapping public names are not assumed to be exact aliases | [Sequence](#case-sequence-unc3944-saas) · [Identity / Access](#case-identity-access-unc3944-saas) · [Data Movement](#case-data-movement-unc3944-saas) · [Multi-Event Correlation](#case-multi-event-correlation-unc3944-saas) |
+| BazarCall to Conti intrusion (2021 case reported on 1 August) | Conti ransomware operators in this investigation; tools alone do not establish actor identity | [Sequence](#case-sequence-bazarcall-conti) · [Rare Process / Service](#case-rare-process-service-bazarcall-conti) · [Multi-Event Correlation](#case-multi-event-correlation-bazarcall-conti) |
+| Storm-0558 forged-token mailbox access (2023) | Storm-0558, as attributed by Microsoft | [Identity / Access](#case-identity-access-storm0558-2023) |
+| MESSAGETAP on telecommunications SMS servers (2019) | APT41, as attributed by Mandiant | [Rare Process / Service](#case-rare-process-service-messagetap-2019) |
+| Lemon Duck exploitation of Exchange servers (March 2021 reporting) | Lemon Duck activity in Microsoft's report; not reassigned to HAFNIUM | [Parent-Child Execution](#case-parent-child-lemon-duck-exchange) |
+| DoejoCrypt activity after Exchange exploitation (March 2021 reporting) | DoejoCrypt activity in Microsoft's report; malware label, not a proven identity of the operator | [Parent-Child Execution](#case-parent-child-doejocrypt-exchange) |
+| OilRig-associated RDAT at a telecommunications organization (April 2020 activity) | OilRig association assessed by Unit 42; not an attribution inferred from DNS entropy | [Protocol / Application Usage](#case-protocol-application-oilrig-rdat-2020) |
+| SCARLETEEL cloud intrusion (2023 reporting) | SCARLETEEL is the operation label used by Sysdig, not an independently established actor identity | [Negative Anomaly (Absence)](#case-negative-absence-scarleteel-2023) |
+| AuKill use before ransomware deployment (January–February 2023 incidents) | Ransomware incidents involving Medusa Locker or LockBit; no assertion that their operators are one group | [Negative Anomaly (Absence)](#case-negative-absence-aukill-2023) |
+| LEMURLOOT in MOVEit data-theft intrusions (May–June 2023) | FIN11 in Mandiant's updated assessment (initially UNC4857); the separately reported CL0P data-leak claim is not an alias inferred from the account artifact | [State-Change](#case-state-change-moveit-lemurloot) |
+
+#### Topic tags {#anomaly-topic-tags}
+
+These tags link to the relevant sections of this existing article; they do not create new tag landing pages.
+
+##### Cloud and SaaS {#tag-cloud}
+
+[Volumetric](#anomaly-volumetric) · [Peer-Group](#anomaly-peer-group) · [Sequence](#anomaly-sequence) · [Graph / Relationship](#anomaly-graph-relationship) · [Geographic / ASN](#anomaly-geographic-asn) · [Identity / Access](#anomaly-identity-access) · [Data Movement](#anomaly-data-movement) · [Negative Anomaly (Absence)](#anomaly-negative-absence) · [State-Change](#anomaly-state-change) · [Multi-Event Correlation](#anomaly-multi-event-correlation)
+
+##### Network telemetry {#tag-network}
+
+[Volumetric](#anomaly-volumetric) · [Frequency / Rate](#anomaly-frequency-rate) · [Temporal](#anomaly-temporal) · [Geographic / ASN](#anomaly-geographic-asn) · [Rare Process / Service](#anomaly-rare-process-service) · [Protocol / Application Usage](#anomaly-protocol-application)
+
+##### Identity and access {#tag-identity}
+
+[Frequency / Rate](#anomaly-frequency-rate) · [Peer-Group](#anomaly-peer-group) · [Sequence](#anomaly-sequence) · [Graph / Relationship](#anomaly-graph-relationship) · [Geographic / ASN](#anomaly-geographic-asn) · [Identity / Access](#anomaly-identity-access) · [Data Movement](#anomaly-data-movement) · [State-Change](#anomaly-state-change) · [Multi-Event Correlation](#anomaly-multi-event-correlation)
+
+##### Endpoint telemetry {#tag-endpoint}
+
+[Temporal](#anomaly-temporal) · [Sequence](#anomaly-sequence) · [Rare Process / Service](#anomaly-rare-process-service) · [Parent-Child Execution](#anomaly-parent-child) · [Protocol / Application Usage](#anomaly-protocol-application) · [Negative Anomaly (Absence)](#anomaly-negative-absence) · [Multi-Event Correlation](#anomaly-multi-event-correlation)
+
+##### Insider risk {#tag-insider}
+
+[Peer-Group](#anomaly-peer-group)
+
+##### Operational technology {#tag-ot}
+
+[Temporal](#anomaly-temporal)
+
+##### Telemetry health {#tag-telemetry-health}
+
+[Negative Anomaly (Absence)](#anomaly-negative-absence)
+
+##### Application audit {#tag-application}
+
+[State-Change](#anomaly-state-change)
+
+#### Reuse and validation {#anomaly-reuse-validation}
+
+**ATT&CK currency:** Mappings in the new case cards were reviewed on 2026-09-21. The former T1562.001 now points to [T1685 — Disable or Modify Tools](https://attack.mitre.org/techniques/T1685/); The former T1562.008 now points to [T1685.002 — Disable or Modify Tools: Disable or Modify Cloud Log](https://attack.mitre.org/techniques/T1685/002/). The JSON retains these identifier transitions. This is not a full version migration of every legacy technique mention elsewhere in the article.
+
+The companion machine-readable evidence register is <a href="https://1200km.com/articles/research/anomaly-incidents.json" target="_self">available as JSON</a>. It keeps source URLs and publication dates separate from incident periods, and records both the observed behavior and the inferred detection opportunity. Case identifiers support deduplication across anomaly types.
+
+To evaluate a proposed detector, preserve the source event IDs, normalize entity identifiers and time zones, define the comparison population, and test against both attack and legitimate activity. Freeze thresholds before evaluation. Report missing telemetry, false alerts per entity-day, incident recall and alert precision separately. A high anomaly score is neither group attribution nor an automatic containment decision.
+
+**Implementation boundary:** This incident expansion is source-verified research, not a validation of the older queries in Section 8. In particular, the password-spray join needs an equality-key/time-window rewrite and account-level correlation; the bulk-download model needs cold-start, zero-variance and missing-day handling; the DCSync example needs real source-IP enrichment and an inventory-based replication allowlist. Do not copy those examples into production as tested detections.
+<!-- anomaly-evidence:index:end -->
 
 ## 3. Mapping Anomalies to the ATT&CK Lifecycle
 
@@ -397,7 +1088,7 @@ Anomaly detection is most useful when an attacker must create measurable change 
 <img src="https://cdn-images-1.medium.com/max/800/1*QWW9hIVmF8ZUA4OH0Qt3zw.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
 (Utility: Moderate) —**Anomaly types**:state-change,identity/access,rare event.
-**Evidence:**Storm-1283 OAuth app + VM creation[[6]](https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/); UNC3944 MFA reset[[8]](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications).**Limitation:**noisy from legitimate admin; requires enrichment.
+**Evidence:** Storm-1283 OAuth app + VM creation[[6]](https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/); UNC3944 MFA reset[[8]](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications). **Limitation:** noisy from legitimate administration; requires enrichment.
 
 ## Privilege Escalation
 
@@ -476,7 +1167,7 @@ SUNBURST used a domain generation algorithm (DGA) to encode victim-specific data
 
 **Resulting anomaly signals:**
 
-- **Subdomain Shannon entropy**on the encoded label was moderate — typically in the 3.7–4.3 range across public samples — higher than human-readable service hostnames but not extreme. Mandiant and independent researchers noted that SUNBURST’s encoding was specifically designed to avoid the high-entropy patterns typical of conventional DNS tunneling, limiting the value of pure entropy analytics against this implant. Entropy alone is insufficient to surface this implant; subdomain label length (&gt; 30 characters) and domain-rarity signals are higher-value discriminators. [Inferred — derived from public sample analysis; consistent with Mandiant design observations]
+- **Subdomain structure and entropy:** Mandiant documents encoded information in SUNBURST DNS names. Label length, character distribution, destination rarity and the originating process are candidate features to evaluate together. No measured entropy range or validated cutoff is supplied here; entropy alone neither establishes tunneling nor identifies SUNBURST. [Inferred from the documented encoding, not a reproduced sample benchmark]
 
 - **Subdomain label length**exceeded 30 characters in encoded queries — far longer than typical service hostnames.**[Inferred]**
 
@@ -610,7 +1301,7 @@ Cisco Talos and Palo Alto Unit 42 explicitly documented that APT34 implants quer
 
 **Primary source:**CISA Advisory AA23–158A — “CL0P Ransomware Gang Exploits CVE-2023–34362 MOVEit Vulnerability,” June 2023[[19]](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a); Mandiant; Rapid7; Akamai.
 
-**Attack summary:**The Cl0p group exploited a SQL injection vulnerability (CVE-2023–34362) in MOVEit Transfer’s web application to deploy the LEMURLOOT webshell and exfiltrate data from hundreds of organisations within a 48-hour window in May 2023.
+**Attack summary:** Attackers exploited CVE-2023–34362 in MOVEit Transfer to deploy LEMURLOOT and steal data. Mandiant observed exploitation beginning in May 2023 and later merged its initial UNC4857 cluster into FIN11; the CL0P data-leak claim was separately reported. The account artifact alone does not establish an actor identity. [Mandiant investigation](https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft).
 
 **LEMURLOOT webshell — documented evasion and detection signals:**
 
@@ -622,41 +1313,43 @@ CISA advisory AA23–158A documented the following explicitly: [Documented]
 
 - Control flow headers:`X-siLock-Step1`,`X-siLock-Step2`,`X-siLock-Step3`
 
-- Created a local Windows user account named`"Health Check Service"`**[Documented]**
+- Created a MOVEit application account through database operations, using `HealthCheckService` / `Health Check Service` names. This was not inherently a local Windows account. **[Documented in Mandiant's LEMURLOOT analysis](https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft)**
 
 - Enumerated files and retrieved the MOVEit configuration file containing database credentials**[Documented]**
 
+**Detection interpretations [Inferred]:** The collection points below are proposed ways to investigate the documented behavior, not evidence that a particular detector fired.
+
 - **SQL injection**(Protocol anomaly) — Anomalous POST body to MOVEit endpoints.
-**Log source**: IIS logs (`cs-uri-stem`, POST body if captured).
+**Log source:** IIS URI/method logs plus separately configured request-body capture, if available; ordinary IIS access logs do not record the POST body.
 
 - **Webshell write**(Parent-child / file creation) —`w3wp.exe`writing ASPX to MOVEit web root.
 **Log source:**Sysmon Event 11; Windows Security 4663 (object access with SACL).
 
 - **Webshell access**(Rare URI) — POST to`human2.aspx`returning HTTP 200.**Log source:**IIS access logs.
 
-- **Account creation**(State-change) — Event 4720: new account`"Health Check Service"`created.
-**Log source**: Windows Security Event 4720.
+- **Account creation** (State-change) — unexpected MOVEit application-account and session records associated with LEMURLOOT.
+**Evidence source:** MOVEit application/database records and forensic examination, correlated with web requests. Availability depends on collection and retention.
 
 - **Data exfiltration**(Volumetric) — Large outbound transfer from MOVEit server.
 **Log source:**NetFlow; firewall egress logs.
 
-Event 4720 (`"Health Check Service"`created by a web application process) is a state-change detection requiring no baseline — any account created under these circumstances warrants investigation. The combination of webshell + account creation is documented as a detection opportunity in CISA AA23-158A.**[Documented]**
+Windows Event 4720 records Windows user-account creation, not this SQL-backed application operation. Investigate the application-account change with webshell and session evidence; a familiar-looking account name alone is not proof of malicious creation. **[Inferred detection approach from Mandiant's documented implementation]**
 
 ### 4.6 Midnight Blizzard / Cozy Bear (2023–2024)
 
 **Primary source:**Microsoft MSTIC — “Midnight Blizzard: Guidance for Responders on Nation-State Attack,” January 2024[[4]](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/).
 
-**Attack summary:**Midnight Blizzard (APT29/Cozy Bear) conducted a sustained password spray campaign against Microsoft’s corporate environment using residential proxy infrastructure. A legacy test account without MFA was compromised. Email from executive and security team mailboxes was exfiltrated. Microsoft’s blog states attack volume increased tenfold between January and February 2024.**[Documented]**
+**Attack summary:** Microsoft's January 2024 report describes Midnight Blizzard compromising a legacy test account without MFA through password spraying, then accessing corporate email through application abuse. The report documents residential proxy use; no later February attack-volume metric is derived from this January publication. **[Documented]**
 
 **Password spray evasion:**
 
-Microsoft explicitly documented that Midnight Blizzard used low-volume attempts from residential proxy infrastructure to distribute authentication failures across thousands of IP addresses. [Documented] The interpretation that this strategy was designed specifically to remain below standard alert thresholds is the author’s inference from the documented distribution pattern.**[Inferred]**
+Microsoft described a low number of attempts against selected accounts through residential proxies. [Documented] Simple source-IP thresholds can miss such activity; account-level history and related application changes provide additional investigation context. **[Inferred]**
 
 **Detection implications:**
 
 - Microsoft Entra Identity Protection’s “Password spray” named detection type fires based on cross-tenant telemetry — provider-level view that tenant-local monitoring cannot replicate. [**Documented**— Microsoft Entra ID Protection documentation]
 
-- Tenant-local per-IP rate limiting was insufficient; the spray pattern was only detectable at provider level. [**Documented**]
+- Per-IP thresholds can miss attempts distributed across residential proxies. Provider-wide context helps, but this does not prove that tenant-local identity correlation cannot detect the activity; Microsoft's responder guidance also supplies local hunting approaches. [**Inferred detection boundary**]
 
 - The compromised legacy test account had sparse sign-in history, producing a weak entity baseline. [**Inferred**from documented account characteristics]
 
@@ -666,13 +1359,13 @@ After initial access, Microsoft documented the creation of malicious OAuth appli
 
 **Detection signals:**
 
-- Entra audit log: new application registration with`Mail.Read`or`Mail.ReadAll`scope, especially where the consenting account had unfamiliar sign-in properties within the preceding 24 hours. [**Inferred**]
+- Entra audit log: unexpected application consent granting Exchange `full_access_as_app`, correlated with the consenting identity, application ownership and subsequent EWS access. This permission is the one described in the incident, not a generic Graph mail scope. [**Inferred detection from documented permission abuse**]
 
 - EWS access by an application not previously seen accessing EWS in that tenant — application-level protocol anomaly. [**Inferred**]
 
 ### 4.7 Scattered Spider / UNC3944 (2023)
 
-**Primary source:**Mandiant — “UNC3944 Targets SaaS Applications,” Google Cloud Security Blog, 2023[[8]](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications); CISA Advisory AA23–320A.
+**Primary source:** Mandiant — “UNC3944 Targets SaaS Applications,” June 13, 2024, reporting activity from preceding investigations[[8]](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications); CISA Advisory AA23–320A (2023). The reporting describes overlapping activity clusters, not proof that every vendor group label has identical membership.
 
 **Attack summary:**UNC3944/Scattered Spider used help-desk vishing to obtain MFA resets for high-privilege accounts, then exploited cloud and SaaS environments for persistence and data exfiltration, including MGM Resorts International and Caesars Entertainment.
 
@@ -696,15 +1389,15 @@ Mandiant’s reporting states explicitly that without SaaS audit log collection,
 
 ### 4.8 Storm-0558 and OAuth Abuse Campaigns (2023)
 
-**Primary source:**Microsoft MSTIC — “Analysis of Storm-0558 Techniques for Unauthorized Email Access,” August 2023; Microsoft MSTIC — Storm-1283 OAuth cryptomining reporting, 2023[[6]](https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/).
+**Primary sources:** Microsoft — [Storm-0558 customer email compromise, July 11, 2023](https://www.microsoft.com/en-us/msrc/blog/2023/07/microsoft-mitigates-china-based-threat-actor-storm-0558-targeting-of-customer-email); Microsoft — [OAuth application abuse, including Storm-1283, December 12, 2023](https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/) [6].
 
 **Storm-0558 — forged tokens:**
 
-Microsoft documented that Storm-0558 used a forged MSA (Microsoft account) consumer signing key to forge authentication tokens, using them to access Exchange Online and OWA mailboxes. The initial detection came from a customer reporting anomalous mailbox access; it was not identified by automated detection tooling before that report. [**Documented**]
+Microsoft documented that Storm-0558 acquired an MSA (Microsoft account) consumer signing key and used it to forge authentication tokens for email access. The tokens were forged; the signing key was acquired, not itself forged. Microsoft began its investigation after a customer reported anomalous mail activity. [**Documented**]
 
-Microsoft’s post-incident analysis identified that`MailItemsAccessed`records in the Microsoft 365 Unified Audit Log (requires Purview Audit Premium — E5 or add-on licensing) provided the evidence needed to scope the incident. [**Documented**]
+Mailbox-access audit records matter for investigating this class of compromise. Historical licensing limits must not be carried forward as current requirements: Microsoft's current documentation includes `MailItemsAccessed` in Audit (Standard), enabled by default for Office 365 / Microsoft 365 E3 and E5 users. Verify the tenant's actual mailbox auditing, licenses and retention before relying on availability. [Microsoft Learn](https://learn.microsoft.com/en-us/purview/audit-log-investigate-accounts).
 
-The “Token issuer anomaly” detection type in Microsoft Entra Identity Protection appears inapplicable to Storm-0558 based on Microsoft’s public documentation of the detection category, though Microsoft has not publicly confirmed this. Microsoft documents Token issuer anomaly as targeting a potentially compromised**SAML token issuer**— a federated identity provider deviation. Storm-0558 did not involve a SAML issuer: the attack used a forged**MSA consumer signing key**to mint authentication tokens outside the enterprise identity plane entirely. Based on those published definitions, the detection category appears to address a different threat model. Whether any Entra Identity Protection detection type would have fired for Storm-0558 is not stated in Microsoft’s published post-incident reporting. [**Inferred**— derived from comparing Microsoft’s published Token issuer anomaly definition against the documented Storm-0558 attack mechanism; Microsoft has not published a definitive statement on this specific mapping]
+Do not infer that a provider's named token-anomaly detection necessarily covered this incident. The documented mechanism used an acquired consumer signing key and forged tokens accepted for enterprise email access. Testing a particular detection requires its actual token-validation inputs and alert evidence, which are not provided by the incident summary. [**Inferred coverage boundary**]
 
 **Storm-1283 — OAuth app + cloud compute:**
 
@@ -818,7 +1511,7 @@ Effective anomaly detection on Windows requires enabling Advanced Audit Policy s
 
 **Account Management (enabled by default):**
 
-- **Event 4720**— User account created. Subcategory: User Account Management. Use: new account creation (LEMURLOOT; attacker backdoor accounts).
+- **Event 4720** — Windows user account created. Subcategory: User Account Management. Use: unexpected Windows backdoor accounts. It does not represent LEMURLOOT's MOVEit application-database account creation.
 
 - **Events 4728 / 4732 / 4756**— Member added to security/local/universal group. Subcategory: Security Group Management. Use: persistence via privileged group membership.
 
@@ -1084,7 +1777,7 @@ SaaS audit logs are the primary — and in many intrusion scenarios the only —
 
 *Exchange:*
 
-- `**MailItemsAccessed**`— Requires Purview Audit Premium (E5 or add-on).
+- **`MailItemsAccessed`** — Part of Audit (Standard) for supported E3/E5 users in [current Microsoft documentation](https://learn.microsoft.com/en-us/purview/audit-log-investigate-accounts); verify mailbox audit settings and retained events.
 
 - `**New-InboxRule**`— Alert on any rule forwarding to external domain.
 
@@ -1122,7 +1815,7 @@ Ratings reflect the effort required for a competent team starting from zero depl
 
 - **Microsoft Entra Sign-in Logs (P2)**— Fidelity: Medium–High. Coverage: password spray, impossible travel, MFA lifecycle anomalies, sign-in risk. Prerequisite: Entra ID P2 license; Sentinel connector for full field set.
 
-- **M365 Unified Audit Log**— Fidelity: Medium. Coverage: SaaS exfiltration (count-based), inbox rule creation, OAuth app consent. Prerequisite: Purview Audit (Standard or Premium); MailItemsAccessed requires Premium.
+- **M365 Unified Audit Log** — Fidelity: Medium. Coverage: SaaS exfiltration (count-based), inbox rule creation, OAuth app consent. Prerequisite: appropriate Purview Audit licensing, enabled workload auditing and sufficient retention; `MailItemsAccessed` is no longer universally Premium-only.
 
 - **Okta System Log**— Fidelity: Medium. Coverage: MFA factor changes, session anomalies, admin privilege grants. Prerequisite: Okta integration via SIEM connector.
 
@@ -1332,7 +2025,7 @@ Highest-value targets for correlation: PTH against domain controllers (Event 462
 
 - `**TargetImage**`=`lsass.exe`— Scope this rule exclusively to LSASS as target.
 
-- `**GrantedAccess**`— Alert on:`0x1010`(PROCESS_VM_READ + PROCESS_QUERY_INFORMATION — Mimikatz sekurlsa mask);`0x1410`(adds PROCESS_DUP_HANDLE);`0x0820`(injection-style mask). Other masks (e.g.,`0x1fffff`— all access) should also be reviewed.
+- **`GrantedAccess`** — Candidate masks include `0x1010` (`PROCESS_VM_READ` + `PROCESS_QUERY_LIMITED_INFORMATION`) and `0x1410` (also adds `PROCESS_QUERY_INFORMATION`, not `PROCESS_DUP_HANDLE`). `0x0820` combines `PROCESS_SUSPEND_RESUME` and `PROCESS_VM_WRITE`; it does not by itself prove injection. Interpret access rights with the source process, signer and call trace, not a mask-only malware verdict. [Microsoft process-access rights](https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights).
 
 - `**SourceImage**`— Any process not on the environment-specific allowlist. The allowlist is environment-dependent; see allowlist guidance below.
 
@@ -1373,6 +2066,10 @@ Advanced threat actors apply documented techniques to reduce their anomaly footp
 **Absorb into baseline through slow operation.**NIST SP 800–94 documented that “malicious activity can be incorporated into a normal profile” if the training window is contaminated. [Documented[[1]](https://csrc.nist.gov/pubs/sp/800/94/final)] Anomaly systems that retrain on recent data will incorporate slow, persistent attacker behaviour into the baseline if the actor operates for weeks before the training window refreshes.
 
 ## 8. Detection Engineering Patterns and Logic Examples
+
+:::warning Research examples, not validated production rules
+The incident expansion does not execute or validate the queries below. Before deployment, the password-spray example needs equality-key/time-window and account-level correlation; the bulk-download baseline needs cold-start, zero-variance and missing-day handling; the DCSync example needs source-IP enrichment and an inventory-based replication allowlist. Validate syntax, source schemas and benign controls in the target platform. The original technical blocks remain available for review, not as a claim of production readiness.
+:::
 
 ### 8.1 Four Core Design Patterns
 
@@ -2095,7 +2792,7 @@ No anomaly programme compensates for missing telemetry. Before deploying any ano
 
 - **DNS query logging**: Windows DNS debug log enabled, or Zeek deployed on DNS traffic.
 
-- **SaaS audit logging**: enabled and forwarded to SIEM for all production SaaS platforms. For Microsoft 365, verify that`MailItemsAccessed`auditing is active (requires Purview Audit Premium).
+- **SaaS audit logging**: enabled and forwarded to SIEM for all production SaaS platforms. For Microsoft 365, verify that `MailItemsAccessed` events are actually generated and retained under the tenant's [current license and audit settings](https://learn.microsoft.com/en-us/purview/audit-log-investigate-accounts).
 
 - **Cloud audit logs**(CloudTrail, Azure Activity Log, GCP Audit): forwarded to SIEM with sufficient retention.
 
@@ -2201,6 +2898,28 @@ The practical priorities for detection engineering:
 
 ## 11. References
 
+<!-- anomaly-evidence:sources:start -->
+### Incident-source register (September 2026 expansion) {#incident-primary-sources}
+
+- Mandiant. [UNC5537 Targets Snowflake Customer Instances for Data Theft and Extortion](https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion). Published 2024-06-10; reviewed 2026-09-21.
+- Cloudflare. [HTTP/2 Rapid Reset: deconstructing the record-breaking attack](https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/). Published 2023-10-10; reviewed 2026-09-21.
+- Microsoft. [Midnight Blizzard: Guidance for responders on nation-state attack](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/). Published 2024-01-25; reviewed 2026-09-21.
+- Mandiant. [SUNBURST Additional Technical Details](https://cloud.google.com/blog/topics/threat-intelligence/sunburst-additional-technical-details/). Published 2020-12-24; reviewed 2026-09-21.
+- ESET. [Industroyer2: Industroyer reloaded](https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/). Published 2022-04-12; reviewed 2026-09-21.
+- US Department of Justice. [Former Twitter Employee Found Guilty of Acting as an Agent of a Foreign Government and Unlawfully Sharing Twitter User Information](https://www.justice.gov/archives/opa/pr/former-twitter-employee-found-guilty-acting-agent-foreign-government-and-unlawfully-sharing). Published 2022-08-10; reviewed 2026-09-21.
+- US Department of Justice. [Superseding indictment, United States v. Abouammo et al., filed July 28, 2020](https://www.justice.gov/usao-ndca/page/file/1299331/dl?inline=). Published 2020-07-28; reviewed 2026-09-21.
+- Microsoft. [Threat actors misuse OAuth applications to automate financially driven attacks](https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/). Published 2023-12-12; reviewed 2026-09-21.
+- Mandiant. [UNC3944 Targets SaaS Applications](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/). Published 2024-06-13; reviewed 2026-09-21.
+- The DFIR Report. [BazarCall to Conti Ransomware via Trickbot and Cobalt Strike](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/). Published 2021-08-01; reviewed 2026-09-21.
+- Microsoft. [Microsoft mitigates China-based threat actor Storm-0558 targeting of customer email](https://www.microsoft.com/en-us/msrc/blog/2023/07/microsoft-mitigates-china-based-threat-actor-storm-0558-targeting-of-customer-email). Published 2023-07-11; reviewed 2026-09-21.
+- Mandiant. [MESSAGETAP: Who's Reading Your Text Messages?](https://cloud.google.com/blog/topics/threat-intelligence/messagetap-who-is-reading-your-text-messages/). Published 2019-10-31; reviewed 2026-09-21.
+- Microsoft. [Analyzing attacks taking advantage of the Exchange Server vulnerabilities](https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/). Published 2021-03-25; reviewed 2026-09-21.
+- Palo Alto Networks Unit 42. [OilRig Targets Middle Eastern Telecommunications Organization and Adds Novel C2 Channel with Steganography to Its Inventory](https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/). Published 2020-07-22; reviewed 2026-09-21.
+- Sysdig. [How to Detect SCARLETEEL with Sysdig Secure](https://www.sysdig.com/blog/detect-scarleteel-sysdig-secure). Published 2023-03-29; reviewed 2026-09-21.
+- Sophos. [AuKill EDR killer malware abuses Process Explorer driver](https://www.sophos.com/en-us/blog/aukill-edr-killer-malware-abuses-process-explorer-driver). Published 2023-04-19; reviewed 2026-09-21.
+- Mandiant. [Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft](https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft). Published 2023-06-02; reviewed 2026-09-21.
+<!-- anomaly-evidence:sources:end -->
+
 [1] National Institute of Standards and Technology.*Guide to Intrusion Detection and Prevention Systems (IDPS)*. NIST Special Publication 800–94. February 2007.[https://csrc.nist.gov/pubs/sp/800/94/final](https://csrc.nist.gov/pubs/sp/800/94/final)
 
 [2] Chandola, V., Banerjee, A., and Kumar, V. “Anomaly Detection: A Survey.”*ACM Computing Surveys*, 41(3), Article 15, July 2009.[https://dl.acm.org/doi/10.1145/1541880.1541882](https://dl.acm.org/doi/10.1145/1541880.1541882)
@@ -2211,11 +2930,11 @@ The practical priorities for detection engineering:
 
 [5] Microsoft Security Response Center. “HAFNIUM Targeting Exchange Servers with 0-Day Exploits.” March 2021.[https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/](https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/)
 
-[6] [VERIFICATION NEEDED] The in-text citation [6] supports the Storm-1283 OAuth application + Azure VM cryptomining narrative in Section 4.8. A specific Microsoft Security Blog post covering Storm-1283 by that designation has not been independently verified by the author; search the Microsoft Threat Intelligence Blog for “Storm-1283” for the current authoritative source. As a nearest generic substitute: Microsoft Threat Intelligence. “Token tactics: How to prevent, detect, and respond to cloud token theft.” November 2022.[https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/](https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/)—*Note: this source covers OAuth token abuse generally and does not specifically report Storm-1283.*
+[6] Microsoft Threat Intelligence. [“Threat actors misuse OAuth applications to automate financially driven attacks.”](https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/) December 12, 2023. Includes the Storm-1283 investigation and application/compute abuse chain.
 
 [7] Mandiant. “Responding to Microsoft Exchange Server Zero-Day Vulnerabilities.” March 2021.[https://cloud.google.com/blog/topics/threat-intelligence/responding-to-exchange-server-zero-days](https://cloud.google.com/blog/topics/threat-intelligence/responding-to-exchange-server-zero-days)
 
-[8] Mandiant. “UNC3944 Targets SaaS Applications.” Google Cloud Security Blog, 2023.[https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications)
+[8] Mandiant. “UNC3944 Targets SaaS Applications.” Google Cloud Security Blog, June 13, 2024.[https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications)
 
 [9] Mandiant.*M-Trends 2025*. Google Cloud Security, 2025.[https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2025](https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2025)
 
@@ -2251,7 +2970,9 @@ The practical priorities for detection engineering:
 
 [25] National Security Agency and Australian Signals Directorate. “Detect and Prevent Web Shell Malware.” April 2020.[https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/2159615/detect-and-prevent-web-shell-malware/](https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/2159615/detect-and-prevent-web-shell-malware/)
 
-## Follow for practical cybersecurity research
+<span id="follow-for-practical-cybersecurity-research"></span>
+
+## Follow My Work
 
 If you’re interested in**Offensive security,****AI security, real-world attack simulations, CTI, and detection engineering**— this is exactly what I focus on.
 

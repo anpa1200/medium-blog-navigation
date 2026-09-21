@@ -1,0 +1,78 @@
+
+> medium-blog-navigation@0.1.0 research:anomalies:verify
+> node scripts/verify_anomaly_research.mjs
+
+START archive: npm run validate:archive
+
+> medium-blog-navigation@0.1.0 validate:archive
+> python3 scripts/test_local_original.py && python3 scripts/validate_article_archive.py && python3 scripts/build_archive_governance.py && python3 scripts/rewrite_same_origin_links.py --check
+
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.014s
+
+OK
+Article archive validation passed: 192 unique local articles.
+Archive governance report written for 192 articles; 1 external canonicals verified.
+Inspected 391 same-origin links; changed 0 Markdown files.
+END archive: exit=0 elapsed=816ms
+START media-local: npm run validate:media:local
+
+> medium-blog-navigation@0.1.0 validate:media:local
+> python3 scripts/validate_article_media.py --local-only
+
+Media references: 2782
+Missing local files: 0
+Remote failures: 0
+Report: docs/media-validation.md
+END media-local: exit=0 elapsed=407ms
+START research-source: npm run research:anomalies:check
+
+> medium-blog-navigation@0.1.0 research:anomalies:check
+> node scripts/render_anomaly_incidents.mjs --check && node scripts/validate_anomaly_incidents.mjs
+
+Incident rendering current: 15 types, 30 mappings, 17 cases.
+PASS evidence: 15 types, 30 mappings, 17 distinct cases, 17 sources, 17 techniques.
+PASS integration: 4 reciprocal article links, linked tags, source/asset parity, one authored H1.
+PASS preservation: all 192 article routes/canonicals unchanged; 44 images and 11 code blocks byte-preserved.
+END research-source: exit=0 elapsed=258ms
+START legacy-build: npm run build:legacy
+
+> medium-blog-navigation@0.1.0 build:legacy
+> python3 scripts/clean_build.py && docusaurus build && python3 scripts/normalize_built_article_headings.py && python3 scripts/rewrite_legacy_canonicals.py
+
+[INFO] [en] Creating an optimized production build...
+[info] [webpackbar] Compiling Client
+[info] [webpackbar] Compiling Server
+[success] [webpackbar] Server: Compiled successfully in 7.90s
+[success] [webpackbar] Client: Compiled successfully in 10.57s
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.
+Normalized 67 rendered headings across 3 article pages.
+Rewrote canonical metadata for 194 legacy archive pages from https://1200km.com/medium-blog-navigation to https://1200km.com/articles.
+END legacy-build: exit=0 elapsed=38005ms
+START embedded-build: npm run build:embedded
+
+> medium-blog-navigation@0.1.0 build:embedded
+> python3 scripts/build_archive_governance.py && python3 scripts/clean_build.py && ARTICLE_ARCHIVE_EMBED=1 ARTICLE_BASE_URL=/articles/ docusaurus build && python3 scripts/prune_embedded_build.py && python3 scripts/normalize_built_article_headings.py && python3 scripts/validate_built_archive.py
+
+Archive governance report written for 192 articles; 1 external canonicals verified.
+[INFO] [en] Creating an optimized production build...
+[info] [webpackbar] Compiling Client
+[info] [webpackbar] Compiling Server
+[success] [webpackbar] Server: Compiled successfully in 1.03m
+[success] [webpackbar] Client: Compiled successfully in 1.07m
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.
+Normalized 49 rendered headings across 2 article pages.
+Built archive validation passed for 192 articles and 195 HTML documents.
+END embedded-build: exit=0 elapsed=87516ms
+START research-rendered: node scripts/validate_anomaly_incidents.mjs --built
+PASS evidence: 15 types, 30 mappings, 17 distinct cases, 17 sources, 17 techniques.
+PASS integration: 4 reciprocal article links, linked tags, source/asset parity, one authored H1.
+PASS preservation: all 192 article routes/canonicals unchanged; 44 images and 11 code blocks byte-preserved.
+PASS rendered article: 455 self-fragment links, 61 explicit anchors, one H1, downloadable JSON and catalog tags.
+END research-rendered: exit=0 elapsed=153ms
+START whitespace: git diff --check
+END whitespace: exit=0 elapsed=46ms
+VERIFICATION PASS: 7/7 checks

@@ -1,0 +1,936 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-21",
+  "article_id": "90df8b6dea12",
+  "scope": "Fourteen operational anomaly families plus multi-event correlation, a cross-signal composition pattern. This covers all fifteen operational headings in the original article, not every statistical category in the companion Atlas.",
+  "evidence_policy": "Observed means reported by the cited investigator, not independently reproduced here. Anomaly interpretation, telemetry recommendations and ATT&CK mappings are author-derived unless expressly identified otherwise. Repeated case IDs are different analytical views of the same case, not independent incidents.",
+  "attack_migrations": [
+    {
+      "previous": "T1562.001",
+      "current": "T1685",
+      "url": "https://attack.mitre.org/techniques/T1685/",
+      "reason": "The previous live MITRE URL now redirects to Disable or Modify Tools."
+    },
+    {
+      "previous": "T1562.008",
+      "current": "T1685.002",
+      "url": "https://attack.mitre.org/techniques/T1685/002/",
+      "reason": "The previous live MITRE URL now redirects to Disable or Modify Tools: Disable or Modify Cloud Log."
+    }
+  ],
+  "sources": {
+    "snowflake": {
+      "publisher": "Mandiant",
+      "title": "UNC5537 Targets Snowflake Customer Instances for Data Theft and Extortion",
+      "published": "2024-06-10",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion"
+    },
+    "rapid-reset": {
+      "publisher": "Cloudflare",
+      "title": "HTTP/2 Rapid Reset: deconstructing the record-breaking attack",
+      "published": "2023-10-10",
+      "url": "https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/"
+    },
+    "midnight": {
+      "publisher": "Microsoft",
+      "title": "Midnight Blizzard: Guidance for responders on nation-state attack",
+      "published": "2024-01-25",
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/"
+    },
+    "sunburst": {
+      "publisher": "Mandiant",
+      "title": "SUNBURST Additional Technical Details",
+      "published": "2020-12-24",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/sunburst-additional-technical-details/"
+    },
+    "industroyer2": {
+      "publisher": "ESET",
+      "title": "Industroyer2: Industroyer reloaded",
+      "published": "2022-04-12",
+      "url": "https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/"
+    },
+    "twitter-verdict": {
+      "publisher": "US Department of Justice",
+      "title": "Former Twitter Employee Found Guilty of Acting as an Agent of a Foreign Government and Unlawfully Sharing Twitter User Information",
+      "published": "2022-08-10",
+      "url": "https://www.justice.gov/archives/opa/pr/former-twitter-employee-found-guilty-acting-agent-foreign-government-and-unlawfully-sharing"
+    },
+    "twitter-indictment": {
+      "publisher": "US Department of Justice",
+      "title": "Superseding indictment, United States v. Abouammo et al., filed July 28, 2020",
+      "published": "2020-07-28",
+      "url": "https://www.justice.gov/usao-ndca/page/file/1299331/dl?inline="
+    },
+    "oauth": {
+      "publisher": "Microsoft",
+      "title": "Threat actors misuse OAuth applications to automate financially driven attacks",
+      "published": "2023-12-12",
+      "url": "https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/"
+    },
+    "unc3944": {
+      "publisher": "Mandiant",
+      "title": "UNC3944 Targets SaaS Applications",
+      "published": "2024-06-13",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/"
+    },
+    "conti": {
+      "publisher": "The DFIR Report",
+      "title": "BazarCall to Conti Ransomware via Trickbot and Cobalt Strike",
+      "published": "2021-08-01",
+      "url": "https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/"
+    },
+    "storm0558": {
+      "publisher": "Microsoft",
+      "title": "Microsoft mitigates China-based threat actor Storm-0558 targeting of customer email",
+      "published": "2023-07-11",
+      "url": "https://www.microsoft.com/en-us/msrc/blog/2023/07/microsoft-mitigates-china-based-threat-actor-storm-0558-targeting-of-customer-email"
+    },
+    "messagetap": {
+      "publisher": "Mandiant",
+      "title": "MESSAGETAP: Who's Reading Your Text Messages?",
+      "published": "2019-10-31",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/messagetap-who-is-reading-your-text-messages/"
+    },
+    "exchange": {
+      "publisher": "Microsoft",
+      "title": "Analyzing attacks taking advantage of the Exchange Server vulnerabilities",
+      "published": "2021-03-25",
+      "url": "https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/"
+    },
+    "rdat": {
+      "publisher": "Palo Alto Networks Unit 42",
+      "title": "OilRig Targets Middle Eastern Telecommunications Organization and Adds Novel C2 Channel with Steganography to Its Inventory",
+      "published": "2020-07-22",
+      "url": "https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/"
+    },
+    "scarleteel": {
+      "publisher": "Sysdig",
+      "title": "How to Detect SCARLETEEL with Sysdig Secure",
+      "published": "2023-03-29",
+      "url": "https://www.sysdig.com/blog/detect-scarleteel-sysdig-secure"
+    },
+    "aukill": {
+      "publisher": "Sophos",
+      "title": "AuKill EDR killer malware abuses Process Explorer driver",
+      "published": "2023-04-19",
+      "url": "https://www.sophos.com/en-us/blog/aukill-edr-killer-malware-abuses-process-explorer-driver"
+    },
+    "moveit": {
+      "publisher": "Mandiant",
+      "title": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft",
+      "published": "2023-06-02",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft"
+    }
+  },
+  "cases": {
+    "unc5537-snowflake-2024": {
+      "name": "UNC5537 and Snowflake customer data theft",
+      "period": "2024",
+      "kind": "campaign",
+      "attribution": "UNC5537, as tracked by Mandiant; customer-account compromise, not a demonstrated compromise of Snowflake itself",
+      "sources": [
+        "snowflake"
+      ]
+    },
+    "rapid-reset-2023": {
+      "name": "HTTP/2 Rapid Reset DDoS campaign",
+      "period": "August 2023",
+      "kind": "campaign",
+      "attribution": "Operators not named in the cited report",
+      "sources": [
+        "rapid-reset"
+      ]
+    },
+    "midnight-blizzard-2024": {
+      "name": "Midnight Blizzard compromise of Microsoft",
+      "period": "Reported January 2024",
+      "kind": "incident",
+      "attribution": "Midnight Blizzard, as attributed by Microsoft",
+      "sources": [
+        "midnight"
+      ]
+    },
+    "sunburst-2020": {
+      "name": "SUNBURST in the SolarWinds supply-chain compromise",
+      "period": "2020",
+      "kind": "campaign",
+      "attribution": "UNC2452 in contemporaneous Mandiant reporting; a malware observation is not by itself group attribution",
+      "sources": [
+        "sunburst"
+      ]
+    },
+    "industroyer2-2022": {
+      "name": "Industroyer2 attempted disruption of a Ukrainian energy provider",
+      "period": "8 April 2022",
+      "kind": "incident",
+      "attribution": "Sandworm, as assessed by ESET and CERT-UA",
+      "sources": [
+        "industroyer2"
+      ]
+    },
+    "twitter-insider": {
+      "name": "Twitter insider access for a foreign official",
+      "period": "Conduct addressed in the 2022 Abouammo conviction",
+      "kind": "incident",
+      "attribution": "Ahmad Abouammo, named in the conviction report; indictment allegations about other people are not treated as convictions",
+      "sources": [
+        "twitter-verdict",
+        "twitter-indictment"
+      ]
+    },
+    "storm1283-2023": {
+      "name": "Storm-1283 OAuth-enabled cryptomining",
+      "period": "Reported December 2023",
+      "kind": "campaign",
+      "attribution": "Storm-1283, as tracked by Microsoft",
+      "sources": [
+        "oauth"
+      ]
+    },
+    "unc3944-saas": {
+      "name": "UNC3944 help-desk compromise and SaaS data theft",
+      "period": "2023–2024 investigations reported June 2024",
+      "kind": "campaign",
+      "attribution": "UNC3944, as tracked by Mandiant; overlapping public names are not assumed to be exact aliases",
+      "sources": [
+        "unc3944"
+      ]
+    },
+    "bazarcall-conti": {
+      "name": "BazarCall to Conti intrusion",
+      "period": "2021 case reported on 1 August",
+      "kind": "incident",
+      "attribution": "Conti ransomware operators in this investigation; tools alone do not establish actor identity",
+      "sources": [
+        "conti"
+      ]
+    },
+    "storm0558-2023": {
+      "name": "Storm-0558 forged-token mailbox access",
+      "period": "2023",
+      "kind": "campaign",
+      "attribution": "Storm-0558, as attributed by Microsoft",
+      "sources": [
+        "storm0558"
+      ]
+    },
+    "messagetap-2019": {
+      "name": "MESSAGETAP on telecommunications SMS servers",
+      "period": "2019",
+      "kind": "campaign",
+      "attribution": "APT41, as attributed by Mandiant",
+      "sources": [
+        "messagetap"
+      ]
+    },
+    "lemon-duck-exchange": {
+      "name": "Lemon Duck exploitation of Exchange servers",
+      "period": "March 2021 reporting",
+      "kind": "campaign",
+      "attribution": "Lemon Duck activity in Microsoft's report; not reassigned to HAFNIUM",
+      "sources": [
+        "exchange"
+      ]
+    },
+    "doejocrypt-exchange": {
+      "name": "DoejoCrypt activity after Exchange exploitation",
+      "period": "March 2021 reporting",
+      "kind": "campaign",
+      "attribution": "DoejoCrypt activity in Microsoft's report; malware label, not a proven identity of the operator",
+      "sources": [
+        "exchange"
+      ]
+    },
+    "oilrig-rdat-2020": {
+      "name": "OilRig-associated RDAT at a telecommunications organization",
+      "period": "April 2020 activity",
+      "kind": "incident",
+      "attribution": "OilRig association assessed by Unit 42; not an attribution inferred from DNS entropy",
+      "sources": [
+        "rdat"
+      ]
+    },
+    "scarleteel-2023": {
+      "name": "SCARLETEEL cloud intrusion",
+      "period": "2023 reporting",
+      "kind": "incident",
+      "attribution": "SCARLETEEL is the operation label used by Sysdig, not an independently established actor identity",
+      "sources": [
+        "scarleteel"
+      ]
+    },
+    "aukill-2023": {
+      "name": "AuKill use before ransomware deployment",
+      "period": "January–February 2023 incidents",
+      "kind": "incident-series",
+      "attribution": "Ransomware incidents involving Medusa Locker or LockBit; no assertion that their operators are one group",
+      "sources": [
+        "aukill"
+      ]
+    },
+    "moveit-lemurloot": {
+      "name": "LEMURLOOT in MOVEit data-theft intrusions",
+      "period": "May–June 2023",
+      "kind": "campaign",
+      "attribution": "FIN11 in Mandiant's updated assessment (initially UNC4857); the separately reported CL0P data-leak claim is not an alias inferred from the account artifact",
+      "sources": [
+        "moveit"
+      ]
+    }
+  },
+  "attack": {
+    "T1078.004": "Valid Accounts: Cloud Accounts",
+    "T1499": "Endpoint Denial of Service",
+    "T1110.003": "Brute Force: Password Spraying",
+    "T1071.004": "Application Layer Protocol: DNS",
+    "T1053.005": "Scheduled Task/Job: Scheduled Task",
+    "T1098": "Account Manipulation",
+    "T1496": "Resource Hijacking",
+    "T1098.005": "Account Manipulation: Device Registration",
+    "T1087.002": "Account Discovery: Domain Account",
+    "T1550.001": "Use Alternate Authentication Material: Application Access Token",
+    "T1040": "Network Sniffing",
+    "T1059.001": "Command and Scripting Interpreter: PowerShell",
+    "T1059.003": "Command and Scripting Interpreter: Windows Command Shell",
+    "T1567.002": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
+    "T1685.002": "Disable or Modify Tools: Disable or Modify Cloud Log",
+    "T1685": "Disable or Modify Tools",
+    "T1505.003": "Server Software Component: Web Shell"
+  },
+  "types": [
+    {
+      "id": "volumetric",
+      "label": "Volumetric",
+      "atlas": "12-magnitude-anomaly",
+      "forms": [
+        "point",
+        "collective"
+      ],
+      "tags": [
+        "cloud",
+        "network"
+      ],
+      "related": [
+        "frequency-rate",
+        "data-movement"
+      ],
+      "article_links": [
+        "63ffeaed97de"
+      ],
+      "examples": [
+        {
+          "case": "unc5537-snowflake-2024",
+          "observed": "Mandiant investigated stolen customer credentials used to access Snowflake instances and exfiltrate database records.",
+          "interpretation": "Compare exported rows or bytes with that account's job and warehouse workload. A large legitimate reporting job remains a competing explanation.",
+          "telemetry": "Snowflake query and access history; export destinations; identity and warehouse context.",
+          "limit": "The report does not provide a universal per-account volume threshold or a measured anomaly-detector success rate.",
+          "attack": [
+            "T1078.004"
+          ]
+        },
+        {
+          "case": "rapid-reset-2023",
+          "observed": "Cloudflare reported HTTP/2 attacks reaching just above 201 million requests per second and automatic detection and mitigation.",
+          "interpretation": "This is a documented extreme-load event. Separate total resource load from rate and compare it with service capacity and normal demand.",
+          "telemetry": "Edge request counters, connection statistics, origin saturation and mitigation events.",
+          "limit": "This is Cloudflare's measurement, not a generic enterprise threshold or independent validation of a particular model.",
+          "attack": [
+            "T1499"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frequency-rate",
+      "label": "Frequency / Rate",
+      "atlas": "14-rate-anomaly",
+      "forms": [
+        "collective"
+      ],
+      "tags": [
+        "identity",
+        "network"
+      ],
+      "related": [
+        "volumetric",
+        "geographic-asn"
+      ],
+      "article_links": [
+        "2d930b168426"
+      ],
+      "examples": [
+        {
+          "case": "rapid-reset-2023",
+          "observed": "The HTTP/2 campaign repeatedly opened and reset streams, letting relatively few connections generate exceptional request rates.",
+          "interpretation": "Measure stream creation and cancellation per connection and per target, not just source-IP counts. Distribution shape complements aggregate rate.",
+          "telemetry": "HTTP/2-aware edge telemetry, reset counters and time-aligned request rates.",
+          "limit": "Ordinary access logs may not expose frame-level resets; encrypted packet metadata alone is insufficient for this feature.",
+          "attack": [
+            "T1499"
+          ]
+        },
+        {
+          "case": "midnight-blizzard-2024",
+          "observed": "Microsoft described low-count password attempts against selected accounts through distributed residential proxies.",
+          "interpretation": "This is an evasion case for simple rate thresholds. Aggregate repeated targeting across sources, retaining the affected identities and observation window.",
+          "telemetry": "Identity sign-in results, account IDs, source networks and provider risk signals.",
+          "limit": "Do not claim that every tenant-local detector must fail or that unrelated successful logins prove compromise.",
+          "attack": [
+            "T1110.003"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "temporal",
+      "label": "Temporal",
+      "atlas": "21-temporal-context-anomaly",
+      "forms": [
+        "contextual",
+        "collective"
+      ],
+      "tags": [
+        "network",
+        "endpoint",
+        "ot"
+      ],
+      "related": [
+        "sequence",
+        "protocol-application"
+      ],
+      "article_links": [
+        "a5ccb46d5556"
+      ],
+      "examples": [
+        {
+          "case": "sunburst-2020",
+          "observed": "SUNBURST delayed activation and subsequently used DNS coordination and command-and-control traffic.",
+          "interpretation": "Relate software installation, delayed first contact and later callbacks. The delay is an event-sequence feature, not an observable DNS anomaly while the implant is silent.",
+          "telemetry": "Software deployment records, process-attributed network events and DNS timestamps.",
+          "limit": "Dormancy without emitted telemetry cannot be scored from network traffic; normal update delays can look similar.",
+          "attack": [
+            "T1071.004"
+          ]
+        },
+        {
+          "case": "industroyer2-2022",
+          "observed": "ESET documented Industroyer2 execution scheduled for 8 April 2022 at 16:10 UTC in an attempted attack on a Ukrainian energy provider.",
+          "interpretation": "Correlate the task's creation and scheduled execution with approved OT work and operational commands. Clock time alone does not make an event anomalous.",
+          "telemetry": "Scheduled-task records, engineering-host process logs, OT commands and maintenance approvals.",
+          "limit": "The public report establishes the scheduled time, not the site's full maintenance baseline or a successful temporal detection.",
+          "attack": [
+            "T1053.005"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peer-group",
+      "label": "Peer-Group",
+      "atlas": "8-peer-group-anomaly",
+      "forms": [
+        "contextual"
+      ],
+      "tags": [
+        "identity",
+        "insider",
+        "cloud"
+      ],
+      "related": [
+        "identity-access",
+        "data-movement"
+      ],
+      "article_links": [
+        "3c3b41e95e82"
+      ],
+      "examples": [
+        {
+          "case": "twitter-insider",
+          "observed": "A jury convicted former Twitter media-partnerships manager Ahmad Abouammo over unlawful access and disclosure of user information. The indictment explains the job-duty boundary.",
+          "interpretation": "Compare sensitive-record access with employees having the same responsibilities, not with all staff who technically possess access.",
+          "telemetry": "Internal user-data access logs, role assignments, case authorization and HR role history.",
+          "limit": "Peer-group detection is an author-derived opportunity; the sources do not say a UEBA model discovered this case.",
+          "attack": []
+        },
+        {
+          "case": "storm1283-2023",
+          "observed": "Microsoft reported that compromised access was used to create an OAuth application and deploy virtual machines for cryptomining.",
+          "interpretation": "Compare application activity with applications having the same business function. VM creation may be abnormal for one cohort and routine for deployment automation.",
+          "telemetry": "Application inventory, workload-identity logs, Azure Activity and approved deployment records.",
+          "limit": "The comparison cohort and expected activity are not supplied by the incident report and must be established locally.",
+          "attack": [
+            "T1496"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sequence",
+      "label": "Sequence",
+      "atlas": "60-sequence-order-anomaly",
+      "forms": [
+        "collective",
+        "contextual"
+      ],
+      "tags": [
+        "identity",
+        "endpoint",
+        "cloud"
+      ],
+      "related": [
+        "identity-access",
+        "parent-child"
+      ],
+      "article_links": [
+        "2d930b168426"
+      ],
+      "examples": [
+        {
+          "case": "unc3944-saas",
+          "observed": "Mandiant described help-desk impersonation, MFA changes and subsequent access to privileged accounts and SaaS applications across its investigations.",
+          "interpretation": "Correlate reset, new-device enrollment, sign-in and expanded access on the same identity. Preserve ordering rather than merely counting co-occurring alerts.",
+          "telemetry": "Help-desk tickets, IdP factor events, session records and SaaS audit logs.",
+          "limit": "The report synthesizes multiple engagements; do not invent one victim timeline containing every reported technique.",
+          "attack": [
+            "T1098.005"
+          ]
+        },
+        {
+          "case": "bazarcall-conti",
+          "observed": "The DFIR Report traced a workbook-led intrusion through Trickbot, Cobalt Strike, discovery and lateral movement to later Conti deployment.",
+          "interpretation": "Link execution, discovery and remote activity by host and identity. A multi-stage sequence can warrant investigation before ransomware appears.",
+          "telemetry": "Process trees, authentication records, service creation and endpoint/network timestamps.",
+          "limit": "A rigid sequence requiring every stage will miss partial telemetry and different attack paths; evaluate missing-stage tolerance.",
+          "attack": [
+            "T1087.002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "graph-relationship",
+      "label": "Graph / Relationship",
+      "atlas": "75-graph-evolution-anomaly",
+      "forms": [
+        "contextual",
+        "collective"
+      ],
+      "tags": [
+        "identity",
+        "cloud"
+      ],
+      "related": [
+        "state-change",
+        "identity-access"
+      ],
+      "article_links": [
+        "2d930b168426"
+      ],
+      "examples": [
+        {
+          "case": "midnight-blizzard-2024",
+          "observed": "Microsoft described a compromised legacy OAuth application being used to grant malicious applications Exchange full_access_as_app access.",
+          "interpretation": "Model principal, application, consent and mailbox-access edges. Investigate a new privileged path rather than treating each grant as an isolated event.",
+          "telemetry": "Application credentials, consent and role-assignment audit history; EWS access.",
+          "limit": "A new graph edge is not proof of abuse, and the report does not establish that graph analytics detected the intrusion.",
+          "attack": [
+            "T1098"
+          ]
+        },
+        {
+          "case": "storm1283-2023",
+          "observed": "The compromised subscription owner granted the attacker-created application Contributor permissions, enabling subsequent VM deployment.",
+          "interpretation": "Trace the new user-to-application-to-subscription path and its first resource actions. Link authorization changes to what the newly authorized principal actually did.",
+          "telemetry": "Directory audit, Azure role assignments and resource deployment activity.",
+          "limit": "Infrastructure-as-code can produce similar edges; compare ownership, approval and expected resource scope.",
+          "attack": [
+            "T1098"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geographic-asn",
+      "label": "Geographic / ASN",
+      "atlas": "80-spatial-context-anomaly",
+      "forms": [
+        "contextual"
+      ],
+      "tags": [
+        "identity",
+        "network",
+        "cloud"
+      ],
+      "related": [
+        "frequency-rate",
+        "identity-access"
+      ],
+      "article_links": [
+        "3c3b41e95e82"
+      ],
+      "examples": [
+        {
+          "case": "unc5537-snowflake-2024",
+          "observed": "Mandiant observed VPN-origin access and separate VPS infrastructure associated with exfiltration in the Snowflake customer campaign.",
+          "interpretation": "Compare source networks with each account's approved access paths and subsequent queries. ASN category is context, not an identity or maliciousness verdict.",
+          "telemetry": "Snowflake login history, timestamped IP/ASN enrichment, query history and destination ownership.",
+          "limit": "VPNs are common legitimate infrastructure. Neither a country nor an ASN identifies the human operator.",
+          "attack": [
+            "T1078.004"
+          ]
+        },
+        {
+          "case": "midnight-blizzard-2024",
+          "observed": "Midnight Blizzard used residential proxies also used by legitimate customers, reducing the usefulness of static IP indicators.",
+          "interpretation": "Evaluate unfamiliar sign-in properties and source diversity alongside the account's behavior. Residential-looking traffic can conceal an intrusion.",
+          "telemetry": "Historical sign-in properties, IP/ASN observations, device and application context.",
+          "limit": "Impossible-travel logic is vulnerable to VPN and proxy artifacts; no fixed travel threshold is asserted here.",
+          "attack": [
+            "T1110.003"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "identity-access",
+      "label": "Identity / Access",
+      "atlas": "3-contextual-anomaly",
+      "forms": [
+        "contextual",
+        "collective"
+      ],
+      "tags": [
+        "identity",
+        "cloud"
+      ],
+      "related": [
+        "sequence",
+        "graph-relationship"
+      ],
+      "article_links": [
+        "3c3b41e95e82"
+      ],
+      "examples": [
+        {
+          "case": "unc3944-saas",
+          "observed": "UNC3944 persuaded help desks to change MFA controls and used compromised privileged identities to reach protected applications.",
+          "interpretation": "Prioritize factor changes followed by unfamiliar access, accounting for the support ticket and strength of identity verification.",
+          "telemetry": "IdP factor lifecycle, device enrollment, sign-ins, application assignments and support records.",
+          "limit": "Legitimate device replacement produces similar events; a reset alone does not establish an account takeover.",
+          "attack": [
+            "T1098.005"
+          ]
+        },
+        {
+          "case": "storm0558-2023",
+          "observed": "Storm-0558 used an acquired Microsoft consumer signing key to forge tokens accepted for enterprise mailbox access.",
+          "interpretation": "Correlate mailbox access with identity and token context. Absence of an expected tenant sign-in can be a lead, not proof of token forgery.",
+          "telemetry": "Mailbox-access audit, application/session context and provider-side token-validation evidence where available.",
+          "limit": "The key was acquired, not forged. Tenant logs do not necessarily expose the token material or all provider validation decisions.",
+          "attack": [
+            "T1550.001"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rare-process-service",
+      "label": "Rare Process / Service",
+      "atlas": "84-rare-category-anomaly",
+      "forms": [
+        "point",
+        "contextual"
+      ],
+      "tags": [
+        "endpoint",
+        "network"
+      ],
+      "related": [
+        "parent-child",
+        "peer-group"
+      ],
+      "article_links": [
+        "a5ccb46d5556"
+      ],
+      "examples": [
+        {
+          "case": "bazarcall-conti",
+          "observed": "The investigators recorded AdFind deployment and execution for domain enumeration on compromised hosts.",
+          "interpretation": "Measure first-seen execution within the host role and inspect the associated account and discovery output. Tool presence alone cannot distinguish administration from intrusion.",
+          "telemetry": "Process image, hash, command line, account and host-class software history.",
+          "limit": "The report documents execution, not a measured enterprise prevalence distribution or a guaranteed rarity alert.",
+          "attack": [
+            "T1087.002"
+          ]
+        },
+        {
+          "case": "messagetap-2019",
+          "observed": "Mandiant found MESSAGETAP on Linux SMS-center servers, capturing network traffic with libpcap and selecting SMS data.",
+          "interpretation": "Compare capture-capable executables with the approved SMS-server software inventory and investigate unknown binaries in that role.",
+          "telemetry": "Executable inventory, process execution, package integrity and packet-capture capability use.",
+          "limit": "libpcap also supports legitimate monitoring; the proposed rarity baseline is not a result published by the investigators.",
+          "attack": [
+            "T1040"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parent-child",
+      "label": "Parent-Child Execution",
+      "atlas": "60-sequence-order-anomaly",
+      "forms": [
+        "contextual",
+        "collective"
+      ],
+      "tags": [
+        "endpoint"
+      ],
+      "related": [
+        "rare-process-service",
+        "sequence"
+      ],
+      "article_links": [
+        "a5ccb46d5556"
+      ],
+      "examples": [
+        {
+          "case": "lemon-duck-exchange",
+          "observed": "Microsoft associated Exchange IIS-worker spawning of PowerShell with observed Lemon Duck activity and supplied a corresponding hunting query.",
+          "interpretation": "Investigate w3wp.exe to powershell.exe lineage in the Exchange context, then inspect the command, deployment history and network activity.",
+          "telemetry": "MDE DeviceProcessEvents or equivalent parent/child process events with command lines.",
+          "limit": "Microsoft's query is a hunting starting point, not proof that every matching parent-child pair is malicious.",
+          "attack": [
+            "T1059.001"
+          ]
+        },
+        {
+          "case": "doejocrypt-exchange",
+          "observed": "Microsoft described DoejoCrypt-associated batch-script credential theft and published lineage-oriented queries for post-exploitation activity.",
+          "interpretation": "Follow the web-server, command-shell and credential-access chain instead of alerting on cmd.exe globally. Corroborate with script content and resulting files.",
+          "telemetry": "Process ancestry, batch command lines, sensitive-registry access and file creation.",
+          "limit": "The report covers several exploiting actors; do not attribute every Exchange child process to HAFNIUM or DoejoCrypt.",
+          "attack": [
+            "T1059.003"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-movement",
+      "label": "Data Movement",
+      "atlas": "48-multivariate-combination-anomaly",
+      "forms": [
+        "contextual",
+        "collective"
+      ],
+      "tags": [
+        "cloud",
+        "identity"
+      ],
+      "related": [
+        "volumetric",
+        "peer-group"
+      ],
+      "article_links": [
+        "3c3b41e95e82"
+      ],
+      "examples": [
+        {
+          "case": "unc5537-snowflake-2024",
+          "observed": "The campaign moved stolen database content out of customer environments and used external hosting or storage infrastructure.",
+          "interpretation": "Compare source data, export operation and destination ownership with normal business flows. An authorized account can execute an unauthorized transfer.",
+          "telemetry": "Database queries, export commands, storage destinations and identity-to-session correlation.",
+          "limit": "A dataset's sensitivity and the destination's authorization must come from customer context, not its public hostname alone.",
+          "attack": [
+            "T1078.004"
+          ]
+        },
+        {
+          "case": "unc3944-saas",
+          "observed": "Mandiant obtained victim Airbyte logs and described Airbyte/Fivetran transfers from SaaS data sources to attacker-owned storage.",
+          "interpretation": "Join connector creation and authorization to source objects, destination account ownership and transfer activity, even when the transport is normal cloud traffic.",
+          "telemetry": "Connector job logs, SaaS audit, consent records and cloud-storage access history.",
+          "limit": "A legitimate sync product is not an IOC. Visibility depends on where the connector runs and which logs are collected.",
+          "attack": [
+            "T1567.002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "protocol-application",
+      "label": "Protocol / Application Usage",
+      "atlas": "48-multivariate-combination-anomaly",
+      "forms": [
+        "contextual",
+        "collective"
+      ],
+      "tags": [
+        "network",
+        "endpoint"
+      ],
+      "related": [
+        "temporal",
+        "data-movement"
+      ],
+      "article_links": [
+        "63ffeaed97de"
+      ],
+      "examples": [
+        {
+          "case": "sunburst-2020",
+          "observed": "Mandiant decoded SUNBURST DNS subdomain formats carrying victim information and other coordination data.",
+          "interpretation": "Combine domain novelty, label structure and the originating process. DNS that is syntactically valid can still carry application data unrelated to normal resolution.",
+          "telemetry": "Full QNAME, response details, timing and endpoint process attribution.",
+          "limit": "Entropy alone is not a discriminator; the cited analysis does not establish the article's proposed numeric entropy range as a benchmark.",
+          "attack": [
+            "T1071.004"
+          ]
+        },
+        {
+          "case": "oilrig-rdat-2020",
+          "observed": "Unit 42 analyzed RDAT deployed against a telecommunications organization, including variants with DNS tunneling over A and AAAA queries.",
+          "interpretation": "Inspect encoded-label structure and repeated exchanges by process and domain. Restricting detection to TXT queries would miss these documented variants.",
+          "telemetry": "DNS queries and responses, label lengths, per-domain patterns and endpoint context.",
+          "limit": "Different RDAT variants use different channels; do not assign one DNS signature to every OilRig intrusion.",
+          "attack": [
+            "T1071.004"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "negative-absence",
+      "label": "Negative Anomaly (Absence)",
+      "atlas": "101-missingness-anomaly",
+      "forms": [
+        "contextual",
+        "collective"
+      ],
+      "tags": [
+        "cloud",
+        "endpoint",
+        "telemetry-health"
+      ],
+      "related": [
+        "state-change",
+        "temporal"
+      ],
+      "article_links": [
+        "a5ccb46d5556"
+      ],
+      "examples": [
+        {
+          "case": "scarleteel-2023",
+          "observed": "Sysdig reported attackers disabling CloudTrail logging during SCARLETEEL and described StopLogging-based detection.",
+          "interpretation": "Combine an explicit logging change with loss of an otherwise expected event stream. Monitor the collection path independently of the source being disabled.",
+          "telemetry": "CloudTrail control-plane changes, trail configuration, delivery health and downstream ingestion counters.",
+          "limit": "StopLogging is a positive state-change event; missing logs are a separate inferred signal. Outages and configuration changes are competing explanations.",
+          "attack": [
+            "T1685.002"
+          ]
+        },
+        {
+          "case": "aukill-2023",
+          "observed": "Sophos investigated ransomware incidents where AuKill abused a Process Explorer driver to disable EDR processes before payload deployment.",
+          "interpretation": "Correlate unexpected security-service loss with driver installation and other independent host activity. A running host with a silent agent deserves investigation.",
+          "telemetry": "EDR health, service state, driver-load events and independent management/network heartbeats.",
+          "limit": "The source documents defense impairment, not a demonstrated heartbeat detector. Agent maintenance and host shutdown must be distinguished.",
+          "attack": [
+            "T1685"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "state-change",
+      "label": "State-Change",
+      "atlas": "75-graph-evolution-anomaly",
+      "forms": [
+        "point",
+        "contextual"
+      ],
+      "tags": [
+        "identity",
+        "cloud",
+        "application"
+      ],
+      "related": [
+        "graph-relationship",
+        "negative-absence"
+      ],
+      "article_links": [
+        "2d930b168426"
+      ],
+      "examples": [
+        {
+          "case": "storm1283-2023",
+          "observed": "The actor added credentials and permissions to OAuth applications and used application access for resource deployment.",
+          "interpretation": "Track changes to authentication material and authorization separately from subsequent consumption. Connect the changed application to its first unusual resource operations.",
+          "telemetry": "Application credential additions, consent/role changes and Azure resource activity.",
+          "limit": "Secret rotation and application provisioning are ordinary operations; ownership, approvals and deployment scope determine risk.",
+          "attack": [
+            "T1098",
+            "T1496"
+          ]
+        },
+        {
+          "case": "moveit-lemurloot",
+          "observed": "Mandiant described LEMURLOOT creating a MOVEit application account with Health Check Service names through database operations.",
+          "interpretation": "Investigate unauthorized application-account creation and session insertion, correlating database changes with webshell access.",
+          "telemetry": "MOVEit application/database evidence, web requests and web-root file changes.",
+          "limit": "This is not inherently a Windows account. Windows Event 4720 is not the correct expected artifact for this application-database operation.",
+          "attack": [
+            "T1505.003"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multi-event-correlation",
+      "label": "Multi-Event Correlation",
+      "atlas": "48-multivariate-combination-anomaly",
+      "forms": [
+        "collective",
+        "contextual"
+      ],
+      "tags": [
+        "identity",
+        "endpoint",
+        "cloud"
+      ],
+      "related": [
+        "sequence",
+        "state-change",
+        "data-movement"
+      ],
+      "article_links": [
+        "2d930b168426"
+      ],
+      "examples": [
+        {
+          "case": "unc3944-saas",
+          "observed": "Mandiant reported identity manipulation, privileged SaaS access and cloud connector use for data theft across UNC3944 investigations.",
+          "interpretation": "Join identity-control changes to application sessions and connector transfers where entity and timestamp evidence supports the link. Correlation combines signal families; ordered sequence analysis is one possible component.",
+          "telemetry": "Support records, IdP factor events, application sessions, connector jobs and destination ownership.",
+          "limit": "A campaign synthesis is not one victim's complete timeline. Do not merge unrelated users or tenants because their events share a time window.",
+          "attack": [
+            "T1098.005",
+            "T1567.002"
+          ]
+        },
+        {
+          "case": "bazarcall-conti",
+          "observed": "The DFIR Report documented an intrusion progressing from initial execution through discovery and lateral activity to Conti ransomware deployment.",
+          "interpretation": "Correlate endpoint execution, discovery and remote-service activity using stable host and account identifiers. Evaluate the linked evidence, not an uncalibrated sum of anomaly scores.",
+          "telemetry": "Process trees, authenticated sessions, service events and network connections, with collection delays recorded.",
+          "limit": "Two alerts generated from the same event are not independent corroboration. Missing sensors can break the join without making the behavior benign.",
+          "attack": [
+            "T1087.002"
+          ]
+        }
+      ]
+    }
+  ]
+}

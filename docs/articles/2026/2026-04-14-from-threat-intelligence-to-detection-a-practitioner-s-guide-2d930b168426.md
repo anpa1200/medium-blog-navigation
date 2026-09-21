@@ -21,6 +21,8 @@ image: "https://cdn-images-1.medium.com/max/800/1*gmEglWovk7wD4MTGoNpZ5A.png"
 
 This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.
 
+For source-to-detection examples, use the <a href="https://1200km.com/articles/read/2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12/#anomaly-evidence-index" target="_self">anomaly incident register with telemetry and ATT&amp;CK mappings</a>. It separates investigator-reported behavior from inferred detection opportunities and preserves attribution boundaries.
+
 ### Building atomic, collection, correlational, TTP-based, and anomaly detection rules from real adversary behavior.
 
 By[Andrey Pautov](https://medium.com/@1200km)— April 2026

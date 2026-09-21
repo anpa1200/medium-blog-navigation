@@ -1,0 +1,4 @@
+PASS evidence: 15 types, 30 mappings, 17 distinct cases, 17 sources, 17 techniques.
+PASS integration: 4 reciprocal article links, linked tags, source/asset parity, one authored H1.
+PASS preservation: all 192 article routes/canonicals unchanged; 44 images and 11 code blocks byte-preserved.
+PASS rendered article: 455 self-fragment links, 61 explicit anchors, one H1, downloadable JSON and catalog tags.

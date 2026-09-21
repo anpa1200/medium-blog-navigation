@@ -21,6 +21,8 @@ image: "https://cdn-images-1.medium.com/max/1024/1*PtjHgt5EKpMEspEmntakBw.png"
 
 This page mirrors the original Medium RSS article into the 1200km.com Docusaurus ecosystem. The article flow, images, screenshots, infographics, and technical blocks are preserved from the Medium feed.
 
+The <a href="https://1200km.com/articles/read/2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12/#anomaly-sequence" target="_self">sequence-anomaly case studies from UNC3944 and BazarCall</a> show how documented activity can motivate a correlation rule without proving its precision or production readiness.
+
 ### Practical methods for identity, cloud, CI/CD, runtime, and AI-era threat detection
 
 ## Table of Contents

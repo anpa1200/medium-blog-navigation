@@ -15,7 +15,14 @@
     "author": "Pavel Yosifovich",
     "domain": "Windows internals",
     "mode": "Technical walkthrough",
-    "tags": ["Windows", "internals", "virtual memory", "threads", "TEB", "C++"]
+    "tags": [
+      "Windows",
+      "internals",
+      "virtual memory",
+      "threads",
+      "TEB",
+      "C++"
+    ]
   },
   {
     "id": "trainsec-86",
@@ -33,7 +40,14 @@
     "author": "Pavel Yosifovich",
     "domain": "Windows internals",
     "mode": "Technical walkthrough",
-    "tags": ["Windows", "internals", "virtual memory", "mapped files", "NT paths", "C++"]
+    "tags": [
+      "Windows",
+      "internals",
+      "virtual memory",
+      "mapped files",
+      "NT paths",
+      "C++"
+    ]
   },
   {
     "id": "trainsec-87",
@@ -51,7 +65,14 @@
     "author": "Pavel Yosifovich",
     "domain": "Windows internals",
     "mode": "Technical walkthrough",
-    "tags": ["Windows", "internals", "virtual memory", "VirtualQueryEx", "PEB", "C++"]
+    "tags": [
+      "Windows",
+      "internals",
+      "virtual memory",
+      "VirtualQueryEx",
+      "PEB",
+      "C++"
+    ]
   },
   {
     "id": "trainsec-1",
@@ -218,7 +239,8 @@
     "mode": "Video / workshop",
     "tags": [
       "Windows",
-      "internals"
+      "internals",
+      "Anomaly: Identity / Access"
     ]
   },
   {
