@@ -1,8 +1,10 @@
 ---
 title: "Malicious Activity as a Statistical Signal: Anomaly Detection Engineering"
 description: "Explore anomaly detection and multi-event correlation through real incidents, with telemetry, ATT&CK mappings and explicit evidence limits."
-image: "https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png"
+image: "/research/anomaly-visuals/research-map.png"
 ---
+
+import ResearchFigure from '@site/src/components/ResearchFigure';
 
 <span id="malicious-activity-as-a-statistical-signal-anomaly-detection-engineering"></span>
 
@@ -16,14 +18,15 @@ This September 2026 technical revision retains the incident register and topic c
 
 > **Scope and safety:** This is defensive research for detection engineers and threat hunters. The supplied tests process synthetic or public recorded events; they do not execute attack commands. Use live exercises only in authorized, isolated environments. No production detection accuracy or automatic-containment safety is established.
 
-<img src="https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
+<ResearchFigure id="research-map" />
 
 :::info Article Metadata
 - **Category:** Detection Engineering
 - **Source article:** [https://medium.com/@1200km/malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12](https://medium.com/@1200km/malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12)
 - **Published:** 2026-04-20
 - **Research updated:** 2026-09-21
-- **Historical media:** 44 original images retained; older technical illustrations are labeled historical in Section 9.8.
+- **Visual revision:** 43 evidence-linked diagrams appear inline, with narrow-screen layouts, text equivalents and full-size SVGs. Calculated figures are generated from the committed evidence.
+- **Historical media:** All 44 original images, including the old cover, remain in Section 9.8; they are not current technical guidance.
 - **Implementation revision:** canonical KQL examples, explicit telemetry contracts and downloadable validation evidence replace the broken operational snippets.
 :::
 
@@ -92,11 +95,15 @@ A collection of related instances that is anomalous together, even if each indiv
 
 **Malicious-behaviour correlation.** The analytical step that links an observed anomaly to an attacker goal, technique, or intrusion stage. An anomaly is not a verdict — it is evidence. A detection becomes operationally useful when that evidence is correlated with asset context, identity state, companion telemetry, or known adversary tradecraft.
 
+<ResearchFigure id="statistical-forms" />
+
 ### 1.2 The Central Tension
 
 Malicious activity can be rare relative to ordinary enterprise events. **Precision and false-positive rate are different quantities:** precision is TP / (TP + FP), while false-positive rate is FP / (FP + TN). In an illustrative population of 1,000,000 benign events, a 1% false-positive rate produces 10,000 false alerts. If 100 malicious events are present and recall is 90%, the resulting 90 true alerts yield about 0.89% precision. These are explanatory numbers, not measured results. NIST SP 800–94 discusses the false positives caused by benign deviations from normal profiles[[1]](https://csrc.nist.gov/pubs/sp/800/94/final).
 
 Operational usefulness depends on the costs of misses and false alerts, available observability, and how the output changes an analyst's decision. Stable, role-appropriate baselines can help, but their value must be measured rather than inferred from a rarity score.
+
+<ResearchFigure id="base-rate" />
 
 ## 2. Taxonomy of Anomaly Types
 
@@ -113,6 +120,8 @@ Unusual amount of data or events over a defined observation window.
 **Candidate method [unvalidated until tested]:** Compare aligned windows within a workload/role. Evaluate empirical quantiles or an appropriate location/scale model.
 
 **Benign alternatives and limits:** Backups, reporting, synchronization and incident recovery can create large legitimate volumes.
+
+<ResearchFigure id="family-volumetric" />
 
 <!-- anomaly-evidence:volumetric:start -->
 **Evidence tags:** [Cloud and SaaS](#tag-cloud) · [Network telemetry](#tag-network). **Statistical forms:** [point](#anomaly-form-point), [collective](#anomaly-form-collective).
@@ -175,6 +184,8 @@ Unusual event frequency per entity and unit of observed time.
 
 **Benign alternatives and limits:** Retries, outages, load tests and shared gateways can resemble an attack burst.
 
+<ResearchFigure id="family-frequency-rate" />
+
 <!-- anomaly-evidence:frequency-rate:start -->
 **Evidence tags:** [Identity and access](#tag-identity) · [Network telemetry](#tag-network). **Statistical forms:** [collective](#anomaly-form-collective).
 
@@ -235,6 +246,8 @@ Activity inconsistent with a defined time-of-day, shift or seasonal context.
 **Candidate method [unvalidated until tested]:** Compare like calendar periods; handle travel, daylight-saving changes and ingestion delay.
 
 **Benign alternatives and limits:** On-call work, international teams and scheduled maintenance are legitimate alternatives.
+
+<ResearchFigure id="family-temporal" />
 
 <!-- anomaly-evidence:temporal:start -->
 **Evidence tags:** [Network telemetry](#tag-network) · [Endpoint telemetry](#tag-endpoint) · [Operational technology](#tag-ot). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
@@ -297,6 +310,8 @@ An entity differs from an explicitly defined comparison cohort.
 
 **Benign alternatives and limits:** Role changes, small cohorts and incomplete personnel data can create misleading outliers.
 
+<ResearchFigure id="family-peer-group" />
+
 <!-- anomaly-evidence:peer-group:start -->
 **Evidence tags:** [Identity and access](#tag-identity) · [Insider risk](#tag-insider) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [contextual](#anomaly-form-contextual).
 
@@ -357,6 +372,8 @@ An event sequence differs from an expected operational workflow.
 **Candidate method [unvalidated until tested]:** Use explicit sequence constraints or a validated sequence model; define allowed lateness and missing steps.
 
 **Benign alternatives and limits:** Different legitimate workflows and timestamp disorder can produce the same apparent sequence.
+
+<ResearchFigure id="family-sequence" />
 
 <!-- anomaly-evidence:sequence:start -->
 **Evidence tags:** [Identity and access](#tag-identity) · [Endpoint telemetry](#tag-endpoint) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [collective](#anomaly-form-collective), [contextual](#anomaly-form-contextual).
@@ -419,6 +436,8 @@ A new or unusual edge, path or community relationship.
 
 **Benign alternatives and limits:** Migrations, new projects and automated infrastructure can legitimately create many edges.
 
+<ResearchFigure id="family-graph-relationship" />
+
 <!-- anomaly-evidence:graph-relationship:start -->
 **Evidence tags:** [Identity and access](#tag-identity) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
 
@@ -479,6 +498,8 @@ A change in the network/location context associated with an identity.
 **Candidate method [unvalidated until tested]:** Compare the account and device history; treat geolocation as uncertain and account for VPN/proxy egress.
 
 **Benign alternatives and limits:** Mobile networks, privacy relays, travel and shared egress can create apparent impossible travel.
+
+<ResearchFigure id="family-geographic-asn" />
 
 <!-- anomaly-evidence:geographic-asn:start -->
 **Evidence tags:** [Identity and access](#tag-identity) · [Network telemetry](#tag-network) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [contextual](#anomaly-form-contextual).
@@ -541,6 +562,8 @@ An unexpected authentication property, permission or identity relationship.
 
 **Benign alternatives and limits:** Recovery, legitimate consent, role changes and delegated administration require investigation context.
 
+<ResearchFigure id="family-identity-access" />
+
 <!-- anomaly-evidence:identity-access:start -->
 **Evidence tags:** [Identity and access](#tag-identity) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
 
@@ -601,6 +624,8 @@ Low observed prevalence of a process or service in a stated population.
 **Candidate method [unvalidated until tested]:** Measure prevalence within a role and time period; distinguish new telemetry from a genuinely new binary.
 
 **Benign alternatives and limits:** Deployment, troubleshooting and rare authorized tools can all be legitimate.
+
+<ResearchFigure id="family-rare-process-service" />
 
 <!-- anomaly-evidence:rare-process-service:start -->
 **Evidence tags:** [Endpoint telemetry](#tag-endpoint) · [Network telemetry](#tag-network). **Statistical forms:** [point](#anomaly-form-point), [contextual](#anomaly-form-contextual).
@@ -663,6 +688,8 @@ An unusual direct process relationship or explicitly defined ancestry path.
 
 **Benign alternatives and limits:** Application automation can launch shells; in-process activity can evade child-process rules.
 
+<ResearchFigure id="family-parent-child" />
+
 <!-- anomaly-evidence:parent-child:start -->
 **Evidence tags:** [Endpoint telemetry](#tag-endpoint). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
 
@@ -723,6 +750,8 @@ Unexpected access, export, copy or synchronization involving a source and destin
 **Candidate method [unvalidated until tested]:** Keep event counts, distinct objects, bytes and records separate; evaluate destination and authorization context.
 
 **Benign alternatives and limits:** Approved export, backup, migration and collaboration can resemble exfiltration.
+
+<ResearchFigure id="family-data-movement" />
 
 <!-- anomaly-evidence:data-movement:start -->
 **Evidence tags:** [Cloud and SaaS](#tag-cloud) · [Identity and access](#tag-identity). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
@@ -785,6 +814,8 @@ Unusual use of a protocol, application function or destination for an entity.
 
 **Benign alternatives and limits:** New clients, protocol changes and legitimate encoded identifiers can invalidate a historical baseline.
 
+<ResearchFigure id="family-protocol-application" />
+
 <!-- anomaly-evidence:protocol-application:start -->
 **Evidence tags:** [Network telemetry](#tag-network) · [Endpoint telemetry](#tag-endpoint). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
 
@@ -845,6 +876,8 @@ An expected observation is absent during a period where it should be observable.
 **Candidate method [unvalidated until tested]:** Model expected presence and detection delay separately from actual zero activity.
 
 **Benign alternatives and limits:** Outage, retirement, filtering, permissions and retention are alternatives to deliberate impairment.
+
+<ResearchFigure id="family-negative-absence" />
 
 <!-- anomaly-evidence:negative-absence:start -->
 **Evidence tags:** [Cloud and SaaS](#tag-cloud) · [Endpoint telemetry](#tag-endpoint) · [Telemetry health](#tag-telemetry-health). **Statistical forms:** [contextual](#anomaly-form-contextual), [collective](#anomaly-form-collective).
@@ -907,6 +940,8 @@ A change to configuration, trust, permissions or exposure that warrants contextu
 
 **Benign alternatives and limits:** Administrative changes can be legitimate, including changes to sensitive objects.
 
+<ResearchFigure id="family-state-change" />
+
 <!-- anomaly-evidence:state-change:start -->
 **Evidence tags:** [Identity and access](#tag-identity) · [Cloud and SaaS](#tag-cloud) · [Application audit](#tag-application). **Statistical forms:** [point](#anomaly-form-point), [contextual](#anomaly-form-contextual).
 
@@ -967,6 +1002,8 @@ A composition method joining related evidence, not a fifteenth independent stati
 **Candidate method [unvalidated until tested]:** Specify equality keys and temporal constraints; measure the recall cost of each added gate.
 
 **Benign alternatives and limits:** Unrelated events, duplicate observations and correlated models can inflate confidence without adding independent evidence.
+
+<ResearchFigure id="family-multi-event-correlation" />
 
 <!-- anomaly-evidence:multi-event-correlation:start -->
 **Evidence tags:** [Identity and access](#tag-identity) · [Endpoint telemetry](#tag-endpoint) · [Cloud and SaaS](#tag-cloud). **Statistical forms:** [collective](#anomaly-form-collective), [contextual](#anomaly-form-contextual).
@@ -1122,6 +1159,8 @@ The following are **author-proposed analytical opportunities**, not measured cov
 
 Map the observed behavior first, then identify the possible statistic. Do not infer a group from an anomaly tag or infer detector success from a valid technique ID. The [case register](#anomaly-evidence-index) records those boundaries separately.
 
+<ResearchFigure id="attack-mapping" />
+
 ## 4. Evidence Register: Real APT Campaigns and Documented Anomaly Patterns
 
 These investigations illustrate opportunities and limitations. **Source-reported** means the named investigator reports the activity; **inferred** means a detection hypothesis developed here. None of the following accounts represents a replay of a victim's private telemetry.
@@ -1132,11 +1171,15 @@ These investigations illustrate opportunities and limitations. **Source-reported
 
 **Inferred:** investigate DNS-label structure, destination novelty and the originating process together. Dormancy complicates short lookbacks but does not itself supply an outbound-network observation. Neither the source nor this research establishes a universal entropy cutoff, an above-baseline entropy measurement at victims, or inevitable detection by a DNS analytic. Sysmon image-load telemetry is not a guarantee of visibility into manual or reflective loading.
 
+<ResearchFigure id="case-sunburst" />
+
 ### 4.2 HAFNIUM / Exchange ProxyLogon (2021)
 
 **Source-reported:** Microsoft described exploitation of Exchange vulnerabilities followed by webshell deployment. Its separate post-exploitation investigation described multiple actors and tools; observations from that broader set must not all be attributed to HAFNIUM. [HAFNIUM investigation](https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/), [post-exploitation analysis](https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/).
 
 **Inferred:** correlate unusual web requests, ASPX writes, and shell execution descending from a web worker. Ordinary IIS logs do not contain arbitrary request bodies. Process fields differ between native 4688, Sysmon and EDR schemas; normalize them explicitly. Custom applications may legitimately invoke shells, so role and change context matter. Later native IIS-module campaigns are a separate evidence set; no claim about them is derived from the original HAFNIUM report here.
+
+<ResearchFigure id="case-exchange" />
 
 ### 4.3 Conti Ransomware (2021–2022)
 
@@ -1144,17 +1187,23 @@ These investigations illustrate opportunities and limitations. **Source-reported
 
 **Inferred:** correlate enumeration, remote administration, share access, service creation and security-setting changes by identity and host. AdFind prevalence must be measured locally; its execution does not guarantee that every EDR alerts. Shadow-copy deletion can occur during legitimate administration. For Defender, collect its own Operational channel: event 5001 reports disabled real-time protection and 5007 a configuration change. Registry telemetry can supplement these records but does not replace them. [Defender event reference](https://learn.microsoft.com/en-us/defender-endpoint/troubleshoot-microsoft-defender-antivirus).
 
+<ResearchFigure id="case-conti" />
+
 ### 4.4 APT34 / OilRig DNS Tunneling (2018–2024)
 
 **Source-reported:** Unit 42's RDAT investigation describes OilRig-associated tooling with several communication mechanisms and an email/steganography variant. Mechanisms differ by sample and version. The separate Talos DNSpionage investigation does not, by itself, establish an OilRig attribution. [RDAT investigation](https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/), [DNSpionage investigation](https://blog.talosintelligence.com/dnspionage-campaign-targets-middle-east/).
 
 **Inferred:** evaluate label structure, unique-label counts, record types, timing, destinations and process context. TXT-heavy legitimate workloads exist; a TXT:A ratio above one is not intrinsically malicious. Full labels are necessary for label-entropy analysis, not for every possible endpoint, traffic-volume or DNS-behavior detector. No universal label-length, entropy or cadence threshold is validated here.
 
+<ResearchFigure id="case-oilrig" />
+
 ### 4.5 MOVEit / Cl0p Campaign (2023)
 
 **Source-reported:** Mandiant described exploitation of MOVEit Transfer and LEMURLOOT, including its custom HTTP headers, database interaction and creation of a MOVEit application account named `HealthCheckService` / `Health Check Service`. It also described retrieval of Azure storage settings from the database. This is not evidence that a Windows user was created or that a particular configuration file was read. [Mandiant investigation](https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft).
 
 **Inferred:** correlate webshell writes/access, application account and session changes, database activity and exports. Windows event 4720 does not represent this SQL-backed account operation. A familiar-looking name alone is not proof of a malicious account, and a normal HTTP status does not establish benign use.
+
+<ResearchFigure id="case-moveit" />
 
 ### 4.6 Midnight Blizzard / Cozy Bear (2023–2024)
 
@@ -1164,11 +1213,15 @@ Microsoft's March update separately reported that some activity, including passw
 
 **Inferred:** combine tenant/account-level failures with consent, application ownership, credentials and EWS access. Provider-wide visibility can add context that a tenant lacks; this does not establish that tenant-local analytics cannot detect distributed activity. Missing prior history is a cold-start problem, not proof of innocence.
 
+<ResearchFigure id="case-midnight" />
+
 ### 4.7 Scattered Spider / UNC3944 (2023)
 
 **Source-reported:** Mandiant's June 2024 investigation describes help-desk social engineering, identity abuse and SaaS data theft involving legitimate integration tools. Its cluster label should not be treated as identical membership across every vendor name or as proof of attribution for every publicly named victim. [UNC3944 investigation](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/).
 
 **Inferred:** join factor changes to subsequent sessions and sensitive application actions using actual account and tenant keys. A failed MFA event is not necessarily a denied push or a fraud report. Provider-side transfers may bypass the customer's endpoint and perimeter monitoring, but visibility varies: identity, application, connector, provider and destination records may still exist. Do not claim that an extortion demand is the only possible discovery path.
+
+<ResearchFigure id="case-unc3944" />
 
 ### 4.8 Storm-0558 and OAuth Abuse Campaigns (2023)
 
@@ -1180,6 +1233,8 @@ This is an important positive example of the article's thesis: available audit d
 
 **Inferred:** unexpected application-to-resource relationships can guide investigation. VM creation by a service principal is also normal automation; principal ownership, role, change history and workload purpose are essential.
 
+<ResearchFigure id="case-storm" />
+
 ### 4.9 Volt Typhoon (2023–2024)
 
 **Source-reported:** Microsoft describes credential extraction with `ntdsutil` IFM against domain controllers, alongside living-off-the-land activity and proxy infrastructure. The execution host and any remote initiation host must be distinguished. [Microsoft, May 24, 2023](https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/).
@@ -1187,6 +1242,8 @@ This is an important positive example of the article's thesis: available audit d
 **Inferred:** examine IFM creation **on a domain controller** by an unexpected principal or outside approved backup activity, particularly with subsequent staging and movement. A non-DC-only filter misses the relevant execution context. Process arguments are useful but not the only evidence: file, authentication, network and change records can contribute.
 
 For log clearing, distinguish Security event **1102** from **104** in the System channel from the Eventlog provider. Record which channel was cleared; do not map `wevtutil cl System` to Security 1102. Collection gaps require independent health evidence before attributing intentional impairment. Legitimate maintenance remains a competing explanation. [Security 1102 reference](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-1102).
+
+<ResearchFigure id="case-volt" />
 
 ### 4.10 APT41 / Winnti — MESSAGETAP and Database Exfiltration {#410-apt41--winnti--messagetap-2019-and-m-trends-2025-exfiltration-2024}
 
@@ -1198,11 +1255,15 @@ For log clearing, distinguish Security event **1102** from **104** in the System
 
 **Inferred:** evaluate unexpected exports and new storage destinations against the database server's role and approved jobs. Both an export utility and cloud storage can be legitimate.
 
+<ResearchFigure id="case-apt41" />
+
 ### 4.11 CISA AA22–277A — Impacket Lateral Movement in Defense Industrial Base Compromise (2022)
 
 The advisory reports Impacket and data theft without assigning a named actor. Tool names do not identify an execution mode: `secretsdump.py` is not synonymous with DCSync, and ordinary `wmiexec.py` execution is not a permanent WMI event subscription. [CISA AA22–277A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a).
 
 **Inferred:** correlate remote logons and WMI-related process ancestry; examine replication-specific evidence where DCSync is suspected. WMI Operational 5861 concerns permanent subscription activity, not every remote WMI execution. TCP/135 followed by dynamic RPC ports is not sufficient to identify DRSUAPI. Event 4662 also needs configured auditing and source enrichment, discussed below.
+
+<ResearchFigure id="case-impacket" />
 
 ### 4.12 Lazarus Group / DPRK — 3CX Supply Chain (2023)
 
@@ -1210,9 +1271,13 @@ The advisory reports Impacket and data theft without assigning a named actor. To
 
 **Inferred:** investigate unusual destinations and subsequent execution associated with a normally trusted application. A valid signature is not a benign verdict. Vendor-reported detection is evidence of those observations, not an independent comparison of all EDR products or proof that a proposed destination-rarity rule would perform equally well.
 
+<ResearchFigure id="case-3cx" />
+
 ## 5. Detection by Log Source and Security Device
 
 A telemetry contract states what must actually be collected: provider/channel, event version, fields, entity keys, clock, parser, retention, collection health and enrichment. A vendor feature list is not a measurement of coverage. Verify prerequisites with generated test activity and raw records before writing analytics against normalized fields.
+
+<ResearchFigure id="telemetry-contract" />
 
 ### 5.1 Windows Security Event Log
 
@@ -1282,6 +1347,8 @@ Empirical character entropy is `H = -sum(p(c) * log2(p(c)))`, in bits per charac
 
 Normalize casing and label selection, handle internationalized names explicitly, and test legitimate encoded names. Section 8's implementation is an ASCII-label feature extractor, not a tunneling verdict. No SUNBURST-specific entropy range or universal alert threshold is claimed.
 
+<ResearchFigure id="dns-entropy" />
+
 ### 5.8 SaaS Audit Logs
 
 Separate event counts, distinct objects, records and bytes. The example below counts download audit events; it does not infer bytes from `OfficeObjectId`. If authoritative object sizes or transfer counters are available, document that separate enrichment and its limitations.
@@ -1310,6 +1377,8 @@ Event 4769 can support investigation when the relevant DC auditing is enabled. P
 
 Do not exclude every machine account or service merely because its name ends in `$`. Such filtering is an explicit scope reduction with blind spots, not a proof of legitimacy. Section 8 excludes `krbtgt` from its service-breadth example, keeps computer principals visible, and reports encryption types rather than treating RC4 as a verdict. The distinct-service count is only as meaningful as the service identifier emitted by the source.
 
+<ResearchFigure id="credential-kerberoast" />
+
 ### 6.2 DCSync
 
 Replication abuse uses directory replication permissions to retrieve credential material. A tool name alone does not establish this mode. For event 4662, configure Directory Service Access auditing and an applicable SACL on the domain object. The SACL controls auditing; the DACL and effective directory permissions determine access. [Microsoft 4662 reference](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4662).
@@ -1320,6 +1389,8 @@ Event 4662 has no native client-IP field. Correlate to a suitable logon record u
 
 Approved replication should be an inventory-backed, time-bounded principal/source relationship. Entra Connect, backup and identity systems need verified exceptions—not blanket `MSOL_*`, `AADConnect*` or computer-account exclusions. Compromise of an approved source remains a blind spot. The provided rule reports candidates; it does not silently discard approved-looking accounts.
 
+<ResearchFigure id="credential-dcsync" />
+
 ### 6.3 Pass-the-Hash
 
 Pass-the-Hash uses captured credential material to perform authentication without the cleartext password. It does not transmit the NTLM hash directly as a password; distinguish the hash from the challenge-response exchange. [MITRE T1550.002](https://attack.mitre.org/techniques/T1550/002/).
@@ -1328,11 +1399,15 @@ Target-side NTLM network logons (4624, type 3) are common and do not by themselv
 
 Correlate identity, source process, destination, authentication and authorized administration. Absence of a prior event is meaningful only with adequate collection, retention and clock alignment. Section 8 intentionally returns two different evidence classes, not a binary PtH classification.
 
+<ResearchFigure id="credential-pth" />
+
 ### 6.4 LSASS Credential Dumping (Sysmon Event 10)
 
 LSASS process access can support credential-access investigations, but legitimate security and diagnostic software also accesses it. `GrantedAccess` is a bitmask: `0x1010` combines VM read and limited query information; `0x1410` additionally includes query information. These masks do not certify malicious intent. [Microsoft process-access rights](https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights).
 
 Use the source/target process identifiers, actual access rights, signer/hash, ancestry, call trace and available memory evidence. An unresolved call trace is not proof of injection. A familiar filename, signature or trusted directory is not a safe universal exclusion. Exceptions require provenance, scope, owner, expiry and periodic review; they can otherwise conceal abuse of a trusted process.
+
+<ResearchFigure id="credential-lsass" />
 
 ## 7. How Attackers Suppress Anomaly Visibility
 
@@ -1350,6 +1425,8 @@ Separate reported tradecraft from untested claims about defeating a specific det
 
 The campaign-specific sources and boundaries are in Section 4. For an operational analytic, publish its expected blind spots next to the query—not only in a distant disclaimer.
 
+<ResearchFigure id="visibility-limits" />
+
 ## 8. Detection Engineering Patterns and Logic Examples
 
 ### 8.1 Four Core Design Patterns
@@ -1361,6 +1438,8 @@ The campaign-specific sources and boundaries are in Section 4. For an operationa
 **State change:** inspect a new permission, identity relationship or configuration state against policy and approved change. A deterministic condition is not the same as a deterministic malicious verdict.
 
 **Corroboration:** combine independent evidence while measuring what each extra gate removes. If a gate intersects a candidate set, it can remove true positives as well as false positives. Do not promise improved precision without a recall trade-off.
+
+<ResearchFigure id="analytic-contract" />
 
 ### 8.2 Detection Logic Examples
 
@@ -1608,6 +1687,8 @@ Full outputs, input-record hashes, query hashes, engine identity and limits are 
 
 The public recordings are provided by Splunk's Attack Data repository under Apache-2.0, pinned in `datasets.json`. They are lab activity, not a representative mix of labeled enterprise events. Query output rows are not a true-positive denominator. A recording can contain legitimate background behavior. Zero matches may expose an analytic's scope limitation rather than an ingestion or execution failure. [Dataset repository](https://github.com/splunk/attack_data).
 
+<ResearchFigure id="validation-levels" />
+
 ## 9. Implementation Guidance
 
 ### 9.1 Instrument Before Modelling
@@ -1642,7 +1723,11 @@ Use only authorized, isolated test identities and systems. This revision replays
 
 Positive cases are necessary but insufficient. Include approved replication, alternate-credential administration, software deployment, backups, browser/DNS diversity, scheduled downloads, missing logs, duplicate events and parser changes. A successful lab exercise does not estimate a production false-positive rate.
 
+<ResearchFigure id="operational-workflow" />
+
 ### 9.6 A reproducible statistical study
+
+<ResearchFigure id="study-splits" />
 
 For a real deployment study, predeclare the target population, prediction unit, labels, costs and evaluation period. Separate chronological training, validation and testing; keep future observations out of every feature and baseline. Where relevant, separate campaigns or entities to test generalization. Do not tune on the held-out test or retrospectively select only incidents the detector catches.
 
@@ -1663,6 +1748,8 @@ In this constructed example, robust scale is not a free improvement: role variat
 
 LANL's public authentication data could support a larger, carefully scoped follow-up. Its anonymized DNS relationship data is not suitable for raw-label entropy evaluation, and its red-team labels do not exhaust all behavior. Dataset suitability must be checked per analytic. [LANL dataset specification](https://csr.lanl.gov/data/cyber1/).
 
+<ResearchFigure id="study-results" />
+
 ### 9.7 Revision, reproducibility and remaining work
 
 The machine-readable issue ledger distinguishes textual correction, functional execution, unresolved external evidence and production validation. It reconciles the earlier audit and external review rather than claiming their counts are independent. Download the <a href="https://1200km.com/articles/research/anomaly-fact-audit.md" target="_self">audit</a>, <a href="https://1200km.com/articles/research/anomaly-validation/bundle.json" target="_self">validation bundle</a> and <a href="https://1200km.com/articles/research/anomaly-incidents.json" target="_self">incident register</a>.
@@ -1671,10 +1758,16 @@ The canonical URL, case anchors and topic tags are retained. Tags indicate relev
 
 ### 9.8 Historical illustrations and corrected navigation
 
+The current edition has **43 new inline diagrams** beside the relevant explanations: statistical concepts, all 14 operational anomaly families and multi-event correlation, incident evidence, telemetry, credential analytics and evaluation. Each includes an evidence label, nearby sources, a text equivalent and a full-size SVG. Numerical charts are generated from the committed results, not manually transcribed. The downloadable <a href="https://1200km.com/articles/research/anomaly-visuals/manifest.json" target="_self">visual manifest</a> records placement, data and source hashes. This is an author-reviewed replacement set, not independent correctness certification.
+
 The original media are retained below for historical continuity, **not as validated technical guidance**. Older diagrams can contain superseded taxonomy, field assumptions or claims. The corrected text, source-specific citations, telemetry contracts and test artifacts take precedence. This avoids leaving an old infographic to silently contradict a corrected paragraph. No image file or existing article URL was deleted.
 
 <details>
 <summary>Historical figures from the original edition — superseded, not implementation guidance</summary>
+
+**Historical figure 1.** Original illustration retained; consult the corrected text for current definitions, event fields and evidence boundaries.
+
+<img src="https://cdn-images-1.medium.com/max/800/1*1YpT-qIBgCt11NZ3slY3vw.png" alt="Cover image" width="2752" height="1536" loading="eager" fetchpriority="high" decoding="async" />
 
 **Historical figure 2.** Original illustration retained; consult the corrected text for current definitions, event fields and evidence boundaries.
 

@@ -3,6 +3,7 @@
 import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {insertFigures} from './lib/anomaly-visuals.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const data = JSON.parse(readFileSync(resolve(root, 'research/anomaly-incidents.json')));
@@ -99,6 +100,7 @@ const refs = ['### Incident-source register (September 2026 expansion) {#inciden
 text = updateBlock(text, 'sources', refs) ?? text.replace('## 11. References\n', '## 11. References\n\n' + marker('sources',refs) + '\n');
 
 const asset = resolve(root, 'static/research/anomaly-incidents.json');
+text = insertFigures(text);
 const serialized = JSON.stringify(data, null, 2) + '\n';
 if (process.argv.includes('--check')) {
   if (text !== old) throw Error('Incident expansion is stale; run node scripts/render_anomaly_incidents.mjs');

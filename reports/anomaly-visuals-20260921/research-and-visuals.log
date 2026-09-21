@@ -1,0 +1,135 @@
+
+> medium-blog-navigation@0.1.0 research:anomalies:check
+> node scripts/build_anomaly_visuals.mjs --check && node scripts/render_anomaly_incidents.mjs --check && node scripts/build_anomaly_revision.mjs --check && node scripts/build_anomaly_audit.mjs --check && node scripts/validate_anomaly_incidents.mjs && node --test tests/anomaly-revision.test.mjs tests/anomaly-visuals.test.mjs
+
+Verified 43 figures / 86 SVG assets with evidence-bound manifest.
+Incident rendering current: 15 types, 30 mappings, 17 cases.
+Revision current: 8 canonical queries, 44 preserved historical images, 17 legacy anchor aliases.
+Reconciled audit: 59 entries; {"corrected_in_revision":54,"documented_conflict_not_resolved_upstream":1,"historical_not_revalidated":1,"not_established":2,"requires_publication_access":1}
+PASS evidence: 15 types, 30 mappings, 17 distinct cases, 17 sources, 17 techniques.
+PASS integration: 4 reciprocal article links, linked tags, source/asset parity, one authored H1.
+PASS preservation: all 192 article routes/canonicals unchanged; 44 historical images retained, 11 superseded blocks archived, 8 maintained KQL examples.
+TAP version 13
+# Subtest: all previous article anchors are retained without duplicates
+ok 1 - all previous article anchors are retained without duplicates
+  ---
+  duration_ms: 3.337809
+  type: 'test'
+  ...
+# Subtest: local TOC fragments resolve
+ok 2 - local TOC fragments resolve
+  ---
+  duration_ms: 1.34423
+  type: 'test'
+  ...
+# Subtest: one title, subtitle, meaningful footer and no orphaned query placeholders
+ok 3 - one title, subtitle, meaningful footer and no orphaned query placeholders
+  ---
+  duration_ms: 0.806451
+  type: 'test'
+  ...
+# Subtest: all original findings and review rows have reconciled dispositions
+ok 4 - all original findings and review rows have reconciled dispositions
+  ---
+  duration_ms: 0.470362
+  type: 'test'
+  ...
+# Subtest: rendered KQL is exactly the tested canonical query source
+ok 5 - rendered KQL is exactly the tested canonical query source
+  ---
+  duration_ms: 1.450814
+  type: 'test'
+  ...
+# Subtest: public replay preserves the single-ticket miss and real source correlation
+ok 6 - public replay preserves the single-ticket miss and real source correlation
+  ---
+  duration_ms: 0.252359
+  type: 'test'
+  ...
+# Subtest: synthetic study is labeled and does not hide gate recall loss
+ok 7 - synthetic study is labeled and does not hide gate recall loss
+  ---
+  duration_ms: 0.651178
+  type: 'test'
+  ...
+# Subtest: corrected guidance does not regress to known dangerous claims
+ok 8 - corrected guidance does not regress to known dangerous claims
+  ---
+  duration_ms: 0.809922
+  type: 'test'
+  ...
+# Subtest: all historical images and code remain available but explicitly superseded
+ok 9 - all historical images and code remain available but explicitly superseded
+  ---
+  duration_ms: 1.341809
+  type: 'test'
+  ...
+# Subtest: 43 distinct figures cover all 15 topics and 12 campaign subsections
+ok 10 - 43 distinct figures cover all 15 topics and 12 campaign subsections
+  ---
+  duration_ms: 2.127399
+  type: 'test'
+  ...
+# Subtest: every figure is inline exactly once, in numbered reading order, before the historical appendix
+ok 11 - every figure is inline exactly once, in numbered reading order, before the historical appendix
+  ---
+  duration_ms: 16.944862
+  type: 'test'
+  ...
+# Subtest: figure placements fail closed if a required boundary changes
+ok 12 - figure placements fail closed if a required boundary changes
+  ---
+  duration_ms: 11.07224
+  type: 'test'
+  ...
+# Subtest: each graphic has evidence labels, source links, a boundary and accessible metadata
+ok 13 - each graphic has evidence labels, source links, a boundary and accessible metadata
+  ---
+  duration_ms: 67.156183
+  type: 'test'
+  ...
+# Subtest: 86 local SVGs match deterministic rendering and evidence hashes
+ok 14 - 86 local SVGs match deterministic rendering and evidence hashes
+  ---
+  duration_ms: 47.03921
+  type: 'test'
+  ...
+# Subtest: base-rate arithmetic and entropy examples are exact
+ok 15 - base-rate arithmetic and entropy examples are exact
+  ---
+  duration_ms: 0.245801
+  type: 'test'
+  ...
+# Subtest: the social-preview PNG is bound to the current SVG and catalog metadata
+ok 16 - the social-preview PNG is bound to the current SVG and catalog metadata
+  ---
+  duration_ms: 0.582928
+  type: 'test'
+  ...
+# Subtest: measured visuals use the recorded outputs without concealing the zero-match case
+ok 17 - measured visuals use the recorded outputs without concealing the zero-match case
+  ---
+  duration_ms: 2.065968
+  type: 'test'
+  ...
+# Subtest: no old images or measured query evidence is overwritten by the visual replacement
+ok 18 - no old images or measured query evidence is overwritten by the visual replacement
+  ---
+  duration_ms: 0.938386
+  type: 'test'
+  ...
+# Subtest: critical incident corrections retain the right source and scope
+ok 19 - critical incident corrections retain the right source and scope
+  ---
+  duration_ms: 0.565512
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 237.181897

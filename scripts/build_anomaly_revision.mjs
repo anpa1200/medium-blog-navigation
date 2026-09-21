@@ -5,6 +5,7 @@ import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import Slugger from 'github-slugger';
+import {insertFigures} from './lib/anomaly-visuals.mjs';
 
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const read=p=>readFileSync(resolve(root,p),'utf8');
@@ -48,7 +49,7 @@ let stats=`**Synthetic experiment, not enterprise performance:** ${study.dataset
 for(const row of study.models){const r=row.test;stats+=`| ${row.model} | ${r.tp} | ${r.fp} | ${r.fn} | ${r.tn} | ${(100*r.precision).toFixed(1)}% | ${(100*r.recall).toFixed(1)}% |\n`;}
 stats+='\nIn this constructed example, robust scale is not a free improvement: role variation, sparse counts, scheduled work and legitimate test-period drift affect the results. Corroboration removes both benign alerts and generated attacks. The generator deliberately makes the corroborating signal more likely for attacks; its apparent usefulness is therefore an assumption of this toy world, not a discovery about real telemetry. Read the [study specification and results](https://1200km.com/articles/research/anomaly-validation/synthetic-study.json) and [generated dataset](https://1200km.com/articles/research/anomaly-validation/synthetic-study.csv). Reproduce with `python3 research/anomaly-validation/statistical_study.py`.';
 body=body.replace('<!-- statistical-results -->',()=>stats);
-body=body.replace('<!-- historical-media -->',()=>'<details>\n<summary>Historical figures from the original edition — superseded, not implementation guidance</summary>\n\n'+inventory.images.slice(1).map((image,i)=>`**Historical figure ${i+2}.** Original illustration retained; consult the corrected text for current definitions, event fields and evidence boundaries.\n\n${image}`).join('\n\n')+'\n\n</details>');
+body=body.replace('<!-- historical-media -->',()=>'<details>\n<summary>Historical figures from the original edition — superseded, not implementation guidance</summary>\n\n'+inventory.images.map((image,i)=>`**Historical figure ${i+1}.** Original illustration retained; consult the corrected text for current definitions, event fields and evidence boundaries.\n\n${image}`).join('\n\n')+'\n\n</details>');
 function anchors(text){
   const s=new Slugger(),ids=[];
   text=text.replace(/^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm,'');
@@ -60,7 +61,7 @@ function anchors(text){
 const present=new Set(anchors(prefix+body));
 const missing=inventory.anchors.filter(id=>!present.has(id));
 body=body.replace('<!-- preserved-anchors -->',()=>missing.map(id=>`<span id="${id}"></span>`).join('\n'));
-const output=(prefix+body).replace(/\[([^\]]+)\]\((https:\/\/1200km\.com\/[^\s)]*)\)/g,
+const output=insertFigures(prefix+body).replace(/\[([^\]]+)\]\((https:\/\/1200km\.com\/[^\s)]*)\)/g,
   (_,label,url)=>`<a href="${url}" target="_self">${label}</a>`);
 const historical='# Historical query exports — superseded and unsafe to deploy\n\nThese are preserved verbatim from the pre-revision article for auditability. They contain documented syntax, schema and logic errors. Use the maintained query files and their explicit validation status instead.\n\n'+inventory.legacy_code.map((code,i)=>`## Historical block ${i+1}\n\n${code}`).join('\n\n')+'\n';
 const bundle={schema_version:1,article_id:article.id,contracts:JSON.parse(read(`${validation}/contracts.json`)),datasets:JSON.parse(read(`${validation}/datasets.json`)),queries,functional,synthetic_study:study};

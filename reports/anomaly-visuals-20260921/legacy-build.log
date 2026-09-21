@@ -1,0 +1,16 @@
+
+> medium-blog-navigation@0.1.0 build:legacy
+> python3 scripts/clean_build.py && docusaurus build && python3 scripts/normalize_built_article_headings.py && python3 scripts/rewrite_legacy_canonicals.py
+
+
+ ------------------------------------------------------------------------------                                                                                                         Update available 3.10.1 → 3.10.2                                                                                                                To upgrade Docusaurus packages with the latest version, run the                                       following command:                                        `npm i @docusaurus/core@latest @docusaurus/preset-classic@latest                @docusaurus/module-type-aliases@latest @docusaurus/types@latest`                                                                                         ------------------------------------------------------------------------------ 
+
+[INFO] [en] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 49.20s
+[webpackbar] ✔ Client: Compiled successfully in 51.69s
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.
+Normalized 67 rendered headings across 3 article pages.
+Rewrote canonical metadata for 194 legacy archive pages from https://1200km.com/medium-blog-navigation to https://1200km.com/articles.

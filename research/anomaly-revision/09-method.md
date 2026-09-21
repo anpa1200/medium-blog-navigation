@@ -52,6 +52,8 @@ The canonical URL, case anchors and topic tags are retained. Tags indicate relev
 
 ### 9.8 Historical illustrations and corrected navigation
 
+The current edition has **43 new inline diagrams** beside the relevant explanations: statistical concepts, all 14 operational anomaly families and multi-event correlation, incident evidence, telemetry, credential analytics and evaluation. Each includes an evidence label, nearby sources, a text equivalent and a full-size SVG. Numerical charts are generated from the committed results, not manually transcribed. The downloadable [visual manifest](https://1200km.com/articles/research/anomaly-visuals/manifest.json) records placement, data and source hashes. This is an author-reviewed replacement set, not independent correctness certification.
+
 The original media are retained below for historical continuity, **not as validated technical guidance**. Older diagrams can contain superseded taxonomy, field assumptions or claims. The corrected text, source-specific citations, telemetry contracts and test artifacts take precedence. This avoids leaving an old infographic to silently contradict a corrected paragraph. No image file or existing article URL was deleted.
 
 <!-- historical-media -->
