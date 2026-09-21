@@ -1,0 +1,8 @@
+// Direct child relation only; HostRole is inventory enrichment, not guessed from a filename.
+EndpointEvents
+| where Provider == "Microsoft-Windows-Sysmon" and EventID == 1 and HostRole == "web-server"
+| where ParentImage endswith "\\w3wp.exe" or ParentImage endswith "\\UMWorkerProcess.exe"
+| where Image endswith "\\cmd.exe" or Image endswith "\\powershell.exe" or Image endswith "\\pwsh.exe"
+| summarize arg_max(TimeGenerated, *) by Computer, EvidenceId
+| project TimeGenerated, Computer, EvidenceId, Image, ParentImage, CommandLine, HostRole
+| order by EvidenceId asc
