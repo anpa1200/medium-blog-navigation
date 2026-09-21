@@ -1,0 +1,56 @@
+{
+  "scope": "Exact arithmetic over synthetic examples, not incident data or a benchmark",
+  "dns": [
+    {
+      "label": "aaaa",
+      "length": 4,
+      "frequencies": {
+        "a": 4
+      },
+      "empirical_entropy_bits_per_character": 0.0
+    },
+    {
+      "label": "abab",
+      "length": 4,
+      "frequencies": {
+        "a": 2,
+        "b": 2
+      },
+      "empirical_entropy_bits_per_character": 1.0
+    },
+    {
+      "label": "abcd",
+      "length": 4,
+      "frequencies": {
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": 1
+      },
+      "empirical_entropy_bits_per_character": 2.0
+    }
+  ],
+  "saas": {
+    "records": [
+      {
+        "illustrative_event_id": "E1",
+        "operation": "FileDownloaded",
+        "object_id": "A"
+      },
+      {
+        "illustrative_event_id": "E2",
+        "operation": "FileDownloaded",
+        "object_id": "A"
+      },
+      {
+        "illustrative_event_id": "E3",
+        "operation": "FileDownloaded",
+        "object_id": "A"
+      }
+    ],
+    "audit_events": 3,
+    "distinct_objects": 1,
+    "transferred_bytes": null,
+    "unknown_is_not_zero": true
+  }
+}
