@@ -20,6 +20,15 @@ function add(url, kind) {
   if (anchor && !target.anchors.includes(anchor)) target.anchors.push(anchor);
 }
 Object.values(data.sources).forEach(source => add(source.url, 'primary-source'));
+if (process.argv.includes('--revision')) {
+  const article = catalog.find(row => row.id === data.article_id);
+  const markdown = readFileSync(resolve(root, `docs/articles/${article.local_path}.md`), 'utf8');
+  for (const match of markdown.matchAll(/\]\((https:\/\/[^\s)]+)\)/g)) {
+    const url = new URL(match[1]);
+    // New local assets are verified in the build, not falsely checked as already deployed.
+    if (url.hostname !== '1200km.com' && !url.hostname.endsWith('medium.com') && !url.hostname.endsWith('linkedin.com')) add(url.href, 'revision-reference');
+  }
+}
 for (const type of data.types) {
   add(`https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/#${type.atlas}`, 'atlas');
   type.article_links.forEach(id => add(`https://1200km.com/articles/read/${catalog.find(row => row.id === id).local_path}/`, 'related-article'));
@@ -57,7 +66,7 @@ await Promise.all(Array.from({length: 4}, () => worker()));
 results.sort((a,b) => a.url.localeCompare(b.url));
 const failed = results.filter(result => !result.ok);
 const report = {checked_at: new Date().toISOString(), scope: 'Public link availability, destination identity and Atlas fragments; not independent reproduction of incident claims or publication verification.', total: results.length, passed: results.length - failed.length, failed: failed.length, results};
-const reportDir = resolve(root, 'reports/anomaly-incidents-20260921');
+const reportDir = resolve(root, process.argv.includes('--revision') ? 'reports/anomaly-technical-revision-20260921' : 'reports/anomaly-incidents-20260921');
 mkdirSync(reportDir, {recursive: true});
 writeFileSync(resolve(reportDir, 'link-check.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(`RESULT ${report.passed}/${report.total} passed; ${report.failed} require review.`);

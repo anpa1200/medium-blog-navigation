@@ -1,0 +1,1822 @@
+{
+  "checked_at": "2026-09-21T09:32:36.823Z",
+  "scope": "Public link availability, destination identity and Atlas fragments; not independent reproduction of incident claims or publication verification.",
+  "total": 99,
+  "passed": 96,
+  "failed": 3,
+  "results": [
+    {
+      "url": "https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/",
+      "kinds": [
+        "atlas"
+      ],
+      "anchors": [
+        "12-magnitude-anomaly",
+        "14-rate-anomaly",
+        "21-temporal-context-anomaly",
+        "8-peer-group-anomaly",
+        "60-sequence-order-anomaly",
+        "75-graph-evolution-anomaly",
+        "80-spatial-context-anomaly",
+        "3-contextual-anomaly",
+        "84-rare-category-anomaly",
+        "48-multivariate-combination-anomaly",
+        "101-missingness-anomaly"
+      ],
+      "status": 200,
+      "final_url": "https://1200km.com/anomaly-detection-atlas/statistical-anomaly-taxonomy/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Statistical Anomaly Taxonomy | Anomaly Detection Atlas",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 152149,
+      "sha256": "25a48fde6b37e31766e8be20c3ef4eb694650820ef5e8520f034a1cb0591eb80",
+      "elapsed_ms": 394,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/articles/read/2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426/",
+      "kinds": [
+        "related-article"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/articles/read/2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "From Threat Intelligence to Detection: A Practitioner’s Guide | 1200km",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 598643,
+      "sha256": "994da89d2faf2354476c2be448ccebd811ae92a79d11aec199a1eb9886da1038",
+      "elapsed_ms": 238,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/articles/read/2026/2026-04-22-detecting-malicious-insider-activity-a-technical-detection-engineering-guide-3c3b41e95e82/",
+      "kinds": [
+        "related-article"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/articles/read/2026/2026-04-22-detecting-malicious-insider-activity-a-technical-detection-engineering-guide-3c3b41e95e82/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Detecting Malicious Insider Activity: A Technical Detection Engineering Guide | 1200km",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 239117,
+      "sha256": "84509cd7310c045095bbe7736933416cc5e2fa12592eb02c383da88fb1b3d1ea",
+      "elapsed_ms": 191,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/articles/read/2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556/",
+      "kinds": [
+        "related-article"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/articles/read/2026/2026-07-11-newest-detection-engineering-techniques-from-rules-to-validated-security-telemetry-a5ccb46d5556/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Newest Detection Engineering Techniques: From Rules to Validated Security Telemetry | 1200km",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 212172,
+      "sha256": "aa8d5c282ec5ea5b59765c427030dd8e2bb554fd81c4564f057b737f659534c8",
+      "elapsed_ms": 360,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/",
+      "kinds": [
+        "related-article"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test | 1200km",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 132770,
+      "sha256": "768eb26018c756d600653f392df513ce26014e91744c9721fb4e5868cf9340ad",
+      "elapsed_ms": 312,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1040/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1040/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1040 Network Sniffing | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 29172,
+      "sha256": "435b1cb750eea30f7da583563c2937643104f46d1c7469ed1daf197f1cece95b",
+      "elapsed_ms": 188,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1053.005/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1053.005/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1053.005 Scheduled Task | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 40094,
+      "sha256": "c1587a9a4b16316b56be9078a4241b155a941159904a09b24c1618c4b3671322",
+      "elapsed_ms": 178,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1059.001/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1059.001/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1059.001 PowerShell | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 42649,
+      "sha256": "ebbd0e20f12e1fdcc07e527a6c5b732c2610b7086cc169827bc6c26ad652a542",
+      "elapsed_ms": 186,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1059.003/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1059.003/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1059.003 Windows Command Shell | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 34003,
+      "sha256": "bdd342fbf11271a22e6caacdadeb40e71744be75a2198a62769ac308b8e422f9",
+      "elapsed_ms": 182,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1071.004/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1071.004/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1071.004 DNS | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 24310,
+      "sha256": "cf97a211b1625b41c780b523e6c1aaa5e312133591c0d2110218fbe8c773387e",
+      "elapsed_ms": 162,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1078.004/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1078.004/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1078.004 Cloud Accounts | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 34787,
+      "sha256": "f2ec578aba8bbf856a624c397bbaa18e37cabad69a4083581e276bacc5922f34",
+      "elapsed_ms": 190,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1087.002/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1087.002/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1087.002 Domain Account | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 27802,
+      "sha256": "ba577ca3881c4cee7d822eb83bff3653dcbd2c572d34d92512becd2c58a572f9",
+      "elapsed_ms": 172,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1098.005/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1098.005/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1098.005 Device Registration | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 22009,
+      "sha256": "c896b97b7804353bf2679b30b547d96c97334fb857824fad6962c00356a7abd2",
+      "elapsed_ms": 176,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1098/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1098/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1098 Account Manipulation | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 31091,
+      "sha256": "1f7558a5e5ee58c3513b8f570933ef28dd18334436c5ba8df16dca4849876686",
+      "elapsed_ms": 184,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1110.003/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1110.003/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1110.003 Password Spraying | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 27011,
+      "sha256": "cfb98a68fc8cfec256e2725992e8ebf819cc8b37d0fc0edf705573f2fb65cb5d",
+      "elapsed_ms": 178,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1496/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1496/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1496 Resource Hijacking | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 21297,
+      "sha256": "d3c801cf759584f03dcb677d8176efe0b4513ae55030656ef9da278f51d690d2",
+      "elapsed_ms": 158,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1499/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1499/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1499 Endpoint Denial of Service | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 25297,
+      "sha256": "c31631d298588a2e52d7814bec442a4a90f410dce0faa76e0c53024baba3331c",
+      "elapsed_ms": 167,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1505.003/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1505.003/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1505.003 Web Shell | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 32866,
+      "sha256": "31b70ca7425287c99d3648fd11194cce7d370df53699243f7755a08c49b8c711",
+      "elapsed_ms": 390,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1550.001/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1550.001/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1550.001 Application Access Token | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 31122,
+      "sha256": "ddc1d53eefba5f9c6bdea14ec0047365f2082392ce8dfe41769c43a8a7b55971",
+      "elapsed_ms": 174,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1567.002/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1567.002/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1567.002 Exfiltration to Cloud Storage | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 27812,
+      "sha256": "a397c21302a885b8c43844a275cff1b2bbb18cd6eb2d8a1bab197bf6253e78ef",
+      "elapsed_ms": 164,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1685.002/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1685.002/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1685.002 Disable or Modify Cloud Log | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 19304,
+      "sha256": "4b48bf7cf3d611966fb81516329f38da35cd9be29bea6e4032fe8e3a6251a3e2",
+      "elapsed_ms": 184,
+      "ok": true
+    },
+    {
+      "url": "https://1200km.com/threat-matrix/techniques/T1685/",
+      "kinds": [
+        "ecosystem-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://1200km.com/threat-matrix/techniques/T1685/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "T1685 Disable or Modify Tools | AdversaryGraph",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 31328,
+      "sha256": "b7cdf18d9e201c668ab8796c45cc2f84333aff0821b348a09d4ad7e88482ad97",
+      "elapsed_ms": 207,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/resources/updates/updates-april-2026/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/resources/updates/updates-april-2026/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Updates - Updates - April 2026 | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 138990,
+      "sha256": "990fb2740a162b4cc335521301a4e1b6e21dbbc056d5897b8e1c0ce23d9878ff",
+      "elapsed_ms": 216,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/resources/versions/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/resources/versions/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Version History | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 41407,
+      "sha256": "5e81954c0c2c10abf8c7204314ede788dc2dab0b1033cb240a6c1eaeada96445",
+      "elapsed_ms": 64,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1040/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1040/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Network Sniffing, Technique T1040 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 95775,
+      "sha256": "1405a5edaa44ad06122f718d3d198d09e66dd6286b54970674a3465dfa1a593e",
+      "elapsed_ms": 177,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1053/005/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1053/005/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Scheduled Task/Job: Scheduled Task, Sub-technique T1053.005 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 406927,
+      "sha256": "e15c97af92dc046dc56efe51567be0f4254051434f48ba8141e25a3735bba1a2",
+      "elapsed_ms": 192,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1059/001/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1059/001/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Command and Scripting Interpreter: PowerShell, Sub-technique T1059.001 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 544169,
+      "sha256": "cca098c14582208cbfdba637928f9088a5f81ad1b18b6809b0e45a2a5d98be60",
+      "elapsed_ms": 160,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1059/003/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1059/003/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Command and Scripting Interpreter: Windows Command Shell, Sub-technique T1059.003 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 732573,
+      "sha256": "7ac34039ca7407b4cbdfdaad56651245247f8daa4ccb892d8eeaf6659dc7ed04",
+      "elapsed_ms": 202,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1071/004/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1071/004/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Application Layer Protocol: DNS, Sub-technique T1071.004 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 156568,
+      "sha256": "7c06c02d3d1533f169c3a57888f4670876e4e15976e813e093cfa61c6d7256ab",
+      "elapsed_ms": 70,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1078/004/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1078/004/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Valid Accounts: Cloud Accounts, Sub-technique T1078.004 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 106425,
+      "sha256": "ac60a1023a73c8aa0f87ec2a59198e76ad75c287a3a6b852be29b8d5605b4aca",
+      "elapsed_ms": 69,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1087/002/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1087/002/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Account Discovery: Domain Account, Sub-technique T1087.002 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 153591,
+      "sha256": "1e8f32d62d66cb6f64fd859bf916e5ffc5a8b0f9c675e8658e5cb7e756094dbc",
+      "elapsed_ms": 164,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1098/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1098/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Account Manipulation, Technique T1098 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 69091,
+      "sha256": "037e291fc43fe71bba2c4e18579ebc978fb6d4c9cd1e739ecf2a0e7ab800537b",
+      "elapsed_ms": 71,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1098/005/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1098/005/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Account Manipulation: Device Registration, Sub-technique T1098.005 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 59413,
+      "sha256": "65e2edeb0c6c90c9a1abc0940efc1930a630d618808724482021d7234b5678ff",
+      "elapsed_ms": 63,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1110/003/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1110/003/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Brute Force: Password Spraying, Sub-technique T1110.003 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 81983,
+      "sha256": "0fa2928fa18b93e5de62d39a6a90b01f5220058f9976b552fd61233dc078f433",
+      "elapsed_ms": 66,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1496/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1496/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Resource Hijacking, Technique T1496 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 41539,
+      "sha256": "b0ba65c34168e02e554edef328bbb96ae1602222bb0bd8bf1fdf68eb1291dd3e",
+      "elapsed_ms": 67,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1499/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1499/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Endpoint Denial of Service, Technique T1499 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 56210,
+      "sha256": "9641791fdf146c96ad04eff935903dd04c9134fee1f56fdc0cde8637beb63289",
+      "elapsed_ms": 293,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1505/003/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1505/003/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Server Software Component: Web Shell, Sub-technique T1505.003 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 168338,
+      "sha256": "25b88568b00eb65444ee3956c65c093331e0c7d16e13e85c0b4ccaeb80e07942",
+      "elapsed_ms": 69,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1550/001/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1550/001/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Use Alternate Authentication Material: Application Access Token, Sub-technique T1550.001 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 81883,
+      "sha256": "454cfe4cdb2d394ab348daef2701abe5be0ee17f8f4a244abd297ad5625565ba",
+      "elapsed_ms": 190,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1550/002/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1550/002/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Use Alternate Authentication Material: Pass the Hash, Sub-technique T1550.002 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 78564,
+      "sha256": "11c644e49ba96ea16b3fc57db2e44105a76d48e4a9a047a42df3f9acbc03e177",
+      "elapsed_ms": 171,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1558/003/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1558/003/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Steal or Forge Kerberos Tickets: Kerberoasting, Sub-technique T1558.003 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 75804,
+      "sha256": "b053ae4306535c6ceba79a4d772a4473e3d43cfab8ca750af1512720a492cb63",
+      "elapsed_ms": 65,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1567/002/",
+      "kinds": [
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1567/002/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Exfiltration Over Web Service: Exfiltration to Cloud Storage, Sub-technique T1567.002 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 117101,
+      "sha256": "dad0f3773615bd02d8d6d73b4a586aec01fd79eb822603396f7a16d9190b25cc",
+      "elapsed_ms": 68,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1685/",
+      "kinds": [
+        "revision-reference",
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1685/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Disable or Modify Tools, Technique T1685 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 291657,
+      "sha256": "85e168025a7311dd4fff18a86e48b16ffc619bc2f11e2db97798bffca3e389fa",
+      "elapsed_ms": 258,
+      "ok": true
+    },
+    {
+      "url": "https://attack.mitre.org/techniques/T1685/002/",
+      "kinds": [
+        "revision-reference",
+        "official-attack"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://attack.mitre.org/techniques/T1685/002/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Disable or Modify Tools: Disable or Modify Cloud Log, Sub-technique T1685.002 - Enterprise | MITRE ATT&CK&reg;",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 47566,
+      "sha256": "c9ca5c769c0932d8059e237ceaf417600933b3d0e763a99dda636a99d5339262",
+      "elapsed_ms": 64,
+      "ok": true
+    },
+    {
+      "url": "https://blog.cloudflare.com/ja4-signals/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://blog.cloudflare.com/ja4-signals/",
+      "content_type": "text/html",
+      "title": "Advancing Threat Intelligence: JA4 fingerprints and inter-request signals | Cloudflare Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 314008,
+      "sha256": "37a235c97329610f1076e281ad5e9e1730de5e47efb20bfe3f339dfc98616ca7",
+      "elapsed_ms": 47,
+      "ok": true
+    },
+    {
+      "url": "https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/",
+      "content_type": "text/html",
+      "title": "HTTP/2 Rapid Reset: deconstructing the record-breaking attack | Cloudflare Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 341765,
+      "sha256": "eaef5fdde5c1487305d5b99a19db4ae805a8eadec922f1380b31b64fd8c0b1a9",
+      "elapsed_ms": 129,
+      "ok": true
+    },
+    {
+      "url": "https://blog.talosintelligence.com/dnspionage-campaign-targets-middle-east/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://blog.talosintelligence.com/dnspionage-campaign-targets-middle-east/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "DNSpionage Campaign Targets Middle East",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 89182,
+      "sha256": "c5cf2522f193f99636d4fd6b16459504ee68524eb5e7b6ae3488338a497ddb49",
+      "elapsed_ms": 158,
+      "ok": true
+    },
+    {
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-arisen-from-dust",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-arisen-from-dust",
+      "content_type": "text/html; charset=utf-8",
+      "title": "APT41 Has Arisen From the DUST | Google Cloud Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 392421,
+      "sha256": "ad012aaca8c0f9fc6d105894c5b5f7bee0cea8701875c8b49bc46927a072dad9",
+      "elapsed_ms": 3940,
+      "ok": true
+    },
+    {
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "SolarWinds Supply Chain Attack Uses SUNBURST Backdoor | Google Cloud Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 296036,
+      "sha256": "2b671eaddb019eec8257ba2258a392fb5e82761202d9e8e60f1d240d58775464",
+      "elapsed_ms": 4606,
+      "ok": true
+    },
+    {
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/messagetap-who-is-reading-your-text-messages/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/messagetap-who-is-reading-your-text-messages/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "MESSAGETAP: Who&#39;s Reading Your Text Messages? | Mandiant | Google Cloud Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 240714,
+      "sha256": "989b54d18ebbfb307cda9c2960f2f491af897b88b8ec4b82245315f94e9bfe22",
+      "elapsed_ms": 4380,
+      "ok": true
+    },
+    {
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/sunburst-additional-technical-details/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/sunburst-additional-technical-details/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "SUNBURST Additional Technical Details | Mandiant | Google Cloud Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 308319,
+      "sha256": "6c49d378b9ef5f7b34b1684ed0a0de82a4410a49a23ab00bb5b7ba104ca0d7af",
+      "elapsed_ms": 4805,
+      "ok": true
+    },
+    {
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "UNC3944 Targets SaaS Applications | Google Cloud Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 272148,
+      "sha256": "7b9799b5467b0d4093ed507ba98d85afdde14c8aa127e20f22d4a875d597701b",
+      "elapsed_ms": 5893,
+      "ok": true
+    },
+    {
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion",
+      "content_type": "text/html; charset=utf-8",
+      "title": "UNC5537 Targets Snowflake Customer Instances for Data Theft and Extortion | Google Cloud Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 270685,
+      "sha256": "b37f3f9e12fa3fbceeb89ec2d11fb8a2dc9085043cbc724011b96291507da792",
+      "elapsed_ms": 4588,
+      "ok": true
+    },
+    {
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 273910,
+      "sha256": "505dd7b61afca999e847663a4454a8456ed2dde63b0ab47982e449bc4a494225",
+      "elapsed_ms": 313,
+      "ok": true
+    },
+    {
+      "url": "https://conservancy.umn.edu/server/api/core/bitstreams/108030d3-3bf3-4c58-bd60-77d0644f8359/content",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://conservancy.umn.edu/server/api/core/bitstreams/108030d3-3bf3-4c58-bd60-77d0644f8359/content",
+      "content_type": "application/pdf;charset=UTF-8",
+      "title": null,
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 621456,
+      "sha256": "b12bdeaa4acb3a8be8ffda5ad8015cec2d29cdb48885fb33250b8ea09290312c",
+      "elapsed_ms": 1924,
+      "ok": true
+    },
+    {
+      "url": "https://csr.lanl.gov/data/cyber1/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://csr.lanl.gov/data/cyber1/",
+      "content_type": "text/html",
+      "title": "Comprehensive, Multi-Source Cyber-Security Events - Cyber Security Research",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 11387,
+      "sha256": "d8aa79edfbe50e139971687e92b591c5ceaed7686d8a7b21e4669df419f0881e",
+      "elapsed_ms": 1196,
+      "ok": true
+    },
+    {
+      "url": "https://csrc.nist.gov/pubs/sp/800/94/final",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://csrc.nist.gov/pubs/sp/800/94/final",
+      "content_type": "text/html; charset=utf-8",
+      "title": "SP 800-94, Guide to Intrusion Detection and Prevention Systems (IDPS) | CSRC",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 46662,
+      "sha256": "9a916fce584571d8cdec9e0bda7db41b0204544552037ee77b4dc19cb0b00fde",
+      "elapsed_ms": 604,
+      "ok": true
+    },
+    {
+      "url": "https://developer.okta.com/docs/reference/api/event-types/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://developer.okta.com/docs/reference/api/event-types/",
+      "content_type": "text/html",
+      "title": "Event Types | Okta Developer",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 835558,
+      "sha256": "15544fdc580d432ce5e009c733548cb847264270372a0cca7e268011a7f2c57b",
+      "elapsed_ms": 182,
+      "ok": true
+    },
+    {
+      "url": "https://dl.acm.org/doi/10.1145/1541880.1541882",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 403,
+      "final_url": "https://dl.acm.org/doi/10.1145/1541880.1541882",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "meta_refresh": true,
+      "valid_content": false,
+      "missing_anchors": [],
+      "bytes": 5609,
+      "sha256": "64b2a49e25d000cf03585a59f01e9478126b098ad7869466bee6510cf405d4e1",
+      "elapsed_ms": 90,
+      "ok": false
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html",
+      "content_type": "text/html",
+      "title": "IAM database authentication for MariaDB, MySQL, and PostgreSQL - Amazon Relational Database Service",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 25079,
+      "sha256": "e6483b9d5f59b2d9fccc7c5156e77eec47eeaec47d169ff3ee420d8de067380c",
+      "elapsed_ms": 403,
+      "ok": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-iam.html",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-iam.html",
+      "content_type": "text/html",
+      "title": "GuardDuty IAM finding types - Amazon GuardDuty",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 89874,
+      "sha256": "58a572e1b86ca8e7824498f86f9a09a50e6b808b1ccb070df87219c539e12cdf",
+      "elapsed_ms": 474,
+      "ok": true
+    },
+    {
+      "url": "https://docs.zeek.org/en/lts/reference/logs/ssl.html",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://docs.zeek.org/en/lts/reference/logs/ssl.html",
+      "content_type": "text/html; charset=utf-8",
+      "title": "ssl.log &mdash; Book of Zeek (9.0.0)",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 231654,
+      "sha256": "4fbcd5a7bb9ca9376a275a89806e1c2e99a08b9bb06152dfe05b0811377af13e",
+      "elapsed_ms": 26,
+      "ok": true
+    },
+    {
+      "url": "https://docs.zeek.org/en/v8.2.1/reference/logs/dns.html",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://docs.zeek.org/en/v8.2.1/reference/logs/dns.html",
+      "content_type": "text/html; charset=utf-8",
+      "title": "dns.log &mdash; Book of Zeek (8.2.1)",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 218854,
+      "sha256": "6d9f5f0ca4ae29dc4aadf12a5609489031e25af7ca232399463b7f1073aa37c1",
+      "elapsed_ms": 102,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/anpa1200",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://github.com/anpa1200",
+      "content_type": "text/html; charset=utf-8",
+      "title": "anpa1200 (Andrey Pautov) · GitHub",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 246142,
+      "sha256": "6c29dd58f76ec33592bd9a8266f4516a2938e5748751207a4a2acdd87bbf44ad",
+      "elapsed_ms": 521,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/splunk/attack_data",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://github.com/splunk/attack_data",
+      "content_type": "text/html; charset=utf-8",
+      "title": "GitHub - splunk/attack_data: A repository of curated datasets from various attacks · GitHub",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 298089,
+      "sha256": "c85248a2e7ae84ffdfe747ccdbea8c59b715e83dee0f0dbd512aa5be42b9eb0d",
+      "elapsed_ms": 596,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/splunk/attack_data/tree/6bc794b7f65562148c872fde1e7412ab3c173f4c",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://github.com/splunk/attack_data/tree/6bc794b7f65562148c872fde1e7412ab3c173f4c",
+      "content_type": "text/html; charset=utf-8",
+      "title": "GitHub - splunk/attack_data at 6bc794b7f65562148c872fde1e7412ab3c173f4c · GitHub",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 302853,
+      "sha256": "5fc020b7ea31974425e15d8159abba17c274b59a68e204c452250ee4dbba8d64",
+      "elapsed_ms": 458,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/officeactivity",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/officeactivity",
+      "content_type": "text/html",
+      "title": "Azure Monitor Logs reference - OfficeActivity - Azure Monitor | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 65109,
+      "sha256": "3a49b221814e092c48f8f3d2ec74624f491e21f2fce807d852b47e772a53eef6",
+      "elapsed_ms": 245,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/data-explorer/kusto-emulator-overview",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/azure/data-explorer/kusto-emulator-overview",
+      "content_type": "text/html",
+      "title": "Azure Data Explorer Kusto emulator overview - Azure Data Explorer | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 54046,
+      "sha256": "cd5f757829461f0acc7fada90ad8f57baaa62a8ce542378a479e63c004edc523",
+      "elapsed_ms": 18,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/work-with-anomaly-rules",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/azure/sentinel/work-with-anomaly-rules",
+      "content_type": "text/html",
+      "title": "Work with anomaly detection analytics rules in Microsoft Sentinel | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 59429,
+      "sha256": "a3e87db5861fd55ea3eb17581787aff7709c74d6aa04df996eee035cafdd080a",
+      "elapsed_ms": 17,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-endpoint/troubleshoot-microsoft-defender-antivirus",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/defender-endpoint/troubleshoot-microsoft-defender-antivirus",
+      "content_type": "text/html",
+      "title": "Microsoft Defender Antivirus event IDs and error codes - Microsoft Defender for Endpoint | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 249480,
+      "sha256": "2ad7f7a7c26d2482be5635cc4d5fb6c7967469e6a8ef6ac54c6a74299f6d62dd",
+      "elapsed_ms": 124,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-deviceprocessevents-table",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-deviceprocessevents-table",
+      "content_type": "text/html",
+      "title": "DeviceProcessEvents table in the advanced hunting schema - Microsoft Defender XDR | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 63960,
+      "sha256": "7ffcd13baee47ead601368aef8f2810bad536159e5f1292e61e5e9bb63068c47",
+      "elapsed_ms": 20,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks",
+      "content_type": "text/html",
+      "title": "What are risk detections? - Microsoft Entra ID Protection | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 77941,
+      "sha256": "fe5b67826d020b4a2e2b49cc7b543095d2cab581d86c85de66c9dab00e14019a",
+      "elapsed_ms": 16,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes",
+      "content_type": "text/html",
+      "title": "Microsoft Entra authentication &amp; authorization error codes - Microsoft identity platform | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 128517,
+      "sha256": "d4b22f4a1dbe1a2cb03991ad3d15a829c12b8440d22dfb7dec2590de9a3fe448",
+      "elapsed_ms": 53,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/kusto/query/join-time-window",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/kusto/query/join-time-window?view=microsoft-fabric",
+      "content_type": "text/html",
+      "title": "Joining within time window - Kusto | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 55708,
+      "sha256": "b7b882cebea39b4930b1ad85f971b7a94326fd9ba34882ac30e88c52f1dc6656",
+      "elapsed_ms": 30,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-1102",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-1102",
+      "content_type": "text/html",
+      "title": "1102(S) The audit log was cleared. - Windows 10 | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 40685,
+      "sha256": "ef1721f797d88a120aa9c3693202d519407c0383392b9f50299ff1c87330aac8",
+      "elapsed_ms": 60,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4624",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4624",
+      "content_type": "text/html",
+      "title": "4624(S) An account was successfully logged on. - Windows 10 | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 64716,
+      "sha256": "159b44ee8c3ce6d452a50d9175ca15ae4b76d307a95caef0a8326f6da876da23",
+      "elapsed_ms": 16,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4662",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4662",
+      "content_type": "text/html",
+      "title": "4662(S, F) An operation was performed on an object. - Windows 10 | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 52155,
+      "sha256": "b4a1403cd655be6de79fb02d7610899ec3acc546bfe94e5d8b78ec5fcc767698",
+      "elapsed_ms": 17,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4688",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4688",
+      "content_type": "text/html",
+      "title": "4688(S) A new process has been created. - Windows 10 | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 54760,
+      "sha256": "9a148525664587a80cdb5836d13977918d6bcb38805e6579924541fef5afbf35",
+      "elapsed_ms": 112,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4776",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4776",
+      "content_type": "text/html",
+      "title": "4776(S, F) The computer attempted to validate the credentials for an account. - Windows 10 | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 47633,
+      "sha256": "fc575c339aadc389a4e770b87878bada09eb936c234ce6b91e886f5ff998ba25",
+      "elapsed_ms": 20,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/audit-log-investigate-accounts",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/purview/audit-log-investigate-accounts",
+      "content_type": "text/html",
+      "title": "Use MailItemsAccessed to investigate compromised accounts | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 58975,
+      "sha256": "1f008c216e83bdcf0c778f857c6bd29eff213bb7d12b07bd86992b3a5b6a086c",
+      "elapsed_ms": 16,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon",
+      "content_type": "text/html",
+      "title": "Sysmon - Sysinternals | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 66832,
+      "sha256": "6b1410f1f8fddfbc3e901fc6d9bff1d125d2d170eccc920a4d2e454a5063aff2",
+      "elapsed_ms": 16,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations",
+      "content_type": "text/html",
+      "title": "System Audit Policy recommendations | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 91550,
+      "sha256": "b3370cb7497f4a15397535b10c2237b4950fb23fd32035a14a5c3f9b054eb479",
+      "elapsed_ms": 16,
+      "ok": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights",
+      "content_type": "text/html",
+      "title": "Process Security and Access Rights - Win32 apps | Microsoft Learn",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 59718,
+      "sha256": "43aee98b12ce1d0b48edcfa07200f44eaca124a46f67d431f9826e7f089648fa",
+      "elapsed_ms": 16,
+      "ok": true
+    },
+    {
+      "url": "https://msrc.microsoft.com/blog/2024/03/update-on-microsoft-actions-following-attack-by-nation-state-actor-midnight-blizzard/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/msrc/blog",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Blog MSRC | Microsoft Security Response Center",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 93380,
+      "sha256": "2ebc1f96a316b149ef919c2e3e026764177599a26e5185e446f9dfa158d96e6f",
+      "elapsed_ms": 410,
+      "ok": true
+    },
+    {
+      "url": "https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "BazarCall to Conti Ransomware via Trickbot and Cobalt Strike",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 167992,
+      "sha256": "6e2724b5e218c1987821b806a14fe9e1a2531e074761533e28a84fd5d7fee058",
+      "elapsed_ms": 113,
+      "ok": true
+    },
+    {
+      "url": "https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "OilRig Targets Middle Eastern Telecommunications Organization and Adds Novel C2 Channel with Steganography to Its Inventory",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 255364,
+      "sha256": "e630fa7e4fd4231f145e3b91cbf8dd4b558acfbdcb39a51f8a933578e0fb6637",
+      "elapsed_ms": 396,
+      "ok": true
+    },
+    {
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Impacket and Exfiltration Tool Used to Steal Sensitive Information from Defense Industrial Base Organization | CISA",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 99720,
+      "sha256": "e6ef30f8a26fc8cded0e2eacb0fd6d33c45a7f71f4be3910fb1b101719ad736b",
+      "elapsed_ms": 65,
+      "ok": true
+    },
+    {
+      "url": "https://www.cisa.gov/sites/default/files/2024-03/CSRB%20Review%20of%20the%20Summer%202023%20MEO%20Intrusion%20Final_508c.pdf",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.cisa.gov/sites/default/files/2024-03/CSRB%20Review%20of%20the%20Summer%202023%20MEO%20Intrusion%20Final_508c.pdf",
+      "content_type": "application/pdf",
+      "title": null,
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 2231667,
+      "sha256": "d92d4cbb826b6d71d45fce71bd2a34a5dc3baa9856e05b1389eeb988e5713642",
+      "elapsed_ms": 636,
+      "ok": true
+    },
+    {
+      "url": "https://www.justice.gov/archives/opa/pr/former-twitter-employee-found-guilty-acting-agent-foreign-government-and-unlawfully-sharing",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.justice.gov/archives/opa/pr/former-twitter-employee-found-guilty-acting-agent-foreign-government-and-unlawfully-sharing",
+      "content_type": "text/html",
+      "title": "&nbsp;",
+      "meta_refresh": true,
+      "valid_content": false,
+      "missing_anchors": [],
+      "bytes": 2587,
+      "sha256": "e4e44e398cec111ce777510d16c9f6d0af3a0bd27c0642d93255d7b74c02461a",
+      "elapsed_ms": 287,
+      "ok": false
+    },
+    {
+      "url": "https://www.justice.gov/usao-ndca/page/file/1299331/dl?inline=",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.justice.gov/usao-ndca/page/file/1299331/dl?inline=",
+      "content_type": "application/pdf",
+      "title": null,
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 1655879,
+      "sha256": "873c0921e58e054dcd0ca63f4c32b35b6a50ab7700ae3e05308ee289c2327703",
+      "elapsed_ms": 529,
+      "ok": true
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/msrc/blog/2023/07/microsoft-mitigates-china-based-threat-actor-storm-0558-targeting-of-customer-email",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/msrc/blog/2023/07/microsoft-mitigates-china-based-threat-actor-storm-0558-targeting-of-customer-email",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Microsoft mitigates China-based threat actor Storm-0558 targeting of customer email",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 90134,
+      "sha256": "6a9cbf22a7b77236d3619ec0194270d808a2b99d941f3aa1baa840313a663ddb",
+      "elapsed_ms": 482,
+      "ok": true
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "HAFNIUM targeting Exchange Servers with 0-day exploits | Microsoft Security Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 303017,
+      "sha256": "550e91181365e3f75659719fc4f7b2435b601093a195f83542ad8688b9214564",
+      "elapsed_ms": 921,
+      "ok": true
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Analyzing attacks taking advantage of the Exchange Server vulnerabilities | Microsoft Security Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 334904,
+      "sha256": "f10ef7d12199832838fbdefecf18b5b8db92d395bf187e9f8ad4d999e097492e",
+      "elapsed_ms": 1334,
+      "ok": true
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Volt Typhoon targets US critical infrastructure with living-off-the-land techniques | Microsoft Security Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 301224,
+      "sha256": "6eaafa6325e8a19911bf74648729ed38eba2a8f18842ac179ded8771cd80d250",
+      "elapsed_ms": 1481,
+      "ok": true
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Threat actors misuse OAuth applications to automate financially driven attacks | Microsoft Security Blog",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 324500,
+      "sha256": "6b7d13c4d043ba7ff8a7e7b43d71a3ac2e1e557c86b4042cc3bd855bdbc14bf5",
+      "elapsed_ms": 1153,
+      "ok": true
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 403,
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/",
+      "content_type": "text/html",
+      "title": "Service unavailable",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 1484,
+      "sha256": "ada0be1cd45bdf771ffc2108d8b87b004857b97c9297785d0d829b5a938bb7bf",
+      "elapsed_ms": 233,
+      "ok": false
+    },
+    {
+      "url": "https://www.sentinelone.com/blog/smoothoperator-ongoing-campaign-trojanizes-3cx-software-in-software-supply-chain-attack/",
+      "kinds": [
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.sentinelone.com/blog/smoothoperator-ongoing-campaign-trojanizes-3cx-software-in-software-supply-chain-attack/",
+      "content_type": "text/html; charset=utf-8",
+      "title": "3CX SmoothOperator | 3CXDesktopApp in Supply Chain Attack",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 327481,
+      "sha256": "9178008f7c8863faef17e4f8fe08c02c016cc225bbeac71c31e9f7e4fbe443d2",
+      "elapsed_ms": 475,
+      "ok": true
+    },
+    {
+      "url": "https://www.sophos.com/en-us/blog/aukill-edr-killer-malware-abuses-process-explorer-driver",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.sophos.com/en-us/blog/aukill-edr-killer-malware-abuses-process-explorer-driver",
+      "content_type": "text/html; charset=utf-8",
+      "title": "‘AuKill’ EDR killer malware abuses Process Explorer driver | SOPHOS",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 781764,
+      "sha256": "3ef8dc287e5dc949a6c923b4d8457e5a3b10f022af2413abb594cf04f556bc04",
+      "elapsed_ms": 305,
+      "ok": true
+    },
+    {
+      "url": "https://www.sysdig.com/blog/detect-scarleteel-sysdig-secure",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.sysdig.com/blog/detect-scarleteel-sysdig-secure",
+      "content_type": "text/html; charset=utf-8",
+      "title": "How to Detect SCARLETEEL with Sysdig Secure | Sysdig",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 278425,
+      "sha256": "5c340efe457f3e34e27f9b928b047ebf4e631ad1b0023880158aeaa730a06a1b",
+      "elapsed_ms": 138,
+      "ok": true
+    },
+    {
+      "url": "https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/",
+      "kinds": [
+        "primary-source",
+        "revision-reference"
+      ],
+      "anchors": [],
+      "status": 200,
+      "final_url": "https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Industroyer2: Industroyer reloaded",
+      "meta_refresh": false,
+      "valid_content": true,
+      "missing_anchors": [],
+      "bytes": 93865,
+      "sha256": "6e7ecdcf63f814dc065318e7b2fd38b9fc802886cd5e2688a6ae5a65736d88a5",
+      "elapsed_ms": 265,
+      "ok": true
+    }
+  ]
+}

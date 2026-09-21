@@ -1,0 +1,7 @@
+
+> medium-blog-navigation@0.1.0 research:revision:render
+> node scripts/render_anomaly_incidents.mjs && node scripts/build_anomaly_revision.mjs && node scripts/build_anomaly_audit.mjs
+
+Updated /home/andrey/wireshark/anomaly-validated-revision/docs/articles/2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12.md
+Revision rendered: 8 canonical queries, 44 preserved historical images, 17 legacy anchor aliases.
+Reconciled audit: 59 entries; {"corrected_in_revision":54,"documented_conflict_not_resolved_upstream":1,"historical_not_revalidated":1,"not_established":2,"requires_publication_access":1}

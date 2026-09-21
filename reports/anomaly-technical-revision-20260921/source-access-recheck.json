@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-09-21T09:35:09.173Z",
+  "scope": "One bounded recheck of the three automated source-access failures, without bypassing publisher controls.",
+  "results": [
+    {
+      "url": "https://dl.acm.org/doi/10.1145/1541880.1541882",
+      "status": 403,
+      "final_url": "https://dl.acm.org/doi/10.1145/1541880.1541882",
+      "bytes": 5525,
+      "sha256": "2f282d3ab7c6821c4ae0bf6bcc3a6dd4f66c7401296b161dccf21b95b69e99da",
+      "title": "Just a moment...",
+      "meta_refresh": true
+    },
+    {
+      "url": "https://www.justice.gov/archives/opa/pr/former-twitter-employee-found-guilty-acting-agent-foreign-government-and-unlawfully-sharing",
+      "status": 200,
+      "final_url": "https://www.justice.gov/archives/opa/pr/former-twitter-employee-found-guilty-acting-agent-foreign-government-and-unlawfully-sharing",
+      "bytes": 2576,
+      "sha256": "e283198cc17d87c8910df58969c864cd8e1b690e556bccc7f131701a23d2a2f7",
+      "title": "&nbsp;",
+      "meta_refresh": true
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/",
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/",
+      "bytes": 299945,
+      "sha256": "1450d194f2d4a642f2465d39f3a1c0582d8fa52cfc489db0343c04d009680521",
+      "title": "Midnight Blizzard: Guidance for responders on nation-state attack | Microsoft Security Blog",
+      "meta_refresh": false
+    }
+  ]
+}

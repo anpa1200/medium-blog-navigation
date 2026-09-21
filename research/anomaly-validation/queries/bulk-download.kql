@@ -1,0 +1,27 @@
+// Complete UTC calendar days; Counts are audit events, not bytes or unique documents.
+// EvaluationDay is supplied explicitly by the caller. Do not tune on the scored day.
+let HistoryDays=28d;
+let MinimumObservedDays=14;
+let MinimumExcess=20.0;
+let MadMultiplier=6.0;
+let History = DailyDownloads
+    | where Day >= EvaluationDay - HistoryDays and Day < EvaluationDay
+    | where Complete and isnotnull(Count) and Count >= 0;
+let Medians = History | summarize Median=percentile(Count, 50), ObservedDays=count() by TenantId, UserId;
+let Baselines = History
+    | join kind=inner Medians on TenantId, UserId
+    | extend Deviation=abs(todouble(Count) - Median)
+    | summarize MAD=percentile(Deviation, 50), Median=take_any(Median), ObservedDays=take_any(ObservedDays)
+        by TenantId, UserId;
+DailyDownloads
+| where Day == EvaluationDay
+| join kind=leftouter Baselines on TenantId, UserId
+| extend ObservedDays=coalesce(ObservedDays, tolong(0))
+| extend Threshold=Median + max_of(MinimumExcess, MadMultiplier * MAD)
+| extend Status=case(
+    not(Complete) or isnull(Count) or Count < 0, "missing-telemetry",
+    ObservedDays < MinimumObservedDays, "insufficient-history",
+    todouble(Count) > Threshold, "above-baseline",
+    "within-baseline")
+| project TenantId, UserId, Day, Count, ObservedDays, Median, MAD, Threshold, Status
+| order by TenantId asc, UserId asc

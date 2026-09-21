@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-09-21T09:45:16.680Z",
+  "scope": "Local embedded article with read-only main-site shell assets; not a full main-site build or deployment.",
+  "shell_asset_root": "/home/andrey/wireshark/anomaly-ecosystem-update",
+  "checks": [
+    "HTTP 200, one H1, preserved self-canonical and all 153 historical anchors.",
+    "Eight rendered KQL examples and two reproduction commands.",
+    "43 superseded figures are labeled and collapsed, not presented as current guidance.",
+    "7 linked research artifacts return 200 and match the local build byte-for-byte.",
+    "No page-level horizontal overflow at 390, 768 or 1440 pixels; wide code/tables retain internal scrolling.",
+    "No uncaught browser JavaScript errors."
+  ],
+  "page_errors": [],
+  "screenshots": [
+    "article-desktop.png",
+    "validation-evidence-desktop.png",
+    "statistical-study-mobile.png",
+    "statistical-study-mobile-recall.png"
+  ],
+  "passed": true,
+  "shell_asset_sha256": {
+    "/assets/theme-bootstrap.js": "9f58a9bec165ab39a54ec63459b77a9e27615ca658933ebd13b57c6bcea821aa",
+    "/assets/docusaurus-ecosystem.js": "2c21c88cbd4400995bcdbbdbca5438baa5d54d39444218f7f097749e60fb53f0",
+    "/assets/docusaurus-ecosystem.css": "78892987b14c7ad3adb736e111fb9e733cd2be4041cc8b56b7084b34fbff3ab6",
+    "/assets/site-theme.css": "7e901d6ca41d26e84ad1d894a2d82e78c32b23d6990fbc635dbed933ee42ba9b",
+    "/assets/site-theme.js": "c42e4936c80ff02186726fde118c66d244f3bd987d25f9110ff65cc26bd2c360",
+    "/assets/platform-sidebar.css": "70df9b39ece1edd1a50100831867077196a6e8252beb41dfe7f3b0e5e2193cd0",
+    "/assets/platform-sidebar.js": "646db7793c1dce78af02b56e795a5d6a111be558ed750486e6324f5f9c06c269",
+    "/assets/site-search.js": "c33274d748438aa5ffcd3e3d8aa4151acadaae3dd98a9762f0e4e575f39755a9",
+    "/assets/ap-logo.png": "20ac61d7ffd7609a35a530505b702cad53a6fee6ee90d7c9a8c34ac037c8344c",
+    "/assets/site-search.css": "20d285676cf935374e228cdbf32696e00f2903c2efdd93ca9c3c86f497b4718e",
+    "/assets/anomaly-tags.js": "77773dfb65c36f089721a60e0b8b08489fb0a4d876e79fa65c8ad7580545cac3"
+  }
+}

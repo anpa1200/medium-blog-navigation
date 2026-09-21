@@ -1,0 +1,354 @@
+{
+  "recorded_at": "2026-09-21T09:52:18.551Z",
+  "baseline_commit": "3656ca970ae839081af078f486cf542e9105044b",
+  "branch": "research/anomaly-validated-revision-20260921",
+  "scope": "Changed/new deliverable files excluding this self-referential report directory; ignored dependencies, build output, recording cache and Python caches excluded.",
+  "count": 69,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 475,
+      "sha256": "b9166450e47d7bb1e1344136bb0032101f65d452f4503f44f3ec1806705409fe"
+    },
+    {
+      "path": ".gitleaks.toml",
+      "bytes": 401,
+      "sha256": "e29f0f548ac37f7f48d11c1230d7d1b6091d444dba983018f28bd0a3d3a34e66"
+    },
+    {
+      "path": "docs/articles/2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12.md",
+      "bytes": 177159,
+      "sha256": "dd8726fda2632002c917f79ff887250983e2672c4f3796ae295209758e65d382"
+    },
+    {
+      "path": "docs/articles/index.md",
+      "bytes": 41864,
+      "sha256": "78d1358b91228507a33ab514f8b1f9acf17dcbc216be616ddc9893986d75b99f"
+    },
+    {
+      "path": "package.json",
+      "bytes": 3051,
+      "sha256": "f69b19c954b8dafbd250131db055f3c5439a2e508e2789f0d5dcaaaa55c8c018"
+    },
+    {
+      "path": "research/anomaly-revision/03-mapping.md",
+      "bytes": 4408,
+      "sha256": "99a82b0694914782a0a7df3f63e381e783d906b01d54fbc7f94a35f4db3caaf1"
+    },
+    {
+      "path": "research/anomaly-revision/04-campaigns.md",
+      "bytes": 13931,
+      "sha256": "fd80a22440fbadf48614aeaa8b356999ee3258904fa529a32431f55857b4f21b"
+    },
+    {
+      "path": "research/anomaly-revision/05-telemetry.md",
+      "bytes": 11299,
+      "sha256": "b88f3891bb789b959159cdecbb6b4f7019a7aa86fe843ad3399267921ea0a51e"
+    },
+    {
+      "path": "research/anomaly-revision/06-credentials.md",
+      "bytes": 5002,
+      "sha256": "6fd53c022c256a5fc99efa53ff112229357583df5ed2fec82aa2317d23bdc2c4"
+    },
+    {
+      "path": "research/anomaly-revision/07-evasion.md",
+      "bytes": 1853,
+      "sha256": "e14d545bada30ef23b008ba7f051ec12beaff302be83c696fd0251690aa2a6b6"
+    },
+    {
+      "path": "research/anomaly-revision/08-analytics.md",
+      "bytes": 7998,
+      "sha256": "d890fd33e74d1c9e61574c113df69c0c4bbe2185dc26c60d7fa518b28beadbba"
+    },
+    {
+      "path": "research/anomaly-revision/09-method.md",
+      "bytes": 6975,
+      "sha256": "814889cdb0801bd83a641218e64e6cf67eb7528824effccdb1b7ea7df6d6a030"
+    },
+    {
+      "path": "research/anomaly-revision/10-conclusion.md",
+      "bytes": 1336,
+      "sha256": "2d951646a3fe0a5c57035075806efa4fda6987d9bc4a3e5c59a337e4b31e1ba8"
+    },
+    {
+      "path": "research/anomaly-revision/11-references.md",
+      "bytes": 3871,
+      "sha256": "063b5e0b848a51e89bcd3f4aff861fa4d9f24882b6f7410fb8152a4aaf9873fd"
+    },
+    {
+      "path": "research/anomaly-revision/MEDIUM-CORRECTION.md",
+      "bytes": 1531,
+      "sha256": "33dde04516f01bffad02caa7e0322d18f0fd0d37ad9e91c5f8724ce8bba938b4"
+    },
+    {
+      "path": "research/anomaly-revision/family-contracts.json",
+      "bytes": 5997,
+      "sha256": "518f7f2ecbc2ccf699848bb3065fe0f30268f2d7e964ea1f1b3b83c3b5fe5bc9"
+    },
+    {
+      "path": "research/anomaly-revision/issues.json",
+      "bytes": 26958,
+      "sha256": "265ddf0bb0bd56f7435df7c0938504708f648b8e332014c7fae143230e03dc28"
+    },
+    {
+      "path": "research/anomaly-revision/original-inventory.json",
+      "bytes": 23194,
+      "sha256": "0a2267f1087044b91614035b023966602ac85f458fef8d3d465dfbc43ad48c88"
+    },
+    {
+      "path": "research/anomaly-validation/.gitignore",
+      "bytes": 20,
+      "sha256": "fba3161fc0773b7851ddc424b0e52a8a9bdd249cf70e6c274c84ea365c19f396"
+    },
+    {
+      "path": "research/anomaly-validation/README.md",
+      "bytes": 7742,
+      "sha256": "d6f48a885124028d8d316ad37af1f152a2eb7e6f727b4a4073aba46742a5fb70"
+    },
+    {
+      "path": "research/anomaly-validation/SPLUNK-LICENSE.txt",
+      "bytes": 11344,
+      "sha256": "8505946b2464fa90223996d99eecbc7639a86648ca071f0cac21695be2623a0a"
+    },
+    {
+      "path": "research/anomaly-validation/THIRD_PARTY_NOTICES.md",
+      "bytes": 986,
+      "sha256": "d78ffcd686e9cbc2522c9d8ea977788bb7cee5b93f832320b4914b5ea5f1f613"
+    },
+    {
+      "path": "research/anomaly-validation/contracts.json",
+      "bytes": 3415,
+      "sha256": "6e0279d6c444d8cab0208376b8de1df27ac25a50f7e5c5a95026648c8f398a16"
+    },
+    {
+      "path": "research/anomaly-validation/datasets.json",
+      "bytes": 1143,
+      "sha256": "fc311a83fcbe9747100e7fe54f4a4dd3726bef633e7d0ccad6a37502b63857d2"
+    },
+    {
+      "path": "research/anomaly-validation/queries/bulk-download.kql",
+      "bytes": 1371,
+      "sha256": "710cf763725c0eca8a5382cc93b92ba5521eeee5bc84bc9286b1b5e1abb5dcfc"
+    },
+    {
+      "path": "research/anomaly-validation/queries/dcsync.kql",
+      "bytes": 1607,
+      "sha256": "8d1b9689a13b6d415c1faa8b2c75a31cf08fc4f34fc2ff1d3edd841f5435f022"
+    },
+    {
+      "path": "research/anomaly-validation/queries/dns-entropy.kql",
+      "bytes": 800,
+      "sha256": "9f16c6db8b9dc1cfbff75cec099c212fe836d036e6c70d193a7970b2a6d7568f"
+    },
+    {
+      "path": "research/anomaly-validation/queries/kerberoasting.kql",
+      "bytes": 702,
+      "sha256": "6ef33de862f4b7fd819eab4126b91a3a55f9ed9d72a42d14ae5e2e7543087ec3"
+    },
+    {
+      "path": "research/anomaly-validation/queries/lsass-access.kql",
+      "bytes": 425,
+      "sha256": "1ffbd69e348afb253002f8875f5e5562b55651ac1f276f36e7001367843fff3f"
+    },
+    {
+      "path": "research/anomaly-validation/queries/pass-the-hash.kql",
+      "bytes": 526,
+      "sha256": "9503a4f8b8214e24e46d2b1c2f25e91b28b4829b8aa04dfb1949daba65862da7"
+    },
+    {
+      "path": "research/anomaly-validation/queries/password-spray.kql",
+      "bytes": 1403,
+      "sha256": "171ab510580177116f585446d3467d6f4cacc8a828ca7cd79b6d9e1b4613491a"
+    },
+    {
+      "path": "research/anomaly-validation/queries/web-shell-lineage.kql",
+      "bytes": 572,
+      "sha256": "26d1c2688796bcf4d0fd0a9eafd81917966808860b438cb5d64269cf224684a5"
+    },
+    {
+      "path": "research/anomaly-validation/results/functional-results.json",
+      "bytes": 61324,
+      "sha256": "3a868b49d7f9f702d68e495caecb1b2985c21522838c67d68136caebf7631795"
+    },
+    {
+      "path": "research/anomaly-validation/results/offline-results.json",
+      "bytes": 2347,
+      "sha256": "1f52b97bd10f552664a4e74f5d7f8af3e5bc5db95ef94f887aa4148b61dd64da"
+    },
+    {
+      "path": "research/anomaly-validation/results/synthetic-study.csv",
+      "bytes": 69005,
+      "sha256": "52ea22efe14c3b91c992e7e85e8f970bf5e0cdb020ee2f347c8ce2f6d9a5793d"
+    },
+    {
+      "path": "research/anomaly-validation/results/synthetic-study.json",
+      "bytes": 339315,
+      "sha256": "014d712d0e7d1f8bd0ff22a23b590ecc77f88d8a99e6b7af21d3194ef159b2fe"
+    },
+    {
+      "path": "research/anomaly-validation/run_validation.py",
+      "bytes": 20559,
+      "sha256": "7faa7d9d886ab966558e8f3525c3b4e54ca241da0ee1863724f6683560c0aa84"
+    },
+    {
+      "path": "research/anomaly-validation/statistical_study.py",
+      "bytes": 6345,
+      "sha256": "83ecb449557def04ff5bdbe193f5123515d9f93822fa67350a5706615991a367"
+    },
+    {
+      "path": "research/anomaly-validation/test_validation.py",
+      "bytes": 4681,
+      "sha256": "26ec9e9a8b74f72d237526be231abc34e052cd777a646bdbbf2f1e5d86994b7f"
+    },
+    {
+      "path": "scripts/build_anomaly_audit.mjs",
+      "bytes": 4399,
+      "sha256": "85007a01ccdf0021db8bae2ea9fa7df4099b56dc248bd9ddb1b5653aaf78dbbb"
+    },
+    {
+      "path": "scripts/build_anomaly_revision.mjs",
+      "bytes": 8585,
+      "sha256": "06a3347d697cc53172ca673c6b1ed230e45d6d36fd65f8aa7fc8ef25e596e061"
+    },
+    {
+      "path": "scripts/check_anomaly_links.mjs",
+      "bytes": 4874,
+      "sha256": "eccce14056bc2ae0f873da574e92ec2393f56e451da9cb1ce0b376d057facf6c"
+    },
+    {
+      "path": "scripts/check_anomaly_revision_browser.mjs",
+      "bytes": 7740,
+      "sha256": "10ef7aac7ae4d8aa54b3dfc1f882ca6ecb373e9e75bc62372e24f43a2b768205"
+    },
+    {
+      "path": "scripts/render_anomaly_incidents.mjs",
+      "bytes": 10375,
+      "sha256": "dd0d622ecf51a30b9558744170675641db75d77a77902b50653d484902f0035b"
+    },
+    {
+      "path": "scripts/report_anomaly_revision.mjs",
+      "bytes": 2451,
+      "sha256": "8442fdd853b7e6b3f0b22d92ce310d9c9a763cb1ff34c0792fab38a81e7ea63e"
+    },
+    {
+      "path": "scripts/validate_anomaly_incidents.mjs",
+      "bytes": 8274,
+      "sha256": "e8c0cfcdb65705ddcc0428039fa6d3166a9731f21c1ab337b7a6d549231b9ca6"
+    },
+    {
+      "path": "scripts/verify_anomaly_research.mjs",
+      "bytes": 3730,
+      "sha256": "47fa2da9209df5a668ae448367c59d1c12648a0395df44de90b022b2559fbf9c"
+    },
+    {
+      "path": "src/data/article-catalog.json",
+      "bytes": 364161,
+      "sha256": "28aa3038fd87ea934ba2ab6d443d5828257b13423f250fcf29caba7ad81ff5b6"
+    },
+    {
+      "path": "static/research/anomaly-fact-audit.md",
+      "bytes": 15773,
+      "sha256": "6fb8b43263acd627cb1c28915e45249af503a60f8756023d73c61bc4dbe83ae3"
+    },
+    {
+      "path": "static/research/anomaly-historical-code.md",
+      "bytes": 8893,
+      "sha256": "ed79b88340546aa5e9e129ef71705784dd136f08531d1b73e963068f1cafe7bf"
+    },
+    {
+      "path": "static/research/anomaly-validation/README.md",
+      "bytes": 7742,
+      "sha256": "d6f48a885124028d8d316ad37af1f152a2eb7e6f727b4a4073aba46742a5fb70"
+    },
+    {
+      "path": "static/research/anomaly-validation/SPLUNK-LICENSE.txt",
+      "bytes": 11344,
+      "sha256": "8505946b2464fa90223996d99eecbc7639a86648ca071f0cac21695be2623a0a"
+    },
+    {
+      "path": "static/research/anomaly-validation/THIRD_PARTY_NOTICES.md",
+      "bytes": 986,
+      "sha256": "d78ffcd686e9cbc2522c9d8ea977788bb7cee5b93f832320b4914b5ea5f1f613"
+    },
+    {
+      "path": "static/research/anomaly-validation/bulk-download.kql",
+      "bytes": 1371,
+      "sha256": "710cf763725c0eca8a5382cc93b92ba5521eeee5bc84bc9286b1b5e1abb5dcfc"
+    },
+    {
+      "path": "static/research/anomaly-validation/bundle.json",
+      "bytes": 454420,
+      "sha256": "f4f86d8d8485a670779d47f7b2fa0d3fa03dfe5b92058b9afa860df6f2d13e63"
+    },
+    {
+      "path": "static/research/anomaly-validation/contracts.json",
+      "bytes": 3415,
+      "sha256": "6e0279d6c444d8cab0208376b8de1df27ac25a50f7e5c5a95026648c8f398a16"
+    },
+    {
+      "path": "static/research/anomaly-validation/datasets.json",
+      "bytes": 1143,
+      "sha256": "fc311a83fcbe9747100e7fe54f4a4dd3726bef633e7d0ccad6a37502b63857d2"
+    },
+    {
+      "path": "static/research/anomaly-validation/dcsync.kql",
+      "bytes": 1607,
+      "sha256": "8d1b9689a13b6d415c1faa8b2c75a31cf08fc4f34fc2ff1d3edd841f5435f022"
+    },
+    {
+      "path": "static/research/anomaly-validation/dns-entropy.kql",
+      "bytes": 800,
+      "sha256": "9f16c6db8b9dc1cfbff75cec099c212fe836d036e6c70d193a7970b2a6d7568f"
+    },
+    {
+      "path": "static/research/anomaly-validation/functional-results.json",
+      "bytes": 61324,
+      "sha256": "3a868b49d7f9f702d68e495caecb1b2985c21522838c67d68136caebf7631795"
+    },
+    {
+      "path": "static/research/anomaly-validation/issues.json",
+      "bytes": 26958,
+      "sha256": "265ddf0bb0bd56f7435df7c0938504708f648b8e332014c7fae143230e03dc28"
+    },
+    {
+      "path": "static/research/anomaly-validation/kerberoasting.kql",
+      "bytes": 702,
+      "sha256": "6ef33de862f4b7fd819eab4126b91a3a55f9ed9d72a42d14ae5e2e7543087ec3"
+    },
+    {
+      "path": "static/research/anomaly-validation/lsass-access.kql",
+      "bytes": 425,
+      "sha256": "1ffbd69e348afb253002f8875f5e5562b55651ac1f276f36e7001367843fff3f"
+    },
+    {
+      "path": "static/research/anomaly-validation/pass-the-hash.kql",
+      "bytes": 526,
+      "sha256": "9503a4f8b8214e24e46d2b1c2f25e91b28b4829b8aa04dfb1949daba65862da7"
+    },
+    {
+      "path": "static/research/anomaly-validation/password-spray.kql",
+      "bytes": 1403,
+      "sha256": "171ab510580177116f585446d3467d6f4cacc8a828ca7cd79b6d9e1b4613491a"
+    },
+    {
+      "path": "static/research/anomaly-validation/synthetic-study.csv",
+      "bytes": 69005,
+      "sha256": "52ea22efe14c3b91c992e7e85e8f970bf5e0cdb020ee2f347c8ce2f6d9a5793d"
+    },
+    {
+      "path": "static/research/anomaly-validation/synthetic-study.json",
+      "bytes": 339315,
+      "sha256": "014d712d0e7d1f8bd0ff22a23b590ecc77f88d8a99e6b7af21d3194ef159b2fe"
+    },
+    {
+      "path": "static/research/anomaly-validation/web-shell-lineage.kql",
+      "bytes": 572,
+      "sha256": "26d1c2688796bcf4d0fd0a9eafd81917966808860b438cb5d64269cf224684a5"
+    },
+    {
+      "path": "tests/anomaly-revision.test.mjs",
+      "bytes": 5643,
+      "sha256": "0a9445a0926950aa55b08f664803ff422daa91e58b8fd22a9f443fcc46690bc0"
+    }
+  ]
+}

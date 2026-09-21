@@ -5,10 +5,10 @@ description: "Full local Docusaurus archive of exported Medium articles by Andre
 
 # Article Archive
 
-This archive contains `191` preserved and native articles converted into Docusaurus pages inside the 1200km.com ecosystem.
+This archive contains `192` preserved and native articles converted into Docusaurus pages inside the 1200km.com ecosystem.
 
-- Preserved images/screenshots/infographics: `2279`
-- Preserved code/configuration blocks: `3549`
+- Cataloged images/screenshots/infographics: `2284`
+- Current article code/configuration blocks: `3551`; superseded anomaly-query exports are retained separately in the research evidence package.
 - Publication media is preserved at its source quality; key Cyber Knowledge guides also use locally hosted copies so essential visuals do not depend on an external CDN.
 
 ## Articles by Year
@@ -60,7 +60,7 @@ This archive contains `191` preserved and native articles converted into Docusau
 - [Vulnerable AI Lab](./2026/2026-04-28-vulnerable-ai-lab-3747e96314dd) - 2026-04-28 | CTI | 23 image(s) | 57 code block(s)
 - [CTI Research: Kubernetes & Cloud-Native Threat Landscape](./2026/2026-04-25-cti-research-kubernetes-and-cloud-native-threat-landscape-70373d6d7a87) - 2026-04-25 | CTI | 22 image(s) | 28 code block(s)
 - [Detecting Malicious Insider Activity: A Technical Detection Engineering Guide](./2026/2026-04-22-detecting-malicious-insider-activity-a-technical-detection-engineering-guide-3c3b41e95e82) - 2026-04-22 | CTI | 32 image(s) | 0 code block(s)
-- [Malicious Activity as a Statistical Signal: A Detection Engineering Analysis of Anomaly-Based…](./2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12) - 2026-04-20 | CTI | 44 image(s) | 11 code block(s)
+- [Malicious Activity as a Statistical Signal: Anomaly Detection Engineering](./2026/2026-04-20-malicious-activity-as-a-statistical-signal-a-detection-engineering-analysis-of-anomaly-bas-90df8b6dea12) - 2026-04-20 | Detection Engineering | 44 historical image(s) | 10 current code block(s)
 - [What AI-Assisted Offensive Work Actually Means for Your Detection Program: A Practitioner’s…](./2026/2026-04-18-what-ai-assisted-offensive-work-actually-means-for-your-detection-program-a-practitioner-s-9c27a8f40f12) - 2026-04-18 | CTI | 14 image(s) | 0 code block(s)
 - [From Threat Intelligence to Detection: A Practitioner’s Guide](./2026/2026-04-14-from-threat-intelligence-to-detection-a-practitioner-s-guide-2d930b168426) - 2026-04-14 | CTI | 22 image(s) | 31 code block(s)
 - [AI in Offensive Operations: How Threat Actors Use Artificial Intelligence](./2026/2026-04-12-ai-in-offensive-operations-how-threat-actors-use-artificial-intelligence-4eaeeaf029a9) - 2026-04-12 | CTI | 22 image(s) | 0 code block(s)

@@ -1,0 +1,11 @@
+// Two hunting views, not an authentication-attack classifier.
+WindowsEvents
+| where EventID == 4624
+| extend EvidenceClass=case(
+    LogonType == 9 and LogonProcess =~ "seclogo", "source-new-credentials",
+    LogonType == 3 and AuthenticationPackage =~ "NTLM", "target-ntlm-network",
+    "outside-scope")
+| where EvidenceClass != "outside-scope"
+| summarize arg_max(TimeGenerated, *) by Computer, EvidenceId
+| project TimeGenerated, Computer, EvidenceId, Principal, SourceIP, LogonId, EvidenceClass
+| order by EvidenceId asc

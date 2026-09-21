@@ -1,0 +1,10 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Verified SHA-256 digests of maintained public LSASS-access and password-spray query files, not credentials. Query/result binding is also enforced by tests."
+regexTarget = "secret"
+regexes = [
+  '''^1ffbd69e348afb253002f8875f5e5562b55651ac1f276f36e7001367843fff3f$''',
+  '''^171ab510580177116f585446d3467d6f4cacc8a828ca7cd79b6d9e1b4613491a$''',
+]

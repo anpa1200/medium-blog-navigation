@@ -1,0 +1,42 @@
+
+> medium-blog-navigation@0.1.0 research:validation:engine
+> python3 research/anomaly-validation/run_validation.py --endpoint http://127.0.0.1:18921 --public-recordings
+
+PASS spray-success-after-own-failures
+PASS spray-unrelated-user
+PASS spray-other-tenant
+PASS spray-50140-not-success
+PASS spray-reversed-order
+PASS spray-expired-followup
+PASS spray-policy-errors-not-password-failures
+PASS spray-duplicate-events-not-extra-failures
+PASS spray-fixed-bin-boundary-known-blind-spot
+PASS kerberoast-aes-breadth
+PASS kerberoast-machine-principal-not-hidden
+PASS kerberoast-low-volume-known-blind-spot
+PASS kerberoast-krbtgt-not-counted
+PASS kerberoast-repeated-service-not-breadth
+PASS replication-same-dc-logon
+PASS replication-missing-logon-retained
+PASS replication-other-dc-not-joined
+PASS replication-future-logon-not-joined
+PASS replication-stale-logon-not-joined
+PASS replication-ambiguous-addresses-retained
+PASS replication-separate-rights-not-and-same-event
+PASS replication-wrong-access-bit
+PASS replication-additional-access-bits-accepted
+PASS pth-two-views-not-proof
+PASS lsass-read-bit-and-trusted-path-retained
+PASS web-child-role-scoped
+PASS dns-frequency-entropy-not-randomness
+PASS bulk-zero-mad-spike
+PASS bulk-zero-mad-small-change
+PASS bulk-cold-start
+PASS bulk-missing-history-not-zero
+PASS bulk-current-outage
+PASS bulk-current-null-count
+PASS bulk-minimum-observed-days
+REPLAY dcsync: 11 input records, 4 output rows
+REPLAY lsass-access: 32 input records, 24 output rows
+REPLAY kerberoasting: 1 input records, 0 output rows
+Report: /home/andrey/wireshark/anomaly-validated-revision/research/anomaly-validation/results/functional-results.json

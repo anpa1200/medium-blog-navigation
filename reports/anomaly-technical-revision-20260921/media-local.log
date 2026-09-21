@@ -1,0 +1,8 @@
+
+> medium-blog-navigation@0.1.0 validate:media:local
+> python3 scripts/validate_article_media.py --local-only
+
+Media references: 2782
+Missing local files: 0
+Remote failures: 0
+Report: docs/media-validation.md

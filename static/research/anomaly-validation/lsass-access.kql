@@ -1,0 +1,8 @@
+// PROCESS_VM_READ candidates. No trusted-path or process-name auto-exclusion.
+EndpointEvents
+| where Provider == "Microsoft-Windows-Sysmon" and EventID == 10
+| where TargetImage endswith "\\lsass.exe"
+| where binary_and(GrantedAccess, 16) != 0
+| summarize arg_max(TimeGenerated, *) by Computer, EvidenceId
+| project TimeGenerated, Computer, EvidenceId, Image, TargetImage, GrantedAccess, CallTrace
+| order by EvidenceId asc

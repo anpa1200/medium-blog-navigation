@@ -1,0 +1,24 @@
+// Candidate replication-right access, NOT proof of successful credential extraction.
+let Candidates = WindowsEvents
+    | where EventID == 4662
+    | where binary_and(AccessMask, 256) != 0
+    | where ObjectType =~ "domainDNS" or ObjectType contains "19195a5b-6da0-11d0-afd3-00c04fd930c9"
+    | where Properties contains "1131f6aa-9c07-11d1-f79f-00c04fc2dcd2"
+        or Properties contains "1131f6ad-9c07-11d1-f79f-00c04fc2dcd2"
+        or Properties contains "89e95b76-444d-4c62-991a-0facbeda640c"
+    | summarize arg_max(TimeGenerated, *) by Computer, EvidenceId
+    | project Computer, EvidenceId, ReplicationTime=TimeGenerated, Principal, LogonId, Properties;
+let Correlation = Candidates
+    | where isnotempty(LogonId)
+    | join kind=inner (WindowsEvents | where EventID == 4624 and isnotempty(LogonId)
+        | project Computer, LogonId, LogonTime=TimeGenerated, CorrelatedIP=SourceIP) on Computer, LogonId
+    | where LogonTime <= ReplicationTime and LogonTime >= ReplicationTime - 24h
+    | where isnotempty(CorrelatedIP) and CorrelatedIP != "-"
+    | summarize CandidateIPs=make_set(CorrelatedIP, 100) by Computer, EvidenceId
+    | extend SourceIP=iff(array_length(CandidateIPs) == 1, tostring(CandidateIPs[0]), ""),
+        SourceStatus=iff(array_length(CandidateIPs) == 1, "correlated", "ambiguous");
+Candidates
+| join kind=leftouter Correlation on Computer, EvidenceId
+| extend SourceStatus=iff(isempty(SourceStatus), "unresolved", SourceStatus)
+| project Computer, EvidenceId, ReplicationTime, Principal, LogonId, Properties, SourceIP, SourceStatus
+| order by Computer asc, EvidenceId asc

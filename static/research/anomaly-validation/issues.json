@@ -1,0 +1,564 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-21",
+  "baseline_commit": "3656ca970ae839081af078f486cf542e9105044b",
+  "scope": "36 existing findings and 16 external-review rows are cross-referenced, not counted as 52 unique factual defects.",
+  "issues": [
+    {
+      "id": "R01",
+      "priority": "P2",
+      "original_finding": "Intro/index: only 14 operational headings covered",
+      "status": "corrected_in_revision",
+      "resolution": "Scope indexed as 14 operational families plus correlation; 15 navigation tags retained.",
+      "location": "§2",
+      "original_evidence": "Original heading; new taxonomy and incident register."
+    },
+    {
+      "id": "R02",
+      "priority": "P1",
+      "original_finding": "§1/§10: hypothesis “substantially true”; incidents “confirm” detectability",
+      "status": "corrected_in_revision",
+      "resolution": "Conditional hypothesis and conclusion replace population-level detectability claims.",
+      "location": "§1; §10",
+      "original_evidence": "Study design contains no controlled detection evaluation or independent negative corpus."
+    },
+    {
+      "id": "R03",
+      "priority": "P2",
+      "original_finding": "§2/§5.9: High/Medium/Low stability, fidelity and FP risk",
+      "status": "corrected_in_revision",
+      "resolution": "Unmeasured FP/stability/fidelity rankings replaced by requirements and competing explanations.",
+      "location": "§2; §5.9",
+      "original_evidence": "No measurement method, samples or uncertainty attached to the ratings."
+    },
+    {
+      "id": "R04",
+      "priority": "P2",
+      "original_finding": "§3: ATT&CK lifecycle; Kerberoasting under privilege escalation",
+      "status": "corrected_in_revision",
+      "resolution": "Nonsequential tactic mapping pinned to Enterprise ATT&CK v19.2; Kerberoasting under Credential Access.",
+      "location": "§3; §6.1",
+      "original_evidence": "[MITRE Kerberoasting](https://attack.mitre.org/techniques/T1558/003/)."
+    },
+    {
+      "id": "R05",
+      "priority": "P1",
+      "original_finding": "§4.1: TEARDROP disguised as a JPEG",
+      "status": "corrected_in_revision",
+      "resolution": "TEARDROP executable distinguished from the input file with a likely fake JPEG header.",
+      "location": "§4.1",
+      "original_evidence": "[Mandiant SUNBURST investigation](https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor/)."
+    },
+    {
+      "id": "R06",
+      "priority": "P1",
+      "original_finding": "§4.1/§10: SUNBURST above-baseline entropy and assured DNS detection",
+      "status": "corrected_in_revision",
+      "resolution": "No SUNBURST entropy range, victim baseline or guaranteed entropy-detector success asserted.",
+      "location": "§4.1; §10",
+      "original_evidence": "[Mandiant technical analysis](https://cloud.google.com/blog/topics/threat-intelligence/sunburst-additional-technical-details/); no local evaluation data."
+    },
+    {
+      "id": "R07",
+      "priority": "P1",
+      "original_finding": "§4.2/§8/§9: web-server child shells have near-zero legitimate prevalence",
+      "status": "corrected_in_revision",
+      "resolution": "Web-worker child shells are scoped hunting candidates with benign alternatives.",
+      "location": "§4.2; §8.2",
+      "original_evidence": "[Microsoft Exchange post-exploitation analysis](https://www.microsoft.com/en-us/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/). Hunting queries are not FP measurements."
+    },
+    {
+      "id": "R08",
+      "priority": "P2",
+      "original_finding": "§4.2: native IIS module activity attributed through original HAFNIUM source",
+      "status": "corrected_in_revision",
+      "resolution": "HAFNIUM separated from broader Exchange post-exploitation and later native-module claims.",
+      "location": "§4.2",
+      "original_evidence": "[Original HAFNIUM report](https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/). Exact later-module attribution remains unverified here."
+    },
+    {
+      "id": "R09",
+      "priority": "P1",
+      "original_finding": "§4.3: one Conti narrative combines specific tools, proxy paths and timing from multiple reports",
+      "status": "corrected_in_revision",
+      "resolution": "Conti account anchored to one BazarCall/Trickbot investigation; unmatched proxy/timing details excluded.",
+      "location": "§4.3",
+      "original_evidence": "[BazarCall to Conti investigation](https://thedfirreport.com/2021/08/01/bazarcall-to-conti-ransomware-via-trickbot-and-cobalt-strike/). Unmatched specifics remain unverified."
+    },
+    {
+      "id": "R10",
+      "priority": "P1",
+      "original_finding": "§4.3/§9: AdFind causes every EDR to fire; workstation shadow-copy deletion is effectively never legitimate",
+      "status": "corrected_in_revision",
+      "resolution": "No universal EDR detection or near-zero legitimate snapshot-deletion claim.",
+      "location": "§4.3; §9.2",
+      "original_evidence": "No prevalence dataset or cross-product experiment supplied by the article."
+    },
+    {
+      "id": "R11",
+      "priority": "P1",
+      "original_finding": "§4.4: DNSpionage folded into APT34/OilRig",
+      "status": "corrected_in_revision",
+      "resolution": "DNSpionage is not assigned to OilRig from the Talos report; RDAT mechanisms remain variant-specific.",
+      "location": "§4.4",
+      "original_evidence": "[Talos DNSpionage](https://blog.talosintelligence.com/dnspionage-campaign-targets-middle-east/); [Unit 42 RDAT](https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/)."
+    },
+    {
+      "id": "R12",
+      "priority": "P1",
+      "original_finding": "§4.4: TXT:A ratio >1 abnormal for any legitimate service; no full QNAME means tunneling is undetectable",
+      "status": "corrected_in_revision",
+      "resolution": "No universal TXT:A threshold or assertion that missing QNAME defeats all possible detection.",
+      "location": "§4.4",
+      "original_evidence": "Analytical counterexamples; [Zeek DNS schema](https://docs.zeek.org/en/v8.2.1/reference/logs/dns.html). No universal threshold is established."
+    },
+    {
+      "id": "R13",
+      "priority": "P1",
+      "original_finding": "§4.8/§10: Volt Typhoon citation links to Midnight Blizzard; detection possible only with command-line logging",
+      "status": "corrected_in_revision",
+      "resolution": "Correct Volt Typhoon source; IFM on DC context and multiple evidence sources.",
+      "location": "§4.9",
+      "original_evidence": "[Microsoft, 24 May 2023](https://www.microsoft.com/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques)."
+    },
+    {
+      "id": "R14",
+      "priority": "P1",
+      "original_finding": "§4.9: MESSAGETAP is a shared library with a continuing 30-second configuration refresh",
+      "status": "corrected_in_revision",
+      "resolution": "MESSAGETAP described as ELF data miner; initial config loading/deletion distinguished from continuous refresh.",
+      "location": "§4.10",
+      "original_evidence": "[MESSAGETAP primary analysis](https://cloud.google.com/blog/topics/threat-intelligence/messagetap-who-is-reading-your-text-messages/)."
+    },
+    {
+      "id": "R15",
+      "priority": "P1",
+      "original_finding": "§4.11: secretsdump means DCSync; WMI 5861 associated with wmiexec",
+      "status": "corrected_in_revision",
+      "resolution": "Impacket tool/mode distinction; WMI subscription and RPC-port inference boundaries.",
+      "location": "§4.11",
+      "original_evidence": "[CISA AA22-277A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a); verify actual mode and protocol, not just tool or port."
+    },
+    {
+      "id": "R16",
+      "priority": "P1",
+      "original_finding": "§5.1: universal default Windows audit settings, including 4688",
+      "status": "corrected_in_revision",
+      "resolution": "Effective audit prerequisites replace blanket defaults; 4776 authority and 4648 corrected.",
+      "location": "§5.1",
+      "original_evidence": "[Audit Process Creation](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/audit-process-creation); [Event 4776](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4776)."
+    },
+    {
+      "id": "R17",
+      "priority": "P1",
+      "original_finding": "§5.2: `StartModule = \"Unknown\"` indicates shellcode",
+      "status": "corrected_in_revision",
+      "resolution": "Unresolved Sysmon start module is not shellcode proof.",
+      "location": "§5.2",
+      "original_evidence": "[Sysmon Event 8](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)."
+    },
+    {
+      "id": "R18",
+      "priority": "P1",
+      "original_finding": "§4/§5/§9: Sysmon 7 sees in-memory loaders; Sysmon command lines require Windows 4688 GPO",
+      "status": "corrected_in_revision",
+      "resolution": "Sysmon versus native 4688 configuration separated; manual-load coverage not guaranteed.",
+      "location": "§5.2",
+      "original_evidence": "[Sysmon documentation](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon). Runtime coverage remains untested here."
+    },
+    {
+      "id": "R19",
+      "priority": "P1",
+      "original_finding": "§5.4: `dns.log` has `TTL`; JA3/JA3S are baseline `ssl.log` fields",
+      "status": "corrected_in_revision",
+      "resolution": "Zeek TTLs corrected; fingerprint/package and analyzer prerequisites documented.",
+      "location": "§5.4",
+      "original_evidence": "[DNS fields](https://docs.zeek.org/en/v8.2.1/reference/logs/dns.html); [TLS logging and JA3 packages](https://docs.zeek.org/en/lts/reference/logs/ssl.html)."
+    },
+    {
+      "id": "R20",
+      "priority": "P2",
+      "original_finding": "§5.3–5.6: exact vendor counts, dates, model inventories, alert labels and license dependencies",
+      "status": "corrected_in_revision",
+      "resolution": "Unverified vendor counts, dates, model inventories, hard-coded learning periods and licensing removed from operational guidance.",
+      "location": "§5.3–5.6",
+      "original_evidence": "Vendor notice is useful but does not validate individual product assertions. No independent product benchmark was run."
+    },
+    {
+      "id": "R21",
+      "priority": "P1",
+      "original_finding": "§5.5: every Entra risk detection is an anomaly model; MFA denial equals user-reported suspicious activity",
+      "status": "corrected_in_revision",
+      "resolution": "Risk signal classes and MFA failure versus user-reported fraud distinguished.",
+      "location": "§5.5",
+      "original_evidence": "[Microsoft's current risk catalog](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks)."
+    },
+    {
+      "id": "R22",
+      "priority": "P2",
+      "original_finding": "§5.5: exact Okta event identifiers",
+      "status": "corrected_in_revision",
+      "resolution": "Valid Okta event names retained; outcome interpretation qualified.",
+      "location": "§5.5",
+      "original_evidence": "[Okta event types](https://developer.okta.com/docs/reference/api/event-types/). No tenant behavior was tested."
+    },
+    {
+      "id": "R23",
+      "priority": "P1",
+      "original_finding": "§5.6: `GenerateDbAuthToken` as a CloudTrail API anomaly",
+      "status": "documented_conflict_not_resolved_upstream",
+      "resolution": "Both conflicting AWS documents cited; no token-generation CloudTrail detector is offered.",
+      "location": "§5.6",
+      "original_evidence": "[Amazon RDS IAM authentication limitations](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html)."
+    },
+    {
+      "id": "R24",
+      "priority": "P2",
+      "original_finding": "§5.7: entropy measures string randomness; short human labels establish a threshold",
+      "status": "corrected_in_revision",
+      "resolution": "Entropy defined as character-frequency statistic with length/alphabet bound; implementation tested.",
+      "location": "§5.7; §8.2",
+      "original_evidence": "Mathematical counterexample in `tests/anomaly-research-logic.test.mjs`; no universal empirical DNS cutoff follows."
+    },
+    {
+      "id": "R25",
+      "priority": "P1",
+      "original_finding": "§6.1: all service tickets encrypted with NTLM hash; regular-user service-ticket requests abnormal",
+      "status": "corrected_in_revision",
+      "resolution": "RC4/AES service-key distinction, ordinary TGS requests and low-volume coverage limits.",
+      "location": "§6.1; §8.2",
+      "original_evidence": "[MITRE Kerberoasting](https://attack.mitre.org/techniques/T1558/003/); ticket encryption and legitimate workload must be checked locally."
+    },
+    {
+      "id": "R26",
+      "priority": "P1",
+      "original_finding": "§6.2: SACL grants SYSTEM audit rights; all machine accounts excluded",
+      "status": "corrected_in_revision",
+      "resolution": "SACL auditing versus permission explained; blanket account-name exclusions removed.",
+      "location": "§6.2",
+      "original_evidence": "[Directory Service Access audit](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/audit-directory-service-access); [4662 fields](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4662)."
+    },
+    {
+      "id": "R27",
+      "priority": "P1",
+      "original_finding": "§6.2/§8: DCSync query outputs `IpAddress` from 4662, requires both GUIDs in one event, omits stated access-mask check",
+      "status": "corrected_in_revision",
+      "resolution": "DCSync access bit, separate rights, same-DC bounded logon correlation and unresolved/ambiguous output tested.",
+      "location": "§6.2; §8.2",
+      "original_evidence": "[Microsoft 4662 event XML and correlation fields](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4662)."
+    },
+    {
+      "id": "R28",
+      "priority": "P1",
+      "original_finding": "§6.3: PtH sends the NTLM hash directly; S-1-0-0 proves no interactive source logon",
+      "status": "corrected_in_revision",
+      "resolution": "NTLM challenge-response distinguished from directly sending hash; null SID not source-session proof.",
+      "location": "§6.3",
+      "original_evidence": "[MITRE PtH](https://attack.mitre.org/techniques/T1550/002/); [Microsoft 4624 field definitions](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4624)."
+    },
+    {
+      "id": "R29",
+      "priority": "P1",
+      "original_finding": "§6.4/§8: unknown call trace proves injection; trusted image-path allowlist proves benign",
+      "status": "corrected_in_revision",
+      "resolution": "Unresolved call trace and trusted filenames/paths are not malicious/benign verdicts.",
+      "location": "§6.4",
+      "original_evidence": "Inference boundary; Sysmon fields do not certify intent."
+    },
+    {
+      "id": "R30",
+      "priority": "P1",
+      "original_finding": "§8: preserved query exports split tokens/operators; undeclared `THRESHOLD` / server-list placeholders",
+      "status": "corrected_in_revision",
+      "resolution": "Broken legacy blocks archived; eight single-source normalized-schema KQL examples execute in a real Kusto engine.",
+      "location": "§8",
+      "original_evidence": "Static inspection: split `15`/`m`, `0`/`x17`, `!`/`in`, and comparison operators. This was not a query-engine compiler test."
+    },
+    {
+      "id": "R31",
+      "priority": "P1",
+      "original_finding": "§8 password spray: time-range expression used as join key, tenant-wide aggregation loses affected identity",
+      "status": "corrected_in_revision",
+      "resolution": "Password-spray equality keys, attempted-account membership and time ordering tested.",
+      "location": "§8.2",
+      "original_evidence": "[Kusto time-window join](https://learn.microsoft.com/en-us/kusto/query/join-time-window?view=microsoft-fabric); synthetic unrelated-user counterexample."
+    },
+    {
+      "id": "R32",
+      "priority": "P1",
+      "original_finding": "§8: result 50140 treated as success; all nonzero codes treated as bad passwords",
+      "status": "corrected_in_revision",
+      "resolution": "Result 0 success; 50126 selected invalid-credential class; 50140 and policy errors excluded.",
+      "location": "§8.2",
+      "original_evidence": "[Entra error-code reference](https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes)."
+    },
+    {
+      "id": "R33",
+      "priority": "P1",
+      "original_finding": "§8 bulk download: calendar-day baseline vs rolling 24 hours; inner join; positive stdev filter",
+      "status": "corrected_in_revision",
+      "resolution": "Calendar-day alignment, completeness, cold starts, zero MAD and future exclusion tested.",
+      "location": "§8.2",
+      "original_evidence": "Static query logic and synthetic cold-start/zero-variance counterexamples."
+    },
+    {
+      "id": "R34",
+      "priority": "P1",
+      "original_finding": "§8 hybrid gating: precision improves without losing recall",
+      "status": "corrected_in_revision",
+      "resolution": "No free precision/recall improvement promised; synthetic gate ablation exposes lost positives.",
+      "location": "§8.1; §9.6",
+      "original_evidence": "Set-intersection counterexample in the logic tests."
+    },
+    {
+      "id": "R35",
+      "priority": "P1",
+      "original_finding": "§9/§10: no single anomaly should cause investigation; other sections call single events near-deterministic",
+      "status": "corrected_in_revision",
+      "resolution": "Investigation, incident declaration and containment separated; no blanket single-signal suppression.",
+      "location": "§9.4; §10",
+      "original_evidence": "Internal comparison of §§8.3, 9.2, 9.4 and 10."
+    },
+    {
+      "id": "R36",
+      "priority": "P1",
+      "original_finding": "§10: Midnight Blizzard defeats per-tenant analytics; SaaS-native theft creates no signals without SaaS audit",
+      "status": "corrected_in_revision",
+      "resolution": "Tenant-local and SaaS visibility limitations qualified; no universal absence claim.",
+      "location": "§4.6–4.7; §10",
+      "original_evidence": "[Microsoft Midnight Blizzard guidance](https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/); [Mandiant UNC3944](https://cloud.google.com/blog/topics/threat-intelligence/unc3944-targets-saas-applications/)."
+    },
+    {
+      "id": "E01",
+      "priority": "P2",
+      "original_finding": "Midnight Blizzard February metric",
+      "overlaps": [
+        "R02"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Already removed before this revision; now cited accurately to the March update with its limited scope.",
+      "location": "§4.6"
+    },
+    {
+      "id": "E02",
+      "priority": "P1",
+      "original_finding": "Midnight Blizzard permission",
+      "overlaps": [
+        "R21"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Already corrected before this revision; full_access_as_app retained explicitly.",
+      "location": "§4.6"
+    },
+    {
+      "id": "E03",
+      "priority": "P1",
+      "original_finding": "Storm-0558 signing key and detection",
+      "overlaps": [
+        "R02"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Acquired key/forged tokens preserved; CSRB customer detection and Big Yellow Taxi added without inventing a private rule.",
+      "location": "§4.8"
+    },
+    {
+      "id": "E04",
+      "priority": "P2",
+      "original_finding": "Storm-1283 citation",
+      "overlaps": [
+        "R20"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "December 12, 2023 Microsoft report retained; distinct campaign from Storm-0558.",
+      "location": "§4.8"
+    },
+    {
+      "id": "E05",
+      "priority": "P1",
+      "original_finding": "Volt Typhoon IFM execution host",
+      "overlaps": [
+        "R13"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "DC execution versus remote initiation distinguished; non-DC-only detector not offered.",
+      "location": "§4.9"
+    },
+    {
+      "id": "E06",
+      "priority": "P2",
+      "original_finding": "System versus Security clearing",
+      "overlaps": [
+        "R16"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Eventlog System 104 distinguished from Security 1102; actual cleared channel required.",
+      "location": "§4.9; §5.1"
+    },
+    {
+      "id": "E07",
+      "priority": "P2",
+      "original_finding": "Event 4648 defaults",
+      "overlaps": [
+        "R16"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Audit Logon membership documented; effective-policy verification replaces universal defaults.",
+      "location": "§5.1"
+    },
+    {
+      "id": "E08",
+      "priority": "P2",
+      "original_finding": "Defender native events",
+      "overlaps": [
+        "R10"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Operational 5001/5007 included; configuration change not automatically malicious.",
+      "location": "§4.3; §5.1"
+    },
+    {
+      "id": "E09",
+      "priority": "P2",
+      "original_finding": "Conti merged tools/timeline",
+      "overlaps": [
+        "R09"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Single-investigation account; IcedID detail not attributed to BazarCall/Trickbot case.",
+      "location": "§4.3"
+    },
+    {
+      "id": "E10",
+      "priority": "P2",
+      "original_finding": "3CX chronology and icon content",
+      "overlaps": [
+        "R02"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "March 22 behavioral detections precede disclosure; icon-based C2 information distinguished from executable download.",
+      "location": "§4.12"
+    },
+    {
+      "id": "E11",
+      "priority": "P1",
+      "original_finding": "MOVEit account and Windows 4720",
+      "overlaps": [
+        "R16"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Already corrected before revision; application-database operation retained explicitly.",
+      "location": "§4.5"
+    },
+    {
+      "id": "E12",
+      "priority": "P2",
+      "original_finding": "RC4-only Kerberoasting",
+      "overlaps": [
+        "R25"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "AES-inclusive request-breadth view, krbtgt exclusion and measured low-volume miss.",
+      "location": "§6.1; §8.2"
+    },
+    {
+      "id": "E13",
+      "priority": "P2",
+      "original_finding": "PtH source-side view",
+      "overlaps": [
+        "R28"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Type 9/seclogo included as non-universal, non-exclusive hunting view.",
+      "location": "§6.3; §8.2"
+    },
+    {
+      "id": "E14",
+      "priority": "P2",
+      "original_finding": "JA3/JA4 currency",
+      "overlaps": [
+        "R19"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "TLS-extension-order issue and implementation dependency documented; fingerprint is not attribution.",
+      "location": "§5.4"
+    },
+    {
+      "id": "E15",
+      "priority": "P2",
+      "original_finding": "TF-IDF and model assumptions",
+      "overlaps": [
+        "R24"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Feature weighting separated from clustering; count dispersion and zero-MAD caveats; synthetic comparison.",
+      "location": "§2; §9.2–9.6"
+    },
+    {
+      "id": "E16",
+      "priority": "P2",
+      "original_finding": "Inconsistent examples",
+      "overlaps": [
+        "R03"
+      ],
+      "status": "corrected_in_revision",
+      "resolution": "Aligned download windows/units, server peers, SSH ancestry, point/context distinctions and service-principal flow example corrected.",
+      "location": "§1–2"
+    },
+    {
+      "id": "A01",
+      "priority": "P2",
+      "original_finding": "Unsupported victim counts, NSA rare-URI cutoff and exact Conti timing",
+      "status": "corrected_in_revision",
+      "resolution": "Unsupported numeric claims are not retained as established incident facts.",
+      "location": "§4.1–4.3"
+    },
+    {
+      "id": "A02",
+      "priority": "P1",
+      "original_finding": "MOVEit configuration-file claim and named UNC3944 victim attribution",
+      "status": "corrected_in_revision",
+      "resolution": "Use documented database settings and source-scoped cluster account; do not carry unmatched filename/victim assertions forward.",
+      "location": "§4.5; §4.7"
+    },
+    {
+      "id": "A03",
+      "priority": "P2",
+      "original_finding": "APT41 SQLULDR2/PINEGROVE and Unit 42 title/URL mismatch",
+      "status": "corrected_in_revision",
+      "resolution": "Direct July 2024 APT41 report and specific RDAT investigation replace generic/mismatched sources.",
+      "location": "§4.4; §4.10; §11"
+    },
+    {
+      "id": "A04",
+      "priority": "P1",
+      "original_finding": "Historical infographics can contradict corrected prose",
+      "status": "historical_not_revalidated",
+      "resolution": "All 44 media references retained; 43 non-cover figures moved into an explicitly superseded historical appendix, not used as current guidance.",
+      "location": "§9.8"
+    },
+    {
+      "id": "V01",
+      "priority": "P1",
+      "original_finding": "Production ingestion/thresholds/accuracy",
+      "status": "not_established",
+      "resolution": "Normalized-schema functional tests and public lab replay do not establish live Sentinel/Splunk ingestion, production precision, recall or containment safety.",
+      "location": "§8.3; §9.6"
+    },
+    {
+      "id": "V02",
+      "priority": "P1",
+      "original_finding": "Medium edition synchronization",
+      "status": "requires_publication_access",
+      "resolution": "Prepared correction notice; no Medium modification or synchronization claimed.",
+      "location": "§9.7"
+    },
+    {
+      "id": "V03",
+      "priority": "P2",
+      "original_finding": "Independent factual certification",
+      "status": "not_established",
+      "resolution": "This is a source-grounded author/assistant revision and reproducible test package, not an independent peer-review certification or 100-percent factual guarantee.",
+      "location": "audit"
+    }
+  ]
+}

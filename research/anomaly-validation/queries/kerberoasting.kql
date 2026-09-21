@@ -1,0 +1,13 @@
+// WindowsEvents normalized as documented in contracts.json. Five is a test parameter.
+WindowsEvents
+| where EventID == 4769 and ResultCode == "0"
+| where isnotempty(Principal) and isnotempty(ServiceName)
+| extend ServiceName=tolower(ServiceName)
+| where ServiceName !~ "krbtgt" and not(ServiceName startswith "krbtgt/")
+| summarize arg_max(TimeGenerated, *) by Computer, EvidenceId
+| extend WindowStart=bin(TimeGenerated, 15m)
+| summarize Requests=count(), DistinctServices=count_distinct(ServiceName),
+    Services=make_set(ServiceName, 100), EncryptionTypes=make_set(EncryptionType, 10)
+    by Principal, SourceIP, WindowStart
+| where DistinctServices >= 5
+| order by Principal asc, WindowStart asc

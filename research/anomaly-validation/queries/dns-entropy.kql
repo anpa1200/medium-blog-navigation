@@ -1,0 +1,15 @@
+// Feature extraction, NOT a malicious-domain verdict. One normalized ASCII label per row.
+let Labels = DnsLabels
+    | where isnotempty(EvidenceId) and isnotempty(Label)
+    | extend Label=tolower(Label)
+    | where Label matches regex "^[a-z0-9_-]{1,63}$"
+    | summarize arg_max(TimeGenerated, *) by Sensor, EvidenceId
+    | extend LabelLength=strlen(Label);
+Labels
+| mv-expand CharacterIndex=range(0, LabelLength - 1, 1) to typeof(long)
+| extend Character=substring(Label, toint(CharacterIndex), 1)
+| summarize Occurrences=count() by Sensor, EvidenceId, Label, LabelLength, Character
+| extend P=todouble(Occurrences) / todouble(LabelLength)
+| summarize Entropy=-sum(P * log2(P)) by Sensor, EvidenceId, Label, LabelLength
+| extend LengthBound=log2(todouble(LabelLength))
+| order by EvidenceId asc
