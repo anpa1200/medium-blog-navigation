@@ -8,7 +8,12 @@ const root=new URL('../',import.meta.url), check=process.argv.includes('--check'
 const hash=s=>createHash('sha256').update(s).digest('hex');
 const out='static/research/anomaly-visuals/';
 const provenance=JSON.parse(readFileSync(new URL('research/anomaly-visuals/uploads-provenance.json',root)));
+const cover=JSON.parse(readFileSync(new URL(out+'uploaded-cover-provenance.json',root)));
+const coverBytes=readFileSync(new URL(out+cover.file,root));
+const coverSize=imageMetadata(coverBytes);
+if(hash(coverBytes)!==cover.sha256||coverBytes.length!==cover.bytes||coverSize.width!==cover.width||coverSize.height!==cover.height||coverSize.format!==cover.format)throw Error('Changed supplied cover artwork');
 const manifest={schema_version:1,revision:'2026-09-21',scope:'Author-reviewed diagrams tied to the revised manuscript and versioned evidence. Not independent certification or production validation.',source_sha256:{},figures:[]};
+manifest.cover=cover;
 manifest.source_sha256['research/anomaly-visuals/uploaded-credentials.mjs']=hash(readFileSync(new URL('research/anomaly-visuals/uploaded-credentials.mjs',root)));
 for(const path of ['research/anomaly-visuals/figures.mjs','research/anomaly-visuals/uploaded-figures.mjs','research/anomaly-visuals/uploaded-taxonomy-continuation.mjs','research/anomaly-visuals/uploaded-incidents.mjs','research/anomaly-visuals/uploaded-detection-sources.mjs','research/anomaly-visuals/uploads-provenance.json','scripts/lib/uploaded-image-metadata.mjs','scripts/lib/anomaly-visuals.mjs','research/anomaly-revision/family-contracts.json','research/anomaly-incidents.json','research/anomaly-validation/results/functional-results.json','research/anomaly-validation/results/synthetic-study.json'])manifest.source_sha256[path]=hash(readFileSync(new URL(path,root)));
 for(const p of provenance.documents||[]){
@@ -42,6 +47,8 @@ for(const [i,f] of figures.entries()){
 }
 save(out+'manifest.json',JSON.stringify(manifest,null,2)+'\n');
 const catalog=JSON.parse(readFileSync(new URL('src/data/article-catalog.json',root)));
-catalog.find(r=>r.id==='90df8b6dea12').images=figures.length+44;
+const article=catalog.find(r=>r.id==='90df8b6dea12');
+article.images=figures.length+44+1; // Numbered figures, historical images, and the unnumbered cover.
+article.cover_image='https://1200km.com/articles/research/anomaly-visuals/'+cover.file;
 save('src/data/article-catalog.json',JSON.stringify(catalog,null,2)+'\n');
 console.log(`${check?'Verified':'Rendered'} ${figures.length} figures: ${figures.filter(f=>!f.upload).length*2} active SVG variants and ${figures.filter(f=>f.upload).length} unchanged uploaded images.`);

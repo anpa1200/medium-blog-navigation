@@ -87,6 +87,9 @@ try{
     assert.equal((await page.goto(origin+path,{waitUntil:'networkidle'})).status(),200);
     await page.addScriptTag({path:resolve(site,'node_modules/axe-core/axe.min.js')});
     assert.equal(await page.locator('h1').count(),1);
+    assert.equal(await page.locator('[data-research-cover]').count(),1);
+    assert.equal(await page.locator('meta[property="og:image"]').getAttribute('content'),article.cover_image);
+    assert.equal(await page.locator('meta[name="twitter:image"]').getAttribute('content'),article.cover_image);
     assert.equal(await page.locator('[data-research-figure]').count(),manifest.figures.length);
     const inventory=JSON.parse(readFileSync(resolve(root,'research/anomaly-revision/original-inventory.json')));
     for(const id of inventory.anchors)assert.equal(await page.locator(`[id="${id}"]`).count(),1,id);
@@ -97,6 +100,17 @@ try{
     for(const width of [390,768,1440])for(const theme of ['light','dark']){
       await page.setViewportSize({width,height:900});
       await page.evaluate(t=>{document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-site-theme',t);},theme);
+      const cover=page.locator('[data-research-cover]');
+      await cover.scrollIntoViewIfNeeded();
+      const coverImage=cover.locator('img');
+      await coverImage.evaluate(img=>img.decode());
+      const coverInfo=await coverImage.evaluate(img=>({width:img.clientWidth,height:img.clientHeight,naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,src:img.currentSrc,loading:img.loading,priority:img.fetchPriority}));
+      assert.deepEqual([coverInfo.naturalWidth,coverInfo.naturalHeight],[manifest.cover.width,manifest.cover.height]);
+      assert.ok(coverInfo.src.endsWith('/'+manifest.cover.file));
+      assert.equal(coverInfo.loading,'eager');assert.equal(coverInfo.priority,'high');
+      assert.ok(Math.abs(coverInfo.width/coverInfo.height-manifest.cover.width/manifest.cover.height)<.02);
+      assert.equal(await coverImage.getAttribute('alt'),manifest.cover.alt);
+      await cover.screenshot({path:resolve(report,`cover-${width}-${theme}.png`)});
       for(const f of manifest.figures){
         const fig=page.locator(`[data-research-figure="${f.id}"]`);await fig.scrollIntoViewIfNeeded();
         await fig.locator('img').evaluate(img=>img.decode());
@@ -116,7 +130,7 @@ try{
       const scrollTables=await page.locator('main table').evaluateAll(nodes=>nodes.filter(n=>n.scrollWidth>n.clientWidth+1).map(n=>({focusable:n.tabIndex>=0})));
       assert.ok(scrollTables.every(t=>t.focusable),`Keyboard-focusable tables ${width}`);
       await page.locator('.anomaly-figure-transcript').evaluateAll(nodes=>nodes.forEach(n=>{n.open=false;}));
-      result.article.push({width,theme,figures_loaded:manifest.figures.length,aspect_ratios:true,overflow:false,accessibility_violations:accessibility,expanded_transcripts_checked:manifest.figures.length,keyboard_scroll_tables:scrollTables.length});
+      result.article.push({width,theme,cover:coverInfo,social_preview:article.cover_image,figures_loaded:manifest.figures.length,aspect_ratios:true,overflow:false,accessibility_violations:accessibility,expanded_transcripts_checked:manifest.figures.length,keyboard_scroll_tables:scrollTables.length});
     }
     for(const [width,id] of [[1440,'family-graph-relationship'],[1440,'case-storm'],[390,'family-volumetric'],[390,'study-results']]){
       await page.setViewportSize({width,height:1000});const fig=page.locator(`[data-research-figure="${id}"]`);await fig.scrollIntoViewIfNeeded();

@@ -3120,5 +3120,17 @@
         }
       }
     }
-  ]
+  ],
+  "cover": {
+    "file": "malicious-activity-statistical-signal-cover.png",
+    "original": "ChatGPT Image Sep 21, 2026, 09_37_54 PM.png",
+    "import": "User-supplied cover artwork, copied without image editing or recompression. Illustrative content, not measured telemetry or instructions.",
+    "sha256": "e6db558031d9e082cfba8dd153c1e7ca22efce24254d522f13ac64737db96f49",
+    "bytes": 1917176,
+    "width": 1672,
+    "height": 941,
+    "format": "png",
+    "alt": "Malicious Activity as a Statistical Signal: identity, endpoint, network, cloud, application and data telemetry illustrated as blue baselines and red deviations. An anomaly is evidence, not a verdict.",
+    "caption": "Illustrative cover artwork, not measured telemetry. Malicious activity can resemble ordinary behavior; an anomaly alone does not establish an intrusion."
+  }
 }

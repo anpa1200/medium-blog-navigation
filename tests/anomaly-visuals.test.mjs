@@ -70,12 +70,25 @@ test('base-rate arithmetic and entropy examples are exact',()=>{
   assert.equal((base.precision*100).toFixed(2),'0.89');
   assert.equal(Math.abs(entropy('aaaa')),0);assert.equal(entropy('abab'),1);assert.equal(entropy('abcd'),2);
 });
-test('the social-preview PNG is bound to the current SVG and catalog metadata',()=>{
+test('the former generated cover stays available at its original URL',()=>{
   const p=json('static/research/anomaly-visuals/cover-provenance.json');
   assert.equal(hash(read(`static/research/anomaly-visuals/${p.source}`)),p.source_sha256);
   assert.equal(hash(readFileSync(new URL('static/research/anomaly-visuals/research-map.png',root))),p.png_sha256);
-  assert.equal(article.cover_image,'https://1200km.com/articles/research/anomaly-visuals/research-map.png');
-  assert.equal(article.images,99);
+});
+test('the supplied cover is byte-bound and consistent across hero, preview and catalog',()=>{
+  const p=json('static/research/anomaly-visuals/uploaded-cover-provenance.json');
+  const bytes=readFileSync(new URL('static/research/anomaly-visuals/'+p.file,root));
+  assert.equal(hash(bytes),p.sha256);
+  assert.equal(bytes.length,p.bytes);
+  assert.deepEqual(imageMetadata(bytes),{format:p.format,width:p.width,height:p.height});
+  assert.deepEqual(manifest.cover,p);
+  assert.equal(article.cover_image,'https://1200km.com/articles/research/anomaly-visuals/'+p.file);
+  assert.ok(text.includes(`image: "/research/anomaly-visuals/${p.file}"`));
+  assert.equal((text.match(/<ResearchCover \/>/g)||[]).length,1);
+  assert.ok(text.indexOf('<ResearchCover />')<text.indexOf('An unusual login'));
+  assert.match(read('src/components/ResearchCover/index.js'),/useBaseUrl/);
+  assert.match(read('src/components/ResearchCover/index.js'),/loading="eager" fetchPriority="high"/);
+  assert.equal(article.images,100);
 });
 test('measured visuals use the recorded outputs without concealing the zero-match case',()=>{
   const d=figures.find(f=>f.id==='validation-levels').data;
