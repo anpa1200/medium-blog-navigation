@@ -8,8 +8,8 @@
 [INFO] [en] Creating an optimized production build...
 [webpackbar] ℹ Compiling Client
 [webpackbar] ℹ Compiling Server
-[webpackbar] ✔ Server: Compiled successfully in 49.20s
-[webpackbar] ✔ Client: Compiled successfully in 51.69s
+[webpackbar] ✔ Server: Compiled successfully in 57.55s
+[webpackbar] ✔ Client: Compiled successfully in 1.36m
 [SUCCESS] Generated static files in "build".
 [INFO] Use `npm run serve` command to test your build locally.
 Normalized 67 rendered headings across 3 article pages.

@@ -1,6 +1,6 @@
 {
   "scope": "Local rendered SVG assets and, unless assets-only, embedded article. Not a deployment or new KQL execution.",
-  "checked_at": "2026-09-21T11:28:16.384Z",
+  "checked_at": "2026-09-21T12:03:16.163Z",
   "assets": [
     {
       "figure": "research-map",
@@ -611,42 +611,54 @@
       "theme": "light",
       "figures_loaded": 43,
       "aspect_ratios": true,
-      "overflow": false
+      "overflow": false,
+      "accessibility_violations": [],
+      "keyboard_scroll_tables": 6
     },
     {
       "width": 390,
       "theme": "dark",
       "figures_loaded": 43,
       "aspect_ratios": true,
-      "overflow": false
+      "overflow": false,
+      "accessibility_violations": [],
+      "keyboard_scroll_tables": 6
     },
     {
       "width": 768,
       "theme": "light",
       "figures_loaded": 43,
       "aspect_ratios": true,
-      "overflow": false
+      "overflow": false,
+      "accessibility_violations": [],
+      "keyboard_scroll_tables": 0
     },
     {
       "width": 768,
       "theme": "dark",
       "figures_loaded": 43,
       "aspect_ratios": true,
-      "overflow": false
+      "overflow": false,
+      "accessibility_violations": [],
+      "keyboard_scroll_tables": 0
     },
     {
       "width": 1440,
       "theme": "light",
       "figures_loaded": 43,
       "aspect_ratios": true,
-      "overflow": false
+      "overflow": false,
+      "accessibility_violations": [],
+      "keyboard_scroll_tables": 0
     },
     {
       "width": 1440,
       "theme": "dark",
       "figures_loaded": 43,
       "aspect_ratios": true,
-      "overflow": false
+      "overflow": false,
+      "accessibility_violations": [],
+      "keyboard_scroll_tables": 0
     },
     {
       "javascript_errors": []

@@ -10,6 +10,13 @@ const article=json('src/data/article-catalog.json').find(x=>x.id==='90df8b6dea12
 const text=read(`docs/articles/${article.local_path}.md`);
 const hash=s=>createHash('sha256').update(s).digest('hex');
 
+test('caption links and scrolling tables retain keyboard and non-color affordances',()=>{
+  const css=read('src/css/custom.css');
+  assert.match(css,/\.anomaly-figure figcaption a,[\s\S]*?text-decoration: underline/);
+  assert.match(css,/table:focus-visible/);
+  assert.match(read('src/theme/MDXComponents/index.js'),/<table tabIndex=\{0\}/);
+});
+
 test('43 distinct figures cover all 15 topics and 12 campaign subsections',()=>{
   assert.equal(figures.length,43);assert.equal(new Set(figures.map(f=>f.id)).size,43);
   const types=json('research/anomaly-incidents.json').types;
