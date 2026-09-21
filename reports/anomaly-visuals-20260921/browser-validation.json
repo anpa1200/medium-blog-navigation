@@ -1,6 +1,6 @@
 {
   "scope": "Local rendered SVG assets and, unless assets-only, embedded article. Not a deployment or new KQL execution.",
-  "checked_at": "2026-09-21T12:03:16.163Z",
+  "checked_at": "2026-09-21T12:10:02.160Z",
   "assets": [
     {
       "figure": "research-map",
@@ -613,6 +613,7 @@
       "aspect_ratios": true,
       "overflow": false,
       "accessibility_violations": [],
+      "expanded_transcripts_checked": 43,
       "keyboard_scroll_tables": 6
     },
     {
@@ -622,6 +623,7 @@
       "aspect_ratios": true,
       "overflow": false,
       "accessibility_violations": [],
+      "expanded_transcripts_checked": 43,
       "keyboard_scroll_tables": 6
     },
     {
@@ -631,6 +633,7 @@
       "aspect_ratios": true,
       "overflow": false,
       "accessibility_violations": [],
+      "expanded_transcripts_checked": 43,
       "keyboard_scroll_tables": 0
     },
     {
@@ -640,6 +643,7 @@
       "aspect_ratios": true,
       "overflow": false,
       "accessibility_violations": [],
+      "expanded_transcripts_checked": 43,
       "keyboard_scroll_tables": 0
     },
     {
@@ -649,6 +653,7 @@
       "aspect_ratios": true,
       "overflow": false,
       "accessibility_violations": [],
+      "expanded_transcripts_checked": 43,
       "keyboard_scroll_tables": 0
     },
     {
@@ -658,6 +663,7 @@
       "aspect_ratios": true,
       "overflow": false,
       "accessibility_violations": [],
+      "expanded_transcripts_checked": 43,
       "keyboard_scroll_tables": 0
     },
     {

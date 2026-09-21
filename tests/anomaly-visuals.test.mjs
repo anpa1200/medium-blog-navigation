@@ -15,6 +15,7 @@ test('caption links and scrolling tables retain keyboard and non-color affordanc
   assert.match(css,/\.anomaly-figure figcaption a,[\s\S]*?text-decoration: underline/);
   assert.match(css,/table:focus-visible/);
   assert.match(read('src/theme/MDXComponents/index.js'),/<table tabIndex=\{0\}/);
+  assert.match(read('src/components/ResearchFigure/index.js'),/<pre tabIndex=\{0\}/);
 });
 
 test('43 distinct figures cover all 15 topics and 12 campaign subsections',()=>{

@@ -118,7 +118,8 @@ body {
   text-underline-offset: 0.16em;
 }
 
-.theme-doc-markdown table:focus-visible {
+.theme-doc-markdown table:focus-visible,
+.anomaly-figure-transcript pre:focus-visible {
   outline: 3px solid var(--ifm-color-primary);
   outline-offset: 2px;
 }

@@ -28,6 +28,8 @@ The release runner stores full command output under `reports/anomaly-visuals-202
 
 The checker also uses `axe-core` from the website checkout to reject color-only text links and non-focusable scroll regions. Markdown tables use the shared MDX table component with keyboard focus and a visible outline; figure-caption links are underlined. These are regression checks added after the first release CI exposed accessibility gaps.
 
+All 43 text-equivalent panels are expanded during these checks. Raw data blocks are also keyboard-focusable, including the wide synthetic-results JSON on narrow screens.
+
 ## Editing discipline
 
 Edit the authored figure specification, not generated SVG or manifest files. Keep figure numbers in reading order and insertions outside managed incident blocks. Run the evidence checks after changing the research data. Preserve existing URLs, anchors, incident cards, queries and historical media. Do not silently replace missing measurements with schematic numbers. A new fact or incident requires a supporting primary source and review of both the text and diagram.
