@@ -80,7 +80,14 @@ for (const id of relatedArticles) {
   assert.ok(read(`docs/articles/${other.local_path}.md`).includes(`/articles/read/${article.local_path}/#anomaly-`), `Missing return link ${id}`);
 }
 // Technical revision is authorized; routes/canonicals and historical evidence stay intact.
-assert.deepEqual(catalog.map(row => [row.id, row.slug, row.local_path, row.canonical_url, row.preferred_canonical_url, row.published_at]), oldCatalog.map(row => [row.id, row.slug, row.local_path, row.canonical_url, row.preferred_canonical_url, row.published_at]));
+// New publications are allowed; every baseline route and canonical must survive.
+assert.equal(new Set(catalog.map(row => row.id)).size, catalog.length, 'Duplicate article IDs');
+const routeIdentity = row => [row.id, row.slug, row.local_path, row.canonical_url, row.preferred_canonical_url, row.published_at];
+assert.deepEqual(oldCatalog.map(old => {
+  const current = catalog.find(row => row.id === old.id);
+  assert.ok(current, `Missing preserved article ${old.id}`);
+  return routeIdentity(current);
+}), oldCatalog.map(routeIdentity));
 const images = text => matches(text, /<img\b[^>]*\bsrc="([^"]+)"[^>]*>/g).map(match => match[1]);
 const code = text => matches(text, /^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm).map(match => match[0]);
 assert.deepEqual(images(markdown), images(original), 'Original media changed');
@@ -101,7 +108,7 @@ const explicitIDs = matches(markdown, /\{#([^}]+)\}|<span id="([^"]+)">/g).map(m
 unique(explicitIDs, 'explicit anchors');
 console.log(`PASS evidence: ${data.types.length} types, ${mappings} mappings, ${usedCases.size} distinct cases, ${usedSources.size} sources, ${usedTechniques.size} techniques.`);
 console.log(`PASS integration: ${relatedArticles.size} reciprocal article links, linked tags, source/asset parity, one authored H1.`);
-console.log(`PASS preservation: all ${catalog.length} article routes/canonicals unchanged; 44 historical images retained, 11 superseded blocks archived, 8 maintained KQL examples.`);
+console.log(`PASS preservation: all ${oldCatalog.length} baseline article routes/canonicals unchanged; ${catalog.length - oldCatalog.length} new articles; 44 historical images retained, 11 superseded blocks archived, 8 maintained KQL examples.`);
 
 if (process.argv.includes('--built')) {
   const candidatePaths = [`build/read/${article.local_path}.html`, `build/read/${article.local_path}/index.html`];
