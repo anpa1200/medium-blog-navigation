@@ -8,7 +8,7 @@ image: "https://1200km.com/articles/article-assets/adversarygraph-pcap-stories/c
 
 **Twenty historical captures, genuine platform screenshots, source-bound short reports, and a separate comparison with the published answers.**
 
-<img src={require('@site/static/article-assets/adversarygraph-pcap-stories/cover.png').default} alt="Illustrated cover: Can AdversaryGraph Tell the Story of a Malware PCAP? This is not a platform evidence screenshot." width="1672" height="941" loading="eager" fetchPriority="high" decoding="async" />
+<img className="pcap-story-cover" src={require('@site/static/article-assets/adversarygraph-pcap-stories/cover.png').default} alt="Illustrated cover: Can AdversaryGraph Tell the Story of a Malware PCAP? This is not a platform evidence screenshot." width="1672" height="941" loading="eager" fetchPriority="high" decoding="async" />
 
 
 
