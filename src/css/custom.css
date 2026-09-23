@@ -1,6 +1,14 @@
 @import url('https://1200km.com/assets/docusaurus-ecosystem.css?v=20260614-3');
 @import url('https://1200km.com/assets/site-theme.css?v=20260721-shell');
 
+/* The PCAP narrative excerpts are prose, not executable source lines. Preserve
+ * their bytes while wrapping long hashes and sentences on narrow screens. */
+article:has(.pcap-story-cover) pre code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 :root {
   --ifm-color-primary: #0756d8;
   --ifm-color-primary-dark: #054ada;
