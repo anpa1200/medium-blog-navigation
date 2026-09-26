@@ -1,0 +1,68 @@
+{
+  "title": "Cyberattacks on Big Pharma and Its Ecosystem: Threat Actors, Attack Surfaces, TTPs, and Defensible Lessons",
+  "canonical_url": "https://1200km.com/articles/read/2026/cyberattacks-on-big-pharma-and-its-ecosystem/",
+  "article_id": "241a0c69a53e",
+  "published_at": "2026-09-26",
+  "evidence_cutoff": "2026-09-25",
+  "source_sha256": "6f07f59b23f864ce227bd4dbbf49cf53288bd84dda012103c97a3e95582f9ea0",
+  "integrated_markdown_sha256": "44b9388cf07097ad82ad1cfa68816fe05f1bf122e05cca8738428a3b4d79f974",
+  "images": [
+    {
+      "file": "cover.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1986838,
+      "sha256": "abcc93867182538dcbf0fef34c3fa962be6a0ceec72a117c6a97336f39404d90",
+      "transformation": "None; user-supplied original bytes."
+    },
+    {
+      "file": "why-pharma-is-targeted.png",
+      "width": 941,
+      "height": 1672,
+      "bytes": 1541797,
+      "sha256": "246becc6e541884f48678cee76554c6c86ea0a520fc54314fe1c1f770aae9b0f",
+      "transformation": "None; user-supplied original bytes."
+    },
+    {
+      "file": "pharmaceutical-attack-surface.png",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1245064,
+      "sha256": "e72763b534c046cd046d999880132a6deb82b9d95c0241302ca0df07a35d7ba7",
+      "transformation": "None; user-supplied original bytes."
+    }
+  ],
+  "technique_ids": [
+    "T1195.002",
+    "T1566.001",
+    "T1110.003",
+    "T1190",
+    "T1078",
+    "T1133",
+    "T1505.003",
+    "T1003.001",
+    "T1210",
+    "T1047",
+    "T1021.002",
+    "T1569.002",
+    "T1078.003",
+    "T1218.011",
+    "T1598",
+    "T1586",
+    "T1555",
+    "T1558",
+    "T1557",
+    "T1041",
+    "T1486"
+  ],
+  "actor_ids": [
+    "G0034",
+    "G0016",
+    "G0007",
+    "G0032",
+    "G0082",
+    "G0096"
+  ],
+  "link_scope": "Editorial learning and investigation links. Incident, campaign, actor-level, and analytical mappings retain their distinct evidence labels. No new attribution edges asserted.",
+  "inline_internal_links": 76
+}
