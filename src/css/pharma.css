@@ -1,0 +1,24 @@
+/* Scope all changes to this publication; preserve supplied artwork. */
+.pharma-cover, .pharma-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.pharma-figure { margin: 2rem 0; max-width: 100%; }
+.pharma-figure-portrait { max-width: 700px; margin-inline: auto; }
+.pharma-figure figcaption { margin-top: .8rem; font-size: .95rem; line-height: 1.6; }
+.pharma-figure a:focus-visible {
+  display: block;
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 5px;
+}
+article:has(.pharma-cover) table { font-size: .95rem; }
+article:has(.pharma-cover) :where(th, td) { min-width: 10rem; }
+article:has(.pharma-cover) pre code { white-space: pre; }
+article:has(.pharma-cover) :where(td, th) a { text-decoration: underline; }
+html[data-theme] .theme-doc-markdown:has(.pharma-cover) pre,
+html[data-theme] .theme-doc-markdown:has(.pharma-cover) pre * {
+  background: #111827 !important;
+  color: #f8fafc !important;
+}

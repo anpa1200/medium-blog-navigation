@@ -11613,5 +11613,20 @@
     "width": 993,
     "height": 443,
     "source": "image-response"
+  },
+  "https://1200km.com/articles/article-assets/big-pharma/cover.png": {
+    "width": 1672,
+    "height": 941,
+    "source": "local-file"
+  },
+  "https://1200km.com/articles/article-assets/big-pharma/why-pharma-is-targeted.png": {
+    "width": 941,
+    "height": 1672,
+    "source": "local-file"
+  },
+  "https://1200km.com/articles/article-assets/big-pharma/pharmaceutical-attack-surface.png": {
+    "width": 1448,
+    "height": 1086,
+    "source": "local-file"
   }
 }
