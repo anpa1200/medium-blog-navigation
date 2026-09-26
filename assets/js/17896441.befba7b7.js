@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkmedium_blog_navigation=globalThis.webpackChunkmedium_blog_navigation||[]).push([[8401],{1225(a,n,i){i.d(n,{A:()=>e});i(6540);var t=i(3436),b=i(4848);const e={...t.A,table:function(a){return(0,b.jsx)("table",{tabIndex:0,...a})}}}}]);
