@@ -1,14 +1,14 @@
 ---
 title: "Cyberattacks on Big Pharma and Its Ecosystem: Threat Actors, Attack Surfaces, TTPs, and Defensible Lessons"
 description: "Evidence-based research on pharmaceutical cyberattacks: actors, ransomware, espionage, attack surfaces, ATT&CK TTPs, operational impact, and a 30/90/180-day defense plan."
-image: "https://1200km.com/articles/article-assets/big-pharma/cover.png"
+image: "https://1200km.com/articles/article-assets/big-pharma/cover.webp"
 ---
 
 # Cyberattacks on Big Pharma and Its Ecosystem: Threat Actors, Attack Surfaces, TTPs, and Defensible Lessons
 
 **An evidence-based guide to attacks on pharmaceutical manufacturers and the research, regulatory, distribution, medtech, and health infrastructure around them**
 
-<img className="pharma-cover" src={require('@site/static/article-assets/big-pharma/cover.png').default} alt="Cyberattacks on Big Pharma and Its Ecosystem — 1200km cover featuring a medicine vial, DNA helix, hooded figure, research facility, and connected globe." width="1672" height="941" loading="eager" fetchPriority="high" decoding="async" />
+<img className="pharma-cover" src={require('@site/static/article-assets/big-pharma/cover.webp').default} srcSet={`${require('@site/static/article-assets/big-pharma/cover-800.webp').default} 800w, ${require('@site/static/article-assets/big-pharma/cover.webp').default} 1672w`} sizes="(max-width: 996px) 95vw, (max-width: 1440px) 700px, 850px" alt="Cyberattacks on Big Pharma and Its Ecosystem — 1200km cover featuring a medicine vial, DNA helix, hooded figure, research facility, and connected globe." width="1672" height="941" loading="eager" fetchPriority="high" decoding="async" />
 
 Cyberattacks on pharmaceutical organizations are often described as a single, escalating crisis. The reality is more complicated. A destructive state operation can disrupt a drug manufacturer without having targeted that company. An intelligence service can pursue vaccine research without encrypting a single system. A criminal group can exploit one internet-facing file-transfer product across hundreds of organizations. An attacker can also compromise a regulator, contract research organization, distributor, or patient-support provider and obtain pharmaceutical data without breaching a drugmaker directly.
 
@@ -18,7 +18,7 @@ This research reconstructs the landscape from primary records wherever possible:
 
 > **Scope and evidence boundary — 25 September 2026.** “Big Pharma” has no formal cyber-risk boundary. This article covers large drug manufacturers and the ecosystem that holds their data or supports their operations: regulators, contract research organizations (CROs), distributors, patient-support providers, managed file-transfer systems, and selected medtech companies. The incident set is illustrative, not a complete census. “Confirmed” means supported by a victim, regulator, court, or government record; “assessed” means a named government or security provider made the judgment; “claimed” means an attacker or leak site asserted it. Absence of public evidence is not evidence that an event did not occur.
 
-<a href="https://1200km.com/articles/article-assets/big-pharma/research.md" target="_self">Download the integrated Markdown</a> · <a href="https://1200km.com/articles/article-assets/big-pharma/publication.json" target="_self">Image provenance and hashes</a>
+<a href="https://1200km.com/articles/article-assets/big-pharma/research.md" target="_self">Download the integrated Markdown</a> · <a href="https://1200km.com/articles/article-assets/big-pharma/publication.json" target="_self">Image provenance and hashes</a> · <a href="https://1200km.com/articles/article-assets/big-pharma/cover.png" target="_self">Original cover</a>. Web-optimized display images retain the supplied artwork; each infographic links to its unchanged PNG original.
 
 **Publication:** 26 September 2026; evidence cutoff: 25 September 2026. Internal links connect this article to the <a href="https://1200km.com/threat-matrix/" target="_self">Threat Matrix</a>, <a href="https://1200km.com/cyber-knowledge/attack-matrix.html" target="_self">ATT&CK Knowledge Mesh</a>, and practical field guides. These are learning and investigation routes; they do not add attribution evidence.
 
@@ -67,7 +67,7 @@ The incident record supports five conclusions.
 ## Why pharmaceutical organizations are targeted
 
 <figure className="pharma-figure pharma-figure-portrait">
-<a href="https://1200km.com/articles/article-assets/big-pharma/why-pharma-is-targeted.png" target="_self"><img src={require('@site/static/article-assets/big-pharma/why-pharma-is-targeted.png').default} alt="Five reasons pharmaceutical organizations are targeted: research and intellectual property, personal and clinical data, uptime pressure, geopolitical influence, and ecosystem leverage. Examples and evidence boundaries are explained below." width="941" height="1672" loading="lazy" decoding="async" /></a>
+<a href="https://1200km.com/articles/article-assets/big-pharma/why-pharma-is-targeted.png" target="_self"><img src={require('@site/static/article-assets/big-pharma/why-pharma-is-targeted.webp').default} alt="Five reasons pharmaceutical organizations are targeted: research and intellectual property, personal and clinical data, uptime pressure, geopolitical influence, and ecosystem leverage. Examples and evidence boundaries are explained below." width="941" height="1672" loading="lazy" decoding="async" /></a>
 <figcaption>Figure 1. Five targeting motives. Select the image to inspect the original. The examples span manufacturers and their ecosystem: Lash Group is a Cencora subsidiary serving a Pfizer patient-support program, not a Pfizer subsidiary. Novo's confirmed trial-data exposure was pseudonymized; the graphic does not imply that every named organization lost directly identifying clinical records. The sections below provide the incident-specific sources and limits.</figcaption>
 </figure>
 
@@ -102,7 +102,7 @@ The February 2024 Change Healthcare ransomware incident disrupted pharmacy and p
 The useful unit of analysis is the end-to-end product and data lifecycle, not merely the corporate network.
 
 <figure className="pharma-figure">
-<a href="https://1200km.com/articles/article-assets/big-pharma/pharmaceutical-attack-surface.png" target="_self"><img src={require('@site/static/article-assets/big-pharma/pharmaceutical-attack-surface.png').default} alt="Pharmaceutical dependency map: researchers and partners use email and identity, SaaS and cloud, research and clinical data, and regulatory exchange. Shared enterprise administration connects these services to manufacturing and laboratories, then distribution and patient programs." width="1448" height="1086" loading="lazy" decoding="async" /></a>
+<a href="https://1200km.com/articles/article-assets/big-pharma/pharmaceutical-attack-surface.png" target="_self"><img src={require('@site/static/article-assets/big-pharma/pharmaceutical-attack-surface.webp').default} alt="Pharmaceutical dependency map: researchers and partners use email and identity, SaaS and cloud, research and clinical data, and regulatory exchange. Shared enterprise administration connects these services to manufacturing and laboratories, then distribution and patient programs." width="1448" height="1086" loading="lazy" decoding="async" /></a>
 <figcaption>Figure 2. A conceptual map of product, data, and administrative dependencies—not a reconstructed intrusion chain. Arrows describe potential dependencies, not proven lateral movement or mandatory network connections. Select the image to inspect the original; a text equivalent follows.</figcaption>
 </figure>
 

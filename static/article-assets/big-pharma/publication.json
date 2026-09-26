@@ -64,5 +64,52 @@
     "G0096"
   ],
   "link_scope": "Editorial learning and investigation links. Incident, campaign, actor-level, and analytical mappings retain their distinct evidence labels. No new attribution edges asserted.",
-  "inline_internal_links": 76
+  "inline_internal_links": 76,
+  "display_derivatives": [
+    {
+      "file": "cover.webp",
+      "original": "cover.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 203904,
+      "sha256": "031e5c4c8126a2b6ed7d3b61659f5a49829a631015eb3e7de4ae024e0b2c7af4",
+      "transformation": "WebP quality 88, method 6; Lanczos resizing only for smaller cover variants. No cropping, redrawing, or content edits."
+    },
+    {
+      "file": "cover-800.webp",
+      "original": "cover.png",
+      "width": 800,
+      "height": 450,
+      "bytes": 74074,
+      "sha256": "829e7dda0ec1b125b4e6028a289181b2d8e9179735f9fc37af430fbca4e247ec",
+      "transformation": "WebP quality 88, method 6; Lanczos resizing only for smaller cover variants. No cropping, redrawing, or content edits."
+    },
+    {
+      "file": "cover-card.webp",
+      "original": "cover.png",
+      "width": 480,
+      "height": 270,
+      "bytes": 34414,
+      "sha256": "a47a40959d4ff5bff535cac258eff732207d316f15d63d50b240597211900e19",
+      "transformation": "WebP quality 88, method 6; Lanczos resizing only for smaller cover variants. No cropping, redrawing, or content edits."
+    },
+    {
+      "file": "why-pharma-is-targeted.webp",
+      "original": "why-pharma-is-targeted.png",
+      "width": 941,
+      "height": 1672,
+      "bytes": 162996,
+      "sha256": "1e0fd50868d7e76fbc6d69fb4f58ecdb4935bcbae0386d1dca41f7672196c3f7",
+      "transformation": "WebP quality 88, method 6; Lanczos resizing only for smaller cover variants. No cropping, redrawing, or content edits."
+    },
+    {
+      "file": "pharmaceutical-attack-surface.webp",
+      "original": "pharmaceutical-attack-surface.png",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 75586,
+      "sha256": "7c49f6ff9f33f8ba97a5aac56ac11004296b39cf8f8eff404a57cfff825aad3b",
+      "transformation": "WebP quality 88, method 6; Lanczos resizing only for smaller cover variants. No cropping, redrawing, or content edits."
+    }
+  ]
 }
