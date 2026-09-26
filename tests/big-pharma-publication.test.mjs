@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import './big-pharma-images.test.mjs';
+import './big-pharma-inline-evidence.test.mjs';
 import test from 'node:test';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';

@@ -5,7 +5,7 @@
   "published_at": "2026-09-26",
   "evidence_cutoff": "2026-09-25",
   "source_sha256": "6f07f59b23f864ce227bd4dbbf49cf53288bd84dda012103c97a3e95582f9ea0",
-  "integrated_markdown_sha256": "44b9388cf07097ad82ad1cfa68816fe05f1bf122e05cca8738428a3b4d79f974",
+  "integrated_markdown_sha256": "37c0b0dfe35bdcb8453f42c306f3ea75c491fdce5a1f6b19572b5dc10c256f3b",
   "images": [
     {
       "file": "cover.png",
@@ -64,7 +64,7 @@
     "G0096"
   ],
   "link_scope": "Editorial learning and investigation links. Incident, campaign, actor-level, and analytical mappings retain their distinct evidence labels. No new attribution edges asserted.",
-  "inline_internal_links": 76,
+  "inline_internal_links": 85,
   "display_derivatives": [
     {
       "file": "cover.webp",
@@ -111,5 +111,11 @@
       "sha256": "7c49f6ff9f33f8ba97a5aac56ac11004296b39cf8f8eff404a57cfff825aad3b",
       "transformation": "WebP quality 88, method 6; Lanczos resizing only for smaller cover variants. No cropping, redrawing, or content edits."
     }
-  ]
+  ],
+  "table_evidence": {
+    "tables": 6,
+    "body_rows": 68,
+    "all_rows_directly_linked": true,
+    "scope": "Incident evidence, actor assessments, and defensive guidance remain distinguished."
+  }
 }
