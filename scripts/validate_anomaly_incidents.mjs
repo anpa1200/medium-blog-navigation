@@ -79,15 +79,19 @@ for (const id of relatedArticles) {
   assert.ok(other, `Missing article ${id}`);
   assert.ok(read(`docs/articles/${other.local_path}.md`).includes(`/articles/read/${article.local_path}/#anomaly-`), `Missing return link ${id}`);
 }
-// Technical revision is authorized; routes/canonicals and historical evidence stay intact.
-// New publications are allowed; every baseline route and canonical must survive.
+// Preserve real baseline articles and their historical evidence. The imported
+// Medium support comment was not a research article and is explicitly retired.
 assert.equal(new Set(catalog.map(row => row.id)).size, catalog.length, 'Duplicate article IDs');
+const retiredNonArticleId = 'cac7ab7d9191';
+assert.ok(oldCatalog.some(row => row.id === retiredNonArticleId), 'Historical baseline must retain the retired comment record');
+assert.ok(!catalog.some(row => row.id === retiredNonArticleId), 'Retired support comment must not re-enter the current archive');
+const preservedCatalog = oldCatalog.filter(row => row.id !== retiredNonArticleId);
 const routeIdentity = row => [row.id, row.slug, row.local_path, row.canonical_url, row.preferred_canonical_url, row.published_at];
-assert.deepEqual(oldCatalog.map(old => {
+assert.deepEqual(preservedCatalog.map(old => {
   const current = catalog.find(row => row.id === old.id);
   assert.ok(current, `Missing preserved article ${old.id}`);
   return routeIdentity(current);
-}), oldCatalog.map(routeIdentity));
+}), preservedCatalog.map(routeIdentity));
 const images = text => matches(text, /<img\b[^>]*\bsrc="([^"]+)"[^>]*>/g).map(match => match[1]);
 const code = text => matches(text, /^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm).map(match => match[0]);
 assert.deepEqual(images(markdown), images(original), 'Original media changed');
@@ -108,7 +112,7 @@ const explicitIDs = matches(markdown, /\{#([^}]+)\}|<span id="([^"]+)">/g).map(m
 unique(explicitIDs, 'explicit anchors');
 console.log(`PASS evidence: ${data.types.length} types, ${mappings} mappings, ${usedCases.size} distinct cases, ${usedSources.size} sources, ${usedTechniques.size} techniques.`);
 console.log(`PASS integration: ${relatedArticles.size} reciprocal article links, linked tags, source/asset parity, one authored H1.`);
-console.log(`PASS preservation: all ${oldCatalog.length} baseline article routes/canonicals unchanged; ${catalog.length - oldCatalog.length} new articles; 44 historical images retained, 11 superseded blocks archived, 8 maintained KQL examples.`);
+console.log(`PASS preservation: ${preservedCatalog.length} baseline article routes/canonicals unchanged; one support comment retired; ${catalog.length - preservedCatalog.length} new articles; 44 historical images retained, 11 superseded blocks archived, 8 maintained KQL examples.`);
 
 if (process.argv.includes('--built')) {
   const candidatePaths = [`build/read/${article.local_path}.html`, `build/read/${article.local_path}/index.html`];
