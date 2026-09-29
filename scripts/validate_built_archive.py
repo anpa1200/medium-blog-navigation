@@ -10,11 +10,15 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
 CATALOG = json.loads((ROOT / "src" / "data" / "article-catalog.json").read_text(encoding="utf-8"))
+JUNK_COMMENT_SLUG = "2026-01-25-hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191"
+DEFANGED_HOSTS = {"vaniloin.fun", "91.211.251.245", "34.121.191.196"}
 
 
 def main() -> int:
     failures: list[str] = []
     expected = {row["local_path"]: row for row in CATALOG}
+    if any(JUNK_COMMENT_SLUG in relative for relative in expected):
+        failures.append("Medium support comment must not be published as an article")
     for relative, row in expected.items():
         path = BUILD / "read" / relative / "index.html"
         if not path.is_file():
@@ -47,6 +51,9 @@ def main() -> int:
             href_match = re.search(r'\bhref=["\']([^"\']+)["\']', link, re.IGNORECASE)
             href = href_match.group(1) if href_match else ""
             parsed = urlsplit(href)
+            if parsed.hostname in DEFANGED_HOSTS:
+                failures.append(f"{path.relative_to(BUILD)}: live IOC or historical lab address is clickable ({parsed.hostname})")
+                break
             if parsed.scheme and parsed.scheme not in {"http", "https", "mailto", "tel"}:
                 failures.append(f"{path.relative_to(BUILD)}: unsupported link scheme ({href})")
                 break
@@ -62,6 +69,10 @@ def main() -> int:
         failures.append("archive index hero and library are not contained in the main landmark")
     if re.search(r'&lt;img\b|<p>\s*&lt;img\b', index, re.IGNORECASE):
         failures.append("archive index exposes image markup as card summary text")
+    if JUNK_COMMENT_SLUG in index:
+        failures.append("archive index still lists the removed Medium support comment")
+    if any(JUNK_COMMENT_SLUG in str(path.relative_to(BUILD)) for path in html_files):
+        failures.append("removed Medium support comment still has a built HTML route")
 
     if failures:
         print(f"Built archive validation failed ({len(failures)}):")

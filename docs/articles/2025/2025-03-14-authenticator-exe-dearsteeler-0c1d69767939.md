@@ -583,7 +583,7 @@ The malware performed DNS lookups for this domain and established TCP connection
 
 <img src="https://cdn-images-1.medium.com/max/800/0*MlTh_la7j25f1kz9" alt="Article image" width="593" height="250" loading="lazy" decoding="async" />
 
-**No HTTP requests to the malicious domain**were seen in plaintext, because the malware uses HTTPS. We did not capture an explicit POST or data upload in our sandbox network logs — likely because the TLS handshake succeeded but the fake server didn’t properly continue the dialog, so the malware retried without ever sending application-layer data. In a real infection, after the TLS handshake, we would expect an HTTP POST (or series of them) to https://vaniloin.fun/&lt;endpoint&gt; carrying stolen information (credentials, etc.). That content would be encrypted inside TLS.
+**No HTTP requests to the malicious domain**were seen in plaintext, because the malware uses HTTPS. We did not capture an explicit POST or data upload in our sandbox network logs — likely because the TLS handshake succeeded but the fake server didn’t properly continue the dialog, so the malware retried without ever sending application-layer data. In a real infection, after the TLS handshake, we would expect an HTTP POST (or series of them) to `hxxps://vaniloin[.]fun/<endpoint>` carrying stolen information (credentials, etc.). That content would be encrypted inside TLS.
 
 ## Malware Classification & TTPs
 

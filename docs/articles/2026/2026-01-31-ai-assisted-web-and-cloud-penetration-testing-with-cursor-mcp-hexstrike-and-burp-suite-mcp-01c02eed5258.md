@@ -394,9 +394,11 @@ Once both MCP servers are configured, Cursor AI should have access to:
 
 **User Prompt:**
 
-&gt; “Perform a blackbox penetration test on http://34.121.191.196 "
+&gt; “Perform a blackbox penetration test on `hxxp://34.121.191[.]196` "
 
 That’s it. One entry point. No additional information. Let’s see how the AI reasons through this challenge.
+The historical lab IP is defanged in this prompt. Substitute only a target you own or are explicitly authorized to test; the command excerpts below document the original lab run.
+
 
 ### Initial Reasoning: Where Do I Start?
 

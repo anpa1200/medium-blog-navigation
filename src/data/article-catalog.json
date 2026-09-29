@@ -3022,36 +3022,6 @@
     "updated_at": "2026-01-26"
   },
   {
-    "id": "cac7ab7d9191",
-    "title": "Hi! Two of my articles have been in pending status for the past few days.",
-    "summary": "Hi! Two of my articles have been in pending status for the past few days.",
-    "published_at": "2026-01-25",
-    "year": "2026",
-    "category": "Platform & Publishing",
-    "tags": [
-      "Platform & Publishing"
-    ],
-    "images": 0,
-    "code_blocks": 0,
-    "slug": "2026-01-25-hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191",
-    "local_path": "2026/2026-01-25-hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191",
-    "source_url": "https://medium.com/@1200km/hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191",
-    "cover_image": "",
-    "canonical_url": "https://1200km.com/articles/read/2026/2026-01-25-hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191",
-    "canonical_owner": "1200km.com",
-    "preferred_canonical_url": "https://1200km.com/articles/read/2026/2026-01-25-hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191",
-    "original_publication_url": "https://medium.com/@1200km/hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191",
-    "original_publication_platform": "Medium",
-    "canonical_migration_status": "migration-pending",
-    "external_canonical_verified": false,
-    "external_canonical_verified_at": null,
-    "migration_note": "Local self-canonical is deliberate. The external publication canonical has not been verified or changed, so migration remains pending.",
-    "source_platform": "Medium",
-    "source_repository": "anpa1200/medium-blog-navigation",
-    "collection_tier": "archive",
-    "updated_at": "2026-01-25"
-  },
-  {
     "id": "cab28cd4ad8d",
     "title": "Active Directory Lab for PenTest. Manual Deployment Guide",
     "summary": "This guide is a manual, step-by-step deployment of a GOAD-Mini Active Directory environment on VirtualBox/VagrantComplete Step-by-Step…",
