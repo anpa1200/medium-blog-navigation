@@ -731,9 +731,9 @@ Direct links to open any file in GitHub (also downloadable via curl -L):
 - [azure-ad/signin-p.levi.json](https://raw.githubusercontent.com/anpa1200/CTI_as_a_Code/main/investigations/lifetech-2024-11/01-evidence/azure-ad/signin-p.levi.json)
 **Format:**JSON
 **Contains:**IT admin Azure AD sign-ins — Istanbul token replay
-- [vpn/anyconnect-2024-10-24.log](https://raw.githubusercontent.com/anpa1200/CTI_as_a_Code/main/investigations/lifetech-2024-11/01-evidence/vpn/anyconnect-2024-10-24.log)
+- `vpn/anyconnect-2024-10-24.log` (not published in the source repository)
 **Format:**ASA syslog
-**Contains:**VPN session from Istanbul, Oct 24
+**Contains:**Referenced VPN session; source log is unavailable for public verification
 - [sysmon/WS-CFO-01-sysmon.jsonl](https://raw.githubusercontent.com/anpa1200/CTI_as_a_Code/main/investigations/lifetech-2024-11/01-evidence/sysmon/WS-CFO-01-sysmon.jsonl)
 **Format:**JSONL
 **Contains:**CFO workstation — PowerShell, LSASS, persistence, BITS
@@ -996,9 +996,11 @@ jq '.[] | {
 
 ### 5. VPN Log Analysis
 
-**In VS Code Explorer:**click vpn/anyconnect-2024-10-24.log
+**Public evidence boundary:** The cited VPN log is absent from the published CTI repository (`*.log` is ignored). The screenshot, sample output, VPN-specific conclusions, and log commands below are training narrative, not reproducible from the public clone. The other linked evidence files can be inspected separately.
 
-VS Code opens the plain syslog file. Use Ctrl+F to navigate without any commands:
+**If you have an independently supplied copy:** open `vpn/anyconnect-2024-10-24.log` in VS Code Explorer.
+
+VS Code opens the plain syslog file. Use Ctrl+F to navigate without any commands; these steps cannot be completed from the public clone:
 
 - Search p.levi — highlights every line for this user
 - Search Authentication: successful — the auth event
@@ -1413,7 +1415,7 @@ Ctrl+Shift+F → 185.220.101.47:
 
 ```text
 azure-ad/signin-p.levi.json          line 18: suspicious sign-in from Istanbul — token replay, no MFA
-vpn/anyconnect-2024-10-24.log        line 4:  VPN authentication as p.levi, assigned 10.10.3.22
+vpn/anyconnect-2024-10-24.log        not in the public clone; VPN event cannot be reproduced here
 palo-alto/dns-queries.csv            line 1:  attacker queried vpn.lifetechpharma.com 1 min before login
 ```
 
