@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.dc3824f7.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.cbd30b69.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.a4f47f0b.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -432,7 +432,7 @@ possibly to query version info of system or browser files (a fingerprinting tech
 <p>The primary network indicator is the domain<strong>vaniloin.fun</strong>, which the malware attempts to contact. In the analysis environment, this domain was resolved by FakeNet to a non-routable IP (in our case 192.0.2.123). All subsequent C2 traffic was directed at that IP. In a real scenario,<strong>vaniloin.fun</strong>is a live domain — threat intelligence confirms it’s an attacker-controlled host linked to<em>DeerStealer</em>campaigns​.</p>
 <p>The malware performed DNS lookups for this domain and established TCP connections to it. An IDS rule (Emerging Threats) specifically flags**DNS queries for “vaniloin.fun”**as indicative of DeerStealer C2 traffic​</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*MlTh_la7j25f1kz9" alt="Article image" width="593" height="250" loading="lazy" decoding="async">
-<p><strong>No HTTP requests to the malicious domain</strong>were seen in plaintext, because the malware uses HTTPS. We did not capture an explicit POST or data upload in our sandbox network logs — likely because the TLS handshake succeeded but the fake server didn’t properly continue the dialog, so the malware retried without ever sending application-layer data. In a real infection, after the TLS handshake, we would expect an HTTP POST (or series of them) to <a href="https://vaniloin.fun/&amp;lt;endpoint" target="_blank" rel="noopener noreferrer" class="">https://vaniloin.fun/&amp;lt;endpoint</a>&gt; carrying stolen information (credentials, etc.). That content would be encrypted inside TLS.</p>
+<p><strong>No HTTP requests to the malicious domain</strong>were seen in plaintext, because the malware uses HTTPS. We did not capture an explicit POST or data upload in our sandbox network logs — likely because the TLS handshake succeeded but the fake server didn’t properly continue the dialog, so the malware retried without ever sending application-layer data. In a real infection, after the TLS handshake, we would expect an HTTP POST (or series of them) to <code>hxxps://vaniloin[.]fun/&lt;endpoint&gt;</code> carrying stolen information (credentials, etc.). That content would be encrypted inside TLS.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="malware-classification--ttps-1">Malware Classification &amp; TTPs<a href="#malware-classification--ttps-1" class="hash-link" aria-label="Direct link to Malware Classification &amp; TTPs" title="Direct link to Malware Classification &amp; TTPs" translate="no">​</a></h2>
 <p><strong>Malware Type:<strong>DeerStealer (Authenticator.exe) falls under the category of an</strong>Information Stealer</strong>(InfoStealer). Its purpose is to covertly gather sensitive user data and exfiltrate it to a remote server, without overtly damaging the system (which aligns with what we observed). It does<strong>not</strong>encrypt files (so it’s not ransomware), nor does it appear to open a persistent backdoor or spread laterally. It’s a classic steal-and-exfiltrate Trojan.</p>
 <p>**MITRE ATT&amp;CK Techniques:**We can map this malware’s behavior to several ATT&amp;CK tactics and techniques:</p>
