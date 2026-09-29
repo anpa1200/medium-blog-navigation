@@ -57,7 +57,7 @@ AgentTesla’s ability to**evade traditional antivirus solutions**, coupled with
 
 - **Analysis Tools:**Custom-built tool
 
-[(Link to this tool here)](https://github.com/anpa1200/Malware_analysis/blob/main/Basic_inf_gathering)
+The original `Basic_inf_gathering` tool file is no longer present in the [Malware_analysis repository](https://github.com/anpa1200/Malware_analysis). The sample metadata below is retained from the original analysis.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*t7tmz2lZUCCW7NA0m7bXDg.png" alt="Article image" width="800" height="265" loading="lazy" decoding="async" />
 
