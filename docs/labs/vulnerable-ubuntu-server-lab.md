@@ -47,7 +47,7 @@ We’ll use VirtualBox or VMware as the hypervisor, download a legitimate Ubuntu
 
 ### VirtualBox (Recommended for Beginners — Free and Open-Source)
 
-**Download and install VirtualBox (latest version from &lt;**[**https://www.virtualbox.org/&gt;**](https://www.virtualbox.org/%3E?referrer=grok.com)**).**
+Download and install VirtualBox from the [official VirtualBox downloads page](https://www.virtualbox.org/wiki/Downloads).
 
 - On Ubuntu/Kali Linux: sudo apt update && sudo apt install virtualbox virtualbox-ext-pack
 
@@ -55,19 +55,19 @@ We’ll use VirtualBox or VMware as the hypervisor, download a legitimate Ubuntu
 
 - Why VirtualBox? Completely free, simple interface, excellent for pentesting labs.
 
-### VMware Alternative (VMware Workstation Player — Free for Personal Use, Better Performance) As of 2025–2026, VMware Workstation Player/Pro is free for personal/non-commercial use.
+### VMware Workstation Pro alternative
 
-**Download from &lt;**[**https://www.vmware.com/products/workstation-player.html&gt;**](https://www.vmware.com/products/workstation-player.html%3E?referrer=grok.com)**.**
+Use the [official VMware Workstation Pro page](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion) for the current download. Workstation Player is no longer a current download; check [VMware's product FAQ](https://www.vmware.com/docs/desktop-hypervisor-faqs) for availability and licensing.
 
 - On Ubuntu/Kali: Download .bundle, chmod +x VMware-*.bundle, install prerequisites (sudo apt install build-essential linux-headers-$(uname -r)), run sudo ./VMware-*.bundle.
 
 - Why VMware? Better performance for complex labs.
 
-### Step 1: Download the Ubuntu 24.04.3 Server ISO
+### Step 1: Download an Ubuntu 24.04 LTS Server ISO
 
-- Go to the official Ubuntu download page: &lt;[https://ubuntu.com/download/server&gt;](https://ubuntu.com/download/server%3E?referrer=grok.com).
+- Go to the [official Ubuntu Server download page](https://ubuntu.com/download/server).
 
-- Select Ubuntu 24.04.3 LTS Server (AMD64). Download the ISO (~2GB).
+- Select a currently available Ubuntu 24.04 LTS Server AMD64 ISO under previous LTS releases; point-release numbers and download sizes change.
 
 ### Step 2: Create a New Virtual Machine In VirtualBox:
 
