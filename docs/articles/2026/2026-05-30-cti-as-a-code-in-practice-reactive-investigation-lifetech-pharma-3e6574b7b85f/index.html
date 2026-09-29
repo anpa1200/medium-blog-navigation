@@ -13,7 +13,7 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.a4f47f0b.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.cfdc4465.js" defer="defer"></script>
 <script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
@@ -182,9 +182,9 @@ The intake commits to git first:</p>
 <li class=""><a href="https://raw.githubusercontent.com/anpa1200/CTI_as_a_Code/main/investigations/lifetech-2024-11/01-evidence/azure-ad/signin-p.levi.json" target="_blank" rel="noopener noreferrer" class="">azure-ad/signin-p.levi.json</a>
 **Format:**JSON
 **Contains:**IT admin Azure AD sign-ins — Istanbul token replay</li>
-<li class=""><a href="https://raw.githubusercontent.com/anpa1200/CTI_as_a_Code/main/investigations/lifetech-2024-11/01-evidence/vpn/anyconnect-2024-10-24.log" target="_blank" rel="noopener noreferrer" class="">vpn/anyconnect-2024-10-24.log</a>
+<li class=""><code>vpn/anyconnect-2024-10-24.log</code> (not published in the source repository)
 **Format:**ASA syslog
-**Contains:**VPN session from Istanbul, Oct 24</li>
+**Contains:**Referenced VPN session; source log is unavailable for public verification</li>
 <li class=""><a href="https://raw.githubusercontent.com/anpa1200/CTI_as_a_Code/main/investigations/lifetech-2024-11/01-evidence/sysmon/WS-CFO-01-sysmon.jsonl" target="_blank" rel="noopener noreferrer" class="">sysmon/WS-CFO-01-sysmon.jsonl</a>
 **Format:**JSONL
 **Contains:**CFO workstation — PowerShell, LSASS, persistence, BITS</li>
@@ -298,8 +298,9 @@ The intake commits to git first:</p>
 <li class=""><strong>Indicator</strong>Token replay — CA policy bypassed; conditionalAccessStatus: notApplied</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-vpn-log-analysis">5. VPN Log Analysis<a href="#5-vpn-log-analysis" class="hash-link" aria-label="Direct link to 5. VPN Log Analysis" title="Direct link to 5. VPN Log Analysis" translate="no">​</a></h3>
-<p>**In VS Code Explorer:**click vpn/anyconnect-2024-10-24.log</p>
-<p>VS Code opens the plain syslog file. Use Ctrl+F to navigate without any commands:</p>
+<p><strong>Public evidence boundary:</strong> The cited VPN log is absent from the published CTI repository (<code>*.log</code> is ignored). The screenshot, sample output, VPN-specific conclusions, and log commands below are training narrative, not reproducible from the public clone. The other linked evidence files can be inspected separately.</p>
+<p><strong>If you have an independently supplied copy:</strong> open <code>vpn/anyconnect-2024-10-24.log</code> in VS Code Explorer.</p>
+<p>VS Code opens the plain syslog file. Use Ctrl+F to navigate without any commands; these steps cannot be completed from the public clone:</p>
 <ul>
 <li class="">Search p.levi — highlights every line for this user</li>
 <li class="">Search Authentication: successful — the auth event</li>
@@ -471,7 +472,7 @@ Compress-ArchiveThe staging command</p>
 <p><strong>Pivot on the attacker source IP (AiTM phishing + VPN access):</strong></p>
 <p>Ctrl+Shift+F → 185.220.101.47:</p>
 <img src="https://cdn-images-1.medium.com/max/1024/1*MHyXMsFanJsG_dvdWSnKqw.png" alt="Article image" width="1024" height="602" loading="lazy" decoding="async">
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">azure-ad/signin-p.levi.json          line 18: suspicious sign-in from Istanbul — token replay, no MFA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vpn/anyconnect-2024-10-24.log        line 4:  VPN authentication as p.levi, assigned 10.10.3.22</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">palo-alto/dns-queries.csv            line 1:  attacker queried vpn.lifetechpharma.com 1 min before login</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">azure-ad/signin-p.levi.json          line 18: suspicious sign-in from Istanbul — token replay, no MFA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vpn/anyconnect-2024-10-24.log        not in the public clone; VPN event cannot be reproduced here</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">palo-alto/dns-queries.csv            line 1:  attacker queried vpn.lifetechpharma.com 1 min before login</span><br></div></code></pre></div></div>
 <p>One IP ties together AiTM credential theft, VPN infiltration, and the recon that preceded it.</p>
 <p>The full attack chain — AiTM phishing → VPN access → formula exfiltration → DCSync → CFO infection — is navigable via these four global searches without opening a SIEM:</p>
 <img src="https://cdn-images-1.medium.com/max/1024/1*n_vokO1vkbqN5O709MFF-w.png" alt="Article image" width="1024" height="683" loading="lazy" decoding="async">
