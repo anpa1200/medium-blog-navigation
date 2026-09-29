@@ -59,7 +59,7 @@ Mitigation strategies include immediate malware removal, credential resets, depl
 
 Basic information about sample I get with my own simple tool:
 
-[(Link to this tool here)](https://github.com/anpa1200/Malware_analysis/blob/main/Basic_inf_gathering)
+The original `Basic_inf_gathering` tool file is no longer present in the [Malware_analysis repository](https://github.com/anpa1200/Malware_analysis). The sample metadata below is retained from the original analysis.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*tSsZ3K1Sey2NmgTt" alt="Article image" width="1017" height="154" loading="lazy" decoding="async" />
 
@@ -230,8 +230,8 @@ Signed file, valid signature.
 
 ### Strings:
 
-There are so many string in this file. For sorting this string I can use my**own tool: String_Analyser
-**[(Link to this tool)](https://github.com/anpa1200/Malware_analysis/blob/main/string_analyser.py)
+There are many strings in this file. I used a custom String Analyser to sort them.
+The [current C++ String Analyser source](https://github.com/anpa1200/Malware_analysis/blob/main/src/string_analyser.cpp) is available, but the Python script originally linked here is not in the repository.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*x2g5ajvGA8nP0hx8" alt="Article image" width="1600" height="633" loading="lazy" decoding="async" />
 
