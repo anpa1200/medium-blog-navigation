@@ -104,7 +104,6 @@ This archive contains `192` preserved and native articles converted into Docusau
 - [ADCS ESC8 Attack: Certificate-Based Domain Compromise — Complete Guide](./2026/2026-01-28-adcs-esc8-attack-certificate-based-domain-compromise-complete-guide-7ec76562fa6d) - 2026-01-28 | CTI | 19 image(s) | 37 code block(s)
 - [AI-Driven Black Box Active Directory Penetration Testing](./2026/2026-01-27-ai-driven-black-box-active-directory-penetration-testing-8de0b9ad38b7) - 2026-01-27 | CTI | 1 image(s) | 7 code block(s)
 - [Active Directory Penetration Testing](./2026/2026-01-26-active-directory-penetration-testing-745cfb31d7d3) - 2026-01-26 | CTI | 27 image(s) | 47 code block(s)
-- [Hi! Two of my articles have been in pending status for the past few days.](./2026/2026-01-25-hi-two-of-my-articles-have-been-in-pending-status-for-the-past-few-days-cac7ab7d9191) - 2026-01-25 | Security Research | 0 image(s) | 0 code block(s)
 - [Active Directory Lab for PenTest. Manual Deployment Guide](./2026/2026-01-24-active-directory-lab-for-pentest-manual-deployment-guide-cab28cd4ad8d) - 2026-01-24 | CTI | 14 image(s) | 32 code block(s)
 - [Deploy a Complete Active Directory PenTest Lab in One Prompt with Cursor AI](./2026/2026-01-23-deploy-a-complete-active-directory-pentest-lab-in-one-prompt-with-cursor-ai-ff926fd2b3fc) - 2026-01-23 | CTI | 13 image(s) | 32 code block(s)
 - [The AI Revolution in Offensive Security](./2026/2026-01-19-the-ai-revolution-in-offensive-security-31e44704d51a) - 2026-01-19 | CTI | 14 image(s) | 0 code block(s)

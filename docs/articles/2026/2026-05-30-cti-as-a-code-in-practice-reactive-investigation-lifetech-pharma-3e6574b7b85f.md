@@ -1592,7 +1592,7 @@ After execution completes, click**Export**→**JSON**in ANY.RUN. Save it as:
 
 Search term What you find
 destination_ip91.211.251.245 — real C2 IP, port 443
-urlhttps://91.211.251.245/ga.js — Malleable C2 profile mimicking Google AnalyticsCookieBase64-encoded beacon metadata in the HTTP Cookie header
+url `hxxps://91.211.251[.]245/ga.js` — Malleable C2 profile mimicking Google AnalyticsCookieBase64-encoded beacon metadata in the HTTP Cookie header
 User-AgentMozilla/4.0 (compatible; MSIE 8.0...) — hardcoded CS UA string
 ProxyServerBeacon installs proxy settings pointing to C2
 long-sleepsVT tag — beacon sleeps between check-ins (configurable interval)
@@ -1606,7 +1606,7 @@ Add the C2 IP to ioc-queries.http and click**Send Request**on the VT and Shodan 
 - **Hash (SHA256)**1cf56da38e5fe05fd2242ff49bafa4271c5ee0868887bf91dafb6f47d1e46ae9 — Cobalt Strike beacon; 48/75 VT detections
 - **Hash (MD5)**cd59d54a7af500f96aa0347bb5daf077 — same sample
 - **IP**91.211.251.245:443 — real C2 server; HTTPS; confirmed in sandbox network traffic
-- **URL**https://91.211.251.245/ga.js — Malleable C2 endpoint; mimics Google Analytics
+- **URL** `hxxps://91.211.251[.]245/ga.js` — Malleable C2 endpoint; mimics Google Analytics
 - **Indicator**Cookie-encoded beacon — AES-encrypted victim metadata in HTTP Cookie header
 - **Indicator**long-sleeps — beacon interval; time between C2 check-ins
 
