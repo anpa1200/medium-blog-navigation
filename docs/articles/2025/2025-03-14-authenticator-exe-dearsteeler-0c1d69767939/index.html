@@ -13,7 +13,7 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.cfdc4465.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.bf5d99be.js" defer="defer"></script>
 <script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
@@ -51,7 +51,7 @@
 <p>Mitigation strategies include immediate malware removal, credential resets, deployment of endpoint detection and response tools, network-level blocking of known malicious domains, and enhanced security awareness training. Continuous threat hunting and proactive monitoring using provided indicators of compromise (IoCs) are critical for effective defense against similar threats.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sample-analyzed">Sample Analyzed<a href="#sample-analyzed" class="hash-link" aria-label="Direct link to Sample Analyzed" title="Direct link to Sample Analyzed" translate="no">​</a></h2>
 <p>Basic information about sample I get with my own simple tool:</p>
-<p><a href="https://github.com/anpa1200/Malware_analysis/blob/main/Basic_inf_gathering" target="_blank" rel="noopener noreferrer" class="">(Link to this tool here)</a></p>
+<p>The original <code>Basic_inf_gathering</code> tool file is no longer present in the <a href="https://github.com/anpa1200/Malware_analysis" target="_blank" rel="noopener noreferrer" class="">Malware_analysis repository</a>. The sample metadata below is retained from the original analysis.</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*tSsZ3K1Sey2NmgTt" alt="Article image" width="1017" height="154" loading="lazy" decoding="async">
 <p>**File Name:**Authenticator.exe</p>
 <p>**MD5:**cbfa7384b0b60d9c2e72cebe54b13619</p>
@@ -183,8 +183,8 @@ possibly to query version info of system or browser files (a fingerprinting tech
 <img src="https://cdn-images-1.medium.com/max/800/0*P_87DRNKx9Mar42p" alt="Article image" width="758" height="188" loading="lazy" decoding="async">
 <p><strong>Signature Validity:<strong>As of the analysis, the certificate’s reputation has changed. The code signing certificate used here has been</strong>revoked</strong>by the issuer. Security scans now flag the signature as<strong>revoked/untrusted</strong>​, meaning the certificate was likely canceled once its misuse was reported.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="strings">Strings:<a href="#strings" class="hash-link" aria-label="Direct link to Strings:" title="Direct link to Strings:" translate="no">​</a></h3>
-<p>There are so many string in this file. For sorting this string I can use my**own tool: String_Analyser
-**<a href="https://github.com/anpa1200/Malware_analysis/blob/main/string_analyser.py" target="_blank" rel="noopener noreferrer" class="">(Link to this tool)</a></p>
+<p>There are many strings in this file. I used a custom String Analyser to sort them.
+The <a href="https://github.com/anpa1200/Malware_analysis/blob/main/src/string_analyser.cpp" target="_blank" rel="noopener noreferrer" class="">current C++ String Analyser source</a> is available, but the Python script originally linked here is not in the repository.</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*x2g5ajvGA8nP0hx8" alt="Article image" width="1600" height="633" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="threat-intelligence-lookup-1">Threat Intelligence Lookup<a href="#threat-intelligence-lookup-1" class="hash-link" aria-label="Direct link to Threat Intelligence Lookup" title="Direct link to Threat Intelligence Lookup" translate="no">​</a></h3>
 <p><strong>Malware signature:</strong></p>
