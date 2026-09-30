@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -440,7 +440,241 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="repository-setup">Repository Setup<a href="#repository-setup" class="hash-link" aria-label="Direct link to Repository Setup" title="Direct link to Repository Setup" translate="no">​</a></h2>
 <p>Treat the CTI project as a codebase. Every artifact is a file, every register is a versioned record, every gate evidence pack is a commit-ready bundle. One directory per engagement. Nothing lives in email or chat. Initialize the repository on Day 1 before any analysis begins.</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cti-project/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── README.md                                    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># project scope, mode, customer, cycle dates</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── .gitignore                                   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># exclude raw source PDFs, PII, credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── config/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── project.yaml                             </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># mode (1/2), AI governance level, cycle dates</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── ai-governance-policy.md                  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2a → Phase 0 → AI Usage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── crown-jewels.md                          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2a → Phase 2 → Crown-Jewel and Business-Impact Mapping</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── registers/                                   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># one CSV per register; schemas in part2b → Master Registers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── evidence-register.csv                    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Evidence Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── decision-register.csv                    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Decision Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── source-register.csv                      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Source Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── pir-register.csv                         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → PIR Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── sir-register.csv                         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → SIR Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── collection-gap-register.csv              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Collection Gap Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── contradiction-register.csv               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Contradiction Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── threat-scenario-register.csv             </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Threat Scenario Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── ioc-review-register.csv                  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → IOC Review Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── attck-mapping-register.csv               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → ATT&amp;CK Mapping Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── detection-coverage-gap-register.csv      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Detection Coverage Gap Register; derived view — regenerate on DRL or scenario change</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── hunt-backlog.csv                         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Hunt Backlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── detection-backlog.csv                    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Detection Backlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── detection-health-register.csv            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Detection Health Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── customer-detection-data-model.csv        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Customer Detection Data Model Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── raid-register.csv                        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → RAID Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── customer-acceptance-record.csv           </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Customer Acceptance Record</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── ai-use-log.csv                           </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → AI Use Log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── approved-ai-tool-register.csv            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># schema: part2b → Approved AI Tool Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── sources/                                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># one subdirectory per source</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── SRC-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── source.pdf                           </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># original document (gitignored if restricted)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   └── extraction.md                        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Task Card 1: Source Claim Extraction; run via AI Workflow 1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── SRC-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">002</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── source.pdf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       └── extraction.md</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── intelligence/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── pirs/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── PIR-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">01</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md                            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → PIR Register + worked example Step 1; validated via Task Card 2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   └── PIR-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">02</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── sirs/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SIR-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">01.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md                          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → SIR Register + worked example Step 2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SIR-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">01.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   └── SIR-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">01.3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── scenarios/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── SCN-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">01</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-cloud-identity-backup-deletion.md   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Threat Scenario Register + worked example Step 4; drafted via Task Card 5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       └── SCN-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">02</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── telemetry/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── telemetry-map.md                         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2a → Phase 3 → Telemetry and Data Readiness Assessment; reviewed via Task Card 4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── customer-detection-data-model.md         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Customer Detection Data Model Register; mirrors register CSV</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── sample-events/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── SAMPLE-CLOUD-AUDIT-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">014</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.json          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># raw log sample; required input for Task Card 7 and DRL-2 confirmation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       └── SAMPLE-IDP-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.json</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── hunts/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── HUNT-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">01</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── hypothesis.md                        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Hunt Backlog + worked example Step 6; generated via Task Card 6 / AI Workflow 4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">query</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.kql                            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → AI Workflow 6: Query Translation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       └── result.md                            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Hunt Backlog result and Result Classification fields; required before hunt can be closed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── detections/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── DET-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── design.md                            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Detection Backlog + worked example Step 7; fields: name, DRL, ATT&amp;CK, D3FEND, log sources, required fields, known FPs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── logic-neutral.md                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Task Card 7: Detection Logic Draft (platform-neutral output)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── logic.kql                            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → AI Workflow 6: Query Translation (target-platform output)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">false</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-positives.md                   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Task Card 8: Rule Quality Challenge; known FP categories and tuning decisions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── rollback-plan.md                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → worked example Step 11 → Rollback plan; fields: disable owner, steps, re-enable criteria, notification path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── tests/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       │   ├── TEST-CLOUD-IAM-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-positive.json </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → AI Workflow 7 / worked example Step 8; positive synthetic event</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       │   ├── TEST-NEG-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-negative.json       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># negative test; required for Gate E</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       │   └── TEST-EDGE-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-edge.json          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># edge test; required for Gate E</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       └── playbooks/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│           └── PB-DET-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md                    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Task Card 9: SOC Playbook Draft / AI Workflow 8; includes dry-run record; required for Gate E</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── gates/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── GATE-A-pir-approval/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   └── evidence-pack.md                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Gate Evidence Pack Template; required fields: PIR Register, Decision Register, Collection Gap Register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── GATE-B-scenario-approval/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   └── evidence-pack.md                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Gate Evidence Pack Template; required fields: Scenario Register, Evidence IDs, priority score, telemetry score</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── GATE-C-hunt-approval/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   └── evidence-pack.md                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Gate Evidence Pack Template; required fields: hypothesis, telemetry map, observables, result classification</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── GATE-D-detection-design/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   └── evidence-pack.md                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Gate Evidence Pack Template; required fields: detection design, field mapping, ATT&amp;CK mapping, test plan</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── GATE-E-production-approval/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   │   └── GATE-E-DET-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md                    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Gate Evidence Pack Template + worked example Step 11; one file per detection; required fields: test evidence IDs, playbook ID, detection health entry, rollback plan, labeling completeness</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── GATE-F-final-delivery/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       └── evidence-pack.md                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Gate Evidence Pack Template; required fields: final package, Evidence Register, Decision Register, Detection Health Register, AI Use Log, Customer Acceptance Record</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── ai/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── approved-tools.md                        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Approved AI Tool Register; mirrors register CSV</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── quality-checklists/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       ├── QC-AIL-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md                        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → AI Use Log → Quality Checklist column definition; seven items: source grounding, no fabrication, customer fit, uncertainty preserved, actionability, security review, prompt-injection resistance</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       └── QC-AIL-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">002</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── delivery/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── executive-summary.md                     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Task Card 10: Executive Report Draft / AI Workflow 9</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── key-judgments.md                         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Task Card 11: Final Red-Team Review; every judgment must trace to an Evidence ID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── technical-appendix.md                    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Final Customer Delivery Package checklist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">60</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">90</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-roadmap.md                      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → 30/60/90-Day Execution Plan</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── customer-acceptance/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│       └── ACC-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-final-signoff.md             </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Customer Acceptance Record + Evidence Package Template</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">└── admin/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├── weekly-hygiene/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    │   └── </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2026</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">05</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">01</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-register-hygiene.md       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2a → Project Execution Controls → Weekly Register Hygiene; covers overdue contradictions, stale IOCs, DRL drift</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └── exceptions/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        └── </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gate exception records</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">             </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># format: part2b → Strict Quality Gates → Conditional pass rules; fields: risk owner, expiry date</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="235"><summary>Large code or log block<!-- --> · <!-- -->235<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>cti-project/
+│
+├── README.md                                    
+# project scope, mode, customer, cycle dates
+├── .gitignore                                   
+# exclude raw source PDFs, PII, credentials
+│
+├── config/
+│   ├── project.yaml                             
+# mode (1/2), AI governance level, cycle dates
+│   ├── ai-governance-policy.md                  
+# format: part2a → Phase 0 → AI Usage
+│   └── crown-jewels.md                          
+# format: part2a → Phase 2 → Crown-Jewel and Business-Impact Mapping
+│
+├── registers/                                   
+# one CSV per register; schemas in part2b → Master Registers
+│   ├── evidence-register.csv                    
+# schema: part2b → Evidence Register
+│   ├── decision-register.csv                    
+# schema: part2b → Decision Register
+│   ├── source-register.csv                      
+# schema: part2b → Source Register
+│   ├── pir-register.csv                         
+# schema: part2b → PIR Register
+│   ├── sir-register.csv                         
+# schema: part2b → SIR Register
+│   ├── collection-gap-register.csv              
+# schema: part2b → Collection Gap Register
+│   ├── contradiction-register.csv               
+# schema: part2b → Contradiction Register
+│   ├── threat-scenario-register.csv             
+# schema: part2b → Threat Scenario Register
+│   ├── ioc-review-register.csv                  
+# schema: part2b → IOC Review Register
+│   ├── attck-mapping-register.csv               
+# schema: part2b → ATT&amp;CK Mapping Register
+│   ├── detection-coverage-gap-register.csv      
+# schema: part2b → Detection Coverage Gap Register; derived view — regenerate on DRL or scenario change
+│   ├── hunt-backlog.csv                         
+# schema: part2b → Hunt Backlog
+│   ├── detection-backlog.csv                    
+# schema: part2b → Detection Backlog
+│   ├── detection-health-register.csv            
+# schema: part2b → Detection Health Register
+│   ├── customer-detection-data-model.csv        
+# schema: part2b → Customer Detection Data Model Register
+│   ├── raid-register.csv                        
+# schema: part2b → RAID Register
+│   ├── customer-acceptance-record.csv           
+# schema: part2b → Customer Acceptance Record
+│   ├── ai-use-log.csv                           
+# schema: part2b → AI Use Log
+│   └── approved-ai-tool-register.csv            
+# schema: part2b → Approved AI Tool Register
+│
+├── sources/                                     
+# one subdirectory per source
+│   ├── SRC-
+001
+/
+│   │   ├── source.pdf                           
+# original document (gitignored if restricted)
+│   │   └── extraction.md                        
+# format: part2b → Task Card 1: Source Claim Extraction; run via AI Workflow 1
+│   └── SRC-
+002
+/
+│       ├── source.pdf
+│       └── extraction.md
+│
+├── intelligence/
+│   ├── pirs/
+│   │   ├── PIR-
+01
+.md                            
+# format: part2b → PIR Register + worked example Step 1; validated via Task Card 2
+│   │   └── PIR-
+02
+.md
+│   ├── sirs/
+│   │   ├── SIR-
+01.1
+.md                          
+# format: part2b → SIR Register + worked example Step 2
+│   │   ├── SIR-
+01.2
+.md
+│   │   └── SIR-
+01.3
+.md
+│   └── scenarios/
+│       ├── SCN-
+01
+-cloud-identity-backup-deletion.md   
+# format: part2b → Threat Scenario Register + worked example Step 4; drafted via Task Card 5
+│       └── SCN-
+02
+.md
+│
+├── telemetry/
+│   ├── telemetry-map.md                         
+# format: part2a → Phase 3 → Telemetry and Data Readiness Assessment; reviewed via Task Card 4
+│   ├── customer-detection-data-model.md         
+# format: part2b → Customer Detection Data Model Register; mirrors register CSV
+│   └── sample-events/
+│       ├── SAMPLE-CLOUD-AUDIT-
+014
+.json          
+# raw log sample; required input for Task Card 7 and DRL-2 confirmation
+│       └── SAMPLE-IDP-
+001
+.json
+│
+├── hunts/
+│   └── HUNT-
+01
+/
+│       ├── hypothesis.md                        
+# format: part2b → Hunt Backlog + worked example Step 6; generated via Task Card 6 / AI Workflow 4
+│       ├── 
+query
+.kql                            
+# format: part2b → AI Workflow 6: Query Translation
+│       └── result.md                            
+# format: part2b → Hunt Backlog result and Result Classification fields; required before hunt can be closed
+│
+├── detections/
+│   └── DET-
+001
+/
+│       ├── design.md                            
+# format: part2b → Detection Backlog + worked example Step 7; fields: name, DRL, ATT&amp;CK, D3FEND, log sources, required fields, known FPs
+│       ├── logic-neutral.md                     
+# format: part2b → Task Card 7: Detection Logic Draft (platform-neutral output)
+│       ├── logic.kql                            
+# format: part2b → AI Workflow 6: Query Translation (target-platform output)
+│       ├── 
+false
+-positives.md                   
+# format: part2b → Task Card 8: Rule Quality Challenge; known FP categories and tuning decisions
+│       ├── rollback-plan.md                     
+# format: part2b → worked example Step 11 → Rollback plan; fields: disable owner, steps, re-enable criteria, notification path
+│       ├── tests/
+│       │   ├── TEST-CLOUD-IAM-
+001
+-positive.json 
+# format: part2b → AI Workflow 7 / worked example Step 8; positive synthetic event
+│       │   ├── TEST-NEG-
+001
+-negative.json       
+# negative test; required for Gate E
+│       │   └── TEST-EDGE-
+001
+-edge.json          
+# edge test; required for Gate E
+│       └── playbooks/
+│           └── PB-DET-
+001
+.md                    
+# format: part2b → Task Card 9: SOC Playbook Draft / AI Workflow 8; includes dry-run record; required for Gate E
+│
+├── gates/
+│   ├── GATE-A-pir-approval/
+│   │   └── evidence-pack.md                     
+# format: part2b → Gate Evidence Pack Template; required fields: PIR Register, Decision Register, Collection Gap Register
+│   ├── GATE-B-scenario-approval/
+│   │   └── evidence-pack.md                     
+# format: part2b → Gate Evidence Pack Template; required fields: Scenario Register, Evidence IDs, priority score, telemetry score
+│   ├── GATE-C-hunt-approval/
+│   │   └── evidence-pack.md                     
+# format: part2b → Gate Evidence Pack Template; required fields: hypothesis, telemetry map, observables, result classification
+│   ├── GATE-D-detection-design/
+│   │   └── evidence-pack.md                     
+# format: part2b → Gate Evidence Pack Template; required fields: detection design, field mapping, ATT&amp;CK mapping, test plan
+│   ├── GATE-E-production-approval/
+│   │   └── GATE-E-DET-
+001
+.md                    
+# format: part2b → Gate Evidence Pack Template + worked example Step 11; one file per detection; required fields: test evidence IDs, playbook ID, detection health entry, rollback plan, labeling completeness
+│   └── GATE-F-final-delivery/
+│       └── evidence-pack.md                     
+# format: part2b → Gate Evidence Pack Template; required fields: final package, Evidence Register, Decision Register, Detection Health Register, AI Use Log, Customer Acceptance Record
+│
+├── ai/
+│   ├── approved-tools.md                        
+# format: part2b → Approved AI Tool Register; mirrors register CSV
+│   └── quality-checklists/
+│       ├── QC-AIL-
+001
+.md                        
+# format: part2b → AI Use Log → Quality Checklist column definition; seven items: source grounding, no fabrication, customer fit, uncertainty preserved, actionability, security review, prompt-injection resistance
+│       └── QC-AIL-
+002
+.md
+│
+├── delivery/
+│   ├── executive-summary.md                     
+# format: part2b → Task Card 10: Executive Report Draft / AI Workflow 9
+│   ├── key-judgments.md                         
+# format: part2b → Task Card 11: Final Red-Team Review; every judgment must trace to an Evidence ID
+│   ├── technical-appendix.md                    
+# format: part2b → Final Customer Delivery Package checklist
+│   ├── 
+30
+-
+60
+-
+90
+-roadmap.md                      
+# format: part2b → 30/60/90-Day Execution Plan
+│   └── customer-acceptance/
+│       └── ACC-
+001
+-final-signoff.md             
+# format: part2b → Customer Acceptance Record + Evidence Package Template
+│
+└── admin/
+    ├── weekly-hygiene/
+    │   └── 
+2026
+-
+05
+-
+01
+-register-hygiene.md       
+# format: part2a → Project Execution Controls → Weekly Register Hygiene; covers overdue contradictions, stale IOCs, DRL drift
+    └── exceptions/
+        └── 
+(
+gate exception records
+)
+             
+# format: part2b → Strict Quality Gates → Conditional pass rules; fields: risk owner, expiry date
+</code></pre></details>
 <p><strong>File naming rules:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Register files     → kebab-case, singular noun, .csv</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Intelligence files → ID prefix + short description, .md (e.g., SCN-01-cloud-identity.md)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Detection files    → one subdirectory per Detection ID; logic files named by platform</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Test files         → TEST-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.json (type: positive / negative / edge)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Gate packs         → GATE-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">letter</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Detection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">].md</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AI checklists      → QC-AIL-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">three-digit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sequence</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.md</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Sample events      → SAMPLE-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SOURCE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sequence</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.json</span><br></div></code></pre></div></div>
 <p><strong>Version control rules:</strong></p>
@@ -517,7 +751,178 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-pir">Example PIR<a href="#example-pir" class="hash-link" aria-label="Direct link to Example PIR" title="Direct link to Example PIR" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">PIR-01:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Decision supported:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">prioritize</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">90</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-day</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">detection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">engineering</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">investment.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Question:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Which</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">adversary</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">behaviors</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">are</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">most</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">relevant</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">customer&#x27;s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">crown</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">jewels</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">most</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">detectable</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">current</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">telemetry?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Consumer:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CISO,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SOC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">lead,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">detection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">engineering</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">lead.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Time horizon:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">90</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">days.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Required confidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">moderate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">high.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Likely action if answered:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">approve</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">detection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">backlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">remediation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">plan.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Related crown jewels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">identity</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">plane,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cloud</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">management,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">customer</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">database,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">backup</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">platform.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Related threat scenarios:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">credential</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">compromise,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cloud</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">deletion,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">data</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">theft,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ransomware</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">staging.</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-pir-and-sir-with-collection-tasks--third-party-access">Example PIR and SIR with Collection Tasks — Third-Party Access<a href="#example-pir-and-sir-with-collection-tasks--third-party-access" class="hash-link" aria-label="Direct link to Example PIR and SIR with Collection Tasks — Third-Party Access" title="Direct link to Example PIR and SIR with Collection Tasks — Third-Party Access" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">PIR:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Which</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">third-party</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">paths</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">could</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">provide</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">privileged</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">core</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">network,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cloud,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Kubernetes,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">management</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">systems?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SIRs:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Which</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vendors</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">have</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">standing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">VPN,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ZTNA,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PAM,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cloud-console</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">access?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Which</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vendor</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">accounts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">can</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reach</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">network</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">management,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Kubernetes,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">backup,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">telecom-core</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">support</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">systems?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Which</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vendor</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sessions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">occurred</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">outside</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">approved</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">change</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">last</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">90</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">days?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Collection tasks:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Pull</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">VPN/ZTNA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vendor</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">identities.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Export</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PAM</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">session</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">records</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">approvals</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">privileged</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vendor</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sessions.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Join</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vendor</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">events</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">NOC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">change</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tickets</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cloud</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">IAM</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">role</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">assignments.</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="172"><summary>Large code or log block<!-- --> · <!-- -->172<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>PIR:
+Which
+ 
+third-party
+ 
+access
+ 
+paths
+ 
+could
+ 
+provide
+ 
+privileged
+ 
+access
+ 
+to
+ 
+core
+ 
+network,
+ 
+cloud,
+Kubernetes,
+ 
+or
+ 
+management
+ 
+systems?
+SIRs:
+-
+ 
+Which
+ 
+vendors
+ 
+have
+ 
+standing
+ 
+VPN,
+ 
+ZTNA,
+ 
+PAM,
+ 
+or
+ 
+cloud-console
+ 
+access?
+-
+ 
+Which
+ 
+vendor
+ 
+accounts
+ 
+can
+ 
+reach
+ 
+network
+ 
+management,
+ 
+Kubernetes,
+ 
+backup,
+  
+or
+ 
+telecom-core
+ 
+support
+ 
+systems?
+-
+ 
+Which
+ 
+vendor
+ 
+sessions
+ 
+occurred
+ 
+outside
+ 
+approved
+ 
+change
+ 
+windows
+ 
+in
+ 
+the
+ 
+last
+ 
+90
+ 
+days?
+Collection tasks:
+-
+ 
+Pull
+ 
+VPN/ZTNA
+ 
+logs
+ 
+for
+ 
+all
+ 
+vendor
+ 
+identities.
+-
+ 
+Export
+ 
+PAM
+ 
+session
+ 
+records
+ 
+and
+ 
+approvals
+ 
+for
+ 
+privileged
+ 
+vendor
+ 
+sessions.
+-
+ 
+Join
+ 
+vendor
+ 
+access
+ 
+events
+ 
+with
+ 
+NOC
+ 
+change
+ 
+tickets
+ 
+and
+ 
+cloud
+ 
+IAM
+ 
+role
+ 
+assignments.
+</code></pre></details>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-usage-1">AI Usage<a href="#ai-usage-1" class="hash-link" aria-label="Direct link to AI Usage" title="Direct link to AI Usage" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*fk8_bHutgtM93ozn9U3mOA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async">
 <p><strong>Allowed:</strong></p>

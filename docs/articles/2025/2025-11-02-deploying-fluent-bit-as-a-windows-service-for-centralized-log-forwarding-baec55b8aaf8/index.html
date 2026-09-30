@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -57,7 +57,221 @@
 </li>
 </ol>
 <p>For example, my configuration:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SERVICE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Flush</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># =====</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># set an interval of seconds before to flush records to a destination</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    flush        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Daemon</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ======</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># instruct Fluent Bit to run in foreground or background mode.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    daemon       Off</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Log_Level</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># =========</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Set the verbosity level of the service, values can be:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># - error</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># - warning</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># - info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># - debug</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># - trace</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># by default &#x27;info&#x27; is set, that means it includes &#x27;error&#x27; and &#x27;warning&#x27;.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    log_level    info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Parsers File</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ============</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># specify an optional &#x27;Parsers&#x27; configuration file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    parsers_file parsers.conf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Plugins File</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ============</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># specify an optional &#x27;Plugins&#x27; configuration file to load external plugins.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    plugins_file plugins.conf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># HTTP Server</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ===========</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Enable/Disable the built-in HTTP Server for metrics</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    http_server  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    http_listen  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    http_port    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2020</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Storage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># =======</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Fluent Bit can use memory and filesystem buffering based mechanisms</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># - https://docs.fluentbit.io/manual/administration/buffering-and-storage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># storage metrics</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ---------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># publish storage pipeline metrics in &#x27;/api/v1/storage&#x27;. The metrics are</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># exported only if the &#x27;http_server&#x27; option is enabled.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.metrics </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># storage.path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># absolute file system path to store filesystem data buffers (chunks).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\fluent-bit\storage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># storage.sync</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># configure the synchronization mode used to store the data into the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># filesystem. It can take the values normal or full.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.sync full</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># storage.checksum</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ----------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># enable the data integrity check when writing and reading data from the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># filesystem. The storage layer uses the CRC32 algorithm.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># storage.checksum off</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># storage.backlog.mem_limit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># -------------------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># if storage.path is set, Fluent Bit will look for data chunks that were</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># not delivered and are still in the storage layer, these are called</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># backlog data. This option configure a hint of maximum value of memory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># to use when processing these records.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.backlog.mem_limit </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">M</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">INPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Name         winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tag          winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Channels     Security,Application,System</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Interval_Sec </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    DB           </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\fluent-bit\winlog.sqlite</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> filesystem</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Mem_Buf_Limit </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">M</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#[INPUT]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    name      tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    path      [ENTER_ABSOLUTE_PATH_TO_LOGS]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    storage.type filesystem</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    DB           C:\fluent-bit\tail.sqlite</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Path_key    filepath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Mem_Buf_Limit 128M</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#[FILTER]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Name modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Match tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Add fluentbittype tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Name modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Match winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Add fluentbittype winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Copy Channel filepath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OUTPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Name http</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Match *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">11.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30443</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    URI /logeye/api/logger.jsp?token</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">53</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">db5aff-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">207</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">b-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">457</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">e-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">9</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a19-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">db73e24a864</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Format json</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    header_tag message</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tls </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tls.verify Off</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Retry_Limit </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">False</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.total_limit_size </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">G</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="215"><summary>Large code or log block<!-- --> · <!-- -->215<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>[
+SERVICE
+]
+    
+# Flush
+    
+# =====
+    
+# set an interval of seconds before to flush records to a destination
+    flush        
+5
+    
+# Daemon
+    
+# ======
+    
+# instruct Fluent Bit to run in foreground or background mode.
+    daemon       Off
+    
+# Log_Level
+    
+# =========
+    
+# Set the verbosity level of the service, values can be:
+    
+#
+    
+# - error
+    
+# - warning
+    
+# - info
+    
+# - debug
+    
+# - trace
+    
+#
+    
+# by default &#x27;info&#x27; is set, that means it includes &#x27;error&#x27; and &#x27;warning&#x27;.
+    log_level    info
+    
+# Parsers File
+    
+# ============
+    
+# specify an optional &#x27;Parsers&#x27; configuration file
+    parsers_file parsers.conf
+    
+# Plugins File
+    
+# ============
+    
+# specify an optional &#x27;Plugins&#x27; configuration file to load external plugins.
+    plugins_file plugins.conf
+    
+# HTTP Server
+    
+# ===========
+    
+# Enable/Disable the built-in HTTP Server for metrics
+    http_server  
+On
+    http_listen  
+0.0
+.
+0.0
+    http_port    
+2020
+    
+# Storage
+    
+# =======
+    
+# Fluent Bit can use memory and filesystem buffering based mechanisms
+    
+#
+    
+# - https://docs.fluentbit.io/manual/administration/buffering-and-storage
+    
+#
+    
+# storage metrics
+    
+# ---------------
+    
+# publish storage pipeline metrics in &#x27;/api/v1/storage&#x27;. The metrics are
+    
+# exported only if the &#x27;http_server&#x27; option is enabled.
+    
+#
+    storage.metrics 
+on
+    
+# storage.path
+    
+# ------------
+    
+# absolute file system path to store filesystem data buffers (chunks).
+    
+#
+    storage.path 
+C
+:
+\fluent-bit\storage
+    
+# storage.sync
+    
+# ------------
+    
+# configure the synchronization mode used to store the data into the
+    
+# filesystem. It can take the values normal or full.
+    
+#
+    storage.sync full
+    
+# storage.checksum
+    
+# ----------------
+    
+# enable the data integrity check when writing and reading data from the
+    
+# filesystem. The storage layer uses the CRC32 algorithm.
+    
+#
+    
+# storage.checksum off
+    
+# storage.backlog.mem_limit
+    
+# -------------------------
+    
+# if storage.path is set, Fluent Bit will look for data chunks that were
+    
+# not delivered and are still in the storage layer, these are called
+    
+# backlog data. This option configure a hint of maximum value of memory
+    
+# to use when processing these records.
+    
+#
+    storage.backlog.mem_limit 
+128
+M
+[
+INPUT
+]
+    Name         winlog
+    tag          winlog
+    Channels     Security,Application,System
+    Interval_Sec 
+1
+    DB           
+C
+:
+\fluent-bit\winlog.sqlite
+    storage.
+type
+ filesystem
+    Mem_Buf_Limit 
+128
+M
+#[INPUT]
+#    name      tail
+#    path      [ENTER_ABSOLUTE_PATH_TO_LOGS]
+#    storage.type filesystem
+#    DB           C:\fluent-bit\tail.sqlite
+#    Path_key    filepath
+#    Mem_Buf_Limit 128M
+#[FILTER]
+#    Name modify
+#    Match tail
+#    Add fluentbittype tail
+[
+FILTER
+]
+    Name modify
+    Match winlog
+    Add fluentbittype winlog
+    Copy Channel filepath
+[
+OUTPUT
+]
+    Name http
+    Match *
+    Host 
+172.16
+.
+11.1
+    Port 
+30443
+    URI /logeye/api/logger.jsp?token
+=
+53
+db5aff-
+207
+b-
+457
+e-
+9
+a19-
+5
+db73e24a864
+    Format json
+    header_tag message
+    tls 
+On
+    tls.verify Off
+    Retry_Limit 
+False
+    storage.total_limit_size 
+10
+G
+</code></pre></details>
 <ol start="5">
 <li class="">Copy your<code>fb.conf</code>file into
 <code>C:\fluent-bit\conf\fluent-bit.conf</code>.</li>

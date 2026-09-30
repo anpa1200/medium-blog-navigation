@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -315,7 +315,255 @@
 <p>**Step 6 — Reports from sources.yaml.**One Report object per promoted source, with publisher, reliability rating, credibility score, actor claims, key entities, and ATT&amp;CK candidates written into the description. MuddyWater is added as an object reference so each report is queryable from the actor page.</p>
 <p>**Step 7 — ATT&amp;CK pattern links from procedures.yaml.**Iterates all attck_candidates across the 10 procedure records and creates MuddyWater → uses → ATT&amp;CK technique relationships. If the MITRE connector has not yet synced a technique, the script creates a stub Attack Pattern object (with x_mitre_id set) and flags it for enrichment. This prevents the import from failing on a timing issue between the connector sync and the import run.</p>
 <p>The script is<strong>idempotent</strong>: every object lookup uses a read() before create(). Re-running after a partial failure or after the MITRE connector syncs simply confirms existing objects and fills in any gaps.</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">#!/usr/bin/env python3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Desert Hydra — Phase 3 OpenCTI graph import.Reads data/sources.yaml and data/procedures.yaml and creates:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  - Identity:       Iran MOIS (organization)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  - Intrusion Set:  MuddyWater (with all known aliases)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  - Malware:        actor-developed tools (9 objects)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  - Tool:           legitimate tools abused (4 objects)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  - Reports:        one per promoted source (up to 20)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  - Relationships:  attributed-to, uses (malware/tool/ATT&amp;CK)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Idempotent - existing objects are not duplicated.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ATT&amp;CK pattern links are skipped for techniques not yet synced by the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">MITRE connector; re-run the script after the MITRE sync completes.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Usage:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    export OPENCTI_URL=http://localhost:8080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    export OPENCTI_TOKEN=&lt;admin-token&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    python3 tools/opencti_import.py</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import os</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import sys</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import yaml</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from pathlib import Path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from pycti import OpenCTIApiClient</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from pycti.entities.opencti_identity import IdentityTypes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Bootstrap ─────────────────────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OPENCTI_URL   = os.environ.get(&quot;OPENCTI_URL&quot;,   &quot;http://localhost:8080&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OPENCTI_TOKEN = os.environ.get(&quot;OPENCTI_TOKEN&quot;, &quot;&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">REPO_ROOT     = Path(__file__).resolve().parent.parent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if not OPENCTI_TOKEN:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    sys.exit(&quot;ERROR: set OPENCTI_TOKEN environment variable&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">api = OpenCTIApiClient(url=OPENCTI_URL, token=OPENCTI_TOKEN, log_level=&quot;error&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(f&quot;[desert-hydra] Connected  {OPENCTI_URL}&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Load YAML data ─────────────────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with open(REPO_ROOT / &quot;data&quot; / &quot;sources.yaml&quot;) as f:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    SOURCES = yaml.safe_load(f)[&quot;sources&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with open(REPO_ROOT / &quot;data&quot; / &quot;procedures.yaml&quot;) as f:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    PROCEDURES = yaml.safe_load(f)[&quot;procedures&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(f&quot;[desert-hydra] Loaded {len(SOURCES)} sources, {len(PROCEDURES)} procedures&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── TLP:WHITE ─────────────────────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def get_tlp_white():</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    results = api.marking_definition.list(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        filters={</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;mode&quot;: &quot;and&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;filters&quot;: [{&quot;key&quot;: &quot;definition&quot;, &quot;values&quot;: [&quot;TLP:WHITE&quot;]}],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;filterGroups&quot;: [],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if results:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        return results[0][&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    obj = api.marking_definition.create(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        definition_type=&quot;TLP&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        definition=&quot;TLP:WHITE&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        x_opencti_color=&quot;#ffffff&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        x_opencti_order=0,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    return obj[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TLP_WHITE = get_tlp_white()</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Helpers ───────────────────────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def _find(accessor, name):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;&quot;&quot;Look up a STIX object by name. Returns the object dict or None.&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    return accessor.read(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        filters={</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;mode&quot;: &quot;and&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;filters&quot;: [{&quot;key&quot;: &quot;name&quot;, &quot;values&quot;: [name]}],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;filterGroups&quot;: [],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def link(from_id, to_id, rel_type, confidence=80):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;&quot;&quot;Create a STIX core relationship; silently skip if it already exists.&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    try:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        api.stix_core_relationship.create(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            fromId=from_id,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            toId=to_id,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            relationship_type=rel_type,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            confidence=confidence,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            objectMarking=[TLP_WHITE],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    except Exception:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        pass</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ATTCK_NAMES = {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;T1574.002&quot;: &quot;DLL Side-Loading&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;T1574.001&quot;: &quot;DLL Search Order Hijacking&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;T1546.015&quot;: &quot;Component Object Model Hijacking&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;T1218.010&quot;: &quot;Regsvr32&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def find_or_create_attack_pattern(mitre_id):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;&quot;&quot;Look up an ATT&amp;CK pattern by x_mitre_id. Create stub if not synced yet.&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    result = api.attack_pattern.read(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        filters={</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;mode&quot;: &quot;and&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;filters&quot;: [{&quot;key&quot;: &quot;x_mitre_id&quot;, &quot;values&quot;: [mitre_id]}],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;filterGroups&quot;: [],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if result:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        return result[&quot;id&quot;], False</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    name = ATTCK_NAMES.get(mitre_id, mitre_id)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    obj = api.attack_pattern.create(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        name=name,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        x_mitre_id=mitre_id,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        description=f&quot;MITRE ATT&amp;CK technique {mitre_id}. Created as stub pending MITRE connector sync.&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        objectMarking=[TLP_WHITE],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        confidence=75,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    return obj[&quot;id&quot;], True</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Step 1: Iran MOIS Identity ────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">existing = _find(api.identity, &quot;Iran MOIS&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if existing:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    MOIS_ID = existing[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    obj = api.identity.create(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        type=IdentityTypes.ORGANIZATION.value,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        name=&quot;Iran MOIS&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        description=(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;Iranian Ministry of Intelligence and Security (MOIS). &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;State sponsor attributed to MuddyWater cyber operations by CISA, FBI, &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;CNMF, NCSC-UK, and NSA in joint advisory AA22-055A (February 2022).&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ),</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        objectMarking=[TLP_WHITE],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        confidence=85,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    MOIS_ID = obj[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Step 2: MuddyWater Intrusion Set ──────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">existing = _find(api.intrusion_set, &quot;MuddyWater&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if existing:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    MW_ID = existing[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    obj = api.intrusion_set.create(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        name=&quot;MuddyWater&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        aliases=[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;Seedworm&quot;, &quot;Mango Sandstorm&quot;, &quot;TA450&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;Static Kitten&quot;, &quot;TEMP.Zagros&quot;, &quot;Mercury&quot;, &quot;DEV-1084&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        description=(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;Iranian MOIS subordinate threat group active since at least 2017. &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;Targets government, defense, telecom, oil and gas, and MSPs globally. &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;Significant focus on Israeli organizations since 2022. Known for &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;spearphishing, RMM tool abuse, and a shift toward in-house tooling &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &quot;(BugSleep, AnchorRAT) beginning ~May 2024.&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ),</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        resource_level=&quot;government&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        primary_motivation=&quot;espionage&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        confidence=85,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        objectMarking=[TLP_WHITE],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        createdBy=MOIS_ID,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    MW_ID = obj[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">link(MW_ID, MOIS_ID, &quot;attributed-to&quot;, 85)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Step 3: Malware catalog ────────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">MALWARE_CATALOG = [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;POWERSTATS&quot;,  &quot;aliases&quot;: [&quot;Powermud&quot;],   &quot;description&quot;: &quot;MuddyWater first-stage PowerShell backdoor (MITRE S0223).&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;PowGoop&quot;,     &quot;aliases&quot;: [&quot;Goopdate&quot;],   &quot;description&quot;: &quot;DLL loader hijacking GoogleUpdate.exe via side-loading (MITRE S1046).&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;Small Sieve&quot;, &quot;aliases&quot;: [],             &quot;description&quot;: &quot;Python backdoor compiled as NSIS; Telegram Bot API C2; OutlookMicrosift Run key.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;Canopy&quot;,      &quot;aliases&quot;: [&quot;Starwhale&quot;],  &quot;description&quot;: &quot;Excel-macro dropper; startup folder persistence; HTTP POST C2.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;Mori&quot;,        &quot;aliases&quot;: [],             &quot;description&quot;: &quot;DNS-tunneling backdoor deployed as FML.dll via regsvr32.exe.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;BugSleep&quot;,    &quot;aliases&quot;: [],             &quot;description&quot;: &quot;In-house backdoor (2024); 43-minute scheduled task; shellcode injection.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;AnchorRAT&quot;,   &quot;aliases&quot;: [],             &quot;description&quot;: &quot;Custom RAT (2024); COM hijacking persistence (T1546.015).&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;SyncroRAT&quot;,   &quot;aliases&quot;: [],             &quot;description&quot;: &quot;RMM-based RAT; Technion campaign (Feb 2023); Log4j initial access.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;DarkBit&quot;,     &quot;aliases&quot;: [],             &quot;description&quot;: &quot;Ransomware/wiper; Technion attack; vssadmin shadow copy deletion.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">MALWARE_IDS = {}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for m in MALWARE_CATALOG:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    existing = _find(api.malware, m[&quot;name&quot;])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if existing:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        MALWARE_IDS[m[&quot;name&quot;]] = existing[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    else:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        obj = api.malware.create(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            name=m[&quot;name&quot;], aliases=m[&quot;aliases&quot;],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            description=m[&quot;description&quot;], is_family=False,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            objectMarking=[TLP_WHITE], createdBy=MOIS_ID,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        MALWARE_IDS[m[&quot;name&quot;]] = obj[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Step 4: Tool catalog ──────────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TOOL_CATALOG = [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;AteraAgent&quot;,  &quot;aliases&quot;: [&quot;Atera RMM&quot;], &quot;description&quot;: &quot;Commercial RMM abused for persistent remote access via phishing.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;SimpleHelp&quot;,  &quot;aliases&quot;: [],            &quot;description&quot;: &quot;Commercial RMM abused in 2024 Israeli targeting.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;Mimikatz&quot;,    &quot;aliases&quot;: [],            &quot;description&quot;: &quot;LSASS credential dumping (T1003.001), used with procdump64.exe.&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    {&quot;name&quot;: &quot;LaZagne&quot;,     &quot;aliases&quot;: [],            &quot;description&quot;: &quot;LSA secrets (T1003.004) and cached domain credential dumping (T1003.005).&quot;},</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TOOL_IDS = {}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for t in TOOL_CATALOG:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    existing = _find(api.tool, t[&quot;name&quot;])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if existing:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        TOOL_IDS[t[&quot;name&quot;]] = existing[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    else:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        obj = api.tool.create(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            name=t[&quot;name&quot;], aliases=t[&quot;aliases&quot;],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            description=t[&quot;description&quot;],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            objectMarking=[TLP_WHITE], createdBy=MOIS_ID,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        TOOL_IDS[t[&quot;name&quot;]] = obj[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Step 5: uses relationships ────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for mid in MALWARE_IDS.values():</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    link(MW_ID, mid, &quot;uses&quot;, 80)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for tid in TOOL_IDS.values():</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    link(MW_ID, tid, &quot;uses&quot;, 80)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Step 6: Reports from sources.yaml ────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SOURCE_DATES = {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;src_usgov_aa22_055a_pdf_mirror&quot;:        &quot;2022-02-24T00:00:00.000Z&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;src_incd_muddywater_darkbit_2023&quot;:      &quot;2023-02-07T00:00:00.000Z&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;src_incd_muddywater_2024_evolution&quot;:    &quot;2024-06-01T00:00:00.000Z&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;src_cisa_aa22_055a_page&quot;:               &quot;2022-02-24T00:00:00.000Z&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;src_ncsc_uk_muddywater_joint_advisory&quot;: &quot;2022-02-24T00:00:00.000Z&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;src_incd_recent_phishing_1947&quot;:         &quot;2024-09-01T00:00:00.000Z&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;src_mitre_attack_muddywater_g0069&quot;:     &quot;2024-01-01T00:00:00.000Z&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">REPORT_IDS = {}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for src in SOURCES:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    src_id   = src[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    title    = src[&quot;title&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    pub_date = SOURCE_DATES.get(src_id, &quot;2023-01-01T00:00:00.000Z&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    confidence = 85 if src.get(&quot;source_reliability&quot;) == &quot;A&quot; else 70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    description = (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        f&quot;Publisher: {src[&#x27;publisher&#x27;]}\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        f&quot;Reliability: {src.get(&#x27;source_reliability&#x27;,&#x27;?&#x27;)} / &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        f&quot;Credibility: {src.get(&#x27;information_credibility&#x27;,&#x27;?&#x27;)}\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        f&quot;URL: {src[&#x27;url&#x27;]}\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        f&quot;Actor claims: {&#x27;, &#x27;.join(src.get(&#x27;actor_claims&#x27;, []))}\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        f&quot;ATT&amp;CK candidates: {&#x27;, &#x27;.join(src.get(&#x27;candidate_attck_techniques&#x27;, []))}&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    existing = _find(api.report, title)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if existing:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        REPORT_IDS[src_id] = existing[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    else:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        obj = api.report.create(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            name=title, published=pub_date,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            description=description,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            report_types=[&quot;threat-report&quot;],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            confidence=confidence,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            objectMarking=[TLP_WHITE],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            createdBy=MOIS_ID,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            objects=[MW_ID],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        REPORT_IDS[src_id] = obj[&quot;id&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Step 7: ATT&amp;CK pattern links from procedures ──────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">linked, stubs = set(), []</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for proc in PROCEDURES:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    for candidate in proc.get(&quot;attck_candidates&quot;, []):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        tid = candidate[&quot;technique&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        if tid in linked:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            continue</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        pattern_id, created_as_stub = find_or_create_attack_pattern(tid)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        link(MW_ID, pattern_id, &quot;uses&quot;, 75)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        linked.add(tid)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        if created_as_stub:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            stubs.append(tid)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ── Summary ───────────────────────────────────────────────────────────────────</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(f&quot;Import complete - malware: {len(MALWARE_IDS)}, tools: {len(TOOL_IDS)}, &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      f&quot;reports: {len(REPORT_IDS)}, ATT&amp;CK links: {len(linked)}, stubs: {len(stubs)}&quot;)</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="249"><summary>Large code or log block<!-- --> · <!-- -->249<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>#!/usr/bin/env python3
+&quot;&quot;&quot;
+Desert Hydra — Phase 3 OpenCTI graph import.Reads data/sources.yaml and data/procedures.yaml and creates:
+  - Identity:       Iran MOIS (organization)
+  - Intrusion Set:  MuddyWater (with all known aliases)
+  - Malware:        actor-developed tools (9 objects)
+  - Tool:           legitimate tools abused (4 objects)
+  - Reports:        one per promoted source (up to 20)
+  - Relationships:  attributed-to, uses (malware/tool/ATT&amp;CK)
+Idempotent - existing objects are not duplicated.
+ATT&amp;CK pattern links are skipped for techniques not yet synced by the
+MITRE connector; re-run the script after the MITRE sync completes.
+Usage:
+    export OPENCTI_URL=http://localhost:8080
+    export OPENCTI_TOKEN=&lt;admin-token&gt;
+    python3 tools/opencti_import.py
+&quot;&quot;&quot;
+import os
+import sys
+import yaml
+from pathlib import Path
+from pycti import OpenCTIApiClient
+from pycti.entities.opencti_identity import IdentityTypes
+# ── Bootstrap ─────────────────────────────────────────────────────────────────
+OPENCTI_URL   = os.environ.get(&quot;OPENCTI_URL&quot;,   &quot;http://localhost:8080&quot;)
+OPENCTI_TOKEN = os.environ.get(&quot;OPENCTI_TOKEN&quot;, &quot;&quot;)
+REPO_ROOT     = Path(__file__).resolve().parent.parent
+if not OPENCTI_TOKEN:
+    sys.exit(&quot;ERROR: set OPENCTI_TOKEN environment variable&quot;)
+api = OpenCTIApiClient(url=OPENCTI_URL, token=OPENCTI_TOKEN, log_level=&quot;error&quot;)
+print(f&quot;[desert-hydra] Connected  {OPENCTI_URL}&quot;)
+# ── Load YAML data ─────────────────────────────────────────────────────────────
+with open(REPO_ROOT / &quot;data&quot; / &quot;sources.yaml&quot;) as f:
+    SOURCES = yaml.safe_load(f)[&quot;sources&quot;]
+with open(REPO_ROOT / &quot;data&quot; / &quot;procedures.yaml&quot;) as f:
+    PROCEDURES = yaml.safe_load(f)[&quot;procedures&quot;]
+print(f&quot;[desert-hydra] Loaded {len(SOURCES)} sources, {len(PROCEDURES)} procedures&quot;)
+# ── TLP:WHITE ─────────────────────────────────────────────────────────────────
+def get_tlp_white():
+    results = api.marking_definition.list(
+        filters={
+            &quot;mode&quot;: &quot;and&quot;,
+            &quot;filters&quot;: [{&quot;key&quot;: &quot;definition&quot;, &quot;values&quot;: [&quot;TLP:WHITE&quot;]}],
+            &quot;filterGroups&quot;: [],
+        }
+    )
+    if results:
+        return results[0][&quot;id&quot;]
+    obj = api.marking_definition.create(
+        definition_type=&quot;TLP&quot;,
+        definition=&quot;TLP:WHITE&quot;,
+        x_opencti_color=&quot;#ffffff&quot;,
+        x_opencti_order=0,
+    )
+    return obj[&quot;id&quot;]
+TLP_WHITE = get_tlp_white()
+# ── Helpers ───────────────────────────────────────────────────────────────────
+def _find(accessor, name):
+    &quot;&quot;&quot;Look up a STIX object by name. Returns the object dict or None.&quot;&quot;&quot;
+    return accessor.read(
+        filters={
+            &quot;mode&quot;: &quot;and&quot;,
+            &quot;filters&quot;: [{&quot;key&quot;: &quot;name&quot;, &quot;values&quot;: [name]}],
+            &quot;filterGroups&quot;: [],
+        }
+    )
+def link(from_id, to_id, rel_type, confidence=80):
+    &quot;&quot;&quot;Create a STIX core relationship; silently skip if it already exists.&quot;&quot;&quot;
+    try:
+        api.stix_core_relationship.create(
+            fromId=from_id,
+            toId=to_id,
+            relationship_type=rel_type,
+            confidence=confidence,
+            objectMarking=[TLP_WHITE],
+        )
+    except Exception:
+        pass
+ATTCK_NAMES = {
+    &quot;T1574.002&quot;: &quot;DLL Side-Loading&quot;,
+    &quot;T1574.001&quot;: &quot;DLL Search Order Hijacking&quot;,
+    &quot;T1546.015&quot;: &quot;Component Object Model Hijacking&quot;,
+    &quot;T1218.010&quot;: &quot;Regsvr32&quot;,
+}
+def find_or_create_attack_pattern(mitre_id):
+    &quot;&quot;&quot;Look up an ATT&amp;CK pattern by x_mitre_id. Create stub if not synced yet.&quot;&quot;&quot;
+    result = api.attack_pattern.read(
+        filters={
+            &quot;mode&quot;: &quot;and&quot;,
+            &quot;filters&quot;: [{&quot;key&quot;: &quot;x_mitre_id&quot;, &quot;values&quot;: [mitre_id]}],
+            &quot;filterGroups&quot;: [],
+        }
+    )
+    if result:
+        return result[&quot;id&quot;], False
+    name = ATTCK_NAMES.get(mitre_id, mitre_id)
+    obj = api.attack_pattern.create(
+        name=name,
+        x_mitre_id=mitre_id,
+        description=f&quot;MITRE ATT&amp;CK technique {mitre_id}. Created as stub pending MITRE connector sync.&quot;,
+        objectMarking=[TLP_WHITE],
+        confidence=75,
+    )
+    return obj[&quot;id&quot;], True
+# ── Step 1: Iran MOIS Identity ────────────────────────────────────────────────
+existing = _find(api.identity, &quot;Iran MOIS&quot;)
+if existing:
+    MOIS_ID = existing[&quot;id&quot;]
+else:
+    obj = api.identity.create(
+        type=IdentityTypes.ORGANIZATION.value,
+        name=&quot;Iran MOIS&quot;,
+        description=(
+            &quot;Iranian Ministry of Intelligence and Security (MOIS). &quot;
+            &quot;State sponsor attributed to MuddyWater cyber operations by CISA, FBI, &quot;
+            &quot;CNMF, NCSC-UK, and NSA in joint advisory AA22-055A (February 2022).&quot;
+        ),
+        objectMarking=[TLP_WHITE],
+        confidence=85,
+    )
+    MOIS_ID = obj[&quot;id&quot;]
+# ── Step 2: MuddyWater Intrusion Set ──────────────────────────────────────────
+existing = _find(api.intrusion_set, &quot;MuddyWater&quot;)
+if existing:
+    MW_ID = existing[&quot;id&quot;]
+else:
+    obj = api.intrusion_set.create(
+        name=&quot;MuddyWater&quot;,
+        aliases=[
+            &quot;Seedworm&quot;, &quot;Mango Sandstorm&quot;, &quot;TA450&quot;,
+            &quot;Static Kitten&quot;, &quot;TEMP.Zagros&quot;, &quot;Mercury&quot;, &quot;DEV-1084&quot;,
+        ],
+        description=(
+            &quot;Iranian MOIS subordinate threat group active since at least 2017. &quot;
+            &quot;Targets government, defense, telecom, oil and gas, and MSPs globally. &quot;
+            &quot;Significant focus on Israeli organizations since 2022. Known for &quot;
+            &quot;spearphishing, RMM tool abuse, and a shift toward in-house tooling &quot;
+            &quot;(BugSleep, AnchorRAT) beginning ~May 2024.&quot;
+        ),
+        resource_level=&quot;government&quot;,
+        primary_motivation=&quot;espionage&quot;,
+        confidence=85,
+        objectMarking=[TLP_WHITE],
+        createdBy=MOIS_ID,
+    )
+    MW_ID = obj[&quot;id&quot;]
+link(MW_ID, MOIS_ID, &quot;attributed-to&quot;, 85)
+# ── Step 3: Malware catalog ────────────────────────────────────────────────────
+MALWARE_CATALOG = [
+    {&quot;name&quot;: &quot;POWERSTATS&quot;,  &quot;aliases&quot;: [&quot;Powermud&quot;],   &quot;description&quot;: &quot;MuddyWater first-stage PowerShell backdoor (MITRE S0223).&quot;},
+    {&quot;name&quot;: &quot;PowGoop&quot;,     &quot;aliases&quot;: [&quot;Goopdate&quot;],   &quot;description&quot;: &quot;DLL loader hijacking GoogleUpdate.exe via side-loading (MITRE S1046).&quot;},
+    {&quot;name&quot;: &quot;Small Sieve&quot;, &quot;aliases&quot;: [],             &quot;description&quot;: &quot;Python backdoor compiled as NSIS; Telegram Bot API C2; OutlookMicrosift Run key.&quot;},
+    {&quot;name&quot;: &quot;Canopy&quot;,      &quot;aliases&quot;: [&quot;Starwhale&quot;],  &quot;description&quot;: &quot;Excel-macro dropper; startup folder persistence; HTTP POST C2.&quot;},
+    {&quot;name&quot;: &quot;Mori&quot;,        &quot;aliases&quot;: [],             &quot;description&quot;: &quot;DNS-tunneling backdoor deployed as FML.dll via regsvr32.exe.&quot;},
+    {&quot;name&quot;: &quot;BugSleep&quot;,    &quot;aliases&quot;: [],             &quot;description&quot;: &quot;In-house backdoor (2024); 43-minute scheduled task; shellcode injection.&quot;},
+    {&quot;name&quot;: &quot;AnchorRAT&quot;,   &quot;aliases&quot;: [],             &quot;description&quot;: &quot;Custom RAT (2024); COM hijacking persistence (T1546.015).&quot;},
+    {&quot;name&quot;: &quot;SyncroRAT&quot;,   &quot;aliases&quot;: [],             &quot;description&quot;: &quot;RMM-based RAT; Technion campaign (Feb 2023); Log4j initial access.&quot;},
+    {&quot;name&quot;: &quot;DarkBit&quot;,     &quot;aliases&quot;: [],             &quot;description&quot;: &quot;Ransomware/wiper; Technion attack; vssadmin shadow copy deletion.&quot;},
+]
+MALWARE_IDS = {}
+for m in MALWARE_CATALOG:
+    existing = _find(api.malware, m[&quot;name&quot;])
+    if existing:
+        MALWARE_IDS[m[&quot;name&quot;]] = existing[&quot;id&quot;]
+    else:
+        obj = api.malware.create(
+            name=m[&quot;name&quot;], aliases=m[&quot;aliases&quot;],
+            description=m[&quot;description&quot;], is_family=False,
+            objectMarking=[TLP_WHITE], createdBy=MOIS_ID,
+        )
+        MALWARE_IDS[m[&quot;name&quot;]] = obj[&quot;id&quot;]
+# ── Step 4: Tool catalog ──────────────────────────────────────────────────────
+TOOL_CATALOG = [
+    {&quot;name&quot;: &quot;AteraAgent&quot;,  &quot;aliases&quot;: [&quot;Atera RMM&quot;], &quot;description&quot;: &quot;Commercial RMM abused for persistent remote access via phishing.&quot;},
+    {&quot;name&quot;: &quot;SimpleHelp&quot;,  &quot;aliases&quot;: [],            &quot;description&quot;: &quot;Commercial RMM abused in 2024 Israeli targeting.&quot;},
+    {&quot;name&quot;: &quot;Mimikatz&quot;,    &quot;aliases&quot;: [],            &quot;description&quot;: &quot;LSASS credential dumping (T1003.001), used with procdump64.exe.&quot;},
+    {&quot;name&quot;: &quot;LaZagne&quot;,     &quot;aliases&quot;: [],            &quot;description&quot;: &quot;LSA secrets (T1003.004) and cached domain credential dumping (T1003.005).&quot;},
+]
+TOOL_IDS = {}
+for t in TOOL_CATALOG:
+    existing = _find(api.tool, t[&quot;name&quot;])
+    if existing:
+        TOOL_IDS[t[&quot;name&quot;]] = existing[&quot;id&quot;]
+    else:
+        obj = api.tool.create(
+            name=t[&quot;name&quot;], aliases=t[&quot;aliases&quot;],
+            description=t[&quot;description&quot;],
+            objectMarking=[TLP_WHITE], createdBy=MOIS_ID,
+        )
+        TOOL_IDS[t[&quot;name&quot;]] = obj[&quot;id&quot;]
+# ── Step 5: uses relationships ────────────────────────────────────────────────
+for mid in MALWARE_IDS.values():
+    link(MW_ID, mid, &quot;uses&quot;, 80)
+for tid in TOOL_IDS.values():
+    link(MW_ID, tid, &quot;uses&quot;, 80)
+# ── Step 6: Reports from sources.yaml ────────────────────────────────────────
+SOURCE_DATES = {
+    &quot;src_usgov_aa22_055a_pdf_mirror&quot;:        &quot;2022-02-24T00:00:00.000Z&quot;,
+    &quot;src_incd_muddywater_darkbit_2023&quot;:      &quot;2023-02-07T00:00:00.000Z&quot;,
+    &quot;src_incd_muddywater_2024_evolution&quot;:    &quot;2024-06-01T00:00:00.000Z&quot;,
+    &quot;src_cisa_aa22_055a_page&quot;:               &quot;2022-02-24T00:00:00.000Z&quot;,
+    &quot;src_ncsc_uk_muddywater_joint_advisory&quot;: &quot;2022-02-24T00:00:00.000Z&quot;,
+    &quot;src_incd_recent_phishing_1947&quot;:         &quot;2024-09-01T00:00:00.000Z&quot;,
+    &quot;src_mitre_attack_muddywater_g0069&quot;:     &quot;2024-01-01T00:00:00.000Z&quot;,
+}
+REPORT_IDS = {}
+for src in SOURCES:
+    src_id   = src[&quot;id&quot;]
+    title    = src[&quot;title&quot;]
+    pub_date = SOURCE_DATES.get(src_id, &quot;2023-01-01T00:00:00.000Z&quot;)
+    confidence = 85 if src.get(&quot;source_reliability&quot;) == &quot;A&quot; else 70
+    description = (
+        f&quot;Publisher: {src[&#x27;publisher&#x27;]}\n&quot;
+        f&quot;Reliability: {src.get(&#x27;source_reliability&#x27;,&#x27;?&#x27;)} / &quot;
+        f&quot;Credibility: {src.get(&#x27;information_credibility&#x27;,&#x27;?&#x27;)}\n&quot;
+        f&quot;URL: {src[&#x27;url&#x27;]}\n&quot;
+        f&quot;Actor claims: {&#x27;, &#x27;.join(src.get(&#x27;actor_claims&#x27;, []))}\n&quot;
+        f&quot;ATT&amp;CK candidates: {&#x27;, &#x27;.join(src.get(&#x27;candidate_attck_techniques&#x27;, []))}&quot;
+    )
+    existing = _find(api.report, title)
+    if existing:
+        REPORT_IDS[src_id] = existing[&quot;id&quot;]
+    else:
+        obj = api.report.create(
+            name=title, published=pub_date,
+            description=description,
+            report_types=[&quot;threat-report&quot;],
+            confidence=confidence,
+            objectMarking=[TLP_WHITE],
+            createdBy=MOIS_ID,
+            objects=[MW_ID],
+        )
+        REPORT_IDS[src_id] = obj[&quot;id&quot;]
+# ── Step 7: ATT&amp;CK pattern links from procedures ──────────────────────────────
+linked, stubs = set(), []
+for proc in PROCEDURES:
+    for candidate in proc.get(&quot;attck_candidates&quot;, []):
+        tid = candidate[&quot;technique&quot;]
+        if tid in linked:
+            continue
+        pattern_id, created_as_stub = find_or_create_attack_pattern(tid)
+        link(MW_ID, pattern_id, &quot;uses&quot;, 75)
+        linked.add(tid)
+        if created_as_stub:
+            stubs.append(tid)
+# ── Summary ───────────────────────────────────────────────────────────────────
+print(f&quot;Import complete - malware: {len(MALWARE_IDS)}, tools: {len(TOOL_IDS)}, &quot;
+      f&quot;reports: {len(REPORT_IDS)}, ATT&amp;CK links: {len(linked)}, stubs: {len(stubs)}&quot;)
+</code></pre></details>
 <img src="https://cdn-images-1.medium.com/max/1024/1*WMvnfWfF50hj3Rk60DBAxA.png" alt="Article image" width="1024" height="775" loading="lazy" decoding="async">
 <img src="https://cdn-images-1.medium.com/max/1024/1*XMTEbgDPokzU9iTK3sjEww.png" alt="Article image" width="1024" height="775" loading="lazy" decoding="async">
 <p>**Result:**All objects created. Re-run confirms idempotency (no duplicates).</p>

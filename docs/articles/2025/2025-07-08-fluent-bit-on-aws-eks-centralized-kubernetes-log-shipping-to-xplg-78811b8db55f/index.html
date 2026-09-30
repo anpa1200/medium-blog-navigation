@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -169,7 +169,441 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-create-fluent-bit-configuration-configmap">5. Create Fluent Bit Configuration (ConfigMap)<a href="#5-create-fluent-bit-configuration-configmap" class="hash-link" aria-label="Direct link to 5. Create Fluent Bit Configuration (ConfigMap)" title="Direct link to 5. Create Fluent Bit Configuration (ConfigMap)" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.yaml</span><br></div></code></pre></div></div>
 <p>Full yaml includes RBAC. Just change the token and requirements</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># --- NAMESPACE ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Namespace</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Create a dedicated namespace for Fluent Bit and logging components</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- SERVICE ACCOUNT ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ServiceAccount</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Service account Fluent Bit will use</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">namespace:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Must be in the same namespace as the DaemonSet</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- RBAC: Role and Binding ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rbac.authorization.k8s.io/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ClusterRole</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rules:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiGroups:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">resources:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">namespaces</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pods</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Needed to get metadata for enrichment</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">verbs:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;get&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;list&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;watch&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Read-only permissions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rbac.authorization.k8s.io/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ClusterRoleBinding</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">roleRef:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiGroup:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rbac.authorization.k8s.io</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ClusterRole</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">subjects:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ServiceAccount</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">namespace:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Binds the role to our ServiceAccount</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- CONFIGMAP: Fluent Bit Configuration Files ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ConfigMap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">namespace:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">labels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">app.kubernetes.io/name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">data:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit.conf:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [SERVICE]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Flush        5               # Flush logs every 5 seconds</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Daemon       Off             # Run in foreground</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Log_Level    info            # Log verbosity</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Parsers_File parsers.conf    # Use custom parser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        HTTP_Server  On              # Enable health check server</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        HTTP_Listen  0.0.0.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        HTTP_Port    2020            # Health check port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@INCLUDE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">inputs.conf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">             </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Include log input config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@INCLUDE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">filters.conf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Include filter config (e.g., enrich with metadata)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@INCLUDE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">outputs.conf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Include output config (e.g., send logs to XPLG)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">inputs.conf:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [INPUT]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Name              tail                          # Tail log files</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Tag               kube.*                        # Tag format for filtering</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Path              /var/log/containers/*.log     # Path to container logs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Parser            docker                        # Use docker-style parser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Mem_Buf_Limit     5MB                           # Buffer limit per file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Skip_Long_Lines   On                            # Skip lines too long</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Refresh_Interval  10                            # Check for new files every 10 sec</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">filters.conf:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [FILTER]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Name                kubernetes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Match               kube.*                      # Match logs from inputs with kube.* tag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Kube_Tag_Prefix     kube.var.log.containers.    # Strip this prefix</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Merge_Log           On                          # Merge log line with Kubernetes metadata</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Merge_Log_Key       log                         # Field name for original log line</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Keep_Log            Off                         # Discard original log if merged</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">outputs.conf:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [OUTPUT]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Name              http                          # Output plugin (HTTP)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Match             *                             # Send all logs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Host              xpolog-service.default.svc.cluster.local  # XPLG service DNS name in-cluster</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Port              30303                         # Port XPLG listens on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        URI               /logeye/api/logger.jsp?token=d450a348-6353-405c-a980-27c51f5f7131  # Auth token in URI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Format            json_lines                    # Format logs as newline-delimited JSON</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Json_date_key     time                          # Key for timestamp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Json_date_format  iso8601                       # Format timestamps in ISO8601</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Header            X-Xpolog-Sender   eks-pod-logs  # Custom HTTP header</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Retry_Limit       5                             # Retry up to 5 times on failure</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">parsers.conf:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [PARSER]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Name             docker                         # Parser name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Format           json                           # Input format</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Time_Key         time                           # Field to use as timestamp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Time_Format      %Y-%m-%dT%H:%M:%S.%L%z          # Timestamp format (ISO8601 with ms and timezone)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Time_Keep        On                             # Preserve original time</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Decode_Field_As  escaped log do_next            # Decode any escaped characters in log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Decode_Field_As  json log                       # Parse nested JSON from &quot;log&quot; field</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- DAEMONSET: Deploy Fluent Bit on Each Node ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apps/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DaemonSet</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">namespace:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">labels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">app.kubernetes.io/name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">spec:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">selector:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">matchLabels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">app.kubernetes.io/name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">template:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">labels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">app.kubernetes.io/name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">spec:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">serviceAccountName:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Use previously created service account</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tolerations:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">operator:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Exists</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Run on any tainted node (master, control-plane, etc.)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">containers:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">image:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">public.ecr.aws/aws-observability/aws-for-fluent-bit:2.32.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># AWS-optimized Fluent Bit image</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">resources:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">requests:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cpu:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">50m</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">memory:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">100Mi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">             </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Minimal required resources</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">limits:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cpu:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">100m</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">memory:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">200Mi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Maximum allowed usage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">volumeMounts:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mountPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/fluent-bit/etc/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Mount config from ConfigMap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">varlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mountPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/var/log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Mount logs directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">readOnly:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">varlibdockercontainers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mountPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/var/lib/docker/containers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">readOnly:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># For container log metadata</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">livenessProbe:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">httpGet:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/api/v1/health</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Health check endpoint</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">port:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2020</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">initialDelaySeconds:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">periodSeconds:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">60</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">volumes:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">configMap:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reference to the above ConfigMap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">varlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hostPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/var/log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Mount node log path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">varlibdockercontainers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hostPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/var/lib/docker/containers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Mount container metadata</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="435"><summary>Large code or log block<!-- --> · <!-- -->435<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># --- NAMESPACE ---
+apiVersion:
+ 
+v1
+kind:
+ 
+Namespace
+metadata:
+  
+name:
+ 
+logging
+  
+# Create a dedicated namespace for Fluent Bit and logging components
+# --- SERVICE ACCOUNT ---
+---
+apiVersion:
+ 
+v1
+kind:
+ 
+ServiceAccount
+metadata:
+  
+name:
+ 
+fluent-bit
+  
+# Service account Fluent Bit will use
+  
+namespace:
+ 
+logging
+  
+# Must be in the same namespace as the DaemonSet
+# --- RBAC: Role and Binding ---
+---
+apiVersion:
+ 
+rbac.authorization.k8s.io/v1
+kind:
+ 
+ClusterRole
+metadata:
+  
+name:
+ 
+fluent-bit-read
+rules:
+-
+ 
+apiGroups:
+ [
+&quot;&quot;
+]
+  
+resources:
+    
+-
+ 
+namespaces
+    
+-
+ 
+pods
+  
+# Needed to get metadata for enrichment
+  
+verbs:
+ [
+&quot;get&quot;
+, 
+&quot;list&quot;
+, 
+&quot;watch&quot;
+]  
+# Read-only permissions
+---
+apiVersion:
+ 
+rbac.authorization.k8s.io/v1
+kind:
+ 
+ClusterRoleBinding
+metadata:
+  
+name:
+ 
+fluent-bit-read
+roleRef:
+  
+apiGroup:
+ 
+rbac.authorization.k8s.io
+  
+kind:
+ 
+ClusterRole
+  
+name:
+ 
+fluent-bit-read
+subjects:
+-
+ 
+kind:
+ 
+ServiceAccount
+  
+name:
+ 
+fluent-bit
+  
+namespace:
+ 
+logging
+  
+# Binds the role to our ServiceAccount
+# --- CONFIGMAP: Fluent Bit Configuration Files ---
+---
+apiVersion:
+ 
+v1
+kind:
+ 
+ConfigMap
+metadata:
+  
+name:
+ 
+fluent-bit-config
+  
+namespace:
+ 
+logging
+  
+labels:
+    
+app.kubernetes.io/name:
+ 
+fluent-bit
+data:
+  
+fluent-bit.conf:
+ 
+|
+    [SERVICE]
+        Flush        5               # Flush logs every 5 seconds
+        Daemon       Off             # Run in foreground
+        Log_Level    info            # Log verbosity
+        Parsers_File parsers.conf    # Use custom parser
+        HTTP_Server  On              # Enable health check server
+        HTTP_Listen  0.0.0.0
+        HTTP_Port    2020            # Health check port
+    
+@INCLUDE
+ 
+inputs.conf
+             
+# Include log input config
+    
+@INCLUDE
+ 
+filters.conf
+            
+# Include filter config (e.g., enrich with metadata)
+    
+@INCLUDE
+ 
+outputs.conf
+            
+# Include output config (e.g., send logs to XPLG)
+  
+inputs.conf:
+ 
+|
+    [INPUT]
+        Name              tail                          # Tail log files
+        Tag               kube.*                        # Tag format for filtering
+        Path              /var/log/containers/*.log     # Path to container logs
+        Parser            docker                        # Use docker-style parser
+        Mem_Buf_Limit     5MB                           # Buffer limit per file
+        Skip_Long_Lines   On                            # Skip lines too long
+        Refresh_Interval  10                            # Check for new files every 10 sec
+  
+filters.conf:
+ 
+|
+    [FILTER]
+        Name                kubernetes
+        Match               kube.*                      # Match logs from inputs with kube.* tag
+        Kube_Tag_Prefix     kube.var.log.containers.    # Strip this prefix
+        Merge_Log           On                          # Merge log line with Kubernetes metadata
+        Merge_Log_Key       log                         # Field name for original log line
+        Keep_Log            Off                         # Discard original log if merged
+  
+outputs.conf:
+ 
+|
+    [OUTPUT]
+        Name              http                          # Output plugin (HTTP)
+        Match             *                             # Send all logs
+        Host              xpolog-service.default.svc.cluster.local  # XPLG service DNS name in-cluster
+        Port              30303                         # Port XPLG listens on
+        URI               /logeye/api/logger.jsp?token=d450a348-6353-405c-a980-27c51f5f7131  # Auth token in URI
+        Format            json_lines                    # Format logs as newline-delimited JSON
+        Json_date_key     time                          # Key for timestamp
+        Json_date_format  iso8601                       # Format timestamps in ISO8601
+        Header            X-Xpolog-Sender   eks-pod-logs  # Custom HTTP header
+        Retry_Limit       5                             # Retry up to 5 times on failure
+  
+parsers.conf:
+ 
+|
+    [PARSER]
+        Name             docker                         # Parser name
+        Format           json                           # Input format
+        Time_Key         time                           # Field to use as timestamp
+        Time_Format      %Y-%m-%dT%H:%M:%S.%L%z          # Timestamp format (ISO8601 with ms and timezone)
+        Time_Keep        On                             # Preserve original time
+        Decode_Field_As  escaped log do_next            # Decode any escaped characters in log
+        Decode_Field_As  json log                       # Parse nested JSON from &quot;log&quot; field
+# --- DAEMONSET: Deploy Fluent Bit on Each Node ---
+---
+apiVersion:
+ 
+apps/v1
+kind:
+ 
+DaemonSet
+metadata:
+  
+name:
+ 
+fluent-bit
+  
+namespace:
+ 
+logging
+  
+labels:
+    
+app.kubernetes.io/name:
+ 
+fluent-bit
+spec:
+  
+selector:
+    
+matchLabels:
+      
+app.kubernetes.io/name:
+ 
+fluent-bit
+  
+template:
+    
+metadata:
+      
+labels:
+        
+app.kubernetes.io/name:
+ 
+fluent-bit
+    
+spec:
+      
+serviceAccountName:
+ 
+fluent-bit
+  
+# Use previously created service account
+      
+tolerations:
+        
+-
+ 
+operator:
+ 
+Exists
+            
+# Run on any tainted node (master, control-plane, etc.)
+      
+containers:
+      
+-
+ 
+name:
+ 
+fluent-bit
+        
+image:
+ 
+public.ecr.aws/aws-observability/aws-for-fluent-bit:2.32.0
+  
+# AWS-optimized Fluent Bit image
+        
+resources:
+          
+requests:
+            
+cpu:
+ 
+50m
+            
+memory:
+ 
+100Mi
+             
+# Minimal required resources
+          
+limits:
+            
+cpu:
+ 
+100m
+            
+memory:
+ 
+200Mi
+            
+# Maximum allowed usage
+        
+volumeMounts:
+        
+-
+ 
+name:
+ 
+config
+          
+mountPath:
+ 
+/fluent-bit/etc/
+  
+# Mount config from ConfigMap
+        
+-
+ 
+name:
+ 
+varlog
+          
+mountPath:
+ 
+/var/log
+         
+# Mount logs directory
+          
+readOnly:
+ 
+true
+        
+-
+ 
+name:
+ 
+varlibdockercontainers
+          
+mountPath:
+ 
+/var/lib/docker/containers
+          
+readOnly:
+ 
+true
+              
+# For container log metadata
+        
+livenessProbe:
+          
+httpGet:
+            
+path:
+ 
+/api/v1/health
+       
+# Health check endpoint
+            
+port:
+ 
+2020
+          
+initialDelaySeconds:
+ 
+10
+          
+periodSeconds:
+ 
+60
+      
+volumes:
+      
+-
+ 
+name:
+ 
+config
+        
+configMap:
+          
+name:
+ 
+fluent-bit-config
+      
+# Reference to the above ConfigMap
+      
+-
+ 
+name:
+ 
+varlog
+        
+hostPath:
+          
+path:
+ 
+/var/log
+               
+# Mount node log path
+      
+-
+ 
+name:
+ 
+varlibdockercontainers
+        
+hostPath:
+          
+path:
+ 
+/var/lib/docker/containers
+  
+# Mount container metadata
+</code></pre></details>
 <p>Apply it:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kubectl apply -f fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.yaml</span><br></div></code></pre></div></div>
 <p><strong>Optional</strong></p>
@@ -182,7 +616,193 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">containers:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">image:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">123456789012.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dkr.ecr.eu-north-1.amazonaws.com/fluent-bit-custom:latest</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-deploy-fluent-bit-as-a-daemonsetseparated-from-configmap">6. Deploy Fluent Bit as a DaemonSet(separated from ConfigMap)<a href="#6-deploy-fluent-bit-as-a-daemonsetseparated-from-configmap" class="hash-link" aria-label="Direct link to 6. Deploy Fluent Bit as a DaemonSet(separated from ConfigMap)" title="Direct link to 6. Deploy Fluent Bit as a DaemonSet(separated from ConfigMap)" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano fluent-bit-daemonset.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">yaml</span><br></div></code></pre></div></div>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apps/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DaemonSet</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">namespace:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">labels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">app.kubernetes.io/name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">spec:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">selector:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">matchLabels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">app.kubernetes.io/name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">template:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">labels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">app.kubernetes.io/name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">spec:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">serviceAccountName:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tolerations:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">operator:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Exists</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">containers:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">image:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">public.ecr.aws/aws-observability/aws-for-fluent-bit:2.32.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">resources:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">requests:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cpu:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">50m</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">memory:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">100Mi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">limits:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cpu:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">100m</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">memory:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">200Mi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">volumeMounts:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mountPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/fluent-bit/etc/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">varlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mountPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/var/log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">readOnly:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">varlibdockercontainers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mountPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/var/lib/docker/containers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">readOnly:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">livenessProbe:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">httpGet:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/api/v1/health</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">port:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2020</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">initialDelaySeconds:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">periodSeconds:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">60</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">volumes:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">configMap:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">varlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hostPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/var/log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">varlibdockercontainers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hostPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/var/lib/docker/containers</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="187"><summary>Large code or log block<!-- --> · <!-- -->187<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>apiVersion:
+ 
+apps/v1
+kind:
+ 
+DaemonSet
+metadata:
+  
+name:
+ 
+fluent-bit
+  
+namespace:
+ 
+logging
+  
+labels:
+    
+app.kubernetes.io/name:
+ 
+fluent-bit
+spec:
+  
+selector:
+    
+matchLabels:
+      
+app.kubernetes.io/name:
+ 
+fluent-bit
+  
+template:
+    
+metadata:
+      
+labels:
+        
+app.kubernetes.io/name:
+ 
+fluent-bit
+    
+spec:
+      
+serviceAccountName:
+ 
+fluent-bit
+      
+tolerations:
+        
+-
+ 
+operator:
+ 
+Exists
+      
+containers:
+      
+-
+ 
+name:
+ 
+fluent-bit
+        
+image:
+ 
+public.ecr.aws/aws-observability/aws-for-fluent-bit:2.32.0
+        
+resources:
+          
+requests:
+            
+cpu:
+ 
+50m
+            
+memory:
+ 
+100Mi
+          
+limits:
+            
+cpu:
+ 
+100m
+            
+memory:
+ 
+200Mi
+        
+volumeMounts:
+        
+-
+ 
+name:
+ 
+config
+          
+mountPath:
+ 
+/fluent-bit/etc/
+        
+-
+ 
+name:
+ 
+varlog
+          
+mountPath:
+ 
+/var/log
+          
+readOnly:
+ 
+true
+        
+-
+ 
+name:
+ 
+varlibdockercontainers
+          
+mountPath:
+ 
+/var/lib/docker/containers
+          
+readOnly:
+ 
+true
+        
+livenessProbe:
+          
+httpGet:
+            
+path:
+ 
+/api/v1/health
+            
+port:
+ 
+2020
+          
+initialDelaySeconds:
+ 
+10
+          
+periodSeconds:
+ 
+60
+      
+volumes:
+      
+-
+ 
+name:
+ 
+config
+        
+configMap:
+          
+name:
+ 
+fluent-bit-config
+      
+-
+ 
+name:
+ 
+varlog
+        
+hostPath:
+          
+path:
+ 
+/var/log
+      
+-
+ 
+name:
+ 
+varlibdockercontainers
+        
+hostPath:
+          
+path:
+ 
+/var/lib/docker/containers
+</code></pre></details>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kubectl apply -f fluent-bit-daemonset.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">yaml</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
 <p><strong>XPLG Official site:</strong></p>

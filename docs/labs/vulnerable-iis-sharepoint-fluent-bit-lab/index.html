@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -156,9 +156,457 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Install IIS with common features (vulnerable config for training)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$ErrorActionPreference = &quot;Stop&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Write-Host &quot;Installing IIS and Web features...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-Server -IncludeManagementTools</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-ASP-Net45</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-Net-Ext45</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-ISAPI-Ext</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-ISAPI-Filter</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-Log-Libraries</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-Request-Monitor</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-Http-Tracing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-Stat-Compression</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Install-WindowsFeature -Name Web-Dyn-Compression</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Import-Module WebAdministration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set-ItemProperty &quot;IIS:\Sites\Default Web Site&quot; -Name logFile.logFormat -Value &quot;W3C&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set-ItemProperty &quot;IIS:\Sites\Default Web Site&quot; -Name logFile.logExtFileFlags -Value &quot;Date,Time,ClientIP,UserName,ServerIP,Method,UriStem,UriQuery,HttpStatus,Win32Status,TimeTaken,ServerPort,UserAgent,Referer&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set-ItemProperty &quot;IIS:\Sites\Default Web Site&quot; -Name logFile.directory -Value &quot;C:\inetpub\logs\LogFiles&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$content = @&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!DOCTYPE </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SharePoint-style Site</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">body</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">h1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Simple SharePoint-style Landing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">h1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">This is a minimal IIS site for logging training. Vulnerable configuration.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Time: $(Get-Date)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">body</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;@</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$content | Out-File -FilePath &quot;C:\inetpub\wwwroot\default.aspx&quot; -Encoding UTF8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-Item -ItemType Directory -Force -Path &quot;C:\inetpub\logs\LogFiles&quot; | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-Item -ItemType Directory -Force -Path &quot;C:\inetpub\logs\FailedReqLogFiles&quot; | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Write-Host &quot;IIS installation complete.&quot;</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-provisioning-script-install-sharepointps1">4. Provisioning Script: install-sharepoint.ps1<a href="#4-provisioning-script-install-sharepointps1" class="hash-link" aria-label="Direct link to 4. Provisioning Script: install-sharepoint.ps1" title="Direct link to 4. Provisioning Script: install-sharepoint.ps1" translate="no">​</a></h2>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">install-sharepoint.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ps1</span><br></div></code></pre></div></div>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Vulnerable SharePoint-style setup - precompiles to avoid ASP.NET temp folder permission issues</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$ErrorActionPreference</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Stop&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Import-Module WebAdministration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;IIS:\AppPools\SharePointAppPool&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    New-WebAppPool -Name </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;SharePointAppPool&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Set-ItemProperty </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;IIS:\AppPools\SharePointAppPool&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Name </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;managedRuntimeVersion&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Value </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;v4.0&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\inetpub\wwwroot\SharePointSite&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$stagingPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\inetpub\wwwroot\SharePointStaging&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$vulnSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\vagrant\vulnerable-sharepoint\default.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) { </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$vulnSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\vagrant\vulnerable-sharepoint&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">elseif</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\tmp\vulnerable-sharepoint\default.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) { </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$vulnSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\tmp\vulnerable-sharepoint&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$vulnSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Deploying and precompiling vulnerable SharePoint app...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$stagingPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) { Remove-Item -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$stagingPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Recurse -Force }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    New-Item -ItemType </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$stagingPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Copy-Item -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$vulnSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Destination </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$stagingPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Recurse -Force</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) { Remove-Item -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Recurse -Force }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    New-Item -ItemType </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &amp; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$env</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:SystemRoot\Microsoft.NET\Framework64\v4.0.30319\aspnet_compiler.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$stagingPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -v / -fixednames </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Remove-Item -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$stagingPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Recurse -Force -ErrorAction SilentlyContinue</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Vulnerable app precompiled and deployed.&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Vulnerable app not found, creating placeholder...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$pageContent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = @</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!DOCTYPE html&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;html&gt;&lt;head&gt;&lt;title&gt;SharePoint&lt;/title&gt;&lt;/head&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;body&gt;&lt;h1&gt;SharePoint-style Site&lt;/h1&gt;&lt;p&gt;Placeholder.&lt;/p&gt;&lt;/body&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/html&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$pageContent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-File -FilePath </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\default.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Encoding UTF8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$acl</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = Get-Acl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$rule</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = New-Object System.Security.AccessControl.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FileSystemAccessRule</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;IIS AppPool\SharePointAppPool&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Read&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;ContainerInherit,ObjectInherit&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;None&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Allow&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$acl</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SetAccessRule</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$rule</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set-Acl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$acl</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$siteName</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;SharePointSite&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;IIS:\Sites\$siteName&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    New-Website -Name </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$siteName</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -PhysicalPath </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -ApplicationPool </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;SharePointAppPool&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;SharePoint site created on port 8080.&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Set-ItemProperty </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;IIS:\Sites\$siteName&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Name physicalPath -Value </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$sitePath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$ulsPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\LOGS&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-Item -ItemType </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$ulsPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;# SharePoint ULS-style log - $(Get-Date)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-File </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$ulsPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\uls.log&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Encoding UTF8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;SharePoint-style setup complete.&quot;</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="191"><summary>Large code or log block<!-- --> · <!-- -->191<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># Vulnerable SharePoint-style setup - precompiles to avoid ASP.NET temp folder permission issues
+$ErrorActionPreference
+ = 
+&quot;Stop&quot;
+Import-Module WebAdministration
+if
+ (-
+not
+ (Test-Path 
+&quot;IIS:\AppPools\SharePointAppPool&quot;
+)) {
+    New-WebAppPool -Name 
+&quot;SharePointAppPool&quot;
+    Set-ItemProperty 
+&quot;IIS:\AppPools\SharePointAppPool&quot;
+ -Name 
+&quot;managedRuntimeVersion&quot;
+ -Value 
+&quot;v4.0&quot;
+}
+$sitePath
+ = 
+&quot;C:\inetpub\wwwroot\SharePointSite&quot;
+$stagingPath
+ = 
+&quot;C:\inetpub\wwwroot\SharePointStaging&quot;
+$vulnSource
+ = 
+$null
+if
+ (Test-Path 
+&quot;C:\vagrant\vulnerable-sharepoint\default.aspx&quot;
+) { 
+$vulnSource
+ = 
+&quot;C:\vagrant\vulnerable-sharepoint&quot;
+ }
+elseif
+ (Test-Path 
+&quot;C:\tmp\vulnerable-sharepoint\default.aspx&quot;
+) { 
+$vulnSource
+ = 
+&quot;C:\tmp\vulnerable-sharepoint&quot;
+ }
+if
+ (
+$vulnSource
+) {
+    Write-Host 
+&quot;Deploying and precompiling vulnerable SharePoint app...&quot;
+    
+if
+ (Test-Path 
+$stagingPath
+) { Remove-Item -Path 
+$stagingPath
+ -Recurse -Force }
+    New-Item -ItemType 
+Directory
+ -Force -Path 
+$stagingPath
+ | Out-Null
+    Copy-Item -Path 
+&quot;
+$vulnSource
+\*&quot;
+ -Destination 
+$stagingPath
+ -Recurse -Force
+    
+if
+ (Test-Path 
+$sitePath
+) { Remove-Item -Path 
+&quot;
+$sitePath
+\*&quot;
+ -Recurse -Force }
+    New-Item -ItemType 
+Directory
+ -Force -Path 
+$sitePath
+ | Out-Null
+    &amp; 
+&quot;
+$env
+:SystemRoot\Microsoft.NET\Framework64\v4.0.30319\aspnet_compiler.exe&quot;
+ -p 
+$stagingPath
+ -v / -fixednames 
+$sitePath
+    Remove-Item -Path 
+$stagingPath
+ -Recurse -Force -ErrorAction SilentlyContinue
+    Write-Host 
+&quot;Vulnerable app precompiled and deployed.&quot;
+} 
+else
+ {
+    Write-Host 
+&quot;Vulnerable app not found, creating placeholder...&quot;
+    
+$pageContent
+ = @
+&quot;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;SharePoint&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;SharePoint-style Site&lt;/h1&gt;&lt;p&gt;Placeholder.&lt;/p&gt;&lt;/body&gt;
+&lt;/html&gt;
+&quot;
+@
+    
+$pageContent
+ | Out-File -FilePath 
+&quot;
+$sitePath
+\default.aspx&quot;
+ -Encoding UTF8
+}
+$acl
+ = Get-Acl 
+$sitePath
+$rule
+ = New-Object System.Security.AccessControl.
+FileSystemAccessRule
+(
+&quot;IIS AppPool\SharePointAppPool&quot;
+, 
+&quot;Read&quot;
+, 
+&quot;ContainerInherit,ObjectInherit&quot;
+, 
+&quot;None&quot;
+, 
+&quot;Allow&quot;
+)
+$acl
+.
+SetAccessRule
+(
+$rule
+)
+Set-Acl 
+$sitePath
+ 
+$acl
+$siteName
+ = 
+&quot;SharePointSite&quot;
+if
+ (-
+not
+ (Test-Path 
+&quot;IIS:\Sites\$siteName&quot;
+)) {
+    New-Website -Name 
+$siteName
+ -PhysicalPath 
+$sitePath
+ -ApplicationPool 
+&quot;SharePointAppPool&quot;
+ -Port 
+8080
+    Write-Host 
+&quot;SharePoint site created on port 8080.&quot;
+} 
+else
+ {
+    Set-ItemProperty 
+&quot;IIS:\Sites\$siteName&quot;
+ -Name physicalPath -Value 
+$sitePath
+}
+$ulsPath
+ = 
+&quot;C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\LOGS&quot;
+New-Item -ItemType 
+Directory
+ -Force -Path 
+$ulsPath
+ | Out-Null
+&quot;# SharePoint ULS-style log - $(Get-Date)&quot;
+ | Out-File 
+&quot;
+$ulsPath
+\uls.log&quot;
+ -Encoding UTF8
+Write-Host 
+&quot;SharePoint-style setup complete.&quot;
+</code></pre></details>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-provisioning-script-install-fluent-bitps1">5. Provisioning Script: install-fluent-bit.ps1<a href="#5-provisioning-script-install-fluent-bitps1" class="hash-link" aria-label="Direct link to 5. Provisioning Script: install-fluent-bit.ps1" title="Direct link to 5. Provisioning Script: install-fluent-bit.ps1" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Install Fluent Bit on Windows - downloads from packages.fluentbit.io, installs as service</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$ErrorActionPreference</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Stop&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Net.ServicePointManager]::</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SecurityProtocol</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = [Net.SecurityProtocolType]::</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Tls12</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitVersion</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;4.2.2&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitUrl</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://packages.fluentbit.io/windows/fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitVersion</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-win64.zip&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$installDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\fluent-bit&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$installDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\conf&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Installing Fluent Bit </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitVersion</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-Item -ItemType </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$installDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-Item -ItemType </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$installDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\data&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-Item -ItemType </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$installDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\data\chunks&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-Item -ItemType </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Out-Null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$zipPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$env</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:TEMP\fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitVersion</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-win64.zip&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$zipPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Downloading Fluent Bit...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Invoke-WebRequest -Uri </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitUrl</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -OutFile </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$zipPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -UseBasicParsing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$svc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = Get-Service -Name </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;fluent-bit&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -ErrorAction SilentlyContinue</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$svc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$svc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.Status -eq </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Running&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Stop-Service fluent-bit -Force</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Start-Sleep -Seconds </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Extracting Fluent Bit...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$env</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:TEMP\fluent-bit-extract&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) { Remove-Item -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Recurse -Force }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add-Type -AssemblyName System.IO.Compression.FileSystem</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[System.IO.Compression.ZipFile]::</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ExtractToDirectory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$zipPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractedDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = Get-ChildItem -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Directory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | Where-Object { </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$_</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.Name -like </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;fluent-bit*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> } | Select-Object -First </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractedDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Get-ChildItem -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractedDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.FullName | ForEach-Object {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$dest</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = Join-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$installDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$_</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$dest</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) { Remove-Item -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$dest</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Recurse -Force }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Move-Item -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$_</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.FullName -Destination </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$installDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Remove-Item -Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$extractDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Recurse -Force -ErrorAction SilentlyContinue</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$args</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (-not </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) { </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\tmp&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Join-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;fluent-bit.conf&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Copy-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Item</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Join-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;fluent-bit.conf&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) -Destination </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Copy-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Item</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Join-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;parsers.conf&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) -Destination </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Force</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Config copied from </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configSource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;ERROR: fluent-bit config not found&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">exit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitExe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = Join-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$installDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;bin\fluent-bit.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = Join-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configDir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;fluent-bit.conf&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Test-Path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitExe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$binPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$fluentBitExe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$configPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$existing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = Get-Service -Name </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;fluent-bit&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -ErrorAction SilentlyContinue</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$existing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        sc.exe delete fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        Start-Sleep -Seconds </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    sc.exe create fluent-bit binpath= </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$binPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> start= auto</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Fluent Bit installed as Windows service.&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Start-Service fluent-bit -ErrorAction SilentlyContinue</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;WARNING: fluent-bit.exe not found.&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Write-Host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Fluent Bit installation complete.&quot;</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="259"><summary>Large code or log block<!-- --> · <!-- -->259<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># Install Fluent Bit on Windows - downloads from packages.fluentbit.io, installs as service
+$ErrorActionPreference
+ = 
+&quot;Stop&quot;
+[Net.ServicePointManager]::
+SecurityProtocol
+ = [Net.SecurityProtocolType]::
+Tls12
+$fluentBitVersion
+ = 
+&quot;4.2.2&quot;
+$fluentBitUrl
+ = 
+&quot;https://packages.fluentbit.io/windows/fluent-bit-
+$fluentBitVersion
+-win64.zip&quot;
+$installDir
+ = 
+&quot;C:\fluent-bit&quot;
+$configDir
+ = 
+&quot;
+$installDir
+\conf&quot;
+Write-Host 
+&quot;Installing Fluent Bit 
+$fluentBitVersion
+...&quot;
+New-Item -ItemType 
+Directory
+ -Force -Path 
+$installDir
+ | Out-Null
+New-Item -ItemType 
+Directory
+ -Force -Path 
+&quot;
+$installDir
+\data&quot;
+ | Out-Null
+New-Item -ItemType 
+Directory
+ -Force -Path 
+&quot;
+$installDir
+\data\chunks&quot;
+ | Out-Null
+New-Item -ItemType 
+Directory
+ -Force -Path 
+$configDir
+ | Out-Null
+$zipPath
+ = 
+&quot;
+$env
+:TEMP\fluent-bit-
+$fluentBitVersion
+-win64.zip&quot;
+if
+ (-
+not
+ (Test-Path 
+$zipPath
+)) {
+    Write-Host 
+&quot;Downloading Fluent Bit...&quot;
+    Invoke-WebRequest -Uri 
+$fluentBitUrl
+ -OutFile 
+$zipPath
+ -UseBasicParsing
+}
+$svc
+ = Get-Service -Name 
+&quot;fluent-bit&quot;
+ -ErrorAction SilentlyContinue
+if
+ (
+$svc
+ -
+and
+ 
+$svc
+.Status -eq 
+&quot;Running&quot;
+) {
+    Stop-Service fluent-bit -Force
+    Start-Sleep -Seconds 
+2
+}
+Write-Host 
+&quot;Extracting Fluent Bit...&quot;
+$extractDir
+ = 
+&quot;
+$env
+:TEMP\fluent-bit-extract&quot;
+if
+ (Test-Path 
+$extractDir
+) { Remove-Item -Path 
+$extractDir
+ -Recurse -Force }
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[System.IO.Compression.ZipFile]::
+ExtractToDirectory
+(
+$zipPath
+, 
+$extractDir
+)
+$extractedDir
+ = Get-ChildItem -Path 
+$extractDir
+ -
+Directory
+ | Where-Object { 
+$_
+.Name -like 
+&quot;fluent-bit*&quot;
+ } | Select-Object -First 
+1
+if
+ (
+$extractedDir
+) {
+    Get-ChildItem -Path 
+$extractedDir
+.FullName | ForEach-Object {
+        
+$dest
+ = Join-Path 
+$installDir
+ 
+$_
+.Name
+        
+if
+ (Test-Path 
+$dest
+) { Remove-Item -Path 
+$dest
+ -Recurse -Force }
+        Move-Item -Path 
+$_
+.FullName -Destination 
+$installDir
+ -Force
+    }
+    Remove-Item -Path 
+$extractDir
+ -Recurse -Force -ErrorAction SilentlyContinue
+}
+$configSource
+ = 
+$args
+[
+0
+]
+if
+ (-not 
+$configSource
+) { 
+$configSource
+ = 
+&quot;C:\tmp&quot;
+ }
+if
+ (Test-
+Path
+ (Join-Path 
+$configSource
+ 
+&quot;fluent-bit.conf&quot;
+)) {
+    Copy-
+Item
+ (Join-Path 
+$configSource
+ 
+&quot;fluent-bit.conf&quot;
+) -Destination 
+$configDir
+ -Force
+    Copy-
+Item
+ (Join-Path 
+$configSource
+ 
+&quot;parsers.conf&quot;
+) -Destination 
+$configDir
+ -Force
+    Write-Host 
+&quot;Config copied from 
+$configSource
+&quot;
+} 
+else
+ {
+    Write-Host 
+&quot;ERROR: fluent-bit config not found&quot;
+    
+exit
+ 
+1
+}
+$fluentBitExe
+ = Join-Path 
+$installDir
+ 
+&quot;bin\fluent-bit.exe&quot;
+$configPath
+ = Join-Path 
+$configDir
+ 
+&quot;fluent-bit.conf&quot;
+if
+ (Test-Path 
+$fluentBitExe
+) {
+    
+$binPath
+ = 
+&quot;
+$fluentBitExe
+ -c 
+$configPath
+&quot;
+    
+$existing
+ = Get-Service -Name 
+&quot;fluent-bit&quot;
+ -ErrorAction SilentlyContinue
+    
+if
+ (
+$existing
+) {
+        sc.exe delete fluent-bit
+        Start-Sleep -Seconds 
+2
+    }
+    sc.exe create fluent-bit binpath= 
+$binPath
+ start= auto
+    Write-Host 
+&quot;Fluent Bit installed as Windows service.&quot;
+    Start-Service fluent-bit -ErrorAction SilentlyContinue
+} 
+else
+ {
+    Write-Host 
+&quot;WARNING: fluent-bit.exe not found.&quot;
+}
+Write-Host 
+&quot;Fluent Bit installation complete.&quot;
+</code></pre></details>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-vulnerable-sharepoint-app">6. Vulnerable SharePoint App<a href="#6-vulnerable-sharepoint-app" class="hash-link" aria-label="Direct link to 6. Vulnerable SharePoint App" title="Direct link to 6. Vulnerable SharePoint App" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="defaultaspx">default.aspx<a href="#defaultaspx" class="hash-link" aria-label="Direct link to default.aspx" title="Direct link to default.aspx" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.aspx</span><br></div></code></pre></div></div>
@@ -168,7 +616,160 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;%@ Page Language=&quot;C#&quot; %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!DOCTYPE </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Search - Vulnerable SharePoint</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">body</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">h1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Document Search</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">h1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">form</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">method</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;GET&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">action</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;search.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">input</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;text&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;q&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">value</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&lt;%= Request.QueryString[&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">q</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;] ?? &quot;&quot; %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; /&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">input</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;submit&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">value</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Search&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">form</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;% if (!string.IsNullOrEmpty(Request.QueryString[&quot;q&quot;])) { %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Results for: &lt;%= Request.QueryString[&quot;q&quot;] %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">em</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Vulnerable: reflected XSS in search - payload appears in response</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">em</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;% } %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">href</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;default.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Back</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">body</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="documentsaspx-path-traversal">documents.aspx (Path Traversal)<a href="#documentsaspx-path-traversal" class="hash-link" aria-label="Direct link to documents.aspx (Path Traversal)" title="Direct link to documents.aspx (Path Traversal)" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">documents.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">aspx</span><br></div></code></pre></div></div>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;%@ Page Language=&quot;C#&quot; %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!DOCTYPE </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Documents - Vulnerable SharePoint</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">body</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">h1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Document Library</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">h1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">form</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">method</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;GET&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">action</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;documents.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">label</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">File: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">input</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;text&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;file&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">value</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&lt;%= Request.QueryString[&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;] ?? &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">report.pdf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; /&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">label</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">input</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;submit&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">value</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Open&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">form</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;% </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">string file = Request.QueryString[&quot;file&quot;];</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if (!string.IsNullOrEmpty(file)) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  bool looksSuspicious = file.Contains(&quot;..&quot;) || file.Contains(&quot;:&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Response.Write(&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Requested file: &quot; + Server.HtmlEncode(file) + &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  if (looksSuspicious) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Response.Write(&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">strong</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path traversal attempt detected - logged!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">strong</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Response.Write(&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">em</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Vulnerable: path traversal attempts are logged for analysis</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">em</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">%&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">href</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;default.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Back</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">body</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="154"><summary>Large code or log block<!-- --> · <!-- -->154<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>&lt;%@ Page Language=&quot;C#&quot; %&gt;
+&lt;!DOCTYPE 
+html
+&gt;
+&lt;
+html
+&gt;
+&lt;
+head
+&gt;
+&lt;
+title
+&gt;
+Documents - Vulnerable SharePoint
+&lt;/
+title
+&gt;
+&lt;/
+head
+&gt;
+&lt;
+body
+&gt;
+&lt;
+h1
+&gt;
+Document Library
+&lt;/
+h1
+&gt;
+&lt;
+form
+ 
+method
+=
+&quot;GET&quot;
+ 
+action
+=
+&quot;documents.aspx&quot;
+&gt;
+  
+&lt;
+label
+&gt;
+File: 
+&lt;
+input
+ 
+type
+=
+&quot;text&quot;
+ 
+name
+=
+&quot;file&quot;
+ 
+value
+=
+&quot;&lt;%= Request.QueryString[&quot;
+file
+&quot;] ?? &quot;
+report.pdf
+&quot; %&gt;
+&quot; /&gt;
+&lt;/
+label
+&gt;
+  
+&lt;
+input
+ 
+type
+=
+&quot;submit&quot;
+ 
+value
+=
+&quot;Open&quot;
+ /&gt;
+&lt;/
+form
+&gt;
+&lt;% 
+string file = Request.QueryString[&quot;file&quot;];
+if (!string.IsNullOrEmpty(file)) {
+  bool looksSuspicious = file.Contains(&quot;..&quot;) || file.Contains(&quot;:&quot;);
+  Response.Write(&quot;
+&lt;
+p
+&gt;
+Requested file: &quot; + Server.HtmlEncode(file) + &quot;
+&lt;/
+p
+&gt;
+&quot;);
+  if (looksSuspicious) {
+    Response.Write(&quot;
+&lt;
+p
+&gt;
+&lt;
+strong
+&gt;
+Path traversal attempt detected - logged!
+&lt;/
+strong
+&gt;
+&lt;/
+p
+&gt;
+&quot;);
+  }
+  Response.Write(&quot;
+&lt;
+p
+&gt;
+&lt;
+em
+&gt;
+Vulnerable: path traversal attempts are logged for analysis
+&lt;/
+em
+&gt;
+&lt;/
+p
+&gt;
+&quot;);
+}
+%&gt;
+&lt;
+p
+&gt;
+&lt;
+a
+ 
+href
+=
+&quot;default.aspx&quot;
+&gt;
+Back
+&lt;/
+a
+&gt;
+&lt;/
+p
+&gt;
+&lt;/
+body
+&gt;
+&lt;/
+html
+&gt;
+</code></pre></details>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apiaspx-sqli-simulation">api.aspx (SQLi Simulation)<a href="#apiaspx-sqli-simulation" class="hash-link" aria-label="Direct link to api.aspx (SQLi Simulation)" title="Direct link to api.aspx (SQLi Simulation)" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">api.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">aspx</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;%@ Page Language=&quot;C#&quot; %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;%@ Import Namespace=&quot;System.Data&quot; %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!DOCTYPE </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">API - Vulnerable SharePoint</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">body</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">h1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">REST API (SQLi simulation)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">h1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">form</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">method</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;GET&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">action</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;api.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">label</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">User ID: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">input</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;text&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;id&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">value</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&lt;%= Request.QueryString[&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;] ?? &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; %&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; /&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">label</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">input</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;submit&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">value</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Query&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">form</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;% </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">string id = Request.QueryString[&quot;id&quot;];</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if (!string.IsNullOrEmpty(id)) {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  string fakeQuery = &quot;SELECT * FROM users WHERE id=&#x27;&quot; + id + &quot;&#x27;&quot;;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Response.Write(&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Simulated query (logged): &quot; + Server.HtmlEncode(fakeQuery) + &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Response.Write(&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">em</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Vulnerable: SQL injection - try id=1&#x27; OR &#x27;1&#x27;=&#x27;1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">em</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">%&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">href</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;default.aspx&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Back</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">body</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
@@ -263,7 +864,547 @@
 <strong>Error logs</strong>= what failed and why (HTTPERR, FREB, ULS, Event Log).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-fluent-bit-config-fluent-bitconf">8. Fluent Bit Config: fluent-bit.conf<a href="#8-fluent-bit-config-fluent-bitconf" class="hash-link" aria-label="Direct link to 8. Fluent Bit Config: fluent-bit.conf" title="Direct link to 8. Fluent Bit Config: fluent-bit.conf" translate="no">​</a></h2>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">conf</span><br></div></code></pre></div></div>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Fluent Bit for Windows IIS - raw collection, NO log modifications</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Outputs logs as-is from each source. Adjust Host/Port in [OUTPUT] for your backend.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SERVICE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Flush</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Grace</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Log_Level</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Parsers_File</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">parsers.conf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">storage.path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/fluent-bit/data/chunks</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">storage.sync</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">normal</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- ACCESS LOGS ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># IIS W3C Extended Log (access log)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Path: C:\inetpub\logs\LogFiles\W3SVC*/*.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Tag: iis.w3c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">INPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Tag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis.w3c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/inetpub/logs/LogFiles/W3SVC*/*.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Parser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis_w3c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path_Key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source_path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/fluent-bit/data/flb_iis.db</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Mem_Buf_Limit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5MB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Refresh_Interval</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Ignore_Older</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1h</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Read_from_Head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- ERROR LOGS ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># HTTPERR (HTTP.sys error log)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Path: C:\Windows\System32\LogFiles\HTTPERR\*.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Tag: iis.httperr</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">INPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Tag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis.httperr</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/Windows/System32/LogFiles/HTTPERR/*.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Parser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis_httperr</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/fluent-bit/data/flb_httperr.db</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Mem_Buf_Limit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2MB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Refresh_Interval</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Ignore_Older</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1h</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Read_from_Head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Failed Request Tracing (diagnostic XML)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Path: C:\inetpub\logs\FailedReqLogFiles\*\*.xml</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Tag: iis.freb</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">INPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Tag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis.freb</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/inetpub/logs/FailedReqLogFiles/*/*.xml</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Parser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis_freb</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/fluent-bit/data/flb_freb.db</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Mem_Buf_Limit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2MB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Refresh_Interval</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Ignore_Older</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1h</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Read_from_Head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- SHAREPOINT / APPLICATION ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># SharePoint ULS (Unified Logging Service)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Path: ...\Web Server Extensions\15\LOGS\*.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Tag: sharepoint.uls</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">INPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Tag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sharepoint.uls</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/Program</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Files/Common</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Files/Microsoft</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Shared/Web</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Server</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Extensions/15/LOGS/*.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Parser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sharepoint_uls</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">C:/fluent-bit/data/flb_uls.db</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Mem_Buf_Limit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5MB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Refresh_Interval</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Ignore_Older</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1h</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Read_from_Head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path_Key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source_path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Windows Event Log - Application channel</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Tag: windows.application</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">INPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Tag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows.application</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Channels</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Application</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Interval_Sec</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- FILTERS: separate logs by type for XPLG (cluster_name-&gt;source-&gt;host) ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis.w3c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cluster_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows-iis-vm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis_w3c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis.httperr</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cluster_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows-iis-vm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis_httperr</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">error</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis.freb</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cluster_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows-iis-vm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis_freb</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">error</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sharepoint.uls</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cluster_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows-iis-vm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sharepoint_uls</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">application</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows.application</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cluster_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows-iis-vm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows_event</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">system</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Normalize message field (XPLG expects message for display)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iis.*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Rename</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">message</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sharepoint.*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Rename</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">message</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows.*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Rename</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Message</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">message</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Ensure &quot;log&quot; field for XPLG (many collectors use &quot;log&quot; as primary display)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FILTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Copy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">message</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># --- OUTPUT ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OUTPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">http</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">           </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8081</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">URI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">             </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/ingest</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Format</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">json_stream</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Json_date_key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">timestamp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Json_date_format</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iso8601</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OUTPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">http</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Match</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30303</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">URI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/logeye/api/logger.jsp?token=b757c1af-2664-4c90-adf5-1a58fa1bf2ab</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Format</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">json</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Json_date_key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Json_date_format</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">iso8601</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Retry_Limit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Header</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">X-Xpolog-Sender</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-windows-iis</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="541"><summary>Large code or log block<!-- --> · <!-- -->541<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># Fluent Bit for Windows IIS - raw collection, NO log modifications
+# Outputs logs as-is from each source. Adjust Host/Port in [OUTPUT] for your backend.
+[
+SERVICE
+]
+    
+Flush
+         
+2
+    
+Grace
+         
+30
+    
+Log_Level
+     
+info
+    
+Parsers_File
+  
+parsers.conf
+    
+storage.path
+  
+C:/fluent-bit/data/chunks
+    
+storage.sync
+  
+normal
+# --- ACCESS LOGS ---
+# IIS W3C Extended Log (access log)
+# Path: C:\inetpub\logs\LogFiles\W3SVC*/*.log
+# Tag: iis.w3c
+[
+INPUT
+]
+    
+Name
+              
+tail
+    
+Tag
+               
+iis.w3c
+    
+Path
+              
+C:/inetpub/logs/LogFiles/W3SVC*/*.log
+    
+Parser
+            
+iis_w3c
+    
+Path_Key
+          
+source_path
+    
+DB
+                
+C:/fluent-bit/data/flb_iis.db
+    
+Mem_Buf_Limit
+     
+5MB
+    
+Refresh_Interval
+  
+10
+    
+Ignore_Older
+      
+1h
+    
+Read_from_Head
+    
+On
+# --- ERROR LOGS ---
+# HTTPERR (HTTP.sys error log)
+# Path: C:\Windows\System32\LogFiles\HTTPERR\*.log
+# Tag: iis.httperr
+[
+INPUT
+]
+    
+Name
+              
+tail
+    
+Tag
+               
+iis.httperr
+    
+Path
+              
+C:/Windows/System32/LogFiles/HTTPERR/*.log
+    
+Parser
+            
+iis_httperr
+    
+DB
+                
+C:/fluent-bit/data/flb_httperr.db
+    
+Mem_Buf_Limit
+     
+2MB
+    
+Refresh_Interval
+  
+10
+    
+Ignore_Older
+      
+1h
+    
+Read_from_Head
+    
+On
+# Failed Request Tracing (diagnostic XML)
+# Path: C:\inetpub\logs\FailedReqLogFiles\*\*.xml
+# Tag: iis.freb
+[
+INPUT
+]
+    
+Name
+              
+tail
+    
+Tag
+               
+iis.freb
+    
+Path
+              
+C:/inetpub/logs/FailedReqLogFiles/*/*.xml
+    
+Parser
+            
+iis_freb
+    
+DB
+                
+C:/fluent-bit/data/flb_freb.db
+    
+Mem_Buf_Limit
+     
+2MB
+    
+Refresh_Interval
+  
+10
+    
+Ignore_Older
+      
+1h
+    
+Read_from_Head
+    
+On
+# --- SHAREPOINT / APPLICATION ---
+# SharePoint ULS (Unified Logging Service)
+# Path: ...\Web Server Extensions\15\LOGS\*.log
+# Tag: sharepoint.uls
+[
+INPUT
+]
+    
+Name
+              
+tail
+    
+Tag
+               
+sharepoint.uls
+    
+Path
+              
+C:/Program
+ 
+Files/Common
+ 
+Files/Microsoft
+ 
+Shared/Web
+ 
+Server
+ 
+Extensions/15/LOGS/*.log
+    
+Parser
+            
+sharepoint_uls
+    
+DB
+                
+C:/fluent-bit/data/flb_uls.db
+    
+Mem_Buf_Limit
+     
+5MB
+    
+Refresh_Interval
+  
+10
+    
+Ignore_Older
+      
+1h
+    
+Read_from_Head
+    
+On
+    
+Path_Key
+          
+source_path
+# Windows Event Log - Application channel
+# Tag: windows.application
+[
+INPUT
+]
+    
+Name
+              
+winlog
+    
+Tag
+               
+windows.application
+    
+Channels
+         
+Application
+    
+Interval_Sec
+      
+5
+# --- FILTERS: separate logs by type for XPLG (cluster_name-&gt;source-&gt;host) ---
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+iis.w3c
+    
+Add
+     
+cluster_name
+ 
+windows-iis-vm
+    
+Add
+     
+source
+       
+iis_w3c
+    
+Add
+     
+log_type
+     
+access
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+iis.httperr
+    
+Add
+     
+cluster_name
+ 
+windows-iis-vm
+    
+Add
+     
+source
+       
+iis_httperr
+    
+Add
+     
+log_type
+     
+error
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+iis.freb
+    
+Add
+     
+cluster_name
+ 
+windows-iis-vm
+    
+Add
+     
+source
+       
+iis_freb
+    
+Add
+     
+log_type
+     
+error
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+sharepoint.uls
+    
+Add
+     
+cluster_name
+ 
+windows-iis-vm
+    
+Add
+     
+source
+       
+sharepoint_uls
+    
+Add
+     
+log_type
+     
+application
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+windows.application
+    
+Add
+     
+cluster_name
+ 
+windows-iis-vm
+    
+Add
+     
+source
+       
+windows_event
+    
+Add
+     
+log_type
+     
+system
+# Normalize message field (XPLG expects message for display)
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+iis.*
+    
+Rename
+  
+log
+ 
+message
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+sharepoint.*
+    
+Rename
+  
+log
+ 
+message
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+windows.*
+    
+Rename
+  
+Message
+ 
+message
+# Ensure &quot;log&quot; field for XPLG (many collectors use &quot;log&quot; as primary display)
+[
+FILTER
+]
+    
+Name
+    
+modify
+    
+Match
+   
+*
+    
+Copy
+    
+message
+ 
+log
+# --- OUTPUT ---
+[
+OUTPUT
+]
+    
+Name
+            
+http
+    
+Match
+           
+*
+    
+Host
+            
+192.168
+.56
+.1
+    
+Port
+            
+8081
+    
+URI
+             
+/ingest
+    
+Format
+          
+json_stream
+    
+Json_date_key
+   
+timestamp
+    
+Json_date_format
+ 
+iso8601
+[
+OUTPUT
+]
+    
+Name
+                
+http
+    
+Match
+               
+*
+    
+Host
+                
+192.168
+.56
+.1
+    
+Port
+                
+30303
+    
+URI
+                 
+/logeye/api/logger.jsp?token=b757c1af-2664-4c90-adf5-1a58fa1bf2ab
+    
+Format
+              
+json
+    
+Json_date_key
+       
+time
+    
+Json_date_format
+    
+iso8601
+    
+Retry_Limit
+         
+5
+    
+Header
+              
+X-Xpolog-Sender
+ 
+fluent-bit-windows-iis
+</code></pre></details>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Note:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Change </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> and </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> in </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[OUTPUT]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> to your log backend. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168.56.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> is the host on the Vagrant private network.</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-fluent-bit-parsers-parsersconf">9. Fluent Bit Parsers: parsers.conf<a href="#9-fluent-bit-parsers-parsersconf" class="hash-link" aria-label="Direct link to 9. Fluent Bit Parsers: parsers.conf" title="Direct link to 9. Fluent Bit Parsers: parsers.conf" translate="no">​</a></h2>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">parsers.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">conf</span><br></div></code></pre></div></div>

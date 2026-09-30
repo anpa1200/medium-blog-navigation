@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -3240,7 +3240,171 @@
 <p>**False positives:**Admin deployment packages, software installers with embedded scripts, developer tooling.</p>
 <p>**Validation required:**Positive synthetic test (simulate archive + script spawning), negative test (confirm legitimate installer does not fire), benign baseline review, historical replay.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sigma-drl-4-candidate--not-production">Sigma (DRL-4 candidate — not production)<a href="#sigma-drl-4-candidate--not-production" class="hash-link" aria-label="Direct link to Sigma (DRL-4 candidate — not production)" title="Direct link to Sigma (DRL-4 candidate — not production)" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">title:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Archive</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Extraction</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Followed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">by</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Script</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Interpreter</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DRL-4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Candidate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">status:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">experimental</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">description:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Detects a scripting engine (PowerShell, wscript, cscript, mshta) spawned as a child</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  of a known archive extraction utility. DRL-4 draft only. Requires positive/negative</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  testing, benign baseline review, and SOC pilot before promotion.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">references:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">https://attack.mitre.org/techniques/T1059/001/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">author:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CTI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Analyst</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Field</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Manual</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">date:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2026-05-16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tags:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">attack.execution</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">attack.t1059.001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">drl.4.candidate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logsource:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">category:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">process_creation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">product:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">detection:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">selection_parent:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ParentImage|endswith:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\7z.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\WinRAR.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\msiexec.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\expand.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">selection_child:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Image|endswith:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\powershell.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\pwsh.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\wscript.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\cscript.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\mshta.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">condition:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">selection_parent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">selection_child</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">falsepositives:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Software</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">installation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">packages</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">that</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">extract</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">execute</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">setup</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scripts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Admin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">automation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tools</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">using</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">archive-based</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">deployment</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Developer</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tooling</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">level:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">medium</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="165"><summary>Large code or log block<!-- --> · <!-- -->165<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>title:
+ 
+Archive
+ 
+Extraction
+ 
+Followed
+ 
+by
+ 
+Script
+ 
+Interpreter
+ 
+—
+ 
+DRL-4
+ 
+Candidate
+status:
+ 
+experimental
+description:
+ 
+&gt;
+  Detects a scripting engine (PowerShell, wscript, cscript, mshta) spawned as a child
+  of a known archive extraction utility. DRL-4 draft only. Requires positive/negative
+  testing, benign baseline review, and SOC pilot before promotion.
+references:
+  
+-
+ 
+https://attack.mitre.org/techniques/T1059/001/
+author:
+ 
+CTI
+ 
+Analyst
+ 
+Field
+ 
+Manual
+date:
+ 
+2026-05-16
+tags:
+  
+-
+ 
+attack.execution
+  
+-
+ 
+attack.t1059.001
+  
+-
+ 
+drl.4.candidate
+logsource:
+  
+category:
+ 
+process_creation
+  
+product:
+ 
+windows
+detection:
+  
+selection_parent:
+    
+ParentImage|endswith:
+      
+-
+ 
+&#x27;\7z.exe&#x27;
+      
+-
+ 
+&#x27;\WinRAR.exe&#x27;
+      
+-
+ 
+&#x27;\msiexec.exe&#x27;
+      
+-
+ 
+&#x27;\expand.exe&#x27;
+  
+selection_child:
+    
+Image|endswith:
+      
+-
+ 
+&#x27;\powershell.exe&#x27;
+      
+-
+ 
+&#x27;\pwsh.exe&#x27;
+      
+-
+ 
+&#x27;\wscript.exe&#x27;
+      
+-
+ 
+&#x27;\cscript.exe&#x27;
+      
+-
+ 
+&#x27;\mshta.exe&#x27;
+  
+condition:
+ 
+selection_parent
+ 
+and
+ 
+selection_child
+falsepositives:
+  
+-
+ 
+Software
+ 
+installation
+ 
+packages
+ 
+that
+ 
+extract
+ 
+and
+ 
+execute
+ 
+setup
+ 
+scripts
+  
+-
+ 
+Admin
+ 
+automation
+ 
+tools
+ 
+using
+ 
+archive-based
+ 
+deployment
+  
+-
+ 
+Developer
+ 
+tooling
+level:
+ 
+medium
+</code></pre></details>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kql--microsoft-defender-for-endpoint-drl-4-candidate--not-production">KQL — Microsoft Defender for Endpoint (DRL-4 candidate — not production)<a href="#kql--microsoft-defender-for-endpoint-drl-4-candidate--not-production" class="hash-link" aria-label="Direct link to KQL — Microsoft Defender for Endpoint (DRL-4 candidate — not production)" title="Direct link to KQL — Microsoft Defender for Endpoint (DRL-4 candidate — not production)" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">// DRL-4 candidate — not production</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">// Requires telemetry validation: confirm ParentProcessName is populated</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">// Validate positive/negative cases before enabling as alert</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DeviceProcessEvents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">where</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Timestamp &gt; ago(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">7</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">d)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">where</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> InitiatingProcessFileName </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">~ (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;7z.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;WinRAR.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;msiexec.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;expand.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">where</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> FileName </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">~ (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;powershell.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;pwsh.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;wscript.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;cscript.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;mshta.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| project Timestamp, DeviceName, AccountName,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          InitiatingProcessFileName, InitiatingProcessCommandLine,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          FileName, ProcessCommandLine, FolderPath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| order </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">by</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Timestamp desc</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="spl--splunk-with-sysmon-drl-4-candidate--not-production">SPL — Splunk with Sysmon (DRL-4 candidate — not production)<a href="#spl--splunk-with-sysmon-drl-4-candidate--not-production" class="hash-link" aria-label="Direct link to SPL — Splunk with Sysmon (DRL-4 candidate — not production)" title="Direct link to SPL — Splunk with Sysmon (DRL-4 candidate — not production)" translate="no">​</a></h3>
@@ -3252,7 +3416,176 @@
 <p>**False positives:**Mail clients, backup tools, developer SMTP testing, monitoring agents.</p>
 <p>**Validation required:**Positive test with netcat or mail client connecting on 993/465, negative test confirming Outlook or Thunderbird does not fire, baseline review of legitimate mail clients.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sigma-drl-4-candidate--not-production-1">Sigma (DRL-4 candidate — not production)<a href="#sigma-drl-4-candidate--not-production-1" class="hash-link" aria-label="Direct link to Sigma (DRL-4 candidate — not production)" title="Direct link to Sigma (DRL-4 candidate — not production)" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">title:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Non-Browser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Process</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Outbound</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">IMAPS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SMTPS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DRL-4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Candidate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">status:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">experimental</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">description:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Detects a process connecting outbound on IMAPS (993) or SMTPS (465, 587) that is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  not a known mail client or browser. C2 via email protocol. DRL-4 draft only.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">references:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">https://attack.mitre.org/techniques/T1071/003/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">author:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CTI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Analyst</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Field</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Manual</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">date:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2026-05-16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tags:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">attack.command_and_control</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">attack.t1071.003</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">drl.4.candidate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logsource:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">category:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">network_connection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">product:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">windows</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">service:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sysmon</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">detection:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">selection:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EventID:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DestinationPort:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">993</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">465</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">587</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">filter_legit:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Image|endswith:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\OUTLOOK.EXE&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\thunderbird.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\chrome.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\firefox.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;\msedge.exe&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">condition:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">selection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">filter_legit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">falsepositives:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Mail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clients</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">filter</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">list</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Backup</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">archiving</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tools</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SMTP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reporting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Developer</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SMTP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">testing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">utilities</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">level:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">medium</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="170"><summary>Large code or log block<!-- --> · <!-- -->170<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>title:
+ 
+Non-Browser
+ 
+Process
+ 
+Outbound
+ 
+IMAPS
+ 
+or
+ 
+SMTPS
+ 
+—
+ 
+DRL-4
+ 
+Candidate
+status:
+ 
+experimental
+description:
+ 
+&gt;
+  Detects a process connecting outbound on IMAPS (993) or SMTPS (465, 587) that is
+  not a known mail client or browser. C2 via email protocol. DRL-4 draft only.
+references:
+  
+-
+ 
+https://attack.mitre.org/techniques/T1071/003/
+author:
+ 
+CTI
+ 
+Analyst
+ 
+Field
+ 
+Manual
+date:
+ 
+2026-05-16
+tags:
+  
+-
+ 
+attack.command_and_control
+  
+-
+ 
+attack.t1071.003
+  
+-
+ 
+drl.4.candidate
+logsource:
+  
+category:
+ 
+network_connection
+  
+product:
+ 
+windows
+  
+service:
+ 
+sysmon
+detection:
+  
+selection:
+    
+EventID:
+ 
+3
+    
+DestinationPort:
+      
+-
+ 
+993
+      
+-
+ 
+465
+      
+-
+ 
+587
+  
+filter_legit:
+    
+Image|endswith:
+      
+-
+ 
+&#x27;\OUTLOOK.EXE&#x27;
+      
+-
+ 
+&#x27;\thunderbird.exe&#x27;
+      
+-
+ 
+&#x27;\chrome.exe&#x27;
+      
+-
+ 
+&#x27;\firefox.exe&#x27;
+      
+-
+ 
+&#x27;\msedge.exe&#x27;
+  
+condition:
+ 
+selection
+ 
+and
+ 
+not
+ 
+filter_legit
+falsepositives:
+  
+-
+ 
+Mail
+ 
+clients
+ 
+not
+ 
+in
+ 
+filter
+ 
+list
+  
+-
+ 
+Backup
+ 
+and
+ 
+archiving
+ 
+tools
+ 
+with
+ 
+SMTP
+ 
+reporting
+  
+-
+ 
+Developer
+ 
+SMTP
+ 
+testing
+ 
+utilities
+level:
+ 
+medium
+</code></pre></details>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kql--microsoft-defender-for-endpoint-drl-4-candidate--not-production-1">KQL — Microsoft Defender for Endpoint (DRL-4 candidate — not production)<a href="#kql--microsoft-defender-for-endpoint-drl-4-candidate--not-production-1" class="hash-link" aria-label="Direct link to KQL — Microsoft Defender for Endpoint (DRL-4 candidate — not production)" title="Direct link to KQL — Microsoft Defender for Endpoint (DRL-4 candidate — not production)" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">// DRL-4 candidate — not production</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">// Add known-good mail clients to exclusion list after baseline review</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">let</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> LegitMailClients = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dynamic</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">([</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;outlook.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;thunderbird.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;chrome.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;firefox.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;msedge.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DeviceNetworkEvents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">where</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Timestamp &gt; ago(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">7</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">d)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">where</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> RemotePort </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">993</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">465</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">587</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">where</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tolower</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">InitiatingProcessFileName</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) !</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">LegitMailClients</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| project Timestamp, DeviceName, AccountName,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          InitiatingProcessFileName, InitiatingProcessCommandLine,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          RemoteIP, RemotePort</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| order </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">by</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Timestamp desc</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="spl--splunk-with-sysmon-drl-4-candidate--not-production-1">SPL — Splunk with Sysmon (DRL-4 candidate — not production)<a href="#spl--splunk-with-sysmon-drl-4-candidate--not-production-1" class="hash-link" aria-label="Direct link to SPL — Splunk with Sysmon (DRL-4 candidate — not production)" title="Direct link to SPL — Splunk with Sysmon (DRL-4 candidate — not production)" translate="no">​</a></h3>
@@ -3469,7 +3802,316 @@
 <img src="https://cdn-images-1.medium.com/max/800/1*Zvnwnib27thC-E_hEH4L9A.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-review-log-template">AI Review Log Template<a href="#ai-review-log-template" class="hash-link" aria-label="Direct link to AI Review Log Template" title="Direct link to AI Review Log Template" translate="no">​</a></h3>
 <p>Every AI-assisted CTI output must be logged before it enters any finished product, detection candidate, or evidence register.</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">AI Review Log ID:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Date:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Model Used:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Model Version / API Identifier:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Task Type:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Allowed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Restricted</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Data Classification:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TLP:CLEAR</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Sanitized</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Internal</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Other</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source Inputs:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">URLs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">document</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">identifiers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">no</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sensitive</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">content</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Prompt Version:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Prompt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">prompt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">library</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">freeform</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">description</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Output Summary:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">What</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">model</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">produced</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">claims</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">extracted</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fields</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">drafted</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">etc.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source Verification:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source 1:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">URL</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">resolves</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">404</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">archive</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Content</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">supports</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">claim</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Yes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Partial</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">No</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source 2:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">URL</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">resolves</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">404</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">archive</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Content</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">supports</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">claim</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Yes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Partial</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">No</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Claim Review:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Accepted claims:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">list</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">evidence</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">labels</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Rejected claims:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">list</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reason</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rejection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Downgraded claims:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">list</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">corrected</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">evidence</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">label</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reason</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Human Analyst:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">role</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Attribution Assigned By:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Analyst</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">did</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">assign</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">attribution</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Confidence Assigned By:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Analyst</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">did</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">assign</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">confidence</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DRL Assigned By:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Analyst</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">—</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">did</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">promote</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DRL</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Final Use:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">evidence</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">register</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hunt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">draft</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">section</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">none</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Residual Risk:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Any</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">unresolved</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">concern</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="310"><summary>Large code or log block<!-- --> · <!-- -->310<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>AI Review Log ID:
+Date:
+Model Used:
+Model Version / API Identifier:
+Task Type:
+ [
+Allowed
+ 
+/
+ 
+Restricted
+]
+Data Classification:
+ [
+TLP:CLEAR
+ 
+/
+ 
+Sanitized
+ 
+Internal
+ 
+/
+ 
+Other
+]
+Source Inputs:
+ [
+URLs
+ 
+or
+ 
+document
+ 
+identifiers
+ 
+—
+ 
+no
+ 
+sensitive
+ 
+content
+ 
+in
+ 
+log
+]
+Prompt Version:
+ [
+Prompt
+ 
+ID
+ 
+from
+ 
+prompt
+ 
+library
+ 
+or
+ 
+freeform
+ 
+description
+]
+Output Summary:
+ [
+What
+ 
+the
+ 
+model
+ 
+produced
+ 
+—
+ 
+claims
+ 
+extracted
+, 
+fields
+ 
+drafted
+, 
+etc.
+]
+Source Verification:
+  
+-
+ 
+Source 1:
+ 
+URL
+ [
+resolves
+ 
+/
+ 
+404
+ 
+/
+ 
+archive
+] 
+—
+ 
+Content
+ 
+supports
+ 
+claim
+ [
+Yes
+ 
+/
+ 
+Partial
+ 
+/
+ 
+No
+]
+  
+-
+ 
+Source 2:
+ 
+URL
+ [
+resolves
+ 
+/
+ 
+404
+ 
+/
+ 
+archive
+] 
+—
+ 
+Content
+ 
+supports
+ 
+claim
+ [
+Yes
+ 
+/
+ 
+Partial
+ 
+/
+ 
+No
+]
+Claim Review:
+  
+-
+ 
+Accepted claims:
+ [
+list
+ 
+with
+ 
+evidence
+ 
+labels
+]
+  
+-
+ 
+Rejected claims:
+ [
+list
+ 
+with
+ 
+reason
+ 
+for
+ 
+rejection
+]
+  
+-
+ 
+Downgraded claims:
+ [
+list
+ 
+with
+ 
+corrected
+ 
+evidence
+ 
+label
+ 
+and
+ 
+reason
+]
+Human Analyst:
+ [
+name
+ 
+or
+ 
+role
+]
+Attribution Assigned By:
+ [
+Analyst
+ 
+name
+ 
+—
+ 
+AI
+ 
+did
+ 
+not
+ 
+assign
+ 
+attribution
+]
+Confidence Assigned By:
+ [
+Analyst
+ 
+name
+ 
+—
+ 
+AI
+ 
+did
+ 
+not
+ 
+assign
+ 
+confidence
+]
+DRL Assigned By:
+ [
+Analyst
+ 
+name
+ 
+—
+ 
+AI
+ 
+did
+ 
+not
+ 
+promote
+ 
+DRL
+]
+Final Use:
+ [
+source
+ 
+register
+ 
+/
+ 
+evidence
+ 
+register
+ 
+/
+ 
+hunt
+ 
+draft
+ 
+/
+ 
+report
+ 
+section
+ 
+/
+ 
+none
+]
+Residual Risk:
+ [
+Any
+ 
+unresolved
+ 
+concern
+ 
+or
+ 
+gap
+]
+</code></pre></details>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prohibited-use-summary">Prohibited Use Summary<a href="#prohibited-use-summary" class="hash-link" aria-label="Direct link to Prohibited Use Summary" title="Direct link to Prohibited Use Summary" translate="no">​</a></h3>
 <img src="https://cdn-images-1.medium.com/max/800/1*MWyJfrbWxf1LWYlsv2ytuA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async">
 <p>The following are prohibited regardless of context. No policy exception or urgent deadline overrides these prohibitions:</p>

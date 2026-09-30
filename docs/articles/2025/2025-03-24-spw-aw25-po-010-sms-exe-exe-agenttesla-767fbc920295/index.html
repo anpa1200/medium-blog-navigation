@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -704,7 +704,197 @@ Ensure the system snapshot is intact and all necessary monitoring tools are oper
 <li class="">**Dropped Files:**The malware drops executable files in the<code>AppData\Roaming</code>directory, such as<code>IbwIIBmUDWimTZ.exe</code>, which are used to carry out its malicious activities.</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="yara--rules">YARA -rules<a href="#yara--rules" class="hash-link" aria-label="Direct link to YARA -rules" title="Direct link to YARA -rules" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">rule </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AgentTesla_SPWAW25_FullDetection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    meta:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        description </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Detects Agent Tesla variant SPW AW25 - PO.010 SMS.exe.exe using hash, behavior, and IoCs&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        author </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Malware Researcher&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        malware_family </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Agent Tesla&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        md5 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;7c89b48a2752a771eb6457fe2fea1d8e&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        sha1 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;afb602ef798b23f400fd3d474cb570aa781797c4&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        sha256 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;3d1e16dec7f88b3ccdf7197c64a6eea6a7d3599c12f34893d60012ffd61f15ce&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        reference </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Full Malware Research Report&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    strings:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">// Unique and high-confidence IoCs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$p1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Add-MpPreference&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$p2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;ExclusionPath&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$s1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;schtasks.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$s2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;/Create /TN </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Updates</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">IbwIIBmUDWimTZ</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$s3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;tmpBF68.tmp&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$f1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;IbwIIBmUDWimTZ.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$api1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;GetPixel&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$api2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;SetPixel&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$api3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Sleep&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$api4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;getModuleHandle&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$comm1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;smtp.&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$comm2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;MailMessage&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$vault</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;VaultGetItem&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> wide ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$net</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;api.ipify.org&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$ip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;104.26.12.205&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ascii</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    condition:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        uint32(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">==</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0x5A4D</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            hash.md5(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, filesize) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">==</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;7c89b48a2752a771eb6457fe2fea1d8e&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">7</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> of (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$f</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$api</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$comm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$vault</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$net</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$ip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        )</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="191"><summary>Large code or log block<!-- --> · <!-- -->191<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>rule 
+AgentTesla_SPWAW25_FullDetection
+{
+    meta:
+        description 
+=
+ 
+&quot;Detects Agent Tesla variant SPW AW25 - PO.010 SMS.exe.exe using hash, behavior, and IoCs&quot;
+        author 
+=
+ 
+&quot;Malware Researcher&quot;
+        malware_family 
+=
+ 
+&quot;Agent Tesla&quot;
+        md5 
+=
+ 
+&quot;7c89b48a2752a771eb6457fe2fea1d8e&quot;
+        sha1 
+=
+ 
+&quot;afb602ef798b23f400fd3d474cb570aa781797c4&quot;
+        sha256 
+=
+ 
+&quot;3d1e16dec7f88b3ccdf7197c64a6eea6a7d3599c12f34893d60012ffd61f15ce&quot;
+        reference 
+=
+ 
+&quot;Full Malware Research Report&quot;
+    strings:
+        
+// Unique and high-confidence IoCs
+        
+$p1
+ 
+=
+ 
+&quot;Add-MpPreference&quot;
+ wide ascii
+        
+$p2
+ 
+=
+ 
+&quot;ExclusionPath&quot;
+ wide ascii
+        
+$s1
+ 
+=
+ 
+&quot;schtasks.exe&quot;
+ wide ascii
+        
+$s2
+ 
+=
+ 
+&quot;/Create /TN 
+\&quot;
+Updates
+\\
+IbwIIBmUDWimTZ
+\&quot;
+&quot;
+ wide ascii
+        
+$s3
+ 
+=
+ 
+&quot;tmpBF68.tmp&quot;
+ wide ascii
+        
+$f1
+ 
+=
+ 
+&quot;IbwIIBmUDWimTZ.exe&quot;
+ wide ascii
+        
+$api1
+ 
+=
+ 
+&quot;GetPixel&quot;
+ wide ascii
+        
+$api2
+ 
+=
+ 
+&quot;SetPixel&quot;
+ wide ascii
+        
+$api3
+ 
+=
+ 
+&quot;Sleep&quot;
+ wide ascii
+        
+$api4
+ 
+=
+ 
+&quot;getModuleHandle&quot;
+ wide ascii
+        
+$comm1
+ 
+=
+ 
+&quot;smtp.&quot;
+ wide ascii
+        
+$comm2
+ 
+=
+ 
+&quot;MailMessage&quot;
+ wide ascii
+        
+$vault
+ 
+=
+ 
+&quot;VaultGetItem&quot;
+ wide ascii
+        
+$net
+ 
+=
+ 
+&quot;api.ipify.org&quot;
+ ascii
+        
+$ip
+ 
+=
+ 
+&quot;104.26.12.205&quot;
+ ascii
+    condition:
+        uint32(
+0
+) 
+==
+ 
+0x5A4D
+ and
+        (
+            hash.md5(
+0
+, filesize) 
+==
+ 
+&quot;7c89b48a2752a771eb6457fe2fea1d8e&quot;
+ or
+            (
+                
+7
+ of (
+$p
+*
+, 
+$s
+*
+, 
+$f
+*
+, 
+$api
+*
+, 
+$comm
+*
+, 
+$vault
+, 
+$net
+, 
+$ip
+)
+            )
+        )
+}
+</code></pre></details>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion-4">Conclusion<a href="#conclusion-4" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
 <p>AgentTesla continues to be a major cyber threat due to its effectiveness in stealing sensitive information and its widespread use in phishing campaigns. Its constant evolution, ease of use, and ability to bypass traditional defenses make it a favored tool among cybercriminals. Vigilance, up-to-date security measures, and user awareness are key to defending against this persistent malware.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>

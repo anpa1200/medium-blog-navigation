@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -334,7 +334,688 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-testing-framework">The Testing Framework<a href="#the-testing-framework" class="hash-link" aria-label="Direct link to The Testing Framework" title="Direct link to The Testing Framework" translate="no">​</a></h2>
 <p>The test framework Cursor created was production-quality:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">#!/usr/bin/env python3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Final Test - Direct Google App Launch</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Uses am start to open Google app directly, then types search</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> subprocess</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> time</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> os</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> sys</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ANDROID_HOME = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;/home/andrey/android-sdk&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ADB = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{ANDROID_HOME}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/platform-tools/adb&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SEARCH_QUERY = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;You are hacked!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">run_adb</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cmd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">try</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        result = subprocess.run([ADB] + cmd.split(), capture_output=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">True</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, text=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">True</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, timeout=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">15</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> result.returncode == </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, result.stdout, result.stderr</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">except</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Exception </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">as</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> e:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">False</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">str</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(e)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key_event</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">keycode</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;shell input keyevent </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{keycode}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type_char</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">c, delay=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.035</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> c == </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27; &#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        key_event(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;KEYCODE_SPACE&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">elif</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> c == </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;!&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;shell input text &quot;!&quot;&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&#x27;shell input text &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{c}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    time.sleep(delay)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">screenshot</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    fn = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{name}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.png&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ok1, _, _ = run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;shell screencap -p /sdcard/screenshot.png&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ok1:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">None</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ok2, _, _ = run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;pull /sdcard/screenshot.png </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{fn}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ok2:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">None</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> os.path.exists(fn) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> os.path.getsize(fn) &gt; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fn</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">None</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">check_network</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">():</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ok, out, _ = run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;shell netstat -n 2&gt;/dev/null&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ok:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        google_ips = [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;172.217&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;216.58&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;142.250&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;74.125&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;142.251&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> google_ips:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> out:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">True</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">False</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;FINAL TEST - DIRECT GOOGLE APP LAUNCH&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Validate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;\n[VALIDATION] Virtual Environment...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  ✓ Python: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{sys.executable}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;[VALIDATION] Android Emulator...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ok, out, _ = run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;devices&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;device&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> out:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  ✗ No emulator!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    exit(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  ✓ Emulator connected&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> i </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">range</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">15</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ok, out, _ = run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;shell getprop sys.boot_completed&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ok </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> out:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  ✓ Android fully booted&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">break</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  ✓ Emulator ready\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Initialize</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;[Init] USB enumeration delays...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> i </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">range</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    key_event(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;KEYCODE_UNKNOWN&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;✓ Initialized\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># STEP 1: Back to Home</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;STEP 1: Back to Home Screen&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> i </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">range</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    key_event(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;KEYCODE_BACK&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scr1 = screenshot(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;step1true&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  ✓ Screenshot: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{scr1}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># STEP 2: Open Google App Directly</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;STEP 2: Open Google App Directly (am start)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Launching Google app...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;shell am start -n com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">7.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scr2 = screenshot(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;step2true&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">network = check_network()</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  ✓ Screenshot: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{scr2}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  Network: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;✓ Detected&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> network </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;✗ Not detected&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  *** CHECK: Google app should be open ***\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># STEP 3: Type Search Query</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;STEP 3: Type Search Query&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;Typing: &#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{SEARCH_QUERY}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> i, c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">enumerate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(SEARCH_QUERY):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    type_char(c, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.035</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (i + </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) % </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> == </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  Progress: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{i+</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">len</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(SEARCH_QUERY)}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scr3 = screenshot(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;step3true&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  ✓ Screenshot: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{scr3}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  *** CHECK: Search query should be visible ***\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># STEP 4: Press Enter - Execute Search</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;STEP 4: Press Enter - Execute Search&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key_event(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;KEYCODE_ENTER&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time.sleep(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">scr4 = screenshot(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;step4true&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">network_final = check_network()</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  ✓ Screenshot: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{scr4}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  Network: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;✓ Detected&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> network_final </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;✗ Not detected&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># RESULTS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;FINAL RESULTS&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">screenshots = [scr1, scr2, scr3, scr4]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all_saved = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">None</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> screenshots)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;\nScreenshots (step&lt;number&gt;true.png):&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> i, scr </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">enumerate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(screenshots, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    status = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;✓&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> scr </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;✗&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{status}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> step</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{i}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true.png: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{scr </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> scr </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;FAILED&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;\nFinal Status:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  Network Activity: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;✓ Detected&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> network_final </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;✗ Not detected&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;  All Screenshots: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;✓ Saved&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> all_saved </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;✗ Some failed&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;\n&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> + </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> all_saved:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;✓✓✓ TEST COMPLETE - All screenshots saved!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;⚠ CHECK step2true.png - Google app must be open&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;⚠ CHECK step3true.png - Search query must be visible&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> network_final:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;✓✓✓ Network activity confirms success!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;⚠ Some screenshots failed&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> * </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">70</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="682"><summary>Large code or log block<!-- --> · <!-- -->682<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>#!/usr/bin/env python3
+&quot;&quot;&quot;
+Final Test - Direct Google App Launch
+Uses am start to open Google app directly, then types search
+&quot;&quot;&quot;
+import
+ subprocess
+import
+ time
+import
+ os
+import
+ sys
+ANDROID_HOME = 
+&quot;/home/andrey/android-sdk&quot;
+ADB = 
+f&quot;
+{ANDROID_HOME}
+/platform-tools/adb&quot;
+SEARCH_QUERY = 
+&quot;You are hacked!&quot;
+def
+ 
+run_adb
+(
+cmd
+):
+    
+try
+:
+        result = subprocess.run([ADB] + cmd.split(), capture_output=
+True
+, text=
+True
+, timeout=
+15
+)
+        
+return
+ result.returncode == 
+0
+, result.stdout, result.stderr
+    
+except
+ Exception 
+as
+ e:
+        
+return
+ 
+False
+, 
+&quot;&quot;
+, 
+str
+(e)
+def
+ 
+key_event
+(
+keycode
+):
+    run_adb(
+f&quot;shell input keyevent 
+{keycode}
+&quot;
+)
+    time.sleep(
+0.3
+)
+def
+ 
+type_char
+(
+c, delay=
+0.035
+):
+    
+if
+ c == 
+&#x27; &#x27;
+:
+        key_event(
+&quot;KEYCODE_SPACE&quot;
+)
+    
+elif
+ c == 
+&#x27;!&#x27;
+:
+        run_adb(
+&#x27;shell input text &quot;!&quot;&#x27;
+)
+    
+else
+:
+        run_adb(
+f&#x27;shell input text &quot;
+{c}
+&quot;&#x27;
+)
+    time.sleep(delay)
+def
+ 
+screenshot
+(
+name
+):
+    fn = 
+f&quot;
+{name}
+.png&quot;
+    ok1, _, _ = run_adb(
+&quot;shell screencap -p /sdcard/screenshot.png&quot;
+)
+    
+if
+ 
+not
+ ok1:
+        
+return
+ 
+None
+    time.sleep(
+0.5
+)
+    ok2, _, _ = run_adb(
+f&quot;pull /sdcard/screenshot.png 
+{fn}
+&quot;
+)
+    
+if
+ 
+not
+ ok2:
+        
+return
+ 
+None
+    time.sleep(
+0.5
+)
+    
+if
+ os.path.exists(fn) 
+and
+ os.path.getsize(fn) &gt; 
+1000
+:
+        
+return
+ fn
+    
+return
+ 
+None
+def
+ 
+check_network
+():
+    time.sleep(
+1
+)
+    ok, out, _ = run_adb(
+&quot;shell netstat -n 2&gt;/dev/null&quot;
+)
+    
+if
+ ok:
+        google_ips = [
+&quot;172.217&quot;
+, 
+&quot;216.58&quot;
+, 
+&quot;142.250&quot;
+, 
+&quot;74.125&quot;
+, 
+&quot;142.251&quot;
+]
+        
+for
+ ip 
+in
+ google_ips:
+            
+if
+ ip 
+in
+ out:
+                
+return
+ 
+True
+    
+return
+ 
+False
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+print
+(
+&quot;FINAL TEST - DIRECT GOOGLE APP LAUNCH&quot;
+)
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+# Validate
+print
+(
+&quot;\n[VALIDATION] Virtual Environment...&quot;
+)
+print
+(
+f&quot;  ✓ Python: 
+{sys.executable}
+\n&quot;
+)
+print
+(
+&quot;[VALIDATION] Android Emulator...&quot;
+)
+ok, out, _ = run_adb(
+&quot;devices&quot;
+)
+if
+ 
+&quot;device&quot;
+ 
+not
+ 
+in
+ out:
+    
+print
+(
+&quot;  ✗ No emulator!&quot;
+)
+    exit(
+1
+)
+print
+(
+&quot;  ✓ Emulator connected&quot;
+)
+for
+ i 
+in
+ 
+range
+(
+15
+):
+    ok, out, _ = run_adb(
+&quot;shell getprop sys.boot_completed&quot;
+)
+    
+if
+ ok 
+and
+ 
+&quot;1&quot;
+ 
+in
+ out:
+        
+print
+(
+&quot;  ✓ Android fully booted&quot;
+)
+        
+break
+    time.sleep(
+2
+)
+time.sleep(
+5
+)
+print
+(
+&quot;  ✓ Emulator ready\n&quot;
+)
+# Initialize
+print
+(
+&quot;[Init] USB enumeration delays...&quot;
+)
+time.sleep(
+5.0
+)
+for
+ i 
+in
+ 
+range
+(
+10
+):
+    key_event(
+&quot;KEYCODE_UNKNOWN&quot;
+)
+    time.sleep(
+0.1
+)
+time.sleep(
+5.0
+)
+print
+(
+&quot;✓ Initialized\n&quot;
+)
+# STEP 1: Back to Home
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+print
+(
+&quot;STEP 1: Back to Home Screen&quot;
+)
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+for
+ i 
+in
+ 
+range
+(
+3
+):
+    key_event(
+&quot;KEYCODE_BACK&quot;
+)
+    time.sleep(
+0.3
+)
+time.sleep(
+2.0
+)
+scr1 = screenshot(
+&quot;step1true&quot;
+)
+print
+(
+f&quot;  ✓ Screenshot: 
+{scr1}
+\n&quot;
+)
+# STEP 2: Open Google App Directly
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+print
+(
+&quot;STEP 2: Open Google App Directly (am start)&quot;
+)
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+print
+(
+&quot;Launching Google app...&quot;
+)
+run_adb(
+&quot;shell am start -n com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity&quot;
+)
+time.sleep(
+7.0
+)
+scr2 = screenshot(
+&quot;step2true&quot;
+)
+network = check_network()
+print
+(
+f&quot;  ✓ Screenshot: 
+{scr2}
+&quot;
+)
+print
+(
+f&quot;  Network: 
+{
+&#x27;✓ Detected&#x27;
+ 
+if
+ network 
+else
+ 
+&#x27;✗ Not detected&#x27;
+}
+&quot;
+)
+print
+(
+&quot;  *** CHECK: Google app should be open ***\n&quot;
+)
+# STEP 3: Type Search Query
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+print
+(
+&quot;STEP 3: Type Search Query&quot;
+)
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+print
+(
+f&quot;Typing: &#x27;
+{SEARCH_QUERY}
+&#x27;...&quot;
+)
+for
+ i, c 
+in
+ 
+enumerate
+(SEARCH_QUERY):
+    type_char(c, 
+0.035
+)
+    
+if
+ (i + 
+1
+) % 
+5
+ == 
+0
+:
+        
+print
+(
+f&quot;  Progress: 
+{i+
+1
+}
+/
+{
+len
+(SEARCH_QUERY)}
+&quot;
+)
+time.sleep(
+3.0
+)
+scr3 = screenshot(
+&quot;step3true&quot;
+)
+print
+(
+f&quot;  ✓ Screenshot: 
+{scr3}
+&quot;
+)
+print
+(
+&quot;  *** CHECK: Search query should be visible ***\n&quot;
+)
+# STEP 4: Press Enter - Execute Search
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+print
+(
+&quot;STEP 4: Press Enter - Execute Search&quot;
+)
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+key_event(
+&quot;KEYCODE_ENTER&quot;
+)
+time.sleep(
+5.0
+)
+scr4 = screenshot(
+&quot;step4true&quot;
+)
+network_final = check_network()
+print
+(
+f&quot;  ✓ Screenshot: 
+{scr4}
+&quot;
+)
+print
+(
+f&quot;  Network: 
+{
+&#x27;✓ Detected&#x27;
+ 
+if
+ network_final 
+else
+ 
+&#x27;✗ Not detected&#x27;
+}
+\n&quot;
+)
+# RESULTS
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+print
+(
+&quot;FINAL RESULTS&quot;
+)
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+screenshots = [scr1, scr2, scr3, scr4]
+all_saved = 
+all
+(s 
+is
+ 
+not
+ 
+None
+ 
+for
+ s 
+in
+ screenshots)
+print
+(
+f&quot;\nScreenshots (step&lt;number&gt;true.png):&quot;
+)
+for
+ i, scr 
+in
+ 
+enumerate
+(screenshots, 
+1
+):
+    status = 
+&quot;✓&quot;
+ 
+if
+ scr 
+else
+ 
+&quot;✗&quot;
+    
+print
+(
+f&quot;  
+{status}
+ step
+{i}
+true.png: 
+{scr 
+if
+ scr 
+else
+ 
+&#x27;FAILED&#x27;
+}
+&quot;
+)
+print
+(
+f&quot;\nFinal Status:&quot;
+)
+print
+(
+f&quot;  Network Activity: 
+{
+&#x27;✓ Detected&#x27;
+ 
+if
+ network_final 
+else
+ 
+&#x27;✗ Not detected&#x27;
+}
+&quot;
+)
+print
+(
+f&quot;  All Screenshots: 
+{
+&#x27;✓ Saved&#x27;
+ 
+if
+ all_saved 
+else
+ 
+&#x27;✗ Some failed&#x27;
+}
+&quot;
+)
+print
+(
+&quot;\n&quot;
+ + 
+&quot;=&quot;
+ * 
+70
+)
+if
+ all_saved:
+    
+print
+(
+&quot;✓✓✓ TEST COMPLETE - All screenshots saved!&quot;
+)
+    
+print
+(
+&quot;⚠ CHECK step2true.png - Google app must be open&quot;
+)
+    
+print
+(
+&quot;⚠ CHECK step3true.png - Search query must be visible&quot;
+)
+    
+if
+ network_final:
+        
+print
+(
+&quot;✓✓✓ Network activity confirms success!&quot;
+)
+else
+:
+    
+print
+(
+&quot;⚠ Some screenshots failed&quot;
+)
+print
+(
+&quot;=&quot;
+ * 
+70
+)
+</code></pre></details>
 <p><strong>Features:</strong></p>
 <ul>
 <li class="">

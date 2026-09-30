@@ -12,9 +12,9 @@
 
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
-<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.b6927b30.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.95700119.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.23491b58.js" defer="defer"></script>
+<script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
+<script src="/medium-blog-navigation/assets/js/runtime~main.6451042c.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.287ec159.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -157,7 +157,281 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[KALI]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Web technology fingerprinting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">whatweb http://10.0.0.100:8080 -v 2&gt;/dev/null | </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tee</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /opt/loot/recon/whatweb.txt</span><br></div></code></pre></div></div>
 <p><strong>Expected — JSON API, no HTML:</strong></p>
 <p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*x6uBi2BZVBJ_YuGw8XxF4A.png" alt="Article screenshot" class="img_ev3q"></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">WhatWeb</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">http://10.0.0.100:8080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Status    :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">400</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Bad</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Title     :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;None&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">IP        :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.100</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Country   :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">RESERVED,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ZZ</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Summary   :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Cookies[JSESSIONID],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HttpOnly[JSESSIONID],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Java</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Detected Plugins:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Cookies</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Display</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">names</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cookies</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HTTP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">headers.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">values</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">are</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">returned</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">save</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">space.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">String       :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">JSESSIONID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HttpOnly</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">If</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HttpOnly</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">flag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">included</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HTTP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set-cookie</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">response</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">header</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">browser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">supports</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">it</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">then</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cookie</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cannot be accessed through client side script - More Info:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">http://en.wikipedia.org/wiki/HTTP_cookie</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">String       :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">JSESSIONID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Java</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Java</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">allows</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">you</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">play</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">online</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">games,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chat</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">people</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">around</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">world,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">calculate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">your</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mortgage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">interest,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">view</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">images</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3D,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">just</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">few.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">It&#x27;s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">also</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">integral</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">intranet</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">applications</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">other</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">e-business</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">solutions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">that</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">are</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">foundation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">of</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">corporate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">computing.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Website     :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">http://www.java.com/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HTTP Headers:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HTTP/1.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">400</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set-Cookie:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">JSESSIONID=B41637102DE425D2D6F1F9384576C785;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Path=/;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HttpOnly</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Content-Type:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">application/json;charset=UTF-8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Content-Length:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">76</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Date:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Mon,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">04</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">May</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2026 10:16:35 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">GMT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Connection:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">close</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="275"><summary>Large code or log block<!-- --> · <!-- -->275<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>WhatWeb
+ 
+report
+ 
+for
+ 
+http://10.0.0.100:8080
+Status    :
+ 
+400
+ 
+Bad
+ 
+Request
+Title     :
+ 
+&lt;None&gt;
+IP        :
+ 
+10.0
+.0
+.100
+Country   :
+ 
+RESERVED,
+ 
+ZZ
+Summary   :
+ 
+Cookies[JSESSIONID],
+ 
+HttpOnly[JSESSIONID],
+ 
+Java
+Detected Plugins:
+[ 
+Cookies
+ ]
+ 
+Display
+ 
+the
+ 
+names
+ 
+of
+ 
+cookies
+ 
+in
+ 
+the
+ 
+HTTP
+ 
+headers.
+ 
+The
+ 
+ 
+values
+ 
+are
+ 
+not
+ 
+returned
+ 
+to
+ 
+save
+ 
+on
+ 
+space.
+ 
+ 
+String       :
+ 
+JSESSIONID
+[ 
+HttpOnly
+ ]
+ 
+If
+ 
+the
+ 
+HttpOnly
+ 
+flag
+ 
+is
+ 
+included
+ 
+in
+ 
+the
+ 
+HTTP
+ 
+set-cookie
+ 
+ 
+response
+ 
+header
+ 
+and
+ 
+the
+ 
+browser
+ 
+supports
+ 
+it
+ 
+then
+ 
+the
+ 
+cookie
+ 
+ 
+cannot be accessed through client side script - More Info:
+ 
+ 
+http://en.wikipedia.org/wiki/HTTP_cookie
+ 
+ 
+String       :
+ 
+JSESSIONID
+[ 
+Java
+ ]
+ 
+Java
+ 
+allows
+ 
+you
+ 
+to
+ 
+play
+ 
+online
+ 
+games,
+ 
+chat
+ 
+with
+ 
+people
+ 
+ 
+around
+ 
+the
+ 
+world,
+ 
+calculate
+ 
+your
+ 
+mortgage
+ 
+interest,
+ 
+and
+ 
+ 
+view
+ 
+images
+ 
+in
+ 
+3D,
+ 
+just
+ 
+to
+ 
+name
+ 
+a
+ 
+few.
+ 
+It&#x27;s
+ 
+also
+ 
+integral
+ 
+ 
+to
+ 
+the
+ 
+intranet
+ 
+applications
+ 
+and
+ 
+other
+ 
+e-business
+ 
+solutions
+ 
+ 
+that
+ 
+are
+ 
+the
+ 
+foundation
+ 
+of
+ 
+corporate
+ 
+computing.
+ 
+ 
+Website     :
+ 
+http://www.java.com/
+HTTP Headers:
+ 
+HTTP/1.1
+ 
+400
+ 
+ 
+Set-Cookie:
+ 
+JSESSIONID=B41637102DE425D2D6F1F9384576C785;
+ 
+Path=/;
+ 
+HttpOnly
+ 
+Content-Type:
+ 
+application/json;charset=UTF-8
+ 
+Content-Length:
+ 
+76
+ 
+Date:
+ 
+Mon,
+ 
+04
+ 
+May
+ 
+2026 10:16:35 
+GMT
+ 
+Connection:
+ 
+close
+</code></pre></details>
 <p>WhatWeb detects little: no HTML, no Server header, no cookies. The<code>application/json</code>content type and bare 400 on<code>/</code>(missing<code>X-Api-Version</code>header) reveals a custom JSP API — not a static site.</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[KALI]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Read raw response headers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s -o /dev/null -D - http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">100</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/ | </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">grep</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -iE </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;server|x-powered|content-type&quot;</span><br></div></code></pre></div></div>
 <p><strong>Expected:</strong></p>
@@ -313,7 +587,239 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   UP   (dragonrx_kali — our own Kali container on target_net)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  UP   (DC01)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.20</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  UP   (FS01)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.50</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  UP   (WS01)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.100</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> UP   (WEB01 — ourselves)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.200</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> UP   (Wazuh SIEM)</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[Kali]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Service scan against discovered Windows hosts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># -sV: detect service versions   -p: only scan relevant ports</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sV -p 135,139,389,445,636,3389,5985,5986 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  192.168.10.10 192.168.10.20 192.168.10.50 2&gt;/dev/null</span><br></div></code></pre></div></div>
 <p><strong>Expected results:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-sV</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">135</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">139</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">389</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">445</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">636</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3389</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5985</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5986</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.20</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.50</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dev</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">null</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Starting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Nmap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">7.99</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ( </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">https</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//nmap.org ) at 2026-05-04 10:45 +0000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Nmap scan report for </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host is up (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.00018s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> latency).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PORT     STATE    SERVICE       VERSION</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">135</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     msrpc         Microsoft Windows RPC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">139</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     netbios-ssn   Microsoft Windows netbios-ssn</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">389</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     ldap          Microsoft Windows Active Directory LDAP (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Domain</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: novatech.local, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Site</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Default-First-Site-Name)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">445</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     microsoft-ds?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">636</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     tcpwrapped</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3389</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp open     ms-wbt-server Microsoft Terminal Services</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5985</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp open     http          Microsoft HTTPAPI httpd </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (SSDP/UPnP)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5986</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp filtered wsmans</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">MAC </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Address</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">08</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">00</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">27</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">E7</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">45</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">90</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (Oracle VirtualBox virtual NIC)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: DC01; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Windows; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CPE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cpe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">o</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">microsoft</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:windows</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Nmap scan report for </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10.20</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host is up (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.00022s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> latency).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PORT     STATE    SERVICE       VERSION</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">135</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     msrpc         Microsoft Windows RPC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">139</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     netbios-ssn   Microsoft Windows netbios-ssn</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">389</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  filtered ldap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">445</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     microsoft-ds?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">636</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  filtered ldapssl</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3389</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp open     ms-wbt-server Microsoft Terminal Services</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5985</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp open     http          Microsoft HTTPAPI httpd </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (SSDP/UPnP)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5986</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp filtered wsmans</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">MAC </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Address</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">08</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">00</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">27</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">A</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">B</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">9</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">E (Oracle VirtualBox virtual NIC)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Windows; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CPE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cpe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">o</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">microsoft</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:windows</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Nmap scan report for </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10.50</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host is up (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0.00020s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> latency).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PORT     STATE    SERVICE       VERSION</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">135</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     msrpc         Microsoft Windows RPC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">139</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     netbios-ssn   Microsoft Windows netbios-ssn</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">389</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  filtered ldap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">445</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  open     microsoft-ds?</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">636</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp  filtered ldapssl</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3389</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp open     ms-wbt-server Microsoft Terminal Services</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5985</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp open     http          Microsoft HTTPAPI httpd </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (SSDP/UPnP)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5986</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tcp filtered wsmans</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">MAC </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Address</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">08</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">00</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">27</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">E4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">59</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">D (Oracle VirtualBox virtual NIC)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Windows; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CPE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cpe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">o</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">microsoft</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:windows</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service detection performed. Please report any incorrect results at </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">https</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//nmap.org/submit/ .</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Nmap </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> IP addresses (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hosts up) scanned in </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8.14</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> seconds</span><br></div></code></pre></div></div>
+<details class="plain-large-code" data-plain-code-lines="233"><summary>Large code or log block<!-- --> · <!-- -->233<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>nmap
+ 
+-sV
+ 
+-p
+ 
+135
+,
+139
+,
+389
+,
+445
+,
+636
+,
+3389
+,
+5985
+,
+5986
+ \
+  
+192.168
+.10
+.10
+ 
+192.168
+.10
+.20
+ 
+192.168
+.10
+.50
+ 
+2
+&gt;/
+dev
+/
+null
+Starting
+ 
+Nmap
+ 
+7.99
+ ( 
+https
+:
+//nmap.org ) at 2026-05-04 10:45 +0000
+Nmap scan report for 
+192.168
+.
+10.10
+Host is up (
+0.00018s
+ latency).
+PORT     STATE    SERVICE       VERSION
+135
+/tcp  open     msrpc         Microsoft Windows RPC
+139
+/tcp  open     netbios-ssn   Microsoft Windows netbios-ssn
+389
+/tcp  open     ldap          Microsoft Windows Active Directory LDAP (
+Domain
+: novatech.local, 
+Site
+: Default-First-Site-Name)
+445
+/tcp  open     microsoft-ds?
+636
+/tcp  open     tcpwrapped
+3389
+/tcp open     ms-wbt-server Microsoft Terminal Services
+5985
+/tcp open     http          Microsoft HTTPAPI httpd 
+2.0
+ (SSDP/UPnP)
+5986
+/tcp filtered wsmans
+MAC 
+Address
+: 
+08
+:
+00
+:
+27
+:
+E7
+:
+45
+:
+90
+ (Oracle VirtualBox virtual NIC)
+Service 
+Info
+: 
+Host
+: DC01; 
+OS
+: Windows; 
+CPE
+: 
+cpe
+:/
+o
+:
+microsoft
+:windows
+Nmap scan report for 
+192.168
+.
+10.20
+Host is up (
+0.00022s
+ latency).
+PORT     STATE    SERVICE       VERSION
+135
+/tcp  open     msrpc         Microsoft Windows RPC
+139
+/tcp  open     netbios-ssn   Microsoft Windows netbios-ssn
+389
+/tcp  filtered ldap
+445
+/tcp  open     microsoft-ds?
+636
+/tcp  filtered ldapssl
+3389
+/tcp open     ms-wbt-server Microsoft Terminal Services
+5985
+/tcp open     http          Microsoft HTTPAPI httpd 
+2.0
+ (SSDP/UPnP)
+5986
+/tcp filtered wsmans
+MAC 
+Address
+: 
+08
+:
+00
+:
+27
+:
+2
+A
+:
+4
+B
+:
+9
+E (Oracle VirtualBox virtual NIC)
+Service 
+Info
+: 
+OS
+: Windows; 
+CPE
+: 
+cpe
+:/
+o
+:
+microsoft
+:windows
+Nmap scan report for 
+192.168
+.
+10.50
+Host is up (
+0.00020s
+ latency).
+PORT     STATE    SERVICE       VERSION
+135
+/tcp  open     msrpc         Microsoft Windows RPC
+139
+/tcp  open     netbios-ssn   Microsoft Windows netbios-ssn
+389
+/tcp  filtered ldap
+445
+/tcp  open     microsoft-ds?
+636
+/tcp  filtered ldapssl
+3389
+/tcp open     ms-wbt-server Microsoft Terminal Services
+5985
+/tcp open     http          Microsoft HTTPAPI httpd 
+2.0
+ (SSDP/UPnP)
+5986
+/tcp filtered wsmans
+MAC 
+Address
+: 
+08
+:
+00
+:
+27
+:
+E4
+:
+59
+:
+5
+D (Oracle VirtualBox virtual NIC)
+Service 
+Info
+: 
+OS
+: Windows; 
+CPE
+: 
+cpe
+:/
+o
+:
+microsoft
+:windows
+Service detection performed. Please report any incorrect results at 
+https
+:
+//nmap.org/submit/ .
+Nmap 
+done
+: 
+3
+ IP addresses (
+3
+ hosts up) scanned in 
+8.14
+ seconds
+</code></pre></details>
 <p><img decoding="async" loading="lazy" src="https://cdn-images-1.medium.com/max/800/1*dqAuiDj93H79STewJDYOqw.png" alt="Article screenshot" class="img_ev3q"></p>
 <p><strong>Assessment:</strong></p>
 <ul>
