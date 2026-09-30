@@ -1,0 +1,33 @@
+/* Long imported logs remain intact without thousands of Prism token spans. */
+.plain-large-code {
+  margin: 1rem 0;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: .5rem;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+}
+.plain-large-code summary {
+  cursor: pointer;
+  padding: .8rem 1rem;
+  font-weight: 600;
+}
+.plain-large-code button {
+  margin: 0 1rem .75rem;
+  padding: .35rem .6rem;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: .3rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+}
+.plain-large-code pre {
+  margin: 0 1rem 1rem;
+  max-height: 65vh;
+  overflow: auto;
+  white-space: pre;
+  color: inherit;
+}
+.plain-large-code :is(summary, button, pre):focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
