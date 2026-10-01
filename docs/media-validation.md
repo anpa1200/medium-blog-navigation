@@ -9,12 +9,12 @@ Generated deterministically from the current source inventory.
 ## Summary
 
 - Markdown documents checked: 213
-- Media references checked: 2735
-- Unique remote image URLs: 2012
+- Media references checked: 2562
+- Unique remote image URLs: 2013
 - Unique local image/CSS paths: 1
 - Missing local files: 0
 - Remote failures: 0
-- Remote checks skipped: 2012
+- Remote checks skipped: 2013
 
 ## Result
 
