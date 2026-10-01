@@ -13,6 +13,10 @@ import ResearchCover from '@site/src/components/ResearchCover';
 
 **Fourteen anomaly families, multi-event correlation, and the telemetry needed to distinguish suspicious behavior from legitimate change.**
 
+<!-- atlas-publication-status:start -->
+<aside data-atlas-publication-snapshot="true" className="anomaly-atlas-notice" aria-label="Publication snapshot"><strong>Publication snapshot — maintained version in the Atlas.</strong><p>This article preserves the revised publication and historical anchors. The <a href="https://1200km.com/anomaly-detection-atlas/research/" target="_self">Anomaly Detection Atlas</a> is the maintained reference, consolidated 27 September 2026 from the 21 September revision. Start with <a href="https://1200km.com/anomaly-detection-atlas/research/worked-password-spray/" target="_self">password spraying</a>, <a href="https://1200km.com/anomaly-detection-atlas/research/worked-saas-downloads/" target="_self">SaaS downloads</a> or the <a href="https://1200km.com/anomaly-detection-atlas/research/worked-kerberoasting/" target="_self">Kerberoasting zero-match</a>. Integration is not a new incident audit or detector execution.</p></aside>
+<!-- atlas-publication-status:end -->
+
 <ResearchCover />
 
 An unusual login, a new process relationship, or a sudden data export can be an investigation lead. None proves an intrusion on its own. This research connects statistical anomaly concepts to documented attacker behavior, explains which logs could expose that behavior, and makes the limits of each interpretation explicit.
