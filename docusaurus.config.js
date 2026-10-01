@@ -7,6 +7,7 @@ const articleRouteBase = embeddedArchive ? 'read' : 'docs/articles';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  trailingSlash: true, // Match 1200km sitemap, canonical links, and directory hosting.
   title: '1200km',
   tagline: 'A local archive of security research, technical guides, case studies, and lab notes.',
   favicon: 'img/favicon.svg',
