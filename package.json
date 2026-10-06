@@ -48,5 +48,10 @@
   },
   "engines": {
     "node": ">=20.0"
+  },
+  "overrides": {
+    "@docusaurus/core": {
+      "tinypool": "2.1.2"
+    }
   }
 }
