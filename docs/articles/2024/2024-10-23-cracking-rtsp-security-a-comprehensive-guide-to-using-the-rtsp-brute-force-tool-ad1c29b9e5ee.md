@@ -37,13 +37,13 @@ Understanding how to connect to RTSP streams, both with and without credentials,
 
 - **Open VLC Media Player.**
 
-- **Go to Media &gt; Open Network Stream…**or press`Ctrl+N`.
+- **Go to Media &gt; Open Network Stream…** or press `Ctrl+N`.
 
-- **Enter the RTSP URL**in the format:`rtsp://IP_Address:Port/Path`
+- **Enter the RTSP URL** in the format: `rtsp://IP_Address:Port/Path`
 
-- Example:`rtsp://192.168.1.143:554/media.sdp`
+- Example: `rtsp://192.168.1.143:554/media.sdp`
 
-- **Click Play**to start streaming.
+- **Click Play** to start streaming.
 
 **With Credentials:**
 
@@ -55,7 +55,7 @@ Understanding how to connect to RTSP streams, both with and without credentials,
 
 - `rtsp://admin:1234@192.168.1.143:554/media.sdp`
 
-- **Follow the same steps as above**to open and play the stream.
+- **Follow the same steps as above** to open and play the stream.
 
 ### FFplay (Part of FFmpeg)
 
@@ -64,8 +64,7 @@ Understanding how to connect to RTSP streams, both with and without credentials,
 - Open a command line interface and enter:
 
 ```text
-ffplay rtsp:
-//IP_Address:Port/Path
+ffplay rtsp://IP_Address:Port/Path
 ```
 
 - Example:
@@ -79,9 +78,7 @@ ffplay rtsp://192.168.1.143:554/media.sdp
 - Include the credentials directly in the RTSP URL:
 
 ```text
-ffplay rtsp:
-//us
-ername:password@IP_Address:Port/Path
+ffplay rtsp://username:password@IP_Address:Port/Path
 ```
 
 - Example:
@@ -94,23 +91,17 @@ ffplay rtsp://admin:1234@192.168.1.143:554/media.sdp
 
 ### First step is to find correct URL:
 
-For this propose you can use**Nmap**script for**rtsp-url-bruteforce:**
+For this propose you can use **Nmap** script for **rtsp-url-bruteforce:**
 
-Full guide for Nmap[here](2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)
+Full guide for Nmap [here](2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)
 
 ```text
-nmap 
---script
- rtsp-url-brute -
-p
- 
-554
- <ip>
+nmap --script rtsp-url-brute -p 554 <ip>
 ```
 
 ## Introducing the RTSP Brute Force Tool
 
-The**RTSP Brute Force Tool**is an advanced utility built to test the resilience of RTSP services against brute force attacks. Here’s what makes this tool indispensable for security testing:
+The **RTSP Brute Force Tool** is an advanced utility built to test the resilience of RTSP services against brute force attacks. Here’s what makes this tool indispensable for security testing:
 
 - **Efficiency and Precision**: Utilizes multithreading to conduct swift and thorough authentication tests.
 
@@ -120,9 +111,9 @@ The**RTSP Brute Force Tool**is an advanced utility built to test the resilience 
 
 ## Introducing the RTSP Brute Force Tool
 
-The**RTSP Brute Force Tool**is an advanced utility built to test the resilience of RTSP services against brute force attacks. Here’s what makes this tool indispensable for security testing:
+The **RTSP Brute Force Tool** is an advanced utility built to test the resilience of RTSP services against brute force attacks. Here’s what makes this tool indispensable for security testing:
 
-*What is bruteforce password cracking you can read*[*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
+*What is bruteforce password cracking you can read* [*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
 
 - **Efficiency and Precision**: Utilizes multithreading to conduct swift and thorough authentication tests.
 
@@ -144,7 +135,7 @@ The**RTSP Brute Force Tool**is an advanced utility built to test the resilience 
 
 - Clone the tool from the GitHub repository:
 
-- `git clone[https://github.com/anpa1200/RTSP-brute-force-tool.git](https://github.com/anpa1200/RTSP-brute-force-tool.git)`
+- `git clone [https://github.com/anpa1200/RTSP-brute-force-tool.git](https://github.com/anpa1200/RTSP-brute-force-tool.git)`
 
 2. Navigate to the tool’s directory:
 
@@ -160,12 +151,12 @@ The**RTSP Brute Force Tool**is an advanced utility built to test the resilience 
 
 **2. Input Details**: Follow the prompts to enter the RTSP URL, decide if you know the username or need to load it from a file, and specify the path to your password list.
 
-- **Enter the RTSP URL (e.g., rtsp://IP_Address:port/extension(not required):**rtsp://192.168.1.143:1024/h264_pcm.sdp
-**Do you know the username? (yes/no) [y/n]:**y
-**Enter the username:**admin (or path to file with usernames)
-**Enter the path to the password list file:**./Dictionaries/short_pass_list.txt
+- **Enter the RTSP URL (e.g., rtsp://IP_Address:port/extension(not required):** rtsp://192.168.1.143:1024/h264_pcm.sdp
+**Do you know the username? (yes/no) [y/n]:** y
+**Enter the username:** admin (or path to file with usernames)
+**Enter the path to the password list file:** ./Dictionaries/short_pass_list.txt
 
-- **How to gain passwords lists**[***here***](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
+- **How to gain passwords lists** [***here***](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
 
 <img src="https://cdn-images-1.medium.com/max/800/1*GJXxPH8PB9CdWxMmwrRmzw.png" alt="cameras rtsp password cracking" width="1150" height="154" loading="lazy" decoding="async" />
 

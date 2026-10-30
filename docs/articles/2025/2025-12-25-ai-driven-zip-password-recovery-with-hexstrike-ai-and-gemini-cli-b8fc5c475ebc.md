@@ -29,9 +29,9 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 &gt; Recover the contents of an encrypted ZIP archive using a known password dictionary.
 
-What makes this workflow different is not the tools themselves — but**how the AI reasons, pivots, and adapts**when something fails.
+What makes this workflow different is not the tools themselves — but **how the AI reasons, pivots, and adapts** when something fails.
 
-This is a**fully authorized, local lab scenario**.
+This is a **fully authorized, local lab scenario**.
 
 ## Scenario
 
@@ -67,15 +67,10 @@ This is a**fully authorized, local lab scenario**.
 
 ## 1. Task initiation (LLM-driven)
 
-The user provides a**single high-level prompt**:
+The user provides a **single high-level prompt**:
 
 ```text
-Open
- encrypted zip file 
-and
- find the flag 
-using
- the provided password list.
+Open encrypted zip file and find the flag using the provided password list.
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*ANUdip5C59veqsAwPgXw1A.png" alt="Article image" width="1369" height="319" loading="lazy" decoding="async" />
@@ -88,16 +83,16 @@ No manual troubleshooting.
 
 HexStrike-AI:
 
-- Determines that ZIP cracking requires**hash extraction**
+- Determines that ZIP cracking requires **hash extraction**
 
-- Locates`zip2john`automatically
+- Locates `zip2john` automatically
 
 - Verifies tool availability on the system
 
 <img src="https://cdn-images-1.medium.com/max/800/1*0gFo7D_MsfBgaWqvMS00aA.png" alt="Article image" width="1712" height="795" loading="lazy" decoding="async" />
 
 **Key point:**
-The AI does*environment discovery*before acting.
+The AI does *environment discovery* before acting.
 
 ## 3. ZIP hash extraction
 
@@ -105,7 +100,7 @@ Initial attempts fail due to incorrect paths.
 
 HexStrike-AI:
 
-- Enumerates`/home`
+- Enumerates `/home`
 
 - Identifies the correct user (`andrey`)
 
@@ -116,9 +111,7 @@ HexStrike-AI:
 Then successfully extracts the ZIP hash:
 
 ```text
-zip2john secret_file.
-zip
- > zip_hash.txt
+zip2john secret_file.zip > zip_hash.txt
 ```
 
 ## 4. Offline password cracking
@@ -127,19 +120,16 @@ HexStrike-AI selects the correct cracking strategy:
 
 - Offline attack (safe, fast, no lockouts)
 
-- Uses`john`with the provided wordlist
+- Uses `john` with the provided wordlist
 
 ```text
-john 
---wordlist=passwords_list.txt zip_hash.txt
+john --wordlist=passwords_list.txt zip_hash.txt
 ```
 
 **Result**
 
 ```text
-Password found:
- 
-Israel123
+Password found: Israel123
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*TRaSGxPOQBkXbiPg-xGREA.png" alt="Article image" width="1700" height="378" loading="lazy" decoding="async" />
@@ -149,10 +139,7 @@ Israel123
 The AI attempts:
 
 ```text
-unzip -
-P
- Israel123 secret_file
-.zip
+unzip -P Israel123 secret_file.zip
 ```
 
 Failure occurs:
@@ -160,7 +147,7 @@ Failure occurs:
 - Unsupported compression method (AES / method 99)
 
 **Critical behavior:**
-HexStrike-AI does**not stop**and does**not guess**.
+HexStrike-AI does **not stop** and does **not guess**.
 
 ## 6. Adaptive pivot (tool switching)
 
@@ -170,13 +157,12 @@ HexStrike-AI:
 
 - Checks for alternative tooling
 
-- Detects`7z`is available
+- Detects `7z` is available
 
 - Switches extraction method automatically
 
 ```text
-7z x -pIsrael123 secret_file.
-zip
+7z x -pIsrael123 secret_file.zip
 ```
 
 Extraction succeeds.
@@ -188,8 +174,7 @@ Extraction succeeds.
 Final step:
 
 ```text
-cat
- secret_file.txt
+cat secret_file.txt
 ```
 
 **Flag recovered**
@@ -197,9 +182,7 @@ cat
 <img src="https://cdn-images-1.medium.com/max/800/1*XqUL-oAX4gre4MnjbaOb7Q.png" alt="Article image" width="1715" height="256" loading="lazy" decoding="async" />
 
 ```text
-Your
- 
-Flag
+Your Flag
 ```
 
 ## Final Result
@@ -208,9 +191,9 @@ ItemValueZIP Password`Israel123`EncryptionZIP AESFlag`Your Flag`Attack TypeOffli
 
 ## Why This Matters
 
-This is**not**about cracking ZIP files.
+This is **not** about cracking ZIP files.
 
-This example demonstrates how**AI-driven execution changes security workflows**:
+This example demonstrates how **AI-driven execution changes security workflows**:
 
 ## What HexStrike-AI did autonomously
 
@@ -238,13 +221,13 @@ This example demonstrates how**AI-driven execution changes security workflows**:
 
 - AI is not “running tools blindly”
 
-- It performs**reasoned decision-making**
+- It performs **reasoned decision-making**
 
 - Failures are treated as signals, not blockers
 
 - Tool chaining is dynamic, not scripted
 
-- This mirrors how a**real junior pentester / analyst**works — at machine speed
+- This mirrors how a **real junior pentester / analyst** works — at machine speed
 
 ## Defensive Perspective
 
@@ -258,11 +241,11 @@ From a blue-team standpoint, this highlights why:
 
 ## Conclusion
 
-This lab shows how**HexStrike-AI + Gemini-CLI**can execute a complete security task:
+This lab shows how **HexStrike-AI + Gemini-CLI** can execute a complete security task:
 
 &gt; From problem definition → tool discovery → exploitation → validation → result
 
-All driven by**one prompt**.
+All driven by **one prompt**.
 
 This is not automation replacing expertise.
-It is**expertise amplified**.
+It is **expertise amplified**.

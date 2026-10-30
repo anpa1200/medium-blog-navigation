@@ -27,11 +27,11 @@ Part 1.
 
 ## Introduction
 
-In today’s digital landscape, organizations face an ever-increasing number of cyber threats, ranging from phishing attacks to advanced persistent threats (APTs). To effectively defend against these risks, businesses rely on a**Security Operations Center (SOC)**— the central hub for monitoring, detecting, and responding to security incidents in real time.
+In today’s digital landscape, organizations face an ever-increasing number of cyber threats, ranging from phishing attacks to advanced persistent threats (APTs). To effectively defend against these risks, businesses rely on a **Security Operations Center (SOC)** — the central hub for monitoring, detecting, and responding to security incidents in real time.
 
 The SOC is the frontline defense, equipped with skilled analysts, advanced tools, and robust processes to ensure that critical assets, networks, and data remain secure. Whether you’re new to the cybersecurity field or looking to understand the role of a SOC, this guide will provide you with a clear and comprehensive overview of its structure, functions, and importance in protecting an organization’s digital infrastructure.
 
-From continuous monitoring and incident response to proactive threat hunting, the SOC plays a critical role in safeguarding against modern cyber adversaries. This introduction will set the stage for you to dive deeper into the world of**SOC operations**and understand how analysts at different tiers work together to defend against evolving threats.
+From continuous monitoring and incident response to proactive threat hunting, the SOC plays a critical role in safeguarding against modern cyber adversaries. This introduction will set the stage for you to dive deeper into the world of **SOC operations** and understand how analysts at different tiers work together to defend against evolving threats.
 
 Let’s explore what a SOC is, why it’s vital, and how it operates to ensure your organization’s security remains resilient and effective.
 
@@ -47,29 +47,29 @@ Let’s explore what a SOC is, why it’s vital, and how it operates to ensure y
 
 - SOC roles and responsibilities (Tier 1, Tier 2, Analysts, Investigators).
 
-- Key concepts:**Alert/Offense**,**Event**,**Incident**.
+- Key concepts: **Alert/Offense**, **Event**, **Incident**.
 
 **2. Common Threats and Attack Types**
 
 - Types of attacks:
 
-- **Phishing**,**Brute Force**,**DDoS**,**Ransomware**.
+- **Phishing**, **Brute Force**, **DDoS**, **Ransomware**.
 
-- Introduction to**MITRE ATT&CK**framework and TTPs (Tactics, Techniques, Procedures).
+- Introduction to **MITRE ATT&CK** framework and TTPs (Tactics, Techniques, Procedures).
 
 **3. Introduction to SIEM Systems**
 
 - What is a SIEM?
 
-- Example SIEM tools:**QRadar**,**Splunk**,**Google Chronicle**.
+- Example SIEM tools: **QRadar**, **Splunk**, **Google Chronicle**.
 
 - Basic SIEM concepts: log collection, dashboards, correlation rules, and basic queries.
 
 **4. Logs and Basic Protocols**
 
-- Understanding**TCP/IP**and common ports (80, 443, 22).
+- Understanding **TCP/IP** and common ports (80, 443, 22).
 
-- Log formats:**Syslog**,**JSON**.
+- Log formats: **Syslog**, **JSON**.
 
 - How to read and interpret logs (source IP, destination IP, event type).
 
@@ -81,17 +81,17 @@ Let’s explore what a SOC is, why it’s vital, and how it operates to ensure y
 
 - Running basic queries to analyze logs.
 
-- Identifying key log fields:**Source IP**,**Destination IP**,**Event Type**.
+- Identifying key log fields: **Source IP**, **Destination IP**, **Event Type**.
 
 - Searching for anomalies in logs.
 
 **2. Identifying and Handling Common Alerts**
 
-- Detecting**Failed Login Attempts**(Brute Force).
+- Detecting **Failed Login Attempts** (Brute Force).
 
-- Analyzing**Phishing Emails**and email headers.
+- Analyzing **Phishing Emails** and email headers.
 
-- Basic**DLP (Data Loss Prevention)**alert investigation.
+- Basic **DLP (Data Loss Prevention)** alert investigation.
 
 **3. Introduction to External Tools**
 
@@ -103,7 +103,7 @@ Let’s explore what a SOC is, why it’s vital, and how it operates to ensure y
 
 **4. Basic Network Traffic Analysis**
 
-- Using**Wireshark**for network traffic capture and analysis.
+- Using **Wireshark** for network traffic capture and analysis.
 
 - Understanding common protocols (HTTP, DNS, SSH).
 
@@ -113,9 +113,9 @@ Let’s explore what a SOC is, why it’s vital, and how it operates to ensure y
 
 - **Incident Response Process**
 
-- Key phases:**Detection**,**Analysis**,**Containment**,**Reporting**.
+- Key phases: **Detection**, **Analysis**, **Containment**, **Reporting**.
 
-- Following**Playbooks**for common scenarios.
+- Following **Playbooks** for common scenarios.
 
 **2. Identifying False Positives**
 
@@ -127,7 +127,7 @@ Let’s explore what a SOC is, why it’s vital, and how it operates to ensure y
 
 - Proper incident documentation.
 
-- Structure of a basic**Incident Response Report**.
+- Structure of a basic **Incident Response Report**.
 
 - Key communication guidelines for escalating incidents to Tier 2 and IT teams.
 
@@ -147,19 +147,19 @@ Let’s explore what a SOC is, why it’s vital, and how it operates to ensure y
 
 - Investigation, containment, and documentation of incidents.
 
-2.**Red Team and Blue Team Scenarios**
+2. **Red Team and Blue Team Scenarios**
 
 - Recognizing Red Team techniques in simulations.
 
 - Analyzing suspicious activities through logs.
 
-3.**Final Assessment**
+3. **Final Assessment**
 
 - Practical exercise with 3–4 alerts to investigate.
 
 - Writing a full incident response report.
 
-4.**Feedback and Next Steps**
+4. **Feedback and Next Steps**
 
 - Personal feedback session for each participant.
 
@@ -169,7 +169,7 @@ Let’s explore what a SOC is, why it’s vital, and how it operates to ensure y
 
 - **SIEM**: QRadar, Google Chronicle.
 
-- **SOAR:**Palo Alto XSOAR
+- **SOAR:** Palo Alto XSOAR
 
 - **Network Analysis**: Check Point Smart Console, Check Point NDR.
 
@@ -179,11 +179,11 @@ Let’s explore what a SOC is, why it’s vital, and how it operates to ensure y
 
 ## What is a Security Operations Center (SOC)?
 
-A**Security Operations Center (SOC)**is a centralized unit within an organization that is responsible for**monitoring, detecting, responding to, and mitigating security incidents**in real time. The primary goal of a SOC is to**protect an organization’s information systems, networks, and assets**from cyber threats.
+A **Security Operations Center (SOC)** is a centralized unit within an organization that is responsible for **monitoring, detecting, responding to, and mitigating security incidents** in real time. The primary goal of a SOC is to **protect an organization’s information systems, networks, and assets** from cyber threats.
 
 ## SOC Roles and Responsibilities
 
-In a Security Operations Center (SOC), roles and responsibilities are typically divided into**tiers**to ensure efficient monitoring, analysis, and response to security threats. Each tier has distinct responsibilities, skill levels, and focus areas.
+In a Security Operations Center (SOC), roles and responsibilities are typically divided into **tiers** to ensure efficient monitoring, analysis, and response to security threats. Each tier has distinct responsibilities, skill levels, and focus areas.
 
 ## 1. Tier 1: SOC Analyst (Junior / Entry-Level)
 
@@ -191,7 +191,7 @@ In a Security Operations Center (SOC), roles and responsibilities are typically 
 
 ### Responsibilities:
 
-- **Alert Monitoring**: Continuously monitor the**SIEM**and security tools for alerts or suspicious activities.
+- **Alert Monitoring**: Continuously monitor the **SIEM** and security tools for alerts or suspicious activities.
 
 - **Initial Triage**: Investigate and validate alerts to determine their legitimacy.
 
@@ -213,7 +213,7 @@ In a Security Operations Center (SOC), roles and responsibilities are typically 
 
 ## SOC Roles and Responsibilities
 
-In a Security Operations Center (SOC), roles and responsibilities are typically divided into**tiers**to ensure efficient monitoring, analysis, and response to security threats. Each tier has distinct responsibilities, skill levels, and focus areas.
+In a Security Operations Center (SOC), roles and responsibilities are typically divided into **tiers** to ensure efficient monitoring, analysis, and response to security threats. Each tier has distinct responsibilities, skill levels, and focus areas.
 
 ## 1. Tier 1: SOC Analyst (Junior / Entry-Level)
 
@@ -221,7 +221,7 @@ In a Security Operations Center (SOC), roles and responsibilities are typically 
 
 ### Responsibilities:
 
-- **Alert Monitoring**: Continuously monitor the**SIEM**and security tools for alerts or suspicious activities.
+- **Alert Monitoring**: Continuously monitor the **SIEM** and security tools for alerts or suspicious activities.
 
 - **Initial Triage**: Investigate and validate alerts to determine their legitimacy.
 
@@ -273,7 +273,7 @@ In a Security Operations Center (SOC), roles and responsibilities are typically 
 
 ### Responsibilities:
 
-- **Advanced Threat Hunting**: Proactively search for**hidden threats**, APTs (Advanced Persistent Threats), and anomalies.
+- **Advanced Threat Hunting**: Proactively search for **hidden threats**, APTs (Advanced Persistent Threats), and anomalies.
 
 - **Forensic Investigation**: Perform digital forensics to analyze and trace root causes of breaches.
 
@@ -289,11 +289,11 @@ In a Security Operations Center (SOC), roles and responsibilities are typically 
 
 - Expertise in digital forensics, malware analysis, and reverse engineering.
 
-- Deep understanding of attack frameworks like**MITRE ATT&CK**and**Cyber Kill Chain**.
+- Deep understanding of attack frameworks like **MITRE ATT&CK** and **Cyber Kill Chain**.
 
 - Scripting knowledge (Python, Bash, PowerShell) for automation and analysis.
 
-- Experience with tools like**Splunk**,**QRadar**, EDRs, and forensic tools.
+- Experience with tools like **Splunk**, **QRadar**, EDRs, and forensic tools.
 
 ## 4. SOC Manager
 
@@ -323,11 +323,11 @@ In a Security Operations Center (SOC), roles and responsibilities are typically 
 
 ## Key Concepts: Alert/Offense, Event, and Incident
 
-These are fundamental terms in a**Security Operations Center (SOC)**and are crucial to understanding how security monitoring and incident response workflows operate. Here’s a breakdown of each concept:
+These are fundamental terms in a **Security Operations Center (SOC)** and are crucial to understanding how security monitoring and incident response workflows operate. Here’s a breakdown of each concept:
 
 ### 1. Event
 
-An**event**is any recorded activity or occurrence on a system, network, or application that is captured and logged for analysis. Events are raw data points and do not necessarily indicate malicious or abnormal activity.
+An **event** is any recorded activity or occurrence on a system, network, or application that is captured and logged for analysis. Events are raw data points and do not necessarily indicate malicious or abnormal activity.
 
 ### Examples of Events:
 
@@ -341,21 +341,21 @@ An**event**is any recorded activity or occurrence on a system, network, or appli
 
 ### Characteristics:
 
-- Events are**low-level**and**high in volume**.
+- Events are **low-level** and **high in volume**.
 
-- They are**neutral**by nature and need further analysis to determine if they pose a threat.
+- They are **neutral** by nature and need further analysis to determine if they pose a threat.
 
 ### Tools:
 
-Events are collected by tools like**SIEMs**(QRadar), endpoint tools, or log aggregators.
+Events are collected by tools like **SIEMs** (QRadar), endpoint tools, or log aggregators.
 
 ### 2. Alert (or Offense)
 
-An**alert**(sometimes referred to as an**offense**in IBM QRadar) is a**notification**or signal generated by a security system when it detects suspicious or potentially malicious activity based on predefined rules, thresholds, or behavior.
+An **alert** (sometimes referred to as an **offense** in IBM QRadar) is a **notification** or signal generated by a security system when it detects suspicious or potentially malicious activity based on predefined rules, thresholds, or behavior.
 
 ### How Alerts Are Triggered:
 
-- A**rule**or**correlation**in the SIEM system identifies a pattern of suspicious behavior.
+- A **rule** or **correlation** in the SIEM system identifies a pattern of suspicious behavior.
 
 - A threshold for unusual activity (e.g., multiple failed login attempts) is exceeded.
 
@@ -369,15 +369,15 @@ An**alert**(sometimes referred to as an**offense**in IBM QRadar) is a**notificat
 
 ### Characteristics:
 
-- Alerts are**actionable**but may include**false positives**.
+- Alerts are **actionable** but may include **false positives**.
 
 - Alerts require investigation by Tier 1 analysts to validate or escalate.
 
-- Alerts aggregate one or more**events**that match specific criteria.
+- Alerts aggregate one or more **events** that match specific criteria.
 
 ### 3. Incident
 
-An**incident**is a**confirmed security breach**or event that poses a threat to the confidentiality, integrity, or availability of an organization’s systems, data, or services. An incident typically originates from an alert that has been investigated and validated by the SOC team.
+An **incident** is a **confirmed security breach** or event that poses a threat to the confidentiality, integrity, or availability of an organization’s systems, data, or services. An incident typically originates from an alert that has been investigated and validated by the SOC team.
 
 ### Examples of Incidents:
 
@@ -391,9 +391,9 @@ An**incident**is a**confirmed security breach**or event that poses a threat to t
 
 ### Characteristics:
 
-- Incidents are**escalated**from validated alerts.
+- Incidents are **escalated** from validated alerts.
 
-- Require a structured**Incident Response (IR)**process, including containment, mitigation, and recovery.
+- Require a structured **Incident Response (IR)** process, including containment, mitigation, and recovery.
 
 - Often reported to management and may trigger regulatory compliance requirements (e.g., GDPR, HIPAA).
 
@@ -413,17 +413,17 @@ An**incident**is a**confirmed security breach**or event that poses a threat to t
 
 ### Summary Table: Key Concepts
 
-**Concept****Definition****Example****Action Required****Event**A logged activity, neutral in nature. A user logs in, or a file is accessed. None (raw data).**Alert/Offense**Notification of potential suspicious activity. Multiple failed login attempts detected. Investigate and validate.**Incident**A validated and confirmed security breach. Malware encrypting files. Trigger Incident Response.
+**Concept** **Definition** **Example** **Action Required** **Event** A logged activity, neutral in nature. A user logs in, or a file is accessed. None (raw data). **Alert/Offense** Notification of potential suspicious activity. Multiple failed login attempts detected. Investigate and validate. **Incident** A validated and confirmed security breach. Malware encrypting files. Trigger Incident Response.
 
 ### Relationship Between These Concepts
 
-- **Events**are the raw data.
+- **Events** are the raw data.
 
-- **Alerts/Offenses**are generated when specific patterns or anomalies are detected in the events.
+- **Alerts/Offenses** are generated when specific patterns or anomalies are detected in the events.
 
-- Once validated, an alert becomes an**incident**that requires immediate action and remediation.
+- Once validated, an alert becomes an **incident** that requires immediate action and remediation.
 
-Understanding these concepts is critical for**SOC analysts**as it helps them efficiently identify threats, prioritize alerts, and respond to incidents in a structured manner.
+Understanding these concepts is critical for **SOC analysts** as it helps them efficiently identify threats, prioritize alerts, and respond to incidents in a structured manner.
 
 ## 2. Common Threats and Attack Types
 

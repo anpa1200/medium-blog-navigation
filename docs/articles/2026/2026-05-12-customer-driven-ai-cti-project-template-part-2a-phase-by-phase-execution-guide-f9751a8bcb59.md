@@ -32,14 +32,14 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Part 1:Foundations and methodology:
 
-Covers the foundations: methodology rules, analytic standards, scoring models, governance, roles, and delivery frameworks — the*what*and*why*behind every project decision.
+Covers the foundations: methodology rules, analytic standards, scoring models, governance, roles, and delivery frameworks — the *what* and *why* behind every project decision.
 
 [**Customer-Driven AI CTI Project Template. Part 1: Foundations**
 [From pure CTI to hands-on detection engineering with strict validation gates](2026-05-11-customer-driven-ai-cti-project-template-part-1-foundations-745861507d03.md)
 
 ### Part 2A (this document): how to do it
 
-is the phase-by-phase execution guide — the*how to do it*, from project charter and guardrails (Phase 0) through continuous improvement and maturity loop (Phase 14), including project execution controls and the master workflow. Part 1 covers the foundations: methodology rules, analytic standards, scoring models, governance, roles, and delivery frameworks.
+is the phase-by-phase execution guide — the *how to do it*, from project charter and guardrails (Phase 0) through continuous improvement and maturity loop (Phase 14), including project execution controls and the master workflow. Part 1 covers the foundations: methodology rules, analytic standards, scoring models, governance, roles, and delivery frameworks.
 
 ### Part 2B is the reference toolkit:
 
@@ -50,7 +50,7 @@ AI Workflow Library, LLM Task Cards, Strict Quality Gates, Master Registers, end
 
 ## Executive Summary
 
-Part 2A is the operational execution guide for a customer-driven AI-assisted CTI project. It assumes the reader is familiar with the methodology rules, scoring models, governance framework, and analytic standards defined in Part 1. Where Part 1 establishes*what*the project must do and*why*, Part 2A defines*how*to run it phase by phase from the first day to final delivery.
+Part 2A is the operational execution guide for a customer-driven AI-assisted CTI project. It assumes the reader is familiar with the methodology rules, scoring models, governance framework, and analytic standards defined in Part 1. Where Part 1 establishes *what* the project must do and *why*, Part 2A defines *how* to run it phase by phase from the first day to final delivery.
 
 The guide covers fifteen phases, from project charter and guardrails (Phase 0) through continuous improvement and maturity loop (Phase 14). Each phase defines its objective, required inputs, activities, AI usage boundaries, validation tests, and exit criteria. No phase may be closed unless its exit criteria and validation tests are met.
 
@@ -66,54 +66,54 @@ The binding rule throughout Part 2A is unchanged from Part 1: no CTI output is a
 
 - **Repository Setup**
 
-- **Phase 0: Project Charter and Guardrails****
-**AI Usage
+- **Phase 0: Project Charter and Guardrails**
+AI Usage
 
-- **Phase 1: Customer Decision and PIR/SIR Definition****
-**AI Usage
+- **Phase 1: Customer Decision and PIR/SIR Definition**
+AI Usage
 
-- **Phase 2: Crown-Jewel and Business-Impact Mapping****
-**AI Usage
+- **Phase 2: Crown-Jewel and Business-Impact Mapping**
+AI Usage
 
-- **Phase 3: Telemetry and Data Readiness Assessment****
-**AI Usage
+- **Phase 3: Telemetry and Data Readiness Assessment**
+AI Usage
 
-- **Phase 4: External CTI Source Intake and Validation****
-**AI Usage
+- **Phase 4: External CTI Source Intake and Validation**
+AI Usage
 
 - **IOC Emergency Unblock Procedure**
 
-- **Phase 5: Threat Scenario Development****
-**AI Usage
+- **Phase 5: Threat Scenario Development**
+AI Usage
 
-- **Phase 6: Hypothesis-Driven Threat Hunting Backlog****
-**AI Usage
+- **Phase 6: Hypothesis-Driven Threat Hunting Backlog**
+AI Usage
 
-- **Phase 7: Detection Engineering Design****
-**AI Usage
+- **Phase 7: Detection Engineering Design**
+AI Usage
 
-- **Phase 8: Detection-as-Code Implementation****
-**AI Usage
+- **Phase 8: Detection-as-Code Implementation**
+AI Usage
 
-- **Phase 9: Test Data, Simulation, and Replay****
-**AI Usage
+- **Phase 9: Test Data, Simulation, and Replay**
+AI Usage
 
-- **Phase 10: SOC Triage and Incident Workflow****
-**AI Usage
+- **Phase 10: SOC Triage and Incident Workflow**
+AI Usage
 
 - **Active Compromise Escalation Protocol**
 
-- **Phase 11: Pilot Deployment and Tuning****
-**AI Usage
+- **Phase 11: Pilot Deployment and Tuning**
+AI Usage
 
-- **Phase 12: Production Deployment****
-**AI Usage
+- **Phase 12: Production Deployment**
+AI Usage
 
-- **Phase 13: Executive and Technical Reporting****
-**AI Usage
+- **Phase 13: Executive and Technical Reporting**
+AI Usage
 
-- **Phase 14: Continuous Improvement and Maturity Loop****
-**AI Usage
+- **Phase 14: Continuous Improvement and Maturity Loop**
+AI Usage
 
 - **Project Execution Controls**
 
@@ -203,23 +203,23 @@ Approved AI processing locations:
 Legal/privacy approval owner:
 ```
 
-**Non-exhaustive regulatory framework reference list.**This list is provided for initial scoping only. Confirm which frameworks apply with the customer’s legal or compliance owner. Additional sector-specific regulations may apply and are not listed here.
+**Non-exhaustive regulatory framework reference list.** This list is provided for initial scoping only. Confirm which frameworks apply with the customer’s legal or compliance owner. Additional sector-specific regulations may apply and are not listed here.
 
-- **GDPR (EU General Data Protection Regulation)**— Scope summary: Personal data of EU residents — Typical relevance to CTI projects: Source data, analyst notes, or employee monitoring data involving EU individuals
+- **GDPR (EU General Data Protection Regulation)** — Scope summary: Personal data of EU residents — Typical relevance to CTI projects: Source data, analyst notes, or employee monitoring data involving EU individuals
 
-- **HIPAA (US Health Insurance Portability and Accountability Act)**— Scope summary: Protected health information (PHI) — Typical relevance to CTI projects: Healthcare sector customers; incident evidence may include PHI
+- **HIPAA (US Health Insurance Portability and Accountability Act)** — Scope summary: Protected health information (PHI) — Typical relevance to CTI projects: Healthcare sector customers; incident evidence may include PHI
 
-- **PCI-DSS (Payment Card Industry Data Security Standard)**— Scope summary: Cardholder data environments — Typical relevance to CTI projects: Retail, financial, and payment-processor customers; scope definition and logging constraints
+- **PCI-DSS (Payment Card Industry Data Security Standard)** — Scope summary: Cardholder data environments — Typical relevance to CTI projects: Retail, financial, and payment-processor customers; scope definition and logging constraints
 
-- **NIS2 (EU Network and Information Security Directive 2)**— Scope summary: Critical infrastructure and essential services operators in the EU — Typical relevance to CTI projects: Incident reporting obligations; telemetry and log retention requirements
+- **NIS2 (EU Network and Information Security Directive 2)** — Scope summary: Critical infrastructure and essential services operators in the EU — Typical relevance to CTI projects: Incident reporting obligations; telemetry and log retention requirements
 
-- **SOX (US Sarbanes-Oxley Act)**— Scope summary: Financial controls and audit trails for US-listed companies — Typical relevance to CTI projects: Detection and logging of access to financial systems
+- **SOX (US Sarbanes-Oxley Act)** — Scope summary: Financial controls and audit trails for US-listed companies — Typical relevance to CTI projects: Detection and logging of access to financial systems
 
-- **DORA (EU Digital Operational Resilience Act)**— Scope summary: ICT risk management and incident reporting for EU financial entities — Typical relevance to CTI projects: Resilience testing, detection coverage, and incident classification requirements
+- **DORA (EU Digital Operational Resilience Act)** — Scope summary: ICT risk management and incident reporting for EU financial entities — Typical relevance to CTI projects: Resilience testing, detection coverage, and incident classification requirements
 
-- **CCPA / CPRA (California Consumer Privacy Act / Privacy Rights Act)**— Scope summary: Personal data of California residents — Typical relevance to CTI projects: Source data or employee monitoring data involving California residents
+- **CCPA / CPRA (California Consumer Privacy Act / Privacy Rights Act)** — Scope summary: Personal data of California residents — Typical relevance to CTI projects: Source data or employee monitoring data involving California residents
 
-- **Sector-specific (examples: NERC CIP for energy, ITAR/EAR for defense, FedRAMP for US federal cloud)**— Scope summary: Varies by sector — Typical relevance to CTI projects: Confirm applicable sector frameworks with customer legal owner
+- **Sector-specific (examples: NERC CIP for energy, ITAR/EAR for defense, FedRAMP for US federal cloud)** — Scope summary: Varies by sector — Typical relevance to CTI projects: Confirm applicable sector frameworks with customer legal owner
 
 ### Project Staff Onboarding and Offboarding
 
@@ -293,7 +293,7 @@ If the sprint contradicts the assumed readiness, the mode must be escalated or d
 
 - decide project scope.
 
-*Part 2B:*[*Minimum Viable Customer Delivery*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*30/60/90-Day Execution Plan*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B:* [*Minimum Viable Customer Delivery*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*30/60/90-Day Execution Plan*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Success Metric Floors
 
@@ -301,37 +301,37 @@ If the sprint contradicts the assumed readiness, the mode must be escalated or d
 
 Each success metric defined in Activity 7 must meet the following minimum floor requirements. Metrics that do not meet these floors must be revised before Phase 0 exits.
 
-- **Detection coverage target:**Must reference at least one specific threat scenario by ID and specify a minimum DRL (e.g., “Scenario SC-01 reaches DRL-7 or above”). A target of “improve detection coverage” without a named scenario and DRL does not pass.
+- **Detection coverage target:** Must reference at least one specific threat scenario by ID and specify a minimum DRL (e.g., “Scenario SC-01 reaches DRL-7 or above”). A target of “improve detection coverage” without a named scenario and DRL does not pass.
 
-- **Telemetry gap closure target:**Must reference at least one named telemetry gap by ID or description (e.g., “close TG-03: no EDR coverage on OT segment”). A generic target of “reduce telemetry gaps” without a named gap does not pass.
+- **Telemetry gap closure target:** Must reference at least one named telemetry gap by ID or description (e.g., “close TG-03: no EDR coverage on OT segment”). A generic target of “reduce telemetry gaps” without a named gap does not pass.
 
-- **Hunt completion target:**Must specify a minimum number of hunt completions and a required result classification (e.g., “complete at least two hunts, each closed as Confirmed Not Found, Escalated, or Inconclusive with documented evidence”). A target of “run hunts” without a count and classification requirement does not pass.
+- **Hunt completion target:** Must specify a minimum number of hunt completions and a required result classification (e.g., “complete at least two hunts, each closed as Confirmed Not Found, Escalated, or Inconclusive with documented evidence”). A target of “run hunts” without a count and classification requirement does not pass.
 
-- **Executive decision support target:**Must name at least one specific Decision ID and define the required Decision Register status at project close: Approved, Rejected, or Deferred with owner-signed rationale. A decision that remains Open with no recommended action at Gate F does not count toward this metric.
+- **Executive decision support target:** Must name at least one specific Decision ID and define the required Decision Register status at project close: Approved, Rejected, or Deferred with owner-signed rationale. A decision that remains Open with no recommended action at Gate F does not count toward this metric.
 
 A quality reviewer (not the analyst who defined the metrics) must confirm that all success metrics meet these floors before the Phase 0 gate is closed. The quality reviewer’s name and confirmation date must be recorded in the Customer Acceptance Record.
 
 ### Validation Tests
 
-- **Scope test:**In-scope and out-of-scope systems are explicitly listed.
+- **Scope test:** In-scope and out-of-scope systems are explicitly listed.
 
-- **Decision test:**At least five customer decisions are documented.
+- **Decision test:** At least five customer decisions are documented.
 
-- **Decision quality test:**Each counted decision passes the four-part decision quality checklist.
+- **Decision quality test:** Each counted decision passes the four-part decision quality checklist.
 
-- **AI policy test:**Allowed and prohibited AI use cases are documented.
+- **AI policy test:** Allowed and prohibited AI use cases are documented.
 
-- **AI tool test:**Approved AI Tool Register contains at least one approved tool or project is marked no-AI.
+- **AI tool test:** Approved AI Tool Register contains at least one approved tool or project is marked no-AI.
 
-- **Approval test:**Named approvers exist for CTI, detection, SOC, and executive outputs.
+- **Approval test:** Named approvers exist for CTI, detection, SOC, and executive outputs.
 
-- **Data handling test:**Data classifications and storage locations are defined.
+- **Data handling test:** Data classifications and storage locations are defined.
 
-- **Legal/privacy test:**Legal and privacy approval conditions are defined for personal data, employee monitoring, customer records, and active incident evidence.
+- **Legal/privacy test:** Legal and privacy approval conditions are defined for personal data, employee monitoring, customer records, and active incident evidence.
 
-- **Technical validation test:**Day 1–5 technical validation sprint completed and mode selection confirmed.
+- **Technical validation test:** Day 1–5 technical validation sprint completed and mode selection confirmed.
 
-- **Success metric floor test:**All success metrics meet the minimum floor requirements (named scenario and DRL for coverage; named gap for telemetry; count and classification for hunts). Quality reviewer name and confirmation date recorded in Customer Acceptance Record.
+- **Success metric floor test:** All success metrics meet the minimum floor requirements (named scenario and DRL for coverage; named gap for telemetry; count and classification for hunts). Quality reviewer name and confirmation date recorded in Customer Acceptance Record.
 
 ### Exit Criteria
 
@@ -359,7 +359,7 @@ A quality reviewer (not the analyst who defined the metrics) must confirm that a
 
 - Customer confirms whether case management timestamps (case open, case assigned, case closed) are available and accessible to the project team. If timestamps are not accessible, time-based metrics such as mean time to triage are excluded from the metrics plan and the gap is recorded in the RAID Register.
 
-- **Chain integrity:**At least one primary output from this phase (charter, PIR, or Decision) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Customer Relevance**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (charter, PIR, or Decision) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Customer Relevance** node are logged as collection gaps or context items, not closed deliverables.
 
 ## Repository Setup
 
@@ -368,238 +368,115 @@ Treat the CTI project as a codebase. Every artifact is a file, every register is
 ```text
 cti-project/
 │
-├── README.md                                    
-# project scope, mode, customer, cycle dates
-├── .gitignore                                   
-# exclude raw source PDFs, PII, credentials
+├── README.md                                    # project scope, mode, customer, cycle dates
+├── .gitignore                                   # exclude raw source PDFs, PII, credentials
 │
 ├── config/
-│   ├── project.yaml                             
-# mode (1/2), AI governance level, cycle dates
-│   ├── ai-governance-policy.md                  
-# format: part2a → Phase 0 → AI Usage
-│   └── crown-jewels.md                          
-# format: part2a → Phase 2 → Crown-Jewel and Business-Impact Mapping
+│   ├── project.yaml                             # mode (1/2), AI governance level, cycle dates
+│   ├── ai-governance-policy.md                  # format: part2a → Phase 0 → AI Usage
+│   └── crown-jewels.md                          # format: part2a → Phase 2 → Crown-Jewel and Business-Impact Mapping
 │
-├── registers/                                   
-# one CSV per register; schemas in part2b → Master Registers
-│   ├── evidence-register.csv                    
-# schema: part2b → Evidence Register
-│   ├── decision-register.csv                    
-# schema: part2b → Decision Register
-│   ├── source-register.csv                      
-# schema: part2b → Source Register
-│   ├── pir-register.csv                         
-# schema: part2b → PIR Register
-│   ├── sir-register.csv                         
-# schema: part2b → SIR Register
-│   ├── collection-gap-register.csv              
-# schema: part2b → Collection Gap Register
-│   ├── contradiction-register.csv               
-# schema: part2b → Contradiction Register
-│   ├── threat-scenario-register.csv             
-# schema: part2b → Threat Scenario Register
-│   ├── ioc-review-register.csv                  
-# schema: part2b → IOC Review Register
-│   ├── attck-mapping-register.csv               
-# schema: part2b → ATT&CK Mapping Register
-│   ├── detection-coverage-gap-register.csv      
-# schema: part2b → Detection Coverage Gap Register; derived view — regenerate on DRL or scenario change
-│   ├── hunt-backlog.csv                         
-# schema: part2b → Hunt Backlog
-│   ├── detection-backlog.csv                    
-# schema: part2b → Detection Backlog
-│   ├── detection-health-register.csv            
-# schema: part2b → Detection Health Register
-│   ├── customer-detection-data-model.csv        
-# schema: part2b → Customer Detection Data Model Register
-│   ├── raid-register.csv                        
-# schema: part2b → RAID Register
-│   ├── customer-acceptance-record.csv           
-# schema: part2b → Customer Acceptance Record
-│   ├── ai-use-log.csv                           
-# schema: part2b → AI Use Log
-│   └── approved-ai-tool-register.csv            
-# schema: part2b → Approved AI Tool Register
+├── registers/                                   # one CSV per register; schemas in part2b → Master Registers
+│   ├── evidence-register.csv                    # schema: part2b → Evidence Register
+│   ├── decision-register.csv                    # schema: part2b → Decision Register
+│   ├── source-register.csv                      # schema: part2b → Source Register
+│   ├── pir-register.csv                         # schema: part2b → PIR Register
+│   ├── sir-register.csv                         # schema: part2b → SIR Register
+│   ├── collection-gap-register.csv              # schema: part2b → Collection Gap Register
+│   ├── contradiction-register.csv               # schema: part2b → Contradiction Register
+│   ├── threat-scenario-register.csv             # schema: part2b → Threat Scenario Register
+│   ├── ioc-review-register.csv                  # schema: part2b → IOC Review Register
+│   ├── attck-mapping-register.csv               # schema: part2b → ATT&CK Mapping Register
+│   ├── detection-coverage-gap-register.csv      # schema: part2b → Detection Coverage Gap Register; derived view — regenerate on DRL or scenario change
+│   ├── hunt-backlog.csv                         # schema: part2b → Hunt Backlog
+│   ├── detection-backlog.csv                    # schema: part2b → Detection Backlog
+│   ├── detection-health-register.csv            # schema: part2b → Detection Health Register
+│   ├── customer-detection-data-model.csv        # schema: part2b → Customer Detection Data Model Register
+│   ├── raid-register.csv                        # schema: part2b → RAID Register
+│   ├── customer-acceptance-record.csv           # schema: part2b → Customer Acceptance Record
+│   ├── ai-use-log.csv                           # schema: part2b → AI Use Log
+│   └── approved-ai-tool-register.csv            # schema: part2b → Approved AI Tool Register
 │
-├── sources/                                     
-# one subdirectory per source
-│   ├── SRC-
-001
-/
-│   │   ├── source.pdf                           
-# original document (gitignored if restricted)
-│   │   └── extraction.md                        
-# format: part2b → Task Card 1: Source Claim Extraction; run via AI Workflow 1
-│   └── SRC-
-002
-/
+├── sources/                                     # one subdirectory per source
+│   ├── SRC-001/
+│   │   ├── source.pdf                           # original document (gitignored if restricted)
+│   │   └── extraction.md                        # format: part2b → Task Card 1: Source Claim Extraction; run via AI Workflow 1
+│   └── SRC-002/
 │       ├── source.pdf
 │       └── extraction.md
 │
 ├── intelligence/
 │   ├── pirs/
-│   │   ├── PIR-
-01
-.md                            
-# format: part2b → PIR Register + worked example Step 1; validated via Task Card 2
-│   │   └── PIR-
-02
-.md
+│   │   ├── PIR-01.md                            # format: part2b → PIR Register + worked example Step 1; validated via Task Card 2
+│   │   └── PIR-02.md
 │   ├── sirs/
-│   │   ├── SIR-
-01.1
-.md                          
-# format: part2b → SIR Register + worked example Step 2
-│   │   ├── SIR-
-01.2
-.md
-│   │   └── SIR-
-01.3
-.md
+│   │   ├── SIR-01.1.md                          # format: part2b → SIR Register + worked example Step 2
+│   │   ├── SIR-01.2.md
+│   │   └── SIR-01.3.md
 │   └── scenarios/
-│       ├── SCN-
-01
--cloud-identity-backup-deletion.md   
-# format: part2b → Threat Scenario Register + worked example Step 4; drafted via Task Card 5
-│       └── SCN-
-02
-.md
+│       ├── SCN-01-cloud-identity-backup-deletion.md   # format: part2b → Threat Scenario Register + worked example Step 4; drafted via Task Card 5
+│       └── SCN-02.md
 │
 ├── telemetry/
-│   ├── telemetry-map.md                         
-# format: part2a → Phase 3 → Telemetry and Data Readiness Assessment; reviewed via Task Card 4
-│   ├── customer-detection-data-model.md         
-# format: part2b → Customer Detection Data Model Register; mirrors register CSV
+│   ├── telemetry-map.md                         # format: part2a → Phase 3 → Telemetry and Data Readiness Assessment; reviewed via Task Card 4
+│   ├── customer-detection-data-model.md         # format: part2b → Customer Detection Data Model Register; mirrors register CSV
 │   └── sample-events/
-│       ├── SAMPLE-CLOUD-AUDIT-
-014
-.json          
-# raw log sample; required input for Task Card 7 and DRL-2 confirmation
-│       └── SAMPLE-IDP-
-001
-.json
+│       ├── SAMPLE-CLOUD-AUDIT-014.json          # raw log sample; required input for Task Card 7 and DRL-2 confirmation
+│       └── SAMPLE-IDP-001.json
 │
 ├── hunts/
-│   └── HUNT-
-01
-/
-│       ├── hypothesis.md                        
-# format: part2b → Hunt Backlog + worked example Step 6; generated via Task Card 6 / AI Workflow 4
-│       ├── 
-query
-.kql                            
-# format: part2b → AI Workflow 6: Query Translation
-│       └── result.md                            
-# format: part2b → Hunt Backlog result and Result Classification fields; required before hunt can be closed
+│   └── HUNT-01/
+│       ├── hypothesis.md                        # format: part2b → Hunt Backlog + worked example Step 6; generated via Task Card 6 / AI Workflow 4
+│       ├── query.kql                            # format: part2b → AI Workflow 6: Query Translation
+│       └── result.md                            # format: part2b → Hunt Backlog result and Result Classification fields; required before hunt can be closed
 │
 ├── detections/
-│   └── DET-
-001
-/
-│       ├── design.md                            
-# format: part2b → Detection Backlog + worked example Step 7; fields: name, DRL, ATT&CK, D3FEND, log sources, required fields, known FPs
-│       ├── logic-neutral.md                     
-# format: part2b → Task Card 7: Detection Logic Draft (platform-neutral output)
-│       ├── logic.kql                            
-# format: part2b → AI Workflow 6: Query Translation (target-platform output)
-│       ├── 
-false
--positives.md                   
-# format: part2b → Task Card 8: Rule Quality Challenge; known FP categories and tuning decisions
-│       ├── rollback-plan.md                     
-# format: part2b → worked example Step 11 → Rollback plan; fields: disable owner, steps, re-enable criteria, notification path
+│   └── DET-001/
+│       ├── design.md                            # format: part2b → Detection Backlog + worked example Step 7; fields: name, DRL, ATT&CK, D3FEND, log sources, required fields, known FPs
+│       ├── logic-neutral.md                     # format: part2b → Task Card 7: Detection Logic Draft (platform-neutral output)
+│       ├── logic.kql                            # format: part2b → AI Workflow 6: Query Translation (target-platform output)
+│       ├── false-positives.md                   # format: part2b → Task Card 8: Rule Quality Challenge; known FP categories and tuning decisions
+│       ├── rollback-plan.md                     # format: part2b → worked example Step 11 → Rollback plan; fields: disable owner, steps, re-enable criteria, notification path
 │       ├── tests/
-│       │   ├── TEST-CLOUD-IAM-
-001
--positive.json 
-# format: part2b → AI Workflow 7 / worked example Step 8; positive synthetic event
-│       │   ├── TEST-NEG-
-001
--negative.json       
-# negative test; required for Gate E
-│       │   └── TEST-EDGE-
-001
--edge.json          
-# edge test; required for Gate E
+│       │   ├── TEST-CLOUD-IAM-001-positive.json # format: part2b → AI Workflow 7 / worked example Step 8; positive synthetic event
+│       │   ├── TEST-NEG-001-negative.json       # negative test; required for Gate E
+│       │   └── TEST-EDGE-001-edge.json          # edge test; required for Gate E
 │       └── playbooks/
-│           └── PB-DET-
-001
-.md                    
-# format: part2b → Task Card 9: SOC Playbook Draft / AI Workflow 8; includes dry-run record; required for Gate E
+│           └── PB-DET-001.md                    # format: part2b → Task Card 9: SOC Playbook Draft / AI Workflow 8; includes dry-run record; required for Gate E
 │
 ├── gates/
 │   ├── GATE-A-pir-approval/
-│   │   └── evidence-pack.md                     
-# format: part2b → Gate Evidence Pack Template; required fields: PIR Register, Decision Register, Collection Gap Register
+│   │   └── evidence-pack.md                     # format: part2b → Gate Evidence Pack Template; required fields: PIR Register, Decision Register, Collection Gap Register
 │   ├── GATE-B-scenario-approval/
-│   │   └── evidence-pack.md                     
-# format: part2b → Gate Evidence Pack Template; required fields: Scenario Register, Evidence IDs, priority score, telemetry score
+│   │   └── evidence-pack.md                     # format: part2b → Gate Evidence Pack Template; required fields: Scenario Register, Evidence IDs, priority score, telemetry score
 │   ├── GATE-C-hunt-approval/
-│   │   └── evidence-pack.md                     
-# format: part2b → Gate Evidence Pack Template; required fields: hypothesis, telemetry map, observables, result classification
+│   │   └── evidence-pack.md                     # format: part2b → Gate Evidence Pack Template; required fields: hypothesis, telemetry map, observables, result classification
 │   ├── GATE-D-detection-design/
-│   │   └── evidence-pack.md                     
-# format: part2b → Gate Evidence Pack Template; required fields: detection design, field mapping, ATT&CK mapping, test plan
+│   │   └── evidence-pack.md                     # format: part2b → Gate Evidence Pack Template; required fields: detection design, field mapping, ATT&CK mapping, test plan
 │   ├── GATE-E-production-approval/
-│   │   └── GATE-E-DET-
-001
-.md                    
-# format: part2b → Gate Evidence Pack Template + worked example Step 11; one file per detection; required fields: test evidence IDs, playbook ID, detection health entry, rollback plan, labeling completeness
+│   │   └── GATE-E-DET-001.md                    # format: part2b → Gate Evidence Pack Template + worked example Step 11; one file per detection; required fields: test evidence IDs, playbook ID, detection health entry, rollback plan, labeling completeness
 │   └── GATE-F-final-delivery/
-│       └── evidence-pack.md                     
-# format: part2b → Gate Evidence Pack Template; required fields: final package, Evidence Register, Decision Register, Detection Health Register, AI Use Log, Customer Acceptance Record
+│       └── evidence-pack.md                     # format: part2b → Gate Evidence Pack Template; required fields: final package, Evidence Register, Decision Register, Detection Health Register, AI Use Log, Customer Acceptance Record
 │
 ├── ai/
-│   ├── approved-tools.md                        
-# format: part2b → Approved AI Tool Register; mirrors register CSV
+│   ├── approved-tools.md                        # format: part2b → Approved AI Tool Register; mirrors register CSV
 │   └── quality-checklists/
-│       ├── QC-AIL-
-001
-.md                        
-# format: part2b → AI Use Log → Quality Checklist column definition; seven items: source grounding, no fabrication, customer fit, uncertainty preserved, actionability, security review, prompt-injection resistance
-│       └── QC-AIL-
-002
-.md
+│       ├── QC-AIL-001.md                        # format: part2b → AI Use Log → Quality Checklist column definition; seven items: source grounding, no fabrication, customer fit, uncertainty preserved, actionability, security review, prompt-injection resistance
+│       └── QC-AIL-002.md
 │
 ├── delivery/
-│   ├── executive-summary.md                     
-# format: part2b → Task Card 10: Executive Report Draft / AI Workflow 9
-│   ├── key-judgments.md                         
-# format: part2b → Task Card 11: Final Red-Team Review; every judgment must trace to an Evidence ID
-│   ├── technical-appendix.md                    
-# format: part2b → Final Customer Delivery Package checklist
-│   ├── 
-30
--
-60
--
-90
--roadmap.md                      
-# format: part2b → 30/60/90-Day Execution Plan
+│   ├── executive-summary.md                     # format: part2b → Task Card 10: Executive Report Draft / AI Workflow 9
+│   ├── key-judgments.md                         # format: part2b → Task Card 11: Final Red-Team Review; every judgment must trace to an Evidence ID
+│   ├── technical-appendix.md                    # format: part2b → Final Customer Delivery Package checklist
+│   ├── 30-60-90-roadmap.md                      # format: part2b → 30/60/90-Day Execution Plan
 │   └── customer-acceptance/
-│       └── ACC-
-001
--final-signoff.md             
-# format: part2b → Customer Acceptance Record + Evidence Package Template
+│       └── ACC-001-final-signoff.md             # format: part2b → Customer Acceptance Record + Evidence Package Template
 │
 └── admin/
     ├── weekly-hygiene/
-    │   └── 
-2026
--
-05
--
-01
--register-hygiene.md       
-# format: part2a → Project Execution Controls → Weekly Register Hygiene; covers overdue contradictions, stale IOCs, DRL drift
+    │   └── 2026-05-01-register-hygiene.md       # format: part2a → Project Execution Controls → Weekly Register Hygiene; covers overdue contradictions, stale IOCs, DRL drift
     └── exceptions/
-        └── 
-(
-gate exception records
-)
-             
-# format: part2b → Strict Quality Gates → Conditional pass rules; fields: risk owner, expiry date
+        └── (gate exception records)             # format: part2b → Strict Quality Gates → Conditional pass rules; fields: risk owner, expiry date
 ```
 
 **File naming rules:**
@@ -608,89 +485,20 @@ gate exception records
 Register files     → kebab-case, singular noun, .csv
 Intelligence files → ID prefix + short description, .md (e.g., SCN-01-cloud-identity.md)
 Detection files    → one subdirectory per Detection ID; logic files named by platform
-Test files         → TEST-
-<
-ID
->
--
-<
-type
->
-.json (type: positive / negative / edge)
-Gate packs         → GATE-
-<
-letter
->
-[-
-<
-Detection
- 
-ID
->
-].md
-AI checklists      → QC-AIL-
-<
-three-digit
- 
-sequence
->
-.md
-Sample events      → SAMPLE-
-<
-SOURCE
->
--
-<
-sequence
->
-.json
+Test files         → TEST-<ID>-<type>.json (type: positive / negative / edge)
+Gate packs         → GATE-<letter>[-<Detection ID>].md
+AI checklists      → QC-AIL-<three-digit sequence>.md
+Sample events      → SAMPLE-<SOURCE>-<sequence>.json
 ```
 
 **Version control rules:**
 
 ```text
-Commit
- 
-on
- 
-every
- register change, gate pass, 
-or
- DRL update.
-Commit
- message format: 
-<
-artifact
--
-id
->
-: 
-<
-action
->
- — e.g., "DET-001: advance to DRL-7"
-Tag releases 
-at
- Gate F: v
-<
-cycle
->
--
-gate
--
-f (e.g., v1
--
-gate
--
-f)
-Never 
-commit
- raw customer PII, credentials, 
-or
- restricted source documents.
-Gate exception records must be committed before the gate 
-is
- marked Pass.
+Commit on every register change, gate pass, or DRL update.
+Commit message format: <artifact-id>: <action> — e.g., "DET-001: advance to DRL-7"
+Tag releases at Gate F: v<cycle>-gate-f (e.g., v1-gate-f)
+Never commit raw customer PII, credentials, or restricted source documents.
+Gate exception records must be committed before the gate is marked Pass.
 ```
 
 ## Phase 1: Customer Decision and PIR/SIR Definition
@@ -705,11 +513,11 @@ FIRST’s CTI curriculum treats Priority Intelligence Requirements as decision-q
 
 For this strategy:
 
-- **PIR:**the decision-level intelligence question that a senior consumer needs answered.
+- **PIR:** the decision-level intelligence question that a senior consumer needs answered.
 
-- **SIR:**the specific information requirement that decomposes the PIR into collectible evidence.
+- **SIR:** the specific information requirement that decomposes the PIR into collectible evidence.
 
-- **Collection task:**the concrete data request, log source, hunt query, partner question, or vendor evidence needed to answer the SIR.
+- **Collection task:** the concrete data request, log source, hunt query, partner question, or vendor evidence needed to answer the SIR.
 
 The relationship is hierarchical: each PIR drives one or more SIRs; each SIR drives one or more collection tasks. Nothing enters the collection plan without a parent SIR; no SIR exists without a parent PIR; no PIR is approved without naming a consumer and a decision it supports.
 
@@ -769,55 +577,17 @@ Understand cloud identity risk.
 **Corrected SIR:**
 
 ```text
-SIR-
-01.2
-:
-Parent PIR: PIR-
-01
-Question:
- 
-Do
- cloud audit logs capture service-principal credential additions 
-with
- actor, source IP, resource ID, 
-and
- timestamp?
-Collection approach: Pull 
-10
- sample events 
-from
- the last 
-30
- days 
-or
- generate a controlled test 
-event
-.
+SIR-01.2:
+Parent PIR: PIR-01
+Question: Do cloud audit logs capture service-principal credential additions with actor, source IP, resource ID, and timestamp?
+Collection approach: Pull 10 sample events from the last 30 days or generate a controlled test event.
 Required evidence type: customer-observed cloud audit log sample.
 Required data source: cloud audit logs.
-Confidence threshold 
-to
- close: high 
-for
- field presence, moderate 
-for
- retention adequacy.
-Owner:
- platform owner.
-Due 
-date
-: [
-date
-].
-Closure condition: sample 
-event
- inspected 
-and
- field mapping added 
-to
- Customer Detection Data Model.
-Status:
- open.
+Confidence threshold to close: high for field presence, moderate for retention adequacy.
+Owner: platform owner.
+Due date: [date].
+Closure condition: sample event inspected and field mapping added to Customer Detection Data Model.
+Status: open.
 ```
 
 ### Activities
@@ -838,303 +608,31 @@ Status:
 
 ```text
 PIR-01:
-Decision supported:
- 
-prioritize
- 
-90
--day
- 
-detection
- 
-engineering
- 
-investment.
-Question:
- 
-Which
- 
-adversary
- 
-behaviors
- 
-are
- 
-most
- 
-relevant
- 
-to
- 
-the
- 
-customer's
- 
-crown
- 
-jewels
- 
-and
- 
-most
- 
-detectable
- 
-with
- 
-current
- 
-telemetry?
-Consumer:
- 
-CISO,
- 
-SOC
- 
-lead,
- 
-detection
- 
-engineering
- 
-lead.
-Time horizon:
- 
-90
- 
-days.
-Required confidence:
- 
-moderate
- 
-or
- 
-high.
-Likely action if answered:
- 
-approve
- 
-detection
- 
-backlog
- 
-and
- 
-logging
- 
-remediation
- 
-plan.
-Related crown jewels:
- 
-identity
- 
-plane,
- 
-cloud
- 
-management,
- 
-customer
- 
-database,
- 
-backup
- 
-platform.
-Related threat scenarios:
- 
-credential
- 
-compromise,
- 
-cloud
- 
-deletion,
- 
-data
- 
-theft,
- 
-ransomware
- 
-staging.
+Decision supported: prioritize 90-day detection engineering investment.
+Question: Which adversary behaviors are most relevant to the customer's crown jewels and most detectable with current telemetry?
+Consumer: CISO, SOC lead, detection engineering lead.
+Time horizon: 90 days.
+Required confidence: moderate or high.
+Likely action if answered: approve detection backlog and logging remediation plan.
+Related crown jewels: identity plane, cloud management, customer database, backup platform.
+Related threat scenarios: credential compromise, cloud deletion, data theft, ransomware staging.
 ```
 
 ### Example PIR and SIR with Collection Tasks — Third-Party Access
 
 ```text
 PIR:
-Which
- 
-third-party
- 
-access
- 
-paths
- 
-could
- 
-provide
- 
-privileged
- 
-access
- 
-to
- 
-core
- 
-network,
- 
-cloud,
-Kubernetes,
- 
-or
- 
-management
- 
-systems?
+Which third-party access paths could provide privileged access to core network, cloud,
+Kubernetes, or management systems?
 SIRs:
--
- 
-Which
- 
-vendors
- 
-have
- 
-standing
- 
-VPN,
- 
-ZTNA,
- 
-PAM,
- 
-or
- 
-cloud-console
- 
-access?
--
- 
-Which
- 
-vendor
- 
-accounts
- 
-can
- 
-reach
- 
-network
- 
-management,
- 
-Kubernetes,
- 
-backup,
-  
-or
- 
-telecom-core
- 
-support
- 
-systems?
--
- 
-Which
- 
-vendor
- 
-sessions
- 
-occurred
- 
-outside
- 
-approved
- 
-change
- 
-windows
- 
-in
- 
-the
- 
-last
- 
-90
- 
-days?
+- Which vendors have standing VPN, ZTNA, PAM, or cloud-console access?
+- Which vendor accounts can reach network management, Kubernetes, backup,
+  or telecom-core support systems?
+- Which vendor sessions occurred outside approved change windows in the last 90 days?
 Collection tasks:
--
- 
-Pull
- 
-VPN/ZTNA
- 
-logs
- 
-for
- 
-all
- 
-vendor
- 
-identities.
--
- 
-Export
- 
-PAM
- 
-session
- 
-records
- 
-and
- 
-approvals
- 
-for
- 
-privileged
- 
-vendor
- 
-sessions.
--
- 
-Join
- 
-vendor
- 
-access
- 
-events
- 
-with
- 
-NOC
- 
-change
- 
-tickets
- 
-and
- 
-cloud
- 
-IAM
- 
-role
- 
-assignments.
+- Pull VPN/ZTNA logs for all vendor identities.
+- Export PAM session records and approvals for privileged vendor sessions.
+- Join vendor access events with NOC change tickets and cloud IAM role assignments.
 ```
 
 ## AI Usage
@@ -1154,32 +652,28 @@ assignments.
 **Validation requirement:**
 
 ```text
-The human CTI lead must confirm that 
-each
- PIR supports a 
-real
- customer decision.
+The human CTI lead must confirm that each PIR supports a real customer decision.
 ```
 
-*Part 2B tools:*[*AI Workflow 1: Source Extraction*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 1: Source Claim Extraction*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 2: PIR Quality Challenge*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Gate A: PIR Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 1: Source Extraction*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md) *·* [*Task Card 1: Source Claim Extraction*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md) *·* [*Task Card 2: PIR Quality Challenge*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md) *·* [*Gate A: PIR Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Decision linkage:**Every PIR names a consumer and decision.
+- **Decision linkage:** Every PIR names a consumer and decision.
 
-- **Collection linkage:**Every PIR has at least two SIRs.
+- **Collection linkage:** Every PIR has at least two SIRs.
 
-- **SIR quality:**Every SIR in the SIR Register has all required fields populated: SIR ID, parent PIR, question, collection approach, required evidence type, required data source, confidence threshold to close, owner, due date, closure condition, and status.
+- **SIR quality:** Every SIR in the SIR Register has all required fields populated: SIR ID, parent PIR, question, collection approach, required evidence type, required data source, confidence threshold to close, owner, due date, closure condition, and status.
 
-- **Feasibility:**Every SIR has at least one realistic collection task.
+- **Feasibility:** Every SIR has at least one realistic collection task.
 
-- **Time-bound:**Every PIR has a time horizon.
+- **Time-bound:** Every PIR has a time horizon.
 
-- **Owner assigned:**Every collection task has an owner.
+- **Owner assigned:** Every collection task has an owner.
 
-- **Register linkage:**Every PIR maps to at least one Decision ID.
+- **Register linkage:** Every PIR maps to at least one Decision ID.
 
-- **Chain integrity:**At least one primary output from this phase (PIR, SIR, or Decision) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Customer Relevance**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (PIR, SIR, or Decision) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Customer Relevance** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -1250,21 +744,21 @@ Known gaps:
 
 - infer regulatory impact without legal or compliance review.
 
-*Part 2B tools:*[*AI Workflow 2: Customer Relevance Mapping*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 3: Crown-Jewel Dependency Review*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 2: Customer Relevance Mapping*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md) *·* [*Task Card 3: Crown-Jewel Dependency Review*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Owner test:**Every crown jewel has business and technical owners.
+- **Owner test:** Every crown jewel has business and technical owners.
 
-- **Impact test:**Confidentiality, integrity, and availability impacts are documented.
+- **Impact test:** Confidentiality, integrity, and availability impacts are documented.
 
-- **Access-path test:**Privileged and third-party access paths are documented.
+- **Access-path test:** Privileged and third-party access paths are documented.
 
-- **Recovery test:**Backup and recovery dependencies are documented.
+- **Recovery test:** Backup and recovery dependencies are documented.
 
-- **Approval test:**Crown-jewel list is approved by customer leadership.
+- **Approval test:** Crown-jewel list is approved by customer leadership.
 
-- **Chain integrity:**At least one primary output from this phase (crown-jewel register entry or Decision) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Customer Relevance**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (crown-jewel register entry or Decision) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Customer Relevance** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -1336,15 +830,15 @@ Assess availability and quality for:
 
 ### Telemetry Quality Scale
 
-- **0:**Not collected.
+- **0:** Not collected.
 
-- **1:**Collected but not searchable or unreliable.
+- **1:** Collected but not searchable or unreliable.
 
-- **2:**Searchable but missing key fields or short retention.
+- **2:** Searchable but missing key fields or short retention.
 
-- **3:**Searchable, parsed, retained, and mapped to asset/user context.
+- **3:** Searchable, parsed, retained, and mapped to asset/user context.
 
-- **4:**High quality with normalization, enrichment, baselines, and tested detections.
+- **4:** High quality with normalization, enrichment, baselines, and tested detections.
 
 ### Telemetry Map Template
 
@@ -1369,7 +863,7 @@ Last assessed:
 
 Critical log source means any source required by a Critical or High Risk scenario, any Risk Score 20–25 scenario, any EP1/EP2 detection or hunt, or any production/pilot detection.
 
-**Phase 3 fallback definition:**Scenarios are not built until Phase 5, so the full critical log source definition cannot be applied during Phase 3. During Phase 3, treat as critical any log source that the CTI lead or customer security lead identifies as likely required for the top three priority scenarios based on the Customer Readiness Assessment and initial crown-jewel map. After Phase 5 scenarios are approved, re-apply the full critical log source definition retroactively, update the telemetry map with any newly critical sources, and inspect sample events for any sources promoted to critical status that were not previously inspected.
+**Phase 3 fallback definition:** Scenarios are not built until Phase 5, so the full critical log source definition cannot be applied during Phase 3. During Phase 3, treat as critical any log source that the CTI lead or customer security lead identifies as likely required for the top three priority scenarios based on the Customer Readiness Assessment and initial crown-jewel map. After Phase 5 scenarios are approved, re-apply the full critical log source definition retroactively, update the telemetry map with any newly critical sources, and inspect sample events for any sources promoted to critical status that were not previously inspected.
 
 ## AI Usage
 
@@ -1391,27 +885,27 @@ Critical log source means any source required by a Critical or High Risk scenari
 
 - mark parsing as valid without sample-event inspection.
 
-*Part 2B tools:*[*AI Workflow 2: Customer Relevance Mapping*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 4: Telemetry Feasibility Review*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 2: Customer Relevance Mapping*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Task Card 4: Telemetry Feasibility Review*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Sample-event test:**Each critical log source has inspected sample events.
+- **Sample-event test:** Each critical log source has inspected sample events.
 
-- **Field test:**Required fields for priority detections are present and parsed.
+- **Field test:** Required fields for priority detections are present and parsed.
 
-- **Retention test:**Retention supports intended lookback and baselining.
+- **Retention test:** Retention supports intended lookback and baselining.
 
-- **Time test:**Timestamps are normalized and time skew is understood.
+- **Time test:** Timestamps are normalized and time skew is understood.
 
-- **Join test:**User, host, IP, asset, and ticket joins are possible where required.
+- **Join test:** User, host, IP, asset, and ticket joins are possible where required.
 
-- **Access test:**Analysts have approved access to run required searches.
+- **Access test:** Analysts have approved access to run required searches.
 
-- **Data model test:**Canonical fields and source fields are mapped for priority data sources.
+- **Data model test:** Canonical fields and source fields are mapped for priority data sources.
 
-- **Reassessment test:**Telemetry entries include last assessed date and reassessment owner.
+- **Reassessment test:** Telemetry entries include last assessed date and reassessment owner.
 
-- **Chain integrity:**At least one primary output from this phase (telemetry map entry or Collection Gap) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Telemetry**node are logged as collection gaps or context items, not closed deliverables
+- **Chain integrity:** At least one primary output from this phase (telemetry map entry or Collection Gap) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Telemetry** node are logged as collection gaps or context items, not closed deliverables
 
 ### Exit Criteria
 
@@ -1466,101 +960,10 @@ Original URL or document:
 Source access:
 Evidence provided:
 Source Reliability:
-Combined Rating:
- [
-Source
- 
-Reliability
- 
-letter
-][
-Information
- 
-Credibility
- 
-number
-] 
-—
- 
-e.g.,
- 
-B4
+Combined Rating: [Source Reliability letter][Information Credibility number] — e.g., B4
 Rating rationale:
 Information Credibility:
-AI-assisted source handling:
- 
-yes
- 
-/
- 
-no.
- 
-If
- 
-yes
-,
- 
-record
- 
-whether
- 
-AI
- 
-was
- 
-used
- 
-for
- 
-summarization,
- 
-extraction,
- 
-translation,
- 
-mapping,
- 
-or
- 
-claim
- 
-generation.
- 
-Unsupported
- 
-AI-generated
- 
-claims
- 
-default
- 
-to
- 
-F6
- 
-unless
- 
-independently
- 
-corroborated
- 
-by
- 
-human-verifiable
- 
-non-AI
- 
-evidence.
- 
-Rate
- 
-traceable
- 
-underlying
- 
-sources
- 
-separately.
+AI-assisted source handling: yes / no. If yes, record whether AI was used for summarization, extraction, translation, mapping, or claim generation. Unsupported AI-generated claims default to F6 unless independently corroborated by human-verifiable non-AI evidence. Rate traceable underlying sources separately.
 Confidence stated by source:
 Claims relevant to customer:
 Indicators included:
@@ -1571,19 +974,19 @@ Expiration or review date:
 Analyst notes:
 ```
 
-*Source rating definitions, combined notation standard, CTI-specific examples, and AI-generated source constraints:*[*Part 1 → Source Reliability and Information Credibility*](2026-05-11-customer-driven-ai-cti-project-template-part-1-foundations-745861507d03.md)*.*
+*Source rating definitions, combined notation standard, CTI-specific examples, and AI-generated source constraints:* [*Part 1 → Source Reliability and Information Credibility*](2026-05-11-customer-driven-ai-cti-project-template-part-1-foundations-745861507d03.md)*.*
 
 ### AI Pre-Screening Checklist
 
 Complete this checklist for every source before submitting it to any AI workflow. If any item is marked YES, the source requires legal/privacy review before AI processing. This applies regardless of whether the source is publicly available.
 
-- **Does the source contain named individuals (full names, usernames, handles traceable to a person)?**— Action if YES: Legal/privacy review required before any AI workflow. Record review decision and approver in AI Use Log.
+- **Does the source contain named individuals (full names, usernames, handles traceable to a person)?** — Action if YES: Legal/privacy review required before any AI workflow. Record review decision and approver in AI Use Log.
 
-- **Does the source contain email addresses, phone numbers, or other direct personal identifiers?**— Action if YES: Legal/privacy review required before any AI workflow. Record review decision and approver in AI Use Log.
+- **Does the source contain email addresses, phone numbers, or other direct personal identifiers?** — Action if YES: Legal/privacy review required before any AI workflow. Record review decision and approver in AI Use Log.
 
-- **Does the source contain organizational details (org charts, internal role titles, internal system names) that could identify individuals indirectly?**— Action if YES: Legal/privacy review required before any AI workflow. Record review decision and approver in AI Use Log.
+- **Does the source contain organizational details (org charts, internal role titles, internal system names) that could identify individuals indirectly?** — Action if YES: Legal/privacy review required before any AI workflow. Record review decision and approver in AI Use Log.
 
-- **Does the source contain active incident evidence, employee communications, or HR-adjacent data?**— Action if YES: Legal/privacy review required before any AI workflow. Record review decision and approver in AI Use Log.
+- **Does the source contain active incident evidence, employee communications, or HR-adjacent data?** — Action if YES: Legal/privacy review required before any AI workflow. Record review decision and approver in AI Use Log.
 
 If all checks are NO, proceed to AI Usage below. If any check is YES and legal/privacy review is not yet complete, the source must be held in the source register with status “Pending privacy review” until the review is recorded and the approver is named in the AI Use Log.
 
@@ -1609,31 +1012,31 @@ If all checks are NO, proceed to AI Usage below. If any check is YES and legal/p
 
 - promote IOCs automatically.
 
-*Part 2B tools:*[*AI Workflow 1: Source Extraction*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 1: Source Claim Extraction*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 1: Source Extraction*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Task Card 1: Source Claim Extraction*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Source-access test:**The source’s access is described: telemetry, malware analysis, IR, government statement, or secondary reporting.
+- **Source-access test:** The source’s access is described: telemetry, malware analysis, IR, government statement, or secondary reporting.
 
-- **Source-rating test:**Every external claim has Source Reliability and Information Credibility ratings and a combined notation code (e.g., B4) recorded in the Source Register. Any claim flagged as AI-generated without traceable primary evidence is rated F6; any traceable underlying source is rated separately on its own merits (see Part 1 §Rating AI-Generated Intelligence).
+- **Source-rating test:** Every external claim has Source Reliability and Information Credibility ratings and a combined notation code (e.g., B4) recorded in the Source Register. Any claim flagged as AI-generated without traceable primary evidence is rated F6; any traceable underlying source is rated separately on its own merits (see Part 1 §Rating AI-Generated Intelligence).
 
-- **Inter-rater calibration test:**At least one priority source per Phase 4 close has been independently rated by two analysts; any disagreement of more than one letter or one number has been resolved and the resolution rationale recorded.
+- **Inter-rater calibration test:** At least one priority source per Phase 4 close has been independently rated by two analysts; any disagreement of more than one letter or one number has been resolved and the resolution rationale recorded.
 
-- **Claim separation test:**Facts, assessments, and inferences are separated.
+- **Claim separation test:** Facts, assessments, and inferences are separated.
 
-- **Relevance test:**Each source maps to a customer PIR, crown jewel, sector, technology, or threat scenario.
+- **Relevance test:** Each source maps to a customer PIR, crown jewel, sector, technology, or threat scenario.
 
-- **Recency test:**Publication date and activity window are recorded.
+- **Recency test:** Publication date and activity window are recorded.
 
-- **Indicator risk test:**Shared infrastructure, stale indicators, sinkholes, CDNs, and legitimate services are flagged.
+- **Indicator risk test:** Shared infrastructure, stale indicators, sinkholes, CDNs, and legitimate services are flagged.
 
-- **Handling test:**TLP or sharing restrictions are recorded.
+- **Handling test:** TLP or sharing restrictions are recorded.
 
-- **Contradiction test:**Conflicting claims are added to the Contradiction Register.
+- **Contradiction test:** Conflicting claims are added to the Contradiction Register.
 
-- **Regulated data test:**If source content contains personal data, regulated records, employee-related data, or active incident evidence, the legal/privacy owner re-reviews before the source is used in AI-assisted workflows. The review decision and approver are recorded in the AI Use Log before any AI workflow processes this source.
+- **Regulated data test:** If source content contains personal data, regulated records, employee-related data, or active incident evidence, the legal/privacy owner re-reviews before the source is used in AI-assisted workflows. The review decision and approver are recorded in the AI Use Log before any AI workflow processes this source.
 
-- **Chain integrity:**At least one primary output from this phase (validated source, IOC, or TTP extraction) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Observable**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (validated source, IOC, or TTP extraction) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Observable** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -1666,27 +1069,7 @@ Overlap with other labels:
 Differences from other labels:
 Confidence:
 Assessment:
-Status:
- 
-candidate
- 
-/
- 
-tracked
- 
-separately
- 
-/
- 
-merged
- 
-for
- 
-reporting
- 
-/
- 
-rejected
+Status: candidate / tracked separately / merged for reporting / rejected
 Review date:
 ```
 
@@ -1744,22 +1127,18 @@ Review date:
 
 **Blast radius tiers and minimum approval requirements:**
 
-- **Tier 1: Single host or confirmed threat IP**— Description: One known malicious IP or host with no shared hosting; customer sightings confirmed — Minimum Approval: One named approver (CTI lead or detection engineer)
+- **Tier 1: Single host or confirmed threat IP** — Description: One known malicious IP or host with no shared hosting; customer sightings confirmed — Minimum Approval: One named approver (CTI lead or detection engineer)
 
-- **Tier 2: Domain, IP range, CDN endpoint, or shared hosting**— Description: Block may affect multiple services or unknown tenants — Minimum Approval: Customer security lead sign-off and documented blast radius review
+- **Tier 2: Domain, IP range, CDN endpoint, or shared hosting** — Description: Block may affect multiple services or unknown tenants — Minimum Approval: Customer security lead sign-off and documented blast radius review
 
-- **Tier 3: SaaS platform, cloud service endpoint, or multi-business-unit dependency**— Description: Block may affect production integrations, external partners, or cross-org dependencies — Minimum Approval: Customer security lead, platform owner, and business owner; formal change request required
+- **Tier 3: SaaS platform, cloud service endpoint, or multi-business-unit dependency** — Description: Block may affect production integrations, external partners, or cross-org dependencies — Minimum Approval: Customer security lead, platform owner, and business owner; formal change request required
 
 **Any block without confirmed customer sightings requires customer security lead approval regardless of tier.**
 
 **Actions:**
 
 ```text
-Observe / Enrich / Hunt / Detect / Block / Do 
-not
- 
-use
- / Expired
+Observe / Enrich / Hunt / Detect / Block / Do not use / Expired
 ```
 
 ## IOC Emergency Unblock Procedure
@@ -1884,31 +1263,31 @@ Each priority scenario must be represented in:
 
 - assign high priority without risk owner review.
 
-*Part 2B tools:*[*AI Workflow 3: Threat Scenario Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 5: Threat Scenario Builder*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Gate B: Scenario Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 3: Threat Scenario Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Task Card 5: Threat Scenario Builder*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Gate B: Scenario Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Customer relevance:**Scenario maps to at least one crown jewel and PIR.
+- **Customer relevance:** Scenario maps to at least one crown jewel and PIR.
 
-- **Evidence support:**Scenario cites validated sources or customer observations.
+- **Evidence support:** Scenario cites validated sources or customer observations.
 
-- **Visibility test:**Required telemetry is identified and scored.
+- **Visibility test:** Required telemetry is identified and scored.
 
-- **Actionability test:**Scenario creates at least one hunt, detection, control, or decision.
+- **Actionability test:** Scenario creates at least one hunt, detection, control, or decision.
 
-- **Alternative test:**At least one plausible alternative or limitation is documented.
+- **Alternative test:** At least one plausible alternative or limitation is documented.
 
-- **Priority test:**Priority is based on likelihood, impact, and detectability, not fear.
+- **Priority test:** Priority is based on likelihood, impact, and detectability, not fear.
 
-- **Score test:**Risk Score and Engineering Priority Score use the approved formula and cite Evidence IDs.
+- **Score test:** Risk Score and Engineering Priority Score use the approved formula and cite Evidence IDs.
 
-- **Decision test:**Scenario maps to at least one Decision ID.
+- **Decision test:** Scenario maps to at least one Decision ID.
 
-- **High-risk remediation test:**Any scenario with Risk Score ≥ 20 and Detection Feasibility &lt; 3 has a documented telemetry remediation plan, control recommendation, or architecture decision linked to a Collection Gap ID or Decision ID.
+- **High-risk remediation test:** Any scenario with Risk Score ≥ 20 and Detection Feasibility &lt; 3 has a documented telemetry remediation plan, control recommendation, or architecture decision linked to a Collection Gap ID or Decision ID.
 
-- **Telemetry map retroactive update:**Any log source newly identified as critical during scenario development is added to the telemetry map and, if not previously inspected, has sample events inspected or an inspection task open in the gap register.
+- **Telemetry map retroactive update:** Any log source newly identified as critical during scenario development is added to the telemetry map and, if not previously inspected, has sample events inspected or an inspection task open in the gap register.
 
-- **Chain integrity:**At least one primary output from this phase (threat scenario) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Scenario**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (threat scenario) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Scenario** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -1935,9 +1314,7 @@ Hunt ID:
 Hypothesis:
 Scenario:
 PIR/SIR:
-ATT&CK
- 
-technique:
+ATT&CK technique:
 Diamond feature focus:
 Expected observable:
 Required data sources:
@@ -1954,48 +1331,28 @@ Follow-up action:
 ### Good Hypothesis
 
 ```text
-If
- an adversary 
-is
- 
-using
- valid credentials 
-for
- cloud control-plane access,
-then
- we may observe privileged role assignment 
-or
- service-principal credential changes
-outside approved change windows, followed 
-by
- access 
-to
- backup, logging, 
-or
- production resources.
+If an adversary is using valid credentials for cloud control-plane access,
+then we may observe privileged role assignment or service-principal credential changes
+outside approved change windows, followed by access to backup, logging, or production resources.
 ```
 
 ### Weak Hypothesis
 
 ```text
-Look 
-for
- 
-APT
- activity.
+Look for APT activity.
 ```
 
 ### Hunt Result Classification
 
-- **Positive finding:**Evidence supports the hypothesis.
+- **Positive finding:** Evidence supports the hypothesis.
 
-- **Negative with good visibility:**No evidence found and telemetry was sufficient for the scoped question.
+- **Negative with good visibility:** No evidence found and telemetry was sufficient for the scoped question.
 
-- **Negative with weak visibility:**No evidence found but telemetry was insufficient.
+- **Negative with weak visibility:** No evidence found but telemetry was insufficient.
 
-- **Inconclusive:**Query, data, time window, or scope limitations prevent judgment.
+- **Inconclusive:** Query, data, time window, or scope limitations prevent judgment.
 
-- **Rejected hypothesis:**Hypothesis is not relevant, not testable, or based on invalid assumptions.
+- **Rejected hypothesis:** Hypothesis is not relevant, not testable, or based on invalid assumptions.
 
 Negative results must not be written as “no compromise” unless the visibility, scope, and time window justify that conclusion.
 
@@ -2019,23 +1376,23 @@ Negative results must not be written as “no compromise” unless the visibilit
 
 - decide suspiciousness without reviewing customer baseline.
 
-*Part 2B tools:*[*AI Workflow 4: Hunt Hypothesis Generation*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 6: Hunt Hypothesis Generator*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Gate C: Hunt Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 4: Hunt Hypothesis Generation*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Task Card 6: Hunt Hypothesis Generator*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Gate C: Hunt Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Falsifiability:**The hypothesis can be tested and can fail.
+- **Falsifiability:** The hypothesis can be tested and can fail.
 
-- **Observable test:**Expected observables are defined in available logs.
+- **Observable test:** Expected observables are defined in available logs.
 
-- **Baseline test:**Benign and expected administrative behavior is documented.
+- **Baseline test:** Benign and expected administrative behavior is documented.
 
-- **Escalation test:**Thresholds for case creation are defined.
+- **Escalation test:** Thresholds for case creation are defined.
 
-- **Repeatability test:**Another analyst can run the hunt from the documentation.
+- **Repeatability test:** Another analyst can run the hunt from the documentation.
 
-- **Result classification test:**The hunt has approved result categories before execution.
+- **Result classification test:** The hunt has approved result categories before execution.
 
-- **Chain integrity:**At least one primary output from this phase (hunt hypothesis or query) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Hunt/Detection**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (hunt hypothesis or query) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Hunt/Detection** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -2057,23 +1414,23 @@ Negative results must not be written as “no compromise” unless the visibilit
 
 Detection-as-code must be operated through controlled review and deployment.
 
-- **Branch creation:**Branch or change request links to Detection ID and Scenario ID.
+- **Branch creation:** Branch or change request links to Detection ID and Scenario ID.
 
-- **Pull request:**CTI and detection engineer review required for threat logic.
+- **Pull request:** CTI and detection engineer review required for threat logic.
 
-- **Static validation:**Schema, metadata, ATT&CK mapping, D3FEND mapping, owner, severity, confidence, and review date checked.
+- **Static validation:** Schema, metadata, ATT&CK mapping, D3FEND mapping, owner, severity, confidence, and review date checked.
 
-- **Syntax validation:**Target SIEM query compile test required.
+- **Syntax validation:** Target SIEM query compile test required.
 
-- **Unit testing:**Positive, negative, and edge fixtures required.
+- **Unit testing:** Positive, negative, and edge fixtures required.
 
-- **Historical preview:**Expected alert volume and false-positive review required.
+- **Historical preview:** Expected alert volume and false-positive review required.
 
-- **Staging deployment:**SOC dry-run, alert routing check, and case creation test required.
+- **Staging deployment:** SOC dry-run, alert routing check, and case creation test required.
 
-- **Production deployment:**Owner, rollback, monitoring, review date, and DRL-9 evidence required.
+- **Production deployment:** Owner, rollback, monitoring, review date, and DRL-9 evidence required.
 
-- **Post-deployment monitoring:**Alert volume, rule errors, data-source health, suppression rate, and SOC feedback reviewed.
+- **Post-deployment monitoring:** Alert volume, rule errors, data-source health, suppression rate, and SOC feedback reviewed.
 
 **Required CI/CD Artifacts**
 
@@ -2141,29 +1498,29 @@ Emergency disable owner must be a named SOC lead, platform owner, detection engi
 
 SLAs should be adjusted for customer contracts and severity levels, but they must be explicit.
 
-- **Critical detection false-positive review**— SLA: 2 business days — Owner: Detection engineer — Escalation: SOC lead
+- **Critical detection false-positive review** — SLA: 2 business days — Owner: Detection engineer — Escalation: SOC lead
 
-- **Production rule failure**— SLA: Same business day — Owner: Platform owner — Escalation: Customer security lead
+- **Production rule failure** — SLA: Same business day — Owner: Platform owner — Escalation: Customer security lead
 
-- **Telemetry gap owner assignment**— SLA: 5 business days — Owner: Platform owner — Escalation: Executive sponsor
+- **Telemetry gap owner assignment** — SLA: 5 business days — Owner: Platform owner — Escalation: Executive sponsor
 
-- **AI output review**— SLA: Before use in deliverable — Owner: Domain owner — Escalation: CTI lead
+- **AI output review** — SLA: Before use in deliverable — Owner: Domain owner — Escalation: CTI lead
 
-- **Source extraction review**— SLA: 3 business days — Owner: CTI lead — Escalation: Customer security lead
+- **Source extraction review** — SLA: 3 business days — Owner: CTI lead — Escalation: Customer security lead
 
-- **PIR approval**— SLA: 5 business days after workshop — Owner: Executive sponsor — Escalation: Customer security lead
+- **PIR approval** — SLA: 5 business days after workshop — Owner: Executive sponsor — Escalation: Customer security lead
 
-- **Crown-jewel approval**— SLA: 5 business days after workshop — Owner: Business owner — Escalation: Executive sponsor
+- **Crown-jewel approval** — SLA: 5 business days after workshop — Owner: Business owner — Escalation: Executive sponsor
 
-- **Evidence Register update for key finding**— SLA: 2 business days — Owner: CTI lead — Escalation: Quality reviewer
+- **Evidence Register update for key finding** — SLA: 2 business days — Owner: CTI lead — Escalation: Quality reviewer
 
-- **Contradiction affecting production detection**— SLA: Weekly review; resolution plan within 30 days — Owner: CTI lead — Escalation: Customer security lead
+- **Contradiction affecting production detection** — SLA: Weekly review; resolution plan within 30 days — Owner: CTI lead — Escalation: Customer security lead
 
-- **Pilot tuning decision**— SLA: 5 business days after pilot end — Owner: Detection engineer — Escalation: SOC lead
+- **Pilot tuning decision** — SLA: 5 business days after pilot end — Owner: Detection engineer — Escalation: SOC lead
 
-- **Executive decision response**— SLA: Customer-defined, normally 5–10 business days — Owner: Decision owner — Escalation: Executive sponsor
+- **Executive decision response** — SLA: Customer-defined, normally 5–10 business days — Owner: Decision owner — Escalation: Executive sponsor
 
-- **Production rollback for high-noise rule**— SLA: Same business day — Owner: Platform owner — Escalation: Customer security lead
+- **Production rollback for high-noise rule** — SLA: Same business day — Owner: Platform owner — Escalation: Customer security lead
 
 **SLA breach consequence:**
 
@@ -2184,25 +1541,7 @@ Convert validated threats and hunts into production-quality detections.
 ```text
 Detection ID:
 Name:
-Status:
- 
-draft
- 
-/
- 
-lab
- 
-/
- 
-pilot
- 
-/
- 
-production
- 
-/
- 
-retired
+Status: draft / lab / pilot / production / retired
 Detection readiness level:
 Use case:
 Scenario:
@@ -2281,33 +1620,33 @@ Use different detection patterns based on the behavior:
 
 - claim precision or recall without test results.
 
-*Part 2B tools:*[*AI Workflow 5: Detection Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 7: Detection Logic Draft*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 8: Rule Quality Challenge*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Gate D: Detection Design Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 5: Detection Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md) *·* [*Task Card 7: Detection Logic Draft*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md) *·* [*Task Card 8: Rule Quality Challenge*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md) *·* [*Gate D: Detection Design Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Logic test:**Rule logic matches the stated behavior and does not drift into unrelated activity.
+- **Logic test:** Rule logic matches the stated behavior and does not drift into unrelated activity.
 
-- **Field test:**Every field exists, is parsed, and has expected values.
+- **Field test:** Every field exists, is parsed, and has expected values.
 
-- **Syntax test:**Query compiles in the target platform.
+- **Syntax test:** Query compiles in the target platform.
 
-- **ATT&CK quality test:**Mapping includes technique, sub-technique where available, platform, mapping type, observable, data source, and evidence.
+- **ATT&CK quality test:** Mapping includes technique, sub-technique where available, platform, mapping type, observable, data source, and evidence.
 
-- **D3FEND test:**Countermeasure mapping explains the defensive control or gap.
+- **D3FEND test:** Countermeasure mapping explains the defensive control or gap.
 
-- **Positive test:**Rule fires on known or simulated malicious behavior.
+- **Positive test:** Rule fires on known or simulated malicious behavior.
 
-- **Negative test:**Rule does not fire on known benign activity.
+- **Negative test:** Rule does not fire on known benign activity.
 
-- **Historical preview:**Rule is tested against historical data before production.
+- **Historical preview:** Rule is tested against historical data before production.
 
-- **False-positive review:**Expected false positives are documented and routed.
+- **False-positive review:** Expected false positives are documented and routed.
 
-- **Severity review:**Severity reflects impact, confidence, and response urgency.
+- **Severity review:** Severity reflects impact, confidence, and response urgency.
 
-- **Playbook link:**SOC triage steps are attached.
+- **Playbook link:** SOC triage steps are attached.
 
-- **Chain integrity:**At least one primary output from this phase (detection design or detection logic) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Detection**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (detection design or detection logic) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Detection** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -2330,39 +1669,22 @@ Implement detections with version control, review, testing, and deployment disci
 ### Repository Structure
 
 ```text
-detections
-/
-  cloud
-/
-  
-identity
-/
-  endpoint
-/
-  network
-/
-  email
-/
-  application
-/
-tests
-/
-  positive
-/
-  negative
-/
-  edge
-/
-docs
-/
-  playbooks
-/
-  data_sources
-/
-  false_positives
-/
-metadata
-/
+detections/
+  cloud/
+  identity/
+  endpoint/
+  network/
+  email/
+  application/
+tests/
+  positive/
+  negative/
+  edge/
+docs/
+  playbooks/
+  data_sources/
+  false_positives/
+metadata/
   attack_mapping.yml
   data_source_mapping.yml
   owners.yml
@@ -2432,25 +1754,25 @@ Each detection must include:
 
 - change production severity without approval.
 
-*Part 2B tools:*[*AI Workflow 5: Detection Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*AI Workflow 6: Query Translation*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 7: Detection Logic Draft*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 5: Detection Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*AI Workflow 6: Query Translation*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Task Card 7: Detection Logic Draft*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Schema test:**Detection file matches required schema.
+- **Schema test:** Detection file matches required schema.
 
-- **Metadata test:**Owner, status, severity, confidence, data source, and mapping fields are complete.
+- **Metadata test:** Owner, status, severity, confidence, data source, and mapping fields are complete.
 
-- **Lint test:**Detection follows repository style.
+- **Lint test:** Detection follows repository style.
 
-- **Unit test:**Detection logic passes defined test fixtures.
+- **Unit test:** Detection logic passes defined test fixtures.
 
-- **Peer review:**CTI and detection engineer approve.
+- **Peer review:** CTI and detection engineer approve.
 
-- **Deployment test:**Rule imports into target platform without error.
+- **Deployment test:** Rule imports into target platform without error.
 
-- **DRL test:**Detection Readiness Level is updated only when evidence supports the transition.
+- **DRL test:** Detection Readiness Level is updated only when evidence supports the transition.
 
-- **Chain integrity:**At least one primary output from this phase (committed detection or test result) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Detection**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (committed detection or test result) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Detection** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -2472,19 +1794,19 @@ Prove detections work before relying on them.
 
 ### Test Types
 
-- **Positive test:**Confirm detection fires when target behavior occurs.
+- **Positive test:** Confirm detection fires when target behavior occurs.
 
-- **Negative test:**Confirm detection does not fire on common benign behavior.
+- **Negative test:** Confirm detection does not fire on common benign behavior.
 
-- **Edge test:**Confirm detection handles missing fields, unusual values, time zones, and partial sequences.
+- **Edge test:** Confirm detection handles missing fields, unusual values, time zones, and partial sequences.
 
-- **Historical test:**Measure expected alert volume and false positives.
+- **Historical test:** Measure expected alert volume and false positives.
 
-- **Replay test:**Validate detection against known attack datasets or controlled simulated logs.
+- **Replay test:** Validate detection against known attack datasets or controlled simulated logs.
 
-- **Purple-team test:**Validate detection against executed adversary emulation.
+- **Purple-team test:** Validate detection against executed adversary emulation.
 
-- **Regression test:**Confirm rule changes do not break previous expected behavior.
+- **Regression test:** Confirm rule changes do not break previous expected behavior.
 
 ### Minimum Test Evidence
 
@@ -2503,14 +1825,8 @@ Notes:
 Reviewer:
 Synthetic event used:
 Real sample event reference:
-Field names match customer schema:
- 
-yes
-/no
-Values match expected platform encoding:
- 
-yes
-/no
+Field names match customer schema: yes/no
+Values match expected platform encoding: yes/no
 Validated by:
 ```
 
@@ -2531,131 +1847,34 @@ A purple-team test executes the adversary technique in a controlled environment 
 ```text
 PT ID:
 Detection ID:
-ATT&CK
- 
-Technique:
-Execution method:
- [
-manual
- 
-/
- 
-automated
- 
-emulation
- 
-/
- 
-attack
- 
-simulation
- 
-tool
-]
+ATT&CK Technique:
+Execution method: [manual / automated emulation / attack simulation tool]
 Tool used:
-Test environment:
- [
-isolated
- 
-lab
- 
-/
- 
-staging
- 
-/
- 
-production-isolated
-]
+Test environment: [isolated lab / staging / production-isolated]
 Test date:
 Executed by:
 Approved by:
-Detection fired:
- 
-yes
- 
-/
- 
-no
-Alert generated:
- 
-yes
- 
-/
- 
-no
-Alert severity matched expected:
- 
-yes
- 
-/
- 
-no
-False negative occurred:
- 
-yes
- 
-/
- 
-no
-If
- 
-false
- 
-negative
- 
-—
- 
-root cause and RAID entry:
-Result:
- [
-pass
- 
-/
- 
-conditional
- 
-pass
- 
-/
- 
-fail
- 
-—
- 
-tuning
- 
-gap
- 
-/
- 
-fail
- 
-—
- 
-false
- 
-negative
- 
-/
- 
-deferred
-]
+Detection fired: yes / no
+Alert generated: yes / no
+Alert severity matched expected: yes / no
+False negative occurred: yes / no
+If false negative — root cause and RAID entry:
+Result: [pass / conditional pass / fail — tuning gap / fail — false negative / deferred]
 Reviewer:
 Notes:
 ```
 
 **Result classifications:**
 
-- **Pass:**Detection fired on first clean execution; alert severity and content match expected behavior.
+- **Pass:** Detection fired on first clean execution; alert severity and content match expected behavior.
 
-- **Conditional pass:**Detection fired but required tuning (timing, field values); documented and retested before DRL-9 promotion.
+- **Conditional pass:** Detection fired but required tuning (timing, field values); documented and retested before DRL-9 promotion.
 
-- **Fail — tuning gap:**Detection fired with incorrect field enrichment or miscategorized severity; tuning documented with dated resolution plan.
+- **Fail — tuning gap:** Detection fired with incorrect field enrichment or miscategorized severity; tuning documented with dated resolution plan.
 
-- **Fail — false negative:**Detection did not fire on confirmed execution. False-Negative Register entry required; DRL demotion to DRL-5 until root cause is resolved and test is re-run.
+- **Fail — false negative:** Detection did not fire on confirmed execution. False-Negative Register entry required; DRL demotion to DRL-5 until root cause is resolved and test is re-run.
 
-- **Deferred:**Technique cannot be safely executed in any available environment. A RAID Register entry is required; approved alternative evidence (controlled capture replay or vendor confirmation) must be documented before DRL-9 promotion is eligible.
+- **Deferred:** Technique cannot be safely executed in any available environment. A RAID Register entry is required; approved alternative evidence (controlled capture replay or vendor confirmation) must be documented before DRL-9 promotion is eligible.
 
 All purple-team test records must be stored in the Purple-Team Test Register (*Part 2B → Purple-Team Test Register*) and referenced in the Gate E evidence pack before DRL-9 promotion.
 
@@ -2699,27 +1918,27 @@ Validation requirements:
 
 - approve production readiness.
 
-*Part 2B tools:*[*AI Workflow 7: Test Case Generation*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 8: Rule Quality Challenge*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 7: Test Case Generation*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Task Card 8: Rule Quality Challenge*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Positive evidence:**At least one positive test passes.
+- **Positive evidence:** At least one positive test passes.
 
-- **Negative evidence:**At least one negative test passes.
+- **Negative evidence:** At least one negative test passes.
 
-- **Historical volume:**Expected alert volume is acceptable or tuning is documented.
+- **Historical volume:** Expected alert volume is acceptable or tuning is documented.
 
-- **Edge handling:**Missing fields or partial data do not create uncontrolled alerting.
+- **Edge handling:** Missing fields or partial data do not create uncontrolled alerting.
 
-- **Reviewer signoff:**Detection engineer and SOC lead approve pilot.
+- **Reviewer signoff:** Detection engineer and SOC lead approve pilot.
 
-- **Readiness update:**DRL is updated based on passed tests only.
+- **Readiness update:** DRL is updated based on passed tests only.
 
-- **Synthetic validation:**Any synthetic event is validated against real sample event and customer schema.
+- **Synthetic validation:** Any synthetic event is validated against real sample event and customer schema.
 
-- **Purple-team coverage:**Any detection for a technique with Risk Score ≥ 20 has a purple-team test result on record in the Purple-Team Test Register, or a RAID Register entry documenting the operational constraint that prevents live execution, with an approved alternative evidence approach and a dated resolution target before DRL-9 promotion.
+- **Purple-team coverage:** Any detection for a technique with Risk Score ≥ 20 has a purple-team test result on record in the Purple-Team Test Register, or a RAID Register entry documenting the operational constraint that prevents live execution, with an approved alternative evidence approach and a dated resolution target before DRL-9 promotion.
 
-- **Chain integrity:**At least one primary output from this phase (test evidence record) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Test**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (test evidence record) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Test** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -2781,23 +2000,23 @@ Feedback fields:
 
 - generate incident conclusions from incomplete facts.
 
-*Part 2B tools:*[*AI Workflow 8: SOC Playbook Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 9: SOC Playbook Draft*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 8: SOC Playbook Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Task Card 9: SOC Playbook Draft*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Analyst usability:**SOC analyst can follow the playbook without CTI context.
+- **Analyst usability:** SOC analyst can follow the playbook without CTI context.
 
-- **Evidence test:**Required evidence fields are available in the alert or linked searches.
+- **Evidence test:** Required evidence fields are available in the alert or linked searches.
 
-- **Escalation test:**Escalation criteria are clear and measurable.
+- **Escalation test:** Escalation criteria are clear and measurable.
 
-- **Benign test:**Common false positives are included.
+- **Benign test:** Common false positives are included.
 
-- **Closure test:**Closure categories capture true positive, benign true positive, false positive, duplicate, and insufficient evidence.
+- **Closure test:** Closure categories capture true positive, benign true positive, false positive, duplicate, and insufficient evidence.
 
-- **DRL test:**Detection cannot exceed DRL-7 until SOC playbook is approved.
+- **DRL test:** Detection cannot exceed DRL-7 until SOC playbook is approved.
 
-- **Chain integrity:**At least one primary output from this phase (SOC playbook or closure procedure) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**SOC Action**node are logged as collection gaps or context items, not closed deliverables
+- **Chain integrity:** At least one primary output from this phase (SOC playbook or closure procedure) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **SOC Action** node are logged as collection gaps or context items, not closed deliverables
 
 ### Exit Criteria
 
@@ -2849,13 +2068,13 @@ If a hunt, detection, source review, or workshop uncovers credible evidence of a
 
 **Non-essential analysis scope decision table:**
 
-- **Compromise is confined to systems not in project scope:**Continue project work with notification to customer security lead. Log escalation record.
+- **Compromise is confined to systems not in project scope:** Continue project work with notification to customer security lead. Log escalation record.
 
-- **Compromise affects in-scope systems but not the monitoring or logging plane:**Pause all analysis on affected systems. Confirm continuation of work on unaffected systems explicitly with the IR lead. Do not use evidence from affected systems in detections or reports until cleared.
+- **Compromise affects in-scope systems but not the monitoring or logging plane:** Pause all analysis on affected systems. Confirm continuation of work on unaffected systems explicitly with the IR lead. Do not use evidence from affected systems in detections or reports until cleared.
 
-- **Compromise affects the monitoring, logging, or SIEM plane:**Assume integrity of all evidence captured during or before the incident window is uncertain. Pause all active engineering and hunting work. Resume only after IR lead and platform owner confirm log integrity and provide a cleared evidence start date.
+- **Compromise affects the monitoring, logging, or SIEM plane:** Assume integrity of all evidence captured during or before the incident window is uncertain. Pause all active engineering and hunting work. Resume only after IR lead and platform owner confirm log integrity and provide a cleared evidence start date.
 
-- **Scope is unknown:**Default to treating all in-scope evidence as uncertain until IR lead defines the boundary.
+- **Scope is unknown:** Default to treating all in-scope evidence as uncertain until IR lead defines the boundary.
 
 **Escalation record:**
 
@@ -2914,25 +2133,25 @@ Run detections in controlled mode before full production.
 
 - optimize only for low alert volume if it harms detection value.
 
-*Part 2B gate:*[*Gate E: Production Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B gate:* [*Gate E: Production Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Volume test:**Alert rate is operationally manageable.
+- **Volume test:** Alert rate is operationally manageable.
 
-- **Precision review:**False-positive categories are understood and tunable.
+- **Precision review:** False-positive categories are understood and tunable.
 
-- **Coverage test:**Detection still covers target behavior after tuning.
+- **Coverage test:** Detection still covers target behavior after tuning.
 
-- **SOC feedback:**SOC analysts confirm triage instructions are usable.
+- **SOC feedback:** SOC analysts confirm triage instructions are usable.
 
-- **Owner approval:**Detection owner approves production promotion.
+- **Owner approval:** Detection owner approves production promotion.
 
-- **Health metrics test:**Alert volume, FP rate, TP count, rule errors, data-source health, and suppression rate are recorded.
+- **Health metrics test:** Alert volume, FP rate, TP count, rule errors, data-source health, and suppression rate are recorded.
 
-- **Labeling progress check:**By Day 3 of the pilot, SOC labeling completeness is on track to reach 80% by pilot end, or a corrective action is documented. If labeling completeness is below 60% at Day 3, the SOC lead must be notified and a recovery plan (SOC briefing, alert routing review, analyst time allocation) documented before the pilot continues.**For low-frequency detections**documented as such per the DRL-7 to DRL-8 transition guidance, where zero alerts have been generated by Day 3: the labeling completeness check does not apply. Instead, confirm at Day 3 that SOC analysts have reviewed the playbook, alert routing is confirmed active, and a notification path exists for when alerts arrive. Record this confirmation in the Detection Health Register as “labeling check deferred: zero alerts at Day 3, SOC readiness confirmed.”
+- **Labeling progress check:** By Day 3 of the pilot, SOC labeling completeness is on track to reach 80% by pilot end, or a corrective action is documented. If labeling completeness is below 60% at Day 3, the SOC lead must be notified and a recovery plan (SOC briefing, alert routing review, analyst time allocation) documented before the pilot continues. **For low-frequency detections** documented as such per the DRL-7 to DRL-8 transition guidance, where zero alerts have been generated by Day 3: the labeling completeness check does not apply. Instead, confirm at Day 3 that SOC analysts have reviewed the playbook, alert routing is confirmed active, and a notification path exists for when alerts arrive. Record this confirmation in the Detection Health Register as “labeling check deferred: zero alerts at Day 3, SOC readiness confirmed.”
 
-- **Chain integrity:**At least one primary output from this phase (pilot alert label or tuning record) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Test**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (pilot alert label or tuning record) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Test** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -2965,111 +2184,12 @@ Severity approved:
 Owner assigned:
 Rollback plan defined:
 Monitoring enabled:
-  
--
- 
-Data
- 
-source
- 
-silence
- 
-alert
- 
-configured
- 
-(triggers
- 
-if
- 
-source
- 
-stops
- 
-producing
- 
-events
- 
-for
- 
-more
- 
-than
- 
-24
- 
-hours):
-  
--
- 
-Zero-alert
- 
-baseline
- 
-alert
- 
-configured
- 
-(triggers
- 
-if
- 
-rule
- 
-produces
- 
-zero
- 
-alerts
- 
-beyond
- 
-the
- 
-established
- 
-baseline
- 
-window):
-  
--
- 
-Scheduled
- 
-review
- 
-date
- 
-confirmed
- 
-(calendar
- 
-entry
- 
-for
- 
-next
- 
-review
- 
-exists
- 
-and
- 
-owner
- 
-is
- 
-assigned):
+  - Data source silence alert configured (triggers if source stops producing events for more than 24 hours):
+  - Zero-alert baseline alert configured (triggers if rule produces zero alerts beyond the established baseline window):
+  - Scheduled review date confirmed (calendar entry for next review exists and owner is assigned):
 Emergency disable procedure confirmed:
-  
--
- 
-Disable owner named and authorized by customer security lead:
-  
--
- 
-Disable steps tested or test scheduled within first production deployment cycle:
+  - Disable owner named and authorized by customer security lead:
+  - Disable steps tested or test scheduled within first production deployment cycle:
 Detection health entry created:
 Review date assigned:
 ```
@@ -3096,23 +2216,23 @@ Review date assigned:
 
 - remove review dates.
 
-*Part 2B gate:*[*Gate E: Production Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*30/60/90-Day Execution Plan*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B gate:* [*Gate E: Production Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*30/60/90-Day Execution Plan*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Deployment test:**Rule is active in production and firing path is confirmed.
+- **Deployment test:** Rule is active in production and firing path is confirmed.
 
-- **Case creation test:**Alert creates a case or ticket as designed.
+- **Case creation test:** Alert creates a case or ticket as designed.
 
-- **Notification test:**Required owners receive notifications.
+- **Notification test:** Required owners receive notifications.
 
-- **Rollback test:**Rollback steps are documented and executable.
+- **Rollback test:** Rollback steps are documented and executable.
 
-- **Monitoring test:**Detection health is monitored.
+- **Monitoring test:** Detection health is monitored.
 
-- **DRL-9 test:**Owner, monitoring, review date, rollback, test evidence, and SOC playbook are complete.
+- **DRL-9 test:** Owner, monitoring, review date, rollback, test evidence, and SOC playbook are complete.
 
-- **Chain integrity:**At least one primary output from this phase (production deployment record) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Decision**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (production deployment record) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Decision** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -3140,13 +2260,7 @@ Top customer decisions supported:
 Key judgments:
 Threat scenarios prioritized:
 New detections deployed:
-Detection
- 
-Work-in-Progress
- 
-(WIP)
- 
-pipeline:
+Detection Work-in-Progress (WIP) pipeline:
 Hunts completed:
 Confirmed findings:
 Rejected hypotheses:
@@ -3163,43 +2277,27 @@ The WIP metric communicates forward progress on detection engineering without vi
 **WIP reporting format:**
 
 ```text
-WIP pipeline 
-summary
- (as of 
-[date]
-):
+WIP pipeline summary (as of [date]):
 | Detection ID | Name | Scenario | DRL | Stage Label | Blocking Issues |
 |--------------|------|----------|-----|-------------|-----------------|
-| DET-
-002
-      |      |          | 
-4
-   | Testing     |                 |
-| DET-
-003
-      |      |          | 
-3
-   | Lab         |                 |
-| DET-
-004
-      |      |          | 
-6
-   | Preview     |                 |
+| DET-002      |      |          | 4   | Testing     |                 |
+| DET-003      |      |          | 3   | Lab         |                 |
+| DET-004      |      |          | 6   | Preview     |                 |
 ```
 
 **Stage labels by DRL:**
 
-- DRL 2–3:**Lab**— logic drafted and fields confirmed; not yet tested
+- DRL 2–3: **Lab** — logic drafted and fields confirmed; not yet tested
 
-- DRL 4–5:**Testing**— positive and/or negative tests in progress or passing
+- DRL 4–5: **Testing** — positive and/or negative tests in progress or passing
 
-- DRL 6:**Preview**— historical preview completed; false-positive volume known; awaiting SOC playbook
+- DRL 6: **Preview** — historical preview completed; false-positive volume known; awaiting SOC playbook
 
-- DRL 7:**Pilot-Ready**— SOC playbook approved; ready for pilot deployment
+- DRL 7: **Pilot-Ready** — SOC playbook approved; ready for pilot deployment
 
-- DRL 8:**Pilot**— running in pilot; tuning in progress
+- DRL 8: **Pilot** — running in pilot; tuning in progress
 
-- DRL 9:**Production**— deployed with owner, monitoring, rollback, and review date
+- DRL 9: **Production** — deployed with owner, monitoring, rollback, and review date
 
 **WIP rules:**
 
@@ -3251,25 +2349,25 @@ Next engineering work:
 
 - change severity without owner approval.
 
-*Part 2B tools:*[*AI Workflow 9: Report Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Task Card 10: Executive Report Draft*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Gate F: Final Delivery Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Final Customer Delivery Package*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 9: Report Drafting*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Task Card 10: Executive Report Draft*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Gate F: Final Delivery Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*· *[*Final Customer Delivery Package*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Evidence traceability:**Every key judgment links to evidence or test results.
+- **Evidence traceability:** Every key judgment links to evidence or test results.
 
-- **Decision clarity:**Executive report states decisions needed.
+- **Decision clarity:** Executive report states decisions needed.
 
-- **No metric theater:**Metrics show defensive value, not just activity counts.
+- **No metric theater:** Metrics show defensive value, not just activity counts.
 
-- **Gap visibility:**Remaining limitations are visible.
+- **Gap visibility:** Remaining limitations are visible.
 
-- **Approval:**CTI lead, detection lead, and customer security lead approve within 5 business days of report delivery, or a documented objection is filed with a resolution path.
+- **Approval:** CTI lead, detection lead, and customer security lead approve within 5 business days of report delivery, or a documented objection is filed with a resolution path.
 
-- **Chain integrity:**At least one primary output from this phase (executive report, technical report, or metric) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Metric**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (executive report, technical report, or metric) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Metric** node are logged as collection gaps or context items, not closed deliverables.
 
-**Report approval SLA:**Approvers have 5 business days from report delivery to approve or document a specific objection. Silence past 5 business days is escalated to the executive sponsor.
+**Report approval SLA:** Approvers have 5 business days from report delivery to approve or document a specific objection. Silence past 5 business days is escalated to the executive sponsor.
 
-**Analytic conflict resolution:**If the CTI lead and the customer security lead disagree on a key judgment’s framing or confidence, the executive sponsor makes the final framing decision. The CTI lead records the analytic disagreement, the business framing decision, and the rationale in the RAID Register. The analytic judgment remains on record even if the executive-facing language is adjusted.
+**Analytic conflict resolution:** If the CTI lead and the customer security lead disagree on a key judgment’s framing or confidence, the executive sponsor makes the final framing decision. The CTI lead records the analytic disagreement, the business framing decision, and the rationale in the RAID Register. The analytic judgment remains on record even if the executive-facing language is adjusted.
 
 ### Exit Criteria
 
@@ -3321,21 +2419,21 @@ The PIR Feedback Loop is the structured process by which findings from the curre
 
 **At the end of each delivery cycle, before the next cycle begins:**
 
-- **Review each PIR in the PIR Register.**Classify each as: Answered (key judgment delivered and accepted), Partially Answered (evidence gathered but confidence insufficient), Unanswered (insufficient collection), or Expired (decision no longer relevant).
+- **Review each PIR in the PIR Register.** Classify each as: Answered (key judgment delivered and accepted), Partially Answered (evidence gathered but confidence insufficient), Unanswered (insufficient collection), or Expired (decision no longer relevant).
 
-- **For each Answered PIR:**Record the decision it supported in the Decision Register. If the consumer acted on the judgment, note the outcome. Close the PIR in the register.
+- **For each Answered PIR:** Record the decision it supported in the Decision Register. If the consumer acted on the judgment, note the outcome. Close the PIR in the register.
 
-- **For each Partially Answered PIR:**Determine whether to carry forward as-is, revise the question, reduce scope, or escalate collection priority. Create or update corresponding SIRs.
+- **For each Partially Answered PIR:** Determine whether to carry forward as-is, revise the question, reduce scope, or escalate collection priority. Create or update corresponding SIRs.
 
-- **For each Unanswered PIR:**Identify whether the failure was a collection gap, a scope problem, or an irrelevant question. If a collection gap: create or update a Collection Gap Register entry. If irrelevant: retire the PIR with a rationale.
+- **For each Unanswered PIR:** Identify whether the failure was a collection gap, a scope problem, or an irrelevant question. If a collection gap: create or update a Collection Gap Register entry. If irrelevant: retire the PIR with a rationale.
 
-- **For each Expired PIR:**Archive with rationale. Do not carry expired PIRs into the next cycle.
+- **For each Expired PIR:** Archive with rationale. Do not carry expired PIRs into the next cycle.
 
-- **Identify new intelligence gaps**surfaced during the cycle: missed detections, threat scenarios that emerged without prior PIR coverage, crown jewels with no collection. Draft new PIRs for the next cycle using the PIR quality criteria in Part 1.
+- **Identify new intelligence gaps** surfaced during the cycle: missed detections, threat scenarios that emerged without prior PIR coverage, crown jewels with no collection. Draft new PIRs for the next cycle using the PIR quality criteria in Part 1.
 
-- **Review the cycle’s Contradiction Register.**For each unresolved contradiction, determine whether it should generate a new PIR or SIR in the next cycle.
+- **Review the cycle’s Contradiction Register.** For each unresolved contradiction, determine whether it should generate a new PIR or SIR in the next cycle.
 
-- **Present the revised PIR set to the executive sponsor and customer security lead for approval before the next cycle begins.**PIRs carried into the next cycle without re-approval are treated as stale.
+- **Present the revised PIR set to the executive sponsor and customer security lead for approval before the next cycle begins.** PIRs carried into the next cycle without re-approval are treated as stale.
 
 **Minimum output of the PIR Feedback Loop:**
 
@@ -3353,21 +2451,21 @@ The PIR Feedback Loop is the structured process by which findings from the curre
 
 **Minimum required metrics:**
 
-- **Top scenario detection/hunt coverage**— Data source: Scenario Register, Detection Backlog, Hunt Backlog — Frequency: Every two weeks — Minimum data quality: Scenario IDs and detection/hunt IDs linked — Review trigger: Coverage below Phase 0 target
+- **Top scenario detection/hunt coverage** — Data source: Scenario Register, Detection Backlog, Hunt Backlog — Frequency: Every two weeks — Minimum data quality: Scenario IDs and detection/hunt IDs linked — Review trigger: Coverage below Phase 0 target
 
-- **Critical crown jewels with mapped telemetry**— Data source: Crown-Jewel Map, Telemetry Map — Frequency: Every two weeks — Minimum data quality: Business owner and platform owner assigned — Review trigger: Any critical crown jewel lacks telemetry map
+- **Critical crown jewels with mapped telemetry** — Data source: Crown-Jewel Map, Telemetry Map — Frequency: Every two weeks — Minimum data quality: Business owner and platform owner assigned — Review trigger: Any critical crown jewel lacks telemetry map
 
-- **Collection gaps closed**— Data source: Collection Gap Register — Frequency: Weekly — Minimum data quality: Gap owner and status updated — Review trigger: No progress for 2 weeks
+- **Collection gaps closed** — Data source: Collection Gap Register — Frequency: Weekly — Minimum data quality: Gap owner and status updated — Review trigger: No progress for 2 weeks
 
-- **Detections passing positive and negative tests**— Data source: Test Evidence, Detection Health Register — Frequency: Weekly during engineering — Minimum data quality: Test evidence reviewed — Review trigger: Detection stuck below DRL-5
+- **Detections passing positive and negative tests** — Data source: Test Evidence, Detection Health Register — Frequency: Weekly during engineering — Minimum data quality: Test evidence reviewed — Review trigger: Detection stuck below DRL-5
 
-- **Pilot alert volume and labeling**— Data source: SIEM, case management, SOC feedback — Frequency: Weekly during pilot — Minimum data quality: SOC labels at least 80% of pilot alerts — Review trigger: Labeling below 80% or volume exceeds threshold
+- **Pilot alert volume and labeling** — Data source: SIEM, case management, SOC feedback — Frequency: Weekly during pilot — Minimum data quality: SOC labels at least 80% of pilot alerts — Review trigger: Labeling below 80% or volume exceeds threshold
 
-- **Mean time to triage**— Data source: Case management — Frequency: Weekly in pilot/production — Minimum data quality: Case timestamps populated and labeling completeness is at least 80% for the measured period — Review trigger: SLA breach
+- **Mean time to triage** — Data source: Case management — Frequency: Weekly in pilot/production — Minimum data quality: Case timestamps populated and labeling completeness is at least 80% for the measured period — Review trigger: SLA breach
 
-- **AI output rejection rate**— Data source: AI Use Log — Frequency: Weekly — Minimum data quality: AI outputs have reviewer and status — Review trigger: Rejection trend increases or unreviewed AI output appears
+- **AI output rejection rate** — Data source: AI Use Log — Frequency: Weekly — Minimum data quality: AI outputs have reviewer and status — Review trigger: Rejection trend increases or unreviewed AI output appears
 
-- **Executive decisions supported**— Data source: Decision Register — Frequency: Every two weeks — Minimum data quality: Decision status and outcome populated — Review trigger: Open decision exceeds deadline
+- **Executive decisions supported** — Data source: Decision Register — Frequency: Every two weeks — Minimum data quality: Decision status and outcome populated — Review trigger: Open decision exceeds deadline
 
 **Optional metrics when data quality supports:**
 
@@ -3453,21 +2551,21 @@ The PIR Feedback Loop is the structured process by which findings from the curre
 
 - suppress critical feedback.
 
-*Part 2B tools:*[*AI Workflow 10: Quality Review*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Gate F: Final Delivery Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
+*Part 2B tools:* [*AI Workflow 10: Quality Review*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)*·*[*Gate F: Final Delivery Approval*](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ### Validation Tests
 
-- **Outcome test:**Metrics show defensive improvement.
+- **Outcome test:** Metrics show defensive improvement.
 
-- **Feedback test:**SOC and platform-owner feedback is incorporated.
+- **Feedback test:** SOC and platform-owner feedback is incorporated.
 
-- **Drift test:**Detections are reviewed for environment and threat drift.
+- **Drift test:** Detections are reviewed for environment and threat drift.
 
-- **AI quality test:**AI error patterns are tracked and reduced.
+- **AI quality test:** AI error patterns are tracked and reduced.
 
-- **Backlog test:**Backlog is reprioritized based on risk, evidence, and feasibility.
+- **Backlog test:** Backlog is reprioritized based on risk, evidence, and feasibility.
 
-- **Chain integrity:**At least one primary output from this phase (updated PIR, metric, or backlog item) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the**Metric**node are logged as collection gaps or context items, not closed deliverables.
+- **Chain integrity:** At least one primary output from this phase (updated PIR, metric, or backlog item) can be traced forward along the Claim-to-Action Chain defined in Part 1 §Claim-to-Action Chain: Source → Claim → Evidence → Assessment → Customer Relevance → Scenario → Observable → Telemetry → Hunt/Detection → Test → SOC Action → Decision → Metric. Outputs that cannot reach at least the **Metric** node are logged as collection gaps or context items, not closed deliverables.
 
 ### Exit Criteria
 
@@ -3521,15 +2619,15 @@ Customer CTI projects need delivery controls, not only analytic controls.
 
 ### Weekly Cadence
 
-- **Executive checkpoint**— Participants: Executive sponsor, customer security lead, CTI lead — Required Output: Decisions, blockers, risk acceptance, priority changes, Detection Coverage Gap Register reviewed.
+- **Executive checkpoint** — Participants: Executive sponsor, customer security lead, CTI lead — Required Output: Decisions, blockers, risk acceptance, priority changes, Detection Coverage Gap Register reviewed.
 
-- **CTI working session**— Participants: CTI lead, analysts, customer SMEs — Required Output: Source validation, scenarios, PIR/SIR progress, evidence gaps.
+- **CTI working session** — Participants: CTI lead, analysts, customer SMEs — Required Output: Source validation, scenarios, PIR/SIR progress, evidence gaps.
 
-- **Detection engineering session**— Participants: Detection engineer, platform owner, SOC lead — Required Output: Rule status, tests, telemetry blockers, pilot decisions.
+- **Detection engineering session** — Participants: Detection engineer, platform owner, SOC lead — Required Output: Rule status, tests, telemetry blockers, pilot decisions.
 
-- **SOC workflow session**— Participants: SOC lead, IR lead, detection engineer — Required Output: Playbooks, escalation, false positives, case feedback.
+- **SOC workflow session** — Participants: SOC lead, IR lead, detection engineer — Required Output: Playbooks, escalation, false positives, case feedback.
 
-- **Quality gate review**— Participants: Quality reviewer, CTI lead, detection engineer, customer security lead — Required Output: Pass/fail decisions for gates and acceptance criteria.
+- **Quality gate review** — Participants: Quality reviewer, CTI lead, detection engineer, customer security lead — Required Output: Pass/fail decisions for gates and acceptance criteria.
 
 ### Change Control
 
@@ -3554,23 +2652,7 @@ If the decision owner does not respond within 4 hours for a critical change, esc
 Out-of-scope requests are not silently absorbed. They must be classified:
 
 ```text
-Accept 
-into
- 
-current
- 
-scope
- 
-/
- 
-Add
- 
-to
- backlog 
-/
- Requires change request 
-/
- Reject
+Accept into current scope / Add to backlog / Requires change request / Reject
 ```
 
 ### Acceptance Criteria
@@ -3615,65 +2697,47 @@ Every weekly project checkpoint must review:
 
 ```text
 1. Charter and guardrails
-   -> 
-approved scope, AI policy, success metrics
+   -> approved scope, AI policy, success metrics
 2. Customer decisions and PIRs
-   -> 
-PIR/SIR register and collection tasks
+   -> PIR/SIR register and collection tasks
 3. Crown jewels
-   -> 
-business-impact and dependency map
+   -> business-impact and dependency map
 4. Telemetry readiness
-   -> 
-data-source score and collection gap register
+   -> data-source score and collection gap register
 5. CTI source validation
-   -> 
-source
- register, TTPs, IOCs, relevance matrix
+   -> source register, TTPs, IOCs, relevance matrix
 6. Threat scenarios
-   -> 
-ranked customer-specific scenarios
+   -> ranked customer-specific scenarios
 7. Hunt hypotheses
-   -> 
-testable hunt backlog
+   -> testable hunt backlog
 8. Detection design
-   -> 
-detection specifications and 
-test
- plan
+   -> detection specifications and test plan
 9. Detection-as-code
-   -> 
-reviewed rule files and metadata
+   -> reviewed rule files and metadata
 10. Testing and replay
-   -> 
-positive, negative, edge, and historical validation
+   -> positive, negative, edge, and historical validation
 11. SOC workflow
-   -> 
-triage playbooks and escalation path
+   -> triage playbooks and escalation path
 12. Pilot and tuning
-   -> 
-measured alert volume and precision
+   -> measured alert volume and precision
 13. Production deployment
-   -> 
-live detection with owner and review 
-date
+   -> live detection with owner and review date
 14. Reporting and maturity loop
-   -> 
-decisions, metrics, gaps, next backlog
+   -> decisions, metrics, gaps, next backlog
 ```
 
-**Continue to Part 2B**for the complete reference toolkit: AI Workflow Library, LLM Task Cards, Strict Quality Gates, Master Registers, the end-to-end Worked Example, and the Final Customer Delivery Package.
+**Continue to Part 2B** for the complete reference toolkit: AI Workflow Library, LLM Task Cards, Strict Quality Gates, Master Registers, the end-to-end Worked Example, and the Final Customer Delivery Package.
 
 [**Customer-Driven AI CTI Project Template:Part 2B: Reference Toolkit**
 [From pure CTI to hands-on detection engineering with strict validation gates](2026-05-12-customer-driven-ai-cti-project-template-part-2b-reference-toolkit-3a56fab0b943.md)
 
 ## Follow for practical cybersecurity research
 
-If you’re interested in**Offensive security,****AI security, real-world attack simulations, CTI, and detection engineering**— this is exactly what I focus on.
+If you’re interested in **Offensive security,** **AI security, real-world attack simulations, CTI, and detection engineering** — this is exactly what I focus on.
 
 ### Stay connected:
 
-→**Subscribe on Medium:**[medium.com/@1200km](https://medium.com/@1200km)
-→**Connect on LinkedIn:**[andrey-pautov](https://www.linkedin.com/in/andrey-pautov/)
-→**GitHub — tools & labs:**[github.com/anpa1200](https://github.com/anpa1200)
-→**Contact:**[1200km@gmail.com](mailto:1200km@gmail.com)
+→ **Subscribe on Medium:** [medium.com/@1200km](https://medium.com/@1200km)
+→ **Connect on LinkedIn:** [andrey-pautov](https://www.linkedin.com/in/andrey-pautov/)
+→ **GitHub — tools & labs:** [github.com/anpa1200](https://github.com/anpa1200)
+→ **Contact:** [1200km@gmail.com](mailto:1200km@gmail.com)

@@ -29,11 +29,11 @@ RSS_NAMESPACES = {
 CURATED_RSS_POST_IDS = {"788626373781"}
 
 
-def md_escape(text: str) -> str:
+def md_escape(text: str, *, strip: bool = True) -> str:
     text = text.replace("\u00a0", " ").replace("\u200a", " ")
     text = text.replace("<", "&lt;").replace(">", "&gt;")
     text = text.replace("{", "&#123;").replace("}", "&#125;")
-    return text.strip()
+    return text.strip() if strip else text
 
 
 def plain_summary(text: str) -> str:
@@ -53,9 +53,16 @@ def post_id_from_path(path: Path) -> str:
     return path.stem.rsplit("-", 1)[-1]
 
 
+def inline_wrap(text: str, prefix: str, suffix: str) -> str:
+    # Markdown emphasis/link delimiters cannot contain boundary whitespace.
+    match = re.fullmatch(r"(\s*)(.*?)(\s*)", text, flags=re.DOTALL)
+    leading, core, trailing = match.groups()
+    return f"{leading}{prefix}{core}{suffix}{trailing}" if core else text
+
+
 def inline_md(node) -> str:
     if isinstance(node, str):
-        return md_escape(node)
+        return md_escape(node, strip=False)
     if not isinstance(node, Tag):
         return ""
 
@@ -64,9 +71,9 @@ def inline_md(node) -> str:
     href = node.get("href")
 
     if name in {"strong", "b"}:
-        return f"**{text}**"
+        return inline_wrap(text, "**", "**")
     if name in {"em", "i"}:
-        return f"*{text}*"
+        return inline_wrap(text, "*", "*")
     if name == "code":
         return f"`{text.replace('`', '\\`')}`"
     if name == "br":
@@ -81,7 +88,7 @@ def inline_md(node) -> str:
             href = href.replace("https://anpa1200.github.io/", "https://1200km.com/", 1)
         if href.startswith("https://1200km.com/"):
             return f'<a href="{href}" target="_self">{text}</a>'
-        return f"[{text}]({href})"
+        return inline_wrap(text, "[", f"]({href})")
     return text
 
 
@@ -125,6 +132,26 @@ def image_markdown(node: Tag) -> str:
     return "\n".join(lines)
 
 
+def pre_text(node) -> str:
+    """Keep actual line breaks, never add separators at highlighting spans.
+
+    html.parser can retain children inside a non-void <br> from Medium's
+    export. Keep those children after the break rather than dropping them.
+    """
+    if isinstance(node, str):
+        return str(node)
+    if not isinstance(node, Tag):
+        return ""
+    children = "".join(pre_text(child) for child in node.children)
+    return ("\n" if node.name == "br" else "") + children
+
+
+def fenced_code(code: str) -> str:
+    longest = max((len(run) for run in re.findall(r"`+", code)), default=0)
+    fence = "`" * max(3, longest + 1)
+    return f"{fence}text\n{code}\n{fence}"
+
+
 def block_to_md(node: Tag, title: str, seen_title: list[bool]) -> str:
     name = node.name.lower()
     classes = set(node.get("class", []))
@@ -132,8 +159,8 @@ def block_to_md(node: Tag, title: str, seen_title: list[bool]) -> str:
     if name == "figure" or "graf--figure" in classes:
         return image_markdown(node)
     if name == "pre" or "graf--pre" in classes:
-        code = node.get_text("\n", strip=False).strip("\n")
-        return f"```text\n{code}\n```"
+        code = pre_text(node).strip("\n")
+        return fenced_code(code)
     if name == "blockquote" or "graf--blockquote" in classes:
         text = md_escape(node.get_text(" ", strip=True))
         return "\n".join(f"> {line}" for line in text.splitlines())
@@ -251,13 +278,14 @@ def category_for(title: str, text: str) -> str:
 def sanitize_generated_markdown(path: Path) -> None:
     lines = path.read_text(encoding="utf-8").splitlines()
     out: list[str] = []
-    in_code = False
+    fence_length = 0
     for line in lines:
-        if line.startswith("```"):
-            in_code = not in_code
-            out.append(line)
-            continue
-        if in_code:
+        fence = re.match(r"^(`{3,})(.*)$", line)
+        if fence and not fence_length:
+            fence_length = len(fence[1])
+        elif fence and len(fence[1]) >= fence_length and not fence[2].strip():
+            fence_length = 0
+        if fence or fence_length:
             out.append(line)
             continue
         line = re.sub(r"\]\((https?://[^)]+?)\.\)", r"](\1)", line)
@@ -270,7 +298,7 @@ def sanitize_generated_markdown(path: Path) -> None:
 
 def fallback_markdown_summary(text: str, title: str) -> str:
     in_frontmatter = False
-    in_code = False
+    fence_length = 0
     for index, raw_line in enumerate(text.splitlines()):
         line = raw_line.strip()
         if index == 0 and line == "---":
@@ -280,10 +308,12 @@ def fallback_markdown_summary(text: str, title: str) -> str:
             if line == "---":
                 in_frontmatter = False
             continue
-        if line.startswith("```"):
-            in_code = not in_code
-            continue
-        if in_code or not line or line.startswith(("#", "- **", ":::", "![", ">")):
+        fence = re.match(r"^(`{3,})(.*)$", line)
+        if fence and not fence_length:
+            fence_length = len(fence[1])
+        elif fence and len(fence[1]) >= fence_length and not fence[2].strip():
+            fence_length = 0
+        if fence or fence_length or not line or line.startswith(("#", "- **", ":::", "![", ">")):
             continue
         plain = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", line)
         plain = re.sub(r"[*_`]", "", plain).strip()

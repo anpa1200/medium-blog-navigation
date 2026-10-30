@@ -45,41 +45,34 @@ Most Linux distributions come with Perl pre-installed, which is required for run
 
 - **Open a Terminal.**
 
-- **Update Package Manager**(optional but recommended):
+- **Update Package Manager** (optional but recommended):
 
 ```text
-sudo apt 
-update
+sudo apt update
 sudo apt upgrade
 ```
 
 **3. Clone the Nikto Repository**:
 
 ```text
-git 
-clone
- https://github.com/sullo/nikto.git
+git clone https://github.com/sullo/nikto.git
 ```
 
 **4. Navigate to the Nikto Directory**:
 
 ```text
-cd
- nikto/program
+cd nikto/program
 ```
 
 **5. Run Nikto**:
 
 ```text
-perl nikto.pl -h 
-<
-target
->
+perl nikto.pl -h <target>
 ```
 
 ### Note:
 
-To use`perl nikto.pl`as`./nikto`, you can add the program path to your`$PATH`or create an alias in your shell configuration.
+To use `perl nikto.pl` as `./nikto`, you can add the program path to your `$PATH` or create an alias in your shell configuration.
 
 ## 2. Windows Installation
 
@@ -89,36 +82,30 @@ For Windows, you need to install Perl and Git if you don’t already have them.
 
 - **Install Strawberry Perl**:
 
-- Download Strawberry Perl from[Strawberry Perl’s official site](https://strawberryperl.com/)and follow the installer instructions.
+- Download Strawberry Perl from [Strawberry Perl’s official site](https://strawberryperl.com/) and follow the installer instructions.
 
-**2. Install Git**(if it’s not already installed):
+**2. Install Git** (if it’s not already installed):
 
-- Download and install Git from[Git for Windows](https://gitforwindows.org/).
+- Download and install Git from [Git for Windows](https://gitforwindows.org/).
 
 **3. Open Command Prompt or Git Bash**.
 
 **4. Clone the Nikto Repository**:
 
 ```text
-git 
-clone
- https://github.com/sullo/nikto.git
+git clone https://github.com/sullo/nikto.git
 ```
 
 **5. Navigate to the Nikto Directory**:
 
 ```text
-cd
- nikto/program
+cd nikto/program
 ```
 
 **6. Run Nikto**:
 
 ```text
-perl nikto.pl -h 
-<
-target
->
+perl nikto.pl -h <target>
 ```
 
 ## 3. macOS Installation
@@ -127,15 +114,12 @@ macOS users also need Perl (pre-installed) and Git. For convenience, Homebrew ca
 
 ### Step-by-Step Installation:
 
-- **Install Homebrew**(if not already installed):
+- **Install Homebrew** (if not already installed):
 
 - Open Terminal and run:
 
 ```text
-/bin/bash -c 
-"
-$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
-"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 **2. Install Nikto Using Homebrew**:
@@ -147,10 +131,7 @@ brew install nikto
 **3. Run Nikto**:
 
 ```text
-nikto -h 
-<
-target
->
+nikto -h <target>
 ```
 
 - Alternative Manual Installation:
@@ -158,11 +139,8 @@ target
 Alternatively, you can clone the Git repository like in the Linux steps:
 
 ```text
-git 
-clone
- https://github.com/sullo/nikto.git
-cd
- nikto/program
+git clone https://github.com/sullo/nikto.git
+cd nikto/program
 perl nikto.pl -h <target>
 ```
 
@@ -170,8 +148,7 @@ perl nikto.pl -h <target>
 To ensure Nikto is installed and running correctly, use the following command to display the version:
 
 ```text
-nikto -
-Version
+nikto -Version
 ```
 
 ## Usage
@@ -189,8 +166,7 @@ nikto
 The most basic Nikto scan requires simply a host to target, since port 80 is assumed if none is specified. The host can either be the IP or a hostname of a machine, and is specified using the -h (-host) option. This will scan the IP 192.168.0.1 on TCP port 80:
 
 ```text
-nikto -h http:
-//18.158.46.251:30540
+nikto -h http://18.158.46.251:30540
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*xGf6OexoRm6dn8803EiLXw.png" alt="Article image" width="1559" height="510" loading="lazy" decoding="async" />
@@ -201,7 +177,7 @@ To check on a different port, specify the port number with the -p (-port) option
 
 Hosts, ports and protocols may also be specified by using a full URL syntax, and it will be scanned:
 
-`perl nikto.pl -h[https://192.168.0.1:443/](https://192.168.0.1:443/)`
+`perl nikto.pl -h [https://192.168.0.1:443/](https://192.168.0.1:443/)`
 
 There is no need to specify that port 443 is encrypted, as Nikto will first test regular HTTP and if that fails, HTTPS. If you are sure it is an SSL/TLS server, specifying -s (-ssl) very slightly will speed up the test (this is also useful for servers that respond HTTP on port 443 even though content is only served when encryption is used).
 
@@ -236,11 +212,7 @@ This is an example of a valid hosts file:
 - **Example**:
 
 ```text
-nikto -
-config
- /
-path
-/to/config_file.conf -h <target>
+nikto -config /path/to/config_file.conf -h <target>
 ```
 
 ### -Display
@@ -254,9 +226,7 @@ path
 - **Example**: Verbose output
 
 ```text
-nikto -
-Display
- V -h <target>
+nikto -Display V -h <target>
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*YtJubeXQjoWtJY-vJ3Ddhg.png" alt="Article image" width="767" height="822" loading="lazy" decoding="async" />
@@ -277,17 +247,14 @@ nikto -dbcheck
 
 ### -Format
 
-**Description**: Choose the format for the output file specified with`-output`.
+**Description**: Choose the format for the output file specified with `-output`.
 
-- **Usage**: Supported formats are`csv`,`html`,`txt`,`xml`, etc.
+- **Usage**: Supported formats are `csv`, `html`, `txt`, `xml`, etc.
 
 - **Example**:
 
 ```text
-nikto -h <target> -Format 
-html
- -output results
-.html
+nikto -h <target> -Format html -output results.html
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*TV5I5DUf1ix46Gs8Fea2Jg.png" alt="Article image" width="1092" height="888" loading="lazy" decoding="async" />
@@ -315,8 +282,7 @@ nikto -Help
 - **Example**:
 
 ```text
-nikto -host example.
-com
+nikto -host example.com
 ```
 
 ### -id
@@ -330,9 +296,7 @@ com
 - **Example**:
 
 ```text
-nikto -h <target> -
-id
- admin:password123
+nikto -h <target> -id admin:password123
 ```
 
 ## 8. -list-plugins
@@ -368,11 +332,7 @@ nikto -list-plugins
 - **Example**:
 
 ```text
-nikto -h 
-<
-target
->
- -nossl
+nikto -h <target> -nossl
 ```
 
 ### -no404
@@ -384,11 +344,7 @@ target
 - **Example**:
 
 ```text
-nikto -h 
-<
-target
->
- -no404
+nikto -h <target> -no404
 ```
 
 ### -Plugins
@@ -400,11 +356,7 @@ target
 - **Example**:
 
 ```text
-nikto -h 
-<
-target
->
- -Plugins myplugin1,myplugin2
+nikto -h <target> -Plugins myplugin1,myplugin2
 ```
 
 ### -port
@@ -438,11 +390,7 @@ nikto -h <target> -root /admin
 - **Example**:
 
 ```text
-nikto -h 
-<
-target
->
- -port 8443 -ssl
+nikto -h <target> -port 8443 -ssl
 ```
 
 ## 16. -Tuning
@@ -454,15 +402,13 @@ target
 - **Example**:
 
 ```text
-nikto -h <target> -Tuning 1  
-# To scan for interesting file types
+nikto -h <target> -Tuning 1  # To scan for interesting file types
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*7JyUyYII83zkviOp7x-JLQ.png" alt="Article image" width="703" height="337" loading="lazy" decoding="async" />
 
 ```text
-nikto -h <target> -Tuning 1  
-# To scan for interesting file types
+nikto -h <target> -Tuning 1  # To scan for interesting file types
 ```
 
 ### -timeout
@@ -474,9 +420,7 @@ nikto -h <target> -Tuning 1
 - **Example**:
 
 ```text
-nikto -h <target> -
-timeout
- 20
+nikto -h <target> -timeout 20
 ```
 
 ### -update
@@ -488,9 +432,7 @@ timeout
 - **Example**:
 
 ```text
-nikto 
--
-update
+nikto -update
 ```
 
 ### -Version
@@ -502,22 +444,19 @@ update
 - **Example**:
 
 ```text
-nikto -
-Version
+nikto -Version
 ```
 
 ### -vhost
 
-**Description**: Specify a virtual host for the`Host`header, often necessary for sites using name-based virtual hosting.
+**Description**: Specify a virtual host for the `Host` header, often necessary for sites using name-based virtual hosting.
 
 - **Usage**: Useful for targeting specific virtual hosts on a shared IP.
 
 - **Example**:
 
 ```text
-nikto -h <target> -vhost 
-sub
-.example.com
+nikto -h <target> -vhost sub.example.com
 ```
 
 ## Report reading
@@ -580,7 +519,7 @@ Each finding generally includes:
 
 - **Severity**: Prioritize addressing vulnerabilities that expose sensitive files or enable unauthorized access.
 
-- **Path Info**: Use the paths in the report to verify findings manually. For example,`phpinfo.php`files should typically be removed or restricted as they expose configuration details.
+- **Path Info**: Use the paths in the report to verify findings manually. For example, `phpinfo.php` files should typically be removed or restricted as they expose configuration details.
 
 - **OSVDB References**: Nikto often references OSVDB (Open Source Vulnerability Database) IDs. Use these IDs to look up more details about the vulnerabilities if needed.
 
@@ -590,7 +529,7 @@ Nikto identifies various server misconfigurations or deviations from security be
 
 - **Directory Listings**: If directory listing is enabled, an attacker could browse files and potentially discover sensitive data.
 
-- **Default Files/Directories**: Presence of default files (e.g.,`/index.html`,`/admin/`) may indicate areas that need better access controls.
+- **Default Files/Directories**: Presence of default files (e.g., `/index.html`, `/admin/`) may indicate areas that need better access controls.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*gfWz5Y0Z_tam5gX7qX-8Fg.png" alt="Article image" width="1020" height="35" loading="lazy" decoding="async" />
 

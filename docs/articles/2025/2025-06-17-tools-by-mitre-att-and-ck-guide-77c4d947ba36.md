@@ -44,10 +44,8 @@ This sub-technique is about identifying live hosts in a target network range. At
 ### 1. Nmap The Swiss Army knife of network scanning.
 
 ```text
-nmap -sn 192.168.1.0/24         
-# Ping scan for live hosts
-nmap -sS -p- 10.0.0.0/8         
-# Stealth scan on all ports across large block
+nmap -sn 192.168.1.0/24         # Ping scan for live hosts
+nmap -sS -p- 10.0.0.0/8         # Stealth scan on all ports across large block
 ```
 
 **Complete guide for Nmap here:**
@@ -67,30 +65,10 @@ $ amass intel
 Usage: amass intel [options] [-whois -d DOMAIN] [-addr ADDR -asn ASN -cidr CIDR]
   -active
         Attempt certificate name grabs
-  -
-addr 
-value
-        IPs 
-and
- 
-ranges
- (
-192.168
-.1
-.1
--254
-) separated 
-by
- commas
-  -asn 
-value
-        ASNs separated 
-by
- 
-commas
- (
-can be used multiple times
-)
+  -addr value
+        IPs and ranges (192.168.1.1-254) separated by commas
+  -asn value
+        ASNs separated by commas (can be used multiple times)
 [...]
 ```
 
@@ -104,12 +82,7 @@ Search for: “Amass Intel”
 ### 3. Netdiscover ARP-based host discovery in internal networks.
 
 ```text
-netdiscover -r 
-192.168
-.1
-.0
-/
-24
+netdiscover -r 192.168.1.0/24
 ```
 
 **Complete guide for basic tools here:**
@@ -132,29 +105,15 @@ Enterprise-grade vulnerability scanner with plugin support. GUI/web-based interf
 Open-source alternative to Nessus.
 
 ```text
-gvm
--
-start
-      # 
-Start
- the scanner
-gvm
--
-check
--
-setup
+gvm-start      # Start the scanner
+gvm-check-setup
 ```
 
 **3. Nmap NSE Scripts**
 Leverage Nmap’s scripting engine to look for vulnerabilities.
 
 ```text
-nmap -sV 
---script
- vuln 
-192.168
-.
-1.5
+nmap -sV --script vuln 192.168.1.5
 ```
 
 **Full guide for Nmap Scripts here:**
@@ -166,8 +125,7 @@ nmap -sV
 Simple scanner for web servers.
 
 ```text
-nikto -h http:
-//192.168.1.10
+nikto -h http://192.168.1.10
 ```
 
 **Full guide for Nikto here:**
@@ -189,8 +147,7 @@ A powerful exploitation platform that also includes auxiliary modules for scanni
 ```text
 msfconsole
 use auxiliary/scanner/http/wordpress_scanner
-set
- RHOSTS 192.168.1.50
+set RHOSTS 192.168.1.50
 run
 ```
 
@@ -218,22 +175,14 @@ ffuf -u https://site.com/FUZZ -w /usr/share/wordlists/dirbuster/directory-list.t
 Directory and DNS brute-forcing.
 
 ```text
-gobuster 
-dir
- -u http://site.com -w /usr/share/wordlists/dirb/common.txt
+gobuster dir -u http://site.com -w /usr/share/wordlists/dirb/common.txt
 ```
 
 **3. Dirb**
 Classic directory brute-forcer.
 
 ```text
-dirb 
-http:
-/
-/site.com /usr
-/share/wordlists
-/dirb/common
-.txt
+dirb http://site.com /usr/share/wordlists/dirb/common.txt
 ```
 
 **4. Dirbuster**
@@ -248,14 +197,7 @@ Java-based GUI tool from OWASP.
 Flexible fuzzing for parameters and headers.
 
 ```text
-wfuzz -c -z file,
-/path/
-to/wordlist.
-txt
- --hh=
-404
- 
-"http://site.com/page.php?file=FUZZ"
+wfuzz -c -z file,/path/to/wordlist.txt --hh=404 "http://site.com/page.php?file=FUZZ"
 ```
 
 **6. Burp Suite (Community or Pro)**
@@ -266,7 +208,7 @@ Use Intruder for custom wordlist scanning.
 
 ## Summary
 
-This post provides a hands-on breakdown of**MITRE ATT&CK technique T1595 — Active Scanning**and its sub-techniques:
+This post provides a hands-on breakdown of **MITRE ATT&CK technique T1595 — Active Scanning** and its sub-techniques:
 
 - `T1595.001 – Scanning IP Blocks`
 
@@ -276,9 +218,9 @@ This post provides a hands-on breakdown of**MITRE ATT&CK technique T1595 — Act
 
 For each, you’ll find a clear explanation, practical tools, and real command-line examples. Whether you’re performing red team recon or strengthening your blue team detections, this guide offers a tactical starting point for scanning and enumeration.
 
-You can explore**detailed guides on every tool**mentioned in this post — like Nmap, Amass, Nikto, FFUF, and Metasploit — on my Medium blog:
+You can explore **detailed guides on every tool** mentioned in this post — like Nmap, Amass, Nikto, FFUF, and Metasploit — on my Medium blog:
 
 [**Andrey Pautov - Medium**
-*Read writing from Andrey Pautov on Medium.*medium.com](https://medium.com/@1200km)[](https://medium.com/@1200km)
+*Read writing from Andrey Pautov on Medium.*medium.com](https://medium.com/@1200km)
 
 **Stay sharp, and happy hunting.**

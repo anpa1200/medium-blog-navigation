@@ -25,20 +25,20 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ## Introduction
 
-Wireless penetration testing is traditionally a**manual, error-prone process**:
-capturing handshakes, guessing attack paths, retrying failed steps, and correlating outputs by hand.
+Wireless penetration testing is traditionally a **manual, error-prone process**:
+ capturing handshakes, guessing attack paths, retrying failed steps, and correlating outputs by hand.
 
 By combining:
 
-- **Aircrack-ng**(low-level Wi-Fi attack tooling)
+- **Aircrack-ng** (low-level Wi-Fi attack tooling)
 
-**Full manual guide for Aircrack-ng here:**[**../2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md](../2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md)
+**Full manual guide for Aircrack-ng here:** [**../2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md](../2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md)
 
-- **HexStrike-AI**(local execution and orchestration)
+- **HexStrike-AI** (local execution and orchestration)
 
-- **Gemini-CLI**(LLM-driven reasoning via MCP)
+- **Gemini-CLI** (LLM-driven reasoning via MCP)
 
-we can transform Wi-Fi testing into a**goal-driven, adaptive workflow**, where the AI:
+we can transform Wi-Fi testing into a **goal-driven, adaptive workflow**, where the AI:
 
 - decides what to do next,
 
@@ -46,7 +46,7 @@ we can transform Wi-Fi testing into a**goal-driven, adaptive workflow**, where t
 
 - and chains findings logically.
 
-This guide demonstrates how to perform**authorized Wi-Fi penetration testing**using AI-orchestrated tooling.
+This guide demonstrates how to perform **authorized Wi-Fi penetration testing** using AI-orchestrated tooling.
 
 ## Architecture Overview
 
@@ -76,7 +76,7 @@ Key principle:
 
 - Gemini-CLI configured with HexStrike MCP
 
-- **Explicit authorization**to test the target network
+- **Explicit authorization** to test the target network
 
 ## Required tools (already in Kali)
 
@@ -88,66 +88,22 @@ Key principle:
 
 - `aircrack-ng`
 
-- `macchanger`(optional)
+- `macchanger` (optional)
 
 ## Prompt
 
 ```text
->
-@hexstrike
-Perform an authorized wireless penetration test against the Wi
--
-Fi network
-First
- 
-show
- me 
-all
- aviable interfaces:
-Then
- 
-show
- me 
-all
- aviable SSID
-/
-ESSID
-aircrack
--
-ng toolset.
-Capture a WPA
-/
-WPA2 handshake 
-and
- attempt offline cracking 
-using
-:
- 
-/
-home
-/
-andrey
-/
-Documents
-/
-passwords_list.txt
-Do it agressive, Keep scans short 
-with
- 
-time
- 
-out
-, stop 
-on
- success 
-or
- timeout, 
-and
- produce a brief report
-with
- results 
-and
- remediation.
+>@hexstrike
+Perform an authorized wireless penetration test against the Wi-Fi network
+First show me all aviable interfaces:
+Then show me all aviable SSID/ESSID
+
+aircrack-ng toolset.
+Capture a WPA/WPA2 handshake and attempt offline cracking using:
+ /home/andrey/Documents/passwords_list.txt
+
+Do it agressive, Keep scans short with time out, stop on success or timeout, and produce a brief report
+with results and remediation.
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*lAvwkgVq89m2Uzb-bTV14A.png" alt="Article image" width="1650" height="589" loading="lazy" decoding="async" />
@@ -158,37 +114,37 @@ and
 
 - HexStrike queried the system for wireless interfaces.
 
-- **Result:**`wlan0`was identified as the only usable wireless interface (RTL8821AU chipset).
+- **Result:** `wlan0` was identified as the only usable wireless interface (RTL8821AU chipset).
 
 <img src="https://cdn-images-1.medium.com/max/800/1*BA-PixA3rZED8oQKzThyzQ.png" alt="Article image" width="1761" height="261" loading="lazy" decoding="async" />
 
 ## 2. Monitor mode enablement
 
-- `airmon-ng start wlan0`was executed.
+- `airmon-ng start wlan0` was executed.
 
-- Warnings appeared about`NetworkManager`and`wpa_supplicant`, but monitor mode was enabled successfully.
+- Warnings appeared about `NetworkManager` and `wpa_supplicant`, but monitor mode was enabled successfully.
 
-- **Result:**`wlan0`entered monitor mode and was usable for capture/injection.
+- **Result:** `wlan0` entered monitor mode and was usable for capture/injection.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*uemVkzoYmBD3zXbt4ojI9Q.png" alt="Article image" width="1749" height="332" loading="lazy" decoding="async" />
 
 ## 3. Initial wireless scan
 
-- `airodump-ng`ran for ~30 seconds.
+- `airodump-ng` ran for ~30 seconds.
 
-- Multiple APs were discovered, including**multiple BSSIDs broadcasting the same ESSID:**`**Andrey**`(typical for mesh / multi-band APs).
+- Multiple APs were discovered, including **multiple BSSIDs broadcasting the same ESSID:** `**Andrey**` (typical for mesh / multi-band APs).
 
-- Encryption observed:**WPA2-PSK**.
+- Encryption observed: **WPA2-PSK**.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*HShvm8_-v2S3fW4QadzsuQ.png" alt="Article image" width="1749" height="332" loading="lazy" decoding="async" />
 
 ## 4. Target selection (first attempt)
 
-- Selected BSSID`D6:35:1D:AD:F5:C0`(channel 64).
+- Selected BSSID `D6:35:1D:AD:F5:C0` (channel 64).
 
 - Clients were detected.
 
-- Several**deauthentication attempts failed**with:
+- Several **deauthentication attempts failed** with:
 
 - `No such BSSID available`
 
@@ -196,33 +152,33 @@ and
 
 - Multiple retries were attempted, including interface reset.
 
-- **Result:**No valid handshake captured on this BSSID.
+- **Result:** No valid handshake captured on this BSSID.
 
 ## 5. Pivot to another AP (same ESSID)
 
-- Switched to BSSID`A2:B5:3C:89:CB:52`(channel 1).
+- Switched to BSSID `A2:B5:3C:89:CB:52` (channel 1).
 
-- This AP had**multiple active clients**and stable channel behavior.
+- This AP had **multiple active clients** and stable channel behavior.
 
-- **Key decision:**Correct pivot based on runtime conditions.
+- **Key decision:** Correct pivot based on runtime conditions.
 
 ## 6. Handshake capture
 
-- `airodump-ng`ran in the background.
+- `airodump-ng` ran in the background.
 
-- `aireplay-ng`deauthentication was executed against an active client.
+- `aireplay-ng` deauthentication was executed against an active client.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*4Oxj0b4jN41LpMkuoYqpAw.png" alt="Article image" width="1728" height="414" loading="lazy" decoding="async" />
 
 - This time, the deauth succeeded.
 
-- **Result:**A valid**WPA2 handshake was captured**.
+- **Result:** A valid **WPA2 handshake was captured**.
 
 Verification:
 
 - `aircrack-ng handshake_capture_3-01.cap`
 
-- Output confirmed:**“WPA (1 handshake)”**
+- Output confirmed: **“WPA (1 handshake)”**
 
 <img src="https://cdn-images-1.medium.com/max/800/1*1jpmbN-iLA2BybvP-Hw69Q.png" alt="Article image" width="1737" height="434" loading="lazy" decoding="async" />
 
@@ -239,8 +195,7 @@ Verification:
 **Recovered key:**
 
 ```text
-A0542553383
-#
+A0542553383#
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Tui0PlJVq-ocozToiX6K9g.png" alt="Article image" width="1723" height="425" loading="lazy" decoding="async" />
@@ -249,18 +204,17 @@ A0542553383
 
 ## Outcome
 
-- The Wi-Fi network**“Andrey”**was successfully compromised**offline**.
+- The Wi-Fi network **“Andrey”** was successfully compromised **offline**.
 
 - No live brute-force was required.
 
 - Attack chain:
-**Capture handshake → Offline dictionary attack → Key recovery**
+ **Capture handshake → Offline dictionary attack → Key recovery**
 
 ## Recovered password
 
 ```text
-A0542553383
-#
+A0542553383#
 ```
 
 ## Key technical observations

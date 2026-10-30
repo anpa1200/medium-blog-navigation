@@ -25,9 +25,9 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ## Overview
 
-This guide documents a**fully authorized lab**workflow where an AI-orchestrated toolchain attempted to validate SSH exposure and assess**credential hygiene**on a target host. The value here is not “running tools,” but how the workflow**handles failures**, corrects environment issues (missing resources, permissions), and produces a**defender-usable outcome**.
+This guide documents a **fully authorized lab** workflow where an AI-orchestrated toolchain attempted to validate SSH exposure and assess **credential hygiene** on a target host. The value here is not “running tools,” but how the workflow **handles failures**, corrects environment issues (missing resources, permissions), and produces a **defender-usable outcome**.
 
-[**HexStrike on Kali Linux 2025.4: A Comprehensive Guide**](../2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md)**here:**
+[**HexStrike on Kali Linux 2025.4: A Comprehensive Guide**](../2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md) **here:**
 
 ## Scenario
 
@@ -35,17 +35,17 @@ This guide documents a**fully authorized lab**workflow where an AI-orchestrated 
 
 - Validate whether SSH is reachable on the target.
 
-- Run a**controlled credential-hygiene check**using pre-approved test data (small lists).
+- Run a **controlled credential-hygiene check** using pre-approved test data (small lists).
 
 - Capture operational issues and produce remediation guidance.
 
 ### Inputs
 
-- **Target host:**`172.16.59.129`
+- **Target host:** `172.16.59.129`
 
 - **Wordlists used during the session:**
 
-- Built-in lists under`/usr/share/wordlists/…`
+- Built-in lists under `/usr/share/wordlists/…`
 
 - Custom lists:
 
@@ -66,17 +66,12 @@ This guide documents a**fully authorized lab**workflow where an AI-orchestrated 
 ### 1) Promt
 
 ```text
-@hexstrike:
- scan 
-172.16
-.
-59.129
- find ssh port, do bruteforce for credentials with password dictionaries
+@hexstrike: scan 172.16.59.129 find ssh port, do bruteforce for credentials with password dictionaries
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*WTVKVELBsiaU5HwO5IGXgA.png" alt="Article image" width="1382" height="514" loading="lazy" decoding="async" />
 
-**Key point:**The operator provides intent; the agent decides execution order.
+**Key point:** The operator provides intent; the agent decides execution order.
 
 ## 2) Port scanning
 
@@ -87,7 +82,7 @@ This guide documents a**fully authorized lab**workflow where an AI-orchestrated 
 <img src="https://cdn-images-1.medium.com/max/800/1*bUZwzZAWqh-3ZCLoeMHKwA.png" alt="Article image" width="1741" height="644" loading="lazy" decoding="async" />
 
 **Important note (reporting hygiene)**
-I recommend**not publishing raw credentials**even for labs. In reports, redact passwords and keep only:
+I recommend **not publishing raw credentials** even for labs. In reports, redact passwords and keep only:
 
 - account name
 
@@ -115,11 +110,11 @@ FindingEvidence (from tool output)RiskMultiple accounts accept weak/default pass
 
 - The workflow ultimately produced a clear conclusion:
 
-- **credential hygiene is weak**on the target system (multiple successful logins using low-entropy passwords)
+- **credential hygiene is weak** on the target system (multiple successful logins using low-entropy passwords)
 
 ## Why this matters (defensive perspective)
 
-Even though**SSH online authentication can be rate-limited**, weak credentials are still a high-value failure mode because:
+Even though **SSH online authentication can be rate-limited**, weak credentials are still a high-value failure mode because:
 
 - attackers can use targeted credential sets (sprays)
 
@@ -131,15 +126,15 @@ Even though**SSH online authentication can be rate-limited**, weak credentials a
 
 ## Hardening (highest ROI first)
 
-- **Disable password authentication**for SSH; enforce keys (or strong MFA where applicable).
+- **Disable password authentication** for SSH; enforce keys (or strong MFA where applicable).
 
-- **Disable direct privileged logins**over SSH.
+- **Disable direct privileged logins** over SSH.
 
-- **Restrict SSH exposure**(allowlist admin subnets / VPN only).
+- **Restrict SSH exposure** (allowlist admin subnets / VPN only).
 
-- **Add throttling / banning**for repeated failures (rate-limit, jail-based blocking).
+- **Add throttling / banning** for repeated failures (rate-limit, jail-based blocking).
 
-- **Rotate credentials**and enforce a banned-password policy.
+- **Rotate credentials** and enforce a banned-password policy.
 
 ## Detection engineering
 
@@ -155,9 +150,9 @@ Even though**SSH online authentication can be rate-limited**, weak credentials a
 
 ## Key takeaways
 
-- AI orchestration is not “blind automation” — it’s**dynamic troubleshooting**.
+- AI orchestration is not “blind automation” — it’s **dynamic troubleshooting**.
 
-- Most failures are**environmental**(paths, permissions, tooling assumptions).
+- Most failures are **environmental** (paths, permissions, tooling assumptions).
 
 - The valuable output is not the run itself, but:
 

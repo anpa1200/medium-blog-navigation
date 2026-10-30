@@ -43,13 +43,13 @@ The content provided in this post is for educational purposes only. DirBuster is
 
 **HTTP Request Simulation**:
 
-- DirBuster sends HTTP or HTTPS requests to the web server, appending each entry from the wordlist to the base URL of the target. For example, if testing`www.example.com`with a wordlist entry of`admin`, DirBuster would check`[www.example.com/admin](http://www.example.com/admin)`[.](http://www.example.com/admin)
+- DirBuster sends HTTP or HTTPS requests to the web server, appending each entry from the wordlist to the base URL of the target. For example, if testing `www.example.com` with a wordlist entry of `admin`, DirBuster would check `[www.example.com/admin](http://www.example.com/admin)`[.](http://www.example.com/admin)
 
-- It then observes the server’s response to each request. A`200 OK`response indicates that the resource exists and is accessible, while responses like`404 Not Found`suggest non-existence. Other responses, such as`301 Moved Permanently`or`403 Forbidden`, provide additional clues about server configuration and security measures.
+- It then observes the server’s response to each request. A `200 OK` response indicates that the resource exists and is accessible, while responses like `404 Not Found` suggest non-existence. Other responses, such as `301 Moved Permanently` or `403 Forbidden`, provide additional clues about server configuration and security measures.
 
 **Recursive Testing**:
 
-- DirBuster can perform recursive testing on directories it finds. This means if it discovers a directory like`www.example.com/admin`, it can then test additional wordlist entries within that directory (e.g.,`[www.example.com/admin/settings](http://www.example.com/admin/settings%29)`[).](http://www.example.com/admin/settings%29)
+- DirBuster can perform recursive testing on directories it finds. This means if it discovers a directory like `www.example.com/admin`, it can then test additional wordlist entries within that directory (e.g., `[www.example.com/admin/settings](http://www.example.com/admin/settings%29)`[).](http://www.example.com/admin/settings%29)
 
 **Multi-threading**:
 
@@ -84,23 +84,20 @@ Before installing DirBuster, ensure that Java is installed on your system since 
 - Update your package list:
 
 ```text
-sudo apt 
-update
+sudo apt update
 ```
 
 - Install Java:
 
 ```text
-sudo apt install 
-default
--jre
+sudo apt install default-jre
 ```
 
 ### Step 2: Install DirBuster
 
-As of my last training cut-off, DirBuster isn’t typically available directly via`apt-get`because it's not included in the standard repositories due to it being a more niche tool for penetration testing. However, if it were available, the process would ideally be:
+As of my last training cut-off, DirBuster isn’t typically available directly via `apt-get` because it's not included in the standard repositories due to it being a more niche tool for penetration testing. However, if it were available, the process would ideally be:
 
-- Install DirBuster using`apt-get`(note this is hypothetical and usually you would need to download it from the OWASP website as mentioned earlier):
+- Install DirBuster using `apt-get` (note this is hypothetical and usually you would need to download it from the OWASP website as mentioned earlier):
 
 ```text
 sudo apt install dirbuster
@@ -108,7 +105,7 @@ sudo apt install dirbuster
 
 ### Step 3: Run DirBuster
 
-If DirBuster were installable through`apt-get`, you would run it from the terminal with:
+If DirBuster were installable through `apt-get`, you would run it from the terminal with:
 
 ```text
 dirbuster
@@ -116,24 +113,19 @@ dirbuster
 
 ### Alternative Download and Setup
 
-Since DirBuster is not available via`apt-get`, here’s how you should actually proceed after installing Java:
+Since DirBuster is not available via `apt-get`, here’s how you should actually proceed after installing Java:
 
-- Visit the OWASP official DirBuster Project page or go directly to its[GitHub repository](https://github.com/digininja/DiRbuster)to download the latest version.
+- Visit the OWASP official DirBuster Project page or go directly to its [GitHub repository](https://github.com/digininja/DiRbuster) to download the latest version.
 
 - Unzip the downloaded file to your desired location.
 
 - Run DirBuster with the following command from the directory where you unzipped it:
 
 ```text
-java -jar 
-DirBuster
--x.
-x
-.
-jar
+java -jar DirBuster-x.x.jar
 ```
 
-- Replace`x.x`with the actual version number.
+- Replace `x.x` with the actual version number.
 
 ## Step-by-Step Process of How DirBuster Works:
 
@@ -153,7 +145,7 @@ dirbuster
 
 <img src="https://cdn-images-1.medium.com/max/800/1*FLVjc_K3AOEQSMzd50ck3Q.png" alt="Article image" width="781" height="584" loading="lazy" decoding="async" />
 
-- You can use lists “Out of the box” or download lists from web, for example[here](https://github.com/daviddias/node-dirbuster/blob/master/lists/directory-list-2.3-medium.txt)or from SecList[here](https://github.com/danielmiessler/SecLists)
+- You can use lists “Out of the box” or download lists from web, for example [here](https://github.com/daviddias/node-dirbuster/blob/master/lists/directory-list-2.3-medium.txt) or from SecList [here](https://github.com/danielmiessler/SecLists)
 
 **Configuring Options**:
 

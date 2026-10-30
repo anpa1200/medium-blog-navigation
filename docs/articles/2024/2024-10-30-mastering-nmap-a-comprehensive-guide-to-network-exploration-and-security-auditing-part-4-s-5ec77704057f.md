@@ -81,29 +81,21 @@ With NSE, Nmap transforms from a simple network scanning tool into an integrated
 When managing over 606 scripts, identifying the most popular ones individually can be quite challenging. To streamline this process, the Nmap team developed the ‘-sC’ option. This feature allows you to execute the top Nmap scripts simultaneously.
 
 ```text
-nmap -sC 
-192.168
-.126
-.144
+nmap -sC 192.168.126.144
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*wuJAjngtVwvwFQKj5ch75Q.png" alt="Article image" width="1910" height="758" loading="lazy" decoding="async" />
 
 ## Categories of NSE Scripts
 
-The Nmap Scripting Engine (NSE) organizes scripts into several categories based on their purpose and the nature of their operations. This classification helps users quickly identify the type of script that suits their specific needs, whether it’s for basic information gathering, vulnerability scanning, or advanced exploitation.[Here’s a detailed look at these categories.](https://nmap.org/nsedoc/categories/)
+The Nmap Scripting Engine (NSE) organizes scripts into several categories based on their purpose and the nature of their operations. This classification helps users quickly identify the type of script that suits their specific needs, whether it’s for basic information gathering, vulnerability scanning, or advanced exploitation. [Here’s a detailed look at these categories.](https://nmap.org/nsedoc/categories/)
 
 ### Execute all the scripts in a category
 
 At times, you might need to execute all the scripts within a specific category. This can be accomplished by using the ‘ -script category’ option, as illustrated below:
 
 ```text
-nmap 
---script
- vuln 
-192.168
-.
-126.144
+nmap --script vuln 192.168.126.144
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*HoTt3gBsUWRO3itdUQJ6zg.png" alt="Article image" width="1917" height="933" loading="lazy" decoding="async" />
@@ -111,12 +103,7 @@ nmap
 ### You can also merge two categories if required:
 
 ```text
-nmap 
---script
- vuln, auth 
-192.168
-.
-126.144
+nmap --script vuln, auth 192.168.126.144
 ```
 
 ### Execute Nmap scripts using a wildcard:
@@ -124,9 +111,7 @@ nmap
 Nmap enables you to execute scripts using wildcards, allowing you to select multiple scripts that start or conclude with a specific pattern. For instance, if you wish to execute all scripts that start with ‘ftp’, you can use the following syntax:
 
 ```text
-nmap --script 
-"ftp-*"
- 192.168.126.130
+nmap --script "ftp-*" 192.168.126.130
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*H8f2phFEtpSEyYNGTDaJ_w.png" alt="Article image" width="1217" height="958" loading="lazy" decoding="async" />
@@ -136,9 +121,7 @@ nmap --script
 This approach is ideal when you have already determined which script you need to use. For instance, to run the http-brute script for conducting brute force password audits on HTTP basic, digest, and NTLM authentication, use the following command:
 
 ```text
-nmap -p80 --script=
-"http-brute"
- 192.168.126.144
+nmap -p80 --script="http-brute" 192.168.126.144
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*--MabYTCKV32NyTSrG0W9Q.png" alt="Article image" width="1158" height="248" loading="lazy" decoding="async" />
@@ -158,9 +141,7 @@ Ensure you replace the path /your-scripts with the actual local directory where 
 You’ve learned how straightforward it is to execute individual scripts, categories, and even your own local scripts. Now, let’s integrate all these options into a single command, as demonstrated in the example below:
 
 ```text
-nmap --script 
-"vuln,auth,/my_script and not ftp-*"
- 192.168.1.1
+nmap --script "vuln,auth,/my_script and not ftp-*" 192.168.1.1
 ```
 
 In this command, we’ve merged two script categories with your own script, while excluding any scripts that start with “ftp-”.
@@ -178,17 +159,10 @@ In this command, we’ve merged two script categories with your own script, whil
 **Command Example**:
 
 ```text
-nmap --script=http-
-default
--accounts --script-args http-
-default
--accounts.category=web 
-192.168
-.1
-.1
+nmap --script=http-default-accounts --script-args http-default-accounts.category=web 192.168.1.1
 ```
 
-This command targets the IP address`192.168.1.1`and uses the script to attempt logins on web services with default credentials, specifying the category of services to focus on web interfaces.
+This command targets the IP address `192.168.1.1` and uses the script to attempt logins on web services with default credentials, specifying the category of services to focus on web interfaces.
 
 ### http-auth-finder
 
@@ -197,13 +171,12 @@ This command targets the IP address`192.168.1.1`and uses the script to attempt l
 **Command Example**:
 
 ```text
-nmap 
---script=http-auth-finder 192.168.126.145
+nmap --script=http-auth-finder 192.168.126.145
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*CpNoQ6Ogk16SI3VQd7YURQ.png" alt="Article image" width="1146" height="453" loading="lazy" decoding="async" />
 
-This command scans the IP`192.168.126.145`to locate HTTP authentication forms, which can help in pinpointing pages that are potential targets for more detailed security assessments.
+This command scans the IP `192.168.126.145` to locate HTTP authentication forms, which can help in pinpointing pages that are potential targets for more detailed security assessments.
 
 ### smb-enum-users
 
@@ -212,17 +185,12 @@ This command scans the IP`192.168.126.145`to locate HTTP authentication forms, w
 **Command Example**:
 
 ```text
-nmap --script=smb-
-enum
--users -p445 
-192.168
-.126
-.130
+nmap --script=smb-enum-users -p445 192.168.126.130
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*89J1PxMURCj_dqhe3q12bA.png" alt="Article image" width="1668" height="889" loading="lazy" decoding="async" />
 
-This command specifically targets the SMB service running on port 445 of the IP address`192.168.126.130`. It aims to list all users on the system, which can be crucial for understanding the target environment and planning further penetration tests or audits.**Command Example**:
+This command specifically targets the SMB service running on port 445 of the IP address `192.168.126.130`. It aims to list all users on the system, which can be crucial for understanding the target environment and planning further penetration tests or audits.**Command Example**:
 
 ### http-wordpress-users
 
@@ -231,13 +199,12 @@ This command specifically targets the SMB service running on port 445 of the IP 
 **Command Example**:
 
 ```text
-nmap -p443 
---script=http-wordpress-users 192.168.122.1
+nmap -p443 --script=http-wordpress-users 192.168.122.1
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*KfcyBxIMYn9PlzGEK-X6dQ.png" alt="Article image" width="1286" height="200" loading="lazy" decoding="async" />
 
-This command scans port 443 (typically used for HTTPS) of the IP address`192.168.122.1`, specifically focusing on detecting WordPress user accounts. This is particularly useful for penetration testing scenarios where gaining insight into potential usernames could facilitate further exploitation attempts.
+This command scans port 443 (typically used for HTTPS) of the IP address `192.168.122.1`, specifically focusing on detecting WordPress user accounts. This is particularly useful for penetration testing scenarios where gaining insight into potential usernames could facilitate further exploitation attempts.
 
 ## Broadcast
 
@@ -250,8 +217,7 @@ This command scans port 443 (typically used for HTTPS) of the IP address`192.168
 **Command Example**:
 
 ```text
-nmap 
---script=broadcast-dhcp-discover 192.168.126.1/24
+nmap --script=broadcast-dhcp-discover 192.168.126.1/24
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*m8PMdqFSqquRWriPwOpbFg.png" alt="Article image" width="1187" height="887" loading="lazy" decoding="async" />
@@ -265,8 +231,7 @@ This command can reveal information about DHCP servers in your network, includin
 **Command Example**:
 
 ```text
-nmap 
---script=broadcast-dns-service-discovery 192.168.126.1/24
+nmap --script=broadcast-dns-service-discovery 192.168.126.1/24
 ```
 
 This script sends multicast DNS (mDNS) queries to discover devices and the services they are advertising without needing prior knowledge of their IP addresses. It’s useful for discovering devices like printers, servers, and other networked devices that support mDNS.
@@ -278,11 +243,10 @@ This script sends multicast DNS (mDNS) queries to discover devices and the servi
 **Command Example**:
 
 ```text
-nmap 
---script=broadcast-wake-on-lan --script-args 'broadcast-wake-on-lan.mac=XX:XX:XX:XX:XX:XX'
+nmap --script=broadcast-wake-on-lan --script-args 'broadcast-wake-on-lan.mac=XX:XX:XX:XX:XX:XX'
 ```
 
-In this command, you need to replace`XX:XX:XX:XX:XX:XX`with the actual MAC address of the target device that you want to wake up. This script is ideal for network administrators who need to remotely start computers for maintenance or updates without being physically present.4
+In this command, you need to replace `XX:XX:XX:XX:XX:XX` with the actual MAC address of the target device that you want to wake up. This script is ideal for network administrators who need to remotely start computers for maintenance or updates without being physically present.4
 
 ## Brute
 
@@ -299,38 +263,14 @@ The Brute category in Nmap's Scripting Engine (NSE) contains scripts aimed at pe
 **Default username/password lists:**
 
 ```text
-  nmap -p 
-22
- 
---script ssh-brute --script-args userdb=users.lst,passdb=pass.lst \
-      
---script-args ssh-brute.timeout=4s <target>
+  nmap -p 22 --script ssh-brute --script-args userdb=users.lst,passdb=pass.lst \
+      --script-args ssh-brute.timeout=4s <target>
 ```
 
 **Brute force with your custom lists:**
 
 ```text
-nmap --script=ssh-brute --script-args userdb=~
-/Documents/
-PasswordCracking
-/
-Dictionaries
-/short.
-txt
-,passdb=
-/home/
-sulik/
-Documents
-/
-PasswordCracking
-/
-Dictionaries
-/short.
-txt
- -p22 
-192.168
-.126
-.130
+nmap --script=ssh-brute --script-args userdb=~/Documents/PasswordCracking/Dictionaries/short.txt,passdb=/home/sulik/Documents/PasswordCracking/Dictionaries/short.txt -p22 192.168.126.130
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*TvPJepArxT0HS5VxqqBPDQ.png" alt="Article image" width="1624" height="588" loading="lazy" decoding="async" />
@@ -350,40 +290,17 @@ txt
 **Default command:**
 
 ```text
-nmap 
---script=smb-brute -p445 192.168.126.130
+nmap --script=smb-brute -p445 192.168.126.130
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*-8UIcK14WRZijcznvfZCgw.png" alt="Article image" width="1624" height="260" loading="lazy" decoding="async" />
 
-- This command applies brute force to the SMB service on port 445 of the IP`192.168.122.1`, using a username and password list to potentially crack login credentials. This is particularly useful in penetration testing scenarios where SMB is widely used for file sharing and network communication on Windows networks.
+- This command applies brute force to the SMB service on port 445 of the IP `192.168.122.1`, using a username and password list to potentially crack login credentials. This is particularly useful in penetration testing scenarios where SMB is widely used for file sharing and network communication on Windows networks.
 
 **Brute force with your custom lists:**
 
 ```text
-nmap --script=smb-brute --script-args userdb=~
-/Documents/
-PasswordCracking
-/
-Dictionaries
-/short.
-txt
-,passdb=
-/home/
-sulik/
-Documents
-/
-PasswordCracking
-/
-Dictionaries
-/short.
-txt
- -p139,
-445
- 
-192.168
-.126
-.130
+nmap --script=smb-brute --script-args userdb=~/Documents/PasswordCracking/Dictionaries/short.txt,passdb=/home/sulik/Documents/PasswordCracking/Dictionaries/short.txt -p139,445 192.168.126.130
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*AJ9HY3-g06rCwZRdxXgBng.png" alt="Article image" width="1672" height="300" loading="lazy" decoding="async" />
@@ -399,10 +316,7 @@ txt
 - When managing over 606 scripts, identifying the most popular ones individually can be quite challenging. To streamline this process, the Nmap team developed the ‘-sC’ option. This feature allows you to execute the top Nmap scripts simultaneously.
 
 ```text
-nmap -sC 
-192.168
-.126
-.144
+nmap -sC 192.168.126.144
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*wuJAjngtVwvwFQKj5ch75Q.png" alt="Article image" width="1910" height="758" loading="lazy" decoding="async" />

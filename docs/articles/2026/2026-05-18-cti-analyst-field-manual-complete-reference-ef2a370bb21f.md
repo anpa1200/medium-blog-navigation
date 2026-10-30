@@ -63,9 +63,9 @@ If you are reviewing the manual professionally, start with Role-Based Reading Pa
 
 This manual is one part of a three-book CTI ecosystem. Use CTI Project Ecosystem and Cross-Project Fact Correlation to move between general analyst tradecraft, customer delivery methodology, and the Israel-focused actor knowledge base.
 
-- <a href="https://1200km.com/customer-driven-ai-cti-project/" target="_self">Customer-Driven AI CTI Project</a>turns tradecraft into gated delivery.
+- <a href="https://1200km.com/customer-driven-ai-cti-project/" target="_self">Customer-Driven AI CTI Project</a> turns tradecraft into gated delivery.
 
-- <a href="https://1200km.com/israel-government-threat-actors-cti/" target="_self">Israel Government Threat Actors CTI</a>provides sector-specific actor, tool, TTP, hunt, and detection examples.
+- <a href="https://1200km.com/israel-government-threat-actors-cti/" target="_self">Israel Government Threat Actors CTI</a> provides sector-specific actor, tool, TTP, hunt, and detection examples.
 
 ### What This Manual Is
 
@@ -101,17 +101,17 @@ This is not a beginner glossary, an exploit guide, a malware analysis lab, an IO
 
 The manual uses these labels:
 
-- **Observed:**directly seen in telemetry, primary artifact, or controlled analysis.
+- **Observed:** directly seen in telemetry, primary artifact, or controlled analysis.
 
-- **Reported:**stated by a source.
+- **Reported:** stated by a source.
 
-- **Assessed:**analytic judgment by a source or by the analyst, with reasoning.
+- **Assessed:** analytic judgment by a source or by the analyst, with reasoning.
 
-- **Inferred:**derived from indirect evidence; weaker than observed or reported.
+- **Inferred:** derived from indirect evidence; weaker than observed or reported.
 
-- **Unknown:**not known from available evidence.
+- **Unknown:** not known from available evidence.
 
-- **Gap:**required information is missing and should be collected or documented.
+- **Gap:** required information is missing and should be collected or documented.
 
 ### Confidence
 
@@ -221,13 +221,13 @@ Good CTI helps teams prioritize limited defensive resources. It answers question
 
 A vendor reports that an actor abuses remote monitoring and management tools after phishing. The weak output is: “Actor X uses RMM tools; block RMM.” The CTI output is stronger:
 
-- **Reported:**Vendor observed RMM installation after phishing in a campaign.
+- **Reported:** Vendor observed RMM installation after phishing in a campaign.
 
-- **Assessment:**This is relevant because the organization allows several RMM products for IT support.
+- **Assessment:** This is relevant because the organization allows several RMM products for IT support.
 
-- **Gap:**It is unknown whether current EDR logs capture RMM child processes and network connections consistently.
+- **Gap:** It is unknown whether current EDR logs capture RMM child processes and network connections consistently.
 
-- **Action:**Create a hunt for newly installed RMM tools on non-IT endpoints, then decide whether to move to detection after baseline review.
+- **Action:** Create a hunt for newly installed RMM tools on non-IT endpoints, then decide whether to move to detection after baseline review.
 
 ### Analyst Checklist
 
@@ -279,35 +279,35 @@ A CTI team should be able to trace a finished product backward to the requiremen
 
 <img src="https://cdn-images-1.medium.com/max/800/1*7zYhIBHsHx3gJVFBh2Ix8g.png" alt="Article image" width="1693" height="929" loading="lazy" decoding="async" />
 
-- **Direction:**Define PIRs, SIRs, and decision owners.
+- **Direction:** Define PIRs, SIRs, and decision owners.
 
-- **Collection:**Gather public reporting, telemetry summaries, vendor intelligence, government advisories, and internal context allowed by scope.
+- **Collection:** Gather public reporting, telemetry summaries, vendor intelligence, government advisories, and internal context allowed by scope.
 
-- **Processing:**Normalize sources, extract claims, identify dates, rate source reliability, and preserve links.
+- **Processing:** Normalize sources, extract claims, identify dates, rate source reliability, and preserve links.
 
-- **Analysis:**Compare claims, weigh evidence, document assumptions, and produce judgments.
+- **Analysis:** Compare claims, weigh evidence, document assumptions, and produce judgments.
 
-- **Dissemination:**Deliver the right format to the right audience.
+- **Dissemination:** Deliver the right format to the right audience.
 
-- **Feedback:**Ask whether the product changed a decision, hunt, detection, control, or risk posture.
+- **Feedback:** Ask whether the product changed a decision, hunt, detection, control, or risk posture.
 
-- **Refinement:**Update requirements, gaps, and collection priorities.
+- **Refinement:** Update requirements, gaps, and collection priorities.
 
 ### Example / Mini Case
 
 A SOC lead asks whether recent reporting on an actor should change monitoring. The cycle prevents a vague answer.
 
-- **Direction:**Determine whether the actor’s reported behaviors intersect with the organization’s telemetry.
+- **Direction:** Determine whether the actor’s reported behaviors intersect with the organization’s telemetry.
 
-- **Collection:**Pull public vendor reports and existing internal telemetry inventory.
+- **Collection:** Pull public vendor reports and existing internal telemetry inventory.
 
-- **Processing:**Extract behaviors, not only IOCs.
+- **Processing:** Extract behaviors, not only IOCs.
 
-- **Analysis:**Identify which behaviors can be hunted with current logs.
+- **Analysis:** Identify which behaviors can be hunted with current logs.
 
-- **Dissemination:**Provide a detection backlog item and a telemetry gap note.
+- **Dissemination:** Provide a detection backlog item and a telemetry gap note.
 
-- **Feedback:**SOC confirms whether the hunt produced results or only baselining needs.
+- **Feedback:** SOC confirms whether the hunt produced results or only baselining needs.
 
 ### Analyst Checklist
 
@@ -335,9 +335,9 @@ Define Priority Intelligence Requirements, Specific Intelligence Requirements, a
 
 PIRs, SIRs, and EEIs convert broad curiosity into answerable intelligence work.
 
-A**PIR**is the high-level intelligence question tied to a decision. A**SIR**breaks that question into specific sub-questions. An**EEI**defines the concrete information needed to answer a SIR.
+A **PIR** is the high-level intelligence question tied to a decision. A **SIR** breaks that question into specific sub-questions. An **EEI** defines the concrete information needed to answer a SIR.
 
-The distinction matters because analysts often mistake a topic for a requirement. “MuddyWater” is a topic. “Which<a href="https://1200km.com/israel-government-threat-actors-cti/actors/muddywater/" target="_self">MuddyWater behaviors reported since 2024</a>are observable with our endpoint and identity telemetry?” is closer to a PIR.
+The distinction matters because analysts often mistake a topic for a requirement. “MuddyWater” is a topic. “Which <a href="https://1200km.com/israel-government-threat-actors-cti/actors/muddywater/" target="_self">MuddyWater behaviors reported since 2024</a> are observable with our endpoint and identity telemetry?” is closer to a PIR.
 
 ### CTI Relevance
 
@@ -479,42 +479,15 @@ Evidence labels are useful across the whole CTI workflow:
 
 ```text
 Claim:
-A 
-public
- report states that a cluster used cloud storage 
-to
- stage payloads.
+A public report states that a cluster used cloud storage to stage payloads.
 Evidence Label:
 Reported
 Confidence:
-Medium confidence, because the source 
-is
- reliable but the report does 
-not
- include telemetry excerpts 
-or
- multiple corroborating sources.
+Medium confidence, because the source is reliable but the report does not include telemetry excerpts or multiple corroborating sources.
 Detection Use:
-Do
- 
-not
- alert 
-on
- all cloud storage use. Build a hunt 
-for
- cloud storage download followed 
-by
- script execution 
-on
- endpoints 
-where
- that pattern 
-is
- unusual.
+Do not alert on all cloud storage use. Build a hunt for cloud storage download followed by script execution on endpoints where that pattern is unusual.
 Gap:
-No internal telemetry has confirmed this behavior 
-in
- the defended environment.
+No internal telemetry has confirmed this behavior in the defended environment.
 ```
 
 ### Analyst Checklist
@@ -543,7 +516,7 @@ Source reliability describes the historic trustworthiness, access, and disciplin
 
 The model in use is the Admiralty Code (NATO-style source evaluation), sometimes called the Admiralty System or the STANAG 2511 model. It is also codified in the MISP admiral taxonomy and widely used in law enforcement, military intelligence, and commercial CTI.
 
-The notation is not mathematical. It is a**review prompt**that forces the analyst to explain why a claim deserves the weight assigned to it.
+The notation is not mathematical. It is a **review prompt** that forces the analyst to explain why a claim deserves the weight assigned to it.
 
 ### Source Reliability: A through F
 
@@ -601,7 +574,7 @@ An A-rated source can make a weak claim. A weak source can report something that
 
 - Rate source reliability (A-F) based on track record, access, and accountability.
 
-- Rate information credibility (1–6) for each**claim**, not only for the source overall.
+- Rate information credibility (1–6) for each **claim**, not only for the source overall.
 
 - Record what corroborates, contradicts, or is missing.
 
@@ -742,52 +715,16 @@ This distinction is critical in CTI-to-detection work. A detection engineer does
 Research note:
 
 ```text
-Vendor 
-A
- says the actor used phishing and 
-a
- cloud storage link. Vendor 
-B
- says 
-a
- similar campaign used archives and script execution. Several IOCs are listed.
+Vendor A says the actor used phishing and a cloud storage link. Vendor B says a similar campaign used archives and script execution. Several IOCs are listed.
 ```
 
 Finished intelligence:
 
 ```text
 Assessment:
-Reported campaign behavior supports a medium-confidence hunt 
-for
- archive-based phishing leading 
-to
- script execution 
-and
- external staging. The 
-public
- sources 
-do
- 
-not
- prove the same actor operated both campaigns. The SOC should hunt behavior rather than actor label.
+Reported campaign behavior supports a medium-confidence hunt for archive-based phishing leading to script execution and external staging. The public sources do not prove the same actor operated both campaigns. The SOC should hunt behavior rather than actor label.
 Action:
-Run a 
-30
--day hunt 
-for
- archive extraction followed 
-by
- script interpreter execution 
-and
- outbound connection 
-to
- newly observed domains. Record 
-false
- positives 
-from
- IT automation 
-and
- software installers.
+Run a 30-day hunt for archive extraction followed by script interpreter execution and outbound connection to newly observed domains. Record false positives from IT automation and software installers.
 ```
 
 ### Analyst Checklist
@@ -830,15 +767,15 @@ The following table adapts the Sherman Kent Words of Estimative Probability (WEP
 
 <img src="https://cdn-images-1.medium.com/max/800/1*ZVHF8y5_6U8hyc80nAU_7w.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Critical rule:**The term used must be tied to a reason. “Likely” with no reason is not calibrated language. “Likely because three independent government advisories describe the same behavior” is.
+**Critical rule:** The term used must be tied to a reason. “Likely” with no reason is not calibrated language. “Likely because three independent government advisories describe the same behavior” is.
 
 ### Confidence Is Not Probability
 
 Confidence (High/Medium/Low) and probability wording (likely/possibly/remote) serve different purposes:
 
-- **Probability wording**describes where the analyst places the judgment on a likelihood scale.
+- **Probability wording** describes where the analyst places the judgment on a likelihood scale.
 
-- **Confidence**describes how well the evidence, source access, and analytic process support that placement.
+- **Confidence** describes how well the evidence, source access, and analytic process support that placement.
 
 A judgment can be “likely” with only low confidence, meaning the analyst leans toward the claim but the evidence base is thin. A judgment can be “possibly” with high confidence, meaning the evidence clearly supports a claim being plausible but not dominant.
 
@@ -849,9 +786,7 @@ Do not conflate these. “High confidence” does not mean “almost certainly.�
 ### Bad Example 1 — “Likely” without explanation
 
 ```text
-The actor will likely target financial institutions 
-next
- quarter.
+The actor will likely target financial institutions next quarter.
 ```
 
 Problem: “Likely” is presented without evidence, source, corroboration, or alternative hypothesis. A reader cannot evaluate the claim or decide how to act on it.
@@ -859,67 +794,20 @@ Problem: “Likely” is presented without evidence, source, corroboration, or a
 Corrected:
 
 ```text
-Key
- Judgment: The actor may prioritize financial institutions 
-in
- the 
-next
- quarter.
-Estimative Term: Possibly (
-25
--
-50%
-)
-Evidence:
- Reported - Two vendor reports describe the actor targeting financial sector victims 
-in
- adjacent campaigns over the past 
-90
- days (SRC-
-003
-, SRC-
-007
-).
-Assumptions:
- The actor
-'s target selection is driven by sector overlap with past campaigns rather than bespoke customer selection.
-Gaps:
- No primary government advisory confirms targeting intent. No telemetry 
-from
- this environment 
-to
- confirm exposure.
-Alternative:
- The actor may shift 
-to
- telecom 
-if
- financial-sector hardening reduces 
-return
-.
-Confidence:
- Low confidence — evidence 
-is
- vendor reporting, no primary source, no local telemetry confirmation.
-What Would Change It: Primary advisory 
-or
- observed targeting 
-of
- financial institutions 
-by
- this cluster.
+Key Judgment: The actor may prioritize financial institutions in the next quarter.
+Estimative Term: Possibly (25-50%)
+Evidence: Reported - Two vendor reports describe the actor targeting financial sector victims in adjacent campaigns over the past 90 days (SRC-003, SRC-007).
+Assumptions: The actor's target selection is driven by sector overlap with past campaigns rather than bespoke customer selection.
+Gaps: No primary government advisory confirms targeting intent. No telemetry from this environment to confirm exposure.
+Alternative: The actor may shift to telecom if financial-sector hardening reduces return.
+Confidence: Low confidence — evidence is vendor reporting, no primary source, no local telemetry confirmation.
+What Would Change It: Primary advisory or observed targeting of financial institutions by this cluster.
 ```
 
 ### Bad Example 2 — “High confidence” from one weak source
 
 ```text
-We assess 
-with
- high confidence that the malware 
-is
- operated 
-by
- a nation-state sponsor.
+We assess with high confidence that the malware is operated by a nation-state sponsor.
 ```
 
 Problem: “High confidence” from a single secondary vendor report or from shared tooling alone is not defensible. High confidence requires primary sources, corroboration, and contradiction review.
@@ -927,48 +815,17 @@ Problem: “High confidence” from a single secondary vendor report or from sha
 ### Corrected:
 
 ```text
-Key
- Judgment: Sponsor attribution 
-is
- unknown.
-Evidence:
- Reported - Vendor A assesses nation-state sponsorship (SRC-
-011
-). No primary source confirms.
-Alternative Hypotheses: Criminal 
-operator
- 
-for
- hire; independent hacktivist 
-with
- state-adjacent motivation; 
-false
- flag.
-Confidence:
- Low confidence — 
-single
--vendor assessment, no corroboration, tool overlap 
-is
- the primary cited evidence.
-What Would Change It: Primary government attribution statement 
-with
- supporting forensics; independent corroboration 
-of
- exclusive infrastructure links.
+Key Judgment: Sponsor attribution is unknown.
+Evidence: Reported - Vendor A assesses nation-state sponsorship (SRC-011). No primary source confirms.
+Alternative Hypotheses: Criminal operator for hire; independent hacktivist with state-adjacent motivation; false flag.
+Confidence: Low confidence — single-vendor assessment, no corroboration, tool overlap is the primary cited evidence.
+What Would Change It: Primary government attribution statement with supporting forensics; independent corroboration of exclusive infrastructure links.
 ```
 
 ### Bad Example 3 — “Almost certainly” with no contradiction review
 
 ```text
-This 
-is
- almost certainly the same 
-group
- responsible 
-for
- the 
-2024
- supply chain intrusion.
+This is almost certainly the same group responsible for the 2024 supply chain intrusion.
 ```
 
 Problem: “Almost certainly” implies contradictions and alternatives have been reviewed and found non-credible. Asserting it without showing the work breaks Kent discipline.
@@ -976,70 +833,14 @@ Problem: “Almost certainly” implies contradictions and alternatives have bee
 ### Corrected:
 
 ```text
-Key
- Judgment: Operational overlap 
-with
- the 
-2024
- cluster 
-is
- possible but 
-not
- confirmed.
-Estimative Term: Possibly (
-25
--
-50%
-)
-Evidence:
- Reported - overlapping infrastructure (PIV-
-008
-), similar lure themes (EV-
-022
-). Assessed - behavioral consistency 
-with
- prior cluster 
-by
- vendor B.
-Assumptions:
- The infrastructure overlap 
-is
- 
-not
- due 
-to
- 
-shared
- hosting, tool resale, 
-or
- deliberate 
-false
- flag.
-Alternatives:
- Separate actor reusing purchased tools; copycat campaign; coincidental infrastructure reuse via 
-shared
- hosting provider.
-Contradiction:
- Vendor C keeps the 
-2024
- cluster 
-and
- current activity separate 
-with
- no published rationale.
-Confidence:
- Low confidence — infrastructure overlap exists but 
-is
- 
-not
- exclusive. Contradiction 
-from
- vendor C unresolved.
-What Would Change It: Exclusive infrastructure link, common malware config seed 
-not
- publicly available, 
-or
- primary source linking operators.
+Key Judgment: Operational overlap with the 2024 cluster is possible but not confirmed.
+Estimative Term: Possibly (25-50%)
+Evidence: Reported - overlapping infrastructure (PIV-008), similar lure themes (EV-022). Assessed - behavioral consistency with prior cluster by vendor B.
+Assumptions: The infrastructure overlap is not due to shared hosting, tool resale, or deliberate false flag.
+Alternatives: Separate actor reusing purchased tools; copycat campaign; coincidental infrastructure reuse via shared hosting provider.
+Contradiction: Vendor C keeps the 2024 cluster and current activity separate with no published rationale.
+Confidence: Low confidence — infrastructure overlap exists but is not exclusive. Contradiction from vendor C unresolved.
+What Would Change It: Exclusive infrastructure link, common malware config seed not publicly available, or primary source linking operators.
 ```
 
 ### Practical Workflow
@@ -1109,8 +910,7 @@ See Sherman Kent for CTI for the full calibration table and worked examples.
 ### Bad Example 1 — “Likely” without explanation
 
 ```text
-The
- campaign likely targets critical infrastructure.
+The campaign likely targets critical infrastructure.
 ```
 
 Problem: The estimative term is asserted with no evidence, no source, no alternative.
@@ -1118,103 +918,17 @@ Problem: The estimative term is asserted with no evidence, no source, no alterna
 **Corrected**:
 
 ```text
-Judgment:
- 
-The
- 
-campaign
- 
-possibly
- 
-targets
- 
-critical
- 
-infrastructure.
-Evidence Label:
- 
-Reported
-Source:
- 
-SRC-009
- 
-—
- 
-vendor
- 
-report
- 
-citing
- 
-two
- 
-energy-sector
- 
-victims.
-Confidence:
- 
-Low
- 
-confidence
- 
-—
- 
-single-vendor
- 
-reporting,
- 
-no
- 
-primary
- 
-advisory,
- 
-no
- 
-local
- 
-telemetry.
-What Would Change It:
- 
-Primary
- 
-government
- 
-advisory
- 
-naming
- 
-critical
- 
-infrastructure
- 
-victims,
- 
-or
- 
-observed
- 
-targeting
- 
-of
- 
-this
- 
-environment.
+Judgment: The campaign possibly targets critical infrastructure.
+Evidence Label: Reported
+Source: SRC-009 — vendor report citing two energy-sector victims.
+Confidence: Low confidence — single-vendor reporting, no primary advisory, no local telemetry.
+What Would Change It: Primary government advisory naming critical infrastructure victims, or observed targeting of this environment.
 ```
 
 ### Bad Example 2 — Passive language hiding the assessment owner
 
 ```text
-It 
-is
- assessed that the malware 
-is
- designed 
-for
- 
-long
--term persistence.
+It is assessed that the malware is designed for long-term persistence.
 ```
 
 Problem: “It is assessed” hides who assessed it. Reader cannot evaluate whether this is source-reported or analyst-derived.
@@ -1222,35 +936,14 @@ Problem: “It is assessed” hides who assessed it. Reader cannot evaluate whet
 **Corrected:**
 
 ```text
-Reported:
- Vendor A assesses the malware 
-is
- designed 
-for
- 
-long
--term persistence (SRC-
-006
-).
-Assessed-here: Consistent 
-with
- observed behavior 
-in
- 
-public
- sandbox reports. The persistence mechanism 
-is
- a scheduled task, which 
-is
- detectable.
+Reported: Vendor A assesses the malware is designed for long-term persistence (SRC-006).
+Assessed-here: Consistent with observed behavior in public sandbox reports. The persistence mechanism is a scheduled task, which is detectable.
 ```
 
 ### Bad Example 3 — Mixing source assessment with local assessment
 
 ```text
-The actor probably has access 
-to
- zero-day capabilities.
+The actor probably has access to zero-day capabilities.
 ```
 
 Problem: It is unclear whether “probably” comes from a source or from the local analyst. If it is source language, it must be labeled Reported. If it is local assessment, the evidence must be stated.
@@ -1258,37 +951,8 @@ Problem: It is unclear whether “probably” comes from a source or from the lo
 **Corrected:**
 
 ```text
-Reported: Vendor B assesses the actor probably has access 
-to
- zero
--
-day
- capabilities, based 
-on
- observed exploitation 
-of
- a 
-then
--
-unpatched vulnerability (SRC
--012
-). Evidence label: Reported.
-Assessed
--
-here: 
-Local
- assessment deferred pending identification 
-of
- a 
-specific
- unpatched vulnerability 
-in
- this environment. Gap: 
-Unknown
- whether this actor has used zero
--
-day
- techniques against our sector.
+Reported: Vendor B assesses the actor probably has access to zero-day capabilities, based on observed exploitation of a then-unpatched vulnerability (SRC-012). Evidence label: Reported.
+Assessed-here: Local assessment deferred pending identification of a specific unpatched vulnerability in this environment. Gap: Unknown whether this actor has used zero-day techniques against our sector.
 ```
 
 ### Bad Example 4 — Using estimative language to avoid evidence
@@ -1302,22 +966,7 @@ Problem: This says nothing. “May” and “uncertain” require a reason and a
 **Corrected:**
 
 ```text
-No actionable intelligence judgment 
-is
- possible 
-on
- future targeting. The gap 
-is
- recorded 
-and
- assigned 
-for
- collection. The 
-next
- collection priority 
-is
-: any primary source identifying the actor
-'s 2026 infrastructure or target set.
+No actionable intelligence judgment is possible on future targeting. The gap is recorded and assigned for collection. The next collection priority is: any primary source identifying the actor's 2026 infrastructure or target set.
 ```
 
 ### Practical Workflow
@@ -1586,9 +1235,9 @@ Use ATT&CK to organize observed behavior and detection ideas without turning it 
 
 ### Practitioner-Level Explanation
 
-[ATT&CK](https://attack.mitre.org/)is a behavior taxonomy. It helps analysts describe what happened, compare procedures, identify telemetry requirements, and communicate with detection engineers. It does not prove who performed the activity.
+[ATT&CK](https://attack.mitre.org/) is a behavior taxonomy. It helps analysts describe what happened, compare procedures, identify telemetry requirements, and communicate with detection engineers. It does not prove who performed the activity.
 
-A useful mapping includes technique ID, technique name, tactic, procedure, evidence, source, confidence, mapping quality, detection idea, and limitations. Use the Israel CTI<a href="https://1200km.com/israel-government-threat-actors-cti/navigation/ttp-detection-matrix/" target="_self">TTP To Detection Matrix</a>for concrete examples. Actor-level mappings are weaker than procedure-level mappings tied to telemetry.
+A useful mapping includes technique ID, technique name, tactic, procedure, evidence, source, confidence, mapping quality, detection idea, and limitations. Use the Israel CTI <a href="https://1200km.com/israel-government-threat-actors-cti/navigation/ttp-detection-matrix/" target="_self">TTP To Detection Matrix</a> for concrete examples. Actor-level mappings are weaker than procedure-level mappings tied to telemetry.
 
 ### CTI Relevance
 
@@ -1886,7 +1535,7 @@ Provide a strict, evidence-weighted approach to CTI attribution.
 
 Attribution is a probabilistic analytic judgment. It is not a label copied from a report and not a result of one IOC match. A defensible attribution weighs timing, targeting, language, infrastructure, tooling, TTPs, operational tempo, malware lineage, and alternative hypotheses.
 
-<a href="https://1200km.com/israel-government-threat-actors-cti/tools/" target="_self">Shared tooling</a>does not prove actor identity. Victimology is supporting evidence, not proof. Infrastructure overlap can be weak or strong depending on exclusivity, timing, and reuse.
+<a href="https://1200km.com/israel-government-threat-actors-cti/tools/" target="_self">Shared tooling</a> does not prove actor identity. Victimology is supporting evidence, not proof. Infrastructure overlap can be weak or strong depending on exclusivity, timing, and reuse.
 
 ### CTI Relevance
 
@@ -2488,7 +2137,7 @@ Worked cases help analysts learn when to stop pivoting and how to explain cluste
 
 ### Example / Mini Case
 
-Seed: example[.]com. Passive DNS shows one IP with many unrelated domains. Certificate data identifies two domains with a matching SAN pattern and same validity window. Web path data shows both used`/update/check`during the same week. Assessment: bounded three-domain infrastructure cluster, medium confidence. Attribution remains Unknown.
+Seed: example[.]com. Passive DNS shows one IP with many unrelated domains. Certificate data identifies two domains with a matching SAN pattern and same validity window. Web path data shows both used `/update/check` during the same week. Assessment: bounded three-domain infrastructure cluster, medium confidence. Attribution remains Unknown.
 
 ### Analyst Checklist
 
@@ -2630,7 +2279,7 @@ Show how to structure an actor research page for a mature Iran-nexus intrusion c
 
 ### Practitioner-Level Explanation
 
-A<a href="https://1200km.com/israel-government-threat-actors-cti/actors/muddywater/" target="_self">MuddyWater / Seedworm</a>profile should be built around behavior, source chronology, targeting, tooling, and operational relevance. The analyst should separate long-term public reporting from current campaign evidence and avoid treating every PowerShell or remote-management-tool event as MuddyWater.
+A <a href="https://1200km.com/israel-government-threat-actors-cti/actors/muddywater/" target="_self">MuddyWater / Seedworm</a> profile should be built around behavior, source chronology, targeting, tooling, and operational relevance. The analyst should separate long-term public reporting from current campaign evidence and avoid treating every PowerShell or remote-management-tool event as MuddyWater.
 
 The practical value of the profile is not the name. It is a set of behaviors that can become collection requirements, hunts, detection candidates, and customer-facing risk judgments.
 
@@ -2668,7 +2317,7 @@ MuddyWater is a useful training case because public reporting frequently connect
 
 ### Example / Mini Case
 
-A source reports phishing that leads to remote management tool installation. The actor page should not say “detect MuddyWater.” It should say: hunt for newly installed<a href="https://1200km.com/israel-government-threat-actors-cti/tools/remote-monitoring-and-management-tools/" target="_self">RMM tooling</a>on non-IT endpoints after suspicious email activity, with local baselining and false-positive review.
+A source reports phishing that leads to remote management tool installation. The actor page should not say “detect MuddyWater.” It should say: hunt for newly installed <a href="https://1200km.com/israel-government-threat-actors-cti/tools/remote-monitoring-and-management-tools/" target="_self">RMM tooling</a> on non-IT endpoints after suspicious email activity, with local baselining and false-positive review.
 
 ### Analyst Checklist
 
@@ -2750,7 +2399,7 @@ Use Handala as a model for separating public persona claims from operational clu
 
 ### Practitioner-Level Explanation
 
-<a href="https://1200km.com/israel-government-threat-actors-cti/actors/handala/" target="_self">Handala / Void Manticore</a>reporting requires strict persona discipline. A public claim, a Telegram post, a defacement message, a leaked-data claim, and a verified intrusion are different evidence classes.
+<a href="https://1200km.com/israel-government-threat-actors-cti/actors/handala/" target="_self">Handala / Void Manticore</a> reporting requires strict persona discipline. A public claim, a Telegram post, a defacement message, a leaked-data claim, and a verified intrusion are different evidence classes.
 
 The analyst should treat Handala as a claim-heavy persona unless stronger sources connect a specific operation to a tracked cluster such as Void Manticore. Do not repost leaked material; use false-flag and persona-claim handling instead. Do not treat persona messaging as telemetry.
 
@@ -3038,9 +2687,9 @@ Convert CTI claims into telemetry requirements, hunts, detections, SOC actions, 
 
 ### Practitioner-Level Explanation
 
-CTI-to-detection is a chain, not a single translation step; the Customer project turns that chain into<a href="https://1200km.com/customer-driven-ai-cti-project/docs/methodology/foundations/" target="_self">delivery gates</a>. A source reports behavior. The analyst labels evidence, assesses relevance, identifies telemetry, writes a hunt hypothesis, validates false positives, and only then promotes detection logic.
+CTI-to-detection is a chain, not a single translation step; the Customer project turns that chain into <a href="https://1200km.com/customer-driven-ai-cti-project/docs/methodology/foundations/" target="_self">delivery gates</a>. A source reports behavior. The analyst labels evidence, assesses relevance, identifies telemetry, writes a hunt hypothesis, validates false positives, and only then promotes detection logic.
 
-The actor name is usually less important than the behavior and observable; use the Israel CTI<a href="https://1200km.com/israel-government-threat-actors-cti/navigation/actor-workbench/" target="_self">Actor Workbench</a>only after evidence is labeled.
+The actor name is usually less important than the behavior and observable; use the Israel CTI <a href="https://1200km.com/israel-government-threat-actors-cti/navigation/actor-workbench/" target="_self">Actor Workbench</a> only after evidence is labeled.
 
 ### CTI Relevance
 
@@ -3104,7 +2753,7 @@ Define a practical DRL model so CTI-derived detections are not marketed as produ
 
 ### Core Rule
 
-Only**DRL-9**can be called production detection coverage. Anything below DRL-9 is research, candidate logic, hunt content, pilot content, or validation work.
+Only **DRL-9** can be called production detection coverage. Anything below DRL-9 is research, candidate logic, hunt content, pilot content, or validation work.
 
 ### DRL Scale
 
@@ -3123,120 +2772,35 @@ Only**DRL-9**can be called production detection coverage. Anything below DRL-9 i
 **Bad:**
 
 ```text
-The rule 
-is
- mapped 
-to
- ATT&CK, so production coverage exists.
+The rule is mapped to ATT&CK, so production coverage exists.
 ```
 
 **Corrected:**
 
 ```text
-The rule is DRL-4. It has behavior-backed ATT&CK mapping and draft logic, but no positive 
-test
-, negative 
-test
-, benign baseline, historical replay, SOC pilot, or production approval.
+The rule is DRL-4. It has behavior-backed ATT&CK mapping and draft logic, but no positive test, negative test, benign baseline, historical replay, SOC pilot, or production approval.
 ```
 
 ### Full SOC Handoff Example
 
 ```text
-Handoff ID: SOC
--
-RMM
--001
-Detection: 
-New
- RMM installation 
-on
- non
--
-IT host followed 
-by
- 
-external
- remote session
-DRL: 
-8
- during pilot
-Why it matters: Source
--
-backed adversary behavior 
-overlaps
- 
-with
- unauthorized remote control.
-First
- checks:
--
- Confirm host owner 
-and
- business role.
--
- 
-Check
- software approval 
-and
- change ticket.
--
- Review parent process 
-and
- install source.
--
- Review 
-identity
- session, source IP, MFA state, 
-and
- remote session destination.
--
- 
-Check
- email
-/
-web activity 
-in
- the preceding 
-24
- hours.
-Required logs: EDR process, software inventory, network, 
-identity
-, helpdesk ticketing.
-False
- positives: Helpdesk deployment, vendor support, IT migration, approved remote work.
-Escalation threshold: 
-No
- ticket plus 
-unknown
- source plus 
-external
- remote session plus suspicious pre
--
-install activity.
-Response: Follow IR policy; do 
-not
- isolate critical systems 
-without
- incident commander approval.
-Rollback
-: Disable alert 
-or
- 
-add
- approved deployment 
-group
- if 
-false
--
-positive rate exceeds pilot threshold.
+Handoff ID: SOC-RMM-001
+Detection: New RMM installation on non-IT host followed by external remote session
+DRL: 8 during pilot
+Why it matters: Source-backed adversary behavior overlaps with unauthorized remote control.
+First checks:
+- Confirm host owner and business role.
+- Check software approval and change ticket.
+- Review parent process and install source.
+- Review identity session, source IP, MFA state, and remote session destination.
+- Check email/web activity in the preceding 24 hours.
+Required logs: EDR process, software inventory, network, identity, helpdesk ticketing.
+False positives: Helpdesk deployment, vendor support, IT migration, approved remote work.
+Escalation threshold: No ticket plus unknown source plus external remote session plus suspicious pre-install activity.
+Response: Follow IR policy; do not isolate critical systems without incident commander approval.
+Rollback: Disable alert or add approved deployment group if false-positive rate exceeds pilot threshold.
 Owner: Detection Engineering
-Review 
-date
-: 
-2026
--06
--16
+Review date: 2026-06-16
 ```
 
 ## Telemetry Requirements
@@ -3257,43 +2821,43 @@ The tables below list the data sources most commonly required for endpoint, netw
 
 <img src="https://cdn-images-1.medium.com/max/800/1*27dgVYwOQB8gsQMIsA9mPQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
-**Common gap:**CommandLine is not logged by default on most Windows versions. Requires Audit Process Creation with command-line inclusion via GPO or registry.
+**Common gap:** CommandLine is not logged by default on most Windows versions. Requires Audit Process Creation with command-line inclusion via GPO or registry.
 
 ### Sysmon (System Monitor)
 
 <img src="https://cdn-images-1.medium.com/max/800/1*UJ4ZRIJ0t5OFUzhZIp3VXQ.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
-**Common gap:**Sysmon is not deployed by default. Configuration must enable the required event types and filters. Noisy rules without filters will generate excessive volume and cause tuning paralysis.
+**Common gap:** Sysmon is not deployed by default. Configuration must enable the required event types and filters. Noisy rules without filters will generate excessive volume and cause tuning paralysis.
 
 ### EDR Process Telemetry (platform-generic)
 
 <img src="https://cdn-images-1.medium.com/max/800/1*wnZHYDumcdm1g2s9V-zDSg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Common gap:**Parent process chain may not be available in all EDR configurations. Verify whether your EDR records grandparent process context.
+**Common gap:** Parent process chain may not be available in all EDR configurations. Verify whether your EDR records grandparent process context.
 
 ### DNS Telemetry
 
 <img src="https://cdn-images-1.medium.com/max/800/1*6Q_g0K3HqccjUi33ZCvTnQ.png" alt="Article image" width="1635" height="962" loading="lazy" decoding="async" />
 
-**Common gap:**DNS logging is frequently incomplete. Recursive resolvers may not log internal resolution. Encrypted DNS (DoH, DoT) bypasses traditional DNS logging entirely.
+**Common gap:** DNS logging is frequently incomplete. Recursive resolvers may not log internal resolution. Encrypted DNS (DoH, DoT) bypasses traditional DNS logging entirely.
 
 ### Proxy / Web Gateway
 
 <img src="https://cdn-images-1.medium.com/max/800/1*mtSeMx3-4X7X4VJVEvIkZw.png" alt="Article image" width="1538" height="1023" loading="lazy" decoding="async" />
 
-**Common gap:**TLS inspection may not be enabled, making encrypted channel contents invisible. User-agent fields can be spoofed and should not be used as primary detection criteria.
+**Common gap:** TLS inspection may not be enabled, making encrypted channel contents invisible. User-agent fields can be spoofed and should not be used as primary detection criteria.
 
 ### Identity Provider (Entra ID / Okta / similar)
 
 <img src="https://cdn-images-1.medium.com/max/800/1*0QjUps5fVzIsal9cY9Lasg.png" alt="Article image" width="1672" height="941" loading="lazy" decoding="async" />
 
-**Common gap:**Legacy authentication protocols may not log MFA result or conditional access enforcement.
+**Common gap:** Legacy authentication protocols may not log MFA result or conditional access enforcement.
 
 ### Cloud Audit Logs (AWS CloudTrail / Azure Monitor / GCP Audit Logs)
 
 <img src="https://cdn-images-1.medium.com/max/800/1*wLxk8URFqS3jLSHGzUdKkQ.png" alt="Article image" width="1606" height="979" loading="lazy" decoding="async" />
 
-**Common gap:**Management plane logs (e.g., CloudTrail) are separate from data plane logs (e.g., S3 object access). Both must be enabled if the detection requires full coverage.
+**Common gap:** Management plane logs (e.g., CloudTrail) are separate from data plane logs (e.g., S3 object access). Both must be enabled if the detection requires full coverage.
 
 ### CTI Relevance
 
@@ -3419,7 +2983,7 @@ Organize CTI-derived detection candidates by value, evidence, telemetry, readine
 
 ### Practitioner-Level Explanation
 
-A detection backlog is not a wish list; compare maturity against the Israel CTI<a href="https://1200km.com/israel-government-threat-actors-cti/detection-engineering/detection-status-dashboard/" target="_self">Detection Status Dashboard</a>. Each item should record source behavior, evidence, expected value, telemetry dependency, false-positive risk, owner, readiness level, and promotion criteria. Backlog discipline prevents teams from losing good hypotheses or promoting immature logic too early.
+A detection backlog is not a wish list; compare maturity against the Israel CTI <a href="https://1200km.com/israel-government-threat-actors-cti/detection-engineering/detection-status-dashboard/" target="_self">Detection Status Dashboard</a>. Each item should record source behavior, evidence, expected value, telemetry dependency, false-positive risk, owner, readiness level, and promotion criteria. Backlog discipline prevents teams from losing good hypotheses or promoting immature logic too early.
 
 ### CTI Relevance
 
@@ -3477,201 +3041,74 @@ Show how to express detection logic across platforms while marking each example 
 
 ### Core Rule
 
-Platform syntax is implementation detail. The analytic logic must exist first: behavior, telemetry, fields, false positives, and validation. Every example below is a**DRL-4 candidate**— draft logic only. None are production-ready without positive test, negative test, benign baseline, historical replay, SOC pilot, and production approval.
+Platform syntax is implementation detail. The analytic logic must exist first: behavior, telemetry, fields, false positives, and validation. Every example below is a **DRL-4 candidate** — draft logic only. None are production-ready without positive test, negative test, benign baseline, historical replay, SOC pilot, and production approval.
 
 ### How to Read These Examples
 
 Each example includes:
 
-- **Behavior:**What the detection targets.
+- **Behavior:** What the detection targets.
 
-- **Source behavior:**CTI claim that justifies the detection.
+- **Source behavior:** CTI claim that justifies the detection.
 
-- **DRL:**Current readiness level.
+- **DRL:** Current readiness level.
 
-- **False positives:**Known benign matches.
+- **False positives:** Known benign matches.
 
-- **Validation required:**What must happen before promotion.
+- **Validation required:** What must happen before promotion.
 
 ### Example 1: Script Interpreter Spawned from Archive Extraction
 
-**Behavior:**A compressed archive is extracted and immediately spawns a scripting engine. This is a common pattern for phishing payload delivery.
+**Behavior:** A compressed archive is extracted and immediately spawns a scripting engine. This is a common pattern for phishing payload delivery.
 
-**Source behavior:**Reported — multiple vendor reports describe archive-attached phishing leading to PowerShell, wscript, or cscript execution. No local telemetry confirmation.
+**Source behavior:** Reported — multiple vendor reports describe archive-attached phishing leading to PowerShell, wscript, or cscript execution. No local telemetry confirmation.
 
-**DRL: 4**— draft logic, no test evidence.
+**DRL: 4** — draft logic, no test evidence.
 
-**False positives:**Admin deployment packages, software installers with embedded scripts, developer tooling.
+**False positives:** Admin deployment packages, software installers with embedded scripts, developer tooling.
 
-**Validation required:**Positive synthetic test (simulate archive + script spawning), negative test (confirm legitimate installer does not fire), benign baseline review, historical replay.
+**Validation required:** Positive synthetic test (simulate archive + script spawning), negative test (confirm legitimate installer does not fire), benign baseline review, historical replay.
 
 ### Sigma (DRL-4 candidate — not production)
 
 ```text
-title:
- 
-Archive
- 
-Extraction
- 
-Followed
- 
-by
- 
-Script
- 
-Interpreter
- 
-—
- 
-DRL-4
- 
-Candidate
-status:
- 
-experimental
-description:
- 
->
+title: Archive Extraction Followed by Script Interpreter — DRL-4 Candidate
+status: experimental
+description: >
   Detects a scripting engine (PowerShell, wscript, cscript, mshta) spawned as a child
   of a known archive extraction utility. DRL-4 draft only. Requires positive/negative
   testing, benign baseline review, and SOC pilot before promotion.
 references:
-  
--
- 
-https://attack.mitre.org/techniques/T1059/001/
-author:
- 
-CTI
- 
-Analyst
- 
-Field
- 
-Manual
-date:
- 
-2026-05-16
+  - https://attack.mitre.org/techniques/T1059/001/
+author: CTI Analyst Field Manual
+date: 2026-05-16
 tags:
-  
--
- 
-attack.execution
-  
--
- 
-attack.t1059.001
-  
--
- 
-drl.4.candidate
+  - attack.execution
+  - attack.t1059.001
+  - drl.4.candidate
 logsource:
-  
-category:
- 
-process_creation
-  
-product:
- 
-windows
+  category: process_creation
+  product: windows
 detection:
-  
-selection_parent:
-    
-ParentImage|endswith:
-      
--
- 
-'\7z.exe'
-      
--
- 
-'\WinRAR.exe'
-      
--
- 
-'\msiexec.exe'
-      
--
- 
-'\expand.exe'
-  
-selection_child:
-    
-Image|endswith:
-      
--
- 
-'\powershell.exe'
-      
--
- 
-'\pwsh.exe'
-      
--
- 
-'\wscript.exe'
-      
--
- 
-'\cscript.exe'
-      
--
- 
-'\mshta.exe'
-  
-condition:
- 
-selection_parent
- 
-and
- 
-selection_child
+  selection_parent:
+    ParentImage|endswith:
+      - '\7z.exe'
+      - '\WinRAR.exe'
+      - '\msiexec.exe'
+      - '\expand.exe'
+  selection_child:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+      - '\wscript.exe'
+      - '\cscript.exe'
+      - '\mshta.exe'
+  condition: selection_parent and selection_child
 falsepositives:
-  
--
- 
-Software
- 
-installation
- 
-packages
- 
-that
- 
-extract
- 
-and
- 
-execute
- 
-setup
- 
-scripts
-  
--
- 
-Admin
- 
-automation
- 
-tools
- 
-using
- 
-archive-based
- 
-deployment
-  
--
- 
-Developer
- 
-tooling
-level:
- 
-medium
+  - Software installation packages that extract and execute setup scripts
+  - Admin automation tools using archive-based deployment
+  - Developer tooling
+level: medium
 ```
 
 ### KQL — Microsoft Defender for Endpoint (DRL-4 candidate — not production)
@@ -3681,309 +3118,77 @@ medium
 // Requires telemetry validation: confirm ParentProcessName is populated
 // Validate positive/negative cases before enabling as alert
 DeviceProcessEvents
-| 
-where
- Timestamp > ago(
-7
-d)
-| 
-where
- InitiatingProcessFileName 
-in
-~ (
-"7z.exe"
-, 
-"WinRAR.exe"
-, 
-"msiexec.exe"
-, 
-"expand.exe"
-)
-| 
-where
- FileName 
-in
-~ (
-"powershell.exe"
-, 
-"pwsh.exe"
-, 
-"wscript.exe"
-, 
-"cscript.exe"
-, 
-"mshta.exe"
-)
+| where Timestamp > ago(7d)
+| where InitiatingProcessFileName in~ ("7z.exe", "WinRAR.exe", "msiexec.exe", "expand.exe")
+| where FileName in~ ("powershell.exe", "pwsh.exe", "wscript.exe", "cscript.exe", "mshta.exe")
 | project Timestamp, DeviceName, AccountName,
           InitiatingProcessFileName, InitiatingProcessCommandLine,
           FileName, ProcessCommandLine, FolderPath
-| order 
-by
- Timestamp desc
+| order by Timestamp desc
 ```
 
 ### SPL — Splunk with Sysmon (DRL-4 candidate — not production)
 
 ```text
-`sysmon` 
-EventCode
-=
-1
-(
-ParentImage
-=
-"*
-\\
-7z.exe"
- 
-OR
- 
-ParentImage
-=
-"*
-\\
-WinRAR.exe"
- 
-OR
- 
-ParentImage
-=
-"*
-\\
-msiexec.exe"
-)
-(
-Image
-=
-"*
-\\
-powershell.exe"
- 
-OR
- 
-Image
-=
-"*
-\\
-wscript.exe"
- 
-OR
- 
-Image
-=
-"*
-\\
-cscript.exe"
- 
-OR
- 
-Image
-=
-"*
-\\
-mshta.exe"
-)
-|
- table _time, host, 
-User
-, 
-ParentImage
-, 
-ParentCommandLine
-, 
-Image
-, 
-CommandLine
-|
- sort 
--
-_time
+`sysmon` EventCode=1
+(ParentImage="*\\7z.exe" OR ParentImage="*\\WinRAR.exe" OR ParentImage="*\\msiexec.exe")
+(Image="*\\powershell.exe" OR Image="*\\wscript.exe" OR Image="*\\cscript.exe" OR Image="*\\mshta.exe")
+| table _time, host, User, ParentImage, ParentCommandLine, Image, CommandLine
+| sort -_time
 ```
 
 ### Example 2: Non-Browser Process Outbound on IMAPS / SMTPS
 
-**Behavior:**A non-browser, non-mail-client process opens an outbound connection on TCP 993 (IMAPS) or TCP 465/587 (SMTPS). This is a C2 exfiltration pattern that abuses email protocols.
+**Behavior:** A non-browser, non-mail-client process opens an outbound connection on TCP 993 (IMAPS) or TCP 465/587 (SMTPS). This is a C2 exfiltration pattern that abuses email protocols.
 
-**Source behavior:**Reported — public CTI describes email-protocol C2 used by several threat clusters for data staging. Evidence label: Reported. Confidence: Medium (multi-vendor, no local telemetry confirmation).
+**Source behavior:** Reported — public CTI describes email-protocol C2 used by several threat clusters for data staging. Evidence label: Reported. Confidence: Medium (multi-vendor, no local telemetry confirmation).
 
-**DRL: 4**— draft logic, no test evidence.
+**DRL: 4** — draft logic, no test evidence.
 
-**False positives:**Mail clients, backup tools, developer SMTP testing, monitoring agents.
+**False positives:** Mail clients, backup tools, developer SMTP testing, monitoring agents.
 
-**Validation required:**Positive test with netcat or mail client connecting on 993/465, negative test confirming Outlook or Thunderbird does not fire, baseline review of legitimate mail clients.
+**Validation required:** Positive test with netcat or mail client connecting on 993/465, negative test confirming Outlook or Thunderbird does not fire, baseline review of legitimate mail clients.
 
 ### Sigma (DRL-4 candidate — not production)
 
 ```text
-title:
- 
-Non-Browser
- 
-Process
- 
-Outbound
- 
-IMAPS
- 
-or
- 
-SMTPS
- 
-—
- 
-DRL-4
- 
-Candidate
-status:
- 
-experimental
-description:
- 
->
+title: Non-Browser Process Outbound IMAPS or SMTPS — DRL-4 Candidate
+status: experimental
+description: >
   Detects a process connecting outbound on IMAPS (993) or SMTPS (465, 587) that is
   not a known mail client or browser. C2 via email protocol. DRL-4 draft only.
 references:
-  
--
- 
-https://attack.mitre.org/techniques/T1071/003/
-author:
- 
-CTI
- 
-Analyst
- 
-Field
- 
-Manual
-date:
- 
-2026-05-16
+  - https://attack.mitre.org/techniques/T1071/003/
+author: CTI Analyst Field Manual
+date: 2026-05-16
 tags:
-  
--
- 
-attack.command_and_control
-  
--
- 
-attack.t1071.003
-  
--
- 
-drl.4.candidate
+  - attack.command_and_control
+  - attack.t1071.003
+  - drl.4.candidate
 logsource:
-  
-category:
- 
-network_connection
-  
-product:
- 
-windows
-  
-service:
- 
-sysmon
+  category: network_connection
+  product: windows
+  service: sysmon
 detection:
-  
-selection:
-    
-EventID:
- 
-3
-    
-DestinationPort:
-      
--
- 
-993
-      
--
- 
-465
-      
--
- 
-587
-  
-filter_legit:
-    
-Image|endswith:
-      
--
- 
-'\OUTLOOK.EXE'
-      
--
- 
-'\thunderbird.exe'
-      
--
- 
-'\chrome.exe'
-      
--
- 
-'\firefox.exe'
-      
--
- 
-'\msedge.exe'
-  
-condition:
- 
-selection
- 
-and
- 
-not
- 
-filter_legit
+  selection:
+    EventID: 3
+    DestinationPort:
+      - 993
+      - 465
+      - 587
+  filter_legit:
+    Image|endswith:
+      - '\OUTLOOK.EXE'
+      - '\thunderbird.exe'
+      - '\chrome.exe'
+      - '\firefox.exe'
+      - '\msedge.exe'
+  condition: selection and not filter_legit
 falsepositives:
-  
--
- 
-Mail
- 
-clients
- 
-not
- 
-in
- 
-filter
- 
-list
-  
--
- 
-Backup
- 
-and
- 
-archiving
- 
-tools
- 
-with
- 
-SMTP
- 
-reporting
-  
--
- 
-Developer
- 
-SMTP
- 
-testing
- 
-utilities
-level:
- 
-medium
+  - Mail clients not in filter list
+  - Backup and archiving tools with SMTP reporting
+  - Developer SMTP testing utilities
+level: medium
 ```
 
 ### KQL — Microsoft Defender for Endpoint (DRL-4 candidate — not production)
@@ -3991,135 +3196,26 @@ medium
 ```text
 // DRL-4 candidate — not production
 // Add known-good mail clients to exclusion list after baseline review
-let
- LegitMailClients = 
-dynamic
-([
-"outlook.exe"
-,
-"thunderbird.exe"
-,
-"chrome.exe"
-,
-"firefox.exe"
-,
-"msedge.exe"
-]);
+let LegitMailClients = dynamic(["outlook.exe","thunderbird.exe","chrome.exe","firefox.exe","msedge.exe"]);
 DeviceNetworkEvents
-| 
-where
- Timestamp > ago(
-7
-d)
-| 
-where
- RemotePort 
-in
- (
-993
-, 
-465
-, 
-587
-)
-| 
-where
- 
-tolower
-(
-InitiatingProcessFileName
-) !
-in
- (
-LegitMailClients
-)
+| where Timestamp > ago(7d)
+| where RemotePort in (993, 465, 587)
+| where tolower(InitiatingProcessFileName) !in (LegitMailClients)
 | project Timestamp, DeviceName, AccountName,
           InitiatingProcessFileName, InitiatingProcessCommandLine,
           RemoteIP, RemotePort
-| order 
-by
- Timestamp desc
+| order by Timestamp desc
 ```
 
 ### SPL — Splunk with Sysmon (DRL-4 candidate — not production)
 
 ```text
-`sysmon` 
-EventCode
-=
-3
-(
-DestinationPort
-=
-993
- 
-OR
- 
-DestinationPort
-=
-465
- 
-OR
- 
-DestinationPort
-=
-587
-)
-NOT
- (
-Image
-=
-"*
-\\
-OUTLOOK.EXE"
- 
-OR
- 
-Image
-=
-"*
-\\
-thunderbird.exe"
- 
-OR
- 
-Image
-=
-"*
-\\
-chrome.exe"
-     
-OR
- 
-Image
-=
-"*
-\\
-firefox.exe"
- 
-OR
- 
-Image
-=
-"*
-\\
-msedge.exe"
-)
-|
- table _time, host, 
-User
-, 
-Image
-, 
-CommandLine
-, 
-DestinationIp
-, 
-DestinationPort
-|
- sort 
--
-_time
+`sysmon` EventCode=3
+(DestinationPort=993 OR DestinationPort=465 OR DestinationPort=587)
+NOT (Image="*\\OUTLOOK.EXE" OR Image="*\\thunderbird.exe" OR Image="*\\chrome.exe"
+     OR Image="*\\firefox.exe" OR Image="*\\msedge.exe")
+| table _time, host, User, Image, CommandLine, DestinationIp, DestinationPort
+| sort -_time
 ```
 
 ### DRL Promotion Checklist for Any Example Above
@@ -4162,7 +3258,7 @@ Package CTI-derived detections and hunts so SOC analysts can triage them consist
 
 ### Practitioner-Level Explanation
 
-SOC handoff is where CTI and detection engineering become operational; align it with the Customer project<a href="https://1200km.com/customer-driven-ai-cti-project/docs/workflow/full-workflow-quick-reference/#phase-10-soc-triage-and-incident-workflow" target="_self">SOC workflow phase</a>. A handoff note should explain why the alert matters, what to check first, what false positives are expected, when to escalate, and what response actions are authorized. Without SOC handoff, even good detection logic may fail in practice.
+SOC handoff is where CTI and detection engineering become operational; align it with the Customer project <a href="https://1200km.com/customer-driven-ai-cti-project/docs/workflow/full-workflow-quick-reference/#phase-10-soc-triage-and-incident-workflow" target="_self">SOC workflow phase</a>. A handoff note should explain why the alert matters, what to check first, what false positives are expected, when to escalate, and what response actions are authorized. Without SOC handoff, even good detection logic may fail in practice.
 
 ### CTI Relevance
 
@@ -4331,311 +3427,24 @@ AI Review Log ID:
 Date:
 Model Used:
 Model Version / API Identifier:
-Task Type:
- [
-Allowed
- 
-/
- 
-Restricted
-]
-Data Classification:
- [
-TLP:CLEAR
- 
-/
- 
-Sanitized
- 
-Internal
- 
-/
- 
-Other
-]
-Source Inputs:
- [
-URLs
- 
-or
- 
-document
- 
-identifiers
- 
-—
- 
-no
- 
-sensitive
- 
-content
- 
-in
- 
-log
-]
-Prompt Version:
- [
-Prompt
- 
-ID
- 
-from
- 
-prompt
- 
-library
- 
-or
- 
-freeform
- 
-description
-]
-Output Summary:
- [
-What
- 
-the
- 
-model
- 
-produced
- 
-—
- 
-claims
- 
-extracted
-, 
-fields
- 
-drafted
-, 
-etc.
-]
+Task Type: [Allowed / Restricted]
+Data Classification: [TLP:CLEAR / Sanitized Internal / Other]
+Source Inputs: [URLs or document identifiers — no sensitive content in log]
+Prompt Version: [Prompt ID from prompt library or freeform description]
+Output Summary: [What the model produced — claims extracted, fields drafted, etc.]
 Source Verification:
-  
--
- 
-Source 1:
- 
-URL
- [
-resolves
- 
-/
- 
-404
- 
-/
- 
-archive
-] 
-—
- 
-Content
- 
-supports
- 
-claim
- [
-Yes
- 
-/
- 
-Partial
- 
-/
- 
-No
-]
-  
--
- 
-Source 2:
- 
-URL
- [
-resolves
- 
-/
- 
-404
- 
-/
- 
-archive
-] 
-—
- 
-Content
- 
-supports
- 
-claim
- [
-Yes
- 
-/
- 
-Partial
- 
-/
- 
-No
-]
+  - Source 1: URL [resolves / 404 / archive] — Content supports claim [Yes / Partial / No]
+  - Source 2: URL [resolves / 404 / archive] — Content supports claim [Yes / Partial / No]
 Claim Review:
-  
--
- 
-Accepted claims:
- [
-list
- 
-with
- 
-evidence
- 
-labels
-]
-  
--
- 
-Rejected claims:
- [
-list
- 
-with
- 
-reason
- 
-for
- 
-rejection
-]
-  
--
- 
-Downgraded claims:
- [
-list
- 
-with
- 
-corrected
- 
-evidence
- 
-label
- 
-and
- 
-reason
-]
-Human Analyst:
- [
-name
- 
-or
- 
-role
-]
-Attribution Assigned By:
- [
-Analyst
- 
-name
- 
-—
- 
-AI
- 
-did
- 
-not
- 
-assign
- 
-attribution
-]
-Confidence Assigned By:
- [
-Analyst
- 
-name
- 
-—
- 
-AI
- 
-did
- 
-not
- 
-assign
- 
-confidence
-]
-DRL Assigned By:
- [
-Analyst
- 
-name
- 
-—
- 
-AI
- 
-did
- 
-not
- 
-promote
- 
-DRL
-]
-Final Use:
- [
-source
- 
-register
- 
-/
- 
-evidence
- 
-register
- 
-/
- 
-hunt
- 
-draft
- 
-/
- 
-report
- 
-section
- 
-/
- 
-none
-]
-Residual Risk:
- [
-Any
- 
-unresolved
- 
-concern
- 
-or
- 
-gap
-]
+  - Accepted claims: [list with evidence labels]
+  - Rejected claims: [list with reason for rejection]
+  - Downgraded claims: [list with corrected evidence label and reason]
+Human Analyst: [name or role]
+Attribution Assigned By: [Analyst name — AI did not assign attribution]
+Confidence Assigned By: [Analyst name — AI did not assign confidence]
+DRL Assigned By: [Analyst name — AI did not promote DRL]
+Final Use: [source register / evidence register / hunt draft / report section / none]
+Residual Risk: [Any unresolved concern or gap]
 ```
 
 ### Prohibited Use Summary
@@ -4661,42 +3470,18 @@ The following are prohibited regardless of context. No policy exception or urgen
 **Bad:**
 
 ```text
-The model says 
-this
- cluster 
-is
- Actor X 
-with
- high confidence.
+The model says this cluster is Actor X with high confidence.
 ```
 
 **Corrected:**
 
 ```text
-The model extracted three source-reported similarities 
-to
- Actor X (
-shared
- tooling,
+The model extracted three source-reported similarities to Actor X (shared tooling,
 overlapping targeting, similar lure themes). The analyst assigns low attribution
-confidence because the evidence consists 
-of
- 
-shared
- tooling 
-and
- victimology only,
-with
- no exclusive infrastructure link 
-or
- source-confirmed 
-operator
- overlap.
+confidence because the evidence consists of shared tooling and victimology only,
+with no exclusive infrastructure link or source-confirmed operator overlap.
 Alternative hypothesis: separate actor reusing available tooling.
-Analyst:
- [name]. AI Review Log: AIR-
-004
-.
+Analyst: [name]. AI Review Log: AIR-004.
 ```
 
 ## Hallucination Control
@@ -4821,7 +3606,7 @@ Define a safe workflow for using LLMs in public, defensive CTI research.
 
 ### Practitioner-Level Explanation
 
-Safe LLM use starts with scope and data handling; use Customer project<a href="https://1200km.com/customer-driven-ai-cti-project/docs/methodology/foundations/" target="_self">AI governance</a>for delivery work. Public TLP:CLEAR material may be appropriate for external tools. Internal telemetry, credentials, victim data, proprietary reporting, or sensitive incident data should not be pasted into public models.
+Safe LLM use starts with scope and data handling; use Customer project <a href="https://1200km.com/customer-driven-ai-cti-project/docs/methodology/foundations/" target="_self">AI governance</a> for delivery work. Public TLP:CLEAR material may be appropriate for external tools. Internal telemetry, credentials, victim data, proprietary reporting, or sensitive incident data should not be pasted into public models.
 
 The model should be asked to produce structured claims, source links, confidence caveats, and gaps. The analyst verifies everything.
 
@@ -4937,97 +3722,45 @@ Track source provenance, reliability, credibility, review status, and downstream
 
 ### Fields
 
-- **source_id:**Unique source identifier.
+- **source_id:** Unique source identifier.
 
-- **publisher:**Organization or author.
+- **publisher:** Organization or author.
 
-- **title:**Exact source title.
+- **title:** Exact source title.
 
-- **url:**Stable source URL.
+- **url:** Stable source URL.
 
-- **publication_date:**Date the source was published.
+- **publication_date:** Date the source was published.
 
-- **accessed_date:**Date the analyst accessed it.
+- **accessed_date:** Date the analyst accessed it.
 
-- **source_type:**Government, vendor CTI, academic, media, persona claim, internal, or other.
+- **source_type:** Government, vendor CTI, academic, media, persona claim, internal, or other.
 
-- **reliability:**A-F source reliability rating.
+- **reliability:** A-F source reliability rating.
 
-- **credibility:**1–6 information credibility rating.
+- **credibility:** 1–6 information credibility rating.
 
-- **summary:**Short source summary.
+- **summary:** Short source summary.
 
-- **limitations:**Known limits, missing evidence, or caveats.
+- **limitations:** Known limits, missing evidence, or caveats.
 
-- **downstream_links:**Evidence, actor, TTP, hunt, detection, or report links.
+- **downstream_links:** Evidence, actor, TTP, hunt, detection, or report links.
 
 ### Example Values
 
 ```text
-source_id:
- 
-SRC-001
-publisher:
- 
-Example
- 
-Vendor
- 
-CTI
-title:
- 
-Example
- 
-Campaign
- 
-Report
-url:
- 
-https://example.com/report
-publication_date:
- 
-2026-05-01
-accessed_date:
- 
-2026-05-16
-source_type:
- 
-Vendor
- 
-CTI
-reliability:
- 
-B
-credibility:
- 
-2
-summary:
- 
-Reports
- 
-phishing
- 
-leading
- 
-to
- 
-script
- 
-execution.
-limitations:
- 
-No
- 
-raw
- 
-telemetry
- 
-shown.
-downstream_links:
- 
-EV-001,
- 
-HUNT-003
+source_id: SRC-001
+publisher: Example Vendor CTI
+title: Example Campaign Report
+url: https://example.com/report
+publication_date: 2026-05-01
+accessed_date: 2026-05-16
+source_type: Vendor CTI
+reliability: B
+credibility: 2
+summary: Reports phishing leading to script execution.
+limitations: No raw telemetry shown.
+downstream_links: EV-001, HUNT-003
 ```
 
 ### Quality Gates
@@ -5089,45 +3822,18 @@ Fail: A row says “vendor blog” with no URL, no date, no access metadata, and
 ### Complete Filled Example
 
 ```text
-source_id: 
-SRC-ATTACK-001
-publisher
-: MITRE ATT&CK
-title
-: Enterprise ATT&CK documentation
-url
-: 
-https
-:
-//attack.mitre.org/
-publication_date
-: Ongoing
-accessed_date
-: 
-2026
--
-05
--
-16
-source_type
-: Framework documentation
-reliability
-: A
-credibility
-: 
-2
-summary
-: Official behavior taxonomy used for technique mapping.
-limitations
-: 
-Not
- attribution evidence 
-and
- 
-not
- proof of detection coverage.
-downstream_links
-: ATT&CK mapping rules, DRL model, detection backlog.
+source_id: SRC-ATTACK-001
+publisher: MITRE ATT&CK
+title: Enterprise ATT&CK documentation
+url: https://attack.mitre.org/
+publication_date: Ongoing
+accessed_date: 2026-05-16
+source_type: Framework documentation
+reliability: A
+credibility: 2
+summary: Official behavior taxonomy used for technique mapping.
+limitations: Not attribution evidence and not proof of detection coverage.
+downstream_links: ATT&CK mapping rules, DRL model, detection backlog.
 ```
 
 ## Evidence Register Template
@@ -5138,50 +3844,33 @@ Record claim-level evidence so CTI judgments remain traceable.
 
 ### Fields
 
-- **evidence_id:**Unique evidence identifier.
+- **evidence_id:** Unique evidence identifier.
 
-- **claim:**Single claim, not a paragraph of mixed claims.
+- **claim:** Single claim, not a paragraph of mixed claims.
 
-- **evidence_label:**Observed, Reported, Assessed, Inferred, Unknown, or Gap.
+- **evidence_label:** Observed, Reported, Assessed, Inferred, Unknown, or Gap.
 
-- **source_id:**Source register ID.
+- **source_id:** Source register ID.
 
-- **confidence:**High, Medium, or Low.
+- **confidence:** High, Medium, or Low.
 
-- **confidence_reason:**Why the confidence level was assigned.
+- **confidence_reason:** Why the confidence level was assigned.
 
-- **contradiction_or_gap:**Known conflict or missing evidence.
+- **contradiction_or_gap:** Known conflict or missing evidence.
 
-- **downstream_use:**Report, actor page, TTP, hunt, detection, or executive summary.
+- **downstream_use:** Report, actor page, TTP, hunt, detection, or executive summary.
 
 ### Example Values
 
 ```text
-evidence_id:
- EV-
-014
-claim:
- Vendor reports archive attachment leading 
-to
- script execution.
-evidence_label:
- Reported
-source_id:
- SRC-
-004
-confidence:
- Medium
-confidence_reason:
- Reliable source, but no raw telemetry included.
-contradiction_or_gap:
- Unknown whether observed 
-in
- our environment.
-downstream_use:
- HUNT-
-002
-, DET-CAND-
-005
+evidence_id: EV-014
+claim: Vendor reports archive attachment leading to script execution.
+evidence_label: Reported
+source_id: SRC-004
+confidence: Medium
+confidence_reason: Reliable source, but no raw telemetry included.
+contradiction_or_gap: Unknown whether observed in our environment.
+downstream_use: HUNT-002, DET-CAND-005
 ```
 
 ### Quality Gates
@@ -5243,39 +3932,16 @@ Fail: One row mixes targeting, tooling, attribution, and detection implications 
 ### Complete Filled Example
 
 ```text
-evidence_id:
- EV-ATTACK-
-001
-claim:
- ATT&CK mapping describes behavior 
-and
- should 
-not
- be used 
-as
- actor attribution proof.
-evidence_label:
- Reported
-source_id:
- SRC-ATTACK-
-001
-source_reliability:
- A
-information_credibility:
- 
-2
-confidence:
- High confidence
-confidence_reason:
- Official framework documentation 
-and
- consistent defensive practice.
-contradiction_or_gap:
- Campaign-specific mapping still requires separate evidence.
-downstream_use:
- ATT&CK mapping rules 
-and
- detection backlog.
+evidence_id: EV-ATTACK-001
+claim: ATT&CK mapping describes behavior and should not be used as actor attribution proof.
+evidence_label: Reported
+source_id: SRC-ATTACK-001
+source_reliability: A
+information_credibility: 2
+confidence: High confidence
+confidence_reason: Official framework documentation and consistent defensive practice.
+contradiction_or_gap: Campaign-specific mapping still requires separate evidence.
+downstream_use: ATT&CK mapping rules and detection backlog.
 ```
 
 ## Collection Gap Register
@@ -5286,77 +3952,33 @@ Track missing information that affects CTI judgments or defensive action.
 
 ### Fields
 
-- **gap_id:**Unique gap identifier.
+- **gap_id:** Unique gap identifier.
 
-- **requirement:**PIR/SIR affected.
+- **requirement:** PIR/SIR affected.
 
-- **gap_statement:**What is missing.
+- **gap_statement:** What is missing.
 
-- **impact:**Blocking, confidence-limiting, or contextual.
+- **impact:** Blocking, confidence-limiting, or contextual.
 
-- **collection_path:**How to close or reduce the gap.
+- **collection_path:** How to close or reduce the gap.
 
-- **owner:**Person or team responsible.
+- **owner:** Person or team responsible.
 
-- **due_date:**Review or collection date.
+- **due_date:** Review or collection date.
 
-- **status:**Open, in progress, closed, accepted risk.
+- **status:** Open, in progress, closed, accepted risk.
 
 ### Example Values
 
 ```text
-gap_id:
- 
-GAP-006
-requirement:
- 
-PIR-002
-gap_statement:
- 
-Unknown
- 
-whether
- 
-endpoint
- 
-telemetry
- 
-records
- 
-command-line
- 
-fields
- 
-for
- 
-script
- 
-hosts.
-impact:
- 
-Blocking
-collection_path:
- 
-Validate
- 
-EDR
- 
-schema
- 
-and
- 
-retention.
-owner:
- 
-Detection
- 
-Engineering
-due_date:
- 
-2026-05-30
-status:
- 
-Open
+gap_id: GAP-006
+requirement: PIR-002
+gap_statement: Unknown whether endpoint telemetry records command-line fields for script hosts.
+impact: Blocking
+collection_path: Validate EDR schema and retention.
+owner: Detection Engineering
+due_date: 2026-05-30
+status: Open
 ```
 
 ### Quality Gates
@@ -5418,39 +4040,14 @@ Fail: The gap says “need more intel” with no owner or collection path.
 ### Complete Filled Example
 
 ```text
-gap_id:
- GAP-DRL-
-001
-requirement:
- DET-CAND-
-001
- promotion 
-to
- DRL-
-6
-gap_statement:
- Unknown whether EDR records parent process 
-for
- archive utilities.
-impact:
- Blocking validation.
-collection_path:
- Query 
-30
--day EDR schema sample 
-and
- confirm field retention.
-owner:
- Detection Engineering
-due_date:
- 
-2026
--
-06
--
-01
-status:
- Open
+gap_id: GAP-DRL-001
+requirement: DET-CAND-001 promotion to DRL-6
+gap_statement: Unknown whether EDR records parent process for archive utilities.
+impact: Blocking validation.
+collection_path: Query 30-day EDR schema sample and confirm field retention.
+owner: Detection Engineering
+due_date: 2026-06-01
+status: Open
 ```
 
 ## Actor Profile Template
@@ -5461,71 +4058,39 @@ Create an actor profile that supports decisions, hunts, and detections.
 
 ### Fields
 
-- **actor_id:**Stable actor identifier.
+- **actor_id:** Stable actor identifier.
 
-- **primary_name:**Preferred name and rationale.
+- **primary_name:** Preferred name and rationale.
 
-- **aliases:**Aliases with source for each.
+- **aliases:** Aliases with source for each.
 
-- **sponsor_assessment:**Sponsor claim with evidence label and confidence.
+- **sponsor_assessment:** Sponsor claim with evidence label and confidence.
 
-- **targeting:**Sectors, regions, and victimology with dates.
+- **targeting:** Sectors, regions, and victimology with dates.
 
-- **ttps:**Behavior mappings with evidence.
+- **ttps:** Behavior mappings with evidence.
 
-- **tools:**Tools and malware with source-backed behavior.
+- **tools:** Tools and malware with source-backed behavior.
 
-- **detections:**Mapped hunts or detections.
+- **detections:** Mapped hunts or detections.
 
-- **gaps:**Unknowns and collection needs.
+- **gaps:** Unknowns and collection needs.
 
-- **last_reviewed:**Review date and owner.
+- **last_reviewed:** Review date and owner.
 
 ### Example Values
 
 ```text
-actor_id:
- ACT-
-001
-primary_name:
- Example Cluster
-aliases:
- VendorA Name, VendorB Name
-sponsor_assessment:
- Assessed-
-by
--source, medium confidence
-targeting:
- Telecom 
-and
- 
-public
--sector reporting since 
-2024
-ttps:
- T1566 phishing, evidence EV-
-003
-tools:
- ExampleLoader, reported 
-by
- SRC-
-002
-detections:
- HUNT-
-004
-gaps:
- No 
-public
- 
-2026
- primary source found
-last_reviewed:
- 
-2026
--
-05
--
-16
+actor_id: ACT-001
+primary_name: Example Cluster
+aliases: VendorA Name, VendorB Name
+sponsor_assessment: Assessed-by-source, medium confidence
+targeting: Telecom and public-sector reporting since 2024
+ttps: T1566 phishing, evidence EV-003
+tools: ExampleLoader, reported by SRC-002
+detections: HUNT-004
+gaps: No public 2026 primary source found
+last_reviewed: 2026-05-16
 ```
 
 ### Quality Gates
@@ -5587,99 +4152,16 @@ Fail: The profile merges vendor aliases without source mapping and treats shared
 ### Complete Filled Example
 
 ```text
-actor_id:
- 
-ACT-EXAMPLE-001
-primary_name:
- 
-Example
- 
-Cluster
-aliases:
- 
-VendorA
- 
-ExampleName
- 
-(SRC-001);
- 
-VendorB
- 
-ExampleKitten
- 
-(SRC-002)
-sponsor_assessment:
- 
-Gap;
- 
-no
- 
-primary
- 
-source
- 
-confirms
- 
-sponsor.
-targeting:
- 
-Reported
- 
-telecom
- 
-and
- 
-public-sector
- 
-targeting,
- 
-2024
--2026
-.
-ttps:
- 
-T1505.003
- 
-web
- 
-shell,
- 
-EV-010,
- 
-medium
- 
-mapping
- 
-confidence.
-tools:
- 
-ExampleShell,
- 
-Reported,
- 
-SRC-002.
-detections:
- 
-HUNT-EDGE-001,
- 
-DET-CAND-003.
-gaps:
- 
-No
- 
-2026 
-primary
- 
-reporting
- 
-on
- 
-current
- 
-infrastructure.
-last_reviewed:
- 
-2026-05-16
+actor_id: ACT-EXAMPLE-001
+primary_name: Example Cluster
+aliases: VendorA ExampleName (SRC-001); VendorB ExampleKitten (SRC-002)
+sponsor_assessment: Gap; no primary source confirms sponsor.
+targeting: Reported telecom and public-sector targeting, 2024-2026.
+ttps: T1505.003 web shell, EV-010, medium mapping confidence.
+tools: ExampleShell, Reported, SRC-002.
+detections: HUNT-EDGE-001, DET-CAND-003.
+gaps: No 2026 primary reporting on current infrastructure.
+last_reviewed: 2026-05-16
 ```
 
 ## Hunting Hypothesis Template
@@ -5690,57 +4172,37 @@ Create falsifiable hunt plans from CTI claims.
 
 ### Fields
 
-- **hunt_id:**Unique hunt identifier.
+- **hunt_id:** Unique hunt identifier.
 
-- **hypothesis:**If/then behavior statement.
+- **hypothesis:** If/then behavior statement.
 
-- **source_claim:**Claim and source backing the hunt.
+- **source_claim:** Claim and source backing the hunt.
 
-- **telemetry:**Required tables/logs.
+- **telemetry:** Required tables/logs.
 
-- **fields:**Required fields.
+- **fields:** Required fields.
 
-- **lookback:**Search period.
+- **lookback:** Search period.
 
-- **malicious_pattern:**Expected suspicious behavior.
+- **malicious_pattern:** Expected suspicious behavior.
 
-- **benign_pattern:**Expected legitimate pattern.
+- **benign_pattern:** Expected legitimate pattern.
 
-- **false_positives:**Likely benign sources.
+- **false_positives:** Likely benign sources.
 
-- **escalation:**When to open incident or case.
+- **escalation:** When to open incident or case.
 
 ### Example Values
 
 ```text
-hunt_id:
- HUNT-
-011
-hypothesis:
- 
-If
- phishing leads 
-to
- script execution, 
-then
- endpoints receiving suspicious mail may spawn script interpreters within 
-24
- hours.
-source_claim:
- EV-
-009
-telemetry:
- Email gateway, EDR process, network logs
-fields:
- recipient, attachment, process, command line, destination
-lookback:
- 
-30
- days
-false_positives:
- IT automation, software installers
-escalation:
- Script execution plus unknown external download.
+hunt_id: HUNT-011
+hypothesis: If phishing leads to script execution, then endpoints receiving suspicious mail may spawn script interpreters within 24 hours.
+source_claim: EV-009
+telemetry: Email gateway, EDR process, network logs
+fields: recipient, attachment, process, command line, destination
+lookback: 30 days
+false_positives: IT automation, software installers
+escalation: Script execution plus unknown external download.
 ```
 
 ### Quality Gates
@@ -5802,52 +4264,17 @@ Fail: Hypothesis is a keyword search with no stop condition.
 ### Complete Filled Example
 
 ```text
-hunt_id:
- HUNT-RMM-
-001
-hypothesis:
- 
-If
- unauthorized RMM 
-is
- used after initial access, 
-then
- a non-IT host will show 
-new
- RMM install plus external remote session without a change ticket.
-source_claim:
- EV-RMM-
-001
-telemetry:
- EDR process, software inventory, network, identity, ticketing
-fields:
- host, user, process, command_line, destination, ticket_id
-lookback:
- 
-30
- days
-malicious_pattern:
- 
-New
- RMM install 
-on
- non-IT host plus external session.
-benign_pattern:
- Approved helpdesk deployment 
-with
- ticket 
-and
- known admin user.
-false_positives:
- Vendor support, helpdesk, migrations.
-escalation:
- No ticket plus suspicious pre-install email 
-or
- external source.
-stop_condition:
- All hits explained 
-by
- approved deployment records.
+hunt_id: HUNT-RMM-001
+hypothesis: If unauthorized RMM is used after initial access, then a non-IT host will show new RMM install plus external remote session without a change ticket.
+source_claim: EV-RMM-001
+telemetry: EDR process, software inventory, network, identity, ticketing
+fields: host, user, process, command_line, destination, ticket_id
+lookback: 30 days
+malicious_pattern: New RMM install on non-IT host plus external session.
+benign_pattern: Approved helpdesk deployment with ticket and known admin user.
+false_positives: Vendor support, helpdesk, migrations.
+escalation: No ticket plus suspicious pre-install email or external source.
+stop_condition: All hits explained by approved deployment records.
 ```
 
 ## Detection Backlog Item
@@ -5858,61 +4285,39 @@ Track detection candidates from idea to retirement.
 
 ### Fields
 
-- **detection_id:**Unique detection identifier.
+- **detection_id:** Unique detection identifier.
 
-- **title:**Short behavior-focused title.
+- **title:** Short behavior-focused title.
 
-- **source_behavior:**Behavior being detected.
+- **source_behavior:** Behavior being detected.
 
-- **evidence_id:**Claim/evidence backing the idea.
+- **evidence_id:** Claim/evidence backing the idea.
 
-- **telemetry:**Required data source.
+- **telemetry:** Required data source.
 
-- **logic_summary:**Plain-language detection logic.
+- **logic_summary:** Plain-language detection logic.
 
-- **false_positives:**Expected benign matches.
+- **false_positives:** Expected benign matches.
 
-- **validation:**Positive, negative, replay, or pilot status.
+- **validation:** Positive, negative, replay, or pilot status.
 
-- **readiness:**Hunt, pilot, production, retired, or DRL level.
+- **readiness:** Hunt, pilot, production, retired, or DRL level.
 
-- **owner:**Responsible engineer or team.
+- **owner:** Responsible engineer or team.
 
 ### Example Values
 
 ```text
-detection_id:
- DET-
-007
-title:
- Archive Extraction Followed 
-by
- Script Execution
-source_behavior:
- Phishing archive launches script interpreter
-evidence_id:
- EV-
-009
-telemetry:
- EDR process 
-and
- file events
-logic_summary:
- Archive extraction followed 
-by
- powershell/cscript/wscript within 
-10
- minutes
-false_positives:
- Admin packages, installers
-validation:
- Synthetic positive 
-and
- negative tests pending
-readiness:
- Hunt
-owner:
- Detection Engineering
+detection_id: DET-007
+title: Archive Extraction Followed by Script Execution
+source_behavior: Phishing archive launches script interpreter
+evidence_id: EV-009
+telemetry: EDR process and file events
+logic_summary: Archive extraction followed by powershell/cscript/wscript within 10 minutes
+false_positives: Admin packages, installers
+validation: Synthetic positive and negative tests pending
+readiness: Hunt
+owner: Detection Engineering
 ```
 
 ### Quality Gates
@@ -5976,53 +4381,19 @@ Fail: Detection is marked production because it has a Sigma rule but no replay, 
 ### Complete Filled Example
 
 ```text
-detection_id:
- DET-CAND-
-001
-title:
- Non-IT RMM Install Followed 
-by
- External Session
-source_behavior:
- Reported RMM abuse after initial access.
-evidence_id:
- EV-RMM-
-001
-telemetry:
- EDR software inventory, process, network, identity, ticketing
-field_mapping:
- host, user, product_name, process_name, destination_ip, ticket_id
-logic_summary:
- 
-New
- RMM install 
-on
- non-IT host followed 
-by
- external session within 
-60
- minutes.
-false_positives:
- Helpdesk deployment, approved vendor support.
-validation:
- Positive/negative synthetic tests pending.
-readiness:
- DRL-
-4
- / Hunt
-owner:
- Detection Engineering
-review_date:
- 
-2026
--
-06
--
-16
-rollback_plan:
- Disable scheduled query 
-and
- revert tuning list.
+detection_id: DET-CAND-001
+title: Non-IT RMM Install Followed by External Session
+source_behavior: Reported RMM abuse after initial access.
+evidence_id: EV-RMM-001
+telemetry: EDR software inventory, process, network, identity, ticketing
+field_mapping: host, user, product_name, process_name, destination_ip, ticket_id
+logic_summary: New RMM install on non-IT host followed by external session within 60 minutes.
+false_positives: Helpdesk deployment, approved vendor support.
+validation: Positive/negative synthetic tests pending.
+readiness: DRL-4 / Hunt
+owner: Detection Engineering
+review_date: 2026-06-16
+rollback_plan: Disable scheduled query and revert tuning list.
 ```
 
 ## Infrastructure Pivot Log
@@ -6033,63 +4404,36 @@ Document accepted and rejected infrastructure pivots with link strength and limi
 
 ### Fields
 
-- **pivot_id:**Unique pivot identifier.
+- **pivot_id:** Unique pivot identifier.
 
-- **seed:**Initial IOC or artifact.
+- **seed:** Initial IOC or artifact.
 
-- **pivot_type:**Passive DNS, certificate, ASN, URL path, favicon, malware config, or telemetry.
+- **pivot_type:** Passive DNS, certificate, ASN, URL path, favicon, malware config, or telemetry.
 
-- **related_indicator:**Candidate related indicator.
+- **related_indicator:** Candidate related indicator.
 
-- **time_window:**First/last seen or relevant date window.
+- **time_window:** First/last seen or relevant date window.
 
-- **link_strength:**Weak, moderate, or strong.
+- **link_strength:** Weak, moderate, or strong.
 
-- **decision:**Accepted, rejected, or pending.
+- **decision:** Accepted, rejected, or pending.
 
-- **reason:**Why the decision was made.
+- **reason:** Why the decision was made.
 
-- **limitations:**False-positive and coverage risks.
+- **limitations:** False-positive and coverage risks.
 
 ### Example Values
 
 ```text
-pivot_id:
- PIV-
-002
-seed:
- example[.]com
-pivot_type:
- Certificate
-related_indicator:
- update-example[.]com
-time_window:
- 
-2026
--
-04
--
-01
- 
-to
- 
-2026
--
-04
--
-08
-link_strength:
- Moderate
-decision:
- Accepted
-reason:
- 
-Shared
- rare SAN pattern 
-and
- URL path.
-limitations:
- Attribution remains Unknown.
+pivot_id: PIV-002
+seed: example[.]com
+pivot_type: Certificate
+related_indicator: update-example[.]com
+time_window: 2026-04-01 to 2026-04-08
+link_strength: Moderate
+decision: Accepted
+reason: Shared rare SAN pattern and URL path.
+limitations: Attribution remains Unknown.
 ```
 
 ### Quality Gates
@@ -6151,48 +4495,15 @@ Fail: Every domain on the same ASN is treated as actor infrastructure.
 ### Complete Filled Example
 
 ```text
-pivot_id:
- PIV-
-014
-seed:
- login-example[.]com
-pivot_type:
- Certificate + URL path
-related_indicator:
- auth-example[.]com
-time_window:
- 
-2026
--
-05
--
-10
- 
-to
- 
-2026
--
-05
--
-14
-link_strength:
- Moderate
-decision:
- Accepted 
-as
- candidate cluster, 
-not
- attribution.
-reason:
- Same cert issuance window 
-and
- same uncommon path 
-structure
-.
-limitations:
- Could be 
-shared
- phishing kit; actor remains Unknown.
+pivot_id: PIV-014
+seed: login-example[.]com
+pivot_type: Certificate + URL path
+related_indicator: auth-example[.]com
+time_window: 2026-05-10 to 2026-05-14
+link_strength: Moderate
+decision: Accepted as candidate cluster, not attribution.
+reason: Same cert issuance window and same uncommon path structure.
+limitations: Could be shared phishing kit; actor remains Unknown.
 ```
 
 ## SOC Handoff Note
@@ -6203,52 +4514,36 @@ Package a hunt or detection for SOC triage and escalation.
 
 ### Fields
 
-- **handoff_id:**Unique handoff identifier.
+- **handoff_id:** Unique handoff identifier.
 
-- **alert_or_hunt:**Name of alert or hunt.
+- **alert_or_hunt:** Name of alert or hunt.
 
-- **why_it_matters:**Threat and impact context.
+- **why_it_matters:** Threat and impact context.
 
-- **first_checks:**Initial triage steps.
+- **first_checks:** Initial triage steps.
 
-- **required_logs:**Logs needed for triage.
+- **required_logs:** Logs needed for triage.
 
-- **false_positives:**Expected benign causes.
+- **false_positives:** Expected benign causes.
 
-- **escalation:**Escalation threshold.
+- **escalation:** Escalation threshold.
 
-- **response:**Authorized response guidance.
+- **response:** Authorized response guidance.
 
-- **feedback:**What SOC should report back.
+- **feedback:** What SOC should report back.
 
 ### Example Values
 
 ```text
-handoff_id:
- SOC-
-004
-alert_or_hunt:
- Non-IT RMM Installation
-why_it_matters:
- Reported adversary behavior uses RMM after phishing.
-first_checks:
- User, host role, install source, ticket, remote session.
-required_logs:
- EDR, software inventory, email, identity.
-false_positives:
- Helpdesk support, approved vendor work.
-escalation:
- No ticket plus external session plus suspicious email.
-response:
- Isolate only per IR policy.
-feedback:
- 
-True
-/
-false
- positive 
-and
- tuning notes.
+handoff_id: SOC-004
+alert_or_hunt: Non-IT RMM Installation
+why_it_matters: Reported adversary behavior uses RMM after phishing.
+first_checks: User, host role, install source, ticket, remote session.
+required_logs: EDR, software inventory, email, identity.
+false_positives: Helpdesk support, approved vendor work.
+escalation: No ticket plus external session plus suspicious email.
+response: Isolate only per IR policy.
+feedback: True/false positive and tuning notes.
 ```
 
 ### Quality Gates
@@ -6310,35 +4605,16 @@ Fail: Handoff says “investigate suspicious activity” with no first checks or
 ### Complete Filled Example
 
 ```text
-handoff_id:
- SOC-RMM-
-001
-alert_or_hunt:
- Non-IT RMM Install Followed 
-by
- External Session
-why_it_matters:
- Unauthorized RMM can provide persistent remote control.
-first_checks:
- host owner, install source, parent process, ticket, user, remote destination.
-required_logs:
- EDR, software inventory, identity, network, ticketing.
-false_positives:
- Helpdesk, vendor support, IT migration.
-escalation:
- No ticket plus external session plus suspicious pre-install activity.
-response:
- Follow IR policy; isolate only under incident commander authority.
-feedback:
- 
-True
- positive, 
-false
- positive 
-class
-, missing fields, tuning request.
-owner:
- SOC Lead
+handoff_id: SOC-RMM-001
+alert_or_hunt: Non-IT RMM Install Followed by External Session
+why_it_matters: Unauthorized RMM can provide persistent remote control.
+first_checks: host owner, install source, parent process, ticket, user, remote destination.
+required_logs: EDR, software inventory, identity, network, ticketing.
+false_positives: Helpdesk, vendor support, IT migration.
+escalation: No ticket plus external session plus suspicious pre-install activity.
+response: Follow IR policy; isolate only under incident commander authority.
+feedback: True positive, false positive class, missing fields, tuning request.
+owner: SOC Lead
 ```
 
 ## Executive Summary Template
@@ -6349,59 +4625,33 @@ Summarize CTI judgments for senior decision-makers without losing uncertainty.
 
 ### Fields
 
-- **decision:**Decision the summary supports.
+- **decision:** Decision the summary supports.
 
-- **bottom_line:**One-paragraph conclusion.
+- **bottom_line:** One-paragraph conclusion.
 
-- **why_now:**Why the issue matters now.
+- **why_now:** Why the issue matters now.
 
-- **confidence:**Confidence and reason.
+- **confidence:** Confidence and reason.
 
-- **business_impact:**Operational or risk impact.
+- **business_impact:** Operational or risk impact.
 
-- **recommended_actions:**Specific executive-level actions.
+- **recommended_actions:** Specific executive-level actions.
 
-- **limits:**What is unknown or not proven.
+- **limits:** What is unknown or not proven.
 
-- **owner:**Accountable owner for follow-up.
+- **owner:** Accountable owner for follow-up.
 
 ### Example Values
 
 ```text
-decision:
- Approve 
-30
--day hunt 
-for
- remote admin tooling abuse.
-bottom_line:
- 
-Public
- reporting 
-and
- local exposure justify a scoped hunt, 
-not
- emergency blocking.
-why_now:
- Multiple recent reports describe RMM abuse after initial access.
-confidence:
- Medium; sources are credible but local telemetry 
-is
- untested.
-business_impact:
- Potential unauthorized remote control 
-of
- endpoints.
-recommended_actions:
- Approve hunt, validate telemetry, review RMM policy.
-limits:
- No evidence 
-of
- compromise 
-in
- this environment.
-owner:
- SOC Lead.
+decision: Approve 30-day hunt for remote admin tooling abuse.
+bottom_line: Public reporting and local exposure justify a scoped hunt, not emergency blocking.
+why_now: Multiple recent reports describe RMM abuse after initial access.
+confidence: Medium; sources are credible but local telemetry is untested.
+business_impact: Potential unauthorized remote control of endpoints.
+recommended_actions: Approve hunt, validate telemetry, review RMM policy.
+limits: No evidence of compromise in this environment.
+owner: SOC Lead.
 ```
 
 ### Quality Gates
@@ -6463,44 +4713,14 @@ Fail: Summary uses dramatic threat language but gives no decision or owner.
 ### Complete Filled Example
 
 ```text
-decision:
- Approve a 
-30
--day hunt 
-for
- unauthorized RMM use.
-bottom_line:
- 
-Public
- reporting 
-and
- local exposure justify a scoped hunt, 
-not
- emergency blocking.
-why_now:
- Recent reporting describes RMM abuse after initial access; local RMM baseline 
-is
- incomplete.
-confidence:
- Medium; reporting 
-is
- credible but local telemetry 
-is
- 
-not
- fully validated.
-business_impact:
- Unauthorized remote access could affect endpoint integrity 
-and
- incident response.
-recommended_actions:
- Approve hunt, validate telemetry, define approved RMM inventory.
-limits:
- No local compromise evidence.
-owner:
- SOC Lead 
-and
- Detection Engineering.
+decision: Approve a 30-day hunt for unauthorized RMM use.
+bottom_line: Public reporting and local exposure justify a scoped hunt, not emergency blocking.
+why_now: Recent reporting describes RMM abuse after initial access; local RMM baseline is incomplete.
+confidence: Medium; reporting is credible but local telemetry is not fully validated.
+business_impact: Unauthorized remote access could affect endpoint integrity and incident response.
+recommended_actions: Approve hunt, validate telemetry, define approved RMM inventory.
+limits: No local compromise evidence.
+owner: SOC Lead and Detection Engineering.
 ```
 
 ## Finished Intelligence Report Template
@@ -6511,57 +4731,35 @@ Structure a CTI report that supports decisions rather than only summarizing rese
 
 ### Fields
 
-- **title:**Report title.
+- **title:** Report title.
 
-- **audience:**Consumer and decision owner.
+- **audience:** Consumer and decision owner.
 
-- **executive_summary:**Concise decision-focused summary.
+- **executive_summary:** Concise decision-focused summary.
 
-- **key_judgments:**Evidence-backed judgments with confidence.
+- **key_judgments:** Evidence-backed judgments with confidence.
 
-- **evidence:**Source and evidence references.
+- **evidence:** Source and evidence references.
 
-- **assessment:**Analytic interpretation.
+- **assessment:** Analytic interpretation.
 
-- **implications:**Defensive, operational, or business impact.
+- **implications:** Defensive, operational, or business impact.
 
-- **recommendations:**Specific actions.
+- **recommendations:** Specific actions.
 
-- **gaps:**Known unknowns.
+- **gaps:** Known unknowns.
 
-- **appendix:**Source and technical detail.
+- **appendix:** Source and technical detail.
 
 ### Example Values
 
 ```text
-title:
- CTI Assessment 
-of
- RMM Abuse Reporting
-audience:
- SOC Lead 
-and
- Detection Engineering
-executive_summary:
- 
-Public
- reporting supports a hunt, 
-not
- production alerting yet.
-key_judgments:
- Medium-confidence relevance due 
-to
- current RMM exposure.
-recommendations:
- Run 
-30
--day hunt 
-and
- baseline admin tooling.
-gaps:
- Unknown local 
-false
--positive volume.
+title: CTI Assessment of RMM Abuse Reporting
+audience: SOC Lead and Detection Engineering
+executive_summary: Public reporting supports a hunt, not production alerting yet.
+key_judgments: Medium-confidence relevance due to current RMM exposure.
+recommendations: Run 30-day hunt and baseline admin tooling.
+gaps: Unknown local false-positive volume.
 ```
 
 ### Quality Gates
@@ -6623,51 +4821,12 @@ Fail: Report summarizes articles but does not support a decision.
 ### Complete Filled Example
 
 ```text
-title:
- Assessment 
-of
- RMM Abuse Relevance 
-to
- Corporate Endpoint Estate
-audience:
- SOC Lead 
-and
- Detection Engineering
-decision:
- Approve scoped 
-30
--day hunt 
-or
- defer.
-key_judgment:
- Medium-confidence relevance due 
-to
- 
-public
- reporting 
-and
- local RMM exposure.
-evidence:
- EV-RMM-
-001
-, SRC-RMM-
-001
-recommendation:
- Run DRL-
-4
- hunt; 
-do
- 
-not
- deploy production alert yet.
-gaps:
- No benign baseline 
-or
- historical replay.
-limitations:
- No evidence 
-of
- compromise 
-in
- this environment.
+title: Assessment of RMM Abuse Relevance to Corporate Endpoint Estate
+audience: SOC Lead and Detection Engineering
+decision: Approve scoped 30-day hunt or defer.
+key_judgment: Medium-confidence relevance due to public reporting and local RMM exposure.
+evidence: EV-RMM-001, SRC-RMM-001
+recommendation: Run DRL-4 hunt; do not deploy production alert yet.
+gaps: No benign baseline or historical replay.
+limitations: No evidence of compromise in this environment.
 ```

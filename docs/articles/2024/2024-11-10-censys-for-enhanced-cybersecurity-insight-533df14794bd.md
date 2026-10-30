@@ -57,13 +57,13 @@ The “Hosts” search feature in Censys is a powerful tool designed to help use
 
 <img src="https://cdn-images-1.medium.com/max/800/1*nfnXBsvNZ2_8Hdp0bDI4zA.png" alt="Article image" width="1233" height="914" loading="lazy" decoding="async" />
 
-**IPv4 and IPv6 Mapping
-**Censys maintains a detailed map of both IPv4 and IPv6 address spaces, providing comprehensive visibility into the internet’s architecture. This helps in understanding how networks are interconnected and how data flows across them.
+**IPv4 and IPv6 Mapping**
+Censys maintains a detailed map of both IPv4 and IPv6 address spaces, providing comprehensive visibility into the internet’s architecture. This helps in understanding how networks are interconnected and how data flows across them.
 
 - **Example**: A network administrator can use Censys to discover previously unknown IPv6 deployments on their network, which might not have the same level of security controls as their IPv4 counterparts, thereby addressing a significant blind spot in network security.
 
-**API Access for Automated Queries
-**Censys offers an API that allows developers to automate queries and integrate Censys data with other tools and systems. This is particularly useful for continuous monitoring and integrating security insights into existing workflows.
+**API Access for Automated Queries**
+Censys offers an API that allows developers to automate queries and integrate Censys data with other tools and systems. This is particularly useful for continuous monitoring and integrating security insights into existing workflows.
 
 - Example: An automated system could use the Censys API to periodically query for new devices appearing on an organization’s network, or changes in service configurations, triggering alerts if unauthorized changes are detected.
 

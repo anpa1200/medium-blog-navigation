@@ -91,7 +91,7 @@ Parrot Security OS is another Debian-based distribution tailored for penetration
 
 <img src="https://cdn-images-1.medium.com/max/800/0*9zGohcPcxemjHELI.png" alt="Article image" width="512" height="512" loading="lazy" decoding="async" />
 
-In addition to**Kali Linux**,**Parrot Security OS**, and custom setups with Debian/Ubuntu,**BlackArch Linux**is a powerful option for penetration testers, especially those looking for a highly customizable and extensive toolkit.
+In addition to **Kali Linux**, **Parrot Security OS**, and custom setups with Debian/Ubuntu, **BlackArch Linux** is a powerful option for penetration testers, especially those looking for a highly customizable and extensive toolkit.
 
 ### What is BlackArch Linux?
 
@@ -174,7 +174,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 [**Full guide to recconnaissance here:**](2024-11-10-web-applications-penetretion-testing-stage-1-reconnaissance-6b6b7aae0399.md)
 
-**OWASP Amass:**is an open-source tool for in-depth domain reconnaissance, asset discovery, and network mapping.
+**OWASP Amass:** is an open-source tool for in-depth domain reconnaissance, asset discovery, and network mapping.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*L0lpOJGf4aw1N0cv" alt="Article image" width="225" height="225" loading="lazy" decoding="async" />
 
@@ -182,7 +182,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 [Official site here](https://owasp.org/www-project-amass/)
 
-[**theHarvester:**](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md)is an open-source reconnaissance tool for gathering domain-related data, including emails, subdomains, and IPs.
+[**theHarvester:**](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md) is an open-source reconnaissance tool for gathering domain-related data, including emails, subdomains, and IPs.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*t_oaaW3j8CifxRzdBXwt3g.png" alt="Article image" width="174" height="189" loading="lazy" decoding="async" />
 
@@ -206,7 +206,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 [Official site here](https://www.shodan.io/)
 
-**Censys:**a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure.
+**Censys:** a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*CvXmoHe66ZiCHgZY4a9bmw.png" alt="Article image" width="187" height="188" loading="lazy" decoding="async" />
 
@@ -216,7 +216,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 **Recon-ng**: Modular OSINT framework.
 
-**Hunter.io**is a tool for finding and verifying professional email addresses linked to specific domains
+**Hunter.io** is a tool for finding and verifying professional email addresses linked to specific domains
 
 **Maltego**: Visual link analysis for OSINT investigations.
 
@@ -228,7 +228,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 ### Network Scanning
 
-**Basic Command Line Tools for Network Exploration:**Ping, Netdiscover, Whois, nslookup:
+**Basic Command Line Tools for Network Exploration:** Ping, Netdiscover, Whois, nslookup:
 
 [**Full explanation about this tool here:**](2024-11-09-mastering-the-basics-essential-cli-tools-for-reconnaissance-in-penetration-testing-ee7fd9e36394.md)
 
@@ -248,7 +248,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 [Official site here](https://whatweb.net/)
 
-**Nikto:**A web server scanner which performs comprehensive tests against web servers for multiple items, including over 6700 potentially dangerous files/programs.
+**Nikto:** A web server scanner which performs comprehensive tests against web servers for multiple items, including over 6700 potentially dangerous files/programs.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*svW8hPvEdycxkU46.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
@@ -256,7 +256,7 @@ Effective penetration testing starts with gathering intelligence about the targe
 
 [Official site here:](https://www.cirt.net/Nikto2)
 
-**OWASP ZAP:**Provides automated scanners and a set of tools for manual vulnerability testing.
+**OWASP ZAP:** Provides automated scanners and a set of tools for manual vulnerability testing.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*PvyGz4m5hLK5ZB6O.png" alt="Article image" width="230" height="200" loading="lazy" decoding="async" />
 
@@ -352,7 +352,7 @@ Once inside the system, leverage these tools for privilege escalation and persis
 
 - **Empire**: PowerShell and Python post-exploitation agent.
 
-- **LinPEAS**/**WinPEAS**: Privilege escalation enumeration scripts.
+- **LinPEAS** / **WinPEAS**: Privilege escalation enumeration scripts.
 
 ### Cloud and API Penetration Testing Tools
 

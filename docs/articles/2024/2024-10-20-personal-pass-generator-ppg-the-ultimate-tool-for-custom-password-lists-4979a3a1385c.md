@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ## What is a Brute-Force Attack?
 
-A**brute-force attack**is a password-cracking method that systematically tries every possible combination of characters until the correct one is found. While this method guarantees success, it can be extremely time-consuming, especially for long or complex passwords.
+A **brute-force attack** is a password-cracking method that systematically tries every possible combination of characters until the correct one is found. While this method guarantees success, it can be extremely time-consuming, especially for long or complex passwords.
 
 ### How Does Brute-Force Work?
 
@@ -39,7 +39,7 @@ While brute-force is slow, it’s effective because it doesn’t rely on common 
 
 ## Title: Introducing the Personal Pass Generator (PPG): The Ultimate Tool for Custom Password Lists
 
-Hello, my name is Andrey Pautov, and today I’m excited to introduce you to my latest tool, the**Personal Pass Generator (PPG)**. This advanced tool is designed for penetration testers, ethical hackers, and cybersecurity researchers who need custom wordlists for their brute-force and dictionary-based password attacks.
+Hello, my name is Andrey Pautov, and today I’m excited to introduce you to my latest tool, the **Personal Pass Generator (PPG)**. This advanced tool is designed for penetration testers, ethical hackers, and cybersecurity researchers who need custom wordlists for their brute-force and dictionary-based password attacks.
 
 In this post, we’ll explore:
 
@@ -51,7 +51,7 @@ In this post, we’ll explore:
 
 ## What is a Brute-Force Attack?
 
-A**brute-force attack**is a password-cracking method that systematically tries every possible combination of characters until the correct one is found. While this method guarantees success, it can be extremely time-consuming, especially for long or complex passwords.
+A **brute-force attack** is a password-cracking method that systematically tries every possible combination of characters until the correct one is found. While this method guarantees success, it can be extremely time-consuming, especially for long or complex passwords.
 
 ### How Does Brute-Force Work?
 
@@ -65,7 +65,7 @@ While brute-force is slow, it’s effective because it doesn’t rely on common 
 
 ## What is a Dictionary Attack?
 
-A**dictionary attack**is a faster and more efficient method than brute-force because it uses a predefined list of possible passwords (known as a dictionary or wordlist). Instead of testing every possible combination, it tests passwords from this list. The success of a dictionary attack depends on how closely the wordlist matches the potential password.
+A **dictionary attack** is a faster and more efficient method than brute-force because it uses a predefined list of possible passwords (known as a dictionary or wordlist). Instead of testing every possible combination, it tests passwords from this list. The success of a dictionary attack depends on how closely the wordlist matches the potential password.
 
 ### How Does a Dictionary Attack Work?
 
@@ -77,7 +77,7 @@ While this method is quicker, its success is limited by the quality and relevanc
 
 ## How to Create or Download Dictionaries
 
-For a dictionary attack to be effective, you need a good wordlist. You can either**download existing dictionaries**or**create custom ones**. Let’s explore both options.
+For a dictionary attack to be effective, you need a good wordlist. You can either **download existing dictionaries** or **create custom ones**. Let’s explore both options.
 
 ### Downloading Dictionaries
 
@@ -91,15 +91,15 @@ These are great starting points, but they might not always match the specific re
 
 ### Creating Custom Dictionaries with PPG
 
-This is where the**Personal Pass Generator (PPG)**comes in. PPG allows you to**create tailored wordlists**that match the specific characteristics of the target system or environment. By defining custom parameters, such as the inclusion of symbols, numbers, or specific lengths, you can generate wordlists that are more likely to crack a password than generic dictionaries.
+This is where the **Personal Pass Generator (PPG)** comes in. PPG allows you to **create tailored wordlists** that match the specific characteristics of the target system or environment. By defining custom parameters, such as the inclusion of symbols, numbers, or specific lengths, you can generate wordlists that are more likely to crack a password than generic dictionaries.
 
 ## Why PPG is the Perfect Tool for This Purpose
 
-The**Personal Pass Generator (PPG)**excels in creating extensive, personalized wordlists for password cracking. Here’s why it stands out:
+The **Personal Pass Generator (PPG)** excels in creating extensive, personalized wordlists for password cracking. Here’s why it stands out:
 
 ### 1. Extensive Password Lists
 
-PPG can generate massive password lists, ranging from 1MB**to over 30GB**. Whether you need a small list for quick testing or a massive dataset for a long-running brute-force attack, PPG can handle it.
+PPG can generate massive password lists, ranging from 1MB **to over 30GB**. Whether you need a small list for quick testing or a massive dataset for a long-running brute-force attack, PPG can handle it.
 
 ### 2. Customization Options
 
@@ -121,14 +121,14 @@ PPG is designed to efficiently generate large datasets, optimized for security t
 
 ## How to Use the Personal Pass Generator (PPG)
 
-Here’s a simple guide on how to get started with the**Personal Pass Generator (PPG)**:
+Here’s a simple guide on how to get started with the **Personal Pass Generator (PPG)**:
 
 **Download the Script**
 Visit my GitHub repository and download the script:
-[PPG Personal Pass Generator](https://github.com/anpa1200/Passwords/blob/main/PPG_personal_pass_generator.py)—[https://github.com/anpa1200/Passwords](https://github.com/anpa1200/Passwords/tree/main)
+[PPG Personal Pass Generator](https://github.com/anpa1200/Passwords/blob/main/PPG_personal_pass_generator.py) — [https://github.com/anpa1200/Passwords](https://github.com/anpa1200/Passwords/tree/main)
 
 **Run the Script in Python 3**
-Open your terminal or command prompt, navigate to the directory where you downloaded the script, and run the following command in your Python 3 environment:**python3 ./PPG_personal_pass_generator.py**
+Open your terminal or command prompt, navigate to the directory where you downloaded the script, and run the following command in your Python 3 environment: **python3 ./PPG_personal_pass_generator.py**
 
 **Input Information About Your Target**
 The script will prompt you to enter relevant information about your target (e.g., password length, character set, etc.). Based on this input, the tool will generate a custom wordlist.
@@ -153,9 +153,9 @@ This simple process will allow you to create highly personalized and efficient p
 
 ## Conclusion
 
-The**Personal Pass Generator (PPG)**is a powerful and customizable tool for creating personalized password lists that can be used in brute-force and dictionary attacks. Whether you’re conducting security assessments, penetration testing, or research, PPG is designed to help you generate highly effective wordlists tailored to your specific needs.
+The **Personal Pass Generator (PPG)** is a powerful and customizable tool for creating personalized password lists that can be used in brute-force and dictionary attacks. Whether you’re conducting security assessments, penetration testing, or research, PPG is designed to help you generate highly effective wordlists tailored to your specific needs.
 
-Feel free to explore the tool on[GitHub](https://github.com/anpa1200/Passwords), and let me know how it works for you!
+Feel free to explore the tool on [GitHub](https://github.com/anpa1200/Passwords), and let me know how it works for you!
 
 **Author**: Andrey Pautov
 **Email**: 1200km@gmail.com

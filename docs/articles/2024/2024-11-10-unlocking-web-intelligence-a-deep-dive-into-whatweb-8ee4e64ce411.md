@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ## Introduction
 
-In the vast and ever-evolving landscape of web technologies, understanding the underlying components that power a website is crucial for a variety of professionals — from cybersecurity experts to market analysts. Enter**WhatWeb**, a robust command-line tool that excels in identifying the technologies used on websites. With the capability to recognize over 1700 different items, WhatWeb provides an essential service in the toolkit of digital professionals. Whether it’s pinpointing which content management system (CMS) a site uses, discovering the JavaScript libraries in operation, or identifying the server software hosting the pages, WhatWeb covers an extensive range of technologies. This powerful tool offers a window into the digital makeup of websites, providing valuable insights that aid in security assessments, competitive analysis, and much more.
+In the vast and ever-evolving landscape of web technologies, understanding the underlying components that power a website is crucial for a variety of professionals — from cybersecurity experts to market analysts. Enter **WhatWeb**, a robust command-line tool that excels in identifying the technologies used on websites. With the capability to recognize over 1700 different items, WhatWeb provides an essential service in the toolkit of digital professionals. Whether it’s pinpointing which content management system (CMS) a site uses, discovering the JavaScript libraries in operation, or identifying the server software hosting the pages, WhatWeb covers an extensive range of technologies. This powerful tool offers a window into the digital makeup of websites, providing valuable insights that aid in security assessments, competitive analysis, and much more.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*dfhH3jPOqTx5anjsr5BC2A.png" alt="Article image" width="801" height="221" loading="lazy" decoding="async" />
 
@@ -42,15 +42,8 @@ This post is for educational purposes only. WhatWeb should be used responsibly a
 - For Debian-based systems like Ubuntu, you can install WhatWeb directly from the official repositories by opening a terminal and running:
 
 ```text
-sudo apt
--
-get
- 
-update
-sudo apt
--
-get
- install whatweb
+sudo apt-get update
+sudo apt-get install whatweb
 ```
 
 - For Red Hat-based systems like Fedora, you might need to enable additional repositories or download the tool directly from its source.
@@ -68,11 +61,8 @@ gem install whatweb
 - You can also install WhatWeb by cloning the GitHub repository and running it from source, which ensures you have the most recent version:
 
 ```text
-git 
-clone
- https://github.com/urbanadventurer/WhatWeb.git
-cd
- WhatWeb ./whatweb
+git clone https://github.com/urbanadventurer/WhatWeb.git
+cd WhatWeb ./whatweb
 ```
 
 ### Installation on macOS
@@ -98,8 +88,7 @@ gem install whatweb
 - To verify that WhatWeb is installed correctly, you can run:
 
 ```text
-whatweb 
---version
+whatweb --version
 ```
 
 - This command should return the version of WhatWeb installed on your system, confirming that the installation was successful.
@@ -111,11 +100,10 @@ whatweb
 The most straightforward use of WhatWeb is to scan a single website to identify the technologies it uses. To do this, open your terminal and type:
 
 ```text
-whatweb 
-[website URL]
+whatweb [website URL]
 ```
 
-For example, to scan[https://juice-shop.herokuapp.com](https://juice-shop.herokuapp.com/#/), you would run:
+For example, to scan [https://juice-shop.herokuapp.com](https://juice-shop.herokuapp.com/#/), you would run:
 
 ```text
 whatweb https://juice-shop.herokuapp.com
@@ -153,7 +141,7 @@ whatweb -a1 https://juice-shop.herokuapp.com
 
 <img src="https://cdn-images-1.medium.com/max/800/1*x9HtrgCC5ZQYM2z3OCzBQg.png" alt="Article image" width="1912" height="71" loading="lazy" decoding="async" />
 
-- **Verbose Output**: For more detailed output, including plugin descriptions and full HTTP request and response headers, use the`--verbose`option:
+- **Verbose Output**: For more detailed output, including plugin descriptions and full HTTP request and response headers, use the `--verbose` option:
 
 ```text
 whatweb -v https://juice-shop.herokuapp.com
@@ -161,27 +149,20 @@ whatweb -v https://juice-shop.herokuapp.com
 
 <img src="https://cdn-images-1.medium.com/max/800/1*3YutNHwokKNM6_oMNY-34g.png" alt="Article image" width="1923" height="953" loading="lazy" decoding="async" />
 
-- **Custom User-Agent**: To specify a custom User-Agent in your HTTP requests, use the`--user-agent`option:
+- **Custom User-Agent**: To specify a custom User-Agent in your HTTP requests, use the `--user-agent` option:
 
 - whatweb --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0' example.com
 
-- **Output to File**: To save the scan results to a file, you can redirect the output or use the`--log`option:
+- **Output to File**: To save the scan results to a file, you can redirect the output or use the `--log` option:
 
 ```text
-whatweb --
-log
-=output.txt example.com
+whatweb --log=output.txt example.com
 ```
 
 - **Scanning Multiple Websites**: WhatWeb can scan multiple websites in a single command. Just list the URLs separated by spaces:
 
 ```text
-whatweb google.
-com
- microsoft.
-com
- yahoo.
-com
+whatweb google.com microsoft.com yahoo.com
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*T04f3xipFACx6wRX1F7viA.png" alt="Article image" width="1910" height="226" loading="lazy" decoding="async" />
@@ -189,23 +170,13 @@ com
 - **Scanning IP Ranges**: WhatWeb can scan entire IP ranges. Specify the range in the command:
 
 ```text
-whatweb 
-192.168
-.1
-.1
--
-192.168
-.1
-.255
+whatweb 192.168.1.1-192.168.1.255
 ```
 
 - **Identifying Specific Technologies**: If you’re only interested in specific technologies, such as WordPress or Apache, you can customize WhatWeb to only report on those:
 
 ```text
-whatweb 
---match-title
- WordPress example
-.com
+whatweb --match-title WordPress example.com
 ```
 
 ## Good luck!

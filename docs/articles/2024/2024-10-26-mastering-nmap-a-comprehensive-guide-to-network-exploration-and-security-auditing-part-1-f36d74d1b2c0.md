@@ -99,7 +99,7 @@ Nmap, short for Network Mapper, is a powerful network scanning tool that helps s
 
 **Windows:**
 
-- Download the official Nmap installer from[nmap.org](https://nmap.org/download.html#windows).
+- Download the official Nmap installer from [nmap.org](https://nmap.org/download.html#windows).
 
 - Run the installer and follow the on-screen instructions, ensuring you include the Nmap Zenmap GUI if graphical interface is desired.
 
@@ -123,7 +123,7 @@ Nmap, short for Network Mapper, is a powerful network scanning tool that helps s
 
 **macOS:**
 
-- The easiest way to install Nmap on macOS is through Homebrew. If Homebrew is not installed, you can install it first from[brew.sh](https://brew.sh/).
+- The easiest way to install Nmap on macOS is through Homebrew. If Homebrew is not installed, you can install it first from [brew.sh](https://brew.sh/).
 
 - Install Nmap using Homebrew by running:
 
@@ -140,8 +140,7 @@ Nmap is equipped with a multitude of scanning options, each designed to provide 
 ### First command:
 
 ```text
-nmap -- 
-help
+nmap -- help
 ```
 
 ## I will use output of this command for article of this post:
@@ -151,21 +150,8 @@ help
 ### Hostname/domain name scanning:
 
 ```text
-nmap scanme.
-nmap
-.
-org
- microsoft.
-com
-/
-24
-, ; 
-10.0
-.0
-–
-255.1
-–
-254
+nmap scanme.nmap.org
+ microsoft.com/24, ; 10.0.0–255.1–254
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*mya6-jQ3og4XsdceQ25UTg.png" alt="Article image" width="830" height="288" loading="lazy" decoding="async" />
@@ -173,10 +159,7 @@ com
 ### IP address scanning:
 
 ```text
-nmap 
-45.33
-.32
-.156
+nmap 45.33.32.156
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*hfyVw-fAPq1mzASuYUpcKQ.png" alt="Article image" width="830" height="271" loading="lazy" decoding="async" />
@@ -198,12 +181,7 @@ A basic Nmap scan without any additional arguments or scripts primarily provides
 ### Networks scanning:
 
 ```text
-nmap 
-192.168
-.1
-.0
-/
-24
+nmap 192.168.1.0/24
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*1ih47YxCphWFy3eTpcAWhw.png" alt="Article image" width="745" height="822" loading="lazy" decoding="async" />
@@ -211,12 +189,7 @@ nmap
 ### Range of IP addresses:
 
 ```text
-nmap 
-192.168
-.1
-.0
--
-150
+nmap 192.168.1.0-150
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*MJZG0TP8sxErNvoc_Qm9Zw.png" alt="Article image" width="707" height="493" loading="lazy" decoding="async" />
@@ -224,11 +197,7 @@ nmap
 ### Input from list of hosts/networks
 
 ```text
-nmap -iL <path 
-to
- file 
-with
- list>
+nmap -iL <path to file with list>
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*2hHzsf8Bo8Vg-jBJGvelrA.png" alt="Article image" width="607" height="63" loading="lazy" decoding="async" />
@@ -236,46 +205,14 @@ with
 ### Choose random targets
 
 ```text
-nmap -iR 
-<
-number
- 
-of
- 
-hosts
->
+nmap -iR <number of hosts>
 ```
 
 ### Exclude addresses from scanning:
 
 ```text
-nmap 
-192.168
-.
-1.0
-/
-24
- 
---exclude
- 
-192.168
-.
-1.188
-, 
-192.168
-.
-1.1
-nmap 
-192.168
-.
-1.0
-/
-24
- 
---excludefile
- <path 
-to
- file with list>
+nmap 192.168.1.0/24 --exclude 192.168.1.188, 192.168.1.1
+nmap 192.168.1.0/24 --excludefile <path to file with list>
 ```
 
 ### Output of basic network or range scanning:
@@ -290,9 +227,9 @@ to
 
 - Lists the TCP ports that are being scanned.
 
-- **STATE**indicates whether each port is open, closed, or filtered.
+- **STATE** indicates whether each port is open, closed, or filtered.
 
-- **SERVICE**provides the default service expected on the open ports.
+- **SERVICE** provides the default service expected on the open ports.
 
 ## Purposes and Uses:
 
@@ -324,45 +261,30 @@ This basic Nmap output provides a foundational overview of network status, which
 
 ### 1. -sL
 
-The`-sL`argument in Nmap stands for "List Scan." This option does not actually perform a scan on the target network; instead, it simply lists each host within the provided range or subnet. It's useful for resolving and listing hostnames to generate a map of the network without sending any packets to the target hosts. This can be particularly helpful for reconnaissance purposes where you want to gather potential target information without alerting the network’s security systems.
+The `-sL` argument in Nmap stands for "List Scan." This option does not actually perform a scan on the target network; instead, it simply lists each host within the provided range or subnet. It's useful for resolving and listing hostnames to generate a map of the network without sending any packets to the target hosts. This can be particularly helpful for reconnaissance purposes where you want to gather potential target information without alerting the network’s security systems.
 
 ```text
-nmap -sL 
-192.168
-.91
-.0
-/
-24
+nmap -sL 192.168.91.0/24
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*w1bs2OYIr4PDPEmxKgLeaw.png" alt="Article image" width="572" height="672" loading="lazy" decoding="async" />
 
 ### 2. -sn
 
-The`-sn`option in Nmap is used for a "Ping Scan," which is also commonly referred to as a host discovery or network sweep. This option tells Nmap to send network packets to the specified targets to check if they are alive (i.e., up and responding) without actually performing a port scan. It's a quick way to determine which hosts are online without engaging in the more detailed—and potentially detectable—activity of port scanning.
+The `-sn` option in Nmap is used for a "Ping Scan," which is also commonly referred to as a host discovery or network sweep. This option tells Nmap to send network packets to the specified targets to check if they are alive (i.e., up and responding) without actually performing a port scan. It's a quick way to determine which hosts are online without engaging in the more detailed—and potentially detectable—activity of port scanning.
 
 ```text
-nmap -sn 
-192.168
-.91
-.0
-/
-24
+nmap -sn 192.168.91.0/24
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*bbdXocdKyirinKkpktDAuw.png" alt="Article image" width="608" height="133" loading="lazy" decoding="async" />
 
 ### 3. -Pn
 
-The`-Pn`option in Nmap is used to skip the host discovery phase entirely and treats every specified host as if it were online. This means that Nmap will not attempt any kind of ping before scanning the specified targets. This option is particularly useful in situations where hosts are configured to ignore or block ICMP requests (commonly used in ping scans), or where other host discovery methods would be ineffective or undesirable.
+The `-Pn` option in Nmap is used to skip the host discovery phase entirely and treats every specified host as if it were online. This means that Nmap will not attempt any kind of ping before scanning the specified targets. This option is particularly useful in situations where hosts are configured to ignore or block ICMP requests (commonly used in ping scans), or where other host discovery methods would be ineffective or undesirable.
 
 ```text
-nmap -
-Pn
- 
-192.168
-.126
-.143
+nmap -Pn 192.168.126.143
 ```
 
 ### Use Cases for -Pn
@@ -377,7 +299,7 @@ Pn
 
 ### 4. -PS/PA/PU/PY[portlist]
 
-The`-PS`,`-PA`,`-PU`, and`-PY`options in Nmap are used for conducting more targeted host discovery scans by specifying particular types of packets to be sent to a list of ports. These options are especially useful for eliciting responses from hosts in a way that may bypass certain firewall configurations or for environments where more common discovery methods (like ICMP) are blocked. Here’s a breakdown of what each of these options does:
+The `-PS`, `-PA`, `-PU`, and `-PY` options in Nmap are used for conducting more targeted host discovery scans by specifying particular types of packets to be sent to a list of ports. These options are especially useful for eliciting responses from hosts in a way that may bypass certain firewall configurations or for environments where more common discovery methods (like ICMP) are blocked. Here’s a breakdown of what each of these options does:
 
 `**-PS[portlist]**`**: TCP SYN Ping**
 
@@ -385,7 +307,7 @@ The`-PS`,`-PA`,`-PU`, and`-PY`options in Nmap are used for conducting more targe
 
 - **Purpose**: To check if the host is alive based on whether it responds with a SYN-ACK (indicating an open port) or a RST (indicating a closed port).
 
-- **Example Usage**:`nmap -PS80,443,8080 192.168.1.1`
+- **Example Usage**: `nmap -PS80,443,8080 192.168.1.1`
 
 - This sends SYN packets to ports 80, 443, and 8080 on the host 192.168.1.1.
 
@@ -395,7 +317,7 @@ The`-PS`,`-PA`,`-PU`, and`-PY`options in Nmap are used for conducting more targe
 
 - **Purpose**: This is typically used to map out firewall rules. A non-responsive port could indicate that it is being filtered by a firewall, whereas an RST response typically means the port is unfiltered but closed.
 
-- **Example Usage**:`nmap -PA80,443 192.168.1.1`
+- **Example Usage**: `nmap -PA80,443 192.168.1.1`
 
 - This sends ACK packets to ports 80 and 443.
 
@@ -405,7 +327,7 @@ The`-PS`,`-PA`,`-PU`, and`-PY`options in Nmap are used for conducting more targe
 
 - **Purpose**: Since many services might not send a reply to a UDP packet, Nmap also sends an ICMP port unreachable packet when no response is received, indicating that the port is closed.
 
-- **Example Usage**:`nmap -PU53,161 192.168.1.1`
+- **Example Usage**: `nmap -PU53,161 192.168.1.1`
 
 - This sends UDP packets to ports 53 (DNS) and 161 (SNMP).
 
@@ -415,7 +337,7 @@ The`-PS`,`-PA`,`-PU`, and`-PY`options in Nmap are used for conducting more targe
 
 - **Purpose**: Used to check if a host is up by eliciting an INIT-ACK (similar to TCP’s SYN-ACK) or an ABORT chunk.
 
-- **Example Usage**:`nmap -PY9901,9902 192.168.1.1`
+- **Example Usage**: `nmap -PY9901,9902 192.168.1.1`
 
 - This sends SCTP INIT chunks to ports 9901 and 9902.
 
@@ -433,7 +355,7 @@ Using these options allows Nmap to adapt its scanning technique to suit differen
 
 ### 5. -PE/PP/PM
 
-The`-PE`,`-PP`, and`-PM`options in Nmap are used for ICMP-based host discovery, specifically leveraging different types of ICMP packets to determine if hosts are up. These options are commonly used when scanning networks where more straightforward host discovery methods are likely to succeed and less invasive techniques are preferred. Here's a breakdown of each option:
+The `-PE`, `-PP`, and `-PM` options in Nmap are used for ICMP-based host discovery, specifically leveraging different types of ICMP packets to determine if hosts are up. These options are commonly used when scanning networks where more straightforward host discovery methods are likely to succeed and less invasive techniques are preferred. Here's a breakdown of each option:
 
 `**-PE**`**: ICMP Echo Request**
 
@@ -481,7 +403,7 @@ The`-PE`,`-PP`, and`-PM`options in Nmap are used for ICMP-based host discovery, 
 
 ### 6.-PO
 
-The`-PO`option in Nmap is used to conduct a protocol ping, which involves sending raw IP packets without any higher-layer protocol header to the target hosts. This option allows you to specify one or more IP protocol numbers with your scans, and it's useful for probing hosts in a way that bypasses typical TCP or UDP based pinging methods.
+The `-PO` option in Nmap is used to conduct a protocol ping, which involves sending raw IP packets without any higher-layer protocol header to the target hosts. This option allows you to specify one or more IP protocol numbers with your scans, and it's useful for probing hosts in a way that bypasses typical TCP or UDP based pinging methods.
 
 ### Example Usage of -PO :
 
@@ -499,7 +421,7 @@ The`-PO`option in Nmap is used to conduct a protocol ping, which involves sendin
 
 Nmap utilizes the standard IP protocol numbers as defined by the Internet Assigned Numbers Authority (IANA). These protocol numbers are used to specify the protocol carried in the IP datagram’s protocol field.
 
-You can find a comprehensive table of IP protocol numbers on the IANA[website](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)or in various network-related documentation. However, for quick reference, here are some of the common protocol numbers that are frequently used with tools like Nmap:
+You can find a comprehensive table of IP protocol numbers on the IANA [website](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) or in various network-related documentation. However, for quick reference, here are some of the common protocol numbers that are frequently used with tools like Nmap:
 
 - **1**: ICMP (Internet Control Message Protocol)
 
@@ -529,17 +451,17 @@ You can find a comprehensive table of IP protocol numbers on the IANA[website](h
 
 - **Firewall Testing and Evasion**: Helps in testing how firewalls handle less common IP protocols and can be used to probe networks while potentially evading detection by conventional security systems that monitor for more frequent protocol traffic.
 
-- **Research and Testing**: In a research setting, using`-PO`can help understand how different network devices respond to various IP protocols, aiding in the development of network models and security strategies.
+- **Research and Testing**: In a research setting, using `-PO` can help understand how different network devices respond to various IP protocols, aiding in the development of network models and security strategies.
 
 ## 7. -n/-R
 
-The`-n`and`-R`options in Nmap are used to control how Nmap handles DNS resolution during the scanning process. Each option has a specific purpose:
+The `-n` and `-R` options in Nmap are used to control how Nmap handles DNS resolution during the scanning process. Each option has a specific purpose:
 
 ### -n
 
-- **Function**: The`-n`option tells Nmap to skip the DNS resolution of the target IP addresses. This means Nmap will not attempt to resolve IP addresses to hostnames during the scan.
+- **Function**: The `-n` option tells Nmap to skip the DNS resolution of the target IP addresses. This means Nmap will not attempt to resolve IP addresses to hostnames during the scan.
 
-- **Purpose**: Using`-n`speeds up the scanning process because it avoids the time delay associated with DNS lookups. It's particularly useful when scanning ranges where DNS information is unnecessary or where DNS lookups might cause additional network noise or logging.
+- **Purpose**: Using `-n` speeds up the scanning process because it avoids the time delay associated with DNS lookups. It's particularly useful when scanning ranges where DNS information is unnecessary or where DNS lookups might cause additional network noise or logging.
 
 - **Example Usage**:
 
@@ -549,7 +471,7 @@ The`-n`and`-R`options in Nmap are used to control how Nmap handles DNS resolutio
 
 ### -R
 
-- **Function**: The`-R`option forces Nmap to always perform DNS resolution for every IP address it scans. Even if Nmap's normal behavior would skip DNS resolution under certain circumstances, this option ensures that it tries to resolve every address.
+- **Function**: The `-R` option forces Nmap to always perform DNS resolution for every IP address it scans. Even if Nmap's normal behavior would skip DNS resolution under certain circumstances, this option ensures that it tries to resolve every address.
 
 - **Purpose**: This can be helpful when detailed network documentation is required, or when you need to ensure that the scan records are as informative as possible regarding the hosts involved.
 
@@ -561,15 +483,15 @@ The`-n`and`-R`options in Nmap are used to control how Nmap handles DNS resolutio
 
 ### Strategic Use:
 
-- `**-n**`: Opt for`-n`when conducting large scale scans where hostnames are not critical to the outcomes, or in highly secure environments where minimizing network traffic and reducing the footprint is important.
+- `**-n**`: Opt for `-n` when conducting large scale scans where hostnames are not critical to the outcomes, or in highly secure environments where minimizing network traffic and reducing the footprint is important.
 
-- `**-R**`: Use`-R`when the clarity and detail of knowing exact hostnames are more beneficial than the additional time and network traffic incurred by DNS lookups.
+- `**-R**`: Use `-R` when the clarity and detail of knowing exact hostnames are more beneficial than the additional time and network traffic incurred by DNS lookups.
 
 Both options are about balancing the need for speed and stealth against the need for detailed information. They allow Nmap users to tailor their scans according to the specific requirements of the task at hand.
 
 ## 8. — dns-servers
 
-The`--dns-servers`option in Nmap allows you to specify one or more DNS servers to be used for DNS resolution during the scan. This option can be very useful when you want to control which DNS servers are used for name resolution, rather than relying on the system’s default DNS settings.
+The `--dns-servers` option in Nmap allows you to specify one or more DNS servers to be used for DNS resolution during the scan. This option can be very useful when you want to control which DNS servers are used for name resolution, rather than relying on the system’s default DNS settings.
 
 ### Function and Use of --dns-servers :
 
@@ -586,25 +508,10 @@ The`--dns-servers`option in Nmap allows you to specify one or more DNS servers t
 **Example Usage**:
 
 ```text
-nmap 
---dns-servers
- 
-192.168
-.
-1.53
-,
-192.168
-.
-1.54
- 
-192.168
-.
-1.0
-/
-24
+nmap --dns-servers 192.168.1.53,192.168.1.54 192.168.1.0/24
 ```
 
-In this command, Nmap is configured to use the DNS servers at`192.168.1.53`and`192.168.1.54`for resolving any hostnames encountered during the scan of the`192.168.1.0/24`subnet.
+In this command, Nmap is configured to use the DNS servers at `192.168.1.53` and `192.168.1.54` for resolving any hostnames encountered during the scan of the `192.168.1.0/24` subnet.
 
 ### Benefits:
 
@@ -614,11 +521,11 @@ In this command, Nmap is configured to use the DNS servers at`192.168.1.53`and`1
 
 - **Accurate and Relevant Data**: Ensures that the DNS data used during the scan is accurate and relevant to the environment you are scanning, especially useful in complex network configurations.
 
-Using the`--dns-servers`option gives you flexibility in how DNS resolutions are handled during Nmap scans, enhancing both the effectiveness and stealthiness of your network reconnaissance efforts.
+Using the `--dns-servers` option gives you flexibility in how DNS resolutions are handled during Nmap scans, enhancing both the effectiveness and stealthiness of your network reconnaissance efforts.
 
 ## 9. — system-dns
 
-The`--system-dns`option in Nmap is used to explicitly instruct Nmap to use the system's default DNS resolver settings for name resolution during the scan. This option can be particularly useful in certain scenarios where you want to ensure that Nmap adheres strictly to the DNS configuration specified at the system level, such as when specific DNS forwarders or resolver settings are pre-configured for optimal network performance or security.
+The `--system-dns` option in Nmap is used to explicitly instruct Nmap to use the system's default DNS resolver settings for name resolution during the scan. This option can be particularly useful in certain scenarios where you want to ensure that Nmap adheres strictly to the DNS configuration specified at the system level, such as when specific DNS forwarders or resolver settings are pre-configured for optimal network performance or security.
 
 ### Function and Use of --system-dns :
 
@@ -635,35 +542,28 @@ The`--system-dns`option in Nmap is used to explicitly instruct Nmap to use the s
 **Example Usage:**
 
 ```text
-nmap 
---system-dns
- 
-192.168
-.
-1.0
-/
-24
+nmap --system-dns 192.168.1.0/24
 ```
 
-This command tells Nmap to perform a network scan on the`192.168.1.0/24`subnet, using the DNS resolver settings that are configured on the system where Nmap is running.
+This command tells Nmap to perform a network scan on the `192.168.1.0/24` subnet, using the DNS resolver settings that are configured on the system where Nmap is running.
 
 ### Strategic Considerations:
 
-- **Default Behavior**: It’s important to note that if neither`--system-dns`nor`--dns-servers`is specified, Nmap typically uses the system DNS settings by default. However, explicitly setting`--system-dns`can be a clear declaration of intent, ensuring that there's no ambiguity about DNS resolution, especially in scripts or automated environments.
+- **Default Behavior**: It’s important to note that if neither `--system-dns` nor `--dns-servers` is specified, Nmap typically uses the system DNS settings by default. However, explicitly setting `--system-dns` can be a clear declaration of intent, ensuring that there's no ambiguity about DNS resolution, especially in scripts or automated environments.
 
-- **Troubleshooting and Compliance**: In environments where DNS configurations are tightly controlled or subject to compliance standards, using`--system-dns`ensures that scans are conducted in alignment with these requirements.
+- **Troubleshooting and Compliance**: In environments where DNS configurations are tightly controlled or subject to compliance standards, using `--system-dns` ensures that scans are conducted in alignment with these requirements.
 
-Using the`--system-dns`option is about ensuring conformity with the host system’s DNS settings, which can be critical for maintaining operational consistency and leveraging existing network infrastructure setups during Nmap scans.
+Using the `--system-dns` option is about ensuring conformity with the host system’s DNS settings, which can be critical for maintaining operational consistency and leveraging existing network infrastructure setups during Nmap scans.
 
 ## 10. — traceroute
 
-The`--traceroute`option in Nmap is used to perform a traceroute operation after completing a scan. This option allows you to trace the path that packets take from the scanning system to the target network, providing visibility into the network routing structure. This feature can be especially valuable for understanding how data flows through the network and identifying potential bottlenecks or misconfigurations.
+The `--traceroute` option in Nmap is used to perform a traceroute operation after completing a scan. This option allows you to trace the path that packets take from the scanning system to the target network, providing visibility into the network routing structure. This feature can be especially valuable for understanding how data flows through the network and identifying potential bottlenecks or misconfigurations.
 
 ### Function and Use of --traceroute :
 
 **Function**: Conducts a traceroute analysis from the scanning system to each scanned host to determine and display the route that packets take to reach the target. This can reveal the number of hops and the path taken through routers and switches over the internet or within local networks.
 
-**Purpose**: Using the`--traceroute`option helps in:
+**Purpose**: Using the `--traceroute` option helps in:
 
 - **Network Troubleshooting**: Identifying routing issues or delays that might affect network performance.
 
@@ -674,25 +574,16 @@ The`--traceroute`option in Nmap is used to perform a traceroute operation after 
 **Example Usage**:
 
 ```text
-nmap -
-p
- 
-80
- 
---traceroute
- 
-192.168
-.
-1.1
+nmap -p 80 --traceroute 192.168.1.1
 ```
 
-This command will perform a scan on port 80 of the host at IP address`192.168.1.1`, followed by a traceroute to that host. The output will include information about each hop along the path that packets take to reach the target, including the IP addresses of the intermediate routers.
+This command will perform a scan on port 80 of the host at IP address `192.168.1.1`, followed by a traceroute to that host. The output will include information about each hop along the path that packets take to reach the target, including the IP addresses of the intermediate routers.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*8WxmY9_8NQrUBO3tN00ZRg.png" alt="Article image" width="646" height="441" loading="lazy" decoding="async" />
 
 ### Detailed Output:
 
-- The output from the`--traceroute`option lists each router (hop) that the packets pass through on their way to the target. For each hop, it shows the IP address, round trip time (RTT), and sometimes the DNS name if it can be resolved.
+- The output from the `--traceroute` option lists each router (hop) that the packets pass through on their way to the target. For each hop, it shows the IP address, round trip time (RTT), and sometimes the DNS name if it can be resolved.
 
 - The traceroute is performed using the same protocol that was used for the scan (ICMP, UDP, or TCP), depending on the scan settings.
 
@@ -702,7 +593,7 @@ This command will perform a scan on port 80 of the host at IP address`192.168.1.
 
 - **Scanning and Network Impact**: While useful, performing traceroutes can increase the visibility of your scan and may be detected by network security systems. It’s important to consider the potential impact and visibility when using this option in sensitive environments.
 
-The`--traceroute`option adds valuable context to Nmap scans by illustrating the network path taken to the scanned hosts, which is crucial for advanced network diagnostics and strategic planning in both security and network administration domains.
+The `--traceroute` option adds valuable context to Nmap scans by illustrating the network path taken to the scanned hosts, which is crucial for advanced network diagnostics and strategic planning in both security and network administration domains.
 
 ### Part 2 here
 

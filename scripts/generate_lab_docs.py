@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from generate_article_docs import pre_text, fenced_code, inline_wrap
+
 import re
 import json
 from pathlib import Path
@@ -220,25 +222,25 @@ LABS = [
 ]
 
 
-def md_escape(text: str) -> str:
+def md_escape(text: str, *, strip: bool = True) -> str:
     text = text.replace("\u00a0", " ").replace("\u200a", " ")
     text = text.replace("<", "&lt;").replace(">", "&gt;")
     text = text.replace("{", "&#123;").replace("}", "&#125;")
-    return text.strip()
+    return text.strip() if strip else text
 
 
 def inline_md(node) -> str:
     if isinstance(node, str):
-        return md_escape(node)
+        return md_escape(node, strip=False)
     if not isinstance(node, Tag):
         return ""
     text = "".join(inline_md(child) for child in node.children)
     name = node.name.lower()
     href = node.get("href")
     if name in {"strong", "b"}:
-        return f"**{text}**"
+        return inline_wrap(text, "**", "**")
     if name in {"em", "i"}:
-        return f"*{text}*"
+        return inline_wrap(text, "*", "*")
     if name == "code":
         return f"`{text.replace('`', '\\`')}`"
     if name == "br":
@@ -247,7 +249,7 @@ def inline_md(node) -> str:
         if href.startswith("#"):
             return text
         href = href.rstrip(".,")
-        return f"[{text}]({href})"
+        return inline_wrap(text, "[", f"]({href})")
     return text
 
 
@@ -299,8 +301,8 @@ def block_to_md(node: Tag, title: str, seen_title: list[bool]) -> str:
     if name == "figure" or "graf--figure" in classes:
         return image_markdown(node)
     if name == "pre" or "graf--pre" in classes:
-        code = node.get_text("\n", strip=False).strip("\n")
-        return f"```text\n{code}\n```"
+        code = pre_text(node).strip("\n")
+        return fenced_code(code)
     if name in {"blockquote"} or "graf--blockquote" in classes:
         text = md_escape(node.get_text(" ", strip=True))
         return "\n".join(f"> {line}" for line in text.splitlines())

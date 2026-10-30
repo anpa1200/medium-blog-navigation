@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 
 
-def rewrite(text: str) -> tuple[str, int]:
+def rewrite_prose(text: str) -> tuple[str, int]:
     count = 0
 
     def markdown(match: re.Match[str]) -> str:
@@ -88,6 +88,33 @@ def rewrite(text: str) -> tuple[str, int]:
         flags=re.IGNORECASE,
     )
     return text, count
+
+
+def rewrite(text: str) -> tuple[str, int]:
+    # Code samples may contain local application URLs and literal Markdown.
+    # Only article navigation outside a fenced block belongs to this origin.
+    output = []
+    prose = []
+    fence = 0
+    count = 0
+    for line in text.splitlines(keepends=True):
+        match = re.match(r"^(`{3,})(.*)$", line.rstrip("\n"))
+        if not fence and match:
+            rewritten, n = rewrite_prose("".join(prose))
+            output.append(rewritten)
+            prose = []
+            count += n
+            fence = len(match[1])
+            output.append(line)
+        elif fence:
+            output.append(line)
+            if match and len(match[1]) >= fence and not match[2].strip():
+                fence = 0
+        else:
+            prose.append(line)
+    rewritten, n = rewrite_prose("".join(prose))
+    output.append(rewritten)
+    return "".join(output), count + n
 
 
 def main() -> int:

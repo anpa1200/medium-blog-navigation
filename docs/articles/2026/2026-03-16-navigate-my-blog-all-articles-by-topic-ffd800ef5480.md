@@ -27,9 +27,9 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 This blog has grown into a large collection of hands-on guides, walkthroughs, and research notes — from classic penetration testing tools to AI-driven workflows that change how we run assessments. Whether you’re building a lab, learning a new tool, or wiring HexStrike-AI and Cursor into your process, it can be hard to know where to start.
 
-**This page is your map.**Every article is sorted into**18 topic-based groups**. Each group has a short description of what you’ll find and direct links to every post in that category. No fluff — just the themes and the links. You can bookmark this post, share it with your team, or use the Table of Contents to jump straight to the section you need.
+**This page is your map.** Every article is sorted into **18 topic-based groups**. Each group has a short description of what you’ll find and direct links to every post in that category. No fluff — just the themes and the links. You can bookmark this post, share it with your team, or use the Table of Contents to jump straight to the section you need.
 
-The content spans**offensive security**(recon, exploitation, AD, cloud, Kubernetes),**AI in security**(LLMs, MCP, HexStrike-AI, Cursor),**core tools**(Nmap, Burp, Metasploit, Hydra, John, Hashcat),**labs and training**(vulnerable VMs, Terraform, Ansible),**blue-team topics**(threat hunting, detection rules, SOC),**malware analysis and forensics**, and**CTI**. If you’re looking for something specific — for example “AI + Burp” or “ADCS ESC8” or “password cracking” — you’ll find the right group below and the exact articles inside it.
+The content spans **offensive security** (recon, exploitation, AD, cloud, Kubernetes), **AI in security** (LLMs, MCP, HexStrike-AI, Cursor), **core tools** (Nmap, Burp, Metasploit, Hydra, John, Hashcat), **labs and training** (vulnerable VMs, Terraform, Ansible), **blue-team topics** (threat hunting, detection rules, SOC), **malware analysis and forensics**, and **CTI**. If you’re looking for something specific — for example “AI + Burp” or “ADCS ESC8” or “password cracking” — you’ll find the right group below and the exact articles inside it.
 
 ## Table of Contents
 
@@ -71,13 +71,13 @@ The content spans**offensive security**(recon, exploitation, AD, cloud, Kubernet
 
 ## How to Use This Page
 
-Use the**Table of Contents**above to jump to any of the 18 groups. Inside each group you’ll find a**short description**of the topic and a**bulleted list of articles**with direct links. Bookmark this page or share it with anyone who needs a clear map of the blog. At the end,**Quick Links by Role**points red teamers, web security folks, blue team, and others to the most relevant sections.
+Use the **Table of Contents** above to jump to any of the 18 groups. Inside each group you’ll find a **short description** of the topic and a **bulleted list of articles** with direct links. Bookmark this page or share it with anyone who needs a clear map of the blog. At the end, **Quick Links by Role** points red teamers, web security folks, blue team, and others to the most relevant sections.
 
 ## AI in Cybersecurity & HexStrike-AI
 
 <img src="https://cdn-images-1.medium.com/max/800/1*9hosIjf0UO7Ri59y86f1Iw.png" alt="Article image" width="1008" height="1024" loading="lazy" decoding="async" />
 
-**What’s in this group:**High-level view of AI in security — from simple “paste tool output into an LLM” to full MCP + Cursor workflows. Here you’ll find the flagship overview (The AI Revolution in Cybersecurity), why HexStrike-AI acts as a force multiplier for red teams, and how it differs from chatbot-style tools like HackerAI. Also included: step-by-step install and config for HexStrike-AI with Gemini, OpenAI, Cursor, and Llama; the Kali Linux setup guide; and the 20x Employee framework for using AI to scale your work. Start here if you want the big picture before diving into specific AI-driven pentests or tool guides.
+**What’s in this group:** High-level view of AI in security — from simple “paste tool output into an LLM” to full MCP + Cursor workflows. Here you’ll find the flagship overview (The AI Revolution in Cybersecurity), why HexStrike-AI acts as a force multiplier for red teams, and how it differs from chatbot-style tools like HackerAI. Also included: step-by-step install and config for HexStrike-AI with Gemini, OpenAI, Cursor, and Llama; the Kali Linux setup guide; and the 20x Employee framework for using AI to scale your work. Start here if you want the big picture before diving into specific AI-driven pentests or tool guides.
 
 - [The AI Revolution in Cybersecurity: A Comprehensive Journey Through Modern AI-Driven Security Operations](2026-01-19-the-ai-revolution-in-offensive-security-31e44704d51a.md)
 
@@ -95,7 +95,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 <img src="https://cdn-images-1.medium.com/max/800/1*DKgfbG-OT1l4aZ6cYoEIFw.png" alt="Article image" width="1024" height="572" loading="lazy" decoding="async" />
 
-**What’s in this group:**Real engagements and labs where AI drives the workflow. Articles cover full-scope pentests (e.g. home network with HexStrike-AI), web and wireless testing with one-prompt or MCP-driven flows, and Cursor + HexStrike from a single target to full subnet compromise or from one email to a full OSINT exposure map. You’ll also find AI-assisted credential attacks (SMB, SSH), password and file recovery (ZIP, PDF, Office) with HexStrike + Gemini, and AI-driven exploitation of Metasploitable (including Codex). HackerAI walkthroughs, StratusAI for cloud scanning, the Villager framework, and the “human-language malware” warning round out this section. Use these when you want concrete examples and step-by-step flows, not just theory.
+**What’s in this group:** Real engagements and labs where AI drives the workflow. Articles cover full-scope pentests (e.g. home network with HexStrike-AI), web and wireless testing with one-prompt or MCP-driven flows, and Cursor + HexStrike from a single target to full subnet compromise or from one email to a full OSINT exposure map. You’ll also find AI-assisted credential attacks (SMB, SSH), password and file recovery (ZIP, PDF, Office) with HexStrike + Gemini, and AI-driven exploitation of Metasploitable (including Codex). HackerAI walkthroughs, StratusAI for cloud scanning, the Villager framework, and the “human-language malware” warning round out this section. Use these when you want concrete examples and step-by-step flows, not just theory.
 
 - [AI-Driven Pentesting at Home: Using HexStrike-AI for Full Network Discovery and Exploitation](../2025/2025-12-21-ai-driven-pentesting-at-home-using-hexstrike-ai-for-full-network-discovery-and-exploitatio-00a9e88b3bde.md)
 
@@ -133,7 +133,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 <img src="https://cdn-images-1.medium.com/max/800/0*ObT5dcc_r_co-Xc6" alt="Article image" width="317" height="159" loading="lazy" decoding="async" />
 
-**What’s in this group:**Everything around Burp Suite and AI. That includes using LLMs to interpret and prioritize Burp scan results, generate payloads, and plan multi-step attacks; wiring Burp to Gemini CLI via MCP so the AI can drive scans and read findings; and the classic “Mastering Burp Suite” vulnerability-scanner guide. There’s also a tutorial on cracking web interfaces with Burp. If you do web app testing and want to add LLM or MCP into the loop, this is the section to use.
+**What’s in this group:** Everything around Burp Suite and AI. That includes using LLMs to interpret and prioritize Burp scan results, generate payloads, and plan multi-step attacks; wiring Burp to Gemini CLI via MCP so the AI can drive scans and read findings; and the classic “Mastering Burp Suite” vulnerability-scanner guide. There’s also a tutorial on cracking web interfaces with Burp. If you do web app testing and want to add LLM or MCP into the loop, this is the section to use.
 
 - [Getting More from Burp Suite with LLMs](../2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d.md)
 
@@ -145,7 +145,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Reconnaissance & OSINT
 
-**What’s in this group:**Finding targets and turning raw data into next steps. Covers Nmap + ChatGPT for command generation, result interpretation, and follow-up planning; Shodan (standalone and integrated with HexStrike-AI) for exposed assets and query building; theHarvester, Sublist3r, OWASP Amass, and SpiderFoot for OSINT and subdomain discovery; Censys for internet-wide insight; and essential CLI recon tools. Use this section when you’re building target lists, mapping attack surface, or want to combine traditional recon with LLM-assisted analysis.
+**What’s in this group:** Finding targets and turning raw data into next steps. Covers Nmap + ChatGPT for command generation, result interpretation, and follow-up planning; Shodan (standalone and integrated with HexStrike-AI) for exposed assets and query building; theHarvester, Sublist3r, OWASP Amass, and SpiderFoot for OSINT and subdomain discovery; Censys for internet-wide insight; and essential CLI recon tools. Use this section when you’re building target lists, mapping attack surface, or want to combine traditional recon with LLM-assisted analysis.
 
 - [Reinventing Recon: Nmap Meets ChatGPT](../2025/2025-11-24-reinventing-recon-nmap-meets-chatgpt-e2acb6130be5.md)
 
@@ -171,7 +171,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 <img src="https://cdn-images-1.medium.com/max/800/0*FBzKxd0RNJb3r-k5.jpg" alt="Article image" width="650" height="347" loading="lazy" decoding="async" />
 
-**What’s in this group:**A full Nmap series from basics to advanced use. Part 1 covers network exploration and security auditing fundamentals; later parts go deeper into service detection, version probing, and scripting (Part 4). These are the go-to references when you need correct syntax, scan strategies, or script usage for internal or external network assessments — with or without AI on top.
+**What’s in this group:** A full Nmap series from basics to advanced use. Part 1 covers network exploration and security auditing fundamentals; later parts go deeper into service detection, version probing, and scripting (Part 4). These are the go-to references when you need correct syntax, scan strategies, or script usage for internal or external network assessments — with or without AI on top.
 
 - [Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing — Part 1](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)
 
@@ -183,7 +183,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Web Application Security (Non-AI)
 
-**What’s in this group:**Web application testing using traditional tools and a clear methodology. Includes OWASP ZAP for automated scanning and manual testing; SQLMap (basic wizard and advanced custom setup) for SQL injection; DirBuster for hidden paths and assets; Nikto for server and misconfiguration checks; and a two-stage methodology — reconnaissance, then scanning and vulnerability assessment — so you can run structured web pentests without AI. Use these when you need a solid, repeatable web-testing workflow or a deep dive on a specific scanner.
+**What’s in this group:** Web application testing using traditional tools and a clear methodology. Includes OWASP ZAP for automated scanning and manual testing; SQLMap (basic wizard and advanced custom setup) for SQL injection; DirBuster for hidden paths and assets; Nikto for server and misconfiguration checks; and a two-stage methodology — reconnaissance, then scanning and vulnerability assessment — so you can run structured web pentests without AI. Use these when you need a solid, repeatable web-testing workflow or a deep dive on a specific scanner.
 
 - [OWASP ZAP: A Comprehensive Guide to Web Application Security Testing](https://medium.com/@1200km)
 
@@ -203,7 +203,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 <img src="https://cdn-images-1.medium.com/max/800/0*mCm6JdFKvjD84tHd.png" alt="Article image" width="1600" height="722" loading="lazy" decoding="async" />
 
-**What’s in this group:**Metasploit from first use to module-level detail. The Ultimate Guide (Part 1) sets the foundation; separate articles cover auxiliary and exploit modules so you can choose and tune the right one. Step-by-step walkthroughs show SSH credential exploitation, FTP abuse, and Telnet cracking in real scenarios. Use this section when you’re building or refining your exploitation workflow or need a quick reference for module types and options.
+**What’s in this group:** Metasploit from first use to module-level detail. The Ultimate Guide (Part 1) sets the foundation; separate articles cover auxiliary and exploit modules so you can choose and tune the right one. Step-by-step walkthroughs show SSH credential exploitation, FTP abuse, and Telnet cracking in real scenarios. Use this section when you’re building or refining your exploitation workflow or need a quick reference for module types and options.
 
 - [The Ultimate Guide to Metasploit — Part 1](../2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df.md)
 
@@ -219,7 +219,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Password & Credential Cracking
 
-**What’s in this group:**Credential and password recovery across protocols and file types. Core tools: John the Ripper (including hash formats and the 2John family), Hashcat for GPU cracking, and Hydra for network logon brute-forcing. Practical guides cover ZIP, PDF, and Office document cracking; WiFi with Aircrack-ng; RDP with Crowbar and PPG; RTSP; and web interfaces, plus a consolidated “passwords cracking” guide with real-life examples. The Personal Pass Generator (PPG) article explains building custom wordlists. Use this section when you need to crack hashes, test weak credentials, or choose the right tool and wordlist for the target.
+**What’s in this group:** Credential and password recovery across protocols and file types. Core tools: John the Ripper (including hash formats and the 2John family), Hashcat for GPU cracking, and Hydra for network logon brute-forcing. Practical guides cover ZIP, PDF, and Office document cracking; WiFi with Aircrack-ng; RDP with Crowbar and PPG; RTSP; and web interfaces, plus a consolidated “passwords cracking” guide with real-life examples. The Personal Pass Generator (PPG) article explains building custom wordlists. Use this section when you need to crack hashes, test weak credentials, or choose the right tool and wordlist for the target.
 
 - [Mastering John the Ripper: A Complete Guide to Password Cracking](../2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71.md)
 
@@ -245,7 +245,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Active Directory & Red Team
 
-**What’s in this group:**Active Directory–focused offensive work and lab setup. Includes a full AD penetration testing overview; the ADCS ESC8 attack (certificate-based domain compromise) with a complete guide and lab walkthrough; deploying a full AD pentest lab in one prompt with Cursor AI; and mapping tools to MITRE ATT&CK for red team playbooks. Use this section when you’re planning or executing AD assessments, studying ESC8 or PKI abuse, or building an AD lab for training.
+**What’s in this group:** Active Directory–focused offensive work and lab setup. Includes a full AD penetration testing overview; the ADCS ESC8 attack (certificate-based domain compromise) with a complete guide and lab walkthrough; deploying a full AD pentest lab in one prompt with Cursor AI; and mapping tools to MITRE ATT&CK for red team playbooks. Use this section when you’re planning or executing AD assessments, studying ESC8 or PKI abuse, or building an AD lab for training.
 
 - [Active Directory Penetration Testing](https://medium.com/@1200km)
 
@@ -257,7 +257,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Cloud & Kubernetes Security
 
-**What’s in this group:**Offensive security in cloud and container environments. GCP gets a step-by-step attack guide and Terraform-based vulnerable labs (GCP-specific and generic cloud). Kubernetes coverage includes building a vulnerable K8s lab with 25 security issues and a black-box penetration testing playbook. Cloud-native security discusses threats, attacks, and detection. Use this section when you’re assessing GCP, designing cloud or K8s labs, or need a structured approach to cloud and container pentesting.
+**What’s in this group:** Offensive security in cloud and container environments. GCP gets a step-by-step attack guide and Terraform-based vulnerable labs (GCP-specific and generic cloud). Kubernetes coverage includes building a vulnerable K8s lab with 25 security issues and a black-box penetration testing playbook. Cloud-native security discusses threats, attacks, and detection. Use this section when you’re assessing GCP, designing cloud or K8s labs, or need a structured approach to cloud and container pentesting.
 
 - [GCP Penetration Testing: A Step-by-Step Attack Guide](2026-02-09-gcp-penetration-testing-a-step-by-step-attack-guide-9e39bc3eb96d.md)
 
@@ -273,7 +273,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Labs & Training Environments
 
-**What’s in this group:**Building and automating vulnerable environments for practice and research. Covers extremely vulnerable Ubuntu and Windows 10 labs (with bonus HexStrike PT walkthroughs), a scripted vulnerable Windows VM for pentest training, an IIS/SharePoint lab with Fluent Bit deployment, and a reproducible DVWA lab with Ansible. The one-prompt PT lab article shows autonomous Android security research with Cursor AI. Use this section when you need a safe, repeatable lab for learning or demonstrating attacks.
+**What’s in this group:** Building and automating vulnerable environments for practice and research. Covers extremely vulnerable Ubuntu and Windows 10 labs (with bonus HexStrike PT walkthroughs), a scripted vulnerable Windows VM for pentest training, an IIS/SharePoint lab with Fluent Bit deployment, and a reproducible DVWA lab with Ansible. The one-prompt PT lab article shows autonomous Android security research with Cursor AI. Use this section when you need a safe, repeatable lab for learning or demonstrating attacks.
 
 - [Building an Extremely Vulnerable Ubuntu 24.04 Server Lab (Bonus: Full PT with HexStrike)](https://medium.com/@1200km)
 
@@ -293,7 +293,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Malware Analysis & Forensics
 
-**What’s in this group:**Static analysis and forensics, with and without AI. Static malware analysis is covered in dedicated articles on file fingerprinting, strings analysis, and obfuscation, plus automation with Python tools. “One Tool to Rule Them All” focuses on file metadata and static analysis for malware analysts and SOC teams. The forensics article explains how ChatGPT can support investigations — pattern recognition, timeline building, evidence interpretation, and report drafting. Use this section when you’re analyzing samples, building a static-analysis workflow, or integrating AI into forensic processes.
+**What’s in this group:** Static analysis and forensics, with and without AI. Static malware analysis is covered in dedicated articles on file fingerprinting, strings analysis, and obfuscation, plus automation with Python tools. “One Tool to Rule Them All” focuses on file metadata and static analysis for malware analysts and SOC teams. The forensics article explains how ChatGPT can support investigations — pattern recognition, timeline building, evidence interpretation, and report drafting. Use this section when you’re analyzing samples, building a static-analysis workflow, or integrating AI into forensic processes.
 
 - [Augmenting Digital Forensics with AI: How ChatGPT Transforms Investigation Workflows](../2025/2025-10-19-augmenting-digital-forensics-with-ai-how-chatgpt-transforms-investigation-workflows-34eb10887ea5.md)
 
@@ -309,7 +309,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Threat Hunting & Detection
 
-**What’s in this group:**Proactive hunting and detection engineering. Endpoint threat hunting covers Windows, Linux, and macOS; protocol-level hunting uses Wireshark for traffic-centric analysis; the Pyramid of Pain ties hunting to defender cost and attacker friction. Detection rules are addressed from single-event (atomic) to correlation-based and behavioral insight, plus a practitioner’s compendium for atomic detection and defending CI/CD pipelines from targeted attacks. Use this section when you’re designing hunts, writing rules, or aligning detection with the kill chain.
+**What’s in this group:** Proactive hunting and detection engineering. Endpoint threat hunting covers Windows, Linux, and macOS; protocol-level hunting uses Wireshark for traffic-centric analysis; the Pyramid of Pain ties hunting to defender cost and attacker friction. Detection rules are addressed from single-event (atomic) to correlation-based and behavioral insight, plus a practitioner’s compendium for atomic detection and defending CI/CD pipelines from targeted attacks. Use this section when you’re designing hunts, writing rules, or aligning detection with the kill chain.
 
 - [Endpoint Threat Hunting: Proactive Detection on Windows, Linux, and macOS](../2025/2025-12-14-endpoint-threat-hunting-proactive-detection-on-windows-linux-and-macos-f892d9b8a113.md)
 
@@ -327,7 +327,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## CTI & Threat Intelligence
 
-**What’s in this group:**Threat intelligence research and sector-specific threat mapping. Includes deep dives on MuddyWater/Seedworm (Mango Sandstorm) and the Handala hack group, plus articles on 4G/LTE and 5G telecom network threats — attack mapping and defense. Use this section when you need context on specific actors, campaigns, or when you’re building or using CTI for detection and planning.
+**What’s in this group:** Threat intelligence research and sector-specific threat mapping. Includes deep dives on MuddyWater/Seedworm (Mango Sandstorm) and the Handala hack group, plus articles on 4G/LTE and 5G telecom network threats — attack mapping and defense. Use this section when you need context on specific actors, campaigns, or when you’re building or using CTI for detection and planning.
 
 - [CTI Research: MuddyWater/Seedworm (Mango Sandstorm)](2026-03-09-cti-research-muddywater-seedworm-mango-sandstorm-ebf6af5ba061.md)
 
@@ -355,7 +355,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Tool Development & Cursor AI
 
-**What’s in this group:**Using Cursor AI to build and automate security tooling and hardware. One article walks through the full workflow for Android Rubber Ducky payloads — from idea to code and validation; another covers building a USB Rubber Ducky with an Arduino Leonardo, with Cursor assisting at each step. Use this section when you want to prototype custom tools, automate payload generation, or integrate AI into your security development workflow.
+**What’s in this group:** Using Cursor AI to build and automate security tooling and hardware. One article walks through the full workflow for Android Rubber Ducky payloads — from idea to code and validation; another covers building a USB Rubber Ducky with an Arduino Leonardo, with Cursor assisting at each step. Use this section when you want to prototype custom tools, automate payload generation, or integrate AI into your security development workflow.
 
 - [Hacker Tool Development Workflow: Android Rubber Ducky Payloads in Cursor AI](2026-01-16-hacker-tool-development-workflow-android-rubber-ducky-payloads-in-cursor-ai-47fcccb9c845.md)
 
@@ -363,7 +363,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## SOC, Awareness & Best Practices
 
-**What’s in this group:**Defensive and organizational security. SOC Tier 1 onboarding covers security monitoring and incident response for new analysts. Awareness articles address principles and best practices for employees and phishing protection. Secure coding is tackled through the OWASP Top 10 with a “from bugs to breaches” angle. There’s also a quick-start server hardening checklist (open-source focused) and the basic toolkit for penetration testing. Use this section for training, awareness programs, or when you need a concise reference for secure build and hardening.
+**What’s in this group:** Defensive and organizational security. SOC Tier 1 onboarding covers security monitoring and incident response for new analysts. Awareness articles address principles and best practices for employees and phishing protection. Secure coding is tackled through the OWASP Top 10 with a “from bugs to breaches” angle. There’s also a quick-start server hardening checklist (open-source focused) and the basic toolkit for penetration testing. Use this section for training, awareness programs, or when you need a concise reference for secure build and hardening.
 
 - [SOC Tier 1: The Complete Onboarding Guide to Security Monitoring and Incident Response](https://medium.com/@1200km)
 
@@ -379,7 +379,7 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Logging, DevOps & XPLG
 
-**What’s in this group:**Log collection, forwarding, and integration with XPLG. Covers deploying Fluent Bit as a Windows service for centralized log forwarding; Fluent Bit on AWS EKS for Kubernetes log shipping to XPLG; DaemonSet-based Fluent Bit on K8s; and sending EKS control-plane logs to XPLG via AWS Lambda. The syscheck_beauty article describes a Linux system report tool with storage insights and exportable HTML. Use this section when you’re designing or troubleshooting log pipelines in hybrid or cloud environments.
+**What’s in this group:** Log collection, forwarding, and integration with XPLG. Covers deploying Fluent Bit as a Windows service for centralized log forwarding; Fluent Bit on AWS EKS for Kubernetes log shipping to XPLG; DaemonSet-based Fluent Bit on K8s; and sending EKS control-plane logs to XPLG via AWS Lambda. The syscheck_beauty article describes a Linux system report tool with storage insights and exportable HTML. Use this section when you’re designing or troubleshooting log pipelines in hybrid or cloud environments.
 
 - [Deploying Fluent Bit as a Windows Service for Centralized Log Forwarding](https://medium.com/@1200km)
 
@@ -393,20 +393,20 @@ Use the**Table of Contents**above to jump to any of the 18 groups. Inside each g
 
 ## Reader Input & Meta
 
-**What’s in this group:**How you can shape future content. The “What Do You Want to Read?” post asks for your topics, use cases, and preferred depth — whether you want more guides on a specific tool, a new lab idea, or a deeper treatment of AI in pentesting. Your comments and suggestions directly influence the next articles. Use this section to send feedback or request new guides.
+**What’s in this group:** How you can shape future content. The “What Do You Want to Read?” post asks for your topics, use cases, and preferred depth — whether you want more guides on a specific tool, a new lab idea, or a deeper treatment of AI in pentesting. Your comments and suggestions directly influence the next articles. Use this section to send feedback or request new guides.
 
 - [What Do You Want to Read? Your Input Shapes What I Write Next](https://medium.com/@1200km/what-do-you-want-to-read-your-input-shapes-what-i-write-next-76fe3355553f)
 
 ## Quick Links by Role
 
-- **Red team / PT:**Sections 1, 2, 4, 5, 7, 8, 9, 10.
+- **Red team / PT:** Sections 1, 2, 4, 5, 7, 8, 9, 10.
 
-- **Web security:**Sections 3, 6.
+- **Web security:** Sections 3, 6.
 
-- **AI + security:**Sections 1, 2, 3, 15.
+- **AI + security:** Sections 1, 2, 3, 15.
 
-- **Blue team / SOC:**Sections 13, 14, 16, 17.
+- **Blue team / SOC:** Sections 13, 14, 16, 17.
 
-- **Labs & training:**Sections 10, 11.
+- **Labs & training:** Sections 10, 11.
 
-- **Malware & forensics:**Section 12.
+- **Malware & forensics:** Section 12.

@@ -24,6 +24,8 @@ const config = {
 
   onBrokenLinks: 'throw',
   markdown: {
+    mdx1Compat: {headingIds: false},
+    preprocessor: require('./scripts/markdown-preprocessor.cjs'),
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },

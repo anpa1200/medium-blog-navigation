@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### In this guide, we’ll explore how to navigate Shodan, understand the information it provides, and, most importantly, how to make use of the data you find. From identifying exposed critical infrastructure to locating everyday devices, Shodan opens a window into the connected world. Let’s dive in and learn how to uncover and leverage this powerful resource!
 
-The internet is more than just websites; it’s a vast network of devices, from industrial control systems to home security cameras, all of which can be discovered with the right tools.**Shodan**is that tool — a powerful search engine for the Internet of Things (IoT). Whether you’re a cyber security professional, researcher, or curious tech enthusiast, Shodan can reveal what devices are exposed to the internet and potentially vulnerable.
+The internet is more than just websites; it’s a vast network of devices, from industrial control systems to home security cameras, all of which can be discovered with the right tools. **Shodan** is that tool — a powerful search engine for the Internet of Things (IoT). Whether you’re a cyber security professional, researcher, or curious tech enthusiast, Shodan can reveal what devices are exposed to the internet and potentially vulnerable.
 
 **About the Author:**
 
@@ -62,7 +62,7 @@ Shodan can locate:
 
 `[port:21 Login successful](https://www.shodan.io/search?query=port%3A21+Login+successful)`
 
-**Full explanation about FTP cracking in my other post**[**here**](2024-10-21-exploiting-ftp-vulnerabilities-for-effective-penetration-testing-a2810df78602.md)
+**Full explanation about FTP cracking in my other post** [**here**](2024-10-21-exploiting-ftp-vulnerabilities-for-effective-penetration-testing-a2810df78602.md)
 
 ### 2. Remote Desktop Protocol (RDP) services
 
@@ -78,7 +78,7 @@ Shodan can locate:
 
 `[port:3389 "Administrator"](https://www.shodan.io/search?query=port%3A3389+has_screenshot%3Atrue)`
 
-**Full explanation about RDP cracking in my other post**[**here**](2024-10-20-accessing-remote-desktops-a-beginner-s-guide-to-rdp-cracking-with-crowbar-and-ppg-tools-5f50027115b7.md)
+**Full explanation about RDP cracking in my other post** [**here**](2024-10-20-accessing-remote-desktops-a-beginner-s-guide-to-rdp-cracking-with-crowbar-and-ppg-tools-5f50027115b7.md)
 
 ### 3. Telnet
 
@@ -100,13 +100,13 @@ Already Logged-In as root via Telnet:
 No password for Telnet Access:
 `[port:23 console gateway](https://www.shodan.io/search?query=port%3A23+console+gateway)`
 
-**Full explanation about Telnet cracking in my other post**[**here**](2024-10-22-cracking-telnet-exploring-weaknesses-and-exploitation-techniques-af5d743abb09.md)
+**Full explanation about Telnet cracking in my other post** [**here**](2024-10-22-cracking-telnet-exploring-weaknesses-and-exploitation-techniques-af5d743abb09.md)
 
 ### 3. SSH
 
 `[port:22](https://www.shodan.io/search?query=port%3A22)`
 
-Full explanation about SSH cracking in my other post[here](2024-10-23-cracking-ssh-with-metasploit-a-step-by-step-guide-to-exploiting-weak-credentials-3ec6ef4cee5b.md)
+Full explanation about SSH cracking in my other post [here](2024-10-23-cracking-ssh-with-metasploit-a-step-by-step-guide-to-exploiting-weak-credentials-3ec6ef4cee5b.md)
 
 ### 4. RTSP
 
@@ -124,11 +124,11 @@ Full explanation about SSH cracking in my other post[here](2024-10-23-cracking-s
 
 `[port:554 "401 Unauthorized"](https://www.shodan.io/search?query=port%3A554+%22401+Unauthorized%22)`
 
-Full explanation about RTSP cracking in my other post[here](2024-10-23-cracking-rtsp-security-a-comprehensive-guide-to-using-the-rtsp-brute-force-tool-ad1c29b9e5ee.md)
+Full explanation about RTSP cracking in my other post [here](2024-10-23-cracking-rtsp-security-a-comprehensive-guide-to-using-the-rtsp-brute-force-tool-ad1c29b9e5ee.md)
 
 ### 5.Web servers
 
-Full explanation about Web Interface cracking in my other post[here](2024-10-24-cracking-web-interfaces-with-burp-suite-a-comprehensive-tutorial-33087bb286b0.md)
+Full explanation about Web Interface cracking in my other post [here](2024-10-24-cracking-web-interfaces-with-burp-suite-a-comprehensive-tutorial-33087bb286b0.md)
 
 ## What is Shodan dorks?
 
@@ -138,21 +138,21 @@ Full explanation about Web Interface cracking in my other post[here](2024-10-24-
 
 A Shodan dork is essentially a search string that uses specific search syntax to filter through the indexed data collected by Shodan. These dorks can be simple or complex, depending on the user’s familiarity with the syntax and the specific data they are trying to extract. For example:
 
-- Searching for all devices within a specific country:`country:"US"`
+- Searching for all devices within a specific country: `country:"US"`
 
-- Finding devices running a specific web server:`server:"Apache"`
+- Finding devices running a specific web server: `server:"Apache"`
 
-- Locating devices with a specific port open:`port:21`
+- Locating devices with a specific port open: `port:21`
 
 ## Uses of Shodan Dorks
 
-**1. Security Research:**Security professionals use Shodan dorks to find devices that may be vulnerable to exploits, helping to identify and mitigate risks before they can be exploited by malicious actors.
+**1. Security Research:** Security professionals use Shodan dorks to find devices that may be vulnerable to exploits, helping to identify and mitigate risks before they can be exploited by malicious actors.
 
-**2. Network Monitoring:**System administrators can use Shodan to monitor the internet exposure of their network and ensure that no unexpected services or devices are publicly accessible.
+**2. Network Monitoring:** System administrators can use Shodan to monitor the internet exposure of their network and ensure that no unexpected services or devices are publicly accessible.
 
-**3. Educational Purposes:**Educators and students use Shodan for research and learning about the distribution of devices and services across the internet, enhancing their understanding of the global digital infrastructure.
+**3. Educational Purposes:** Educators and students use Shodan for research and learning about the distribution of devices and services across the internet, enhancing their understanding of the global digital infrastructure.
 
-**4. Market Research:**Companies can use Shodan to gauge how widely their products are being used or to find the usage stats of competitors’ products.
+**4. Market Research:** Companies can use Shodan to gauge how widely their products are being used or to find the usage stats of competitors’ products.
 
 ## Crafting Effective Shodan Dorks
 
@@ -340,7 +340,7 @@ In summary, Shodan dorks are powerful tools in the hands of those who know how t
 
 - **MELSEC-Q**: Mitsubishi Electric’s sequence controllers for manufacturing processes.
 
-- [Search for MELSEC-Q devices](https://www.shodan.io/search?query=port%3A5006%2C5007+product%3Amitsubishi)—*251 results*
+- [Search for MELSEC-Q devices](https://www.shodan.io/search?query=port%3A5006%2C5007+product%3Amitsubishi) — *251 results*
 
 ## Highly Specific and Niche Searches
 
@@ -442,7 +442,7 @@ In summary, Shodan dorks are powerful tools in the hands of those who know how t
 
 - **General Printer Search**: This query provides a broad view of printers connected across the globe, regardless of brand or type.
 
-- [Search general printers](https://www.shodan.io/search?query=printer)—*91,880 results*
+- [Search general printers](https://www.shodan.io/search?query=printer) — *91,880 results*
 
 - Brand-Specific Printer Searches
 
@@ -544,7 +544,7 @@ In summary, Shodan dorks are powerful tools in the hands of those who know how t
 
 **Indicators of Compromise**
 
-- [General Hacked Label Search](https://www.shodan.io/search?query=hacked)— Looks for devices labeled as hacked.
+- [General Hacked Label Search](https://www.shodan.io/search?query=hacked) — Looks for devices labeled as hacked.
 
 - Ransomware Infected RDP Services — Targets RDP services compromised with ransomware.
 

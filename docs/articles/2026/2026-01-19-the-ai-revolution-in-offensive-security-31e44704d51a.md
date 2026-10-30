@@ -34,15 +34,15 @@ Getting More from Burp Suite with LLMs
 Reinventing Recon: Nmap Meets ChatGPT
 Augmenting Digital Forensics with AI
 
-- **More Robust: Specific LLM Tools (HackerAI****)
-**Enhancing Penetration Testing with HackerAI
+- **More Robust: Specific LLM Tools (HackerAI****)**
+Enhancing Penetration Testing with HackerAI
 HexStrike + Gemini vs. HackerAI: Comparative Analysis
 
-- **More Robust: MCP Usage with Security Tools****
-**Burp Suite MCP Integration
+- **More Robust: MCP Usage with Security Tools**
+Burp Suite MCP Integration
 
-- **HexStrike-AI: Comprehensive AI Security Framework****
-**Overview and Capabilities
+- **HexStrike-AI: Comprehensive AI Security Framework**
+Overview and Capabilities
 AI-Driven Network Penetration Testing
 AI-Driven Web Application Pentesting
 AI-Driven Active Directory Pentest
@@ -52,11 +52,11 @@ Credential Brute-Forcing with AI Assistance
 Password Recovery Operations
 Exploitation with AI Code Generation
 
-- **Very Robust: MCP + Cursor for Full Workflow****
--**HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise
--HexStrike + Cursor for OSINT: From One Email to Full Exposure Map
--Cursor AI for Security Tool Development and Environment Deployment
--AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP
+- **Very Robust: MCP + Cursor for Full Workflow
+-** HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise
+- HexStrike + Cursor for OSINT: From One Email to Full Exposure Map
+- Cursor AI for Security Tool Development and Environment Deployment
+- AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP
 
 - **Impact to Blue Teams. The Threat Curve Just Bent Upwards**
 
@@ -123,7 +123,7 @@ Burp Suite is one of the most widely used web application security testing tools
 
 This simple approach transforms Burp Suite from a tool that requires deep expertise to use effectively into one that’s accessible to security professionals at all levels. The AI acts as an intelligent interpreter, making complex technical findings understandable and actionable.
 
-**Traditional Tool Reference**: For comprehensive guides on using[Burp Suite](../2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac.md)without AI assistance.
+**Traditional Tool Reference**: For comprehensive guides on using [Burp Suite](../2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac.md) without AI assistance.
 
 ## Reinventing Recon: Nmap Meets ChatGPT
 
@@ -146,7 +146,7 @@ Network reconnaissance with Nmap generates complex output that can be difficult 
 
 The detailed article provides practical examples of how ChatGPT can assist with Nmap operations, from command generation to result interpretation, making network reconnaissance more accessible and efficient.
 
-**Traditional Tool Reference**: For comprehensive guides on using[Nmap](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)without AI assistance.
+**Traditional Tool Reference**: For comprehensive guides on using [Nmap](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md) without AI assistance.
 
 ## Augmenting Digital Forensics with AI
 
@@ -238,7 +238,7 @@ Model Context Protocol (MCP) represents a standardized way to connect AI assista
 
 Burp Suite integration through MCP represents a significant step up from simple data upload. The MCP connection enables:
 
-- **Intelligent Vulnerability Analysis**: The AI analyzes[Burp Suite](../2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac.md)scan results in real-time, providing context-aware recommendations that go beyond simple vulnerability identification. It understands the severity in context, suggests exploitation techniques, and identifies potential false positives
+- **Intelligent Vulnerability Analysis**: The AI analyzes [Burp Suite](../2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac.md) scan results in real-time, providing context-aware recommendations that go beyond simple vulnerability identification. It understands the severity in context, suggests exploitation techniques, and identifies potential false positives
 
 - **Custom Payload Generation**: Based on identified vulnerabilities, the AI generates targeted exploit payloads tailored to the specific application, technology stack, and input validation mechanisms
 
@@ -282,17 +282,17 @@ HexStrike-AI integrates AI capabilities directly into security operations, enabl
 
 In a comprehensive home lab environment, HexStrike-AI demonstrated its capability to autonomously discover network topologies, identify vulnerable services, and execute full exploitation chains. The detailed walkthrough showed how the AI:
 
-- **Automatically mapped network segments**using intelligent scanning strategies, identifying critical assets without manual intervention
+- **Automatically mapped network segments** using intelligent scanning strategies, identifying critical assets without manual intervention
 
-- **Correlated vulnerability scan results**with exploit databases, automatically matching CVEs to available exploits and proof-of-concept code
+- **Correlated vulnerability scan results** with exploit databases, automatically matching CVEs to available exploits and proof-of-concept code
 
-- **Generated and executed custom exploit chains**that adapted to target configurations, handling version-specific vulnerabilities and custom applications
+- **Generated and executed custom exploit chains** that adapted to target configurations, handling version-specific vulnerabilities and custom applications
 
-- **Adapted strategies dynamically**based on defensive measures encountered, such as adjusting attack vectors when firewalls or IDS systems were detected
+- **Adapted strategies dynamically** based on defensive measures encountered, such as adjusting attack vectors when firewalls or IDS systems were detected
 
-- **Maintained operational context**throughout the engagement, remembering previous reconnaissance data and building upon it for lateral movement
+- **Maintained operational context** throughout the engagement, remembering previous reconnaissance data and building upon it for lateral movement
 
-The entire process, which would typically require days of manual work involving multiple tools ([Nmap](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md), Nessus,[Metasploit](../2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df.md), manual exploit research), was completed autonomously in hours. The AI made strategic decisions about target prioritization, attack vectors, and when to pivot to alternative approaches — decisions that would normally require an experienced penetration tester.
+The entire process, which would typically require days of manual work involving multiple tools ([Nmap](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md), Nessus, [Metasploit](../2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df.md), manual exploit research), was completed autonomously in hours. The AI made strategic decisions about target prioritization, attack vectors, and when to pivot to alternative approaches — decisions that would normally require an experienced penetration tester.
 
 ## AI-Driven Web Application Pentesting
 
@@ -320,9 +320,9 @@ The AI’s ability to understand context means it can identify vulnerabilities t
 
 ### Fully Automated AD Discovery and Exploitation with Cursor AI and HexStrike-ai MCP. From IP to Full dump.
 
-This article documents a groundbreaking**black box penetration test**orchestrated entirely by**Cursor AI**(an advanced AI coding assistant) integrated with**HexStrike-ai MCP**(Model Context Protocol) tools. Unlike traditional manual or scripted penetration tests, this assessment demonstrates how artificial intelligence can autonomously discover, analyze, and exploit an unknown target environment, making real-time decisions and self-correcting when encountering issues.
+This article documents a groundbreaking **black box penetration test** orchestrated entirely by **Cursor AI** (an advanced AI coding assistant) integrated with **HexStrike-ai MCP** (Model Context Protocol) tools. Unlike traditional manual or scripted penetration tests, this assessment demonstrates how artificial intelligence can autonomously discover, analyze, and exploit an unknown target environment, making real-time decisions and self-correcting when encountering issues.
 
-**Critical Context:**This was a**true black box assessment**— the only information provided was a single IP address (**192.168.56.10**). Cursor AI had no prior knowledge of:
+**Critical Context:** This was a **true black box assessment** — the only information provided was a single IP address (**192.168.56.10**). Cursor AI had no prior knowledge of:
 
 - Whether the target was a Domain Controller
 
@@ -334,7 +334,7 @@ This article documents a groundbreaking**black box penetration test**orchestrate
 
 - Any credentials or domain information
 
-The entire penetration test was initiated with**a single human language prompt**and executed completely autonomously, with Cursor AI discovering the environment, identifying it as an Active Directory domain controller, and then systematically exploiting it. All strategic decisions, error handling, and troubleshooting were performed automatically without human intervention.
+The entire penetration test was initiated with **a single human language prompt** and executed completely autonomously, with Cursor AI discovering the environment, identifying it as an Active Directory domain controller, and then systematically exploiting it. All strategic decisions, error handling, and troubleshooting were performed automatically without human intervention.
 
 ## Shodan Integration with HexStrike-AI
 
@@ -368,7 +368,7 @@ Perhaps one of the most dramatic demonstrations of AI’s capabilities was in wi
 
 - **Execute handshake capture**: For WPA/WPA2 networks, the AI orchestrated deauthentication attacks to capture handshakes, then automatically extracted and prepared them for cracking
 
-- **Password cracking**: The AI selected appropriate wordlists, configured cracking tools ([Aircrack-ng](../2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md),[Hashcat](../2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8.md)), and managed the cracking process with intelligent wordlist selection based on network names and other context
+- **Password cracking**: The AI selected appropriate wordlists, configured cracking tools ([Aircrack-ng](../2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md), [Hashcat](../2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8.md)), and managed the cracking process with intelligent wordlist selection based on network names and other context
 
 - **Provide detailed analysis**: After successful cracking, the AI provided comprehensive reports on network security configurations, recommended improvements, and potential vulnerabilities
 
@@ -421,7 +421,7 @@ Password-protected archives are common in security assessments and incident resp
 
 - **Intelligent Wordlist Selection**: Based on file context, target information, and password complexity indicators, the AI selects the most appropriate wordlists from extensive collections
 
-- **Multi-Tool Orchestration**: The AI coordinates between different cracking tools ([John the Ripper](../2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71.md)for CPU-based cracking,[Hashcat](../2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8.md)for GPU acceleration) based on password complexity, available hardware, and cracking progress
+- **Multi-Tool Orchestration**: The AI coordinates between different cracking tools ([John the Ripper](../2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71.md) for CPU-based cracking, [Hashcat](../2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8.md) for GPU acceleration) based on password complexity, available hardware, and cracking progress
 
 - **Adaptive Strategy**: If initial wordlists fail, the AI analyzes patterns and generates new password variations
 
@@ -446,9 +446,9 @@ Document password recovery follows similar principles but requires understanding
 
 One of the most impressive capabilities demonstrated was AI-driven exploit development. Using OpenAI Codex integrated with HexStrike-AI, the system was able to:
 
-- **Analyze vulnerability scan results**: The AI reviewed[Nmap](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)scans, Nessus, and other scan outputs, identifying exploitable vulnerabilities and prioritizing them based on potential impact and exploitability
+- **Analyze vulnerability scan results**: The AI reviewed [Nmap](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md) scans, Nessus, and other scan outputs, identifying exploitable vulnerabilities and prioritizing them based on potential impact and exploitability
 
-- **Research exploit techniques**: For identified vulnerabilities, the AI researched available exploits using[Metasploit](../2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df.md), proof-of-concept code, and exploitation techniques
+- **Research exploit techniques**: For identified vulnerabilities, the AI researched available exploits using [Metasploit](../2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df.md), proof-of-concept code, and exploitation techniques
 
 - **Generate custom exploit code**: The AI created custom exploit code tailored to the target’s specific configuration
 
@@ -494,7 +494,7 @@ The detailed walkthrough provides step-by-step documentation of the entire proce
 
 Open Source Intelligence (OSINT) gathering demonstrates another powerful application of MCP + Cursor integration. Starting with just an email address, the AI was able to:
 
-- **Query multiple OSINT sources**: Through MCP-connected tools, the AI automatically queried multiple sources ([theHarvester](../2024/2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md),[Shodan](../2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe.md),[Sublist3r](../2024/2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712.md),[OWASP Amass](../2024/2024-11-06-owasp-amass-project-guide-94bd55521f91.md),[SpiderFoot](../2025/2025-11-23-spiderfoot-deep-dive-installation-scans-and-practical-use-cases-11ea6537ad6f.md), social media, domain registrars, breach databases) without manual tool switching
+- **Query multiple OSINT sources**: Through MCP-connected tools, the AI automatically queried multiple sources ([theHarvester](../2024/2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md), [Shodan](../2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe.md), [Sublist3r](../2024/2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712.md), [OWASP Amass](../2024/2024-11-06-owasp-amass-project-guide-94bd55521f91.md), [SpiderFoot](../2025/2025-11-23-spiderfoot-deep-dive-installation-scans-and-practical-use-cases-11ea6537ad6f.md), social media, domain registrars, breach databases) without manual tool switching
 
 - **Correlate information**: The AI identified connections between data points across different sources, building a comprehensive profile from fragmented information
 
@@ -563,11 +563,11 @@ This workflow reduces development and deployment time from days or weeks to hour
 
 This article documents a comprehensive penetration test conducted using an innovative AI-assisted methodology that combines:
 
-- **Cursor AI:**An intelligent code editor with advanced AI capabilities
+- **Cursor AI:** An intelligent code editor with advanced AI capabilities
 
-- **HexStrike MCP:**A Model Context Protocol server providing 150+ cybersecurity tools
+- **HexStrike MCP:** A Model Context Protocol server providing 150+ cybersecurity tools
 
-- **Burp Suite MCP:**Professional web application security testing via MCP integration This approach represents a paradigm shift in penetration testing, where AI doesn’t just automate tasks but actively reasons, adapts, and makes intelligent decisions throughout the testing process.
+- **Burp Suite MCP:** Professional web application security testing via MCP integration This approach represents a paradigm shift in penetration testing, where AI doesn’t just automate tasks but actively reasons, adapts, and makes intelligent decisions throughout the testing process.
 
 ## What Makes This Different?
 
@@ -725,15 +725,15 @@ The integration of AI into cybersecurity operations represents one of the most s
 
 The progression from simple data analysis to fully autonomous operations demonstrates the spectrum of AI integration possibilities. Each level offers unique advantages:
 
-- **Simple Usage**provides immediate value with minimal setup
+- **Simple Usage** provides immediate value with minimal setup
 
-- **Specialized LLM Tools**offer more targeted assistance
+- **Specialized LLM Tools** offer more targeted assistance
 
-- **MCP Integration**enables seamless tool connectivity
+- **MCP Integration** enables seamless tool connectivity
 
-- **MCP + Cursor**provides complete workflow automation
+- **MCP + Cursor** provides complete workflow automation
 
-- **Comprehensive Frameworks**like HexStrike-AI enable fully autonomous operations
+- **Comprehensive Frameworks** like HexStrike-AI enable fully autonomous operations
 
 The key insight from this journey is that AI in cybersecurity is not about replacing human expertise — it’s about augmenting it. The most effective implementations combine AI capabilities with human judgment, strategic thinking, and domain expertise. Tools that function as “ops copilots” rather than simple chatbots demonstrate this principle: they maintain context, understand workflows, and make strategic decisions while still benefiting from human oversight and guidance.
 
@@ -745,11 +745,11 @@ The future of cybersecurity is AI-enhanced, and the time to begin that journey i
 
 ## Follow for practical cybersecurity research
 
-If you’re interested in**Offensive security,****AI security, real-world attack simulations, CTI, and detection engineering**— this is exactly what I focus on.
+If you’re interested in **Offensive security,** **AI security, real-world attack simulations, CTI, and detection engineering** — this is exactly what I focus on.
 
 Stay connected:
 
-→**Subscribe on Medium:**[medium.com/@1200km](https://medium.com/@1200km)
-→**Connect on LinkedIn:**[andrey-pautov](https://www.linkedin.com/in/andrey-pautov/)
-→**GitHub — tools & labs:**[github.com/anpa1200](https://github.com/anpa1200)
-→**Contact:**[1200km@gmail.com](mailto:1200km@gmail.com)
+→ **Subscribe on Medium:** [medium.com/@1200km](https://medium.com/@1200km)
+→ **Connect on LinkedIn:** [andrey-pautov](https://www.linkedin.com/in/andrey-pautov/)
+→ **GitHub — tools & labs:** [github.com/anpa1200](https://github.com/anpa1200)
+→ **Contact:** [1200km@gmail.com](mailto:1200km@gmail.com)

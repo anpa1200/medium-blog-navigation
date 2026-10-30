@@ -33,7 +33,7 @@ SQL injections allow attackers to manipulate SQL queries by inserting or “inje
 
 The purpose of this guide is not just to introduce SQLMap but to delve deep into its functionality, demonstrating how it can be leveraged to conduct thorough security assessments. Whether you’re a seasoned security expert or a novice in the field, understanding how to utilize SQLMap effectively can significantly enhance your ability to secure applications against SQL injection attacks.
 
-More information in[Part 1 here](2024-11-04-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-1-basic-wizard-6dd540363c83.md)of this guide
+More information in [Part 1 here](2024-11-04-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-1-basic-wizard-6dd540363c83.md) of this guide
 
 ## Legal and Ethical Use Disclaimer
 
@@ -54,18 +54,9 @@ puthon3 path/to/sqlmap/sqlmap.py {options}
 ## Options:
 
 ```text
--h, - 
-help
- Show basic 
-help
- message and 
-exit
--hh Show advanced 
-help
- message and 
-exit
-- version Show program
-'s version number and exit
+-h, - help Show basic help message and exit
+-hh Show advanced help message and exit
+- version Show program's version number and exit
 -v VERBOSE Verbosity level: 0–6 (default 1)
 ```
 
@@ -80,12 +71,10 @@ exit
 - **Example**: To test a specific URL where parameters are visible in the query string:
 
 ```text
-sqlmap -u http://www.site.com/vuln.php?
-id
-=1
+sqlmap -u http://www.site.com/vuln.php?id=1
 ```
 
-- Here, SQLMap will test the`id`parameter in`vuln.php`for vulnerabilities.
+- Here, SQLMap will test the `id` parameter in `vuln.php` for vulnerabilities.
 
 ### 2. -d DIRECT
 
@@ -94,8 +83,7 @@ id
 - **Example**: To connect directly to a MySQL database:
 
 ```text
-python sqlmap.py -d 
-"mysql://user:password@localhost:3306/database"
+python sqlmap.py -d "mysql://user:password@localhost:3306/database"
 ```
 
 - This option is useful for testing databases when you have credentials and direct access is possible.
@@ -107,10 +95,7 @@ python sqlmap.py -d
 - **Example**: If you have a log file from Burp Suite:
 
 ```text
-sqlmap -l /
-path
-/to/burp.
-log
+sqlmap -l /path/to/burp.log
 ```
 
 - SQLMap will extract and test all URLs found in the log file.
@@ -121,7 +106,7 @@ To use SQLMap with log files from Burp Suite, you need to export the HTTP reques
 
 First, ensure that you have configured Burp Suite to intercept the traffic between your browser and the target web application. Here’s a quick guide:
 
-- **Set up Burp Suite as your proxy**: Configure your browser to route traffic through Burp Suite. Typically, this is done by setting the browser’s proxy settings to`127.0.0.1`(localhost) with port`8080`, which is the default proxy listener port for Burp Suite.
+- **Set up Burp Suite as your proxy**: Configure your browser to route traffic through Burp Suite. Typically, this is done by setting the browser’s proxy settings to `127.0.0.1` (localhost) with port `8080`, which is the default proxy listener port for Burp Suite.
 
 - **Browse the target application**: With Burp Suite running and intercepting traffic, navigate through the application. Every request and response will be captured by Burp.
 
@@ -133,13 +118,13 @@ Once you have captured the necessary traffic, you can export the HTTP requests:
 
 - **Filter for relevant requests**: You might want to filter or manually select the requests that are relevant to the testing. This can include forms, endpoints with parameters, or any other requests that could potentially be vulnerable to SQL injection.
 
-- **Save the requests**: Right-click on one or more selected requests in the HTTP history and choose “Save items”. Burp Suite allows you to save the selected requests in various formats. For SQLMap, you should save them as a`.log`file, which essentially saves the raw HTTP requests.
+- **Save the requests**: Right-click on one or more selected requests in the HTTP history and choose “Save items”. Burp Suite allows you to save the selected requests in various formats. For SQLMap, you should save them as a `.log` file, which essentially saves the raw HTTP requests.
 
 ### 4. -m BULKFILE
 
 - **Description**: Allows testing of multiple targets listed in a text file. Each line in the file should contain one target.
 
-- **Example**: If you have a list of URLs in a file called`targets.txt`:
+- **Example**: If you have a list of URLs in a file called `targets.txt`:
 
 ```text
 python sqlmap.py -m /path/to/targets.txt
@@ -151,7 +136,7 @@ python sqlmap.py -m /path/to/targets.txt
 
 - **Description**: Loads an HTTP request directly from a file. This is useful for complex requests that are hard to reproduce with command-line options.
 
-- **Example**: If you have an HTTP request saved in a file named`request.txt`:
+- **Example**: If you have an HTTP request saved in a file named `request.txt`:
 
 ```text
 python sqlmap.py -r /path/to/request.txt
@@ -166,12 +151,10 @@ python sqlmap.py -r /path/to/request.txt
 - **Example**: To find vulnerable targets using a Google dork:
 
 ```text
-python sqlmap.py -g 
-"inurl:index.php?id="
-y
+python sqlmap.py -g "inurl:index.php?id="y
 ```
 
-- This command uses Google search to find URLs containing`index.php?id=`and tests them for vulnerabilities.
+- This command uses Google search to find URLs containing `index.php?id=` and tests them for vulnerabilities.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*adl-AWf9U3YWkif6oDYrvg.png" alt="Article image" width="1684" height="747" loading="lazy" decoding="async" />
 
@@ -179,70 +162,42 @@ y
 
 - **Description**: Loads options from a configuration INI file. This allows for the reuse of complex configurations without retyping them.
 
-- **Example**: If you have a configuration file named`config.ini`:
+- **Example**: If you have a configuration file named `config.ini`:
 
 ```text
-python sqlmap.py -c /
-path
-/to/
-config
-.ini
+python sqlmap.py -c /path/to/config.ini
 ```
 
-- SQLMap will load and apply all options specified in the`config.ini`file.
+- SQLMap will load and apply all options specified in the `config.ini` file.
 
 config.ini for example:
 
 ```text
 [Target]
-url
- = http://www.example.com/vuln.php?id=
-1
-method
- = GET
-data
- = 
-cookie
- = PHPSESSID=
-123456789
+url = http://www.example.com/vuln.php?id=1
+method = GET
+data = 
+cookie = PHPSESSID=123456789
+
 [Request]
-timeout
- = 
-30
-retry
- = 
-3
-headers
- = User-Agent: SQLMap/
-1.0
-agent
- = SQLMap/
-1.0
-randomAgent
- = 
-True
+timeout = 30
+retry = 3
+headers = User-Agent: SQLMap/1.0
+agent = SQLMap/1.0
+randomAgent = True
+
 [Optimization]
-level
- = 
-5
-risk
- = 
-3
+level = 5
+risk = 3
+
 [Tuning]
-threads
- = 
-5
-delay
- = 
-0
-timeout
- = 
-20
+threads = 5
+delay = 0
+timeout = 20
+
 [Detection]
-technique
- = B
-dbms
- = mysql
+technique = B
+dbms = mysql
 ```
 
 ### Full guide for all options here
@@ -256,21 +211,7 @@ dbms
 **Custom Command**:
 
 ```text
-sqlmap -u 
-"http://example.com/item.php?id=1"
- --technique=T --
-time
--sec=
-10
- --dbms=MySQL --proxy=
-"http://127.0.0.1:8080"
- --threads=
-5
- --risk=
-3
- --level=
-5
- --batch --current-db
+sqlmap -u "http://example.com/item.php?id=1" --technique=T --time-sec=10 --dbms=MySQL --proxy="http://127.0.0.1:8080" --threads=5 --risk=3 --level=5 --batch --current-db
 ```
 
 **Explanation**:
@@ -285,7 +226,7 @@ time
 
 - `--threads=5`: Uses 5 threads to perform attacks concurrently, speeding up the process.
 
-- `--risk=3`and`--level=5`: Utilizes more invasive SQL injection techniques and tests for a comprehensive assessment.
+- `--risk=3` and `--level=5`: Utilizes more invasive SQL injection techniques and tests for a comprehensive assessment.
 
 - `--batch`: Enables automatic mode without prompting for user input.
 
@@ -298,16 +239,7 @@ time
 **Custom Command**:
 
 ```text
-sqlmap -u 
-"http://securedomain.com/securelogin.php?user=test"
- -p user --technique=BU --random-agent --tor --tamper=space2comment --dbs --
-hex
- --delay=
-2
- --safe-url=
-"http://securedomain.com/index.php"
- --safe-freq=
-10
+sqlmap -u "http://securedomain.com/securelogin.php?user=test" -p user --technique=BU --random-agent --tor --tamper=space2comment --dbs --hex --delay=2 --safe-url="http://securedomain.com/index.php" --safe-freq=10
 ```
 
 **Explanation**:
@@ -324,7 +256,7 @@ hex
 
 - `--delay=2`: Delays between each request to avoid triggering rate limits or suspicious activity alerts.
 
-- `--safe-url`and`--safe-freq`: Regularly accesses a safe URL to mimic normal user behavior and lessen the suspicion of security systems.
+- `--safe-url` and `--safe-freq`: Regularly accesses a safe URL to mimic normal user behavior and lessen the suspicion of security systems.
 
 ## Use Case 3: Automated Extraction of Sensitive Data Post-Exploitation with Specific HTTP Headers
 
@@ -333,14 +265,7 @@ hex
 **Custom Command**:
 
 ```text
-sqlmap -u 
-"http://example.com/app.php?id=10"
- -p 
-id
- --dbms=PostgreSQL --dump --tables -T 
-users
- --columns -C username,password --batch --headers=
-"X-Forwarded-For: 127.0.0.1\nAuth-Token: abcdef12345"
+sqlmap -u "http://example.com/app.php?id=10" -p id --dbms=PostgreSQL --dump --tables -T users --columns -C username,password --batch --headers="X-Forwarded-For: 127.0.0.1\nAuth-Token: abcdef12345"
 ```
 
 **Explanation**:

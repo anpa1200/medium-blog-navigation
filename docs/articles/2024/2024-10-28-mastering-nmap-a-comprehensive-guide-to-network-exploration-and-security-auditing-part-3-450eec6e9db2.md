@@ -79,10 +79,8 @@ OS DETECTION:
 - **Example**:
 
 ```text
-nmap -p 22,80,443 192.168.1.1  
-# Scans specific ports
-nmap -p 1-100 192.168.1.1      
-# Scans a range of ports 
+nmap -p 22,80,443 192.168.1.1  # Scans specific ports
+nmap -p 1-100 192.168.1.1      # Scans a range of ports 
 ```
 
 - **Strategic Use**: Targeted port scanning is crucial for compliance checks or when time constraints require focused assessment on services known to be active on specific ports. It reduces overhead and scan time, making it ideal for routine security audits.
@@ -94,8 +92,7 @@ nmap -p 1-100 192.168.1.1
 - **Example**:
 
 ```text
-nmap --exclude-ports 445,3389 192.168.1.1  
-# Excludes specific ports from the scan
+nmap --exclude-ports 445,3389 192.168.1.1  # Excludes specific ports from the scan
 ```
 
 - **Strategic Use**: Excluding ports can prevent disruptions on production systems, especially for ports associated with critical applications. It also helps tailor security assessments to avoid well-defended or non-essential targets, enhancing operational safety and efficiency.
@@ -107,39 +104,31 @@ nmap --exclude-ports 445,3389 192.168.1.1
 - **Example**:
 
 ```text
-nmap 
--
-F
- 
-192.168
-.1.1  
-# Quickly scans the top 100 most common ports
+nmap -F 192.168.1.1  # Quickly scans the top 100 most common ports
 ```
 
 - **Strategic Use**: This mode is designed for high-level sweeps and preliminary assessments where breadth rather than depth is desired. It’s particularly useful in early phases of a penetration test or routine network maintenance checks.
 
 ## -r : Sequential Port Scanning
 
-- **Technical Details**: By default, Nmap randomizes port order to avoid predictable patterns that could be easily detected by intrusion prevention systems. The`-r`option overrides this, scanning ports in numerical order.
+- **Technical Details**: By default, Nmap randomizes port order to avoid predictable patterns that could be easily detected by intrusion prevention systems. The `-r` option overrides this, scanning ports in numerical order.
 
 - **Example**:
 
 ```text
-nmap -r 192.168.1.1  
-# Scans ports in ascending order from lowest to highest
+nmap -r 192.168.1.1  # Scans ports in ascending order from lowest to highest
 ```
 
 - **Strategic Use**: Sequential scanning is beneficial when testing how network devices handle sustained and orderly traffic. It can be particularly revealing in stress-testing environments or when analyzing the performance of network appliances under a systematic scan load.
 
 ## -top-ports &lt;number&gt; : Scan Top Common Ports
 
-- **Technical Details**: This option allows scanning of the most frequently used ports, where`&lt;number&gt;`specifies the exact count of top ports to scan, based on their commonality in network traffic.
+- **Technical Details**: This option allows scanning of the most frequently used ports, where `&lt;number&gt;` specifies the exact count of top ports to scan, based on their commonality in network traffic.
 
 - **Example**:
 
 ```text
-nmap --top-ports 20 192.168.1.1  
-# Scans the 20 most common ports
+nmap --top-ports 20 192.168.1.1  # Scans the 20 most common ports
 ```
 
 - **Strategic Use**: Scanning the most common ports is an efficient way to quickly identify potential vulnerabilities in the most exposed parts of a network. It’s effective for broad yet shallow security assessments across diverse environments.
@@ -151,8 +140,7 @@ nmap --top-ports 20 192.168.1.1
 - **Example**:
 
 ```text
-nmap --port-ratio 0.1 192.168.1.1  
-# Scans ports that are among the top 10% of commonly open ports
+nmap --port-ratio 0.1 192.168.1.1  # Scans ports that are among the top 10% of commonly open ports
 ```
 
 - **Strategic Use**: This approach allows for dynamic adjustment of the scan’s breadth based on network norms and statistical likelihood of port openness, which can be particularly useful in adaptive threat environments or when custom scanning strategies are needed based on prior intelligence.
@@ -166,10 +154,7 @@ nmap --port-ratio 0.1 192.168.1.1
 - **Command Example**:
 
 ```text
-nmap -sV 
-192.168
-.1
-.1
+nmap -sV 192.168.1.1
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*ShdpXA1EyIFK6EpfVPfLWg.png" alt="Article image" width="1055" height="312" loading="lazy" decoding="async" />
@@ -183,48 +168,31 @@ nmap -sV
 - **Command Example**:
 
 ```text
-nmap -sV 
---version-intensity
- 
-5
- 
-192.168
-.
-1.1
+nmap -sV --version-intensity 5 192.168.1.1
 ```
 
 - **Typical Usage**: Adjusting the intensity can speed up scans or increase thoroughness, depending on the security requirements and time constraints of the assessment.
 
 ## -version-light : Limit to Most Likely Probes
 
-- **Full Explanation**: Equivalent to setting`--version-intensity 2`, this option limits the scan to the most likely probes, reducing the total number of probes sent and speeding up the scan.
+- **Full Explanation**: Equivalent to setting `--version-intensity 2`, this option limits the scan to the most likely probes, reducing the total number of probes sent and speeding up the scan.
 
 - **Command Example**:
 
 ```text
-nmap -sV 
---version-light
- 
-192.168
-.
-1.1
+nmap -sV --version-light 192.168.1.1
 ```
 
 - **Typical Usage**: Useful for quick scans where basic version detection is sufficient, or in high-volume scanning scenarios where speed is a priority.
 
 ## -version-all : Try Every Single Probe
 
-- **Full Explanation**: This setting, equivalent to`--version-intensity 9`, configures Nmap to use every single probe in its database, ensuring the most comprehensive service detection.
+- **Full Explanation**: This setting, equivalent to `--version-intensity 9`, configures Nmap to use every single probe in its database, ensuring the most comprehensive service detection.
 
 - **Command Example**:
 
 ```text
-nmap -sV 
---version-all
- 
-192.168
-.
-1.1
+nmap -sV --version-all 192.168.1.1
 ```
 
 - **Typical Usage**: Best used in deep-dive investigations where maximum information about the target is required, regardless of scan duration or network noise.
@@ -236,12 +204,7 @@ nmap -sV
 - **Command Example**:
 
 ```text
-nmap -sV 
---version-trace
- 
-192.168
-.
-1.1
+nmap -sV --version-trace 192.168.1.1
 ```
 
 - **Typical Usage**: Ideal for debugging scan configurations, developing new service
@@ -257,10 +220,7 @@ This option triggers Nmap to use its sophisticated TCP/IP stack fingerprinting m
 **Command Example:**
 
 ```text
-nmap -O 
-192.168
-.1
-.1
+nmap -O 192.168.1.1
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Z6ABqmOqe03wZZSYFkxBJg.png" alt="Article image" width="1920" height="399" loading="lazy" decoding="async" />
@@ -274,29 +234,19 @@ Use this option to restrict OS detection efforts to targets that are more likely
 **Command Example:**
 
 ```text
-nmap -O 
---osscan-limit
- 
-192.168
-.
-1.1
+nmap -O --osscan-limit 192.168.1.1
 ```
 
 This command performs OS detection on 192.168.1.1 but limits the process to hosts that meet the criteria for likely accurate identification.
 
 ### -osscan-guess: Guess OS More Aggressively
 
-If getting an OS fingerprint is crucial and you’re dealing with a target that doesn’t easily give up this information, use`-osscan-guess`to force Nmap to make an educated guess. This option lowers the confidence thresholds needed for Nmap to decide on an OS, making it more likely to return a guess.
+If getting an OS fingerprint is crucial and you’re dealing with a target that doesn’t easily give up this information, use `-osscan-guess` to force Nmap to make an educated guess. This option lowers the confidence thresholds needed for Nmap to decide on an OS, making it more likely to return a guess.
 
 **Command Example:**
 
 ```text
-nmap -O 
---osscan-guess
- 
-192.168
-.
-1.1
+nmap -O --osscan-guess 192.168.1.1
 ```
 
 This command will aggressively guess the OS of the target, which is useful when some information is better than none, especially during preliminary stages of penetration testing.

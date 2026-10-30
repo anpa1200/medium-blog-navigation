@@ -37,22 +37,20 @@ NSLookup
 
 ### Introduction
 
-The`ping`command is a fundamental network tool used in diagnostics and performance measurement of networks. It operates by sending Internet Control Message Protocol (ICMP) echo request packets to a target host and listens for echo replies. This process helps determine the operational status of the target and the network's latency - the time it takes for a packet to travel from the sender to the receiver and back.
+The `ping` command is a fundamental network tool used in diagnostics and performance measurement of networks. It operates by sending Internet Control Message Protocol (ICMP) echo request packets to a target host and listens for echo replies. This process helps determine the operational status of the target and the network's latency - the time it takes for a packet to travel from the sender to the receiver and back.
 
 ### How Ping Works
 
-`ping`uses the ICMP protocol, which is a part of the Internet Protocol Suite that is used by network devices, like routers, to send error messages indicating, for example, that a requested service is not available or that a host or router could not be reached. When you execute a`ping`command, it sends ICMP echo request packets to the address you specify. The target host, if reachable, responds with an echo reply.
+`ping` uses the ICMP protocol, which is a part of the Internet Protocol Suite that is used by network devices, like routers, to send error messages indicating, for example, that a requested service is not available or that a host or router could not be reached. When you execute a `ping` command, it sends ICMP echo request packets to the address you specify. The target host, if reachable, responds with an echo reply.
 
-The`ping`tool measures the time between the sending of the echo request and the receipt of the corresponding reply. It typically reports this time in milliseconds and provides details on the sequence of the data packets, loss, and sometimes the route taken by the packets.
+The `ping` tool measures the time between the sending of the echo request and the receipt of the corresponding reply. It typically reports this time in milliseconds and provides details on the sequence of the data packets, loss, and sometimes the route taken by the packets.
 
 ### Syntax and Options
 
-The basic syntax for`ping`in most operating systems is:
+The basic syntax for `ping` in most operating systems is:
 
 ```text
-ping 
-[options]
- <destination>
+ping [options] <destination>
 ```
 
 ## Typical Responses from the ping Command
@@ -64,22 +62,7 @@ ping
 - **Output Example**:
 
 ```text
-64
- 
-bytes
- 
-from
- 
-192.168
-.1
-.1
-: icmp_seq=
-1
- ttl=
-64
- time=
-10.1
- ms
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=10.1 ms
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*-nhs-JN-kPqKhWINX_Vstw.png" alt="Article image" width="649" height="72" loading="lazy" decoding="async" />
@@ -93,14 +76,7 @@ from
 - **Output Example**:
 
 ```text
-From
- 
-192.168
-.
-1.1
- icmp_seq=
-1
- Destination Host Unreachable
+From 192.168.1.1 icmp_seq=1 Destination Host Unreachable
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*_Fap-a2NaJc-QrHppNKZ5Q.png" alt="Article image" width="649" height="72" loading="lazy" decoding="async" />
@@ -111,7 +87,7 @@ From
 
 - **What It Means**: No Echo Reply was received within the default time frame (usually 1 second for each packet). This can mean heavy network congestion, a misconfigured network, FireWall, ICMP filtering, or a non-responsive host.
 
-- **Output Example**:`Request timed out.`
+- **Output Example**: `Request timed out.`
 
 - **Details**: Suggests a break in the connection or excessive network latency.
 
@@ -119,7 +95,7 @@ From
 
 - **What It Means**: The packet has traveled through more network devices (routers or switches) than allowed by its TTL value. Each device decreases the TTL value of the packet by one, and if it reaches zero, the packet is discarded, and this message is sent back.
 
-- **Output Example**:`From 192.168.1.1 icmp_seq=1 Time to live exceeded`
+- **Output Example**: `From 192.168.1.1 icmp_seq=1 Time to live exceeded`
 
 - **Details**: Usually indicates a routing loop or excessively long route to the destination.
 
@@ -127,7 +103,7 @@ From
 
 - **What It Means**: The DNS name of the target cannot be resolved to an IP address.
 
-- **Output Example**:`ping: unknown host[www.example.com](http://www.example.com)`
+- **Output Example**: `ping: unknown host [www.example.com](http://www.example.com)`
 
 - **Details**: Indicates a DNS problem, where the hostname entry is incorrect, missing, or the DNS server is not reachable.
 
@@ -155,17 +131,12 @@ From
 
 - Unexpected redirects or TTL exceeded errors might suggest deeper investigations into routing protocols, firewall rules, and overall network security posture.
 
-During the reconnaissance stage of penetration testing, certain`ping`command options are particularly valuable for gathering information about the target network's structure, security posture, and operational characteristics. Here are some`ping`options that are useful for reconnaissance along with their use cases:
+During the reconnaissance stage of penetration testing, certain `ping` command options are particularly valuable for gathering information about the target network's structure, security posture, and operational characteristics. Here are some `ping` options that are useful for reconnaissance along with their use cases:
 
 ## 1. -t &lt;ttl&gt; (Time to Live)
 
 ```text
-ping -t 
-1
- 
-192.168
-.126
-.130
+ping -t 1 192.168.126.130
 ```
 
 **Functionality**:
@@ -179,10 +150,7 @@ ping -t
 ## 2. -a
 
 ```text
-ping -
-a
- google
-.com
+ping -a google.com
 ```
 
 - **Functionality**:
@@ -215,13 +183,13 @@ Netdiscover is a popular network tool used for network reconnaissance, particula
 
 - **ARP-Based Scanning:**
 
-Netdiscover uses ARP (Address Resolution Protocol) to find active hosts on a local Ethernet network. Unlike tools that rely on ICMP (Internet Control Message Protocol) like`ping`, Netdiscover does not depend on ICMP replies which can be blocked by personal firewalls. This makes it particularly effective in environments where ICMP packets are filtered.
+Netdiscover uses ARP (Address Resolution Protocol) to find active hosts on a local Ethernet network. Unlike tools that rely on ICMP (Internet Control Message Protocol) like `ping`, Netdiscover does not depend on ICMP replies which can be blocked by personal firewalls. This makes it particularly effective in environments where ICMP packets are filtered.
 
 **2. Passive and Active Scanning Modes:**
 
-- **Passive Mode:**In this mode, Netdiscover listens for ARP requests and replies on the network without sending any packets itself. This is useful for stealthy reconnaissance where the scanner should not generate additional network traffic.
+- **Passive Mode:** In this mode, Netdiscover listens for ARP requests and replies on the network without sending any packets itself. This is useful for stealthy reconnaissance where the scanner should not generate additional network traffic.
 
-- **Active Mode:**Netdiscover actively sends ARP requests to determine which addresses are in use on the local network. This mode is faster and more direct but more likely to be noticed.
+- **Active Mode:** Netdiscover actively sends ARP requests to determine which addresses are in use on the local network. This mode is faster and more direct but more likely to be noticed.
 
 **3. MAC Address and Vendor Identification:**
 
@@ -266,52 +234,50 @@ netdiscover -h
 ### -i Use other interface:
 
 ```text
-sudo netdiscover -
-i
- vmnet8
+sudo netdiscover -i vmnet8
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*zAO8iTA1iip6yb1solWriQ.png" alt="Article image" width="910" height="236" loading="lazy" decoding="async" />
 
 ## Whois
 
-`whois`is a query and response protocol that is widely used for querying databases that store the registered users or assignees of an Internet resource, such as a domain name, an IP address block, or an autonomous system. The tool provides detailed information about the domain or IP address in question, such as the ownership details, contact information, domain availability status, and when it was last updated.
+`whois` is a query and response protocol that is widely used for querying databases that store the registered users or assignees of an Internet resource, such as a domain name, an IP address block, or an autonomous system. The tool provides detailed information about the domain or IP address in question, such as the ownership details, contact information, domain availability status, and when it was last updated.
 
 ## How Whois Is Useful for Penetration Testing:
 
 - **Reconnaissance Phase:**
 
-- **Identifying Targets:**`whois`is used in the reconnaissance phase of penetration testing to gather intelligence about a target organization’s Internet footprint. By running a`whois`query on a domain, testers can learn about the network blocks, domain registrations, and associated IP addresses which might provide gateways to internal networks.
+- **Identifying Targets:** `whois` is used in the reconnaissance phase of penetration testing to gather intelligence about a target organization’s Internet footprint. By running a `whois` query on a domain, testers can learn about the network blocks, domain registrations, and associated IP addresses which might provide gateways to internal networks.
 
-- **Gathering Contact Info:**Sometimes`whois`provides contact details for the administrators of a domain. This information can be useful for social engineering attacks or for understanding the structure of the company.
+- **Gathering Contact Info:** Sometimes `whois` provides contact details for the administrators of a domain. This information can be useful for social engineering attacks or for understanding the structure of the company.
 
 **2. Domain Information:**
 
-- **Registration Details:**Testers can find out when a domain was registered and when it is due to expire. Sudden changes in domain registration details can sometimes indicate a change in ownership potentially due to corporate actions (like mergers or acquisitions) which might introduce instabilities or configuration lapses in IT systems.
+- **Registration Details:** Testers can find out when a domain was registered and when it is due to expire. Sudden changes in domain registration details can sometimes indicate a change in ownership potentially due to corporate actions (like mergers or acquisitions) which might introduce instabilities or configuration lapses in IT systems.
 
-- **Registrar Information:**Knowing where the domain was registered can provide insights into the administrative practices of the target, such as the choice of service providers and potentially weak links in security due to less reputable third-party services.
+- **Registrar Information:** Knowing where the domain was registered can provide insights into the administrative practices of the target, such as the choice of service providers and potentially weak links in security due to less reputable third-party services.
 
 **3. Network Size and Scope:**
 
-- **IP Allocation and ASN Information:**`whois`queries can provide details about allocated IP address blocks and Autonomous System Numbers (ASN). This information is crucial for mapping out the network infrastructure of the target organization, which can help in identifying possible network ranges to probe for vulnerabilities.
+- **IP Allocation and ASN Information:** `whois` queries can provide details about allocated IP address blocks and Autonomous System Numbers (ASN). This information is crucial for mapping out the network infrastructure of the target organization, which can help in identifying possible network ranges to probe for vulnerabilities.
 
 **4. Legal and Compliance Aspects:**
 
-- **Understanding Compliance Posture:**Information on the geographical location of IP addresses and servers can aid in understanding the compliance landscape the target operates under. This might impact the types of security protocols they are likely to implement.
+- **Understanding Compliance Posture:** Information on the geographical location of IP addresses and servers can aid in understanding the compliance landscape the target operates under. This might impact the types of security protocols they are likely to implement.
 
 ## Example Uses of Whois:
 
-- **Domain Research:**`whois google.com`would reveal information about the registrant, contact details, registration dates, and name servers of Google. This information can be used to identify additional domains owned by the company or to prepare for further DNS-based or network-level attacks.
+- **Domain Research:** `whois google.com` would reveal information about the registrant, contact details, registration dates, and name servers of Google. This information can be used to identify additional domains owned by the company or to prepare for further DNS-based or network-level attacks.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*rWTTEPuTtU6UP3m9S_Z8UQ.png" alt="Article image" width="946" height="585" loading="lazy" decoding="async" />
 
-- **IP Research:**`whois 172.217.0.0`can provide details about the IP addresses that Google owns. This helps in creating a map of network infrastructure and can lead to the discovery of less secure or neglected network segments.
+- **IP Research:** `whois 172.217.0.0` can provide details about the IP addresses that Google owns. This helps in creating a map of network infrastructure and can lead to the discovery of less secure or neglected network segments.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*K41GISV7hD491Y_mtXcUww.png" alt="Article image" width="1902" height="937" loading="lazy" decoding="async" />
 
 ## NSLookup
 
-`nslookup`stands for "name server lookup" and is available on most Unix-like operating systems as well as on Microsoft Windows. It allows users to query DNS servers to discover DNS details, including IP addresses associated with a domain, the mail servers configured for a domain, and the name servers responsible for a domain. This can be very helpful in gathering information about a target's Internet presence and network infrastructure.
+`nslookup` stands for "name server lookup" and is available on most Unix-like operating systems as well as on Microsoft Windows. It allows users to query DNS servers to discover DNS details, including IP addresses associated with a domain, the mail servers configured for a domain, and the name servers responsible for a domain. This can be very helpful in gathering information about a target's Internet presence and network infrastructure.
 
 ## Key Features of nslookup :
 
@@ -347,7 +313,7 @@ i
 
 **4. Reverse DNS Lookup:**
 
-- `nslookup`can perform reverse DNS lookups to find out the domain name associated with an IP address. This can be particularly useful in identifying what part of a network an IP address is associated with
+- `nslookup` can perform reverse DNS lookups to find out the domain name associated with an IP address. This can be particularly useful in identifying what part of a network an IP address is associated with
 
 ## Example Uses of nslookup :
 

@@ -23,7 +23,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### In-depth Attack Surface Mapping and Asset Discovery.
 
-The**OWASP Amass Project**is a prominent open-source initiative under the Open Web Application Security Project (OWASP), designed to help with in-depth reconnaissance, network mapping, and identifying assets associated with a target domain. It’s particularly valuable in the reconnaissance phase of penetration testing and red teaming exercises, providing cybersecurity professionals with a comprehensive understanding of a target’s external infrastructure.
+The **OWASP Amass Project** is a prominent open-source initiative under the Open Web Application Security Project (OWASP), designed to help with in-depth reconnaissance, network mapping, and identifying assets associated with a target domain. It’s particularly valuable in the reconnaissance phase of penetration testing and red teaming exercises, providing cybersecurity professionals with a comprehensive understanding of a target’s external infrastructure.
 
 ## Key Features of OWASP Amass
 
@@ -39,7 +39,7 @@ The**OWASP Amass Project**is a prominent open-source initiative under the Open W
 
 ## Usage in Penetration Testing
 
-For web application penetration testing, Amass is often used to conduct a**detailed reconnaissance phase**before moving to more active testing. By identifying hidden subdomains and linked infrastructure, penetration testers can:
+For web application penetration testing, Amass is often used to conduct a **detailed reconnaissance phase** before moving to more active testing. By identifying hidden subdomains and linked infrastructure, penetration testers can:
 
 - Identify potential attack vectors.
 
@@ -81,36 +81,16 @@ $ amass intel
 Usage: amass intel [options] [-whois -d DOMAIN] [-addr ADDR -asn ASN -cidr CIDR]
   -active
         Attempt certificate name grabs
-  -
-addr 
-value
-        IPs 
-and
- 
-ranges
- (
-192.168
-.1
-.1
--254
-) separated 
-by
- commas
-  -asn 
-value
-        ASNs separated 
-by
- 
-commas
- (
-can be used multiple times
-)
+  -addr value
+        IPs and ranges (192.168.1.1-254) separated by commas
+  -asn value
+        ASNs separated by commas (can be used multiple times)
 [...]
 ```
 
 It is probably worth noting at this point that another great perk of Amass is that all the subcommands attempt to maintain argument consistency.
 
-This subcommand will use a number of information gathering techniques and data sources by default, such as WHOIS, in order to obtain intelligence and parent domains owned by the organization, unless these are explicitly disabled in Amass’ configuration file. An example Amass configuration file is available[on the GitHub config repository](https://github.com/owasp-amass/config/blob/master/examples/config.yaml).
+This subcommand will use a number of information gathering techniques and data sources by default, such as WHOIS, in order to obtain intelligence and parent domains owned by the organization, unless these are explicitly disabled in Amass’ configuration file. An example Amass configuration file is available [on the GitHub config repository](https://github.com/owasp-amass/config/blob/master/examples/config.yaml).
 
 ### Flags:
 
@@ -118,145 +98,56 @@ This subcommand will use a number of information gathering techniques and data s
   -active
      Attempt certificate name grabs
   -addr value
-     IPs 
-and
- ranges (
-192.168
-.
-1.1
--
-254
-) separated 
-by
- commas
+     IPs and ranges (192.168.1.1-254) separated by commas
   -asn value
-     ASNs separated 
-by
- commas (can be used multiple times)
+     ASNs separated by commas (can be used multiple times)
   -cidr value
-     CIDRs separated 
-by
- commas (can be used multiple times)
-  -config 
-string
-     Path 
-to
- the YAML configuration file. Additional details below
+     CIDRs separated by commas (can be used multiple times)
+  -config string
+     Path to the YAML configuration file. Additional details below
   -d value
-     Domain names separated 
-by
- commas (can be used multiple times)
+     Domain names separated by commas (can be used multiple times)
   -demo
-     Censor output 
-to
- make it suitable 
-for
- demonstrations
+     Censor output to make it suitable for demonstrations
   -df value
-     Path 
-to
- a file providing root domain names
-  -dir 
-string
-     Path 
-to
- the directory containing the output files
-  -ef 
-string
-     Path 
-to
- a file providing data sources 
-to
- exclude
+     Path to a file providing root domain names
+  -dir string
+     Path to the directory containing the output files
+  -ef string
+     Path to a file providing data sources to exclude
   -exclude value
-     Data source names separated 
-by
- commas 
-to
- be excluded
+     Data source names separated by commas to be excluded
   -h Show the program usage message
   -help
      Show the program usage message
-  -
-if
- 
-string
-     Path 
-to
- a file providing data sources 
-to
- include
+  -if string
+     Path to a file providing data sources to include
   -include value
-     Data source names separated 
-by
- commas 
-to
- be included
+     Data source names separated by commas to be included
   -ip
-     Show the IP addresses 
-for
- discovered names
+     Show the IP addresses for discovered names
   -ipv4
-     Show the IPv4 addresses 
-for
- discovered names
+     Show the IPv4 addresses for discovered names
   -ipv6
-     Show the IPv6 addresses 
-for
- discovered names
+     Show the IPv6 addresses for discovered names
   -list
      Print additional information
-  -log 
-string
-     Path 
-to
- the log file 
-where
- errors will be written
+  -log string
+     Path to the log file where errors will be written
   -max-dns-queries int
-     Maximum number 
-of
- concurrent DNS queries
-  -o 
-string
-     Path 
-to
- the 
-text
- file containing terminal stdout/stderr
-  -org 
-string
-     Search 
-string
- provided against 
-AS
- description information
+     Maximum number of concurrent DNS queries
+  -o string
+     Path to the text file containing terminal stdout/stderr
+  -org string
+     Search string provided against AS description information
   -p value
-     Ports separated 
-by
- commas (
-default
-: 
-80
-, 
-443
-)
+     Ports separated by commas (default: 80, 443)
   -r value
-     IP addresses 
-of
- preferred DNS resolvers (can be used multiple times)
+     IP addresses of preferred DNS resolvers (can be used multiple times)
   -rf value
-     Path 
-to
- a file providing preferred DNS resolvers
+     Path to a file providing preferred DNS resolvers
   -timeout int
-     Number 
-of
- minutes 
-to
- 
-let
- enumeration run before quitting
+     Number of minutes to let enumeration run before quitting
   -v Output status / debug / troubleshooting info
   -whois
      All provided domains are run through reverse whois
@@ -265,9 +156,7 @@ let
 **Example**:
 
 ```text
-amass intel -d owasp.
-org
- -whois
+amass intel -d owasp.org -whois
 ```
 
 When performing searches with amass intel you can always run it with more configuration options, such as the “-active” argument which will attempt zone transfers and actively scan to fetch SSL/TLS certificates to extract information. As with any engagement, ensure you are authorized to perform active searches against the target.
@@ -303,9 +192,7 @@ In the below example, we are passively searching for subdomains on
 juice-shop.herokuapp.com (special vuln site)
 
 ```text
-amass 
-enum
- -active -d juice-shop.herokuapp.com 
+amass enum -active -d juice-shop.herokuapp.com 
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Rc0FdvfM22-Rd-drSlxGvQ.png" alt="Article image" width="1058" height="285" loading="lazy" decoding="async" />
@@ -317,23 +204,17 @@ You can use this subcommand in order to interact with an Amass graph database, e
 For example, the below command would list all the names discovered during enumerations you have performed against owasp.org and stored in the “amass4owasp” graph database:
 
 ```text
-$ 
-amass db -
-dir
- amass4owasp -names -d juice-shop.herokuapp.com
+$ amass db -dir amass4owasp -names -d juice-shop.herokuapp.com
 ```
 
 Next, with a similar command, you could retrieve the complete output for owasp.org and stored in the “amass4owasp” graph database:
 
 ```text
-$ 
-amass db -
-dir
- amass4owasp -d owasp.org -show -ip
+$ amass db -dir amass4owasp -d owasp.org -show -ip
 ```
 
 You may want to maintain the same Amass output directory for statistical or historical purposes, through which you perform all the subdomain enumeration exercises, as Amass tracking can be used only against the same graph database and output directory.
 
 ## Conclusion
 
-In closing, OWASP Amass is a project that is becoming increasingly popular. We highly recommend that you incorporate Amass in your workflow/processes if you have information gathering and subdomain discovery requirements, and stay tuned as more and more features and improvements will be added with every release. Finally, you can always refer to the official[User’s Guide](https://github.com/owasp-amass/amass/blob/master/doc/user_guide.md)of Amass.
+In closing, OWASP Amass is a project that is becoming increasingly popular. We highly recommend that you incorporate Amass in your workflow/processes if you have information gathering and subdomain discovery requirements, and stay tuned as more and more features and improvements will be added with every release. Finally, you can always refer to the official [User’s Guide](https://github.com/owasp-amass/amass/blob/master/doc/user_guide.md) of Amass.

@@ -57,7 +57,7 @@ To use Crowbar effectively, you will need:
 
 Here’s a step-by-step guide to installing Crowbar:
 
-**For Kali Repository Users**: If you are using Kali Linux and have access to its repository, you can install Crowbar directly using the package manager. Simply open a terminal and enter the command:**sudo apt install crowbar**
+**For Kali Repository Users**: If you are using Kali Linux and have access to its repository, you can install Crowbar directly using the package manager. Simply open a terminal and enter the command: **sudo apt install crowbar**
 
 This command will download and install Crowbar along with its dependencies.
 
@@ -66,36 +66,31 @@ This command will download and install Crowbar along with its dependencies.
 - **Clone the repository**: Open a terminal and clone the Crowbar GitHub repository by entering:
 
 ```text
-git 
-clone
- https://github.com/galkan/crowbar.git
+git clone https://github.com/galkan/crowbar.git
 ```
 
-- **Navigate to the directory**: Change into the directory with`cd crowbar`.
+- **Navigate to the directory**: Change into the directory with `cd crowbar`.
 
 **Install dependencies**: Depending on your Linux distribution, you might need to install dependencies. For most users, running:
 
 ```text
-sudo apt-
-get
- install python-pip
+sudo apt-get install python-pip
 pip install -r requirements.txt
 ```
 
 **Make it executable**: Grant execution permissions to the script with
 
 ```text
-chmod
- +x crowbar.py
+chmod +x crowbar.py
 ```
 
 ## Usage
 
-- -b: Target service. Crowbar supports:`openvpn`,`rdp`,`sshkey`,`vnckey`
+- -b: Target service. Crowbar supports: `openvpn`, `rdp`, `sshkey`, `vnckey`
 
 - -c: Static password to login with (if you know a password)
 
-- -C:`&lt;/path/to/file&gt;`for passwords list
+- -C: `&lt;/path/to/file&gt;` for passwords list
 
 - -d: Run a tcp port scan (nmap) on the IP range (`-s`/`-S`) before trying to brute force. This will discover whether the target's port is open
 
@@ -103,15 +98,15 @@ chmod
 
 - -h: Shows a help menu
 
-- -k:`&lt;/path/to/file-or-folder&gt;`for key files (for SSH or VNC)
+- -k: `&lt;/path/to/file-or-folder&gt;` for key files (for SSH or VNC)
 
-- -l:`&lt;/path/to/file&gt;`to store the log file (default is`./crowbar.log`)
+- -l: `&lt;/path/to/file&gt;` to store the log file (default is `./crowbar.log`)
 
-- -m:`&lt;/path/to/file&gt;`for a OpenVPN configuration file
+- -m: `&lt;/path/to/file&gt;` for a OpenVPN configuration file
 
 - -n: Thread count
 
-- -o:`&lt;/path/to/file&gt;`to store the successfully attempt(s) (default is`./crowbar.out`)
+- -o: `&lt;/path/to/file&gt;` to store the successfully attempt(s) (default is `./crowbar.out`)
 
 - -p: Port number (if the service is not on the default port)
 
@@ -119,17 +114,17 @@ chmod
 
 - -s: Target IP address/range (in CIDR notation)
 
-- -S:`&lt;/path/to/file&gt;`which is stores target IP addresses
+- -S: `&lt;/path/to/file&gt;` which is stores target IP addresses
 
 - -t: Timeout value
 
 - -u: Single username (If you know a username)
 
-- -U:`&lt;/path/to/file&gt;`which stores the username list
+- -U: `&lt;/path/to/file&gt;` which stores the username list
 
 - -v: Enable verbose mode (shows all the attempts)
 
-If you want see all usage options, please use:`./crowbar.py --help`.
+If you want see all usage options, please use: `./crowbar.py --help`.
 
 For example:
 
@@ -137,15 +132,15 @@ For example:
 crowbar -b rdp -C /home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt -s 172.16.131.128/32 -U /home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt -v
 ```
 
-- `**-b rdp**`: This flag specifies the type of service to attack. Here,`rdp`indicates that the Remote Desktop Protocol is being targeted.
+- `**-b rdp**`: This flag specifies the type of service to attack. Here, `rdp` indicates that the Remote Desktop Protocol is being targeted.
 
-- `**-C /home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt**`: This flag points to the file that contains the list of passwords to be tried during the attack. The path`/home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt`should lead to a text file where each line is a different password attempt.
+- `**-C /home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt**`: This flag points to the file that contains the list of passwords to be tried during the attack. The path `/home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt` should lead to a text file where each line is a different password attempt.
 
-- `**-s 172.16.131.128/32**`: This flag defines the target IP address and subnet. The`/32`indicates a single IP address (in this case,`172.16.131.128`) is targeted, as`/32`is the subnet mask for a single host.
+- `**-s 172.16.131.128/32**`: This flag defines the target IP address and subnet. The `/32` indicates a single IP address (in this case, `172.16.131.128`) is targeted, as `/32` is the subnet mask for a single host.
 
-- `**-U /home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt**`: This flag specifies the path to the file containing usernames to use in the attack. Similar to the password file, each line in`/home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt`should contain one username.
+- `**-U /home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt**`: This flag specifies the path to the file containing usernames to use in the attack. Similar to the password file, each line in `/home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt` should contain one username.
 
-- `**-v**`: This is the verbosity flag. Including`-v`means the output of the Crowbar tool will be more detailed, providing more information about the ongoing attack process. This can be useful for debugging or understanding more about how the attack is proceeding.
+- `**-v**`: This is the verbosity flag. Including `-v` means the output of the Crowbar tool will be more detailed, providing more information about the ongoing attack process. This can be useful for debugging or understanding more about how the attack is proceeding.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*C9oxb9QgdWCCoG8tJ9u70A.png" alt="Article image" width="1920" height="731" loading="lazy" decoding="async" />
 
@@ -171,13 +166,13 @@ To find lists of the most popular usernames for security testing purposes like b
 
 ## How can I gain list of passwords?
 
-To create or find a dictionary (wordlist) for password cracking, you can either download pre-existing wordlists or generate custom ones using tools**PPG — Personal Pass Generator.**Here’s a step-by-step explanation:
+To create or find a dictionary (wordlist) for password cracking, you can either download pre-existing wordlists or generate custom ones using tools **PPG — Personal Pass Generator.** Here’s a step-by-step explanation:
 
 **1. Finding Pre-Existing Dictionaries:**
 You can often find wordlists that are publicly available and have been compiled from various sources, such as leaked password databases or common password lists. Some popular resources include:
 
-**SecLists:**A large collection of wordlists for various security tools, available on GitHub.
-**RockYou:**One of the most famous password lists from a large data breach. It’s often included in tools like Kali Linux.
+**SecLists:** A large collection of wordlists for various security tools, available on GitHub.
+**RockYou:** One of the most famous password lists from a large data breach. It’s often included in tools like Kali Linux.
 To use these wordlists:
 
 Download them from repositories like GitHub or security forums.
@@ -192,21 +187,21 @@ You can directly apply these wordlists with tools like aircrack-ng for password 
 **Description**
 The Personal Pass Generator (PPG) is an advanced tool designed for security professionals and ethical hackers to create extensive, personalized lists of potential passwords. This tool is especially useful for conducting penetration tests or security assessments where custom or brute-force attacks might be necessary.
 
-**Key Features:
-**Extensive Password Lists: PPG can generate password lists that are unusually large — ranging from 1GB to over 30GB — tailored to specific security testing scenarios.
-**Customization Options:**Users can specify various parameters including the inclusion of symbols, alphanumeric characters, and more, allowing for highly customized password sets that are adapted to the target environment or system characteristics.
+**Key Features:**
+Extensive Password Lists: PPG can generate password lists that are unusually large — ranging from 1GB to over 30GB — tailored to specific security testing scenarios.
+**Customization Options:** Users can specify various parameters including the inclusion of symbols, alphanumeric characters, and more, allowing for highly customized password sets that are adapted to the target environment or system characteristics.
 Efficiency and Scalability: The tool is optimized for efficient generation of large datasets while allowing users to scale the output based on their storage and processing capabilities.
-**How It Works:
-**PPG employs a combination of standard and advanced cryptographic principles, utilizing permutations and combinations of characters from predefined sets (including special characters, numbers, and letters). This approach ensures that the generated passwords are both random and comprehensive, covering a wide range of possible password combinations that might be used by an individual or organization.
+**How It Works:**
+PPG employs a combination of standard and advanced cryptographic principles, utilizing permutations and combinations of characters from predefined sets (including special characters, numbers, and letters). This approach ensures that the generated passwords are both random and comprehensive, covering a wide range of possible password combinations that might be used by an individual or organization.
 
 **Applications:**
 Security Testing: Ideal for penetration testers and red teams needing custom password lists to test the resilience of systems to password cracking.
-**Research and Development:**Useful for researchers studying password security and the effectiveness of password policies.
+**Research and Development:** Useful for researchers studying password security and the effectiveness of password policies.
 Training and Workshops: Can be used in educational settings to demonstrate the importance of strong password policies and the potential vulnerabilities of weak passwords.
 **Requirements**
 Python 3.x
 **Usage**
-To use the Personal Pass Generator, simply download from[here](https://github.com/anpa1200/Passwords)and run the script in your Python environment
+To use the Personal Pass Generator, simply download from [here](https://github.com/anpa1200/Passwords) and run the script in your Python environment
 
 **Warning**
 Please be aware that generating very large password lists can consume significant storage and computing resources. Ensure you have adequate space and computing power to handle the outputs.
@@ -257,5 +252,5 @@ Understanding the tools and methods used for RDP cracking, such as Crowbar and t
 
 Thank you for reading.
 
-**Author:**Andrey Pautov
-**Email:**1200km@gmail.com
+**Author:** Andrey Pautov
+**Email:** 1200km@gmail.com

@@ -87,33 +87,29 @@ SQLMap is developed in Python, making it easily runnable on any system with Pyth
 
 ### Windows:
 
-- **Install Python**: Ensure Python is installed on your system. You can download it from the[official Python website](https://www.python.org/downloads/).
+- **Install Python**: Ensure Python is installed on your system. You can download it from the [official Python website](https://www.python.org/downloads/).
 
 **2. Download SQLMap**: You can clone SQLMap from its official GitHub repository. Open Command Prompt and run:
 
 ```text
-git 
-clone
- --depth 1 https://github.com/sqlmapproject/sqlmap.git
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
 ```
 
 [Or download from here:](https://sqlmap.org/#:~:text=of%20the%20features.-,Download,-You%20can%20download)
 
-**3. Navigate to SQLMap Directory**: Use the command`cd sqlmap`to move into the directory.
+**3. Navigate to SQLMap Directory**: Use the command `cd sqlmap` to move into the directory.
 
 ### Linux/MacOS:
 
-- **Install Python**: Most Linux distributions and MacOS come with Python pre-installed. You can check by running`python --version`or`python3 --version`in the terminal.
+- **Install Python**: Most Linux distributions and MacOS come with Python pre-installed. You can check by running `python --version` or `python3 --version` in the terminal.
 
 **2. Clone SQLMap Repository**: Open a terminal and run:
 
 ```text
-git 
-clone
- --depth 1 https://github.com/sqlmapproject/sqlmap.git
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
 ```
 
-**3. Change to SQLMap Directory**: Enter the directory with`cd sqlmap`.
+**3. Change to SQLMap Directory**: Enter the directory with `cd sqlmap`.
 
 [Or download from here:](https://sqlmap.org/#:~:text=of%20the%20features.-,Download,-You%20can%20download)
 
@@ -145,11 +141,11 @@ sqlmap -hh
 
 ## Wizard: Simple wizard interface for beginner users
 
-The`--wizard`mode in SQLMap is designed to simplify the tool's operation, making it more accessible for beginners or those who prefer a more guided approach to configuring their SQL injection tests. This feature offers an interactive experience, prompting users with a series of questions to help them set up their attack without needing to manually specify numerous command-line options. Here’s how it works and why it might be useful:
+The `--wizard` mode in SQLMap is designed to simplify the tool's operation, making it more accessible for beginners or those who prefer a more guided approach to configuring their SQL injection tests. This feature offers an interactive experience, prompting users with a series of questions to help them set up their attack without needing to manually specify numerous command-line options. Here’s how it works and why it might be useful:
 
 ### Functionality of --wizard Mode
 
-When you run SQLMap with the`--wizard`option, the tool initiates a step-by-step wizard that guides you through the process of setting up an SQL injection test. This mode is particularly helpful if you are not familiar with the various command-line arguments SQLMap offers or if you want a quick setup for standard tests.
+When you run SQLMap with the `--wizard` option, the tool initiates a step-by-step wizard that guides you through the process of setting up an SQL injection test. This mode is particularly helpful if you are not familiar with the various command-line arguments SQLMap offers or if you want a quick setup for standard tests.
 
 ### How to Use --wizard
 
@@ -164,11 +160,7 @@ After wizard launch you’ll see next questions:
 <img src="https://cdn-images-1.medium.com/max/800/1*h5VYaGt5m3pjJK9l91hS8A.png" alt="Article image" width="343" height="26" loading="lazy" decoding="async" />
 
 ```text
-Please enter full target 
-URL
- 
-(-u)
-:
+Please enter full target URL (-u):
 ```
 
 Enter full URL of WebSite/Service with DB
@@ -176,26 +168,22 @@ Enter full URL of WebSite/Service with DB
 <img src="https://cdn-images-1.medium.com/max/800/1*roFinT3KTLYjvzlWAwYW8w.png" alt="Article image" width="373" height="27" loading="lazy" decoding="async" />
 
 ```text
-POST data (
---data
-) 
-[Enter for None]
-:
+POST data (--data) [Enter for None]:
 ```
 
-The`--data`option in SQLMap is used to specify data that should be sent through a POST request when testing a web application for SQL injection vulnerabilities. This feature is particularly important for situations where the SQL injection vulnerability is within a form or any other part of the application that requires POST data to interact with the database.
+The `--data` option in SQLMap is used to specify data that should be sent through a POST request when testing a web application for SQL injection vulnerabilities. This feature is particularly important for situations where the SQL injection vulnerability is within a form or any other part of the application that requires POST data to interact with the database.
 
-**Understanding the**`**--data**`**Option**
+**Understanding the** `**--data**` **Option**
 
 When you interact with web applications, data can be sent to the server via either GET or POST methods. While GET requests append data to the URL, POST requests include data within the body of the request, which is not visible in the URL. SQLMap needs to know this data to effectively test POST parameters for vulnerabilities.
 
-Using the`--data`option in SQLMap correctly requires understanding the specific POST data that a target website expects when submitting forms or requests. Here’s how you can find the correct POST data to use and three examples of how it might look in SQLMap.
+Using the `--data` option in SQLMap correctly requires understanding the specific POST data that a target website expects when submitting forms or requests. Here’s how you can find the correct POST data to use and three examples of how it might look in SQLMap.
 
 ### How to Find Correct POST Data on a Target Website
 
 To determine the correct POST data for a website, you typically need to inspect the HTTP requests sent by the web browser when interacting with forms or other dynamic elements. Here’s a general approach using browser developer tools:
 
-- **Open Developer Tools**: In most browsers, you can access this by right-clicking on the webpage and selecting “Inspect” or pressing`Ctrl+Shift+I`(or`Cmd+Option+I`on Mac).
+- **Open Developer Tools**: In most browsers, you can access this by right-clicking on the webpage and selecting “Inspect” or pressing `Ctrl+Shift+I` (or `Cmd+Option+I` on Mac).
 
 - **Navigate to the Network Tab**: Refresh the page with the form or submit a form to capture the network activity.
 
@@ -203,7 +191,7 @@ To determine the correct POST data for a website, you typically need to inspect 
 
 - **Examine the Form Data**: In the details pane, find the section labeled “Form Data” or “Request Payload”. This section shows the key-value pairs that are sent to the server.
 
-This data is what you need to pass to the`--data`option in SQLMap.
+This data is what you need to pass to the `--data` option in SQLMap.
 
 **Example 1: User Login Form**
 
@@ -216,10 +204,8 @@ Suppose a login form on a website sends the following data:
 In SQLMap, you would use:
 
 ```text
-python sqlmap.py -u http://example.com/login --data=
-"username=admin&password=pass123"
-In wizard mode just enter: 
-"username=admin&password=pass123"
+python sqlmap.py -u http://example.com/login --data="username=admin&password=pass123"
+In wizard mode just enter: "username=admin&password=pass123"
 ```
 
 **Example 2: Search Function**
@@ -231,10 +217,8 @@ If a website has a search box that sends POST data like:
 The SQLMap command might look like:
 
 ```text
-python sqlmap.py -u http://example.com/login --data=
-"query=test"
-In wizard mode just enter:
-"query=test"
+python sqlmap.py -u http://example.com/login --data="query=test"
+In wizard mode just enter:"query=test"
 ```
 
 **Example 3: Feedback Submission**
@@ -250,17 +234,13 @@ For a feedback form that includes several fields:
 The corresponding SQLMap usage would be:
 
 ```text
-python sqlmap.py -u http:
-//
-example.com/login --data=
-"email=user@example.com&message=Great site!&subscribe=yes"
-In wizard mode just enter:
-"email=user@example.com&message=Great site!&subscribe=yes"
+python sqlmap.py -u http://example.com/login --data="email=user@example.com&message=Great site!&subscribe=yes"
+In wizard mode just enter:"email=user@example.com&message=Great site!&subscribe=yes"
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*QtzUenqKLExhAXdbcbgl8w.png" alt="Article image" width="634" height="95" loading="lazy" decoding="async" />
 
-The`--level`and`--risk`options in SQLMap are used to specify the intensity and type of SQL injection tests that SQLMap will perform on the target. These options allow users to fine-tune how aggressive and invasive their testing should be. Here’s an explanation of the different settings for these options when SQLMap prompts you with "Injection difficulty (--level/--risk). Please choose:":
+The `--level` and `--risk` options in SQLMap are used to specify the intensity and type of SQL injection tests that SQLMap will perform on the target. These options allow users to fine-tune how aggressive and invasive their testing should be. Here’s an explanation of the different settings for these options when SQLMap prompts you with "Injection difficulty (--level/--risk). Please choose:":
 
 ### — level Option
 
@@ -274,11 +254,11 @@ This option determines the number and complexity of tests (payloads) SQLMap will
 
 ### — risk Option
 
-This option adjusts the types of payloads SQLMap will use, potentially impacting the data or operation of the application. The`--risk`level ranges from 1 to 3:
+This option adjusts the types of payloads SQLMap will use, potentially impacting the data or operation of the application. The `--risk` level ranges from 1 to 3:
 
 - **[1] Normal (default)**: Safe for most applications, this level avoids potentially destructive SQL operations, such as those that might modify data.
 
-- **[2] Medium**: This level includes more aggressive SQL operations that might change database information, such as using`INSERT`,`UPDATE`, or even adding new values.
+- **[2] Medium**: This level includes more aggressive SQL operations that might change database information, such as using `INSERT`, `UPDATE`, or even adding new values.
 
 - **[3] Hard**: Includes potentially harmful SQL operations, such as those that can alter or delete data. This level should be used with caution, especially on production systems.
 
@@ -292,7 +272,7 @@ When prompted to choose a level of injection difficulty, your choice should be b
 
 - **Legal and ethical considerations**: Always ensure that you have the necessary permissions to perform these tests, especially with higher risk levels that could impact system operations.
 
-By adjusting the`--level`and`--risk`, you can control the thoroughness of the SQL injection testing and minimize potential disruptions or damages to the target application. These settings help cater the testing process to match specific security objectives and operational constraints.
+By adjusting the `--level` and `--risk`, you can control the thoroughness of the SQL injection testing and minimize potential disruptions or damages to the target application. These settings help cater the testing process to match specific security objectives and operational constraints.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*3B7r70_BxYj5lWWANS6E2A.png" alt="Article image" width="634" height="95" loading="lazy" decoding="async" />
 
@@ -340,13 +320,13 @@ The level of enumeration you choose should depend on your specific goals, the sc
 
 ### Real life example:
 
-**URL:**Practice laboratory from ITSAFE college
+**URL:** Practice laboratory from ITSAFE college
 
-**POST data:**empty
+**POST data:** empty
 
-**Injection difficulty:**3 — Hard
+**Injection difficulty:** 3 — Hard
 
-**Enumeration:**3 — All
+**Enumeration:** 3 — All
 
 <img src="https://cdn-images-1.medium.com/max/800/1*CgDe-g7p2Cl0pw3GVxVVbQ.png" alt="Article image" width="1896" height="668" loading="lazy" decoding="async" />
 
@@ -355,12 +335,10 @@ The level of enumeration you choose should depend on your specific goals, the sc
 <img src="https://cdn-images-1.medium.com/max/800/1*NMzmEkl_JX0p7-5N7woinQ.png" alt="Article image" width="871" height="49" loading="lazy" decoding="async" />
 
 ```text
-Edit POST data 
-[default: searchtitle=]
- (Warning: blank fields detected): searchtitle=
+Edit POST data [default: searchtitle=] (Warning: blank fields detected): searchtitle=
 ```
 
-This message occurs during the setup process when SQLMap has detected that the target URL or request includes POST data with one or more fields, in this case, a field named`searchtitle`. The prompt indicates that the default value for this field is currently empty (`searchtitle=`), and SQLMap is warning you that it has detected these blank fields in the POST data.
+This message occurs during the setup process when SQLMap has detected that the target URL or request includes POST data with one or more fields, in this case, a field named `searchtitle`. The prompt indicates that the default value for this field is currently empty (`searchtitle=`), and SQLMap is warning you that it has detected these blank fields in the POST data.
 
 The tool then asks if you want to manually enter data for this field or edit the existing data. If you leave it as it is and press Enter, SQLMap will proceed without modifying the field’s value.
 

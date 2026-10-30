@@ -63,23 +63,23 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ## Introduction
 
-Building an Android research lab sounds straightforward — install Android Studio, press Play, done. In practice, researchers hit a wall the first time they try to intercept HTTPS traffic, hook a method with Frida, or modify a system file: the default emulator setup blocks all of these. Understanding*why*each limitation exists and*which configuration removes it*saves hours of debugging.
+Building an Android research lab sounds straightforward — install Android Studio, press Play, done. In practice, researchers hit a wall the first time they try to intercept HTTPS traffic, hook a method with Frida, or modify a system file: the default emulator setup blocks all of these. Understanding *why* each limitation exists and *which configuration removes it* saves hours of debugging.
 
 ### What “Android emulation” actually means
 
 <img src="https://cdn-images-1.medium.com/max/800/1*ti8ATaDRIXswEyGjUaIO2Q.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async" />
 
-The practical consequence:**always use x86_64 images**. KVM turns QEMU from a software interpreter into a thin hypervisor shim, giving you an emulator that feels as fast as a real device. ARM images are only necessary when you need to observe actual ARM instruction behaviour (e.g., ROP gadget research, JIT compiler bugs).
+The practical consequence: **always use x86_64 images**. KVM turns QEMU from a software interpreter into a thin hypervisor shim, giving you an emulator that feels as fast as a real device. ARM images are only necessary when you need to observe actual ARM instruction behaviour (e.g., ROP gadget research, JIT compiler bugs).
 
 ### The two decisions that shape every other choice
 
 <img src="https://cdn-images-1.medium.com/max/800/1*bLtvG72lRLhrV6Lu2gHmkw.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
-- **Image variant**— which Android system image you install:
+- **Image variant** — which Android system image you install:
 
 <img src="https://cdn-images-1.medium.com/max/800/1*aEzjl9QvcTp57GAEeeooPQ.png" alt="Article image" width="769" height="286" loading="lazy" decoding="async" />
 
-**2. Launch mode**— how you start the emulator:
+**2. Launch mode** — how you start the emulator:
 
 <img src="https://cdn-images-1.medium.com/max/800/1*GAJgJOsnbBVjNYIEBotujw.png" alt="Article image" width="770" height="130" loading="lazy" decoding="async" />
 
@@ -93,11 +93,11 @@ The guide follows the natural setup sequence: host prerequisites → SDK → ima
 
 ### 1. How the Android Emulator Works Internally
 
-The Android Emulator is**not pure emulation**— it is a layered hybrid:
+The Android Emulator is **not pure emulation** — it is a layered hybrid:
 
 <img src="https://cdn-images-1.medium.com/max/800/1*4Wo7RWzk9Ze1Zdii3UTWIg.png" alt="Article image" width="1024" height="1536" loading="lazy" decoding="async" />
 
-**Key insight:**x86_64 images + KVM = near-native speed. ARM images = full software emulation = slow. For research, always use x86_64 images unless you specifically need ARM instruction-level behaviour.
+**Key insight:** x86_64 images + KVM = near-native speed. ARM images = full software emulation = slow. For research, always use x86_64 images unless you specifically need ARM instruction-level behaviour.
 
 ### 2. Emulation Variants at a Glance
 
@@ -108,36 +108,14 @@ The Android Emulator is**not pure emulation**— it is a layered hybrid:
 The same AVD can be booted in two modes:
 
 ```text
-Normal boot:                    Writable
--
-system
- boot:
-/
-system
- 
-=
- read
--
-only
-             
-/
-system
- 
-=
- read
--
-write
-adb remount → fails             adb remount → 
-succeeds
-Cannot install 
-system
- CAs       Can install 
-system
- CAs
+Normal boot:                    Writable-system boot:
+/system = read-only             /system = read-write
+adb remount → fails             adb remount → succeeds
+Cannot install system CAs       Can install system CAs
 Cannot modify framework         Can modify framework files
 ```
 
-This is not a different image — it is the same image launched with`-writable-system`. Changes to`/system`only persist for that session unless you snapshot after.
+This is not a different image — it is the same image launched with `-writable-system`. Changes to `/system` only persist for that session unless you snapshot after.
 
 ## Host Prerequisites
 
@@ -171,17 +149,14 @@ sudo apt install -y \
   bridge-utils \
   cpu-checker
 # ── Add your user to kvm group ────────────────────────────────────────────
-sudo usermod -aG kvm 
-$USER
+sudo usermod -aG kvm $USER
 # Log out and back in (or run: newgrp kvm)
 # ── Verify KVM is available ───────────────────────────────────────────────
 kvm-ok
 # Expected output:
 # INFO: /dev/kvm exists
 # KVM acceleration can be used
-egrep -c 
-'(vmx|svm)'
- /proc/cpuinfo
+egrep -c '(vmx|svm)' /proc/cpuinfo
 # > 0 means hardware virtualisation is available
 ```
 
@@ -190,8 +165,7 @@ egrep -c
 ```text
 # macOS uses Hypervisor.framework instead of KVM — no extra setup needed
 # Install Homebrew if not present, then:
-brew install android-platform-tools   
-# for adb
+brew install android-platform-tools   # for adb
 # Install Android Studio for full SDK, or use cmdline-tools
 # Verify adb
 adb version
@@ -211,80 +185,35 @@ adb version
 
 ```text
 # ── 1. Create SDK directory ───────────────────────────────────────────────
-mkdir
- -p 
-$HOME
-/Android/Sdk/cmdline-tools
+mkdir -p $HOME/Android/Sdk/cmdline-tools
 # ── 2. Download command-line tools ───────────────────────────────────────
 # From: https://developer.android.com/studio#command-tools
 # File: commandlinetools-linux-*.zip
-wget 
-"https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip"
- \
+wget "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip" \
   -O cmdline-tools.zip
 unzip cmdline-tools.zip
-mv
- cmdline-tools 
-$HOME
-/Android/Sdk/cmdline-tools/latest
+mv cmdline-tools $HOME/Android/Sdk/cmdline-tools/latest
 # ── 3. Environment variables - add to ~/.bashrc or ~/.zshrc ──────────────
-cat
- >> ~/.bashrc << 
-'EOF'
+cat >> ~/.bashrc << 'EOF'
 # Android SDK
-export
- ANDROID_HOME=
-$HOME
-/Android/Sdk
-export
- ANDROID_SDK_ROOT=
-$HOME
-/Android/Sdk
-export
- PATH=
-$PATH
-:
-$ANDROID_HOME
-/cmdline-tools/latest/bin
-export
- PATH=
-$PATH
-:
-$ANDROID_HOME
-/platform-tools
-export
- PATH=
-$PATH
-:
-$ANDROID_HOME
-/emulator
-export
- PATH=
-$PATH
-:
-$ANDROID_HOME
-/build-tools/34.0.0
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/build-tools/34.0.0
 EOF
-source
- ~/.bashrc
+source ~/.bashrc
 # ── 4. Verify sdkmanager is available ─────────────────────────────────────
 sdkmanager --version
 # ── 5. Install core packages ──────────────────────────────────────────────
 sdkmanager --install \
-  
-"platform-tools"
- \
-  
-"emulator"
- \
-  
-"platforms;android-33"
- \
-  
-"build-tools;34.0.0"
+  "platform-tools" \
+  "emulator" \
+  "platforms;android-33" \
+  "build-tools;34.0.0"
 # ── 6. Accept all licenses ────────────────────────────────────────────────
-yes
- | sdkmanager --licenses
+yes | sdkmanager --licenses
 # ── 7. Verify adb is available ────────────────────────────────────────────
 adb version
 ```
@@ -293,11 +222,11 @@ adb version
 
 Android Studio installs the full SDK automatically. The SDK is placed at:
 
-- Linux:`~/Android/Sdk/`
+- Linux: `~/Android/Sdk/`
 
-- macOS:`~/Library/Android/sdk/`
+- macOS: `~/Library/Android/sdk/`
 
-- Windows:`%LOCALAPPDATA%\Android\Sdk\`
+- Windows: `%LOCALAPPDATA%\Android\Sdk\`
 
 Set the same environment variables as above, pointing to this path.
 
@@ -311,10 +240,7 @@ Set the same environment variables as above, pointing to this path.
 
 ```text
 # List all available system images
-sdkmanager --list | 
-grep
- 
-"system-images"
+sdkmanager --list | grep "system-images"
 # Key patterns:
 # system-images;android-{API};{variant};{abi}
 #
@@ -332,20 +258,15 @@ grep
 
 ```text
 # ── Primary research image (recommended) ─────────────────────────────────
-sdkmanager 
-"system-images;android-33;google_apis;x86_64"
+sdkmanager "system-images;android-33;google_apis;x86_64"
 # ── If you need API 34 (Android 14) ──────────────────────────────────────
-sdkmanager 
-"system-images;android-34;google_apis;x86_64"
+sdkmanager "system-images;android-34;google_apis;x86_64"
 # ── If app requires Play Store ────────────────────────────────────────────
-sdkmanager 
-"system-images;android-33;google_apis_playstore;x86_64"
+sdkmanager "system-images;android-33;google_apis_playstore;x86_64"
 # ── ARM64 (for instruction-level research - slow) ─────────────────────────
-sdkmanager 
-"system-images;android-33;google_apis;arm64-v8a"
+sdkmanager "system-images;android-33;google_apis;arm64-v8a"
 # ── Older API for legacy app testing ─────────────────────────────────────
-sdkmanager 
-"system-images;android-28;google_apis;x86_64"
+sdkmanager "system-images;android-28;google_apis;x86_64"
 ```
 
 ### 3. API Level Reference
@@ -359,64 +280,28 @@ sdkmanager
 ```text
 # ── Baseline research AVD ─────────────────────────────────────────────────
 avdmanager create avd \
-  --name 
-"research_api33"
- \
-  --abi 
-"google_apis/x86_64"
- \
-  --
-package
- 
-"system-images;android-33;google_apis;x86_64"
- \
-  --device 
-"pixel_5"
+  --name "research_api33" \
+  --abi "google_apis/x86_64" \
+  --package "system-images;android-33;google_apis;x86_64" \
+  --device "pixel_5"
 # ── Writable-system research AVD (separate instance) ─────────────────────
 avdmanager create avd \
-  --name 
-"research_api33_rw"
- \
-  --abi 
-"google_apis/x86_64"
- \
-  --
-package
- 
-"system-images;android-33;google_apis;x86_64"
- \
-  --device 
-"pixel_5"
+  --name "research_api33_rw" \
+  --abi "google_apis/x86_64" \
+  --package "system-images;android-33;google_apis;x86_64" \
+  --device "pixel_5"
 # ── Legacy API for older app testing ──────────────────────────────────────
 avdmanager create avd \
-  --name 
-"research_api28"
- \
-  --abi 
-"google_apis/x86_64"
- \
-  --
-package
- 
-"system-images;android-28;google_apis;x86_64"
- \
-  --device 
-"pixel_3"
+  --name "research_api28" \
+  --abi "google_apis/x86_64" \
+  --package "system-images;android-28;google_apis;x86_64" \
+  --device "pixel_3"
 # ── Play Store AVD (when app requires it) ─────────────────────────────────
 avdmanager create avd \
-  --name 
-"research_api33_play"
- \
-  --abi 
-"google_apis_playstore/x86_64"
- \
-  --
-package
- 
-"system-images;android-33;google_apis_playstore;x86_64"
- \
-  --device 
-"pixel_5"
+  --name "research_api33_play" \
+  --abi "google_apis_playstore/x86_64" \
+  --package "system-images;android-33;google_apis_playstore;x86_64" \
+  --device "pixel_5"
 ```
 
 ### 2. Manage AVDs
@@ -426,194 +311,107 @@ package
 emulator -list-avds
 avdmanager list avd
 # Delete an AVD
-avdmanager delete avd --name 
-"research_api33"
+avdmanager delete avd --name "research_api33"
 # AVD files location (Linux)
-ls
- ~/.android/avd/
+ls ~/.android/avd/
 # research_api33.avd/     ← data directory (userdata, snapshots)
 # research_api33.ini      ← config pointer file
 # View AVD config
-cat
- ~/.android/avd/research_api33.avd/config.ini
+cat ~/.android/avd/research_api33.avd/config.ini
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Oypg-oFjLwgPQXcQYH1x_w.png" alt="Article image" width="1129" height="491" loading="lazy" decoding="async" />
 
 ### 3. Customising AVD config.ini
 
-Edit`~/.android/avd/research_api33.avd/config.ini`to tune:
+Edit `~/.android/avd/research_api33.avd/config.ini` to tune:
 
 ```text
 # RAM size
-hw.ramSize
-=
-4096
+hw.ramSize=4096
 # Disk size
-disk.dataPartition.size
-=
-8
-G
+disk.dataPartition.size=8G
 # CPU cores
-hw.cpu.ncore
-=
-4
+hw.cpu.ncore=4
 # Screen resolution
-skin.name
-=pixel_5
-hw.lcd.density
-=
-440
-hw.lcd.height
-=
-2340
-hw.lcd.width
-=
-1080
+skin.name=pixel_5
+hw.lcd.density=440
+hw.lcd.height=2340
+hw.lcd.width=1080
 # Disable device authentication (useful for automation)
-hw.mainKeys
-=
-no
+hw.mainKeys=no
 ```
 
 ## Emulator Launch Variants
 
 ### 1. Variant A — Standard Baseline Boot
 
-**Use for:**APK testing, logcat, basic ADB + Frida, repeatable automated runs.
+**Use for:** APK testing, logcat, basic ADB + Frida, repeatable automated runs.
 
 ```text
-emulator -avd research_api33 -
-no
--snapshot -
-no
--boot-anim &
+emulator -avd research_api33 -no-snapshot -no-boot-anim &
 # Wait for boot
-adb 
-wait
--
-for
--device
-until
- [ 
-"$(adb shell getprop sys.boot_completed 2>/dev/null)"
- = 
-"1"
- ]; 
-do
-  
-sleep
- 
-1
+adb wait-for-device
+until [ "$(adb shell getprop sys.boot_completed 2>/dev/null)" = "1" ]; do
+  sleep 1
 done
-echo 
-"[+] Emulator ready"
+echo "[+] Emulator ready"
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*301MwyIZi1zMMM5CiAymCA.png" alt="Article image" width="1897" height="1030" loading="lazy" decoding="async" />
 
 ### 2. Variant B — Writable-System Boot
 
-**Use for:**installing system CA certs, modifying`/system`, framework research.
+**Use for:** installing system CA certs, modifying `/system`, framework research.
 
 ```text
-emulator -avd research_api33_rw -writable-
-system
- -
-no
--snapshot -
-no
--boot-anim &
-adb 
-wait
--
-for
--device
-until
- [ 
-"$(adb shell getprop sys.boot_completed)"
- = 
-"1"
- ]; 
-do
- 
-sleep
- 
-1
-; done
+emulator -avd research_api33_rw -writable-system -no-snapshot -no-boot-anim &
+adb wait-for-device
+until [ "$(adb shell getprop sys.boot_completed)" = "1" ]; do sleep 1; done
 adb root
 adb remount
 # Verify
-adb shell whoami          
-# → root
-adb shell mount | 
-grep
- 
-system
-   
-# → should show rw
+adb shell whoami          # → root
+adb shell mount | grep system   # → should show rw
 ```
 
 ### 3. Variant C — Fast/Deterministic Research Boot
 
-**Use for:**rapid iterations, scripted test pipelines, CI-style repetitive runs.
+**Use for:** rapid iterations, scripted test pipelines, CI-style repetitive runs.
 
 ```text
 emulator -avd research_api33 \
-  -writable-
-system
- \
-  -
-no
--snapshot \
-  -
-no
--boot-anim \
+  -writable-system \
+  -no-snapshot \
+  -no-boot-anim \
   -netspeed full \
   -netdelay none \
-  -
-no
--audio \
-  -skin 
-1080
-x234
-0
- &
+  -no-audio \
+  -skin 1080x2340 &
 ```
 
 ### 4. Variant D — GPU Fallback (Headless / Remote Server)
 
-**Use for:**when running on a remote server without GPU, or if graphics crash the emulator.
+**Use for:** when running on a remote server without GPU, or if graphics crash the emulator.
 
 ```text
 # Software rendering — slow graphics but stable
 emulator -avd research_api33 \
   -gpu swiftshader_indirect \
-  -
-no
--snapshot \
-  -
-no
--window &         
-# completely headless
+  -no-snapshot \
+  -no-window &         # completely headless
 # OR: off = no GPU emulation at all (fastest headless)
 emulator -avd research_api33 \
   -gpu off \
-  -
-no
--snapshot \
-  -
-no
--window &
+  -no-snapshot \
+  -no-window &
 ```
 
 ### 5. Variant E — Snapshot-Based (Repeatable Clean State)
 
 ```text
 # First run: set up the environment, then save snapshot
-emulator -avd research_api33 -
-no
--snapshot &
+emulator -avd research_api33 -no-snapshot &
 # ... install tools, push frida-server, configure ...
 # Then from another terminal:
 adb emu avd snapshot save clean_setup
@@ -625,56 +423,24 @@ emulator -avd research_api33 -snapshot clean_setup &
 ### 6. Emulator Command-Line Options Reference
 
 ```text
-emulator -avd <name>           
-# AVD to launch (required)
--
-no
--snapshot                   
-# ignore existing snapshot, cold boot
--snapshot <name>               
-# load specific named snapshot
--writable-
-system
-               
-# make /system partition writable
--
-no
--boot-anim                  
-# skip boot animation (faster)
--
-no
--audio                      
-# disable audio (useful headless)
--
-no
--window                     
-# headless mode (no display window)
--netspeed full                 
-# maximum simulated network speed
--netdelay none                 
-# no simulated network delay
--gpu swiftshader_indirect      
-# software GPU rendering
--gpu off                       
-# no GPU rendering
--port 
-5554
-                     
-# ADB port (default 5554)
--tcpdump <file>                
-# capture all network traffic to pcap
--http-proxy <host>:<port>      
-# route emulator traffic through proxy
--dns-server <ip>               
-# custom DNS server
--prop ro.debuggable=
-1
-          
-# set system property at boot
--verbose                       
-# verbose logging
--logcat *:V                    
-# enable logcat output to terminal
+emulator -avd <name>           # AVD to launch (required)
+-no-snapshot                   # ignore existing snapshot, cold boot
+-snapshot <name>               # load specific named snapshot
+-writable-system               # make /system partition writable
+-no-boot-anim                  # skip boot animation (faster)
+-no-audio                      # disable audio (useful headless)
+-no-window                     # headless mode (no display window)
+-netspeed full                 # maximum simulated network speed
+-netdelay none                 # no simulated network delay
+-gpu swiftshader_indirect      # software GPU rendering
+-gpu off                       # no GPU rendering
+-port 5554                     # ADB port (default 5554)
+-tcpdump <file>                # capture all network traffic to pcap
+-http-proxy <host>:<port>      # route emulator traffic through proxy
+-dns-server <ip>               # custom DNS server
+-prop ro.debuggable=1          # set system property at boot
+-verbose                       # verbose logging
+-logcat *:V                    # enable logcat output to terminal
 ```
 
 ## ADB Connection Modes
@@ -707,21 +473,9 @@ adb -e shell
 **Emulator ports:**
 
 ```text
-emulator-
-5554
- → ADB port 
-5554
- (first emulator)
-emulator-
-5556
- → ADB port 
-5556
- (second emulator)
-emulator-
-5558
- → ADB port 
-5558
- (third emulator)
+emulator-5554 → ADB port 5554 (first emulator)
+emulator-5556 → ADB port 5556 (second emulator)
+emulator-5558 → ADB port 5558 (third emulator)
 ```
 
 ### 3. Mode B — USB Physical Device
@@ -751,31 +505,16 @@ adb get-serialno
 
 ```text
 # 1. Connect device via USB, then promote to TCP
-adb tcpip 
-5555
+adb tcpip 5555
 # 2. Find device IP
-adb shell ip route | 
-grep
- wlan
+adb shell ip route | grep wlan
 # or: adb shell ifconfig wlan0
 # 3. Connect over Wi-Fi
-adb 
-connect
- 
-192.168
-.
-1.50
-:
-5555
+adb connect 192.168.1.50:5555
 # 4. Disconnect USB - adb over Wi-Fi persists
 adb devices -l
 # 5. Disconnect when done
-adb disconnect 
-192.168
-.
-1.50
-:
-5555
+adb disconnect 192.168.1.50:5555
 # 6. Revert to USB-only mode
 adb usb
 ```
@@ -788,18 +527,10 @@ adb usb
 # First time: pair with one-time code
 # On device: Wireless Debugging → Pair device with pairing code
 # Note the pairing port and 6-digit code
-adb pair 
-192.168
-.
-1.50
-:PAIRING_PORT
+adb pair 192.168.1.50:PAIRING_PORT
 # Enter code when prompted
 # Then connect using the main port (different from pairing port)
-adb connect 
-192.168
-.
-1.50
-:MAIN_PORT
+adb connect 192.168.1.50:MAIN_PORT
 adb devices -l
 ```
 
@@ -809,34 +540,13 @@ adb devices -l
 # Always check what's connected
 adb devices -l
 # Run command on all devices at once (shell loop)
-for
- SERIAL 
-in
- $(adb devices | grep -v List | awk 
-'{print $1}'
-); 
-do
-  
-echo
- 
-"=== 
-$SERIAL
- ==="
-  adb -s 
-$SERIAL
- shell getprop ro.product.model
+for SERIAL in $(adb devices | grep -v List | awk '{print $1}'); do
+  echo "=== $SERIAL ==="
+  adb -s $SERIAL shell getprop ro.product.model
 done
 # Install on all devices
-for
- SERIAL 
-in
- $(adb devices | grep -v List | awk 
-'{print $1}'
-); 
-do
-  adb -s 
-$SERIAL
- install -r app.apk
+for SERIAL in $(adb devices | grep -v List | awk '{print $1}'); do
+  adb -s $SERIAL install -r app.apk
 done
 ```
 
@@ -846,14 +556,7 @@ When the device is on a remote machine:
 
 ```text
 # On remote host: forward ADB server port
-ssh -L 
-5037
-:localhost
-:
-5037
- user
-@remote
--host
+ssh -L 5037:localhost:5037 user@remote-host
 # On local host: use adb normally - it connects through the tunnel
 adb devices -l
 ```
@@ -867,16 +570,7 @@ adb start-server
 # Check ADB server is running
 adb version
 # ADB server log (for debugging connection issues)
-ADB_TRACE
-=
-all adb devices 
-2
->&
-1
- 
-|
- head -
-50
+ADB_TRACE=all adb devices 2>&1 | head -50
 ```
 
 ## Frida Integration
@@ -889,11 +583,11 @@ all adb devices
 
 **Three rules:**
 
-- `adb`must see the device before Frida can connect
+- `adb` must see the device before Frida can connect
 
-- `frida-server`on-device version must match`frida-tools`on host exactly
+- `frida-server` on-device version must match `frida-tools` on host exactly
 
-- `frida-server`ABI must match the device architecture
+- `frida-server` ABI must match the device architecture
 
 ### 2. Host Installation
 
@@ -924,31 +618,11 @@ adb shell getprop ro.product.cpu.abi
 # armeabi-v7a → frida-server-{VERSION}-android-arm.xz
 # ── Download (replace VERSION with your frida --version output) ───────────
 VERSION=$(frida --version)
-ABI=
-"x86_64"
-   
-# change to arm64 for physical device
-wget 
-"https://github.com/frida/frida/releases/download/
-${VERSION}
-/frida-server-
-${VERSION}
--android-
-${ABI}
-.xz"
-xz -d frida-server-
-${VERSION}
--android-
-${ABI}
-.xz
-mv
- frida-server-
-${VERSION}
--android-
-${ABI}
- frida-server
-chmod
- +x frida-server
+ABI="x86_64"   # change to arm64 for physical device
+wget "https://github.com/frida/frida/releases/download/${VERSION}/frida-server-${VERSION}-android-${ABI}.xz"
+xz -d frida-server-${VERSION}-android-${ABI}.xz
+mv frida-server-${VERSION}-android-${ABI} frida-server
+chmod +x frida-server
 ```
 
 ### 4. Frida Setup Variants
@@ -956,13 +630,10 @@ chmod
 **Variant 1 — Standard Google APIs Emulator**
 
 ```text
-cd
- ~
+cd ~
 adb root
 adb push /home/andrey/frida-server /data/local/tmp/frida-server
-adb shell 
-chmod
- 755 /data/local/tmp/frida-server
+adb shell chmod 755 /data/local/tmp/frida-server
 adb shell /data/local/tmp/frida-server &
 # 4. Verify from host
 frida-ps -U
@@ -975,9 +646,7 @@ adb shell pkill frida-server
 **Verification**:
 
 ```text
-adb shell 
-ls
- -l /data/local/tmp/frida-server
+adb shell ls -l /data/local/tmp/frida-server
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*hI518xXCtO6eONKBh6uE3w.png" alt="Article image" width="1122" height="51" loading="lazy" decoding="async" />
@@ -985,49 +654,27 @@ ls
 ### Variant 2 — Writable-System Emulator (Persistent Across Reboots)
 
 ```text
-emulator -avd research_api33_rw -writable-
-system
- -
-no
--snapshot &
+emulator -avd research_api33_rw -writable-system -no-snapshot &
 adb root && adb remount
 # Push to /system/bin so it survives app installs/clears
-adb 
-push
- frida-server /
-system
-/bin/frida-server
-adb shell 
-chmod
- 
-755
- /
-system
-/bin/frida-server
+adb push frida-server /system/bin/frida-server
+adb shell chmod 755 /system/bin/frida-server
 # Start
-adb shell /
-system
-/bin/frida-server &
+adb shell /system/bin/frida-server &
 frida-ps -U
 ```
 
 ### Variant 3 — Rooted Physical Device (su -c path)
 
-`adb root`fails on production builds. Use`su`:
+`adb root` fails on production builds. Use `su`:
 
 ```text
 # Push server
-adb 
-push
- frida-server /data/
-local
-/tmp/frida-server
+adb push frida-server /data/local/tmp/frida-server
 # Set permissions via su
-adb shell 
-"su -c 'chmod 755 /data/local/tmp/frida-server'"
+adb shell "su -c 'chmod 755 /data/local/tmp/frida-server'"
 # Start via su (background)
-adb shell 
-"su -c 'nohup /data/local/tmp/frida-server > /dev/null 2>&1 &'"
+adb shell "su -c 'nohup /data/local/tmp/frida-server > /dev/null 2>&1 &'"
 # Verify
 frida-ps -U
 ```
@@ -1038,56 +685,23 @@ Frida uses the ADB transport regardless of whether the ADB connection is USB or 
 
 ```text
 # Connect device via TCP ADB (see §7.4)
-adb 
-connect
- 
-192.168
-.
-1.50
-:
-5555
+adb connect 192.168.1.50:5555
 adb devices -l
 # Push + start frida-server as normal
-adb -s 
-192.168
-.
-1.50
-:
-5555
- 
-push
- frida-server /data/
-local
-/tmp/frida-server
-adb -s 
-192.168
-.
-1.50
-:
-5555
- shell 
-"su -c 'chmod 755 /data/local/tmp/frida-server'"
-adb -s 
-192.168
-.
-1.50
-:
-5555
- shell 
-"su -c '/data/local/tmp/frida-server &'"
+adb -s 192.168.1.50:5555 push frida-server /data/local/tmp/frida-server
+adb -s 192.168.1.50:5555 shell "su -c 'chmod 755 /data/local/tmp/frida-server'"
+adb -s 192.168.1.50:5555 shell "su -c '/data/local/tmp/frida-server &'"
 # Frida sees the device through the ADB transport
 frida-ps -U
 ```
 
 ### Variant 5 — Frida Gadget (No Root Required)
 
-For apps you can repackage, embed`frida-gadget`directly into the APK:
+For apps you can repackage, embed `frida-gadget` directly into the APK:
 
 ```text
 # Using objection's patchapk (automates the embedding)
-objection patchapk --
-source
- target.apk
+objection patchapk --source target.apk
 # Install patched APK
 adb install -r target.objection.apk
 # Launch the app - gadget starts automatically, waits for connection
@@ -1107,52 +721,27 @@ This is useful when:
 
 ```text
 # ── Process listing ───────────────────────────────────────────────────────
-frida-ps -U                        
-# all processes
-frida-ps -U -a                     
-# installed apps only
-frida-ps -U | 
-grep
- -i target       
-# filter by name
+frida-ps -U                        # all processes
+frida-ps -U -a                     # installed apps only
+frida-ps -U | grep -i target       # filter by name
 # ── Attaching ─────────────────────────────────────────────────────────────
-frida -U -n 
-"com.target.app"
-                    
-# attach to running process
-frida -U -f com.target.app --
-no
--pause           
-# spawn + attach (catches init)
-frida -U -p $(adb shell pidof com.target.app)   
-# attach by PID (no ambiguity)
+frida -U -n "com.target.app"                    # attach to running process
+frida -U -f com.target.app --no-pause           # spawn + attach (catches init)
+frida -U -p $(adb shell pidof com.target.app)   # attach by PID (no ambiguity)
 # ── Loading scripts ───────────────────────────────────────────────────────
-frida -U -f com.target.app --
-no
--pause -l script.js
+frida -U -f com.target.app --no-pause -l script.js
 # Auto-reload on script change:
-frida -U -f com.target.app --
-no
--pause -l script.js --enable-repl
+frida -U -f com.target.app --no-pause -l script.js --enable-repl
 # ── frida-trace ───────────────────────────────────────────────────────────
 # Trace all methods in a Java class
-frida-trace -U -n com.target.app -j 
-"com.target.app.SomeClass!*"
+frida-trace -U -n com.target.app -j "com.target.app.SomeClass!*"
 # Trace a specific method
-frida-trace -U -n com.target.app -j 
-"com.target.app.Auth!login"
+frida-trace -U -n com.target.app -j "com.target.app.Auth!login"
 # Trace native functions in a library
-frida-trace -U -n com.target.app -I 
-"libssl.so"
-frida-trace -U -n com.target.app -i 
-"SSL_write"
- -i 
-"SSL_read"
+frida-trace -U -n com.target.app -I "libssl.so"
+frida-trace -U -n com.target.app -i "SSL_write" -i "SSL_read"
 # Trace all calls to any function matching a pattern
-frida-trace -U -n com.target.app -i 
-"open*"
-    
-# all open* native functions
+frida-trace -U -n com.target.app -i "open*"    # all open* native functions
 # ── Objection (Frida-powered interactive shell) ───────────────────────────
 objection -g com.target.app explore
 # Inside the REPL:
@@ -1169,45 +758,21 @@ objection -g com.target.app explore
 ```text
 # Helper script: start_frida.sh
 #!/bin/bash
-set
- -e
-ABI=$(adb shell getprop ro.product.cpu.abi 2>/dev/null | 
-tr
- -d 
-'\r'
-)
-echo
- 
-"[*] Device ABI: 
-$ABI
-"
+set -e
+ABI=$(adb shell getprop ro.product.cpu.abi 2>/dev/null | tr -d '\r')
+echo "[*] Device ABI: $ABI"
 # Kill any existing frida-server
-adb shell pkill frida-server 2>/dev/null || 
-true
+adb shell pkill frida-server 2>/dev/null || true
 # Start
-adb shell 
-"nohup /data/local/tmp/frida-server > /dev/null 2>&1 &"
-sleep
- 1
+adb shell "nohup /data/local/tmp/frida-server > /dev/null 2>&1 &"
+sleep 1
 # Verify
-if
- frida-ps -U > /dev/null 2>&1; 
-then
-  
-echo
- 
-"[+] frida-server running"
-  frida-ps -U | 
-head
- -5
+if frida-ps -U > /dev/null 2>&1; then
+  echo "[+] frida-server running"
+  frida-ps -U | head -5
 else
-  
-echo
- 
-"[-] frida-server failed to start"
-  
-exit
- 1
+  echo "[-] frida-server failed to start"
+  exit 1
 fi
 ```
 
@@ -1216,34 +781,15 @@ fi
 ### 1. Enabling Research Mode
 
 ```text
-Settings → About Phone → Build Number (tap 
-7
- times) → Developer Options unlocked
+Settings → About Phone → Build Number (tap 7 times) → Developer Options unlocked
 Settings → Developer Options:
-  USB Debugging:               
-ON
-  Wireless Debugging:          
-ON
-  (Android 
-11
-+)
-  Install via USB:             
-ON
-  USB debugging (Security):    
-ON
-  (Xiaomi, some Samsung)
-  Mock location app:           (
-optional
-, 
-for
- location spoofing)
-  Disable adb authorization timeout: 
-ON
-  (so you don
-'t re-approve daily)
-  
-Default
- USB config:          File Transfer
+  USB Debugging:               ON
+  Wireless Debugging:          ON  (Android 11+)
+  Install via USB:             ON
+  USB debugging (Security):    ON  (Xiaomi, some Samsung)
+  Mock location app:           (optional, for location spoofing)
+  Disable adb authorization timeout: ON  (so you don't re-approve daily)
+  Default USB config:          File Transfer
 ```
 
 ### 2. Rooting with Magisk
@@ -1257,8 +803,7 @@ Default
 # 5. Flash patched boot: fastboot flash boot magisk_patched.img
 # 6. Reboot → Magisk is installed
 # Verify root
-adb shell su -c 
-id
+adb shell su -c id
 # uid=0(root) gid=0(root)
 ```
 
@@ -1293,14 +838,7 @@ Genymotion uses VirtualBox or its own hypervisor. Useful when:
 
 ```text
 # ADB connection to Genymotion:
-adb connect 
-192.168
-.
-56.101
-:
-5555
-   
-# default Genymotion IP
+adb connect 192.168.56.101:5555   # default Genymotion IP
 adb devices -l
 # Frida works the same way - push server, start, connect
 ```
@@ -1310,55 +848,19 @@ adb devices -l
 For kernel-level research, running Android-x86 directly on KVM gives full access:
 
 ```text
-# 
-Create
- KVM VM 
-with
- Android
--
-x86 ISO
-virt
--
-install \
-  
---name android-x86 \
-  
---ram 4096 \
-  
---vcpus 4 \
-  
---disk path=/var/lib/libvirt/images/android.qcow2,size=20 \
-  
---cdrom android-x86_64-9.0-r2.iso \
-  
---graphics vnc \
-  
---os-variant generic
-# ADB 
-over
- TCP after boot
-# 
-In
- Android
--
-x86: enable USB debugging 
-in
- developer options
-# 
-Get
- IP: Settings → About → Network
-adb 
-connect
- 
-<
-android
--
-x86
--
-ip
->
-:
-5555
+# Create KVM VM with Android-x86 ISO
+virt-install \
+  --name android-x86 \
+  --ram 4096 \
+  --vcpus 4 \
+  --disk path=/var/lib/libvirt/images/android.qcow2,size=20 \
+  --cdrom android-x86_64-9.0-r2.iso \
+  --graphics vnc \
+  --os-variant generic
+# ADB over TCP after boot
+# In Android-x86: enable USB debugging in developer options
+# Get IP: Settings → About → Network
+adb connect <android-x86-ip>:5555
 ```
 
 ## Snapshots & Lab Hygiene
@@ -1370,22 +872,15 @@ Snapshots save the complete state of the emulator (memory, storage, running proc
 ```text
 # ── Save a snapshot ───────────────────────────────────────────────────────
 # While emulator is running:
-adb emu avd snapshot save 
-"frida_ready"
-adb emu avd snapshot save 
-"burp_configured"
-adb emu avd snapshot save 
-"app_installed_v3.5"
+adb emu avd snapshot save "frida_ready"
+adb emu avd snapshot save "burp_configured"
+adb emu avd snapshot save "app_installed_v3.5"
 # List snapshots
 adb emu avd snapshot list
 # Load a snapshot (while emulator is running)
-adb emu avd snapshot load 
-"frida_ready"
+adb emu avd snapshot load "frida_ready"
 # Delete a snapshot
-adb emu avd snapshot 
-delete
- 
-"old_state"
+adb emu avd snapshot delete "old_state"
 # ── Boot directly from a snapshot ────────────────────────────────────────
 emulator -avd research_api33 -snapshot frida_ready &
 # Boots in ~2–3 seconds to exactly the saved state
@@ -1394,29 +889,16 @@ emulator -avd research_api33 -snapshot frida_ready &
 ### 2. Recommended Snapshot Strategy
 
 ```text
-Snapshot:
- 
-"clean_boot"
+Snapshot: "clean_boot"
   ↓  Install frida-server
   ↓  Configure Burp proxy
   ↓  Install system CA cert
-Snapshot:
- 
-"lab_ready"
-  ↓  Install target app v3.
-5
-  ↓  Log 
-in
- 
-with
- test account
-Snapshot:
- 
-"app_baseline"
+Snapshot: "lab_ready"
+  ↓  Install target app v3.5
+  ↓  Log in with test account
+Snapshot: "app_baseline"
   ↓  Run research / exploit attempts
-  ↓  (always revert 
-to
- app_baseline between tests)
+  ↓  (always revert to app_baseline between tests)
 ```
 
 ### 3. Multiple Emulator Instances
@@ -1429,30 +911,22 @@ emulator -avd research_api28 -port 5556 &
 adb -s emulator-5554 shell
 adb -s emulator-5556 shell
 # Or use a helper
-alias
- adb33=
-"adb -s emulator-5554"
-alias
- adb28=
-"adb -s emulator-5556"
+alias adb33="adb -s emulator-5554"
+alias adb28="adb -s emulator-5556"
 ```
 
 ### 4. Clean Research Practice
 
 ```text
 # Before testing a new app: revert to clean snapshot
-adb emu avd snapshot load 
-"lab_ready"
+adb emu avd snapshot load "lab_ready"
 # Clear app data between test runs (without reinstalling)
 adb shell pm clear com.target.app
 # Completely remove and reinstall
 adb uninstall com.target.app
 adb install -r target.apk
 # Reset network proxy between sessions
-adb shell settings put 
-global
- http_proxy 
-":0"
+adb shell settings put global http_proxy ":0"
 # Stop frida-server cleanly
 adb shell pkill frida-server
 ```
@@ -1467,16 +941,10 @@ adb shell pkill frida-server
 
 ```text
 # Find USB vendor ID of device
-lsusb | grep -i android   
-# note idVendor (e.g. 18d1 for Google)
+lsusb | grep -i android   # note idVendor (e.g. 18d1 for Google)
 # Create rule
-echo
- 
-'SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"'
- \
-  | sudo 
-tee
- /etc/udev/rules.d/51-android.rules
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"' \
+  | sudo tee /etc/udev/rules.d/51-android.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 # Replug device
@@ -1499,77 +967,35 @@ sudo udevadm trigger
 ### SDK Setup
 
 ```text
-sdkmanager 
-"system-images;android-33;google_apis;x86_64"
-yes | sdkmanager 
---licenses
-avdmanager 
-create
- avd 
---name "research_api33" \
-  
---abi "google_apis/x86_64" \
-  
---package "system-images;android-33;google_apis;x86_64" \
-  
---device "pixel_5"
+sdkmanager "system-images;android-33;google_apis;x86_64"
+yes | sdkmanager --licenses
+avdmanager create avd --name "research_api33" \
+  --abi "google_apis/x86_64" \
+  --package "system-images;android-33;google_apis;x86_64" \
+  --device "pixel_5"
 ```
 
 ### Emulator Launch
 
 ```text
 # Standard
-emulator -avd research_api33 -
-no
--snapshot -
-no
--boot-anim &
+emulator -avd research_api33 -no-snapshot -no-boot-anim &
 # Writable-system
-emulator -avd research_api33_rw -writable-
-system
- -
-no
--snapshot -
-no
--boot-anim &
+emulator -avd research_api33_rw -writable-system -no-snapshot -no-boot-anim &
 adb root && adb remount
 # Headless
-emulator -avd research_api33 -
-no
--window -gpu off -
-no
--snapshot &
+emulator -avd research_api33 -no-window -gpu off -no-snapshot &
 ```
 
 ### ADB Essentials
 
 ```text
-adb devices -l                              
-# list devices
-adb 
-wait
--
-for
--device                         
-# wait for emulator boot
-adb root && adb remount                     
-# root + writable system
-adb -s emulator-
-5554
- shell                  
-# target specific device
-adb tcpip 
-5555
- && adb 
-connect
- <ip>:
-5555
-     
-# Wi-Fi mode
-adb 
-kill
--server && adb start-server         
-# fix connection issues
+adb devices -l                              # list devices
+adb wait-for-device                         # wait for emulator boot
+adb root && adb remount                     # root + writable system
+adb -s emulator-5554 shell                  # target specific device
+adb tcpip 5555 && adb connect <ip>:5555     # Wi-Fi mode
+adb kill-server && adb start-server         # fix connection issues
 ```
 
 ### Frida Essentials
@@ -1579,43 +1005,24 @@ kill
 # x86_64 emulator: frida-server-{VER}-android-x86_64.xz
 # arm64 device:    frida-server-{VER}-android-arm64.xz
 # Deploy
-adb 
-push
- frida-server /data/
-local
-/tmp/frida-server
-adb shell 
-chmod
- 
-755
- /data/
-local
-/tmp/frida-server
-adb shell /data/
-local
-/tmp/frida-server &       
-# emulator (adb root)
-adb shell 
-"su -c '/data/local/tmp/frida-server'"
- &  
-# physical device
+adb push frida-server /data/local/tmp/frida-server
+adb shell chmod 755 /data/local/tmp/frida-server
+adb shell /data/local/tmp/frida-server &       # emulator (adb root)
+adb shell "su -c '/data/local/tmp/frida-server'" &  # physical device
 # Use
 frida-ps -U
-frida -U -f com.target.app --
-no
--pause -l script.js
-frida-trace -U -n com.target.app -j 
-"com.target.app.Auth!*"
+frida -U -f com.target.app --no-pause -l script.js
+frida-trace -U -n com.target.app -j "com.target.app.Auth!*"
 objection -g com.target.app explore
 ```
 
 ## Follow for practical cybersecurity research
 
-If you’re interested in**Offensive security,****AI security, real-world attack simulations, CTI, and detection engineering**— this is exactly what I focus on.
+If you’re interested in **Offensive security,** **AI security, real-world attack simulations, CTI, and detection engineering** — this is exactly what I focus on.
 
 Stay connected:
 
-→**Subscribe on Medium:**[medium.com/@1200km](https://medium.com/@1200km)
-→**Connect on LinkedIn:**[andrey-pautov](https://www.linkedin.com/in/andrey-pautov/)
-→**GitHub — tools & labs:**[github.com/anpa1200](https://github.com/anpa1200)
-→**Contact:**[1200km@gmail.com](mailto:1200km@gmail.com)
+→ **Subscribe on Medium:** [medium.com/@1200km](https://medium.com/@1200km)
+→ **Connect on LinkedIn:** [andrey-pautov](https://www.linkedin.com/in/andrey-pautov/)
+→ **GitHub — tools & labs:** [github.com/anpa1200](https://github.com/anpa1200)
+→ **Contact:** [1200km@gmail.com](mailto:1200km@gmail.com)

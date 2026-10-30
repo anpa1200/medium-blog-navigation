@@ -12,17 +12,18 @@ const cases = [
 
 function largeFences(markdown) {
   const blocks = [];
-  let active = false;
+  let fenceLength = 0;
   let lines = [];
   for (const line of markdown.split('\n')) {
-    if (line.startsWith('```')) {
-      if (active) {
-        const text = lines.join('\n');
-        if (lines.length > 150 || text.length > 12000) blocks.push(text);
-        lines = [];
-      }
-      active = !active;
-    } else if (active) {
+    const fence = line.match(/^(`{3,})(.*)$/);
+    if (!fenceLength && fence) {
+      fenceLength = fence[1].length;
+    } else if (fenceLength && fence && fence[1].length >= fenceLength && !fence[2].trim()) {
+      const text = lines.join('\n');
+      if (lines.length > 150 || text.length > 12000) blocks.push(text);
+      lines = [];
+      fenceLength = 0;
+    } else if (fenceLength) {
       lines.push(line);
     }
   }

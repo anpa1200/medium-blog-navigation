@@ -23,26 +23,26 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ### Why AI-Orchestrated Pentesting Is a Force Multiplier for Red Teams — and a Warning Sign for Defenders
 
-Over the past months, I’ve been deeply experimenting with**HexStrike-AI**in real,**authorized penetration-testing scenarios**:
+Over the past months, I’ve been deeply experimenting with **HexStrike-AI** in real, **authorized penetration-testing scenarios**:
 home networks, vulnerable web applications, OSINT workflows, wireless attacks, and controlled exploitation labs.
 
 - **AI-Driven Web Application Pentesting with HexStrike-AI**
-[2025-12-22-ai-driven-web-application-pentesting-with-hexstrike-ai-67f3dae32040.md](2025-12-22-ai-driven-web-application-pentesting-with-hexstrike-ai-67f3dae32040.md)
+ [2025-12-22-ai-driven-web-application-pentesting-with-hexstrike-ai-67f3dae32040.md](2025-12-22-ai-driven-web-application-pentesting-with-hexstrike-ai-67f3dae32040.md)
 
 - **AI-Driven Pentesting at Home: Using HexStrike-AI for Full Network Discovery and Exploitation**
-[2025-12-21-ai-driven-pentesting-at-home-using-hexstrike-ai-for-full-network-discovery-and-exploitatio-00a9e88b3bde.md](2025-12-21-ai-driven-pentesting-at-home-using-hexstrike-ai-for-full-network-discovery-and-exploitatio-00a9e88b3bde.md)
+ [2025-12-21-ai-driven-pentesting-at-home-using-hexstrike-ai-for-full-network-discovery-and-exploitatio-00a9e88b3bde.md](2025-12-21-ai-driven-pentesting-at-home-using-hexstrike-ai-for-full-network-discovery-and-exploitatio-00a9e88b3bde.md)
 
 - **HexStrike on Kali Linux 2025.4: A Comprehensive Guide**
-[2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md](2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md)
+ [2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md](2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949.md)
 
 - **Integrating Shodan with HexStrike-AI Using Gemini-CLI**
-[2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md](2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md)
+ [2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md](2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md)
 
 - **AI-Driven ZIP Password Recovery with HexStrike-AI and Gemini-CLI**
-[2025-12-25-ai-driven-zip-password-recovery-with-hexstrike-ai-and-gemini-cli-b8fc5c475ebc.md](2025-12-25-ai-driven-zip-password-recovery-with-hexstrike-ai-and-gemini-cli-b8fc5c475ebc.md)
+ [2025-12-25-ai-driven-zip-password-recovery-with-hexstrike-ai-and-gemini-cli-b8fc5c475ebc.md](2025-12-25-ai-driven-zip-password-recovery-with-hexstrike-ai-and-gemini-cli-b8fc5c475ebc.md)
 
 - **AI-Driven Wireless Penetration Testing — One Prompt Wi-Fi Cracking**
-[2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md](2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md)
+ [2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md](2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md)
 
 After multiple hands-on engagements and published write-ups, one thing is clear:
 
@@ -62,7 +62,7 @@ HexStrike is often misunderstood as:
 
 That framing is wrong.
 
-HexStrike is an**AI execution orchestrator**.
+HexStrike is an **AI execution orchestrator**.
 
 Instead of running tools independently, it:
 
@@ -84,7 +84,7 @@ In my article
 **“AI-Driven Web Application Pentesting with HexStrike-AI”**
 [2025-12-22-ai-driven-web-application-pentesting-with-hexstrike-ai-67f3dae32040.md](2025-12-22-ai-driven-web-application-pentesting-with-hexstrike-ai-67f3dae32040.md)
 
-HexStrike executed a**complete WebApp PT**against Google Gruyere:
+HexStrike executed a **complete WebApp PT** against Google Gruyere:
 
 - Discovery
 
@@ -98,9 +98,9 @@ HexStrike executed a**complete WebApp PT**against Google Gruyere:
 
 - Reporting
 
-Not as isolated steps — but as a**continuous reasoning loop**.
+Not as isolated steps — but as a **continuous reasoning loop**.
 
-The result wasn’t “findings” — it was an**attack narrative**, exactly how real attackers operate.
+The result wasn’t “findings” — it was an **attack narrative**, exactly how real attackers operate.
 
 ## HexStrike as a Red Team Force Multiplier
 
@@ -142,16 +142,16 @@ HexStrike:
 - Produced a clean, structured summary
 
 This was not blind automation.
-It was**guided, adaptive offensive reasoning**.
+It was **guided, adaptive offensive reasoning**.
 
 ## Wireless Attacks: From Prompt to Compromise
 
-One of the most striking demonstrations came from**wireless pentesting**.
+One of the most striking demonstrations came from **wireless pentesting**.
 
 **AI-Driven Wireless Penetration Testing — One Prompt Wi-Fi Cracking**
-[2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md](2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md)
+ [2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md](2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4.md)
 
-Using HexStrike + Gemini-CLI + aircrack-ng, a**single high-level prompt**initiated:
+Using HexStrike + Gemini-CLI + aircrack-ng, a **single high-level prompt** initiated:
 
 - Interface discovery
 
@@ -179,14 +179,14 @@ All while HexStrike:
 
 - Changed strategy autonomously
 
-This is**not script execution**— this is**autonomous troubleshooting**.
+This is **not script execution** — this is **autonomous troubleshooting**.
 
 ## OSINT and IoT: The Part That Is Genuinely Scary
 
 The most unsettling experience came from OSINT-driven testing.
 
 **Integrating Shodan with HexStrike-AI Using Gemini-CLI**
-[2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md](2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md)
+ [2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md](2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e.md)
 
 In one guided flow, HexStrike:
 
@@ -196,10 +196,10 @@ In one guided flow, HexStrike:
 
 - Extracted sensitive information
 
-- Retrieved RTSP credentials —**not by brute-force**, but because the system itself leaked them
+- Retrieved RTSP credentials — **not by brute-force**, but because the system itself leaked them
 
 This wasn’t luck.
-It was**layered reasoning across protocols, services, and misconfigurations**.
+It was **layered reasoning across protocols, services, and misconfigurations**.
 
 And that’s the point.
 
@@ -207,10 +207,10 @@ And that’s the point.
 
 Here is the part many people avoid discussing.
 
-HexStrike**dramatically reduces the barrier to entry for attackers**.
+HexStrike **dramatically reduces the barrier to entry for attackers**.
 
-Not because it makes everyone an expert —
-but because it**supplies structure, logic, and persistence**.
+Not because it makes everyone an expert — 
+but because it **supplies structure, logic, and persistence**.
 
 With a single well-written prompt, HexStrike can:
 
@@ -237,7 +237,7 @@ I observed it directly.
 
 ## Will HexStrike Replace Junior Pentesters?
 
-Yes —**partially and inevitably**.
+Yes — **partially and inevitably**.
 
 Many traditional junior tasks are already automated better by HexStrike:
 
@@ -265,7 +265,7 @@ This will reshape entry-level roles.
 
 ## What HexStrike Cannot Replace
 
-Despite its power, HexStrike**does not replace real expertise**.
+Despite its power, HexStrike **does not replace real expertise**.
 
 It cannot:
 
@@ -281,7 +281,7 @@ It cannot:
 
 - Replace experience earned through failure
 
-HexStrike amplifies**existing skill**.
+HexStrike amplifies **existing skill**.
 It does not create it.
 
 Senior pentesters and real hackers remain essential — but their role shifts:

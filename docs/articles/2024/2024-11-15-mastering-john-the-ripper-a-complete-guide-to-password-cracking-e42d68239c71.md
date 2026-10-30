@@ -33,29 +33,29 @@ In this guide, we’ll explore how to install and operate John the Ripper, discu
 
 ## Installation
 
-**1. Installing on Linux:**John the Ripper is readily available in the repositories of most Linux distributions, making it easy to install via package management systems.
+**1. Installing on Linux:** John the Ripper is readily available in the repositories of most Linux distributions, making it easy to install via package management systems.
 
-- **Debian-based systems (like Ubuntu):**Open the terminal and type the following command:
+- **Debian-based systems (like Ubuntu):** Open the terminal and type the following command:
 
 ```text
 sudo apt-get install john
 ```
 
-- **Red Hat-based systems (like Fedora or CentOS):**Use the following command in the terminal:
+- **Red Hat-based systems (like Fedora or CentOS):** Use the following command in the terminal:
 
 ```text
 sudo yum install john
 ```
 
-- **Arch Linux:**Use the pacman package manager:
+- **Arch Linux:** Use the pacman package manager:
 
 ```text
 sudo pacman -S john
 ```
 
-After installation, you can locate the binary typically in`/usr/sbin/john`.
+After installation, you can locate the binary typically in `/usr/sbin/john`.
 
-**2. Installing on macOS:**John the Ripper can be installed on macOS using Homebrew, a package manager for macOS.
+**2. Installing on macOS:** John the Ripper can be installed on macOS using Homebrew, a package manager for macOS.
 
 - First, install Homebrew by pasting the following in a terminal:
 
@@ -69,9 +69,9 @@ After installation, you can locate the binary typically in`/usr/sbin/john`.
 brew install john
 ```
 
-**3. Installing on Windows:**Windows users can download John the Ripper as part of the Cygwin environment, which emulates a Linux distribution on Windows.
+**3. Installing on Windows:** Windows users can download John the Ripper as part of the Cygwin environment, which emulates a Linux distribution on Windows.
 
-- Download the Cygwin installer from[Cygwin’s official website](https://www.cygwin.com/).
+- Download the Cygwin installer from [Cygwin’s official website](https://www.cygwin.com/).
 
 - During the installation process, make sure to select the “john” package under the “Security” category.
 
@@ -99,11 +99,11 @@ cd /snap/john-the-ripper/639/run/
 
 ### How to use:
 
-Creating hashes with John the Ripper, especially for different file types like ZIP files, involves using specialized utilities that come with John the Ripper. These utilities are designed to extract the hash values from various file formats so that they can be cracked by John the Ripper. For ZIP files, the utility you mentioned,`zip2john`, is used. Here’s how you can use`zip2john`to create a hash from a ZIP file:
+Creating hashes with John the Ripper, especially for different file types like ZIP files, involves using specialized utilities that come with John the Ripper. These utilities are designed to extract the hash values from various file formats so that they can be cracked by John the Ripper. For ZIP files, the utility you mentioned, `zip2john`, is used. Here’s how you can use `zip2john` to create a hash from a ZIP file:
 
 ### Step 1: Obtain zip2john
 
-Ensure that you have the full version of John the Ripper installed, which includes the`zip2john`utility. This utility is part of the "community-enhanced" version of John (often referred to as "jumbo" version), which includes additional features and support for more file types compared to the standard version.
+Ensure that you have the full version of John the Ripper installed, which includes the `zip2john` utility. This utility is part of the "community-enhanced" version of John (often referred to as "jumbo" version), which includes additional features and support for more file types compared to the standard version.
 
 ### Step 2: Prepare Your ZIP File
 
@@ -111,11 +111,11 @@ Make sure your ZIP file is ready and note its path. The file should have some fo
 
 ### Step 3: Run zip2john
 
-- **Open your command line interface**(Terminal on Linux and macOS, CMD or PowerShell on Windows).
+- **Open your command line interface** (Terminal on Linux and macOS, CMD or PowerShell on Windows).
 
-- **Navigate to the directory containing**`**zip2john**`if it is not added to your system path.
+- **Navigate to the directory containing** `**zip2john**` if it is not added to your system path.
 
-- **Execute**`**zip2john**`**followed by the path to your ZIP file**to extract the hash. The command would look like this:
+- **Execute** `**zip2john**` **followed by the path to your ZIP file** to extract the hash. The command would look like this:
 
 ```text
 zip2john /path/to/your/file.zip > /path/to/output/hash_file.txt
@@ -131,7 +131,7 @@ Once you have the hash, you can use John the Ripper to attempt to crack it. Here
 john /path/to/output/hash_file.txt
 ```
 
-This command tells John to start cracking the hashes stored in`hash_file.txt`. You can use various options to specify wordlists, rules, or other cracking methods.
+This command tells John to start cracking the hashes stored in `hash_file.txt`. You can use various options to specify wordlists, rules, or other cracking methods.
 
 ## Basic Usage
 
@@ -151,7 +151,7 @@ john
 john [options] password_file
 ```
 
-- Replace`password_file`with the path to the file containing the password hashes.
+- Replace `password_file` with the path to the file containing the password hashes.
 
 I have file with hash of password from office file:
 
@@ -167,7 +167,7 @@ john /path/to/your/hashes.txt
 
 <img src="https://cdn-images-1.medium.com/max/800/1*9wzwU-_k58BWzVVr2TU7SQ.png" alt="Article image" width="1019" height="379" loading="lazy" decoding="async" />
 
-When you use a default configuration, John use basic password list:**/usr/share/john/password.lst**, you can add more passwords for this list if you want, or use external lists.
+When you use a default configuration, John use basic password list: **/usr/share/john/password.lst**, you can add more passwords for this list if you want, or use external lists.
 
 ### Common Command-Line Options:
 
@@ -187,13 +187,13 @@ Enables word mangling rules to try variations of words from the wordlist.
 john --wordlist=/path/to/wordlist.txt --rules /path/to/hashes.txt
 ```
 
-**Default rules**in**John the Ripper**are predefined word-mangling rules specified in the configuration file (`john.conf`). These rules apply common password transformations to a base wordlist, increasing the chances of cracking passwords without requiring custom rule creation.
+**Default rules** in **John the Ripper** are predefined word-mangling rules specified in the configuration file (`john.conf`). These rules apply common password transformations to a base wordlist, increasing the chances of cracking passwords without requiring custom rule creation.
 
 ## Where Default Rules Are Defined
 
-- Default rules are found in the`[List.Rules:Wordlist]`section of the`john.conf`file.
+- Default rules are found in the `[List.Rules:Wordlist]` section of the `john.conf` file.
 
-- Other predefined rule sets like`[List.Rules:Single]`and`[List.Rules:Jumbo]`may also exist, depending on your John installation.
+- Other predefined rule sets like `[List.Rules:Single]` and `[List.Rules:Jumbo]` may also exist, depending on your John installation.
 
 You can examine these rules by opening the configuration file:
 
@@ -215,19 +215,19 @@ Default rules perform transformations on each word from the wordlist to generate
 
 **2. Appending Characters**
 
-- Adding numbers, symbols, or specific sequences to the word (e.g.,`password1`,`password123`,`password!`).
+- Adding numbers, symbols, or specific sequences to the word (e.g., `password1`, `password123`, `password!`).
 
 **3. Prepending Characters**
 
-- Adding numbers or symbols to the beginning of the word (e.g.,`1password`,`!password`).
+- Adding numbers or symbols to the beginning of the word (e.g., `1password`, `!password`).
 
 **4. Reversing Words**
 
-- Changing`password`to`drowssap`.
+- Changing `password` to `drowssap`.
 
 **5. Leetspeak Substitution**
 
-- Replacing letters with numbers or symbols (`password`→`p@ssw0rd`).
+- Replacing letters with numbers or symbols (`password` → `p@ssw0rd`).
 
 **6. Combining Words**
 
@@ -235,7 +235,7 @@ Default rules perform transformations on each word from the wordlist to generate
 
 ### Examples of Default Rules
 
-Here are examples of some rules in the`[List.Rules:Wordlist]`section of`john.conf`:
+Here are examples of some rules in the `[List.Rules:Wordlist]` section of `john.conf`:
 
 ```text
 c               # Capitalize the first letter
@@ -247,23 +247,23 @@ r               # Reverse the word
 
 ### Applying Default Rules
 
-You can apply default rules using the`--rules`option without specifying a particular rule set. For example:
+You can apply default rules using the `--rules` option without specifying a particular rule set. For example:
 
 ```text
 john --wordlist=/path/to/wordlist.txt --rules /path/to/hashfile
 ```
 
-This will apply all the rules in`[List.Rules:Wordlist]`to the words in your wordlist.
+This will apply all the rules in `[List.Rules:Wordlist]` to the words in your wordlist.
 
 ### Testing Default Rules
 
-You can see how default rules modify your wordlist using the`--stdout`option:
+You can see how default rules modify your wordlist using the `--stdout` option:
 
 ```text
 john --wordlist=/path/to/wordlist.txt --rules --stdout | head -20
 ```
 
-**For a wordlist containing**`**password**`**, the output might look like this:**
+**For a wordlist containing** `**password**`**, the output might look like this:**
 
 ```text
 password
@@ -282,7 +282,7 @@ drowssap
 
 Default rules are particularly effective for:
 
-- Passwords following common patterns (e.g., adding`123`, capitalizing the first letter).
+- Passwords following common patterns (e.g., adding `123`, capitalizing the first letter).
 
 - Quick attacks with minimal configuration.
 
@@ -290,7 +290,7 @@ Default rules are particularly effective for:
 
 ### Customizing or Expanding Default Rules
 
-You can modify the`[List.Rules:Wordlist]`section in`john.conf`to add or remove rules as needed. For example, to add a rule that prepends`123`, you can add:
+You can modify the `[List.Rules:Wordlist]` section in `john.conf` to add or remove rules as needed. For example, to add a rule that prepends `123`, you can add:
 
 ```text
 [List.Rules:Wordlist]
@@ -325,9 +325,9 @@ john --show /path/to/hashes.txt
 
 <img src="https://cdn-images-1.medium.com/max/800/1*PiECFLpr4FRNrIJ-F-GGwg.png" alt="Article image" width="778" height="208" loading="lazy" decoding="async" />
 
-**Checking the Status:**While John the Ripper is running, you can check the progress by pressing any key. To see more detailed status information, press`Ctrl + C`to pause the cracking process, and John will display the current status, including the speed of attempts and how many passwords have been cracked so far.
+**Checking the Status:** While John the Ripper is running, you can check the progress by pressing any key. To see more detailed status information, press `Ctrl + C` to pause the cracking process, and John will display the current status, including the speed of attempts and how many passwords have been cracked so far.
 
-**Stopping and Resuming:**You can safely stop the cracking process at any time by pressing`Ctrl + C`. John the Ripper saves the progress automatically, and you can resume the process later by simply rerunning the command without any changes.
+**Stopping and Resuming:** You can safely stop the cracking process at any time by pressing `Ctrl + C`. John the Ripper saves the progress automatically, and you can resume the process later by simply rerunning the command without any changes.
 
 ## Conclusion: Harnessing John the Ripper’s Versatility for Secure Password Management
 

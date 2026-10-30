@@ -63,17 +63,17 @@ The original `Basic_inf_gathering` tool file is no longer present in the [Malwar
 
 <img src="https://cdn-images-1.medium.com/max/800/0*tSsZ3K1Sey2NmgTt" alt="Article image" width="1017" height="154" loading="lazy" decoding="async" />
 
-**File Name:**Authenticator.exe
+**File Name:** Authenticator.exe
 
-**MD5:**cbfa7384b0b60d9c2e72cebe54b13619
+**MD5:** cbfa7384b0b60d9c2e72cebe54b13619
 
-**SHA-1:**3de18e3c92b296115261ea8f340d9564dae5c7a9
+**SHA-1:** 3de18e3c92b296115261ea8f340d9564dae5c7a9
 
-**SHA-256:**5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737
+**SHA-256:** 5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737
 
-**File Size:**12138248 bytes (11.58 MB)
+**File Size:** 12138248 bytes (11.58 MB)
 
-**File Type:**application/x-dosexec (PE32+**GUI**for Windows x86–64), standard portable executable targeting 64-bit Windows systems
+**File Type:** application/x-dosexec (PE32+ **GUI** for Windows x86–64), standard portable executable targeting 64-bit Windows systems
 
 ## Static Analysis
 
@@ -85,17 +85,17 @@ VirusTotal is a free online service that analyzes files and URLs for potential m
 
 ### Key Features:
 
-- **Multi-Engine Scanning:**VirusTotal aggregates results from various antivirus products and online scan engines, allowing users to identify malicious content that individual security solutions might miss. citeturn0search10
+- **Multi-Engine Scanning:** VirusTotal aggregates results from various antivirus products and online scan engines, allowing users to identify malicious content that individual security solutions might miss. citeturn0search10
 
-- **File and URL Analysis:**Users can upload files (up to 650 MB) or submit URLs to check for potential threats. citeturn0search10
+- **File and URL Analysis:** Users can upload files (up to 650 MB) or submit URLs to check for potential threats. citeturn0search10
 
-- **Community Collaboration:**The platform fosters a community where users can comment on and discuss submitted files and URLs, enhancing collective threat intelligence. citeturn0search10
+- **Community Collaboration:** The platform fosters a community where users can comment on and discuss submitted files and URLs, enhancing collective threat intelligence. citeturn0search10
 
 ### Usage Considerations:
 
 While VirusTotal is a valuable tool for detecting malware, it should not replace dedicated antivirus software. Instead, it serves as a supplementary resource, offering a second opinion on suspicious files or links. Users should be aware that uploading files to VirusTotal means they may be shared with security vendors to improve overall threat detection. citeturn0search10
 
-For more information or to use the service, visit the official VirusTotal website:[https://virustotal.com](https://virustotal.com)
+For more information or to use the service, visit the official VirusTotal website: [https://virustotal.com](https://virustotal.com)
 
 ### Upload file to VT
 
@@ -113,15 +113,15 @@ In Virus Total we can see much more information. But for this Lab I will do it m
 
 ### Key Features:
 
-- **PE32/64 Support:**Fully supports both 32-bit and 64-bit PE files, allowing for detailed inspection and modification.​
+- **PE32/64 Support:** Fully supports both 32-bit and 64-bit PE files, allowing for detailed inspection and modification.​
 
-- **.NET Compatibility:**Provides in-depth analysis and editing capabilities for .NET internal structures, making it valuable for developers working with .NET assemblies.​
+- **.NET Compatibility:** Provides in-depth analysis and editing capabilities for .NET internal structures, making it valuable for developers working with .NET assemblies.​
 
-- **Resource Editor:**Enables viewing and editing of resources within executables, including support for Windows Vista icons and .NET manifest resources.​
+- **Resource Editor:** Enables viewing and editing of resources within executables, including support for Windows Vista icons and .NET manifest resources.​
 
-- **Hex Editor:**Includes a built-in hex editor for low-level data inspection and modification.​
+- **Hex Editor:** Includes a built-in hex editor for low-level data inspection and modification.​
 
-- **Utilities and Tools:**Offers additional functionalities such as a process viewer, PE rebuilder, import adder, signature scanner, and dependency walker.​
+- **Utilities and Tools:** Offers additional functionalities such as a process viewer, PE rebuilder, import adder, signature scanner, and dependency walker.​
 
 ### Usage Considerations:
 
@@ -147,21 +147,21 @@ The Authenticator.exe imports a range of Windows API libraries consistent with a
 
 **Key imported DLLs include:**
 
-- **Kernel32.dll**— for core OS functions (process/thread creation via CreateThread, file operations via CreateFileW, system info via GetSystemInfo)​
+- **Kernel32.dll** — for core OS functions (process/thread creation via CreateThread, file operations via CreateFileW, system info via GetSystemInfo)​
 
-- **Advapi32.dll**— for Windows Registry manipulation (RegCreateKeyExW, RegOpenKeyExW, RegLoadKeyW)​
+- **Advapi32.dll** — for Windows Registry manipulation (RegCreateKeyExW, RegOpenKeyExW, RegLoadKeyW)​
 Likely used to potentially establish persistence or steal credential store data.
 
-- **User32.dll**— for GUI and user interaction (FindWindowW, clipboard access via OpenClipboard)​
-These could support**keylogging or clipboard theft**(common in stealers) and checking for certain windows (perhaps anti-VM or to target specific apps).
+- **User32.dll** — for GUI and user interaction (FindWindowW, clipboard access via OpenClipboard)​
+These could support **keylogging or clipboard theft** (common in stealers) and checking for certain windows (perhaps anti-VM or to target specific apps).
 
-- **Gdi32.dll**— graphics routines (StretchDIBits)​
+- **Gdi32.dll** — graphics routines (StretchDIBits)​
 possibly to capture screenshots of the desktop or browser content (screen capturing is another data theft technique).
 
-- **Ole32.dll**— COM interfaces (e.g., CoCreateInstance)​
+- **Ole32.dll** — COM interfaces (e.g., CoCreateInstance)​
 which might be used to instantiate network communication objects or other COM-based system utilities. For example, COM could be used to leverage Internet Explorer/WinINET COM classes for HTTP requests instead of direct API calls, or to launch other components.
 
-- **Version.dll**— used to call GetFileVersionInfo APIs​
+- **Version.dll** — used to call GetFileVersionInfo APIs​
 possibly to query version info of system or browser files (a fingerprinting technique).
 
 **Export:**
@@ -176,21 +176,21 @@ The PE file contains standard sections such as:
 
 ### Indicators of Packing/Obfuscation:
 
-I’ll user other tool —**Detect It Easy**
+I’ll user other tool — **Detect It Easy**
 
 <img src="https://cdn-images-1.medium.com/max/800/0*amQ87xfX1IqLNGWf.png" alt="Article image" width="256" height="256" loading="lazy" decoding="async" />
 
-**​Detect It Easy**(DiE) is a free, open-source utility designed to identify and analyze executable files across multiple platforms, including Windows, Linux, and macOS. Developed by NTInfo, DiE is widely utilized by malware analysts, cybersecurity professionals, and reverse engineers for its robust capabilities in detecting compilers, packers, and protectors embedded within executable files.
+**​Detect It Easy** (DiE) is a free, open-source utility designed to identify and analyze executable files across multiple platforms, including Windows, Linux, and macOS. Developed by NTInfo, DiE is widely utilized by malware analysts, cybersecurity professionals, and reverse engineers for its robust capabilities in detecting compilers, packers, and protectors embedded within executable files.
 
 ### Key Features:
 
-- **Comprehensive File Analysis:**DiE supports over 200 file types, encompassing formats such as PE (Windows), ELF (Linux), MACH-O (macOS), and more. It examines file headers, sections, and other critical attributes to determine their origin and the tools employed in their creation or protection.
+- **Comprehensive File Analysis:** DiE supports over 200 file types, encompassing formats such as PE (Windows), ELF (Linux), MACH-O (macOS), and more. It examines file headers, sections, and other critical attributes to determine their origin and the tools employed in their creation or protection.
 
-- **Customizable Detection Engine:**Users can add or modify detection signatures, enhancing the tool’s adaptability to emerging packers or protectors. This flexibility ensures that DiE remains current with the latest threats and technologies. ​
+- **Customizable Detection Engine:** Users can add or modify detection signatures, enhancing the tool’s adaptability to emerging packers or protectors. This flexibility ensures that DiE remains current with the latest threats and technologies. ​
 
-- **Cross-Platform Compatibility:**DiE operates seamlessly across Windows, Linux, and macOS, making it a versatile solution for professionals working in diverse computing environments. ​
+- **Cross-Platform Compatibility:** DiE operates seamlessly across Windows, Linux, and macOS, making it a versatile solution for professionals working in diverse computing environments. ​
 
-- **User-Friendly Interface:**The tool features an intuitive interface, simplifying the process of importing, exporting, and analyzing files. Additional functionalities include a HEX disassembler, various search options (ANSI, Links, UNICODE, and Crypto), and entropy calculation graphs for detailed file analysis. ​
+- **User-Friendly Interface:** The tool features an intuitive interface, simplifying the process of importing, exporting, and analyzing files. Additional functionalities include a HEX disassembler, various search options (ANSI, Links, UNICODE, and Crypto), and entropy calculation graphs for detailed file analysis. ​
 
 [More information and download this tool here:](https://www.majorgeeks.com/files/details/detect_it_easy.html)
 
@@ -198,7 +198,7 @@ I’ll user other tool —**Detect It Easy**
 
 ### Entropy
 
-​Entropy in the context of Portable Executable (PE) files measures the randomness or unpredictability of data within the file. Specifically,**Shannon entropy**is commonly used, providing a value between 0 and 8. A higher entropy value indicates greater randomness, often associated with compressed, encrypted, or obfuscated data. ​
+​Entropy in the context of Portable Executable (PE) files measures the randomness or unpredictability of data within the file. Specifically, **Shannon entropy** is commonly used, providing a value between 0 and 8. A higher entropy value indicates greater randomness, often associated with compressed, encrypted, or obfuscated data. ​
 
 In PE files, elevated entropy levels can signal the use of packing or encryption techniques, which are frequently employed by malware authors to conceal malicious code. By analyzing the entropy of different sections within a PE file, security professionals can identify anomalies that may warrant further investigation. ​
 
@@ -226,7 +226,7 @@ Signed file, valid signature.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*P_87DRNKx9Mar42p" alt="Article image" width="758" height="188" loading="lazy" decoding="async" />
 
-**Signature Validity:**As of the analysis, the certificate’s reputation has changed. The code signing certificate used here has been**revoked**by the issuer. Security scans now flag the signature as**revoked/untrusted**​, meaning the certificate was likely canceled once its misuse was reported.
+**Signature Validity:** As of the analysis, the certificate’s reputation has changed. The code signing certificate used here has been **revoked** by the issuer. Security scans now flag the signature as **revoked/untrusted**​, meaning the certificate was likely canceled once its misuse was reported.
 
 ### Strings:
 
@@ -239,7 +239,7 @@ The [current C++ String Analyser source](https://github.com/anpa1200/Malware_ana
 
 **Malware signature:**
 
-The sample did not explicitly carry a known malware family tag in the PE (no clear text like “DeerStealer” internally), but external detection engines identify it as**DeerStealer**via behavioral traits​:
+The sample did not explicitly carry a known malware family tag in the PE (no clear text like “DeerStealer” internally), but external detection engines identify it as **DeerStealer** via behavioral traits​:
 
 **AnyRun**
 
@@ -255,35 +255,35 @@ The sample did not explicitly carry a known malware family tag in the PE (no cle
 
 ## Threat Intelligence Lookup
 
-Using the SHA-256 hash 5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737 and the filename*Authenticator.exe*, we correlated this sample with known malware databases and reports. It is identified as**DeerStealer**, an information-stealing Trojan active since mid-2024​
+Using the SHA-256 hash 5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737 and the filename *Authenticator.exe*, we correlated this sample with known malware databases and reports. It is identified as **DeerStealer**, an information-stealing Trojan active since mid-2024​
 
 [any.run](https://any.run/report/5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737/8928117d-88c9-4d33-aae9-3a7822a2bf1f#:~:text=DeerStealer%20Stealer%20X)
 
-.Notably, DeerStealer has been linked to the**X-Files stealer**family — researchers note code and tactic similarities (X-Files was another credential stealer; DeerStealer may be a rework or evolution of it)​
+.Notably, DeerStealer has been linked to the **X-Files stealer** family — researchers note code and tactic similarities (X-Files was another credential stealer; DeerStealer may be a rework or evolution of it)​
 
 [any.run](https://any.run/report/5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737/8928117d-88c9-4d33-aae9-3a7822a2bf1f#:~:text=DeerStealer)
 
 [cybersecsentinel.com](https://cybersecsentinel.com/deerstealer-uses-google-authenticator-as-a-trojan-horse/#:~:text=)
 
-**Campaign and Distribution:**This specific sample was distributed via a fake Google Authenticator campaign. In July 2024, attackers ran malicious Google Ads that led users searching for “Google Authenticator” to a spoofed download site​
+**Campaign and Distribution:** This specific sample was distributed via a fake Google Authenticator campaign. In July 2024, attackers ran malicious Google Ads that led users searching for “Google Authenticator” to a spoofed download site​
 
 [securityonline.info](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=The%20ads%2C%20which%20appeared%20in,and%20other%20sensitive%20%2022)
 
-The site (e.g. chromeweb-authenticators[.]com) impersonated Google and offered an Authenticator app download. In reality, the download was the DeerStealer malware. The file was even hosted on**GitHub**(in a repository named “authgg” by user**authe-gogle**), leveraging a trusted platform to reduce suspicion​
+The site (e.g. chromeweb-authenticators[.]com) impersonated Google and offered an Authenticator app download. In reality, the download was the DeerStealer malware. The file was even hosted on **GitHub** (in a repository named “authgg” by user **authe-gogle**), leveraging a trusted platform to reduce suspicion​
 
 [securityonline.info](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=The%20decoy%20website%E2%80%99s%20source%20code,in%20a%20repository%20named%20authgg)
 
-The executable was deceptively named*Authenticator.exe*and was**digitally signed**by “Songyuan Meiying Electronic Products Co., Ltd.” — a certificate apparently issued just one day before the campaign​
+The executable was deceptively named *Authenticator.exe* and was **digitally signed** by “Songyuan Meiying Electronic Products Co., Ltd.” — a certificate apparently issued just one day before the campaign​
 
 [securityonline.info](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=Further%20investigation%20showed%20that%20the,the%20time%20of%20the%20report)
 
-Because the signature was valid, Windows did not initially block the file; instead, it installed the signer’s root cert (explaining the AuthRoot registry changes) and treated the app as from a known publisher. This social engineering and code-signing strategy allowed the malware to run with less user skepticism. MalwareBytes and others reported on this campaign, highlighting how the**threat actor impersonated Google**via ads and a convincing fake website​
+Because the signature was valid, Windows did not initially block the file; instead, it installed the signer’s root cert (explaining the AuthRoot registry changes) and treated the app as from a known publisher. This social engineering and code-signing strategy allowed the malware to run with less user skepticism. MalwareBytes and others reported on this campaign, highlighting how the **threat actor impersonated Google** via ads and a convincing fake website​
 
 [securityonline.info](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=The%20ads%2C%20which%20appeared%20in,and%20other%20sensitive%20%2022)
 
 [securityonline.info](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=The%20downloaded%20malware%2C%20identified%20as,privacy%20breaches%20and%20financial%20losses)
 
-**C2 Infrastructure:**The hash lookup and open-source intelligence show that vaniloin.fun is a known DeerStealer**command-and-control domain**​
+**C2 Infrastructure:** The hash lookup and open-source intelligence show that vaniloin.fun is a known DeerStealer **command-and-control domain**​
 
 [cybersecsentinel.com](https://cybersecsentinel.com/deerstealer-uses-google-authenticator-as-a-trojan-horse/#:~:text=Domains%3A)
 
@@ -301,7 +301,7 @@ At least 14 antivirus engines flagged it malicious at the time of first analysis
 
 (detections naming it e.g. “Win64.Thief.DeerStealer” or similar).
 
-**Attribution:**DeerStealer appears to be a commodity malware sold or shared on underground forums rather than a nation-state tool. The campaign using fake ads indicates a**cybercriminal operation (financially motivated)**. The use of Telegram for tracking victims (the fake site sent visitor info to a Telegram bot, per OSINT reports​
+**Attribution:** DeerStealer appears to be a commodity malware sold or shared on underground forums rather than a nation-state tool. The campaign using fake ads indicates a **cybercriminal operation (financially motivated)**. The use of Telegram for tracking victims (the fake site sent visitor info to a Telegram bot, per OSINT reports​
 
 [cybersecsentinel.com](https://cybersecsentinel.com/deerstealer-uses-google-authenticator-as-a-trojan-horse/#:~:text=A%20recent%20malware%20distribution%20campaign,for%20victim%20tracking%20and%20identification)
 
@@ -317,19 +317,19 @@ align with crimeware groups. While specific actor attribution is not confirmed p
 
 Researchers have noted DeerStealer’s emergence in 2024 and increasing prevalence via such deceptive distribution methods.
 
-**Malware Capabilities:**According to threat intelligence profiles, DeerStealer is capable of harvesting: saved browser passwords and cookies (from Chrome, Edge, Brave, Firefox, etc.), credit card numbers saved in browsers, cryptocurrency wallet files or seed phrases, as well as system information​
+**Malware Capabilities:** According to threat intelligence profiles, DeerStealer is capable of harvesting: saved browser passwords and cookies (from Chrome, Edge, Brave, Firefox, etc.), credit card numbers saved in browsers, cryptocurrency wallet files or seed phrases, as well as system information​
 
 [any.run](https://any.run/report/5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737/8928117d-88c9-4d33-aae9-3a7822a2bf1f#:~:text=DeerStealer)
 
 Some variants also target messaging platforms or gaming credentials (Discord tokens, for example). Once data is collected, it compresses/encrypts it and sends to the C2 (as we observed attempted). In our analysis, we saw evidence consistent with these capabilities — loading DPAPI and crypt32 (to decrypt browser-stored passwords), accessing AppData folders (where browsers and wallets store data), and using HTTPS for exfiltration.
 
-The**name “DeerStealer”**does not indicate a completely new codebase but underscores the method of distribution (preying on users searching for Authenticator). It shares functionality with the**X-Files Stealer**(which is a .NET-based stealer); however, DeerStealer is a native Windows 64-bit executable​
+The **name “DeerStealer”** does not indicate a completely new codebase but underscores the method of distribution (preying on users searching for Authenticator). It shares functionality with the **X-Files Stealer** (which is a .NET-based stealer); however, DeerStealer is a native Windows 64-bit executable​
 
 [cybersecsentinel.com](https://cybersecsentinel.com/deerstealer-uses-google-authenticator-as-a-trojan-horse/#:~:text=)
 
 This native code approach may be intended to evade detections that focused on .NET malware. The overlap in campaign (fake software sites) suggests the developers of X-Files or their affiliates pivoted to this new malware.
 
-In summary, external intelligence confirms that*Authenticator.exe*is indeed malicious — part of a 2024 info-stealer campaign named**DeerStealer**. It has been observed in the wild stealing data and sending to vaniloin.fun (with the malware author likely receiving logs of victims’ accounts). This context helps us understand the impact: any machine infected with this malware should be assumed fully compromised in terms of credential secrecy (all passwords, session cookies, and wallet keys could be in the attackers’ hands shortly after execution).
+In summary, external intelligence confirms that *Authenticator.exe* is indeed malicious — part of a 2024 info-stealer campaign named **DeerStealer**. It has been observed in the wild stealing data and sending to vaniloin.fun (with the malware author likely receiving logs of victims’ accounts). This context helps us understand the impact: any machine infected with this malware should be assumed fully compromised in terms of credential secrecy (all passwords, session cookies, and wallet keys could be in the attackers’ hands shortly after execution).
 
 ## Dynamic Analysis
 
@@ -341,23 +341,23 @@ Process Monitor, commonly known as ProcMon, is an advanced monitoring tool devel
 
 **Key Features:**
 
-- **Real-Time Monitoring:**ProcMon captures and displays live data on file system operations, registry modifications, and process/thread activities, enabling users to observe system behavior as it occurs. ​
+- **Real-Time Monitoring:** ProcMon captures and displays live data on file system operations, registry modifications, and process/thread activities, enabling users to observe system behavior as it occurs. ​
 
-- **Advanced Filtering:**Users can apply non-destructive filters to focus on specific processes, threads, or operations, facilitating targeted analysis without losing data.
+- **Advanced Filtering:** Users can apply non-destructive filters to focus on specific processes, threads, or operations, facilitating targeted analysis without losing data.
 
-- **Comprehensive Event Properties:**The tool provides detailed information for each captured event, including session IDs, user names, and stack traces, aiding in thorough diagnostics. ​
+- **Comprehensive Event Properties:** The tool provides detailed information for each captured event, including session IDs, user names, and stack traces, aiding in thorough diagnostics. ​
 
-- **Boot-Time Logging:**ProcMon can record events during the system boot process, which is particularly useful for diagnosing startup issues. ​
+- **Boot-Time Logging:** ProcMon can record events during the system boot process, which is particularly useful for diagnosing startup issues. ​
 
-- **Cross-Platform Availability:**Originally designed for Windows, ProcMon has been reimagined for Linux systems, allowing Linux developers to trace system call activities effectively. ​[github.com](https://github.com/microsoft/ProcMon-for-Linux)
+- **Cross-Platform Availability:** Originally designed for Windows, ProcMon has been reimagined for Linux systems, allowing Linux developers to trace system call activities effectively. ​[github.com](https://github.com/microsoft/ProcMon-for-Linux)
 
 **Usage Scenarios:**
 
-- **Troubleshooting Application Issues:**By monitoring real-time system activities, ProcMon helps identify the root causes of application errors, such as missing files or registry keys.​
+- **Troubleshooting Application Issues:** By monitoring real-time system activities, ProcMon helps identify the root causes of application errors, such as missing files or registry keys.​
 
-- **Malware Analysis:**Security professionals utilize ProcMon to detect unauthorized or suspicious activities performed by malicious software, enhancing threat detection and response efforts.​
+- **Malware Analysis:** Security professionals utilize ProcMon to detect unauthorized or suspicious activities performed by malicious software, enhancing threat detection and response efforts.​
 
-- **System Performance Optimization:**ProcMon assists in pinpointing processes that consume excessive resources, enabling informed decisions to optimize system performance.​
+- **System Performance Optimization:** ProcMon assists in pinpointing processes that consume excessive resources, enabling informed decisions to optimize system performance.​
 
 **Installation and Usage:**
 
@@ -371,23 +371,23 @@ To use ProcMon on Windows:​
 
 Add next filters:
 
-**Process name:**Authenticator.exe
+**Process name:** Authenticator.exe
 
 **Process Execution**
 
-Process Create, Process Exit, Process Start, Thread Create, Thread Exit —*Detects new processes and code injection*.
+Process Create, Process Exit, Process Start, Thread Create, Thread Exit — *Detects new processes and code injection*.
 
 **File System**
 
-CreateFile, WriteFile, ReadFile, CloseFile —*Identifies file modifications, creation, and potential self-deletion.*
+CreateFile, WriteFile, ReadFile, CloseFile — *Identifies file modifications, creation, and potential self-deletion.*
 
 **Registry Changes**
 
-RegSetValue, RegCreateKey, RegDeleteKey —*Checks if malware modifies system settings or auto-start keys.*
+RegSetValue, RegCreateKey, RegDeleteKey — *Checks if malware modifies system settings or auto-start keys.*
 
 **Network Activity**
 
-TCP Connect, UDP Send —*Detects malware trying to communicate with external servers.*
+TCP Connect, UDP Send — *Detects malware trying to communicate with external servers.*
 
 <img src="https://cdn-images-1.medium.com/max/800/0*UJhbmktjbQ7VzWTh" alt="Article image" width="932" height="606" loading="lazy" decoding="async" />
 
@@ -395,9 +395,9 @@ TCP Connect, UDP Send —*Detects malware trying to communicate with external se
 
 <img src="https://cdn-images-1.medium.com/max/800/0*afSwvL1Z2jYXzrQ5" alt="Article image" width="1029" height="106" loading="lazy" decoding="async" />
 
-**Loaded DLLs:**Authenticator.exe loads numerous Windows system libraries, indicating a broad range of capabilities. Key DLLs include:
+**Loaded DLLs:** Authenticator.exe loads numerous Windows system libraries, indicating a broad range of capabilities. Key DLLs include:
 
-- **Core OS Libraries:**ntdll.dll, kernel32.dll, KernelBase.dll — fundamental Windows APIs for process execution and memory management. These are expected for any program.
+- **Core OS Libraries:** ntdll.dll, kernel32.dll, KernelBase.dll — fundamental Windows APIs for process execution and memory management. These are expected for any program.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*Upjxfp9Wz9fDywC1" alt="Article image" width="446" height="32" loading="lazy" decoding="async" />
 
@@ -483,17 +483,17 @@ The malware leveraged these to query system information and perhaps enumerate ru
 
 ### File System Operations:
 
-*Authenticator.exe*did not drop additional malware files or inject into other processes. According to the Procmon logs, it primarily**read existing files**and directories.
+*Authenticator.exe* did not drop additional malware files or inject into other processes. According to the Procmon logs, it primarily **read existing files** and directories.
 
-The malware likely scanned for browser data (e.g. Chrome/Brave user data folders, which reside under AppData\Local) and other sensitive files. (In our execution, no large file reads were explicitly logged — possibly because the malware used memory-mapped reads or the environment had limited data. However, the*intended*behavior is to harvest files like browser**“Login Data”**SQLite databases, cookies, and wallet files​
+The malware likely scanned for browser data (e.g. Chrome/Brave user data folders, which reside under AppData\Local) and other sensitive files. (In our execution, no large file reads were explicitly logged — possibly because the malware used memory-mapped reads or the environment had limited data. However, the *intended* behavior is to harvest files like browser **“Login Data”** SQLite databases, cookies, and wallet files​
 
-No file writes or new files were created by the malware (Procmon shows**no successful WriteFile**or file creation events). This indicates it didn’t implant itself elsewhere or drop config files. It likely collected data and held it in memory for exfiltration.
+No file writes or new files were created by the malware (Procmon shows **no successful WriteFile** or file creation events). This indicates it didn’t implant itself elsewhere or drop config files. It likely collected data and held it in memory for exfiltration.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*wXOyntB5DCZqZEEC" alt="Article image" width="438" height="123" loading="lazy" decoding="async" />
 
-One minor filesystem artifact: the Windows**Prefetch**was queried (AUTHENTICATOR.EXE-*.pf), as is normal on first run (no prefetch existed, so it was just the OS looking to create one).
+One minor filesystem artifact: the Windows **Prefetch** was queried (AUTHENTICATOR.EXE-*.pf), as is normal on first run (no prefetch existed, so it was just the OS looking to create one).
 
-In summary,*Authenticator.exe*’s behavior in the file system was**profiling the user’s data**rather than modifying the system. This corresponds to typical stealer malware behavior: scan for interesting files (credentials, cookies, wallet seeds, etc.), read them, and prepare for exfiltration, all while avoiding making noisy changes to the disk.
+In summary, *Authenticator.exe*’s behavior in the file system was **profiling the user’s data** rather than modifying the system. This corresponds to typical stealer malware behavior: scan for interesting files (credentials, cookies, wallet seeds, etc.), read them, and prepare for exfiltration, all while avoiding making noisy changes to the disk.
 
 ### Registry Modifications:
 
@@ -505,29 +505,29 @@ In summary,*Authenticator.exe*’s behavior in the file system was**profiling th
 
 ### Key Features:
 
-- **Registry and File System Monitoring:**Regshot captures snapshots of the Windows registry and specified directories, enabling comprehensive tracking of system changes.
+- **Registry and File System Monitoring:** Regshot captures snapshots of the Windows registry and specified directories, enabling comprehensive tracking of system changes.
 
-- **Comparison Reports:**After capturing two snapshots, Regshot compares them and generates detailed reports highlighting added, modified, or deleted entries. These reports can be saved in text or HTML formats. ​
+- **Comparison Reports:** After capturing two snapshots, Regshot compares them and generates detailed reports highlighting added, modified, or deleted entries. These reports can be saved in text or HTML formats. ​
 
-- **Multi-Language Support:**The application offers support for multiple languages, enhancing accessibility for users worldwide. ​
+- **Multi-Language Support:** The application offers support for multiple languages, enhancing accessibility for users worldwide. ​
 
-- **Portability:**Regshot is a lightweight, portable application that doesn’t require installation, making it convenient for use across different systems. ​
+- **Portability:** Regshot is a lightweight, portable application that doesn’t require installation, making it convenient for use across different systems. ​
 
 ### Usage Scenarios:
 
-- **Software Installation Analysis:**Determine the exact changes made to the system by new software installations.​
+- **Software Installation Analysis:** Determine the exact changes made to the system by new software installations.​
 
-- **Troubleshooting:**Identify unintended or malicious modifications to the registry or file system.​
+- **Troubleshooting:** Identify unintended or malicious modifications to the registry or file system.​
 
-- **System Auditing:**Monitor and document changes for security assessments or compliance purposes.​
+- **System Auditing:** Monitor and document changes for security assessments or compliance purposes.​
 
 ### Availability:
 
 Regshot is compatible with various versions of Windows and is available for download from several reputable sources, including:​[regshot.informer.com+6portableapps.com+6regshot.en.lo4d.com+6](https://portableapps.com/apps/utilities/regshot_portable)
 
-- **SourceForge:**Provides the latest stable releases and source code. ​
+- **SourceForge:** Provides the latest stable releases and source code. ​
 
-- **PortableApps:**Offers a portable version that can run from USB drives without installation. ​
+- **PortableApps:** Offers a portable version that can run from USB drives without installation. ​
 
 ### Considerations:
 
@@ -535,7 +535,7 @@ While Regshot is a powerful tool for monitoring system changes, users should exe
 
 For more detailed information and to access the source code, visit the official GitHub repository.
 
-**The malware**did not create any persistent autostart entries in the registry. No new Run/RunOnce keys or Scheduled Task registrations were observed. Regshot comparison shows no Run key added. Instead, registry changes were mostly related to Windows internals: e.g. AuthRoot certificate entries were added under HKLM\SOFTWARE\Microsoft\SystemCertificates\AuthRoot\Certificates\…​
+**The malware** did not create any persistent autostart entries in the registry. No new Run/RunOnce keys or Scheduled Task registrations were observed. Regshot comparison shows no Run key added. Instead, registry changes were mostly related to Windows internals: e.g. AuthRoot certificate entries were added under HKLM\SOFTWARE\Microsoft\SystemCertificates\AuthRoot\Certificates\…​
 
 <img src="https://cdn-images-1.medium.com/max/800/0*6p7p3wBJuBmoWZE0" alt="Article image" width="1489" height="463" loading="lazy" decoding="async" />
 
@@ -559,17 +559,17 @@ FakeNet-NG is an open-source dynamic network analysis tool designed for malware 
 
 ### Key Features:
 
-- **Traffic Interception and Redirection:**Captures all or specific network traffic, allowing for in-depth analysis of malware communication patterns. ​
+- **Traffic Interception and Redirection:** Captures all or specific network traffic, allowing for in-depth analysis of malware communication patterns. ​
 
-- **Protocol Simulation:**Emulates various network protocols, such as DNS, HTTP, and SSL, ensuring malware continues its operations for comprehensive observation. ​[SourceForge+1aldeid.com+1](https://sourceforge.net/projects/fakenet/)
+- **Protocol Simulation:** Emulates various network protocols, such as DNS, HTTP, and SSL, ensuring malware continues its operations for comprehensive observation. ​[SourceForge+1aldeid.com+1](https://sourceforge.net/projects/fakenet/)
 
-- **Cross-Platform Compatibility:**Supports both Windows and Linux operating systems, providing flexibility across different analysis environments. ​
+- **Cross-Platform Compatibility:** Supports both Windows and Linux operating systems, providing flexibility across different analysis environments. ​
 
-- **Extensibility:**Offers a modular framework that allows users to develop custom plugins for specialized analysis needs. ​
+- **Extensibility:** Offers a modular framework that allows users to develop custom plugins for specialized analysis needs. ​
 
 ### Installation and Usage:
 
-FakeNet-NG can be utilized as a stand-alone executable or installed as a Python module. For Windows users, downloading the compiled version from the releases page is recommended. Linux users can install it using Python’s package manager,`pip`. Detailed installation instructions are available in the official GitHub repository. ​
+FakeNet-NG can be utilized as a stand-alone executable or installed as a Python module. For Windows users, downloading the compiled version from the releases page is recommended. Linux users can install it using Python’s package manager, `pip`. Detailed installation instructions are available in the official GitHub repository. ​
 
 ### Recent Enhancements:
 
@@ -577,46 +577,46 @@ The latest updates to FakeNet-NG include interactive HTML-based output, enhancin
 
 ### C2 Domain and IP:
 
-The primary network indicator is the domain**vaniloin.fun**, which the malware attempts to contact. In the analysis environment, this domain was resolved by FakeNet to a non-routable IP (in our case 192.0.2.123). All subsequent C2 traffic was directed at that IP. In a real scenario,**vaniloin.fun**is a live domain — threat intelligence confirms it’s an attacker-controlled host linked to*DeerStealer*campaigns​.
+The primary network indicator is the domain **vaniloin.fun**, which the malware attempts to contact. In the analysis environment, this domain was resolved by FakeNet to a non-routable IP (in our case 192.0.2.123). All subsequent C2 traffic was directed at that IP. In a real scenario, **vaniloin.fun** is a live domain — threat intelligence confirms it’s an attacker-controlled host linked to *DeerStealer* campaigns​.
 
-The malware performed DNS lookups for this domain and established TCP connections to it. An IDS rule (Emerging Threats) specifically flags**DNS queries for “vaniloin.fun”**as indicative of DeerStealer C2 traffic​
+The malware performed DNS lookups for this domain and established TCP connections to it. An IDS rule (Emerging Threats) specifically flags **DNS queries for “vaniloin.fun”** as indicative of DeerStealer C2 traffic​
 
 <img src="https://cdn-images-1.medium.com/max/800/0*MlTh_la7j25f1kz9" alt="Article image" width="593" height="250" loading="lazy" decoding="async" />
 
-**No HTTP requests to the malicious domain**were seen in plaintext, because the malware uses HTTPS. We did not capture an explicit POST or data upload in our sandbox network logs — likely because the TLS handshake succeeded but the fake server didn’t properly continue the dialog, so the malware retried without ever sending application-layer data. In a real infection, after the TLS handshake, we would expect an HTTP POST (or series of them) to `hxxps://vaniloin[.]fun/<endpoint>` carrying stolen information (credentials, etc.). That content would be encrypted inside TLS.
+**No HTTP requests to the malicious domain** were seen in plaintext, because the malware uses HTTPS. We did not capture an explicit POST or data upload in our sandbox network logs — likely because the TLS handshake succeeded but the fake server didn’t properly continue the dialog, so the malware retried without ever sending application-layer data. In a real infection, after the TLS handshake, we would expect an HTTP POST (or series of them) to `hxxps://vaniloin[.]fun/<endpoint>` carrying stolen information (credentials, etc.). That content would be encrypted inside TLS.
 
 ## Malware Classification & TTPs
 
-**Malware Type:**DeerStealer (Authenticator.exe) falls under the category of an**Information Stealer**(InfoStealer). Its purpose is to covertly gather sensitive user data and exfiltrate it to a remote server, without overtly damaging the system (which aligns with what we observed). It does**not**encrypt files (so it’s not ransomware), nor does it appear to open a persistent backdoor or spread laterally. It’s a classic steal-and-exfiltrate Trojan.
+**Malware Type:** DeerStealer (Authenticator.exe) falls under the category of an **Information Stealer** (InfoStealer). Its purpose is to covertly gather sensitive user data and exfiltrate it to a remote server, without overtly damaging the system (which aligns with what we observed). It does **not** encrypt files (so it’s not ransomware), nor does it appear to open a persistent backdoor or spread laterally. It’s a classic steal-and-exfiltrate Trojan.
 
-**MITRE ATT&CK Techniques:**We can map this malware’s behavior to several ATT&CK tactics and techniques:
+**MITRE ATT&CK Techniques:** We can map this malware’s behavior to several ATT&CK tactics and techniques:
 
 - **Initial Access — T1566.002 (Search Engine Ads)**: The malware was delivered through a drive-by download via malicious search engine advertisements​
-[securityonline.info
-](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=The%20ads%2C%20which%20appeared%20in,and%20other%20sensitive%20%2022). This is essentially a form of phishing using ads (also known as malvertising). Users were tricked into running the file themselves (social engineering), which is**T1204.002 User Execution: Malicious File**. The user believed they were installing legitimate software, which is a**Masquerading (T1036)**tactic — the binary’s name and signature masquerade as a trustworthy application​
+[securityonline.info](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=The%20ads%2C%20which%20appeared%20in,and%20other%20sensitive%20%2022)
+. This is essentially a form of phishing using ads (also known as malvertising). Users were tricked into running the file themselves (social engineering), which is **T1204.002 User Execution: Malicious File**. The user believed they were installing legitimate software, which is a **Masquerading (T1036)** tactic — the binary’s name and signature masquerade as a trustworthy application​
 [securityonline.info](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=Further%20investigation%20showed%20that%20the,the%20time%20of%20the%20report)
 
-- **Execution — T1047 / T1569**: The malware ran as a normal process when the user launched it (no exploit needed). It did not require elevation (it ran under user privileges). It also didn’t use any unusual execution techniques like process injection in this case (it ran in its own process space,*Authenticator.exe*). No**UAC bypass**was attempted (since it didn’t need admin rights for its stealing tasks).
+- **Execution — T1047 / T1569**: The malware ran as a normal process when the user launched it (no exploit needed). It did not require elevation (it ran under user privileges). It also didn’t use any unusual execution techniques like process injection in this case (it ran in its own process space, *Authenticator.exe*). No **UAC bypass** was attempted (since it didn’t need admin rights for its stealing tasks).
 
-- **Persistence — (None)**: DeerStealer does not set up persistence on the system. This is somewhat deliberate — by not leaving itself running or adding autoruns, it reduces its footprint. This means it**lacks typical persistence techniques**like Registry Run keys (T1547.001) or Scheduled Tasks. It relies on the one-time execution to get data. If the attackers want more data later, they would likely need to infect the user again or use credentials stolen to achieve persistence in another way. (In our case, since no persistence was observed, the malware likely exfiltrated and exited to avoid detection.)
+- **Persistence — (None)**: DeerStealer does not set up persistence on the system. This is somewhat deliberate — by not leaving itself running or adding autoruns, it reduces its footprint. This means it **lacks typical persistence techniques** like Registry Run keys (T1547.001) or Scheduled Tasks. It relies on the one-time execution to get data. If the attackers want more data later, they would likely need to infect the user again or use credentials stolen to achieve persistence in another way. (In our case, since no persistence was observed, the malware likely exfiltrated and exited to avoid detection.)
 
 - **Defense Evasion**: The malware employed several evasion tactics:
 
-- **Signed Binary**— It was code-signed with a valid digital signature​
-[securityonline.info
-](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=Further%20investigation%20showed%20that%20the,the%20time%20of%20the%20report), a Defense Evasion technique (T1588.003 — Acquire Code Signing Certificate, and T1553.002 — Code Signing). This can help it bypass SmartScreen or appear legitimate to users and some AV solutions.
+- **Signed Binary** — It was code-signed with a valid digital signature​
+[securityonline.info](https://securityonline.info/fake-google-authenticator-ads-spread-malware-through-google-search/#:~:text=Further%20investigation%20showed%20that%20the,the%20time%20of%20the%20report)
+, a Defense Evasion technique (T1588.003 — Acquire Code Signing Certificate, and T1553.002 — Code Signing). This can help it bypass SmartScreen or appear legitimate to users and some AV solutions.
 
-- **Masquerading**— as mentioned, naming itself “Authenticator” and using a legit-looking icon/signature to appear benign (T1036.005).
+- **Masquerading** — as mentioned, naming itself “Authenticator” and using a legit-looking icon/signature to appear benign (T1036.005).
 
 - It also likely avoids creating new processes or injecting code (thus avoiding behaviors that EDRs flag). All actions were done within its own process.
 
 - We did not see it explicitly disabling antivirus or firewall — no such attempts in logs (no Tampering with security settings). It may rely on its low profile to evade detection rather than actively killing AV.
 
-- **In-memory operations**— Possibly reading files via memory mapping and immediately encrypting data in memory for exfil, which would evade simplistic file-access monitors.
+- **In-memory operations** — Possibly reading files via memory mapping and immediately encrypting data in memory for exfil, which would evade simplistic file-access monitors.
 
-- Using**common protocols (HTTPS)**(T1071.001) and legitimate endpoints (Cloudflare) for C2 is also an evasion, blending traffic with normal user traffic.
+- Using **common protocols (HTTPS)** (T1071.001) and legitimate endpoints (Cloudflare) for C2 is also an evasion, blending traffic with normal user traffic.
 
-- **Discovery**— The malware performed extensive discovery of system and user data:
+- **Discovery** — The malware performed extensive discovery of system and user data:
 
 - **File and Directory Discovery (T1083)**: It enumerated directories like Documents and AppData, presumably to find files of interest.
 
@@ -624,9 +624,9 @@ The malware performed DNS lookups for this domain and established TCP connection
 
 - **Process Discovery (T1057)**: It loaded psapi.dll, which could indicate it might list running processes (e.g. to check if browsers are open, or if certain anti-malware processes are present).
 
-- **Browser Credential Access — T1555.003**: This is a significant one — the malware targets**Credentials from Web Browsers**​
-[any.run
-](https://any.run/report/5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737/8928117d-88c9-4d33-aae9-3a7822a2bf1f#:~:text=DeerStealer). It likely locates browser databases (Login Data, Cookies, etc.) and uses DPAPI to decrypt passwords. This falls squarely under credential access techniques. Many stealers, including this one, have routines for each browser to steal saved passwords, autofill data, and cookies (which can hijack logged-in sessions).
+- **Browser Credential Access — T1555.003**: This is a significant one — the malware targets **Credentials from Web Browsers**​
+[any.run](https://any.run/report/5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737/8928117d-88c9-4d33-aae9-3a7822a2bf1f#:~:text=DeerStealer)
+. It likely locates browser databases (Login Data, Cookies, etc.) and uses DPAPI to decrypt passwords. This falls squarely under credential access techniques. Many stealers, including this one, have routines for each browser to steal saved passwords, autofill data, and cookies (which can hijack logged-in sessions).
 
 - **Credential Access — T1552.001 (Credentials in Files)**: Beyond browsers, any plaintext credentials in configuration files (for example, some FTP client or messaging app configs) could be taken. It may hunt for known file paths for crypto wallets or config files in the user profile.
 
@@ -638,7 +638,7 @@ The malware performed DNS lookups for this domain and established TCP connection
 
 - Given DeerStealer’s focus on sensitive info, it might also steal things like saved RDP credentials, or file listings of the user’s machine. But primarily, it’s credentials and personal data. In our monitoring, the “RecentApps” registry entry for the malware itself was created (showing it ran), but no obvious sign of, say, recording everything in a local file. It likely kept the collection ephemeral until exfil.
 
-- **Command and Control**— The malware uses an**Encrypted Channel (T1573)**for C2. Specifically T1573.001 (TLS/SSL). It communicates with the C2 over HTTPS, blending in with normal web traffic. The**Protocol**is essentially HTTPS POST requests (web C2 — T1071.001). There’s no evidence of fallback to an alternate protocol (no IRC, no custom UDP, etc.), it sticks to web protocols. No C2 “beaconing” interval beyond the immediate upload loop was observed (it doesn’t beacon periodically; it just sends data right after execution).
+- **Command and Control** — The malware uses an **Encrypted Channel (T1573)** for C2. Specifically T1573.001 (TLS/SSL). It communicates with the C2 over HTTPS, blending in with normal web traffic. The **Protocol** is essentially HTTPS POST requests (web C2 — T1071.001). There’s no evidence of fallback to an alternate protocol (no IRC, no custom UDP, etc.), it sticks to web protocols. No C2 “beaconing” interval beyond the immediate upload loop was observed (it doesn’t beacon periodically; it just sends data right after execution).
 
 - The domain and patterns are hardcoded in the sample (as confirmed by threat intelligence). If the domain were to be sinkholed or down, the malware doesn’t appear to have an alternate domain in our case (some malware have a list of C2 domains or IPs to try in sequence; in this sample only vaniloin.fun was seen).
 
@@ -646,7 +646,7 @@ The malware performed DNS lookups for this domain and established TCP connection
 
 - **Exfiltration — T1041 (Exfiltration Over C2 Channel)**: All stolen data is exfiltrated over the same HTTPS channel it established. This is consistent with T1041, using an encrypted web request to upload data. Since the malware likely compresses and encrypts the stolen data by itself (perhaps in memory), the actual payload sent to the server might be encoded (often base64 or binary blob in HTTP POST). Because it’s over TLS, we couldn’t see the exact content, but that is the exfil mechanism.
 
-- **Impact — (None direct)**: This malware doesn’t have a destructive or disruptive impact on the victim’s machine in the way ransomware or wipers do. The impact is**data loss**and**privacy breach**.
+- **Impact — (None direct)**: This malware doesn’t have a destructive or disruptive impact on the victim’s machine in the way ransomware or wipers do. The impact is **data loss** and **privacy breach**.
 
 ## Indicators of Compromise (IoCs)
 
@@ -657,124 +657,27 @@ The malware performed DNS lookups for this domain and established TCP connection
 <img src="https://cdn-images-1.medium.com/max/800/0*d0t_7-9ELEXTv-8t" alt="Article image" width="1293" height="442" loading="lazy" decoding="async" />
 
 ```text
-rule 
-DeerStealer_Authenticator_Indicators
+rule DeerStealer_Authenticator_Indicators
 {
 meta:
-description 
-=
- 
-"YARA rule detecting DeerStealer malware based on specific IoCs"
-author 
-=
- 
-"Andrey Pautov (1200km@gmail.com)"
-date 
-=
- 
-"2025–03–13"
-malware_family 
-=
- 
-"DeerStealer"
-reference 
-=
- 
-"Sample SHA256: 5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737"
+description = "YARA rule detecting DeerStealer malware based on specific IoCs"
+author = "Andrey Pautov (1200km@gmail.com)"
+date = "2025–03–13"
+malware_family = "DeerStealer"
+reference = "Sample SHA256: 5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737"
 strings:
-$filename
- 
-=
- 
-"Authenticator.exe"
- 
-// Malicious file name used to masquerade as Google Authenticator
-$c2_domain1
- 
-=
- 
-"vaniloin.fun"
- 
-// Primary confirmed C2 domain
-$c2_domain2
- 
-=
- 
-"paradiso4.fun"
- 
-// Secondary known DeerStealer C2 domain
-$distribution_site
- 
-=
- 
-"chromeweb-authenticators.com"
- 
-// Fake Google Authenticator distribution site
-$github_repo
- 
-=
- 
-"authe-gogle/authgg"
- 
-// GitHub repository hosting malicious payload
-$registry_root_cert
- 
-=
- 
-"HKLM
-\\
-SOFTWARE
-\\
-Microsoft
-\\
-SystemCertificates
-\\
-AuthRoot
-\\
-Certificates
-\\
-8094640EB5A7A1CA119C1FDDD59F810263A7FBD1"
- 
-// Root certificate added upon execution
+$filename = "Authenticator.exe" // Malicious file name used to masquerade as Google Authenticator
+$c2_domain1 = "vaniloin.fun" // Primary confirmed C2 domain
+$c2_domain2 = "paradiso4.fun" // Secondary known DeerStealer C2 domain
+$distribution_site = "chromeweb-authenticators.com" // Fake Google Authenticator distribution site
+$github_repo = "authe-gogle/authgg" // GitHub repository hosting malicious payload
+$registry_root_cert = "HKLM\\SOFTWARE\\Microsoft\\SystemCertificates\\AuthRoot\\Certificates\\8094640EB5A7A1CA119C1FDDD59F810263A7FBD1" // Root certificate added upon execution
 condition:
-uint16(
-0
-) 
-==
- 
-0x5A4D
- and 
-// Checks PE file signature
+uint16(0) == 0x5A4D and // Checks PE file signature
 (
-hash.sha256(
-0
-, filesize) 
-==
- 
-"5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737"
- or 
-// Matches exact SHA-256 hash
-hash.md5(
-0
-, filesize) 
-==
- 
-"cbfa7384b0b60d9c2e72cebe54b13619"
- or 
-// Matches exact MD5 hash
-any
- of (
-$c2_domain1
-, 
-$c2_domain2
-, 
-$distribution_site
-, 
-$github_repo
-, 
-$registry_root_cert
-) or 
-// Matches critical strings indicating DeerStealer
+hash.sha256(0, filesize) == "5d1e3b113e15fc5fd4a08f41e553b8fd0eaace74b6dc034e0f6237c5e10aa737" or // Matches exact SHA-256 hash
+hash.md5(0, filesize) == "cbfa7384b0b60d9c2e72cebe54b13619" or // Matches exact MD5 hash
+any of ($c2_domain1, $c2_domain2, $distribution_site, $github_repo, $registry_root_cert) or // Matches critical strings indicating DeerStealer
 $filename
 )
 }
@@ -868,7 +771,7 @@ Malwarebytes Threat Intelligence Blog
 
 **Additional Documentation:**
 
-MITRE ATT&CK Framework —[https://attack.mitre.org](https://attack.mitre.org)
+MITRE ATT&CK Framework — [https://attack.mitre.org](https://attack.mitre.org)
 
 Sysinternals Suite Documentation — Microsoft
 

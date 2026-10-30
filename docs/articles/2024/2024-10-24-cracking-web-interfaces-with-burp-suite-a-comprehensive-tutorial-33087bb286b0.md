@@ -37,7 +37,7 @@ The information and tools provided in this guide are for educational and authori
 
 Burp Suite is a comprehensive platform for performing security testing of web applications. It includes various tools bundled into one suite, including a scanner, proxy, repeater, and intruder. The intruder component is particularly useful for conducting brute force attacks on web interfaces.
 
-*You can download this tool from official site*[*here*](https://portswigger.net/users/youraccount/licenses)
+*You can download this tool from official site* [*here*](https://portswigger.net/users/youraccount/licenses)
 
 ## Using Burp Suite to Crack Passwords on Web Interfaces
 
@@ -79,7 +79,7 @@ Or you can use burpsuite browser:
 
 **Step 3: Identify the Login Form**
 
-*For legal training I’ll use*[*portswiggers*](https://portswigger.net/web-security/all-labs#authentication)*labs.*
+*For legal training I’ll use* [*portswiggers*](https://portswigger.net/web-security/all-labs#authentication) *labs.*
 
 This is the most common authentication interface:
 
@@ -95,7 +95,7 @@ If you try to insert random username you can see reflection: invalid username. W
 
 - Navigate to the web interface you want to test.
 
-- Enter dummy credentials into the login like*testuser:testpass*form and submit it.
+- Enter dummy credentials into the login like *testuser:testpass* form and submit it.
 
 - Burp Suite will capture the request in the “HTTP history” tab under the “Proxy” tab.
 
@@ -121,7 +121,7 @@ If you try to insert random username you can see reflection: invalid username. W
 
 Now we can try to bruteforce username based response.
 
-*More information about brtute force attack*[*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
+*More information about brtute force attack* [*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
 
 - **Objective**: Configure payloads for both usernames and passwords.
 
@@ -133,7 +133,7 @@ Now we can try to bruteforce username based response.
 
 - Load your lists of usernames into the respective payload positions.
 
-*How to gain lists with usernames and passwords*[*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
+*How to gain lists with usernames and passwords* [*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
 
 <img src="https://cdn-images-1.medium.com/max/800/1*HDILTb5mokzhtuMR7AeCxg.png" alt="burp suite intruder brute force payload" width="851" height="520" loading="lazy" decoding="async" />
 
@@ -153,11 +153,11 @@ Now we can try to bruteforce username based response.
 
 ## Step 7: Analyze the Results
 
-**Objective:**Determine if any of the attempted credential combinations were successful, particularly by analyzing changes in response length that may indicate incorrect usernames.
+**Objective:** Determine if any of the attempted credential combinations were successful, particularly by analyzing changes in response length that may indicate incorrect usernames.
 
 **How to Do It:**
 
-- **Review the Responses:**Once the attack is complete, examine the responses listed in the Intruder’s results window. Burp Suite will display a table with details of each trial, including status codes and response lengths.
+- **Review the Responses:** Once the attack is complete, examine the responses listed in the Intruder’s results window. Burp Suite will display a table with details of each trial, including status codes and response lengths.
 
 - **Analyze Response Lengths:**
 
@@ -171,7 +171,7 @@ Now we can try to bruteforce username based response.
 
 ## Step 8: Try to Brute Force Password for Identified Username
 
-**Objective:**Once a username is suspected to be correct based on the analysis of response lengths or specific success indicators from Step 7, the next step is to concentrate efforts on cracking the password for that username.
+**Objective:** Once a username is suspected to be correct based on the analysis of response lengths or specific success indicators from Step 7, the next step is to concentrate efforts on cracking the password for that username.
 
 **How to Do It:**
 
@@ -187,7 +187,7 @@ Now we can try to bruteforce username based response.
 
 - Prepare a comprehensive list of potential passwords. This list can be based on common passwords, password patterns observed in the organization, or sophisticated guessing techniques (like using variations of common words associated with the user or company).
 
-- *How to gain lists with usernames and passwords*[*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
+- *How to gain lists with usernames and passwords* [*here*](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
 
 - Load this list into the Payloads section of the Intruder. Make sure you configure the payload type to “Simple list” and load your password list into it.
 
@@ -209,7 +209,7 @@ Now we can try to bruteforce username based response.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*4FJBTnXXuNzFzdttMl0M5w.png" alt="burp suite intruder brute force succsess" width="1611" height="834" loading="lazy" decoding="async" />
 
-Success: username:**au**, password:**football**
+Success: username: **au**, password: **football**
 
 ## Conclusion
 
@@ -217,13 +217,13 @@ The method described in this guide represents the simplest but most common examp
 
 While this method is sufficient for demonstrating basic vulnerabilities and testing simple authentication systems, real-world scenarios often present more complex challenges. In future posts, I will delve into more sophisticated techniques and scenarios, including but not limited to:
 
-- **Cracking advanced authentication mechanisms**that use multi-factor authentication and other security layers.
+- **Cracking advanced authentication mechanisms** that use multi-factor authentication and other security layers.
 
-- **Bypassing security features**such as CAPTCHA, CSRF tokens, and advanced session management controls.
+- **Bypassing security features** such as CAPTCHA, CSRF tokens, and advanced session management controls.
 
-- **Automating attacks**to handle large-scale testing with more complex and less predictable patterns.
+- **Automating attacks** to handle large-scale testing with more complex and less predictable patterns.
 
-- **Utilizing advanced payloads**and custom scripts within Burp Suite to adapt to unique security configurations and defenses.
+- **Utilizing advanced payloads** and custom scripts within Burp Suite to adapt to unique security configurations and defenses.
 
 Stay tuned for these upcoming discussions where we will explore deeper into the art of penetration testing and ethical hacking to uncover and mitigate more advanced security vulnerabilities.
 

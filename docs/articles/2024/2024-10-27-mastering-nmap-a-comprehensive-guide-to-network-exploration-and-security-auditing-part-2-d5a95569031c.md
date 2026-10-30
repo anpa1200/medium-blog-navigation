@@ -63,10 +63,7 @@ SCAN TECHNIQUES:
 **Command Example**:
 
 ```text
-nmap -sS 
-192.168
-.
-1.1
+nmap -sS 192.168.1.1
 ```
 
 This command initiates a TCP SYN scan against the host at 192.168.1.1, checking for open ports without completing the TCP handshake, making it stealthy.
@@ -81,15 +78,12 @@ This command initiates a TCP SYN scan against the host at 192.168.1.1, checking 
 
 ## -sT : TCP Connect() Scan
 
-- **Description**: This scan type uses the standard TCP`connect()`system call to establish a full TCP connection with the target, rather than sending raw packets.
+- **Description**: This scan type uses the standard TCP `connect()` system call to establish a full TCP connection with the target, rather than sending raw packets.
 
 **Command Example**:
 
 ```text
-nmap -sT 
-192.168
-.1
-.1
+nmap -sT 192.168.1.1
 ```
 
 This performs a TCP Connect() scan, using the operating system’s built-in connect() function to fully establish a TCP connection with each scanned port on the host. It’s straightforward but less stealthy.
@@ -109,10 +103,7 @@ This performs a TCP Connect() scan, using the operating system’s built-in conn
 **Command Example**:
 
 ```text
-nmap -sA 
-192.168
-.1
-.1
+nmap -sA 192.168.1.1
 ```
 
 This command executes a TCP ACK scan to determine filtering rules by sending ACK packets. It helps map out firewall configurations, as firewalls may react differently to unexpected ACK packets.
@@ -157,11 +148,11 @@ This command executes a TCP ACK scan to determine filtering rules by sending ACK
 
 ## -sU: UDP Scan
 
-The`-sU`option in Nmap is designated for UDP scans, which are essential for identifying open UDP ports on target hosts. Unlike TCP, UDP is a connectionless protocol, which can make these scans particularly challenging but highly valuable for discovering a wide range of services.
+The `-sU` option in Nmap is designated for UDP scans, which are essential for identifying open UDP ports on target hosts. Unlike TCP, UDP is a connectionless protocol, which can make these scans particularly challenging but highly valuable for discovering a wide range of services.
 
 ### How -sU Works:
 
-When executing a UDP scan with`-sU`, Nmap sends a UDP packet to the specified ports on the target host. The behavior of the target in response to these packets determines the status of the port:
+When executing a UDP scan with `-sU`, Nmap sends a UDP packet to the specified ports on the target host. The behavior of the target in response to these packets determines the status of the port:
 
 - If an ICMP port unreachable error (type 3, code 3) is received, the port is considered closed.
 
@@ -174,15 +165,10 @@ These scans are particularly effective for identifying and interacting with serv
 ### Example Usage of -sU :
 
 ```text
-nmap -sU 
-192.168
-.1
-.0
-/
-24
+nmap -sU 192.168.1.0/24
 ```
 
-This command initiates a UDP scan across all hosts within the subnet`192.168.1.0/24`, aiming to discover active UDP services. The results will indicate which UDP ports are open but will not detail the services unless combined with version detection (`-sV`).
+This command initiates a UDP scan across all hosts within the subnet `192.168.1.0/24`, aiming to discover active UDP services. The results will indicate which UDP ports are open but will not detail the services unless combined with version detection (`-sV`).
 
 ### Use Cases:
 
@@ -194,7 +180,7 @@ This command initiates a UDP scan across all hosts within the subnet`192.168.1.0
 
 ## -sN/sF/sX
 
-The`-sN`,`-sF`, and`-sX`options in Nmap are types of stealth TCP scans that manipulate TCP flags to probe systems in ways that standard SYN scans do not. These scans are particularly useful for evading detection by firewalls and intrusion detection systems that primarily look for SYN packets. Here’s an explanation of each, along with command examples and typical usage scenarios:
+The `-sN`, `-sF`, and `-sX` options in Nmap are types of stealth TCP scans that manipulate TCP flags to probe systems in ways that standard SYN scans do not. These scans are particularly useful for evading detection by firewalls and intrusion detection systems that primarily look for SYN packets. Here’s an explanation of each, along with command examples and typical usage scenarios:
 
 ### -sN : TCP Null Scan
 
@@ -236,11 +222,11 @@ The`-sN`,`-sF`, and`-sX`options in Nmap are types of stealth TCP scans that mani
 
 ## — scanflags &lt;flags&gt;:
 
-The`--scanflags`option in Nmap allows you to customize the TCP flags in the packet headers sent during the scan. This advanced feature lets you specify an arbitrary set of TCP flags to manipulate packet behavior in a highly controlled manner. It can be used to craft packets that might elicit responses from target systems that reveal information about their configuration and response patterns, potentially bypassing standard security mechanisms.
+The `--scanflags` option in Nmap allows you to customize the TCP flags in the packet headers sent during the scan. This advanced feature lets you specify an arbitrary set of TCP flags to manipulate packet behavior in a highly controlled manner. It can be used to craft packets that might elicit responses from target systems that reveal information about their configuration and response patterns, potentially bypassing standard security mechanisms.
 
 ### Full Explanation:
 
-With`--scanflags`, you provide the flags you want to set in the TCP header. Nmap enables you to explicitly set any combination of TCP flags, such as SYN, ACK, FIN, PSH, URG, and RST. This flexibility allows for very granular control over the packet's characteristics, making it possible to simulate different types of communication or malicious patterns to see how a network or host responds.
+With `--scanflags`, you provide the flags you want to set in the TCP header. Nmap enables you to explicitly set any combination of TCP flags, such as SYN, ACK, FIN, PSH, URG, and RST. This flexibility allows for very granular control over the packet's characteristics, making it possible to simulate different types of communication or malicious patterns to see how a network or host responds.
 
 ### Flag Definitions:
 
@@ -259,15 +245,10 @@ With`--scanflags`, you provide the flags you want to set in the TCP header. Nmap
 ### Command Example:
 
 ```text
-nmap 
---scanflags
- SYNACK 
-192.168
-.
-1.1
+nmap --scanflags SYNACK 192.168.1.1
 ```
 
-This command sets both the SYN and ACK flags in the packets sent to`192.168.1.1`. It's a non-standard flag combination for initiating TCP connections, which can test how devices react to unusual or incorrect signaling.
+This command sets both the SYN and ACK flags in the packets sent to `192.168.1.1`. It's a non-standard flag combination for initiating TCP connections, which can test how devices react to unusual or incorrect signaling.
 
 ### Typical Usage:
 
@@ -279,7 +260,7 @@ This command sets both the SYN and ACK flags in the packets sent to`192.168.1.1`
 
 ## -sI &lt;zombie host[:probeport]&gt;: Idle scan
 
-The`-sI`option in Nmap represents the Idle Scan, a sophisticated scanning technique that allows for stealthy scanning of a target network using a so-called "zombie" host. This type of scan can be used to map out a target's ports without exposing the scanner's IP address, making it one of the most stealthy and indirect methods of scanning available in Nmap.
+The `-sI` option in Nmap represents the Idle Scan, a sophisticated scanning technique that allows for stealthy scanning of a target network using a so-called "zombie" host. This type of scan can be used to map out a target's ports without exposing the scanner's IP address, making it one of the most stealthy and indirect methods of scanning available in Nmap.
 
 ### Full Explanation:
 
@@ -290,9 +271,7 @@ When Nmap sends a spoofed packet to the target that appears to come from the zom
 ### Command Example:
 
 ```text
-nmap -sI zombie_host
-[:probeport]
- target_host
+nmap -sI zombie_host[:probeport] target_host
 ```
 
 - **zombie_host**: An IP address of a machine that fulfills the criteria of being a suitable zombie.
@@ -304,19 +283,10 @@ nmap -sI zombie_host
 **Example with specified probe port:**
 
 ```text
-nmap -sI 
-192.168
-.1
-.100
-:
-80
- 
-192.168
-.1
-.200
+nmap -sI 192.168.1.100:80 192.168.1.200
 ```
 
-This command uses the host at`192.168.1.100`with port 80 as the zombie to scan the target at`192.168.1.200`.
+This command uses the host at `192.168.1.100` with port 80 as the zombie to scan the target at `192.168.1.200`.
 
 ### Typical Usage:
 
@@ -328,7 +298,7 @@ This command uses the host at`192.168.1.100`with port 80 as the zombie to scan t
 
 ### -sY/sZ: SCTP INIT/COOKIE-ECHO scans
 
-The`-sY`and`-sZ`options in Nmap are used for scanning using the SCTP (Stream Control Transmission Protocol) protocol, which is an alternative to TCP and UDP and supports features like multi-streaming and multi-homing. These options specify two types of SCTP scans: INIT scan and COOKIE-ECHO scan. Here's a detailed explanation of each type, their command usage, and typical applications.
+The `-sY` and `-sZ` options in Nmap are used for scanning using the SCTP (Stream Control Transmission Protocol) protocol, which is an alternative to TCP and UDP and supports features like multi-streaming and multi-homing. These options specify two types of SCTP scans: INIT scan and COOKIE-ECHO scan. Here's a detailed explanation of each type, their command usage, and typical applications.
 
 ## -sY : SCTP INIT Scan
 
@@ -338,7 +308,7 @@ The`-sY`and`-sZ`options in Nmap are used for scanning using the SCTP (Stream Con
 
 - `nmap -sY 192.168.1.1`
 
-- This command performs an SCTP INIT scan on all open ports of the host at`192.168.1.1`.
+- This command performs an SCTP INIT scan on all open ports of the host at `192.168.1.1`.
 
 ### Typical Usage :
 
@@ -352,13 +322,13 @@ SCTP INIT scans are particularly useful in environments where SCTP is used, such
 
 - `nmap -sZ 192.168.1.1`
 
-- This command initiates an SCTP COOKIE-ECHO scan on the host at`192.168.1.1`, probing the response to COOKIE-ECHO chunks.
+- This command initiates an SCTP COOKIE-ECHO scan on the host at `192.168.1.1`, probing the response to COOKIE-ECHO chunks.
 
 - **Typical Usage**: Similar to the INIT scan, the COOKIE-ECHO scan is valuable in networks utilizing SCTP. It offers a deeper level of scanning for SCTP services, often employed in telecommunications to manage connections more securely and robustly against certain types of network attacks.
 
 ### General Considerations:
 
-- **Specialized Network Environments**: Both`-sY`and`-sZ`scans are specific to networks where SCTP is deployed. SCTP is less common than TCP or UDP but is crucial in certain industries, particularly in IP telephony and carrier-grade IP networks.
+- **Specialized Network Environments**: Both `-sY` and `-sZ` scans are specific to networks where SCTP is deployed. SCTP is less common than TCP or UDP but is crucial in certain industries, particularly in IP telephony and carrier-grade IP networks.
 
 - **Security Implications**: These scans can help security professionals identify and assess the security posture of SCTP implementations, which might be overlooked in environments primarily focused on TCP and UDP.
 
@@ -366,7 +336,7 @@ SCTP INIT scans are particularly useful in environments where SCTP is used, such
 
 ### -sO: IP protocol scan
 
-The`-sO`option in Nmap specifies an IP protocol scan, which is used to determine which IP protocols (e.g., TCP, ICMP, UDP, etc.) are supported by the target machines. This type of scan is less about the ports and more about understanding what protocols are being used or allowed through a network device like a firewall or router.
+The `-sO` option in Nmap specifies an IP protocol scan, which is used to determine which IP protocols (e.g., TCP, ICMP, UDP, etc.) are supported by the target machines. This type of scan is less about the ports and more about understanding what protocols are being used or allowed through a network device like a firewall or router.
 
 ### Full Explanation:
 
@@ -375,19 +345,16 @@ An IP protocol scan sends raw IP packets to the target, using the protocol field
 ### Command Example:
 
 ```text
-nmap -sO 
-192.168
-.1
-.1
+nmap -sO 192.168.1.1
 ```
 
-This command initiates an IP protocol scan against the host at`192.168.1.1`, probing to see which IP protocols are supported or allowed through the network.
+This command initiates an IP protocol scan against the host at `192.168.1.1`, probing to see which IP protocols are supported or allowed through the network.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*EsoNrSm7R392iWciY-aYuw.png" alt="Article image" width="703" height="294" loading="lazy" decoding="async" />
 
 Nmap utilizes the standard IP protocol numbers as defined by the Internet Assigned Numbers Authority (IANA). These protocol numbers are used to specify the protocol carried in the IP datagram’s protocol field.
 
-You can find a comprehensive table of IP protocol numbers on the IANA[website](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)or in various network-related documentation. However, for quick reference, here are some of the common protocol numbers that are frequently used with tools like Nmap:
+You can find a comprehensive table of IP protocol numbers on the IANA [website](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) or in various network-related documentation. However, for quick reference, here are some of the common protocol numbers that are frequently used with tools like Nmap:
 
 - **1**: ICMP (Internet Control Message Protocol)
 
@@ -421,7 +388,7 @@ You can find a comprehensive table of IP protocol numbers on the IANA[website](h
 
 ## -b &lt;FTP relay host&gt;: FTP bounce scan
 
-The`-b`option in Nmap is used for conducting an FTP bounce scan. This type of scan leverages an FTP server to "bounce" a scan or other traffic off of the FTP server, masking the origin of the scan and using the FTP server as a proxy. This technique exploits the FTP protocol’s`PORT`command, which tells the FTP server to open a data connection to a specified IP address and port. Essentially, it can be used to scan other hosts from the perspective of the FTP server, making the traffic appear to originate from the FTP server rather than the actual scanning machine.
+The `-b` option in Nmap is used for conducting an FTP bounce scan. This type of scan leverages an FTP server to "bounce" a scan or other traffic off of the FTP server, masking the origin of the scan and using the FTP server as a proxy. This technique exploits the FTP protocol’s `PORT` command, which tells the FTP server to open a data connection to a specified IP address and port. Essentially, it can be used to scan other hosts from the perspective of the FTP server, making the traffic appear to originate from the FTP server rather than the actual scanning machine.
 
 ### Full Explanation:
 
@@ -430,9 +397,7 @@ FTP bounce scans utilize a feature of the FTP protocol that allows a client to r
 ### Command Example:
 
 ```text
-nmap -
-b
- FTP_user:FTP_password@FTP_relay_host target_host
+nmap -b FTP_user:FTP_password@FTP_relay_host target_host
 ```
 
 - **FTP_user**: The username for the FTP server.
@@ -446,19 +411,10 @@ b
 For example:
 
 ```text
-nmap -
-b
- admin:password@
-192.168
-.
-1.100
- 
-192.168
-.
-2.1
+nmap -b admin:password@192.168.1.100 192.168.2.1
 ```
 
-This command uses the FTP server at`192.168.1.100`with the username`admin`and password`password`to scan the host at`192.168.2.1`.
+This command uses the FTP server at `192.168.1.100` with the username `admin` and password `password` to scan the host at `192.168.2.1`.
 
 ### Typical Usage:
 

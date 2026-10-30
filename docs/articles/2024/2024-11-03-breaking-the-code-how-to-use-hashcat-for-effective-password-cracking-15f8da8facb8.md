@@ -99,13 +99,13 @@ Hashcat is compatible with Windows, Linux, and macOS, making it accessible to a 
 
 ### Windows Installation:
 
-- **Download Hashcat**: Visit the[official Hashcat website](https://hashcat.net/hashcat/)and download the latest version of Hashcat for Windows. Choose the version that matches your system architecture (32-bit or 64-bit).
+- **Download Hashcat**: Visit the [official Hashcat website](https://hashcat.net/hashcat/) and download the latest version of Hashcat for Windows. Choose the version that matches your system architecture (32-bit or 64-bit).
 
-- **Extract Files**: Once downloaded, extract the zip file to a folder of your choice, typically`C:\Hashcat`is used for ease of access.
+- **Extract Files**: Once downloaded, extract the zip file to a folder of your choice, typically `C:\Hashcat` is used for ease of access.
 
-- **Open Command Prompt**: Navigate to the Hashcat directory by opening Command Prompt and typing`cd C:\Hashcat`.
+- **Open Command Prompt**: Navigate to the Hashcat directory by opening Command Prompt and typing `cd C:\Hashcat`.
 
-- **Test Installation**: Test if Hashcat is installed correctly by running`hashcat -I`to display version information and available devices.
+- **Test Installation**: Test if Hashcat is installed correctly by running `hashcat -I` to display version information and available devices.
 
 ### Linux Installation:
 
@@ -118,32 +118,26 @@ sudo apt install hashcat
 - **Install Dependencies**: Open a terminal and install necessary libraries with:
 
 ```text
-sudo apt-
-get
- install build-essential
+sudo apt-get install build-essential
 ```
 
 **2. Clone Repository**: Clone the Hashcat repository from GitHub using:
 
 ```text
-git 
-clone
- https://github.com/hashcat/hashcat.git
+git clone https://github.com/hashcat/hashcat.git
 ```
 
-**3. Navigate and Compile**: Navigate to the cloned directory, and compile the source code using`make`.
+**3. Navigate and Compile**: Navigate to the cloned directory, and compile the source code using `make`.
 
 ```text
-cd
- hashcat
+cd hashcat
 make
 ```
 
 **4. Test Installation**: Verify the installation by running .
 
 ```text
-hashcat -
-I
+hashcat -I
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*5NkF69cKgqmDwprXTjwB7A.png" alt="Article image" width="892" height="560" loading="lazy" decoding="async" />
@@ -153,11 +147,7 @@ I
 - **Install Homebrew**: If not already installed, set up Homebrew by running:
 
 ```text
-/bin/bash -c 
-"
-$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
-"
-.
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)".
 ```
 
 **2. Install Hashcat**: Install Hashcat using Homebrew with:
@@ -166,15 +156,15 @@ $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
 brew install hashcat
 ```
 
-**3. Verify Installation**: Check that Hashcat is installed correctly by typing`hashcat -I`in the terminal.
+**3. Verify Installation**: Check that Hashcat is installed correctly by typing `hashcat -I` in the terminal.
 
 ### Configuring Hashcat for Optimal Performance:
 
 - **Use Dedicated GPUs**: For best performance, ensure Hashcat is running on dedicated GPU hardware. Integrated graphics can be significantly slower.
 
-- **Adjust Workload Profiles**: Hashcat offers various workload profiles ranging from 1 (low) to 4 (nightmare). These can be adjusted with the`-w`option, e.g.,`hashcat -w 3`. Select a profile based on your urgency and the thermal/energy constraints of your hardware.
+- **Adjust Workload Profiles**: Hashcat offers various workload profiles ranging from 1 (low) to 4 (nightmare). These can be adjusted with the `-w` option, e.g., `hashcat -w 3`. Select a profile based on your urgency and the thermal/energy constraints of your hardware.
 
-- **Manage Temperature**: Avoid overheating by using the`--hwmon-temp-abort=XX`option where`XX`is the maximum temperature in Celsius. It automatically stops the process at a safe temperature threshold.
+- **Manage Temperature**: Avoid overheating by using the `--hwmon-temp-abort=XX` option where `XX` is the maximum temperature in Celsius. It automatically stops the process at a safe temperature threshold.
 
 - **Utilize Rule-Based Attacks**: Improve the effectiveness of dictionary attacks by applying rules to adapt guesses to more complex password policies.
 
@@ -183,19 +173,12 @@ brew install hashcat
 The basic command structure for Hashcat consists of several components, which are typically concatenated in a single command line. Each component is prefixed with a dash (`-`) or double dash (`--`), followed by an identifier or a keyword. Here's how it generally looks:
 
 ```text
-hashcat [options] 
-<
-hashfile
->
- 
-<
-wordlist
->
+hashcat [options] <hashfile> <wordlist>
 ```
 
 - **hashcat**: This is the command to run the Hashcat program.
 
-- **[options]**: These are various options you can set to customize Hashcat’s behavior. Each option changes how Hashcat performs the cracking process.[**Full options list here**](https://hashcat.net/wiki/doku.php?id=hashcat#:~:text=48%3A24%202024-,Options,-hashcat%20%28v6.2.6%29%20starting):
+- **[options]**: These are various options you can set to customize Hashcat’s behavior. Each option changes how Hashcat performs the cracking process. [**Full options list here**](https://hashcat.net/wiki/doku.php?id=hashcat#:~:text=48%3A24%202024-,Options,-hashcat%20%28v6.2.6%29%20starting):
 
 - **&lt;hashfile&gt;**: This is the path to the file containing the hash values you wish to crack.
 
@@ -205,11 +188,11 @@ wordlist
 
 ### 1. Mode Selector ( -m ):
 
-- **Usage**:`-m &lt;mode&gt;`
+- **Usage**: `-m &lt;mode&gt;`
 
-- **Description**: Specifies the type of hash to crack. Each hash type, such as MD5, SHA-1, or WPA2, is assigned a unique number called a mode. For example,`-m 0`for MD5,`-m 1000`for NTLM, etc.
+- **Description**: Specifies the type of hash to crack. Each hash type, such as MD5, SHA-1, or WPA2, is assigned a unique number called a mode. For example, `-m 0` for MD5, `-m 1000` for NTLM, etc.
 
-- **Example**:`hashcat -m 1000 hashes.txt wordlist.txt`
+- **Example**: `hashcat -m 1000 hashes.txt wordlist.txt`
 
 - **-m 0**: MD5
 
@@ -235,7 +218,7 @@ wordlist
 
 ### 2. Attack Mode ( -a ):
 
-- **Usage**:`-a &lt;attack-mode&gt;`
+- **Usage**: `-a &lt;attack-mode&gt;`
 
 - **Description**: Sets the attack mode. Common modes include 0 for straight (dictionary attack), 3 for brute force, and 1 for combination.
 
@@ -244,26 +227,7 @@ wordlist
 - **Full list is here**
 
 ```text
-hashcat -
-a
- 
-3
- -m 
-0
- hashes
-.txt
- ?
-a
-?
-a
-?
-a
-?
-a
-?
-a
-?
-a
+hashcat -a 3 -m 0 hashes.txt ?a?a?a?a?a?a
 ```
 
 ### -a 0: Straight (Dictionary attack)
@@ -302,66 +266,55 @@ a
 
 ### 3. Output File ( -o ):
 
-- **Usage**:`-o &lt;output-file&gt;`
+- **Usage**: `-o &lt;output-file&gt;`
 
 - **Description**: Directs Hashcat to write the results (cracked passwords) to a specified file.
 
 - **Example**:
 
 ```text
-hashcat -m 
-0
- -
-a
- 
-0
- -o cracked
-.txt
- hashes
-.txt
- wordlist
-.txt
+hashcat -m 0 -a 0 -o cracked.txt hashes.txt wordlist.txt
 ```
 
 - **hash**
 
-- **Output**:`user1hash:salt123`
+- **Output**: `user1hash:salt123`
 
 - **Description**: Shows the hash and, if applicable, the salt.
 
 **2. plain**
 
-- **Output**:`password123`
+- **Output**: `password123`
 
 - **Description**: Outputs the plaintext of the cracked password.
 
 **3. hex_plain**
 
-- **Output**:`70617373776f7264313233`
+- **Output**: `70617373776f7264313233`
 
 - **Description**: Displays the plaintext password in hexadecimal format.
 
 **4. crack_pos**
 
-- **Output**:`42`
+- **Output**: `42`
 
 - **Description**: Indicates the position where the password was found.
 
 **5. timestamp absolute**
 
-- **Output**:`2024-11-03 12:34:56`
+- **Output**: `2024-11-03 12:34:56`
 
 - **Description**: Provides the exact date and time when the password was cracked.
 
 **6. timestamp relative**
 
-- **Output**:`00:00:42`
+- **Output**: `00:00:42`
 
 - **Description**: Shows the time elapsed from the start of the session to when the password was cracked.
 
 ### 4. Rules ( -r ):
 
-- **Usage**:`-r &lt;rule-file&gt;`
+- **Usage**: `-r &lt;rule-file&gt;`
 
 - **Description**: Applies rules to modify input words from a wordlist during a dictionary attack. This can greatly increase the effectiveness by simulating common password variations.
 
@@ -373,47 +326,47 @@ hashcat -m 0 -a 0 -r rules/best64.rule hashes.txt wordlist.txt
 
 **Finding-Rule**
 
-- **Output**:`Rule1`
+- **Output**: `Rule1`
 
 - **Description**: This format outputs the name or identifier of the rule that successfully cracked the password.
 
-- **Example**:`Rule1`indicates the specific transformation rule applied to derive the password.
+- **Example**: `Rule1` indicates the specific transformation rule applied to derive the password.
 
 **Original-Word**
 
-- **Output**:`password`
+- **Output**: `password`
 
 - **Description**: Displays the original word from the wordlist before any rules were applied.
 
-- **Example**:`password`shows the base word used to eventually crack the hash.
+- **Example**: `password` shows the base word used to eventually crack the hash.
 
 **Original-Word**
 
-- **Output**:`password:Rule1`
+- **Output**: `password:Rule1`
 
 - **Description**: Combines the original word with the rule that led to a successful crack.
 
-- **Example**:`password:Rule1`where`Rule1`might represent appending digits.
+- **Example**: `password:Rule1` where `Rule1` might represent appending digits.
 
 **Original-Word:Finding-Rule**
 
-- **Output**:`password:Rule1:password123`
+- **Output**: `password:Rule1:password123`
 
 - **Description**: Outputs the original word, the rule applied, and the resulting processed word that cracked the hash.
 
-- **Example**:`password:Rule1:password123`illustrates the transformation from the original word to the cracked password.
+- **Example**: `password:Rule1:password123` illustrates the transformation from the original word to the cracked password.
 
 **Original-Word:Finding-Rule:Processed-Word**
 
-- **Output**:`password:Rule1:password123:wordlist.txt`
+- **Output**: `password:Rule1:password123:wordlist.txt`
 
 - **Description**: This detailed format includes the original word, the applied rule, the processed word, and the wordlist file name used.
 
-- **Example**:`password:Rule1:password123:wordlist.txt`provides a comprehensive trace of how the cracking process unfolded from the original word to the successful result, specifying even the wordlist used.
+- **Example**: `password:Rule1:password123:wordlist.txt` provides a comprehensive trace of how the cracking process unfolded from the original word to the successful result, specifying even the wordlist used.
 
 ### 5. Workload Profile ( -w ):
 
-- **Usage**:`-w &lt;workload-profile&gt;`
+- **Usage**: `-w &lt;workload-profile&gt;`
 
 - **Description**: Adjusts the performance demand on the system by setting different workload profiles, where 1 is lightest and 4 is heaviest.
 
@@ -465,123 +418,62 @@ Nightmare (Profile 4)
 
 ### 6. Incremental Mode ( -i ):
 
-- **Usage**:`-i`
+- **Usage**: `-i`
 
 - **Description**: Enables incremental attack mode, which systematically tries password candidates from shorter to longer.
 
 - **Example**:
 
 ```text
-hashcat -m 
-1000
- -
-a
- 
-3
- -
-i
- hashes
-.txt
+hashcat -m 1000 -a 3 -i hashes.txt
 ```
 
 ### 7. Show ( --show ):
 
-- **Usage**:`--show`
+- **Usage**: `--show`
 
 - **Description**: Displays the cracked passwords from a result file without retesting the hashes.
 
 - **Example**:
 
 ```text
-hashcat -m 
-1000
- 
---show
- hashes
-.txt
+hashcat -m 1000 --show hashes.txt
 ```
 
 ### 8. Session ( --session ):
 
-- **Usage**:`--session &lt;session-name&gt;`
+- **Usage**: `--session &lt;session-name&gt;`
 
 - **Description**: Assigns a name to the session which allows for managing multiple concurrent or successive cracking tasks.
 
 - **Example**:
 
 ```text
-hashcat 
---session
- mycrack -m 
-1000
- hashes
-.txt
+hashcat --session mycrack -m 1000 hashes.txt
 ```
 
 ### 9. Limit ( --limit ):
 
-- **Usage**:`--limit &lt;limit&gt;`
+- **Usage**: `--limit &lt;limit&gt;`
 
 - **Description**: Limits the number of attempts to a specified number. Useful for testing or when time is a factor.
 
 - **Example**:
 
 ```text
-hashcat -m 
-1000
- -
-a
- 
-3
- 
---limit
- 
-1000000
- hashes
-.txt
- ?
-a
-?
-a
-?
-a
-?
-a
-?
-a
+hashcat -m 1000 -a 3 --limit 1000000 hashes.txt ?a?a?a?a?a
 ```
 
 ### 10. Skip ( --skip ):
 
-- **Usage**:`--skip &lt;skip&gt;`
+- **Usage**: `--skip &lt;skip&gt;`
 
 - **Description**: Skips a certain number of attempts. This is useful when resuming a long attack process without starting over.
 
 - **Example**:
 
 ```text
-hashcat -m 
-1000
- -
-a
- 
-3
- 
---skip
- 
-1000000
- hashes
-.txt
- ?
-a
-?
-a
-?
-a
-?
-a
-?
-a
+hashcat -m 1000 -a 3 --skip 1000000 hashes.txt ?a?a?a?a?a
 ```
 
 ## Real life examples:

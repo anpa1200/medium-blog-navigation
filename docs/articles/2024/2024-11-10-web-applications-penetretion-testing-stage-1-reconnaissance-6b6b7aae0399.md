@@ -67,11 +67,11 @@ The information in this blog post is for educational and informational purposes 
 
 ### Recommended Tools :
 
-[**OWASP Amass**](2024-11-06-owasp-amass-project-guide-94bd55521f91.md)**:**is an open-source tool for in-depth domain reconnaissance, asset discovery, and network mapping, widely used in penetration testing to identify a target’s external infrastructure.
+[**OWASP Amass**](2024-11-06-owasp-amass-project-guide-94bd55521f91.md)**:** is an open-source tool for in-depth domain reconnaissance, asset discovery, and network mapping, widely used in penetration testing to identify a target’s external infrastructure.
 
 - [Full explanation about OWASP Amass here](2024-11-06-owasp-amass-project-guide-94bd55521f91.md):
 
-[**theHarvester:**](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md)is an open-source reconnaissance tool for gathering domain-related data, including emails, subdomains, and IPs. Widely used in penetration testing and OSINT, it aggregates information from public sources, helping map a target’s external footprint and reveal potential vulnerabilities.
+[**theHarvester:**](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md) is an open-source reconnaissance tool for gathering domain-related data, including emails, subdomains, and IPs. Widely used in penetration testing and OSINT, it aggregates information from public sources, helping map a target’s external footprint and reveal potential vulnerabilities.
 
 - [Full explanation about theHarvester here:](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md)
 
@@ -79,11 +79,11 @@ The information in this blog post is for educational and informational purposes 
 
 - [Full explanation about Sublist3r here](2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712.md):
 
-**Censys:**a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure, providing security professionals with the tools needed to identify, analyze, and respond to vulnerabilities across global networks.
+**Censys:** a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure, providing security professionals with the tools needed to identify, analyze, and respond to vulnerabilities across global networks.
 
 - [Full explanation about Cencys here](2024-11-10-censys-for-enhanced-cybersecurity-insight-533df14794bd.md):
 
-**Hunter.io**is a tool for finding and verifying professional email addresses linked to specific domains, widely used for lead generation and OSINT by gathering publicly available contact information.
+**Hunter.io** is a tool for finding and verifying professional email addresses linked to specific domains, widely used for lead generation and OSINT by gathering publicly available contact information.
 
 ## 2. IP Address Ranges, DNS, WHOIS and Network Information
 
@@ -99,7 +99,7 @@ In the reconnaissance stage of a security assessment, mapping IP addresses, IP r
 
 ### Recommended Tools :
 
-**Basic Command Line Tools for Network Exploration:**Ping, Netdiscover, Whois, nslookup:
+**Basic Command Line Tools for Network Exploration:** Ping, Netdiscover, Whois, nslookup:
 
 - [Full explanation about this tool here:](2024-11-09-mastering-the-basics-essential-cli-tools-for-reconnaissance-in-penetration-testing-ee7fd9e36394.md)
 
@@ -111,15 +111,15 @@ In the reconnaissance stage of a security assessment, mapping IP addresses, IP r
 
 - [Full explanation about Nmap here:](2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)
 
-**Censys:**a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure, providing security professionals with the tools needed to identify, analyze, and respond to vulnerabilities across global networks.
+**Censys:** a comprehensive cybersecurity platform, offers an expansive view of the internet’s infrastructure, providing security professionals with the tools needed to identify, analyze, and respond to vulnerabilities across global networks.
 
 - [Full explanation about Cencys here](2024-11-10-censys-for-enhanced-cybersecurity-insight-533df14794bd.md):
 
-**DNSdumpster:**is a free online tool that allows users to find DNS records for domains, helping them visualize a domain’s DNS map. It is widely used in the initial stages of penetration testing to perform DNS reconnaissance.
+**DNSdumpster:** is a free online tool that allows users to find DNS records for domains, helping them visualize a domain’s DNS map. It is widely used in the initial stages of penetration testing to perform DNS reconnaissance.
 
 - **Usage**:
 
-- **Visit the Website**: Go to[https://dnsdumpster.com/](https://dnsdumpster.com/).
+- **Visit the Website**: Go to [https://dnsdumpster.com/](https://dnsdumpster.com/).
 
 - **Enter the Domain**: Input the domain you’re interested in researching into the search bar.
 
@@ -133,7 +133,7 @@ In the reconnaissance stage of a security assessment, mapping IP addresses, IP r
 
 **Recommended Tools**:
 
-[**theHarvester:**](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md)is an open-source reconnaissance tool for gathering domain-related data, including emails, subdomains, and IPs. Widely used in penetration testing and OSINT, it aggregates information from public sources, helping map a target’s external footprint and reveal potential vulnerabilities.
+[**theHarvester:**](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md) is an open-source reconnaissance tool for gathering domain-related data, including emails, subdomains, and IPs. Widely used in penetration testing and OSINT, it aggregates information from public sources, helping map a target’s external footprint and reveal potential vulnerabilities.
 
 - [Full explanation about theHarvester here:](2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3.md)
 
@@ -175,11 +175,11 @@ Very good and powerfull but not free.
 
 **Project Information:**
 
-- **Client Name:**[Client Name]
+- **Client Name:** [Client Name]
 
-- **Project Date:**[Date]
+- **Project Date:** [Date]
 
-- **Lead Tester:**[Lead Tester’s Name]
+- **Lead Tester:** [Lead Tester’s Name]
 
 **1. Domain and Subdomain Information**
 

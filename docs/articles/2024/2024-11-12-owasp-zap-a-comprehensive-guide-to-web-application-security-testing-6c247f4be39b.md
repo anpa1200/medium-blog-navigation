@@ -41,7 +41,7 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 - **Download ZAP**:
 
-- Go to[OWASP ZAP’s download page](https://www.zaproxy.org/download/).
+- Go to [OWASP ZAP’s download page](https://www.zaproxy.org/download/).
 
 - Select the appropriate version for your operating system.
 
@@ -55,7 +55,7 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 **3. Launch ZAP**:
 
-- Open ZAP and configure your browser’s proxy settings to route through ZAP’s local proxy (usually`localhost:8080`) to intercept traffic.
+- Open ZAP and configure your browser’s proxy settings to route through ZAP’s local proxy (usually `localhost:8080`) to intercept traffic.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*OS6pzG8N7LZLnMjgOxy-6g.png" alt="Article image" width="1924" height="1049" loading="lazy" decoding="async" />
 
@@ -65,7 +65,7 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 - Open OWASP ZAP on your computer.
 
-- On the**Quick Start**tab, you’ll see options for different types of scans, including the Automated Scan.
+- On the **Quick Start** tab, you’ll see options for different types of scans, including the Automated Scan.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*4O3qswkItttACntogOu1sw.png" alt="Article image" width="1915" height="231" loading="lazy" decoding="async" />
 
@@ -73,25 +73,25 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 ### For ZAP to capture traffic and run scans effectively, configure your browser to use ZAP as a proxy.
 
-- Set the browser’s proxy settings to`localhost`on port`8080`(ZAP’s default proxy).
+- Set the browser’s proxy settings to `localhost` on port `8080` (ZAP’s default proxy).
 
-- Alternatively, you can use the**OWASP ZAP Browser Extension**if available for your browser, which will automatically set up the proxy configuration.
+- Alternatively, you can use the **OWASP ZAP Browser Extension** if available for your browser, which will automatically set up the proxy configuration.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*5vdceVb4mrvMkGFmP6Bo-w.png" alt="Article image" width="860" height="516" loading="lazy" decoding="async" />
 
 ### Step 3: Enter the Target URL
 
-- Go to the**Quick Start**tab in ZAP.
+- Go to the **Quick Start** tab in ZAP.
 
-- In the**URL to attack**field, enter the full URL of the target website (e.g.,`[http://example.com](http://example.com%29)`[).](http://example.com%29)
+- In the **URL to attack** field, enter the full URL of the target website (e.g., `[http://example.com](http://example.com%29)`[).](http://example.com%29)
 
-- Select the**Attack Mode**as**Active Scan**for ZAP to perform an active vulnerability scan on the target.
+- Select the **Attack Mode** as **Active Scan** for ZAP to perform an active vulnerability scan on the target.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*PB9EURvvjdONOo2aOVnRYw.png" alt="Article image" width="1214" height="182" loading="lazy" decoding="async" />
 
 ### Step 4: Run the Basic Scan
 
-- Click the**Attack**button to initiate the basic scan.
+- Click the **Attack** button to initiate the basic scan.
 
 - ZAP will start by crawling the website and identifying available pages, forms, and parameters.
 
@@ -99,7 +99,7 @@ ZAP is available for multiple operating systems, including Windows, macOS, and L
 
 ### Step 5: Monitor the Scan Progress
 
-In the**Sites**and**Alerts**panels:
+In the **Sites** and **Alerts** panels:
 
 - **Sites Panel**: Shows the structure of the target site, including all discovered URLs and resources.
 
@@ -111,7 +111,7 @@ In the**Sites**and**Alerts**panels:
 
 ### Step 6: Review the Results
 
-- After the scan completes, go to the**Alerts**tab to view a summary of the findings.
+- After the scan completes, go to the **Alerts** tab to view a summary of the findings.
 
 - Click on each alert to see more details, including:
 
@@ -129,7 +129,7 @@ In the**Sites**and**Alerts**panels:
 
 To generate a report for documentation or analysis:
 
-- Go to**Report &gt; Generate Report**.
+- Go to **Report &gt; Generate Report**.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Apt6Jo9f-lrPOpe8SPLNcw.png" alt="Article image" width="1066" height="623" loading="lazy" decoding="async" />
 
@@ -143,31 +143,31 @@ To generate a report for documentation or analysis:
 
 - Open OWASP ZAP.
 
-- Ensure your browser is configured to use ZAP as a proxy (typically`localhost:8080`) so it can capture all traffic and requests.
+- Ensure your browser is configured to use ZAP as a proxy (typically `localhost:8080`) so it can capture all traffic and requests.
 
 ### Step 2: Configure the Deep Scan Settings
 
 **Spider Configuration**:
 
-- **Increase Depth Levels**: By default, the spidering (crawling) depth may be limited. Go to**Tools &gt; Options &gt; Spider**and adjust the depth level by setting it to a higher value, such as`5`or more, to explore the site more deeply. Maximum Depth to Crawl — 0.
+- **Increase Depth Levels**: By default, the spidering (crawling) depth may be limited. Go to **Tools &gt; Options &gt; Spider** and adjust the depth level by setting it to a higher value, such as `5` or more, to explore the site more deeply. Maximum Depth to Crawl — 0.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*zJ1YzWz5xIBlCBiQmqnz1g.png" alt="Article image" width="1156" height="668" loading="lazy" decoding="async" />
 
-**Enable AJAX Spidering**: For JavaScript-heavy sites or Single Page Applications (SPAs), enable**AJAX Spidering**under**Tools &gt; Options &gt; AJAX Spider**. This will allow ZAP to find pages and resources loaded dynamically with JavaScript.
+**Enable AJAX Spidering**: For JavaScript-heavy sites or Single Page Applications (SPAs), enable **AJAX Spidering** under **Tools &gt; Options &gt; AJAX Spider**. This will allow ZAP to find pages and resources loaded dynamically with JavaScript.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*fGygERmk3aEgaqhbr7JuAw.png" alt="Article image" width="1156" height="668" loading="lazy" decoding="async" />
 
 **Active Scan Policy**:
 
-- Go to**Analyze &gt; Scan Policy Manager**to access the scan policy settings.
+- Go to **Analyze &gt; Scan Policy Manager** to access the scan policy settings.
 
-- Select the**Default Policy**or create a new custom policy.
+- Select the **Default Policy** or create a new custom policy.
 
-- Enable all scan rules by setting each category (Injection, Authentication, etc.) to**High**. This ensures that the scan will cover all vulnerability types with the highest level of detail.
+- Enable all scan rules by setting each category (Injection, Authentication, etc.) to **High**. This ensures that the scan will cover all vulnerability types with the highest level of detail.
 
 **Attack Strength**:
 
-- In the same**Scan Policy Manager**window, set the**Attack Strength**to**Insane**or**High**. This setting controls how many payloads (test cases) ZAP uses for each vulnerability type, increasing the depth and thoroughness of testing.
+- In the same **Scan Policy Manager** window, set the **Attack Strength** to **Insane** or **High**. This setting controls how many payloads (test cases) ZAP uses for each vulnerability type, increasing the depth and thoroughness of testing.
 
 - Be aware that this can significantly increase scan time and server load.
 
@@ -177,20 +177,20 @@ To generate a report for documentation or analysis:
 
 - **Enter the Target URL**:
 
-- In the**Quick Start**tab, enter the full URL of the target web application.
+- In the **Quick Start** tab, enter the full URL of the target web application.
 
 - **Enable Attack Mode**:
 
-- Switch to**Attack Mode**by clicking on the small icon (red target icon) in the toolbar. Attack Mode ensures ZAP actively scans any site or URL visited in your browser, automatically performing deeper scans on each component found.
+- Switch to **Attack Mode** by clicking on the small icon (red target icon) in the toolbar. Attack Mode ensures ZAP actively scans any site or URL visited in your browser, automatically performing deeper scans on each component found.
 
 ### Step 4: Perform the Active Scan
 
-- In the**Sites**panel, right-click on the target site.
+- In the **Sites** panel, right-click on the target site.
 
-- Select**Attack &gt; Active Scan**
+- Select **Attack &gt; Active Scan**
 
-- Choose**Default Policy**or your custom**Deep Scan Policy**from the dropdown, ensuring that all previously configured deep scan rules and attack strength settings are applied.
+- Choose **Default Policy** or your custom **Deep Scan Policy** from the dropdown, ensuring that all previously configured deep scan rules and attack strength settings are applied.
 
-- Click**Start Scan**.
+- Click **Start Scan**.
 
 ## Good luck!

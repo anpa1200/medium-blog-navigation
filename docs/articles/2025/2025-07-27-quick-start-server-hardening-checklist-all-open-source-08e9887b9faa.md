@@ -32,11 +32,9 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 ```text
 # Replace 'secadmin' with your desired username
 adduser secadmin
-usermod -aG sudo secadmin   
-# For Debian/Ubuntu
+usermod -aG sudo secadmin   # For Debian/Ubuntu
 # OR
-usermod -aG wheel secadmin  
-# For RHEL/CentOS/Fedora
+usermod -aG wheel secadmin  # For RHEL/CentOS/Fedora
 ```
 
 This ensures you have a non-root user with administrative privileges.
@@ -50,32 +48,25 @@ passwd secadmin
 Or set up key-based login:
 
 ```text
-mkdir
- -p /home/secadmin/.ssh
-cp
- /root/.ssh/authorized_keys /home/secadmin/.ssh/
-chown
- -R secadmin:secadmin /home/secadmin/.ssh
-chmod
- 700 /home/secadmin/.ssh
-chmod
- 600 /home/secadmin/.ssh/authorized_keys
+mkdir -p /home/secadmin/.ssh
+cp /root/.ssh/authorized_keys /home/secadmin/.ssh/
+chown -R secadmin:secadmin /home/secadmin/.ssh
+chmod 700 /home/secadmin/.ssh
+chmod 600 /home/secadmin/.ssh/authorized_keys
 ```
 
 **3. Test SSH login as the new user**
 
-Open a**new terminal**(do not close the current one!) and run:
+Open a **new terminal** (do not close the current one!) and run:
 
 ```text
-ssh secadmin
-@your_server_ip
+ssh secadmin@your_server_ip
 ```
 
-Confirm you can log in and use`sudo`:
+Confirm you can log in and use `sudo`:
 
 ```text
-sudo 
-whoami
+sudo whoami
 # Output should be: root
 ```
 
@@ -83,9 +74,7 @@ whoami
 
 ```text
 # List all users with login shells
-grep 
-'/bash'
- /etc/passwd
+grep '/bash' /etc/passwd
 ```
 
 ```text
@@ -105,19 +94,14 @@ sudo nano /etc/ssh/sshd_config
 Find and change:
 
 ```text
-PermitRootLogin 
-no
+PermitRootLogin no
 ```
 
 Also consider:
 
 ```text
-PasswordAuthentication 
-no
-         
-# if you use keys only
-AllowUsers secadmin               
-# optional: restrict to known users
+PasswordAuthentication no         # if you use keys only
+AllowUsers secadmin               # optional: restrict to known users
 ```
 
 **6. Restart SSH service**
@@ -131,50 +115,32 @@ sudo systemctl restart sshd
 - Open a new terminal:
 
 ```text
-ssh root
-@your_server_ip
- 
-# Should fail: Permission denied
+ssh root@your_server_ip # Should fail: Permission denied
 ```
 
 - Try your admin user:
 
 ```text
-ssh secadmin
-@your_server_ip
- 
-# Should succeed
+ssh secadmin@your_server_ip # Should succeed
 ```
 
-To limit SSH login attempts to**3 tries**and**block further attempts for 30 seconds**, you can use`**fail2ban**`, a common and effective tool for this purpose.
+To limit SSH login attempts to **3 tries** and **block further attempts for 30 seconds**, you can use `**fail2ban**`, a common and effective tool for this purpose.
 
-- **Install**`**fail2ban**`**:**
+- **Install** `**fail2ban**`**:**
 
 Debian
 
 ```text
-sudo apt 
-update
-sudo apt install fail2ban 
--
-y
+sudo apt update
+sudo apt install fail2ban -y
 ```
 
 Centos7/RH
 
 ```text
-sudo yum install epel
--
-release
- 
--
-y
-sudo yum install fail2ban 
--
-y
-sudo systemctl 
-start
- fail2ban
+sudo yum install epel-release -y
+sudo yum install fail2ban -y
+sudo systemctl start fail2ban
 sudo systemctl enable fail2ban
 ```
 
@@ -190,26 +156,14 @@ Paste the following configuration
 
 ```text
 [sshd]
-enabled
- = 
-true
-port
-    = ssh
-filter
-  = sshd
-logpath
- = /var/log/auth.log
-backend
- = systemd
-maxretry
- = 
-3
-findtime
- = 
-30
-bantime
- = 
-30
+enabled = true
+port    = ssh
+filter  = sshd
+logpath = /var/log/auth.log
+backend = systemd
+maxretry = 3
+findtime = 30
+bantime = 30
 ```
 
 - `maxretry = 3`: max 3 failed attempts
@@ -218,13 +172,11 @@ bantime
 
 - `bantime = 30`: block IP for 30 seconds
 
-**3. Restart**`**fail2ban**`**:**
+**3. Restart** `**fail2ban**`**:**
 
 ```text
 sudo systemctl restart fail2ban
-sudo systemctl 
-enable
- fail2ban
+sudo systemctl enable fail2ban
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*oWxtmJGT8OTSvrRgCYXf4g.png" alt="Article image" width="780" height="208" loading="lazy" decoding="async" />
@@ -232,22 +184,20 @@ enable
 **4. Check if jail is working:**
 
 ```text
-sudo fail2ban-client 
-status
- sshd
+sudo fail2ban-client status sshd
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*LhJNvRjgcC2WERd0AWVxRQ.png" alt="Article image" width="903" height="225" loading="lazy" decoding="async" />
 
 ### 2. System & Network Hardening (ISO 27001 — A.13, A.12.6.1)
 
-- **Close all unused ports**(use`ufw`,`iptables`)
+- **Close all unused ports** (use `ufw`, `iptables`)
 
 - **Disable unused services**:
 
 - `systemctl disable service_name`
 
-- **Enable firewalls**:`ufw`,`firewalld`
+- **Enable firewalls**: `ufw`, `firewalld`
 
 - **Configure SELinux or AppArmor**
 
@@ -257,7 +207,7 @@ status
 
 - `apt purge package_name`
 
-- Use minimal OS images (`AlmaLinux`,`Debian Netinstall`,`Ubuntu Minimal`)
+- Use minimal OS images (`AlmaLinux`, `Debian Netinstall`, `Ubuntu Minimal`)
 
 ### 4. Patch Management (A.12.6.1)
 
@@ -265,29 +215,28 @@ status
 
 - `apt update && apt upgrade -y`
 
-- Automate using`unattended-upgrades`(Debian/Ubuntu) or`dnf-automatic`(RHEL)
+- Automate using `unattended-upgrades` (Debian/Ubuntu) or `dnf-automatic` (RHEL)
 
 **Automatic Updates**
 
-- **Control:**`unattended-upgrades`enabled
+- **Control:** `unattended-upgrades` enabled
 
 - **Purpose:**
-Automatically installs**security patches**without manual intervention, reducing exposure to known vulnerabilities.
+ Automatically installs **security patches** without manual intervention, reducing exposure to known vulnerabilities.
 
 - **How it works (Debian/Ubuntu):**
 
-- Package:`unattended-upgrades`
+- Package: `unattended-upgrades`
 
 - Configuration:
 
 ```text
-sudo dpkg-reconfigure 
---priority=low unattended-upgrades
+sudo dpkg-reconfigure --priority=low unattended-upgrades
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*_B5aS6YHsNSpvy-LL6f1Ng.png" alt="Article image" width="1733" height="265" loading="lazy" decoding="async" />
 
-- Log file:`/var/log/unattended-upgrades/unattended-upgrades.log`
+- Log file: `/var/log/unattended-upgrades/unattended-upgrades.log`
 
 - **Verify:**
 
@@ -295,9 +244,9 @@ sudo dpkg-reconfigure
 
 ### 5. Logging and Monitoring (A.12.4)
 
-- **Enable audit logging**:`auditd`
+- **Enable audit logging**: `auditd`
 
-- **Central log server**:`Syslog-ng`,`XPLG`
+- **Central log server**: `Syslog-ng`, `XPLG`
 
 - Set up log forwarding and alerts for:
 
@@ -309,7 +258,7 @@ sudo dpkg-reconfigure
 
 ### 6. File and Configuration Integrity (A.12.5.1)
 
-- Use`**AIDE**`(Advanced Intrusion Detection Environment) or`Tripwire`
+- Use `**AIDE**` (Advanced Intrusion Detection Environment) or `Tripwire`
 
 - Configure alerting for:
 
@@ -323,21 +272,21 @@ sudo dpkg-reconfigure
 
 - **Data at rest**: LUKS, dm-crypt
 
-- **Data in transit**: TLS, HTTPS (use`Let’s Encrypt`with auto-renew)
+- **Data in transit**: TLS, HTTPS (use `Let’s Encrypt` with auto-renew)
 
-- **Passwords**: SHA-512, bcrypt (`/etc/login.defs`,`pam.d`)
+- **Passwords**: SHA-512, bcrypt (`/etc/login.defs`, `pam.d`)
 
 ### 8. Malware and Rootkit Detection (A.12.2.1)
 
 - Install and configure:
 
-- `ClamAV`(open-source AV)
+- `ClamAV` (open-source AV)
 
-- `Chkrootkit`/`RKHunter`for rootkit scanning
+- `Chkrootkit` / `RKHunter` for rootkit scanning
 
 ### 9. Backup and Recovery (A.12.3)
 
-- **Automated backups**:`rsync`,`BorgBackup`,`Restic`
+- **Automated backups**: `rsync`, `BorgBackup`, `Restic`
 
 - Store offsite or encrypted in cloud
 
@@ -345,7 +294,7 @@ sudo dpkg-reconfigure
 
 ### 10. Baseline and CIS Benchmarking
 
-- Use**CIS Benchmarks**for your OS:
+- Use **CIS Benchmarks** for your OS:
 
 - CIS-CAT tool
 

@@ -107,7 +107,7 @@ Hashed passwords are typically found in database management systems where user c
 
 <img src="https://cdn-images-1.medium.com/max/800/1*QSKllyHefPb0z_blDXUd6Q.png" alt="Article image" width="610" height="395" loading="lazy" decoding="async" />
 
-- **Operating System Authentication**: Systems like Linux and Windows store user password hashes locally. For example, Linux stores these hashes in the`/etc/shadow`file, which is accessible only by privileged users.
+- **Operating System Authentication**: Systems like Linux and Windows store user password hashes locally. For example, Linux stores these hashes in the `/etc/shadow` file, which is accessible only by privileged users.
 
 <img src="https://cdn-images-1.medium.com/max/800/0*3G_iIwKWDo_KSbKG.png" alt="Article image" width="1040" height="586" loading="lazy" decoding="async" />
 
@@ -217,11 +217,11 @@ An attacker might use a straightforward list of the most common passwords (such 
 
 You can obtain dictionaries for dictionary attacks from various online sources, often used for educational and ethical hacking purposes. Here are some common places to find them:
 
-**Security Websites**: Websites like[Weakpass](https://weakpass.com/)offer extensive collections of wordlists and password dictionaries specifically designed for cracking passwords.
+**Security Websites**: Websites like [Weakpass](https://weakpass.com/) offer extensive collections of wordlists and password dictionaries specifically designed for cracking passwords.
 
 **GitHub**: Many security professionals and researchers share their custom wordlists on GitHub. You can find these by searching for repositories labeled as “password wordlists” or “security wordlists”.
 
-For example:[SecLists](https://github.com/danielmiessler/SecLists)
+For example: [SecLists](https://github.com/danielmiessler/SecLists)
 
 **Public Data Breaches**: Sometimes, data from public breaches, which include password dumps, are compiled into wordlists that can be used to understand common password trends.
 
@@ -231,9 +231,9 @@ For example:[SecLists](https://github.com/danielmiessler/SecLists)
 
 Advanced dictionary attacks can customize their lists based on target-specific details. For instance, if targeting a particular company, an attacker might include common industry terms, the company’s history, or known interests of employees derived from social media.
 
-To create customized passwords list you can use special tool like:**Personal**[**Pass Generator (PPG): The Ultimate Tool for Custom Password Lists, full guide to this tool here**](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)**.**
+To create customized passwords list you can use special tool like:**Personal** [**Pass Generator (PPG): The Ultimate Tool for Custom Password Lists, full guide to this tool here**](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)**.**
 
-- **Hybrid Dictionary Attack**: Combining dictionary words with brute force elements, these attacks try adding numbers or symbols to dictionary words (e.g., “password1!”, “winter2023”).[Use can use PPG for this propose to.](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
+- **Hybrid Dictionary Attack**: Combining dictionary words with brute force elements, these attacks try adding numbers or symbols to dictionary words (e.g., “password1!”, “winter2023”). [Use can use PPG for this propose to.](2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c.md)
 
 ### Defense Against Dictionary Attacks
 
@@ -373,7 +373,7 @@ Password leaks are major security breaches where large numbers of usernames, pas
 
 - **Impact**: This massive breach was one of several factors that contributed to the decline of MySpace.
 
-- **Source**:[MySpace breach reportedly affects 360 million records](https://www.usatoday.com/story/tech/2016/05/31/360-million-myspace-accounts-breached/85183200/)
+- **Source**: [MySpace breach reportedly affects 360 million records](https://www.usatoday.com/story/tech/2016/05/31/360-million-myspace-accounts-breached/85183200/)
 
 ### 5. eBay (2014)
 
@@ -381,7 +381,7 @@ Password leaks are major security breaches where large numbers of usernames, pas
 
 - **Impact**: eBay requested all users to change their passwords; however, the company reported no unauthorized access to financial information or fraudulent activity on its main site following the breach.
 
-- **Source**:[eBay urges 145 million users to change passwords after cyber attack](https://www.washingtonpost.com/news/the-switch/wp/2014/05/21/ebay-asks-145-million-users-to-change-passwords-after-data-breach/)
+- **Source**: [eBay urges 145 million users to change passwords after cyber attack](https://www.washingtonpost.com/news/the-switch/wp/2014/05/21/ebay-asks-145-million-users-to-change-passwords-after-data-breach/)
 
 ## Social engineering
 
@@ -415,13 +415,13 @@ Social engineering attacks typically follow a step-by-step process:
 
 - **Password Monster**:
 
-- **URL**:[Password Monster](https://www.passwordmonster.com)
+- **URL**: [Password Monster](https://www.passwordmonster.com)
 
 - **Description**: This is a tool that evaluates the strength of a password by estimating how long it would take to crack it using different methods. Users can input a password, and the tool will assess its complexity and resilience against common password-cracking techniques, providing insights into the security level of the password.
 
 - **Have I Been Pwned**:
 
-- **URL**:[Have I Been Pwned](https://haveibeenpwned.com/)
+- **URL**: [Have I Been Pwned](https://haveibeenpwned.com/)
 
 - **Description**: Created by security expert Troy Hunt, this service allows users to check if their personal data has been compromised in any data breaches. By entering an email or password, users can see if their information has appeared in data leaks collected across various breaches, helping them understand their exposure and encouraging better password practices.
 

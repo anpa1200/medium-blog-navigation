@@ -27,7 +27,7 @@ This page mirrors the original Medium article into the 1200km.com Docusaurus eco
 
 Password-based authentication is still one of the most common entry points into networks, servers, databases, and remote administration services. Even in modern environments with firewalls, VPNs, endpoint protection, and monitoring systems, weak credentials remain a critical security risk. A single reused, default, or poorly chosen password can expose FTP, SSH, RDP, email, database, or web services to unauthorized access.
 
-This is where**Hydra**, also known as**THC-Hydra**, becomes an important tool for security professionals.
+This is where **Hydra**, also known as **THC-Hydra**, becomes an important tool for security professionals.
 
 Hydra is one of the most widely used network logon testing tools in penetration testing. It allows analysts to assess the strength of authentication mechanisms across many protocols by performing controlled dictionary-based or brute-force login attempts. When used correctly and legally, Hydra helps identify weak credentials before attackers do.
 
@@ -35,7 +35,7 @@ This guide provides a practical, protocol-focused walkthrough of Hydra: how it w
 
 The goal is not to promote unauthorized access. The goal is to understand how credential attacks work in real environments, how attackers abuse weak authentication, and how defenders and penetration testers can validate password security, reduce exposure, and improve system hardening.
 
-All examples in this article are intended for**authorized penetration testing, lab environments, and defensive security validation only**.
+All examples in this article are intended for **authorized penetration testing, lab environments, and defensive security validation only**.
 
 ## Table of Contents
 
@@ -43,8 +43,8 @@ All examples in this article are intended for**authorized penetration testing, l
 
 - **Overview of Hydra**
 
-- **Installation and Setup of Hydra****
-**Installing Hydra on Linux
+- **Installation and Setup of Hydra**
+Installing Hydra on Linux
 Installing Hydra on Windows
 Installing Hydra on macOS
 Configuration Essentials
@@ -58,8 +58,8 @@ Testing the Installation
 
 - **Practical Usage with real examples**
 
-- **General Network Protocols****
-**FTP
+- **General Network Protocols**
+FTP
 Telnet
 SMTP
 POP3
@@ -67,8 +67,8 @@ IMAP
 SNMP v1, v2, v3
 SOCKS5
 
-- **Remote Administration Protocols****
-**RDP
+- **Remote Administration Protocols**
+RDP
 SSH
 
 - **Database Protocols**
@@ -77,7 +77,7 @@ SSH
 
 ## Overview of Hydra
 
-Hydra, also known as[THC-Hydra](https://github.com/vanhauser-thc/thc-hydra), is a powerful and widely-used tool for network logon cracking. It is capable of rapidly guessing and applying numerous password combinations to uncover authentication credentials across a variety of protocols, such as FTP, HTTP, IMAP, databases, and more. Hydra works by employing brute-force or dictionary attacks, where it systematically checks all possible passwords by trying hundreds or thousands of combinations per minute. The primary use of Hydra is in penetration testing scenarios where security professionals assess the strength of passwords on network services and applications to identify potential vulnerabilities that could be exploited by malicious actors.
+Hydra, also known as [THC-Hydra](https://github.com/vanhauser-thc/thc-hydra), is a powerful and widely-used tool for network logon cracking. It is capable of rapidly guessing and applying numerous password combinations to uncover authentication credentials across a variety of protocols, such as FTP, HTTP, IMAP, databases, and more. Hydra works by employing brute-force or dictionary attacks, where it systematically checks all possible passwords by trying hundreds or thousands of combinations per minute. The primary use of Hydra is in penetration testing scenarios where security professionals assess the strength of passwords on network services and applications to identify potential vulnerabilities that could be exploited by malicious actors.
 
 ### Legal Use Disclaimer
 
@@ -92,9 +92,7 @@ This guide is provided for educational and informational purposes only. The tech
 Hydra is most commonly used on Linux, and it is available in the repositories of most major distributions. You can install Hydra on Linux using the package manager. For Debian-based systems like Ubuntu, use the following command:
 
 ```text
-sudo apt-
-get
- install hydra
+sudo apt-get install hydra
 ```
 
 For Red Hat-based systems like Fedora or CentOS, you can use:
@@ -109,7 +107,7 @@ Hydra can be run on Windows, but it typically requires the use of Cygwin, a Linu
 
 - Download and install Cygwin from the official site.
 
-- During the installation, select the`hydra`package from the list of packages.
+- During the installation, select the `hydra` package from the list of packages.
 
 - Complete the installation, and you can run Hydra from the Cygwin terminal.
 
@@ -123,7 +121,7 @@ brew install hydra
 
 ### Configuration Essentials
 
-**Dependencies:**Hydra may require additional libraries or dependencies depending on what protocols you plan to target. Common dependencies include:
+**Dependencies:** Hydra may require additional libraries or dependencies depending on what protocols you plan to target. Common dependencies include:
 
 - OpenSSL: Required for protocols that use SSL.
 
@@ -133,11 +131,11 @@ brew install hydra
 
 Ensure these are installed on your system. Most package managers will handle these dependencies automatically, but if you are compiling from source, you may need to install them manually.
 
-**Basic Configuration:**After installation, Hydra does not typically require extensive configuration to start using it. However, it is crucial to update your system and Hydra to ensure you have the latest security patches and features. For most users, running Hydra is straightforward after installation, but here are a few things to consider:
+**Basic Configuration:** After installation, Hydra does not typically require extensive configuration to start using it. However, it is crucial to update your system and Hydra to ensure you have the latest security patches and features. For most users, running Hydra is straightforward after installation, but here are a few things to consider:
 
-- **Update Hydra:**Regularly check for and install updates to Hydra and its dependencies.
+- **Update Hydra:** Regularly check for and install updates to Hydra and its dependencies.
 
-- **Network Settings:**Ensure your network settings allow for the type of traffic generated by Hydra, particularly if operating on a network with strict firewall rules or intrusion detection systems.
+- **Network Settings:** Ensure your network settings allow for the type of traffic generated by Hydra, particularly if operating on a network with strict firewall rules or intrusion detection systems.
 
 ### Testing the Installation:
 
@@ -174,10 +172,7 @@ Hydra can target a wide range of protocols, reflecting its utility in various se
 Understanding the basic command syntax is crucial for effectively using Hydra. The tool is command-line based, which allows for flexibility and automation in testing environments. Here’s a breakdown of the fundamental command syntax used by Hydra:
 
 ```text
-hydra 
-[options]
- server service 
-[module-options]
+hydra [options] server service [module-options]
 ```
 
 - `**server**`: The IP address or hostname of the target server.
@@ -188,15 +183,15 @@ hydra
 
 - `-s [port]`: If the service is running on a non-default port.
 
-- `-l [login]`or`-L [file]`: Specifies a single login name or a file containing a list of usernames.
+- `-l [login]` or `-L [file]`: Specifies a single login name or a file containing a list of usernames.
 
-- `-p [password]`or`-P [file]`: Specifies a single password or a file containing a list of passwords.
+- `-p [password]` or `-P [file]`: Specifies a single password or a file containing a list of passwords.
 
 - [**How to gain lists with usernames and passwords here:**](2024-10-29-passwords-cracking-zip-pdf-web-rdp-ssh-cameras-c1bacbd592cd.md)
 
 - `-t [tasks]`: Number of parallel connections (tasks) to use.
 
-- `-v`or`-V`: Verbosity of the output;`-V`shows every attempt,`-v`shows only successful attempts.
+- `-v` or `-V`: Verbosity of the output; `-V` shows every attempt, `-v` shows only successful attempts.
 
 ### How -t Affects the Cracking Process
 
@@ -217,40 +212,20 @@ hydra
 Suppose you are attempting to crack an FTP password. You might start with a moderate number of tasks:
 
 ```text
-hydra -l user -
-P
- passlist
-.txt
- -t 
-10
- 
-192.168
-.
-1.1
- ftp
+hydra -l user -P passlist.txt -t 10 192.168.1.1 ftp
 ```
 
-In this example, Hydra will make up to 10 simultaneous login attempts against the FTP server at`192.168.1.1`. If the server handles this well and the network bandwidth is sufficient, you could increase the number to speed up the attack further. Conversely, if the server starts showing signs of strain or if connections begin dropping, it would be wise to reduce the number of tasks.
+In this example, Hydra will make up to 10 simultaneous login attempts against the FTP server at `192.168.1.1`. If the server handles this well and the network bandwidth is sufficient, you could increase the number to speed up the attack further. Conversely, if the server starts showing signs of strain or if connections begin dropping, it would be wise to reduce the number of tasks.
 
-Using the`-t`flag effectively requires monitoring the performance and responsiveness during the attack and adjusting the number of parallel tasks accordingly. This ensures an efficient attack while minimizing the risk of disrupting the target network or alerting administrators through abnormal traffic patterns. Always conduct such tests with authorization and in a controlled environment to avoid legal and ethical issues.
+Using the `-t` flag effectively requires monitoring the performance and responsiveness during the attack and adjusting the number of parallel tasks accordingly. This ensures an efficient attack while minimizing the risk of disrupting the target network or alerting administrators through abnormal traffic patterns. Always conduct such tests with authorization and in a controlled environment to avoid legal and ethical issues.
 
 **Example Command:**
 
 ```text
-hydra -l admin -
-P
- password_list
-.txt
- -t 
-4
- -vV 
-192.168
-.
-0.1
- ssh
+hydra -l admin -P password_list.txt -t 4 -vV 192.168.0.1 ssh
 ```
 
-This command tries to log in as “admin” using a list of passwords from`password_list.txt`on the SSH service running on`192.168.0.1`, using 4 parallel tasks and showing detailed output.
+This command tries to log in as “admin” using a list of passwords from `password_list.txt` on the SSH service running on `192.168.0.1`, using 4 parallel tasks and showing detailed output.
 
 ## Practical Usage with real examples:
 
@@ -281,41 +256,23 @@ hydra -L Documents/PasswordCracking/Dictionaries/1000_usernames.txt -P Documents
 Basic Syntax for SMTP in Hydra:
 
 ```text
-hydra -
-P
- passwordlist
-.txt
- -l user -s port -S -v -V smtp
-.server
-.com
- smtp
+hydra -P passwordlist.txt -l user -s port -S -v -V smtp.server.com smtp
 ```
 
 - `**-P passwordlist.txt**`: Specifies the path to the file containing a list of passwords to test.
 
-- `**-l user**`: Specifies the single username to attempt authentication with. You can use`-L`for a list of usernames.
+- `**-l user**`: Specifies the single username to attempt authentication with. You can use `-L` for a list of usernames.
 
 - `**-s port**`: (Optional) Specifies the port number to connect to if the SMTP server is not on the default port (25 for unencrypted or 587 for encrypted STARTTLS).
 
 - `**-S**`: (Optional) Enables SSL support, which might be necessary if the SMTP server requires SSL (port 465 usually).
 
-- `**-v**`and`**-V**`: Increase the verbosity of the report that Hydra outputs.`-v`shows only the successful attempts, while`-V`shows all attempts.
+- `**-v**` and `**-V**`: Increase the verbosity of the report that Hydra outputs. `-v` shows only the successful attempts, while `-V` shows all attempts.
 
-Suppose you are testing`smtp.example.com`that requires SSL and runs on port 465, and you have a list of usernames and passwords. The Hydra command might look like this:
+Suppose you are testing `smtp.example.com` that requires SSL and runs on port 465, and you have a list of usernames and passwords. The Hydra command might look like this:
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s 
-465
- -S -v smtp
-.example
-.com
- smtp
+hydra -L userlist.txt -P passlist.txt -s 465 -S -v smtp.example.com smtp
 ```
 
 ### POP3
@@ -323,17 +280,10 @@ P
 Basic Syntax for POP3 in Hydra:
 
 ```text
-hydra -l user -
-P
- passlist
-.txt
- -s port -S -v -V pop3
-.server
-.com
- pop3
+hydra -l user -P passlist.txt -s port -S -v -V pop3.server.com pop3
 ```
 
-- `**-l user**`: Specifies the single username to attempt authentication with. You can use`-L`for a list of usernames.
+- `**-l user**`: Specifies the single username to attempt authentication with. You can use `-L` for a list of usernames.
 
 - `**-P passlist.txt**`: Specifies the path to the file containing a list of passwords to test.
 
@@ -341,23 +291,12 @@ P
 
 - `**-S**`: (Optional) Enables SSL support, which might be necessary if the POP3 server requires SSL (port 995 usually).
 
-- `**-v**`and`**-V**`: Increase the verbosity of the report that Hydra outputs.`-v`shows only the successful attempts, while`-V`shows all attempts.
+- `**-v**` and `**-V**`: Increase the verbosity of the report that Hydra outputs. `-v` shows only the successful attempts, while `-V` shows all attempts.
 
-Suppose you are testing`pop3.example.com`that requires SSL and runs on port 995, and you have a list of usernames and passwords. The Hydra command might look like this:
+Suppose you are testing `pop3.example.com` that requires SSL and runs on port 995, and you have a list of usernames and passwords. The Hydra command might look like this:
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s 
-995
- -S -v pop3
-.example
-.com
- pop3
+hydra -L userlist.txt -P passlist.txt -s 995 -S -v pop3.example.com pop3
 ```
 
 ### IMAP
@@ -365,17 +304,10 @@ P
 Basic Syntax for IMAP in Hydra:
 
 ```text
-hydra -l user -
-P
- passlist
-.txt
- -s port -S -v -V imap
-.server
-.com
- imap
+hydra -l user -P passlist.txt -s port -S -v -V imap.server.com imap
 ```
 
-- `**-l user**`: Specifies the single username to attempt authentication with. You can use`-L`for a list of usernames.
+- `**-l user**`: Specifies the single username to attempt authentication with. You can use `-L` for a list of usernames.
 
 - `**-P passlist.txt**`: Specifies the path to the file containing a list of passwords to test.
 
@@ -383,7 +315,7 @@ P
 
 - `**-S**`: (Optional) Enables SSL support, which might be necessary if the IMAP server requires SSL (port 993 usually).
 
-- `**-v**`and`**-V**`: Increase the verbosity of the report that Hydra outputs.`-v`shows only the successful attempts, while`-V`shows all attempts.
+- `**-v**` and `**-V**`: Increase the verbosity of the report that Hydra outputs. `-v` shows only the successful attempts, while `-V` shows all attempts.
 
 ### SNMP (v1, v2, v3)
 
@@ -398,38 +330,26 @@ Hydra can crack SNMP community strings and SNMPv3 authentication credentials by 
 **Basic Syntax for SNMP in Hydra:**
 
 ```text
-hydra -
-P
- communitylist
-.txt
- -v -V 
-[IP Address]
- snmp
+hydra -P communitylist.txt -v -V [IP Address] snmp
 ```
 
 - `**-P communitylist.txt**`: Specifies the path to the file containing a list of community strings or passwords to test.
 
-- `**-v**`and`**-V**`: Increase the verbosity of the report that Hydra outputs.`-v`shows only the successful attempts, while`-V`shows all attempts.
+- `**-v**` and `**-V**`: Increase the verbosity of the report that Hydra outputs. `-v` shows only the successful attempts, while `-V` shows all attempts.
 
 For SNMPv3, which includes authentication and privacy (encryption) protocols, the command becomes more complex because you need to specify the username, authentication method, and possibly an encryption key:
 
 **Basic Syntax for SNMPv3 in Hydra:**
 
 ```text
-hydra -l admin -
-P
- passlist
-.txt
- -v -V 
-[IP Address]
- snmpv3 -m auth:MD5:priv:AES128
+hydra -l admin -P passlist.txt -v -V [IP Address] snmpv3 -m auth:MD5:priv:AES128
 ```
 
 - `**-l admin**`: Specifies the username to attempt authentication with.
 
 - `**-P passlist.txt**`: Specifies the path to the file containing a list of passwords.
 
-- `**-m auth:MD5:priv:AES128**`: Specifies SNMPv3 specific options where`auth`is the authentication protocol (MD5 or SHA), and`priv`is the privacy (encryption) protocol (AES128, AES192, AES256, DES).
+- `**-m auth:MD5:priv:AES128**`: Specifies SNMPv3 specific options where `auth` is the authentication protocol (MD5 or SHA), and `priv` is the privacy (encryption) protocol (AES128, AES192, AES256, DES).
 
 **How to Determine SNMP Settings for a Specific Device**
 
@@ -445,34 +365,18 @@ To effectively use Hydra to test an SNMP service, you need to know the correct s
 
 - **Testing SNMP Configuration Manually**:
 
-- You can use tools like`snmpwalk`or`snmpget`to manually send SNMP requests to the device to verify its response.
+- You can use tools like `snmpwalk` or `snmpget` to manually send SNMP requests to the device to verify its response.
 
-- Example using`snmpwalk`:
+- Example using `snmpwalk`:
 
 ```text
-snmpwalk -v 
-1
- -c 
-public
- [IP Address] 
-1.3
-.6
-.1
+snmpwalk -v 1 -c public [IP Address] 1.3.6.1
 ```
 
 **For SNMPv3:**
 
 ```text
-snmpwalk -v3 -u admin -l authPriv -
-a
- MD5 -
-A
- "authpassword" -x AES -X "privpassword" 
-[IP Address]
- 
-1.3
-.
-6.1
+snmpwalk -v3 -u admin -l authPriv -a MD5 -A "authpassword" -x AES -X "privpassword" [IP Address] 1.3.6.1
 ```
 
 - **Crafting the Hydra Command**:
@@ -492,13 +396,7 @@ Hydra can be employed to crack usernames and passwords on SOCKS5 servers by atte
 **Basic Syntax for SOCKS5 in Hydra:**
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s port -v -V server socks5
+hydra -L userlist.txt -P passlist.txt -s port -v -V server socks5
 ```
 
 - `**-L userlist.txt**`: Specifies the path to the file containing a list of usernames to test.
@@ -507,7 +405,7 @@ P
 
 - `**-s port**`: Specifies the port number to connect to if the SOCKS5 server is not on the default port (usually 1080).
 
-- `**-v**`and`**-V**`: Increase the verbosity of the report that Hydra outputs.`-v`shows only the successful attempts, while`-V`shows all attempts.
+- `**-v**` and `**-V**`: Increase the verbosity of the report that Hydra outputs. `-v` shows only the successful attempts, while `-V` shows all attempts.
 
 **How to Determine SOCKS5 Settings for a Specific Server**
 
@@ -521,13 +419,10 @@ To effectively use Hydra to test a SOCKS5 server, you need to know the correct s
 
 **2. Testing SOCKS5 Configuration Manually**:
 
-- You can use network tools like`curl`to manually connect to the SOCKS5 server and test authentication:
+- You can use network tools like `curl` to manually connect to the SOCKS5 server and test authentication:
 
 ```text
-curl --socks5 username:password
-@server
-:port http:
-//example.com
+curl --socks5 username:password@server:port http://example.com
 ```
 
 - This can help verify the server’s response to authentication attempts and confirm the correct username/password fields.
@@ -540,21 +435,10 @@ curl --socks5 username:password
 
 **Example**
 
-Suppose you are testing a SOCKS5 server at`socks5.example.com`running on port`1080`, and you have a list of usernames and passwords. The Hydra command might look like this:
+Suppose you are testing a SOCKS5 server at `socks5.example.com` running on port `1080`, and you have a list of usernames and passwords. The Hydra command might look like this:
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s 
-1080
- -v socks5
-.example
-.com
- socks5
+hydra -L userlist.txt -P passlist.txt -s 1080 -v socks5.example.com socks5
 ```
 
 This command attempts to authenticate against the SOCKS5 server, testing multiple usernames and passwords concurrently.
@@ -576,10 +460,7 @@ Hydra can crack passwords on RDP servers by attempting to authenticate using var
 **Basic Syntax for RDP in Hydra:**
 
 ```text
-hydra -t 
-1
- -V -f -L userlist.txt -P passlist.txt rdp:
-//[IP Address]
+hydra -t 1 -V -f -L userlist.txt -P passlist.txt rdp://[IP Address]
 ```
 
 - `**-t 1**`: Specifies the number of parallel tasks to use. RDP servers typically have a limit on simultaneous connections, so it's often practical to use a single task.
@@ -612,49 +493,27 @@ To effectively use Hydra to test an RDP server, you need to know the correct set
 
 - Once you understand the server’s configuration, construct your Hydra command to test credentials effectively.
 
-- Adjust parameters based on your findings, such as adding`-s [port]`if the default port has been changed.
+- Adjust parameters based on your findings, such as adding `-s [port]` if the default port has been changed.
 
 **Example**
 
-Suppose you are testing an RDP server at IP address`192.168.1.100`running on the default port. The Hydra command might look like this:
+Suppose you are testing an RDP server at IP address `192.168.1.100` running on the default port. The Hydra command might look like this:
 
 ```text
-hydra -t 
-1
- -V -f -L userlist.txt -P passlist.txt rdp:
-//192.168.1.100
+hydra -t 1 -V -f -L userlist.txt -P passlist.txt rdp://192.168.1.100
 ```
 
-This command attempts to authenticate against the RDP server, testing multiple usernames and passwords concurrently, but only one attempt at a time due to the`-t 1`setting.
+This command attempts to authenticate against the RDP server, testing multiple usernames and passwords concurrently, but only one attempt at a time due to the `-t 1` setting.
 
 ```text
-hydra -t 
-5
- -f -v -L ~
-/Documents/
-PasswordCracking
-/
-Dictionaries
-/1000_usernames.
-txt
- -P ~
-/Documents/
-PasswordCracking
-/
-Dictionaries
-/short.
-txt
- 
-rdp
-:
-//192.168.126.143
+hydra -t 5 -f -v -L ~/Documents/PasswordCracking/Dictionaries/1000_usernames.txt -P ~/Documents/PasswordCracking/Dictionaries/short.txt rdp://192.168.126.143
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*bKZi5NJXjS_4479c_FuMDA.png" alt="Article image" width="1891" height="453" loading="lazy" decoding="async" />
 
 ### SSH
 
-I suggest to use Metasploit.[Explanation here](2024-10-23-cracking-ssh-with-metasploit-a-step-by-step-guide-to-exploiting-weak-credentials-3ec6ef4cee5b.md):
+I suggest to use Metasploit. [Explanation here](2024-10-23-cracking-ssh-with-metasploit-a-step-by-step-guide-to-exploiting-weak-credentials-3ec6ef4cee5b.md):
 
 ## Database Protocols :
 
@@ -667,18 +526,7 @@ When using Hydra to test database services like MS-SQL, MySQL, Oracle, PostgreSQ
 Hydra can be configured to perform password-cracking attacks on a variety of database services by specifying the target database server, the appropriate port, and the credential pairs to test. The general command structure follows this pattern:
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s 
-[port]
- -v -V -f 
-[IP Address]
- 
-[service]
+hydra -L userlist.txt -P passlist.txt -s [port] -v -V -f [IP Address] [service]
 ```
 
 Here’s how you would specify each service for different databases:
@@ -687,13 +535,13 @@ Here’s how you would specify each service for different databases:
 
 - Default port: 1433
 
-- Service in Hydra:`mssql`
+- Service in Hydra: `mssql`
 
 - **MySQL**
 
 - Default port: 3306
 
-- Service in Hydra:`mysql`
+- Service in Hydra: `mysql`
 
 - **Oracle**
 
@@ -701,35 +549,35 @@ Here’s how you would specify each service for different databases:
 
 - Services in Hydra:
 
-- `oracle-listener`for testing the TNS listener.
+- `oracle-listener` for testing the TNS listener.
 
-- `oracle-sid`to brute-force SIDs.
+- `oracle-sid` to brute-force SIDs.
 
-- `oracle`for general Oracle database login attempts.
+- `oracle` for general Oracle database login attempts.
 
 - **PostgreSQL**
 
 - Default port: 5432
 
-- Service in Hydra:`postgres`
+- Service in Hydra: `postgres`
 
 - **Firebird**
 
 - Default port: 3050
 
-- Service in Hydra:`firebird`
+- Service in Hydra: `firebird`
 
 **Configuring Hydra for Database Attack**
 
 For each database type, you need to modify the Hydra command to fit the specific server and service. The command will generally include:
 
-- `-L`and`-P`to specify paths to the username and password lists.
+- `-L` and `-P` to specify paths to the username and password lists.
 
-- `-s`to define the specific port if it's not the default one.
+- `-s` to define the specific port if it's not the default one.
 
-- `-v`and`-V`for verbosity levels.
+- `-v` and `-V` for verbosity levels.
 
-- `-f`to stop after the first found password.
+- `-f` to stop after the first found password.
 
 **Example Commands**
 
@@ -738,89 +586,31 @@ Here are example commands for each database type:
 - **MS-SQL**:
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s 
-1433
- -vV -f 
-192.168
-.
-1.100
- mssql
+hydra -L userlist.txt -P passlist.txt -s 1433 -vV -f 192.168.1.100 mssql
 ```
 
 - **MySQL**:
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s 
-3306
- -vV -f 
-192.168
-.
-1.101
- mysql
+hydra -L userlist.txt -P passlist.txt -s 3306 -vV -f 192.168.1.101 mysql
 ```
 
 - **Oracle Listener**:
 
 ```text
-hydra -
-P
- sidlist
-.txt
- -s 
-1521
- -vV -f 
-192.168
-.
-1.102
- oracle-listener
+hydra -P sidlist.txt -s 1521 -vV -f 192.168.1.102 oracle-listener
 ```
 
 - **PostgreSQL**:
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s 
-5432
- -vV -f 
-192.168
-.
-1.103
- postgres
+hydra -L userlist.txt -P passlist.txt -s 5432 -vV -f 192.168.1.103 postgres
 ```
 
 - **Firebird**:
 
 ```text
-hydra -L userlist
-.txt
- -
-P
- passlist
-.txt
- -s 
-3050
- -vV -f 
-192.168
-.
-1.104
- firebird
+hydra -L userlist.txt -P passlist.txt -s 3050 -vV -f 192.168.1.104 firebird
 ```
 
 ## Testing and Security Considerations
@@ -839,11 +629,11 @@ When using Hydra for testing database services:
 
 ## Follow for practical cybersecurity research
 
-If you’re interested in**Offensive security,****AI security, real-world attack simulations, CTI, and detection engineering**— this is exactly what I focus on.
+If you’re interested in **Offensive security,** **AI security, real-world attack simulations, CTI, and detection engineering** — this is exactly what I focus on.
 
 Stay connected:
 
-→**Subscribe on Medium:**[medium.com/@1200km](https://medium.com/@1200km)
-→**Connect on LinkedIn:**[andrey-pautov](https://www.linkedin.com/in/andrey-pautov/)
-→**GitHub — tools & labs:**[github.com/anpa1200](https://github.com/anpa1200)
-→**Contact:**[1200km@gmail.com](mailto:1200km@gmail.com)
+→ **Subscribe on Medium:** [medium.com/@1200km](https://medium.com/@1200km)
+→ **Connect on LinkedIn:** [andrey-pautov](https://www.linkedin.com/in/andrey-pautov/)
+→ **GitHub — tools & labs:** [github.com/anpa1200](https://github.com/anpa1200)
+→ **Contact:** [1200km@gmail.com](mailto:1200km@gmail.com)

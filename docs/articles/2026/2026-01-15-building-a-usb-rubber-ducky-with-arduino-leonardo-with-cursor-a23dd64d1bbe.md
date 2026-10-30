@@ -64,22 +64,19 @@ The Arduino Leonardo and Arduino Micro are ideal for building a DIY Rubber Ducky
 Create a new directory for your Rubber Ducky project:
 
 ```text
-mkdir
- RubberDucky
-cd
- RubberDucky
+mkdir RubberDucky
+cd RubberDucky
 ```
 
-- Open**Cursor IDE**and create a new Arduino project (or open your existing sketch).
+- Open **Cursor IDE** and create a new Arduino project (or open your existing sketch).
 
 ```text
-cursor
- .
+cursor .
 ```
 
-- Connect your**Arduino Leonardo**to your computer using a USB data cable.
+- Connect your **Arduino Leonardo** to your computer using a USB data cable.
 
-- In Cursor, use**plain-language prompts**to generate or improve your sketch.
+- In Cursor, use **plain-language prompts** to generate or improve your sketch.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*yb-lC-Fntc43T5gigch9YA.png" alt="Article image" width="1915" height="1080" loading="lazy" decoding="async" />
 
@@ -89,49 +86,31 @@ cursor
 
 ### Pay Attention to User requests!
 
-```text
+````text
 ## Phase 1: Initial Setup Request
+
 ### User Request
 > "Install to this directory tool for Arduino Leonardo programming"
+
 ### Actions Taken
-1.
- 
-**Directory Check**
-   -
- Checked 
-`/home/andrey/RubberDucky`
- directory
-   -
- Confirmed directory was empty
-2.
- 
-**PlatformIO Installation Decision**
-   -
- Selected PlatformIO as the development tool
-   -
- Chose virtual environment approach for isolation
-3.
- 
-**Project Structure Creation**
-   -
- Created 
-`platformio.ini`
- configuration file
-   -
- Created 
-`src/main.cpp`
- with basic Arduino template
-   -
- Created 
-`.gitignore`
- for build artifacts
-   -
- Created 
-`README.md`
- with setup instructions
+
+1. **Directory Check**
+   - Checked `/home/andrey/RubberDucky` directory
+   - Confirmed directory was empty
+
+2. **PlatformIO Installation Decision**
+   - Selected PlatformIO as the development tool
+   - Chose virtual environment approach for isolation
+
+3. **Project Structure Creation**
+   - Created `platformio.ini` configuration file
+   - Created `src/main.cpp` with basic Arduino template
+   - Created `.gitignore` for build artifacts
+   - Created `README.md` with setup instructions
+
 ### Files Created
-**platformio.ini**
- (Initial version):
+
+**platformio.ini** (Initial version):
 ```ini
 [env:leonardo]
 platform = atmelavr
@@ -144,10 +123,11 @@ build_flags =
     -DUSB_VID=0x2341
     -DUSB_PID=0x0036
 ```
-**src/main.cpp**
- (Initial template):
+
+**src/main.cpp** (Initial template):
 ```cpp
-#include &lt;Arduino.h&gt;
+#include <Arduino.h>
+
 void setup() {
   Serial.begin(9600);
   while (!Serial) {
@@ -155,74 +135,64 @@ void setup() {
   }
   Serial.println("Arduino Leonardo initialized!");
 }
+
 void loop() {
   Serial.println("Hello from Arduino Leonardo!");
   delay(1000);
 }
 ```
+
 ### Commands Executed
+
 ```bash
 # Created virtual environment
 python3 -m venv venv
+
 # Installed PlatformIO
 source venv/bin/activate
 pip install platformio
+
 # Verified installation
 pio --version
 # Output: PlatformIO Core, version 6.1.18
 ```
+
 ### Result
 ✅ PlatformIO successfully installed and configured for Arduino Leonardo
+
 ---
+
 ## Phase 2: Device Detection and IDE Integration
+
+
 ### User Request
 > "Run the tool. Now I have one device connected to my host, open it or add option to program this device via Cursor IDE"
+
 ### Actions Taken
-1.
- 
-**Device Detection**
-   
-```bash
+
+1. **Device Detection**
+   ```bash
    pio device list
    ```
-   -
- Detected Arduino Micro at 
-`/dev/ttyACM0`
-   -
- Confirmed compatibility with Leonardo configuration
-2.
- 
-**Build Test**
-   
-```bash
+   - Detected Arduino Micro at `/dev/ttyACM0`
+   - Confirmed compatibility with Leonardo configuration
+
+2. **Build Test**
+   ```bash
    pio run
    ```
-   -
- Successfully compiled project
-   -
- Installed required toolchains and frameworks
-3.
- 
-**Cursor IDE Integration**
-   -
- Created 
-`.vscode/`
- directory
-   -
- Created 
-`.vscode/settings.json`
- for PlatformIO integration
-   -
- Created 
-`.vscode/tasks.json`
- with build/upload tasks
-   -
- Created 
-`.vscode/extensions.json`
- with PlatformIO recommendation
+   - Successfully compiled project
+   - Installed required toolchains and frameworks
+
+3. **Cursor IDE Integration**
+   - Created `.vscode/` directory
+   - Created `.vscode/settings.json` for PlatformIO integration
+   - Created `.vscode/tasks.json` with build/upload tasks
+   - Created `.vscode/extensions.json` with PlatformIO recommendation
+
 ### Files Created
-**.vscode/settings.json**
-:
+
+**.vscode/settings.json**:
 ```json
 {
     "platformio-ide.autoCleanBeforeBuild": true,
@@ -234,8 +204,8 @@ pio --version
     }
 }
 ```
-**.vscode/tasks.json**
-:
+
+**.vscode/tasks.json**:
 ```json
 {
     "version": "2.0.0",
@@ -256,134 +226,112 @@ pio --version
     ]
 }
 ```
+
 ### Result
 ✅ Device detected and Cursor IDE fully configured for programming
+
 ---
+
 ## Phase 3: First Code Upload
+
 ### User Request
 > "Upload this code to my device"
+
 ### Actions Taken
-1.
- 
-**Permission Issue Encountered**
-   -
- Error: 
-`Permission denied`
- on 
-`/dev/ttyACM0`
-   -
- User not in 
-`dialout`
- group
-2.
- 
-**Permission Fix**
-   
-```bash
+
+1. **Permission Issue Encountered**
+   - Error: `Permission denied` on `/dev/ttyACM0`
+   - User not in `dialout` group
+
+2. **Permission Fix**
+   ```bash
    sudo usermod -a -G dialout $USER
    ```
-   -
- Added user to dialout group
-   -
- Created 
-`upload.sh`
- helper script for sudo access
-3.
- 
-**Successful Upload**
-   
-```bash
+   - Added user to dialout group
+   - Created `upload.sh` helper script for sudo access
+
+3. **Successful Upload**
+   ```bash
    sudo -E env "PATH=$PATH" bash -c "source venv/bin/activate && pio run --target upload"
    ```
-   -
- Uploaded successfully using sudo
-   -
- Firmware verified: 3,694 bytes
+   - Uploaded successfully using sudo
+   - Firmware verified: 3,694 bytes
+
 ### Files Created
-**upload.sh**
-:
+
+**upload.sh**:
 ```bash
 #!/bin/bash
 cd "$(dirname "$0")"
 source venv/bin/activate
 pio run --target upload
 ```
+
 ### Result
 ✅ Code successfully uploaded to Arduino Micro device
+
 ---
+
 ## Phase 4: Rubber Ducky Payload Development
+
 ### User Request
 > "Create and upload to device new script: Connect as Standard Keyboard,"
 > "After connection open the terminal on Linux, and write Hello world to terminal"
+
 ### Actions Taken
-1.
- 
-**Initial Attempt - Standard Keyboard Library**
-   -
- Tried to use 
-`#include <Keyboard.h>`
-   -
- 
-**Error**
-: 
-`Keyboard.h: No such file or directory`
-   -
- PlatformIO doesn't include standard Arduino Keyboard library for Leonardo
-2.
- 
-**Library Research**
-   -
- Searched for HID libraries compatible with PlatformIO
-   -
- Found HID-Project library as solution
-3.
- 
-**HID-Project Library Integration**
-   -
- Updated 
-`platformio.ini`
- to include library:
+
+1. **Initial Attempt - Standard Keyboard Library**
+   - Tried to use `#include <Keyboard.h>`
+   - **Error**: `Keyboard.h: No such file or directory`
+   - PlatformIO doesn't include standard Arduino Keyboard library for Leonardo
+
+2. **Library Research**
+   - Searched for HID libraries compatible with PlatformIO
+   - Found HID-Project library as solution
+
+3. **HID-Project Library Integration**
+   - Updated `platformio.ini` to include library:
      ```ini
      lib_deps = 
          nicohood/HID-Project@^2.8.4
      ```
    - Updated code to use `BootKeyboard` from HID-Project
-4.
- 
-**Code Development**
-   -
- Implemented keyboard initialization
-   -
- Added delays for system recognition
-   -
- Implemented Ctrl+Alt+T for terminal opening
-   -
- Added "Hello world" typing functionality
+
+4. **Code Development**
+   - Implemented keyboard initialization
+   - Added delays for system recognition
+   - Implemented Ctrl+Alt+T for terminal opening
+   - Added "Hello world" typing functionality
+
 ### Files Modified
-**platformio.ini**
- (Updated):
+
+**platformio.ini** (Updated):
 ```ini
 [env:leonardo]
 platform = atmelavr
 board = leonardo
 framework = arduino
+
 ; USB Configuration
 board_build.usb_product = "Arduino Leonardo"
 board_build.usb_vid = 0x2341
 board_build.usb_pid = 0x0036
+
 ; Libraries
 lib_deps = 
     nicohood/HID-Project@^2.8.4
+
 monitor_speed = 9600
 upload_protocol = avr109
 upload_port = /dev/ttyACM0
 ```
-**src/main.cpp**
- (Rubber Ducky Payload):
+
+**src/main.cpp** (Rubber Ducky Payload):
 ```cpp
-#include &lt;Arduino.h&gt;
-#include &lt;HID-Project.h&gt;
-#include &lt;HID-Settings.h&gt;
+#include <Arduino.h>
+#include <HID-Project.h>
+#include <HID-Settings.h>
+
 void setup() {
   // Initialize keyboard
   BootKeyboard.begin();
@@ -412,52 +360,41 @@ void setup() {
   // End keyboard control
   BootKeyboard.end();
 }
+
 void loop() {
   // Do nothing - script runs once
   delay(1000);
 }
 ```
+
 ### Commands Executed
+
 ```bash
 # Library installation
 pio lib install "nicohood/HID-Project@^2.8.4"
+
 # Build test
 pio run
 # Output: [SUCCESS] - 5,980 bytes compiled
+
 # Upload with sudo
 echo '****' | sudo -S env "PATH=$PATH" bash -c \
   "source venv/bin/activate && pio run --target upload"
 # Output: [SUCCESS] - Firmware uploaded and verified
 ```
+
 ### Key Learnings
-1.
- 
-**Library Selection**
-: Standard Arduino Keyboard library not available in PlatformIO
-2.
- 
-**HID-Project**
-: Provides 
-`BootKeyboard`
- class with similar API
-3.
- 
-**Key Constants**
-: Uses 
-`KEY_LEFT_CTRL`
-, 
-`KEY_LEFT_ALT`
-, 
-`KEY_RETURN`
- from HID-Project
-4.
- 
-**Timing**
-: Delays crucial for system to recognize HID device
+
+1. **Library Selection**: Standard Arduino Keyboard library not available in PlatformIO
+2. **HID-Project**: Provides `BootKeyboard` class with similar API
+3. **Key Constants**: Uses `KEY_LEFT_CTRL`, `KEY_LEFT_ALT`, `KEY_RETURN` from HID-Project
+4. **Timing**: Delays crucial for system to recognize HID device
+
 ### Result
 ✅ Rubber Ducky payload successfully created and uploaded
+
 ---
-```
+````
 
 ## ✅ Rubber Ducky payload successfully created and uploaded!
 

