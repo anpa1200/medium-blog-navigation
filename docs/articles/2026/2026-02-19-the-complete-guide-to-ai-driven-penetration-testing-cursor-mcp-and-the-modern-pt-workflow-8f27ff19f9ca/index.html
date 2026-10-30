@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,7 +34,7 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-comprehensive-step-by-step-guide-to-running-penetration-tests-the-way-that-actually-works--faster-deeper-and-more-powerful--after-hundreds-of-engagements-and-countless-tools">A comprehensive, step-by-step guide to running penetration tests the way that actually works — faster, deeper, and more powerful — after hundreds of engagements and countless tools.<a href="#a-comprehensive-step-by-step-guide-to-running-penetration-tests-the-way-that-actually-works--faster-deeper-and-more-powerful--after-hundreds-of-engagements-and-countless-tools" class="hash-link" aria-label="Direct link to A comprehensive, step-by-step guide to running penetration tests the way that actually works — faster, deeper, and more powerful — after hundreds of engagements and countless tools." title="Direct link to A comprehensive, step-by-step guide to running penetration tests the way that actually works — faster, deeper, and more powerful — after hundreds of engagements and countless tools." translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
-<p>Penetration testing hasn’t changed because of AI. The kill chain is still the kill chain: scope → recon → enumeration → exploitation → post-exploitation → reporting. What<em>has</em>changed is the execution layer — how fast you can move, how consistently you can capture artifacts, and how well you can turn raw output into decisions.</p>
+<p>Penetration testing hasn’t changed because of AI. The kill chain is still the kill chain: scope → recon → enumeration → exploitation → post-exploitation → reporting. What <em>has</em> changed is the execution layer — how fast you can move, how consistently you can capture artifacts, and how well you can turn raw output into decisions.</p>
 <p>Most “AI pentesting” content today is either:</p>
 <ul>
 <li class="">
@@ -45,17 +45,17 @@
 </li>
 </ul>
 <p>That’s not how real engagements work.</p>
-<p>Real engagements are won by<strong>pipeline discipline</strong>: every phase produces artifacts (hosts, ports, screenshots, creds, notes), and those artifacts drive the next phase. The bottleneck isn’t knowing<em>what</em>to do — it’s doing it<strong>reliably</strong>,<strong>documenting it</strong>, and<strong>iterating</strong>without losing context.</p>
+<p>Real engagements are won by <strong>pipeline discipline</strong>: every phase produces artifacts (hosts, ports, screenshots, creds, notes), and those artifacts drive the next phase. The bottleneck isn’t knowing <em>what</em> to do — it’s doing it <strong>reliably</strong>, <strong>documenting it</strong>, and <strong>iterating</strong> without losing context.</p>
 <p>That’s why this guide is centered around a specific model that consistently works in practice:</p>
 <p><strong>Cursor as the control plane + MCP as the tool bus + a modern PT toolset as the execution layer.</strong></p>
-<p>Cursor isn’t “another chat.” It’s an IDE that can see your project, your files, your outputs, and your knowledge base. Add MCP, and the same interface can orchestrate real tooling — recon, scanning, Burp workflows, exploit chains — while keeping everything inside a repeatable project structure. The result is not “automatic hacking.” It’s<strong>manual methodology with amplified throughput</strong>: faster recon loops, better correlation of findings, cleaner artifacts, and dramatically improved reporting velocity.</p>
+<p>Cursor isn’t “another chat.” It’s an IDE that can see your project, your files, your outputs, and your knowledge base. Add MCP, and the same interface can orchestrate real tooling — recon, scanning, Burp workflows, exploit chains — while keeping everything inside a repeatable project structure. The result is not “automatic hacking.” It’s <strong>manual methodology with amplified throughput</strong>: faster recon loops, better correlation of findings, cleaner artifacts, and dramatically improved reporting velocity.</p>
 <p>This post is a step-by-step playbook for building that workflow:</p>
 <ul>
 <li class="">
 <p>how to set up a PT machine and keep it stable,</p>
 </li>
 <li class="">
-<p>how to structure engagements so the AI has<em>correct context</em>,</p>
+<p>how to structure engagements so the AI has <em>correct context</em>,</p>
 </li>
 <li class="">
 <p>how to run the kill chain as a pipeline (not random commands),</p>
@@ -91,59 +91,59 @@
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-why-cursor-the-short-answer-after-many-pts">1. Why Cursor? The Short Answer After Many PTs<a href="#1-why-cursor-the-short-answer-after-many-pts" class="hash-link" aria-label="Direct link to 1. Why Cursor? The Short Answer After Many PTs" title="Direct link to 1. Why Cursor? The Short Answer After Many PTs" translate="no">​</a></h2>
-<p>After running many penetration tests with many different tools —<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">Nmap</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac">Burp Suite</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df">Metasploit</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1">Hydra</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike-AI</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-26-enhancing-penetration-testing-with-hackerai-step-by-step-guide-metasploitable-lab-b2ab2cdd4139">HackerAI</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-31-hexstrike-mcp-orchestration-with-ollama-ubuntu-host-kali-vm-ssh-bridging-and-performance-f049ab140596">standalone LLMs</a>, and MCP in isolation — the approach that consistently delivers the best results is<strong>working with Cursor</strong>as the central interface.</p>
+<p>After running many penetration tests with many different tools — <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">Nmap</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac">Burp Suite</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df">Metasploit</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1">Hydra</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike-AI</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-26-enhancing-penetration-testing-with-hackerai-step-by-step-guide-metasploitable-lab-b2ab2cdd4139">HackerAI</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-31-hexstrike-mcp-orchestration-with-ollama-ubuntu-host-kali-vm-ssh-bridging-and-performance-f049ab140596">standalone LLMs</a>, and MCP in isolation — the approach that consistently delivers the best results is<strong>working with Cursor</strong> as the central interface.</p>
 <p><strong>Why Cursor wins:</strong></p>
 <ul>
 <li class="">
-<p>**Single surface for everything.**You stay in one environment: natural language, code generation, script execution, and tool orchestration. No constant switching between terminal, browser, and chat.</p>
+<p><strong>Single surface for everything.</strong> You stay in one environment: natural language, code generation, script execution, and tool orchestration. No constant switching between terminal, browser, and chat.</p>
 </li>
 <li class="">
-<p><strong>Full workflow, not just “chat with a tool.”<strong>Cursor is an IDE with an AI that sees your project, your files, and your context. When you add MCP (Model Context Protocol), the same AI can drive HexStrike-AI, Burp, Shodan, and other tools. That’s not a chatbot with plugins — it’s an</strong>ops copilot</strong>that can run a full PT from recon to report. See:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-26-hexstrike-gemini-vs-hackerai-ops-copilot-vs-chatbot-with-tools-1d799845410b">HexStrike + Gemini vs. HackerAI: “Ops Copilot” vs. “Chatbot with Tools”</a>.</p>
+<p><strong>Full workflow, not just “chat with a tool.”</strong> Cursor is an IDE with an AI that sees your project, your files, and your context. When you add MCP (Model Context Protocol), the same AI can drive HexStrike-AI, Burp, Shodan, and other tools. That’s not a chatbot with plugins — it’s an<strong>ops copilot</strong> that can run a full PT from recon to report. See: <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-26-hexstrike-gemini-vs-hackerai-ops-copilot-vs-chatbot-with-tools-1d799845410b">HexStrike + Gemini vs. HackerAI: “Ops Copilot” vs. “Chatbot with Tools”</a>.</p>
 </li>
 </ul>
 <p>[<strong>HexStrike + Gemini vs. HackerAI: “Ops Copilot” vs. “Chatbot with Tools”</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-26-hexstrike-gemini-vs-hackerai-ops-copilot-vs-chatbot-with-tools-1d799845410b">A practical lab comparison: Why orchestration quality beats raw model IQ in real-world workflows.</a></p>
 <ul>
 <li class="">
-<p>**Project and knowledge base in one place.**You create a project folder, add scope docs, previous reports, and tool outputs. The AI uses all of that as context. That’s how you get “like a regular manual PT, just faster and deeper.”</p>
+<p><strong>Project and knowledge base in one place.</strong> You create a project folder, add scope docs, previous reports, and tool outputs. The AI uses all of that as context. That’s how you get “like a regular manual PT, just faster and deeper.”</p>
 </li>
 <li class="">
-<p>**Pipeline thinking.**Each phase of the kill chain produces outputs (scan results, credentials, screenshots). You feed those into the next phase. Cursor + MCP lets you do that in a structured way: same rigor as manual PT, with automation and AI-assisted decisions.</p>
+<p><strong>Pipeline thinking.</strong> Each phase of the kill chain produces outputs (scan results, credentials, screenshots). You feed those into the next phase. Cursor + MCP lets you do that in a structured way: same rigor as manual PT, with automation and AI-assisted decisions.</p>
 </li>
 </ul>
-<p>So: the best way to work, based on real experience, is<strong>Cursor + MCP + your PT toolset (e.g. HexStrike-AI, Burp MCP)</strong>— with a clean toolset, a dedicated project layout, and a project-specific knowledge base. The rest of this guide details how to build that.</p>
+<p>So: the best way to work, based on real experience, is <strong>Cursor + MCP + your PT toolset (e.g. HexStrike-AI, Burp MCP)</strong> — with a clean toolset, a dedicated project layout, and a project-specific knowledge base. The rest of this guide details how to build that.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-how-ai-driven-pt-works-the-big-picture">2. How AI-Driven PT Works: The Big Picture<a href="#2-how-ai-driven-pt-works-the-big-picture" class="hash-link" aria-label="Direct link to 2. How AI-Driven PT Works: The Big Picture" title="Direct link to 2. How AI-Driven PT Works: The Big Picture" translate="no">​</a></h2>
-<p>AI-driven PT is still a<strong>manual methodology</strong>in spirit: you follow a kill chain, you analyze each step, you decide when to go deeper or go back. The difference is<strong>how</strong>you execute and analyze.</p>
+<p>AI-driven PT is still a <strong>manual methodology</strong> in spirit: you follow a kill chain, you analyze each step, you decide when to go deeper or go back. The difference is <strong>how</strong> you execute and analyze.</p>
 <ul>
 <li class="">
-<p><strong>You work in Cursor</strong>(or another MCP-capable client) connected to your tools via MCP (e.g. HexStrike-AI, Burp Suite MCP).</p>
+<p><strong>You work in Cursor</strong> (or another MCP-capable client) connected to your tools via MCP (e.g. HexStrike-AI, Burp Suite MCP).</p>
 </li>
 <li class="">
-<p><strong>You give high-level instructions</strong>in natural language (“enumerate this subnet,” “find web vulns on this host,” “crack this hash with context from the client name”).</p>
+<p><strong>You give high-level instructions</strong> in natural language (“enumerate this subnet,” “find web vulns on this host,” “crack this hash with context from the client name”).</p>
 </li>
 <li class="">
-<p><strong>The AI proposes and runs tool invocations</strong>(Nmap, Nuclei, Burp, Hydra, etc.), reads outputs, and suggests next steps.</p>
+<p><strong>The AI proposes and runs tool invocations</strong> (Nmap, Nuclei, Burp, Hydra, etc.), reads outputs, and suggests next steps.</p>
 </li>
 <li class="">
-<p><strong>You review results</strong>at each stage. You can ask to re-run with different options, go back to recon, or drill into a specific finding.</p>
+<p><strong>You review results</strong> at each stage. You can ask to re-run with different options, go back to recon, or drill into a specific finding.</p>
 </li>
 <li class="">
-<p>**Outputs form a pipeline:**recon → scanning → exploitation → post-exploitation → reporting. Each step’s artifacts (files, logs, screenshots) are stored in the project and used as context for the next.</p>
+<p><strong>Outputs form a pipeline:</strong> recon → scanning → exploitation → post-exploitation → reporting. Each step’s artifacts (files, logs, screenshots) are stored in the project and used as context for the next.</p>
 </li>
 </ul>
-<p>So:**same phases as a regular manual PT, with AI and automation making each phase faster and more thorough.**For a full lab example, see<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-08-hexstrike-cursor-mcp-from-single-target-full-subnet-compromise-lab-pt-walkthrough-f2e1fd793ad7">HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough</a>).</p>
+<p>So: <strong>same phases as a regular manual PT, with AI and automation making each phase faster and more thorough.</strong> For a full lab example, see <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-08-hexstrike-cursor-mcp-from-single-target-full-subnet-compromise-lab-pt-walkthrough-f2e1fd793ad7">HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough</a>).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-building-and-configuring-your-pt-toolset">3. Building and Configuring Your PT Toolset<a href="#3-building-and-configuring-your-pt-toolset" class="hash-link" aria-label="Direct link to 3. Building and Configuring Your PT Toolset" title="Direct link to 3. Building and Configuring Your PT Toolset" translate="no">​</a></h2>
 <p>Before you run a single engagement, your environment must be ready. That means: base OS (Kali, Arch, or custom), tools updated, API keys set, wordlists and rainbow tables in place, and dependencies installed. Do this once (and maintain it); then every new PT starts from a known-good state.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="31-choose-and-harden-your-base-system">3.1 Choose and Harden Your Base System<a href="#31-choose-and-harden-your-base-system" class="hash-link" aria-label="Direct link to 3.1 Choose and Harden Your Base System" title="Direct link to 3.1 Choose and Harden Your Base System" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Kali Linux</strong>— Easiest: most tools preinstalled, good for getting started. See<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike on Kali Linux 2025.4: A Comprehensive Guide</a>.</p>
+<p><strong>Kali Linux</strong> — Easiest: most tools preinstalled, good for getting started. See <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike on Kali Linux 2025.4: A Comprehensive Guide</a>.</p>
 </li>
 <li class="">
-<p><strong>Arch (BlackArch or plain Arch + tools)</strong>— Rolling updates, minimal by default; you add only what you need.</p>
+<p><strong>Arch (BlackArch or plain Arch + tools)</strong> — Rolling updates, minimal by default; you add only what you need.</p>
 </li>
 <li class="">
-<p><strong>Custom (e.g. Ubuntu/Debian + your own tool list)</strong>— Full control; you maintain updates and dependencies yourself.</p>
+<p><strong>Custom (e.g. Ubuntu/Debian + your own tool list)</strong> — Full control; you maintain updates and dependencies yourself.</p>
 </li>
 </ul>
 <p><strong>Regardless of base:</strong></p>
@@ -155,63 +155,63 @@
 <p>Snapshot the VM after a clean toolset build so you can revert if something breaks.</p>
 </li>
 <li class="">
-<p>Keep the system updated regularly (<code>apt update &amp;&amp; apt full-upgrade</code>or equivalent).</p>
+<p>Keep the system updated regularly (<code>apt update &amp;&amp; apt full-upgrade</code> or equivalent).</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="32-install-and-update-core-tools">3.2 Install and Update Core Tools<a href="#32-install-and-update-core-tools" class="hash-link" aria-label="Direct link to 3.2 Install and Update Core Tools" title="Direct link to 3.2 Install and Update Core Tools" translate="no">​</a></h3>
 <p>Install or verify these (versions and names may differ by distro):</p>
 <ul>
 <li class="">
-<p>**Recon / scanning:**Nmap, Masscan, Nikto, Nuclei, theHarvester, Sublist3r, Amass, SpiderFoot.
-Refs:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">Nmap</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3">theHarvester</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712">Sublist3r</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-06-owasp-amass-project-guide-94bd55521f91">OWASP Amass</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-23-spiderfoot-deep-dive-installation-scans-and-practical-use-cases-11ea6537ad6f">SpiderFoot</a>.</p>
+<p><strong>Recon / scanning:</strong> Nmap, Masscan, Nikto, Nuclei, theHarvester, Sublist3r, Amass, SpiderFoot.
+Refs: <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">Nmap</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3">theHarvester</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712">Sublist3r</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-06-owasp-amass-project-guide-94bd55521f91">OWASP Amass</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-23-spiderfoot-deep-dive-installation-scans-and-practical-use-cases-11ea6537ad6f">SpiderFoot</a>.</p>
 </li>
 <li class="">
-<p>**Web:**Burp Suite (Pro or Community), OWASP ZAP, SQLMap, Dirb/Gobuster/FFuf.
-Refs:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac">Burp Suite</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d">Getting More from Burp Suite with LLMs</a>.</p>
+<p><strong>Web:</strong> Burp Suite (Pro or Community), OWASP ZAP, SQLMap, Dirb/Gobuster/FFuf.
+Refs: <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac">Burp Suite</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d">Getting More from Burp Suite with LLMs</a>.</p>
 </li>
 <li class="">
-<p>**Exploitation:**Metasploit Framework, searchsploit, custom PoC scripts.
-Ref:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df">Metasploit</a>.</p>
+<p><strong>Exploitation:</strong> Metasploit Framework, searchsploit, custom PoC scripts.
+Ref: <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df">Metasploit</a>.</p>
 </li>
 </ul>
 <p>[<strong>The Ultimate Guide to Metasploit. Part 1.</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df">A Complete Guide to Exploiting Vulnerabilities and Strengthening Security with Metasploit</a></p>
 <ul>
 <li class="">
-<p>**Credential testing:**Hydra, Medusa, Ncrack, John the Ripper, Hashcat.
-Refs:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1">Hydra</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71">John the Ripper</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8">Hashcat</a>.</p>
+<p><strong>Credential testing:</strong> Hydra, Medusa, Ncrack, John the Ripper, Hashcat.
+Refs: <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1">Hydra</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71">John the Ripper</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8">Hashcat</a>.</p>
 </li>
 <li class="">
 <p>**Wireless (if in scope):**Aircrack-ng suite.
-Ref:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f">Wifi cracking with Aircrack-ng</a>.</p>
+Ref: <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f">Wifi cracking with Aircrack-ng</a>.</p>
 </li>
 </ul>
 <p>[<strong>WiFi cracking with Aircrack-ng</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f">In this article, I am going to explain how you can crack a WiFi network using Aircrack-ng and the PPG — Personal Pass…</a></p>
 <ul>
-<li class="">**AI/MCP stack:**HexStrike-AI (or your chosen MCP server), Cursor (or another MCP client).
-Refs:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama</a>,<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-02-burp-suite-mcp-gemini-cli-c1229edfe092">Burp Suite MCP + Gemini CLI</a>.</li>
+<li class=""><strong>AI/MCP stack:</strong> HexStrike-AI (or your chosen MCP server), Cursor (or another MCP client).
+Refs: <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama</a>, <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-02-burp-suite-mcp-gemini-cli-c1229edfe092">Burp Suite MCP + Gemini CLI</a>.</li>
 </ul>
-<p>After install, run tool-specific update commands (e.g.<code>msfupdate</code>,<code>nuclei -update-templates</code>,<code>searchsploit -u</code>).</p>
+<p>After install, run tool-specific update commands (e.g. <code>msfupdate</code>, <code>nuclei -update-templates</code>, <code>searchsploit -u</code>).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="33-api-keys-and-external-services">3.3 API Keys and External Services<a href="#33-api-keys-and-external-services" class="hash-link" aria-label="Direct link to 3.3 API Keys and External Services" title="Direct link to 3.3 API Keys and External Services" translate="no">​</a></h3>
 <p>Configure once; reuse for every project:</p>
 <ul>
-<li class=""><strong>Shodan</strong>— Recon and exposed-asset discovery. Create key at shodan.io, set in env (e.g.<code>SHODAN_API_KEY</code>) or in HexStrike/Shodan config.
-Ref:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe">Shodan — you can find everything</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e">Integrating Shodan with HexStrike-AI Using Gemini-CLI</a>.</li>
+<li class=""><strong>Shodan</strong> — Recon and exposed-asset discovery. Create key at shodan.io, set in env (e.g. <code>SHODAN_API_KEY</code>) or in HexStrike/Shodan config.
+Ref: <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe">Shodan — you can find everything</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e">Integrating Shodan with HexStrike-AI Using Gemini-CLI</a>.</li>
 </ul>
 <p>[<strong>Integrating Shodan with HexStrike-AI Using Gemini-CLI</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e">A Practical Guide to AI-Driven External Reconnaissance and Vulnerability Analysis</a></p>
 <ul>
 <li class="">
-<p><strong>VirusTotal</strong>(optional) — Hash/file/URL lookups. Use env or config.</p>
+<p><strong>VirusTotal</strong> (optional) — Hash/file/URL lookups. Use env or config.</p>
 </li>
 <li class="">
-<p><strong>Censys / ZoomEye / etc.</strong>(optional) — Same idea: key in env or tool config so MCP/AI can use them when needed.</p>
+<p><strong>Censys / ZoomEye / etc.</strong> (optional) — Same idea: key in env or tool config so MCP/AI can use them when needed.</p>
 </li>
 </ul>
 <p>Store keys in a secure store (e.g. env file not in git, or a secrets manager) and document in your internal runbook where each tool reads them from.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="34-wordlists-username-lists-and-directory-dictionaries">3.4 Wordlists, Username Lists, and Directory Dictionaries<a href="#34-wordlists-username-lists-and-directory-dictionaries" class="hash-link" aria-label="Direct link to 3.4 Wordlists, Username Lists, and Directory Dictionaries" title="Direct link to 3.4 Wordlists, Username Lists, and Directory Dictionaries" translate="no">​</a></h3>
-<p>Create a single, well-organized directory (e.g.<code>/opt/wordlists</code>or<code>~/wordlists</code>) and keep it updated:</p>
+<p>Create a single, well-organized directory (e.g. <code>/opt/wordlists</code> or <code>~/wordlists</code>) and keep it updated:</p>
 <p><strong>Best resource:</strong></p>
 <p><a href="https://weakpass.com/wordlists/" target="_blank" rel="noopener noreferrer" class=""><strong>https://weakpass.com/wordlists/</strong></a></p>
 <ul>
@@ -219,22 +219,22 @@ Ref:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shod
 <p><strong>Passwords:</strong></p>
 </li>
 <li class="">
-<p>RockYou (and variants), SecLists<code>Passwords/</code>, weak passwords from breaches, company/context-specific lists.</p>
+<p>RockYou (and variants), SecLists <code>Passwords/</code>, weak passwords from breaches, company/context-specific lists.</p>
 </li>
 <li class="">
-<p>For AI-assisted cracking:<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-05-hexstrike-gemini-ai-assisted-smb-exposure-credential-brute-force-2c5f99dcdbf4">HexStrike + Gemini. AI-Assisted SMB Credential Brute-Force</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-ai-driven-zip-password-recovery-with-hexstrike-ai-and-gemini-cli-b8fc5c475ebc">AI-Driven ZIP Password Recovery with HexStrike-AI and Gemini-CLI</a>.</p>
+<p>For AI-assisted cracking: <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-05-hexstrike-gemini-ai-assisted-smb-exposure-credential-brute-force-2c5f99dcdbf4">HexStrike + Gemini. AI-Assisted SMB Credential Brute-Force</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-ai-driven-zip-password-recovery-with-hexstrike-ai-and-gemini-cli-b8fc5c475ebc">AI-Driven ZIP Password Recovery with HexStrike-AI and Gemini-CLI</a>.</p>
 </li>
 <li class="">
 <p><strong>Usernames:</strong></p>
 </li>
 <li class="">
-<p>SecLists<code>Usernames/</code>, generated lists from OSINT (names, emails, IDs). Feed these into Hydra/Medusa and into AI context for smarter guessing.</p>
+<p>SecLists <code>Usernames/</code>, generated lists from OSINT (names, emails, IDs). Feed these into Hydra/Medusa and into AI context for smarter guessing.</p>
 </li>
 <li class="">
 <p><strong>Web/directory:</strong></p>
 </li>
 <li class="">
-<p>SecLists<code>Discovery/Web-Content/</code>, DirBuster lists, custom lists for tech stacks (e.g.<code>admin</code>,<code>wp-admin</code>,<code>.git</code>, API paths).</p>
+<p>SecLists <code>Discovery/Web-Content/</code>, DirBuster lists, custom lists for tech stacks (e.g. <code>admin</code>, <code>wp-admin</code>, <code>.git</code>, API paths).</p>
 </li>
 <li class="">
 <p><strong>Subdomains:</strong></p>
@@ -243,83 +243,83 @@ Ref:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shod
 <p>SecLists, Amass wordlists, custom from previous engagements (sanitized).</p>
 </li>
 </ul>
-<p>Point HexStrike and your scripts at this directory so the AI can “choose the right list” based on target (e.g.<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-pdf-password-recovery-with-hexstrike-ai-and-gemini-cli-cfa7eb0fae91">AI-Driven PDF/Office Password Recovery</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-office-documents-password-recovery-with-hexstrike-ai-and-gemini-cli-3c8bb7deb82d">Office Documents</a>).</p>
+<p>Point HexStrike and your scripts at this directory so the AI can “choose the right list” based on target (e.g. <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-pdf-password-recovery-with-hexstrike-ai-and-gemini-cli-cfa7eb0fae91">AI-Driven PDF/Office Password Recovery</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-office-documents-password-recovery-with-hexstrike-ai-and-gemini-cli-3c8bb7deb82d">Office Documents</a>).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="35-rainbow-tables-and-hash-cracking-resources">3.5 Rainbow Tables and Hash Cracking Resources<a href="#35-rainbow-tables-and-hash-cracking-resources" class="hash-link" aria-label="Direct link to 3.5 Rainbow Tables and Hash Cracking Resources" title="Direct link to 3.5 Rainbow Tables and Hash Cracking Resources" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Rainbow tables:**For LM/NTLM and other algorithms where you’ve decided to use them (storage-heavy). Store in a known path and document which hash types they cover.</p>
+<p><strong>Rainbow tables:</strong> For LM/NTLM and other algorithms where you’ve decided to use them (storage-heavy). Store in a known path and document which hash types they cover.</p>
 </li>
 <li class="">
-<p>**Hashcat/John rules:**Install and update rule sets (e.g. Hashcat rules, John rules) so the AI can suggest “try rule X with this wordlist” for credential and file-cracking tasks.
-Refs:<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71">John the Ripper</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8">Hashcat</a>.</p>
+<p><strong>Hashcat/John rules:</strong> Install and update rule sets (e.g. Hashcat rules, John rules) so the AI can suggest “try rule X with this wordlist” for credential and file-cracking tasks.
+Refs: <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71">John the Ripper</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8">Hashcat</a>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="36-dependencies-and-runtimes">3.6 Dependencies and Runtimes<a href="#36-dependencies-and-runtimes" class="hash-link" aria-label="Direct link to 3.6 Dependencies and Runtimes" title="Direct link to 3.6 Dependencies and Runtimes" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Python 3</strong>— Many tools and HexStrike depend on it. Use a venv per project if you have custom scripts.</p>
+<p><strong>Python 3</strong> — Many tools and HexStrike depend on it. Use a venv per project if you have custom scripts.</p>
 </li>
 <li class="">
-<p><strong>Ruby (Metasploit), Go (many modern tools)</strong>— Install as required by your distro.</p>
+<p><strong>Ruby (Metasploit), Go (many modern tools)</strong> — Install as required by your distro.</p>
 </li>
 <li class="">
-<p><strong>GPU drivers (for Hashcat)</strong>— Install and test if you use GPU cracking.</p>
+<p><strong>GPU drivers (for Hashcat)</strong> — Install and test if you use GPU cracking.</p>
 </li>
 <li class="">
-<p><strong>MCP server dependencies</strong>— Whatever HexStrike-AI or Burp MCP need (Node/Python, etc.); document in your setup guide.</p>
+<p><strong>MCP server dependencies</strong> — Whatever HexStrike-AI or Burp MCP need (Node/Python, etc.); document in your setup guide.</p>
 </li>
 </ul>
 <p>After this section, your “PT machine” is a single, repeatable environment: base OS + updated tools + API keys + wordlists + cracking resources + dependencies. Then every new engagement starts from the same foundation.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-starting-a-new-pt-project-structure-and-knowledge-base">4. Starting a New PT Project: Structure and Knowledge Base<a href="#4-starting-a-new-pt-project-structure-and-knowledge-base" class="hash-link" aria-label="Direct link to 4. Starting a New PT Project: Structure and Knowledge Base" title="Direct link to 4. Starting a New PT Project: Structure and Knowledge Base" translate="no">​</a></h2>
-<p>For<strong>every</strong>new penetration test, do the following before running any attacks. This keeps engagements consistent and lets the AI use project-specific context.</p>
+<p>For <strong>every</strong> new penetration test, do the following before running any attacks. This keeps engagements consistent and lets the AI use project-specific context.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="41-create-a-project-directory">4.1 Create a Project Directory<a href="#41-create-a-project-directory" class="hash-link" aria-label="Direct link to 4.1 Create a Project Directory" title="Direct link to 4.1 Create a Project Directory" translate="no">​</a></h3>
 <p>Create one folder per engagement, for example:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">~/pt-projects/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  client-name-2025-01/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    scope.txt           </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># In-scope IPs/domains, OOB, rules of engagement</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    notes.md            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Timeline, credentials found, open questions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    recon/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    scan/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    exploit/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    postex/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    report/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    kb/                 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Knowledge base (see below)</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">~/pt-projects/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  client-name-2025-01/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    scope.txt           # In-scope IPs/domains, OOB, rules of engagement</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    notes.md            # Timeline, credentials found, open questions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    recon/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    scan/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    exploit/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    postex/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    report/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    kb/                 # Knowledge base (see below)</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
-<p>**scope.txt (or scope.md):**In-scope targets, out-of-scope, and any constraints (e.g. “no DoS,” “only these subnets”).</p>
+<p><strong>scope.txt (or scope.md):</strong> In-scope targets, out-of-scope, and any constraints (e.g. “no DoS,” “only these subnets”).</p>
 </li>
 <li class="">
-<p>**notes.md:**Running log: what you did, what you found, credentials, next steps. The AI can use this file when you ask “what have we tried on this host?”</p>
+<p><strong>notes.md:</strong> Running log: what you did, what you found, credentials, next steps. The AI can use this file when you ask “what have we tried on this host?”</p>
 </li>
 <li class="">
-<p>**recon / scan / exploit / postex / report:**Store phase outputs here (see pipeline below). Use subfolders per host or per phase if needed (e.g.<code>scan/nmap/</code>,<code>scan/burp/</code>).</p>
+<p><strong>recon / scan / exploit / postex / report:</strong> Store phase outputs here (see pipeline below). Use subfolders per host or per phase if needed (e.g. <code>scan/nmap/</code>, <code>scan/burp/</code>).</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="42-build-a-project-specific-knowledge-base-kb">4.2 Build a Project-Specific Knowledge Base (KB)<a href="#42-build-a-project-specific-knowledge-base-kb" class="hash-link" aria-label="Direct link to 4.2 Build a Project-Specific Knowledge Base (KB)" title="Direct link to 4.2 Build a Project-Specific Knowledge Base (KB)" translate="no">​</a></h3>
-<p>Put in<code>kb/</code>(or a dedicated subfolder) everything that should guide this engagement:</p>
+<p>Put in <code>kb/</code> (or a dedicated subfolder) everything that should guide this engagement:</p>
 <ul>
 <li class="">
-<p>**Official docs:**Product/version docs for in-scope systems (e.g. CMS, API framework, VPN). PDFs or cleaned HTML are fine.</p>
+<p><strong>Official docs:</strong> Product/version docs for in-scope systems (e.g. CMS, API framework, VPN). PDFs or cleaned HTML are fine.</p>
 </li>
 <li class="">
-<p>**Previous reports:**Sanitized excerpts or summaries from past PTs for the same client (if allowed). Helps the AI suggest “last time we saw X, try Y.”</p>
+<p><strong>Previous reports:</strong> Sanitized excerpts or summaries from past PTs for the same client (if allowed). Helps the AI suggest “last time we saw X, try Y.”</p>
 </li>
 <li class="">
-<p>**Scope and RoE:**Copy or link scope, rules of engagement, and any communication constraints.</p>
+<p><strong>Scope and RoE:</strong> Copy or link scope, rules of engagement, and any communication constraints.</p>
 </li>
 <li class="">
-<p>**Asset list (if provided):**IPs, hostnames, critical apps. The AI can use this to prioritize and avoid out-of-scope targets.</p>
+<p><strong>Asset list (if provided):</strong> IPs, hostnames, critical apps. The AI can use this to prioritize and avoid out-of-scope targets.</p>
 </li>
 </ul>
-<p>You don’t need to paste every doc into the chat — Cursor (and the AI) can read files in the project. So you can say: “Using the docs in<code>kb/</code>, suggest the best way to test this API.” This is how you get “like a regular manual PT”: the same kind of context a human would use, but available to the model.</p>
+<p>You don’t need to paste every doc into the chat — Cursor (and the AI) can read files in the project. So you can say: “Using the docs in <code>kb/</code>, suggest the best way to test this API.” This is how you get “like a regular manual PT”: the same kind of context a human would use, but available to the model.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="43-open-the-project-in-cursor-and-connect-mcp">4.3 Open the Project in Cursor and Connect MCP<a href="#43-open-the-project-in-cursor-and-connect-mcp" class="hash-link" aria-label="Direct link to 4.3 Open the Project in Cursor and Connect MCP" title="Direct link to 4.3 Open the Project in Cursor and Connect MCP" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Open the project root (e.g.<code>~/pt-projects/client-name-2025-01</code>) in Cursor.</p>
+<p>Open the project root (e.g. <code>~/pt-projects/client-name-2025-01</code>) in Cursor.</p>
 </li>
 <li class="">
 <p>Ensure MCP is configured so Cursor talks to HexStrike-AI (and Burp MCP if you use it).
-Ref:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama</a>.</p>
+Ref: <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama</a>.</p>
 </li>
 </ul>
 <p>From here on, all recon, scanning, exploitation, and note-taking can be driven from Cursor with the project and KB as context.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-the-kill-chain-as-a-pipeline-step-by-step">5. The Kill Chain as a Pipeline: Step by Step<a href="#5-the-kill-chain-as-a-pipeline-step-by-step" class="hash-link" aria-label="Direct link to 5. The Kill Chain as a Pipeline: Step by Step" title="Direct link to 5. The Kill Chain as a Pipeline: Step by Step" translate="no">​</a></h2>
-<p>Run the engagement as a<strong>pipeline</strong>: each phase produces outputs that feed the next. After each phase,<strong>analyze results</strong>; if something is unclear or you need more data,<strong>go back</strong>to an earlier step (e.g. more recon or a different scan). This is the same discipline as a manual PT — just faster and with AI assistance.</p>
+<p>Run the engagement as a <strong>pipeline</strong>: each phase produces outputs that feed the next. After each phase, <strong>analyze results</strong>; if something is unclear or you need more data, <strong>go back</strong> to an earlier step (e.g. more recon or a different scan). This is the same discipline as a manual PT — just faster and with AI assistance.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="51-reconnaissance-recon">5.1 Reconnaissance (Recon)<a href="#51-reconnaissance-recon" class="hash-link" aria-label="Direct link to 5.1 Reconnaissance (Recon)" title="Direct link to 5.1 Reconnaissance (Recon)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Goals:**Discover in-scope targets, subdomains, tech stack, and public exposure.</p>
+<p><strong>Goals:</strong> Discover in-scope targets, subdomains, tech stack, and public exposure.</p>
 </li>
 <li class="">
 <p><strong>Actions:</strong></p>
@@ -334,20 +334,20 @@ Ref:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexs
 <p><strong>Outputs to save in project:</strong></p>
 </li>
 <li class="">
-<p><code>recon/domains.txt</code>,<code>recon/subdomains.txt</code>,<code>recon/ips.txt</code>,<code>recon/shodan_*.json</code>(or similar),<code>recon/theharvester_*.json</code>.</p>
+<p><code>recon/domains.txt</code>, <code>recon/subdomains.txt</code>, <code>recon/ips.txt</code>, <code>recon/shodan_*.json</code> (or similar), <code>recon/theharvester_*.json</code>.</p>
 </li>
 <li class="">
-<p>**AI use:**Ask Cursor/HexStrike to run Shodan/theHarvester/Amass for the scope, then “summarize findings and suggest next scans.”
-Refs:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e">Integrating Shodan with HexStrike-AI</a>,<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-11-hexstrike-cursor-for-osint-from-one-email-to-a-full-exposure-map-ffdfc7ba1b30">HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map</a>.</p>
+<p><strong>AI use:</strong> Ask Cursor/HexStrike to run Shodan/theHarvester/Amass for the scope, then “summarize findings and suggest next scans.”
+Refs: <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-23-integrating-shodan-with-hexstrike-ai-using-gemini-cli-b6f9fcbe8e6e">Integrating Shodan with HexStrike-AI</a>, <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-11-hexstrike-cursor-for-osint-from-one-email-to-a-full-exposure-map-ffdfc7ba1b30">HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map</a>.</p>
 </li>
 <li class="">
-<p><strong>Pipeline:<strong>Recon outputs become the</strong>target list</strong>for scanning (hosts, ports, services).</p>
+<p><strong>Pipeline:</strong> Recon outputs become the <strong>target list</strong> for scanning (hosts, ports, services).</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="52-scanning-and-enumeration-scan">5.2 Scanning and Enumeration (Scan)<a href="#52-scanning-and-enumeration-scan" class="hash-link" aria-label="Direct link to 5.2 Scanning and Enumeration (Scan)" title="Direct link to 5.2 Scanning and Enumeration (Scan)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Goals:**Open ports, services, versions, and potential vulns (e.g. Nuclei, Nikto, default creds).</p>
+<p><strong>Goals:</strong> Open ports, services, versions, and potential vulns (e.g. Nuclei, Nikto, default creds).</p>
 </li>
 <li class="">
 <p><strong>Actions:</strong></p>
@@ -368,20 +368,20 @@ Refs:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-23-int
 <p><strong>Outputs to save:</strong></p>
 </li>
 <li class="">
-<p><code>scan/nmap/&amp;lt;host&amp;gt;.xml</code>and<code>.nmap</code>,<code>scan/nuclei/*.json</code>,<code>scan/burp/*.xml</code>or project file,<code>scan/dirb_*.txt</code>.</p>
+<p><code>scan/nmap/&amp;lt;host&amp;gt;.xml</code> and <code>.nmap</code>, <code>scan/nuclei/*.json</code>, <code>scan/burp/*.xml</code> or project file, <code>scan/dirb_*.txt</code>.</p>
 </li>
 <li class="">
-<p><strong>AI use:</strong>“From<code>recon/ips.txt</code>and scope, run Nmap and Nuclei; put results in<code>scan/</code>. Then prioritize by criticality.”
-Refs:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-24-reinventing-recon-nmap-meets-chatgpt-e2acb6130be5">Reinventing Recon: Nmap Meets ChatGPT</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d">Getting More from Burp Suite with LLMs</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-22-ai-driven-web-application-pentesting-with-hexstrike-ai-67f3dae32040">AI-Driven Web Application Pentesting with HexStrike-AI</a>.</p>
+<p><strong>AI use:</strong>“From<code>recon/ips.txt</code> and scope, run Nmap and Nuclei; put results in <code>scan/</code>. Then prioritize by criticality.”
+Refs: <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-24-reinventing-recon-nmap-meets-chatgpt-e2acb6130be5">Reinventing Recon: Nmap Meets ChatGPT</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d">Getting More from Burp Suite with LLMs</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-22-ai-driven-web-application-pentesting-with-hexstrike-ai-67f3dae32040">AI-Driven Web Application Pentesting with HexStrike-AI</a>.</p>
 </li>
 <li class="">
-<p><strong>Pipeline:<strong>Scan results (CVEs, services, paths) feed into</strong>exploitation</strong>(exploit selection, payload design).</p>
+<p><strong>Pipeline:</strong> Scan results (CVEs, services, paths) feed into <strong>exploitation</strong> (exploit selection, payload design).</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="53-exploitation">5.3 Exploitation<a href="#53-exploitation" class="hash-link" aria-label="Direct link to 5.3 Exploitation" title="Direct link to 5.3 Exploitation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Goals:**Gain initial access (or prove impact) using findings from scan + recon.</p>
+<p><strong>Goals:</strong> Gain initial access (or prove impact) using findings from scan + recon.</p>
 </li>
 <li class="">
 <p><strong>Actions:</strong></p>
@@ -402,20 +402,20 @@ Refs:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-24-rei
 <p><strong>Outputs to save:</strong></p>
 </li>
 <li class="">
-<p><code>exploit/&amp;lt;host&amp;gt;_&amp;lt;service&amp;gt;_notes.md</code>, screenshots, hashes/creds in<code>notes.md</code>(or a creds file with care).</p>
+<p><code>exploit/&amp;lt;host&amp;gt;_&amp;lt;service&amp;gt;_notes.md</code>, screenshots, hashes/creds in <code>notes.md</code> (or a creds file with care).</p>
 </li>
 <li class="">
-<p><strong>AI use:</strong>“Given this Nmap/Nuclei output in<code>scan/</code>, suggest and run Metasploit modules or PoCs; document results in<code>exploit/</code>.”
-Ref:<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-03-hexstrike-openai-codex-ai-driven-exploitation-of-metasploitable-b892c07be39f">HexStrike+OpenAI Codex. AI-Driven Exploitation of Metasploitable</a>.</p>
+<p><strong>AI use:</strong> “Given this Nmap/Nuclei output in <code>scan/</code>, suggest and run Metasploit modules or PoCs; document results in<code>exploit/</code>.”
+Ref: <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-03-hexstrike-openai-codex-ai-driven-exploitation-of-metasploitable-b892c07be39f">HexStrike+OpenAI Codex. AI-Driven Exploitation of Metasploitable</a>.</p>
 </li>
 <li class="">
-<p><strong>Pipeline:<strong>Obtained access and credentials feed</strong>post-exploitation</strong>(lateral movement, privilege escalation, persistence).</p>
+<p><strong>Pipeline:</strong> Obtained access and credentials feed <strong>post-exploitation</strong> (lateral movement, privilege escalation, persistence).</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="54-post-exploitation">5.4 Post-Exploitation<a href="#54-post-exploitation" class="hash-link" aria-label="Direct link to 5.4 Post-Exploitation" title="Direct link to 5.4 Post-Exploitation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Goals:**Escalate privileges, move laterally, and (if in scope) demonstrate full impact (e.g. domain compromise).</p>
+<p><strong>Goals:</strong> Escalate privileges, move laterally, and (if in scope) demonstrate full impact (e.g. domain compromise).</p>
 </li>
 <li class="">
 <p><strong>Actions:</strong></p>
@@ -433,79 +433,79 @@ Ref:<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-03-hexs
 <p><code>postex/&amp;lt;host&amp;gt;_*.md</code>, dumps (stored securely), screenshots.</p>
 </li>
 <li class="">
-<p><strong>AI use:</strong>“We have access to host X and creds Y; suggest next steps for privilege escalation and lateral movement given scope.” You can reference internal docs (e.g. ADCS, BloodHound) in<code>kb/</code>.</p>
+<p><strong>AI use:</strong> “We have access to host X and creds Y; suggest next steps for privilege escalation and lateral movement given scope.” You can reference internal docs (e.g. ADCS, BloodHound) in <code>kb/</code>.</p>
 </li>
 <li class="">
-<p><strong>Pipeline:<strong>Post-ex findings and evidence feed</strong>reporting</strong>.</p>
+<p><strong>Pipeline:</strong> Post-ex findings and evidence feed <strong>reporting</strong>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="55-analysis-and-iteration">5.5 Analysis and Iteration<a href="#55-analysis-and-iteration" class="hash-link" aria-label="Direct link to 5.5 Analysis and Iteration" title="Direct link to 5.5 Analysis and Iteration" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>After<strong>each</strong>phase:</p>
+<p>After <strong>each</strong> phase:</p>
 </li>
 <li class="">
 <p>Review AI-suggested and tool outputs.</p>
 </li>
 <li class="">
-<p>If results are insufficient or ambiguous,<strong>go back</strong>: e.g. more recon, different Nmap options, or a deeper Burp scan.</p>
+<p>If results are insufficient or ambiguous, <strong>go back</strong>: e.g. more recon, different Nmap options, or a deeper Burp scan.</p>
 </li>
 <li class="">
-<p>Update<code>notes.md</code>and phase folders so the next step has full context.</p>
+<p>Update <code>notes.md</code> and phase folders so the next step has full context.</p>
 </li>
 </ul>
-<p>This loop (recon → scan → exploit → postex → analyze → possibly back) is exactly like a manual PT; the difference is that the AI can propose and run many of the commands and correlate findings for you. For an end-to-end example:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-21-ai-driven-pentesting-at-home-using-hexstrike-ai-for-full-network-discovery-and-exploitatio-00a9e88b3bde">AI-Driven Pentesting at Home: Using HexStrike-AI for Full Network Discovery and Exploitation</a>.</p>
+<p>This loop (recon → scan → exploit → postex → analyze → possibly back) is exactly like a manual PT; the difference is that the AI can propose and run many of the commands and correlate findings for you. For an end-to-end example: <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-21-ai-driven-pentesting-at-home-using-hexstrike-ai-for-full-network-discovery-and-exploitatio-00a9e88b3bde">AI-Driven Pentesting at Home: Using HexStrike-AI for Full Network Discovery and Exploitation</a>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="56-reporting">5.6 Reporting<a href="#56-reporting" class="hash-link" aria-label="Direct link to 5.6 Reporting" title="Direct link to 5.6 Reporting" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Goals:**Clear, evidence-based report (findings, impact, remediation).</p>
+<p><strong>Goals:</strong> Clear, evidence-based report (findings, impact, remediation).</p>
 </li>
 <li class="">
-<p>**Inputs:**All artifacts in<code>recon/</code>,<code>scan/</code>,<code>exploit/</code>,<code>postex/</code>, and<code>notes.md</code>.</p>
+<p><strong>Inputs:</strong> All artifacts in <code>recon/</code>, <code>scan/</code>, <code>exploit/</code>, <code>postex/</code>, and <code>notes.md</code>.</p>
 </li>
 <li class="">
-<p><strong>AI use:</strong>“Draft the executive summary and findings sections from<code>notes.md</code>and the evidence in the project; use scope in<code>scope.txt</code>for in-scope summary.” You then edit and approve.
-Ref:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-10-19-augmenting-digital-forensics-with-ai-how-chatgpt-transforms-investigation-workflows-34eb10887ea5">Augmenting Digital Forensics with AI: How ChatGPT Transforms Investigation Workflows</a>(same idea: AI helps turn technical output into structured narrative).</p>
+<p><strong>AI use:</strong> “Draft the executive summary and findings sections from<code>notes.md</code> and the evidence in the project; use scope in<code>scope.txt</code> for in-scope summary.” You then edit and approve.
+Ref: <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-10-19-augmenting-digital-forensics-with-ai-how-chatgpt-transforms-investigation-workflows-34eb10887ea5">Augmenting Digital Forensics with AI: How ChatGPT Transforms Investigation Workflows</a> (same idea: AI helps turn technical output into structured narrative).</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-examples-and-deep-dives">6. Examples and Deep Dives<a href="#6-examples-and-deep-dives" class="hash-link" aria-label="Direct link to 6. Examples and Deep Dives" title="Direct link to 6. Examples and Deep Dives" translate="no">​</a></h2>
 <ul>
-<li class=""><strong>Full lab PT (single host → subnet):</strong><a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-08-hexstrike-cursor-mcp-from-single-target-full-subnet-compromise-lab-pt-walkthrough-f2e1fd793ad7">HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough)</a>.</li>
+<li class=""><strong>Full lab PT (single host → subnet):</strong> <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-08-hexstrike-cursor-mcp-from-single-target-full-subnet-compromise-lab-pt-walkthrough-f2e1fd793ad7">HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough)</a>.</li>
 </ul>
 <p>[<strong>HexStrike + Cursor (MCP): From Single Target → Full Subnet Compromise (Lab PT Walkthrough)</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-08-hexstrike-cursor-mcp-from-single-target-full-subnet-compromise-lab-pt-walkthrough-f2e1fd793ad7">A real end-to-end lab engagement: recon → credential discovery → share abuse → lateral movement → multi-host compromise…</a></p>
 <ul>
-<li class=""><strong>OSINT from one email:</strong><a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-11-hexstrike-cursor-for-osint-from-one-email-to-a-full-exposure-map-ffdfc7ba1b30">HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map</a>.</li>
+<li class=""><strong>OSINT from one email:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-11-hexstrike-cursor-for-osint-from-one-email-to-a-full-exposure-map-ffdfc7ba1b30">HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map</a>.</li>
 </ul>
 <p>[<strong>HexStrike + Cursor for OSINT: From One Email to a Full Exposure Map</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-11-hexstrike-cursor-for-osint-from-one-email-to-a-full-exposure-map-ffdfc7ba1b30">Why OSINT is harder than “hack the box,” what an AI-assisted workflow looks like in practice, and how to publish a real…</a></p>
 <ul>
-<li class=""><strong>Web + cloud with Cursor and MCP:</strong><a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-31-ai-assisted-web-and-cloud-penetration-testing-with-cursor-mcp-hexstrike-and-burp-suite-mcp-01c02eed5258">AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP</a>.</li>
+<li class=""><strong>Web + cloud with Cursor and MCP:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-31-ai-assisted-web-and-cloud-penetration-testing-with-cursor-mcp-hexstrike-and-burp-suite-mcp-01c02eed5258">AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP</a>.</li>
 </ul>
 <p>[<strong>AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP.</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-31-ai-assisted-web-and-cloud-penetration-testing-with-cursor-mcp-hexstrike-and-burp-suite-mcp-01c02eed5258">A Complete Guide to Modern AI-Powered Security Testing. From One Prompt to Full Attack Surface Coverage (Recon →…</a></p>
 <ul>
-<li class=""><strong>Credential attacks (SMB/SSH):</strong><a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-05-hexstrike-gemini-ai-assisted-smb-exposure-credential-brute-force-2c5f99dcdbf4">HexStrike + Gemini. AI-Assisted SMB Exposure Credential Brute-Force</a>,<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-04-hexstrike-gemini-ai-assisted-ssh-credential-brute-force-a9162f8e253b">HexStrike + Gemini. AI-Assisted SSH Credential Brute-Force</a>.</li>
+<li class=""><strong>Credential attacks (SMB/SSH):</strong> <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-05-hexstrike-gemini-ai-assisted-smb-exposure-credential-brute-force-2c5f99dcdbf4">HexStrike + Gemini. AI-Assisted SMB Exposure Credential Brute-Force</a>, <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-04-hexstrike-gemini-ai-assisted-ssh-credential-brute-force-a9162f8e253b">HexStrike + Gemini. AI-Assisted SSH Credential Brute-Force</a>.</li>
 </ul>
 <p>[<strong>HexStrike + Gemini. AI-Assisted SSH Credential Brute-Force</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-04-hexstrike-gemini-ai-assisted-ssh-credential-brute-force-a9162f8e253b">From Service Validation → Dependency Fixes → Findings → Defensive Takeaways</a></p>
 <ul>
-<li class=""><strong>Password/file recovery (ZIP, PDF, Office):</strong><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-ai-driven-zip-password-recovery-with-hexstrike-ai-and-gemini-cli-b8fc5c475ebc">AI-Driven ZIP Password Recovery with HexStrike-AI and Gemini-CLI</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-pdf-password-recovery-with-hexstrike-ai-and-gemini-cli-cfa7eb0fae91">AI-Driven PDF Password Recovery</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-office-documents-password-recovery-with-hexstrike-ai-and-gemini-cli-3c8bb7deb82d">AI-Driven Office Documents Password Recovery</a>.</li>
+<li class=""><strong>Password/file recovery (ZIP, PDF, Office):</strong> <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-ai-driven-zip-password-recovery-with-hexstrike-ai-and-gemini-cli-b8fc5c475ebc">AI-Driven ZIP Password Recovery with HexStrike-AI and Gemini-CLI</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-pdf-password-recovery-with-hexstrike-ai-and-gemini-cli-cfa7eb0fae91">AI-Driven PDF Password Recovery</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-office-documents-password-recovery-with-hexstrike-ai-and-gemini-cli-3c8bb7deb82d">AI-Driven Office Documents Password Recovery</a>.</li>
 </ul>
 <p>[<strong>AI-Driven Office Documents Password Recovery with HexStrike-AI and Gemini-CLI</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-office-documents-password-recovery-with-hexstrike-ai-and-gemini-cli-3c8bb7deb82d">From Encrypted Document to Readable Content Using LLM-Orchestrated Tooling</a></p>
 <ul>
-<li class=""><strong>Tool dev and env setup with Cursor:</strong><a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-16-hacker-tool-development-workflow-android-rubber-ducky-payloads-in-cursor-ai-47fcccb9c845">Hacker Tool Development Workflow: Android Rubber Ducky Payloads in Cursor AI</a>,<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-15-building-a-usb-rubber-ducky-with-arduino-leonardo-with-cursor-a23dd64d1bbe">Building a USB Rubber Ducky with Arduino Leonardo with Cursor</a>.</li>
+<li class=""><strong>Tool dev and env setup with Cursor:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-16-hacker-tool-development-workflow-android-rubber-ducky-payloads-in-cursor-ai-47fcccb9c845">Hacker Tool Development Workflow: Android Rubber Ducky Payloads in Cursor AI</a>, <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-15-building-a-usb-rubber-ducky-with-arduino-leonardo-with-cursor-a23dd64d1bbe">Building a USB Rubber Ducky with Arduino Leonardo with Cursor</a>.</li>
 </ul>
 <p>[<strong>Building a USB Rubber Ducky with Arduino Leonardo with Cursor.</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-15-building-a-usb-rubber-ducky-with-arduino-leonardo-with-cursor-a23dd64d1bbe">Integrating Cursor AI into your hardware hacking workflow is a game-changer. From Human Prompt to Working Code</a></p>
 <ul>
-<li class=""><strong>Threat hunting (defender side, same mindset):</strong><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-14-endpoint-threat-hunting-proactive-detection-on-windows-linux-and-macos-f892d9b8a113">Endpoint Threat Hunting: Proactive Detection on Windows, Linux, and macOS</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-12-protocol-level-network-threat-hunting-a-wireshark-centric-guide-a6770ffc96c6">Protocol-Level Network Threat Hunting: A Wireshark-Centric Guide</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-07-09-threat-hunting-with-the-pyramid-of-pain-8add3cedb380">Threat Hunting with the Pyramid of Pain</a>.</li>
+<li class=""><strong>Threat hunting (defender side, same mindset):</strong> <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-14-endpoint-threat-hunting-proactive-detection-on-windows-linux-and-macos-f892d9b8a113">Endpoint Threat Hunting: Proactive Detection on Windows, Linux, and macOS</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-12-protocol-level-network-threat-hunting-a-wireshark-centric-guide-a6770ffc96c6">Protocol-Level Network Threat Hunting: A Wireshark-Centric Guide</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-07-09-threat-hunting-with-the-pyramid-of-pain-8add3cedb380">Threat Hunting with the Pyramid of Pain</a>.</li>
 </ul>
 <p>[<strong>Endpoint Threat Hunting: Proactive Detection on Windows, Linux, and macOS</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-14-endpoint-threat-hunting-proactive-detection-on-windows-linux-and-macos-f892d9b8a113">Uncovering Advanced Compromises Through Telemetry, Artifacts, MITRE ATT&amp;CK Tactics, and Practical Playbooks</a></p>
 <ul>
-<li class=""><strong>Broader picture:</strong><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-hexstrike-ai-a-force-multiplier-for-red-teams-and-a-dangerous-shift-in-the-threat-landscap-3e1d4e86f3ae">HexStrike-AI: A Force Multiplier for Red Teams — and a Dangerous Shift in the Threat Landscape</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-08-01-the-20x-employee-a-strategic-framework-for-unlocking-hyper-productivity-with-artificial-8f49cde95a25">The 20x Employee: A Strategic Framework for Unlocking Hyper-Productivity with Artificial Intelligence</a>.</li>
+<li class=""><strong>Broader picture:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-hexstrike-ai-a-force-multiplier-for-red-teams-and-a-dangerous-shift-in-the-threat-landscap-3e1d4e86f3ae">HexStrike-AI: A Force Multiplier for Red Teams — and a Dangerous Shift in the Threat Landscape</a>, <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-08-01-the-20x-employee-a-strategic-framework-for-unlocking-hyper-productivity-with-artificial-8f49cde95a25">The 20x Employee: A Strategic Framework for Unlocking Hyper-Productivity with Artificial Intelligence</a>.</li>
 </ul>
 <p>[<strong>HexStrike-AI: A Force Multiplier for Red Teams — and a Dangerous Shift in the Threat Landscape</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-hexstrike-ai-a-force-multiplier-for-red-teams-and-a-dangerous-shift-in-the-threat-landscap-3e1d4e86f3ae">Why AI-Orchestrated Pentesting Is a Force Multiplier for Red Teams — and a Warning Sign for Defenders</a></p>
@@ -513,58 +513,58 @@ Ref:<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-10-19-augm
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-articles-by-topic">My Articles (by topic)<a href="#my-articles-by-topic" class="hash-link" aria-label="Direct link to My Articles (by topic)" title="Direct link to My Articles (by topic)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Setup and MCP:</strong><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama</a>,<a href="https://medium.com/@1200km/hexstrike-on-kali-linux-2025-4-a-comprehensive-guide" target="_blank" rel="noopener noreferrer" class="">HexStrike on Kali Linux 2025.4: A Comprehensive Guide</a>.</p>
+<p><strong>Setup and MCP:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949">HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama</a>, <a href="https://medium.com/@1200km/hexstrike-on-kali-linux-2025-4-a-comprehensive-guide" target="_blank" rel="noopener noreferrer" class="">HexStrike on Kali Linux 2025.4: A Comprehensive Guide</a>.</p>
 </li>
 <li class="">
-<p><strong>Burp + AI/MCP:</strong><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d">Getting More from Burp Suite with LLMs</a>,<a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-02-burp-suite-mcp-gemini-cli-c1229edfe092">Burp Suite MCP + Gemini CLI</a>.</p>
+<p><strong>Burp + AI/MCP:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d">Getting More from Burp Suite with LLMs</a>, <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-02-burp-suite-mcp-gemini-cli-c1229edfe092">Burp Suite MCP + Gemini CLI</a>.</p>
 </li>
 <li class="">
-<p><strong>Recon and OSINT:</strong><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-24-reinventing-recon-nmap-meets-chatgpt-e2acb6130be5">Reinventing Recon: Nmap Meets ChatGPT</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe">Shodan</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3">theHarvester</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712">Sublist3r</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-06-owasp-amass-project-guide-94bd55521f91">OWASP Amass</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-23-spiderfoot-deep-dive-installation-scans-and-practical-use-cases-11ea6537ad6f">SpiderFoot</a>.</p>
+<p><strong>Recon and OSINT:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-24-reinventing-recon-nmap-meets-chatgpt-e2acb6130be5">Reinventing Recon: Nmap Meets ChatGPT</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe">Shodan</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-theharvester-your-essential-tool-for-osint-and-reconnaissance-in-cybersecurity-10aa6d76f5b3">theHarvester</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-07-sublist3r-your-essential-tool-for-subdomain-enumeration-c1910121d712">Sublist3r</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-06-owasp-amass-project-guide-94bd55521f91">OWASP Amass</a>,<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-11-23-spiderfoot-deep-dive-installation-scans-and-practical-use-cases-11ea6537ad6f">SpiderFoot</a>.</p>
 </li>
 <li class="">
-<p><strong>Core tools (no AI):</strong><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">Nmap</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac">Burp Suite</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df">Metasploit</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1">Hydra</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71">John the Ripper</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8">Hashcat</a>,<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f">Aircrack-ng</a>.</p>
+<p><strong>Core tools (no AI):</strong> <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">Nmap</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac">Burp Suite</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-17-the-ultimate-guide-to-metasploit-part-1-43c8573487df">Metasploit</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-01-mastering-hydra-the-ultimate-guide-to-network-logon-cracking-182579dbaed1">Hydra</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-mastering-john-the-ripper-a-complete-guide-to-password-cracking-e42d68239c71">John the Ripper</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8">Hashcat</a>, <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f">Aircrack-ng</a>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="external-frameworks-and-references">External frameworks and references<a href="#external-frameworks-and-references" class="hash-link" aria-label="Direct link to External frameworks and references" title="Direct link to External frameworks and references" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>MITRE ATT&amp;CK:</strong><a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer" class="">attack.mitre.org</a>— Map your actions and findings to tactics and techniques.</p>
+<p><strong>MITRE ATT&amp;CK:</strong> <a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer" class="">attack.mitre.org</a> — Map your actions and findings to tactics and techniques.</p>
 </li>
 <li class="">
-<p><strong>PTES (Penetration Testing Execution Standard):</strong><a href="http://www.ptes.org/" target="_blank" rel="noopener noreferrer" class="">ptes.org</a>— High-level PT methodology.</p>
+<p><strong>PTES (Penetration Testing Execution Standard):</strong> <a href="http://www.ptes.org/" target="_blank" rel="noopener noreferrer" class="">ptes.org</a> — High-level PT methodology.</p>
 </li>
 <li class="">
-<p><strong>OWASP:</strong><a href="https://owasp.org/" target="_blank" rel="noopener noreferrer" class="">owasp.org</a>— Web and API testing (e.g. Top 10, Testing Guide).</p>
+<p><strong>OWASP:</strong> <a href="https://owasp.org/" target="_blank" rel="noopener noreferrer" class="">owasp.org</a> — Web and API testing (e.g. Top 10, Testing Guide).</p>
 </li>
 <li class="">
-<p>**NIST SP 800–115 (Technical Guide to Information Security Testing and Assessment):**For scope and methodology alignment in formal engagements.</p>
+<p><strong>NIST SP 800–115 (Technical Guide to Information Security Testing and Assessment):</strong> For scope and methodology alignment in formal engagements.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Best way to work after many PTs:**<strong>Cursor + MCP + your PT toolset</strong>(e.g. HexStrike-AI, Burp MCP), with a clean, repeatable environment and a project-based workflow.</p>
+<p><strong>Best way to work after many PTs:</strong> <strong>Cursor + MCP + your PT toolset</strong> (e.g. HexStrike-AI, Burp MCP), with a clean, repeatable environment and a project-based workflow.</p>
 </li>
 <li class="">
-<p>**Environment:**One base system (Kali/Arch/custom), all tools updated, API keys set, wordlists and cracking resources in one place, dependencies documented.</p>
+<p><strong>Environment:</strong> One base system (Kali/Arch/custom), all tools updated, API keys set, wordlists and cracking resources in one place, dependencies documented.</p>
 </li>
 <li class="">
-<p>**Per engagement:**One project directory, scope and RoE, a small knowledge base (docs, previous reports), and phase folders (recon → scan → exploit → postex → report).</p>
+<p><strong>Per engagement:</strong> One project directory, scope and RoE, a small knowledge base (docs, previous reports), and phase folders (recon → scan → exploit → postex → report).</p>
 </li>
 <li class="">
-<p><strong>Execution:<strong>Run the kill chain as a</strong>pipeline</strong>: each phase’s outputs feed the next; analyze after each step and go back when needed; use the AI to propose and run tools and to draft reports from your artifacts.</p>
+<p><strong>Execution:</strong> Run the kill chain as a <strong>pipeline</strong>: each phase’s outputs feed the next; analyze after each step and go back when needed; use the AI to propose and run tools and to draft reports from your artifacts.</p>
 </li>
 </ul>
 <p>Same rigor as a manual PT — faster, deeper, and more powerful.</p>
-<p><em>This guide is based on many real penetration tests and the articles linked above. For the full narrative on AI in cybersecurity and the evolution from simple LLM use to Cursor + MCP, see</em><a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-19-the-ai-revolution-in-offensive-security-31e44704d51a"><em>The AI Revolution in Cybersecurity: A Comprehensive Journey Through Modern AI-Driven Security Operations</em></a><em>(and the</em><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class=""><em>summary on my Medium</em></a><em>).</em></p>
+<p><em>This guide is based on many real penetration tests and the articles linked above. For the full narrative on AI in cybersecurity and the evolution from simple LLM use to Cursor + MCP, see</em> <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-19-the-ai-revolution-in-offensive-security-31e44704d51a"><em>The AI Revolution in Cybersecurity: A Comprehensive Journey Through Modern AI-Driven Security Operations</em></a><em>(and the <em><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class=""><em>summary on my Medium</em></a></em>).</em></p>
 <p>[<strong>The AI Revolution in Cybersecurity</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-19-the-ai-revolution-in-offensive-security-31e44704d51a">Practical Hands-On Guide to AI-Accelerated Offensive Security: Burp Suite, Nmap, OSINT, Exploitation, and End-to-End…</a></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="follow-for-practical-cybersecurity-research">Follow for practical cybersecurity research<a href="#follow-for-practical-cybersecurity-research" class="hash-link" aria-label="Direct link to Follow for practical cybersecurity research" title="Direct link to Follow for practical cybersecurity research" translate="no">​</a></h2>
-<p>If you’re interested in**Offensive security,**<strong>AI security, real-world attack simulations, CTI, and detection engineering</strong>— this is exactly what I focus on.</p>
+<p>If you’re interested in <strong>Offensive security,</strong> <strong>AI security, real-world attack simulations, CTI, and detection engineering</strong> — this is exactly what I focus on.</p>
 <p>Stay connected:</p>
-<p>→<strong>Subscribe on Medium:</strong><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="">medium.com/@1200km</a>
-→<strong>Connect on LinkedIn:</strong><a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="">andrey-pautov</a>
-→<strong>GitHub — tools &amp; labs:</strong><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="">github.com/anpa1200</a>
-→<strong>Contact:</strong><a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-02-13-build-a-vulnerable-iis-sharepoint-lab-with-fluent-bit-complete-deployment-guide-8fe947e8439e"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Build a Vulnerable IIS SharePoint Lab with Fluent Bit: Complete Deployment Guide</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-02-21-one-tool-to-rule-them-all-file-metadata-and-static-analysis-for-malware-analysts-and-soc-t-c6dba1f5b7de"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">One Tool to Rule Them All: File Metadata &amp; Static Analysis for Malware Analysts and SOC Teams</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#a-comprehensive-step-by-step-guide-to-running-penetration-tests-the-way-that-actually-works--faster-deeper-and-more-powerful--after-hundreds-of-engagements-and-countless-tools" class="table-of-contents__link toc-highlight">A comprehensive, step-by-step guide to running penetration tests the way that actually works — faster, deeper, and more powerful — after hundreds of engagements and countless tools.</a></li></ul></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#1-why-cursor-the-short-answer-after-many-pts" class="table-of-contents__link toc-highlight">1. Why Cursor? The Short Answer After Many PTs</a></li><li><a href="#2-how-ai-driven-pt-works-the-big-picture" class="table-of-contents__link toc-highlight">2. How AI-Driven PT Works: The Big Picture</a></li><li><a href="#3-building-and-configuring-your-pt-toolset" class="table-of-contents__link toc-highlight">3. Building and Configuring Your PT Toolset</a><ul><li><a href="#31-choose-and-harden-your-base-system" class="table-of-contents__link toc-highlight">3.1 Choose and Harden Your Base System</a></li><li><a href="#32-install-and-update-core-tools" class="table-of-contents__link toc-highlight">3.2 Install and Update Core Tools</a></li><li><a href="#33-api-keys-and-external-services" class="table-of-contents__link toc-highlight">3.3 API Keys and External Services</a></li><li><a href="#34-wordlists-username-lists-and-directory-dictionaries" class="table-of-contents__link toc-highlight">3.4 Wordlists, Username Lists, and Directory Dictionaries</a></li><li><a href="#35-rainbow-tables-and-hash-cracking-resources" class="table-of-contents__link toc-highlight">3.5 Rainbow Tables and Hash Cracking Resources</a></li><li><a href="#36-dependencies-and-runtimes" class="table-of-contents__link toc-highlight">3.6 Dependencies and Runtimes</a></li></ul></li><li><a href="#4-starting-a-new-pt-project-structure-and-knowledge-base" class="table-of-contents__link toc-highlight">4. Starting a New PT Project: Structure and Knowledge Base</a><ul><li><a href="#41-create-a-project-directory" class="table-of-contents__link toc-highlight">4.1 Create a Project Directory</a></li><li><a href="#42-build-a-project-specific-knowledge-base-kb" class="table-of-contents__link toc-highlight">4.2 Build a Project-Specific Knowledge Base (KB)</a></li><li><a href="#43-open-the-project-in-cursor-and-connect-mcp" class="table-of-contents__link toc-highlight">4.3 Open the Project in Cursor and Connect MCP</a></li></ul></li><li><a href="#5-the-kill-chain-as-a-pipeline-step-by-step" class="table-of-contents__link toc-highlight">5. The Kill Chain as a Pipeline: Step by Step</a><ul><li><a href="#51-reconnaissance-recon" class="table-of-contents__link toc-highlight">5.1 Reconnaissance (Recon)</a></li><li><a href="#52-scanning-and-enumeration-scan" class="table-of-contents__link toc-highlight">5.2 Scanning and Enumeration (Scan)</a></li><li><a href="#53-exploitation" class="table-of-contents__link toc-highlight">5.3 Exploitation</a></li><li><a href="#54-post-exploitation" class="table-of-contents__link toc-highlight">5.4 Post-Exploitation</a></li><li><a href="#55-analysis-and-iteration" class="table-of-contents__link toc-highlight">5.5 Analysis and Iteration</a></li><li><a href="#56-reporting" class="table-of-contents__link toc-highlight">5.6 Reporting</a></li></ul></li><li><a href="#6-examples-and-deep-dives" class="table-of-contents__link toc-highlight">6. Examples and Deep Dives</a></li><li><a href="#7-references-and-further-reading" class="table-of-contents__link toc-highlight">7. References and Further Reading</a><ul><li><a href="#my-articles-by-topic" class="table-of-contents__link toc-highlight">My Articles (by topic)</a></li><li><a href="#external-frameworks-and-references" class="table-of-contents__link toc-highlight">External frameworks and references</a></li></ul></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#follow-for-practical-cybersecurity-research" class="table-of-contents__link toc-highlight">Follow for practical cybersecurity research</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p>→ <strong>Subscribe on Medium:</strong> <a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="">medium.com/@1200km</a>
+→ <strong>Connect on LinkedIn:</strong> <a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="">andrey-pautov</a>
+→ <strong>GitHub — tools &amp; labs:</strong> <a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="">github.com/anpa1200</a>
+→ <strong>Contact:</strong> <a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-02-13-build-a-vulnerable-iis-sharepoint-lab-with-fluent-bit-complete-deployment-guide-8fe947e8439e"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Build a Vulnerable IIS SharePoint Lab with Fluent Bit: Complete Deployment Guide</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-02-21-one-tool-to-rule-them-all-file-metadata-and-static-analysis-for-malware-analysts-and-soc-t-c6dba1f5b7de"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">One Tool to Rule Them All: File Metadata &amp; Static Analysis for Malware Analysts and SOC Teams</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#a-comprehensive-step-by-step-guide-to-running-penetration-tests-the-way-that-actually-works--faster-deeper-and-more-powerful--after-hundreds-of-engagements-and-countless-tools" class="table-of-contents__link toc-highlight">A comprehensive, step-by-step guide to running penetration tests the way that actually works — faster, deeper, and more powerful — after hundreds of engagements and countless tools.</a></li></ul></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#1-why-cursor-the-short-answer-after-many-pts" class="table-of-contents__link toc-highlight">1. Why Cursor? The Short Answer After Many PTs</a></li><li><a href="#2-how-ai-driven-pt-works-the-big-picture" class="table-of-contents__link toc-highlight">2. How AI-Driven PT Works: The Big Picture</a></li><li><a href="#3-building-and-configuring-your-pt-toolset" class="table-of-contents__link toc-highlight">3. Building and Configuring Your PT Toolset</a><ul><li><a href="#31-choose-and-harden-your-base-system" class="table-of-contents__link toc-highlight">3.1 Choose and Harden Your Base System</a></li><li><a href="#32-install-and-update-core-tools" class="table-of-contents__link toc-highlight">3.2 Install and Update Core Tools</a></li><li><a href="#33-api-keys-and-external-services" class="table-of-contents__link toc-highlight">3.3 API Keys and External Services</a></li><li><a href="#34-wordlists-username-lists-and-directory-dictionaries" class="table-of-contents__link toc-highlight">3.4 Wordlists, Username Lists, and Directory Dictionaries</a></li><li><a href="#35-rainbow-tables-and-hash-cracking-resources" class="table-of-contents__link toc-highlight">3.5 Rainbow Tables and Hash Cracking Resources</a></li><li><a href="#36-dependencies-and-runtimes" class="table-of-contents__link toc-highlight">3.6 Dependencies and Runtimes</a></li></ul></li><li><a href="#4-starting-a-new-pt-project-structure-and-knowledge-base" class="table-of-contents__link toc-highlight">4. Starting a New PT Project: Structure and Knowledge Base</a><ul><li><a href="#41-create-a-project-directory" class="table-of-contents__link toc-highlight">4.1 Create a Project Directory</a></li><li><a href="#42-build-a-project-specific-knowledge-base-kb" class="table-of-contents__link toc-highlight">4.2 Build a Project-Specific Knowledge Base (KB)</a></li><li><a href="#43-open-the-project-in-cursor-and-connect-mcp" class="table-of-contents__link toc-highlight">4.3 Open the Project in Cursor and Connect MCP</a></li></ul></li><li><a href="#5-the-kill-chain-as-a-pipeline-step-by-step" class="table-of-contents__link toc-highlight">5. The Kill Chain as a Pipeline: Step by Step</a><ul><li><a href="#51-reconnaissance-recon" class="table-of-contents__link toc-highlight">5.1 Reconnaissance (Recon)</a></li><li><a href="#52-scanning-and-enumeration-scan" class="table-of-contents__link toc-highlight">5.2 Scanning and Enumeration (Scan)</a></li><li><a href="#53-exploitation" class="table-of-contents__link toc-highlight">5.3 Exploitation</a></li><li><a href="#54-post-exploitation" class="table-of-contents__link toc-highlight">5.4 Post-Exploitation</a></li><li><a href="#55-analysis-and-iteration" class="table-of-contents__link toc-highlight">5.5 Analysis and Iteration</a></li><li><a href="#56-reporting" class="table-of-contents__link toc-highlight">5.6 Reporting</a></li></ul></li><li><a href="#6-examples-and-deep-dives" class="table-of-contents__link toc-highlight">6. Examples and Deep Dives</a></li><li><a href="#7-references-and-further-reading" class="table-of-contents__link toc-highlight">7. References and Further Reading</a><ul><li><a href="#my-articles-by-topic" class="table-of-contents__link toc-highlight">My Articles (by topic)</a></li><li><a href="#external-frameworks-and-references" class="table-of-contents__link toc-highlight">External frameworks and references</a></li></ul></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#follow-for-practical-cybersecurity-research" class="table-of-contents__link toc-highlight">Follow for practical cybersecurity research</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

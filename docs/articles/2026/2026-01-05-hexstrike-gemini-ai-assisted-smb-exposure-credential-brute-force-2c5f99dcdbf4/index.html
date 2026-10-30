@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,7 +34,7 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-toolchain-failures--service-fingerprinting--authentication-findings--share-risk">From Toolchain Failures → Service Fingerprinting → Authentication Findings → Share Risk<a href="#from-toolchain-failures--service-fingerprinting--authentication-findings--share-risk" class="hash-link" aria-label="Direct link to From Toolchain Failures → Service Fingerprinting → Authentication Findings → Share Risk" title="Direct link to From Toolchain Failures → Service Fingerprinting → Authentication Findings → Share Risk" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
-<p>This session aimed to validate whether a Windows host exposed SMB, then assess<strong>credential hygiene</strong>using a controlled test dataset, and finally confirm what level of<strong>share access</strong>those credentials provide.</p>
+<p>This session aimed to validate whether a Windows host exposed SMB, then assess <strong>credential hygiene</strong> using a controlled test dataset, and finally confirm what level of <strong>share access</strong> those credentials provide.</p>
 <p>The key value in the log is not “the attack,” but:</p>
 <ul>
 <li class="">
@@ -44,7 +44,7 @@
 <p>what the SMB stack reveals about security posture,</p>
 </li>
 <li class="">
-<p>and how to translate outputs into<strong>defensible remediation + detection</strong>.</p>
+<p>and how to translate outputs into <strong>defensible remediation + detection</strong>.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario">Scenario<a href="#scenario" class="hash-link" aria-label="Direct link to Scenario" title="Direct link to Scenario" translate="no">​</a></h2>
@@ -63,26 +63,26 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inputs">Inputs<a href="#inputs" class="hash-link" aria-label="Direct link to Inputs" title="Direct link to Inputs" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Target:</strong><code>172.16.59.129</code></p>
+<p><strong>Target:</strong> <code>172.16.59.129</code></p>
 </li>
 <li class="">
-<p><strong>Custom test lists:</strong><code>~/Documents/users_list.txt</code>,<code>~/Documents/passwords_list.txt</code></p>
+<p><strong>Custom test lists:</strong> <code>~/Documents/users_list.txt</code>, <code>~/Documents/passwords_list.txt</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="promt">Promt:<a href="#promt" class="hash-link" aria-label="Direct link to Promt:" title="Direct link to Promt:" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">@hexstrike:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> scan </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">59.129</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> find smb port, enumerate creds </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> do bruteforce to  passwords with next </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dictionaries</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:  ~/Documents/passwords_list.txt ~/Documents/users_list.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">@hexstrike: scan 172.16.59.129 find smb port, enumerate creds and do bruteforce to  passwords with next dictionaries:  ~/Documents/passwords_list.txt ~/Documents/users_list.txt</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*58m_3RUriTgxwZfi7v8_pQ.png" alt="Article image" width="1486" height="331" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="execution-flow-what-actually-happened">Execution flow (what actually happened)<a href="#execution-flow-what-actually-happened" class="hash-link" aria-label="Direct link to Execution flow (what actually happened)" title="Direct link to Execution flow (what actually happened)" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-fast-scan-failed--fallback-to-a-full-nmap-fingerprint">1) Fast scan failed → fallback to a full Nmap fingerprint<a href="#1-fast-scan-failed--fallback-to-a-full-nmap-fingerprint" class="hash-link" aria-label="Direct link to 1) Fast scan failed → fallback to a full Nmap fingerprint" title="Direct link to 1) Fast scan failed → fallback to a full Nmap fingerprint" translate="no">​</a></h3>
 <p>The workflow attempted a fast scan first and immediately failed:</p>
 <ul>
-<li class=""><code>rustscan</code>was<strong>not installed</strong>(<code>/bin/sh: 1: rustscan: not found</code>)</li>
+<li class=""><code>rustscan</code> was <strong>not installed</strong> (<code>/bin/sh: 1: rustscan: not found</code>)</li>
 </ul>
-<p>The agent recovered correctly by switching to<strong>Nmap service detection</strong>, which produced a solid baseline.</p>
+<p>The agent recovered correctly by switching to <strong>Nmap service detection</strong>, which produced a solid baseline.</p>
 <p><strong>Nmap highlights (security-relevant):</strong></p>
 <ul>
 <li class="">
-<p><code>445/tcp open microsoft-ds</code>(SMB)</p>
+<p><code>445/tcp open microsoft-ds</code> (SMB)</p>
 </li>
 <li class="">
 <p><code>139/tcp open netbios-ssn</code></p>
@@ -98,13 +98,13 @@
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*5LRXp03c-23FoZw3K2eDjw.png" alt="Article image" width="1703" height="666" loading="lazy" decoding="async">
-<p>**Takeaway:**Your lab target is an intentionally “wide-open” Windows surface: SMB + RDP + SSH simultaneously, which is a high-risk posture in any real network.</p>
+<p><strong>Takeaway:</strong> Your lab target is an intentionally “wide-open” Windows surface: SMB + RDP + SSH simultaneously, which is a high-risk posture in any real network.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-smb-enumeration-tooling-mismatch-enum4linux-ng-wrapper-issue">2) SMB enumeration tooling mismatch (enum4linux-ng wrapper issue)<a href="#2-smb-enumeration-tooling-mismatch-enum4linux-ng-wrapper-issue" class="hash-link" aria-label="Direct link to 2) SMB enumeration tooling mismatch (enum4linux-ng wrapper issue)" title="Direct link to 2) SMB enumeration tooling mismatch (enum4linux-ng wrapper issue)" translate="no">​</a></h2>
 <p>Two consecutive runs of enum4linux-ng failed with the same pattern:</p>
 <ul>
 <li class=""><code>enum4linux-ng: error: unrecognized arguments: S,U,G,P</code></li>
 </ul>
-<p>This looks like a<strong>wrapper/parameter bug</strong>, where legacy enum4linux flags are being passed into enum4linux-ng. Even when<code>-A</code>was provided, the wrapper still injected the invalid flags, so it failed again.</p>
+<p>This looks like a <strong>wrapper/parameter bug</strong>, where legacy enum4linux flags are being passed into enum4linux-ng. Even when <code>-A</code> was provided, the wrapper still injected the invalid flags, so it failed again.</p>
 <p><strong>Practical fix (operational):</strong></p>
 <ul>
 <li class="">
@@ -116,7 +116,7 @@
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*BTJl_KCgKrvZ7o9Gj3Emgw.png" alt="Article image" width="1711" height="584" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-smbmap-unauthenticated-run-produced-a-transportread-error">3) SMBMap unauthenticated run produced a transport/read error<a href="#3-smbmap-unauthenticated-run-produced-a-transportread-error" class="hash-link" aria-label="Direct link to 3) SMBMap unauthenticated run produced a transport/read error" title="Direct link to 3) SMBMap unauthenticated run produced a transport/read error" translate="no">​</a></h2>
-<p>The first<code>smbmap_scan</code>(no credentials) connected but reported:</p>
+<p>The first <code>smbmap_scan</code> (no credentials) connected but reported:</p>
 <ul>
 <li class="">
 <p>“0 authenticated sessions”</p>
@@ -126,9 +126,9 @@
 </li>
 </ul>
 <p>This is consistent with SMBMap occasionally being brittle against certain SMB configurations, resets, or SMBv1 negotiation oddities.</p>
-<p>**Takeaway:**Use SMBMap primarily once you have known-good credentials; for unauthenticated posture checks, rely on more stable fingerprinting outputs (like the next step).</p>
+<p><strong>Takeaway:</strong> Use SMBMap primarily once you have known-good credentials; for unauthenticated posture checks, rely on more stable fingerprinting outputs (like the next step).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-netexec-fingerprinting-revealed-two-critical-posture-flags">4) NetExec fingerprinting revealed two critical posture flags<a href="#4-netexec-fingerprinting-revealed-two-critical-posture-flags" class="hash-link" aria-label="Direct link to 4) NetExec fingerprinting revealed two critical posture flags" title="Direct link to 4) NetExec fingerprinting revealed two critical posture flags" translate="no">​</a></h2>
-<p>The<code>netexec_scan</code>output is the single most important SMB posture line in the log:</p>
+<p>The <code>netexec_scan</code> output is the single most important SMB posture line in the log:</p>
 <ul>
 <li class="">
 <p><strong>SMB signing: False</strong></p>
@@ -140,17 +140,17 @@
 <p><strong>Why this matters</strong></p>
 <ul>
 <li class="">
-<p><strong>SMBv1 enabled</strong>is broadly considered unsafe in modern environments.</p>
+<p><strong>SMBv1 enabled</strong> is broadly considered unsafe in modern environments.</p>
 </li>
 <li class="">
-<p><strong>Signing disabled</strong>weakens integrity protections and often correlates with legacy compatibility configurations.</p>
+<p><strong>Signing disabled</strong> weakens integrity protections and often correlates with legacy compatibility configurations.</p>
 </li>
 </ul>
 <p>In a real enterprise, this combination is a red flag and typically violates baseline hardening standards.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-hydra-attack">5) Hydra Attack<a href="#5-hydra-attack" class="hash-link" aria-label="Direct link to 5) Hydra Attack" title="Direct link to 5) Hydra Attack" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*GF-wE8qxoVaaevDXbbcgRw.png" alt="Article image" width="1701" height="450" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-credential-hygiene-test-succeeded-but-reveals-systemic-weakness">6) Credential hygiene test succeeded (but reveals systemic weakness)<a href="#6-credential-hygiene-test-succeeded-but-reveals-systemic-weakness" class="hash-link" aria-label="Direct link to 6) Credential hygiene test succeeded (but reveals systemic weakness)" title="Direct link to 6) Credential hygiene test succeeded (but reveals systemic weakness)" translate="no">​</a></h2>
-<p>The credential test completed quickly (reduced to 1 task due to SMB’s intolerance for parallel auth attempts) and returned<strong>12 valid credentials</strong>from your controlled dataset.</p>
+<p>The credential test completed quickly (reduced to 1 task due to SMB’s intolerance for parallel auth attempts) and returned <strong>12 valid credentials</strong> from your controlled dataset.</p>
 <p>Several accounts also returned a notable message:</p>
 <ul>
 <li class="">“Valid password, GPO Deny access to this computer from the network”</li>
@@ -172,17 +172,17 @@
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*lJ3-KK72SWLpHRNDAvpnSA.png" alt="Article image" width="1701" height="450" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-authenticated-share-enumeration-succeeded">7) Authenticated share enumeration succeeded<a href="#7-authenticated-share-enumeration-succeeded" class="hash-link" aria-label="Direct link to 7) Authenticated share enumeration succeeded" title="Direct link to 7) Authenticated share enumeration succeeded" translate="no">​</a></h2>
-<p>Once valid credentials were used, SMBMap successfully enumerated shares and showed multiple shares with<strong>READ/WRITE</strong>access:</p>
+<p>Once valid credentials were used, SMBMap successfully enumerated shares and showed multiple shares with <strong>READ/WRITE</strong> access:</p>
 <ul>
 <li class="">
-<p><code>Backup</code>,<code>Data</code>,<code>Public</code>,<code>SSH</code>,<code>Temp</code>,<code>Web</code>(all R/W)</p>
+<p><code>Backup</code>, <code>Data</code>, <code>Public</code>, <code>SSH</code>, <code>Temp</code>, <code>Web</code> (all R/W)</p>
 </li>
 <li class="">
-<p><code>IPC$</code>(read only; expected)</p>
+<p><code>IPC$</code> (read only; expected)</p>
 </li>
 </ul>
-<p>It also reported “Status: NULL Session” while simultaneously indicating an authenticated session. That can occur due to how SMBMap labels sessions even when authentication is successful; the important part is<strong>effective access</strong>(R/W).</p>
-<p>The shares appeared empty (only<code>.</code>and<code>..</code>listed).</p>
+<p>It also reported “Status: NULL Session” while simultaneously indicating an authenticated session. That can occur due to how SMBMap labels sessions even when authentication is successful; the important part is <strong>effective access</strong> (R/W).</p>
+<p>The shares appeared empty (only <code>.</code> and <code>..</code> listed).</p>
 <p><strong>Interpretation</strong></p>
 <ul>
 <li class="">
@@ -201,440 +201,18 @@
 <p>or the environment is staged for later tasks.</p>
 </li>
 </ul>
-<p>In real environments, the risk is not “empty vs not empty,” but<strong>R/W on multiple shares</strong>with weak credentials. That is a classic ransomware and data-exfiltration enabler.</p>
+<p>In real environments, the risk is not “empty vs not empty,” but <strong>R/W on multiple shares</strong> with weak credentials. That is a classic ransomware and data-exfiltration enabler.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="findings-summary">Findings summary<a href="#findings-summary" class="hash-link" aria-label="Direct link to Findings summary" title="Direct link to Findings summary" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*ThfCkYxlr2PPaUzI0cIAAg.png" alt="Article image" width="1793" height="799" loading="lazy" decoding="async">
-<details class="plain-large-code" data-plain-code-lines="423"><summary>Large code or log block<!-- --> · <!-- -->423<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>  Security Assessment Report
-  
-1.
- Introduction
-  This report details the findings 
-of
- a security assessment conducted 
-on
- the target 
-system
- 
-172.16
-.59
-.129
-. The assessment focused 
-on
- identifying vulnerabilities related 
-to
- the SMB service 
-and
- enumerating 
-user
-  credentials.
-  
-Date
-: 
-2026
--01
--04
-  Target: 
-172.16
-.59
-.129
-  
-2.
- Executive Summary
-  The assessment revealed several critical 
-and
- high
--
-severity vulnerabilities that could expose the target 
-system
- 
-to
- unauthorized access 
-and
- compromise. Weak passwords were discovered 
-for
- multiple 
-user
- accounts,
-  
-and
- the insecure SMBv1 protocol was found 
-to
- be enabled. Additionally, several network shares 
-with
- write permissions were identified.
-  
-3.
- Methodology
-  The following steps were taken during the assessment:
-   
-1.
- Port Scanning: An 
-initial
- port scan was performed 
-to
- identify 
-open
- ports 
-and
- services 
-on
- the target system.
-   
-2.
- SMB Enumeration: The SMB service was enumerated 
-to
- identify shares 
-and
- 
-user
- accounts.
-   
-3.
- Password Cracking: A brute
--
-force password attack was conducted against the SMB service 
-to
- identify weak credentials.
-   
-4.
- Share Analysis: Discovered shares were analyzed 
-for
- permissions 
-and
- content.
-  
-4.
- Findings
-  
-4.1
-. 
-Open
- Ports
-  The following 
-open
- ports 
-and
- services were identified 
-on
- the target 
-system
-:
-  ┌──────────┬───────────────┬─────────────────────────────────────────┐
-  │ Port     │ Service       │ Version                                 │
-  ├──────────┼───────────────┼─────────────────────────────────────────┤
-  │ 
-22
-/
-tcp   │ ssh           │ OpenSSH for_Windows_7
-.7
- (protocol 
-2.0
-)    │
-  │ 
-135
-/
-tcp  │ msrpc         │ Microsoft Windows RPC                   │
-  │ 
-139
-/
-tcp  │ netbios
--
-ssn   │ Microsoft Windows netbios
--
-ssn           │
-  │ 
-445
-/
-tcp  │ microsoft
--
-ds  │ Microsoft Windows 
-7
- 
--
- 
-10
- microsoft
--
-ds   │
-  │ 
-1688
-/
-tcp │ msrpc         │ Microsoft Windows RPC                   │
-  │ 
-3389
-/
-tcp │ ms
--
-wbt
--
-server │ Microsoft Terminal Service              │
-  │ 
-5357
-/
-tcp │ http          │ Microsoft HTTPAPI httpd 
-2.0
- (SSDP
-/
-UPnP) │
-  └──────────┴───────────────┴─────────────────────────────────────────┘
-  
-4.2
-. Vulnerabilities
-  
-4.2
-.1
-. Weak Passwords (High)
-  A brute
--
-force attack successfully identified several 
-user
- accounts 
-with
- weak 
-and
- easily guessable passwords. This vulnerability could allow an attacker 
-to
- gain unauthorized access 
-to
- the system.
-  Affected Accounts:
-    
-1
- admin:admin123
-    
-2
- administrator2:password
-    
-3
- guest2:guest
-    
-4
- malware:
-123456
-    
-5
- root:toor
-    
-6
- test:test
-    
-7
- 
-user
-:
-123456
-    
-8
- lab_backupsvc:
-123456
-    
-9
- lab_helpdesk:
-123456
-   
-10
- lab_devops:
-123456
-   
-11
- lab_audit:
-123456
-   
-12
- lab_ops:
-123456
-  
-4.2
-.2
-. SMBv1 Enabled (High)
-  The SMBv1 protocol 
-is
- enabled 
-on
- the target system. SMBv1 
-is
- an outdated 
-and
- insecure protocol 
-with
- known vulnerabilities, such 
-as
- EternalBlue, which can be exploited 
-to
- gain remote code execution.
-  
-4.2
-.3
-. Excessive Share Permissions (Medium)
-  The admin 
-user
- has read 
-and
- write access 
-to
- multiple shares. Overly permissive shares can lead 
-to
- unauthorized data modification 
-or
- deletion.
-  Writable Shares:
-  ┌────────┬─────────────┐
-  │ Share  │ Permissions │
-  ├────────┼─────────────┤
-  │ Backup │ READ, WRITE │
-  │ Data   │ READ, WRITE │
-  │ Public │ READ, WRITE │
-  │ SSH    │ READ, WRITE │
-  │ Temp   │ READ, WRITE │
-  │ Web    │ READ, WRITE │
-  └────────┴─────────────┘
-  
-4.3
-. Share Content
-  
-All
- enumerated shares 
-with
- write access were found 
-to
- be empty.
-  
-5.
- Recommendations
-  It 
-is
- strongly recommended 
-to
- address the identified vulnerabilities 
-to
- improve the security posture 
-of
- the target system.
-  
-&gt;
-    Password Security:
-*
-  
-&gt;
-     
-*
-   Enforce a strong password policy that requires a mix 
-of
- uppercase 
-and
- lowercase letters, numbers, 
-and
- symbols.
-  
-&gt;
-     
-*
-   Immediately change the passwords 
-for
- 
-all
- accounts 
-with
- weak credentials.
-  
-&gt;
-     
-*
-   Implement account lockout policies 
-to
- mitigate brute
--
-force attacks.
-  
-&gt;
-    SMB Configuration:
-*
-  
-&gt;
-     
-*
-   Disable the SMBv1 protocol 
-and
- use SMBv2 
-or
- a later version.
-  
-&gt;
-    Share Permissions:
-*
-  
-&gt;
-     
-*
-   Review 
-and
- restrict share permissions based 
-on
- the principle 
-of
- least privilege.
-  
-&gt;
-     
-*
-   Ensure that users 
-only
- have access 
-to
- the resources necessary 
-for
- their roles.
-  
-&gt;
-    
-User
- Accounts:
-*
-  
-&gt;
-     
-*
-   Investigate the purpose 
-of
- the discovered 
-user
- accounts 
-and
- disable 
-any
- that 
-are
- 
-not
- required.
-  
-6.
- Conclusion
-  The security assessment 
-of
- 
-172.16
-.59
-.129
- has identified significant vulnerabilities that require immediate attention. 
-By
- implementing the recommendations outlined 
-in
- this report, the overall security 
-of
- the
-  
-system
- can be substantially improved.
-</code></pre></details>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">  Security Assessment Report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  1. Introduction</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  This report details the findings of a security assessment conducted on the target system 172.16.59.129. The assessment focused on identifying vulnerabilities related to the SMB service and enumerating user</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  credentials.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Date: 2026-01-04</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Target: 172.16.59.129</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  2. Executive Summary</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  The assessment revealed several critical and high-severity vulnerabilities that could expose the target system to unauthorized access and compromise. Weak passwords were discovered for multiple user accounts,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  and the insecure SMBv1 protocol was found to be enabled. Additionally, several network shares with write permissions were identified.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  3. Methodology</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  The following steps were taken during the assessment:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   1. Port Scanning: An initial port scan was performed to identify open ports and services on the target system.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   2. SMB Enumeration: The SMB service was enumerated to identify shares and user accounts.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   3. Password Cracking: A brute-force password attack was conducted against the SMB service to identify weak credentials.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   4. Share Analysis: Discovered shares were analyzed for permissions and content.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4. Findings</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4.1. Open Ports</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  The following open ports and services were identified on the target system:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  ┌──────────┬───────────────┬─────────────────────────────────────────┐</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ Port     │ Service       │ Version                                 │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  ├──────────┼───────────────┼─────────────────────────────────────────┤</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ 22/tcp   │ ssh           │ OpenSSH for_Windows_7.7 (protocol 2.0)    │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ 135/tcp  │ msrpc         │ Microsoft Windows RPC                   │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ 139/tcp  │ netbios-ssn   │ Microsoft Windows netbios-ssn           │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ 445/tcp  │ microsoft-ds  │ Microsoft Windows 7 - 10 microsoft-ds   │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ 1688/tcp │ msrpc         │ Microsoft Windows RPC                   │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ 3389/tcp │ ms-wbt-server │ Microsoft Terminal Service              │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ 5357/tcp │ http          │ Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP) │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  └──────────┴───────────────┴─────────────────────────────────────────┘</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4.2. Vulnerabilities</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4.2.1. Weak Passwords (High)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  A brute-force attack successfully identified several user accounts with weak and easily guessable passwords. This vulnerability could allow an attacker to gain unauthorized access to the system.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Affected Accounts:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    1 admin:admin123</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    2 administrator2:password</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    3 guest2:guest</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    4 malware:123456</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    5 root:toor</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    6 test:test</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    7 user:123456</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    8 lab_backupsvc:123456</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    9 lab_helpdesk:123456</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   10 lab_devops:123456</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   11 lab_audit:123456</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   12 lab_ops:123456</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4.2.2. SMBv1 Enabled (High)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  The SMBv1 protocol is enabled on the target system. SMBv1 is an outdated and insecure protocol with known vulnerabilities, such as EternalBlue, which can be exploited to gain remote code execution.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4.2.3. Excessive Share Permissions (Medium)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  The admin user has read and write access to multiple shares. Overly permissive shares can lead to unauthorized data modification or deletion.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Writable Shares:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  ┌────────┬─────────────┐</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ Share  │ Permissions │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  ├────────┼─────────────┤</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ Backup │ READ, WRITE │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ Data   │ READ, WRITE │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ Public │ READ, WRITE │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ SSH    │ READ, WRITE │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ Temp   │ READ, WRITE │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │ Web    │ READ, WRITE │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  └────────┴─────────────┘</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4.3. Share Content</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  All enumerated shares with write access were found to be empty.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  5. Recommendations</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  It is strongly recommended to address the identified vulnerabilities to improve the security posture of the target system.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;    Password Security:*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;     *   Enforce a strong password policy that requires a mix of uppercase and lowercase letters, numbers, and symbols.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;     *   Immediately change the passwords for all accounts with weak credentials.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;     *   Implement account lockout policies to mitigate brute-force attacks.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;    SMB Configuration:*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;     *   Disable the SMBv1 protocol and use SMBv2 or a later version.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;    Share Permissions:*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;     *   Review and restrict share permissions based on the principle of least privilege.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;     *   Ensure that users only have access to the resources necessary for their roles.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;    User Accounts:*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &gt;     *   Investigate the purpose of the discovered user accounts and disable any that are not required.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  6. Conclusion</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  The security assessment of 172.16.59.129 has identified significant vulnerabilities that require immediate attention. By implementing the recommendations outlined in this report, the overall security of the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  system can be substantially improved.</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="defensive-remediation-checklist-prioritized">Defensive remediation checklist (prioritized)<a href="#defensive-remediation-checklist-prioritized" class="hash-link" aria-label="Direct link to Defensive remediation checklist (prioritized)" title="Direct link to Defensive remediation checklist (prioritized)" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-fix-protocol-posture-high-impact">1) Fix protocol posture (high impact)<a href="#1-fix-protocol-posture-high-impact" class="hash-link" aria-label="Direct link to 1) Fix protocol posture (high impact)" title="Direct link to 1) Fix protocol posture (high impact)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Disable<strong>SMBv1</strong></p>
+<p>Disable <strong>SMBv1</strong></p>
 </li>
 <li class="">
-<p>Enable<strong>SMB signing</strong></p>
+<p>Enable <strong>SMB signing</strong></p>
 </li>
 <li class="">
 <p>Prefer modern SMB configuration and remove legacy compatibility where possible</p>
@@ -695,16 +273,16 @@ system
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="windows-logs-to-prioritize">Windows logs to prioritize<a href="#windows-logs-to-prioritize" class="hash-link" aria-label="Direct link to Windows logs to prioritize" title="Direct link to Windows logs to prioritize" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>4625</strong>(failed logons) — look for volume spikes and many usernames from one source</p>
+<p><strong>4625</strong> (failed logons) — look for volume spikes and many usernames from one source</p>
 </li>
 <li class="">
-<p><strong>4624</strong>(successful logons) — specifically logon type associated with network access (commonly type 3)</p>
+<p><strong>4624</strong> (successful logons) — specifically logon type associated with network access (commonly type 3)</p>
 </li>
 <li class="">
-<p><strong>5140 / 5145</strong>(SMB share access / object access) — access to many shares in short time</p>
+<p><strong>5140 / 5145</strong> (SMB share access / object access) — access to many shares in short time</p>
 </li>
 <li class="">
-<p><strong>4672</strong>(special privileges assigned) — privileged logons</p>
+<p><strong>4672</strong> (special privileges assigned) — privileged logons</p>
 </li>
 <li class="">
 <p>Correlate: burst of failures → first success → share enumeration activity</p>
@@ -724,25 +302,25 @@ system
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
 <p>This exercise demonstrated why “AI-assisted pentesting” is most valuable when it behaves like a disciplined operator, not a click-to-hack shortcut.</p>
-<p>HexStrike + Gemini did not deliver value merely by running a brute-force; the value was in the<strong>operational recovery</strong>and<strong>decision-making</strong>when the toolchain and assumptions broke:</p>
+<p>HexStrike + Gemini did not deliver value merely by running a brute-force; the value was in the <strong>operational recovery</strong> and <strong>decision-making</strong> when the toolchain and assumptions broke:</p>
 <ul>
 <li class="">
-<p>A missing dependency (rustscan) forced a<strong>fallback to reliable fingerprinting</strong>(Nmap), establishing a defensible baseline of exposed services (SMB, RDP, SSH) and confirming a high-risk attack surface.</p>
+<p>A missing dependency (rustscan) forced a <strong>fallback to reliable fingerprinting</strong> (Nmap), establishing a defensible baseline of exposed services (SMB, RDP, SSH) and confirming a high-risk attack surface.</p>
 </li>
 <li class="">
-<p>Enumeration friction (enum4linux-ng wrapper flag injection) made it clear that<strong>orchestration layers can fail in non-obvious ways</strong>— and that successful assessment depends on switching primitives, not insisting on one “preferred” tool.</p>
+<p>Enumeration friction (enum4linux-ng wrapper flag injection) made it clear that <strong>orchestration layers can fail in non-obvious ways</strong> — and that successful assessment depends on switching primitives, not insisting on one “preferred” tool.</p>
 </li>
 <li class="">
-<p>NetExec produced the single most security-relevant posture finding:<strong>SMBv1 enabled and signing disabled</strong>— a combination that materially increases the likelihood and blast radius of compromise in real networks.</p>
+<p>NetExec produced the single most security-relevant posture finding: <strong>SMBv1 enabled and signing disabled</strong> — a combination that materially increases the likelihood and blast radius of compromise in real networks.</p>
 </li>
 <li class="">
-<p>The controlled credential test converted posture into impact:<strong>weak passwords existed at scale</strong>, and even where GPO blocked network logon, the credentials were still valid — preserving reuse and lateral movement risk.</p>
+<p>The controlled credential test converted posture into impact: <strong>weak passwords existed at scale</strong>, and even where GPO blocked network logon, the credentials were still valid — preserving reuse and lateral movement risk.</p>
 </li>
 <li class="">
-<p>Authenticated enumeration then validated the business risk:<strong>broad write access across multiple shares</strong>, which is a common precursor condition for ransomware staging, mass encryption, and rapid data collection.</p>
+<p>Authenticated enumeration then validated the business risk: <strong>broad write access across multiple shares</strong>, which is a common precursor condition for ransomware staging, mass encryption, and rapid data collection.</p>
 </li>
 </ul>
-<p>Taken together, the assessment shows a clear chain:<strong>exposure → insecure protocol posture → weak identity controls → excessive authorization</strong>. That chain is exactly what defenders need to break.</p>
-<p>In short: the workflow did what a real assessment must do —<strong>turn messy tool output into a coherent, actionable security narrative</strong>that maps directly to hardening and monitoring decision</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-01-05-building-an-extremely-vulnerable-windows-10-lab-a-step-by-step-guide-bonus-full-pt-with-9290d388744c"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Building an Extremely Vulnerable Windows 10 Lab: A Step-by-Step Guide (Bonus:Full PT with…</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-01-06-building-an-extremely-vulnerable-ubuntu-24-04-server-lab-bonus-full-pt-with-hexstrike-90034032775b"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Building an Extremely Vulnerable Ubuntu 24.04 Server Lab (Bonus: Full PT with Hexstrike)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#from-toolchain-failures--service-fingerprinting--authentication-findings--share-risk" class="table-of-contents__link toc-highlight">From Toolchain Failures → Service Fingerprinting → Authentication Findings → Share Risk</a></li></ul></li><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#scenario" class="table-of-contents__link toc-highlight">Scenario</a><ul><li><a href="#objective" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#inputs" class="table-of-contents__link toc-highlight">Inputs</a></li><li><a href="#promt" class="table-of-contents__link toc-highlight">Promt:</a></li></ul></li><li><a href="#execution-flow-what-actually-happened" class="table-of-contents__link toc-highlight">Execution flow (what actually happened)</a><ul><li><a href="#1-fast-scan-failed--fallback-to-a-full-nmap-fingerprint" class="table-of-contents__link toc-highlight">1) Fast scan failed → fallback to a full Nmap fingerprint</a></li></ul></li><li><a href="#2-smb-enumeration-tooling-mismatch-enum4linux-ng-wrapper-issue" class="table-of-contents__link toc-highlight">2) SMB enumeration tooling mismatch (enum4linux-ng wrapper issue)</a></li><li><a href="#3-smbmap-unauthenticated-run-produced-a-transportread-error" class="table-of-contents__link toc-highlight">3) SMBMap unauthenticated run produced a transport/read error</a></li><li><a href="#4-netexec-fingerprinting-revealed-two-critical-posture-flags" class="table-of-contents__link toc-highlight">4) NetExec fingerprinting revealed two critical posture flags</a></li><li><a href="#5-hydra-attack" class="table-of-contents__link toc-highlight">5) Hydra Attack</a></li><li><a href="#6-credential-hygiene-test-succeeded-but-reveals-systemic-weakness" class="table-of-contents__link toc-highlight">6) Credential hygiene test succeeded (but reveals systemic weakness)</a></li><li><a href="#7-authenticated-share-enumeration-succeeded" class="table-of-contents__link toc-highlight">7) Authenticated share enumeration succeeded</a></li><li><a href="#findings-summary" class="table-of-contents__link toc-highlight">Findings summary</a></li><li><a href="#defensive-remediation-checklist-prioritized" class="table-of-contents__link toc-highlight">Defensive remediation checklist (prioritized)</a><ul><li><a href="#1-fix-protocol-posture-high-impact" class="table-of-contents__link toc-highlight">1) Fix protocol posture (high impact)</a></li><li><a href="#2-reduce-exposure" class="table-of-contents__link toc-highlight">2) Reduce exposure</a></li><li><a href="#3-repair-identity-controls" class="table-of-contents__link toc-highlight">3) Repair identity controls</a></li><li><a href="#4-tighten-share-permissions" class="table-of-contents__link toc-highlight">4) Tighten share permissions</a></li><li><a href="#5-keep-the-good-part-network-logon-restrictions" class="table-of-contents__link toc-highlight">5) Keep the good part: network logon restrictions</a></li></ul></li><li><a href="#detection-engineering-what-to-monitor" class="table-of-contents__link toc-highlight">Detection engineering (what to monitor)</a><ul><li><a href="#windows-logs-to-prioritize" class="table-of-contents__link toc-highlight">Windows logs to prioritize</a></li><li><a href="#network-telemetry" class="table-of-contents__link toc-highlight">Network telemetry</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p>Taken together, the assessment shows a clear chain: <strong>exposure → insecure protocol posture → weak identity controls → excessive authorization</strong>. That chain is exactly what defenders need to break.</p>
+<p>In short: the workflow did what a real assessment must do — <strong>turn messy tool output into a coherent, actionable security narrative</strong> that maps directly to hardening and monitoring decision</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-01-05-building-an-extremely-vulnerable-windows-10-lab-a-step-by-step-guide-bonus-full-pt-with-9290d388744c"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Building an Extremely Vulnerable Windows 10 Lab: A Step-by-Step Guide (Bonus:Full PT with…</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-01-06-building-an-extremely-vulnerable-ubuntu-24-04-server-lab-bonus-full-pt-with-hexstrike-90034032775b"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Building an Extremely Vulnerable Ubuntu 24.04 Server Lab (Bonus: Full PT with Hexstrike)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#from-toolchain-failures--service-fingerprinting--authentication-findings--share-risk" class="table-of-contents__link toc-highlight">From Toolchain Failures → Service Fingerprinting → Authentication Findings → Share Risk</a></li></ul></li><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#scenario" class="table-of-contents__link toc-highlight">Scenario</a><ul><li><a href="#objective" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#inputs" class="table-of-contents__link toc-highlight">Inputs</a></li><li><a href="#promt" class="table-of-contents__link toc-highlight">Promt:</a></li></ul></li><li><a href="#execution-flow-what-actually-happened" class="table-of-contents__link toc-highlight">Execution flow (what actually happened)</a><ul><li><a href="#1-fast-scan-failed--fallback-to-a-full-nmap-fingerprint" class="table-of-contents__link toc-highlight">1) Fast scan failed → fallback to a full Nmap fingerprint</a></li></ul></li><li><a href="#2-smb-enumeration-tooling-mismatch-enum4linux-ng-wrapper-issue" class="table-of-contents__link toc-highlight">2) SMB enumeration tooling mismatch (enum4linux-ng wrapper issue)</a></li><li><a href="#3-smbmap-unauthenticated-run-produced-a-transportread-error" class="table-of-contents__link toc-highlight">3) SMBMap unauthenticated run produced a transport/read error</a></li><li><a href="#4-netexec-fingerprinting-revealed-two-critical-posture-flags" class="table-of-contents__link toc-highlight">4) NetExec fingerprinting revealed two critical posture flags</a></li><li><a href="#5-hydra-attack" class="table-of-contents__link toc-highlight">5) Hydra Attack</a></li><li><a href="#6-credential-hygiene-test-succeeded-but-reveals-systemic-weakness" class="table-of-contents__link toc-highlight">6) Credential hygiene test succeeded (but reveals systemic weakness)</a></li><li><a href="#7-authenticated-share-enumeration-succeeded" class="table-of-contents__link toc-highlight">7) Authenticated share enumeration succeeded</a></li><li><a href="#findings-summary" class="table-of-contents__link toc-highlight">Findings summary</a></li><li><a href="#defensive-remediation-checklist-prioritized" class="table-of-contents__link toc-highlight">Defensive remediation checklist (prioritized)</a><ul><li><a href="#1-fix-protocol-posture-high-impact" class="table-of-contents__link toc-highlight">1) Fix protocol posture (high impact)</a></li><li><a href="#2-reduce-exposure" class="table-of-contents__link toc-highlight">2) Reduce exposure</a></li><li><a href="#3-repair-identity-controls" class="table-of-contents__link toc-highlight">3) Repair identity controls</a></li><li><a href="#4-tighten-share-permissions" class="table-of-contents__link toc-highlight">4) Tighten share permissions</a></li><li><a href="#5-keep-the-good-part-network-logon-restrictions" class="table-of-contents__link toc-highlight">5) Keep the good part: network logon restrictions</a></li></ul></li><li><a href="#detection-engineering-what-to-monitor" class="table-of-contents__link toc-highlight">Detection engineering (what to monitor)</a><ul><li><a href="#windows-logs-to-prioritize" class="table-of-contents__link toc-highlight">Windows logs to prioritize</a></li><li><a href="#network-telemetry" class="table-of-contents__link toc-highlight">Network telemetry</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

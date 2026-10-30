@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,7 +34,7 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learn-how-to-leverage-theharvester-to-gather-emails-subdomains-ips-and-more-from-open-sources">Learn how to leverage theHarvester to gather emails, subdomains, IPs, and more from open sources<a href="#learn-how-to-leverage-theharvester-to-gather-emails-subdomains-ips-and-more-from-open-sources" class="hash-link" aria-label="Direct link to Learn how to leverage theHarvester to gather emails, subdomains, IPs, and more from open sources" title="Direct link to Learn how to leverage theHarvester to gather emails, subdomains, IPs, and more from open sources" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction-to-theharvester">Introduction to theHarvester<a href="#introduction-to-theharvester" class="hash-link" aria-label="Direct link to Introduction to theHarvester" title="Direct link to Introduction to theHarvester" translate="no">​</a></h2>
-<p><strong>theHarvester</strong>is an open-source reconnaissance tool used to gather information about domains, including email addresses, subdomains, IPs, and employee details, by leveraging multiple public data sources. It’s particularly useful in the early stages of penetration testing and OSINT (Open Source Intelligence) investigations.</p>
+<p><strong>theHarvester</strong> is an open-source reconnaissance tool used to gather information about domains, including email addresses, subdomains, IPs, and employee details, by leveraging multiple public data sources. It’s particularly useful in the early stages of penetration testing and OSINT (Open Source Intelligence) investigations.</p>
 <p><strong>Disclaimer:</strong>
 theHarvester is a powerful reconnaissance tool intended for ethical and legal use only. Users must have explicit permission from the domain owner or be conducting tests within a legally approved scope, such as a bug bounty program or an authorized penetration test. Unauthorized use of theHarvester or any similar tools to gather information on systems or domains without consent may violate laws and lead to serious legal consequences. Always ensure compliance with local laws and regulations when performing security testing or OSINT activities.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-theharvester">What is theHarvester?<a href="#what-is-theharvester" class="hash-link" aria-label="Direct link to What is theHarvester?" title="Direct link to What is theHarvester?" translate="no">​</a></h2>
@@ -45,7 +45,7 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p>Due to its comprehensive data-gathering capabilities, theHarvester is widely used in both offensive and defensive security work. It’s especially favored in OSINT investigations, where mapping a target’s online presence is essential. By using publicly available sources, theHarvester is non-intrusive, making it a preferred tool for early-stage information gathering and threat analysis.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="installation-and-configuration">Installation and configuration<a href="#installation-and-configuration" class="hash-link" aria-label="Direct link to Installation and configuration" title="Direct link to Installation and configuration" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-installation-of-theharvester">1. Installation of theHarvester<a href="#1-installation-of-theharvester" class="hash-link" aria-label="Direct link to 1. Installation of theHarvester" title="Direct link to 1. Installation of theHarvester" translate="no">​</a></h3>
-<p><strong>Step 1</strong>: Install theHarvester on<strong>Kali Linux</strong>(already included) or other systems via Git.</p>
+<p><strong>Step 1</strong>: Install theHarvester on <strong>Kali Linux</strong> (already included) or other systems via Git.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="on-kali-linux-pre-installed">On Kali Linux (Pre-installed)<a href="#on-kali-linux-pre-installed" class="hash-link" aria-label="Direct link to On Kali Linux (Pre-installed)" title="Direct link to On Kali Linux (Pre-installed)" translate="no">​</a></h3>
 <ul>
 <li class="">Verify the installation by running:</li>
@@ -56,16 +56,16 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <ul>
 <li class=""><strong>Clone the Repository</strong>:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clone</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> https://github.com/laramies/theHarvester.git</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/laramies/theHarvester.git</span><br></div></code></pre></div></div>
 <ul>
 <li class=""><strong>Navigate to the Directory</strong>:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> theHarvester</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd theHarvester</span><br></div></code></pre></div></div>
 <ul>
 <li class=""><strong>Install Required Dependencies</strong>:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pip3 install -r requirements.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">txt</span><br></div></code></pre></div></div>
-<p>Now, you should be able to run<code>theHarvester</code>from within the directory.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pip3 install -r requirements.txt</span><br></div></code></pre></div></div>
+<p>Now, you should be able to run <code>theHarvester</code> from within the directory.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-setting-up-api-keys-for-enhanced-searches">2. Setting Up API Keys for Enhanced Searches<a href="#2-setting-up-api-keys-for-enhanced-searches" class="hash-link" aria-label="Direct link to 2. Setting Up API Keys for Enhanced Searches" title="Direct link to 2. Setting Up API Keys for Enhanced Searches" translate="no">​</a></h3>
 <p>theHarvester uses various sources, and some of these sources (such as Bing, GitHub, and VirusTotal) require API keys for expanded and faster searches. You can obtain API keys by signing up with each respective service.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="supported-api-sources">Supported API Sources<a href="#supported-api-sources" class="hash-link" aria-label="Direct link to Supported API Sources" title="Direct link to Supported API Sources" translate="no">​</a></h3>
@@ -86,7 +86,7 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Shodan</strong>: For information on internet-connected devices.</p>
 </li>
 <li class="">
-<p>List of modules that require an<a href="https://github.com/laramies/theHarvester?tab=readme-ov-file#:~:text=Modules%20that%20require%20an%20API%20key%3A" target="_blank" rel="noopener noreferrer" class="">API key here:</a></p>
+<p>List of modules that require an <a href="https://github.com/laramies/theHarvester?tab=readme-ov-file#:~:text=Modules%20that%20require%20an%20API%20key%3A" target="_blank" rel="noopener noreferrer" class="">API key here:</a></p>
 </li>
 </ul>
 <p>Other sources may also require API keys for extended usage. Each API has its own rate limits, and usage is often restricted in free tiers.</p>
@@ -94,16 +94,16 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p>Once you have your API keys, configure them in theHarvester’s API key configuration file:</p>
 <ul>
 <li class="">
-<p><strong>Locate the</strong><code>**api-keys.yaml**</code><strong>File</strong>: This file stores API keys for all sources that require one. It’s typically located in theHarvester&#x27;s main directory.</p>
+<p><strong>Locate the</strong> <code>**api-keys.yaml**</code> <strong>File</strong>: This file stores API keys for all sources that require one. It’s typically located in theHarvester&#x27;s main directory.</p>
 </li>
 <li class="">
-<p><strong>Edit the</strong><code>**api-keys.yaml**</code><strong>File</strong>: Open the file with a text editor, such as nano or vim.</p>
+<p><strong>Edit the</strong> <code>**api-keys.yaml**</code> <strong>File</strong>: Open the file with a text editor, such as nano or vim.</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano api-keys.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">yaml</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano api-keys.yaml</span><br></div></code></pre></div></div>
 <p><strong>3. Add Your API Keys</strong>: Update each source section with your API keys. Here’s a sample structure:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">bing:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;YOUR_BING_API_KEY&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hunterio:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;YOUR_HUNTER_API_KEY&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">shodan:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;YOUR_SHODAN_API_KEY&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">github:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;YOUR_GITHUB_API_KEY&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">virustotal:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;YOUR_VIRUSTOTAL_API_KEY&quot;</span><br></div></code></pre></div></div>
-<p><strong>4. Save and Exit</strong>: Save the changes and exit the editor (for nano, press<code>CTRL + O</code>to save, then<code>CTRL + X</code>to exit).</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">bing:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: &quot;YOUR_BING_API_KEY&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">hunterio:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: &quot;YOUR_HUNTER_API_KEY&quot; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">shodan:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: &quot;YOUR_SHODAN_API_KEY&quot; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">github:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: &quot;YOUR_GITHUB_API_KEY&quot; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">virustotal:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     api_key: &quot;YOUR_VIRUSTOTAL_API_KEY&quot;</span><br></div></code></pre></div></div>
+<p><strong>4. Save and Exit</strong>: Save the changes and exit the editor (for nano, press <code>CTRL + O</code> to save, then <code>CTRL + X</code> to exit).</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*unVM57MNkw72e5ef1VVcbw.png" alt="Article image" width="1075" height="996" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="usage">Usage<a href="#usage" class="hash-link" aria-label="Direct link to Usage" title="Direct link to Usage" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-command">Basic command:<a href="#basic-command" class="hash-link" aria-label="Direct link to Basic command:" title="Direct link to Basic command:" translate="no">​</a></h3>
@@ -115,10 +115,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Specifies the target domain to search for.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-d example.com</code></p>
+<p><strong>Usage</strong>: <code>-d example.com</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-l----limit">-l / --limit<a href="#-l----limit" class="hash-link" aria-label="Direct link to -l / --limit" title="Direct link to -l / --limit" translate="no">​</a></h3>
@@ -127,10 +127,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Sets the limit for the number of results to retrieve from each source.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-l 500</code></p>
+<p><strong>Usage</strong>: <code>-l 500</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -l 500</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -l 500</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-s----start">-S / --start<a href="#-s----start" class="hash-link" aria-label="Direct link to -S / --start" title="Direct link to -S / --start" translate="no">​</a></h3>
@@ -139,10 +139,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Defines the starting result number for search engines (useful for paginated results).</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-S 100</code></p>
+<p><strong>Usage</strong>: <code>-S 100</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -S 100</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -S 100</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-p">-p<a href="#-p" class="hash-link" aria-label="Direct link to -p" title="Direct link to -p" translate="no">​</a></h3>
@@ -151,10 +151,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Proxies the search traffic through Tor. Ensure Tor is running.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-p</code></p>
+<p><strong>Usage</strong>: <code>-p</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -p</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -p</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-s">-s<a href="#-s" class="hash-link" aria-label="Direct link to -s" title="Direct link to -s" translate="no">​</a></h3>
@@ -163,10 +163,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Performs a DNS subdomain search.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-s</code></p>
+<p><strong>Usage</strong>: <code>-s</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -s</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -s</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="--screenshot">--screenshot<a href="#--screenshot" class="hash-link" aria-label="Direct link to --screenshot" title="Direct link to --screenshot" translate="no">​</a></h3>
@@ -175,10 +175,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Takes screenshots of the resolved IPs, helpful for visual verification.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>--screenshot path/to/save/screenshots</code></p>
+<p><strong>Usage</strong>: <code>--screenshot path/to/save/screenshots</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com --screenshot /screenshots</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com --screenshot /screenshots</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-v">-v<a href="#-v" class="hash-link" aria-label="Direct link to -v" title="Direct link to -v" translate="no">​</a></h3>
@@ -187,10 +187,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Enables verbose output, displaying more detailed information.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-v</code></p>
+<p><strong>Usage</strong>: <code>-v</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -v</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -v</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-e----dns-server">-e / --dns-server<a href="#-e----dns-server" class="hash-link" aria-label="Direct link to -e / --dns-server" title="Direct link to -e / --dns-server" translate="no">​</a></h3>
@@ -199,22 +199,22 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Specifies a custom DNS server to resolve domains.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-e 8.8.8.8</code></p>
+<p><strong>Usage</strong>: <code>-e 8.8.8.8</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -e 8.8.8.8</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -e 8.8.8.8</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-t">-t<a href="#-t" class="hash-link" aria-label="Direct link to -t" title="Direct link to -t" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Description</strong>: Performs DNS TLD (Top-Level Domain) expansion to find similar domains (like<code>example.net</code>,<code>example.org</code>).</p>
+<p><strong>Description</strong>: Performs DNS TLD (Top-Level Domain) expansion to find similar domains (like <code>example.net</code>, <code>example.org</code>).</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-t</code></p>
+<p><strong>Usage</strong>: <code>-t</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -t</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -t</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-r----dns-resolve">-r / --dns-resolve<a href="#-r----dns-resolve" class="hash-link" aria-label="Direct link to -r / --dns-resolve" title="Direct link to -r / --dns-resolve" translate="no">​</a></h3>
@@ -223,10 +223,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Performs reverse DNS resolution on the IP addresses found.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-r</code></p>
+<p><strong>Usage</strong>: <code>-r</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -r</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -r</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-n">-n<a href="#-n" class="hash-link" aria-label="Direct link to -n" title="Direct link to -n" translate="no">​</a></h3>
@@ -235,10 +235,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Avoids DNS resolution of discovered domains or IPs.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-n</code></p>
+<p><strong>Usage</strong>: <code>-n</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -n</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -n</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-c">-c<a href="#-c" class="hash-link" aria-label="Direct link to -c" title="Direct link to -c" translate="no">​</a></h3>
@@ -247,10 +247,10 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Attempts to perform DNS brute-forcing for subdomains.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-c</code></p>
+<p><strong>Usage</strong>: <code>-c</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -c</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -c</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-f----filename">-f / --filename<a href="#-f----filename" class="hash-link" aria-label="Direct link to -f / --filename" title="Direct link to -f / --filename" translate="no">​</a></h3>
@@ -259,16 +259,16 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Description</strong>: Saves results to a specified file in XML or HTML format.</p>
 </li>
 <li class="">
-<p><strong>Usage</strong>:<code>-f output.xml</code>or<code>-f output.html</code></p>
+<p><strong>Usage</strong>: <code>-f output.xml</code> or <code>-f output.html</code></p>
 </li>
 <li class="">
-<p><strong>Example</strong>:<code>theHarvester -d example.com -f report.html</code></p>
+<p><strong>Example</strong>: <code>theHarvester -d example.com -f report.html</code></p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-b----source">-b / --source<a href="#-b----source" class="hash-link" aria-label="Direct link to -b / --source" title="Direct link to -b / --source" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Description</strong>: Defines the data sources to use, such as<code>google</code>,<code>bing</code>,<code>linkedin</code>, etc. You can specify multiple sources separated by commas.</p>
+<p><strong>Description</strong>: Defines the data sources to use, such as <code>google</code>, <code>bing</code>, <code>linkedin</code>, etc. You can specify multiple sources separated by commas.</p>
 </li>
 <li class="">
 <p>You can use all of sources with flag all</p>
@@ -277,16 +277,16 @@ theHarvester is a powerful reconnaissance tool intended for ethical and legal us
 <p><strong>Usage</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">b</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> duckduckgo,bing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">b</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">-b duckduckgo,bing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-b all</span><br></div></code></pre></div></div>
 <ul>
-<li class=""><strong>Example</strong>:<code>theHarvester -d example.com -b duckduckgo,bing</code></li>
+<li class=""><strong>Example</strong>: <code>theHarvester -d example.com -b duckduckgo,bing</code></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-usage">Example Usage<a href="#example-usage" class="hash-link" aria-label="Direct link to Example Usage" title="Direct link to Example Usage" translate="no">​</a></h2>
-<p>To perform a search on<code>example.com</code>with a limit of 100 results from Google and Bing, output results in HTML format, and save screenshots:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">theHarvester -d example</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.com</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -l </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">100</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">b</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> bing -f example_report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--screenshot</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /screenshots</span><br></div></code></pre></div></div>
+<p>To perform a search on <code>example.com</code> with a limit of 100 results from Google and Bing, output results in HTML format, and save screenshots:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">theHarvester -d example.com -l 100 -b bing -f example_report.html --screenshot /screenshots</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-life-example">Real life example<a href="#real-life-example" class="hash-link" aria-label="Direct link to Real life example" title="Direct link to Real life example" translate="no">​</a></h2>
 <p>Target: juice-shop.herokuapp.com</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">theHarvester -d juice-shop</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.herokuapp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.com</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">b</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">theHarvester -d juice-shop.herokuapp.com -b all</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*_DPTnPcnAuJuZjHskekQKw.png" alt="Article image" width="1899" height="616" loading="lazy" decoding="async">
 <img src="https://cdn-images-1.medium.com/max/800/1*DKgBLVJuBrBokf8Gsey_Mg.png" alt="Article image" width="1899" height="616" loading="lazy" decoding="async">
 <img src="https://cdn-images-1.medium.com/max/800/1*d7Oxd-qtgJ0t5gH_ZvleYg.png" alt="Article image" width="1867" height="352" loading="lazy" decoding="async">

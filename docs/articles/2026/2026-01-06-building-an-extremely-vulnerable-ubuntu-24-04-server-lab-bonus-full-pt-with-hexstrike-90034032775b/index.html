@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -114,22 +114,22 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-3-install-ubuntu-24043-server">Step 3: Install Ubuntu 24.04.3 Server<a href="#step-3-install-ubuntu-24043-server" class="hash-link" aria-label="Direct link to Step 3: Install Ubuntu 24.04.3 Server" title="Direct link to Step 3: Install Ubuntu 24.04.3 Server" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Boot</strong>from ISO, select language (English), install Ubuntu Server.</p>
+<p><strong>Boot</strong> from ISO, select language (English), install Ubuntu Server.</p>
 </li>
 <li class="">
-<p>**Network:**Use DHCP (or static for lab).</p>
+<p><strong>Network:</strong> Use DHCP (or static for lab).</p>
 </li>
 <li class="">
-<p>**Storage:**Use entire disk.</p>
+<p><strong>Storage:</strong> Use entire disk.</p>
 </li>
 <li class="">
-<p>**Profile:**Set hostname “vulnubuntu”, username “admin”, password “password” (weaken later).</p>
+<p><strong>Profile:</strong> Set hostname “vulnubuntu”, username “admin”, password “password” (weaken later).</p>
 </li>
 <li class="">
-<p>**SSH:**Enable OpenSSH server.</p>
+<p><strong>SSH:</strong> Enable OpenSSH server.</p>
 </li>
 <li class="">
-<p>**Featured Server Snaps:**None (install manually).</p>
+<p><strong>Featured Server Snaps:</strong> None (install manually).</p>
 </li>
 <li class="">
 <p>Install takes 10–20 minutes. Reboot, login as admin.</p>
@@ -138,17 +138,19 @@
 <p><strong>Update basics:</strong></p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update &amp;&amp; sudo apt upgrade -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">y</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (but avoid security patches </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vuln</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> lab).</span><br></div></code></pre></div></div>
-<p>9.<strong>Install Guest Additions/Tools:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update &amp;&amp; sudo apt upgrade -y (but avoid security patches for vuln lab).</span><br></div></code></pre></div></div>
+<ol start="9">
+<li class=""><strong>Install Guest Additions/Tools:</strong></li>
+</ol>
 <ul>
 <li class="">For VirtualBox:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install linux-headers-$(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">uname</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -r) build-essential dkms</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install linux-headers-$(uname -r) build-essential dkms</span><br></div></code></pre></div></div>
 <p>Insert Guest Additions CD, run installer.</p>
 <ul>
 <li class="">For VMware:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install -y </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">open</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-vm-tools </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">open</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-vm-tools-desktop</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo reboot</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install -y open-vm-tools open-vm-tools-desktop</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo reboot</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*GsxDbtudG9XFKLfgQ17lGQ.png" alt="Article image" width="1300" height="813" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-4-configure-basic-networking-and-access">Step 4: Configure Basic Networking and Access<a href="#step-4-configure-basic-networking-and-access" class="hash-link" aria-label="Direct link to Step 4: Configure Basic Networking and Access" title="Direct link to Step 4: Configure Basic Networking and Access" translate="no">​</a></h3>
 <ul>
@@ -162,15 +164,15 @@
 <p>Enable SSH: Already installed, but ensure password auth:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo sed -i </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;s/#PasswordAuthentication yes/PasswordAuthentication yes/&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /etc/ssh/sshd_config &amp;&amp; sudo systemctl restart ssh</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo sed -i &#x27;s/#PasswordAuthentication yes/PasswordAuthentication yes/&#x27; /etc/ssh/sshd_config &amp;&amp; sudo systemctl restart ssh</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="take-clear-snapshot">TAKE CLEAR SNAPSHOT!!!<a href="#take-clear-snapshot" class="hash-link" aria-label="Direct link to TAKE CLEAR SNAPSHOT!!!" title="Direct link to TAKE CLEAR SNAPSHOT!!!" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="if-this-is-a-server-only-cli-vm">If this is a server-only (CLI) VM<a href="#if-this-is-a-server-only-cli-vm" class="hash-link" aria-label="Direct link to If this is a server-only (CLI) VM" title="Direct link to If this is a server-only (CLI) VM" translate="no">​</a></h3>
-<p><strong>Copy/paste</strong>between host ↔ VM<strong>will not work</strong>in the VMware console.</p>
+<p><strong>Copy/paste</strong> between host ↔ VM <strong>will not work</strong> in the VMware console.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recommended-alternatives">Recommended alternatives:<a href="#recommended-alternatives" class="hash-link" aria-label="Direct link to Recommended alternatives:" title="Direct link to Recommended alternatives:" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>SSH from host</strong></li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh -l </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">user</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vm-ip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh -l &lt;user&gt; &lt;vm-ip&gt;</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
 <p>→ Copy/paste works perfectly in your terminal</p>
@@ -179,7 +181,7 @@
 <p><strong>scp / rsync</strong></p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">scp file.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> user</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@vm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/path/</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">scp file.txt user@vm-ip:/path/</span><br></div></code></pre></div></div>
 <ul>
 <li class=""><strong>Install a lightweight GUI (optional)</strong>:</li>
 </ul>
@@ -195,94 +197,80 @@
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo nano /tmp/vuln-setup.sh</span><br></div></code></pre></div></div>
 <p><strong>Bash Script:</strong></p>
-<details class="plain-large-code" data-plain-code-lines="220"><summary>Large code or log block<!-- --> · <!-- -->220<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>#!/bin/bash
+<details class="plain-large-code" data-plain-code-lines="159"><summary>Large code or log block<!-- --> · <!-- -->159<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>#!/bin/bash
+
 # ==============================================================================
 # ULTIMATE VULNERABLE UBUNTU 24.04 SERVER LAB SETUP - FULLY FIXED VERSION
 # Run once with: sudo bash /tmp/vuln-setup.sh
 # ==============================================================================
-set
- -e  
-# Stop on any error
-echo
- 
-&quot;=== EXTREME VULNERABLE LAB SETUP STARTED ===&quot;
+
+set -e  # Stop on any error
+
+echo &quot;=== EXTREME VULNERABLE LAB SETUP STARTED ===&quot;
+
 # 1. Disable defenses
-ufw 
-disable
-systemctl stop apparmor || 
-true
-systemctl 
-disable
- apparmor || 
-true
-echo
- 0 &gt; /proc/sys/kernel/randomize_va_space
-echo
- 
-&quot;kernel.randomize_va_space = 0&quot;
- &gt;&gt; /etc/sysctl.conf
+ufw disable
+systemctl stop apparmor || true
+systemctl disable apparmor || true
+echo 0 &gt; /proc/sys/kernel/randomize_va_space
+echo &quot;kernel.randomize_va_space = 0&quot; &gt;&gt; /etc/sysctl.conf
 sysctl -p
+
 # 2. Install everything
 apt update -y
 apt install -y \
     openssh-server apache2 libapache2-mod-php php php-mysql mariadb-server \
     samba nfs-kernel-server inetutils-telnetd git build-essential \
     phpmyadmin vsftpd
+
 # 3. Configure services
+
 # SSH password auth
-sed -i 
-&#x27;s/#PasswordAuthentication yes/PasswordAuthentication yes/&#x27;
- /etc/ssh/sshd_config
-sed -i 
-&#x27;s/PasswordAuthentication no/PasswordAuthentication yes/&#x27;
- /etc/ssh/sshd_config
+sed -i &#x27;s/#PasswordAuthentication yes/PasswordAuthentication yes/&#x27; /etc/ssh/sshd_config
+sed -i &#x27;s/PasswordAuthentication no/PasswordAuthentication yes/&#x27; /etc/ssh/sshd_config
 systemctl restart ssh
+
 # Apache + PHP world-writable
 a2enmod rewrite
-chmod
- 777 /var/www/html
+chmod 777 /var/www/html
 systemctl restart apache2
+
 # Samba - guest writable shares including root
-mkdir
- -p /var/smb/public /var/smb/secrets
-chmod
- 777 /var/smb/public /var/smb/secrets
-cat
- &gt;&gt; /etc/samba/smb.conf &lt;&lt;
-EOF
+mkdir -p /var/smb/public /var/smb/secrets
+chmod 777 /var/smb/public /var/smb/secrets
+cat &gt;&gt; /etc/samba/smb.conf &lt;&lt;EOF
+
 [public]
    path = /var/smb/public
    writable = yes
    guest ok = yes
+
 [secrets]
    path = /var/smb/secrets
    writable = yes
    guest ok = yes
+
 [root]
    path = /
    writable = yes
    guest ok = yes
 EOF
 systemctl restart smbd
+
 # NFS - extreme no_root_squash
-cat
- &gt; /etc/exports &lt;&lt;
-EOF
+cat &gt; /etc/exports &lt;&lt;EOF
 / *(rw,sync,no_root_squash,insecure,no_subtree_check)
 /home *(rw,sync,no_root_squash,insecure,no_subtree_check)
 EOF
 exportfs -ra
 systemctl restart nfs-kernel-server
+
 # Telnet via inetd (correct way on Ubuntu)
-echo
- 
-&quot;telnet stream tcp nowait root /usr/sbin/in.telnetd in.telnetd&quot;
- &gt;&gt; /etc/inetd.conf
+echo &quot;telnet stream tcp nowait root /usr/sbin/in.telnetd in.telnetd&quot; &gt;&gt; /etc/inetd.conf
 systemctl restart inetutils-inetd
+
 # vsftpd - fully anonymous + upload
-cat
- &gt; /etc/vsftpd.conf &lt;&lt;
-EOF
+cat &gt; /etc/vsftpd.conf &lt;&lt;EOF
 listen=YES
 anonymous_enable=YES
 local_enable=YES
@@ -293,14 +281,12 @@ anon_root=/var/ftp/pub
 chroot_local_user=YES
 allow_writeable_chroot=YES
 EOF
-mkdir
- -p /var/ftp/pub
-chmod
- 777 /var/ftp/pub
+mkdir -p /var/ftp/pub
+chmod 777 /var/ftp/pub
 systemctl restart vsftpd
+
 # 4. MariaDB - completely open
-mysql &lt;&lt;
-EOF
+mysql &lt;&lt;EOF
 ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;password&#x27;;
 CREATE USER IF NOT EXISTS &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password&#x27;;
 GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27; WITH GRANT OPTION;
@@ -310,113 +296,68 @@ CREATE USER IF NOT EXISTS &#x27;admin&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;pa
 GRANT ALL PRIVILEGES ON *.* TO &#x27;admin&#x27;@&#x27;%&#x27; WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EOF
-echo
- 
-&quot;bind-address = 0.0.0.0&quot;
- &gt;&gt; /etc/mysql/mariadb.conf.d/50-server.cnf
+
+echo &quot;bind-address = 0.0.0.0&quot; &gt;&gt; /etc/mysql/mariadb.conf.d/50-server.cnf
 systemctl restart mariadb
+
 # 5. DVWA + phpMyAdmin
-git 
-clone
- https://github.com/digininja/DVWA.git /var/www/html/DVWA
-cp
- /var/www/html/DVWA/config/config.inc.php.dist /var/www/html/DVWA/config/config.inc.php
-sed -i 
-&quot;s/p@ssw0rd/password123/&quot;
- /var/www/html/DVWA/config/config.inc.php
-sed -i 
-&quot;s/&#x27;root&#x27;/&#x27;admin&#x27;/&quot;
- /var/www/html/DVWA/config/config.inc.php
-mysql -u root -ppassword &lt;&lt;
-EOF
+git clone https://github.com/digininja/DVWA.git /var/www/html/DVWA
+cp /var/www/html/DVWA/config/config.inc.php.dist /var/www/html/DVWA/config/config.inc.php
+sed -i &quot;s/p@ssw0rd/password123/&quot; /var/www/html/DVWA/config/config.inc.php
+sed -i &quot;s/&#x27;root&#x27;/&#x27;admin&#x27;/&quot; /var/www/html/DVWA/config/config.inc.php
+mysql -u root -ppassword &lt;&lt;EOF
 CREATE DATABASE IF NOT EXISTS dvwa;
 GRANT ALL ON dvwa.* TO &#x27;admin&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password123&#x27;;
 FLUSH PRIVILEGES;
 EOF
-chown
- -R www-data:www-data /var/www/html/DVWA
-chmod
- -R 755 /var/www/html/DVWA
-ln
- -sf /usr/share/phpmyadmin /var/www/html/phpmyadmin
+chown -R www-data:www-data /var/www/html/DVWA
+chmod -R 755 /var/www/html/DVWA
+ln -sf /usr/share/phpmyadmin /var/www/html/phpmyadmin
+
 # 6. Weak users + privilege escalation
-useradd -m -s /bin/bash -p 
-&#x27;$(openssl passwd -1 password123)&#x27;
- guest_user
-useradd -m -s /bin/bash -p 
-&#x27;$(openssl passwd -1 123456)&#x27;
- ftp_user
-useradd -m -s /bin/bash -p 
-&#x27;$(openssl passwd -1 password123)&#x27;
- web_admin
-useradd -m -s /bin/bash -p 
-&#x27;$(openssl passwd -1 C0mplex_77!_HArd_To_Gu3ss)&#x27;
- it_admin
-echo
- 
-&quot;ftp_user ALL=(ALL) NOPASSWD: ALL&quot;
- &gt;&gt; /etc/sudoers
-echo
- 
-&quot;guest_user ALL=(ALL) NOPASSWD: /bin/bash&quot;
- &gt;&gt; /etc/sudoers
+useradd -m -s /bin/bash -p &#x27;$(openssl passwd -1 password123)&#x27; guest_user
+useradd -m -s /bin/bash -p &#x27;$(openssl passwd -1 123456)&#x27; ftp_user
+useradd -m -s /bin/bash -p &#x27;$(openssl passwd -1 password123)&#x27; web_admin
+useradd -m -s /bin/bash -p &#x27;$(openssl passwd -1 C0mplex_77!_HArd_To_Gu3ss)&#x27; it_admin
+
+echo &quot;ftp_user ALL=(ALL) NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers
+echo &quot;guest_user ALL=(ALL) NOPASSWD: /bin/bash&quot; &gt;&gt; /etc/sudoers
+
 # Setuid root shell
-mkdir
- -p /opt/vuln
-cat
- &gt; /opt/vuln/vuln.c &lt;&lt;
-&#x27;EOF&#x27;
+mkdir -p /opt/vuln
+cat &gt; /opt/vuln/vuln.c &lt;&lt;&#x27;EOF&#x27;
 #include &lt;unistd.h&gt;
-int 
-main
-() {
+int main() {
     setuid(0); setgid(0);
-    execl(
-&quot;/bin/bash&quot;
-, 
-&quot;bash&quot;
-, NULL);
-    
-return
- 0;
+    execl(&quot;/bin/bash&quot;, &quot;bash&quot;, NULL);
+    return 0;
 }
 EOF
 gcc /opt/vuln/vuln.c -o /usr/local/bin/vuln-shell
-chmod
- 4755 /usr/local/bin/vuln-shell
+chmod 4755 /usr/local/bin/vuln-shell
+
 # 7. Sensitive data
-mkdir
- -p /secrets /database
-cat
- &gt; /secrets/passwords.txt &lt;&lt;
-EOF
+mkdir -p /secrets /database
+cat &gt; /secrets/passwords.txt &lt;&lt;EOF
 it_admin:C0mplex_77!_HArd_To_Gu3ss
 ftp_user:123456
 web_admin:password123
 guest_user:password123
 root:password
 EOF
-cat
- &gt; /secrets/credit_cards.csv &lt;&lt;
-EOF
+cat &gt; /secrets/credit_cards.csv &lt;&lt;EOF
 Name,CardNumber,Expiry
 John Doe,4444-5555-6666-7777,12/28
 Jane Smith,8888-9999-0000-1111,05/30
 EOF
-chmod
- -R 777 /secrets /database /var/ftp/pub
-echo
- 
-&quot;=== SETUP COMPLETE ===&quot;
-echo
- 
-&quot;REBOOT NOW: sudo reboot&quot;
-echo
- 
-&quot;After reboot, run the verification script below.&quot;
+chmod -R 777 /secrets /database /var/ftp/pub
+
+echo &quot;=== SETUP COMPLETE ===&quot;
+echo &quot;REBOOT NOW: sudo reboot&quot;
+echo &quot;After reboot, run the verification script below.&quot;
 </code></pre></details>
 <p><strong>3. Make executable:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chmod</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> +x /tmp/vuln-setup.sh</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo chmod +x /tmp/vuln-setup.sh</span><br></div></code></pre></div></div>
 <p><strong>4. Run:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo /tmp/vuln-setup.sh</span><br></div></code></pre></div></div>
 <p><strong>Reboot the system:</strong></p>
@@ -424,8 +365,8 @@ echo
 <p><strong>Post-Reboot Verification Script:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano /tmp/post_reboot.sh</span><br></div></code></pre></div></div>
 <p><strong>Script:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">#!/bin/bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;=== VULNERABLE UBUNTU LAB VERIFICATION ===&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">IP=$(hostname -I | awk </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;{print $1}&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;IP address: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$IP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Open ports:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ss -tuln | grep -E </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;21|22|23|80|111|445|2049|3306&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Service status:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> apache2 vsftpd smbd nfs-kernel-server mariadb inetutils-inetd; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    systemctl is-active </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &gt;/dev/null &amp;&amp; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: ACTIVE&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> || </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$s</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: INACTIVE&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Accessible services:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  • DVWA:          http://</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$IP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/DVWA        (admin / password)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  • phpMyAdmin:    http://</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$IP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/phpmyadmin  (root/password or anonymous)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  • Anonymous FTP: ftp </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$IP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   (upload to /pub)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  • Telnet:        telnet </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$IP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   (any weak user)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  • Samba guest:   smbclient -L //</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$IP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -N&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  • NFS exports:   showmount -e </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$IP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Privilege escalation examples:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  • sudo -l (as ftp_user or guest_user)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;  • /usr/local/bin/vuln-shell  (setuid root shell)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Lab is fully vulnerable and ready for pentesting!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Take a snapshot now and start attacking from Kali!&quot;</span><br></div></code></pre></div></div>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chmod</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> +x /tmp/post_reboot.sh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo /tmp/post_reboot.sh</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">#!/bin/bash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;=== VULNERABLE UBUNTU LAB VERIFICATION ===&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">IP=$(hostname -I | awk &#x27;{print $1}&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;IP address: $IP&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;Open ports:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ss -tuln | grep -E &#x27;21|22|23|80|111|445|2049|3306&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;Service status:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for s in apache2 vsftpd smbd nfs-kernel-server mariadb inetutils-inetd; do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    systemctl is-active $s &gt;/dev/null &amp;&amp; echo &quot;  $s: ACTIVE&quot; || echo &quot;  $s: INACTIVE&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;Accessible services:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;  • DVWA:          http://$IP/DVWA        (admin / password)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;  • phpMyAdmin:    http://$IP/phpmyadmin  (root/password or anonymous)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;  • Anonymous FTP: ftp $IP   (upload to /pub)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;  • Telnet:        telnet $IP   (any weak user)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;  • Samba guest:   smbclient -L //$IP -N&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;  • NFS exports:   showmount -e $IP&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;Privilege escalation examples:&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;  • sudo -l (as ftp_user or guest_user)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;  • /usr/local/bin/vuln-shell  (setuid root shell)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;Lab is fully vulnerable and ready for pentesting!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;Take a snapshot now and start attacking from Kali!&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo chmod +x /tmp/post_reboot.sh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo /tmp/post_reboot.sh</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*o9L68FSF08YQRs4gvRpGmg.png" alt="Article image" width="1024" height="926" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="take-new-snapshot">TAKE NEW SNAPSHOT!<a href="#take-new-snapshot" class="hash-link" aria-label="Direct link to TAKE NEW SNAPSHOT!" title="Direct link to TAKE NEW SNAPSHOT!" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-testing-the-lab">Quick Testing the Lab<a href="#quick-testing-the-lab" class="hash-link" aria-label="Direct link to Quick Testing the Lab" title="Direct link to Quick Testing the Lab" translate="no">​</a></h3>
@@ -484,190 +425,11 @@ echo
 <p><strong>5. Dummy Data</strong>: Exposed passwords, CC info, SQL dumps. Exploit: Theft via shares/services.</p>
 <p><strong>6. Vulnerable Apps</strong>: DVWA for web vulns (SQLi, CSRF, etc.).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-penetration-test-report-for-this-lab">Basic Penetration Test Report for this Lab<a href="#basic-penetration-test-report-for-this-lab" class="hash-link" aria-label="Direct link to Basic Penetration Test Report for this Lab" title="Direct link to Basic Penetration Test Report for this Lab" translate="no">​</a></h2>
-<p>**This PT was performed with HexStrike-AI + Gemini-CLI in one prompt
-***<a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949"><strong>HexStrike on Kali Linux 2025.4: A Comprehensive Guide here</strong></a></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">## 1. Executive Summary</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">A penetration test was conducted on the target machine 172.16.59.140, identified as a Kali GNU/Linux Rolling system (Version 2025.4). Multiple critical vulnerabilities were identified, leading to full administrative control (root access) over the system. The primary vulnerability exploited was a misconfigured Network File System (NFS) share, which allowed unauthorized access to the target&#x27;s root filesystem. Additionally, sensitive credentials were discovered, including a root password and other user credentials.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 2. Methodology</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The penetration test followed a standard methodology:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Reconnaissance:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Initial port scanning and service enumeration.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Vulnerability Identification:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Analysis of open services and identified misconfigurations.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Exploitation:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Leveraging identified vulnerabilities to gain unauthorized access.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Post-Exploitation:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Gathering system information, sensitive data, and confirming root access.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Reporting:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Documenting findings and recommendations.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 3. Reconnaissance - Open Ports and Protocols</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The following open ports and services were identified on the target machine (172.16.59.140) during the reconnaissance phase using </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`autorecon`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> and </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">`nmap`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| Port/Protocol | Service       | Version                               |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|---------------|---------------|---------------------------------------|</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 21/tcp        | FTP           | vsftpd 3.0.5                          |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 22/tcp        | SSH           | OpenSSH 9.6p1 Ubuntu 3ubuntu13.14     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 23/tcp        | Telnet        | tcpwrapped                            |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 80/tcp        | HTTP          | Apache httpd 2.4.58 (Ubuntu)          |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 111/tcp,udp   | RPC           | rpcbind 2-4                           |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 139/tcp       | NetBIOS       | Samba smbd 4                          |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 445/tcp       | NetBIOS       | Samba smbd 4                          |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 2049/tcp      | NFS           | nfs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">_acl 3                             |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 3306/tcp      | MySQL         | MariaDB 5.5.5-10.11.13                |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 32857/tcp     | mountd        | 1-3 (RPC #100005)                     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 35029/tcp     | status        | 1 (RPC #100024)                       |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 36399/tcp     | mountd        | 1-3 (RPC #100005)                     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 42753/tcp     | nlockmgr      | 1-4 (RPC #100021)                     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 54907/tcp     | mountd        | 1-3 (RPC #100005)                     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 137/udp       | NetBIOS       |                                       |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 4. Vulnerabilities and Exploits</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 4.1. Critical: Misconfigured NFS Shares (Root Access)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Description:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The target machine was found to be exporting its entire root filesystem (`/`) and `/home` directory via NFS to all clients (`*`). This misconfiguration allowed the attacker to mount the target&#x27;s filesystem locally with root privileges.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Exploit:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The attacker mounted the `/` and `/home` directories locally using `mount -t nfs 172.16.59.140:/ /tmp/nfs_</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">root</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">` and `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">mount -t nfs 172.16.59.140:/home /tmp/nfs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">_home`. This provided direct read/write access to the entire filesystem.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Impact:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Complete compromise of the target system, including reading, writing, and executing arbitrary files as root. This directly led to gaining a root shell.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Proof:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   `showmount -e 172.16.59.140` revealed `/` and `/home` exported to `*`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Successful mounting of `/` to `/tmp/nfs_</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">root</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">` and `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/home</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">` to `</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/tmp/nfs</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">_home`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Successful execution of `id` command on the target machine via a reverse shell, confirming `uid=0(root) gid=0(root) groups=0(root)`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 4.2. Critical: Exposed Credentials (passwords.txt)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Description:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> A file named `passwords.txt` was discovered in a non-standard, world-readable directory `/secrets` on the target machine. This file contained plaintext credentials for several users, including `root`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Exploit:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> The credentials were directly read from the mounted NFS share.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Impact:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Direct access to user accounts, including the administrative `root` account, enabling further system compromise and lateral movement.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**Proof:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Contents of `/tmp/nfs_</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">root/secrets/passwords.txt`:</span><br></div></code></pre></div></div>
-<p>it_admin<!-- -->:C0mplex_77<!-- -->!_HArd_To_Gu3ss
-ftp_user:123456
-web_admin<!-- -->:password123<!-- -->
-guest_user<!-- -->:password123<!-- -->
-root<!-- -->:password</p>
-<details class="plain-large-code" data-plain-code-lines="176"><summary>Large code or log block<!-- --> · <!-- -->176<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>### 4.3. High: phpMyAdmin Access with Root Credentials
-*
-
-**Description:**
-The phpMyAdmin web interface was accessible on port 80, and the discovered 
-`root:password`
-credentials allowed successful login.
-*
-
-**Exploit:**
-The 
-`root:password`
-credentials were used to log into the phpMyAdmin interface. This allowed for arbitrary SQL query execution, including 
-`SELECT INTO OUTFILE`
-to write files to the web server&#x27;s document root.
-*
-
-**Impact:**
-Full administrative control over the MySQL database, including data manipulation, schema modification, and potential for further system compromise through SQL injection or file write vulnerabilities.
-*
-
-**Proof:**
-*
-Successful login to phpMyAdmin using 
-`root:password`
-.
-*
-Successful upload and execution of 
-`test.php`
-via 
-`SELECT INTO OUTFILE`
-to 
-`/var/www/html/test.php`
-.
-## 5. Sensitive Files and Credentials Found
-*
-
-**`/etc/shadow`:**
-Contains hashed passwords for all users on the system. The hash for user 
-`andrey`
-was extracted: 
-`andrey:$y$j9T$9WBQ0H4N9M0/BG4OjPGZF/$OLzBJRQBeNiqCWIDtWr9abtMkyorDYUrIH5pzG5fqf5`
-.
-*
-
-**`/secrets/passwords.txt`:**
-Contains plaintext credentials:
-*
-
-`it_admin:C0mplex_77!_HArd_To_Gu3ss`
-*
-
-`ftp_user:123456`
-*
-
-`web_admin:password123`
-*
-
-`guest_user:password123`
-*
-
-`root:password`
-## 6. Tools Used
-*
-
-`autorecon`
-: For automated reconnaissance and service enumeration.
-*
-
-`nmap`
-: For detailed port scanning and service version detection.
-*
-
-`showmount`
-: To enumerate NFS exports.
-*
-
-`mount`
-: To mount NFS shares locally.
-*
-
-`curl`
-: For interacting with web services (phpMyAdmin login, web shell execution).
-*
-
-`grep`
-, 
-`sed`
-: For parsing and extracting information from HTML responses.
-*
-
-`netcat`
-: For setting up a listener for the reverse shell.
-*
-
-`cp`
-: To copy files to the mounted NFS share.
-*
-
-`rm`
-: To remove files.
-*
-
-`id`
-, 
-`hostname`
-, 
-`cat /etc/os-release`
-, 
-`cat /etc/shadow`
-: Standard Linux commands for post-exploitation information gathering.
-*
-
-`john`
-, 
-`hashcat`
-: Attempted for offline password cracking (unsuccessful in this instance due to hash format issues).
-## 7. Conclusion
-The penetration test successfully demonstrated critical vulnerabilities on the target machine, leading to full root compromise. The misconfigured NFS shares and exposed plaintext credentials were the primary vectors. Addressing these vulnerabilities immediately is crucial to prevent unauthorized access and maintain the security of the system.
-## 8. Recommendations
-### 8.1. Immediate Action: Secure NFS Shares
-*
-
-**Recommendation:**
-Restrict NFS exports to only trusted IP addresses or networks. Implement 
-`no_root_squash`
-with extreme caution, or ideally, avoid it entirely. Review 
-`/etc/exports`
-on the target system and ensure only necessary directories are shared with appropriate permissions.
-### 8.2. Immediate Action: Remove Exposed Credentials
-*
-
-**Recommendation:**
-Immediately remove 
-`passwords.txt`
-from the 
-`/secrets`
-directory. Implement a robust secrets management solution. All passwords found in 
-`passwords.txt`
-should be changed immediately, especially the 
-`root`
-password.
-### 8.3. Immediate Action: Secure phpMyAdmin
-*
-
-**Recommendation:**
-*
-Change the 
-`root`
-password for MySQL to a strong, unique password.
-*
-Consider restricting access to phpMyAdmin to internal networks or specific IP addresses.
-*
-Implement two-factor authentication if available.
-*
-Ensure phpMyAdmin is always up-to-date to patch known vulnerabilities.
-### 8.4. General Security Best Practices
-*
-
-**Recommendation:**
-*
-Implement strong, unique passwords for all user accounts.
-*
-Regularly patch and update all operating system components and installed software.
-*
-Disable unnecessary services.
-*
-Implement a firewall to restrict inbound and outbound traffic to only necessary ports.
-*
-Conduct regular security audits and penetration tests.
-*
-Implement intrusion detection/prevention systems (IDS/IPS).
-*
-Monitor system logs for suspicious activity.
-This concludes the penetration test report.
-</code></pre></details>
+<p><strong>This PT was performed with HexStrike-AI + Gemini-CLI in one prompt</strong></p>
+<ul>
+<li class=""><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949"><strong>HexStrike on Kali Linux 2025.4: A Comprehensive Guide here</strong></a></li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">## 1. Executive Summary</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">A penetration test was conducted on the target machine 172.16.59.140, identified as a Kali GNU/Linux Rolling system (Version 2025.4). Multiple critical vulnerabilities were identified, leading to full administrative control (root access) over the system. The primary vulnerability exploited was a misconfigured Network File System (NFS) share, which allowed unauthorized access to the target&#x27;s root filesystem. Additionally, sensitive credentials were discovered, including a root password and other user credentials.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 2. Methodology</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The penetration test followed a standard methodology:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Reconnaissance:** Initial port scanning and service enumeration.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Vulnerability Identification:** Analysis of open services and identified misconfigurations.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Exploitation:** Leveraging identified vulnerabilities to gain unauthorized access.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Post-Exploitation:** Gathering system information, sensitive data, and confirming root access.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Reporting:** Documenting findings and recommendations.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 3. Reconnaissance - Open Ports and Protocols</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The following open ports and services were identified on the target machine (172.16.59.140) during the reconnaissance phase using `autorecon` and `nmap`:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| Port/Protocol | Service       | Version                               |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|---------------|---------------|---------------------------------------|</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 21/tcp        | FTP           | vsftpd 3.0.5                          |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 22/tcp        | SSH           | OpenSSH 9.6p1 Ubuntu 3ubuntu13.14     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 23/tcp        | Telnet        | tcpwrapped                            |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 80/tcp        | HTTP          | Apache httpd 2.4.58 (Ubuntu)          |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 111/tcp,udp   | RPC           | rpcbind 2-4                           |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 139/tcp       | NetBIOS       | Samba smbd 4                          |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 445/tcp       | NetBIOS       | Samba smbd 4                          |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 2049/tcp      | NFS           | nfs_acl 3                             |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 3306/tcp      | MySQL         | MariaDB 5.5.5-10.11.13                |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 32857/tcp     | mountd        | 1-3 (RPC #100005)                     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 35029/tcp     | status        | 1 (RPC #100024)                       |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 36399/tcp     | mountd        | 1-3 (RPC #100005)                     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 42753/tcp     | nlockmgr      | 1-4 (RPC #100021)                     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 54907/tcp     | mountd        | 1-3 (RPC #100005)                     |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">| 137/udp       | NetBIOS       |                                       |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 4. Vulnerabilities and Exploits</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 4.1. Critical: Misconfigured NFS Shares (Root Access)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Description:** The target machine was found to be exporting its entire root filesystem (`/`) and `/home` directory via NFS to all clients (`*`). This misconfiguration allowed the attacker to mount the target&#x27;s filesystem locally with root privileges.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Exploit:** The attacker mounted the `/` and `/home` directories locally using `mount -t nfs 172.16.59.140:/ /tmp/nfs_root` and `mount -t nfs 172.16.59.140:/home /tmp/nfs_home`. This provided direct read/write access to the entire filesystem.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Impact:** Complete compromise of the target system, including reading, writing, and executing arbitrary files as root. This directly led to gaining a root shell.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Proof:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   `showmount -e 172.16.59.140` revealed `/` and `/home` exported to `*`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Successful mounting of `/` to `/tmp/nfs_root` and `/home` to `/tmp/nfs_home`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Successful execution of `id` command on the target machine via a reverse shell, confirming `uid=0(root) gid=0(root) groups=0(root)`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 4.2. Critical: Exposed Credentials (passwords.txt)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Description:** A file named `passwords.txt` was discovered in a non-standard, world-readable directory `/secrets` on the target machine. This file contained plaintext credentials for several users, including `root`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Exploit:** The credentials were directly read from the mounted NFS share.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Impact:** Direct access to user accounts, including the administrative `root` account, enabling further system compromise and lateral movement.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Proof:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Contents of `/tmp/nfs_root/secrets/passwords.txt`:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ```</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        it_admin:C0mplex_77!_HArd_To_Gu3ss</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ftp_user:123456</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        web_admin:password123</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        guest_user:password123</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        root:password</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ```</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 4.3. High: phpMyAdmin Access with Root Credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Description:** The phpMyAdmin web interface was accessible on port 80, and the discovered `root:password` credentials allowed successful login.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Exploit:** The `root:password` credentials were used to log into the phpMyAdmin interface. This allowed for arbitrary SQL query execution, including `SELECT INTO OUTFILE` to write files to the web server&#x27;s document root.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Impact:** Full administrative control over the MySQL database, including data manipulation, schema modification, and potential for further system compromise through SQL injection or file write vulnerabilities.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Proof:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Successful login to phpMyAdmin using `root:password`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Successful upload and execution of `test.php` via `SELECT INTO OUTFILE` to `/var/www/html/test.php`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 5. Sensitive Files and Credentials Found</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **`/etc/shadow`:** Contains hashed passwords for all users on the system. The hash for user `andrey` was extracted: `andrey:$y$j9T$9WBQ0H4N9M0/BG4OjPGZF/$OLzBJRQBeNiqCWIDtWr9abtMkyorDYUrIH5pzG5fqf5`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **`/secrets/passwords.txt`:** Contains plaintext credentials:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   `it_admin:C0mplex_77!_HArd_To_Gu3ss`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   `ftp_user:123456`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   `web_admin:password123`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   `guest_user:password123`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   `root:password`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 6. Tools Used</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `autorecon`: For automated reconnaissance and service enumeration.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `nmap`: For detailed port scanning and service version detection.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `showmount`: To enumerate NFS exports.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `mount`: To mount NFS shares locally.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `curl`: For interacting with web services (phpMyAdmin login, web shell execution).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `grep`, `sed`: For parsing and extracting information from HTML responses.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `netcat`: For setting up a listener for the reverse shell.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `cp`: To copy files to the mounted NFS share.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `rm`: To remove files.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `id`, `hostname`, `cat /etc/os-release`, `cat /etc/shadow`: Standard Linux commands for post-exploitation information gathering.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   `john`, `hashcat`: Attempted for offline password cracking (unsuccessful in this instance due to hash format issues).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 7. Conclusion</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">The penetration test successfully demonstrated critical vulnerabilities on the target machine, leading to full root compromise. The misconfigured NFS shares and exposed plaintext credentials were the primary vectors. Addressing these vulnerabilities immediately is crucial to prevent unauthorized access and maintain the security of the system.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## 8. Recommendations</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 8.1. Immediate Action: Secure NFS Shares</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Recommendation:** Restrict NFS exports to only trusted IP addresses or networks. Implement `no_root_squash` with extreme caution, or ideally, avoid it entirely. Review `/etc/exports` on the target system and ensure only necessary directories are shared with appropriate permissions.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 8.2. Immediate Action: Remove Exposed Credentials</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Recommendation:** Immediately remove `passwords.txt` from the `/secrets` directory. Implement a robust secrets management solution. All passwords found in `passwords.txt` should be changed immediately, especially the `root` password.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 8.3. Immediate Action: Secure phpMyAdmin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Recommendation:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Change the `root` password for MySQL to a strong, unique password.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Consider restricting access to phpMyAdmin to internal networks or specific IP addresses.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Implement two-factor authentication if available.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Ensure phpMyAdmin is always up-to-date to patch known vulnerabilities.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### 8.4. General Security Best Practices</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*   **Recommendation:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Implement strong, unique passwords for all user accounts.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Regularly patch and update all operating system components and installed software.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Disable unnecessary services.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Implement a firewall to restrict inbound and outbound traffic to only necessary ports.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Conduct regular security audits and penetration tests.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Implement intrusion detection/prevention systems (IDS/IPS).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    *   Monitor system logs for suspicious activity.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">This concludes the penetration test report.</span><br></div></code></pre></div></div>
 <ul>
 <li class=""><strong>Vulnerable Apps</strong>: DVWA for web vulns (SQLi, CSRF, etc.).</li>
 </ul>

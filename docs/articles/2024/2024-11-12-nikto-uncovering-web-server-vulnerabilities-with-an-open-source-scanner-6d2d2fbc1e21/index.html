@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -48,18 +48,18 @@
 <p><strong>Open a Terminal.</strong></p>
 </li>
 <li class="">
-<p><strong>Update Package Manager</strong>(optional but recommended):</p>
+<p><strong>Update Package Manager</strong> (optional but recommended):</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">update</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt upgrade</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt upgrade</span><br></div></code></pre></div></div>
 <p><strong>3. Clone the Nikto Repository</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clone</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> https://github.com/sullo/nikto.git</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/sullo/nikto.git</span><br></div></code></pre></div></div>
 <p><strong>4. Navigate to the Nikto Directory</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> nikto/program</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd nikto/program</span><br></div></code></pre></div></div>
 <p><strong>5. Run Nikto</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">perl nikto.pl -h </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">perl nikto.pl -h &lt;target&gt;</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="note">Note:<a href="#note" class="hash-link" aria-label="Direct link to Note:" title="Direct link to Note:" translate="no">​</a></h3>
-<p>To use<code>perl nikto.pl</code>as<code>./nikto</code>, you can add the program path to your<code>$PATH</code>or create an alias in your shell configuration.</p>
+<p>To use <code>perl nikto.pl</code> as <code>./nikto</code>, you can add the program path to your <code>$PATH</code> or create an alias in your shell configuration.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-windows-installation">2. Windows Installation<a href="#2-windows-installation" class="hash-link" aria-label="Direct link to 2. Windows Installation" title="Direct link to 2. Windows Installation" translate="no">​</a></h2>
 <p>For Windows, you need to install Perl and Git if you don’t already have them.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-by-step-installation-1">Step-by-Step Installation:<a href="#step-by-step-installation-1" class="hash-link" aria-label="Direct link to Step-by-Step Installation:" title="Direct link to Step-by-Step Installation:" translate="no">​</a></h3>
@@ -68,56 +68,56 @@
 <p><strong>Install Strawberry Perl</strong>:</p>
 </li>
 <li class="">
-<p>Download Strawberry Perl from<a href="https://strawberryperl.com/" target="_blank" rel="noopener noreferrer" class="">Strawberry Perl’s official site</a>and follow the installer instructions.</p>
+<p>Download Strawberry Perl from <a href="https://strawberryperl.com/" target="_blank" rel="noopener noreferrer" class="">Strawberry Perl’s official site</a> and follow the installer instructions.</p>
 </li>
 </ul>
-<p><strong>2. Install Git</strong>(if it’s not already installed):</p>
+<p><strong>2. Install Git</strong> (if it’s not already installed):</p>
 <ul>
-<li class="">Download and install Git from<a href="https://gitforwindows.org/" target="_blank" rel="noopener noreferrer" class="">Git for Windows</a>.</li>
+<li class="">Download and install Git from <a href="https://gitforwindows.org/" target="_blank" rel="noopener noreferrer" class="">Git for Windows</a>.</li>
 </ul>
 <p><strong>3. Open Command Prompt or Git Bash</strong>.</p>
 <p><strong>4. Clone the Nikto Repository</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clone</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> https://github.com/sullo/nikto.git</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/sullo/nikto.git</span><br></div></code></pre></div></div>
 <p><strong>5. Navigate to the Nikto Directory</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> nikto/program</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd nikto/program</span><br></div></code></pre></div></div>
 <p><strong>6. Run Nikto</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">perl nikto.pl -h </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">perl nikto.pl -h &lt;target&gt;</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-macos-installation">3. macOS Installation<a href="#3-macos-installation" class="hash-link" aria-label="Direct link to 3. macOS Installation" title="Direct link to 3. macOS Installation" translate="no">​</a></h2>
 <p>macOS users also need Perl (pre-installed) and Git. For convenience, Homebrew can be used to install Nikto directly.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-by-step-installation-2">Step-by-Step Installation:<a href="#step-by-step-installation-2" class="hash-link" aria-label="Direct link to Step-by-Step Installation:" title="Direct link to Step-by-Step Installation:" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Install Homebrew</strong>(if not already installed):</p>
+<p><strong>Install Homebrew</strong> (if not already installed):</p>
 </li>
 <li class="">
 <p>Open Terminal and run:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">/bin/bash -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></div></code></pre></div></div>
 <p><strong>2. Install Nikto Using Homebrew</strong>:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">brew install nikto</span><br></div></code></pre></div></div>
 <p><strong>3. Run Nikto</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt;</span><br></div></code></pre></div></div>
 <ul>
 <li class="">Alternative Manual Installation:</li>
 </ul>
 <p>Alternatively, you can clone the Git repository like in the Linux steps:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clone</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> https://github.com/sullo/nikto.git</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> nikto/program</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">perl nikto.pl -h &lt;target&gt;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/sullo/nikto.git</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd nikto/program</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">perl nikto.pl -h &lt;target&gt;</span><br></div></code></pre></div></div>
 <p><strong>Post-Installation Check</strong>
 To ensure Nikto is installed and running correctly, use the following command to display the version:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Version</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -Version</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="usage">Usage<a href="#usage" class="hash-link" aria-label="Direct link to Usage" title="Direct link to Usage" translate="no">​</a></h2>
 <p>Basic command</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*k0LVINSaOvlMKCQnmq9y3A.png" alt="Article image" width="956" height="638" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="single-port">Single Port<a href="#single-port" class="hash-link" aria-label="Direct link to Single Port" title="Direct link to Single Port" translate="no">​</a></h3>
 <p>The most basic Nikto scan requires simply a host to target, since port 80 is assumed if none is specified. The host can either be the IP or a hostname of a machine, and is specified using the -h (-host) option. This will scan the IP 192.168.0.1 on TCP port 80:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//18.158.46.251:30540</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h http://18.158.46.251:30540</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*xGf6OexoRm6dn8803EiLXw.png" alt="Article image" width="1559" height="510" loading="lazy" decoding="async">
 <p>To check on a different port, specify the port number with the -p (-port) option. This will scan the IP 192.168.0.1 on TCP port 443:</p>
 <p><code>perl nikto.pl -h 192.168.0.1 -p 443</code></p>
 <p>Hosts, ports and protocols may also be specified by using a full URL syntax, and it will be scanned:</p>
-<p><code>perl nikto.pl -h[https://192.168.0.1:443/](https://192.168.0.1:443/)</code></p>
+<p><code>perl nikto.pl -h [https://192.168.0.1:443/](https://192.168.0.1:443/)</code></p>
 <p>There is no need to specify that port 443 is encrypted, as Nikto will first test regular HTTP and if that fails, HTTPS. If you are sure it is an SSL/TLS server, specifying -s (-ssl) very slightly will speed up the test (this is also useful for servers that respond HTTP on port 443 even though content is only served when encryption is used).</p>
 <p><code>perl nikto.pl -h 192.168.0.1 -p 443 -ssl</code></p>
 <p><strong>Multiple Ports</strong></p>
@@ -140,7 +140,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/to/config_file.conf -h &lt;target&gt;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -config /path/to/config_file.conf -h &lt;target&gt;</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-display">-Display<a href="#-display" class="hash-link" aria-label="Direct link to -Display" title="Direct link to -Display" translate="no">​</a></h3>
 <p><strong>Description</strong>: Control what gets displayed on the screen during the scan.</p>
 <ul>
@@ -150,7 +150,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <ul>
 <li class=""><strong>Example</strong>: Verbose output</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Display</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> V -h &lt;target&gt;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -Display V -h &lt;target&gt;</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*YtJubeXQjoWtJY-vJ3Ddhg.png" alt="Article image" width="767" height="822" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-dbcheck">-dbcheck<a href="#-dbcheck" class="hash-link" aria-label="Direct link to -dbcheck" title="Direct link to -dbcheck" translate="no">​</a></h3>
 <p><strong>Description</strong>: Checks the Nikto database and key files for syntax errors.</p>
@@ -165,16 +165,16 @@ To ensure Nikto is installed and running correctly, use the following command to
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -dbcheck</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*cRH4VYv7dR6BPS6VQRphLA.png" alt="Article image" width="756" height="700" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-format">-Format<a href="#-format" class="hash-link" aria-label="Direct link to -Format" title="Direct link to -Format" translate="no">​</a></h3>
-<p><strong>Description</strong>: Choose the format for the output file specified with<code>-output</code>.</p>
+<p><strong>Description</strong>: Choose the format for the output file specified with <code>-output</code>.</p>
 <ul>
 <li class="">
-<p><strong>Usage</strong>: Supported formats are<code>csv</code>,<code>html</code>,<code>txt</code>,<code>xml</code>, etc.</p>
+<p><strong>Usage</strong>: Supported formats are <code>csv</code>, <code>html</code>, <code>txt</code>, <code>xml</code>, etc.</p>
 </li>
 <li class="">
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -Format </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -output results</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.html</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -Format html -output results.html</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*TV5I5DUf1ix46Gs8Fea2Jg.png" alt="Article image" width="1092" height="888" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-help">-Help<a href="#-help" class="hash-link" aria-label="Direct link to -Help" title="Direct link to -Help" translate="no">​</a></h3>
 <p><strong>Description</strong>: Displays extended help information for Nikto.</p>
@@ -198,7 +198,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -host example.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">com</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -host example.com</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-id">-id<a href="#-id" class="hash-link" aria-label="Direct link to -id" title="Direct link to -id" translate="no">​</a></h3>
 <p><strong>Description</strong>: Provide HTTP basic authentication credentials (username</p>
 <p>).</p>
@@ -210,7 +210,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> admin:password123</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -id admin:password123</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="8--list-plugins">8. -list-plugins<a href="#8--list-plugins" class="hash-link" aria-label="Direct link to 8. -list-plugins" title="Direct link to 8. -list-plugins" translate="no">​</a></h2>
 <p><strong>Description</strong>: Lists all available plugins in Nikto.</p>
 <ul>
@@ -246,7 +246,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -nossl</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -nossl</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-no404">-no404<a href="#-no404" class="hash-link" aria-label="Direct link to -no404" title="Direct link to -no404" translate="no">​</a></h3>
 <p><strong>Description</strong>: Disables Nikto’s 404 checks, which are used to avoid false positives.</p>
 <ul>
@@ -257,7 +257,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -no404</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -no404</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-plugins">-Plugins<a href="#-plugins" class="hash-link" aria-label="Direct link to -Plugins" title="Direct link to -Plugins" translate="no">​</a></h3>
 <p><strong>Description</strong>: Specify a list of plugins to run, instead of running all plugins. By default -ALL</p>
 <ul>
@@ -268,7 +268,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Plugins myplugin1,myplugin2</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -Plugins myplugin1,myplugin2</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-port">-port<a href="#-port" class="hash-link" aria-label="Direct link to -port" title="Direct link to -port" translate="no">​</a></h3>
 <p><strong>Description</strong>: Set the port to use for the scan.</p>
 <ul>
@@ -303,7 +303,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -port 8443 -ssl</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -port 8443 -ssl</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="16--tuning">16. -Tuning<a href="#16--tuning" class="hash-link" aria-label="Direct link to 16. -Tuning" title="Direct link to 16. -Tuning" translate="no">​</a></h2>
 <p><strong>Description</strong>: Control the types of scans by category, like injection flaws or file types.</p>
 <ul>
@@ -314,9 +314,9 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -Tuning 1  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># To scan for interesting file types</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -Tuning 1  # To scan for interesting file types</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*7JyUyYII83zkviOp7x-JLQ.png" alt="Article image" width="703" height="337" loading="lazy" decoding="async">
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -Tuning 1  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># To scan for interesting file types</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -Tuning 1  # To scan for interesting file types</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-timeout">-timeout<a href="#-timeout" class="hash-link" aria-label="Direct link to -timeout" title="Direct link to -timeout" translate="no">​</a></h3>
 <p><strong>Description</strong>: Set a custom timeout for requests (default is 10 seconds).</p>
 <ul>
@@ -327,7 +327,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">timeout</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> 20</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -timeout 20</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-update">-update<a href="#-update" class="hash-link" aria-label="Direct link to -update" title="Direct link to -update" translate="no">​</a></h3>
 <p><strong>Description</strong>: Updates Nikto’s vulnerability databases and plugins from CIRT.net.</p>
 <ul>
@@ -338,7 +338,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">update</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -update</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-version">-Version<a href="#-version" class="hash-link" aria-label="Direct link to -Version" title="Direct link to -Version" translate="no">​</a></h3>
 <p><strong>Description</strong>: Print the current versions of plugins and the database.</p>
 <ul>
@@ -349,9 +349,9 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Version</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -Version</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-vhost">-vhost<a href="#-vhost" class="hash-link" aria-label="Direct link to -vhost" title="Direct link to -vhost" translate="no">​</a></h3>
-<p><strong>Description</strong>: Specify a virtual host for the<code>Host</code>header, often necessary for sites using name-based virtual hosting.</p>
+<p><strong>Description</strong>: Specify a virtual host for the <code>Host</code> header, often necessary for sites using name-based virtual hosting.</p>
 <ul>
 <li class="">
 <p><strong>Usage</strong>: Useful for targeting specific virtual hosts on a shared IP.</p>
@@ -360,7 +360,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -vhost </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sub</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.example.com</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nikto -h &lt;target&gt; -vhost sub.example.com</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="report-reading">Report reading<a href="#report-reading" class="hash-link" aria-label="Direct link to Report reading" title="Direct link to Report reading" translate="no">​</a></h2>
 <p>Reading a Nikto report effectively involves understanding its structure and interpreting the scan findings to assess the security of a web server. Here’s a breakdown of how to read a typical Nikto report and what to look for in each section.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*7UQ7IzXLHPs3_dBrtRngBA.png" alt="Article image" width="1646" height="513" loading="lazy" decoding="async">
@@ -421,7 +421,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Severity</strong>: Prioritize addressing vulnerabilities that expose sensitive files or enable unauthorized access.</p>
 </li>
 <li class="">
-<p><strong>Path Info</strong>: Use the paths in the report to verify findings manually. For example,<code>phpinfo.php</code>files should typically be removed or restricted as they expose configuration details.</p>
+<p><strong>Path Info</strong>: Use the paths in the report to verify findings manually. For example, <code>phpinfo.php</code> files should typically be removed or restricted as they expose configuration details.</p>
 </li>
 <li class="">
 <p><strong>OSVDB References</strong>: Nikto often references OSVDB (Open Source Vulnerability Database) IDs. Use these IDs to look up more details about the vulnerabilities if needed.</p>
@@ -434,7 +434,7 @@ To ensure Nikto is installed and running correctly, use the following command to
 <p><strong>Directory Listings</strong>: If directory listing is enabled, an attacker could browse files and potentially discover sensitive data.</p>
 </li>
 <li class="">
-<p><strong>Default Files/Directories</strong>: Presence of default files (e.g.,<code>/index.html</code>,<code>/admin/</code>) may indicate areas that need better access controls.</p>
+<p><strong>Default Files/Directories</strong>: Presence of default files (e.g., <code>/index.html</code>, <code>/admin/</code>) may indicate areas that need better access controls.</p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*gfWz5Y0Z_tam5gX7qX-8Fg.png" alt="Article image" width="1020" height="35" loading="lazy" decoding="async">

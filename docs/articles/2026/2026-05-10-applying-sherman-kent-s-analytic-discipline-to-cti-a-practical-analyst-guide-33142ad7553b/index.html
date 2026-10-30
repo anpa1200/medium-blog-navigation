@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -35,8 +35,8 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="estimative-language-evidence-discipline-and-analytic-integrity-for-cyber-threat-intelligence">Estimative language, evidence discipline, and analytic integrity for cyber threat intelligence<a href="#estimative-language-evidence-discipline-and-analytic-integrity-for-cyber-threat-intelligence" class="hash-link" aria-label="Direct link to Estimative language, evidence discipline, and analytic integrity for cyber threat intelligence" title="Direct link to Estimative language, evidence discipline, and analytic integrity for cyber threat intelligence" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="executive-summary">Executive Summary<a href="#executive-summary" class="hash-link" aria-label="Direct link to Executive Summary" title="Direct link to Executive Summary" translate="no">​</a></h2>
 <p>This is an analyst guide, not a formal CTI report. It does not answer a single priority intelligence requirement, assess one actor or campaign end to end, provide an IOC package, or produce a defensive detection plan. Its purpose is narrower: show how cyber threat intelligence analysts can apply Sherman Kent-style analytic discipline to public evidence without overstating what the evidence proves.</p>
-<p>Sherman Kent was one of the central figures in professionalizing U.S. intelligence analysis. His writing emphasized clear estimative language, policy relevance, analytic independence, evidence discipline, explicit uncertainty, and the separation of fact from judgment (<a href="https://www.cia.gov/resources/csi/studies-in-intelligence/archives/vol-8-no-4/words-of-estimative-probability/" target="_blank" rel="noopener noreferrer" class="">CIA, Words of Estimative Probability</a>;<a href="https://www.cia.gov/readingroom/document/cia-rdp78-04718a000600100003-3" target="_blank" rel="noopener noreferrer" class="">CIA, The Intelligence Process: A Digest from Strategic Intelligence</a>;<a href="https://www.cia.gov/resources/csi/static/Kent-Profession-Intel-Analysis.pdf" target="_blank" rel="noopener noreferrer" class="">CIA, Sherman Kent and the Profession of Intelligence Analysis</a>).</p>
-<p>This article uses**“Kent-style analytic discipline”**as shorthand for that professional tradition. It is not claiming that there is one official, codified “Sherman Kent doctrine” that directly governs modern CTI. The safer claim is that Kent’s principles are consistent with later Intelligence Community analytic standards and structured analytic technique guidance, including ICD 203 and the CIA tradecraft primer (<a href="https://www.dni.gov/files/documents/ICD/ICD-203.pdf" target="_blank" rel="noopener noreferrer" class="">ODNI, ICD 203</a>;<a href="https://www.cia.gov/resources/csi/static/Tradecraft-Primer-apr09.pdf" target="_blank" rel="noopener noreferrer" class="">CIA, A Tradecraft Primer</a>).</p>
+<p>Sherman Kent was one of the central figures in professionalizing U.S. intelligence analysis. His writing emphasized clear estimative language, policy relevance, analytic independence, evidence discipline, explicit uncertainty, and the separation of fact from judgment (<a href="https://www.cia.gov/resources/csi/studies-in-intelligence/archives/vol-8-no-4/words-of-estimative-probability/" target="_blank" rel="noopener noreferrer" class="">CIA, Words of Estimative Probability</a>; <a href="https://www.cia.gov/readingroom/document/cia-rdp78-04718a000600100003-3" target="_blank" rel="noopener noreferrer" class="">CIA, The Intelligence Process: A Digest from Strategic Intelligence</a>; <a href="https://www.cia.gov/resources/csi/static/Kent-Profession-Intel-Analysis.pdf" target="_blank" rel="noopener noreferrer" class="">CIA, Sherman Kent and the Profession of Intelligence Analysis</a>).</p>
+<p>This article uses <strong>“Kent-style analytic discipline”</strong> as shorthand for that professional tradition. It is not claiming that there is one official, codified “Sherman Kent doctrine” that directly governs modern CTI. The safer claim is that Kent’s principles are consistent with later Intelligence Community analytic standards and structured analytic technique guidance, including ICD 203 and the CIA tradecraft primer (<a href="https://www.dni.gov/files/documents/ICD/ICD-203.pdf" target="_blank" rel="noopener noreferrer" class="">ODNI, ICD 203</a>; <a href="https://www.cia.gov/resources/csi/static/Tradecraft-Primer-apr09.pdf" target="_blank" rel="noopener noreferrer" class="">CIA, A Tradecraft Primer</a>).</p>
 <p>For CTI, this matters because analysts often work from incomplete telemetry, vendor reporting, malware analysis, infrastructure links, victimology, and government attribution statements. Those evidence types do not all prove the same thing. A file hash can support a malware-family claim. A command-and-control pattern can support a campaign link. Victimology can support a targeting assessment. None of those, by itself, proves adversary intent or state tasking.</p>
 <p>This guide therefore focuses on one standard: make the reader see where evidence ends and assessment begins.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="table-of-contents">Table of Contents<a href="#table-of-contents" class="hash-link" aria-label="Direct link to Table of Contents" title="Direct link to Table of Contents" translate="no">​</a></h2>
@@ -77,50 +77,50 @@
 <p><strong>This article uses these evidence labels:</strong></p>
 <ul>
 <li class="">
-<p>**Author-observed:**directly inspected by the author. This article rarely uses this label because it is based on public reporting, not original telemetry or reverse engineering.</p>
+<p><strong>Author-observed:</strong> directly inspected by the author. This article rarely uses this label because it is based on public reporting, not original telemetry or reverse engineering.</p>
 </li>
 <li class="">
-<p>**Source-observed:**the cited source claims direct access to evidence, such as imagery, telemetry, malware samples, incident response data, or official records.</p>
+<p><strong>Source-observed:</strong> the cited source claims direct access to evidence, such as imagery, telemetry, malware samples, incident response data, or official records.</p>
 </li>
 <li class="">
-<p>**Reported:**stated by a cited source, but not independently verified here.</p>
+<p><strong>Reported:</strong> stated by a cited source, but not independently verified here.</p>
 </li>
 <li class="">
-<p>**Assessed:**analytic judgment made by a cited source.</p>
+<p><strong>Assessed:</strong> analytic judgment made by a cited source.</p>
 </li>
 <li class="">
-<p>**Inferred:**reasonable interpretation made in this article from public evidence, but not directly observed.</p>
+<p><strong>Inferred:</strong> reasonable interpretation made in this article from public evidence, but not directly observed.</p>
 </li>
 </ul>
 <p><strong>Qualifiers are tracked separately from evidence labels:</strong></p>
 <ul>
-<li class="">**Qualifier / limitation:**ambiguity, scope limit, alternate explanation, source-access constraint, or reason the evidence should not be overinterpreted.</li>
+<li class=""><strong>Qualifier / limitation:</strong> ambiguity, scope limit, alternate explanation, source-access constraint, or reason the evidence should not be overinterpreted.</li>
 </ul>
 <p><strong>Confidence attaches to a specific assessment, not to an example as a whole:</strong></p>
 <ul>
 <li class="">
-<p>**High confidence:**strong source access, strong credibility, meaningful corroboration, and a short inference chain.</p>
+<p><strong>High confidence:</strong> strong source access, strong credibility, meaningful corroboration, and a short inference chain.</p>
 </li>
 <li class="">
-<p>**Moderate confidence:**credible reporting, but incomplete visibility, limited corroboration, contested interpretation, or a longer inference chain.</p>
+<p><strong>Moderate confidence:</strong> credible reporting, but incomplete visibility, limited corroboration, contested interpretation, or a longer inference chain.</p>
 </li>
 <li class="">
-<p>**Low confidence:**plausible inference from thin, indirect, or weakly corroborated evidence.</p>
+<p><strong>Low confidence:</strong> plausible inference from thin, indirect, or weakly corroborated evidence.</p>
 </li>
 </ul>
 <p><strong>Every example uses the same four-field confidence basis:</strong></p>
 <ul>
 <li class="">
-<p>**Source access:**direct telemetry, reverse engineering, official record, government statement, vendor incident response, or secondary reporting.</p>
+<p><strong>Source access:</strong> direct telemetry, reverse engineering, official record, government statement, vendor incident response, or secondary reporting.</p>
 </li>
 <li class="">
-<p>**Source reliability:**established, unknown, contested, or mixed.</p>
+<p><strong>Source reliability:</strong> established, unknown, contested, or mixed.</p>
 </li>
 <li class="">
-<p>**Information credibility:**corroborated, single-source, inferred, or disputed.</p>
+<p><strong>Information credibility:</strong> corroborated, single-source, inferred, or disputed.</p>
 </li>
 <li class="">
-<p>**Author verification:**verified, partially verified, or not independently verified here.</p>
+<p><strong>Author verification:</strong> verified, partially verified, or not independently verified here.</p>
 </li>
 </ul>
 <p>This is still not a formal source-grading model. Operational CTI should use a more rigorous source reliability and information credibility system, especially when reporting will support security operations, legal action, executive decision-making, or public attribution.</p>
@@ -135,25 +135,25 @@
 <p>In practice, that means:</p>
 <ul>
 <li class="">
-<p>**Serve the decision, not the preference:**Intelligence should be relevant to policy or defensive decisions, but analytic judgment should not be shaped to support a preferred outcome.</p>
+<p><strong>Serve the decision, not the preference:</strong> Intelligence should be relevant to policy or defensive decisions, but analytic judgment should not be shaped to support a preferred outcome.</p>
 </li>
 <li class="">
-<p>**Separate facts from estimates:**The analyst should distinguish observed evidence from assumptions, inference, and judgment.</p>
+<p><strong>Separate facts from estimates:</strong> The analyst should distinguish observed evidence from assumptions, inference, and judgment.</p>
 </li>
 <li class="">
-<p>**Use estimative language deliberately:**Words such as “likely,” “probably,” “possible,” and “almost certainly” should communicate probability consistently rather than act as vague hedges.</p>
+<p><strong>Use estimative language deliberately:</strong> Words such as “likely,” “probably,” “possible,” and “almost certainly” should communicate probability consistently rather than act as vague hedges.</p>
 </li>
 <li class="">
-<p>**State confidence separately from probability:**A judgment can be likely but low confidence if evidence is thin. A judgment can be high confidence but still not certain.</p>
+<p><strong>State confidence separately from probability:</strong> A judgment can be likely but low confidence if evidence is thin. A judgment can be high confidence but still not certain.</p>
 </li>
 <li class="">
-<p>**Expose assumptions and alternatives:**Analysts should test what else could explain the same evidence.</p>
+<p><strong>Expose assumptions and alternatives:</strong> Analysts should test what else could explain the same evidence.</p>
 </li>
 <li class="">
-<p>**Identify collection gaps:**A good estimate says what is missing, not only what is believed.</p>
+<p><strong>Identify collection gaps:</strong> A good estimate says what is missing, not only what is believed.</p>
 </li>
 <li class="">
-<p>**Preserve analytic integrity:**Intelligence should be candid about uncertainty, source weakness, and dissent.</p>
+<p><strong>Preserve analytic integrity:</strong> Intelligence should be candid about uncertainty, source weakness, and dissent.</p>
 </li>
 </ul>
 <p>This is not a mechanical checklist. It is a writing and reasoning discipline: structure the product so the reader can audit the analytic path.</p>
@@ -162,37 +162,37 @@
 <p>Traditional national-security intelligence and CTI share the same analytic problem: decisions must be made before evidence is complete. Kent-style discipline maps well to CTI in several areas:</p>
 <ul>
 <li class="">
-<p>**Estimative language:**CTI needs disciplined wording for attribution, intent, targeting, capability, and likelihood of future activity.</p>
+<p><strong>Estimative language:</strong> CTI needs disciplined wording for attribution, intent, targeting, capability, and likelihood of future activity.</p>
 </li>
 <li class="">
-<p>**Source access:**CTI must distinguish endpoint telemetry, network logs, malware samples, sinkhole data, victim reporting, vendor clustering, government statements, and media summaries.</p>
+<p><strong>Source access:</strong> CTI must distinguish endpoint telemetry, network logs, malware samples, sinkhole data, victim reporting, vendor clustering, government statements, and media summaries.</p>
 </li>
 <li class="">
-<p>**Confidence:**CTI must explain whether confidence comes from direct artifacts, multiple independent sources, long-term tracking, or inference.</p>
+<p><strong>Confidence:</strong> CTI must explain whether confidence comes from direct artifacts, multiple independent sources, long-term tracking, or inference.</p>
 </li>
 <li class="">
-<p>**Alternative hypotheses:**CTI must test whether shared infrastructure means same actor, whether victimology means deliberate targeting, and whether malware behavior proves intent.</p>
+<p><strong>Alternative hypotheses:</strong> CTI must test whether shared infrastructure means same actor, whether victimology means deliberate targeting, and whether malware behavior proves intent.</p>
 </li>
 <li class="">
-<p>**Collection gaps:**CTI should turn uncertainty into hunt tasks, telemetry requirements, malware-analysis questions, and intelligence requirements.</p>
+<p><strong>Collection gaps:</strong> CTI should turn uncertainty into hunt tasks, telemetry requirements, malware-analysis questions, and intelligence requirements.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="but-not-everything-transfers-cleanly">But not everything transfers cleanly:<a href="#but-not-everything-transfers-cleanly" class="hash-link" aria-label="Direct link to But not everything transfers cleanly:" title="Direct link to But not everything transfers cleanly:" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**CTI evidence is often technical and perishable:**Domains, infrastructure, certificates, hashes, and telemetry can age quickly.</p>
+<p><strong>CTI evidence is often technical and perishable:</strong> Domains, infrastructure, certificates, hashes, and telemetry can age quickly.</p>
 </li>
 <li class="">
-<p>**Vendor labels are not legal attribution:**NOBELIUM, APT29, COZY BEAR, and other labels may overlap, but they are not automatically interchangeable.</p>
+<p><strong>Vendor labels are not legal attribution:</strong> NOBELIUM, APT29, COZY BEAR, and other labels may overlap, but they are not automatically interchangeable.</p>
 </li>
 <li class="">
-<p>**Visibility is uneven:**One vendor may see endpoint telemetry, another may see cloud logs, and a government source may have classified access unavailable to public readers.</p>
+<p><strong>Visibility is uneven:</strong> One vendor may see endpoint telemetry, another may see cloud logs, and a government source may have classified access unavailable to public readers.</p>
 </li>
 <li class="">
-<p>**Intent is harder than behavior:**Malware execution, credential theft, and lateral movement can be documented technically. Strategic objective usually requires assessment.</p>
+<p><strong>Intent is harder than behavior:</strong> Malware execution, credential theft, and lateral movement can be documented technically. Strategic objective usually requires assessment.</p>
 </li>
 <li class="">
-<p>**A CTI report needs a scoped question:**This article is a tradecraft guide. A real CTI report would need a PIR, key judgments, actor or campaign scope, timeline, source base, indicators, affected victims or sectors, confidence per judgment, and defensive implications.</p>
+<p><strong>A CTI report needs a scoped question:</strong> This article is a tradecraft guide. A real CTI report would need a PIR, key judgments, actor or campaign scope, timeline, source base, indicators, affected victims or sectors, confidence per judgment, and defensive implications.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-policy-relevance-without-policy-capture">1. Policy Relevance Without Policy Capture<a href="#1-policy-relevance-without-policy-capture" class="hash-link" aria-label="Direct link to 1. Policy Relevance Without Policy Capture" title="Direct link to 1. Policy Relevance Without Policy Capture" translate="no">​</a></h2>
@@ -201,56 +201,56 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-1-cuban-missile-crisis-imagery-supported-decision-making-without-replacing-policy-judgment">Example 1: Cuban Missile Crisis imagery supported decision-making without replacing policy judgment<a href="#example-1-cuban-missile-crisis-imagery-supported-decision-making-without-replacing-policy-judgment" class="hash-link" aria-label="Direct link to Example 1: Cuban Missile Crisis imagery supported decision-making without replacing policy judgment" title="Direct link to Example 1: Cuban Missile Crisis imagery supported decision-making without replacing policy judgment" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**October 1962 imagery narrowed uncertainty about Soviet offensive missile deployment in Cuba, but did not determine the U.S. policy response.</p>
+<p><strong>Claim:</strong> October 1962 imagery narrowed uncertainty about Soviet offensive missile deployment in Cuba, but did not determine the U.S. policy response.</p>
 </li>
 <li class="">
-<p>**Evidence:**U.S. historical records describe a U-2 flight on October 14, 1962 and subsequent photo interpretation that identified Soviet MRBM sites under construction.</p>
+<p><strong>Evidence:</strong> U.S. historical records describe a U-2 flight on October 14, 1962 and subsequent photo interpretation that identified Soviet MRBM sites under construction.</p>
 </li>
 <li class="">
-<p>**Source access:**Official historical records and archival imagery; reported in U.S. government records, not author-observed here.</p>
+<p><strong>Source access:</strong> Official historical records and archival imagery; reported in U.S. government records, not author-observed here.</p>
 </li>
 <li class="">
-<p>**Assessment:**This is a strong national-security example of policy-relevant intelligence: evidence clarified the threat, while the response remained a policy decision.</p>
+<p><strong>Assessment:</strong> This is a strong national-security example of policy-relevant intelligence: evidence clarified the threat, while the response remained a policy decision.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High.</p>
+<p><strong>Confidence in assessment:</strong> High.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: official records and archival imagery; Source reliability: established; Information credibility: corroborated; Author verification: public records checked, original imagery not independently analyzed here.</p>
+<p><strong>Confidence basis:</strong> Source access: official records and archival imagery; Source reliability: established; Information credibility: corroborated; Author verification: public records checked, original imagery not independently analyzed here.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://history.state.gov/historicaldocuments/frus1961-63v11/d16" target="_blank" rel="noopener noreferrer" class="">Office of the Historian, FRUS chronology</a>;<a href="https://www.archives.gov/milestone-documents/aerial-photograph-of-missiles-in-cuba" target="_blank" rel="noopener noreferrer" class="">National Archives, Aerial Photograph of Missiles in Cuba</a>.</p>
+<p><strong>Sources:</strong> <a href="https://history.state.gov/historicaldocuments/frus1961-63v11/d16" target="_blank" rel="noopener noreferrer" class="">Office of the Historian, FRUS chronology</a>; <a href="https://www.archives.gov/milestone-documents/aerial-photograph-of-missiles-in-cuba" target="_blank" rel="noopener noreferrer" class="">National Archives, Aerial Photograph of Missiles in Cuba</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**This is not a CTI case. It is used because the evidence-to-decision structure is directly relevant to CTI reporting.</p>
+<p><strong>Qualifier / limitation:</strong> This is not a CTI case. It is used because the evidence-to-decision structure is directly relevant to CTI reporting.</p>
 </li>
 </ul>
 <p>The CTI translation is straightforward: a malware sample, intrusion timeline, or cloud log can narrow uncertainty, but it does not automatically decide whether the organization should disclose publicly, isolate a business unit, attribute the incident, or notify regulators.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-2-the-2007-iran-nie-decomposed-a-broad-question-into-narrower-judgments">Example 2: The 2007 Iran NIE decomposed a broad question into narrower judgments<a href="#example-2-the-2007-iran-nie-decomposed-a-broad-question-into-narrower-judgments" class="hash-link" aria-label="Direct link to Example 2: The 2007 Iran NIE decomposed a broad question into narrower judgments" title="Direct link to Example 2: The 2007 Iran NIE decomposed a broad question into narrower judgments" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**The 2007 Iran NIE separated several analytic questions — weaponization, enrichment, intent, and future capability — instead of treating “Iran’s nuclear program” as one indivisible judgment.</p>
+<p><strong>Claim:</strong> The 2007 Iran NIE separated several analytic questions — weaponization, enrichment, intent, and future capability — instead of treating “Iran’s nuclear program” as one indivisible judgment.</p>
 </li>
 <li class="">
-<p>**Evidence:**The declassified NIE uses differentiated judgments and confidence levels across related nuclear questions.</p>
+<p><strong>Evidence:</strong> The declassified NIE uses differentiated judgments and confidence levels across related nuclear questions.</p>
 </li>
 <li class="">
-<p>**Source access:**Public declassified key judgments; reported by ODNI, not author-observed classified sourcing.</p>
+<p><strong>Source access:</strong> Public declassified key judgments; reported by ODNI, not author-observed classified sourcing.</p>
 </li>
 <li class="">
-<p>**Assessment:**The product is a useful example of decomposing a broad question into narrower estimative judgments.</p>
+<p><strong>Assessment:</strong> The product is a useful example of decomposing a broad question into narrower estimative judgments.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High for the decomposition claim; low for any claim about policy effect unless separately sourced.</p>
+<p><strong>Confidence in assessment:</strong> High for the decomposition claim; low for any claim about policy effect unless separately sourced.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: declassified ODNI key judgments; Source reliability: established; Information credibility: primary public document; Author verification: public text checked, classified sourcing not available.</p>
+<p><strong>Confidence basis:</strong> Source access: declassified ODNI key judgments; Source reliability: established; Information credibility: primary public document; Author verification: public text checked, classified sourcing not available.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://www.dni.gov/files/documents/Newsroom/Reports%20and%20Pubs/20071203_release.pdf" target="_blank" rel="noopener noreferrer" class="">ODNI, Iran: Nuclear Intentions and Capabilities</a>;<a href="https://www.cia.gov/resources/csi/books-monographs/cia-support-to-policymakers-the-2007-nie-on-irans-nuclear-intentions-and-capabilities/" target="_blank" rel="noopener noreferrer" class="">CIA CSI, 2007 NIE on Iran</a>.</p>
+<p><strong>Sources:</strong> <a href="https://www.dni.gov/files/documents/Newsroom/Reports%20and%20Pubs/20071203_release.pdf" target="_blank" rel="noopener noreferrer" class="">ODNI, Iran: Nuclear Intentions and Capabilities</a>; <a href="https://www.cia.gov/resources/csi/books-monographs/cia-support-to-policymakers-the-2007-nie-on-irans-nuclear-intentions-and-capabilities/" target="_blank" rel="noopener noreferrer" class="">CIA CSI, 2007 NIE on Iran</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**This article does not assess whether the NIE changed policy. It only uses the public product to show disciplined decomposition of judgments.</p>
+<p><strong>Qualifier / limitation:</strong> This article does not assess whether the NIE changed policy. It only uses the public product to show disciplined decomposition of judgments.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-facts-assumptions-and-judgments">2. Facts, Assumptions, and Judgments<a href="#2-facts-assumptions-and-judgments" class="hash-link" aria-label="Direct link to 2. Facts, Assumptions, and Judgments" title="Direct link to 2. Facts, Assumptions, and Judgments" translate="no">​</a></h2>
@@ -259,92 +259,92 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-1-iraq-wmd-analysis-shows-the-risk-of-assumption-driven-certainty">Example 1: Iraq WMD analysis shows the risk of assumption-driven certainty<a href="#example-1-iraq-wmd-analysis-shows-the-risk-of-assumption-driven-certainty" class="hash-link" aria-label="Direct link to Example 1: Iraq WMD analysis shows the risk of assumption-driven certainty" title="Direct link to Example 1: Iraq WMD analysis shows the risk of assumption-driven certainty" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**The Iraq WMD case is a negative example of insufficiently disciplined separation between evidence, assumptions, and judgment.</p>
+<p><strong>Claim:</strong> The Iraq WMD case is a negative example of insufficiently disciplined separation between evidence, assumptions, and judgment.</p>
 </li>
 <li class="">
-<p>**Evidence:**The WMD Commission identified weak collection, analytic errors, and failure to make clear how much analysis rested on assumptions rather than strong evidence.</p>
+<p><strong>Evidence:</strong> The WMD Commission identified weak collection, analytic errors, and failure to make clear how much analysis rested on assumptions rather than strong evidence.</p>
 </li>
 <li class="">
-<p>**Source access:**Official retrospective commission reporting; reported, not author-observed original intelligence.</p>
+<p><strong>Source access:</strong> Official retrospective commission reporting; reported, not author-observed original intelligence.</p>
 </li>
 <li class="">
-<p>**Assessment:**The Kent-style lesson is that historical behavior and concealment indicators should not be converted into current capability judgments without showing the inference chain.</p>
+<p><strong>Assessment:</strong> The Kent-style lesson is that historical behavior and concealment indicators should not be converted into current capability judgments without showing the inference chain.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High for the official finding of intelligence failure; moderate for the article’s specific “assumption-driven certainty” framing.</p>
+<p><strong>Confidence in assessment:</strong> High for the official finding of intelligence failure; moderate for the article’s specific “assumption-driven certainty” framing.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: official retrospective commission reporting; Source reliability: established; Information credibility: corroborated for broad failure, interpreted for this article’s lesson framing; Author verification: public report checked, original intelligence not available.</p>
+<p><strong>Confidence basis:</strong> Source access: official retrospective commission reporting; Source reliability: established; Information credibility: corroborated for broad failure, interpreted for this article’s lesson framing; Author verification: public report checked, original intelligence not available.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://govinfo.library.unt.edu/wmd/report/index.html" target="_blank" rel="noopener noreferrer" class="">WMD Commission report index</a>;<a href="https://govinfo.library.unt.edu/wmd/report/transmittal_letter.html" target="_blank" rel="noopener noreferrer" class="">WMD Commission transmittal letter</a>;<a href="https://www.govinfo.gov/content/pkg/GPO-WMD/pdf/GPO-WMD.pdf" target="_blank" rel="noopener noreferrer" class="">GPO WMD Commission PDF</a>.</p>
+<p><strong>Sources:</strong> <a href="https://govinfo.library.unt.edu/wmd/report/index.html" target="_blank" rel="noopener noreferrer" class="">WMD Commission report index</a>; <a href="https://govinfo.library.unt.edu/wmd/report/transmittal_letter.html" target="_blank" rel="noopener noreferrer" class="">WMD Commission transmittal letter</a>; <a href="https://www.govinfo.gov/content/pkg/GPO-WMD/pdf/GPO-WMD.pdf" target="_blank" rel="noopener noreferrer" class="">GPO WMD Commission PDF</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**The Iraq case is not a CTI case. It is included because it is a canonical warning about assumptions, source weakness, and overconfident estimates.</p>
+<p><strong>Qualifier / limitation:</strong> The Iraq case is not a CTI case. It is included because it is a canonical warning about assumptions, source weakness, and overconfident estimates.</p>
 </li>
 </ul>
 <p><strong>Correct Kent-style wording would separate:</strong></p>
 <ul>
 <li class="">
-<p>**Reported:**Iraq had historical WMD programs and had previously concealed activity.</p>
+<p><strong>Reported:</strong> Iraq had historical WMD programs and had previously concealed activity.</p>
 </li>
 <li class="">
-<p>**Reported:**sources and technical indicators were interpreted as suggesting renewed activity.</p>
+<p><strong>Reported:</strong> sources and technical indicators were interpreted as suggesting renewed activity.</p>
 </li>
 <li class="">
-<p>**Assumed:**past concealment behavior implied possible continuing programs.</p>
+<p><strong>Assumed:</strong> past concealment behavior implied possible continuing programs.</p>
 </li>
 <li class="">
-<p>**Assessed:**Iraq retained or reconstituted WMD capabilities.</p>
+<p><strong>Assessed:</strong> Iraq retained or reconstituted WMD capabilities.</p>
 </li>
 <li class="">
-<p>**Collection gap:**direct, reliable access to current program status was limited.</p>
+<p><strong>Collection gap:</strong> direct, reliable access to current program status was limited.</p>
 </li>
 </ul>
 <p>The failure mode is converting “the regime has concealed WMD before” into “the regime currently has active WMD programs” without making the inferential jump visible enough.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-2-solarwinds-analysis-required-separating-technical-fact-from-attribution-judgment">Example 2: SolarWinds analysis required separating technical fact from attribution judgment<a href="#example-2-solarwinds-analysis-required-separating-technical-fact-from-attribution-judgment" class="hash-link" aria-label="Direct link to Example 2: SolarWinds analysis required separating technical fact from attribution judgment" title="Direct link to Example 2: SolarWinds analysis required separating technical fact from attribution judgment" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**SolarWinds reporting should distinguish technical supply-chain compromise from actor attribution and strategic intent.</p>
+<p><strong>Claim:</strong> SolarWinds reporting should distinguish technical supply-chain compromise from actor attribution and strategic intent.</p>
 </li>
 <li class="">
-<p>**Evidence:**CISA reported malicious code inserted into the SolarWinds software lifecycle; CrowdStrike analyzed SUNSPOT’s role in manipulating the build process.</p>
+<p><strong>Evidence:</strong> CISA reported malicious code inserted into the SolarWinds software lifecycle; CrowdStrike analyzed SUNSPOT’s role in manipulating the build process.</p>
 </li>
 <li class="">
-<p>**Source access:**CISA-reported government advisory and CrowdStrike-reported technical analysis; not author-observed here.</p>
+<p><strong>Source access:</strong> CISA-reported government advisory and CrowdStrike-reported technical analysis; not author-observed here.</p>
 </li>
 <li class="">
-<p>**Assessment:**The technical compromise, vendor cluster labels, government attribution, and intent assessment should be written as separate claims.</p>
+<p><strong>Assessment:</strong> The technical compromise, vendor cluster labels, government attribution, and intent assessment should be written as separate claims.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High.</p>
+<p><strong>Confidence in assessment:</strong> High.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: government advisory and vendor technical analysis; Source reliability: established; Information credibility: corroborated for supply-chain compromise; Author verification: public reports checked, no independent reverse engineering here.</p>
+<p><strong>Confidence basis:</strong> Source access: government advisory and vendor technical analysis; Source reliability: established; Information credibility: corroborated for supply-chain compromise; Author verification: public reports checked, no independent reverse engineering here.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a" target="_blank" rel="noopener noreferrer" class="">CISA AA20–352A</a>;<a href="https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/" target="_blank" rel="noopener noreferrer" class="">CrowdStrike, SUNSPOT</a>.</p>
+<p><strong>Sources:</strong> <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a" target="_blank" rel="noopener noreferrer" class="">CISA AA20–352A</a>; <a href="https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/" target="_blank" rel="noopener noreferrer" class="">CrowdStrike, SUNSPOT</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**Public reporting can support strong technical conclusions while still leaving parts of attribution and intent dependent on non-public evidence.</p>
+<p><strong>Qualifier / limitation:</strong> Public reporting can support strong technical conclusions while still leaving parts of attribution and intent dependent on non-public evidence.</p>
 </li>
 </ul>
 <p><strong>Kent-style separation:</strong></p>
 <ul>
 <li class="">
-<p>**Technical behavior:**malicious Orion component inserted into build/update lifecycle.</p>
+<p><strong>Technical behavior:</strong> malicious Orion component inserted into build/update lifecycle.</p>
 </li>
 <li class="">
-<p>**Tooling:**SUNSPOT and SUNBURST.</p>
+<p><strong>Tooling:</strong> SUNSPOT and SUNBURST.</p>
 </li>
 <li class="">
-<p>**Vendor/government label:**NOBELIUM, StellarParticle, APT29-style community labels depending on source.</p>
+<p><strong>Vendor/government label:</strong> NOBELIUM, StellarParticle, APT29-style community labels depending on source.</p>
 </li>
 <li class="">
-<p>**Attribution:**assessed responsibility by governments or vendors.</p>
+<p><strong>Attribution:</strong> assessed responsibility by governments or vendors.</p>
 </li>
 <li class="">
-<p>**Intent:**assessed intelligence collection or access objective.</p>
+<p><strong>Intent:</strong> assessed intelligence collection or access objective.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-estimative-probability-language">3. Estimative Probability Language<a href="#3-estimative-probability-language" class="hash-link" aria-label="Direct link to 3. Estimative Probability Language" title="Direct link to 3. Estimative Probability Language" translate="no">​</a></h2>
@@ -353,28 +353,28 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-1-apt28-attribution-should-preserve-source-confidence">Example 1: APT28 attribution should preserve source confidence<a href="#example-1-apt28-attribution-should-preserve-source-confidence" class="hash-link" aria-label="Direct link to Example 1: APT28 attribution should preserve source confidence" title="Direct link to Example 1: APT28 attribution should preserve source confidence" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**Public APT28 attribution language should preserve the source’s estimative wording.</p>
+<p><strong>Claim:</strong> Public APT28 attribution language should preserve the source’s estimative wording.</p>
 </li>
 <li class="">
-<p>**Evidence:**The linked Google Cloud/Mandiant blog says FireEye assessed APT28 was most likely sponsored by the Russian government and targeted information useful to government interests. Older or fuller Mandiant/FireEye reporting may use different confidence phrasing, so analysts should preserve the exact wording of the specific source they cite.</p>
+<p><strong>Evidence:</strong> The linked Google Cloud/Mandiant blog says FireEye assessed APT28 was most likely sponsored by the Russian government and targeted information useful to government interests. Older or fuller Mandiant/FireEye reporting may use different confidence phrasing, so analysts should preserve the exact wording of the specific source they cite.</p>
 </li>
 <li class="">
-<p>**Source access:**Vendor reporting based on proprietary analysis; exact source base not fully available to public readers.</p>
+<p><strong>Source access:</strong> Vendor reporting based on proprietary analysis; exact source base not fully available to public readers.</p>
 </li>
 <li class="">
-<p><strong>Assessment:</strong>“The cited Google Cloud/Mandiant blog says FireEye assessed APT28 was most likely sponsored by the Russian government” is stronger tradecraft than writing “APT28 is proven to be Russia.”</p>
+<p><strong>Assessment:</strong> “The cited Google Cloud/Mandiant blog says FireEye assessed APT28 was most likely sponsored by the Russian government” is stronger tradecraft than writing “APT28 is proven to be Russia.”</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High for the wording recommendation; moderate for public evaluation of the underlying sponsorship claim.</p>
+<p><strong>Confidence in assessment:</strong> High for the wording recommendation; moderate for public evaluation of the underlying sponsorship claim.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: vendor reporting based on proprietary analysis; Source reliability: established vendor; Information credibility: credible but not fully public; Author verification: linked blog wording checked, underlying evidence not independently verified.</p>
+<p><strong>Confidence basis:</strong> Source access: vendor reporting based on proprietary analysis; Source reliability: established vendor; Information credibility: credible but not fully public; Author verification: linked blog wording checked, underlying evidence not independently verified.</p>
 </li>
 <li class="">
-<p><strong>Source:</strong><a href="https://cloud.google.com/blog/topics/threat-intelligence/apt28-a-window-into-russias-cyber-espionage-operations" target="_blank" rel="noopener noreferrer" class="">Google Cloud / Mandiant, APT28</a>.</p>
+<p><strong>Source:</strong> <a href="https://cloud.google.com/blog/topics/threat-intelligence/apt28-a-window-into-russias-cyber-espionage-operations" target="_blank" rel="noopener noreferrer" class="">Google Cloud / Mandiant, APT28</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**Vendor attribution can be credible without being fully independently auditable from public evidence.</p>
+<p><strong>Qualifier / limitation:</strong> Vendor attribution can be credible without being fully independently auditable from public evidence.</p>
 </li>
 </ul>
 <p><strong>Kent-style wording:</strong></p>
@@ -393,28 +393,28 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-2-2007-iran-nie-showed-probability-and-confidence-in-the-same-product">Example 2: 2007 Iran NIE showed probability and confidence in the same product<a href="#example-2-2007-iran-nie-showed-probability-and-confidence-in-the-same-product" class="hash-link" aria-label="Direct link to Example 2: 2007 Iran NIE showed probability and confidence in the same product" title="Direct link to Example 2: 2007 Iran NIE showed probability and confidence in the same product" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**The 2007 Iran NIE is a useful example of stating confidence levels across separate judgments.</p>
+<p><strong>Claim:</strong> The 2007 Iran NIE is a useful example of stating confidence levels across separate judgments.</p>
 </li>
 <li class="">
-<p>**Evidence:**The declassified NIE differentiates judgments about halted weaponization, enrichment, intent, and future decisions.</p>
+<p><strong>Evidence:</strong> The declassified NIE differentiates judgments about halted weaponization, enrichment, intent, and future decisions.</p>
 </li>
 <li class="">
-<p>**Source access:**Public declassified key judgments; original classified evidence not available here.</p>
+<p><strong>Source access:</strong> Public declassified key judgments; original classified evidence not available here.</p>
 </li>
 <li class="">
-<p>**Assessment:**The product demonstrates why broad topics should be decomposed into narrower estimates with separate uncertainty.</p>
+<p><strong>Assessment:</strong> The product demonstrates why broad topics should be decomposed into narrower estimates with separate uncertainty.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High.</p>
+<p><strong>Confidence in assessment:</strong> High.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: declassified ODNI key judgments; Source reliability: established; Information credibility: primary public document; Author verification: public text checked, classified sourcing not available.</p>
+<p><strong>Confidence basis:</strong> Source access: declassified ODNI key judgments; Source reliability: established; Information credibility: primary public document; Author verification: public text checked, classified sourcing not available.</p>
 </li>
 <li class="">
-<p><strong>Source:</strong><a href="https://www.dni.gov/files/documents/Newsroom/Reports%20and%20Pubs/20071203_release.pdf" target="_blank" rel="noopener noreferrer" class="">ODNI, Iran NIE</a>.</p>
+<p><strong>Source:</strong> <a href="https://www.dni.gov/files/documents/Newsroom/Reports%20and%20Pubs/20071203_release.pdf" target="_blank" rel="noopener noreferrer" class="">ODNI, Iran NIE</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**Confidence language is not a guarantee of truth. It is a statement about evidentiary strength and analytic basis at the time of the estimate.</p>
+<p><strong>Qualifier / limitation:</strong> Confidence language is not a guarantee of truth. It is a statement about evidentiary strength and analytic basis at the time of the estimate.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-confidence-is-not-probability">4. Confidence Is Not Probability<a href="#4-confidence-is-not-probability" class="hash-link" aria-label="Direct link to 4. Confidence Is Not Probability" title="Direct link to 4. Confidence Is Not Probability" translate="no">​</a></h2>
@@ -423,28 +423,28 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-1-iraq-wmd-showed-that-high-confidence-judgments-can-still-be-wrong">Example 1: Iraq WMD showed that high-confidence judgments can still be wrong<a href="#example-1-iraq-wmd-showed-that-high-confidence-judgments-can-still-be-wrong" class="hash-link" aria-label="Direct link to Example 1: Iraq WMD showed that high-confidence judgments can still be wrong" title="Direct link to Example 1: Iraq WMD showed that high-confidence judgments can still be wrong" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**High confidence does not guarantee analytic accuracy if the source base and assumptions are weak.</p>
+<p><strong>Claim:</strong> High confidence does not guarantee analytic accuracy if the source base and assumptions are weak.</p>
 </li>
 <li class="">
-<p>**Evidence:**Official retrospective reporting found major problems in prewar Iraq WMD assessments, including unsupported or overstated judgments.</p>
+<p><strong>Evidence:</strong> Official retrospective reporting found major problems in prewar Iraq WMD assessments, including unsupported or overstated judgments.</p>
 </li>
 <li class="">
-<p>**Source access:**Official retrospective investigations and public reporting.</p>
+<p><strong>Source access:</strong> Official retrospective investigations and public reporting.</p>
 </li>
 <li class="">
-<p>**Assessment:**The case shows why confidence statements must identify source quality, access, corroboration, and assumption sensitivity.</p>
+<p><strong>Assessment:</strong> The case shows why confidence statements must identify source quality, access, corroboration, and assumption sensitivity.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High.</p>
+<p><strong>Confidence in assessment:</strong> High.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: official retrospective investigations; Source reliability: established; Information credibility: corroborated for failure finding; Author verification: public reports checked, original intelligence not available.</p>
+<p><strong>Confidence basis:</strong> Source access: official retrospective investigations; Source reliability: established; Information credibility: corroborated for failure finding; Author verification: public reports checked, original intelligence not available.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://www.govinfo.gov/content/pkg/GPO-WMD/pdf/GPO-WMD.pdf" target="_blank" rel="noopener noreferrer" class="">WMD Commission report</a>;<a href="https://www.globalsecurity.org/intell/library/congress/2004_rpt/iraq-wmd_intell_09jul2004_conclusions.htm" target="_blank" rel="noopener noreferrer" class="">Senate Select Committee conclusions via GlobalSecurity mirror</a>.</p>
+<p><strong>Sources:</strong> <a href="https://www.govinfo.gov/content/pkg/GPO-WMD/pdf/GPO-WMD.pdf" target="_blank" rel="noopener noreferrer" class="">WMD Commission report</a>; <a href="https://www.globalsecurity.org/intell/library/congress/2004_rpt/iraq-wmd_intell_09jul2004_conclusions.htm" target="_blank" rel="noopener noreferrer" class="">Senate Select Committee conclusions via GlobalSecurity mirror</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**This does not mean confidence language is useless. It means confidence must be earned and explained.</p>
+<p><strong>Qualifier / limitation:</strong> This does not mean confidence language is useless. It means confidence must be earned and explained.</p>
 </li>
 </ul>
 <p><strong>Kent-style analysts should ask:</strong></p>
@@ -468,28 +468,28 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-2-cti-malware-behavior-can-be-high-confidence-while-intent-remains-moderate-confidence">Example 2: CTI malware behavior can be high confidence while intent remains moderate confidence<a href="#example-2-cti-malware-behavior-can-be-high-confidence-while-intent-remains-moderate-confidence" class="hash-link" aria-label="Direct link to Example 2: CTI malware behavior can be high confidence while intent remains moderate confidence" title="Direct link to Example 2: CTI malware behavior can be high confidence while intent remains moderate confidence" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**A CTI product can have high confidence in technical behavior and lower confidence in actor intent.</p>
+<p><strong>Claim:</strong> A CTI product can have high confidence in technical behavior and lower confidence in actor intent.</p>
 </li>
 <li class="">
-<p>**Evidence:**Mandiant reporting ties WannaCry to SMBv1/TCP 445 propagation and EternalBlue/MS17–010 exploitation. The U.S. Department of Justice later alleged that a North Korean regime-backed programmer connected to Lazarus Group activity participated in creating the malware used in the WannaCry 2.0 attack.</p>
+<p><strong>Evidence:</strong> Mandiant reporting ties WannaCry to SMBv1/TCP 445 propagation and EternalBlue/MS17–010 exploitation. The U.S. Department of Justice later alleged that a North Korean regime-backed programmer connected to Lazarus Group activity participated in creating the malware used in the WannaCry 2.0 attack.</p>
 </li>
 <li class="">
-<p>**Source access:**Mandiant malware analysis reported technical behavior; DOJ charged/alleged DPRK-linked involvement and provided public attribution material; not author-observed here.</p>
+<p><strong>Source access:</strong> Mandiant malware analysis reported technical behavior; DOJ charged/alleged DPRK-linked involvement and provided public attribution material; not author-observed here.</p>
 </li>
 <li class="">
-<p>**Assessment:**Analysts should assign separate confidence to malware behavior, actor clustering, government attribution, and intent. Government attribution does not remove the need to distinguish technical behavior from strategic motivation.</p>
+<p><strong>Assessment:</strong> Analysts should assign separate confidence to malware behavior, actor clustering, government attribution, and intent. Government attribution does not remove the need to distinguish technical behavior from strategic motivation.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High.</p>
+<p><strong>Confidence in assessment:</strong> High.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: Mandiant malware analysis and DOJ charging/public attribution material; Source reliability: established; Information credibility: high for SMB/MS17–010 behavior, established public government attribution exists, inferred for intent and internal tasking; Author verification: public reporting checked, no independent malware analysis here.</p>
+<p><strong>Confidence basis:</strong> Source access: Mandiant malware analysis and DOJ charging/public attribution material; Source reliability: established; Information credibility: high for SMB/MS17–010 behavior, established public government attribution exists, inferred for intent and internal tasking; Author verification: public reporting checked, no independent malware analysis here.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://cloud.google.com/blog/topics/threat-intelligence/wannacry-malware-profile" target="_blank" rel="noopener noreferrer" class="">Mandiant, WannaCry malware profile</a>;<a href="https://cloud.google.com/blog/topics/threat-intelligence/smb-exploited-wannacry-use-of-eternalblue/" target="_blank" rel="noopener noreferrer" class="">Mandiant, WannaCry use of EternalBlue</a>;<a href="https://www.justice.gov/archives/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-cyber-attacks-and" target="_blank" rel="noopener noreferrer" class="">DOJ, North Korean regime-backed programmer charged</a>.</p>
+<p><strong>Sources:</strong> <a href="https://cloud.google.com/blog/topics/threat-intelligence/wannacry-malware-profile" target="_blank" rel="noopener noreferrer" class="">Mandiant, WannaCry malware profile</a>; <a href="https://cloud.google.com/blog/topics/threat-intelligence/smb-exploited-wannacry-use-of-eternalblue/" target="_blank" rel="noopener noreferrer" class="">Mandiant, WannaCry use of EternalBlue</a>; <a href="https://www.justice.gov/archives/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-cyber-attacks-and" target="_blank" rel="noopener noreferrer" class="">DOJ, North Korean regime-backed programmer charged</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**This article does not independently adjudicate the DPRK/Lazarus attribution. It uses the case to show how post-attribution CTI should still separate behavior, attribution, and intent.</p>
+<p><strong>Qualifier / limitation:</strong> This article does not independently adjudicate the DPRK/Lazarus attribution. It uses the case to show how post-attribution CTI should still separate behavior, attribution, and intent.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-alternative-hypotheses">5. Alternative Hypotheses<a href="#5-alternative-hypotheses" class="hash-link" aria-label="Direct link to 5. Alternative Hypotheses" title="Direct link to 5. Alternative Hypotheses" translate="no">​</a></h2>
@@ -498,82 +498,82 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-1-911-warning-failure-showed-the-cost-of-narrow-imagination">Example 1: 9/11 warning failure showed the cost of narrow imagination<a href="#example-1-911-warning-failure-showed-the-cost-of-narrow-imagination" class="hash-link" aria-label="Direct link to Example 1: 9/11 warning failure showed the cost of narrow imagination" title="Direct link to Example 1: 9/11 warning failure showed the cost of narrow imagination" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**The 9/11 case illustrates why warning analysis needs alternative hypotheses before a threat becomes obvious in hindsight.</p>
+<p><strong>Claim:</strong> The 9/11 case illustrates why warning analysis needs alternative hypotheses before a threat becomes obvious in hindsight.</p>
 </li>
 <li class="">
-<p>**Evidence:**The 9/11 Commission identified failures of imagination, policy, capabilities, and management.</p>
+<p><strong>Evidence:</strong> The 9/11 Commission identified failures of imagination, policy, capabilities, and management.</p>
 </li>
 <li class="">
-<p>**Source access:**Official retrospective commission reporting.</p>
+<p><strong>Source access:</strong> Official retrospective commission reporting.</p>
 </li>
 <li class="">
-<p>**Assessment:**A warning product should test competing explanations for fragmentary indicators, including low-frequency but high-impact possibilities.</p>
+<p><strong>Assessment:</strong> A warning product should test competing explanations for fragmentary indicators, including low-frequency but high-impact possibilities.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High for the broad warning lesson; moderate for any reconstructed pre-attack hypothesis set.</p>
+<p><strong>Confidence in assessment:</strong> High for the broad warning lesson; moderate for any reconstructed pre-attack hypothesis set.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: official retrospective commission reporting; Source reliability: established; Information credibility: corroborated for broad failure categories, illustrative for reconstructed hypotheses; Author verification: public report checked.</p>
+<p><strong>Confidence basis:</strong> Source access: official retrospective commission reporting; Source reliability: established; Information credibility: corroborated for broad failure categories, illustrative for reconstructed hypotheses; Author verification: public report checked.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://www.9-11commission.gov/report/911Report.pdf" target="_blank" rel="noopener noreferrer" class="">9/11 Commission Report PDF</a>;<a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/911-commission-report-executive-summary" target="_blank" rel="noopener noreferrer" class="">Office of Justice Programs summary</a>.</p>
+<p><strong>Sources:</strong> <a href="https://www.9-11commission.gov/report/911Report.pdf" target="_blank" rel="noopener noreferrer" class="">9/11 Commission Report PDF</a>; <a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/911-commission-report-executive-summary" target="_blank" rel="noopener noreferrer" class="">Office of Justice Programs summary</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**Hindsight makes patterns look cleaner than they appeared at the time. The goal is humility and better warning structure, not retrospective certainty.</p>
+<p><strong>Qualifier / limitation:</strong> Hindsight makes patterns look cleaner than they appeared at the time. The goal is humility and better warning structure, not retrospective certainty.</p>
 </li>
 </ul>
 <p><strong>Possible analytic frame before the attack:</strong></p>
 <ul>
 <li class="">
-<p>**H1:**Al-Qaida intended overseas attacks against U.S. interests.</p>
+<p><strong>H1:</strong> Al-Qaida intended overseas attacks against U.S. interests.</p>
 </li>
 <li class="">
-<p>**H2:**Al-Qaida intended a major attack inside the United States.</p>
+<p><strong>H2:</strong> Al-Qaida intended a major attack inside the United States.</p>
 </li>
 <li class="">
-<p>**H3:**Al-Qaida intended aviation-related operations, but the exact target and method were unknown.</p>
+<p><strong>H3:</strong> Al-Qaida intended aviation-related operations, but the exact target and method were unknown.</p>
 </li>
 <li class="">
-<p>**Discrimination:**travel patterns, flight training, visa anomalies, financial movement, communications, and detainee reporting could have been evaluated as indicators across hypotheses.</p>
+<p><strong>Discrimination:</strong> travel patterns, flight training, visa anomalies, financial movement, communications, and detainee reporting could have been evaluated as indicators across hypotheses.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-2-notpetya-intent-remains-an-assessed-judgment">Example 2: NotPetya intent remains an assessed judgment<a href="#example-2-notpetya-intent-remains-an-assessed-judgment" class="hash-link" aria-label="Direct link to Example 2: NotPetya intent remains an assessed judgment" title="Direct link to Example 2: NotPetya intent remains an assessed judgment" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**NotPetya’s destructive effect is easier to establish publicly than the operators’ internal intent.</p>
+<p><strong>Claim:</strong> NotPetya’s destructive effect is easier to establish publicly than the operators’ internal intent.</p>
 </li>
 <li class="">
-<p>**Evidence:**Microsoft reported destructive behavior and enterprise spread; Cisco Talos reported M.E.Doc infrastructure manipulation connected to the outbreak. The UK and U.S. governments publicly attributed NotPetya to the Russian government or Russian military in February 2018, and DOJ later charged GRU Unit 74455 officers in connection with NotPetya and other destructive operations.</p>
+<p><strong>Evidence:</strong> Microsoft reported destructive behavior and enterprise spread; Cisco Talos reported M.E.Doc infrastructure manipulation connected to the outbreak. The UK and U.S. governments publicly attributed NotPetya to the Russian government or Russian military in February 2018, and DOJ later charged GRU Unit 74455 officers in connection with NotPetya and other destructive operations.</p>
 </li>
 <li class="">
-<p>**Source access:**Vendor technical analysis, incident reporting, and public government attribution statements.</p>
+<p><strong>Source access:</strong> Vendor technical analysis, incident reporting, and public government attribution statements.</p>
 </li>
 <li class="">
-<p>**Assessment:**Destructive effect should be reported separately from strategic intent even after public government attribution exists.</p>
+<p><strong>Assessment:</strong> Destructive effect should be reported separately from strategic intent even after public government attribution exists.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High for destructive effect; moderate for specific intent claims.</p>
+<p><strong>Confidence in assessment:</strong> High for destructive effect; moderate for specific intent claims.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: vendor technical reporting and government attribution statements; Source reliability: established; Information credibility: corroborated for destructive effect, public attribution strengthens actor context, internal intent remains inferred; Author verification: public reports checked, no original telemetry review.</p>
+<p><strong>Confidence basis:</strong> Source access: vendor technical reporting and government attribution statements; Source reliability: established; Information credibility: corroborated for destructive effect, public attribution strengthens actor context, internal intent remains inferred; Author verification: public reports checked, no original telemetry review.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://www.microsoft.com/security/blog/2017/10/03/advanced-threat-analytics-security-research-network-technical-analysis-notpetya/" target="_blank" rel="noopener noreferrer" class="">Microsoft, NotPetya technical analysis</a>;<a href="https://blogs.cisco.com/security/talos/the-medoc-connection" target="_blank" rel="noopener noreferrer" class="">Cisco Talos, The MeDoc Connection</a>;<a href="https://www.gov.uk/government/news/foreign-office-minister-condemns-russia-for-notpetya-attacks" target="_blank" rel="noopener noreferrer" class="">UK Government, Foreign Office Minister condemns Russia for NotPetya</a>;<a href="https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/" target="_blank" rel="noopener noreferrer" class="">White House, Statement from the Press Secretary</a>;<a href="https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and" target="_blank" rel="noopener noreferrer" class="">DOJ, Six Russian GRU officers charged</a>.</p>
+<p><strong>Sources:</strong> <a href="https://www.microsoft.com/security/blog/2017/10/03/advanced-threat-analytics-security-research-network-technical-analysis-notpetya/" target="_blank" rel="noopener noreferrer" class="">Microsoft, NotPetya technical analysis</a>; <a href="https://blogs.cisco.com/security/talos/the-medoc-connection" target="_blank" rel="noopener noreferrer" class="">Cisco Talos, The MeDoc Connection</a>; <a href="https://www.gov.uk/government/news/foreign-office-minister-condemns-russia-for-notpetya-attacks" target="_blank" rel="noopener noreferrer" class="">UK Government, Foreign Office Minister condemns Russia for NotPetya</a>; <a href="https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/" target="_blank" rel="noopener noreferrer" class="">White House, Statement from the Press Secretary</a>; <a href="https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and" target="_blank" rel="noopener noreferrer" class="">DOJ, Six Russian GRU officers charged</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**Public attribution strengthens the actor context, but it still does not expose every internal objective, command decision, or intended propagation boundary.</p>
+<p><strong>Qualifier / limitation:</strong> Public attribution strengthens the actor context, but it still does not expose every internal objective, command decision, or intended propagation boundary.</p>
 </li>
 </ul>
 <p><strong>Alternative hypotheses:</strong></p>
 <ul>
 <li class="">
-<p>**H1:**NotPetya was designed as a destructive state operation using ransomware aesthetics as cover.</p>
+<p><strong>H1:</strong> NotPetya was designed as a destructive state operation using ransomware aesthetics as cover.</p>
 </li>
 <li class="">
-<p>**H2:**NotPetya was designed primarily for Ukraine-focused disruption but propagated more broadly than intended.</p>
+<p><strong>H2:</strong> NotPetya was designed primarily for Ukraine-focused disruption but propagated more broadly than intended.</p>
 </li>
 <li class="">
-<p>**H3:**The ransomware presentation reflected mixed objectives or operational cover rather than a pure financial motive.</p>
+<p><strong>H3:</strong> The ransomware presentation reflected mixed objectives or operational cover rather than a pure financial motive.</p>
 </li>
 </ul>
 <p>The evidence strongly supports destructive effect. It does not publicly prove the internal decision process behind the operation.</p>
@@ -583,28 +583,28 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-1-cuban-missile-crisis-warning-depended-on-collection-timing-and-imagery-interpretation">Example 1: Cuban Missile Crisis warning depended on collection timing and imagery interpretation<a href="#example-1-cuban-missile-crisis-warning-depended-on-collection-timing-and-imagery-interpretation" class="hash-link" aria-label="Direct link to Example 1: Cuban Missile Crisis warning depended on collection timing and imagery interpretation" title="Direct link to Example 1: Cuban Missile Crisis warning depended on collection timing and imagery interpretation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**The Cuban Missile Crisis shows how warning changes as collection improves.</p>
+<p><strong>Claim:</strong> The Cuban Missile Crisis shows how warning changes as collection improves.</p>
 </li>
 <li class="">
-<p>**Evidence:**Official records describe the October 14, 1962 U-2 mission, subsequent photo interpretation, and identification of MRBM sites under construction.</p>
+<p><strong>Evidence:</strong> Official records describe the October 14, 1962 U-2 mission, subsequent photo interpretation, and identification of MRBM sites under construction.</p>
 </li>
 <li class="">
-<p>**Source access:**Official records and imagery references.</p>
+<p><strong>Source access:</strong> Official records and imagery references.</p>
 </li>
 <li class="">
-<p>**Assessment:**Before imagery confirmation, the problem was warning under uncertainty; after imagery, the problem became site status, operational timeline, Soviet intent, and escalation risk.</p>
+<p><strong>Assessment:</strong> Before imagery confirmation, the problem was warning under uncertainty; after imagery, the problem became site status, operational timeline, Soviet intent, and escalation risk.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High.</p>
+<p><strong>Confidence in assessment:</strong> High.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: official records and imagery references; Source reliability: established; Information credibility: corroborated; Author verification: public records checked.</p>
+<p><strong>Confidence basis:</strong> Source access: official records and imagery references; Source reliability: established; Information credibility: corroborated; Author verification: public records checked.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://history.state.gov/historicaldocuments/frus1961-63v11/d16" target="_blank" rel="noopener noreferrer" class="">Office of the Historian, FRUS chronology</a>;<a href="https://www.dia.mil/News-Features/Photo-Gallery/igphoto/2000948884/" target="_blank" rel="noopener noreferrer" class="">DIA photo record</a>.</p>
+<p><strong>Sources:</strong> <a href="https://history.state.gov/historicaldocuments/frus1961-63v11/d16" target="_blank" rel="noopener noreferrer" class="">Office of the Historian, FRUS chronology</a>; <a href="https://www.dia.mil/News-Features/Photo-Gallery/igphoto/2000948884/" target="_blank" rel="noopener noreferrer" class="">DIA photo record</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**This is a national-security warning example, not a CTI intrusion case.</p>
+<p><strong>Qualifier / limitation:</strong> This is a national-security warning example, not a CTI intrusion case.</p>
 </li>
 </ul>
 <p><strong>Kent-style warning questions:</strong></p>
@@ -628,28 +628,28 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-2-solarwinds-exposed-a-collection-gap-in-trusted-software-supply-chains">Example 2: SolarWinds exposed a collection gap in trusted software supply chains<a href="#example-2-solarwinds-exposed-a-collection-gap-in-trusted-software-supply-chains" class="hash-link" aria-label="Direct link to Example 2: SolarWinds exposed a collection gap in trusted software supply chains" title="Direct link to Example 2: SolarWinds exposed a collection gap in trusted software supply chains" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**SolarWinds showed that trusted software updates can create visibility gaps not solved by ordinary IOC matching.</p>
+<p><strong>Claim:</strong> SolarWinds showed that trusted software updates can create visibility gaps not solved by ordinary IOC matching.</p>
 </li>
 <li class="">
-<p>**Evidence:**CISA and CrowdStrike reporting describe malicious code inserted into a trusted software build and update process.</p>
+<p><strong>Evidence:</strong> CISA and CrowdStrike reporting describe malicious code inserted into a trusted software build and update process.</p>
 </li>
 <li class="">
-<p>**Source access:**Government advisory and vendor technical analysis.</p>
+<p><strong>Source access:</strong> Government advisory and vendor technical analysis.</p>
 </li>
 <li class="">
-<p>**Assessment:**The collection gap included build integrity, signed software provenance, vendor trust relationships, and anomalous post-update behavior.</p>
+<p><strong>Assessment:</strong> The collection gap included build integrity, signed software provenance, vendor trust relationships, and anomalous post-update behavior.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High for the SolarWinds-specific gap; moderate for generalizing across all software supply-chain risk.</p>
+<p><strong>Confidence in assessment:</strong> High for the SolarWinds-specific gap; moderate for generalizing across all software supply-chain risk.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: government advisory and vendor technical analysis; Source reliability: established; Information credibility: corroborated for SolarWinds compromise mechanism, inferred for broader supply-chain lessons; Author verification: public reports checked.</p>
+<p><strong>Confidence basis:</strong> Source access: government advisory and vendor technical analysis; Source reliability: established; Information credibility: corroborated for SolarWinds compromise mechanism, inferred for broader supply-chain lessons; Author verification: public reports checked.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a" target="_blank" rel="noopener noreferrer" class="">CISA AA20–352A</a>;<a href="https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/" target="_blank" rel="noopener noreferrer" class="">CrowdStrike, SUNSPOT</a>.</p>
+<p><strong>Sources:</strong> <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a" target="_blank" rel="noopener noreferrer" class="">CISA AA20–352A</a>; <a href="https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/" target="_blank" rel="noopener noreferrer" class="">CrowdStrike, SUNSPOT</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**A supply-chain compromise does not imply every similar vendor relationship is equally exposed.</p>
+<p><strong>Qualifier / limitation:</strong> A supply-chain compromise does not imply every similar vendor relationship is equally exposed.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-analytic-integrity-in-cti">7. Analytic Integrity in CTI<a href="#7-analytic-integrity-in-cti" class="hash-link" aria-label="Direct link to 7. Analytic Integrity in CTI" title="Direct link to 7. Analytic Integrity in CTI" translate="no">​</a></h2>
@@ -658,88 +658,88 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-1-apt1-victimology-supports-targeting-assessment-not-observed-reconnaissance">Example 1: APT1 victimology supports targeting assessment, not observed reconnaissance<a href="#example-1-apt1-victimology-supports-targeting-assessment-not-observed-reconnaissance" class="hash-link" aria-label="Direct link to Example 1: APT1 victimology supports targeting assessment, not observed reconnaissance" title="Direct link to Example 1: APT1 victimology supports targeting assessment, not observed reconnaissance" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**APT1 victimology supports a target-selection assessment, but does not directly prove specific reconnaissance methods.</p>
+<p><strong>Claim:</strong> APT1 victimology supports a target-selection assessment, but does not directly prove specific reconnaissance methods.</p>
 </li>
 <li class="">
-<p>**Evidence:**Mandiant reported that APT1 compromised at least 141 organizations across many industries and tied the victimology to Chinese strategic priorities.</p>
+<p><strong>Evidence:</strong> Mandiant reported that APT1 compromised at least 141 organizations across many industries and tied the victimology to Chinese strategic priorities.</p>
 </li>
 <li class="">
-<p>**Source access:**Vendor incident response and technical reporting; public readers do not see the full underlying evidence.</p>
+<p><strong>Source access:</strong> Vendor incident response and technical reporting; public readers do not see the full underlying evidence.</p>
 </li>
 <li class="">
-<p>**Assessment:**Victimology supports deliberate campaign-level targeting, while individual intrusion reconnaissance remains a collection gap unless separate evidence exists.</p>
+<p><strong>Assessment:</strong> Victimology supports deliberate campaign-level targeting, while individual intrusion reconnaissance remains a collection gap unless separate evidence exists.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**Moderate.</p>
+<p><strong>Confidence in assessment:</strong> Moderate.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: vendor incident response reporting; Source reliability: established vendor; Information credibility: credible but limited public raw data; Author verification: public report checked, underlying case data not available.</p>
+<p><strong>Confidence basis:</strong> Source access: vendor incident response reporting; Source reliability: established vendor; Information credibility: credible but limited public raw data; Author verification: public report checked, underlying case data not available.</p>
 </li>
 <li class="">
-<p><strong>Source:</strong><a href="https://www.mandiant.com/sites/default/files/2021-09/mandiant-apt1-report.pdf" target="_blank" rel="noopener noreferrer" class="">Mandiant, APT1 report</a>.</p>
+<p><strong>Source:</strong> <a href="https://www.mandiant.com/sites/default/files/2021-09/mandiant-apt1-report.pdf" target="_blank" rel="noopener noreferrer" class="">Mandiant, APT1 report</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**Victimology alignment is not proof of tasking or pre-compromise research for each victim.</p>
+<p><strong>Qualifier / limitation:</strong> Victimology alignment is not proof of tasking or pre-compromise research for each victim.</p>
 </li>
 </ul>
 <p><strong>Kent-style wording:</strong></p>
 <ul>
 <li class="">
-<p>**Reported:**APT1 compromised a large victim set across multiple sectors.</p>
+<p><strong>Reported:</strong> APT1 compromised a large victim set across multiple sectors.</p>
 </li>
 <li class="">
-<p>**Assessed by source:**Victim sectors aligned with strategic economic and policy interests.</p>
+<p><strong>Assessed by source:</strong> Victim sectors aligned with strategic economic and policy interests.</p>
 </li>
 <li class="">
-<p>**Inferred by this article:**The campaign likely involved deliberate target selection.</p>
+<p><strong>Inferred by this article:</strong> The campaign likely involved deliberate target selection.</p>
 </li>
 <li class="">
-<p>**Collection gap:**The exact reconnaissance method before each intrusion is not directly shown by victimology alone.</p>
+<p><strong>Collection gap:</strong> The exact reconnaissance method before each intrusion is not directly shown by victimology alone.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-2-sunburst-goldmax-sibot-and-stellarparticle-should-not-be-flattened-into-one-label">Example 2: SUNBURST, GoldMax, Sibot, and StellarParticle should not be flattened into one label<a href="#example-2-sunburst-goldmax-sibot-and-stellarparticle-should-not-be-flattened-into-one-label" class="hash-link" aria-label="Direct link to Example 2: SUNBURST, GoldMax, Sibot, and StellarParticle should not be flattened into one label" title="Direct link to Example 2: SUNBURST, GoldMax, Sibot, and StellarParticle should not be flattened into one label" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Claim:**SolarWinds-related reporting requires careful separation of malware, tools, vendor clusters, campaign names, attribution, and intent.</p>
+<p><strong>Claim:</strong> SolarWinds-related reporting requires careful separation of malware, tools, vendor clusters, campaign names, attribution, and intent.</p>
 </li>
 <li class="">
-<p>**Evidence:**Microsoft described GoldMax, GoldFinder, and Sibot as later-stage NOBELIUM tools; CrowdStrike used StellarParticle for related follow-on intrusion activity.</p>
+<p><strong>Evidence:</strong> Microsoft described GoldMax, GoldFinder, and Sibot as later-stage NOBELIUM tools; CrowdStrike used StellarParticle for related follow-on intrusion activity.</p>
 </li>
 <li class="">
-<p>**Source access:**Vendor technical analysis based on proprietary telemetry and incident response.</p>
+<p><strong>Source access:</strong> Vendor technical analysis based on proprietary telemetry and incident response.</p>
 </li>
 <li class="">
-<p>**Assessment:**Treating SUNBURST, SUNSPOT, GoldMax, Sibot, NOBELIUM, StellarParticle, APT29, and COZY BEAR as interchangeable would collapse different analytic layers.</p>
+<p><strong>Assessment:</strong> Treating SUNBURST, SUNSPOT, GoldMax, Sibot, NOBELIUM, StellarParticle, APT29, and COZY BEAR as interchangeable would collapse different analytic layers.</p>
 </li>
 <li class="">
-<p>**Confidence in assessment:**High.</p>
+<p><strong>Confidence in assessment:</strong> High.</p>
 </li>
 <li class="">
-<p>**Confidence basis:**Source access: vendor technical reporting; Source reliability: established vendors; Information credibility: credible and label-specific; Author verification: public reports checked, cross-vendor clustering not independently verified.</p>
+<p><strong>Confidence basis:</strong> Source access: vendor technical reporting; Source reliability: established vendors; Information credibility: credible and label-specific; Author verification: public reports checked, cross-vendor clustering not independently verified.</p>
 </li>
 <li class="">
-<p><strong>Sources:</strong><a href="https://www.microsoft.com/en-us/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/" target="_blank" rel="noopener noreferrer" class="">Microsoft, GoldMax, GoldFinder, and Sibot</a>;<a href="https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/" target="_blank" rel="noopener noreferrer" class="">CrowdStrike, StellarParticle observations</a>.</p>
+<p><strong>Sources:</strong> <a href="https://www.microsoft.com/en-us/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/" target="_blank" rel="noopener noreferrer" class="">Microsoft, GoldMax, GoldFinder, and Sibot</a>; <a href="https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/" target="_blank" rel="noopener noreferrer" class="">CrowdStrike, StellarParticle observations</a>.</p>
 </li>
 <li class="">
-<p>**Qualifier / limitation:**Cross-vendor clustering may be valid, but it should be stated as an assessment with evidence, not assumed from name proximity.</p>
+<p><strong>Qualifier / limitation:</strong> Cross-vendor clustering may be valid, but it should be stated as an assessment with evidence, not assumed from name proximity.</p>
 </li>
 </ul>
 <p><strong>Kent-style separation:</strong></p>
 <ul>
 <li class="">
-<p>**Malware/tool:**SUNBURST, SUNSPOT, GoldMax, GoldFinder, Sibot.</p>
+<p><strong>Malware/tool:</strong> SUNBURST, SUNSPOT, GoldMax, GoldFinder, Sibot.</p>
 </li>
 <li class="">
-<p>**Vendor cluster:**NOBELIUM, StellarParticle, APT29-style community labels.</p>
+<p><strong>Vendor cluster:</strong> NOBELIUM, StellarParticle, APT29-style community labels.</p>
 </li>
 <li class="">
-<p>**Campaign:**SolarWinds-related intrusion activity.</p>
+<p><strong>Campaign:</strong> SolarWinds-related intrusion activity.</p>
 </li>
 <li class="">
-<p>**Attribution:**assessed state-linked responsibility.</p>
+<p><strong>Attribution:</strong> assessed state-linked responsibility.</p>
 </li>
 <li class="">
-<p>**Intent:**intelligence collection, access development, or other objectives.</p>
+<p><strong>Intent:</strong> intelligence collection, access development, or other objectives.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cognitive-biases-cti-analysts-should-name">Cognitive Biases CTI Analysts Should Name<a href="#cognitive-biases-cti-analysts-should-name" class="hash-link" aria-label="Direct link to Cognitive Biases CTI Analysts Should Name" title="Direct link to Cognitive Biases CTI Analysts Should Name" translate="no">​</a></h2>
@@ -748,19 +748,19 @@
 <p><strong>Common CTI bias patterns:</strong></p>
 <ul>
 <li class="">
-<p>**Confirmation bias:**treating every new domain, malware string, or infrastructure overlap as support for the actor hypothesis already in the analyst’s head.</p>
+<p><strong>Confirmation bias:</strong> treating every new domain, malware string, or infrastructure overlap as support for the actor hypothesis already in the analyst’s head.</p>
 </li>
 <li class="">
-<p>**Anchoring:**giving too much weight to the first vendor label or first incident-response theory, even after better evidence appears.</p>
+<p><strong>Anchoring:</strong> giving too much weight to the first vendor label or first incident-response theory, even after better evidence appears.</p>
 </li>
 <li class="">
-<p>**Mirror imaging:**assuming the adversary values risk, cost, publicity, or operational tempo the same way the defender does.</p>
+<p><strong>Mirror imaging:</strong> assuming the adversary values risk, cost, publicity, or operational tempo the same way the defender does.</p>
 </li>
 <li class="">
-<p>**Availability bias:**over-weighting the most recent high-profile campaign because it is memorable, not because it best explains the evidence.</p>
+<p><strong>Availability bias:</strong> over-weighting the most recent high-profile campaign because it is memorable, not because it best explains the evidence.</p>
 </li>
 <li class="">
-<p>**Groupthink:**converging on a shared attribution label because peer teams or trusted vendors use it, without separately testing the underlying evidence.</p>
+<p><strong>Groupthink:</strong> converging on a shared attribution label because peer teams or trusted vendors use it, without separately testing the underlying evidence.</p>
 </li>
 </ul>
 <p>Structured analytic techniques are useful because they force friction into the analysis. Alternative hypotheses, key assumptions checks, evidence matrices, and premortems are not bureaucratic decoration; they are bias controls. In CTI, the most practical bias check is simple: before publishing an attribution, write down the strongest evidence against it.</p>
@@ -770,22 +770,22 @@
 <p><strong>Kent-style discipline does not replace these frameworks. It tells analysts how to write about them:</strong></p>
 <ul>
 <li class="">
-<p>**Hash, IP, domain:**usually source-observed or reported technical indicators; useful but often perishable and weak for attribution.</p>
+<p><strong>Hash, IP, domain:</strong> usually source-observed or reported technical indicators; useful but often perishable and weak for attribution.</p>
 </li>
 <li class="">
-<p>**Host or network artifact:**stronger than a raw IOC when tied to execution context, but still may not identify an actor.</p>
+<p><strong>Host or network artifact:</strong> stronger than a raw IOC when tied to execution context, but still may not identify an actor.</p>
 </li>
 <li class="">
-<p>**ATT&amp;CK technique:**a behavioral claim. It should be mapped only when evidence supports the behavior, not because a malware family is commonly associated with the technique.</p>
+<p><strong>ATT&amp;CK technique:</strong> a behavioral claim. It should be mapped only when evidence supports the behavior, not because a malware family is commonly associated with the technique.</p>
 </li>
 <li class="">
-<p>**Tool:**stronger than a hash when supported by reverse engineering, but tool reuse and leaks can complicate attribution.</p>
+<p><strong>Tool:</strong> stronger than a hash when supported by reverse engineering, but tool reuse and leaks can complicate attribution.</p>
 </li>
 <li class="">
-<p>**TTP pattern:**stronger for clustering when repeated across time, victims, infrastructure, and tooling.</p>
+<p><strong>TTP pattern:</strong> stronger for clustering when repeated across time, victims, infrastructure, and tooling.</p>
 </li>
 <li class="">
-<p>**Actor attribution and intent:**assessed judgments. ATT&amp;CK mapping can support them, but does not prove them by itself.</p>
+<p><strong>Actor attribution and intent:</strong> assessed judgments. ATT&amp;CK mapping can support them, but does not prove them by itself.</p>
 </li>
 </ul>
 <p>Example: “The intrusion used credential dumping” is a technique-level claim. “This was APT28” is an attribution claim. “The objective was strategic intelligence collection” is an intent claim. They need different evidence and different confidence statements.</p>
@@ -794,53 +794,53 @@
 <img src="https://cdn-images-1.medium.com/max/800/1*kZv6tiN5XkW8yiGJzvSiSA.png" alt="Article image" width="1536" height="1024" loading="lazy" decoding="async">
 <ul>
 <li class="">
-<p>**Question:**What decision or intelligence requirement does this answer?</p>
+<p><strong>Question:</strong> What decision or intelligence requirement does this answer?</p>
 </li>
 <li class="">
-<p>**Claim:**What exactly are you asserting?</p>
+<p><strong>Claim:</strong> What exactly are you asserting?</p>
 </li>
 <li class="">
-<p>**Evidence:**What is source-observed, reported, assessed, or inferred?</p>
+<p><strong>Evidence:</strong> What is source-observed, reported, assessed, or inferred?</p>
 </li>
 <li class="">
-<p>**Source access:**Did the source have telemetry, malware samples, logs, imagery, victim access, official records, or secondhand reporting?</p>
+<p><strong>Source access:</strong> Did the source have telemetry, malware samples, logs, imagery, victim access, official records, or secondhand reporting?</p>
 </li>
 <li class="">
-<p>**Source reliability:**Is the source established, unknown, contested, or mixed?</p>
+<p><strong>Source reliability:</strong> Is the source established, unknown, contested, or mixed?</p>
 </li>
 <li class="">
-<p>**Information credibility:**Is the information corroborated, single-source, inferred, or disputed?</p>
+<p><strong>Information credibility:</strong> Is the information corroborated, single-source, inferred, or disputed?</p>
 </li>
 <li class="">
-<p>**Author verification:**What did you personally verify?</p>
+<p><strong>Author verification:</strong> What did you personally verify?</p>
 </li>
 <li class="">
-<p>**Assumptions:**What must be true for the judgment to hold?</p>
+<p><strong>Assumptions:</strong> What must be true for the judgment to hold?</p>
 </li>
 <li class="">
-<p>**Probability:**How likely is the judgment?</p>
+<p><strong>Probability:</strong> How likely is the judgment?</p>
 </li>
 <li class="">
-<p>**Confidence:**How strong is the evidence base?</p>
+<p><strong>Confidence:</strong> How strong is the evidence base?</p>
 </li>
 <li class="">
-<p>**Alternatives:**What else could explain the same evidence?</p>
+<p><strong>Alternatives:</strong> What else could explain the same evidence?</p>
 </li>
 <li class="">
-<p>**Discrimination:**What evidence would separate the hypotheses?</p>
+<p><strong>Discrimination:</strong> What evidence would separate the hypotheses?</p>
 </li>
 <li class="">
-<p>**Gaps:**What do we still not know?</p>
+<p><strong>Gaps:</strong> What do we still not know?</p>
 </li>
 <li class="">
-<p>**Dissent:**Are there credible disagreements or minority views?</p>
+<p><strong>Dissent:</strong> Are there credible disagreements or minority views?</p>
 </li>
 <li class="">
-<p>**Change indicators:**What would cause the assessment to change?</p>
+<p><strong>Change indicators:</strong> What would cause the assessment to change?</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="practical-analyst-template">Practical Analyst Template<a href="#practical-analyst-template" class="hash-link" aria-label="Direct link to Practical Analyst Template" title="Direct link to Practical Analyst Template" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Product title:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Primary intelligence requirement:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Decision context:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Analyst:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Date:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Bottom line:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Assessment:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Probability language:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Confidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Scope and time horizon:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Claim:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Exact claim:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">What this claim does not say:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Evidence base:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Author-observed:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source-observed:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Reported:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Assessed by source:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Inferred by analyst:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source quality:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source access:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source reliability:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Information credibility:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Corroboration:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Author verification:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Assumptions:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Assumption 1:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Assumption 2:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Assumption sensitivity:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Alternative hypotheses:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">H1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(primary):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">H2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(alternative):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">H3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(alternative,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">needed):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Discriminating evidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Current preferred hypothesis and why:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Confidence basis:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Collection strength:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Collection weakness:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Analytic uncertainty:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Dissent or caveats:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Collection requirements:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Requirement 1:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Requirement 2:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Requirement 3:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Indicators to watch:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Indicator that would increase confidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Indicator that would decrease confidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Indicator that would change the assessment:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Defensive or policy implications:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Tactical:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Operational:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Strategic:</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Product title:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Primary intelligence requirement:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Decision context:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Analyst:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Date:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Bottom line:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Assessment:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Probability language:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Confidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Scope and time horizon:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Claim:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Exact claim:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- What this claim does not say:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Evidence base:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Author-observed:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Source-observed:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Reported:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Assessed by source:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Inferred by analyst:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Source quality:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Source access:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Source reliability:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Information credibility:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Corroboration:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Author verification:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Assumptions:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Assumption 1:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Assumption 2:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Assumption sensitivity:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Alternative hypotheses:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- H1 (primary):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- H2 (alternative):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- H3 (alternative, if needed):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Discriminating evidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Current preferred hypothesis and why:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Confidence basis:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Collection strength:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Collection weakness:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Analytic uncertainty:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Dissent or caveats:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Collection requirements:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Requirement 1:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Requirement 2:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Requirement 3:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Indicators to watch:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Indicator that would increase confidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Indicator that would decrease confidence:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Indicator that would change the assessment:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Defensive or policy implications:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Tactical:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Operational:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Strategic:</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
 <p>Sherman Kent’s analytic legacy is not a historical curiosity. It is a practical discipline for writing intelligence under uncertainty. For CTI analysts, the lesson is especially important because cyber reporting routinely combines artifacts, telemetry, malware names, infrastructure links, vendor clusters, government statements, victimology, attribution, and intent.</p>
 <p>The real-world examples show why the discipline matters:</p>
@@ -871,114 +871,114 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>CIA, Sherman Kent, Words of Estimative Probability:<a href="https://www.cia.gov/resources/csi/studies-in-intelligence/archives/vol-8-no-4/words-of-estimative-probability/" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/studies-in-intelligence/archives/vol-8-no-4/words-of-estimative-probability/</a></p>
+<p>CIA, Sherman Kent, Words of Estimative Probability: <a href="https://www.cia.gov/resources/csi/studies-in-intelligence/archives/vol-8-no-4/words-of-estimative-probability/" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/studies-in-intelligence/archives/vol-8-no-4/words-of-estimative-probability/</a></p>
 </li>
 <li class="">
-<p>CIA, Words of Estimative Probability PDF:<a href="https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf</a></p>
+<p>CIA, Words of Estimative Probability PDF: <a href="https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf</a></p>
 </li>
 <li class="">
-<p>CIA, The Intelligence Process: A Digest from Strategic Intelligence by Sherman Kent:<a href="https://www.cia.gov/readingroom/document/cia-rdp78-04718a000600100003-3" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/readingroom/document/cia-rdp78-04718a000600100003-3</a></p>
+<p>CIA, The Intelligence Process: A Digest from Strategic Intelligence by Sherman Kent: <a href="https://www.cia.gov/readingroom/document/cia-rdp78-04718a000600100003-3" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/readingroom/document/cia-rdp78-04718a000600100003-3</a></p>
 </li>
 <li class="">
-<p>CIA, Sherman Kent and the Profession of Intelligence Analysis:<a href="https://www.cia.gov/resources/csi/static/Kent-Profession-Intel-Analysis.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/static/Kent-Profession-Intel-Analysis.pdf</a></p>
+<p>CIA, Sherman Kent and the Profession of Intelligence Analysis: <a href="https://www.cia.gov/resources/csi/static/Kent-Profession-Intel-Analysis.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/static/Kent-Profession-Intel-Analysis.pdf</a></p>
 </li>
 <li class="">
-<p>ODNI, Intelligence Community Directive 203: Analytic Standards:<a href="https://www.dni.gov/files/documents/ICD/ICD-203.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.dni.gov/files/documents/ICD/ICD-203.pdf</a></p>
+<p>ODNI, Intelligence Community Directive 203: Analytic Standards: <a href="https://www.dni.gov/files/documents/ICD/ICD-203.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.dni.gov/files/documents/ICD/ICD-203.pdf</a></p>
 </li>
 <li class="">
-<p>CIA, A Tradecraft Primer: Structured Analytic Techniques for Improving Intelligence Analysis:<a href="https://www.cia.gov/resources/csi/static/Tradecraft-Primer-apr09.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/static/Tradecraft-Primer-apr09.pdf</a></p>
+<p>CIA, A Tradecraft Primer: Structured Analytic Techniques for Improving Intelligence Analysis: <a href="https://www.cia.gov/resources/csi/static/Tradecraft-Primer-apr09.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/static/Tradecraft-Primer-apr09.pdf</a></p>
 </li>
 <li class="">
-<p>Office of the Historian, Cuban Missile Crisis chronology and U-2 collection:<a href="https://history.state.gov/historicaldocuments/frus1961-63v11/d16" target="_blank" rel="noopener noreferrer" class="">https://history.state.gov/historicaldocuments/frus1961-63v11/d16</a></p>
+<p>Office of the Historian, Cuban Missile Crisis chronology and U-2 collection: <a href="https://history.state.gov/historicaldocuments/frus1961-63v11/d16" target="_blank" rel="noopener noreferrer" class="">https://history.state.gov/historicaldocuments/frus1961-63v11/d16</a></p>
 </li>
 <li class="">
-<p>National Archives, Aerial Photograph of Missiles in Cuba:<a href="https://www.archives.gov/milestone-documents/aerial-photograph-of-missiles-in-cuba" target="_blank" rel="noopener noreferrer" class="">https://www.archives.gov/milestone-documents/aerial-photograph-of-missiles-in-cuba</a></p>
+<p>National Archives, Aerial Photograph of Missiles in Cuba: <a href="https://www.archives.gov/milestone-documents/aerial-photograph-of-missiles-in-cuba" target="_blank" rel="noopener noreferrer" class="">https://www.archives.gov/milestone-documents/aerial-photograph-of-missiles-in-cuba</a></p>
 </li>
 <li class="">
-<p>DIA, Cuban Missile Crisis U-2 photo record:<a href="https://www.dia.mil/News-Features/Photo-Gallery/igphoto/2000948884/" target="_blank" rel="noopener noreferrer" class="">https://www.dia.mil/News-Features/Photo-Gallery/igphoto/2000948884/</a></p>
+<p>DIA, Cuban Missile Crisis U-2 photo record: <a href="https://www.dia.mil/News-Features/Photo-Gallery/igphoto/2000948884/" target="_blank" rel="noopener noreferrer" class="">https://www.dia.mil/News-Features/Photo-Gallery/igphoto/2000948884/</a></p>
 </li>
 <li class="">
-<p>WMD Commission report index:<a href="https://govinfo.library.unt.edu/wmd/report/index.html" target="_blank" rel="noopener noreferrer" class="">https://govinfo.library.unt.edu/wmd/report/index.html</a></p>
+<p>WMD Commission report index: <a href="https://govinfo.library.unt.edu/wmd/report/index.html" target="_blank" rel="noopener noreferrer" class="">https://govinfo.library.unt.edu/wmd/report/index.html</a></p>
 </li>
 <li class="">
-<p>WMD Commission report PDF:<a href="https://www.govinfo.gov/content/pkg/GPO-WMD/pdf/GPO-WMD.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.govinfo.gov/content/pkg/GPO-WMD/pdf/GPO-WMD.pdf</a></p>
+<p>WMD Commission report PDF: <a href="https://www.govinfo.gov/content/pkg/GPO-WMD/pdf/GPO-WMD.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.govinfo.gov/content/pkg/GPO-WMD/pdf/GPO-WMD.pdf</a></p>
 </li>
 <li class="">
-<p>WMD Commission transmittal letter:<a href="https://govinfo.library.unt.edu/wmd/report/transmittal_letter.html" target="_blank" rel="noopener noreferrer" class="">https://govinfo.library.unt.edu/wmd/report/transmittal_letter.html</a></p>
+<p>WMD Commission transmittal letter: <a href="https://govinfo.library.unt.edu/wmd/report/transmittal_letter.html" target="_blank" rel="noopener noreferrer" class="">https://govinfo.library.unt.edu/wmd/report/transmittal_letter.html</a></p>
 </li>
 <li class="">
-<p>Senate Select Committee conclusions on Iraq WMD intelligence via GlobalSecurity mirror:<a href="https://www.globalsecurity.org/intell/library/congress/2004_rpt/iraq-wmd_intell_09jul2004_conclusions.htm" target="_blank" rel="noopener noreferrer" class="">https://www.globalsecurity.org/intell/library/congress/2004_rpt/iraq-wmd_intell_09jul2004_conclusions.htm</a></p>
+<p>Senate Select Committee conclusions on Iraq WMD intelligence via GlobalSecurity mirror: <a href="https://www.globalsecurity.org/intell/library/congress/2004_rpt/iraq-wmd_intell_09jul2004_conclusions.htm" target="_blank" rel="noopener noreferrer" class="">https://www.globalsecurity.org/intell/library/congress/2004_rpt/iraq-wmd_intell_09jul2004_conclusions.htm</a></p>
 </li>
 <li class="">
-<p>9/11 Commission Report PDF:<a href="https://www.9-11commission.gov/report/911Report.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.9-11commission.gov/report/911Report.pdf</a></p>
+<p>9/11 Commission Report PDF: <a href="https://www.9-11commission.gov/report/911Report.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.9-11commission.gov/report/911Report.pdf</a></p>
 </li>
 <li class="">
-<p>Office of Justice Programs, 9/11 Commission Report summary:<a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/911-commission-report-executive-summary" target="_blank" rel="noopener noreferrer" class="">https://www.ojp.gov/ncjrs/virtual-library/abstracts/911-commission-report-executive-summary</a></p>
+<p>Office of Justice Programs, 9/11 Commission Report summary: <a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/911-commission-report-executive-summary" target="_blank" rel="noopener noreferrer" class="">https://www.ojp.gov/ncjrs/virtual-library/abstracts/911-commission-report-executive-summary</a></p>
 </li>
 <li class="">
-<p>ODNI, Iran: Nuclear Intentions and Capabilities, 2007 NIE:<a href="https://www.dni.gov/files/documents/Newsroom/Reports%20and%20Pubs/20071203_release.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.dni.gov/files/documents/Newsroom/Reports%20and%20Pubs/20071203_release.pdf</a></p>
+<p>ODNI, Iran: Nuclear Intentions and Capabilities, 2007 NIE: <a href="https://www.dni.gov/files/documents/Newsroom/Reports%20and%20Pubs/20071203_release.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.dni.gov/files/documents/Newsroom/Reports%20and%20Pubs/20071203_release.pdf</a></p>
 </li>
 <li class="">
-<p>CIA CSI, CIA Support to Policymakers: The 2007 NIE on Iran’s Nuclear Intentions and Capabilities:<a href="https://www.cia.gov/resources/csi/books-monographs/cia-support-to-policymakers-the-2007-nie-on-irans-nuclear-intentions-and-capabilities/" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/books-monographs/cia-support-to-policymakers-the-2007-nie-on-irans-nuclear-intentions-and-capabilities/</a></p>
+<p>CIA CSI, CIA Support to Policymakers: The 2007 NIE on Iran’s Nuclear Intentions and Capabilities: <a href="https://www.cia.gov/resources/csi/books-monographs/cia-support-to-policymakers-the-2007-nie-on-irans-nuclear-intentions-and-capabilities/" target="_blank" rel="noopener noreferrer" class="">https://www.cia.gov/resources/csi/books-monographs/cia-support-to-policymakers-the-2007-nie-on-irans-nuclear-intentions-and-capabilities/</a></p>
 </li>
 <li class="">
-<p>Mandiant, APT1:<a href="https://www.mandiant.com/sites/default/files/2021-09/mandiant-apt1-report.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.mandiant.com/sites/default/files/2021-09/mandiant-apt1-report.pdf</a></p>
+<p>Mandiant, APT1: <a href="https://www.mandiant.com/sites/default/files/2021-09/mandiant-apt1-report.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.mandiant.com/sites/default/files/2021-09/mandiant-apt1-report.pdf</a></p>
 </li>
 <li class="">
-<p>Google Cloud / Mandiant, APT28:<a href="https://cloud.google.com/blog/topics/threat-intelligence/apt28-a-window-into-russias-cyber-espionage-operations" target="_blank" rel="noopener noreferrer" class="">https://cloud.google.com/blog/topics/threat-intelligence/apt28-a-window-into-russias-cyber-espionage-operations</a></p>
+<p>Google Cloud / Mandiant, APT28: <a href="https://cloud.google.com/blog/topics/threat-intelligence/apt28-a-window-into-russias-cyber-espionage-operations" target="_blank" rel="noopener noreferrer" class="">https://cloud.google.com/blog/topics/threat-intelligence/apt28-a-window-into-russias-cyber-espionage-operations</a></p>
 </li>
 <li class="">
-<p>CISA, SolarWinds AA20–352A:<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a" target="_blank" rel="noopener noreferrer" class="">https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a</a></p>
+<p>CISA, SolarWinds AA20–352A: <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a" target="_blank" rel="noopener noreferrer" class="">https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a</a></p>
 </li>
 <li class="">
-<p>CrowdStrike, SUNSPOT:<a href="https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/" target="_blank" rel="noopener noreferrer" class="">https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/</a></p>
+<p>CrowdStrike, SUNSPOT: <a href="https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/" target="_blank" rel="noopener noreferrer" class="">https://www.crowdstrike.com/en-us/blog/sunspot-malware-technical-analysis/</a></p>
 </li>
 <li class="">
-<p>Microsoft, GoldMax, GoldFinder, and Sibot:<a href="https://www.microsoft.com/en-us/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/en-us/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/</a></p>
+<p>Microsoft, GoldMax, GoldFinder, and Sibot: <a href="https://www.microsoft.com/en-us/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/en-us/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/</a></p>
 </li>
 <li class="">
-<p>CrowdStrike, StellarParticle observations:<a href="https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/" target="_blank" rel="noopener noreferrer" class="">https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/</a></p>
+<p>CrowdStrike, StellarParticle observations: <a href="https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/" target="_blank" rel="noopener noreferrer" class="">https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/</a></p>
 </li>
 <li class="">
-<p>MITRE ATT&amp;CK:<a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer" class="">https://attack.mitre.org/</a></p>
+<p>MITRE ATT&amp;CK: <a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer" class="">https://attack.mitre.org/</a></p>
 </li>
 <li class="">
-<p>MITRE, MITRE ATT&amp;CK overview:<a href="https://www.mitre.org/focus-areas/cybersecurity/mitre-attack" target="_blank" rel="noopener noreferrer" class="">https://www.mitre.org/focus-areas/cybersecurity/mitre-attack</a></p>
+<p>MITRE, MITRE ATT&amp;CK overview: <a href="https://www.mitre.org/focus-areas/cybersecurity/mitre-attack" target="_blank" rel="noopener noreferrer" class="">https://www.mitre.org/focus-areas/cybersecurity/mitre-attack</a></p>
 </li>
 <li class="">
-<p>Sqrrl / David Bianco, A Framework for Cyber Threat Hunting Part 1: The Pyramid of Pain:<a href="https://www.threathunting.net/files/A%20Framework%20for%20Cyber%20Threat%20Hunting%20Part%201_%20The%20Pyramid%20of%20Pain%20_%20Sqrrl.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.threathunting.net/files/A%20Framework%20for%20Cyber%20Threat%20Hunting%20Part%201_%20The%20Pyramid%20of%20Pain%20_%20Sqrrl.pdf</a></p>
+<p>Sqrrl / David Bianco, A Framework for Cyber Threat Hunting Part 1: The Pyramid of Pain: <a href="https://www.threathunting.net/files/A%20Framework%20for%20Cyber%20Threat%20Hunting%20Part%201_%20The%20Pyramid%20of%20Pain%20_%20Sqrrl.pdf" target="_blank" rel="noopener noreferrer" class="">https://www.threathunting.net/files/A%20Framework%20for%20Cyber%20Threat%20Hunting%20Part%201_%20The%20Pyramid%20of%20Pain%20_%20Sqrrl.pdf</a></p>
 </li>
 <li class="">
-<p>Mandiant, WannaCry malware profile:<a href="https://cloud.google.com/blog/topics/threat-intelligence/wannacry-malware-profile" target="_blank" rel="noopener noreferrer" class="">https://cloud.google.com/blog/topics/threat-intelligence/wannacry-malware-profile</a></p>
+<p>Mandiant, WannaCry malware profile: <a href="https://cloud.google.com/blog/topics/threat-intelligence/wannacry-malware-profile" target="_blank" rel="noopener noreferrer" class="">https://cloud.google.com/blog/topics/threat-intelligence/wannacry-malware-profile</a></p>
 </li>
 <li class="">
-<p>Mandiant, WannaCry use of EternalBlue:<a href="https://cloud.google.com/blog/topics/threat-intelligence/smb-exploited-wannacry-use-of-eternalblue/" target="_blank" rel="noopener noreferrer" class="">https://cloud.google.com/blog/topics/threat-intelligence/smb-exploited-wannacry-use-of-eternalblue/</a></p>
+<p>Mandiant, WannaCry use of EternalBlue: <a href="https://cloud.google.com/blog/topics/threat-intelligence/smb-exploited-wannacry-use-of-eternalblue/" target="_blank" rel="noopener noreferrer" class="">https://cloud.google.com/blog/topics/threat-intelligence/smb-exploited-wannacry-use-of-eternalblue/</a></p>
 </li>
 <li class="">
-<p>DOJ, North Korean regime-backed programmer charged in cyber attacks including WannaCry 2.0:<a href="https://www.justice.gov/archives/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-cyber-attacks-and" target="_blank" rel="noopener noreferrer" class="">https://www.justice.gov/archives/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-cyber-attacks-and</a></p>
+<p>DOJ, North Korean regime-backed programmer charged in cyber attacks including WannaCry 2.0: <a href="https://www.justice.gov/archives/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-cyber-attacks-and" target="_blank" rel="noopener noreferrer" class="">https://www.justice.gov/archives/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-cyber-attacks-and</a></p>
 </li>
 <li class="">
-<p>Microsoft, NotPetya technical analysis:<a href="https://www.microsoft.com/security/blog/2017/10/03/advanced-threat-analytics-security-research-network-technical-analysis-notpetya/" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/security/blog/2017/10/03/advanced-threat-analytics-security-research-network-technical-analysis-notpetya/</a></p>
+<p>Microsoft, NotPetya technical analysis: <a href="https://www.microsoft.com/security/blog/2017/10/03/advanced-threat-analytics-security-research-network-technical-analysis-notpetya/" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/security/blog/2017/10/03/advanced-threat-analytics-security-research-network-technical-analysis-notpetya/</a></p>
 </li>
 <li class="">
-<p>Cisco Talos, The MeDoc Connection:<a href="https://blogs.cisco.com/security/talos/the-medoc-connection" target="_blank" rel="noopener noreferrer" class="">https://blogs.cisco.com/security/talos/the-medoc-connection</a></p>
+<p>Cisco Talos, The MeDoc Connection: <a href="https://blogs.cisco.com/security/talos/the-medoc-connection" target="_blank" rel="noopener noreferrer" class="">https://blogs.cisco.com/security/talos/the-medoc-connection</a></p>
 </li>
 <li class="">
-<p>UK Government, Foreign Office Minister condemns Russia for NotPetya attacks:<a href="https://www.gov.uk/government/news/foreign-office-minister-condemns-russia-for-notpetya-attacks" target="_blank" rel="noopener noreferrer" class="">https://www.gov.uk/government/news/foreign-office-minister-condemns-russia-for-notpetya-attacks</a></p>
+<p>UK Government, Foreign Office Minister condemns Russia for NotPetya attacks: <a href="https://www.gov.uk/government/news/foreign-office-minister-condemns-russia-for-notpetya-attacks" target="_blank" rel="noopener noreferrer" class="">https://www.gov.uk/government/news/foreign-office-minister-condemns-russia-for-notpetya-attacks</a></p>
 </li>
 <li class="">
-<p>White House, Statement from the Press Secretary on NotPetya:<a href="https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/" target="_blank" rel="noopener noreferrer" class="">https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/</a></p>
+<p>White House, Statement from the Press Secretary on NotPetya: <a href="https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/" target="_blank" rel="noopener noreferrer" class="">https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/</a></p>
 </li>
 <li class="">
-<p>DOJ, Six Russian GRU officers charged in connection with destructive malware including NotPetya:<a href="https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and" target="_blank" rel="noopener noreferrer" class="">https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and</a></p>
+<p>DOJ, Six Russian GRU officers charged in connection with destructive malware including NotPetya: <a href="https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and" target="_blank" rel="noopener noreferrer" class="">https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and</a></p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="follow-for-practical-cybersecurity-research">Follow for practical cybersecurity research<a href="#follow-for-practical-cybersecurity-research" class="hash-link" aria-label="Direct link to Follow for practical cybersecurity research" title="Direct link to Follow for practical cybersecurity research" translate="no">​</a></h2>
-<p>If you’re interested in**Offensive security,**<strong>AI security, real-world attack simulations, CTI, and detection engineering</strong>— this is exactly what I focus on.</p>
+<p>If you’re interested in <strong>Offensive security,</strong> <strong>AI security, real-world attack simulations, CTI, and detection engineering</strong> — this is exactly what I focus on.</p>
 <p>Stay connected:</p>
-<p>→<strong>Subscribe on Medium:</strong><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="">medium.com/@1200km</a>
-→<strong>Connect on LinkedIn:</strong><a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="">andrey-pautov</a>
-→<strong>GitHub — tools &amp; labs:</strong><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="">github.com/anpa1200</a>
-→<strong>Contact:</strong><a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-05-09-cti-led-defensive-strategy-for-a-cellular-provider-case-study-c77bc5765b31"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">CTI-Led Defensive Strategy for a Cellular Provider (Case Study)</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-05-11-customer-driven-ai-cti-project-template-part-1-foundations-745861507d03"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Customer-Driven AI CTI Project Template. Part 1: Foundations</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#estimative-language-evidence-discipline-and-analytic-integrity-for-cyber-threat-intelligence" class="table-of-contents__link toc-highlight">Estimative language, evidence discipline, and analytic integrity for cyber threat intelligence</a></li></ul></li><li><a href="#executive-summary" class="table-of-contents__link toc-highlight">Executive Summary</a></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#evidence-and-confidence-model-used-here" class="table-of-contents__link toc-highlight">Evidence and Confidence Model Used Here</a></li><li><a href="#estimative-probability-reference" class="table-of-contents__link toc-highlight">Estimative Probability Reference</a></li><li><a href="#what-is-sherman-kent-style-analytic-discipline" class="table-of-contents__link toc-highlight">What Is Sherman Kent-Style Analytic Discipline?</a></li><li><a href="#what-maps-from-traditional-intelligence-to-cti--and-what-does-not" class="table-of-contents__link toc-highlight">What Maps From Traditional Intelligence to CTI — And What Does Not</a><ul><li><a href="#but-not-everything-transfers-cleanly" class="table-of-contents__link toc-highlight">But not everything transfers cleanly:</a></li></ul></li><li><a href="#1-policy-relevance-without-policy-capture" class="table-of-contents__link toc-highlight">1. Policy Relevance Without Policy Capture</a><ul><li><a href="#example-1-cuban-missile-crisis-imagery-supported-decision-making-without-replacing-policy-judgment" class="table-of-contents__link toc-highlight">Example 1: Cuban Missile Crisis imagery supported decision-making without replacing policy judgment</a></li><li><a href="#example-2-the-2007-iran-nie-decomposed-a-broad-question-into-narrower-judgments" class="table-of-contents__link toc-highlight">Example 2: The 2007 Iran NIE decomposed a broad question into narrower judgments</a></li></ul></li><li><a href="#2-facts-assumptions-and-judgments" class="table-of-contents__link toc-highlight">2. Facts, Assumptions, and Judgments</a><ul><li><a href="#example-1-iraq-wmd-analysis-shows-the-risk-of-assumption-driven-certainty" class="table-of-contents__link toc-highlight">Example 1: Iraq WMD analysis shows the risk of assumption-driven certainty</a></li><li><a href="#example-2-solarwinds-analysis-required-separating-technical-fact-from-attribution-judgment" class="table-of-contents__link toc-highlight">Example 2: SolarWinds analysis required separating technical fact from attribution judgment</a></li></ul></li><li><a href="#3-estimative-probability-language" class="table-of-contents__link toc-highlight">3. Estimative Probability Language</a><ul><li><a href="#example-1-apt28-attribution-should-preserve-source-confidence" class="table-of-contents__link toc-highlight">Example 1: APT28 attribution should preserve source confidence</a></li><li><a href="#example-2-2007-iran-nie-showed-probability-and-confidence-in-the-same-product" class="table-of-contents__link toc-highlight">Example 2: 2007 Iran NIE showed probability and confidence in the same product</a></li></ul></li><li><a href="#4-confidence-is-not-probability" class="table-of-contents__link toc-highlight">4. Confidence Is Not Probability</a><ul><li><a href="#example-1-iraq-wmd-showed-that-high-confidence-judgments-can-still-be-wrong" class="table-of-contents__link toc-highlight">Example 1: Iraq WMD showed that high-confidence judgments can still be wrong</a></li><li><a href="#example-2-cti-malware-behavior-can-be-high-confidence-while-intent-remains-moderate-confidence" class="table-of-contents__link toc-highlight">Example 2: CTI malware behavior can be high confidence while intent remains moderate confidence</a></li></ul></li><li><a href="#5-alternative-hypotheses" class="table-of-contents__link toc-highlight">5. Alternative Hypotheses</a><ul><li><a href="#example-1-911-warning-failure-showed-the-cost-of-narrow-imagination" class="table-of-contents__link toc-highlight">Example 1: 9/11 warning failure showed the cost of narrow imagination</a></li><li><a href="#example-2-notpetya-intent-remains-an-assessed-judgment" class="table-of-contents__link toc-highlight">Example 2: NotPetya intent remains an assessed judgment</a></li></ul></li><li><a href="#6-warning-indicators-and-collection-gaps" class="table-of-contents__link toc-highlight">6. Warning, Indicators, and Collection Gaps</a><ul><li><a href="#example-1-cuban-missile-crisis-warning-depended-on-collection-timing-and-imagery-interpretation" class="table-of-contents__link toc-highlight">Example 1: Cuban Missile Crisis warning depended on collection timing and imagery interpretation</a></li><li><a href="#example-2-solarwinds-exposed-a-collection-gap-in-trusted-software-supply-chains" class="table-of-contents__link toc-highlight">Example 2: SolarWinds exposed a collection gap in trusted software supply chains</a></li></ul></li><li><a href="#7-analytic-integrity-in-cti" class="table-of-contents__link toc-highlight">7. Analytic Integrity in CTI</a><ul><li><a href="#example-1-apt1-victimology-supports-targeting-assessment-not-observed-reconnaissance" class="table-of-contents__link toc-highlight">Example 1: APT1 victimology supports targeting assessment, not observed reconnaissance</a></li><li><a href="#example-2-sunburst-goldmax-sibot-and-stellarparticle-should-not-be-flattened-into-one-label" class="table-of-contents__link toc-highlight">Example 2: SUNBURST, GoldMax, Sibot, and StellarParticle should not be flattened into one label</a></li></ul></li><li><a href="#cognitive-biases-cti-analysts-should-name" class="table-of-contents__link toc-highlight">Cognitive Biases CTI Analysts Should Name</a></li><li><a href="#where-attck-and-the-pyramid-of-pain-fit" class="table-of-contents__link toc-highlight">Where ATT&amp;CK and the Pyramid of Pain Fit</a></li><li><a href="#kent-style-checklist" class="table-of-contents__link toc-highlight">Kent-Style Checklist</a></li><li><a href="#practical-analyst-template" class="table-of-contents__link toc-highlight">Practical Analyst Template</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li><li><a href="#follow-for-practical-cybersecurity-research" class="table-of-contents__link toc-highlight">Follow for practical cybersecurity research</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p>→ <strong>Subscribe on Medium:</strong> <a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="">medium.com/@1200km</a>
+→ <strong>Connect on LinkedIn:</strong> <a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="">andrey-pautov</a>
+→ <strong>GitHub — tools &amp; labs:</strong> <a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="">github.com/anpa1200</a>
+→ <strong>Contact:</strong> <a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-05-09-cti-led-defensive-strategy-for-a-cellular-provider-case-study-c77bc5765b31"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">CTI-Led Defensive Strategy for a Cellular Provider (Case Study)</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-05-11-customer-driven-ai-cti-project-template-part-1-foundations-745861507d03"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Customer-Driven AI CTI Project Template. Part 1: Foundations</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#estimative-language-evidence-discipline-and-analytic-integrity-for-cyber-threat-intelligence" class="table-of-contents__link toc-highlight">Estimative language, evidence discipline, and analytic integrity for cyber threat intelligence</a></li></ul></li><li><a href="#executive-summary" class="table-of-contents__link toc-highlight">Executive Summary</a></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#evidence-and-confidence-model-used-here" class="table-of-contents__link toc-highlight">Evidence and Confidence Model Used Here</a></li><li><a href="#estimative-probability-reference" class="table-of-contents__link toc-highlight">Estimative Probability Reference</a></li><li><a href="#what-is-sherman-kent-style-analytic-discipline" class="table-of-contents__link toc-highlight">What Is Sherman Kent-Style Analytic Discipline?</a></li><li><a href="#what-maps-from-traditional-intelligence-to-cti--and-what-does-not" class="table-of-contents__link toc-highlight">What Maps From Traditional Intelligence to CTI — And What Does Not</a><ul><li><a href="#but-not-everything-transfers-cleanly" class="table-of-contents__link toc-highlight">But not everything transfers cleanly:</a></li></ul></li><li><a href="#1-policy-relevance-without-policy-capture" class="table-of-contents__link toc-highlight">1. Policy Relevance Without Policy Capture</a><ul><li><a href="#example-1-cuban-missile-crisis-imagery-supported-decision-making-without-replacing-policy-judgment" class="table-of-contents__link toc-highlight">Example 1: Cuban Missile Crisis imagery supported decision-making without replacing policy judgment</a></li><li><a href="#example-2-the-2007-iran-nie-decomposed-a-broad-question-into-narrower-judgments" class="table-of-contents__link toc-highlight">Example 2: The 2007 Iran NIE decomposed a broad question into narrower judgments</a></li></ul></li><li><a href="#2-facts-assumptions-and-judgments" class="table-of-contents__link toc-highlight">2. Facts, Assumptions, and Judgments</a><ul><li><a href="#example-1-iraq-wmd-analysis-shows-the-risk-of-assumption-driven-certainty" class="table-of-contents__link toc-highlight">Example 1: Iraq WMD analysis shows the risk of assumption-driven certainty</a></li><li><a href="#example-2-solarwinds-analysis-required-separating-technical-fact-from-attribution-judgment" class="table-of-contents__link toc-highlight">Example 2: SolarWinds analysis required separating technical fact from attribution judgment</a></li></ul></li><li><a href="#3-estimative-probability-language" class="table-of-contents__link toc-highlight">3. Estimative Probability Language</a><ul><li><a href="#example-1-apt28-attribution-should-preserve-source-confidence" class="table-of-contents__link toc-highlight">Example 1: APT28 attribution should preserve source confidence</a></li><li><a href="#example-2-2007-iran-nie-showed-probability-and-confidence-in-the-same-product" class="table-of-contents__link toc-highlight">Example 2: 2007 Iran NIE showed probability and confidence in the same product</a></li></ul></li><li><a href="#4-confidence-is-not-probability" class="table-of-contents__link toc-highlight">4. Confidence Is Not Probability</a><ul><li><a href="#example-1-iraq-wmd-showed-that-high-confidence-judgments-can-still-be-wrong" class="table-of-contents__link toc-highlight">Example 1: Iraq WMD showed that high-confidence judgments can still be wrong</a></li><li><a href="#example-2-cti-malware-behavior-can-be-high-confidence-while-intent-remains-moderate-confidence" class="table-of-contents__link toc-highlight">Example 2: CTI malware behavior can be high confidence while intent remains moderate confidence</a></li></ul></li><li><a href="#5-alternative-hypotheses" class="table-of-contents__link toc-highlight">5. Alternative Hypotheses</a><ul><li><a href="#example-1-911-warning-failure-showed-the-cost-of-narrow-imagination" class="table-of-contents__link toc-highlight">Example 1: 9/11 warning failure showed the cost of narrow imagination</a></li><li><a href="#example-2-notpetya-intent-remains-an-assessed-judgment" class="table-of-contents__link toc-highlight">Example 2: NotPetya intent remains an assessed judgment</a></li></ul></li><li><a href="#6-warning-indicators-and-collection-gaps" class="table-of-contents__link toc-highlight">6. Warning, Indicators, and Collection Gaps</a><ul><li><a href="#example-1-cuban-missile-crisis-warning-depended-on-collection-timing-and-imagery-interpretation" class="table-of-contents__link toc-highlight">Example 1: Cuban Missile Crisis warning depended on collection timing and imagery interpretation</a></li><li><a href="#example-2-solarwinds-exposed-a-collection-gap-in-trusted-software-supply-chains" class="table-of-contents__link toc-highlight">Example 2: SolarWinds exposed a collection gap in trusted software supply chains</a></li></ul></li><li><a href="#7-analytic-integrity-in-cti" class="table-of-contents__link toc-highlight">7. Analytic Integrity in CTI</a><ul><li><a href="#example-1-apt1-victimology-supports-targeting-assessment-not-observed-reconnaissance" class="table-of-contents__link toc-highlight">Example 1: APT1 victimology supports targeting assessment, not observed reconnaissance</a></li><li><a href="#example-2-sunburst-goldmax-sibot-and-stellarparticle-should-not-be-flattened-into-one-label" class="table-of-contents__link toc-highlight">Example 2: SUNBURST, GoldMax, Sibot, and StellarParticle should not be flattened into one label</a></li></ul></li><li><a href="#cognitive-biases-cti-analysts-should-name" class="table-of-contents__link toc-highlight">Cognitive Biases CTI Analysts Should Name</a></li><li><a href="#where-attck-and-the-pyramid-of-pain-fit" class="table-of-contents__link toc-highlight">Where ATT&amp;CK and the Pyramid of Pain Fit</a></li><li><a href="#kent-style-checklist" class="table-of-contents__link toc-highlight">Kent-Style Checklist</a></li><li><a href="#practical-analyst-template" class="table-of-contents__link toc-highlight">Practical Analyst Template</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li><li><a href="#follow-for-practical-cybersecurity-research" class="table-of-contents__link toc-highlight">Follow for practical cybersecurity research</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

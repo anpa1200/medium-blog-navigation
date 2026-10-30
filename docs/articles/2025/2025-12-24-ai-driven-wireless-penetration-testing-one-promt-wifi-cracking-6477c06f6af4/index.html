@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,22 +34,22 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="using-aircrack-ng-with-hexstrike-ai-and-gemini-cli">Using Aircrack-ng with HexStrike-AI and Gemini-CLI<a href="#using-aircrack-ng-with-hexstrike-ai-and-gemini-cli" class="hash-link" aria-label="Direct link to Using Aircrack-ng with HexStrike-AI and Gemini-CLI" title="Direct link to Using Aircrack-ng with HexStrike-AI and Gemini-CLI" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
-<p>Wireless penetration testing is traditionally a<strong>manual, error-prone process</strong>:
+<p>Wireless penetration testing is traditionally a <strong>manual, error-prone process</strong>:
 capturing handshakes, guessing attack paths, retrying failed steps, and correlating outputs by hand.</p>
 <p>By combining:</p>
 <ul>
-<li class=""><strong>Aircrack-ng</strong>(low-level Wi-Fi attack tooling)</li>
+<li class=""><strong>Aircrack-ng</strong> (low-level Wi-Fi attack tooling)</li>
 </ul>
-<p><strong>Full manual guide for Aircrack-ng here:</strong><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f">**../2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md</a></p>
+<p><strong>Full manual guide for Aircrack-ng here:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f">**../2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f.md</a></p>
 <ul>
 <li class="">
-<p><strong>HexStrike-AI</strong>(local execution and orchestration)</p>
+<p><strong>HexStrike-AI</strong> (local execution and orchestration)</p>
 </li>
 <li class="">
-<p><strong>Gemini-CLI</strong>(LLM-driven reasoning via MCP)</p>
+<p><strong>Gemini-CLI</strong> (LLM-driven reasoning via MCP)</p>
 </li>
 </ul>
-<p>we can transform Wi-Fi testing into a<strong>goal-driven, adaptive workflow</strong>, where the AI:</p>
+<p>we can transform Wi-Fi testing into a <strong>goal-driven, adaptive workflow</strong>, where the AI:</p>
 <ul>
 <li class="">
 <p>decides what to do next,</p>
@@ -61,7 +61,7 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 <p>and chains findings logically.</p>
 </li>
 </ul>
-<p>This guide demonstrates how to perform<strong>authorized Wi-Fi penetration testing</strong>using AI-orchestrated tooling.</p>
+<p>This guide demonstrates how to perform <strong>authorized Wi-Fi penetration testing</strong> using AI-orchestrated tooling.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-overview">Architecture Overview<a href="#architecture-overview" class="hash-link" aria-label="Direct link to Architecture Overview" title="Direct link to Architecture Overview" translate="no">​</a></h2>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">User (High-level prompt)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Gemini-CLI (Reasoning &amp; decision making)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ↓  MCP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">HexStrike-AI (Local execution)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Aircrack-ng suite (airodump-ng, aireplay-ng, aircrack-ng)</span><br></div></code></pre></div></div>
 <p>Key principle:</p>
@@ -82,7 +82,7 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 <p>Gemini-CLI configured with HexStrike MCP</p>
 </li>
 <li class="">
-<p><strong>Explicit authorization</strong>to test the target network</p>
+<p><strong>Explicit authorization</strong> to test the target network</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-tools-already-in-kali">Required tools (already in Kali)<a href="#required-tools-already-in-kali" class="hash-link" aria-label="Direct link to Required tools (already in Kali)" title="Direct link to Required tools (already in Kali)" translate="no">​</a></h2>
@@ -100,11 +100,11 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 <p><code>aircrack-ng</code></p>
 </li>
 <li class="">
-<p><code>macchanger</code>(optional)</p>
+<p><code>macchanger</code> (optional)</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="prompt">Prompt<a href="#prompt" class="hash-link" aria-label="Direct link to Prompt" title="Direct link to Prompt" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@hexstrike</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Perform an authorized wireless penetration test against the Wi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Fi network</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">First</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">show</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> me </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> aviable interfaces:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Then</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">show</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> me </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> aviable SSID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ESSID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">aircrack</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ng toolset.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Capture a WPA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">WPA2 handshake </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> attempt offline cracking </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">using</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">home</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">andrey</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Documents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">passwords_list.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Do it agressive, Keep scans short </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">out</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, stop </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> success </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> timeout, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> produce a brief report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> results </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> remediation.</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">&gt;@hexstrike</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Perform an authorized wireless penetration test against the Wi-Fi network</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">First show me all aviable interfaces:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Then show me all aviable SSID/ESSID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">aircrack-ng toolset.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Capture a WPA/WPA2 handshake and attempt offline cracking using:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /home/andrey/Documents/passwords_list.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Do it agressive, Keep scans short with time out, stop on success or timeout, and produce a brief report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with results and remediation.</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*lAvwkgVq89m2Uzb-bTV14A.png" alt="Article image" width="1650" height="589" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-happened-step-by-step">What happened (step by step)<a href="#what-happened-step-by-step" class="hash-link" aria-label="Direct link to What happened (step by step)" title="Direct link to What happened (step by step)" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-interface-discovery">1. Interface discovery<a href="#1-interface-discovery" class="hash-link" aria-label="Direct link to 1. Interface discovery" title="Direct link to 1. Interface discovery" translate="no">​</a></h2>
@@ -113,46 +113,46 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 <p>HexStrike queried the system for wireless interfaces.</p>
 </li>
 <li class="">
-<p><strong>Result:</strong><code>wlan0</code>was identified as the only usable wireless interface (RTL8821AU chipset).</p>
+<p><strong>Result:</strong> <code>wlan0</code> was identified as the only usable wireless interface (RTL8821AU chipset).</p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*BA-PixA3rZED8oQKzThyzQ.png" alt="Article image" width="1761" height="261" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-monitor-mode-enablement">2. Monitor mode enablement<a href="#2-monitor-mode-enablement" class="hash-link" aria-label="Direct link to 2. Monitor mode enablement" title="Direct link to 2. Monitor mode enablement" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><code>airmon-ng start wlan0</code>was executed.</p>
+<p><code>airmon-ng start wlan0</code> was executed.</p>
 </li>
 <li class="">
-<p>Warnings appeared about<code>NetworkManager</code>and<code>wpa_supplicant</code>, but monitor mode was enabled successfully.</p>
+<p>Warnings appeared about <code>NetworkManager</code> and <code>wpa_supplicant</code>, but monitor mode was enabled successfully.</p>
 </li>
 <li class="">
-<p><strong>Result:</strong><code>wlan0</code>entered monitor mode and was usable for capture/injection.</p>
+<p><strong>Result:</strong> <code>wlan0</code> entered monitor mode and was usable for capture/injection.</p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*uemVkzoYmBD3zXbt4ojI9Q.png" alt="Article image" width="1749" height="332" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-initial-wireless-scan">3. Initial wireless scan<a href="#3-initial-wireless-scan" class="hash-link" aria-label="Direct link to 3. Initial wireless scan" title="Direct link to 3. Initial wireless scan" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><code>airodump-ng</code>ran for ~30 seconds.</p>
+<p><code>airodump-ng</code> ran for ~30 seconds.</p>
 </li>
 <li class="">
-<p>Multiple APs were discovered, including<strong>multiple BSSIDs broadcasting the same ESSID:</strong><code>**Andrey**</code>(typical for mesh / multi-band APs).</p>
+<p>Multiple APs were discovered, including <strong>multiple BSSIDs broadcasting the same ESSID:</strong> <code>**Andrey**</code> (typical for mesh / multi-band APs).</p>
 </li>
 <li class="">
-<p>Encryption observed:<strong>WPA2-PSK</strong>.</p>
+<p>Encryption observed: <strong>WPA2-PSK</strong>.</p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*HShvm8_-v2S3fW4QadzsuQ.png" alt="Article image" width="1749" height="332" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-target-selection-first-attempt">4. Target selection (first attempt)<a href="#4-target-selection-first-attempt" class="hash-link" aria-label="Direct link to 4. Target selection (first attempt)" title="Direct link to 4. Target selection (first attempt)" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>Selected BSSID<code>D6:35:1D:AD:F5:C0</code>(channel 64).</p>
+<p>Selected BSSID <code>D6:35:1D:AD:F5:C0</code> (channel 64).</p>
 </li>
 <li class="">
 <p>Clients were detected.</p>
 </li>
 <li class="">
-<p>Several<strong>deauthentication attempts failed</strong>with:</p>
+<p>Several <strong>deauthentication attempts failed</strong> with:</p>
 </li>
 <li class="">
 <p><code>No such BSSID available</code></p>
@@ -164,28 +164,28 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 <p>Multiple retries were attempted, including interface reset.</p>
 </li>
 <li class="">
-<p>**Result:**No valid handshake captured on this BSSID.</p>
+<p><strong>Result:</strong> No valid handshake captured on this BSSID.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-pivot-to-another-ap-same-essid">5. Pivot to another AP (same ESSID)<a href="#5-pivot-to-another-ap-same-essid" class="hash-link" aria-label="Direct link to 5. Pivot to another AP (same ESSID)" title="Direct link to 5. Pivot to another AP (same ESSID)" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>Switched to BSSID<code>A2:B5:3C:89:CB:52</code>(channel 1).</p>
+<p>Switched to BSSID <code>A2:B5:3C:89:CB:52</code> (channel 1).</p>
 </li>
 <li class="">
-<p>This AP had<strong>multiple active clients</strong>and stable channel behavior.</p>
+<p>This AP had <strong>multiple active clients</strong> and stable channel behavior.</p>
 </li>
 <li class="">
-<p>**Key decision:**Correct pivot based on runtime conditions.</p>
+<p><strong>Key decision:</strong> Correct pivot based on runtime conditions.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-handshake-capture">6. Handshake capture<a href="#6-handshake-capture" class="hash-link" aria-label="Direct link to 6. Handshake capture" title="Direct link to 6. Handshake capture" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><code>airodump-ng</code>ran in the background.</p>
+<p><code>airodump-ng</code> ran in the background.</p>
 </li>
 <li class="">
-<p><code>aireplay-ng</code>deauthentication was executed against an active client.</p>
+<p><code>aireplay-ng</code> deauthentication was executed against an active client.</p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*4Oxj0b4jN41LpMkuoYqpAw.png" alt="Article image" width="1728" height="414" loading="lazy" decoding="async">
@@ -194,7 +194,7 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 <p>This time, the deauth succeeded.</p>
 </li>
 <li class="">
-<p><strong>Result:<strong>A valid</strong>WPA2 handshake was captured</strong>.</p>
+<p><strong>Result:</strong> A valid <strong>WPA2 handshake was captured</strong>.</p>
 </li>
 </ul>
 <p>Verification:</p>
@@ -203,7 +203,7 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 <p><code>aircrack-ng handshake_capture_3-01.cap</code></p>
 </li>
 <li class="">
-<p>Output confirmed:<strong>“WPA (1 handshake)”</strong></p>
+<p>Output confirmed: <strong>“WPA (1 handshake)”</strong></p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*1jpmbN-iLA2BybvP-Hw69Q.png" alt="Article image" width="1737" height="434" loading="lazy" decoding="async">
@@ -223,13 +223,13 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 </li>
 </ul>
 <p><strong>Recovered key:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">A0542553383</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">A0542553383#</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*Tui0PlJVq-ocozToiX6K9g.png" alt="Article image" width="1723" height="425" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-result">Final result<a href="#final-result" class="hash-link" aria-label="Direct link to Final result" title="Direct link to Final result" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="outcome">Outcome<a href="#outcome" class="hash-link" aria-label="Direct link to Outcome" title="Direct link to Outcome" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>The Wi-Fi network**“Andrey”<strong>was successfully compromised</strong>offline**.</p>
+<p>The Wi-Fi network <strong>“Andrey”</strong> was successfully compromised <strong>offline</strong>.</p>
 </li>
 <li class="">
 <p>No live brute-force was required.</p>
@@ -240,7 +240,7 @@ capturing handshakes, guessing attack paths, retrying failed steps, and correlat
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recovered-password">Recovered password<a href="#recovered-password" class="hash-link" aria-label="Direct link to Recovered password" title="Direct link to Recovered password" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">A0542553383</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">A0542553383#</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-technical-observations">Key technical observations<a href="#key-technical-observations" class="hash-link" aria-label="Direct link to Key technical observations" title="Direct link to Key technical observations" translate="no">​</a></h2>
 <ul>
 <li class="">

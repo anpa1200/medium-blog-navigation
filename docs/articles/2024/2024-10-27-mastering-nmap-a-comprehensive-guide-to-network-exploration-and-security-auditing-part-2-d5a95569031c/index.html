@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -73,7 +73,7 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 <li class=""><strong>Description</strong>: The SYN scan is perhaps the most popular and default scan option for good reasons. It’s often referred to as a “stealth” scan because it never completes TCP connections. It sends a SYN packet (as if it’s going to open a connection) and listens for a response.</li>
 </ul>
 <p><strong>Command Example</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sS </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1.1</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sS 192.168.1.1</span><br></div></code></pre></div></div>
 <p>This command initiates a TCP SYN scan against the host at 192.168.1.1, checking for open ports without completing the TCP handshake, making it stealthy.</p>
 <ul>
 <li class="">
@@ -91,10 +91,10 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-st--tcp-connect-scan">-sT : TCP Connect() Scan<a href="#-st--tcp-connect-scan" class="hash-link" aria-label="Direct link to -sT : TCP Connect() Scan" title="Direct link to -sT : TCP Connect() Scan" translate="no">​</a></h2>
 <ul>
-<li class=""><strong>Description</strong>: This scan type uses the standard TCP<code>connect()</code>system call to establish a full TCP connection with the target, rather than sending raw packets.</li>
+<li class=""><strong>Description</strong>: This scan type uses the standard TCP <code>connect()</code> system call to establish a full TCP connection with the target, rather than sending raw packets.</li>
 </ul>
 <p><strong>Command Example</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sT </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sT 192.168.1.1</span><br></div></code></pre></div></div>
 <p>This performs a TCP Connect() scan, using the operating system’s built-in connect() function to fully establish a TCP connection with each scanned port on the host. It’s straightforward but less stealthy.</p>
 <ul>
 <li class="">
@@ -115,7 +115,7 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 <li class=""><strong>Description</strong>: The ACK scan is used primarily to map out firewall rules, not to check whether ports are open or closed. It sends an ACK packet to the target port to see how it responds.</li>
 </ul>
 <p><strong>Command Example</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sA </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sA 192.168.1.1</span><br></div></code></pre></div></div>
 <p>This command executes a TCP ACK scan to determine filtering rules by sending ACK packets. It helps map out firewall configurations, as firewalls may react differently to unexpected ACK packets.</p>
 <ul>
 <li class="">
@@ -173,9 +173,9 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-su-udp-scan">-sU: UDP Scan<a href="#-su-udp-scan" class="hash-link" aria-label="Direct link to -sU: UDP Scan" title="Direct link to -sU: UDP Scan" translate="no">​</a></h2>
-<p>The<code>-sU</code>option in Nmap is designated for UDP scans, which are essential for identifying open UDP ports on target hosts. Unlike TCP, UDP is a connectionless protocol, which can make these scans particularly challenging but highly valuable for discovering a wide range of services.</p>
+<p>The <code>-sU</code> option in Nmap is designated for UDP scans, which are essential for identifying open UDP ports on target hosts. Unlike TCP, UDP is a connectionless protocol, which can make these scans particularly challenging but highly valuable for discovering a wide range of services.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how--su-works">How -sU Works:<a href="#how--su-works" class="hash-link" aria-label="Direct link to How -sU Works:" title="Direct link to How -sU Works:" translate="no">​</a></h3>
-<p>When executing a UDP scan with<code>-sU</code>, Nmap sends a UDP packet to the specified ports on the target host. The behavior of the target in response to these packets determines the status of the port:</p>
+<p>When executing a UDP scan with <code>-sU</code>, Nmap sends a UDP packet to the specified ports on the target host. The behavior of the target in response to these packets determines the status of the port:</p>
 <ul>
 <li class="">
 <p>If an ICMP port unreachable error (type 3, code 3) is received, the port is considered closed.</p>
@@ -189,8 +189,8 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </ul>
 <p>These scans are particularly effective for identifying and interacting with services that use UDP, such as DNS, SNMP, DHCP, and many real-time applications.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-usage-of--su-">Example Usage of -sU :<a href="#example-usage-of--su-" class="hash-link" aria-label="Direct link to Example Usage of -sU :" title="Direct link to Example Usage of -sU :" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sU </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">24</span><br></div></code></pre></div></div>
-<p>This command initiates a UDP scan across all hosts within the subnet<code>192.168.1.0/24</code>, aiming to discover active UDP services. The results will indicate which UDP ports are open but will not detail the services unless combined with version detection (<code>-sV</code>).</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sU 192.168.1.0/24</span><br></div></code></pre></div></div>
+<p>This command initiates a UDP scan across all hosts within the subnet <code>192.168.1.0/24</code>, aiming to discover active UDP services. The results will indicate which UDP ports are open but will not detail the services unless combined with version detection (<code>-sV</code>).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-cases">Use Cases:<a href="#use-cases" class="hash-link" aria-label="Direct link to Use Cases:" title="Direct link to Use Cases:" translate="no">​</a></h3>
 <ul>
 <li class="">
@@ -204,7 +204,7 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-snsfsx">-sN/sF/sX<a href="#-snsfsx" class="hash-link" aria-label="Direct link to -sN/sF/sX" title="Direct link to -sN/sF/sX" translate="no">​</a></h2>
-<p>The<code>-sN</code>,<code>-sF</code>, and<code>-sX</code>options in Nmap are types of stealth TCP scans that manipulate TCP flags to probe systems in ways that standard SYN scans do not. These scans are particularly useful for evading detection by firewalls and intrusion detection systems that primarily look for SYN packets. Here’s an explanation of each, along with command examples and typical usage scenarios:</p>
+<p>The <code>-sN</code>, <code>-sF</code>, and <code>-sX</code> options in Nmap are types of stealth TCP scans that manipulate TCP flags to probe systems in ways that standard SYN scans do not. These scans are particularly useful for evading detection by firewalls and intrusion detection systems that primarily look for SYN packets. Here’s an explanation of each, along with command examples and typical usage scenarios:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-sn--tcp-null-scan">-sN : TCP Null Scan<a href="#-sn--tcp-null-scan" class="hash-link" aria-label="Direct link to -sN : TCP Null Scan" title="Direct link to -sN : TCP Null Scan" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>Explanation</strong>: In a TCP Null scan, Nmap sends TCP packets with no flags set — hence “null.” According to the TCP standard, no response is received from open ports, while closed ports should respond with an RST (reset) packet.</li>
@@ -257,9 +257,9 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-scanflags-flags">— scanflags &lt;flags&gt;:<a href="#-scanflags-flags" class="hash-link" aria-label="Direct link to — scanflags &lt;flags&gt;:" title="Direct link to — scanflags &lt;flags&gt;:" translate="no">​</a></h2>
-<p>The<code>--scanflags</code>option in Nmap allows you to customize the TCP flags in the packet headers sent during the scan. This advanced feature lets you specify an arbitrary set of TCP flags to manipulate packet behavior in a highly controlled manner. It can be used to craft packets that might elicit responses from target systems that reveal information about their configuration and response patterns, potentially bypassing standard security mechanisms.</p>
+<p>The <code>--scanflags</code> option in Nmap allows you to customize the TCP flags in the packet headers sent during the scan. This advanced feature lets you specify an arbitrary set of TCP flags to manipulate packet behavior in a highly controlled manner. It can be used to craft packets that might elicit responses from target systems that reveal information about their configuration and response patterns, potentially bypassing standard security mechanisms.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="full-explanation">Full Explanation:<a href="#full-explanation" class="hash-link" aria-label="Direct link to Full Explanation:" title="Direct link to Full Explanation:" translate="no">​</a></h3>
-<p>With<code>--scanflags</code>, you provide the flags you want to set in the TCP header. Nmap enables you to explicitly set any combination of TCP flags, such as SYN, ACK, FIN, PSH, URG, and RST. This flexibility allows for very granular control over the packet&#x27;s characteristics, making it possible to simulate different types of communication or malicious patterns to see how a network or host responds.</p>
+<p>With <code>--scanflags</code>, you provide the flags you want to set in the TCP header. Nmap enables you to explicitly set any combination of TCP flags, such as SYN, ACK, FIN, PSH, URG, and RST. This flexibility allows for very granular control over the packet&#x27;s characteristics, making it possible to simulate different types of communication or malicious patterns to see how a network or host responds.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="flag-definitions">Flag Definitions:<a href="#flag-definitions" class="hash-link" aria-label="Direct link to Flag Definitions:" title="Direct link to Flag Definitions:" translate="no">​</a></h3>
 <ul>
 <li class="">
@@ -282,8 +282,8 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="command-example">Command Example:<a href="#command-example" class="hash-link" aria-label="Direct link to Command Example:" title="Direct link to Command Example:" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--scanflags</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> SYNACK </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1.1</span><br></div></code></pre></div></div>
-<p>This command sets both the SYN and ACK flags in the packets sent to<code>192.168.1.1</code>. It&#x27;s a non-standard flag combination for initiating TCP connections, which can test how devices react to unusual or incorrect signaling.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap --scanflags SYNACK 192.168.1.1</span><br></div></code></pre></div></div>
+<p>This command sets both the SYN and ACK flags in the packets sent to <code>192.168.1.1</code>. It&#x27;s a non-standard flag combination for initiating TCP connections, which can test how devices react to unusual or incorrect signaling.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-usage">Typical Usage:<a href="#typical-usage" class="hash-link" aria-label="Direct link to Typical Usage:" title="Direct link to Typical Usage:" translate="no">​</a></h3>
 <ul>
 <li class="">
@@ -297,12 +297,12 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-si-zombie-host-idle-scan">-sI &lt;zombie host[<!-- -->:probeport<!-- -->]&gt;: Idle scan<a href="#-si-zombie-host-idle-scan" class="hash-link" aria-label="Direct link to -si-zombie-host-idle-scan" title="Direct link to -si-zombie-host-idle-scan" translate="no">​</a></h2>
-<p>The<code>-sI</code>option in Nmap represents the Idle Scan, a sophisticated scanning technique that allows for stealthy scanning of a target network using a so-called &quot;zombie&quot; host. This type of scan can be used to map out a target&#x27;s ports without exposing the scanner&#x27;s IP address, making it one of the most stealthy and indirect methods of scanning available in Nmap.</p>
+<p>The <code>-sI</code> option in Nmap represents the Idle Scan, a sophisticated scanning technique that allows for stealthy scanning of a target network using a so-called &quot;zombie&quot; host. This type of scan can be used to map out a target&#x27;s ports without exposing the scanner&#x27;s IP address, making it one of the most stealthy and indirect methods of scanning available in Nmap.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="full-explanation-1">Full Explanation:<a href="#full-explanation-1" class="hash-link" aria-label="Direct link to Full Explanation:" title="Direct link to Full Explanation:" translate="no">​</a></h3>
 <p>An Idle Scan utilizes a third party (zombie) to send packets to the target. This zombie host must meet certain criteria: it should have an incremental IP ID sequence and be relatively idle (not sending many packets). The technique exploits the predictable incrementing of this ID in the IP packet headers to indirectly determine the status of ports on a target machine.</p>
 <p>When Nmap sends a spoofed packet to the target that appears to come from the zombie, the target’s response (if any) will be sent to the zombie. By observing changes in the IP ID sequence on the zombie, the scanner can infer the target’s response to the spoofed packets.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="command-example-1">Command Example:<a href="#command-example-1" class="hash-link" aria-label="Direct link to Command Example:" title="Direct link to Command Example:" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sI zombie_host</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[:probeport]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> target_host</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sI zombie_host[:probeport] target_host</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
 <p><strong>zombie_host</strong>: An IP address of a machine that fulfills the criteria of being a suitable zombie.</p>
@@ -315,8 +315,8 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <p><strong>Example with specified probe port:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sI </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.100</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">80</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.200</span><br></div></code></pre></div></div>
-<p>This command uses the host at<code>192.168.1.100</code>with port 80 as the zombie to scan the target at<code>192.168.1.200</code>.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sI 192.168.1.100:80 192.168.1.200</span><br></div></code></pre></div></div>
+<p>This command uses the host at <code>192.168.1.100</code> with port 80 as the zombie to scan the target at <code>192.168.1.200</code>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-usage-1">Typical Usage:<a href="#typical-usage-1" class="hash-link" aria-label="Direct link to Typical Usage:" title="Direct link to Typical Usage:" translate="no">​</a></h3>
 <ul>
 <li class="">
@@ -330,7 +330,7 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-sysz-sctp-initcookie-echo-scans">-sY/sZ: SCTP INIT/COOKIE-ECHO scans<a href="#-sysz-sctp-initcookie-echo-scans" class="hash-link" aria-label="Direct link to -sY/sZ: SCTP INIT/COOKIE-ECHO scans" title="Direct link to -sY/sZ: SCTP INIT/COOKIE-ECHO scans" translate="no">​</a></h3>
-<p>The<code>-sY</code>and<code>-sZ</code>options in Nmap are used for scanning using the SCTP (Stream Control Transmission Protocol) protocol, which is an alternative to TCP and UDP and supports features like multi-streaming and multi-homing. These options specify two types of SCTP scans: INIT scan and COOKIE-ECHO scan. Here&#x27;s a detailed explanation of each type, their command usage, and typical applications.</p>
+<p>The <code>-sY</code> and <code>-sZ</code> options in Nmap are used for scanning using the SCTP (Stream Control Transmission Protocol) protocol, which is an alternative to TCP and UDP and supports features like multi-streaming and multi-homing. These options specify two types of SCTP scans: INIT scan and COOKIE-ECHO scan. Here&#x27;s a detailed explanation of each type, their command usage, and typical applications.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-sy--sctp-init-scan">-sY : SCTP INIT Scan<a href="#-sy--sctp-init-scan" class="hash-link" aria-label="Direct link to -sY : SCTP INIT Scan" title="Direct link to -sY : SCTP INIT Scan" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>Full Explanation</strong>: An SCTP INIT scan involves sending an SCTP INIT chunk to a target port. The INIT chunk is used to initiate an SCTP association. This scan type is similar in purpose to a TCP SYN scan. It helps determine if a port is listening by checking for responses to the INIT request.</li>
@@ -341,7 +341,7 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 <p><code>nmap -sY 192.168.1.1</code></p>
 </li>
 <li class="">
-<p>This command performs an SCTP INIT scan on all open ports of the host at<code>192.168.1.1</code>.</p>
+<p>This command performs an SCTP INIT scan on all open ports of the host at <code>192.168.1.1</code>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-usage-">Typical Usage :<a href="#typical-usage-" class="hash-link" aria-label="Direct link to Typical Usage :" title="Direct link to Typical Usage :" translate="no">​</a></h3>
@@ -356,7 +356,7 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 <p><code>nmap -sZ 192.168.1.1</code></p>
 </li>
 <li class="">
-<p>This command initiates an SCTP COOKIE-ECHO scan on the host at<code>192.168.1.1</code>, probing the response to COOKIE-ECHO chunks.</p>
+<p>This command initiates an SCTP COOKIE-ECHO scan on the host at <code>192.168.1.1</code>, probing the response to COOKIE-ECHO chunks.</p>
 </li>
 <li class="">
 <p><strong>Typical Usage</strong>: Similar to the INIT scan, the COOKIE-ECHO scan is valuable in networks utilizing SCTP. It offers a deeper level of scanning for SCTP services, often employed in telecommunications to manage connections more securely and robustly against certain types of network attacks.</p>
@@ -365,7 +365,7 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="general-considerations-1">General Considerations:<a href="#general-considerations-1" class="hash-link" aria-label="Direct link to General Considerations:" title="Direct link to General Considerations:" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Specialized Network Environments</strong>: Both<code>-sY</code>and<code>-sZ</code>scans are specific to networks where SCTP is deployed. SCTP is less common than TCP or UDP but is crucial in certain industries, particularly in IP telephony and carrier-grade IP networks.</p>
+<p><strong>Specialized Network Environments</strong>: Both <code>-sY</code> and <code>-sZ</code> scans are specific to networks where SCTP is deployed. SCTP is less common than TCP or UDP but is crucial in certain industries, particularly in IP telephony and carrier-grade IP networks.</p>
 </li>
 <li class="">
 <p><strong>Security Implications</strong>: These scans can help security professionals identify and assess the security posture of SCTP implementations, which might be overlooked in environments primarily focused on TCP and UDP.</p>
@@ -375,15 +375,15 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-so-ip-protocol-scan">-sO: IP protocol scan<a href="#-so-ip-protocol-scan" class="hash-link" aria-label="Direct link to -sO: IP protocol scan" title="Direct link to -sO: IP protocol scan" translate="no">​</a></h3>
-<p>The<code>-sO</code>option in Nmap specifies an IP protocol scan, which is used to determine which IP protocols (e.g., TCP, ICMP, UDP, etc.) are supported by the target machines. This type of scan is less about the ports and more about understanding what protocols are being used or allowed through a network device like a firewall or router.</p>
+<p>The <code>-sO</code> option in Nmap specifies an IP protocol scan, which is used to determine which IP protocols (e.g., TCP, ICMP, UDP, etc.) are supported by the target machines. This type of scan is less about the ports and more about understanding what protocols are being used or allowed through a network device like a firewall or router.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="full-explanation-2">Full Explanation:<a href="#full-explanation-2" class="hash-link" aria-label="Direct link to Full Explanation:" title="Direct link to Full Explanation:" translate="no">​</a></h3>
 <p>An IP protocol scan sends raw IP packets to the target, using the protocol field in the IP header to determine which protocols are supported by the host. Instead of checking what services are running on which ports, this scan checks for the availability of different protocols at the IP level. For each protocol number, Nmap sends a packet and listens for a response. This is particularly useful for identifying security filters at a network level that may allow or block certain types of traffic.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="command-example-2">Command Example:<a href="#command-example-2" class="hash-link" aria-label="Direct link to Command Example:" title="Direct link to Command Example:" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sO </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div></code></pre></div></div>
-<p>This command initiates an IP protocol scan against the host at<code>192.168.1.1</code>, probing to see which IP protocols are supported or allowed through the network.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sO 192.168.1.1</span><br></div></code></pre></div></div>
+<p>This command initiates an IP protocol scan against the host at <code>192.168.1.1</code>, probing to see which IP protocols are supported or allowed through the network.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*EsoNrSm7R392iWciY-aYuw.png" alt="Article image" width="703" height="294" loading="lazy" decoding="async">
 <p>Nmap utilizes the standard IP protocol numbers as defined by the Internet Assigned Numbers Authority (IANA). These protocol numbers are used to specify the protocol carried in the IP datagram’s protocol field.</p>
-<p>You can find a comprehensive table of IP protocol numbers on the IANA<a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml" target="_blank" rel="noopener noreferrer" class="">website</a>or in various network-related documentation. However, for quick reference, here are some of the common protocol numbers that are frequently used with tools like Nmap:</p>
+<p>You can find a comprehensive table of IP protocol numbers on the IANA <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml" target="_blank" rel="noopener noreferrer" class="">website</a> or in various network-related documentation. However, for quick reference, here are some of the common protocol numbers that are frequently used with tools like Nmap:</p>
 <ul>
 <li class="">
 <p><strong>1</strong>: ICMP (Internet Control Message Protocol)</p>
@@ -432,11 +432,11 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-b-ftp-relay-host-ftp-bounce-scan">-b &lt;FTP relay host&gt;: FTP bounce scan<a href="#-b-ftp-relay-host-ftp-bounce-scan" class="hash-link" aria-label="Direct link to -b &lt;FTP relay host&gt;: FTP bounce scan" title="Direct link to -b &lt;FTP relay host&gt;: FTP bounce scan" translate="no">​</a></h2>
-<p>The<code>-b</code>option in Nmap is used for conducting an FTP bounce scan. This type of scan leverages an FTP server to &quot;bounce&quot; a scan or other traffic off of the FTP server, masking the origin of the scan and using the FTP server as a proxy. This technique exploits the FTP protocol’s<code>PORT</code>command, which tells the FTP server to open a data connection to a specified IP address and port. Essentially, it can be used to scan other hosts from the perspective of the FTP server, making the traffic appear to originate from the FTP server rather than the actual scanning machine.</p>
+<p>The <code>-b</code> option in Nmap is used for conducting an FTP bounce scan. This type of scan leverages an FTP server to &quot;bounce&quot; a scan or other traffic off of the FTP server, masking the origin of the scan and using the FTP server as a proxy. This technique exploits the FTP protocol’s <code>PORT</code> command, which tells the FTP server to open a data connection to a specified IP address and port. Essentially, it can be used to scan other hosts from the perspective of the FTP server, making the traffic appear to originate from the FTP server rather than the actual scanning machine.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="full-explanation-3">Full Explanation:<a href="#full-explanation-3" class="hash-link" aria-label="Direct link to Full Explanation:" title="Direct link to Full Explanation:" translate="no">​</a></h3>
 <p>FTP bounce scans utilize a feature of the FTP protocol that allows a client to request the server to connect back to an arbitrary IP address and port. Originally intended for sending data to third parties directly, this feature can be misused to scan ports on other systems. When conducting an FTP bounce scan, Nmap sends commands to the FTP server to have it connect to third-party hosts and ports. Depending on the response from the target, the scanner can infer the status of the ports.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="command-example-3">Command Example:<a href="#command-example-3" class="hash-link" aria-label="Direct link to Command Example:" title="Direct link to Command Example:" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">b</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> FTP_user:FTP_password@FTP_relay_host target_host</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -b FTP_user:FTP_password@FTP_relay_host target_host</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
 <p><strong>FTP_user</strong>: The username for the FTP server.</p>
@@ -452,8 +452,8 @@ My name is Andrey, and I am a penetration tester and cybersecurity researcher</p
 </li>
 </ul>
 <p>For example:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">b</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> admin:password@</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1.100</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.1</span><br></div></code></pre></div></div>
-<p>This command uses the FTP server at<code>192.168.1.100</code>with the username<code>admin</code>and password<code>password</code>to scan the host at<code>192.168.2.1</code>.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -b admin:password@192.168.1.100 192.168.2.1</span><br></div></code></pre></div></div>
+<p>This command uses the FTP server at <code>192.168.1.100</code> with the username <code>admin</code> and password <code>password</code> to scan the host at <code>192.168.2.1</code>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-usage-3">Typical Usage:<a href="#typical-usage-3" class="hash-link" aria-label="Direct link to Typical Usage:" title="Direct link to Typical Usage:" translate="no">​</a></h3>
 <ul>
 <li class="">

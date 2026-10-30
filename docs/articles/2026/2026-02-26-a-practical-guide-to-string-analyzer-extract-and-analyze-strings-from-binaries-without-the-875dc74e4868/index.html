@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -74,12 +74,12 @@
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introdaction">Introdaction<a href="#introdaction" class="hash-link" aria-label="Direct link to Introdaction" title="Direct link to Introdaction" translate="no">​</a></h2>
-<p>If you’ve ever stared at a suspicious binary or a memory dump and thought*“I just need the URLs and IPs and API names, not a full reverse-engineering suite,”*you’re not alone. Classic<code>strings</code>gives you a firehose of output. Manual grepping is tedious. What you want is something that<strong>extracts</strong>printable strings,<strong>classifies</strong>them (URLs, IPs, registry keys, Windows APIs, etc.), and — if you’re into AI-assisted triage —<strong>spits out a ready-made prompt</strong>you can paste into ChatGPT or Claude.</p>
-<p><strong>String Analyzer</strong>does exactly that. It’s a single Python tool: no heavy GUI, no commercial license, no runtime dependencies beyond the standard library. In this guide you’ll see how to install it, use it from the command line and from Python, and fit it into real workflows (malware triage, reverse engineering, forensics).</p>
+<p>If you’ve ever stared at a suspicious binary or a memory dump and thought <em>“I just need the URLs and IPs and API names, not a full reverse-engineering suite,”</em> you’re not alone. Classic <code>strings</code> gives you a firehose of output. Manual grepping is tedious. What you want is something that <strong>extracts</strong> printable strings, <strong>classifies</strong> them (URLs, IPs, registry keys, Windows APIs, etc.), and — if you’re into AI-assisted triage — <strong>spits out a ready-made prompt</strong> you can paste into ChatGPT or Claude.</p>
+<p><strong>String Analyzer</strong> does exactly that. It’s a single Python tool: no heavy GUI, no commercial license, no runtime dependencies beyond the standard library. In this guide you’ll see how to install it, use it from the command line and from Python, and fit it into real workflows (malware triage, reverse engineering, forensics).</p>
 <p><a href="https://github.com/anpa1200/String-Analyzer" target="_blank" rel="noopener noreferrer" class=""><strong>GitHub - anpa1200/String-Analyzer: A powerful Python script to extract and analyze printable…</strong>
-*A powerful Python script to extract and analyze printable strings from binaries. Ideal for malware analysts, reverse…*github.com</a><a href="https://github.com/anpa1200/String-Analyzer" target="_blank" rel="noopener noreferrer" class=""></a></p>
+*A powerful Python script to extract and analyze printable strings from binaries. Ideal for malware analysts, reverse…*github.com</a></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-strings-alone-isnt-enough">Why “strings” alone isn’t enough<a href="#why-strings-alone-isnt-enough" class="hash-link" aria-label="Direct link to Why “strings” alone isn’t enough" title="Direct link to Why “strings” alone isn’t enough" translate="no">​</a></h2>
-<p>Running<code>strings</code>on a binary gives you every printable sequence. That’s useful, but then you’re left with thousands of lines and no structure. You still have to:</p>
+<p>Running <code>strings</code> on a binary gives you every printable sequence. That’s useful, but then you’re left with thousands of lines and no structure. You still have to:</p>
 <ul>
 <li class="">
 <p>Find URLs and IPs</p>
@@ -88,460 +88,255 @@
 <p>Spot Windows API names and DLLs</p>
 </li>
 <li class="">
-<p>Notice obfuscation (e.g.<code>h[.]xxp</code>instead of<code>http</code>)</p>
+<p>Notice obfuscation (e.g. <code>h[.]xxp</code> instead of <code>http</code>)</p>
 </li>
 <li class="">
 <p>Decide if the file might be packed (high entropy, few readable APIs)</p>
 </li>
 </ul>
-<p>String Analyzer automates that. It extracts strings, runs pattern detection (URLs, IPv4/IPv6, emails, registry keys, 300+ Windows API names, CMD/PowerShell commands, and more), optionally decodes Base64/hex candidates, and computes file entropy. You get either a<strong>categorized report</strong>, a<strong>raw string dump</strong>, or an<strong>AI-ready markdown prompt</strong>— your choice.</p>
+<p>String Analyzer automates that. It extracts strings, runs pattern detection (URLs, IPv4/IPv6, emails, registry keys, 300+ Windows API names, CMD/PowerShell commands, and more), optionally decodes Base64/hex candidates, and computes file entropy. You get either a <strong>categorized report</strong>, a <strong>raw string dump</strong>, or an <strong>AI-ready markdown prompt</strong> — your choice.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="install-in-under-a-minute">Install in under a minute<a href="#install-in-under-a-minute" class="hash-link" aria-label="Direct link to Install in under a minute" title="Direct link to Install in under a minute" translate="no">​</a></h2>
-<p>You need**Python 3.8+**and nothing else (no pip packages for normal use).</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clone</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> https://github.com/anpa1200/String-Analyzer-.git &amp;&amp; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> String-Analyzer-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 -m venv venv</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> venv/bin/activate   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># On Windows: venv\Scripts\activate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pip install -e .</span><br></div></code></pre></div></div>
-<p>After that you have the<code>string-analyzer</code>command. From the project root you can also run<code>python -m string_analyzer</code>. That’s the only entry point — no second script to remember.</p>
+<p>You need <strong>Python 3.8+</strong> and nothing else (no pip packages for normal use).</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/anpa1200/String-Analyzer-.git &amp;&amp; cd String-Analyzer-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 -m venv venv</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source venv/bin/activate   # On Windows: venv\Scripts\activate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pip install -e .</span><br></div></code></pre></div></div>
+<p>After that you have the <code>string-analyzer</code> command. From the project root you can also run <code>python -m string_analyzer</code>. That’s the only entry point — no second script to remember.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*t2oueLWrLmTjWlbEC6PVpw.png" alt="Article image" width="1797" height="289" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="three-ways-to-run-it">Three ways to run it<a href="#three-ways-to-run-it" class="hash-link" aria-label="Direct link to Three ways to run it" title="Direct link to Three ways to run it" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-categorized-report-default">1. Categorized report (default)<a href="#1-categorized-report-default" class="hash-link" aria-label="Direct link to 1. Categorized report (default)" title="Direct link to 1. Categorized report (default)" translate="no">​</a></h3>
 <p>Best for a first look: entropy plus strings grouped by type (URLs, IPs, APIs, DLLs, obfuscation, etc.).</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-analyzer /</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/to/suspicious.exe -o report.txt</span><br></div></code></pre></div></div>
-<p>Open<code>report.txt</code>: you’ll see file entropy at the top, then sections like<code>### URLS</code>,<code>### IPS</code>,<code>### WINDOWS API COMMANDS</code>, and so on. Empty categories are omitted.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string-analyzer /path/to/suspicious.exe -o report.txt</span><br></div></code></pre></div></div>
+<p>Open <code>report.txt</code>: you’ll see file entropy at the top, then sections like <code>### URLS</code>, <code>### IPS</code>, <code>### WINDOWS API COMMANDS</code>, and so on. Empty categories are omitted.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*_qOu_CjI3Sv3kZhY3VRy-g.png" alt="Article image" width="1707" height="952" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-unfiltered-string-dump">2. Unfiltered string dump<a href="#2-unfiltered-string-dump" class="hash-link" aria-label="Direct link to 2. Unfiltered string dump" title="Direct link to 2. Unfiltered string dump" translate="no">​</a></h3>
 <p>When you want every extracted string (e.g. to grep or feed into another tool):</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-analyzer /</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/to/binary </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--unfiltered -o strings.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string-analyzer /path/to/binary --unfiltered -o strings.txt</span><br></div></code></pre></div></div>
 <p>You get a sorted, one-string-per-line file. No categories — just raw strings.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-ai-ready-analysis-prompt">3. AI-ready analysis prompt<a href="#3-ai-ready-analysis-prompt" class="hash-link" aria-label="Direct link to 3. AI-ready analysis prompt" title="Direct link to 3. AI-ready analysis prompt" translate="no">​</a></h3>
 <p>For triage, you can generate a markdown prompt that already contains the categorized strings and a short instruction for an AI to analyze behavior:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-analyzer /</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/to/suspicious.exe </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--ai-prompt -o prompt.md</span><br></div></code></pre></div></div>
-<p>Paste<code>prompt.md</code>into your favorite AI assistant. The prompt includes entropy, a “possibly packed/obfuscated” note when the heuristic triggers, and all the categorized strings — so the model can summarize behavior without you rewriting everything.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string-analyzer /path/to/suspicious.exe --ai-prompt -o prompt.md</span><br></div></code></pre></div></div>
+<p>Paste <code>prompt.md</code> into your favorite AI assistant. The prompt includes entropy, a “possibly packed/obfuscated” note when the heuristic triggers, and all the categorized strings — so the model can summarize behavior without you rewriting everything.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*j3uzFjVqHjG_AMOaA1bjkw.png" alt="Article image" width="1887" height="917" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="llm-response">LLM Response:<a href="#llm-response" class="hash-link" aria-label="Direct link to LLM Response:" title="Direct link to LLM Response:" translate="no">​</a></h3>
-<details class="plain-large-code" data-plain-code-lines="423"><summary>Large code or log block<!-- --> · <!-- -->423<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>Below is a strings-driven behavioral assessment (static triage). Strings are not proof of execution, but the 
-*combination*
- here is highly suggestive of an infostealer with credential decryption, browser/Steam/Discord token theft, screenshot capability, process injection/hollowing, and staged PowerShell download/execution.
+<details class="plain-large-code" data-plain-code-lines="218"><summary>Large code or log block<!-- --> · <!-- -->218<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>Below is a strings-driven behavioral assessment (static triage). Strings are not proof of execution, but the *combination* here is highly suggestive of an infostealer with credential decryption, browser/Steam/Discord token theft, screenshot capability, process injection/hollowing, and staged PowerShell download/execution.
+
 ---
+
 ## 1) DLLs (capability mapping)
-*
- 
-**ADVAPI32.dll / ntdll.dll / KERNEL32.dll**
+
+* **ADVAPI32.dll / ntdll.dll / KERNEL32.dll**
   Core Windows process + registry + privilege APIs. In malware, these often back:
-  *
- registry-based persistence, system profiling, token/handle operations
-  *
- low-level NT syscalls (via 
-**ntdll**
-) to evade user-mode hooks
-*
- 
-**Secur32.dll**
- (SSPI) + 
-**AcquireCredentialsHandleA / EncryptMessage / DecryptMessage / FreeCredentialsHandle**
-  Points to use of Windows 
-**SSPI**
- (security support provider interface): credential handles and message sealing/unsealing. Typical uses in malware:
-  *
- authenticated connections (e.g., NTLM/Kerberos via SSPI)
-  *
- protecting C2 traffic (wrapping/encrypting payloads at the session layer)
-  *
- interacting with proxies that require authentication
-*
- 
-**crypt32.dll**
- + CryptoAPI calls (
-**CryptImportKey / CryptEncrypt / CryptDecrypt / CryptSetKeyParam / CryptDestroyKey**
-)
+
+  * registry-based persistence, system profiling, token/handle operations
+  * low-level NT syscalls (via **ntdll**) to evade user-mode hooks
+
+* **Secur32.dll** (SSPI) + **AcquireCredentialsHandleA / EncryptMessage / DecryptMessage / FreeCredentialsHandle**
+  Points to use of Windows **SSPI** (security support provider interface): credential handles and message sealing/unsealing. Typical uses in malware:
+
+  * authenticated connections (e.g., NTLM/Kerberos via SSPI)
+  * protecting C2 traffic (wrapping/encrypting payloads at the session layer)
+  * interacting with proxies that require authentication
+
+* **crypt32.dll** + CryptoAPI calls (**CryptImportKey / CryptEncrypt / CryptDecrypt / CryptSetKeyParam / CryptDestroyKey**)
   Strong indicator of on-host encryption/decryption:
-  *
- decrypting locally protected secrets (common in stealers)
-  *
- encrypting exfiltrated data before sending
-  *
- implementing a custom packer/loader encryption layer
-*
- 
-**ole32.dll / oleaut32.dll**
- + COM calls (
-**CoInitializeEx / CoCreateInstance / CoSetProxyBlanket**
-)
+
+  * decrypting locally protected secrets (common in stealers)
+  * encrypting exfiltrated data before sending
+  * implementing a custom packer/loader encryption layer
+
+* **ole32.dll / oleaut32.dll** + COM calls (**CoInitializeEx / CoCreateInstance / CoSetProxyBlanket**)
   Usually indicates COM usage, often for:
-  *
- 
-**WMI**
- / system interrogation
-  *
- COM-based networking components
-  *
- setting authentication on COM proxies (
-**CoSetProxyBlanket**
-) → can be used with WMI/DCOM or other COM servers
-*
- 
-**user32.dll / gdi32.dll**
- + 
-**BitBlt / CreateCompatibleDC / GetDC / GetDIBits**
-  Classic 
-**screenshot**
- pipeline (GDI screen capture).
+
+  * **WMI** / system interrogation
+  * COM-based networking components
+  * setting authentication on COM proxies (**CoSetProxyBlanket**) → can be used with WMI/DCOM or other COM servers
+
+* **user32.dll / gdi32.dll** + **BitBlt / CreateCompatibleDC / GetDC / GetDIBits**
+  Classic **screenshot** pipeline (GDI screen capture).
+
 &gt; Note: you have both `Error: no user32.dll` and `user32.dll`. That kind of contradictory artifact commonly appears when:
 &gt;
 &gt; * multiple samples were concatenated, or
 &gt; * a packer/loader carries decoy strings, or
 &gt; * the binary resolves APIs dynamically and includes “error” strings for fallback paths.
+
 ---
+
 ## 2) Files / paths (what it targets)
-*
- 
-**`powershell.exe`**
- and PowerShell one-liners
-  Indicates 
-**staging**
- / “living off the land” execution:
-  *
- 
-`-NoProfile`
- reduces noise
-  *
- 
-`-ExecutionPolicy Bypass`
- is a common bypass attempt
-  *
- 
-`IEX (New-Object Net.WebClient).DownloadString(&#x27;...&#x27;)`
- is a classic in-memory downloader pattern
-*
- 
-**`\rundll32.exe`**
-  Frequently used as a 
-**proxy execution**
- mechanism (launch a DLL export, blend in with normal Windows activity).
-*
- 
-**`\Err.txt`**
+
+* **`powershell.exe`** and PowerShell one-liners
+  Indicates **staging** / “living off the land” execution:
+
+  * `-NoProfile` reduces noise
+  * `-ExecutionPolicy Bypass` is a common bypass attempt
+  * `IEX (New-Object Net.WebClient).DownloadString(&#x27;...&#x27;)` is a classic in-memory downloader pattern
+
+* **`\rundll32.exe`**
+  Frequently used as a **proxy execution** mechanism (launch a DLL export, blend in with normal Windows activity).
+
+* **`\Err.txt`**
   Local error logging is common in stealers/loaders (helps operators debug deployments). It also means the malware may write artifacts to disk (useful for DFIR).
-*
- 
-**Browser credential stores**
-  *
- 
-`\AppData\Local\Temp\Login Data`
-, 
-`\Login Data`
-, 
-`\Network\Cookies`
-  *
- 
-`encrypted_key`
-, 
-`app_bound_encrypted_key`
+
+* **Browser credential stores**
+
+  * `\AppData\Local\Temp\Login Data`, `\Login Data`, `\Network\Cookies`
+  * `encrypted_key`, `app_bound_encrypted_key`
     These strongly align with **Chromium-based browsers** (Chrome/Edge/Brave/etc.). The typical theft flow:
-  1.
- read browser DB files (
-`Login Data`
-, cookies DB)
-  2.
- extract the 
-**encrypted master key**
- from “Local State” (the 
-`encrypted_key`
- concept)
-  3.
- decrypt secrets using Windows crypto/DPAPI-like primitives (your CryptoAPI strings support this)
-  4.
- exfiltrate credentials/cookies/session tokens
-*
- 
-**Firefox artifacts**
-  *
- 
-`\key3.db`
-, 
-`\key4.db`
-, 
-`\logins.json`
+
+  1. read browser DB files (`Login Data`, cookies DB)
+  2. extract the **encrypted master key** from “Local State” (the `encrypted_key` concept)
+  3. decrypt secrets using Windows crypto/DPAPI-like primitives (your CryptoAPI strings support this)
+  4. exfiltrate credentials/cookies/session tokens
+
+* **Firefox artifacts**
+
+  * `\key3.db`, `\key4.db`, `\logins.json`
     This is the classic Firefox credential material (logins + key DB).
-*
- 
-**Steam**
-  *
- 
-`\config\loginusers.vdf`
+
+* **Steam**
+
+  * `\config\loginusers.vdf`
     This file is commonly targeted to steal Steam account/session info.
-*
- 
-**Discord / token theft**
-  *
- 
-`o/41/tokens.txt`
+
+* **Discord / token theft**
+
+  * `o/41/tokens.txt`
     The explicit “tokens.txt” naming is consistent with commodity stealers that dump tokens to a staging file before exfil.
-*
- 
-**`Elevator.exe`**
-  Filename often used by malware droppers/loaders (suggesting privilege escalation themes), but strings alone can’t confirm actual UAC bypass. Treat as 
-*suspicious staging component name*
-.
+
+* **`Elevator.exe`**
+  Filename often used by malware droppers/loaders (suggesting privilege escalation themes), but strings alone can’t confirm actual UAC bypass. Treat as *suspicious staging component name*.
+
 ---
+
 ## 3) Obfuscated / network indicators
-*
- 
-**`http://`, `https://`, `HTTP/1.1`, `CONNECT`**
-  Suggests raw HTTP(S) client behavior. The presence of 
-**CONNECT**
- specifically can imply:
-  *
- proxy tunneling (HTTP CONNECT method)
-  *
- pivoting traffic through enterprise proxies
-  *
- hiding C2 behind standard TLS tunnels
+
+* **`http://`, `https://`, `HTTP/1.1`, `CONNECT`**
+  Suggests raw HTTP(S) client behavior. The presence of **CONNECT** specifically can imply:
+
+  * proxy tunneling (HTTP CONNECT method)
+  * pivoting traffic through enterprise proxies
+  * hiding C2 behind standard TLS tunnels
+
 ### URL/domain enrichment: `data-cdn.mbamupdates.com`
-This hostname is associated with 
-**Malwarebytes update delivery/CDN**
- in official firewall/network requirement docs. ([
-מרכז העזרה של Malwarebytes
-][
-1
-])
+
+This hostname is associated with **Malwarebytes update delivery/CDN** in official firewall/network requirement docs. ([מרכז העזרה של Malwarebytes][1])
+
 **Implications in a malware context:**
-*
- It might be 
-**benign**
- (e.g., the binary bundles or fetches a legitimate Malwarebytes installer/component).
-*
- It might be 
-**abuse/misdirection**
-:
-  *
- attackers sometimes use reputable domains as decoys in strings
-  *
- historically, update channels can be abused via spoofing/MITM if validation is weak; Rapid7 documented an exploit scenario involving spoofing 
-`data-cdn.mbamupdates.com`
- for code execution in older Malwarebytes update flows. ([
-Rapid7
-][
-2
-])
+
+* It might be **benign** (e.g., the binary bundles or fetches a legitimate Malwarebytes installer/component).
+* It might be **abuse/misdirection**:
+
+  * attackers sometimes use reputable domains as decoys in strings
+  * historically, update channels can be abused via spoofing/MITM if validation is weak; Rapid7 documented an exploit scenario involving spoofing `data-cdn.mbamupdates.com` for code execution in older Malwarebytes update flows. ([Rapid7][2])
     (That does **not** mean Malwarebytes is currently vulnerable—just that attackers may reference this domain in related tradecraft or older tooling.)
+
 ---
+
 ## 4) “Suspicious keywords” (why they matter)
-*
- 
-**PE header string**
-: 
-`!This program cannot be run in DOS mode.`
+
+* **PE header string**: `!This program cannot be run in DOS mode.`
   Normal for Windows PE files; not inherently malicious.
-*
- 
-**PowerShell bypass &amp; download**
-  Direct evidence of likely 
-**second-stage retrieval**
- or 
-**scripted payload execution**
-.
-*
- 
-**Registry targeting**
-  *
- 
-`NtOpenKey`
-, 
-`NtQueryValueKey`
-  *
- 
-`\Registry\Machine\SOFTWARE\Microsoft\Cryptography`
-  *
- 
-`\shell\open\command`
+
+* **PowerShell bypass &amp; download**
+  Direct evidence of likely **second-stage retrieval** or **scripted payload execution**.
+
+* **Registry targeting**
+
+  * `NtOpenKey`, `NtQueryValueKey`
+  * `\Registry\Machine\SOFTWARE\Microsoft\Cryptography`
+  * `\shell\open\command`
     Strong persistence / hijack signal:
   * `...shell\open\command` is a common place to hijack “open” behaviors for file types or handlers (persistence and/or execution redirection).
   * Crypto registry path can be used to locate machine crypto material or configuration relevant to decryption routines.
-*
- 
-**Environment/profile strings**
-  *
- 
-`USERNAME=`
-, 
-`USERPROFILE=`
-, 
-`User lang:`
+
+* **Environment/profile strings**
+
+  * `USERNAME=`, `USERPROFILE=`, `User lang:`
     Host profiling (victim ID, locale-based targeting, exfil tagging, or operator telemetry).
+
 ---
+
 ## 5) Windows API commands (what actions it can perform)
+
 ### A) Credential &amp; data theft (file + registry)
-*
- 
-**NtCreateFile / NtOpenFile / NtReadFile / NtQueryInformationFile**
-*
- 
-**RegOpenKeyExA / RegEnumKeyExA / RegCloseKey**
+
+* **NtCreateFile / NtOpenFile / NtReadFile / NtQueryInformationFile**
+* **RegOpenKeyExA / RegEnumKeyExA / RegCloseKey**
   Reads browser DBs, Steam files, and registry values needed to decrypt stored secrets.
+
 ### B) Screenshot capture
-*
- 
-**GetDC / BitBlt / CreateCompatibleDC / CreateCompatibleBitmap / GetDIBits / DeleteDC / DeleteObject / ReleaseDC**
+
+* **GetDC / BitBlt / CreateCompatibleDC / CreateCompatibleBitmap / GetDIBits / DeleteDC / DeleteObject / ReleaseDC**
   This is the canonical GDI screenshot chain → indicates screen capture capability (often used to steal MFA prompts, wallets, sensitive docs).
+
 ### C) Process discovery + injection / hollowing
-*
- 
-**CreateToolhelp32Snapshot**
- → enumerate processes
-*
- 
-**OpenProcess / VirtualAllocEx / WriteProcessMemory / GetThreadContext / SetThreadContext / ResumeThread / TerminateProcess / WaitForSingleObject**
-*
- 
-**DuplicateHandle**
+
+* **CreateToolhelp32Snapshot** → enumerate processes
+* **OpenProcess / VirtualAllocEx / WriteProcessMemory / GetThreadContext / SetThreadContext / ResumeThread / TerminateProcess / WaitForSingleObject**
+* **DuplicateHandle**
   This cluster is highly consistent with:
-*
- classic 
-**remote process injection**
-*
- 
-**process hollowing**
- (create/suspend → replace memory → set context → resume)
-*
- evasion (run under a legitimate process context)
+* classic **remote process injection**
+* **process hollowing** (create/suspend → replace memory → set context → resume)
+* evasion (run under a legitimate process context)
+
 ### D) Anti-analysis / EDR evasion hints
-*
- 
-**GetProcAddress / FreeLibrary**
- often used for dynamic API resolution (reduces static signatures).
-*
- 
-**ntdll + NtQuerySystemInformation**
- can be used to enumerate system/AV/EDR artifacts and evade hooks.
+
+* **GetProcAddress / FreeLibrary** often used for dynamic API resolution (reduces static signatures).
+* **ntdll + NtQuerySystemInformation** can be used to enumerate system/AV/EDR artifacts and evade hooks.
+
 ---
+
 ## Overall assessment: likely behavior &amp; functionality
-**Most likely malware family class (based on strings):**
- a 
-**commodity infostealer/loader**
- with:
-1.
- 
-**Stage 0/1 loader behavior**
-: PowerShell-based download/execute + possible rundll32-based execution.
-2.
- 
-**Credential/session theft**
-:
-   *
- Chromium credentials + cookies (
-`Login Data`
-, 
-`Network\Cookies`
-, 
-`encrypted_key/app_bound_encrypted_key`
-)
-   *
- Firefox credentials (
-`logins.json`
-, 
-`key3.db/key4.db`
-)
-   *
- Steam session/user data (
-`loginusers.vdf`
-)
-   *
- Token harvesting (
-`tokens.txt`
-)
-3.
- 
-**Victim profiling**
-: username/userprofile/language.
-4.
- 
-**Data collection add-ons**
-: screenshots.
-5.
- 
-**Stealth/execution**
-: process injection/hollowing to run under another process and bypass controls.
-6.
- 
-**Encrypted comms**
-: CryptoAPI + SSPI suggests exfil/C2 traffic may be protected or proxy-auth capable.
+
+**Most likely malware family class (based on strings):** a **commodity infostealer/loader** with:
+
+1. **Stage 0/1 loader behavior**: PowerShell-based download/execute + possible rundll32-based execution.
+2. **Credential/session theft**:
+
+   * Chromium credentials + cookies (`Login Data`, `Network\Cookies`, `encrypted_key/app_bound_encrypted_key`)
+   * Firefox credentials (`logins.json`, `key3.db/key4.db`)
+   * Steam session/user data (`loginusers.vdf`)
+   * Token harvesting (`tokens.txt`)
+3. **Victim profiling**: username/userprofile/language.
+4. **Data collection add-ons**: screenshots.
+5. **Stealth/execution**: process injection/hollowing to run under another process and bypass controls.
+6. **Encrypted comms**: CryptoAPI + SSPI suggests exfil/C2 traffic may be protected or proxy-auth capable.
+
 **Why entropy 5.94 matters (context):**
-*
- It’s moderately high but not “maxed out.” That can indicate:
-  *
- partially packed/obfuscated content, or
-  *
- a normal compiled binary with some compressed/encrypted sections, or
-  *
- embedded resources (scripts/config/blobs).
+
+* It’s moderately high but not “maxed out.” That can indicate:
+
+  * partially packed/obfuscated content, or
+  * a normal compiled binary with some compressed/encrypted sections, or
+  * embedded resources (scripts/config/blobs).
+
 ---
+
 ## Practical implications for defenders (high-confidence IOCs from your strings)
-*
- 
-**File access indicators**
-  *
- reads of 
-`...\Login Data`
-, 
-`...\Network\Cookies`
-, 
-`...\logins.json`
-, 
-`...\key4.db`
-, 
-`...\Steam\config\loginusers.vdf`
-*
- 
-**PowerShell command line**
-  *
- 
-`-ExecutionPolicy Bypass`
-  *
- 
-`IEX (New-Object Net.WebClient).DownloadString(...)`
-*
- 
-**Process injection telemetry**
-  *
- 
-`OpenProcess`
- → 
-`VirtualAllocEx`
- → 
-`WriteProcessMemory`
- → 
-`SetThreadContext`
-/
-`ResumeThread`
-*
- 
-**Screenshot telemetry**
-  *
- 
-`BitBlt`
- + 
-`GetDC`
- sequences
-*
- 
-**Registry persistence checks**
-  *
- 
-`...\shell\open\command`
- modifications
-If you want, paste 
-**any actual observed command lines**
-, mutexes, or network destinations (even partial), and I’ll turn this into a tighter behavior map (MITRE ATT&amp;CK techniques + likely execution chain) and a concrete detection checklist (Sysmon + EDR query ideas).
-[
-1
-]: 
-https://help.malwarebytes.com/hc/en-us/articles/31589321931419-Firewall-access-requirements-for-Malwarebytes-for-Mac-v4?utm_source=chatgpt.com &quot;Firewall access requirements for Malwarebytes for Mac v4&quot;
-[
-2
-]: 
-https://www.rapid7.com/db/modules/exploit/windows/browser/malwarebytes_update_exec/?utm_source=chatgpt.com &quot;Malwarebytes Anti-Malware and Anti-Exploit Update ...&quot;
+
+* **File access indicators**
+
+  * reads of `...\Login Data`, `...\Network\Cookies`, `...\logins.json`, `...\key4.db`, `...\Steam\config\loginusers.vdf`
+* **PowerShell command line**
+
+  * `-ExecutionPolicy Bypass`
+  * `IEX (New-Object Net.WebClient).DownloadString(...)`
+* **Process injection telemetry**
+
+  * `OpenProcess` → `VirtualAllocEx` → `WriteProcessMemory` → `SetThreadContext`/`ResumeThread`
+* **Screenshot telemetry**
+
+  * `BitBlt` + `GetDC` sequences
+* **Registry persistence checks**
+
+  * `...\shell\open\command` modifications
+
+If you want, paste **any actual observed command lines**, mutexes, or network destinations (even partial), and I’ll turn this into a tighter behavior map (MITRE ATT&amp;CK techniques + likely execution chain) and a concrete detection checklist (Sysmon + EDR query ideas).
+
+[1]: https://help.malwarebytes.com/hc/en-us/articles/31589321931419-Firewall-access-requirements-for-Malwarebytes-for-Mac-v4?utm_source=chatgpt.com &quot;Firewall access requirements for Malwarebytes for Mac v4&quot;
+[2]: https://www.rapid7.com/db/modules/exploit/windows/browser/malwarebytes_update_exec/?utm_source=chatgpt.com &quot;Malwarebytes Anti-Malware and Anti-Exploit Update ...&quot;
 </code></pre></details>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="interactive-mode-when-you-dont-want-to-type-flags">Interactive mode: when you don’t want to type flags<a href="#interactive-mode-when-you-dont-want-to-type-flags" class="hash-link" aria-label="Direct link to Interactive mode: when you don’t want to type flags" title="Direct link to Interactive mode: when you don’t want to type flags" translate="no">​</a></h2>
-<p>If you run String Analyzer<strong>without</strong>a file path, it switches to interactive mode:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-analyzer</span><br></div></code></pre></div></div>
+<p>If you run String Analyzer <strong>without</strong> a file path, it switches to interactive mode:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string-analyzer</span><br></div></code></pre></div></div>
 <p>It will ask you for:</p>
 <ul>
 <li class="">
@@ -557,106 +352,106 @@ https://www.rapid7.com/db/modules/exploit/windows/browser/malwarebytes_update_ex
 <p>Where to save the output (with a sensible default)</p>
 </li>
 </ul>
-<p>Useful when you’re exploring one file at a time and don’t want to remember<code>--ai-prompt</code>or<code>-o</code>. Interactive mode also caps how much of the file is read (e.g. 50 MB) so you don’t accidentally blow memory on a huge dump.</p>
+<p>Useful when you’re exploring one file at a time and don’t want to remember <code>--ai-prompt</code> or <code>-o</code>. Interactive mode also caps how much of the file is read (e.g. 50 MB) so you don’t accidentally blow memory on a huge dump.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="handy-options-youll-use">Handy options you’ll use<a href="#handy-options-youll-use" class="hash-link" aria-label="Direct link to Handy options you’ll use" title="Direct link to Handy options you’ll use" translate="no">​</a></h3>
 <p>Example: large memory dump, first 100 MB only, filtered report:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-analyzer memory.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dump</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--max-bytes 100000000 -o report.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">string-analyzer memory.dump --max-bytes 100000000 -o report.txt</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-gets-detected-and-why-it-matters">What gets detected (and why it matters)<a href="#what-gets-detected-and-why-it-matters" class="hash-link" aria-label="Direct link to What gets detected (and why it matters)" title="Direct link to What gets detected (and why it matters)" translate="no">​</a></h2>
 <p>String Analyzer doesn’t execute anything; it only reads the file and classifies printable strings. The categories include:</p>
 <ul>
 <li class="">
-<p><strong>URLs</strong>— C2, download links, ads</p>
+<p><strong>URLs</strong> — C2, download links, ads</p>
 </li>
 <li class="">
-<p><strong>IPs (IPv4/IPv6)</strong>— servers, beacons</p>
+<p><strong>IPs (IPv4/IPv6)</strong> — servers, beacons</p>
 </li>
 <li class="">
-<p><strong>Emails</strong>— contacts, exfil, phishing</p>
+<p><strong>Emails</strong> — contacts, exfil, phishing</p>
 </li>
 <li class="">
-<p><strong>Windows API names</strong>— 300+ known functions (CreateFile, VirtualAlloc, etc.)</p>
+<p><strong>Windows API names</strong> — 300+ known functions (CreateFile, VirtualAlloc, etc.)</p>
 </li>
 <li class="">
-<p><strong>DLLs</strong>— e.g.<code>kernel32.dll</code>,<code>ws2_32.dll</code></p>
+<p><strong>DLLs</strong> — e.g. <code>kernel32.dll</code>, <code>ws2_32.dll</code></p>
 </li>
 <li class="">
-<p><strong>CMD / PowerShell</strong>— script-like commands</p>
+<p><strong>CMD / PowerShell</strong> — script-like commands</p>
 </li>
 <li class="">
-<p><strong>Registry keys</strong>— persistence, config</p>
+<p><strong>Registry keys</strong> — persistence, config</p>
 </li>
 <li class="">
-<p><strong>System paths</strong>— install locations, temp dirs</p>
+<p><strong>System paths</strong> — install locations, temp dirs</p>
 </li>
 <li class="">
-<p><strong>Obfuscation patterns</strong>— e.g.<code>h[.]xxp</code>, dotted IPs</p>
+<p><strong>Obfuscation patterns</strong> — e.g. <code>h[.]xxp</code>, dotted IPs</p>
 </li>
 <li class="">
-<p><strong>Base64 / hex</strong>— decoded when the result looks like text</p>
+<p><strong>Base64 / hex</strong> — decoded when the result looks like text</p>
 </li>
 <li class="">
-<p><strong>Suspicious keywords</strong>— malware-related terms and .NET namespaces</p>
+<p><strong>Suspicious keywords</strong> — malware-related terms and .NET namespaces</p>
 </li>
 </ul>
 <p>So in one run you get a structured view of “what this binary talks about” — without opening a disassembler.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="using-it-from-python">Using it from Python<a href="#using-it-from-python" class="hash-link" aria-label="Direct link to Using it from Python" title="Direct link to Using it from Python" translate="no">​</a></h2>
 <p>String Analyzer is also a library. You can batch-process files or plug it into your own pipeline.</p>
 <p><strong>One-shot analysis:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">from</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> string_analyzer import analyze_file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">result</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> analyze_file(&quot;sample.exe&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(&quot;Entropy:&quot;, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">result</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[&quot;entropy&quot;])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(&quot;Likely obfuscated/packed:&quot;, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">result</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[&quot;obfuscated&quot;])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(&quot;URLs:&quot;, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">result</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[&quot;patterns&quot;].</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">get</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(&quot;URLS&quot;, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">()))</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(&quot;IPs:&quot;, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">result</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[&quot;patterns&quot;].</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">get</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(&quot;IPS&quot;, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">set</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">()))</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">from string_analyzer import analyze_file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">result = analyze_file(&quot;sample.exe&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(&quot;Entropy:&quot;, result[&quot;entropy&quot;])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(&quot;Likely obfuscated/packed:&quot;, result[&quot;obfuscated&quot;])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(&quot;URLs:&quot;, result[&quot;patterns&quot;].get(&quot;URLS&quot;, set()))</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(&quot;IPs:&quot;, result[&quot;patterns&quot;].get(&quot;IPS&quot;, set()))</span><br></div></code></pre></div></div>
 <p><strong>Step-by-step (e.g. custom reporting):</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">from string_analyzer import extract_strings, detect_patterns, compute_file_entropy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from string_analyzer.analyzer import is_likely_obfuscated, generate_ai_prompt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;sample.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">entropy = compute_file_entropy(path)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">strings = extract_strings(path, min_length=4, max_bytes=50_000_000)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">patterns = detect_patterns(strings)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">obfuscated = is_likely_obfuscated(patterns, entropy)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">prompt_text = generate_ai_prompt(patterns, entropy, obfuscated)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Save prompt_text or send it to your AI API</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">from string_analyzer import extract_strings, detect_patterns, compute_file_entropy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from string_analyzer.analyzer import is_likely_obfuscated, generate_ai_prompt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">path = &quot;sample.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">entropy = compute_file_entropy(path)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">strings = extract_strings(path, min_length=4, max_bytes=50_000_000)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">patterns = detect_patterns(strings)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">obfuscated = is_likely_obfuscated(patterns, entropy)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">prompt_text = generate_ai_prompt(patterns, entropy, obfuscated)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Save prompt_text or send it to your AI API</span><br></div></code></pre></div></div>
 <p><strong>Batch over many files:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">from</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> pathlib </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> string_analyzer </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> analyze_file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> f </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Path(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;samples&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">).glob(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">try</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        r = analyze_file(f, max_bytes=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">50_000_000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> r[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;obfuscated&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;Possible packer: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{f}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># ... write r[&quot;patterns&quot;], r[&quot;entropy&quot;] to your DB or report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">except</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Exception </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">as</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> e:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;Error </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{f}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{e}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div></code></pre></div></div>
-<p>No global state:<code>detect_patterns()</code>returns a fresh dict every time, so it’s safe to use in loops or concurrent code.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">from pathlib import Path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from string_analyzer import analyze_file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for f in Path(&quot;samples&quot;).glob(&quot;*.exe&quot;):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    try:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        r = analyze_file(f, max_bytes=50_000_000)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        if r[&quot;obfuscated&quot;]:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            print(f&quot;Possible packer: {f}&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        # ... write r[&quot;patterns&quot;], r[&quot;entropy&quot;] to your DB or report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    except Exception as e:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        print(f&quot;Error {f}: {e}&quot;)</span><br></div></code></pre></div></div>
+<p>No global state: <code>detect_patterns()</code> returns a fresh dict every time, so it’s safe to use in loops or concurrent code.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-obfuscated-flag-what-it-means">The “obfuscated” flag: what it means<a href="#the-obfuscated-flag-what-it-means" class="hash-link" aria-label="Direct link to The “obfuscated” flag: what it means" title="Direct link to The “obfuscated” flag: what it means" translate="no">​</a></h2>
-<p>String Analyzer computes<strong>Shannon entropy</strong>for the whole file. Packed or encrypted binaries often have high entropy and few readable API/command strings. The tool combines:</p>
+<p>String Analyzer computes <strong>Shannon entropy</strong> for the whole file. Packed or encrypted binaries often have high entropy and few readable API/command strings. The tool combines:</p>
 <ul>
 <li class="">
-<p><strong>Entropy</strong>above a threshold (default 5.0), and</p>
+<p><strong>Entropy</strong> above a threshold (default 5.0), and</p>
 </li>
 <li class="">
-<p><strong>Low count</strong>of “useful” patterns (Windows APIs, DLLs, CMD, PowerShell)</p>
+<p><strong>Low count</strong> of “useful” patterns (Windows APIs, DLLs, CMD, PowerShell)</p>
 </li>
 </ul>
-<p>into a single**“obfuscated”**(or “maybe obfuscated/packed”) note in the report and in the AI prompt. It’s a heuristic — not a guarantee — but it helps you prioritize what to dig into next.</p>
+<p>into a single <strong>“obfuscated”</strong> (or “maybe obfuscated/packed”) note in the report and in the AI prompt. It’s a heuristic — not a guarantee — but it helps you prioritize what to dig into next.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="when-to-use-which-output">When to use which output<a href="#when-to-use-which-output" class="hash-link" aria-label="Direct link to When to use which output" title="Direct link to When to use which output" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Filtered report (default)</strong>— First look, sharing with colleagues, or when you want sections (URLs, IPs, APIs) in one place.</p>
+<p><strong>Filtered report (default)</strong> — First look, sharing with colleagues, or when you want sections (URLs, IPs, APIs) in one place.</p>
 </li>
 <li class="">
-<p><strong>Unfiltered</strong>— You need a plain string list for grep, custom scripts, or other tools.</p>
+<p><strong>Unfiltered</strong> — You need a plain string list for grep, custom scripts, or other tools.</p>
 </li>
 <li class="">
-<p><strong>AI prompt</strong>— You want a first-pass behavioral summary from an LLM; the prompt is already written and filled with categorized strings.</p>
+<p><strong>AI prompt</strong> — You want a first-pass behavioral summary from an LLM; the prompt is already written and filled with categorized strings.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-simple-triage-workflow">A simple triage workflow<a href="#a-simple-triage-workflow" class="hash-link" aria-label="Direct link to A simple triage workflow" title="Direct link to A simple triage workflow" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>Get a suspicious sample (e.g.<code>suspect.exe</code>).</p>
+<p>Get a suspicious sample (e.g. <code>suspect.exe</code>).</p>
 </li>
 <li class="">
 <p>Run:
 <code>string-analyzer suspect.exe --ai-prompt -o triage.md</code></p>
 </li>
 <li class="">
-<p>Open<code>triage.md</code>, paste it into your AI assistant.</p>
+<p>Open <code>triage.md</code>, paste it into your AI assistant.</p>
 </li>
 <li class="">
 <p>Use the model’s summary to decide: deep-dive, sandbox, or discard.</p>
 </li>
 <li class="">
-<p>For deeper inspection, run again without<code>--ai-prompt</code>and open the filtered report to grep or skim categories.</p>
+<p>For deeper inspection, run again without <code>--ai-prompt</code> and open the filtered report to grep or skim categories.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-in-a-few-words">Safety in a few words<a href="#safety-in-a-few-words" class="hash-link" aria-label="Direct link to Safety in a few words" title="Direct link to Safety in a few words" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>String Analyzer<strong>only reads</strong>the file and extracts/classifies strings. It doesn’t execute code.</p>
+<p>String Analyzer <strong>only reads</strong> the file and extracts/classifies strings. It doesn’t execute code.</p>
 </li>
 <li class="">
-<p>For very large files, use<code>--max-bytes</code>(or<code>max_bytes</code>in the API) to limit memory and CPU.</p>
+<p>For very large files, use <code>--max-bytes</code> (or <code>max_bytes</code> in the API) to limit memory and CPU.</p>
 </li>
 <li class="">
 <p>Treat the output (URLs, IPs, paths) according to your security and privacy policies — it can contain sensitive or malicious indicators.</p>
@@ -665,13 +460,13 @@ https://www.rapid7.com/db/modules/exploit/windows/browser/malwarebytes_update_ex
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="where-to-go-from-here">Where to go from here<a href="#where-to-go-from-here" class="hash-link" aria-label="Direct link to Where to go from here" title="Direct link to Where to go from here" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Repo and full docs:</strong><a href="https://github.com/anpa1200/String-Analyzer-" target="_blank" rel="noopener noreferrer" class="">GitHub — String Analyzer</a></p>
+<p><strong>Repo and full docs:</strong> <a href="https://github.com/anpa1200/String-Analyzer-" target="_blank" rel="noopener noreferrer" class="">GitHub — String Analyzer</a></p>
 </li>
 <li class="">
-<p>**Detailed reference:**See<code>docs/DOCUMENTATION.md</code>in the repo (workflows, pattern details, API, troubleshooting).</p>
+<p><strong>Detailed reference:</strong> See <code>docs/DOCUMENTATION.md</code> in the repo (workflows, pattern details, API, troubleshooting).</p>
 </li>
 </ul>
-<p>String Analyzer is GPL-3.0, Python 3.8+, and dependency-free at runtime. If you’re doing malware analysis, reverse engineering, or forensics and you’ve outgrown plain<code>strings</code>, give it a try — and if you improve it, the project welcomes contributions.</p>
+<p>String Analyzer is GPL-3.0, Python 3.8+, and dependency-free at runtime. If you’re doing malware analysis, reverse engineering, or forensics and you’ve outgrown plain <code>strings</code>, give it a try — and if you improve it, the project welcomes contributions.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h2>
 <p>String Analyzer extracts and categorizes strings from binaries (URLs, IPs, APIs, DLLs, obfuscation, etc.), computes entropy, and can output a filtered report or an AI-ready prompt. This guide walked through installation, the three main output modes, interactive mode, key options, what’s detected, Python API usage, the obfuscation heuristic, and a simple triage workflow.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-02-21-one-tool-to-rule-them-all-file-metadata-and-static-analysis-for-malware-analysts-and-soc-t-c6dba1f5b7de"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">One Tool to Rule Them All: File Metadata &amp; Static Analysis for Malware Analysts and SOC Teams</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-02-26-pe-import-analyzer-a-practical-guide-for-malware-analysts-and-reverse-engineers-29b8b98aeaf3"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">PE Import Analyzer: A Practical Guide for Malware Analysts and Reverse Engineers</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a></li><li><a href="#a-practical-guide-to-string-analyzer-extract-and-analyze-strings-from-binaries-without-the-headache" class="table-of-contents__link toc-highlight">A Practical Guide to String Analyzer: Extract and Analyze Strings from Binaries (Without the Headache)</a><ul><li><a href="#turn-executables-memory-dumps-and-disk-images-into-actionable-intelligence-in-minutes--with-one-python-tool-and-zero-extra-dependencies" class="table-of-contents__link toc-highlight">Turn executables, memory dumps, and disk images into actionable intelligence in minutes — with one Python tool and zero extra dependencies.</a></li></ul></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#introdaction" class="table-of-contents__link toc-highlight">Introdaction</a></li><li><a href="#why-strings-alone-isnt-enough" class="table-of-contents__link toc-highlight">Why “strings” alone isn’t enough</a></li><li><a href="#install-in-under-a-minute" class="table-of-contents__link toc-highlight">Install in under a minute</a></li><li><a href="#three-ways-to-run-it" class="table-of-contents__link toc-highlight">Three ways to run it</a><ul><li><a href="#1-categorized-report-default" class="table-of-contents__link toc-highlight">1. Categorized report (default)</a></li><li><a href="#2-unfiltered-string-dump" class="table-of-contents__link toc-highlight">2. Unfiltered string dump</a></li><li><a href="#3-ai-ready-analysis-prompt" class="table-of-contents__link toc-highlight">3. AI-ready analysis prompt</a></li><li><a href="#llm-response" class="table-of-contents__link toc-highlight">LLM Response:</a></li></ul></li><li><a href="#interactive-mode-when-you-dont-want-to-type-flags" class="table-of-contents__link toc-highlight">Interactive mode: when you don’t want to type flags</a><ul><li><a href="#handy-options-youll-use" class="table-of-contents__link toc-highlight">Handy options you’ll use</a></li></ul></li><li><a href="#what-gets-detected-and-why-it-matters" class="table-of-contents__link toc-highlight">What gets detected (and why it matters)</a></li><li><a href="#using-it-from-python" class="table-of-contents__link toc-highlight">Using it from Python</a></li><li><a href="#the-obfuscated-flag-what-it-means" class="table-of-contents__link toc-highlight">The “obfuscated” flag: what it means</a></li><li><a href="#when-to-use-which-output" class="table-of-contents__link toc-highlight">When to use which output</a></li><li><a href="#a-simple-triage-workflow" class="table-of-contents__link toc-highlight">A simple triage workflow</a></li><li><a href="#safety-in-a-few-words" class="table-of-contents__link toc-highlight">Safety in a few words</a></li><li><a href="#where-to-go-from-here" class="table-of-contents__link toc-highlight">Where to go from here</a></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>

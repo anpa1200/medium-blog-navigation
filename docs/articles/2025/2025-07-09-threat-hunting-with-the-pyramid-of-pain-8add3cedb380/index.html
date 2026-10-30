@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -33,15 +33,15 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ecosystem-fit">Ecosystem Fit<a href="#ecosystem-fit" class="hash-link" aria-label="Direct link to Ecosystem Fit" title="Direct link to Ecosystem Fit" translate="no">​</a></h2>
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-practical-guide-to-using-threat-indicators-that-actually-hurt-your-attackers-based-on-david-j-biancos-model-why-detecting-ttps-is-more-powerful-than-blocking-ips--and-how-to-use-that-to-your-advantage">A practical guide to using threat indicators that actually hurt your attackers, based on David J. Bianco’s model. Why detecting TTPs is more powerful than blocking IPs — and how to use that to your advantage<a href="#a-practical-guide-to-using-threat-indicators-that-actually-hurt-your-attackers-based-on-david-j-biancos-model-why-detecting-ttps-is-more-powerful-than-blocking-ips--and-how-to-use-that-to-your-advantage" class="hash-link" aria-label="Direct link to A practical guide to using threat indicators that actually hurt your attackers, based on David J. Bianco’s model. Why detecting TTPs is more powerful than blocking IPs — and how to use that to your advantage" title="Direct link to A practical guide to using threat indicators that actually hurt your attackers, based on David J. Bianco’s model. Why detecting TTPs is more powerful than blocking IPs — and how to use that to your advantage" translate="no">​</a></h3>
-<p>Every security team knows that blocking malicious IPs or blacklisting hashes is only part of the battle. But what if you could force your adversaries back to the drawing board, slow them down, or even break their momentum entirely? Enter the<strong>Pyramid of Pain</strong>, a framework created by David J. Bianco that ranks common indicators of compromise (IOCs) by how much they “hurt” an attacker when you deny their use. By shifting our focus up the pyramid, we can inflict the maximum operational cost on threat actors — and make our defenses truly effective.</p>
+<p>Every security team knows that blocking malicious IPs or blacklisting hashes is only part of the battle. But what if you could force your adversaries back to the drawing board, slow them down, or even break their momentum entirely? Enter the <strong>Pyramid of Pain</strong>, a framework created by David J. Bianco that ranks common indicators of compromise (IOCs) by how much they “hurt” an attacker when you deny their use. By shifting our focus up the pyramid, we can inflict the maximum operational cost on threat actors — and make our defenses truly effective.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-the-pyramid-of-pain">What Is the Pyramid of Pain?<a href="#what-is-the-pyramid-of-pain" class="hash-link" aria-label="Direct link to What Is the Pyramid of Pain?" title="Direct link to What Is the Pyramid of Pain?" translate="no">​</a></h3>
-<p>Originally published in 2013 (with a 2014 update adding hashes), the Pyramid of Pain illustrates seven levels of indicators:<a href="https://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html" target="_blank" rel="noopener noreferrer" class="">HERE</a></p>
+<p>Originally published in 2013 (with a 2014 update adding hashes), the Pyramid of Pain illustrates seven levels of indicators: <a href="https://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html" target="_blank" rel="noopener noreferrer" class="">HERE</a></p>
 <ul>
 <li class="">
-<p><strong>Wider</strong>(green) levels at the bottom are<strong>easier</strong>for attackers to change.</p>
+<p><strong>Wider</strong> (green) levels at the bottom are <strong>easier</strong> for attackers to change.</p>
 </li>
 <li class="">
-<p><strong>Narrower</strong>(red) levels at the top are<strong>harder</strong>and thus inflict far more “pain” when you detect and block them.</p>
+<p><strong>Narrower</strong> (red) levels at the top are <strong>harder</strong> and thus inflict far more “pain” when you detect and block them.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-seven-levels-explained">The Seven Levels Explained<a href="#the-seven-levels-explained" class="hash-link" aria-label="Direct link to The Seven Levels Explained" title="Direct link to The Seven Levels Explained" translate="no">​</a></h2>
@@ -50,98 +50,98 @@
 <p><strong>Hash Values</strong></p>
 </li>
 <li class="">
-<p>*What they are:*Exact file fingerprints (MD5, SHA1).</p>
+<p><em>What they are:</em> Exact file fingerprints (MD5, SHA1).</p>
 </li>
 <li class="">
-<p>*Why they hurt least:*A single bit flip turns one hash into a completely new one. Tracking hundreds of unique hashes quickly becomes a losing game.</p>
+<p><em>Why they hurt least:</em> A single bit flip turns one hash into a completely new one. Tracking hundreds of unique hashes quickly becomes a losing game.</p>
 </li>
 </ul>
 <p><strong>2. IP Addresses</strong></p>
 <ul>
 <li class="">
-<p>*What they are:*Source or destination network addresses.</p>
+<p><em>What they are:</em> Source or destination network addresses.</p>
 </li>
 <li class="">
-<p>*Why they’re easy:*Threat actors can pivot through VPNs, proxies, or cloud instances in seconds — making IP-based blocks trivial to bypass.</p>
+<p><em>Why they’re easy:</em> Threat actors can pivot through VPNs, proxies, or cloud instances in seconds — making IP-based blocks trivial to bypass.</p>
 </li>
 </ul>
 <p><strong>3. Domain Names</strong></p>
 <ul>
 <li class="">
-<p>*What they are:*URLs or DNS records used for command-and-control (C2), phishing, or payload hosting.</p>
+<p><em>What they are:</em> URLs or DNS records used for command-and-control (C2), phishing, or payload hosting.</p>
 </li>
 <li class="">
-<p>*Why they cost more:*Registering a new domain takes time and (sometimes) money, and DNS propagation can introduce delays, but free DNS services and compromised registrars can blunt this pain.</p>
+<p><em>Why they cost more:</em> Registering a new domain takes time and (sometimes) money, and DNS propagation can introduce delays, but free DNS services and compromised registrars can blunt this pain.</p>
 </li>
 </ul>
 <p><strong>4. Network Artifacts</strong></p>
 <ul>
 <li class="">
-<p>*What they are:*Signatures in network traffic — unusual User-Agent strings, URI patterns, custom protocol markers.</p>
+<p><em>What they are:</em> Signatures in network traffic — unusual User-Agent strings, URI patterns, custom protocol markers.</p>
 </li>
 <li class="">
-<p>*Why they matter:*Modifying these requires attackers to tweak or recompile their networking code, slowing them down and exposing them to further detection.</p>
+<p><em>Why they matter:</em> Modifying these requires attackers to tweak or recompile their networking code, slowing them down and exposing them to further detection.</p>
 </li>
 </ul>
 <p><strong>5. Host Artifacts</strong></p>
 <ul>
 <li class="">
-<p>*What they are:*Traces on endpoints — registry keys, dropped DLLs, service names, WMI artifacts.</p>
+<p><em>What they are:</em> Traces on endpoints — registry keys, dropped DLLs, service names, WMI artifacts.</p>
 </li>
 <li class="">
-<p>*Why they hurt:*Attackers must change how their malware installs, communicates, or persists, which often means a full rebuild of payloads and implantation routines.</p>
+<p><em>Why they hurt:</em> Attackers must change how their malware installs, communicates, or persists, which often means a full rebuild of payloads and implantation routines.</p>
 </li>
 </ul>
 <p><strong>6. Tools</strong></p>
 <ul>
 <li class="">
-<p>*What they are:*The actual software utilities (scanners, backdoors, credential dumpers) adversaries bring or develop.</p>
+<p><em>What they are:</em> The actual software utilities (scanners, backdoors, credential dumpers) adversaries bring or develop.</p>
 </li>
 <li class="">
-<p>*Why they’re painful:*A well-tuned YARA rule or behavioral engine can force adversaries to discard or significantly retool their entire toolset — an expensive, time-consuming endeavor.</p>
+<p><em>Why they’re painful:</em> A well-tuned YARA rule or behavioral engine can force adversaries to discard or significantly retool their entire toolset — an expensive, time-consuming endeavor.</p>
 </li>
 </ul>
 <p><strong>7. Tactics, Techniques &amp; Procedures (TTPs)</strong></p>
 <ul>
 <li class="">
-<p>*What they are:*The overarching methods and workflows — phishing delivery vectors, lateral-movement approaches, credential-theft techniques.</p>
+<p><em>What they are:</em> The overarching methods and workflows — phishing delivery vectors, lateral-movement approaches, credential-theft techniques.</p>
 </li>
 <li class="">
-<p>*Why they’re king:*Disrupting TTPs goes straight to attackers’ playbooks. They must learn new methodologies rather than tweak code, potentially reinventing their entire operation.</p>
+<p><em>Why they’re king:</em> Disrupting TTPs goes straight to attackers’ playbooks. They must learn new methodologies rather than tweak code, potentially reinventing their entire operation.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-target-higher-levels">Why Target Higher Levels?<a href="#why-target-higher-levels" class="hash-link" aria-label="Direct link to Why Target Higher Levels?" title="Direct link to Why Target Higher Levels?" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Maximized Return:**One piece of TTP-based detection (e.g., spotting Pass-the-Hash behavior in Windows logs) costs attackers hours or days to overcome — versus minutes for IP blocks.</p>
+<p><strong>Maximized Return:</strong> One piece of TTP-based detection (e.g., spotting Pass-the-Hash behavior in Windows logs) costs attackers hours or days to overcome — versus minutes for IP blocks.</p>
 </li>
 <li class="">
-<p>**Broader Coverage:**TTP detections are tool-agnostic. They catch new variants without requiring rule updates for every new binary or domain.</p>
+<p><strong>Broader Coverage:</strong> TTP detections are tool-agnostic. They catch new variants without requiring rule updates for every new binary or domain.</p>
 </li>
 <li class="">
-<p>**Sustainable Defense:**Focusing on higher-level indicators builds resilience against future campaigns, not just the current ones.</p>
+<p><strong>Sustainable Defense:</strong> Focusing on higher-level indicators builds resilience against future campaigns, not just the current ones.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="putting-the-pyramid-into-practice">Putting the Pyramid into Practice<a href="#putting-the-pyramid-into-practice" class="hash-link" aria-label="Direct link to Putting the Pyramid into Practice" title="Direct link to Putting the Pyramid into Practice" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Audit Your Indicators:**Map existing IOCs to the pyramid. Are you heavy on hashes and IPs? Time to level up.</p>
+<p><strong>Audit Your Indicators:</strong> Map existing IOCs to the pyramid. Are you heavy on hashes and IPs? Time to level up.</p>
 </li>
 <li class="">
-<p>**Enrich Your Telemetry:**Ensure your SIEM or EDR collects host and network artifacts with enough context (process names, command lines, registry changes).</p>
+<p><strong>Enrich Your Telemetry:</strong> Ensure your SIEM or EDR collects host and network artifacts with enough context (process names, command lines, registry changes).</p>
 </li>
 <li class="">
-<p>**Build Behavior Rules:**Create analytics that look for anomalous sequences — e.g., “New admin service created immediately after a PowerShell download.”</p>
+<p><strong>Build Behavior Rules:</strong> Create analytics that look for anomalous sequences — e.g., “New admin service created immediately after a PowerShell download.”</p>
 </li>
 <li class="">
-<p>**Integrate Threat Intel:**When new reports arrive (APT1, SolarWinds, etc.), ask: “Which indicators fall high on the pyramid?” Prioritize those in your detection roadmap.</p>
+<p><strong>Integrate Threat Intel:</strong> When new reports arrive (APT1, SolarWinds, etc.), ask: “Which indicators fall high on the pyramid?” Prioritize those in your detection roadmap.</p>
 </li>
 <li class="">
-<p>**Continuously Refine:**Review detections quarterly. As attackers adapt, your pyramid should evolve — shifting emphasis up, not down.</p>
+<p><strong>Continuously Refine:</strong> Review detections quarterly. As attackers adapt, your pyramid should evolve — shifting emphasis up, not down.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
-<p>The Pyramid of Pain is more than a conceptual model — it’s a<strong>strategic playbook</strong>. By climbing from hashes and IPs to TTPs, you not only detect adversaries more effectively but also<strong>inflict real operational costs</strong>on them, disrupting their campaigns long before they strike.</p>
+<p>The Pyramid of Pain is more than a conceptual model — it’s a <strong>strategic playbook</strong>. By climbing from hashes and IPs to TTPs, you not only detect adversaries more effectively but also <strong>inflict real operational costs</strong> on them, disrupting their campaigns long before they strike.</p>
 <p>Ready to take your threat hunting to the next level? Start by evaluating your current detections against the pyramid today — and watch your defenders become attackers’ worst nightmare.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-07-08-fluent-bit-on-aws-eks-centralized-kubernetes-log-shipping-to-xplg-78811b8db55f"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Fluent Bit on AWS-EKS: Centralized Kubernetes Log Shipping to XPLG</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-07-11-fluentbit-on-kubernetes-demonset-deployment-13c3915113ba"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FluentBit on Kubernetes DemonSet Deployment.</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#a-practical-guide-to-using-threat-indicators-that-actually-hurt-your-attackers-based-on-david-j-biancos-model-why-detecting-ttps-is-more-powerful-than-blocking-ips--and-how-to-use-that-to-your-advantage" class="table-of-contents__link toc-highlight">A practical guide to using threat indicators that actually hurt your attackers, based on David J. Bianco’s model. Why detecting TTPs is more powerful than blocking IPs — and how to use that to your advantage</a></li><li><a href="#what-is-the-pyramid-of-pain" class="table-of-contents__link toc-highlight">What Is the Pyramid of Pain?</a></li></ul></li><li><a href="#the-seven-levels-explained" class="table-of-contents__link toc-highlight">The Seven Levels Explained</a><ul><li><a href="#why-target-higher-levels" class="table-of-contents__link toc-highlight">Why Target Higher Levels?</a></li><li><a href="#putting-the-pyramid-into-practice" class="table-of-contents__link toc-highlight">Putting the Pyramid into Practice</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

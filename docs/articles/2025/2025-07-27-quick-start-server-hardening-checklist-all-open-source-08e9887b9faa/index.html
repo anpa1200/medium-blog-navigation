@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -36,51 +36,51 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-access-control-iso-27001--a9">1. Access Control (ISO 27001 — A.9)<a href="#1-access-control-iso-27001--a9" class="hash-link" aria-label="Direct link to 1. Access Control (ISO 27001 — A.9)" title="Direct link to 1. Access Control (ISO 27001 — A.9)" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="disable-root-login-via-ssh--permitrootlogin-no-">Disable Root Login via SSH ( PermitRootLogin no )<a href="#disable-root-login-via-ssh--permitrootlogin-no-" class="hash-link" aria-label="Direct link to Disable Root Login via SSH ( PermitRootLogin no )" title="Direct link to Disable Root Login via SSH ( PermitRootLogin no )" translate="no">​</a></h3>
 <p><strong>1. Create a new administrative user</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Replace &#x27;secadmin&#x27; with your desired username</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">adduser secadmin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">usermod -aG sudo secadmin   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># For Debian/Ubuntu</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># OR</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">usermod -aG wheel secadmin  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># For RHEL/CentOS/Fedora</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Replace &#x27;secadmin&#x27; with your desired username</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">adduser secadmin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">usermod -aG sudo secadmin   # For Debian/Ubuntu</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># OR</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">usermod -aG wheel secadmin  # For RHEL/CentOS/Fedora</span><br></div></code></pre></div></div>
 <p>This ensures you have a non-root user with administrative privileges.</p>
 <p><strong>2. Set a strong password (or configure SSH key login)</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">passwd secadmin</span><br></div></code></pre></div></div>
 <p>Or set up key-based login:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -p /home/secadmin/.ssh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /root/.ssh/authorized_keys /home/secadmin/.ssh/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chown</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -R secadmin:secadmin /home/secadmin/.ssh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chmod</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> 700 /home/secadmin/.ssh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chmod</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> 600 /home/secadmin/.ssh/authorized_keys</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir -p /home/secadmin/.ssh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cp /root/.ssh/authorized_keys /home/secadmin/.ssh/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chown -R secadmin:secadmin /home/secadmin/.ssh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chmod 700 /home/secadmin/.ssh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">chmod 600 /home/secadmin/.ssh/authorized_keys</span><br></div></code></pre></div></div>
 <p><strong>3. Test SSH login as the new user</strong></p>
-<p>Open a<strong>new terminal</strong>(do not close the current one!) and run:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh secadmin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@your_server_ip</span><br></div></code></pre></div></div>
-<p>Confirm you can log in and use<code>sudo</code>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">whoami</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Output should be: root</span><br></div></code></pre></div></div>
+<p>Open a <strong>new terminal</strong> (do not close the current one!) and run:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh secadmin@your_server_ip</span><br></div></code></pre></div></div>
+<p>Confirm you can log in and use <code>sudo</code>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo whoami</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Output should be: root</span><br></div></code></pre></div></div>
 <p><strong>4. Check all existing users (optional but recommended)</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># List all users with login shells</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">grep </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;/bash&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /etc/passwd</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># List all users with login shells</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">grep &#x27;/bash&#x27; /etc/passwd</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># List all sudo-capable users</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">getent group sudo      # For Debian/Ubuntu</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">getent group wheel     # For RHEL/Fedora/CentOS</span><br></div></code></pre></div></div>
 <p><strong>5. Disable root SSH login</strong></p>
 <p>Edit the SSH config:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo nano /etc/ssh/sshd_config</span><br></div></code></pre></div></div>
 <p>Find and change:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">PermitRootLogin </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">no</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">PermitRootLogin no</span><br></div></code></pre></div></div>
 <p>Also consider:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">PasswordAuthentication </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">no</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># if you use keys only</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AllowUsers secadmin               </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># optional: restrict to known users</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">PasswordAuthentication no         # if you use keys only</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AllowUsers secadmin               # optional: restrict to known users</span><br></div></code></pre></div></div>
 <p><strong>6. Restart SSH service</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl restart sshd</span><br></div></code></pre></div></div>
 <p><strong>7. Verify it’s working</strong></p>
 <ul>
 <li class="">Open a new terminal:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh root</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@your_server_ip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Should fail: Permission denied</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh root@your_server_ip # Should fail: Permission denied</span><br></div></code></pre></div></div>
 <ul>
 <li class="">Try your admin user:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh secadmin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@your_server_ip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Should succeed</span><br></div></code></pre></div></div>
-<p>To limit SSH login attempts to<strong>3 tries</strong>and<strong>block further attempts for 30 seconds</strong>, you can use<code>**fail2ban**</code>, a common and effective tool for this purpose.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh secadmin@your_server_ip # Should succeed</span><br></div></code></pre></div></div>
+<p>To limit SSH login attempts to <strong>3 tries</strong> and <strong>block further attempts for 30 seconds</strong>, you can use <code>**fail2ban**</code>, a common and effective tool for this purpose.</p>
 <ul>
-<li class=""><strong>Install</strong><code>**fail2ban**</code><strong>:</strong></li>
+<li class=""><strong>Install</strong> <code>**fail2ban**</code><strong>:</strong></li>
 </ul>
 <p>Debian</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">update</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install fail2ban </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">y</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install fail2ban -y</span><br></div></code></pre></div></div>
 <p>Centos7/RH</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo yum install epel</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">release</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">y</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo yum install fail2ban </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">y</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">start</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fail2ban</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl enable fail2ban</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo yum install epel-release -y</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo yum install fail2ban -y</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl start fail2ban</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl enable fail2ban</span><br></div></code></pre></div></div>
 <p><strong>2. Configure SSH jail:</strong></p>
 <p>Create a local override config:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo nano /etc/fail2ban/jail.local</span><br></div></code></pre></div></div>
 <p>Paste the following configuration</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[sshd]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">enabled</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    = ssh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">filter</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  = sshd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logpath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = /var/log/auth.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">backend</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = systemd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">maxretry</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">findtime</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bantime</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[sshd]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">enabled = true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">port    = ssh</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">filter  = sshd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logpath = /var/log/auth.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">backend = systemd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">maxretry = 3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">findtime = 30</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bantime = 30</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
 <p><code>maxretry = 3</code>: max 3 failed attempts</p>
@@ -92,16 +92,16 @@
 <p><code>bantime = 30</code>: block IP for 30 seconds</p>
 </li>
 </ul>
-<p><strong>3. Restart</strong><code>**fail2ban**</code><strong>:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl restart fail2ban</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">enable</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fail2ban</span><br></div></code></pre></div></div>
+<p><strong>3. Restart</strong> <code>**fail2ban**</code><strong>:</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl restart fail2ban</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl enable fail2ban</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*oWxtmJGT8OTSvrRgCYXf4g.png" alt="Article image" width="780" height="208" loading="lazy" decoding="async">
 <p><strong>4. Check if jail is working:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo fail2ban-client </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">status</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> sshd</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo fail2ban-client status sshd</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*LhJNvRjgcC2WERd0AWVxRQ.png" alt="Article image" width="903" height="225" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-system--network-hardening-iso-27001--a13-a1261">2. System &amp; Network Hardening (ISO 27001 — A.13, A.12.6.1)<a href="#2-system--network-hardening-iso-27001--a13-a1261" class="hash-link" aria-label="Direct link to 2. System &amp; Network Hardening (ISO 27001 — A.13, A.12.6.1)" title="Direct link to 2. System &amp; Network Hardening (ISO 27001 — A.13, A.12.6.1)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Close all unused ports</strong>(use<code>ufw</code>,<code>iptables</code>)</p>
+<p><strong>Close all unused ports</strong> (use <code>ufw</code>, <code>iptables</code>)</p>
 </li>
 <li class="">
 <p><strong>Disable unused services</strong>:</p>
@@ -110,7 +110,7 @@
 <p><code>systemctl disable service_name</code></p>
 </li>
 <li class="">
-<p><strong>Enable firewalls</strong>:<code>ufw</code>,<code>firewalld</code></p>
+<p><strong>Enable firewalls</strong>: <code>ufw</code>, <code>firewalld</code></p>
 </li>
 <li class="">
 <p><strong>Configure SELinux or AppArmor</strong></p>
@@ -125,7 +125,7 @@
 <p><code>apt purge package_name</code></p>
 </li>
 <li class="">
-<p>Use minimal OS images (<code>AlmaLinux</code>,<code>Debian Netinstall</code>,<code>Ubuntu Minimal</code>)</p>
+<p>Use minimal OS images (<code>AlmaLinux</code>, <code>Debian Netinstall</code>, <code>Ubuntu Minimal</code>)</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-patch-management-a1261">4. Patch Management (A.12.6.1)<a href="#4-patch-management-a1261" class="hash-link" aria-label="Direct link to 4. Patch Management (A.12.6.1)" title="Direct link to 4. Patch Management (A.12.6.1)" translate="no">​</a></h3>
@@ -137,33 +137,33 @@
 <p><code>apt update &amp;&amp; apt upgrade -y</code></p>
 </li>
 <li class="">
-<p>Automate using<code>unattended-upgrades</code>(Debian/Ubuntu) or<code>dnf-automatic</code>(RHEL)</p>
+<p>Automate using <code>unattended-upgrades</code> (Debian/Ubuntu) or <code>dnf-automatic</code> (RHEL)</p>
 </li>
 </ul>
 <p><strong>Automatic Updates</strong></p>
 <ul>
 <li class="">
-<p><strong>Control:</strong><code>unattended-upgrades</code>enabled</p>
+<p><strong>Control:</strong> <code>unattended-upgrades</code> enabled</p>
 </li>
 <li class="">
 <p><strong>Purpose:</strong>
-Automatically installs<strong>security patches</strong>without manual intervention, reducing exposure to known vulnerabilities.</p>
+Automatically installs <strong>security patches</strong> without manual intervention, reducing exposure to known vulnerabilities.</p>
 </li>
 <li class="">
 <p><strong>How it works (Debian/Ubuntu):</strong></p>
 </li>
 <li class="">
-<p>Package:<code>unattended-upgrades</code></p>
+<p>Package: <code>unattended-upgrades</code></p>
 </li>
 <li class="">
 <p>Configuration:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo dpkg-reconfigure </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--priority=low unattended-upgrades</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo dpkg-reconfigure --priority=low unattended-upgrades</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*_B5aS6YHsNSpvy-LL6f1Ng.png" alt="Article image" width="1733" height="265" loading="lazy" decoding="async">
 <ul>
 <li class="">
-<p>Log file:<code>/var/log/unattended-upgrades/unattended-upgrades.log</code></p>
+<p>Log file: <code>/var/log/unattended-upgrades/unattended-upgrades.log</code></p>
 </li>
 <li class="">
 <p><strong>Verify:</strong></p>
@@ -175,10 +175,10 @@ Automatically installs<strong>security patches</strong>without manual interventi
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-logging-and-monitoring-a124">5. Logging and Monitoring (A.12.4)<a href="#5-logging-and-monitoring-a124" class="hash-link" aria-label="Direct link to 5. Logging and Monitoring (A.12.4)" title="Direct link to 5. Logging and Monitoring (A.12.4)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Enable audit logging</strong>:<code>auditd</code></p>
+<p><strong>Enable audit logging</strong>: <code>auditd</code></p>
 </li>
 <li class="">
-<p><strong>Central log server</strong>:<code>Syslog-ng</code>,<code>XPLG</code></p>
+<p><strong>Central log server</strong>: <code>Syslog-ng</code>, <code>XPLG</code></p>
 </li>
 <li class="">
 <p>Set up log forwarding and alerts for:</p>
@@ -196,7 +196,7 @@ Automatically installs<strong>security patches</strong>without manual interventi
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-file-and-configuration-integrity-a1251">6. File and Configuration Integrity (A.12.5.1)<a href="#6-file-and-configuration-integrity-a1251" class="hash-link" aria-label="Direct link to 6. File and Configuration Integrity (A.12.5.1)" title="Direct link to 6. File and Configuration Integrity (A.12.5.1)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Use<code>**AIDE**</code>(Advanced Intrusion Detection Environment) or<code>Tripwire</code></p>
+<p>Use <code>**AIDE**</code> (Advanced Intrusion Detection Environment) or <code>Tripwire</code></p>
 </li>
 <li class="">
 <p>Configure alerting for:</p>
@@ -217,10 +217,10 @@ Automatically installs<strong>security patches</strong>without manual interventi
 <p><strong>Data at rest</strong>: LUKS, dm-crypt</p>
 </li>
 <li class="">
-<p><strong>Data in transit</strong>: TLS, HTTPS (use<code>Let’s Encrypt</code>with auto-renew)</p>
+<p><strong>Data in transit</strong>: TLS, HTTPS (use <code>Let’s Encrypt</code> with auto-renew)</p>
 </li>
 <li class="">
-<p><strong>Passwords</strong>: SHA-512, bcrypt (<code>/etc/login.defs</code>,<code>pam.d</code>)</p>
+<p><strong>Passwords</strong>: SHA-512, bcrypt (<code>/etc/login.defs</code>, <code>pam.d</code>)</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-malware-and-rootkit-detection-a1221">8. Malware and Rootkit Detection (A.12.2.1)<a href="#8-malware-and-rootkit-detection-a1221" class="hash-link" aria-label="Direct link to 8. Malware and Rootkit Detection (A.12.2.1)" title="Direct link to 8. Malware and Rootkit Detection (A.12.2.1)" translate="no">​</a></h3>
@@ -229,16 +229,16 @@ Automatically installs<strong>security patches</strong>without manual interventi
 <p>Install and configure:</p>
 </li>
 <li class="">
-<p><code>ClamAV</code>(open-source AV)</p>
+<p><code>ClamAV</code> (open-source AV)</p>
 </li>
 <li class="">
-<p><code>Chkrootkit</code>/<code>RKHunter</code>for rootkit scanning</p>
+<p><code>Chkrootkit</code> / <code>RKHunter</code> for rootkit scanning</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-backup-and-recovery-a123">9. Backup and Recovery (A.12.3)<a href="#9-backup-and-recovery-a123" class="hash-link" aria-label="Direct link to 9. Backup and Recovery (A.12.3)" title="Direct link to 9. Backup and Recovery (A.12.3)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Automated backups</strong>:<code>rsync</code>,<code>BorgBackup</code>,<code>Restic</code></p>
+<p><strong>Automated backups</strong>: <code>rsync</code>, <code>BorgBackup</code>, <code>Restic</code></p>
 </li>
 <li class="">
 <p>Store offsite or encrypted in cloud</p>
@@ -250,7 +250,7 @@ Automatically installs<strong>security patches</strong>without manual interventi
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-baseline-and-cis-benchmarking">10. Baseline and CIS Benchmarking<a href="#10-baseline-and-cis-benchmarking" class="hash-link" aria-label="Direct link to 10. Baseline and CIS Benchmarking" title="Direct link to 10. Baseline and CIS Benchmarking" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Use<strong>CIS Benchmarks</strong>for your OS:</p>
+<p>Use <strong>CIS Benchmarks</strong> for your OS:</p>
 </li>
 <li class="">
 <p>CIS-CAT tool</p>

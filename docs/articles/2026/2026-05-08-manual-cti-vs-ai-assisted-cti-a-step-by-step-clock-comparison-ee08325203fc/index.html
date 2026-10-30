@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -86,18 +86,18 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="where-the-111-minutes-go">Where the 111 minutes go<a href="#where-the-111-minutes-go" class="hash-link" aria-label="Direct link to Where the 111 minutes go" title="Direct link to Where the 111 minutes go" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*wZCsySfeiP3fQk78-WbPwg.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async">
 <p>Before the step-by-step walkthrough, here is the aggregate view by phase.</p>
-<p>**Reading both advisories:**25 minutes each approach, no difference. There is no shortcut here and this article will not pretend there is one.</p>
-<p>**Brainstorming phase (Steps 3–5):**25 minutes manual, 5 minutes AI-era. 20 minutes saved.</p>
-<p>**Data analysis phase (Steps 6–10):**40 minutes manual, 6 minutes AI-era. 34 minutes saved.</p>
-<p>**Writing the assessment (Step 11):**60 minutes manual, 3 minutes AI-era. 57 minutes saved.</p>
-<p>**Total:**150 minutes manual, 39 minutes AI-era, 111 minutes saved.</p>
+<p><strong>Reading both advisories:</strong> 25 minutes each approach, no difference. There is no shortcut here and this article will not pretend there is one.</p>
+<p><strong>Brainstorming phase (Steps 3–5):</strong> 25 minutes manual, 5 minutes AI-era. 20 minutes saved.</p>
+<p><strong>Data analysis phase (Steps 6–10):</strong> 40 minutes manual, 6 minutes AI-era. 34 minutes saved.</p>
+<p><strong>Writing the assessment (Step 11):</strong> 60 minutes manual, 3 minutes AI-era. 57 minutes saved.</p>
+<p><strong>Total:</strong> 150 minutes manual, 39 minutes AI-era, 111 minutes saved.</p>
 <p>That is not a marginal improvement. That is a 2.5-hour investigation becoming a 40-minute one. The reading time — the one step that does not compress — is 25 minutes in both cases. Everything else is where the two approaches diverge completely.</p>
-<p>The rest of this article explains each step in detail, because the raw numbers hide something important: the<em>type</em>of thinking each approach requires, and what you risk when you remove the friction.</p>
+<p>The rest of this article explains each step in detail, because the raw numbers hide something important: the <em>type</em> of thinking each approach requires, and what you risk when you remove the friction.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-1--brainstorming">Part 1 — Brainstorming<a href="#part-1--brainstorming" class="hash-link" aria-label="Direct link to Part 1 — Brainstorming" title="Direct link to Part 1 — Brainstorming" translate="no">​</a></h2>
 <p>The technique is Simple Brainstorming: read the source material, then dump every concept it surfaces — no filtering, no organising, no evaluating. Then cluster the dump into categories that structure the analysis.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-1--read-the-cisa-advisory">Step 1 — Read the CISA advisory<a href="#step-1--read-the-cisa-advisory" class="hash-link" aria-label="Direct link to Step 1 — Read the CISA advisory" title="Direct link to Step 1 — Read the CISA advisory" translate="no">​</a></h3>
 <p><strong>Manual: 15 min · AI-era: 15 min · Saved: 0</strong></p>
-<p>Open the PDF. Read it from start to finish. No notes yet. The CISA advisory describes a PRC state-sponsored actor using only tools already present on Windows —<code>wmic</code>,<code>ntdsutil</code>,<code>certutil</code>,<code>netsh</code>, PowerShell — routing traffic through compromised SOHO home routers, entering via internet-facing VPN appliances. No malware. No signature. Goal: long-term pre-positioning in critical infrastructure ahead of a geopolitical crisis.</p>
+<p>Open the PDF. Read it from start to finish. No notes yet. The CISA advisory describes a PRC state-sponsored actor using only tools already present on Windows — <code>wmic</code>, <code>ntdsutil</code>, <code>certutil</code>, <code>netsh</code>, PowerShell — routing traffic through compromised SOHO home routers, entering via internet-facing VPN appliances. No malware. No signature. Goal: long-term pre-positioning in critical infrastructure ahead of a geopolitical crisis.</p>
 <p>The AI-era approach is identical. Read it for fifteen minutes. Write nothing.</p>
 <p>&gt; This step does not change. It is the investment that makes everything else valid. Every experienced analyst who has tried AI-assisted CTI and produced generic output made the same mistake: they prompted before reading. What comes out reflects what went in. If you skip the reading, the prompt carries no signal about this specific advisory — only the model’s training-data memory of Volt Typhoon, which may be months old and subtly wrong about details that matter for your assessment.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-2--read-the-microsoft-volt-typhoon-advisory">Step 2 — Read the Microsoft Volt Typhoon advisory<a href="#step-2--read-the-microsoft-volt-typhoon-advisory" class="hash-link" aria-label="Direct link to Step 2 — Read the Microsoft Volt Typhoon advisory" title="Direct link to Step 2 — Read the Microsoft Volt Typhoon advisory" translate="no">​</a></h3>
@@ -107,11 +107,11 @@
 <p>&gt; Both advisories, fully read, is the non-negotiable starting condition for everything that follows. This is where the analyst earns the right to use an LLM.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-3--brainstorm-dump">Step 3 — Brainstorm dump<a href="#step-3--brainstorm-dump" class="hash-link" aria-label="Direct link to Step 3 — Brainstorm dump" title="Direct link to Step 3 — Brainstorm dump" translate="no">​</a></h3>
 <p><strong>Manual: 10 min · AI-era: 2 min · Saved: 8 min</strong></p>
-<p>**Manual approach:**Set a timer for ten minutes. Write every word, phrase, and concept that surfaces from both reports and your own knowledge of the scenario. No filtering. No organising. No second-guessing. Write fast.</p>
+<p><strong>Manual approach:</strong> Set a timer for ten minutes. Write every word, phrase, and concept that surfaces from both reports and your own knowledge of the scenario. No filtering. No organising. No second-guessing. Write fast.</p>
 <p><em>Volt Typhoon · living-off-the-land · LOLbins · wmic · certutil · ntdsutil · SOHO router botnet · KV-botnet · traffic proxying · Fortinet CVE · web shell · credential dumping · TEMP staging · pre-positioning · long dwell time · no malware signature · behavioural baseline needed · Taiwan strait · geopolitical crisis · critical infrastructure · defence contractor · pharmaceutical logistics · supply chain value · beaconing · regular interval · port 443 blend-in · Uncategorised proxy · bytes_out anomaly · exfiltration · data staging · forensics · GreyNoise · Shodan · VT reputation · IP enrichment · MITRE ATT&amp;CK · T1003 credential dumping · T1078 valid accounts · network segmentation · VPN audit · edge device inventory · insider threat? · misattribution risk · false positive</em></p>
 <img src="https://cdn-images-1.medium.com/max/800/1*WHyGuwLaUze9N4iYlMw-TQ.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async">
 <p>The timer ends at exactly ten minutes. That is the exercise.</p>
-<p>**AI-era approach:**Write a scoped prompt — not “what are the threats to logistics companies?” which produces a Wikipedia summary with no connection to the reports you just read. A structured briefing:</p>
+<p><strong>AI-era approach:</strong> Write a scoped prompt — not “what are the threats to logistics companies?” which produces a Wikipedia summary with no connection to the reports you just read. A structured briefing:</p>
 <p><em>“I am a CTI analyst at Meridian Freight Group, a European logistics operator with defence contractor and pharmaceutical clients. I have read CISA AA23–144A [key facts: LOLbin TTPs, SOHO botnet, Fortinet initial access, no-malware approach, pre-positioning goal] and the Microsoft Volt Typhoon advisory [key facts: active since 2021, Fortinet CVE, credential dumping, TEMP staging, logistics targeting]. My CISO asks whether this actor is a concern for our organisation. Use simple brainstorming: generate every relevant variable by category. Volume over judgement — do not filter yet.”</em></p>
 <img src="https://cdn-images-1.medium.com/max/800/1*GW7PkPQqnY_5DKON0cOKCA.png" alt="Article image" width="1916" height="994" loading="lazy" decoding="async">
 <p>Prompt writing: 1 minute. Generation: seconds. A categorised list of 40+ items appears. Then read every item — ask whether each one is sourced in the actual reports or is training-data content added without a source, what the model missed, what is misleading for this specific context. The model added “reduced staff attention due to remote work” — reasonable inference, but not in either advisory. Label it as analyst inference. It missed the KV-botnet framing. Add it manually.</p>
@@ -119,37 +119,37 @@
 <p>&gt; The 8-minute saving matters less than the shift in mode. The manual analyst is in generative mode — squeezing concepts out of memory. The AI-era analyst is in critical filtering mode — deciding which items are valid, which are hallucinated, which are missing. A junior analyst benefits from the broader initial list the model produces; a senior analyst may find it distracting. Know which one you are before you decide whether to use this step.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-4--cluster-the-dump">Step 4 — Cluster the dump<a href="#step-4--cluster-the-dump" class="hash-link" aria-label="Direct link to Step 4 — Cluster the dump" title="Direct link to Step 4 — Cluster the dump" translate="no">​</a></h3>
 <p><strong>Manual: 10 min · AI-era: 2 min · Saved: 8 min</strong></p>
-<p>**Manual approach:**Read through every item in the dump. Group them. If an item fits nowhere, create a new cluster. Do not discard anything. The clusters that emerge:</p>
+<p><strong>Manual approach:</strong> Read through every item in the dump. Group them. If an item fits nowhere, create a new cluster. Do not discard anything. The clusters that emerge:</p>
 <ul>
 <li class="">
-<p><strong>Threat actor profile</strong>— Volt Typhoon, LOLbins, long dwell time, pre-positioning, Taiwan strait</p>
+<p><strong>Threat actor profile</strong> — Volt Typhoon, LOLbins, long dwell time, pre-positioning, Taiwan strait</p>
 </li>
 <li class="">
-<p><strong>Initial access methods</strong>— Fortinet CVE, SOHO botnet, KV-botnet, traffic proxying, web shell, T1078</p>
+<p><strong>Initial access methods</strong> — Fortinet CVE, SOHO botnet, KV-botnet, traffic proxying, web shell, T1078</p>
 </li>
 <li class="">
-<p><strong>Post-compromise TTPs</strong>— wmic, certutil, ntdsutil, T1003 credential dumping, TEMP staging, beaconing, port 443 blend-in, exfiltration</p>
+<p><strong>Post-compromise TTPs</strong> — wmic, certutil, ntdsutil, T1003 credential dumping, TEMP staging, beaconing, port 443 blend-in, exfiltration</p>
 </li>
 <li class="">
-<p><strong>Why Meridian is a target</strong>— defence contractor clients, pharmaceutical logistics, supply chain value, critical infrastructure</p>
+<p><strong>Why Meridian is a target</strong> — defence contractor clients, pharmaceutical logistics, supply chain value, critical infrastructure</p>
 </li>
 <li class="">
-<p><strong>Detection challenges</strong>— no malware signature, behavioural baseline needed, Uncategorised proxy, misattribution risk, false positive, insider threat?</p>
+<p><strong>Detection challenges</strong> — no malware signature, behavioural baseline needed, Uncategorised proxy, misattribution risk, false positive, insider threat?</p>
 </li>
 <li class="">
-<p><strong>Defensive actions</strong>— network segmentation, VPN audit, edge device inventory, MITRE ATT&amp;CK detection rules</p>
+<p><strong>Defensive actions</strong> — network segmentation, VPN audit, edge device inventory, MITRE ATT&amp;CK detection rules</p>
 </li>
 <li class="">
-<p><strong>Intelligence gaps</strong>— IP enrichment, lateral movement confirmed?, VPN appliance patched?</p>
+<p><strong>Intelligence gaps</strong> — IP enrichment, lateral movement confirmed?, VPN appliance patched?</p>
 </li>
 </ul>
 <p>Performing this by hand: 10 minutes.</p>
-<p>**AI-era approach:**Prompt:*“Cluster the brainstorm items above into logical categories. One-sentence label per cluster. Do not discard any item.”*Generation: seconds. Validation — confirm cluster names are specific enough to drive research, confirm no items were silently dropped: 90 seconds.</p>
+<p><strong>AI-era approach:</strong> Prompt: <em>“Cluster the brainstorm items above into logical categories. One-sentence label per cluster. Do not discard any item.”</em> Generation: seconds. Validation — confirm cluster names are specific enough to drive research, confirm no items were silently dropped: 90 seconds.</p>
 <p>&gt; “Risks” is too vague a cluster name. “Why Meridian is a target” is specific enough to direct a research cycle. The AI does the sorting in seconds. The analyst decides whether the resulting structure is precise enough to be useful. Those are different jobs.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-5--document-intelligence-gaps">Step 5 — Document intelligence gaps<a href="#step-5--document-intelligence-gaps" class="hash-link" aria-label="Direct link to Step 5 — Document intelligence gaps" title="Direct link to Step 5 — Document intelligence gaps" translate="no">​</a></h3>
 <p><strong>Manual: 5 min · AI-era: 1 min · Saved: 4 min</strong></p>
 <p>Look at each cluster and ask: what do I not know that I would need to know before publishing an assessment? Write each gap as a specific, answerable question with a priority tag.</p>
-<p><strong>[BLOCKER]</strong>— cannot publish without answering this.<strong>[RESEARCH]</strong>— should be answered, does not block initial publication.</p>
+<p><strong>[BLOCKER]</strong> — cannot publish without answering this. <strong>[RESEARCH]</strong> — should be answered, does not block initial publication.</p>
 <p>The gaps from this brainstorm:</p>
 <ul>
 <li class="">
@@ -168,7 +168,7 @@
 <p>[RESEARCH] Has any lateral movement from Engineering to other segments been logged?</p>
 </li>
 </ul>
-<p>**AI-era approach:**Prompt:*“For each cluster, identify what an analyst would need to know before publishing. Specific, answerable questions tagged [BLOCKER] or [RESEARCH].”*Generation: seconds. Validation: 45 seconds.</p>
+<p><strong>AI-era approach:</strong> Prompt: <em>“For each cluster, identify what an analyst would need to know before publishing. Specific, answerable questions tagged [BLOCKER] or [RESEARCH].”</em> Generation: seconds. Validation: 45 seconds.</p>
 <p>&gt; The AI tends to be systematic — it checks every cluster. The risk is generic output. “Gather more threat intelligence” is not a gap. “Determine whether 185.220.101.47 appears in GreyNoise as a Tor exit node or known C2 infrastructure” is a gap. Validate every item for specificity before moving on.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-1-complete">Part 1 complete<a href="#part-1-complete" class="hash-link" aria-label="Direct link to Part 1 complete" title="Direct link to Part 1 complete" translate="no">​</a></h3>
 <p><strong>Manual total: 50 min · AI-era total: 30 min · Saved: 20 min</strong></p>
@@ -177,606 +177,61 @@
 <p>The technique is Sorting: load the dataset, apply sequential sorts and filters to surface findings, and build each finding into a written assessment.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-6--load-and-prepare-the-data">Step 6 — Load and prepare the data<a href="#step-6--load-and-prepare-the-data" class="hash-link" aria-label="Direct link to Step 6 — Load and prepare the data" title="Direct link to Step 6 — Load and prepare the data" translate="no">​</a></h3>
 <p><strong>Manual: 5 min · AI-era: 1 min · Saved: 4 min</strong></p>
-<p>**Manual approach:**Open Excel. File → Open the CSV. Confirm 39 data rows plus one header. Freeze the top row. Widen columns. Save a working copy as<code>.xlsx</code>. Mechanical, necessary, unremarkable.</p>
+<p><strong>Manual approach:</strong> Open Excel. File → Open the CSV. Confirm 39 data rows plus one header. Freeze the top row. Widen columns. Save a working copy as <code>.xlsx</code>. Mechanical, necessary, unremarkable.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*_1sxNIs6mI_raIQL1O1FdA.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async">
 <p><strong>AI-era approach:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> pandas </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">as</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> pd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">df = pd.read_csv(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;lab-1.1.2-proxy-beaconing.csv&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(df.shape)   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># (39, 12)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(df.dtypes)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(df.head())</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">import pandas as pd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">df = pd.read_csv(&quot;lab-1.1.2-proxy-beaconing.csv&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(df.shape)   # (39, 12)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(df.dtypes)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(df.head())</span><br></div></code></pre></div></div>
 <p>Seconds to run. One minute to scan the output. Pandas gives you column types, row count, and a structural overview before any analysis begins.</p>
 <p>&gt; At 39 rows this is not a meaningful saving. At 390,000 rows — a realistic SIEM export — the difference between “open in Excel” and “read into pandas” is the difference between a working analyst and a frozen machine.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-7--find-the-suspicious-ip">Step 7 — Find the suspicious IP<a href="#step-7--find-the-suspicious-ip" class="hash-link" aria-label="Direct link to Step 7 — Find the suspicious IP" title="Direct link to Step 7 — Find the suspicious IP" translate="no">​</a></h3>
 <p><strong>Manual: 10 min · AI-era: 1 min · Saved: 9 min</strong></p>
-<p>**Manual approach:**Sort by<code>dest_ip</code>, A to Z. Count rows per IP manually or with<code>COUNTIF()</code>. Seven distinct IPs appear. Six are recognisable Microsoft infrastructure — Microsoft-365, Teams, News categories — drawing legitimate traffic from Finance, HR, Operations, and Management. One IP sits apart:<code>185.220.101.47</code>, accounting for 23 of 39 rows — 59% of all proxy traffic — categorised as Uncategorised, and connected exclusively from Engineering workstations.</p>
+<p><strong>Manual approach:</strong> Sort by <code>dest_ip</code>, A to Z. Count rows per IP manually or with <code>COUNTIF()</code>. Seven distinct IPs appear. Six are recognisable Microsoft infrastructure — Microsoft-365, Teams, News categories — drawing legitimate traffic from Finance, HR, Operations, and Management. One IP sits apart: <code>185.220.101.47</code>, accounting for 23 of 39 rows — 59% of all proxy traffic — categorised as Uncategorised, and connected exclusively from Engineering workstations.</p>
 <p>Manual counting and verification: 10 minutes.</p>
 <p><strong>AI-era approach:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">summary = df.groupby(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dest_ip&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;category&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;department&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dest_ip&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">].count().sort_values(ascending=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">False</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(summary)</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">summary = df.groupby(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [&quot;dest_ip&quot;, &quot;category&quot;, &quot;department&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)[&quot;dest_ip&quot;].count().sort_values(ascending=False)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(summary)</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*_24QhtojVs9BC0z5MMjUuQ.png" alt="Article image" width="1106" height="876" loading="lazy" decoding="async">
-<p>Seconds to run.<code>185.220.101.47</code>at the top: 23 rows, Uncategorised, Engineering only. Read and confirm: 50 seconds.</p>
+<p>Seconds to run. <code>185.220.101.47</code> at the top: 23 rows, Uncategorised, Engineering only. Read and confirm: 50 seconds.</p>
 <p>&gt; Python is not faster in an interesting sense — it is faster in a way that removes arithmetic error. At 3,900 rows, COUNTIF formulas become error-prone and one miscounted row distorts a finding. More importantly: the script is a reproducible record of exactly what you did. The spreadsheet sort is not.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-8--detect-the-beaconing-pattern">Step 8 — Detect the beaconing pattern<a href="#step-8--detect-the-beaconing-pattern" class="hash-link" aria-label="Direct link to Step 8 — Detect the beaconing pattern" title="Direct link to Step 8 — Detect the beaconing pattern" translate="no">​</a></h3>
 <p><strong>Manual: 15 min · AI-era: 2 min · Saved: 13 min</strong></p>
-<p>**Manual approach:**Filter to show only rows with<code>dest_ip = 185.220.101.47</code>. Sort by source host, then date, then time. Calculate the time gap between consecutive connections for the same host within each day — by hand, by subtraction.</p>
+<p><strong>Manual approach:</strong> Filter to show only rows with <code>dest_ip = 185.220.101.47</code>. Sort by source host, then date, then time. Calculate the time gap between consecutive connections for the same host within each day — by hand, by subtraction.</p>
 <p>MRDN-ENG-04 connects at 08:14, 11:17, and 14:22 on April 7. Again at 08:09, 11:15, and 14:18 on April 8. The gaps — 3h 03m, 3h 05m, 3h 06m, 3h 03m — are not random.</p>
 <p>Human browsing follows attention and task. It is irregular. A gap consistent to within 12 minutes across 15 connections over five days is a process. An automated process. A C2 implant on a beacon schedule.</p>
 <p>Manual arithmetic and verification: 15 minutes.</p>
 <p><strong>AI-era approach:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sus = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">df</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">df</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dest_ip&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] == </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;185.220.101.47&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">].copy()</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sus[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dt&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] = pd.to_datetime(sus[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;date&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] + </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; &quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> + sus[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;time&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sus = sus.sort_values([</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;source_host&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dt&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">eng04 = sus[sus[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;source_host&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] == </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;MRDN-ENG-04&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">].copy()</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">eng04[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;gap_min&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] = (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    eng04[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dt&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">].diff().dt.total_seconds().div(60).round(1)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(eng04[[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;date&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;time&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;gap_min&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(eng04[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;gap_min&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">].dropna().median())</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sus = df[df[&quot;dest_ip&quot;] == &quot;185.220.101.47&quot;].copy()</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sus[&quot;dt&quot;] = pd.to_datetime(sus[&quot;date&quot;] + &quot; &quot; + sus[&quot;time&quot;])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sus = sus.sort_values([&quot;source_host&quot;, &quot;dt&quot;])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">eng04 = sus[sus[&quot;source_host&quot;] == &quot;MRDN-ENG-04&quot;].copy()</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">eng04[&quot;gap_min&quot;] = (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    eng04[&quot;dt&quot;].diff().dt.total_seconds().div(60).round(1)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(eng04[[&quot;date&quot;, &quot;time&quot;, &quot;gap_min&quot;]])</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(eng04[&quot;gap_min&quot;].dropna().median())</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*oJU9WiQDCXfTRI8ZWIL_Aw.png" alt="Article image" width="519" height="495" loading="lazy" decoding="async">
 <p>Seconds to run. Median: 183 minutes. Read and interpret: 90 seconds.</p>
 <p>&gt; This is the largest single time saving in the analysis phase — 13 minutes. The median calculation also makes the jitter visible: ±4 minutes around a 183-minute centre. A manual analyst discovers that only if they specifically think to check variance — which requires already suspecting it matters. But pandas does not interpret that number. The tool lowers the cost of the calculation. The analyst who knows C2 tradecraft is the one who recognises that ±4 minutes around a fixed mean indicates a deliberate randomised sleep interval, not timing noise. That is analyst knowledge applied to tool output, not tool output alone.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-9--find-the-exfiltration-event">Step 9 — Find the exfiltration event<a href="#step-9--find-the-exfiltration-event" class="hash-link" aria-label="Direct link to Step 9 — Find the exfiltration event" title="Direct link to Step 9 — Find the exfiltration event" translate="no">​</a></h3>
 <p><strong>Manual: 5 min · AI-era: 1 min · Saved: 4 min</strong></p>
-<p>**Manual approach:**Clear the filter. All 39 rows visible. Sort by<code>bytes_out</code>, Largest to Smallest. The top row: MRDN-ENG-07, April 10, 13:47, sending to<code>185.220.101.47</code>. Bytes out:<strong>1,395,348,120 — 1.40 gigabytes</strong>. The second-ranked row: 2,240 bytes. The ratio is 623,000 to 1.</p>
+<p><strong>Manual approach:</strong> Clear the filter. All 39 rows visible. Sort by <code>bytes_out</code>, Largest to Smallest. The top row: MRDN-ENG-07, April 10, 13:47, sending to <code>185.220.101.47</code>. Bytes out: <strong>1,395,348,120 — 1.40 gigabytes</strong>. The second-ranked row: 2,240 bytes. The ratio is 623,000 to 1.</p>
 <p>Same destination as the beaconing finding. This is exfiltration.</p>
 <p><strong>AI-era approach:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">top5 = df.nlargest(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;bytes_out&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;date&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;time&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;source_host&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dest_ip&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;bytes_out&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">top5[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;gb&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] = (top5[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;bytes_out&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] / </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1e9</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">round</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">3</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(top5)</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">top5 = df.nlargest(5, &quot;bytes_out&quot;)[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    [&quot;date&quot;,&quot;time&quot;,&quot;source_host&quot;,&quot;dest_ip&quot;,&quot;bytes_out&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">top5[&quot;gb&quot;] = (top5[&quot;bytes_out&quot;] / 1e9).round(3)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(top5)</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*1_AccxUAKXaSjMYB92jnvQ.png" alt="Article image" width="663" height="137" loading="lazy" decoding="async">
-<p>Seconds. MRDN-ENG-07, April 10 13:47, 1.395 GB to<code>185.220.101.47</code>. Same finding.</p>
+<p>Seconds. MRDN-ENG-07, April 10 13:47, 1.395 GB to <code>185.220.101.47</code>. Same finding.</p>
 <p>&gt; The script converts bytes to gigabytes automatically — one fewer manual calculation with one fewer chance for error. If you re-run it on tomorrow’s log extract, the same finding surfaces in the same format without any additional work.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-10--find-the-port-80-anomaly">Step 10 — Find the port-80 anomaly<a href="#step-10--find-the-port-80-anomaly" class="hash-link" aria-label="Direct link to Step 10 — Find the port-80 anomaly" title="Direct link to Step 10 — Find the port-80 anomaly" translate="no">​</a></h3>
 <p><strong>Manual: 5 min · AI-era: 30 sec · Saved: 4 min</strong></p>
-<p>**Manual approach:**Filter<code>department</code>to Engineering only. Filter<code>dest_port</code>to 80 only. One row: MRDN-ENG-04, April 8, 09:11, connecting to<code>104.21.45.72</code>. Bytes out: 284. Bytes in: 1,240. Duration: 11 seconds.</p>
-<p>Anomalous for two reasons. First, Engineering hosts have been beaconing over port 443 — encrypted — to a different IP. A separate port-80 connection to a third destination suggests secondary activity. Second, the profile: 284 bytes sent, 1,240 bytes received, 11-second session. This is consistent with a LOLbin HTTP GET —<code>certutil</code>, for example, downloads remote payloads over HTTP with exactly this profile: small request, small response, short duration. But the proxy log cannot distinguish<code>certutil</code>from any other process making the same HTTP GET to the same destination. The behavioral signature narrows the hypothesis; it does not confirm it. Endpoint process creation logs are needed to determine what made this connection.</p>
+<p><strong>Manual approach:</strong> Filter <code>department</code> to Engineering only. Filter <code>dest_port</code> to 80 only. One row: MRDN-ENG-04, April 8, 09:11, connecting to <code>104.21.45.72</code>. Bytes out: 284. Bytes in: 1,240. Duration: 11 seconds.</p>
+<p>Anomalous for two reasons. First, Engineering hosts have been beaconing over port 443 — encrypted — to a different IP. A separate port-80 connection to a third destination suggests secondary activity. Second, the profile: 284 bytes sent, 1,240 bytes received, 11-second session. This is consistent with a LOLbin HTTP GET — <code>certutil</code>, for example, downloads remote payloads over HTTP with exactly this profile: small request, small response, short duration. But the proxy log cannot distinguish <code>certutil</code> from any other process making the same HTTP GET to the same destination. The behavioral signature narrows the hypothesis; it does not confirm it. Endpoint process creation logs are needed to determine what made this connection.</p>
 <p><strong>AI-era approach:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">port80_eng = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">df</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">df</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dest_port&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] == 80) &amp;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">df</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;department&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">] == </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Engineering&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(port80_eng[[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;date&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;time&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;source_host&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;dest_ip&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;bytes_out&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;bytes_in&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;duration_s&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]])</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">port80_eng = df[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    (df[&quot;dest_port&quot;] == 80) &amp;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    (df[&quot;department&quot;] == &quot;Engineering&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">print(port80_eng[[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;date&quot;,&quot;time&quot;,&quot;source_host&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;dest_ip&quot;,&quot;bytes_out&quot;,&quot;bytes_in&quot;,&quot;duration_s&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]])</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*pCYuERXqpc2kh0_JAJrwYA.png" alt="Article image" width="722" height="196" loading="lazy" decoding="async">
 <p>Seconds. One row. Same finding.</p>
 <p>&gt; A compound filter that requires multiple Excel menu interactions is one line in pandas — and trivially extensible. Adding another condition is one word.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-11--write-the-assessment">Step 11 — Write the assessment<a href="#step-11--write-the-assessment" class="hash-link" aria-label="Direct link to Step 11 — Write the assessment" title="Direct link to Step 11 — Write the assessment" translate="no">​</a></h2>
 <p><strong>Manual: 60 min · AI-era: 3 min · Saved: 57 min</strong></p>
 <p>This is where the comparison stops being about data mechanics and becomes about writing.</p>
-<p>**Manual approach:**Four findings documented. Now write a structured intelligence assessment from a blank page: confidence level with justification, one section per finding, TTP alignment, an attribution section that states what cannot be confirmed, recommended actions, and open gaps. This requires translating every finding into clear prose, applying analytic standards (Sherman Kent’s estimative language, explicit uncertainty), cross-referencing findings so each claim traces to a specific row in the dataset, and making sure the attribution section does not overstate what the proxy log evidence actually supports.</p>
+<p><strong>Manual approach:</strong> Four findings documented. Now write a structured intelligence assessment from a blank page: confidence level with justification, one section per finding, TTP alignment, an attribution section that states what cannot be confirmed, recommended actions, and open gaps. This requires translating every finding into clear prose, applying analytic standards (Sherman Kent’s estimative language, explicit uncertainty), cross-referencing findings so each claim traces to a specific row in the dataset, and making sure the attribution section does not overstate what the proxy log evidence actually supports.</p>
 <p>Writing this structured, cross-referenced, and defensible from scratch: 60 minutes for an analyst who is doing it properly. More if it is their first time. Less if they have a template — but building that template still costs time the first time.</p>
 <p><strong>AI-era approach:</strong></p>
 <p>Prompt:</p>
 <p><em>“You are a CTI analyst at Meridian Freight Group. Based on these four findings from proxy log analysis [paste findings], draft an intelligence assessment. Include: confidence level with justification, one paragraph per finding, TTP alignment to CISA AA23–144A and Microsoft Volt Typhoon, an attribution section that states explicitly what cannot be confirmed, five recommended immediate actions, and gaps tagged [BLOCKER] or [RESEARCH].”</em></p>
 <p>Generation: seconds. A structured draft appears covering all required sections.</p>
-<p>Then read it line by line. The model wrote:*“attribution to Volt Typhoon is likely given the TTP alignment.”*That is wrong. TTP alignment is necessary but not sufficient for attribution. Change it to: “Cannot be attributed to any specific actor on the basis of TTP overlap alone.” Check every confidence statement. Check every recommended action against what the team can actually execute.</p>
-<details class="plain-large-code" data-plain-code-lines="546"><summary>Large code or log block<!-- --> · <!-- -->546<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code> &quot;You are a CTI analyst at Meridian Freight Group. Based on these four findings from proxy log analysis [paste findings], draft an intelligence assessment. Include: confidence level with
-  justification, one paragraph per finding, TTP alignment to CISA AA23–144A and Microsoft Volt Typhoon, an attribution section that states explicitly what cannot be confirmed, five
-  recommended immediate actions, and gaps tagged [BLOCKER] or [RESEARCH].&quot;
-✦ Author’s Note: Since the four proxy log findings were 
-not
- pasted 
-in
- your prompt, I have simulated four findings that directly align 
-with
- the context 
-of
- Meridian Freight 
-Group
- 
-and
- the Volt
-  Typhoon threat profile 
-to
- fulfill the requirements 
-of
- the assessment.
-  
----
-  INTELLIGENCE ASSESSMENT: SUSPECTED &quot;LIVING OFF THE LAND&quot; NETWORK ACTIVITY
-  Prepared 
-For
-: Chief Information Security Officer (CISO)
-  Analyst: CTI Analyst, Meridian Freight 
-Group
-  
-Date
-: May 
-8
-, 
-2026
- 
-  
-1.
- Executive Summary 
-&amp;
- Confidence Level
-  Confidence Level: MODERATE
-  Justification: We assess 
-with
- moderate confidence that the anomalous activity observed 
-in
- the proxy logs represents a coordinated intrusion attempt heavily mirroring the Tradecraft,
-  Tactics, 
-and
- Procedures (TTPs) 
-of
- the threat actor tracked 
-as
- Volt Typhoon. This confidence level 
-is
- derived 
-from
- the high degree 
-of
- behavioral alignment 
-with
- recent CISA 
-and
- Microsoft
-  advisories, specifically the use 
-of
- dual
--
-use tools 
-and
- known staging directories. We cannot assess 
-with
- high confidence due 
-to
- the inherent nature 
-of
- &quot;Living off the Land&quot; (LOLbin)
-  techniques, which utilize legitimate administrative tools 
-and
- lack bespoke malware signatures, leaving a margin 
-of
- error that this could be a highly skilled ransomware precursor 
-or
- an
-  unannounced red team engagement.
-  
-2.
- Proxy Log Findings Analysis
-  Finding 
-1
-: Beaconing 
-to
- Suspected SOHO Botnet Infrastructure
-  Proxy logs indicate repeated, low
--
-volume HTTPS beaconing originating 
-from
- an internal, highly privileged asset (Domain Controller DC
--
-EUR
--02
-) communicating 
-with
- a cluster 
-of
- 
-dynamic
- IP
-  addresses. 
-Open
--
-source intelligence indicates these destination IPs correspond 
-to
- consumer
--
-grade Small Office
-/
-Home Office (SOHO) routers (predominantly ASUS 
-and
- Netgear models). The
-  traffic occurs strictly 
-between
- 
-02
-:
-00
- 
-and
- 
-04
-:
-00
- 
-local
- 
-time
-, suggesting an automated callback mechanism intentionally routing through compromised edge devices 
-to
- blend 
-in
- 
-with
- normal
-  residential internet traffic 
-and
- evade geolocation
--
-based blocking.
-  Finding 
-2
-: Anomalous LOLbin Network Connections
-  We observed an outbound HTTP 
-GET
- request originating 
-from
- the logistics routing server (LOG
--
-RTR
--
-PROD
--01
-) utilizing the 
-user
--
-agent string 
-for
- certutil.exe. This legitimate Windows
-  certificate utility was used 
-to
- reach 
-out
- 
-to
- an unclassified 
-external
- IP address 
-on
- port 
-8080
- 
-to
- download a randomly named .txt file. 
-Using
- certutil.exe 
-as
- a download cradle 
-is
- a widely
-  documented LOLbin technique used 
-to
- bypass proxy restrictions 
-and
- endpoint defenses that normally block arbitrary executable downloads 
-by
- unauthorized users. 
-  Finding 
-3
-: Data Staging 
-and
- Exfiltration Signatures
-  Proxy traffic analysis revealed an encrypted, high
--
-volume data transfer (approximately 
-4.2
- GB) originating 
-from
- the directory path C:\PerfLogs\ 
-on
- a compromised internal file server,
-  destined 
-for
- an 
-external
- Virtual Private Server (VPS) hosted 
-by
- a European infrastructure provider. While proxy logs cannot definitively confirm the file type due 
-to
- encryption, the
-  entropy 
-and
- header patterns strongly resemble compressed archives (.rar 
-or
- 
-.7
-z). The use 
-of
- C:\PerfLogs 
-as
- a staging ground 
-is
- highly anomalous 
-for
- normal business operations but 
-is
- a
-  known safe haven 
-for
- threat actors attempting 
-to
- hide staged data prior 
-to
- exfiltration.
-  Finding 
-4
-: Suspicious Fortinet SSL
--
-VPN Probing
-  
-External
--
-facing proxy 
-and
- WAF logs 
-show
- a concentrated 
-pattern
- 
-of
- anomalous WebDAV requests 
-and
- unusually formed HTTP POST requests directed 
-at
- our Fortinet SSL
--
-VPN gateway interface.
-  These requests originate 
-from
- the same ASN 
-as
- the suspected SOHO botnet nodes identified 
-in
- Finding 
-1.
- Rather than attempting brute
--
-force credential stuffing, the requests appear 
-to
- be
-  scanning 
-for
- 
-specific
- path vulnerabilities 
-or
- attempting 
-to
- exploit unpatched edge
--
-device CVEs 
-to
- establish a foothold 
-without
- requiring valid credentials 
-or
- MFA tokens.
-  
-3.
- TTP Alignment
-  The observed activity maps directly 
-to
- the warnings issued 
-in
- CISA AA23–
-144
-A 
-and
- the Microsoft Volt Typhoon advisory:
-   
-*
- CISA AA23
--144
-A Alignment: The use 
-of
- certutil.exe 
-as
- a download cradle strongly aligns 
-with
- the advisory
-&#x27;s warning regarding heavy reliance on LOLbins to evade detection. Furthermore,
-     the external beaconing to compromised SOHO routers matches the exact C2 obfuscation techniques detailed by CISA.
-   * Microsoft Advisory Alignment: The probing of the Fortinet SSL-VPN gateway perfectly aligns with Microsoft&#x27;
-s assessment 
-of
- Volt Typhoon
-&#x27;s preferred initial access vector. Additionally,
-     the staging of compressed data in the C:\PerfLogs directory before exfiltration is a specific, documented behavior of this actor.
-  4. Attribution
-  While the TTPs closely mirror Volt Typhoon, we cannot explicitly confirm the following at this time:
-   * Identity &amp; Sponsorship: We cannot confirm that this is a People&#x27;
-s Republic 
-of
- China (PRC) state
--
-sponsored actor. The TTPs 
-are
- public 
-and
- could be co
--
-opted 
-by
- sophisticated cybercriminal
-     
-groups
- (e.g., ransomware affiliates).
-   
-*
- Ultimate Intent: We cannot confirm if the goal 
-is
- strategic pre
--
-positioning (
-as
- 
-is
- typical 
-for
- Volt Typhoon targeting critical infrastructure), intellectual property theft targeting our
-     pharmaceutical clients, 
-or
- preparation 
-for
- network
--
-wide ransomware deployment.
-   
-*
- Presence 
-of
- Malware: Due 
-to
- the reliance 
-on
- LOLbins, we have 
-not
- identified 
-any
- bespoke malware, backdoors, 
-or
- proprietary implants that would guarantee attribution 
-to
- a 
-specific
- group.
-  
-5.
- Recommended Immediate Actions
-   
-1.
- Containment: Immediately isolate Domain Controller DC
--
-EUR
--02
- 
-and
- Logistics Server LOG
--
-RTR
--
-PROD
--01
- 
-from
- the broader network while preserving their volatile memory 
-for
- forensic analysis.
-   
-2.
- Network Blocking: Implement immediate blocklists 
-at
- the proxy 
-and
- perimeter firewalls 
-for
- 
-all
- SOHO router IP addresses identified 
-in
- Finding 
-1
- 
-and
- the VPS IP address 
-from
- Finding 
-3.
-   
-3.
- Edge Audit: Conduct an emergency configuration review 
-and
- patch audit 
-of
- 
-all
- Fortinet appliances 
-to
- ensure mitigation against known CVEs (e.g., CVE
--2022
--42475
-, CVE
--2023
--27997
-) 
-and
-      verify strict MFA enforcement.
-   
-4.
- Threat Hunting: 
-Execute
- an enterprise
--
-wide hunt 
-for
- archive creations (.rar, 
-.7
-z, .zip) 
-within
- C:\PerfLogs, C:\Users\Public, 
-and
- 
-%
-TEMP
-%
- 
-over
- the 
-last
- 
-90
- days.
-   
-5.
- Credential Reset: Force a password reset 
-for
- 
-all
- service accounts 
-and
- domain administrator accounts that have interacted 
-with
- the compromised endpoints 
-within
- the 
-last
- 
-30
- days,
-      anticipating potential NTDS.dit extraction 
-or
- LSASS dumping.
-  
-6.
- Intelligence Gaps
-   
-*
- [BLOCKER] We currently lack 
-full
- command
--
-line execution logging (Event ID 
-4688
-) 
-and
- PowerShell Script Block Logging 
-for
- the logistics server (LOG
--
-RTR
--
-PROD
--01
-), preventing us 
-from
- seeing
-     what commands were executed after the certutil download.
-   
-*
- [BLOCKER] The encrypted nature 
-of
- the 
-4.2
- GB exfiltration prevents us 
-from
- determining if 
-sensitive
- Meridian Freight operations data 
-or
- client intellectual property (defence
-/
-pharma) was
-     stolen.
-   
-*
- [RESEARCH] We need 
-to
- 
-cross
--
-reference the identified malicious SOHO IP addresses against the home IP addresses used 
-by
- our remote employees 
-to
- determine if our own workforce
-&#x27;s routers
-     are part of the botnet being leveraged against us.
-</code></pre></details>
+<p>Then read it line by line. The model wrote: <em>“attribution to Volt Typhoon is likely given the TTP alignment.”</em> That is wrong. TTP alignment is necessary but not sufficient for attribution. Change it to: “Cannot be attributed to any specific actor on the basis of TTP overlap alone.” Check every confidence statement. Check every recommended action against what the team can actually execute.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"> &quot;You are a CTI analyst at Meridian Freight Group. Based on these four findings from proxy log analysis [paste findings], draft an intelligence assessment. Include: confidence level with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  justification, one paragraph per finding, TTP alignment to CISA AA23–144A and Microsoft Volt Typhoon, an attribution section that states explicitly what cannot be confirmed, five</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  recommended immediate actions, and gaps tagged [BLOCKER] or [RESEARCH].&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">✦ Author’s Note: Since the four proxy log findings were not pasted in your prompt, I have simulated four findings that directly align with the context of Meridian Freight Group and the Volt</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Typhoon threat profile to fulfill the requirements of the assessment.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  ---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  INTELLIGENCE ASSESSMENT: SUSPECTED &quot;LIVING OFF THE LAND&quot; NETWORK ACTIVITY</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Prepared For: Chief Information Security Officer (CISO)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Analyst: CTI Analyst, Meridian Freight Group</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Date: May 8, 2026 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  1. Executive Summary &amp; Confidence Level</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Confidence Level: MODERATE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Justification: We assess with moderate confidence that the anomalous activity observed in the proxy logs represents a coordinated intrusion attempt heavily mirroring the Tradecraft,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Tactics, and Procedures (TTPs) of the threat actor tracked as Volt Typhoon. This confidence level is derived from the high degree of behavioral alignment with recent CISA and Microsoft</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  advisories, specifically the use of dual-use tools and known staging directories. We cannot assess with high confidence due to the inherent nature of &quot;Living off the Land&quot; (LOLbin)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  techniques, which utilize legitimate administrative tools and lack bespoke malware signatures, leaving a margin of error that this could be a highly skilled ransomware precursor or an</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  unannounced red team engagement.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  2. Proxy Log Findings Analysis</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Finding 1: Beaconing to Suspected SOHO Botnet Infrastructure</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Proxy logs indicate repeated, low-volume HTTPS beaconing originating from an internal, highly privileged asset (Domain Controller DC-EUR-02) communicating with a cluster of dynamic IP</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  addresses. Open-source intelligence indicates these destination IPs correspond to consumer-grade Small Office/Home Office (SOHO) routers (predominantly ASUS and Netgear models). The</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  traffic occurs strictly between 02:00 and 04:00 local time, suggesting an automated callback mechanism intentionally routing through compromised edge devices to blend in with normal</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  residential internet traffic and evade geolocation-based blocking.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Finding 2: Anomalous LOLbin Network Connections</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  We observed an outbound HTTP GET request originating from the logistics routing server (LOG-RTR-PROD-01) utilizing the user-agent string for certutil.exe. This legitimate Windows</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  certificate utility was used to reach out to an unclassified external IP address on port 8080 to download a randomly named .txt file. Using certutil.exe as a download cradle is a widely</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  documented LOLbin technique used to bypass proxy restrictions and endpoint defenses that normally block arbitrary executable downloads by unauthorized users. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Finding 3: Data Staging and Exfiltration Signatures</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Proxy traffic analysis revealed an encrypted, high-volume data transfer (approximately 4.2 GB) originating from the directory path C:\PerfLogs\ on a compromised internal file server,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  destined for an external Virtual Private Server (VPS) hosted by a European infrastructure provider. While proxy logs cannot definitively confirm the file type due to encryption, the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  entropy and header patterns strongly resemble compressed archives (.rar or .7z). The use of C:\PerfLogs as a staging ground is highly anomalous for normal business operations but is a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  known safe haven for threat actors attempting to hide staged data prior to exfiltration.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Finding 4: Suspicious Fortinet SSL-VPN Probing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  External-facing proxy and WAF logs show a concentrated pattern of anomalous WebDAV requests and unusually formed HTTP POST requests directed at our Fortinet SSL-VPN gateway interface.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  These requests originate from the same ASN as the suspected SOHO botnet nodes identified in Finding 1. Rather than attempting brute-force credential stuffing, the requests appear to be</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  scanning for specific path vulnerabilities or attempting to exploit unpatched edge-device CVEs to establish a foothold without requiring valid credentials or MFA tokens.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  3. TTP Alignment</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  The observed activity maps directly to the warnings issued in CISA AA23–144A and the Microsoft Volt Typhoon advisory:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * CISA AA23-144A Alignment: The use of certutil.exe as a download cradle strongly aligns with the advisory&#x27;s warning regarding heavy reliance on LOLbins to evade detection. Furthermore,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     the external beaconing to compromised SOHO routers matches the exact C2 obfuscation techniques detailed by CISA.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Microsoft Advisory Alignment: The probing of the Fortinet SSL-VPN gateway perfectly aligns with Microsoft&#x27;s assessment of Volt Typhoon&#x27;s preferred initial access vector. Additionally,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     the staging of compressed data in the C:\PerfLogs directory before exfiltration is a specific, documented behavior of this actor.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4. Attribution</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  While the TTPs closely mirror Volt Typhoon, we cannot explicitly confirm the following at this time:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Identity &amp; Sponsorship: We cannot confirm that this is a People&#x27;s Republic of China (PRC) state-sponsored actor. The TTPs are public and could be co-opted by sophisticated cybercriminal</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     groups (e.g., ransomware affiliates).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Ultimate Intent: We cannot confirm if the goal is strategic pre-positioning (as is typical for Volt Typhoon targeting critical infrastructure), intellectual property theft targeting our</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     pharmaceutical clients, or preparation for network-wide ransomware deployment.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Presence of Malware: Due to the reliance on LOLbins, we have not identified any bespoke malware, backdoors, or proprietary implants that would guarantee attribution to a specific group.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  5. Recommended Immediate Actions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   1. Containment: Immediately isolate Domain Controller DC-EUR-02 and Logistics Server LOG-RTR-PROD-01 from the broader network while preserving their volatile memory for forensic analysis.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   2. Network Blocking: Implement immediate blocklists at the proxy and perimeter firewalls for all SOHO router IP addresses identified in Finding 1 and the VPS IP address from Finding 3.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   3. Edge Audit: Conduct an emergency configuration review and patch audit of all Fortinet appliances to ensure mitigation against known CVEs (e.g., CVE-2022-42475, CVE-2023-27997) and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      verify strict MFA enforcement.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   4. Threat Hunting: Execute an enterprise-wide hunt for archive creations (.rar, .7z, .zip) within C:\PerfLogs, C:\Users\Public, and %TEMP% over the last 90 days.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   5. Credential Reset: Force a password reset for all service accounts and domain administrator accounts that have interacted with the compromised endpoints within the last 30 days,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      anticipating potential NTDS.dit extraction or LSASS dumping.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  6. Intelligence Gaps</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * [BLOCKER] We currently lack full command-line execution logging (Event ID 4688) and PowerShell Script Block Logging for the logistics server (LOG-RTR-PROD-01), preventing us from seeing</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     what commands were executed after the certutil download.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * [BLOCKER] The encrypted nature of the 4.2 GB exfiltration prevents us from determining if sensitive Meridian Freight operations data or client intellectual property (defence/pharma) was</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     stolen.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * [RESEARCH] We need to cross-reference the identified malicious SOHO IP addresses against the home IP addresses used by our remote employees to determine if our own workforce&#x27;s routers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     are part of the botnet being leveraged against us.</span><br></div></code></pre></div></div>
 <p>Total: 3 minutes — 1 minute to write the prompt, seconds to generate, 2 minutes to validate and correct.</p>
 <p>&gt; This is the step that changes the economic argument entirely. A 57-minute saving on the assessment alone exceeds everything saved in the brainstorm and analysis phases combined. But it is also the most dangerous step, and it deserves more than a single efficiency note.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-validation-problem">The validation problem<a href="#the-validation-problem" class="hash-link" aria-label="Direct link to The validation problem" title="Direct link to The validation problem" translate="no">​</a></h2>
@@ -788,13 +243,13 @@ to
 <p>This is why the claim “the AI-era approach produces the same assessment in 3 minutes” is precisely wrong, and why this article does not make it. The AI-era approach produces a draft that a skilled analyst, using 3 minutes well, can convert into a defensible assessment. The skill and the 3 minutes are both required.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-the-clock-actually-measures">What the clock actually measures<a href="#what-the-clock-actually-measures" class="hash-link" aria-label="Direct link to What the clock actually measures" title="Direct link to What the clock actually measures" translate="no">​</a></h2>
 <p>The total time saved across eleven steps is 111 minutes. But the clock only measures the mechanics.</p>
-<p>**The manual process embeds thinking inside the mechanics.**When you subtract timestamps by hand, you read every row. When you sort by destination IP in Excel, you see the shape of the data before you have quantified it. You feel the dataset before you have measured it. When pandas does the sort in three seconds, you get the answer — and you skip the reading. That skip is mostly fine. But it creates a failure mode the manual process does not have: the analyst who accepts output without asking whether the question was well-formed.</p>
+<p><strong>The manual process embeds thinking inside the mechanics.</strong> When you subtract timestamps by hand, you read every row. When you sort by destination IP in Excel, you see the shape of the data before you have quantified it. You feel the dataset before you have measured it. When pandas does the sort in three seconds, you get the answer — and you skip the reading. That skip is mostly fine. But it creates a failure mode the manual process does not have: the analyst who accepts output without asking whether the question was well-formed.</p>
 <p>“What is the median beacon interval?” and “is the interval consistent enough to indicate automation?” are different questions. The first produces a number. The second requires a judgement. Pandas gives you the number. The judgement is still yours.</p>
-<p>**AI brainstorming is only as good as the prompt, and the prompt is only as good as the reading.**The 25 minutes of reading in Steps 1 and 2 — identical in both approaches — are not overhead. They are the investment that makes the brainstorm produce CTI rather than a summarised web article. Every minute cut from the reading shows up downstream as generic content, missed context, or hallucinated connections to material the model was never given.</p>
-<p>**The assessment is always the analyst’s.**The Python pivot is arithmetic, not intelligence. The LLM draft is a scaffold, not a finding. Somewhere after all eleven steps, a human being looks at everything and decides:*this is what I believe, this is how confident I am, this is what I recommend, and this is what I do not yet know.*That decision cannot be delegated. The 39-minute path does not remove it. It clears the road to it faster.</p>
-<p>**An LLM is a statistical model — and that is both its strength and its hard limit.**Because it is trained on vast corpora of text, an LLM can match patterns in data, surface statistical anomalies, and identify correlations across everything it has ingested — often faster and more consistently than a human analyst whose attention drifts after the second hour of a log review. In that narrow sense it genuinely sees the data better: it does not tire, it does not anchor on the first hypothesis it forms, and it does not skip rows.</p>
+<p><strong>AI brainstorming is only as good as the prompt, and the prompt is only as good as the reading.</strong> The 25 minutes of reading in Steps 1 and 2 — identical in both approaches — are not overhead. They are the investment that makes the brainstorm produce CTI rather than a summarised web article. Every minute cut from the reading shows up downstream as generic content, missed context, or hallucinated connections to material the model was never given.</p>
+<p><strong>The assessment is always the analyst’s.</strong> The Python pivot is arithmetic, not intelligence. The LLM draft is a scaffold, not a finding. Somewhere after all eleven steps, a human being looks at everything and decides: <em>this is what I believe, this is how confident I am, this is what I recommend, and this is what I do not yet know.</em> That decision cannot be delegated. The 39-minute path does not remove it. It clears the road to it faster.</p>
+<p><strong>An LLM is a statistical model — and that is both its strength and its hard limit.</strong> Because it is trained on vast corpora of text, an LLM can match patterns in data, surface statistical anomalies, and identify correlations across everything it has ingested — often faster and more consistently than a human analyst whose attention drifts after the second hour of a log review. In that narrow sense it genuinely sees the data better: it does not tire, it does not anchor on the first hypothesis it forms, and it does not skip rows.</p>
 <p>But statistical models are, by construction, conservative. A language model predicts the most probable continuation of a sequence given everything it has learned. Its hypotheses are almost always drawn from the distribution of what has already been documented. It is structurally biased toward high-probability continuations, which makes it significantly less likely to surface a non-standard hypothesis unprompted — the kind of explanation that sits outside the documented pattern the training data establishes. It has no intuition. It cannot make the lateral leap that breaks from the established pattern.</p>
-<p>In CTI, the most valuable analyst insight is sometimes the one that goes<em>against</em>the data’s apparent signal. “What if this is not a nation-state actor at all — what if this is an insider using a commercial VPN and the regular interval reflects a scheduled task the user set up themselves?” is a hypothesis the Meridian proxy log does not rule out. A statistical model would be unlikely to surface it unprompted, because the pattern of 23 connections to an uncategorised IP at consistent intervals strongly fits the C2 narrative in training data, and the insider-with-VPN hypothesis is a lower-probability continuation of that evidence set.</p>
+<p>In CTI, the most valuable analyst insight is sometimes the one that goes <em>against</em> the data’s apparent signal. “What if this is not a nation-state actor at all — what if this is an insider using a commercial VPN and the regular interval reflects a scheduled task the user set up themselves?” is a hypothesis the Meridian proxy log does not rule out. A statistical model would be unlikely to surface it unprompted, because the pattern of 23 connections to an uncategorised IP at consistent intervals strongly fits the C2 narrative in training data, and the insider-with-VPN hypothesis is a lower-probability continuation of that evidence set.</p>
 <p>The human analyst who finds the nation-state story too clean, who has seen this pattern misattributed before, who follows an instinct that something is off — that analyst generates the hypothesis the model does not. The clock cannot measure this capacity. Time savings are real and quantifiable. The ability to produce a non-standard hypothesis — the kind that turns out to be the correct one when the standard explanation collapses — is not a function of time. It is a function of the analyst who is present, and no model substitutes for it.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-nearly-two-hours-actually-buys">What nearly two hours actually buys<a href="#what-nearly-two-hours-actually-buys" class="hash-link" aria-label="Direct link to What nearly two hours actually buys" title="Direct link to What nearly two hours actually buys" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*wZCsySfeiP3fQk78-WbPwg.png" alt="Article image" width="1055" height="1491" loading="lazy" decoding="async">
@@ -803,17 +258,17 @@ to
 <p>Those 111 minutes buy something concrete. IP enrichment on 185.220.101.47 via GreyNoise, Shodan, and VirusTotal — resolving the first [BLOCKER] before the assessment leaves the desk. Endpoint log correlation on MRDN-ENG-04, confirming or refuting the certutil hypothesis before escalating to incident response. A check of whether any other Engineering hosts connected to the suspicious IP outside the five-day window. A second pass on the attribution section to ensure it does not overstate what proxy log evidence can actually support.</p>
 <p>In the manual approach, those tasks get scheduled for tomorrow. In the AI-era approach, they happen today, before the CISO acts on an incomplete picture.</p>
 <p>The AI-era approach does not produce better analysis automatically. It produces time. What you do with that time — whether you use it to think harder or just to close more tickets — is the only thing that determines whether 111 minutes of savings become 111 minutes of better intelligence.</p>
-<p><em>Source reports:</em><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a" target="_blank" rel="noopener noreferrer" class=""><em>CISA Advisory AA23–144A</em></a><em>(24 May 2023) and</em><a href="https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/" target="_blank" rel="noopener noreferrer" class=""><em>Microsoft Volt Typhoon advisory</em></a><em>(24 May 2023). The Meridian Freight Group scenario and dataset are original — no course-proprietary material is reproduced.</em></p>
+<p><em>Source reports:</em> <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a" target="_blank" rel="noopener noreferrer" class=""><em>CISA Advisory AA23–144A</em></a> <em>(24 May 2023) and</em> <a href="https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/" target="_blank" rel="noopener noreferrer" class=""><em>Microsoft Volt Typhoon advisory</em></a> <em>(24 May 2023). The Meridian Freight Group scenario and dataset are original — no course-proprietary material is reproduced.</em></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-1200km-research">Related 1200km research<a href="#related-1200km-research" class="hash-link" aria-label="Direct link to Related 1200km research" title="Direct link to Related 1200km research" translate="no">​</a></h2>
 <ul>
 <li class=""><a href="https://1200km.com/articles/read/2026/2026-09-18-ai-agent-vs-human-with-wireshark-six-malware-pcaps-put-to-the-test-63ffeaed97de/" target="_self">AI Agent vs. Human with Wireshark: Six Malware PCAPs Put to the Test</a> extends the human-versus-AI comparison to six malicious packet captures with pre-answer evidence, correction tracking, timing, and explicit limitations.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="follow-for-practical-cybersecurity-research">Follow for practical cybersecurity research<a href="#follow-for-practical-cybersecurity-research" class="hash-link" aria-label="Direct link to Follow for practical cybersecurity research" title="Direct link to Follow for practical cybersecurity research" translate="no">​</a></h2>
-<p>If you’re interested in**Offensive security,**<strong>AI security, real-world attack simulations, CTI, and detection engineering</strong>— this is exactly what I focus on.</p>
+<p>If you’re interested in <strong>Offensive security,</strong> <strong>AI security, real-world attack simulations, CTI, and detection engineering</strong> — this is exactly what I focus on.</p>
 <p>Stay connected:</p>
-<p>→<strong>Subscribe on Medium:</strong><a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="">medium.com/@1200km</a>
-→<strong>Connect on LinkedIn:</strong><a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="">andrey-pautov</a>
-→<strong>GitHub — tools &amp; labs:</strong><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="">github.com/anpa1200</a>
-→<strong>Contact:</strong><a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-05-04-attack-playbook-operation-dragonrx-91339316f0df"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Attack Playbook — Operation DragonRx</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-05-09-cti-kill-chain-an-analyst-guide-with-real-world-evidence-c3bef6fd2979"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">CTI Kill Chain: An Analyst Guide With Real-World Evidence</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#which-steps-compress-which-do-not-and-what-you-risk-if-you-do-not-understand-the-difference" class="table-of-contents__link toc-highlight">Which steps compress, which do not, and what you risk if you do not understand the difference.</a></li></ul></li><li><a href="#the-same-investigation-twice" class="table-of-contents__link toc-highlight">The Same Investigation, Twice</a></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#table-of-content" class="table-of-contents__link toc-highlight">Table of Content</a></li><li><a href="#the-scenario-a" class="table-of-contents__link toc-highlight">The scenario a:</a></li><li><a href="#the-setup" class="table-of-contents__link toc-highlight">The Setup</a></li><li><a href="#where-the-111-minutes-go" class="table-of-contents__link toc-highlight">Where the 111 minutes go</a></li><li><a href="#part-1--brainstorming" class="table-of-contents__link toc-highlight">Part 1 — Brainstorming</a><ul><li><a href="#step-1--read-the-cisa-advisory" class="table-of-contents__link toc-highlight">Step 1 — Read the CISA advisory</a></li><li><a href="#step-2--read-the-microsoft-volt-typhoon-advisory" class="table-of-contents__link toc-highlight">Step 2 — Read the Microsoft Volt Typhoon advisory</a></li><li><a href="#step-3--brainstorm-dump" class="table-of-contents__link toc-highlight">Step 3 — Brainstorm dump</a></li><li><a href="#step-4--cluster-the-dump" class="table-of-contents__link toc-highlight">Step 4 — Cluster the dump</a></li><li><a href="#step-5--document-intelligence-gaps" class="table-of-contents__link toc-highlight">Step 5 — Document intelligence gaps</a></li><li><a href="#part-1-complete" class="table-of-contents__link toc-highlight">Part 1 complete</a></li></ul></li><li><a href="#part-2--sorting" class="table-of-contents__link toc-highlight">Part 2 — Sorting</a><ul><li><a href="#step-6--load-and-prepare-the-data" class="table-of-contents__link toc-highlight">Step 6 — Load and prepare the data</a></li><li><a href="#step-7--find-the-suspicious-ip" class="table-of-contents__link toc-highlight">Step 7 — Find the suspicious IP</a></li><li><a href="#step-8--detect-the-beaconing-pattern" class="table-of-contents__link toc-highlight">Step 8 — Detect the beaconing pattern</a></li><li><a href="#step-9--find-the-exfiltration-event" class="table-of-contents__link toc-highlight">Step 9 — Find the exfiltration event</a></li><li><a href="#step-10--find-the-port-80-anomaly" class="table-of-contents__link toc-highlight">Step 10 — Find the port-80 anomaly</a></li></ul></li><li><a href="#step-11--write-the-assessment" class="table-of-contents__link toc-highlight">Step 11 — Write the assessment</a></li><li><a href="#the-validation-problem" class="table-of-contents__link toc-highlight">The validation problem</a></li><li><a href="#what-the-clock-actually-measures" class="table-of-contents__link toc-highlight">What the clock actually measures</a></li><li><a href="#what-nearly-two-hours-actually-buys" class="table-of-contents__link toc-highlight">What nearly two hours actually buys</a></li><li><a href="#related-1200km-research" class="table-of-contents__link toc-highlight">Related 1200km research</a></li><li><a href="#follow-for-practical-cybersecurity-research" class="table-of-contents__link toc-highlight">Follow for practical cybersecurity research</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p>→ <strong>Subscribe on Medium:</strong> <a href="https://medium.com/@1200km" target="_blank" rel="noopener noreferrer" class="">medium.com/@1200km</a>
+→ <strong>Connect on LinkedIn:</strong> <a href="https://www.linkedin.com/in/andrey-pautov/" target="_blank" rel="noopener noreferrer" class="">andrey-pautov</a>
+→ <strong>GitHub — tools &amp; labs:</strong> <a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer" class="">github.com/anpa1200</a>
+→ <strong>Contact:</strong> <a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-05-04-attack-playbook-operation-dragonrx-91339316f0df"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Attack Playbook — Operation DragonRx</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-05-09-cti-kill-chain-an-analyst-guide-with-real-world-evidence-c3bef6fd2979"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">CTI Kill Chain: An Analyst Guide With Real-World Evidence</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#which-steps-compress-which-do-not-and-what-you-risk-if-you-do-not-understand-the-difference" class="table-of-contents__link toc-highlight">Which steps compress, which do not, and what you risk if you do not understand the difference.</a></li></ul></li><li><a href="#the-same-investigation-twice" class="table-of-contents__link toc-highlight">The Same Investigation, Twice</a></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#table-of-content" class="table-of-contents__link toc-highlight">Table of Content</a></li><li><a href="#the-scenario-a" class="table-of-contents__link toc-highlight">The scenario a:</a></li><li><a href="#the-setup" class="table-of-contents__link toc-highlight">The Setup</a></li><li><a href="#where-the-111-minutes-go" class="table-of-contents__link toc-highlight">Where the 111 minutes go</a></li><li><a href="#part-1--brainstorming" class="table-of-contents__link toc-highlight">Part 1 — Brainstorming</a><ul><li><a href="#step-1--read-the-cisa-advisory" class="table-of-contents__link toc-highlight">Step 1 — Read the CISA advisory</a></li><li><a href="#step-2--read-the-microsoft-volt-typhoon-advisory" class="table-of-contents__link toc-highlight">Step 2 — Read the Microsoft Volt Typhoon advisory</a></li><li><a href="#step-3--brainstorm-dump" class="table-of-contents__link toc-highlight">Step 3 — Brainstorm dump</a></li><li><a href="#step-4--cluster-the-dump" class="table-of-contents__link toc-highlight">Step 4 — Cluster the dump</a></li><li><a href="#step-5--document-intelligence-gaps" class="table-of-contents__link toc-highlight">Step 5 — Document intelligence gaps</a></li><li><a href="#part-1-complete" class="table-of-contents__link toc-highlight">Part 1 complete</a></li></ul></li><li><a href="#part-2--sorting" class="table-of-contents__link toc-highlight">Part 2 — Sorting</a><ul><li><a href="#step-6--load-and-prepare-the-data" class="table-of-contents__link toc-highlight">Step 6 — Load and prepare the data</a></li><li><a href="#step-7--find-the-suspicious-ip" class="table-of-contents__link toc-highlight">Step 7 — Find the suspicious IP</a></li><li><a href="#step-8--detect-the-beaconing-pattern" class="table-of-contents__link toc-highlight">Step 8 — Detect the beaconing pattern</a></li><li><a href="#step-9--find-the-exfiltration-event" class="table-of-contents__link toc-highlight">Step 9 — Find the exfiltration event</a></li><li><a href="#step-10--find-the-port-80-anomaly" class="table-of-contents__link toc-highlight">Step 10 — Find the port-80 anomaly</a></li></ul></li><li><a href="#step-11--write-the-assessment" class="table-of-contents__link toc-highlight">Step 11 — Write the assessment</a></li><li><a href="#the-validation-problem" class="table-of-contents__link toc-highlight">The validation problem</a></li><li><a href="#what-the-clock-actually-measures" class="table-of-contents__link toc-highlight">What the clock actually measures</a></li><li><a href="#what-nearly-two-hours-actually-buys" class="table-of-contents__link toc-highlight">What nearly two hours actually buys</a></li><li><a href="#related-1200km-research" class="table-of-contents__link toc-highlight">Related 1200km research</a></li><li><a href="#follow-for-practical-cybersecurity-research" class="table-of-contents__link toc-highlight">Follow for practical cybersecurity research</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

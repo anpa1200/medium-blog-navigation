@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,69 +34,69 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-evidence-triage-to-report-generation--applying-large-language-models-to-real-forensic-cases-like-hacktheboxs-sherlok">From evidence triage to report generation — applying large language models to real forensic cases like HackTheBox’s “Sherlok”.<a href="#from-evidence-triage-to-report-generation--applying-large-language-models-to-real-forensic-cases-like-hacktheboxs-sherlok" class="hash-link" aria-label="Direct link to From evidence triage to report generation — applying large language models to real forensic cases like HackTheBox’s “Sherlok”." title="Direct link to From evidence triage to report generation — applying large language models to real forensic cases like HackTheBox’s “Sherlok”." translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="about-the-sherlok-challenge-hackthebox">About the “Sherlok” Challenge (HackTheBox)<a href="#about-the-sherlok-challenge-hackthebox" class="hash-link" aria-label="Direct link to About the “Sherlok” Challenge (HackTheBox)" title="Direct link to About the “Sherlok” Challenge (HackTheBox)" translate="no">​</a></h2>
-<p>“<strong>Sherlok</strong>” is an<em>easy-level</em>digital forensics challenge from<strong>Hack The Box’s Sherlocks</strong>series — designed to simulate a real-world investigation where an analyst must uncover evidence from a limited set of artifacts.</p>
-<p>In this challenge, participants receive a few digital traces — such as<strong>system logs, memory snapshots, or network captures</strong>— and are tasked with reconstructing the attacker’s actions, identifying indicators of compromise (IoCs), and answering investigative questions.</p>
-<p>The focus of<em>Sherlok</em>is not complex exploitation but<strong>analytical reasoning</strong>: understanding how to extract, correlate, and interpret forensic data to build a clear narrative of what happened.</p>
-<p>It’s the perfect environment to demonstrate how<strong>AI tools like ChatGPT</strong>can assist investigators — from artifact triage and log interpretation to timeline reconstruction and report drafting.</p>
-<p><strong>Brutus</strong>simulates a realistic but compact incident: an SSH brute-force against a Unix server that eventually yields a successful login (including root access), followed by the attacker reconnecting, creating a new account and escalating privileges. The challenge’s primary artifacts are<code>auth.log</code>(authentication events) and the<code>wtmp</code>login/logout record — ideal for teaching timeline reconstruction, brute-force detection, session correlation, and basic account persistence analysis. Because its scope is small and focused, Brutus is perfect to demonstrate how an AI assistant (ChatGPT) can help triage logs, extract timelines, suggest hypotheses (e.g., credential reuse, lateral access), and draft a concise forensic narrative — all while the analyst validates and extends those leads with tools.</p>
+<p>“<strong>Sherlok</strong>” is an <em>easy-level</em> digital forensics challenge from <strong>Hack The Box’s Sherlocks</strong> series — designed to simulate a real-world investigation where an analyst must uncover evidence from a limited set of artifacts.</p>
+<p>In this challenge, participants receive a few digital traces — such as <strong>system logs, memory snapshots, or network captures</strong> — and are tasked with reconstructing the attacker’s actions, identifying indicators of compromise (IoCs), and answering investigative questions.</p>
+<p>The focus of <em>Sherlok</em> is not complex exploitation but <strong>analytical reasoning</strong>: understanding how to extract, correlate, and interpret forensic data to build a clear narrative of what happened.</p>
+<p>It’s the perfect environment to demonstrate how <strong>AI tools like ChatGPT</strong> can assist investigators — from artifact triage and log interpretation to timeline reconstruction and report drafting.</p>
+<p><strong>Brutus</strong> simulates a realistic but compact incident: an SSH brute-force against a Unix server that eventually yields a successful login (including root access), followed by the attacker reconnecting, creating a new account and escalating privileges. The challenge’s primary artifacts are <code>auth.log</code> (authentication events) and the <code>wtmp</code> login/logout record — ideal for teaching timeline reconstruction, brute-force detection, session correlation, and basic account persistence analysis. Because its scope is small and focused, Brutus is perfect to demonstrate how an AI assistant (ChatGPT) can help triage logs, extract timelines, suggest hypotheses (e.g., credential reuse, lateral access), and draft a concise forensic narrative — all while the analyst validates and extends those leads with tools.</p>
 <p><strong>Step 1 — Upload and Analyze the Evidence with AI</strong>
 <em>Using ChatGPT to perform initial forensic triage on log files with next promt:</em></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Prompt:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Archive correct </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pass</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">is</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: hacktheblue</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">“You are a digital forensics assistant. Analyze the uploaded log file carefully.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Identify </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> unusual </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> suspicious activities, failed </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> successful login attempts, IP addresses, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> timestamps.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Reconstruct the possible timeline of events.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Highlight signs of brute-force attacks, privilege escalation, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> persistence.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Summarize the behavior </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> clear forensic language </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">with</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> evidence references </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the log.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Finally, suggest additional questions </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">or</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> artifacts that an investigator should review </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">next</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.”</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Prompt:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Archive correct pass is: hacktheblue</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">“You are a digital forensics assistant. Analyze the uploaded log file carefully.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Identify all unusual or suspicious activities, failed and successful login attempts, IP addresses, and timestamps.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Reconstruct the possible timeline of events.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Highlight signs of brute-force attacks, privilege escalation, or persistence.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Summarize the behavior in clear forensic language with evidence references from the log.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Finally, suggest additional questions or artifacts that an investigator should review next.”</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*N62016f8MFf9Yq-aflmfnA.png" alt="Article image" width="1857" height="731" loading="lazy" decoding="async">
 <img src="https://cdn-images-1.medium.com/max/800/1*LleqvhHxriMtR4o9UyduYA.png" alt="Article image" width="1906" height="882" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="and-after-a-few-seconds-you-get-next-response">And after a few seconds you get next response:<a href="#and-after-a-few-seconds-you-get-next-response" class="hash-link" aria-label="Direct link to And after a few seconds you get next response:" title="Direct link to And after a few seconds you get next response:" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-findings-with-evidence-references">Key findings (with evidence references)<a href="#key-findings-with-evidence-references" class="hash-link" aria-label="Direct link to Key findings (with evidence references)" title="Direct link to Key findings (with evidence references)" translate="no">​</a></h2>
-<p>All evidence below comes from the parsed<code>auth.log</code>(file name<code>auth.log</code>). Where I reference specific lines I use the line numbers in the parsed CSV produced from that file.</p>
+<p>All evidence below comes from the parsed <code>auth.log</code> (file name <code>auth.log</code>). Where I reference specific lines I use the line numbers in the parsed CSV produced from that file.</p>
 <ul>
 <li class="">
 <p><strong>Massive automated/auth probing from single IP (likely brute-force):</strong></p>
 </li>
 <li class="">
-<p>Top IP:<strong>65.2.161.68–214 matched events</strong>in<code>auth.log</code>.</p>
+<p>Top IP: <strong>65.2.161.68–214 matched events</strong> in <code>auth.log</code>.</p>
 </li>
 <li class="">
 <p>Example lines (auth.log):</p>
 </li>
 <li class="">
-<p><code>auth.log:L68</code>—<code>Mar 6 06:31:31 ip-172-31-35-28 sshd[2325]: Invalid user admin from 65.2.161.68 port 46380</code>(AUTH_FAIL).</p>
+<p><code>auth.log:L68</code> — <code>Mar 6 06:31:31 ip-172-31-35-28 sshd[2325]: Invalid user admin from 65.2.161.68 port 46380</code> (AUTH_FAIL).</p>
 </li>
 <li class="">
 <p>Nearby lines show repeated invalid user / failed attempts, disconnections and preauth “Bye Bye” entries from the same IP.</p>
 </li>
 <li class="">
-<p>Summary counts: top offender<code>65.2.161.68 (214)</code>(see top IP summary in parsed output).</p>
+<p>Summary counts: top offender <code>65.2.161.68 (214)</code> (see top IP summary in parsed output).</p>
 </li>
 <li class="">
 <p><strong>Large number of failed authentication attempts (brute-force clusters):</strong></p>
 </li>
 </ul>
 <ol start="3">
-<li class="">Detected<strong>160 brute-force clusters</strong>across<code>auth.log</code>. Each cluster is 5+ failed attempts from same IP within 5 minutes (heuristic). These clusters are overwhelmingly associated with<code>65.2.161.68</code>.</li>
+<li class="">Detected <strong>160 brute-force clusters</strong> across <code>auth.log</code>. Each cluster is 5+ failed attempts from same IP within 5 minutes (heuristic). These clusters are overwhelmingly associated with <code>65.2.161.68</code>.</li>
 </ol>
 <ul>
 <li class="">
-<p>Example: cluster entries around<code>Mar 6 06:31:31</code>show many<code>Invalid user</code>and<code>Failed password</code>lines from that IP.</p>
+<p>Example: cluster entries around <code>Mar 6 06:31:31</code> show many <code>Invalid user</code> and <code>Failed password</code> lines from that IP.</p>
 </li>
 <li class="">
 <p><strong>Successful (local/service) sessions recorded (not necessarily remote SSH):</strong></p>
 </li>
 </ul>
 <ol start="4">
-<li class="">There are<em>some</em>successful session openings in the log, e.g.:</li>
+<li class="">There are <em>some</em> successful session openings in the log, e.g.:</li>
 </ol>
 <ul>
 <li class="">
-<p><code>auth.log:L8</code>—<code>Mar 6 06:19:01 ip-172-31-35-28 CRON[1367]: pam_unix(cron:session): session opened for user confluence(uid=998) by (uid=0)</code>— CRON job for<code>confluence</code>user started (PERSISTENCE / AUTH_SUCCESS tag).</p>
+<p><code>auth.log:L8</code> — <code>Mar 6 06:19:01 ip-172-31-35-28 CRON[1367]: pam_unix(cron:session): session opened for user confluence(uid=998) by (uid=0)</code> — CRON job for <code>confluence</code> user started (PERSISTENCE / AUTH_SUCCESS tag).</p>
 </li>
 <li class="">
-<p>Several other<code>session opened for user ...</code>entries exist for local/system jobs — these are expected for scheduled jobs but should be considered when correlating with suspicious activity.</p>
+<p>Several other <code>session opened for user ...</code> entries exist for local/system jobs — these are expected for scheduled jobs but should be considered when correlating with suspicious activity.</p>
 </li>
 <li class="">
 <p><strong>Privilege / persistence related indicators:</strong></p>
 </li>
 </ul>
 <ol start="5">
-<li class="">There are<strong>115</strong>matched events flagged with<code>SU_SUDO</code>,<code>USER_MGMT</code>or<code>PERSISTENCE</code>patterns (e.g., sudo messages, cron sessions, authorized_keys mentions, useradd/usermod). These require review because they may indicate:</li>
+<li class="">There are <strong>115</strong> matched events flagged with <code>SU_SUDO</code>, <code>USER_MGMT</code> or <code>PERSISTENCE</code> patterns (e.g., sudo messages, cron sessions, authorized_keys mentions, useradd/usermod). These require review because they may indicate:</li>
 </ol>
 <ul>
 <li class="">
@@ -106,16 +106,16 @@
 <p>cron-based persistence, or</p>
 </li>
 <li class="">
-<p>SSH key persistence via<code>authorized_keys</code>.</p>
+<p>SSH key persistence via <code>authorized_keys</code>.</p>
 </li>
 <li class="">
-<p>Example entries include CRON session open/closed messages for<code>confluence</code>(see<code>auth.log:L8-L10</code>).</p>
+<p>Example entries include CRON session open/closed messages for <code>confluence</code> (see <code>auth.log:L8-L10</code>).</p>
 </li>
 </ul>
 <p><strong>6. wtmp entries parsed (interactive/recorded logins):</strong></p>
 <ul>
 <li class="">
-<p><code>wtmp</code>parsed into ~29 records showing types such as<code>USER</code>,<code>LOGIN</code>,<code>DEAD</code>etc. This gives interactive login history (records saved at<code>/mnt/data/brutus_final_output/wtmp_parsed.csv</code>). The<code>wtmp</code>parsing used the utmp layout consistent with your<code>utmp.py</code>helper.</p>
+<p><code>wtmp</code> parsed into ~29 records showing types such as <code>USER</code>, <code>LOGIN</code>, <code>DEAD</code> etc. This gives interactive login history (records saved at <code>/mnt/data/brutus_final_output/wtmp_parsed.csv</code>). The <code>wtmp</code> parsing used the utmp layout consistent with your <code>utmp.py</code> helper.</p>
 </li>
 <li class="">
 <p>utmp</p>
@@ -123,102 +123,102 @@
 </ul>
 <p><strong>7. Other remote IPs:</strong></p>
 <ul>
-<li class="">Second observed remote IP:<strong>203.101.190.9</strong>(much smaller count — 1 event in the parsed sample). The event counts show the attacker activity is dominated by the first IP.</li>
+<li class="">Second observed remote IP: <strong>203.101.190.9</strong> (much smaller count — 1 event in the parsed sample). The event counts show the attacker activity is dominated by the first IP.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reconstructed-timeline-representative-exact-minute-granularity-available-in-csv">Reconstructed timeline (representative; exact minute granularity available in CSV)<a href="#reconstructed-timeline-representative-exact-minute-granularity-available-in-csv" class="hash-link" aria-label="Direct link to Reconstructed timeline (representative; exact minute granularity available in CSV)" title="Direct link to Reconstructed timeline (representative; exact minute granularity available in CSV)" translate="no">​</a></h2>
 <p>Below is a concise reconstruction using the parsed events (representative — see CSV for full minute-by-minute sequence):</p>
 <ul>
 <li class="">
-<p><strong>Mar 6 06:19:01</strong>— CRON starts and opens sessions for<code>confluence</code>user (local scheduled job). Logged as session opened/closed (auth.log<!-- -->:L8<!-- -->–L10). This appears to be a normal cron task but we flag it for correlation because it&#x27;s local privileged activity around the same window where remote attempts occur later.</p>
+<p><strong>Mar 6 06:19:01</strong> — CRON starts and opens sessions for <code>confluence</code> user (local scheduled job). Logged as session opened/closed (auth.log<!-- -->:L8<!-- -->–L10). This appears to be a normal cron task but we flag it for correlation because it&#x27;s local privileged activity around the same window where remote attempts occur later.</p>
 </li>
 <li class="">
-<p><strong>Mar 6 06:31:31</strong>— intense SSH probe / invalid-user attempts from<strong>65.2.161.68</strong>begin (auth.log<!-- -->:L68<!-- --> and onward). Multiple<code>Invalid user</code>,<code>Failed password</code>, and preauth disconnect messages recorded. This marks the start of one large brute-force cluster.</p>
+<p><strong>Mar 6 06:31:31</strong> — intense SSH probe / invalid-user attempts from <strong>65.2.161.68</strong> begin (auth.log<!-- -->:L68<!-- --> and onward). Multiple <code>Invalid user</code>, <code>Failed password</code>, and preauth disconnect messages recorded. This marks the start of one large brute-force cluster.</p>
 </li>
 <li class="">
-<p><strong>Mar 6 06:31:31 → subsequent minutes</strong>— repeated attempts continue (many clusters recorded). In many clusters each attempt is recorded as<code>Invalid user</code>or<code>Failed password</code>and the connection resets / disconnection lines appear.</p>
+<p><strong>Mar 6 06:31:31 → subsequent minutes</strong> — repeated attempts continue (many clusters recorded). In many clusters each attempt is recorded as <code>Invalid user</code> or <code>Failed password</code> and the connection resets / disconnection lines appear.</p>
 </li>
 <li class="">
-<p>Throughout the parsed timeframe — repeated brute-force windows and many tagged<code>PERSISTENCE</code>and<code>SU_SUDO</code>events appear (these should be inspected to determine if they are legitimate system activity or post-compromise changes).</p>
+<p>Throughout the parsed timeframe — repeated brute-force windows and many tagged <code>PERSISTENCE</code> and <code>SU_SUDO</code> events appear (these should be inspected to determine if they are legitimate system activity or post-compromise changes).</p>
 </li>
 </ul>
 <p>I produced the full chronological table (<code>auth_parsed_events.csv</code>) so you can step through each minute and each event line — this contains the exact file line and message to use in evidence packages.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="signs-of-attacker-behavior-vs-normal-system-noise">Signs of attacker behavior vs. normal system noise<a href="#signs-of-attacker-behavior-vs-normal-system-noise" class="hash-link" aria-label="Direct link to Signs of attacker behavior vs. normal system noise" title="Direct link to Signs of attacker behavior vs. normal system noise" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Strong indicators of attack / compromise attempt:**large number of<code>Invalid user</code>/<code>Failed password</code>messages from the same external IP (65.2.161.68) in short windows →<strong>credential stuffing / brute-force</strong>. The volume (214 matched events) is too high for legitimate activity.</p>
+<p><strong>Strong indicators of attack / compromise attempt:</strong> large number of <code>Invalid user</code> / <code>Failed password</code> messages from the same external IP (65.2.161.68) in short windows → <strong>credential stuffing / brute-force</strong>. The volume (214 matched events) is too high for legitimate activity.</p>
 </li>
 <li class="">
-<p><strong>Unclear / suspicious but not proven:</strong><code>PERSISTENCE</code>matches (cron entries,<code>authorized_keys</code>) and<code>USER_MGMT</code>entries. These can be legitimate system changes (e.g., package installs, admin tasks) — they must be cross-checked with known change windows and system admins.</p>
+<p><strong>Unclear / suspicious but not proven:</strong> <code>PERSISTENCE</code> matches (cron entries, <code>authorized_keys</code>) and <code>USER_MGMT</code> entries. These can be legitimate system changes (e.g., package installs, admin tasks) — they must be cross-checked with known change windows and system admins.</p>
 </li>
 <li class="">
-<p><strong>Privilege escalation signals to validate:</strong><code>sudo:</code>and<code>session opened for user root</code>entries — present in logs flagged — must be checked for who invoked sudo and whether the invoker was legitimate.</p>
+<p><strong>Privilege escalation signals to validate:</strong> <code>sudo:</code> and <code>session opened for user root</code> entries — present in logs flagged — must be checked for who invoked sudo and whether the invoker was legitimate.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="immediate-containment-recommendations-if-system-may-be-livecompromised">Immediate containment recommendations (if system may be live/compromised)<a href="#immediate-containment-recommendations-if-system-may-be-livecompromised" class="hash-link" aria-label="Direct link to Immediate containment recommendations (if system may be live/compromised)" title="Direct link to Immediate containment recommendations (if system may be live/compromised)" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Block</strong>IP<code>65.2.161.68</code>at perimeter / host firewall (iptables / security group).</p>
+<p><strong>Block</strong> IP <code>65.2.161.68</code> at perimeter / host firewall (iptables / security group).</p>
 </li>
 <li class="">
-<p><strong>Disable or restrict SSH</strong>temporarily (e.g., limit to key-based auth, disable password auth, restrict by IP).</p>
+<p><strong>Disable or restrict SSH</strong> temporarily (e.g., limit to key-based auth, disable password auth, restrict by IP).</p>
 </li>
 <li class="">
-<p><strong>Rotate credentials</strong>for any accounts that might be targeted (especially admin or<code>confluence</code>if that service is exposed).</p>
+<p><strong>Rotate credentials</strong> for any accounts that might be targeted (especially admin or <code>confluence</code> if that service is exposed).</p>
 </li>
 <li class="">
-<p><strong>Preserve evidence</strong>: snapshot filesystem, copy<code>/var/log/auth.log</code>,<code>/var/log/secure</code>,<code>/var/log/syslog</code>,<code>/etc/passwd</code>,<code>/etc/shadow</code>(read-only copy),<code>/root/.ssh/authorized_keys</code>,<code>/home/*/.ssh/authorized_keys</code>.</p>
+<p><strong>Preserve evidence</strong>: snapshot filesystem, copy <code>/var/log/auth.log</code>, <code>/var/log/secure</code>, <code>/var/log/syslog</code>, <code>/etc/passwd</code>, <code>/etc/shadow</code> (read-only copy), <code>/root/.ssh/authorized_keys</code>, <code>/home/*/.ssh/authorized_keys</code>.</p>
 </li>
 <li class="">
-<p><strong>Isolate</strong>the host from the network for forensic preservation if you suspect a successful compromise and need full investigation.</p>
+<p><strong>Isolate</strong> the host from the network for forensic preservation if you suspect a successful compromise and need full investigation.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="artifacts--follow-up-items-you-should-collect--review-next">Artifacts &amp; follow-up items you should collect / review next<a href="#artifacts--follow-up-items-you-should-collect--review-next" class="hash-link" aria-label="Direct link to Artifacts &amp; follow-up items you should collect / review next" title="Direct link to Artifacts &amp; follow-up items you should collect / review next" translate="no">​</a></h2>
 <p>(These will help confirm whether an attacker achieved access, escalated privileges, or established persistence.)</p>
 <ul>
 <li class="">
-<p><strong>Full raw logs</strong>(if not already collected):</p>
+<p><strong>Full raw logs</strong> (if not already collected):</p>
 </li>
 <li class="">
-<p><code>/var/log/auth.log</code>,<code>/var/log/secure</code>,<code>/var/log/syslog</code>(complete files, not just snippets).</p>
+<p><code>/var/log/auth.log</code>, <code>/var/log/secure</code>, <code>/var/log/syslog</code> (complete files, not just snippets).</p>
 </li>
 <li class="">
-<p><code>/var/log/cron*</code>and<code>/var/log/messages</code>.</p>
+<p><code>/var/log/cron*</code> and <code>/var/log/messages</code>.</p>
 </li>
 </ul>
 <p><strong>2. SSH artifacts &amp; user context:</strong></p>
 <ul>
 <li class="">
-<p><code>/root/.ssh/authorized_keys</code>and<code>/home/*/.ssh/authorized_keys</code>(diff against known baseline), and<code>.bash_history</code>for accounts of interest.</p>
+<p><code>/root/.ssh/authorized_keys</code> and <code>/home/*/.ssh/authorized_keys</code> (diff against known baseline), and <code>.bash_history</code> for accounts of interest.</p>
 </li>
 <li class="">
-<p><code>/etc/ssh/sshd_config</code>(to confirm PermitRootLogin, PasswordAuthentication settings).</p>
+<p><code>/etc/ssh/sshd_config</code> (to confirm PermitRootLogin, PasswordAuthentication settings).</p>
 </li>
 </ul>
 <p><strong>3. Account and sudo changes:</strong></p>
 <ul>
 <li class="">
-<p><code>/etc/passwd</code>,<code>/etc/shadow</code>,<code>/etc/group</code>(look for recently added accounts).</p>
+<p><code>/etc/passwd</code>, <code>/etc/shadow</code>, <code>/etc/group</code> (look for recently added accounts).</p>
 </li>
 <li class="">
-<p><code>/etc/sudoers</code>and<code>/etc/sudoers.d/*</code>(look for unauthorized sudo grants).</p>
+<p><code>/etc/sudoers</code> and <code>/etc/sudoers.d/*</code> (look for unauthorized sudo grants).</p>
 </li>
 </ul>
 <p><strong>4. Service / scheduled tasks / persistence:</strong></p>
 <ul>
 <li class="">
-<p><code>crontab -l</code>for all users,<code>/var/spool/cron/crontabs/*</code>,<code>/etc/cron.*/*</code>.</p>
+<p><code>crontab -l</code> for all users, <code>/var/spool/cron/crontabs/*</code>, <code>/etc/cron.*/*</code>.</p>
 </li>
 <li class="">
-<p><code>systemctl list-unit-files --state=enabled</code>and<code>ls -la /etc/systemd/system</code>(new unit files).</p>
+<p><code>systemctl list-unit-files --state=enabled</code> and <code>ls -la /etc/systemd/system</code> (new unit files).</p>
 </li>
 </ul>
 <p><strong>5. Binaries &amp; filesystem changes:</strong></p>
 <ul>
 <li class="">
-<p><code>find / -mtime -7 -ls</code>(files modified in last 7 days) — be careful on live systems; best against snapshot.</p>
+<p><code>find / -mtime -7 -ls</code> (files modified in last 7 days) — be careful on live systems; best against snapshot.</p>
 </li>
 <li class="">
-<p>Check for unknown setuid binaries, newly added scripts in<code>/tmp</code>,<code>/var/tmp</code>,<code>/usr/local/bin</code>.</p>
+<p>Check for unknown setuid binaries, newly added scripts in <code>/tmp</code>, <code>/var/tmp</code>, <code>/usr/local/bin</code>.</p>
 </li>
 </ul>
 <p><strong>6. Network/host telemetry &amp; EDR:</strong></p>
@@ -230,12 +230,12 @@
 <p>Anti-virus / EDR alerts and recent scans.</p>
 </li>
 </ul>
-<p><strong>7. Memory image</strong>(if possible and suspect compromise): collect<code>volatile</code>data to identify in-memory persistence, loaded suspicious binaries, and network connections.</p>
-<p>**8. Cross-system correlation:**check logs for other infrastructure (bastion, firewall, IDS) to see if 65.2.161.68 or other IPs targeted other hosts at same time.</p>
+<p><strong>7. Memory image</strong> (if possible and suspect compromise): collect <code>volatile</code> data to identify in-memory persistence, loaded suspicious binaries, and network connections.</p>
+<p><strong>8. Cross-system correlation:</strong> check logs for other infrastructure (bastion, firewall, IDS) to see if 65.2.161.68 or other IPs targeted other hosts at same time.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="specific-questions-an-investigator-should-answer-next">Specific questions an investigator should answer next<a href="#specific-questions-an-investigator-should-answer-next" class="hash-link" aria-label="Direct link to Specific questions an investigator should answer next" title="Direct link to Specific questions an investigator should answer next" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>Did any of the brute-force clusters result in a successful remote login? (Search<code>Accepted password</code>/<code>Accepted publickey</code>entries that correlate to attacker IPs.)</p>
+<p>Did any of the brute-force clusters result in a successful remote login? (Search <code>Accepted password</code> / <code>Accepted publickey</code> entries that correlate to attacker IPs.)</p>
 </li>
 <li class="">
 <p>If a successful login exists: which account was used, and what was the command history / processes launched by that account?</p>
@@ -244,7 +244,7 @@
 <p>Are there newly added users or SSH keys that permit persistent access?</p>
 </li>
 <li class="">
-<p>Were any sudo or root sessions opened that were not initiated by known admins? (Check<code>sudo</code>logs,<code>session opened for user root</code>lines and map to invoking user.)</p>
+<p>Were any sudo or root sessions opened that were not initiated by known admins? (Check <code>sudo</code> logs, <code>session opened for user root</code> lines and map to invoking user.)</p>
 </li>
 <li class="">
 <p>Does the host exhibit unexplained outbound connections or scheduled tasks that contact external C2 IPs?</p>
@@ -253,25 +253,25 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="where-the-parsed-evidence-lives-on-this-analysis-host">Where the parsed evidence lives (on this analysis host)<a href="#where-the-parsed-evidence-lives-on-this-analysis-host" class="hash-link" aria-label="Direct link to Where the parsed evidence lives (on this analysis host)" title="Direct link to Where the parsed evidence lives (on this analysis host)" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>CSV of parsed auth events:<code>/mnt/data/brutus_final_output/auth_parsed_events.csv</code></p>
+<p>CSV of parsed auth events: <code>/mnt/data/brutus_final_output/auth_parsed_events.csv</code></p>
 </li>
 <li class="">
-<p>CSV of parsed wtmp records:<code>/mnt/data/brutus_final_output/wtmp_parsed.csv</code></p>
+<p>CSV of parsed wtmp records: <code>/mnt/data/brutus_final_output/wtmp_parsed.csv</code></p>
 </li>
 <li class="">
-<p>Brute-force clusters (JSON):<code>/mnt/data/brutus_final_output/bruteforce_clusters.json</code>(if present)</p>
+<p>Brute-force clusters (JSON): <code>/mnt/data/brutus_final_output/bruteforce_clusters.json</code> (if present)</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="notes--limitations">Notes &amp; limitations<a href="#notes--limitations" class="hash-link" aria-label="Direct link to Notes &amp; limitations" title="Direct link to Notes &amp; limitations" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>My brute-force detection used a<strong>heuristic</strong>(≥5 fails in 5 minutes). This is intentionally sensitive; you can increase thresholds to reduce noise.</p>
+<p>My brute-force detection used a <strong>heuristic</strong> (≥5 fails in 5 minutes). This is intentionally sensitive; you can increase thresholds to reduce noise.</p>
 </li>
 <li class="">
-<p>Timestamps in<code>auth.log</code>are syslog format without year; I assigned the current year when parsing. If events span year boundaries you should confirm the correct year against original file metadata.</p>
+<p>Timestamps in <code>auth.log</code> are syslog format without year; I assigned the current year when parsing. If events span year boundaries you should confirm the correct year against original file metadata.</p>
 </li>
 <li class="">
-<p><code>wtmp</code>parsing used the utmp layout and offsets from your<code>utmp.py</code>helper; that script was used as a reference.</p>
+<p><code>wtmp</code> parsing used the utmp layout and offsets from your <code>utmp.py</code> helper; that script was used as a reference.</p>
 </li>
 <li class="">
 <p>utmp</p>
@@ -283,19 +283,19 @@
 <p>If you want, next I can (pick any or several):</p>
 <ul>
 <li class="">
-<p>Walk through the<strong>top 20</strong><code>**auth.log**</code><strong>lines for IP 65.2.161.68</strong>and annotate each one (I already have a sample; I can produce a full sequence with timestamps).</p>
+<p>Walk through the <strong>top 20</strong> <code>**auth.log**</code> <strong>lines for IP 65.2.161.68</strong> and annotate each one (I already have a sample; I can produce a full sequence with timestamps).</p>
 </li>
 <li class="">
-<p>Search the parsed events for<strong>any successful logins that originated from</strong><code>**65.2.161.68**</code>and highlight exactly which line(s) show an<code>Accepted</code>or<code>session opened</code>from that IP.</p>
+<p>Search the parsed events for <strong>any successful logins that originated from</strong> <code>**65.2.161.68**</code> and highlight exactly which line(s) show an <code>Accepted</code> or <code>session opened</code> from that IP.</p>
 </li>
 <li class="">
-<p>Produce a<strong>play-by-play timeline</strong>(CSV → human timeline) that shows minute-by-minute what happened, including how many failures per minute from the top IP.</p>
+<p>Produce a <strong>play-by-play timeline</strong> (CSV → human timeline) that shows minute-by-minute what happened, including how many failures per minute from the top IP.</p>
 </li>
 <li class="">
-<p>Hunt for<strong>evidence of persistence</strong>by scanning the filesystem (if you upload or allow additional files):<code>authorized_keys</code>, cron directories, systemd unit files,<code>/tmp</code>, etc.</p>
+<p>Hunt for <strong>evidence of persistence</strong> by scanning the filesystem (if you upload or allow additional files): <code>authorized_keys</code>, cron directories, systemd unit files, <code>/tmp</code>, etc.</p>
 </li>
 <li class="">
-<p>Provide a<strong>remediation checklist</strong>customized to the services on the host (e.g., if Confluence is present, list Confluence-specific indicators and recommended steps).</p>
+<p>Provide a <strong>remediation checklist</strong> customized to the services on the host (e.g., if Confluence is present, list Confluence-specific indicators and recommended steps).</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="now-just-ask-box-questions-and-get-correct-answers-with-evidence-and-explanation">Now just ask box questions, and get correct answers with evidence and explanation:<a href="#now-just-ask-box-questions-and-get-correct-answers-with-evidence-and-explanation" class="hash-link" aria-label="Direct link to Now just ask box questions, and get correct answers with evidence and explanation:" title="Direct link to Now just ask box questions, and get correct answers with evidence and explanation:" translate="no">​</a></h2>

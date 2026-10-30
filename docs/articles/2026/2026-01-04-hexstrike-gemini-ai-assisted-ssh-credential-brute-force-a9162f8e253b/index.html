@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,8 +34,8 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-service-validation--dependency-fixes--findings--defensive-takeaways">From Service Validation → Dependency Fixes → Findings → Defensive Takeaways<a href="#from-service-validation--dependency-fixes--findings--defensive-takeaways" class="hash-link" aria-label="Direct link to From Service Validation → Dependency Fixes → Findings → Defensive Takeaways" title="Direct link to From Service Validation → Dependency Fixes → Findings → Defensive Takeaways" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
-<p>This guide documents a<strong>fully authorized lab</strong>workflow where an AI-orchestrated toolchain attempted to validate SSH exposure and assess<strong>credential hygiene</strong>on a target host. The value here is not “running tools,” but how the workflow<strong>handles failures</strong>, corrects environment issues (missing resources, permissions), and produces a<strong>defender-usable outcome</strong>.</p>
-<p><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949"><strong>HexStrike on Kali Linux 2025.4: A Comprehensive Guide</strong></a><strong>here:</strong></p>
+<p>This guide documents a <strong>fully authorized lab</strong> workflow where an AI-orchestrated toolchain attempted to validate SSH exposure and assess <strong>credential hygiene</strong> on a target host. The value here is not “running tools,” but how the workflow <strong>handles failures</strong>, corrects environment issues (missing resources, permissions), and produces a <strong>defender-usable outcome</strong>.</p>
+<p><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949"><strong>HexStrike on Kali Linux 2025.4: A Comprehensive Guide</strong></a> <strong>here:</strong></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario">Scenario<a href="#scenario" class="hash-link" aria-label="Direct link to Scenario" title="Direct link to Scenario" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective">Objective<a href="#objective" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
 <ul>
@@ -43,7 +43,7 @@
 <p>Validate whether SSH is reachable on the target.</p>
 </li>
 <li class="">
-<p>Run a<strong>controlled credential-hygiene check</strong>using pre-approved test data (small lists).</p>
+<p>Run a <strong>controlled credential-hygiene check</strong> using pre-approved test data (small lists).</p>
 </li>
 <li class="">
 <p>Capture operational issues and produce remediation guidance.</p>
@@ -52,13 +52,13 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inputs">Inputs<a href="#inputs" class="hash-link" aria-label="Direct link to Inputs" title="Direct link to Inputs" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Target host:</strong><code>172.16.59.129</code></p>
+<p><strong>Target host:</strong> <code>172.16.59.129</code></p>
 </li>
 <li class="">
 <p><strong>Wordlists used during the session:</strong></p>
 </li>
 <li class="">
-<p>Built-in lists under<code>/usr/share/wordlists/…</code></p>
+<p>Built-in lists under <code>/usr/share/wordlists/…</code></p>
 </li>
 <li class="">
 <p>Custom lists:</p>
@@ -84,15 +84,15 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-by-step-execution-flow">Step-by-step execution flow<a href="#step-by-step-execution-flow" class="hash-link" aria-label="Direct link to Step-by-step execution flow" title="Direct link to Step-by-step execution flow" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-promt">1) Promt<a href="#1-promt" class="hash-link" aria-label="Direct link to 1) Promt" title="Direct link to 1) Promt" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">@hexstrike:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> scan </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">59.129</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> find ssh port, do bruteforce for credentials with password dictionaries</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">@hexstrike: scan 172.16.59.129 find ssh port, do bruteforce for credentials with password dictionaries</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*WTVKVELBsiaU5HwO5IGXgA.png" alt="Article image" width="1382" height="514" loading="lazy" decoding="async">
-<p>**Key point:**The operator provides intent; the agent decides execution order.</p>
+<p><strong>Key point:</strong> The operator provides intent; the agent decides execution order.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-port-scanning">2) Port scanning<a href="#2-port-scanning" class="hash-link" aria-label="Direct link to 2) Port scanning" title="Direct link to 2) Port scanning" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*PGkBW3RGZzs2h3qqWRKl_Q.png" alt="Article image" width="1723" height="421" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-custom-small-lists-succeeded-and-exposed-weak-credentials">3) Custom small lists succeeded (and exposed weak credentials)<a href="#3-custom-small-lists-succeeded-and-exposed-weak-credentials" class="hash-link" aria-label="Direct link to 3) Custom small lists succeeded (and exposed weak credentials)" title="Direct link to 3) Custom small lists succeeded (and exposed weak credentials)" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*bUZwzZAWqh-3ZCLoeMHKwA.png" alt="Article image" width="1741" height="644" loading="lazy" decoding="async">
 <p><strong>Important note (reporting hygiene)</strong>
-I recommend<strong>not publishing raw credentials</strong>even for labs. In reports, redact passwords and keep only:</p>
+I recommend <strong>not publishing raw credentials</strong> even for labs. In reports, redact passwords and keep only:</p>
 <ul>
 <li class="">
 <p>account name</p>
@@ -130,11 +130,11 @@ I recommend<strong>not publishing raw credentials</strong>even for labs. In repo
 <p>The workflow ultimately produced a clear conclusion:</p>
 </li>
 <li class="">
-<p><strong>credential hygiene is weak</strong>on the target system (multiple successful logins using low-entropy passwords)</p>
+<p><strong>credential hygiene is weak</strong> on the target system (multiple successful logins using low-entropy passwords)</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-matters-defensive-perspective">Why this matters (defensive perspective)<a href="#why-this-matters-defensive-perspective" class="hash-link" aria-label="Direct link to Why this matters (defensive perspective)" title="Direct link to Why this matters (defensive perspective)" translate="no">​</a></h2>
-<p>Even though<strong>SSH online authentication can be rate-limited</strong>, weak credentials are still a high-value failure mode because:</p>
+<p>Even though <strong>SSH online authentication can be rate-limited</strong>, weak credentials are still a high-value failure mode because:</p>
 <ul>
 <li class="">
 <p>attackers can use targeted credential sets (sprays)</p>
@@ -150,19 +150,19 @@ I recommend<strong>not publishing raw credentials</strong>even for labs. In repo
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardening-highest-roi-first">Hardening (highest ROI first)<a href="#hardening-highest-roi-first" class="hash-link" aria-label="Direct link to Hardening (highest ROI first)" title="Direct link to Hardening (highest ROI first)" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Disable password authentication</strong>for SSH; enforce keys (or strong MFA where applicable).</p>
+<p><strong>Disable password authentication</strong> for SSH; enforce keys (or strong MFA where applicable).</p>
 </li>
 <li class="">
-<p><strong>Disable direct privileged logins</strong>over SSH.</p>
+<p><strong>Disable direct privileged logins</strong> over SSH.</p>
 </li>
 <li class="">
-<p><strong>Restrict SSH exposure</strong>(allowlist admin subnets / VPN only).</p>
+<p><strong>Restrict SSH exposure</strong> (allowlist admin subnets / VPN only).</p>
 </li>
 <li class="">
-<p><strong>Add throttling / banning</strong>for repeated failures (rate-limit, jail-based blocking).</p>
+<p><strong>Add throttling / banning</strong> for repeated failures (rate-limit, jail-based blocking).</p>
 </li>
 <li class="">
-<p><strong>Rotate credentials</strong>and enforce a banned-password policy.</p>
+<p><strong>Rotate credentials</strong> and enforce a banned-password policy.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-engineering">Detection engineering<a href="#detection-engineering" class="hash-link" aria-label="Direct link to Detection engineering" title="Direct link to Detection engineering" translate="no">​</a></h2>
@@ -186,10 +186,10 @@ I recommend<strong>not publishing raw credentials</strong>even for labs. In repo
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-takeaways">Key takeaways<a href="#key-takeaways" class="hash-link" aria-label="Direct link to Key takeaways" title="Direct link to Key takeaways" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>AI orchestration is not “blind automation” — it’s<strong>dynamic troubleshooting</strong>.</p>
+<p>AI orchestration is not “blind automation” — it’s <strong>dynamic troubleshooting</strong>.</p>
 </li>
 <li class="">
-<p>Most failures are<strong>environmental</strong>(paths, permissions, tooling assumptions).</p>
+<p>Most failures are <strong>environmental</strong> (paths, permissions, tooling assumptions).</p>
 </li>
 <li class="">
 <p>The valuable output is not the run itself, but:</p>

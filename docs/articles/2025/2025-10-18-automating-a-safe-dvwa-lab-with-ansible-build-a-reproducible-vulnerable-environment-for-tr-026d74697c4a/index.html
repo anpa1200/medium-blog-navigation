@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,24 +34,24 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="automating-a-safe-dvwa-lab-with-ansible-build-a-reproducible-vulnerable-environment-for-training-and-research">Automating a Safe DVWA Lab with Ansible: Build a Reproducible Vulnerable Environment for Training and Research<a href="#automating-a-safe-dvwa-lab-with-ansible-build-a-reproducible-vulnerable-environment-for-training-and-research" class="hash-link" aria-label="Direct link to Automating a Safe DVWA Lab with Ansible: Build a Reproducible Vulnerable Environment for Training and Research" title="Direct link to Automating a Safe DVWA Lab with Ansible: Build a Reproducible Vulnerable Environment for Training and Research" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-deploy-damn-vulnerable-web-app-in-minutes-inside-an-isolated-docker-lab--repeatable-auditable-and-safe-for-every-cybersecurity-team">How to deploy Damn Vulnerable Web App in minutes inside an isolated Docker lab — repeatable, auditable, and safe for every cybersecurity team.<a href="#how-to-deploy-damn-vulnerable-web-app-in-minutes-inside-an-isolated-docker-lab--repeatable-auditable-and-safe-for-every-cybersecurity-team" class="hash-link" aria-label="Direct link to How to deploy Damn Vulnerable Web App in minutes inside an isolated Docker lab — repeatable, auditable, and safe for every cybersecurity team." title="Direct link to How to deploy Damn Vulnerable Web App in minutes inside an isolated Docker lab — repeatable, auditable, and safe for every cybersecurity team." translate="no">​</a></h3>
-<p>**TL;DR:**I show you how to automate the deployment of a Damn Vulnerable Web App (DVWA) lab inside Docker using a single Ansible playbook. You’ll get repeatable, auditable labs that are safe by default (bound to<code>127.0.0.1</code>, internal Docker network), easy to snapshot/rollback, and ideal for training, tests, demos, and developer education. This article explains the business and technical benefits, step-by-step usage, hardening &amp; OPSEC guidance, and suggested next steps for teams and CISO owners.</p>
+<p><strong>TL;DR:</strong> I show you how to automate the deployment of a Damn Vulnerable Web App (DVWA) lab inside Docker using a single Ansible playbook. You’ll get repeatable, auditable labs that are safe by default (bound to <code>127.0.0.1</code>, internal Docker network), easy to snapshot/rollback, and ideal for training, tests, demos, and developer education. This article explains the business and technical benefits, step-by-step usage, hardening &amp; OPSEC guidance, and suggested next steps for teams and CISO owners.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="design-goals-for-this-playbook">Design goals for this playbook<a href="#design-goals-for-this-playbook" class="hash-link" aria-label="Direct link to Design goals for this playbook" title="Direct link to Design goals for this playbook" translate="no">​</a></h2>
 <p>When I built the Ansible playbook for DVWA deployment I kept these design principles:</p>
 <ul>
 <li class="">
-<p><strong>Safe-by-default</strong>: Bind DVWA to<code>127.0.0.1</code>, use an internal Docker network, and avoid any automatic exploit or offensive automation.</p>
+<p><strong>Safe-by-default</strong>: Bind DVWA to <code>127.0.0.1</code>, use an internal Docker network, and avoid any automatic exploit or offensive automation.</p>
 </li>
 <li class="">
 <p><strong>Idempotent</strong>: Re-running the playbook should converge to the same state (recreate or update containers safely).</p>
 </li>
 <li class="">
-<p><strong>Explicit manual gates</strong>: DB initialization via the web<code>setup.php</code>is left as a conscious manual step to force operator attention and snapshots.</p>
+<p><strong>Explicit manual gates</strong>: DB initialization via the web <code>setup.php</code> is left as a conscious manual step to force operator attention and snapshots.</p>
 </li>
 <li class="">
-<p><strong>Auditable artifacts</strong>: Write a small<code>/root/dvwa_deploy_info_&amp;lt;host&amp;gt;.txt</code>artifact with deployment metadata.</p>
+<p><strong>Auditable artifacts</strong>: Write a small <code>/root/dvwa_deploy_info_&amp;lt;host&amp;gt;.txt</code> artifact with deployment metadata.</p>
 </li>
 <li class="">
-<p><strong>Optional build-from-source</strong>: Support pulling a prebuilt image<em>or</em>building DVWA from source so teams can inspect and modify the app.</p>
+<p><strong>Optional build-from-source</strong>: Support pulling a prebuilt image <em>or</em> building DVWA from source so teams can inspect and modify the app.</p>
 </li>
 <li class="">
 <p><strong>Operator-centric</strong>: Easy helper commands for snapshots, logs, and rollback — designed for a CISO or lab admin to use in a training session.</p>
@@ -60,28 +60,28 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-value-for-ciso--security-leadership">Business value (for CISO / security leadership)<a href="#business-value-for-ciso--security-leadership" class="hash-link" aria-label="Direct link to Business value (for CISO / security leadership)" title="Direct link to Business value (for CISO / security leadership)" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Training ROI</strong>— Trainers can run identical labs for large cohorts with a consistent baseline, enabling comparable skill assessments.</p>
+<p><strong>Training ROI</strong> — Trainers can run identical labs for large cohorts with a consistent baseline, enabling comparable skill assessments.</p>
 </li>
 <li class="">
-<p><strong>Audit &amp; Compliance</strong>— When you must prove controlled security training, the deploy playbook + commit history shows pedigree and intent.</p>
+<p><strong>Audit &amp; Compliance</strong> — When you must prove controlled security training, the deploy playbook + commit history shows pedigree and intent.</p>
 </li>
 <li class="">
-<p><strong>Time-to-value</strong>— Instead of spending hours prepping, a shift lead can spawn 5 fresh labs in minutes for parallel workshops.</p>
+<p><strong>Time-to-value</strong> — Instead of spending hours prepping, a shift lead can spawn 5 fresh labs in minutes for parallel workshops.</p>
 </li>
 <li class="">
-<p><strong>Reduced operational risk</strong>— Safe defaults prevent accidental exposure of intentionally vulnerable services to production or the internet.</p>
+<p><strong>Reduced operational risk</strong> — Safe defaults prevent accidental exposure of intentionally vulnerable services to production or the internet.</p>
 </li>
 <li class="">
-<p><strong>Cost control</strong>— Deterministic teardown prevents forgotten VMs/containers; you automate cleanup to avoid recurring costs.</p>
+<p><strong>Cost control</strong> — Deterministic teardown prevents forgotten VMs/containers; you automate cleanup to avoid recurring costs.</p>
 </li>
 <li class="">
-<p><strong>Integration points</strong>— The same playbook can be used to seed GitHub Action jobs (ephemeral lab per PR), SOC exercises, or purple-team drills.</p>
+<p><strong>Integration points</strong> — The same playbook can be used to seed GitHub Action jobs (ephemeral lab per PR), SOC exercises, or purple-team drills.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-youll-get-deliverables">What you’ll get (deliverables)<a href="#what-youll-get-deliverables" class="hash-link" aria-label="Direct link to What you’ll get (deliverables)" title="Direct link to What you’ll get (deliverables)" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>A single, battle-tested<strong>Ansible playbook</strong>that:</p>
+<p>A single, battle-tested <strong>Ansible playbook</strong> that:</p>
 </li>
 <li class="">
 <p>Installs Docker (Debian/Ubuntu)</p>
@@ -90,16 +90,16 @@
 <p>Pulls or builds DVWA + MariaDB images</p>
 </li>
 <li class="">
-<p>Creates Docker volumes and an<strong>internal</strong>Docker network</p>
+<p>Creates Docker volumes and an <strong>internal</strong> Docker network</p>
 </li>
 <li class="">
-<p>Starts containers and binds DVWA to<code>127.0.0.1:8081</code></p>
+<p>Starts containers and binds DVWA to <code>127.0.0.1:8081</code></p>
 </li>
 <li class="">
 <p>Emits an info artifact with connection info and operator hints</p>
 </li>
 <li class="">
-<p>Clear<strong>manual steps</strong>for DB initialization (safe gate)</p>
+<p>Clear <strong>manual steps</strong> for DB initialization (safe gate)</p>
 </li>
 <li class="">
 <p>Safe snapshot &amp; cleanup commands</p>
@@ -108,34 +108,34 @@
 <p>Guidance on operationalizing the lab in programs and CI</p>
 </li>
 <li class="">
-<p><em>Note: the playbook intentionally does</em><em><strong>not</strong>**automate vulnerability exploitation or Metasploit. That’s a conscious safety and policy decision.</em></p>
+<p><em>Note: the playbook intentionally does</em> <em><strong>not</strong></em> <em>automate vulnerability exploitation or Metasploit. That’s a conscious safety and policy decision.</em></p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-it-works--short-technical-walkthrough">How it works — short technical walkthrough<a href="#how-it-works--short-technical-walkthrough" class="hash-link" aria-label="Direct link to How it works — short technical walkthrough" title="Direct link to How it works — short technical walkthrough" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Provision host packages</strong>— the playbook installs prerequisites (git, curl, Docker packages) on Debian/Ubuntu hosts.</p>
+<p><strong>Provision host packages</strong> — the playbook installs prerequisites (git, curl, Docker packages) on Debian/Ubuntu hosts.</p>
 </li>
 <li class="">
-<p><strong>Docker resources</strong>— creates named volumes for the web root and DB data; creates an<code>internal</code>docker network (no external egress).</p>
+<p><strong>Docker resources</strong> — creates named volumes for the web root and DB data; creates an <code>internal</code> docker network (no external egress).</p>
 </li>
 <li class="">
-<p><strong>Containers</strong>— runs<code>mariadb:10.5</code>for the DB and either<code>vulnerables/web-dvwa:latest</code><em>or</em>a local<code>local/dvwa:latest</code>if<code>build_from_source</code>is enabled.</p>
+<p><strong>Containers</strong> — runs <code>mariadb:10.5</code> for the DB and either <code>vulnerables/web-dvwa:latest</code> <em>or</em> a local <code>local/dvwa:latest</code> if <code>build_from_source</code> is enabled.</p>
 </li>
 <li class="">
-<p><strong>Bind &amp; expose</strong>— DVWA is published only on<code>127.0.0.1:8081</code>(local access) so the service is not reachable externally.</p>
+<p><strong>Bind &amp; expose</strong> — DVWA is published only on <code>127.0.0.1:8081</code> (local access) so the service is not reachable externally.</p>
 </li>
 <li class="">
-<p><strong>Safety gate</strong>— DB schema init is left manual (via DVWA’s<code>/setup.php</code>) — forcing a snapshot/approval step prior to active exercises.</p>
+<p><strong>Safety gate</strong> — DB schema init is left manual (via DVWA’s <code>/setup.php</code>) — forcing a snapshot/approval step prior to active exercises.</p>
 </li>
 <li class="">
-<p><strong>Reports</strong>— playbook writes a helper file with connection info and suggested next commands.</p>
+<p><strong>Reports</strong> — playbook writes a helper file with connection info and suggested next commands.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-summary-of-what-youll-do">Quick summary of what you’ll do<a href="#quick-summary-of-what-youll-do" class="hash-link" aria-label="Direct link to Quick summary of what you’ll do" title="Direct link to Quick summary of what you’ll do" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>Create a project folder and files (<code>dvwa-deploy.yml</code>and<code>inventory.ini</code>).</p>
+<p>Create a project folder and files (<code>dvwa-deploy.yml</code> and <code>inventory.ini</code>).</p>
 </li>
 <li class="">
 <p>Install prerequisites on your control machine (Ansible, Python docker deps).</p>
@@ -172,2362 +172,469 @@
 <p>If you prefer to run entirely offline, pre-pull the Docker images onto the host before running the playbook.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-create-the-project-folder--files">2) Create the project folder &amp; files<a href="#2-create-the-project-folder--files" class="hash-link" aria-label="Direct link to 2) Create the project folder &amp; files" title="Direct link to 2) Create the project folder &amp; files" translate="no">​</a></h2>
 <p>Open a shell on your control machine (the machine where you’ll run Ansible). Then:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -p ~/dvwa-ansible</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ~/dvwa-ansible</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir -p ~/dvwa-ansible</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd ~/dvwa-ansible</span><br></div></code></pre></div></div>
 <p><strong>Create the two files:</strong></p>
 <ul>
-<li class=""><code>dvwa-deploy.yml</code>— copy the full playbook content I provided previously into this file. Example:</li>
+<li class=""><code>dvwa-deploy.yml</code> — copy the full playbook content I provided previously into this file. Example:</li>
 </ul>
-<details class="plain-large-code" data-plain-code-lines="2404"><summary>Large code or log block<!-- --> · <!-- -->2404<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>cat
- 
-&gt;
- 
-dvwa-deploy.yml
- 
-&lt;&lt;&#x27;EOF&#x27;
+<details class="plain-large-code" data-plain-code-lines="479"><summary>Large code or log block<!-- --> · <!-- -->479<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>cat &gt; dvwa-deploy.yml &lt;&lt;&#x27;EOF&#x27;
 ---
 ---
 # dvwa-deploy.yml
 # Deploy DVWA + MariaDB in Docker (localhost-only publish) on Linux.
--
- 
-name:
- 
-Deploy
- 
-DVWA
- 
-in
- 
-Docker
- 
-(isolated
- 
-lab)
-  
-hosts:
- 
-lab
-  
-become:
- 
-true
-  
-gather_facts:
- 
-false
-  
-pre_tasks:
-    
--
- 
-name:
- 
-Gather
- 
-minimal
- 
-facts
- 
-(needed
- 
-for
- 
-os_family/distribution)
-      
-setup:
-        
-gather_subset:
- [
-min
-]
-        
-gather_timeout:
- 
-10
-  
-collections:
-    
--
- 
-community.docker
-  
-vars:
-    
-# Bind DVWA only to loopback for safety
-    
-dvwa_bind_address:
- 
-&quot;127.0.0.1&quot;
-    
-dvwa_bind_port:
- 
-8081
-    
-# Images
-    
-dvwa_image:
- 
-&quot;vulnerables/web-dvwa:latest&quot;
-    
-mariadb_image:
- 
-&quot;mariadb:10.5&quot;
-    
-# Optional local build
-    
-build_from_source:
- 
-false
-    
-dvwa_source_repo:
- 
-&quot;https://github.com/digininja/DVWA.git&quot;
-    
-dvwa_source_branch:
- 
-&quot;master&quot;
-    
-dvwa_source_dir:
- 
-&quot;/opt/dvwa_source&quot;
-    
-# DB creds (lab defaults; change if you like)
-    
-dvwa_db_root_password:
- 
-&quot;DvwaRootPass123!&quot;
-    
-dvwa_db_name:
- 
-&quot;dvwa&quot;
-    
-dvwa_db_user:
- 
-&quot;dvwauser&quot;
-    
-dvwa_db_password:
- 
-&quot;DvwaUserPass123!&quot;
-    
-# Docker artifacts
-    
-docker_network_name:
- 
-&quot;dvwa_net&quot;
-    
-dvwa_volume_name:
- 
-&quot;dvwa_html&quot;
-    
-dvwa_db_volume_name:
- 
-&quot;dvwa_db&quot;
-    
-# Container names
-    
-dvwa_container_name:
- 
-&quot;dvwa_app&quot;
-    
-dvwa_db_container_name:
- 
-&quot;dvwa_db&quot;
-    
-# Misc
-    
-snapshot_hint:
- 
-&quot;/var/lib/docker&quot;
-  
-tasks:
-    
-# ---------- Base packages (Debian/Ubuntu) ----------
-    
--
- 
-name:
- 
-Ensure
- 
-apt
- 
-cache
- 
-is
- 
-up-to-date
- 
-(Debian/Ubuntu)
-      
-apt:
-        
-update_cache:
- 
-yes
-        
-cache_valid_time:
- 
-3600
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-Ensure
- 
-required
- 
-packages
- 
-are
- 
-installed
- 
-(curl,
- 
-git,
- 
-python3-pip)
-      
-package:
-        
-name:
-          
--
- 
-curl
-          
--
- 
-git
-          
--
- 
-ca-certificates
-          
--
- 
-apt-transport-https
-          
--
- 
-python3-pip
-        
-state:
- 
-present
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
-# ---------- Modern Docker repo setup (no apt-key) ----------
-    
--
- 
-name:
- 
-Install
- 
-prerequisites
- 
-for
- 
-Docker
- 
-official
- 
-repo
-      
-apt:
-        
-name:
-          
--
- 
-ca-certificates
-          
--
- 
-curl
-          
--
- 
-gnupg
-          
--
- 
-lsb-release
-        
-state:
- 
-present
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-Ensure
- 
-APT
- 
-keyrings
- 
-dir
- 
-exists
-      
-file:
-        
-path:
- 
-/etc/apt/keyrings
-        
-state:
- 
-directory
-        
-mode:
- 
-&quot;0755&quot;
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-Download
- 
-Docker
- 
-GPG
- 
-key
- 
-(ASCII)
-      
-get_url:
-        
-url:
- 
-https://download.docker.com/linux/ubuntu/gpg
-        
-dest:
- 
-/etc/apt/keyrings/docker.asc
-        
-mode:
- 
-&quot;0644&quot;
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-De-armor
- 
-Docker
- 
-GPG
- 
-key
- 
-to
- 
-.gpg
- 
-(idempotent)
-      
-command:
- 
-&gt;
+
+- name: Deploy DVWA in Docker (isolated lab)
+  hosts: lab
+  become: true
+  gather_facts: false
+
+  pre_tasks:
+    - name: Gather minimal facts (needed for os_family/distribution)
+      setup:
+        gather_subset: [min]
+        gather_timeout: 10
+
+  collections:
+    - community.docker
+
+  vars:
+    # Bind DVWA only to loopback for safety
+    dvwa_bind_address: &quot;127.0.0.1&quot;
+    dvwa_bind_port: 8081
+
+    # Images
+    dvwa_image: &quot;vulnerables/web-dvwa:latest&quot;
+    mariadb_image: &quot;mariadb:10.5&quot;
+
+    # Optional local build
+    build_from_source: false
+    dvwa_source_repo: &quot;https://github.com/digininja/DVWA.git&quot;
+    dvwa_source_branch: &quot;master&quot;
+    dvwa_source_dir: &quot;/opt/dvwa_source&quot;
+
+    # DB creds (lab defaults; change if you like)
+    dvwa_db_root_password: &quot;DvwaRootPass123!&quot;
+    dvwa_db_name: &quot;dvwa&quot;
+    dvwa_db_user: &quot;dvwauser&quot;
+    dvwa_db_password: &quot;DvwaUserPass123!&quot;
+
+    # Docker artifacts
+    docker_network_name: &quot;dvwa_net&quot;
+    dvwa_volume_name: &quot;dvwa_html&quot;
+    dvwa_db_volume_name: &quot;dvwa_db&quot;
+
+    # Container names
+    dvwa_container_name: &quot;dvwa_app&quot;
+    dvwa_db_container_name: &quot;dvwa_db&quot;
+
+    # Misc
+    snapshot_hint: &quot;/var/lib/docker&quot;
+
+  tasks:
+    # ---------- Base packages (Debian/Ubuntu) ----------
+    - name: Ensure apt cache is up-to-date (Debian/Ubuntu)
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: Ensure required packages are installed (curl, git, python3-pip)
+      package:
+        name:
+          - curl
+          - git
+          - ca-certificates
+          - apt-transport-https
+          - python3-pip
+        state: present
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    # ---------- Modern Docker repo setup (no apt-key) ----------
+    - name: Install prerequisites for Docker official repo
+      apt:
+        name:
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+        state: present
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: Ensure APT keyrings dir exists
+      file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: &quot;0755&quot;
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: Download Docker GPG key (ASCII)
+      get_url:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        dest: /etc/apt/keyrings/docker.asc
+        mode: &quot;0644&quot;
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: De-armor Docker GPG key to .gpg (idempotent)
+      command: &gt;
         gpg --dearmor --yes
         --output /etc/apt/keyrings/docker.gpg
         /etc/apt/keyrings/docker.asc
-      
-args:
-        
-creates:
- 
-/etc/apt/keyrings/docker.gpg
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-Set
- 
-permissions
- 
-on
- 
-docker.gpg
-      
-file:
-        
-path:
- 
-/etc/apt/keyrings/docker.gpg
-        
-mode:
- 
-&quot;0644&quot;
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-Add
- 
-Docker
- 
-apt
- 
-repository
- 
-(signed-by
- 
-keyring)
-      
-apt_repository:
-        
-repo:
- 
-&quot;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu 
-{{ ansible_distribution_release }}
- stable&quot;
-        
-state:
- 
-present
-        
-filename:
- 
-docker
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-apt
- 
-update
- 
-after
- 
-adding
- 
-Docker
- 
-repo
-      
-apt:
-        
-update_cache:
- 
-yes
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-Install
- 
-docker
- 
-engine
- 
-packages
- 
-(and
- 
-containerd.io)
-      
-apt:
-        
-name:
-          
--
- 
-docker-ce
-          
--
- 
-docker-ce-cli
-          
--
- 
-containerd.io
-        
-state:
- 
-present
-        
-update_cache:
- 
-yes
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
-# ---------- Harden host so Docker can start cleanly ----------
-    
--
- 
-name:
- 
-Ensure
- 
-kernel
- 
-modules
- 
-for
- 
-container
- 
-networking
- 
-are
- 
-configured
-      
-copy:
-        
-dest:
- 
-/etc/modules-load.d/containerd.conf
-        
-content:
- 
-|
+      args:
+        creates: /etc/apt/keyrings/docker.gpg
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: Set permissions on docker.gpg
+      file:
+        path: /etc/apt/keyrings/docker.gpg
+        mode: &quot;0644&quot;
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: Add Docker apt repository (signed-by keyring)
+      apt_repository:
+        repo: &quot;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable&quot;
+        state: present
+        filename: docker
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: apt update after adding Docker repo
+      apt:
+        update_cache: yes
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: Install docker engine packages (and containerd.io)
+      apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+        update_cache: yes
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    # ---------- Harden host so Docker can start cleanly ----------
+    - name: Ensure kernel modules for container networking are configured
+      copy:
+        dest: /etc/modules-load.d/containerd.conf
+        content: |
           overlay
           br_netfilter
-        
-mode:
- 
-&quot;0644&quot;
-    
--
- 
-name:
- 
-Load
- 
-overlay
- 
-module
- 
-(runtime)
-      
-modprobe:
-        
-name:
- 
-overlay
-        
-state:
- 
-present
-      
-ignore_errors:
- 
-yes
-    
--
- 
-name:
- 
-Load
- 
-br_netfilter
- 
-module
- 
-(runtime)
-      
-modprobe:
-        
-name:
- 
-br_netfilter
-        
-state:
- 
-present
-      
-ignore_errors:
- 
-yes
-    
--
- 
-name:
- 
-Ensure
- 
-netfilter/forwarding
- 
-sysctls
- 
-are
- 
-set
-      
-copy:
-        
-dest:
- 
-/etc/sysctl.d/99-containerd-bridge.conf
-        
-content:
- 
-|
+        mode: &quot;0644&quot;
+
+    - name: Load overlay module (runtime)
+      modprobe:
+        name: overlay
+        state: present
+      ignore_errors: yes
+
+    - name: Load br_netfilter module (runtime)
+      modprobe:
+        name: br_netfilter
+        state: present
+      ignore_errors: yes
+
+    - name: Ensure netfilter/forwarding sysctls are set
+      copy:
+        dest: /etc/sysctl.d/99-containerd-bridge.conf
+        content: |
           net.bridge.bridge-nf-call-iptables = 1
           net.bridge.bridge-nf-call-ip6tables = 1
           net.ipv4.ip_forward = 1
-        
-mode:
- 
-&quot;0644&quot;
-    
--
- 
-name:
- 
-Apply
- 
-sysctl
- 
-settings
-      
-command:
- 
-sysctl
- 
---system
-      
-register:
- 
-sysctl_apply
-      
-changed_when:
- 
-&quot;&#x27;Applying /etc/sysctl.d/99-containerd-bridge.conf&#x27; in (sysctl_apply.stdout | default(&#x27;&#x27;)) or &#x27;Applying /etc/sysctl.d/99-containerd-bridge.conf&#x27; in (sysctl_apply.stderr | default(&#x27;&#x27;))&quot;
-      
-failed_when:
- 
-false
-    
--
- 
-name:
- 
-Ensure
- 
-containerd
- 
-config
- 
-directory
- 
-exists
-      
-file:
-        
-path:
- 
-/etc/containerd
-        
-state:
- 
-directory
-        
-mode:
- 
-&quot;0755&quot;
-    
--
- 
-name:
- 
-Generate
- 
-containerd
- 
-default
- 
-config
- 
-if
- 
-missing
-      
-command:
- 
-bash
- 
--lc
- 
-&quot;containerd config default &gt; /etc/containerd/config.toml&quot;
-      
-args:
-        
-creates:
- 
-/etc/containerd/config.toml
-    
--
- 
-name:
- 
-Force
- 
-SystemdCgroup=true
- 
-in
- 
-containerd
- 
-config
-      
-replace:
-        
-path:
- 
-/etc/containerd/config.toml
-        
-regexp:
- 
-&#x27;SystemdCgroup\s*=\s*false&#x27;
-        
-replace:
- 
-&#x27;SystemdCgroup = true&#x27;
-      
-notify:
- 
-restart
- 
-containerd
-    
--
- 
-name:
- 
-Ensure
- 
-containerd
- 
-service
- 
-is
- 
-enabled
- 
-and
- 
-started
-      
-service:
-        
-name:
- 
-containerd
-        
-state:
- 
-started
-        
-enabled:
- 
-true
-    
--
- 
-name:
- 
-Ensure
- 
-/etc/docker
- 
-directory
- 
-exists
-      
-file:
-        
-path:
- 
-/etc/docker
-        
-state:
- 
-directory
-        
-mode:
- 
-&quot;0755&quot;
-    
--
- 
-name:
- 
-Stat
- 
-docker
- 
-daemon.json
-      
-stat:
-        
-path:
- 
-/etc/docker/daemon.json
-      
-register:
- 
-docker_daemon_json_stat
-    
--
- 
-name:
- 
-Ensure
- 
-daemon.json
- 
-exists
- 
-with
- 
-minimal
- 
-valid
- 
-JSON
-      
-copy:
-        
-dest:
- 
-/etc/docker/daemon.json
-        
-content:
- 
-|
+        mode: &quot;0644&quot;
+
+    - name: Apply sysctl settings
+      command: sysctl --system
+      register: sysctl_apply
+      changed_when: &quot;&#x27;Applying /etc/sysctl.d/99-containerd-bridge.conf&#x27; in (sysctl_apply.stdout | default(&#x27;&#x27;)) or &#x27;Applying /etc/sysctl.d/99-containerd-bridge.conf&#x27; in (sysctl_apply.stderr | default(&#x27;&#x27;))&quot;
+      failed_when: false
+
+    - name: Ensure containerd config directory exists
+      file:
+        path: /etc/containerd
+        state: directory
+        mode: &quot;0755&quot;
+
+    - name: Generate containerd default config if missing
+      command: bash -lc &quot;containerd config default &gt; /etc/containerd/config.toml&quot;
+      args:
+        creates: /etc/containerd/config.toml
+
+    - name: Force SystemdCgroup=true in containerd config
+      replace:
+        path: /etc/containerd/config.toml
+        regexp: &#x27;SystemdCgroup\s*=\s*false&#x27;
+        replace: &#x27;SystemdCgroup = true&#x27;
+      notify: restart containerd
+
+    - name: Ensure containerd service is enabled and started
+      service:
+        name: containerd
+        state: started
+        enabled: true
+
+    - name: Ensure /etc/docker directory exists
+      file:
+        path: /etc/docker
+        state: directory
+        mode: &quot;0755&quot;
+
+    - name: Stat docker daemon.json
+      stat:
+        path: /etc/docker/daemon.json
+      register: docker_daemon_json_stat
+
+    - name: Ensure daemon.json exists with minimal valid JSON
+      copy:
+        dest: /etc/docker/daemon.json
+        content: |
           {}
-        
-mode:
- 
-&quot;0644&quot;
-      
-when:
- 
-not
- 
-docker_daemon_json_stat.stat.exists
-    
--
- 
-name:
- 
-Ensure
- 
-Docker
- 
-service
- 
-is
- 
-started
- 
-and
- 
-enabled
-      
-service:
-        
-name:
- 
-docker
-        
-state:
- 
-started
-        
-enabled:
- 
-true
-    
-# ---------- Python Docker SDK (for community.docker modules) ----------
-    
--
- 
-name:
- 
-Ensure
- 
-Python
- 
-Docker
- 
-SDK
- 
-via
- 
-APT
- 
-(Debian/Ubuntu)
-      
-apt:
-        
-name:
- 
-python3-docker
-        
-state:
- 
-present
-        
-update_cache:
- 
-yes
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-==
- 
-&quot;Debian&quot;
-    
--
- 
-name:
- 
-Ensure
- 
-Python
- 
-Docker
- 
-SDK
- 
-via
- 
-pip
- 
-(non-Debian)
-      
-pip:
-        
-name:
- 
-docker
-        
-executable:
- 
-pip3
-        
-break_system_packages:
- 
-true
-      
-when:
- 
-(ansible_facts.os_family
- 
-|
- 
-default(&#x27;&#x27;))
- 
-!=
- 
-&quot;Debian&quot;
-    
-# ---------- Network: ensure NON-internal so host port publish works ----------
-    
--
- 
-name:
- 
-Create
- 
-dvwa_net
- 
-(non-internal
- 
-so
- 
--p
- 
-works)
-      
-docker_network:
-        
-name:
- 
-&quot;
-{{ docker_network_name }}
-&quot;
-        
-internal:
- 
-false
-        
-state:
- 
-present
-    
--
- 
-name:
- 
-Inspect
- 
-dvwa_net.Internal
- 
-flag
-      
-command:
- 
-docker
- 
-network
- 
-inspect
- {{ 
-docker_network_name
- }} 
---format
- 
-&#x27;
-{{&quot;{{json .Internal}}
-&quot;}}&#x27;
-      
-register:
- 
-dvwa_net_internal
-      
-changed_when:
- 
-false
-      
-failed_when:
- 
-false
-    
--
- 
-name:
- 
-Recreate
- 
-dvwa_net
- 
-without
- 
-internal
- 
-if
- 
-needed
-      
-when:
- 
-dvwa_net_internal.stdout
- 
-|
- 
-default(&quot;&quot;)
- 
-in
- [
-&quot;true&quot;
-,
-&quot;True&quot;
-]
-      
-block:
-        
--
- 
-name:
- 
-Remove
- 
-dvwa_net
- 
-(was
- 
-internal)
-          
-docker_network:
-            
-name:
- 
-&quot;
-{{ docker_network_name }}
-&quot;
-            
-state:
- 
-absent
-        
--
- 
-name:
- 
-Create
- 
-dvwa_net
- 
-(non-internal)
-          
-docker_network:
-            
-name:
- 
-&quot;
-{{ docker_network_name }}
-&quot;
-            
-internal:
- 
-false
-            
-state:
- 
-present
-        
--
- 
-name:
- 
-Remove
- 
-dvwa_app
- 
-to
- 
-refresh
- 
-port
- 
-bindings
- 
-after
- 
-network
- 
-change
-          
-docker_container:
-            
-name:
- 
-&quot;
-{{ dvwa_container_name }}
-&quot;
-            
-state:
- 
-absent
-            
-force_kill:
- 
-true
-          
-ignore_errors:
- 
-true
-    
-# ---------- Volumes ----------
-    
--
- 
-name:
- 
-Create
- 
-Docker
- 
-volume
- 
-for
- 
-DVWA
- 
-HTML
- 
-(persistent)
-      
-docker_volume:
-        
-name:
- 
-&quot;
-{{ dvwa_volume_name }}
-&quot;
-    
--
- 
-name:
- 
-Create
- 
-Docker
- 
-volume
- 
-for
- 
-DVWA
- 
-DB
- 
-data
- 
-(persistent)
-      
-docker_volume:
-        
-name:
- 
-&quot;
-{{ dvwa_db_volume_name }}
-&quot;
-    
-# ---------- Images ----------
-    
--
- 
-name:
- 
-Pull
- 
-MariaDB
- 
-image
-      
-docker_image:
-        
-name:
- 
-&quot;
-{{ mariadb_image }}
-&quot;
-        
-source:
- 
-pull
-    
--
- 
-name:
- 
-Pull
- 
-DVWA
- 
-image
- 
-(unless
- 
-building
- 
-from
- 
-source)
-      
-when:
- 
-not
- 
-build_from_source
- 
-|
- 
-bool
-      
-docker_image:
-        
-name:
- 
-&quot;
-{{ dvwa_image }}
-&quot;
-        
-source:
- 
-pull
-    
--
- 
-name:
- 
-(Optional)
- 
-Clone
- 
-DVWA
- 
-source
- 
-if
- 
-build_from_source
- 
-true
-      
-when:
- 
-build_from_source
- 
-|
- 
-bool
-      
-git:
-        
-repo:
- 
-&quot;
-{{ dvwa_source_repo }}
-&quot;
-        
-dest:
- 
-&quot;
-{{ dvwa_source_dir }}
-&quot;
-        
-version:
- 
-&quot;
-{{ dvwa_source_branch }}
-&quot;
-        
-update:
- 
-yes
-    
--
- 
-name:
- 
-(Optional)
- 
-Build
- 
-DVWA
- 
-image
- 
-from
- 
-source
- 
-(if
- 
-enabled)
-      
-when:
- 
-build_from_source
- 
-|
- 
-bool
-      
-docker_image:
-        
-build:
-          
-path:
- 
-&quot;
-{{ dvwa_source_dir }}
-&quot;
-        
-name:
- 
-&quot;local/dvwa&quot;
-        
-tag:
- 
-&quot;latest&quot;
-      
-register:
- 
-dvwa_build_result
-    
--
- 
-name:
- 
-Set
- 
-effective
- 
-dvwa
- 
-image
- 
-name
- 
-(if
- 
-built
- 
-locally)
-      
-set_fact:
-        
-dvwa_image_effective:
- 
-&quot;
-{{ (build_from_source | bool) | ternary(&#x27;local/dvwa:latest&#x27;, dvwa_image) }}
-&quot;
-    
-# ---------- Clean old containers (idempotent re-deploys) ----------
-    
--
- 
-name:
- 
-Ensure
- 
-old
- 
-DVWA
- 
-app
- 
-container
- 
-is
- 
-absent
-      
-docker_container:
-        
-name:
- 
-&quot;
-{{ dvwa_container_name }}
-&quot;
-        
-state:
- 
-absent
-        
-force_kill:
- 
-true
-      
-ignore_errors:
- 
-true
-    
--
- 
-name:
- 
-Ensure
- 
-old
- 
-DVWA
- 
-DB
- 
-container
- 
-is
- 
-absent
-      
-docker_container:
-        
-name:
- 
-&quot;
-{{ dvwa_db_container_name }}
-&quot;
-        
-state:
- 
-absent
-        
-force_kill:
- 
-true
-      
-ignore_errors:
- 
-true
-    
-# ---------- Run containers ----------
-    
--
- 
-name:
- 
-Run
- 
-MariaDB
- 
-container
- 
-for
- 
-DVWA
-      
-docker_container:
-        
-name:
- 
-&quot;
-{{ dvwa_db_container_name }}
-&quot;
-        
-image:
- 
-&quot;
-{{ mariadb_image }}
-&quot;
-        
-env:
-          
-MYSQL_ROOT_PASSWORD:
- 
-&quot;
-{{ dvwa_db_root_password }}
-&quot;
-          
-MYSQL_DATABASE:
- 
-&quot;
-{{ dvwa_db_name }}
-&quot;
-          
-MYSQL_USER:
- 
-&quot;
-{{ dvwa_db_user }}
-&quot;
-          
-MYSQL_PASSWORD:
- 
-&quot;
-{{ dvwa_db_password }}
-&quot;
-        
-restart_policy:
- 
-unless-stopped
-        
-networks:
-          
--
- 
-name:
- 
-&quot;
-{{ docker_network_name }}
-&quot;
-        
-volumes:
-          
--
- 
-&quot;
-{{ dvwa_db_volume_name }}
-:/var/lib/mysql&quot;
-        
-state:
- 
-started
-    
--
- 
-name:
- 
-Pause
- 
-to
- 
-allow
- 
-DB
- 
-initialization
-      
-pause:
-        
-seconds:
- 
-15
-    
--
- 
-name:
- 
-Run
- 
-DVWA
- 
-container
- 
-(bind
- 
-to
- 
-localhost;
- 
-publish
- 
-port)
-      
-docker_container:
-        
-name:
- 
-&quot;
-{{ dvwa_container_name }}
-&quot;
-        
-image:
- 
-&quot;
-{{ dvwa_image_effective | default(dvwa_image) }}
-&quot;
-        
-state:
- 
-started
-        
-restart_policy:
- 
-unless-stopped
-        
-networks:
-          
--
- 
-name:
- 
-&quot;
-{{ docker_network_name }}
-&quot;
-        
-ports:
-                      
-# publish host-&gt;container
-          
--
- 
-&quot;
-{{ dvwa_bind_address }}
-:
-{{ dvwa_bind_port }}
-:80/tcp&quot;
-        
-volumes:
-          
--
- 
-&quot;
-{{ dvwa_volume_name }}
-:/var/www/html&quot;
-        
-env:
-          
-MYSQL_HOST:
- 
-&quot;
-{{ dvwa_db_container_name }}
-&quot;
-          
-MYSQL_DATABASE:
- 
-&quot;
-{{ dvwa_db_name }}
-&quot;
-          
-MYSQL_USER:
- 
-&quot;
-{{ dvwa_db_user }}
-&quot;
-          
-MYSQL_PASSWORD:
- 
-&quot;
-{{ dvwa_db_password }}
-&quot;
-        
-recreate:
- 
-true
-              
-# replace if config (ports) differs
-    
-# ---------- Health &amp; diagnostics ----------
-    
--
- 
-name:
- 
-Verify
- 
-port
- 
-mapping
- 
-exists
- 
-on
- 
-dvwa_app
-      
-command:
- 
-bash
- 
--lc
- 
-&quot;docker inspect 
-{{ dvwa_container_name }}
- --format &#x27;
-{{&#x27;{{json .NetworkSettings.Ports}}
-&#x27;}}&#x27;&quot;
-      
-register:
- 
-portmap
-      
-changed_when:
- 
-false
-      
-failed_when:
- 
-false
-    
--
- 
-name:
- 
-Show
- 
-published
- 
-port
- 
-mapping
-      
-debug:
-        
-var:
- 
-portmap.stdout
-    
--
- 
-name:
- 
-If
- 
-port
- 
-not
- 
-published,
- 
-recreate
- 
-dvwa_app
- 
-with
- 
-ports
-      
-when:
- 
-portmap.stdout
- 
-|
- 
-trim
- 
-in
- [
-&#x27;{}&#x27;
-, 
-&#x27;null&#x27;
-, 
-&#x27;&#x27;
-] 
-or
- 
-(portmap.stdout
- 
-is
- 
-search(&#x27;\&quot;80/tcp\&quot;:null&#x27;))
-      
-block:
-        
--
- 
-name:
- 
-Remove
- 
-dvwa_app
- 
-to
- 
-refresh
- 
-port
- 
-bindings
-          
-docker_container:
-            
-name:
- 
-&quot;
-{{ dvwa_container_name }}
-&quot;
-            
-state:
- 
-absent
-            
-force_kill:
- 
-true
-        
--
- 
-name:
- 
-Recreate
- 
-dvwa_app
- 
-with
- 
-port
- 
-mapping
-          
-docker_container:
-            
-name:
- 
-&quot;
-{{ dvwa_container_name }}
-&quot;
-            
-image:
- 
-&quot;
-{{ dvwa_image_effective | default(dvwa_image) }}
-&quot;
-            
-state:
- 
-started
-            
-restart_policy:
- 
-unless-stopped
-            
-networks:
-              
--
- 
-name:
- 
-&quot;
-{{ docker_network_name }}
-&quot;
-            
-ports:
-              
--
- 
-&quot;
-{{ dvwa_bind_address }}
-:
-{{ dvwa_bind_port }}
-:80/tcp&quot;
-            
-volumes:
-              
--
- 
-&quot;
-{{ dvwa_volume_name }}
-:/var/www/html&quot;
-            
-env:
-              
-MYSQL_HOST:
- 
-&quot;
-{{ dvwa_db_container_name }}
-&quot;
-              
-MYSQL_DATABASE:
- 
-&quot;
-{{ dvwa_db_name }}
-&quot;
-              
-MYSQL_USER:
- 
-&quot;
-{{ dvwa_db_user }}
-&quot;
-              
-MYSQL_PASSWORD:
- 
-&quot;
-{{ dvwa_db_password }}
-&quot;
-    
--
- 
-name:
- 
-Wait
- 
-for
- 
-DVWA
- 
-TCP
- 
-port
- 
-to
- 
-open
- 
-on
- 
-host
-      
-wait_for:
-        
-host:
- 
-&quot;
-{{ dvwa_bind_address }}
-&quot;
-        
-port:
- 
-&quot;
-{{ dvwa_bind_port }}
-&quot;
-        
-delay:
- 
-1
-        
-timeout:
- 
-180
-    
--
- 
-name:
- 
-Try
- 
-DVWA
- 
-HTTP
-      
-uri:
-        
-url:
- 
-&quot;http://
-{{ dvwa_bind_address }}
-:
-{{ dvwa_bind_port }}
-/&quot;
-        
-method:
- 
-GET
-        
-status_code:
- 
-200
-,302,401,403
-        
-return_content:
- 
-false
-        
-timeout:
- 
-8
-      
-register:
- 
-dvwa_http_check
-      
-retries:
- 
-5
-      
-delay:
- 
-3
-      
-until:
- 
-dvwa_http_check
- 
-is
- 
-succeeded
-      
-ignore_errors:
- 
-yes
-    
--
- 
-name:
- 
-If
- 
-HTTP
- 
-failed,
- 
-dump
- 
-dvwa_app
- 
-logs
-      
-when:
- 
-dvwa_http_check
- 
-is
- 
-failed
-      
-block:
-        
--
- 
-name:
- 
-Dump
- 
-dvwa_app
- 
-logs
- 
-(last
- 
-150
- 
-lines)
-          
-command:
- 
-docker
- 
-logs
- 
---tail=150
- {{ 
-dvwa_container_name
- }}
-          
-register:
- 
-dvwa_logs
-          
-changed_when:
- 
-false
-          
-failed_when:
- 
-false
-        
--
- 
-name:
- 
-Print
- 
-dvwa_app
- 
-logs
-          
-debug:
-            
-var:
- 
-dvwa_logs.stdout_lines
-    
--
- 
-name:
- 
-Attempt
- 
-to
- 
-fetch
- 
-DVWA
- 
-setup
- 
-page
- 
-(to
- 
-guide
- 
-operator)
-      
-uri:
-        
-url:
- 
-&quot;http://
-{{ dvwa_bind_address }}
-:
-{{ dvwa_bind_port }}
-/setup.php&quot;
-        
-method:
- 
-GET
-        
-return_content:
- 
-true
-        
-timeout:
- 
-30
-        
-status_code:
- 
-200
-      
-register:
- 
-dvwa_setup_page
-      
-failed_when:
- 
-false
-      
-ignore_errors:
- 
-true
-    
--
- 
-name:
- 
-If
- 
-setup.php
- 
-is
- 
-reachable,
- 
-print
- 
-next
- 
-manual
- 
-instruction
-      
-debug:
-        
-msg:
-          
--
- 
-&quot;DVWA setup page: http://
-{{ dvwa_bind_address }}
-:
-{{ dvwa_bind_port }}
-/setup.php&quot;
-          
--
- 
-&quot;Open it and click &#x27;Create / Reset Database&#x27; to initialize the schema.&quot;
-    
-# ---------- Artifact ----------
-    
--
- 
-name:
- 
-Register
- 
-final
- 
-artifact
- 
-info
- 
-file
-      
-copy:
-        
-dest:
- 
-&quot;/root/dvwa_deploy_info_
-{{ inventory_hostname | default(&#x27;host&#x27;) }}
-.txt&quot;
-        
-content:
- 
-|
+        mode: &quot;0644&quot;
+      when: not docker_daemon_json_stat.stat.exists
+
+    - name: Ensure Docker service is started and enabled
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    # ---------- Python Docker SDK (for community.docker modules) ----------
+    - name: Ensure Python Docker SDK via APT (Debian/Ubuntu)
+      apt:
+        name: python3-docker
+        state: present
+        update_cache: yes
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) == &quot;Debian&quot;
+
+    - name: Ensure Python Docker SDK via pip (non-Debian)
+      pip:
+        name: docker
+        executable: pip3
+        break_system_packages: true
+      when: (ansible_facts.os_family | default(&#x27;&#x27;)) != &quot;Debian&quot;
+
+    # ---------- Network: ensure NON-internal so host port publish works ----------
+    - name: Create dvwa_net (non-internal so -p works)
+      docker_network:
+        name: &quot;{{ docker_network_name }}&quot;
+        internal: false
+        state: present
+
+    - name: Inspect dvwa_net.Internal flag
+      command: docker network inspect {{ docker_network_name }} --format &#x27;{{&quot;{{json .Internal}}&quot;}}&#x27;
+      register: dvwa_net_internal
+      changed_when: false
+      failed_when: false
+
+    - name: Recreate dvwa_net without internal if needed
+      when: dvwa_net_internal.stdout | default(&quot;&quot;) in [&quot;true&quot;,&quot;True&quot;]
+      block:
+        - name: Remove dvwa_net (was internal)
+          docker_network:
+            name: &quot;{{ docker_network_name }}&quot;
+            state: absent
+
+        - name: Create dvwa_net (non-internal)
+          docker_network:
+            name: &quot;{{ docker_network_name }}&quot;
+            internal: false
+            state: present
+
+        - name: Remove dvwa_app to refresh port bindings after network change
+          docker_container:
+            name: &quot;{{ dvwa_container_name }}&quot;
+            state: absent
+            force_kill: true
+          ignore_errors: true
+
+    # ---------- Volumes ----------
+    - name: Create Docker volume for DVWA HTML (persistent)
+      docker_volume:
+        name: &quot;{{ dvwa_volume_name }}&quot;
+
+    - name: Create Docker volume for DVWA DB data (persistent)
+      docker_volume:
+        name: &quot;{{ dvwa_db_volume_name }}&quot;
+
+    # ---------- Images ----------
+    - name: Pull MariaDB image
+      docker_image:
+        name: &quot;{{ mariadb_image }}&quot;
+        source: pull
+
+    - name: Pull DVWA image (unless building from source)
+      when: not build_from_source | bool
+      docker_image:
+        name: &quot;{{ dvwa_image }}&quot;
+        source: pull
+
+    - name: (Optional) Clone DVWA source if build_from_source true
+      when: build_from_source | bool
+      git:
+        repo: &quot;{{ dvwa_source_repo }}&quot;
+        dest: &quot;{{ dvwa_source_dir }}&quot;
+        version: &quot;{{ dvwa_source_branch }}&quot;
+        update: yes
+
+    - name: (Optional) Build DVWA image from source (if enabled)
+      when: build_from_source | bool
+      docker_image:
+        build:
+          path: &quot;{{ dvwa_source_dir }}&quot;
+        name: &quot;local/dvwa&quot;
+        tag: &quot;latest&quot;
+      register: dvwa_build_result
+
+    - name: Set effective dvwa image name (if built locally)
+      set_fact:
+        dvwa_image_effective: &quot;{{ (build_from_source | bool) | ternary(&#x27;local/dvwa:latest&#x27;, dvwa_image) }}&quot;
+
+    # ---------- Clean old containers (idempotent re-deploys) ----------
+    - name: Ensure old DVWA app container is absent
+      docker_container:
+        name: &quot;{{ dvwa_container_name }}&quot;
+        state: absent
+        force_kill: true
+      ignore_errors: true
+
+    - name: Ensure old DVWA DB container is absent
+      docker_container:
+        name: &quot;{{ dvwa_db_container_name }}&quot;
+        state: absent
+        force_kill: true
+      ignore_errors: true
+
+    # ---------- Run containers ----------
+    - name: Run MariaDB container for DVWA
+      docker_container:
+        name: &quot;{{ dvwa_db_container_name }}&quot;
+        image: &quot;{{ mariadb_image }}&quot;
+        env:
+          MYSQL_ROOT_PASSWORD: &quot;{{ dvwa_db_root_password }}&quot;
+          MYSQL_DATABASE: &quot;{{ dvwa_db_name }}&quot;
+          MYSQL_USER: &quot;{{ dvwa_db_user }}&quot;
+          MYSQL_PASSWORD: &quot;{{ dvwa_db_password }}&quot;
+        restart_policy: unless-stopped
+        networks:
+          - name: &quot;{{ docker_network_name }}&quot;
+        volumes:
+          - &quot;{{ dvwa_db_volume_name }}:/var/lib/mysql&quot;
+        state: started
+
+    - name: Pause to allow DB initialization
+      pause:
+        seconds: 15
+
+    - name: Run DVWA container (bind to localhost; publish port)
+      docker_container:
+        name: &quot;{{ dvwa_container_name }}&quot;
+        image: &quot;{{ dvwa_image_effective | default(dvwa_image) }}&quot;
+        state: started
+        restart_policy: unless-stopped
+        networks:
+          - name: &quot;{{ docker_network_name }}&quot;
+        ports:                      # publish host-&gt;container
+          - &quot;{{ dvwa_bind_address }}:{{ dvwa_bind_port }}:80/tcp&quot;
+        volumes:
+          - &quot;{{ dvwa_volume_name }}:/var/www/html&quot;
+        env:
+          MYSQL_HOST: &quot;{{ dvwa_db_container_name }}&quot;
+          MYSQL_DATABASE: &quot;{{ dvwa_db_name }}&quot;
+          MYSQL_USER: &quot;{{ dvwa_db_user }}&quot;
+          MYSQL_PASSWORD: &quot;{{ dvwa_db_password }}&quot;
+        recreate: true              # replace if config (ports) differs
+
+    # ---------- Health &amp; diagnostics ----------
+    - name: Verify port mapping exists on dvwa_app
+      command: bash -lc &quot;docker inspect {{ dvwa_container_name }} --format &#x27;{{&#x27;{{json .NetworkSettings.Ports}}&#x27;}}&#x27;&quot;
+      register: portmap
+      changed_when: false
+      failed_when: false
+
+    - name: Show published port mapping
+      debug:
+        var: portmap.stdout
+
+    - name: If port not published, recreate dvwa_app with ports
+      when: portmap.stdout | trim in [&#x27;{}&#x27;, &#x27;null&#x27;, &#x27;&#x27;] or (portmap.stdout is search(&#x27;\&quot;80/tcp\&quot;:null&#x27;))
+      block:
+        - name: Remove dvwa_app to refresh port bindings
+          docker_container:
+            name: &quot;{{ dvwa_container_name }}&quot;
+            state: absent
+            force_kill: true
+
+        - name: Recreate dvwa_app with port mapping
+          docker_container:
+            name: &quot;{{ dvwa_container_name }}&quot;
+            image: &quot;{{ dvwa_image_effective | default(dvwa_image) }}&quot;
+            state: started
+            restart_policy: unless-stopped
+            networks:
+              - name: &quot;{{ docker_network_name }}&quot;
+            ports:
+              - &quot;{{ dvwa_bind_address }}:{{ dvwa_bind_port }}:80/tcp&quot;
+            volumes:
+              - &quot;{{ dvwa_volume_name }}:/var/www/html&quot;
+            env:
+              MYSQL_HOST: &quot;{{ dvwa_db_container_name }}&quot;
+              MYSQL_DATABASE: &quot;{{ dvwa_db_name }}&quot;
+              MYSQL_USER: &quot;{{ dvwa_db_user }}&quot;
+              MYSQL_PASSWORD: &quot;{{ dvwa_db_password }}&quot;
+
+    - name: Wait for DVWA TCP port to open on host
+      wait_for:
+        host: &quot;{{ dvwa_bind_address }}&quot;
+        port: &quot;{{ dvwa_bind_port }}&quot;
+        delay: 1
+        timeout: 180
+
+    - name: Try DVWA HTTP
+      uri:
+        url: &quot;http://{{ dvwa_bind_address }}:{{ dvwa_bind_port }}/&quot;
+        method: GET
+        status_code: 200,302,401,403
+        return_content: false
+        timeout: 8
+      register: dvwa_http_check
+      retries: 5
+      delay: 3
+      until: dvwa_http_check is succeeded
+      ignore_errors: yes
+
+    - name: If HTTP failed, dump dvwa_app logs
+      when: dvwa_http_check is failed
+      block:
+        - name: Dump dvwa_app logs (last 150 lines)
+          command: docker logs --tail=150 {{ dvwa_container_name }}
+          register: dvwa_logs
+          changed_when: false
+          failed_when: false
+
+        - name: Print dvwa_app logs
+          debug:
+            var: dvwa_logs.stdout_lines
+
+    - name: Attempt to fetch DVWA setup page (to guide operator)
+      uri:
+        url: &quot;http://{{ dvwa_bind_address }}:{{ dvwa_bind_port }}/setup.php&quot;
+        method: GET
+        return_content: true
+        timeout: 30
+        status_code: 200
+      register: dvwa_setup_page
+      failed_when: false
+      ignore_errors: true
+
+    - name: If setup.php is reachable, print next manual instruction
+      debug:
+        msg:
+          - &quot;DVWA setup page: http://{{ dvwa_bind_address }}:{{ dvwa_bind_port }}/setup.php&quot;
+          - &quot;Open it and click &#x27;Create / Reset Database&#x27; to initialize the schema.&quot;
+
+    # ---------- Artifact ----------
+    - name: Register final artifact info file
+      copy:
+        dest: &quot;/root/dvwa_deploy_info_{{ inventory_hostname | default(&#x27;host&#x27;) }}.txt&quot;
+        content: |
           DVWA deployed on host: {{ inventory_hostname }}
           DVWA URL: http://{{ dvwa_bind_address }}:{{ dvwa_bind_port }}/
           DVWA container: {{ dvwa_container_name }}
@@ -2535,188 +642,158 @@ content:
           DVWA HTML volume: {{ dvwa_volume_name }}
           DVWA DB volume: {{ dvwa_db_volume_name }}
           Snapshot hint (operator): {{ snapshot_hint }}
-        
-mode:
- 
-&quot;0600&quot;
-  
-handlers:
-    
--
- 
-name:
- 
-restart
- 
-containerd
-      
-service:
-        
-name:
- 
-containerd
-        
-state:
- 
-restarted
-    
--
- 
-name:
- 
-restart
- 
-dvwa
-      
-docker_container:
-        
-name:
- 
-&quot;
-{{ dvwa_container_name }}
-&quot;
-        
-state:
- 
-restarted
+        mode: &quot;0600&quot;
+
+  handlers:
+    - name: restart containerd
+      service:
+        name: containerd
+        state: restarted
+
+    - name: restart dvwa
+      docker_container:
+        name: &quot;{{ dvwa_container_name }}&quot;
+        state: restarted
 EOF
 </code></pre></details>
 <p>&gt; Tip: If you prefer, open your editor nano dvwa-deploy.yml and paste.</p>
-<p>2.<code>inventory.ini</code>— minimal inventory for local run or remote host.</p>
+<ol start="2">
+<li class=""><code>inventory.ini</code> — minimal inventory for local run or remote host.</li>
+</ol>
 <p>For local run (recommended for simple testing), create an inventory file that points to localhost:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cat</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &gt; inventory.ini &lt;&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;EOF&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[lab]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">localhost ansible_connection=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EOF</span><br></div></code></pre></div></div>
-<p>For remote host (example<code>lab.example.com</code>), use:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cat</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &gt; inventory.ini &lt;&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;EOF&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[lab]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">lab.example.com ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EOF</span><br></div></code></pre></div></div>
-<p>Adjust<code>ansible_user</code>and key path to match your remote host.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cat &gt; inventory.ini &lt;&lt;&#x27;EOF&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[lab]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">localhost ansible_connection=local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EOF</span><br></div></code></pre></div></div>
+<p>For remote host (example <code>lab.example.com</code>), use:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cat &gt; inventory.ini &lt;&lt;&#x27;EOF&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[lab]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">lab.example.com ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EOF</span><br></div></code></pre></div></div>
+<p>Adjust <code>ansible_user</code> and key path to match your remote host.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-install-ansible--dependencies-control-machine">3) Install Ansible &amp; dependencies (control machine)<a href="#3-install-ansible--dependencies-control-machine" class="hash-link" aria-label="Direct link to 3) Install Ansible &amp; dependencies (control machine)" title="Direct link to 3) Install Ansible &amp; dependencies (control machine)" translate="no">​</a></h2>
 <p><strong>On Debian/Ubuntu (local control):</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">update</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Install Ansible (from distro or pip). We&#x27;ll use distro package for simplicity:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install -y ansible git python3-pip</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Install community docker collection dependencies</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pip3 install docker</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Install the community.docker collection (needed by playbook)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ansible-galaxy collection install community.docker</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Optional: verify ansible version</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ansible --version</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update &amp;&amp; sudo apt install -y python3-docker</span><br></div></code></pre></div></div>
-<p>If you run Ansible from a Mac or other OS, install Ansible by your preferred package manager and ensure<code>pip3</code>and the Python docker SDK (<code>pip3 install docker</code>) are available.</p>
+<p>If you run Ansible from a Mac or other OS, install Ansible by your preferred package manager and ensure <code>pip3</code> and the Python docker SDK (<code>pip3 install docker</code>) are available.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-run-the-playbook-local-run">4) Run the playbook (local run)<a href="#4-run-the-playbook-local-run" class="hash-link" aria-label="Direct link to 4) Run the playbook (local run)" title="Direct link to 4) Run the playbook (local run)" translate="no">​</a></h2>
-<p>The playbook uses<code>become: true</code>to install Docker if needed and create volumes. For a local run:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ~/dvwa-ansible</span><br></div></code></pre></div></div>
+<p>The playbook uses <code>become: true</code> to install Docker if needed and create volumes. For a local run:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd ~/dvwa-ansible</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Run interactively with sudo prompt:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ansible-playbook -i inventory.ini dvwa-deploy.yml --ask-become-pass</span><br></div></code></pre></div></div>
-<p>If you are already root or running in a root shell, you can omit<code>--ask-become-pass</code>.</p>
+<p>If you are already root or running in a root shell, you can omit <code>--ask-become-pass</code>.</p>
 <p>If you prefer an explicit local invocation:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ansible-playbook -i </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;localhost,&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> dvwa-deploy.yml </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--ask-become-pass</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ansible-playbook -i &quot;localhost,&quot; -c local dvwa-deploy.yml --ask-become-pass</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-run-the-playbook-remote-host">5) Run the playbook (remote host)<a href="#5-run-the-playbook-remote-host" class="hash-link" aria-label="Direct link to 5) Run the playbook (remote host)" title="Direct link to 5) Run the playbook (remote host)" translate="no">​</a></h2>
 <p>If using a remote lab host from your control machine:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ansible-playbook -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">i</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> inventory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.ini</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> dvwa-deploy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.yml</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--ask-become-pass</span><br></div></code></pre></div></div>
-<p>Make sure<code>inventory.ini</code>points to the remote host and you can<code>ssh</code>to it as the configured user.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ansible-playbook -i inventory.ini dvwa-deploy.yml --ask-become-pass</span><br></div></code></pre></div></div>
+<p>Make sure <code>inventory.ini</code> points to the remote host and you can <code>ssh</code> to it as the configured user.</p>
 <p>What you’ll see:</p>
 <ul>
 <li class="">
-<p>Docker repo/keyring configured (no<code>apt-key</code>)</p>
+<p>Docker repo/keyring configured (no <code>apt-key</code>)</p>
 </li>
 <li class="">
 <p>containerd/Docker tuned and started</p>
 </li>
 <li class="">
-<p>Volumes:<code>dvwa_html</code>,<code>dvwa_db</code></p>
+<p>Volumes: <code>dvwa_html</code>, <code>dvwa_db</code></p>
 </li>
 <li class="">
-<p><strong>Network:</strong><code>dvwa_net</code>created<strong>non-internal</strong>(so<code>-p</code>works)</p>
+<p><strong>Network:</strong> <code>dvwa_net</code> created <strong>non-internal</strong> (so <code>-p</code> works)</p>
 </li>
 <li class="">
-<p>Images pulled (<code>mariadb:10.5</code>,<code>vulnerables/web-dvwa:latest</code>)</p>
+<p>Images pulled (<code>mariadb:10.5</code>, <code>vulnerables/web-dvwa:latest</code>)</p>
 </li>
 <li class="">
-<p>Containers started:<code>dvwa_db</code>,<code>dvwa_app</code></p>
+<p>Containers started: <code>dvwa_db</code>, <code>dvwa_app</code></p>
 </li>
 <li class="">
 <p>Health checks (TCP then HTTP) and helpful logs if HTTP fails</p>
 </li>
 <li class="">
-<p>Artifact file:<code>/root/dvwa_deploy_info_&amp;lt;host&amp;gt;.txt</code></p>
+<p>Artifact file: <code>/root/dvwa_deploy_info_&amp;lt;host&amp;gt;.txt</code></p>
 </li>
 </ul>
 <p>&gt; The playbook also auto-recovers if the app was previously created without port mapping: it inspects the mapping and, if missing, removes &amp; recreates dvwa_app with 127.0.0.1:8081 -&gt; 80/tcp .</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-verify-its-up">6) Verify it’s up<a href="#6-verify-its-up" class="hash-link" aria-label="Direct link to 6) Verify it’s up" title="Direct link to 6) Verify it’s up" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># mapping should show 127.0.0.1:8081 -&gt; 80/tcp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker inspect dvwa_app --format </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;{{json .NetworkSettings.Ports}}&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | jq .</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># should return 200/302/401/403</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -I http://127.0.0.1:8081/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># quick logs if needed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker logs --</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=120 dvwa_app</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker logs --</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=120 dvwa_db</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># mapping should show 127.0.0.1:8081 -&gt; 80/tcp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker inspect dvwa_app --format &#x27;{{json .NetworkSettings.Ports}}&#x27; | jq .</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># should return 200/302/401/403</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl -I http://127.0.0.1:8081/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># quick logs if needed</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker logs --tail=120 dvwa_app</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker logs --tail=120 dvwa_db</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*aLm6bnvjp8u-V734FAZwAA.png" alt="Article image" width="1913" height="521" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-initialize-dvwa">7) Initialize DVWA<a href="#7-initialize-dvwa" class="hash-link" aria-label="Direct link to 7) Initialize DVWA" title="Direct link to 7) Initialize DVWA" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="option-a--via-browser-recommended">Option A — via browser (recommended)<a href="#option-a--via-browser-recommended" class="hash-link" aria-label="Direct link to Option A — via browser (recommended)" title="Direct link to Option A — via browser (recommended)" translate="no">​</a></h2>
 <p>On the host (or via SSH tunnel) open:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">http://127.0.0.1:8081/setup.php</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*pk3WsMzwxRybWiTWbZJggw.png" alt="Article image" width="1913" height="521" loading="lazy" decoding="async">
-<p>Click<strong>Create / Reset Database</strong>, then go to:</p>
+<p>Click <strong>Create / Reset Database</strong>, then go to:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">http://127.0.0.1:8081/login.php</span><br></div></code></pre></div></div>
-<p>Default creds:<code>admin</code>/<code>password</code>(change later).</p>
+<p>Default creds: <code>admin</code> / <code>password</code> (change later).</p>
 <p><strong>SSH tunnel example (if remote):</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh -L </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8081</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">127.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8081</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ubuntu@</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">lab.example.com -N</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># then </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">open</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//127.0.0.1:8081 locally</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ssh -L 8081:127.0.0.1:8081 ubuntu@lab.example.com -N</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># then open http://127.0.0.1:8081 locally</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="option-b--one-liners-manual-on-the-host">Option B — one-liners (manual, on the host)<a href="#option-b--one-liners-manual-on-the-host" class="hash-link" aria-label="Direct link to Option B — one-liners (manual, on the host)" title="Direct link to Option B — one-liners (manual, on the host)" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">exec</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">it dvwa_db bash </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">c \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;mysql -uroot -p&#x27;DvwaRootPass123!&#x27; -e \&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CREATE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> DATABASE IF </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">NOT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EXISTS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> dvwa; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">GRANT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ALL</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ON</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> dvwa.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TO</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;dvwauser&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;%&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> IDENTIFIED </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">BY</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;DvwaUserPass123!&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">; FLUSH PRIVILEGES;\&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">exec</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">it dvwa_app bash </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">c &quot;php /var/www/html/setup.php&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker exec -it dvwa_db bash -c \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;mysql -uroot -p&#x27;DvwaRootPass123!&#x27; -e \&quot;CREATE DATABASE IF NOT EXISTS dvwa; GRANT ALL ON dvwa.* TO &#x27;dvwauser&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;DvwaUserPass123!&#x27;; FLUSH PRIVILEGES;\&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker exec -it dvwa_app bash -c &quot;php /var/www/html/setup.php&quot;</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-snapshots--backups-recommended">7) Snapshots &amp; backups (recommended)<a href="#7-snapshots--backups-recommended" class="hash-link" aria-label="Direct link to 7) Snapshots &amp; backups (recommended)" title="Direct link to 7) Snapshots &amp; backups (recommended)" translate="no">​</a></h2>
-<p><strong>VM snapshots</strong>(VBox/VMware/KVM) before training.
-<strong>Volume backups</strong>(bare metal):</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># DB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker run --</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -v dvwa_db:/db -v </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$PWD</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:/backup alpine \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sh -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;cd /db &amp;&amp; tar -czf /backup/dvwa_db_volume_backup.tgz .&quot;</span><br></div></code></pre></div></div>
+<p><strong>VM snapshots</strong> (VBox/VMware/KVM) before training.
+<strong>Volume backups</strong> (bare metal):</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># DB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker run --rm -v dvwa_db:/db -v &quot;$PWD&quot;:/backup alpine \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sh -c &quot;cd /db &amp;&amp; tar -czf /backup/dvwa_db_volume_backup.tgz .&quot;</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Web</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker run --rm -v dvwa_html:/data -v &quot;$PWD&quot;:/backup alpine \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  sh -c &quot;cd /data &amp;&amp; tar -czf /backup/dvwa_html_volume_backup.tgz .&quot;</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-change-dvwa-security-level">8) Change DVWA security level<a href="#8-change-dvwa-security-level" class="hash-link" aria-label="Direct link to 8) Change DVWA security level" title="Direct link to 8) Change DVWA security level" translate="no">​</a></h2>
-<p>DVWA UI →<strong>DVWA Security</strong>→ pick<strong>Low / Medium / High / Impossible</strong>.</p>
+<p>DVWA UI → <strong>DVWA Security</strong> → pick <strong>Low / Medium / High / Impossible</strong>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-cleanup">9) Cleanup<a href="#9-cleanup" class="hash-link" aria-label="Direct link to 9) Cleanup" title="Direct link to 9) Cleanup" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -f dvwa_app dvwa_db || </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker volume </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> dvwa_html dvwa_db || </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker network </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> dvwa_net || </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rm</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -f /root/dvwa_deploy_info_$(hostname).txt || </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker rm -f dvwa_app dvwa_db || true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker volume rm dvwa_html dvwa_db || true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker network rm dvwa_net || true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sudo rm -f /root/dvwa_deploy_info_$(hostname).txt || true</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*wyfgrmY9qrW6T5MAjpp2vw.png" alt="Article image" width="1870" height="258" loading="lazy" decoding="async">
-<p>If you built<code>local/dvwa:latest</code>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker rmi </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/dvwa:latest || </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div></code></pre></div></div>
+<p>If you built <code>local/dvwa:latest</code>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo docker rmi local/dvwa:latest || true</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-troubleshooting-aligned-with-final-yaml">10) Troubleshooting (aligned with final YAML)<a href="#10-troubleshooting-aligned-with-final-yaml" class="hash-link" aria-label="Direct link to 10) Troubleshooting (aligned with final YAML)" title="Direct link to 10) Troubleshooting (aligned with final YAML)" translate="no">​</a></h2>
 <ul>
 <li class="">
 <p><strong>Timeout on 127.0.0.1:8081:</strong></p>
 </li>
 <li class="">
-<p>Ensure the network is<strong>non-internal</strong>:
-<code>docker network inspect dvwa_net | jq &#x27;.[0].Internal&#x27;</code>→ should be<code>false</code></p>
+<p>Ensure the network is <strong>non-internal</strong>:
+<code>docker network inspect dvwa_net | jq &#x27;.[0].Internal&#x27;</code> → should be <code>false</code></p>
 </li>
 <li class="">
 <p>Check mapping:
 <code>docker inspect dvwa_app --format &#x27;&amp;#123;&amp;#123;json .NetworkSettings.Ports&amp;#125;&amp;#125;&#x27;</code></p>
 </li>
 <li class="">
-<p>If mapping is<code>&amp;#123;&amp;#125;</code>: re-run the playbook; it now<strong>recreates</strong>the container with ports when missing.</p>
+<p>If mapping is <code>&amp;#123;&amp;#125;</code>: re-run the playbook; it now <strong>recreates</strong> the container with ports when missing.</p>
 </li>
 <li class="">
-<p><strong>Ansible complains about</strong><code>**purge_networks**</code><strong>:</strong>
-Not used anymore. The final YAML removed it for compatibility with older<code>community.docker</code>.</p>
+<p><strong>Ansible complains about</strong> <code>**purge_networks**</code><strong>:</strong>
+Not used anymore. The final YAML removed it for compatibility with older <code>community.docker</code>.</p>
 </li>
 <li class="">
 <p><strong>PEP 668/“externally managed environment” pip errors:</strong>
-The playbook avoids this on Debian/Ubuntu by installing<code>**python3-docker**</code>via APT.</p>
+The playbook avoids this on Debian/Ubuntu by installing <code>**python3-docker**</code> via APT.</p>
 </li>
 <li class="">
 <p><strong>Port already used:</strong>
-Override at run:<code>-e &quot;dvwa_bind_port=8888&quot;</code></p>
+Override at run: <code>-e &quot;dvwa_bind_port=8888&quot;</code></p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary-from-manual-setup-to-full-automation">Summary: From Manual Setup to Full Automation<a href="#summary-from-manual-setup-to-full-automation" class="hash-link" aria-label="Direct link to Summary: From Manual Setup to Full Automation" title="Direct link to Summary: From Manual Setup to Full Automation" translate="no">​</a></h2>
-<p>What we built here is more than just a Docker deployment — it’s a<strong>complete repeatable cybersecurity lab</strong>, fully automated with Ansible and container-based isolation.
+<p>What we built here is more than just a Docker deployment — it’s a <strong>complete repeatable cybersecurity lab</strong>, fully automated with Ansible and container-based isolation.
 With just one playbook and a few commands, you can stand up a vulnerable web application, database backend, and secure network — then tear it all down cleanly afterward.</p>
-<p>This approach has several powerful implications for both<strong>security professionals</strong>and<strong>students</strong>:</p>
+<p>This approach has several powerful implications for both <strong>security professionals</strong> and <strong>students</strong>:</p>
 <ul>
 <li class="">
-<p><strong>Consistency and reproducibility</strong>— every environment is identical, ensuring training sessions or penetration tests start from a clean, known baseline.</p>
+<p><strong>Consistency and reproducibility</strong> — every environment is identical, ensuring training sessions or penetration tests start from a clean, known baseline.</p>
 </li>
 <li class="">
-<p><strong>Safety by design</strong>— the containers run only on<code>127.0.0.1</code>, never exposed to the public Internet.</p>
+<p><strong>Safety by design</strong> — the containers run only on <code>127.0.0.1</code>, never exposed to the public Internet.</p>
 </li>
 <li class="">
-<p><strong>Automation as documentation</strong>— the playbook itself becomes a living, executable manual: every installation step is declared, versioned, and auditable.</p>
+<p><strong>Automation as documentation</strong> — the playbook itself becomes a living, executable manual: every installation step is declared, versioned, and auditable.</p>
 </li>
 <li class="">
-<p><strong>Rapid reset &amp; rollback</strong>— by snapshotting containers or volumes, you can return to a pristine vulnerable state in seconds — ideal for ongoing training or demo labs.</p>
+<p><strong>Rapid reset &amp; rollback</strong> — by snapshotting containers or volumes, you can return to a pristine vulnerable state in seconds — ideal for ongoing training or demo labs.</p>
 </li>
 <li class="">
-<p><strong>Extendable foundation</strong>— you can evolve this setup into a full cyber-range: add Metasploitable, OWASP Juice Shop, or even simulated attacker nodes, all orchestrated by Ansible.</p>
+<p><strong>Extendable foundation</strong> — you can evolve this setup into a full cyber-range: add Metasploitable, OWASP Juice Shop, or even simulated attacker nodes, all orchestrated by Ansible.</p>
 </li>
 </ul>
-<p>In short, you’ve automated the entire lifecycle of a vulnerable lab:<strong>provision → exploit → reset → repeat.</strong></p>
+<p>In short, you’ve automated the entire lifecycle of a vulnerable lab: <strong>provision → exploit → reset → repeat.</strong></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-thoughts">Final Thoughts<a href="#final-thoughts" class="hash-link" aria-label="Direct link to Final Thoughts" title="Direct link to Final Thoughts" translate="no">​</a></h2>
-<p>In modern cybersecurity education and red-team research,<strong>automation is not a luxury — it’s a necessity</strong>.
-Manually deploying and configuring training environments wastes valuable time and introduces inconsistencies. By embracing<strong>Infrastructure as Code</strong>through Ansible, we ensure that every new lab is<strong>deterministic, safe, and instantly reproducible</strong>.</p>
+<p>In modern cybersecurity education and red-team research, <strong>automation is not a luxury — it’s a necessity</strong>.
+Manually deploying and configuring training environments wastes valuable time and introduces inconsistencies. By embracing <strong>Infrastructure as Code</strong> through Ansible, we ensure that every new lab is <strong>deterministic, safe, and instantly reproducible</strong>.</p>
 <p>DVWA is only the beginning. With the same pattern, you can:</p>
 <ul>
 <li class="">
@@ -2729,7 +806,7 @@ Manually deploying and configuring training environments wastes valuable time an
 <p>Integrate CI/CD pipelines that automatically test your blue-team detections.</p>
 </li>
 </ul>
-<p>Ultimately, this lab is a reminder that<strong>ethical hacking and automation belong together</strong>— the better your tools, the faster you learn and the safer you experiment.</p>
+<p>Ultimately, this lab is a reminder that <strong>ethical hacking and automation belong together</strong> — the better your tools, the faster you learn and the safer you experiment.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps" translate="no">​</a></h2>
 <p>If you enjoyed this guide, try one of these follow-ups:</p>
 <ul>
@@ -2743,6 +820,6 @@ Manually deploying and configuring training environments wastes valuable time an
 <p>Build a dashboard to visualize attack patterns in real time.</p>
 </li>
 </ul>
-<p>Stay safe, stay curious — and remember:<strong>every great red-team engineer automates their lab before they attack it.</strong></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-10-14-the-invisible-pipeline-defending-ci-cd-from-targeted-attacks-456283ee5ed3"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">The Invisible Pipeline: Defending CI/CD from Targeted Attacks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-10-19-augmenting-digital-forensics-with-ai-how-chatgpt-transforms-investigation-workflows-34eb10887ea5"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Augmenting Digital Forensics with AI: How ChatGPT Transforms Investigation Workflows</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a></li><li><a href="#automating-a-safe-dvwa-lab-with-ansible-build-a-reproducible-vulnerable-environment-for-training-and-research" class="table-of-contents__link toc-highlight">Automating a Safe DVWA Lab with Ansible: Build a Reproducible Vulnerable Environment for Training and Research</a><ul><li><a href="#how-to-deploy-damn-vulnerable-web-app-in-minutes-inside-an-isolated-docker-lab--repeatable-auditable-and-safe-for-every-cybersecurity-team" class="table-of-contents__link toc-highlight">How to deploy Damn Vulnerable Web App in minutes inside an isolated Docker lab — repeatable, auditable, and safe for every cybersecurity team.</a></li></ul></li><li><a href="#design-goals-for-this-playbook" class="table-of-contents__link toc-highlight">Design goals for this playbook</a></li><li><a href="#business-value-for-ciso--security-leadership" class="table-of-contents__link toc-highlight">Business value (for CISO / security leadership)</a></li><li><a href="#what-youll-get-deliverables" class="table-of-contents__link toc-highlight">What you’ll get (deliverables)</a></li><li><a href="#how-it-works--short-technical-walkthrough" class="table-of-contents__link toc-highlight">How it works — short technical walkthrough</a></li><li><a href="#quick-summary-of-what-youll-do" class="table-of-contents__link toc-highlight">Quick summary of what you’ll do</a></li><li><a href="#1-prepare-your-workstation--lab-host-one-liner-checklist" class="table-of-contents__link toc-highlight">1) Prepare your workstation / lab host (one-liner checklist)</a></li><li><a href="#2-create-the-project-folder--files" class="table-of-contents__link toc-highlight">2) Create the project folder &amp; files</a></li><li><a href="#3-install-ansible--dependencies-control-machine" class="table-of-contents__link toc-highlight">3) Install Ansible &amp; dependencies (control machine)</a></li><li><a href="#4-run-the-playbook-local-run" class="table-of-contents__link toc-highlight">4) Run the playbook (local run)</a></li><li><a href="#5-run-the-playbook-remote-host" class="table-of-contents__link toc-highlight">5) Run the playbook (remote host)</a></li><li><a href="#6-verify-its-up" class="table-of-contents__link toc-highlight">6) Verify it’s up</a></li><li><a href="#7-initialize-dvwa" class="table-of-contents__link toc-highlight">7) Initialize DVWA</a></li><li><a href="#option-a--via-browser-recommended" class="table-of-contents__link toc-highlight">Option A — via browser (recommended)</a></li><li><a href="#option-b--one-liners-manual-on-the-host" class="table-of-contents__link toc-highlight">Option B — one-liners (manual, on the host)</a></li><li><a href="#7-snapshots--backups-recommended" class="table-of-contents__link toc-highlight">7) Snapshots &amp; backups (recommended)</a></li><li><a href="#8-change-dvwa-security-level" class="table-of-contents__link toc-highlight">8) Change DVWA security level</a></li><li><a href="#9-cleanup" class="table-of-contents__link toc-highlight">9) Cleanup</a></li><li><a href="#10-troubleshooting-aligned-with-final-yaml" class="table-of-contents__link toc-highlight">10) Troubleshooting (aligned with final YAML)</a></li><li><a href="#summary-from-manual-setup-to-full-automation" class="table-of-contents__link toc-highlight">Summary: From Manual Setup to Full Automation</a></li><li><a href="#final-thoughts" class="table-of-contents__link toc-highlight">Final Thoughts</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p>Stay safe, stay curious — and remember: <strong>every great red-team engineer automates their lab before they attack it.</strong></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-10-14-the-invisible-pipeline-defending-ci-cd-from-targeted-attacks-456283ee5ed3"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">The Invisible Pipeline: Defending CI/CD from Targeted Attacks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-10-19-augmenting-digital-forensics-with-ai-how-chatgpt-transforms-investigation-workflows-34eb10887ea5"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Augmenting Digital Forensics with AI: How ChatGPT Transforms Investigation Workflows</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a></li><li><a href="#automating-a-safe-dvwa-lab-with-ansible-build-a-reproducible-vulnerable-environment-for-training-and-research" class="table-of-contents__link toc-highlight">Automating a Safe DVWA Lab with Ansible: Build a Reproducible Vulnerable Environment for Training and Research</a><ul><li><a href="#how-to-deploy-damn-vulnerable-web-app-in-minutes-inside-an-isolated-docker-lab--repeatable-auditable-and-safe-for-every-cybersecurity-team" class="table-of-contents__link toc-highlight">How to deploy Damn Vulnerable Web App in minutes inside an isolated Docker lab — repeatable, auditable, and safe for every cybersecurity team.</a></li></ul></li><li><a href="#design-goals-for-this-playbook" class="table-of-contents__link toc-highlight">Design goals for this playbook</a></li><li><a href="#business-value-for-ciso--security-leadership" class="table-of-contents__link toc-highlight">Business value (for CISO / security leadership)</a></li><li><a href="#what-youll-get-deliverables" class="table-of-contents__link toc-highlight">What you’ll get (deliverables)</a></li><li><a href="#how-it-works--short-technical-walkthrough" class="table-of-contents__link toc-highlight">How it works — short technical walkthrough</a></li><li><a href="#quick-summary-of-what-youll-do" class="table-of-contents__link toc-highlight">Quick summary of what you’ll do</a></li><li><a href="#1-prepare-your-workstation--lab-host-one-liner-checklist" class="table-of-contents__link toc-highlight">1) Prepare your workstation / lab host (one-liner checklist)</a></li><li><a href="#2-create-the-project-folder--files" class="table-of-contents__link toc-highlight">2) Create the project folder &amp; files</a></li><li><a href="#3-install-ansible--dependencies-control-machine" class="table-of-contents__link toc-highlight">3) Install Ansible &amp; dependencies (control machine)</a></li><li><a href="#4-run-the-playbook-local-run" class="table-of-contents__link toc-highlight">4) Run the playbook (local run)</a></li><li><a href="#5-run-the-playbook-remote-host" class="table-of-contents__link toc-highlight">5) Run the playbook (remote host)</a></li><li><a href="#6-verify-its-up" class="table-of-contents__link toc-highlight">6) Verify it’s up</a></li><li><a href="#7-initialize-dvwa" class="table-of-contents__link toc-highlight">7) Initialize DVWA</a></li><li><a href="#option-a--via-browser-recommended" class="table-of-contents__link toc-highlight">Option A — via browser (recommended)</a></li><li><a href="#option-b--one-liners-manual-on-the-host" class="table-of-contents__link toc-highlight">Option B — one-liners (manual, on the host)</a></li><li><a href="#7-snapshots--backups-recommended" class="table-of-contents__link toc-highlight">7) Snapshots &amp; backups (recommended)</a></li><li><a href="#8-change-dvwa-security-level" class="table-of-contents__link toc-highlight">8) Change DVWA security level</a></li><li><a href="#9-cleanup" class="table-of-contents__link toc-highlight">9) Cleanup</a></li><li><a href="#10-troubleshooting-aligned-with-final-yaml" class="table-of-contents__link toc-highlight">10) Troubleshooting (aligned with final YAML)</a></li><li><a href="#summary-from-manual-setup-to-full-automation" class="table-of-contents__link toc-highlight">Summary: From Manual Setup to Full Automation</a></li><li><a href="#final-thoughts" class="table-of-contents__link toc-highlight">Final Thoughts</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

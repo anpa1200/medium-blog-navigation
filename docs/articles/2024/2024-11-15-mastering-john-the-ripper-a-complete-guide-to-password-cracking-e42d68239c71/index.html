@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -38,21 +38,21 @@
 <p>John the Ripper primarily serves to test the strength of passwords against common cracking methods, including dictionary attacks, brute force, and rainbow tables. Its versatility allows it to handle not only simple password types but also complex hashes and encrypted representations from a wide array of applications. Whether you’re a security enthusiast trying to understand the vulnerabilities of password policies or a professional tasked with auditing the security of systems, John the Ripper offers the critical tools needed to measure and enhance password security effectively.</p>
 <p>In this guide, we’ll explore how to install and operate John the Ripper, discuss its various modes and configurations, and provide insights on advanced techniques for effective password cracking, ensuring you are well-equipped to use this tool proficiently in your security assessments.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="installation">Installation<a href="#installation" class="hash-link" aria-label="Direct link to Installation" title="Direct link to Installation" translate="no">​</a></h2>
-<p>**1. Installing on Linux:**John the Ripper is readily available in the repositories of most Linux distributions, making it easy to install via package management systems.</p>
+<p><strong>1. Installing on Linux:</strong> John the Ripper is readily available in the repositories of most Linux distributions, making it easy to install via package management systems.</p>
 <ul>
-<li class="">**Debian-based systems (like Ubuntu):**Open the terminal and type the following command:</li>
+<li class=""><strong>Debian-based systems (like Ubuntu):</strong> Open the terminal and type the following command:</li>
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt-get install john</span><br></div></code></pre></div></div>
 <ul>
-<li class="">**Red Hat-based systems (like Fedora or CentOS):**Use the following command in the terminal:</li>
+<li class=""><strong>Red Hat-based systems (like Fedora or CentOS):</strong> Use the following command in the terminal:</li>
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo yum install john</span><br></div></code></pre></div></div>
 <ul>
-<li class="">**Arch Linux:**Use the pacman package manager:</li>
+<li class=""><strong>Arch Linux:</strong> Use the pacman package manager:</li>
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo pacman -S john</span><br></div></code></pre></div></div>
-<p>After installation, you can locate the binary typically in<code>/usr/sbin/john</code>.</p>
-<p>**2. Installing on macOS:**John the Ripper can be installed on macOS using Homebrew, a package manager for macOS.</p>
+<p>After installation, you can locate the binary typically in <code>/usr/sbin/john</code>.</p>
+<p><strong>2. Installing on macOS:</strong> John the Ripper can be installed on macOS using Homebrew, a package manager for macOS.</p>
 <ul>
 <li class="">First, install Homebrew by pasting the following in a terminal:</li>
 </ul>
@@ -61,10 +61,10 @@
 <li class="">Once Homebrew is installed, install John the Ripper by running:</li>
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">brew install john</span><br></div></code></pre></div></div>
-<p>**3. Installing on Windows:**Windows users can download John the Ripper as part of the Cygwin environment, which emulates a Linux distribution on Windows.</p>
+<p><strong>3. Installing on Windows:</strong> Windows users can download John the Ripper as part of the Cygwin environment, which emulates a Linux distribution on Windows.</p>
 <ul>
 <li class="">
-<p>Download the Cygwin installer from<a href="https://www.cygwin.com/" target="_blank" rel="noopener noreferrer" class="">Cygwin’s official website</a>.</p>
+<p>Download the Cygwin installer from <a href="https://www.cygwin.com/" target="_blank" rel="noopener noreferrer" class="">Cygwin’s official website</a>.</p>
 </li>
 <li class="">
 <p>During the installation process, make sure to select the “john” package under the “Security” category.</p>
@@ -81,21 +81,21 @@
 <img src="https://cdn-images-1.medium.com/max/800/1*xDmkFf46L9ISDMUnim5Uwg.png" alt="Article image" width="1901" height="596" loading="lazy" decoding="async">
 <p><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-11-15-2john-9bb0bd44ed64">List with this tools with short explanations here:</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-use">How to use:<a href="#how-to-use" class="hash-link" aria-label="Direct link to How to use:" title="Direct link to How to use:" translate="no">​</a></h3>
-<p>Creating hashes with John the Ripper, especially for different file types like ZIP files, involves using specialized utilities that come with John the Ripper. These utilities are designed to extract the hash values from various file formats so that they can be cracked by John the Ripper. For ZIP files, the utility you mentioned,<code>zip2john</code>, is used. Here’s how you can use<code>zip2john</code>to create a hash from a ZIP file:</p>
+<p>Creating hashes with John the Ripper, especially for different file types like ZIP files, involves using specialized utilities that come with John the Ripper. These utilities are designed to extract the hash values from various file formats so that they can be cracked by John the Ripper. For ZIP files, the utility you mentioned, <code>zip2john</code>, is used. Here’s how you can use <code>zip2john</code> to create a hash from a ZIP file:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-1-obtain-zip2john">Step 1: Obtain zip2john<a href="#step-1-obtain-zip2john" class="hash-link" aria-label="Direct link to Step 1: Obtain zip2john" title="Direct link to Step 1: Obtain zip2john" translate="no">​</a></h3>
-<p>Ensure that you have the full version of John the Ripper installed, which includes the<code>zip2john</code>utility. This utility is part of the &quot;community-enhanced&quot; version of John (often referred to as &quot;jumbo&quot; version), which includes additional features and support for more file types compared to the standard version.</p>
+<p>Ensure that you have the full version of John the Ripper installed, which includes the <code>zip2john</code> utility. This utility is part of the &quot;community-enhanced&quot; version of John (often referred to as &quot;jumbo&quot; version), which includes additional features and support for more file types compared to the standard version.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-2-prepare-your-zip-file">Step 2: Prepare Your ZIP File<a href="#step-2-prepare-your-zip-file" class="hash-link" aria-label="Direct link to Step 2: Prepare Your ZIP File" title="Direct link to Step 2: Prepare Your ZIP File" translate="no">​</a></h3>
 <p>Make sure your ZIP file is ready and note its path. The file should have some form of password protection.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-3-run-zip2john">Step 3: Run zip2john<a href="#step-3-run-zip2john" class="hash-link" aria-label="Direct link to Step 3: Run zip2john" title="Direct link to Step 3: Run zip2john" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Open your command line interface</strong>(Terminal on Linux and macOS, CMD or PowerShell on Windows).</p>
+<p><strong>Open your command line interface</strong> (Terminal on Linux and macOS, CMD or PowerShell on Windows).</p>
 </li>
 <li class="">
-<p><strong>Navigate to the directory containing</strong><code>**zip2john**</code>if it is not added to your system path.</p>
+<p><strong>Navigate to the directory containing</strong> <code>**zip2john**</code> if it is not added to your system path.</p>
 </li>
 <li class="">
-<p><strong>Execute</strong><code>**zip2john**</code><strong>followed by the path to your ZIP file</strong>to extract the hash. The command would look like this:</p>
+<p><strong>Execute</strong> <code>**zip2john**</code> <strong>followed by the path to your ZIP file</strong> to extract the hash. The command would look like this:</p>
 </li>
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">zip2john /path/to/your/file.zip &gt; /path/to/output/hash_file.txt</span><br></div></code></pre></div></div>
@@ -105,7 +105,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-4-use-john-the-ripper-to-crack-the-hash">Step 4: Use John the Ripper to Crack the Hash<a href="#step-4-use-john-the-ripper-to-crack-the-hash" class="hash-link" aria-label="Direct link to Step 4: Use John the Ripper to Crack the Hash" title="Direct link to Step 4: Use John the Ripper to Crack the Hash" translate="no">​</a></h3>
 <p>Once you have the hash, you can use John the Ripper to attempt to crack it. Here’s how you might do that:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john /path/to/output/hash_file.txt</span><br></div></code></pre></div></div>
-<p>This command tells John to start cracking the hashes stored in<code>hash_file.txt</code>. You can use various options to specify wordlists, rules, or other cracking methods.</p>
+<p>This command tells John to start cracking the hashes stored in <code>hash_file.txt</code>. You can use various options to specify wordlists, rules, or other cracking methods.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-usage">Basic Usage<a href="#basic-usage" class="hash-link" aria-label="Direct link to Basic Usage" title="Direct link to Basic Usage" translate="no">​</a></h2>
 <p>John the Ripper is primarily a command-line tool, offering powerful options for password cracking. This section covers basic commands and options to get you started with password cracking tasks.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="running-john-the-ripper">Running John the Ripper:<a href="#running-john-the-ripper" class="hash-link" aria-label="Direct link to Running John the Ripper:" title="Direct link to Running John the Ripper:" translate="no">​</a></h3>
@@ -114,7 +114,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-command-structure">Basic Command Structure:<a href="#basic-command-structure" class="hash-link" aria-label="Direct link to Basic Command Structure:" title="Direct link to Basic Command Structure:" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john [options] password_file</span><br></div></code></pre></div></div>
 <ul>
-<li class="">Replace<code>password_file</code>with the path to the file containing the password hashes.</li>
+<li class="">Replace <code>password_file</code> with the path to the file containing the password hashes.</li>
 </ul>
 <p>I have file with hash of password from office file:</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example:<a href="#example" class="hash-link" aria-label="Direct link to Example:" title="Direct link to Example:" translate="no">​</a></h3>
@@ -124,7 +124,7 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john /path/to/your/hashes.txt</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*S58u40vaw81QpN3t4LAGzA.png" alt="Article image" width="1135" height="377" loading="lazy" decoding="async">
 <img src="https://cdn-images-1.medium.com/max/800/1*9wzwU-_k58BWzVVr2TU7SQ.png" alt="Article image" width="1019" height="379" loading="lazy" decoding="async">
-<p>When you use a default configuration, John use basic password list:<strong>/usr/share/john/password.lst</strong>, you can add more passwords for this list if you want, or use external lists.</p>
+<p>When you use a default configuration, John use basic password list: <strong>/usr/share/john/password.lst</strong>, you can add more passwords for this list if you want, or use external lists.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-command-line-options">Common Command-Line Options:<a href="#common-command-line-options" class="hash-link" aria-label="Direct link to Common Command-Line Options:" title="Direct link to Common Command-Line Options:" translate="no">​</a></h3>
 <ul>
 <li class="">
@@ -138,14 +138,14 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="--rules-">--rules :<a href="#--rules-" class="hash-link" aria-label="Direct link to --rules :" title="Direct link to --rules :" translate="no">​</a></h3>
 <p>Enables word mangling rules to try variations of words from the wordlist.</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john --wordlist=/path/to/wordlist.txt --rules /path/to/hashes.txt</span><br></div></code></pre></div></div>
-<p><strong>Default rules</strong>in<strong>John the Ripper</strong>are predefined word-mangling rules specified in the configuration file (<code>john.conf</code>). These rules apply common password transformations to a base wordlist, increasing the chances of cracking passwords without requiring custom rule creation.</p>
+<p><strong>Default rules</strong> in <strong>John the Ripper</strong> are predefined word-mangling rules specified in the configuration file (<code>john.conf</code>). These rules apply common password transformations to a base wordlist, increasing the chances of cracking passwords without requiring custom rule creation.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="where-default-rules-are-defined">Where Default Rules Are Defined<a href="#where-default-rules-are-defined" class="hash-link" aria-label="Direct link to Where Default Rules Are Defined" title="Direct link to Where Default Rules Are Defined" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>Default rules are found in the<code>[List.Rules:Wordlist]</code>section of the<code>john.conf</code>file.</p>
+<p>Default rules are found in the <code>[List.Rules:Wordlist]</code> section of the <code>john.conf</code> file.</p>
 </li>
 <li class="">
-<p>Other predefined rule sets like<code>[List.Rules:Single]</code>and<code>[List.Rules:Jumbo]</code>may also exist, depending on your John installation.</p>
+<p>Other predefined rule sets like <code>[List.Rules:Single]</code> and <code>[List.Rules:Jumbo]</code> may also exist, depending on your John installation.</p>
 </li>
 </ul>
 <p>You can examine these rules by opening the configuration file:</p>
@@ -166,41 +166,41 @@
 </ul>
 <p><strong>2. Appending Characters</strong></p>
 <ul>
-<li class="">Adding numbers, symbols, or specific sequences to the word (e.g.,<code>password1</code>,<code>password123</code>,<code>password!</code>).</li>
+<li class="">Adding numbers, symbols, or specific sequences to the word (e.g., <code>password1</code>, <code>password123</code>, <code>password!</code>).</li>
 </ul>
 <p><strong>3. Prepending Characters</strong></p>
 <ul>
-<li class="">Adding numbers or symbols to the beginning of the word (e.g.,<code>1password</code>,<code>!password</code>).</li>
+<li class="">Adding numbers or symbols to the beginning of the word (e.g., <code>1password</code>, <code>!password</code>).</li>
 </ul>
 <p><strong>4. Reversing Words</strong></p>
 <ul>
-<li class="">Changing<code>password</code>to<code>drowssap</code>.</li>
+<li class="">Changing <code>password</code> to <code>drowssap</code>.</li>
 </ul>
 <p><strong>5. Leetspeak Substitution</strong></p>
 <ul>
-<li class="">Replacing letters with numbers or symbols (<code>password</code>→<code>p@ssw0rd</code>).</li>
+<li class="">Replacing letters with numbers or symbols (<code>password</code> → <code>p@ssw0rd</code>).</li>
 </ul>
 <p><strong>6. Combining Words</strong></p>
 <ul>
 <li class="">Concatenating two words from the list.</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="examples-of-default-rules">Examples of Default Rules<a href="#examples-of-default-rules" class="hash-link" aria-label="Direct link to Examples of Default Rules" title="Direct link to Examples of Default Rules" translate="no">​</a></h3>
-<p>Here are examples of some rules in the<code>[List.Rules:Wordlist]</code>section of<code>john.conf</code>:</p>
+<p>Here are examples of some rules in the <code>[List.Rules:Wordlist]</code> section of <code>john.conf</code>:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">c               # Capitalize the first letter</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Az&quot;[0-9]&quot;       # Append numbers 0-9</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cAz&quot;[0-9]&quot;      # Capitalize, then append numbers 0-9</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Az&quot;123&quot;         # Append the sequence &quot;123&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">r               # Reverse the word</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applying-default-rules">Applying Default Rules<a href="#applying-default-rules" class="hash-link" aria-label="Direct link to Applying Default Rules" title="Direct link to Applying Default Rules" translate="no">​</a></h3>
-<p>You can apply default rules using the<code>--rules</code>option without specifying a particular rule set. For example:</p>
+<p>You can apply default rules using the <code>--rules</code> option without specifying a particular rule set. For example:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john --wordlist=/path/to/wordlist.txt --rules /path/to/hashfile</span><br></div></code></pre></div></div>
-<p>This will apply all the rules in<code>[List.Rules:Wordlist]</code>to the words in your wordlist.</p>
+<p>This will apply all the rules in <code>[List.Rules:Wordlist]</code> to the words in your wordlist.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-default-rules">Testing Default Rules<a href="#testing-default-rules" class="hash-link" aria-label="Direct link to Testing Default Rules" title="Direct link to Testing Default Rules" translate="no">​</a></h3>
-<p>You can see how default rules modify your wordlist using the<code>--stdout</code>option:</p>
+<p>You can see how default rules modify your wordlist using the <code>--stdout</code> option:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john --wordlist=/path/to/wordlist.txt --rules --stdout | head -20</span><br></div></code></pre></div></div>
-<p><strong>For a wordlist containing</strong><code>**password**</code><strong>, the output might look like this:</strong></p>
+<p><strong>For a wordlist containing</strong> <code>**password**</code><strong>, the output might look like this:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">password</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Password</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PASSWORD</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">password1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">password123</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">password!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">p@ssword</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">123password</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">passwordpassword</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">drowssap</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="when-to-use-default-rules">When to Use Default Rules<a href="#when-to-use-default-rules" class="hash-link" aria-label="Direct link to When to Use Default Rules" title="Direct link to When to Use Default Rules" translate="no">​</a></h3>
 <p>Default rules are particularly effective for:</p>
 <ul>
 <li class="">
-<p>Passwords following common patterns (e.g., adding<code>123</code>, capitalizing the first letter).</p>
+<p>Passwords following common patterns (e.g., adding <code>123</code>, capitalizing the first letter).</p>
 </li>
 <li class="">
 <p>Quick attacks with minimal configuration.</p>
@@ -210,7 +210,7 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="customizing-or-expanding-default-rules">Customizing or Expanding Default Rules<a href="#customizing-or-expanding-default-rules" class="hash-link" aria-label="Direct link to Customizing or Expanding Default Rules" title="Direct link to Customizing or Expanding Default Rules" translate="no">​</a></h3>
-<p>You can modify the<code>[List.Rules:Wordlist]</code>section in<code>john.conf</code>to add or remove rules as needed. For example, to add a rule that prepends<code>123</code>, you can add:</p>
+<p>You can modify the <code>[List.Rules:Wordlist]</code> section in <code>john.conf</code> to add or remove rules as needed. For example, to add a rule that prepends <code>123</code>, you can add:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[List.Rules:Wordlist]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Az&quot;123&quot;          # Prepend 123 to all words</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="--incremental-">--incremental :<a href="#--incremental-" class="hash-link" aria-label="Direct link to --incremental :" title="Direct link to --incremental :" translate="no">​</a></h3>
 <p>Uses brute force mode, attempting all possible character combinations.</p>
@@ -223,8 +223,8 @@
 <p>Displays the cracked passwords.</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john --show /path/to/hashes.txt</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*PiECFLpr4FRNrIJ-F-GGwg.png" alt="Article image" width="778" height="208" loading="lazy" decoding="async">
-<p>**Checking the Status:**While John the Ripper is running, you can check the progress by pressing any key. To see more detailed status information, press<code>Ctrl + C</code>to pause the cracking process, and John will display the current status, including the speed of attempts and how many passwords have been cracked so far.</p>
-<p>**Stopping and Resuming:**You can safely stop the cracking process at any time by pressing<code>Ctrl + C</code>. John the Ripper saves the progress automatically, and you can resume the process later by simply rerunning the command without any changes.</p>
+<p><strong>Checking the Status:</strong> While John the Ripper is running, you can check the progress by pressing any key. To see more detailed status information, press <code>Ctrl + C</code> to pause the cracking process, and John will display the current status, including the speed of attempts and how many passwords have been cracked so far.</p>
+<p><strong>Stopping and Resuming:</strong> You can safely stop the cracking process at any time by pressing <code>Ctrl + C</code>. John the Ripper saves the progress automatically, and you can resume the process later by simply rerunning the command without any changes.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion-harnessing-john-the-rippers-versatility-for-secure-password-management">Conclusion: Harnessing John the Ripper’s Versatility for Secure Password Management<a href="#conclusion-harnessing-john-the-rippers-versatility-for-secure-password-management" class="hash-link" aria-label="Direct link to Conclusion: Harnessing John the Ripper’s Versatility for Secure Password Management" title="Direct link to Conclusion: Harnessing John the Ripper’s Versatility for Secure Password Management" translate="no">​</a></h2>
 <p>John the Ripper stands out in the field of cybersecurity as a versatile and powerful tool designed for password cracking and security auditing. With its array of “2john” utilities, John can process a wide range of file types and encryption protocols, from conventional operating systems’ passwords to modern encrypted wallet files and network protocols. This adaptability allows users to recover lost passwords, test the strength of password policies, and conduct security assessments across diverse platforms and environments.</p>
 <p>The appropriate use of John the Ripper hinges on ethical and legal considerations. It is paramount to use this tool within the confines of authorized environments only. This includes conducting penetration testing or security assessments with explicit permission, recovering passwords for which you have legitimate rights, or practicing on personal or openly shared projects designed for educational purposes. Unauthorized use of John the Ripper, as with any hacking tool, can lead to legal repercussions and ethical violations.</p>

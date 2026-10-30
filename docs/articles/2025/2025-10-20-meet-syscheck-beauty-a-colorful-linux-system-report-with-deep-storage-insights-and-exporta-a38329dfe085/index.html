@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -35,19 +35,19 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="meet-syscheck_beauty--a-colorful-linux-system-report-with-deep-storage-insights-and-exportable-html">Meet syscheck_beauty : a colorful Linux system report with deep storage insights (and exportable HTML)<a href="#meet-syscheck_beauty--a-colorful-linux-system-report-with-deep-storage-insights-and-exportable-html" class="hash-link" aria-label="Direct link to Meet syscheck_beauty : a colorful Linux system report with deep storage insights (and exportable HTML)" title="Direct link to Meet syscheck_beauty : a colorful Linux system report with deep storage insights (and exportable HTML)" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tldr--i-built-a-single-file-python-tool-that-prints-a-beautiful-color-coded-snapshot-of-your-linux-machine--cpu-memory-gpu-disks-filesystems--and-can-optionally-scan-for-the-heaviest-directoriesfiles-it-also-exports-a-polished-responsive-html-report-you-can-share-with-teammates-or-stash-in-tickets">TL;DR : I built a single-file Python tool that prints a beautiful, color-coded snapshot of your Linux machine — CPU, memory, GPU, disks, filesystems — and can optionally scan for the heaviest directories/files. It also exports a polished, responsive HTML report you can share with teammates or stash in tickets.<a href="#tldr--i-built-a-single-file-python-tool-that-prints-a-beautiful-color-coded-snapshot-of-your-linux-machine--cpu-memory-gpu-disks-filesystems--and-can-optionally-scan-for-the-heaviest-directoriesfiles-it-also-exports-a-polished-responsive-html-report-you-can-share-with-teammates-or-stash-in-tickets" class="hash-link" aria-label="Direct link to TL;DR : I built a single-file Python tool that prints a beautiful, color-coded snapshot of your Linux machine — CPU, memory, GPU, disks, filesystems — and can optionally scan for the heaviest directories/files. It also exports a polished, responsive HTML report you can share with teammates or stash in tickets." title="Direct link to TL;DR : I built a single-file Python tool that prints a beautiful, color-coded snapshot of your Linux machine — CPU, memory, GPU, disks, filesystems — and can optionally scan for the heaviest directories/files. It also exports a polished, responsive HTML report you can share with teammates or stash in tickets." translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-another-system-report-tool">Why another system report tool?<a href="#why-another-system-report-tool" class="hash-link" aria-label="Direct link to Why another system report tool?" title="Direct link to Why another system report tool?" translate="no">​</a></h2>
-<p>Admins and developers jump between<code>lscpu</code>,<code>free</code>,<code>df</code>,<code>du</code>,<code>lsblk</code>,<code>nvidia-smi</code>, and friends. That’s fast when you know where to look… until you’re on a different distro, a container, or a laptop with hybrid graphics. I wanted:</p>
+<p>Admins and developers jump between <code>lscpu</code>, <code>free</code>, <code>df</code>, <code>du</code>, <code>lsblk</code>, <code>nvidia-smi</code>, and friends. That’s fast when you know where to look… until you’re on a different distro, a container, or a laptop with hybrid graphics. I wanted:</p>
 <ul>
 <li class="">
-<p><strong>One command</strong>that “just works” on most Linux boxes.</p>
+<p><strong>One command</strong> that “just works” on most Linux boxes.</p>
 </li>
 <li class="">
-<p><strong>Readable output</strong>in the terminal with clear colors and progress bars.</p>
+<p><strong>Readable output</strong> in the terminal with clear colors and progress bars.</p>
 </li>
 <li class="">
-<p>A<strong>deep storage view</strong>highlighting space hogs.</p>
+<p>A <strong>deep storage view</strong> highlighting space hogs.</p>
 </li>
 <li class="">
-<p>A<strong>shareable HTML report</strong>that looks good in docs and tickets.</p>
+<p>A <strong>shareable HTML report</strong> that looks good in docs and tickets.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-it-shows">What it shows<a href="#what-it-shows" class="hash-link" aria-label="Direct link to What it shows" title="Direct link to What it shows" translate="no">​</a></h2>
@@ -55,7 +55,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="system--os">System &amp; OS<a href="#system--os" class="hash-link" aria-label="Direct link to System &amp; OS" title="Direct link to System &amp; OS" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Vendor/model, motherboard, serials (via<code>/sys/devices/virtual/dmi/id/*</code>, with<code>dmidecode</code>/<code>lshw</code>fallbacks)</p>
+<p>Vendor/model, motherboard, serials (via <code>/sys/devices/virtual/dmi/id/*</code>, with <code>dmidecode</code>/<code>lshw</code> fallbacks)</p>
 </li>
 <li class="">
 <p>OS pretty name, version/ID, kernel, architecture</p>
@@ -67,7 +67,7 @@
 <p>Model, vendor, architecture, physical/logical cores</p>
 </li>
 <li class="">
-<p>Base/max frequency and<strong>live utilization</strong>(if<code>psutil</code>is available)</p>
+<p>Base/max frequency and <strong>live utilization</strong> (if <code>psutil</code> is available)</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="memory">Memory<a href="#memory" class="hash-link" aria-label="Direct link to Memory" title="Direct link to Memory" translate="no">​</a></h3>
@@ -82,10 +82,10 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gpu">GPU<a href="#gpu" class="hash-link" aria-label="Direct link to GPU" title="Direct link to GPU" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>Vendor/model/driver, bus, VRAM totals;<strong>NVIDIA VRAM usage</strong>via<code>nvidia-smi</code>if present</p>
+<p>Vendor/model/driver, bus, VRAM totals; <strong>NVIDIA VRAM usage</strong> via <code>nvidia-smi</code> if present</p>
 </li>
 <li class="">
-<p>Fallback to<code>lshw</code>or<code>lspci</code>on non-NVIDIA systems</p>
+<p>Fallback to <code>lshw</code> or <code>lspci</code> on non-NVIDIA systems</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage-hardware--filesystems">Storage: hardware + filesystems<a href="#storage-hardware--filesystems" class="hash-link" aria-label="Direct link to Storage: hardware + filesystems" title="Direct link to Storage: hardware + filesystems" translate="no">​</a></h3>
@@ -94,20 +94,20 @@
 <p>Per-disk model, vendor, capacity, transport (NVMe/SATA/USB), block sizes</p>
 </li>
 <li class="">
-<p>Classifies<strong>NVMe SSD / SSD / HDD</strong></p>
+<p>Classifies <strong>NVMe SSD / SSD / HDD</strong></p>
 </li>
 <li class="">
-<p>Per-mount capacity &amp;<strong>color bars</strong>for usage</p>
+<p>Per-mount capacity &amp; <strong>color bars</strong> for usage</p>
 </li>
 <li class="">
-<p>Optional deep scan (<strong>largest directories</strong>at depth 1 and<strong>largest files</strong>) per mount</p>
+<p>Optional deep scan (<strong>largest directories</strong> at depth 1 and <strong>largest files</strong>) per mount</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-start">Quick start<a href="#quick-start" class="hash-link" aria-label="Direct link to Quick start" title="Direct link to Quick start" translate="no">​</a></h2>
 <p>&gt; Requires Python 3.8+. It gracefully degrades when optional tools aren’t present.</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Optional: install psutil for live CPU/memory &amp; partition info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 -m pip install --user psutil</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Clone the repo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">git </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clone</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> https://github.com/anpa1200/SystemCheck.git</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> SystemCheck</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Run (colorful TTY output, deep storage scan enabled by default)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Skip deep scan (faster)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --no-deep</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Deep scan with larger top lists</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --deep --top 10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Generate a beautiful HTML report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --html --html-file report.html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Or view immediately (Linux desktop)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">xdg-open report.html</span><br></div></code></pre></div></div>
-<p><strong>Tip (NVIDIA)</strong>: install proprietary drivers so<code>nvidia-smi</code>works.
-<strong>Tip (hardware details)</strong>:<code>sudo</code>enables richer DMI data on some distros (<code>dmidecode</code>).</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Optional: install psutil for live CPU/memory &amp; partition info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 -m pip install --user psutil</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Clone the repo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/anpa1200/SystemCheck.git</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd SystemCheck</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Run (colorful TTY output, deep storage scan enabled by default)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Skip deep scan (faster)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --no-deep</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Deep scan with larger top lists</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --deep --top 10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Generate a beautiful HTML report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --html --html-file report.html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Or view immediately (Linux desktop)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">xdg-open report.html</span><br></div></code></pre></div></div>
+<p><strong>Tip (NVIDIA)</strong>: install proprietary drivers so <code>nvidia-smi</code> works.
+<strong>Tip (hardware details)</strong>: <code>sudo</code> enables richer DMI data on some distros (<code>dmidecode</code>).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="html-reports-you-can-share">HTML reports you can share<a href="#html-reports-you-can-share" class="hash-link" aria-label="Direct link to HTML reports you can share" title="Direct link to HTML reports you can share" translate="no">​</a></h2>
 <p>Generate a responsive, well-styled HTML report:</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*Wng0RfDsEFKHIILhWLSovg.png" alt="Article image" width="1157" height="913" loading="lazy" decoding="async">
@@ -136,65 +136,65 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">/boot/efi  dev=/dev/nvme0n1p1  fs=vfat</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  total=1.05 GiB  used=28.03 MiB  free=1.02 GiB</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  [■···························]   2.6%</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Largest directories (depth=1):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - 28.02 MiB  /boot/efi/EFI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Largest files:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - 21.58 MiB  /boot/efi/EFI/ubuntu/fw/fwupd-85686610-06c3-4be4-97c5-565e3d149fc9.cap</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    -  2.67 MiB  /boot/efi/EFI/ubuntu/grubx64.efi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - 944.11 KiB  /boot/efi/EFI/ubuntu/shimx64.efi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - 944.11 KiB  /boot/efi/EFI/BOOT/BOOTX64.EFI</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - 836.21 KiB  /boot/efi/EFI/ubuntu/mmx64.efi</span><br></div></code></pre></div></div>
 <p><em>(Progress bars render in color when your terminal supports ANSI.)</em></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="command-options">Command options<a href="#command-options" class="hash-link" aria-label="Direct link to Command options" title="Direct link to Command options" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Optional: install psutil for live CPU/memory &amp; partition info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 -m pip install --user psutil</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Clone the repo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">git clone https:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//gi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">thub.com/anpa120</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/SystemCheck.git</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd SystemCheck</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Run (colorful TTY output, deep storage scan enabled by default)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Skip deep scan (faster)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">no</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-deep</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Deep scan with larger top lists</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --deep --top </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Generate a beautiful HTML report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --html --html-file report.html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Or view immediately (Linux desktop)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">xdg-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">open</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> report.html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--top N                </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># show top N directories/files per mount (default: 5)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--max-mounts N         </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># cap the number of mounts scanned (default: 5)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--per-mount-timeout S  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># per-mount timeout in seconds (default: 60)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># TTY color</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">no</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-color             </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># disable colored terminal output</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Optional: install psutil for live CPU/memory &amp; partition info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 -m pip install --user psutil</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Clone the repo</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/anpa1200/SystemCheck.git</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cd SystemCheck</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Run (colorful TTY output, deep storage scan enabled by default)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Skip deep scan (faster)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --no-deep</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Deep scan with larger top lists</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --deep --top 10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Generate a beautiful HTML report</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 systemcheck.py --html --html-file report.html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Or view immediately (Linux desktop)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">xdg-open report.html</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--top N                # show top N directories/files per mount (default: 5)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--max-mounts N         # cap the number of mounts scanned (default: 5)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--per-mount-timeout S  # per-mount timeout in seconds (default: 60)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># TTY color</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--no-color             # disable colored terminal output</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-it-works-under-the-hood">How it works (under the hood)<a href="#how-it-works-under-the-hood" class="hash-link" aria-label="Direct link to How it works (under the hood)" title="Direct link to How it works (under the hood)" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Safe subprocess wrappers</strong>(<code>subprocess.check_output</code>) with timeouts → non-crashy behavior.</p>
+<p><strong>Safe subprocess wrappers</strong> (<code>subprocess.check_output</code>) with timeouts → non-crashy behavior.</p>
 </li>
 <li class="">
-<p><strong>Graceful fallbacks</strong>:<code>psutil</code>→<code>/proc</code>/core utils;<code>nvidia-smi</code>→<code>lshw</code>→<code>lspci</code>.</p>
+<p><strong>Graceful fallbacks</strong>: <code>psutil</code> → <code>/proc</code>/core utils; <code>nvidia-smi</code> → <code>lshw</code> → <code>lspci</code>.</p>
 </li>
 <li class="">
-<p><strong>Deep scan</strong>uses<code>du -x -B1 -d1</code>for same-filesystem directory sizes and a<code>find | sort</code>pipeline for top files.</p>
+<p><strong>Deep scan</strong> uses <code>du -x -B1 -d1</code> for same-filesystem directory sizes and a <code>find | sort</code> pipeline for top files.</p>
 </li>
 <li class="">
-<p><strong>NVMe/SSD/HDD</strong>classification from<code>lsblk -JO</code>(transport &amp; rotation flags).</p>
+<p><strong>NVMe/SSD/HDD</strong> classification from <code>lsblk -JO</code> (transport &amp; rotation flags).</p>
 </li>
 <li class="">
-<p><strong>HTML</strong>is embedded CSS with responsive grids and ARIA-friendly usage bars.</p>
+<p><strong>HTML</strong> is embedded CSS with responsive grids and ARIA-friendly usage bars.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance--safety">Performance &amp; safety<a href="#performance--safety" class="hash-link" aria-label="Direct link to Performance &amp; safety" title="Direct link to Performance &amp; safety" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>Default mode (no HTML/JSON) enables<strong>deep storage scan</strong>; pass<code>--no-deep</code>to go faster.</p>
+<p>Default mode (no HTML/JSON) enables <strong>deep storage scan</strong>; pass <code>--no-deep</code> to go faster.</p>
 </li>
 <li class="">
-<p>Deep scans are<strong>bounded</strong>with<code>--per-mount-timeout</code>.</p>
+<p>Deep scans are <strong>bounded</strong> with <code>--per-mount-timeout</code>.</p>
 </li>
 <li class="">
-<p>HTML/JSON modes default to<strong>no deep scan</strong>(can be re-enabled).</p>
+<p>HTML/JSON modes default to <strong>no deep scan</strong> (can be re-enabled).</p>
 </li>
 <li class="">
-<p>Only reads system info —<strong>does not modify</strong>anything.</p>
+<p>Only reads system info — <strong>does not modify</strong> anything.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting" translate="no">​</a></h2>
 <ul>
 <li class="">
 <p><strong>“No GPU adapters detected”</strong>
-Install<code>lshw</code>(<code>sudo apt install lshw</code>) or proprietary drivers for NVIDIA (<code>nvidia-smi</code>).</p>
+Install <code>lshw</code> (<code>sudo apt install lshw</code>) or proprietary drivers for NVIDIA (<code>nvidia-smi</code>).</p>
 </li>
 <li class="">
 <p><strong>“Please run with Python 3.8 or newer”</strong>
-Use<code>pyenv</code>, distro packages, or containers to run a newer Python.</p>
+Use <code>pyenv</code>, distro packages, or containers to run a newer Python.</p>
 </li>
 <li class="">
 <p><strong>Sparse motherboard/System info</strong>
-Some environments require<code>sudo</code>for DMI tables:
+Some environments require <code>sudo</code> for DMI tables:
 <code>sudo ./syscheck_beauty.py</code>
-Also consider<code>sudo apt install dmidecode</code>.</p>
+Also consider <code>sudo apt install dmidecode</code>.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="extend-it">Extend it<a href="#extend-it" class="hash-link" aria-label="Direct link to Extend it" title="Direct link to Extend it" translate="no">​</a></h2>
 <p>A few easy wins you can add if you like hacking:</p>
 <ul>
 <li class="">
-<p><strong>AMD GPUs</strong>: integrate<code>rocm-smi</code>for VRAM and power usage.</p>
+<p><strong>AMD GPUs</strong>: integrate <code>rocm-smi</code> for VRAM and power usage.</p>
 </li>
 <li class="">
-<p><strong>Thermals</strong>: pull CPU/GPU temps from<code>sensors</code>or<code>/sys/class/thermal</code>.</p>
+<p><strong>Thermals</strong>: pull CPU/GPU temps from <code>sensors</code> or <code>/sys/class/thermal</code>.</p>
 </li>
 <li class="">
 <p><strong>Network</strong>: enumerate NICs, link speeds, IPs, RX/TX counters.</p>
@@ -207,10 +207,10 @@ Also consider<code>sudo apt install dmidecode</code>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-notes">Final notes<a href="#final-notes" class="hash-link" aria-label="Direct link to Final notes" title="Direct link to Final notes" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>It’s a single script; great for<strong>SSH one-offs</strong>,<strong>golden images</strong>, and<strong>fleet diagnostics</strong>.</p>
+<p>It’s a single script; great for <strong>SSH one-offs</strong>, <strong>golden images</strong>, and <strong>fleet diagnostics</strong>.</p>
 </li>
 <li class="">
-<p>Output is readable for humans, structured for machines, and<strong>beautiful</strong>when you need to share.</p>
+<p>Output is readable for humans, structured for machines, and <strong>beautiful</strong> when you need to share.</p>
 </li>
 </ul>
 <p>If you try it, I’d love feedback — especially from servers with unusual storage layouts or hybrid-GPU laptops. Happy auditing!</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-10-19-augmenting-digital-forensics-with-ai-how-chatgpt-transforms-investigation-workflows-34eb10887ea5"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Augmenting Digital Forensics with AI: How ChatGPT Transforms Investigation Workflows</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-11-01-the-atomic-standard-a-practitioner-s-compendium-for-single-event-threat-detection-570c4241d4d9"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">The Atomic Standard: A Practitioner’s Compendium for Single-Event Threat Detection</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a></li><li><a href="#meet-syscheck_beauty--a-colorful-linux-system-report-with-deep-storage-insights-and-exportable-html" class="table-of-contents__link toc-highlight">Meet syscheck_beauty : a colorful Linux system report with deep storage insights (and exportable HTML)</a><ul><li><a href="#tldr--i-built-a-single-file-python-tool-that-prints-a-beautiful-color-coded-snapshot-of-your-linux-machine--cpu-memory-gpu-disks-filesystems--and-can-optionally-scan-for-the-heaviest-directoriesfiles-it-also-exports-a-polished-responsive-html-report-you-can-share-with-teammates-or-stash-in-tickets" class="table-of-contents__link toc-highlight">TL;DR : I built a single-file Python tool that prints a beautiful, color-coded snapshot of your Linux machine — CPU, memory, GPU, disks, filesystems — and can optionally scan for the heaviest directories/files. It also exports a polished, responsive HTML report you can share with teammates or stash in tickets.</a></li></ul></li><li><a href="#why-another-system-report-tool" class="table-of-contents__link toc-highlight">Why another system report tool?</a></li><li><a href="#what-it-shows" class="table-of-contents__link toc-highlight">What it shows</a><ul><li><a href="#system--os" class="table-of-contents__link toc-highlight">System &amp; OS</a></li><li><a href="#cpu" class="table-of-contents__link toc-highlight">CPU</a></li><li><a href="#memory" class="table-of-contents__link toc-highlight">Memory</a></li><li><a href="#gpu" class="table-of-contents__link toc-highlight">GPU</a></li><li><a href="#storage-hardware--filesystems" class="table-of-contents__link toc-highlight">Storage: hardware + filesystems</a></li></ul></li><li><a href="#quick-start" class="table-of-contents__link toc-highlight">Quick start</a></li><li><a href="#html-reports-you-can-share" class="table-of-contents__link toc-highlight">HTML reports you can share</a></li><li><a href="#a-peek-at-the-terminal-output" class="table-of-contents__link toc-highlight">A peek at the terminal output</a></li><li><a href="#command-options" class="table-of-contents__link toc-highlight">Command options</a></li><li><a href="#how-it-works-under-the-hood" class="table-of-contents__link toc-highlight">How it works (under the hood)</a></li><li><a href="#performance--safety" class="table-of-contents__link toc-highlight">Performance &amp; safety</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a></li><li><a href="#extend-it" class="table-of-contents__link toc-highlight">Extend it</a></li><li><a href="#final-notes" class="table-of-contents__link toc-highlight">Final notes</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>

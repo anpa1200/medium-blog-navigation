@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -35,275 +35,61 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-step-by-step-guide-to-collecting-windows-event-logs-and-securely-shipping-them-to-portx--xplg-other-log-collector-using-fluent-bit">A step-by-step guide to collecting Windows Event Logs and securely shipping them to PortX — XPLG (other log collector) using Fluent Bit<a href="#a-step-by-step-guide-to-collecting-windows-event-logs-and-securely-shipping-them-to-portx--xplg-other-log-collector-using-fluent-bit" class="hash-link" aria-label="Direct link to A step-by-step guide to collecting Windows Event Logs and securely shipping them to PortX — XPLG (other log collector) using Fluent Bit" title="Direct link to A step-by-step guide to collecting Windows Event Logs and securely shipping them to PortX — XPLG (other log collector) using Fluent Bit" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h3>
 <p>Fluent Bit is a lightweight log forwarder that can collect, filter, and ship logs from Windows to your central logging platform (PortX/XpoLog in your case).</p>
-<p>You’ll install it as a<strong>Windows service</strong>so that it starts automatically and continuously forwards logs.</p>
+<p>You’ll install it as a <strong>Windows service</strong> so that it starts automatically and continuously forwards logs.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-folder-structure">1. Folder Structure<a href="#1-folder-structure" class="hash-link" aria-label="Direct link to 1. Folder Structure" title="Direct link to 1. Folder Structure" translate="no">​</a></h3>
 <p>Create the following structure under C:\fluent-bit:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">C:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\fluent-bit\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── bin\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── fluent-bit.exe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── conf\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── fluent-bit.conf       ← (your main config file: fb.conf)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── parsers.conf          ← </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">optional</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> you define extra parsers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── plugins.conf          ← </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">optional</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> external plugins</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">└── storage\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └── (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">auto</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-created </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">by</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Fluent Bit)</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">C:\fluent-bit\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── bin\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── fluent-bit.exe</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">├── conf\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── fluent-bit.conf       ← (your main config file: fb.conf)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   ├── parsers.conf          ← optional, if you define extra parsers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│   └── plugins.conf          ← optional, for external plugins</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">│</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">└── storage\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    └── (auto-created by Fluent Bit)</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-install-fluent-bit">2. Install Fluent Bit<a href="#2-install-fluent-bit" class="hash-link" aria-label="Direct link to 2. Install Fluent Bit" title="Direct link to 2. Install Fluent Bit" translate="no">​</a></h2>
 <ul>
-<li class="">Download the latest<strong>Fluent Bit Windows zip</strong>from
+<li class="">Download the latest <strong>Fluent Bit Windows zip</strong> from
 <a href="https://fluentbit.io/download/" target="_blank" rel="noopener noreferrer" class="">https://fluentbit.io/download/</a></li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*9xWw5bNpolbteAC8TrJNrQ.png" alt="Article image" width="1038" height="502" loading="lazy" decoding="async">
 <ol start="2">
 <li class="">
-<p>Extract the archive into<code>C:\fluent-bit\</code>.</p>
+<p>Extract the archive into <code>C:\fluent-bit\</code>.</p>
 </li>
 <li class="">
-<p>Confirm that<code>C:\fluent-bit\bin\fluent-bit.exe</code>exists.</p>
+<p>Confirm that <code>C:\fluent-bit\bin\fluent-bit.exe</code> exists.</p>
 </li>
 <li class="">
 <p>Configure your FluentBit</p>
 </li>
 </ol>
 <p>For example, my configuration:</p>
-<details class="plain-large-code" data-plain-code-lines="215"><summary>Large code or log block<!-- --> · <!-- -->215<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>[
-SERVICE
-]
-    
-# Flush
-    
-# =====
-    
-# set an interval of seconds before to flush records to a destination
-    flush        
-5
-    
-# Daemon
-    
-# ======
-    
-# instruct Fluent Bit to run in foreground or background mode.
-    daemon       Off
-    
-# Log_Level
-    
-# =========
-    
-# Set the verbosity level of the service, values can be:
-    
-#
-    
-# - error
-    
-# - warning
-    
-# - info
-    
-# - debug
-    
-# - trace
-    
-#
-    
-# by default &#x27;info&#x27; is set, that means it includes &#x27;error&#x27; and &#x27;warning&#x27;.
-    log_level    info
-    
-# Parsers File
-    
-# ============
-    
-# specify an optional &#x27;Parsers&#x27; configuration file
-    parsers_file parsers.conf
-    
-# Plugins File
-    
-# ============
-    
-# specify an optional &#x27;Plugins&#x27; configuration file to load external plugins.
-    plugins_file plugins.conf
-    
-# HTTP Server
-    
-# ===========
-    
-# Enable/Disable the built-in HTTP Server for metrics
-    http_server  
-On
-    http_listen  
-0.0
-.
-0.0
-    http_port    
-2020
-    
-# Storage
-    
-# =======
-    
-# Fluent Bit can use memory and filesystem buffering based mechanisms
-    
-#
-    
-# - https://docs.fluentbit.io/manual/administration/buffering-and-storage
-    
-#
-    
-# storage metrics
-    
-# ---------------
-    
-# publish storage pipeline metrics in &#x27;/api/v1/storage&#x27;. The metrics are
-    
-# exported only if the &#x27;http_server&#x27; option is enabled.
-    
-#
-    storage.metrics 
-on
-    
-# storage.path
-    
-# ------------
-    
-# absolute file system path to store filesystem data buffers (chunks).
-    
-#
-    storage.path 
-C
-:
-\fluent-bit\storage
-    
-# storage.sync
-    
-# ------------
-    
-# configure the synchronization mode used to store the data into the
-    
-# filesystem. It can take the values normal or full.
-    
-#
-    storage.sync full
-    
-# storage.checksum
-    
-# ----------------
-    
-# enable the data integrity check when writing and reading data from the
-    
-# filesystem. The storage layer uses the CRC32 algorithm.
-    
-#
-    
-# storage.checksum off
-    
-# storage.backlog.mem_limit
-    
-# -------------------------
-    
-# if storage.path is set, Fluent Bit will look for data chunks that were
-    
-# not delivered and are still in the storage layer, these are called
-    
-# backlog data. This option configure a hint of maximum value of memory
-    
-# to use when processing these records.
-    
-#
-    storage.backlog.mem_limit 
-128
-M
-[
-INPUT
-]
-    Name         winlog
-    tag          winlog
-    Channels     Security,Application,System
-    Interval_Sec 
-1
-    DB           
-C
-:
-\fluent-bit\winlog.sqlite
-    storage.
-type
- filesystem
-    Mem_Buf_Limit 
-128
-M
-#[INPUT]
-#    name      tail
-#    path      [ENTER_ABSOLUTE_PATH_TO_LOGS]
-#    storage.type filesystem
-#    DB           C:\fluent-bit\tail.sqlite
-#    Path_key    filepath
-#    Mem_Buf_Limit 128M
-#[FILTER]
-#    Name modify
-#    Match tail
-#    Add fluentbittype tail
-[
-FILTER
-]
-    Name modify
-    Match winlog
-    Add fluentbittype winlog
-    Copy Channel filepath
-[
-OUTPUT
-]
-    Name http
-    Match *
-    Host 
-172.16
-.
-11.1
-    Port 
-30443
-    URI /logeye/api/logger.jsp?token
-=
-53
-db5aff-
-207
-b-
-457
-e-
-9
-a19-
-5
-db73e24a864
-    Format json
-    header_tag message
-    tls 
-On
-    tls.verify Off
-    Retry_Limit 
-False
-    storage.total_limit_size 
-10
-G
-</code></pre></details>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[SERVICE]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Flush</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # =====</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # set an interval of seconds before to flush records to a destination</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    flush        5</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Daemon</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # ======</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # instruct Fluent Bit to run in foreground or background mode.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    daemon       Off</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Log_Level</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # =========</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Set the verbosity level of the service, values can be:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # - error</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # - warning</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # - info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # - debug</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # - trace</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # by default &#x27;info&#x27; is set, that means it includes &#x27;error&#x27; and &#x27;warning&#x27;.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    log_level    info</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Parsers File</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # ============</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # specify an optional &#x27;Parsers&#x27; configuration file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    parsers_file parsers.conf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Plugins File</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # ============</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # specify an optional &#x27;Plugins&#x27; configuration file to load external plugins.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    plugins_file plugins.conf</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # HTTP Server</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # ===========</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Enable/Disable the built-in HTTP Server for metrics</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    http_server  On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    http_listen  0.0.0.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    http_port    2020</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Storage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # =======</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Fluent Bit can use memory and filesystem buffering based mechanisms</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # - https://docs.fluentbit.io/manual/administration/buffering-and-storage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # storage metrics</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # ---------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # publish storage pipeline metrics in &#x27;/api/v1/storage&#x27;. The metrics are</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # exported only if the &#x27;http_server&#x27; option is enabled.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.metrics on</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # storage.path</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # ------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # absolute file system path to store filesystem data buffers (chunks).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.path C:\fluent-bit\storage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # storage.sync</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # ------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # configure the synchronization mode used to store the data into the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # filesystem. It can take the values normal or full.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.sync full</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # storage.checksum</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # ----------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # enable the data integrity check when writing and reading data from the</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # filesystem. The storage layer uses the CRC32 algorithm.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # storage.checksum off</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # storage.backlog.mem_limit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # -------------------------</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # if storage.path is set, Fluent Bit will look for data chunks that were</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # not delivered and are still in the storage layer, these are called</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # backlog data. This option configure a hint of maximum value of memory</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # to use when processing these records.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    #</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.backlog.mem_limit 128M</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[INPUT]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Name         winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tag          winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Channels     Security,Application,System</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Interval_Sec 1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    DB           C:\fluent-bit\winlog.sqlite</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.type filesystem</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Mem_Buf_Limit 128M</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#[INPUT]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    name      tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    path      [ENTER_ABSOLUTE_PATH_TO_LOGS]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    storage.type filesystem</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    DB           C:\fluent-bit\tail.sqlite</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Path_key    filepath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Mem_Buf_Limit 128M</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#[FILTER]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Name modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Match tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#    Add fluentbittype tail</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[FILTER]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Name modify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Match winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Add fluentbittype winlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Copy Channel filepath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[OUTPUT]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Name http</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Match *</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Host 172.16.11.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Port 30443</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    URI /logeye/api/logger.jsp?token=53db5aff-207b-457e-9a19-5db73e24a864</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Format json</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    header_tag message</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tls On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tls.verify Off</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Retry_Limit False</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    storage.total_limit_size 10G</span><br></div></code></pre></div></div>
 <ol start="5">
-<li class="">Copy your<code>fb.conf</code>file into
+<li class="">Copy your <code>fb.conf</code> file into
 <code>C:\fluent-bit\conf\fluent-bit.conf</code>.</li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-verify-configuration">3. Verify Configuration<a href="#3-verify-configuration" class="hash-link" aria-label="Direct link to 3. Verify Configuration" title="Direct link to 3. Verify Configuration" translate="no">​</a></h3>
 <p>Run this command manually to ensure the configuration is valid:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> C:\fluent-bit\bin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.\fluent-bit.exe -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\fluent-bit\conf\fluent-bit.conf&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd C:\fluent-bit\bin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.\fluent-bit.exe -c &quot;C:\fluent-bit\conf\fluent-bit.conf&quot;</span><br></div></code></pre></div></div>
 <p>You should see log lines like:</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*7HxD6wOGrHsx42dPe5Z5eA.png" alt="Article image" width="957" height="758" loading="lazy" decoding="async">
-<p>Stop with<strong>Ctrl + C</strong>when ready.</p>
+<p>Stop with <strong>Ctrl + C</strong> when ready.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-install-as-a-windows-service">4. Install as a Windows Service<a href="#4-install-as-a-windows-service" class="hash-link" aria-label="Direct link to 4. Install as a Windows Service" title="Direct link to 4. Install as a Windows Service" translate="no">​</a></h3>
-<p>Run the following<strong>in an elevated PowerShell or CMD</strong>(as Administrator):</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sc </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">create</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit binpath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &quot;\&quot;C:\fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit\bin\fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit.exe\&quot; -c \&quot;C:\fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit\conf\fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit.conf\&quot;&quot; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">start</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> auto</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sc description fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit &quot;Fluent Bit: Log Forwarder to PortX&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sc failure fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit reset</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">86400</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> actions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> restart</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">restart</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">restart</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">900</span><br></div></code></pre></div></div>
+<p>Run the following <strong>in an elevated PowerShell or CMD</strong> (as Administrator):</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sc create fluent-bit binpath= &quot;\&quot;C:\fluent-bit\bin\fluent-bit.exe\&quot; -c \&quot;C:\fluent-bit\conf\fluent-bit.conf\&quot;&quot; start= auto</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sc description fluent-bit &quot;Fluent Bit: Log Forwarder to PortX&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sc failure fluent-bit reset= 86400 actions= restart/0/restart/0/restart/900</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*H4vQKGkt_p_6IvRXNuZbNQ.png" alt="Article image" width="930" height="467" loading="lazy" decoding="async">
 <p>Then start it:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sc </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">start</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sc start fluent-bit</span><br></div></code></pre></div></div>
 <p>Check status:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sc </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">query</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fluent-bit</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sc query fluent-bit</span><br></div></code></pre></div></div>
 <p>You should see:</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*JKvSnKrVAbggnC1GMa-3fA.png" alt="Article image" width="921" height="346" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-gui-verification">5. GUI Verification<a href="#5-gui-verification" class="hash-link" aria-label="Direct link to 5. GUI Verification" title="Direct link to 5. GUI Verification" translate="no">​</a></h3>
-<p>Open<strong>Services (services.msc)</strong>→ locate<strong>fluent-bit</strong>
+<p>Open <strong>Services (services.msc)</strong> → locate <strong>fluent-bit</strong>
 → ensure:</p>
 <ul>
 <li class="">
-<p><strong>Startup Type</strong>= Automatic</p>
+<p><strong>Startup Type</strong> = Automatic</p>
 </li>
 <li class="">
-<p><strong>Service Status</strong>= Running</p>
+<p><strong>Service Status</strong> = Running</p>
 </li>
 <li class="">
-<p><strong>Path to executable</strong>=
+<p><strong>Path to executable</strong> =
 “C:\fluent-bit\bin\fluent-bit.exe” -c “C:\fluent-bit\conf\fluent-bit.conf”</p>
 </li>
 </ul>
@@ -313,18 +99,18 @@ G
 <ul>
 <li class="">Run interactively to reveal the real error:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> C:\fluent-bit\bin .\fluent-bit.exe -c </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\fluent-bit\conf\fluent-bit.conf&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cd C:\fluent-bit\bin .\fluent-bit.exe -c &quot;C:\fluent-bit\conf\fluent-bit.conf&quot;</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
 <p>Look for syntax issues, wrong indentation, or unsupported parameters.</p>
 </li>
 <li class="">
-<p>Common problems: wrong section names (<code>[SERVICE]</code>,<code>[INPUT]</code>, etc.), missing paths, or duplicate directives.</p>
+<p>Common problems: wrong section names (<code>[SERVICE]</code>, <code>[INPUT]</code>, etc.), missing paths, or duplicate directives.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-check-https-output-configuration">2. Check HTTPS output configuration<a href="#2-check-https-output-configuration" class="hash-link" aria-label="Direct link to 2. Check HTTPS output configuration" title="Direct link to 2. Check HTTPS output configuration" translate="no">​</a></h2>
 <p>If you send logs via HTTPS, confirm these lines are correct:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OUTPUT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Name  http</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tls   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tls.verify Off   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># or On if you have valid CA chain</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[OUTPUT]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Name  http</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tls   On</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    tls.verify Off   # or On if you have valid CA chain</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
 <p>A wrong or unreachable HTTPS endpoint can make Fluent Bit exit instantly → error 1067.</p>
@@ -333,12 +119,12 @@ G
 <p>Test reachability:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Test-NetConnection </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">172.16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.11</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -Port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">30443</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> curl -k https:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//172.16.11.1:30443/</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Test-NetConnection 172.16.11.1 -Port 30443 curl -k https://172.16.11.1:30443/</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-if-you-copied-the-fluent-bit-working-directory-from-another-machine">3. If you copied the Fluent Bit working directory from another machine<a href="#3-if-you-copied-the-fluent-bit-working-directory-from-another-machine" class="hash-link" aria-label="Direct link to 3. If you copied the Fluent Bit working directory from another machine" title="Direct link to 3. If you copied the Fluent Bit working directory from another machine" translate="no">​</a></h2>
-<p>Remove any<strong>persistent data</strong>before starting the service:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">del</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /Q </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\fluent-bit\storage\*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">del</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /Q </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;C:\fluent-bit\*.sqlite&quot;</span><br></div></code></pre></div></div>
+<p>Remove any <strong>persistent data</strong> before starting the service:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">del /Q &quot;C:\fluent-bit\storage\*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">del /Q &quot;C:\fluent-bit\*.sqlite&quot;</span><br></div></code></pre></div></div>
 <ul>
-<li class="">Old checkpoint or DB files (e.g.,<code>winlog.sqlite</code>,<code>tail.sqlite</code>) tied to another system path can crash initialization.</li>
+<li class="">Old checkpoint or DB files (e.g., <code>winlog.sqlite</code>, <code>tail.sqlite</code>) tied to another system path can crash initialization.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-verify-all-file-paths">4. Verify all file paths<a href="#4-verify-all-file-paths" class="hash-link" aria-label="Direct link to 4. Verify all file paths" title="Direct link to 4. Verify all file paths" translate="no">​</a></h2>
 <p>Ensure every referenced path exists and is accessible by the service account:</p>
@@ -353,20 +139,20 @@ G
 <p><code>C:\fluent-bit\storage\</code></p>
 </li>
 <li class="">
-<p><code>C:\fluent-bit\winlog.sqlite</code>(auto-created but needs folder write rights)</p>
+<p><code>C:\fluent-bit\winlog.sqlite</code> (auto-created but needs folder write rights)</p>
 </li>
 <li class="">
-<p>Optional:<code>C:\fluent-bit\tail.sqlite</code></p>
+<p>Optional: <code>C:\fluent-bit\tail.sqlite</code></p>
 </li>
 </ul>
-<p>Use<strong>absolute paths</strong>only — relative paths often cause Error 1057 (bad command line) or Error 1067 (crash).</p>
+<p>Use <strong>absolute paths</strong> only — relative paths often cause Error 1057 (bad command line) or Error 1067 (crash).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="extra-quick-checks">Extra quick checks<a href="#extra-quick-checks" class="hash-link" aria-label="Direct link to Extra quick checks" title="Direct link to Extra quick checks" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*q6sGj8kf8OgXuxdk7E0LHw.png" alt="Article image" width="948" height="753" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="if-all-above-fails">If all above fails<a href="#if-all-above-fails" class="hash-link" aria-label="Direct link to If all above fails" title="Direct link to If all above fails" translate="no">​</a></h2>
 <ul>
 <li class="">Delete and recreate the service cleanly:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sc stop fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit sc </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">delete</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit sc </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">create</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit binpath</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &quot;\&quot;C:\fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit\bin\fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit.exe\&quot; -c \&quot;C:\fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit\conf\fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit.conf\&quot;&quot; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">start</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> auto sc </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">start</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fluent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">bit</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sc stop fluent-bit sc delete fluent-bit sc create fluent-bit binpath= &quot;\&quot;C:\fluent-bit\bin\fluent-bit.exe\&quot; -c \&quot;C:\fluent-bit\conf\fluent-bit.conf\&quot;&quot; start= auto sc start fluent-bit</span><br></div></code></pre></div></div>
 <ol start="2">
 <li class="">Watch live logs interactively again to pinpoint the crash reason.</li>
 </ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-11-01-the-atomic-standard-a-practitioner-s-compendium-for-single-event-threat-detection-570c4241d4d9"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">The Atomic Standard: A Practitioner’s Compendium for Single-Event Threat Detection</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-11-07-cloud-native-security-threats-attacks-and-detection-strategies-55b3dd6ea2d1"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Cloud-Native Security Threats, Attacks, and Detection Strategies</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#a-step-by-step-guide-to-collecting-windows-event-logs-and-securely-shipping-them-to-portx--xplg-other-log-collector-using-fluent-bit" class="table-of-contents__link toc-highlight">A step-by-step guide to collecting Windows Event Logs and securely shipping them to PortX — XPLG (other log collector) using Fluent Bit</a></li><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#1-folder-structure" class="table-of-contents__link toc-highlight">1. Folder Structure</a></li></ul></li><li><a href="#2-install-fluent-bit" class="table-of-contents__link toc-highlight">2. Install Fluent Bit</a><ul><li><a href="#3-verify-configuration" class="table-of-contents__link toc-highlight">3. Verify Configuration</a></li><li><a href="#4-install-as-a-windows-service" class="table-of-contents__link toc-highlight">4. Install as a Windows Service</a></li><li><a href="#5-gui-verification" class="table-of-contents__link toc-highlight">5. GUI Verification</a></li></ul></li><li><a href="#troubleshooting-error-1057--error-1067" class="table-of-contents__link toc-highlight">Troubleshooting: Error 1057 / Error 1067</a></li><li><a href="#1-check-your-fluent-bit-configuration" class="table-of-contents__link toc-highlight">1. Check your Fluent Bit configuration</a></li><li><a href="#2-check-https-output-configuration" class="table-of-contents__link toc-highlight">2. Check HTTPS output configuration</a></li><li><a href="#3-if-you-copied-the-fluent-bit-working-directory-from-another-machine" class="table-of-contents__link toc-highlight">3. If you copied the Fluent Bit working directory from another machine</a></li><li><a href="#4-verify-all-file-paths" class="table-of-contents__link toc-highlight">4. Verify all file paths</a></li><li><a href="#extra-quick-checks" class="table-of-contents__link toc-highlight">Extra quick checks</a></li><li><a href="#if-all-above-fails" class="table-of-contents__link toc-highlight">If all above fails</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>

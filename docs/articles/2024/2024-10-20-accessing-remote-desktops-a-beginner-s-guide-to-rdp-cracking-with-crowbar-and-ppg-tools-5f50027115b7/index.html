@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -60,7 +60,7 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="installation">Installation<a href="#installation" class="hash-link" aria-label="Direct link to Installation" title="Direct link to Installation" translate="no">​</a></h3>
 <p>Here’s a step-by-step guide to installing Crowbar:</p>
-<p><strong>For Kali Repository Users</strong>: If you are using Kali Linux and have access to its repository, you can install Crowbar directly using the package manager. Simply open a terminal and enter the command:<strong>sudo apt install crowbar</strong></p>
+<p><strong>For Kali Repository Users</strong>: If you are using Kali Linux and have access to its repository, you can install Crowbar directly using the package manager. Simply open a terminal and enter the command: <strong>sudo apt install crowbar</strong></p>
 <p>This command will download and install Crowbar along with its dependencies.</p>
 <ul>
 <li class="">
@@ -70,24 +70,24 @@
 <p><strong>Clone the repository</strong>: Open a terminal and clone the Crowbar GitHub repository by entering:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">clone</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> https://github.com/galkan/crowbar.git</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/galkan/crowbar.git</span><br></div></code></pre></div></div>
 <ul>
-<li class=""><strong>Navigate to the directory</strong>: Change into the directory with<code>cd crowbar</code>.</li>
+<li class=""><strong>Navigate to the directory</strong>: Change into the directory with <code>cd crowbar</code>.</li>
 </ul>
 <p><strong>Install dependencies</strong>: Depending on your Linux distribution, you might need to install dependencies. For most users, running:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">get</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> install python-pip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pip install -r requirements.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt-get install python-pip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pip install -r requirements.txt</span><br></div></code></pre></div></div>
 <p><strong>Make it executable</strong>: Grant execution permissions to the script with</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">chmod</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> +x crowbar.py</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">chmod +x crowbar.py</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="usage">Usage<a href="#usage" class="hash-link" aria-label="Direct link to Usage" title="Direct link to Usage" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>-b: Target service. Crowbar supports:<code>openvpn</code>,<code>rdp</code>,<code>sshkey</code>,<code>vnckey</code></p>
+<p>-b: Target service. Crowbar supports: <code>openvpn</code>, <code>rdp</code>, <code>sshkey</code>, <code>vnckey</code></p>
 </li>
 <li class="">
 <p>-c: Static password to login with (if you know a password)</p>
 </li>
 <li class="">
-<p>-C:<code>&amp;lt;/path/to/file&amp;gt;</code>for passwords list</p>
+<p>-C: <code>&amp;lt;/path/to/file&amp;gt;</code> for passwords list</p>
 </li>
 <li class="">
 <p>-d: Run a tcp port scan (nmap) on the IP range (<code>-s</code>/<code>-S</code>) before trying to brute force. This will discover whether the target&#x27;s port is open</p>
@@ -99,19 +99,19 @@
 <p>-h: Shows a help menu</p>
 </li>
 <li class="">
-<p>-k:<code>&amp;lt;/path/to/file-or-folder&amp;gt;</code>for key files (for SSH or VNC)</p>
+<p>-k: <code>&amp;lt;/path/to/file-or-folder&amp;gt;</code> for key files (for SSH or VNC)</p>
 </li>
 <li class="">
-<p>-l:<code>&amp;lt;/path/to/file&amp;gt;</code>to store the log file (default is<code>./crowbar.log</code>)</p>
+<p>-l: <code>&amp;lt;/path/to/file&amp;gt;</code> to store the log file (default is <code>./crowbar.log</code>)</p>
 </li>
 <li class="">
-<p>-m:<code>&amp;lt;/path/to/file&amp;gt;</code>for a OpenVPN configuration file</p>
+<p>-m: <code>&amp;lt;/path/to/file&amp;gt;</code> for a OpenVPN configuration file</p>
 </li>
 <li class="">
 <p>-n: Thread count</p>
 </li>
 <li class="">
-<p>-o:<code>&amp;lt;/path/to/file&amp;gt;</code>to store the successfully attempt(s) (default is<code>./crowbar.out</code>)</p>
+<p>-o: <code>&amp;lt;/path/to/file&amp;gt;</code> to store the successfully attempt(s) (default is <code>./crowbar.out</code>)</p>
 </li>
 <li class="">
 <p>-p: Port number (if the service is not on the default port)</p>
@@ -123,7 +123,7 @@
 <p>-s: Target IP address/range (in CIDR notation)</p>
 </li>
 <li class="">
-<p>-S:<code>&amp;lt;/path/to/file&amp;gt;</code>which is stores target IP addresses</p>
+<p>-S: <code>&amp;lt;/path/to/file&amp;gt;</code> which is stores target IP addresses</p>
 </li>
 <li class="">
 <p>-t: Timeout value</p>
@@ -132,30 +132,30 @@
 <p>-u: Single username (If you know a username)</p>
 </li>
 <li class="">
-<p>-U:<code>&amp;lt;/path/to/file&amp;gt;</code>which stores the username list</p>
+<p>-U: <code>&amp;lt;/path/to/file&amp;gt;</code> which stores the username list</p>
 </li>
 <li class="">
 <p>-v: Enable verbose mode (shows all the attempts)</p>
 </li>
 </ul>
-<p>If you want see all usage options, please use:<code>./crowbar.py --help</code>.</p>
+<p>If you want see all usage options, please use: <code>./crowbar.py --help</code>.</p>
 <p>For example:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">crowbar -b rdp -C /home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt -s 172.16.131.128/32 -U /home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt -v</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
-<p><code>**-b rdp**</code>: This flag specifies the type of service to attack. Here,<code>rdp</code>indicates that the Remote Desktop Protocol is being targeted.</p>
+<p><code>**-b rdp**</code>: This flag specifies the type of service to attack. Here, <code>rdp</code> indicates that the Remote Desktop Protocol is being targeted.</p>
 </li>
 <li class="">
-<p><code>**-C /home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt**</code>: This flag points to the file that contains the list of passwords to be tried during the attack. The path<code>/home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt</code>should lead to a text file where each line is a different password attempt.</p>
+<p><code>**-C /home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt**</code>: This flag points to the file that contains the list of passwords to be tried during the attack. The path <code>/home/sulik/Documents/PasswordCracking/Dictionaries/short_pass_list.txt</code> should lead to a text file where each line is a different password attempt.</p>
 </li>
 <li class="">
-<p><code>**-s 172.16.131.128/32**</code>: This flag defines the target IP address and subnet. The<code>/32</code>indicates a single IP address (in this case,<code>172.16.131.128</code>) is targeted, as<code>/32</code>is the subnet mask for a single host.</p>
+<p><code>**-s 172.16.131.128/32**</code>: This flag defines the target IP address and subnet. The <code>/32</code> indicates a single IP address (in this case, <code>172.16.131.128</code>) is targeted, as <code>/32</code> is the subnet mask for a single host.</p>
 </li>
 <li class="">
-<p><code>**-U /home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt**</code>: This flag specifies the path to the file containing usernames to use in the attack. Similar to the password file, each line in<code>/home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt</code>should contain one username.</p>
+<p><code>**-U /home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt**</code>: This flag specifies the path to the file containing usernames to use in the attack. Similar to the password file, each line in <code>/home/sulik/Documents/PasswordCracking/Dictionaries/1000_usernames.txt</code> should contain one username.</p>
 </li>
 <li class="">
-<p><code>**-v**</code>: This is the verbosity flag. Including<code>-v</code>means the output of the Crowbar tool will be more detailed, providing more information about the ongoing attack process. This can be useful for debugging or understanding more about how the attack is proceeding.</p>
+<p><code>**-v**</code>: This is the verbosity flag. Including <code>-v</code> means the output of the Crowbar tool will be more detailed, providing more information about the ongoing attack process. This can be useful for debugging or understanding more about how the attack is proceeding.</p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*C9oxb9QgdWCCoG8tJ9u70A.png" alt="Article image" width="1920" height="731" loading="lazy" decoding="async">
@@ -182,11 +182,11 @@
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-can-i-gain-list-of-passwords">How can I gain list of passwords?<a href="#how-can-i-gain-list-of-passwords" class="hash-link" aria-label="Direct link to How can I gain list of passwords?" title="Direct link to How can I gain list of passwords?" translate="no">​</a></h2>
-<p>To create or find a dictionary (wordlist) for password cracking, you can either download pre-existing wordlists or generate custom ones using tools**PPG — Personal Pass Generator.**Here’s a step-by-step explanation:</p>
+<p>To create or find a dictionary (wordlist) for password cracking, you can either download pre-existing wordlists or generate custom ones using tools <strong>PPG — Personal Pass Generator.</strong> Here’s a step-by-step explanation:</p>
 <p><strong>1. Finding Pre-Existing Dictionaries:</strong>
 You can often find wordlists that are publicly available and have been compiled from various sources, such as leaked password databases or common password lists. Some popular resources include:</p>
-<p>**SecLists:**A large collection of wordlists for various security tools, available on GitHub.
-**RockYou:**One of the most famous password lists from a large data breach. It’s often included in tools like Kali Linux.
+<p><strong>SecLists:</strong> A large collection of wordlists for various security tools, available on GitHub.
+<strong>RockYou:</strong> One of the most famous password lists from a large data breach. It’s often included in tools like Kali Linux.
 To use these wordlists:</p>
 <p>Download them from repositories like GitHub or security forums.
 You can directly apply these wordlists with tools like aircrack-ng for password cracking.</p>
@@ -195,20 +195,20 @@ You can directly apply these wordlists with tools like aircrack-ng for password 
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="personal-pass-generator--httpsgithubcomanpa1200passwords">Personal Pass Generator — <a href="https://github.com/anpa1200/Passwords" target="_blank" rel="noopener noreferrer" class="">https://github.com/anpa1200/Passwords</a><a href="#personal-pass-generator--httpsgithubcomanpa1200passwords" class="hash-link" aria-label="Direct link to personal-pass-generator--httpsgithubcomanpa1200passwords" title="Direct link to personal-pass-generator--httpsgithubcomanpa1200passwords" translate="no">​</a></h2>
 <p><strong>Description</strong>
 The Personal Pass Generator (PPG) is an advanced tool designed for security professionals and ethical hackers to create extensive, personalized lists of potential passwords. This tool is especially useful for conducting penetration tests or security assessments where custom or brute-force attacks might be necessary.</p>
-<p>**Key Features:
-**Extensive Password Lists: PPG can generate password lists that are unusually large — ranging from 1GB to over 30GB — tailored to specific security testing scenarios.
-**Customization Options:**Users can specify various parameters including the inclusion of symbols, alphanumeric characters, and more, allowing for highly customized password sets that are adapted to the target environment or system characteristics.
+<p><strong>Key Features:</strong>
+Extensive Password Lists: PPG can generate password lists that are unusually large — ranging from 1GB to over 30GB — tailored to specific security testing scenarios.
+<strong>Customization Options:</strong> Users can specify various parameters including the inclusion of symbols, alphanumeric characters, and more, allowing for highly customized password sets that are adapted to the target environment or system characteristics.
 Efficiency and Scalability: The tool is optimized for efficient generation of large datasets while allowing users to scale the output based on their storage and processing capabilities.
-**How It Works:
-**PPG employs a combination of standard and advanced cryptographic principles, utilizing permutations and combinations of characters from predefined sets (including special characters, numbers, and letters). This approach ensures that the generated passwords are both random and comprehensive, covering a wide range of possible password combinations that might be used by an individual or organization.</p>
+<strong>How It Works:</strong>
+PPG employs a combination of standard and advanced cryptographic principles, utilizing permutations and combinations of characters from predefined sets (including special characters, numbers, and letters). This approach ensures that the generated passwords are both random and comprehensive, covering a wide range of possible password combinations that might be used by an individual or organization.</p>
 <p><strong>Applications:</strong>
 Security Testing: Ideal for penetration testers and red teams needing custom password lists to test the resilience of systems to password cracking.
-**Research and Development:**Useful for researchers studying password security and the effectiveness of password policies.
+<strong>Research and Development:</strong> Useful for researchers studying password security and the effectiveness of password policies.
 Training and Workshops: Can be used in educational settings to demonstrate the importance of strong password policies and the potential vulnerabilities of weak passwords.
 <strong>Requirements</strong>
 Python 3.x
 <strong>Usage</strong>
-To use the Personal Pass Generator, simply download from<a href="https://github.com/anpa1200/Passwords" target="_blank" rel="noopener noreferrer" class="">here</a>and run the script in your Python environment</p>
+To use the Personal Pass Generator, simply download from <a href="https://github.com/anpa1200/Passwords" target="_blank" rel="noopener noreferrer" class="">here</a> and run the script in your Python environment</p>
 <p><strong>Warning</strong>
 Please be aware that generating very large password lists can consume significant storage and computing resources. Ensure you have adequate space and computing power to handle the outputs.</p>
 <p>To protect yourself from RDP brute force attacks, a critical step is managing RDP services and ports effectively, especially if they are not actively needed:</p>
@@ -240,7 +240,7 @@ Please be aware that generating very large password lists can consume significan
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
 <p>Understanding the tools and methods used for RDP cracking, such as Crowbar and the Personal Pass Generator, is crucial for recognizing the vulnerabilities in your own systems. By employing robust security measures like closing unused RDP services, using strong and unique passwords, enabling two-factor authentication, and consistently updating and monitoring your systems, you can significantly enhance your defenses against brute force attacks. Always remember that the best defense is a proactive approach — stay informed, stay prepared, and prioritize the security of your digital infrastructure to safeguard against potential cyber threats.</p>
 <p>Thank you for reading.</p>
-<p>**Author:**Andrey Pautov
-**Email:**<a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">WiFi cracking with Aircrack-ng</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2024/2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Personal Pass Generator (PPG): The Ultimate Tool for Custom Password Lists</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#master-the-techniques-unveiling-the-power-of-crowbar-and-ppg-to-unlock-remote-desktop-protocols" class="table-of-contents__link toc-highlight">Master the Techniques: Unveiling the Power of Crowbar and PPG to Unlock Remote Desktop Protocols</a></li></ul></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a><ul><li><a href="#brief-overview" class="table-of-contents__link toc-highlight">Brief Overview</a></li><li><a href="#importance-of-security" class="table-of-contents__link toc-highlight">Importance of Security</a></li></ul></li><li><a href="#what-is-crowbar" class="table-of-contents__link toc-highlight">What is Crowbar?</a><ul><li><a href="#tool-overview" class="table-of-contents__link toc-highlight">Tool Overview</a></li></ul></li><li><a href="#setting-up-the-environment" class="table-of-contents__link toc-highlight">Setting Up the Environment</a><ul><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a></li><li><a href="#installation" class="table-of-contents__link toc-highlight">Installation</a></li></ul></li><li><a href="#usage" class="table-of-contents__link toc-highlight">Usage</a></li><li><a href="#important-tips" class="table-of-contents__link toc-highlight">Important tips</a></li><li><a href="#how-can-i-gain-list-of-passwords" class="table-of-contents__link toc-highlight">How can I gain list of passwords?</a><ul><li><a href="#2-creating-a-custom-dictionary-with-tool-ppg--personal-pass-generator" class="table-of-contents__link toc-highlight">2. Creating a Custom Dictionary with Tool (PPG — Personal Pass Generator)</a></li></ul></li><li><a href="#personal-pass-generator--httpsgithubcomanpa1200passwords" class="table-of-contents__link toc-highlight">Personal Pass Generator — https://github.com/anpa1200/Passwords</a></li><li><a href="#how-to-prevent-ourselves-from-this-attack" class="table-of-contents__link toc-highlight">How to Prevent ourselves from this attack?</a><ul><li><a href="#close-unused-rdp-ports-and-services" class="table-of-contents__link toc-highlight">Close Unused RDP Ports and Services</a></li><li><a href="#use-strong-unique-passwords" class="table-of-contents__link toc-highlight">Use Strong, Unique Passwords</a></li><li><a href="#implement-account-lockout-policies" class="table-of-contents__link toc-highlight">Implement Account Lockout Policies</a></li><li><a href="#enable-two-factor-authentication-2fa" class="table-of-contents__link toc-highlight">Enable Two-Factor Authentication (2FA)</a></li><li><a href="#use-rdp-gateways" class="table-of-contents__link toc-highlight">Use RDP Gateways</a></li><li><a href="#keep-systems-updated" class="table-of-contents__link toc-highlight">Keep Systems Updated</a></li><li><a href="#network-level-authentication-nla" class="table-of-contents__link toc-highlight">Network Level Authentication (NLA)</a></li><li><a href="#monitor-and-audit-rdp-access" class="table-of-contents__link toc-highlight">Monitor and Audit RDP Access</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p><strong>Author:</strong> Andrey Pautov
+<strong>Email:</strong> <a href="mailto:1200km@gmail.com" target="_blank" rel="noopener noreferrer" class="">1200km@gmail.com</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2024/2024-10-17-wifi-cracking-with-aircrack-ng-d51cf98c789f"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">WiFi cracking with Aircrack-ng</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2024/2024-10-20-personal-pass-generator-ppg-the-ultimate-tool-for-custom-password-lists-4979a3a1385c"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Personal Pass Generator (PPG): The Ultimate Tool for Custom Password Lists</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#master-the-techniques-unveiling-the-power-of-crowbar-and-ppg-to-unlock-remote-desktop-protocols" class="table-of-contents__link toc-highlight">Master the Techniques: Unveiling the Power of Crowbar and PPG to Unlock Remote Desktop Protocols</a></li></ul></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a><ul><li><a href="#brief-overview" class="table-of-contents__link toc-highlight">Brief Overview</a></li><li><a href="#importance-of-security" class="table-of-contents__link toc-highlight">Importance of Security</a></li></ul></li><li><a href="#what-is-crowbar" class="table-of-contents__link toc-highlight">What is Crowbar?</a><ul><li><a href="#tool-overview" class="table-of-contents__link toc-highlight">Tool Overview</a></li></ul></li><li><a href="#setting-up-the-environment" class="table-of-contents__link toc-highlight">Setting Up the Environment</a><ul><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a></li><li><a href="#installation" class="table-of-contents__link toc-highlight">Installation</a></li></ul></li><li><a href="#usage" class="table-of-contents__link toc-highlight">Usage</a></li><li><a href="#important-tips" class="table-of-contents__link toc-highlight">Important tips</a></li><li><a href="#how-can-i-gain-list-of-passwords" class="table-of-contents__link toc-highlight">How can I gain list of passwords?</a><ul><li><a href="#2-creating-a-custom-dictionary-with-tool-ppg--personal-pass-generator" class="table-of-contents__link toc-highlight">2. Creating a Custom Dictionary with Tool (PPG — Personal Pass Generator)</a></li></ul></li><li><a href="#personal-pass-generator--httpsgithubcomanpa1200passwords" class="table-of-contents__link toc-highlight">Personal Pass Generator — https://github.com/anpa1200/Passwords</a></li><li><a href="#how-to-prevent-ourselves-from-this-attack" class="table-of-contents__link toc-highlight">How to Prevent ourselves from this attack?</a><ul><li><a href="#close-unused-rdp-ports-and-services" class="table-of-contents__link toc-highlight">Close Unused RDP Ports and Services</a></li><li><a href="#use-strong-unique-passwords" class="table-of-contents__link toc-highlight">Use Strong, Unique Passwords</a></li><li><a href="#implement-account-lockout-policies" class="table-of-contents__link toc-highlight">Implement Account Lockout Policies</a></li><li><a href="#enable-two-factor-authentication-2fa" class="table-of-contents__link toc-highlight">Enable Two-Factor Authentication (2FA)</a></li><li><a href="#use-rdp-gateways" class="table-of-contents__link toc-highlight">Use RDP Gateways</a></li><li><a href="#keep-systems-updated" class="table-of-contents__link toc-highlight">Keep Systems Updated</a></li><li><a href="#network-level-authentication-nla" class="table-of-contents__link toc-highlight">Network Level Authentication (NLA)</a></li><li><a href="#monitor-and-audit-rdp-access" class="table-of-contents__link toc-highlight">Monitor and Audit RDP Access</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

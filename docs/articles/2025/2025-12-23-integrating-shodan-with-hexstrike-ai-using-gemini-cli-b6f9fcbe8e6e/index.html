@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -35,7 +35,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-practical-guide-to-ai-driven-external-reconnaissance-and-vulnerability-analysis">A Practical Guide to AI-Driven External Reconnaissance and Vulnerability Analysis<a href="#a-practical-guide-to-ai-driven-external-reconnaissance-and-vulnerability-analysis" class="hash-link" aria-label="Direct link to A Practical Guide to AI-Driven External Reconnaissance and Vulnerability Analysis" title="Direct link to A Practical Guide to AI-Driven External Reconnaissance and Vulnerability Analysis" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
 <p>External reconnaissance is one of the most time-consuming phases of penetration testing and security assessments.
-With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan</strong>, this phase can be transformed into a<strong>guided, AI-driven workflow</strong>where:</p>
+With <strong>HexStrike-AI</strong>, <strong>Gemini-CLI</strong>, and <strong>Shodan</strong>, this phase can be transformed into a <strong>guided, AI-driven workflow</strong> where:</p>
 <ul>
 <li class="">
 <p>Shodan provides large-scale passive internet intelligence</p>
@@ -47,9 +47,9 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 <p>Gemini orchestrates analysis and decision-making</p>
 </li>
 </ul>
-<p>This guide explains how to integrate<strong>Shodan</strong>into<strong>HexStrike-AI</strong>via the<strong>Model Context Protocol (MCP)<strong>and use it safely for</strong>authorized targets</strong>, such as security cameras or lab devices exposed to the internet.</p>
+<p>This guide explains how to integrate <strong>Shodan</strong> into <strong>HexStrike-AI</strong> via the <strong>Model Context Protocol (MCP)</strong> and use it safely for <strong>authorized targets</strong>, such as security cameras or lab devices exposed to the internet.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="additional-guides">Additional guides:<a href="#additional-guides" class="hash-link" aria-label="Direct link to Additional guides:" title="Direct link to Additional guides:" translate="no">​</a></h2>
-<p><strong>All about shodan:</strong><a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe">**../2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe.md</a></p>
+<p><strong>All about shodan:</strong> <a class="" href="/medium-blog-navigation/docs/articles/2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe">**../2024/2024-10-24-shodan-guide-how-you-can-find-everything-640f47f41bbe.md</a></p>
 <ul>
 <li class="">
 <p><a class="" href="/medium-blog-navigation/docs/articles/2025/2025-12-21-ai-driven-pentesting-at-home-using-hexstrike-ai-for-full-network-discovery-and-exploitatio-00a9e88b3bde"><strong>AI-Driven Pentesting at Home: Using HexStrike-AI for Full Network Discovery and Exploitation</strong></a></p>
@@ -79,13 +79,13 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 <p>Before starting, you need a valid Shodan API key.</p>
 <ul>
 <li class="">
-<p>Log in to<a href="https://www.shodan.io/" target="_blank" rel="noopener noreferrer" class="">https://www.shodan.io</a></p>
+<p>Log in to <a href="https://www.shodan.io/" target="_blank" rel="noopener noreferrer" class="">https://www.shodan.io</a></p>
 </li>
 <li class="">
-<p>Open your<strong>Account Dashboard</strong></p>
+<p>Open your <strong>Account Dashboard</strong></p>
 </li>
 <li class="">
-<p>Copy your<strong>API Key</strong></p>
+<p>Copy your <strong>API Key</strong></p>
 </li>
 </ul>
 <p>This key grants access to Shodan’s internet-wide dataset. Treat it as sensitive.</p>
@@ -100,31 +100,31 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="edit-the-gemini-cli-configuration">Edit the Gemini-CLI configuration<a href="#edit-the-gemini-cli-configuration" class="hash-link" aria-label="Direct link to Edit the Gemini-CLI configuration" title="Direct link to Edit the Gemini-CLI configuration" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano ~</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/.config/g</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">emini-cli/settings.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano ~/.config/gemini-cli/settings.json</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-configuration">Example configuration<a href="#example-configuration" class="hash-link" aria-label="Direct link to Example configuration" title="Direct link to Example configuration" translate="no">​</a></h2>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;mcpServers&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;hexstrike-ai&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;command&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;python3&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;args&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;/usr/share/hexstrike-ai/hexstrike_mcp.py&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;--server&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;http://localhost:8888&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;env&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;SHODAN_API_KEY&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;PASTE_YOUR_SHODAN_API_KEY_HERE&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;trust&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
-<p>Save and exit (<code>Ctrl+O</code>,<code>Enter</code>,<code>Ctrl+X</code>).</p>
-<p>Once configured, HexStrike automatically inherits the<code>SHODAN_API_KEY</code>.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;mcpServers&quot;: {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;hexstrike-ai&quot;: {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      &quot;command&quot;: &quot;python3&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      &quot;args&quot;: [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &quot;/usr/share/hexstrike-ai/hexstrike_mcp.py&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &quot;--server&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &quot;http://localhost:8888&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      ],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      &quot;env&quot;: {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &quot;SHODAN_API_KEY&quot;: &quot;PASTE_YOUR_SHODAN_API_KEY_HERE&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      },</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      &quot;trust&quot;: true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<p>Save and exit (<code>Ctrl+O</code>, <code>Enter</code>, <code>Ctrl+X</code>).</p>
+<p>Once configured, HexStrike automatically inherits the <code>SHODAN_API_KEY</code>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-3-understanding-the-execution-flow">Step 3: Understanding the Execution Flow<a href="#step-3-understanding-the-execution-flow" class="hash-link" aria-label="Direct link to Step 3: Understanding the Execution Flow" title="Direct link to Step 3: Understanding the Execution Flow" translate="no">​</a></h2>
 <p>When you issue a prompt in Gemini-CLI:</p>
 <ul>
 <li class="">
-<p><strong>Gemini-CLI</strong>receives your natural-language instruction</p>
+<p><strong>Gemini-CLI</strong> receives your natural-language instruction</p>
 </li>
 <li class="">
-<p><strong>Gemini</strong>determines that external intelligence is required</p>
+<p><strong>Gemini</strong> determines that external intelligence is required</p>
 </li>
 <li class="">
-<p><strong>Gemini</strong>calls the HexStrike MCP server</p>
+<p><strong>Gemini</strong> calls the HexStrike MCP server</p>
 </li>
 <li class="">
-<p><strong>HexStrike</strong>queries Shodan using the API key</p>
+<p><strong>HexStrike</strong> queries Shodan using the API key</p>
 </li>
 <li class="">
-<p><strong>HexStrike</strong>returns structured results (ports, banners, CVEs)</p>
+<p><strong>HexStrike</strong> returns structured results (ports, banners, CVEs)</p>
 </li>
 <li class="">
-<p><strong>Gemini</strong>analyzes, correlates, and explains the findings</p>
+<p><strong>Gemini</strong> analyzes, correlates, and explains the findings</p>
 </li>
 </ul>
 <p>No manual Shodan commands are required.</p>
@@ -143,105 +143,105 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="initial-prompt-task-definition">Initial Prompt (Task Definition)<a href="#initial-prompt-task-definition" class="hash-link" aria-label="Direct link to Initial Prompt (Task Definition)" title="Direct link to Initial Prompt (Task Definition)" translate="no">​</a></h2>
 <p>The assessment was initiated using a high-level, goal-oriented instruction:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">@hexstrike-ai:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Perform an authorized security assessment on target IP &lt;target_ip&gt;. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Use </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">tool</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: Shodan to pull all historical exposure data </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> identified service headers.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Perform an Nmap service discovery scan on all common ports.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  If port </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">554</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> is open, attempt to verify RTSP stream accessibility using unauthenticated requests.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  If a web management interface is found, use Nuclei/gidra/john-the-reaper or internal scripts to check for default credentials or brute force it, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> known authentication bypass CVEs.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Compile a full report documenting open ports, hardware/firmware identification, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> proof of access for any findings. (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Note</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: I am the owner of this asset </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> provide full permission for this test.)`</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"> @hexstrike-ai: Perform an authorized security assessment on target IP &lt;target_ip&gt;. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Use tool: Shodan to pull all historical exposure data and identified service headers.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Perform an Nmap service discovery scan on all common ports.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  If port 554 is open, attempt to verify RTSP stream accessibility using unauthenticated requests.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  If a web management interface is found, use Nuclei/gidra/john-the-reaper or internal scripts to check for default credentials or brute force it, and known authentication bypass CVEs.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  Compile a full report documenting open ports, hardware/firmware identification, and proof of access for any findings. (Note: I am the owner of this asset and provide full permission for this test.)`</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-by-step-analysis-of-what-actually-happened">Step-by-Step Analysis of What Actually Happened<a href="#step-by-step-analysis-of-what-actually-happened" class="hash-link" aria-label="Direct link to Step-by-Step Analysis of What Actually Happened" title="Direct link to Step-by-Step Analysis of What Actually Happened" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-scope-and-task-definition">1. Scope and task definition<a href="#1-scope-and-task-definition" class="hash-link" aria-label="Direct link to 1. Scope and task definition" title="Direct link to 1. Scope and task definition" translate="no">​</a></h2>
 <p>The agent was tasked to:</p>
 <ul>
 <li class="">
-<p>Assess IP<code>&amp;lt;target_IP&amp;gt;</code></p>
+<p>Assess IP <code>&amp;lt;target_IP&amp;gt;</code></p>
 </li>
 <li class="">
 <p>Identify exposed services</p>
 </li>
 <li class="">
-<p>Use<strong>Shodan + active scanning</strong></p>
+<p>Use <strong>Shodan + active scanning</strong></p>
 </li>
 <li class="">
 <p>Validate RTSP access</p>
 </li>
 <li class="">
-<p>Assess the<strong>web interface</strong>and<strong>ONVIF (SOAP) service</strong></p>
+<p>Assess the <strong>web interface</strong> and <strong>ONVIF (SOAP) service</strong></p>
 </li>
 <li class="">
 <p>Produce a final security report</p>
 </li>
 </ul>
-<p>This was an<strong>authorized assessment</strong>of a network video device.</p>
+<p>This was an <strong>authorized assessment</strong> of a network video device.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-network--service-discovery">2. Network &amp; service discovery<a href="#2-network--service-discovery" class="hash-link" aria-label="Direct link to 2. Network &amp; service discovery" title="Direct link to 2. Network &amp; service discovery" translate="no">​</a></h2>
 <p>Using Nmap, the following services were correctly identified:</p>
 <p><strong>Open ports</strong></p>
 <ul>
 <li class="">
-<p><strong>80/tcp</strong>— HTTP</p>
+<p><strong>80/tcp</strong> — HTTP</p>
 </li>
 <li class="">
-<p>Web UI:<strong>NETSurveillance WEB</strong></p>
+<p>Web UI: <strong>NETSurveillance WEB</strong></p>
 </li>
 <li class="">
-<p><strong>554/tcp</strong>— RTSP</p>
+<p><strong>554/tcp</strong> — RTSP</p>
 </li>
 <li class="">
-<p>Service:<strong>H264DVR rtspd 1.0</strong></p>
+<p>Service: <strong>H264DVR rtspd 1.0</strong></p>
 </li>
 <li class="">
-<p><strong>8899/tcp</strong>— SOAP</p>
+<p><strong>8899/tcp</strong> — SOAP</p>
 </li>
 <li class="">
-<p>Service:<strong>gSOAP 2.7 (ONVIF)</strong></p>
+<p>Service: <strong>gSOAP 2.7 (ONVIF)</strong></p>
 </li>
 </ul>
-<p>This clearly identified the device as an<strong>internet-exposed DVR / IP camera system</strong>.</p>
+<p>This clearly identified the device as an <strong>internet-exposed DVR / IP camera system</strong>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-rtsp-initial-assessment">3. RTSP initial assessment<a href="#3-rtsp-initial-assessment" class="hash-link" aria-label="Direct link to 3. RTSP initial assessment" title="Direct link to 3. RTSP initial assessment" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>RTSP service returned<strong>401 Unauthorized</strong></p>
+<p>RTSP service returned <strong>401 Unauthorized</strong></p>
 </li>
 <li class="">
 <p>This confirmed that:</p>
 </li>
 <li class="">
-<p>RTSP<strong>is active</strong></p>
+<p>RTSP <strong>is active</strong></p>
 </li>
 <li class="">
-<p>Authentication<strong>is required</strong></p>
+<p>Authentication <strong>is required</strong></p>
 </li>
 <li class="">
 <p>No unauthenticated stream was exposed</p>
 </li>
 </ul>
-<p>At this stage,<strong>no credentials were yet obtained</strong>.</p>
+<p>At this stage, <strong>no credentials were yet obtained</strong>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-onvif-service-analysis-critical-pivot">4. ONVIF service analysis (critical pivot)<a href="#4-onvif-service-analysis-critical-pivot" class="hash-link" aria-label="Direct link to 4. ONVIF service analysis (critical pivot)" title="Direct link to 4. ONVIF service analysis (critical pivot)" translate="no">​</a></h2>
 <p>The key turning point happened here.</p>
-<p>The agent interacted with the<strong>ONVIF service on port 8899</strong>and tested<strong>default credentials</strong>, which is a very common issue for DVRs and IP cameras.</p>
+<p>The agent interacted with the <strong>ONVIF service on port 8899</strong> and tested <strong>default credentials</strong>, which is a very common issue for DVRs and IP cameras.</p>
 <p><strong>Successful authentication to ONVIF using default credentials:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">admin :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">123456</span><br></div></code></pre></div></div>
-<p>This granted<strong>administrative access</strong>to the ONVIF API.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">admin : 123456</span><br></div></code></pre></div></div>
+<p>This granted <strong>administrative access</strong> to the ONVIF API.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-information-disclosure-via-onvif-core-vulnerability">5. Information disclosure via ONVIF (core vulnerability)<a href="#5-information-disclosure-via-onvif-core-vulnerability" class="hash-link" aria-label="Direct link to 5. Information disclosure via ONVIF (core vulnerability)" title="Direct link to 5. Information disclosure via ONVIF (core vulnerability)" translate="no">​</a></h2>
 <p>Once authenticated, the agent executed ONVIF methods, including:</p>
 <ul>
 <li class="">
-<p><code>GetSystemDateAndTime</code>(access validation)</p>
+<p><code>GetSystemDateAndTime</code> (access validation)</p>
 </li>
 <li class="">
-<p><code>**GetStreamUri**</code>(critical)</p>
+<p><code>**GetStreamUri**</code> (critical)</p>
 </li>
 </ul>
-<p>This resulted in the disclosure of an<strong>internal RTSP URI</strong>, embedded with credentials:</p>
+<p>This resulted in the disclosure of an <strong>internal RTSP URI</strong>, embedded with credentials:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">rtsp://192.168.0.122:554/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-this-means">What this means<a href="#what-this-means" class="hash-link" aria-label="Direct link to What this means" title="Direct link to What this means" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>The device<strong>leaked a valid RTSP username and password</strong></p>
+<p>The device <strong>leaked a valid RTSP username and password</strong></p>
 </li>
 <li class="">
-<p>Credentials were<strong>different from the default ONVIF password</strong></p>
+<p>Credentials were <strong>different from the default ONVIF password</strong></p>
 </li>
 <li class="">
-<p>The password<code>tlJwpbo6</code>is a<strong>real, working credential</strong></p>
+<p>The password <code>tlJwpbo6</code> is a <strong>real, working credential</strong></p>
 </li>
 <li class="">
-<p>This is a<strong>high-impact information disclosure</strong></p>
+<p>This is a <strong>high-impact information disclosure</strong></p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-authentication-bypass-achieved">6. Authentication bypass achieved<a href="#6-authentication-bypass-achieved" class="hash-link" aria-label="Direct link to 6. Authentication bypass achieved" title="Direct link to 6. Authentication bypass achieved" translate="no">​</a></h2>
@@ -251,7 +251,7 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 <p>RTSP was previously protected</p>
 </li>
 <li class="">
-<p>ONVIF access<strong>bypassed that protection</strong></p>
+<p>ONVIF access <strong>bypassed that protection</strong></p>
 </li>
 <li class="">
 <p>Credentials were extracted indirectly</p>
@@ -261,49 +261,49 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 </li>
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Username: admin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Password: tlJwpbo6</span><br></div></code></pre></div></div>
-<p>This is a<strong>classic chained vulnerability</strong>:</p>
+<p>This is a <strong>classic chained vulnerability</strong>:</p>
 <p>&gt; Default credentials → privileged API access → credential disclosure → service compromise</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-device-fingerprinting">7. Device fingerprinting<a href="#7-device-fingerprinting" class="hash-link" aria-label="Direct link to 7. Device fingerprinting" title="Direct link to 7. Device fingerprinting" translate="no">​</a></h2>
 <p>Using ONVIF metadata, the following device details were obtained:</p>
 <ul>
 <li class="">
-<p>**Manufacturer:**H264</p>
+<p><strong>Manufacturer:</strong> H264</p>
 </li>
 <li class="">
-<p>**Model:**XM530_80X30T_8M</p>
+<p><strong>Model:</strong> XM530_80X30T_8M</p>
 </li>
 <li class="">
 <p><strong>Firmware:</strong>
 <code>V5.00.R02.000309ED.10010.348700..ONVIF 2.41</code></p>
 </li>
 <li class="">
-<p><strong>Serial Number:</strong><code>&amp;lt;masked_by_Me&amp;gt;</code></p>
+<p><strong>Serial Number:</strong> <code>&amp;lt;masked_by_Me&amp;gt;</code></p>
 </li>
 <li class="">
-<p><strong>Hardware ID:</strong><code>00001</code></p>
+<p><strong>Hardware ID:</strong> <code>00001</code></p>
 </li>
 </ul>
-<p>This confirms a<strong>known vulnerable DVR platform (XM family)</strong>.</p>
+<p>This confirms a <strong>known vulnerable DVR platform (XM family)</strong>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-result-correct-outcome">Final Result (Correct Outcome)<a href="#final-result-correct-outcome" class="hash-link" aria-label="Direct link to Final Result (Correct Outcome)" title="Direct link to Final Result (Correct Outcome)" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-was-successfully-achieved">What was successfully achieved<a href="#what-was-successfully-achieved" class="hash-link" aria-label="Direct link to What was successfully achieved" title="Direct link to What was successfully achieved" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>Identified an<strong>internet-exposed video surveillance device</strong></p>
+<p>Identified an <strong>internet-exposed video surveillance device</strong></p>
 </li>
 <li class="">
 <p>Enumerated all exposed services</p>
 </li>
 <li class="">
-<p>Discovered<strong>default credentials on ONVIF</strong></p>
+<p>Discovered <strong>default credentials on ONVIF</strong></p>
 </li>
 <li class="">
-<p>Gained<strong>administrative ONVIF access</strong></p>
+<p>Gained <strong>administrative ONVIF access</strong></p>
 </li>
 <li class="">
-<p>Extracted<strong>working RTSP credentials</strong></p>
+<p>Extracted <strong>working RTSP credentials</strong></p>
 </li>
 <li class="">
-<p>Demonstrated<strong>authentication bypass + information disclosure</strong></p>
+<p>Demonstrated <strong>authentication bypass + information disclosure</strong></p>
 </li>
 <li class="">
 <p>Produced a structured vulnerability report</p>
@@ -314,7 +314,7 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 <ul>
 <li class="">ONVIF service uses:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">admin :</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">123456</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">admin : 123456</span><br></div></code></pre></div></div>
 <ul>
 <li class="">Grants full administrative access</li>
 </ul>
@@ -348,10 +348,10 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 <p>Retrieval of RTSP URI with embedded credentials</p>
 </li>
 </ul>
-<p>No speculation —<strong>this was a real, confirmed attack chain</strong>.</p>
+<p>No speculation — <strong>this was a real, confirmed attack chain</strong>.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*Oi1g3oXGgNKHuSgX9cWJCA.png" alt="Article image" width="1697" height="736" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-flow-matters-important-insight">Why this flow matters (important insight)<a href="#why-this-flow-matters-important-insight" class="hash-link" aria-label="Direct link to Why this flow matters (important insight)" title="Direct link to Why this flow matters (important insight)" translate="no">​</a></h2>
-<p>This was<strong>not</strong>:</p>
+<p>This was <strong>not</strong>:</p>
 <ul>
 <li class="">
 <p>Just port scanning</p>
@@ -365,11 +365,11 @@ With<strong>HexStrike-AI</strong>,<strong>Gemini-CLI</strong>, and<strong>Shodan
 </ul>
 <p>This was:</p>
 <p>&gt; An AI-driven chained exploitation flow , where one weak control (default credentials) led to credential compromise of another service .</p>
-<p>This is exactly how<strong>real-world camera and DVR breaches happen</strong>.</p>
+<p>This is exactly how <strong>real-world camera and DVR breaches happen</strong>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-takeaway">Final takeaway<a href="#final-takeaway" class="hash-link" aria-label="Direct link to Final takeaway" title="Direct link to Final takeaway" translate="no">​</a></h2>
-<p>Your correction is<strong>absolutely valid</strong>.</p>
+<p>Your correction is <strong>absolutely valid</strong>.</p>
 <p>The earlier summary was incomplete because it stopped at RTSP authentication checks.
-The<strong>real success</strong>happened later via<strong>ONVIF abuse</strong>, which:</p>
+The <strong>real success</strong> happened later via <strong>ONVIF abuse</strong>, which:</p>
 <ul>
 <li class="">
 <p>Bypassed RTSP authentication</p>
@@ -381,7 +381,7 @@ The<strong>real success</strong>happened later via<strong>ONVIF abuse</strong>, 
 <p>Fully compromised the device</p>
 </li>
 </ul>
-<p>This is a<strong>textbook example</strong>of why:</p>
+<p>This is a <strong>textbook example</strong> of why:</p>
 <ul>
 <li class="">
 <p>ONVIF must never be exposed</p>

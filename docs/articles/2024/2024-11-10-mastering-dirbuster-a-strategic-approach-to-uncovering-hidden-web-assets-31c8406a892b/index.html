@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -51,15 +51,15 @@
 <p><strong>HTTP Request Simulation</strong>:</p>
 <ul>
 <li class="">
-<p>DirBuster sends HTTP or HTTPS requests to the web server, appending each entry from the wordlist to the base URL of the target. For example, if testing<code>www.example.com</code>with a wordlist entry of<code>admin</code>, DirBuster would check<code>[www.example.com/admin](http://www.example.com/admin)</code><a href="http://www.example.com/admin" target="_blank" rel="noopener noreferrer" class="">.</a></p>
+<p>DirBuster sends HTTP or HTTPS requests to the web server, appending each entry from the wordlist to the base URL of the target. For example, if testing <code>www.example.com</code> with a wordlist entry of <code>admin</code>, DirBuster would check <code>[www.example.com/admin](http://www.example.com/admin)</code><a href="http://www.example.com/admin" target="_blank" rel="noopener noreferrer" class="">.</a></p>
 </li>
 <li class="">
-<p>It then observes the server’s response to each request. A<code>200 OK</code>response indicates that the resource exists and is accessible, while responses like<code>404 Not Found</code>suggest non-existence. Other responses, such as<code>301 Moved Permanently</code>or<code>403 Forbidden</code>, provide additional clues about server configuration and security measures.</p>
+<p>It then observes the server’s response to each request. A <code>200 OK</code> response indicates that the resource exists and is accessible, while responses like <code>404 Not Found</code> suggest non-existence. Other responses, such as <code>301 Moved Permanently</code> or <code>403 Forbidden</code>, provide additional clues about server configuration and security measures.</p>
 </li>
 </ul>
 <p><strong>Recursive Testing</strong>:</p>
 <ul>
-<li class="">DirBuster can perform recursive testing on directories it finds. This means if it discovers a directory like<code>www.example.com/admin</code>, it can then test additional wordlist entries within that directory (e.g.,<code>[www.example.com/admin/settings](http://www.example.com/admin/settings%29)</code><a href="http://www.example.com/admin/settings%29" target="_blank" rel="noopener noreferrer" class="">).</a></li>
+<li class="">DirBuster can perform recursive testing on directories it finds. This means if it discovers a directory like <code>www.example.com/admin</code>, it can then test additional wordlist entries within that directory (e.g., <code>[www.example.com/admin/settings](http://www.example.com/admin/settings%29)</code><a href="http://www.example.com/admin/settings%29" target="_blank" rel="noopener noreferrer" class="">).</a></li>
 </ul>
 <p><strong>Multi-threading</strong>:</p>
 <ul>
@@ -93,25 +93,25 @@
 <p>Update your package list:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">update</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update</span><br></div></code></pre></div></div>
 <ul>
 <li class="">Install Java:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">default</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-jre</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install default-jre</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-2-install-dirbuster">Step 2: Install DirBuster<a href="#step-2-install-dirbuster" class="hash-link" aria-label="Direct link to Step 2: Install DirBuster" title="Direct link to Step 2: Install DirBuster" translate="no">​</a></h3>
-<p>As of my last training cut-off, DirBuster isn’t typically available directly via<code>apt-get</code>because it&#x27;s not included in the standard repositories due to it being a more niche tool for penetration testing. However, if it were available, the process would ideally be:</p>
+<p>As of my last training cut-off, DirBuster isn’t typically available directly via <code>apt-get</code> because it&#x27;s not included in the standard repositories due to it being a more niche tool for penetration testing. However, if it were available, the process would ideally be:</p>
 <ul>
-<li class="">Install DirBuster using<code>apt-get</code>(note this is hypothetical and usually you would need to download it from the OWASP website as mentioned earlier):</li>
+<li class="">Install DirBuster using <code>apt-get</code> (note this is hypothetical and usually you would need to download it from the OWASP website as mentioned earlier):</li>
 </ul>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt install dirbuster</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-3-run-dirbuster">Step 3: Run DirBuster<a href="#step-3-run-dirbuster" class="hash-link" aria-label="Direct link to Step 3: Run DirBuster" title="Direct link to Step 3: Run DirBuster" translate="no">​</a></h3>
-<p>If DirBuster were installable through<code>apt-get</code>, you would run it from the terminal with:</p>
+<p>If DirBuster were installable through <code>apt-get</code>, you would run it from the terminal with:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">dirbuster</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternative-download-and-setup">Alternative Download and Setup<a href="#alternative-download-and-setup" class="hash-link" aria-label="Direct link to Alternative Download and Setup" title="Direct link to Alternative Download and Setup" translate="no">​</a></h3>
-<p>Since DirBuster is not available via<code>apt-get</code>, here’s how you should actually proceed after installing Java:</p>
+<p>Since DirBuster is not available via <code>apt-get</code>, here’s how you should actually proceed after installing Java:</p>
 <ul>
 <li class="">
-<p>Visit the OWASP official DirBuster Project page or go directly to its<a href="https://github.com/digininja/DiRbuster" target="_blank" rel="noopener noreferrer" class="">GitHub repository</a>to download the latest version.</p>
+<p>Visit the OWASP official DirBuster Project page or go directly to its <a href="https://github.com/digininja/DiRbuster" target="_blank" rel="noopener noreferrer" class="">GitHub repository</a> to download the latest version.</p>
 </li>
 <li class="">
 <p>Unzip the downloaded file to your desired location.</p>
@@ -120,9 +120,9 @@
 <p>Run DirBuster with the following command from the directory where you unzipped it:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">java -jar </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DirBuster</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-x.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">x</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">jar</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">java -jar DirBuster-x.x.jar</span><br></div></code></pre></div></div>
 <ul>
-<li class="">Replace<code>x.x</code>with the actual version number.</li>
+<li class="">Replace <code>x.x</code> with the actual version number.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-by-step-process-of-how-dirbuster-works">Step-by-Step Process of How DirBuster Works:<a href="#step-by-step-process-of-how-dirbuster-works" class="hash-link" aria-label="Direct link to Step-by-Step Process of How DirBuster Works:" title="Direct link to Step-by-Step Process of How DirBuster Works:" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setting-up-the-target-">Setting Up the Target :<a href="#setting-up-the-target-" class="hash-link" aria-label="Direct link to Setting Up the Target :" title="Direct link to Setting Up the Target :" translate="no">​</a></h3>
@@ -137,7 +137,7 @@
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*FLVjc_K3AOEQSMzd50ck3Q.png" alt="Article image" width="781" height="584" loading="lazy" decoding="async">
 <ul>
-<li class="">You can use lists “Out of the box” or download lists from web, for example<a href="https://github.com/daviddias/node-dirbuster/blob/master/lists/directory-list-2.3-medium.txt" target="_blank" rel="noopener noreferrer" class="">here</a>or from SecList<a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener noreferrer" class="">here</a></li>
+<li class="">You can use lists “Out of the box” or download lists from web, for example <a href="https://github.com/daviddias/node-dirbuster/blob/master/lists/directory-list-2.3-medium.txt" target="_blank" rel="noopener noreferrer" class="">here</a> or from SecList <a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener noreferrer" class="">here</a></li>
 </ul>
 <p><strong>Configuring Options</strong>:</p>
 <ul>

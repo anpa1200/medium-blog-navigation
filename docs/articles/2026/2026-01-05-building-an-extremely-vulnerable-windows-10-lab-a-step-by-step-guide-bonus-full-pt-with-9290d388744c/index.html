@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -42,7 +42,7 @@
 <p><a class="" href="/medium-blog-navigation/docs/articles/2026/2026-01-06-building-an-extremely-vulnerable-ubuntu-24-04-server-lab-bonus-full-pt-with-hexstrike-90034032775b"><strong>Building an Extremely Vulnerable Ubuntu 24.04 Server Lab (Bonus: Full PT with Hexstrike)</strong></a></p>
 </li>
 </ul>
-<p>This guide will walk you through creating a vulnerable Windows 10 virtual machine (VM) lab for ethical penetration testing, security research, or educational purposes.**Important Safety Note:**This setup intentionally introduces severe security flaws, making the system highly exploitable. Only run this in an isolated virtual environment (e.g., a VM on your local machine). Do not deploy this on production systems, public networks, or without explicit permission. Always comply with laws and ethical guidelines — use for authorized testing only (e.g., CTFs, bug bounties, or personal labs). The vulnerabilities introduced here are based on common real-world exploits but are amplified for demonstration.</p>
+<p>This guide will walk you through creating a vulnerable Windows 10 virtual machine (VM) lab for ethical penetration testing, security research, or educational purposes. <strong>Important Safety Note:</strong> This setup intentionally introduces severe security flaws, making the system highly exploitable. Only run this in an isolated virtual environment (e.g., a VM on your local machine). Do not deploy this on production systems, public networks, or without explicit permission. Always comply with laws and ethical guidelines — use for authorized testing only (e.g., CTFs, bug bounties, or personal labs). The vulnerabilities introduced here are based on common real-world exploits but are amplified for demonstration.</p>
 <p>We’ll use VMWare as the hypervisor (free and cross-platform), download a legitimate Windows 10 ISO, install Windows, and then apply an enhanced PowerShell script to introduce vulnerabilities. The script is inspired by the provided vulnerable lab creator but made “much more vulnerable” as per the enhanced version.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h2>
 <ul>
@@ -57,11 +57,11 @@
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="virtualbox-recommended-for-beginners--free-and-open-source">VirtualBox (Recommended for Beginners — Free and Open-Source)<a href="#virtualbox-recommended-for-beginners--free-and-open-source" class="hash-link" aria-label="Direct link to VirtualBox (Recommended for Beginners — Free and Open-Source)" title="Direct link to VirtualBox (Recommended for Beginners — Free and Open-Source)" translate="no">​</a></h2>
-<p>Download and install<strong>VirtualBox</strong>(latest version from<a href="https://www.virtualbox.org/?referrer=grok.com" target="_blank" rel="noopener noreferrer" class="">https://www.virtualbox.org/</a>).</p>
+<p>Download and install <strong>VirtualBox</strong> (latest version from <a href="https://www.virtualbox.org/?referrer=grok.com" target="_blank" rel="noopener noreferrer" class="">https://www.virtualbox.org/</a>).</p>
 <ul>
 <li class=""><strong>On Ubuntu/Kali Linux</strong>: It’s often easiest via the package manager:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update sudo apt install virtualbox virtualbox-ext-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pack</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt update sudo apt install virtualbox virtualbox-ext-pack</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
 <p>(The ext-pack adds USB support and other features; accept the license when prompted.)</p>
@@ -70,14 +70,14 @@
 <p><strong>On Windows/macOS</strong>: Download the installer from the official site and run it.</p>
 </li>
 <li class="">
-<p>**Why VirtualBox?**Completely free, simple interface, excellent for pentesting labs, and widely used in the Kali community. It handles snapshots, shared folders, and networking well for most users.</p>
+<p><strong>Why VirtualBox?</strong> Completely free, simple interface, excellent for pentesting labs, and widely used in the Kali community. It handles snapshots, shared folders, and networking well for most users.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="vmware-alternative-vmware-workstation-player--free-for-personal-use-better-performance">VMware Alternative (VMware Workstation Player — Free for Personal Use, Better Performance)<a href="#vmware-alternative-vmware-workstation-player--free-for-personal-use-better-performance" class="hash-link" aria-label="Direct link to VMware Alternative (VMware Workstation Player — Free for Personal Use, Better Performance)" title="Direct link to VMware Alternative (VMware Workstation Player — Free for Personal Use, Better Performance)" translate="no">​</a></h2>
-<p>As of 2025–2026,<strong>VMware Workstation Player</strong>(or the full Workstation Pro) is free for personal/non-commercial use.</p>
+<p>As of 2025–2026, <strong>VMware Workstation Player</strong> (or the full Workstation Pro) is free for personal/non-commercial use.</p>
 <ul>
 <li class="">
-<p>Download the latest version from the official VMware site:<a href="https://www.vmware.com/products/workstation-player.html?referrer=grok.com" target="_blank" rel="noopener noreferrer" class="">https://www.vmware.com/products/workstation-player.html</a>(create a free Broadcom/VMware account if prompted).</p>
+<p>Download the latest version from the official VMware site: <a href="https://www.vmware.com/products/workstation-player.html?referrer=grok.com" target="_blank" rel="noopener noreferrer" class="">https://www.vmware.com/products/workstation-player.html</a> (create a free Broadcom/VMware account if prompted).</p>
 </li>
 <li class="">
 <p><strong>On Windows/macOS</strong>: Run the downloaded installer.</p>
@@ -98,10 +98,10 @@
 <p>Run: sudo ./VMware-*.bundle</p>
 </li>
 <li class="">
-<p>If kernel module issues occur (common on rolling distros like Kali), patch via the community script as per Kali docs:<a href="https://www.kali.org/docs/virtualization/install-vmware-host/?referrer=grok.com" target="_blank" rel="noopener noreferrer" class="">https://www.kali.org/docs/virtualization/install-vmware-host/</a></p>
+<p>If kernel module issues occur (common on rolling distros like Kali), patch via the community script as per Kali docs: <a href="https://www.kali.org/docs/virtualization/install-vmware-host/?referrer=grok.com" target="_blank" rel="noopener noreferrer" class="">https://www.kali.org/docs/virtualization/install-vmware-host/</a></p>
 </li>
 <li class="">
-<p>**Why VMware?**Often provides better performance, smoother graphics, and more stable networking in complex labs (e.g., multiple VMs communicating). Many pre-built vulnerable VMs (like from VulnHub) are in VMware format.</p>
+<p><strong>Why VMware?</strong> Often provides better performance, smoother graphics, and more stable networking in complex labs (e.g., multiple VMs communicating). Many pre-built vulnerable VMs (like from VulnHub) are in VMware format.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-1-download-the-windows-10-iso">Step 1: Download the Windows 10 ISO<a href="#step-1-download-the-windows-10-iso" class="hash-link" aria-label="Direct link to Step 1: Download the Windows 10 ISO" title="Direct link to Step 1: Download the Windows 10 ISO" translate="no">​</a></h2>
@@ -109,7 +109,7 @@
 <p>Microsoft provides official Windows 10 ISOs for free via their software download page. Windows 10 reached end-of-support in October 2025, but ISOs are still available for legacy or testing purposes as of January 2026.</p>
 <ul>
 <li class="">
-<p>Go to the official Microsoft download page:<a href="https://www.microsoft.com/software-download/windows10?referrer=grok.com" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/software-download/windows10</a>.</p>
+<p>Go to the official Microsoft download page: <a href="https://www.microsoft.com/software-download/windows10?referrer=grok.com" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/software-download/windows10</a>.</p>
 </li>
 <li class="">
 <p>Under “Create Windows 10 installation media,” select “Download tool now” to get the Media Creation Tool (a small executable).</p>
@@ -373,10 +373,10 @@
 <img src="https://cdn-images-1.medium.com/max/800/1*9_KCBqcAeUzhLb0j_br18Q.png" alt="Article image" width="1904" height="860" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reboot-the-vm">Reboot the VM.<a href="#reboot-the-vm" class="hash-link" aria-label="Direct link to Reboot the VM." title="Direct link to Reboot the VM." translate="no">​</a></h3>
 <p>Post restart script:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Start</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> services</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Start</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Service sshd </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ErrorAction SilentlyContinue</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Start services</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Start-Service sshd -ErrorAction SilentlyContinue</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Verify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">netstat -ano | findstr &quot;:21 :22 :80 :445 :3389&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Get-SmbServerConfiguration | Select EnableSMB1Protocol</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Write-Host &quot;Lab ready: EternalBlue + vulnerable FTP + SSH + RDP + open shares!&quot; -ForegroundColor Cyan</span><br></div></code></pre></div></div>
-<p>Windows 10 consumer editions (Home/Pro) do<strong>not</strong>support full scripted FTP site creation without the IIS Management Console and manual confirmation. The features install, but the PowerShell module (WebAdministration) and appcmd.exe are either missing or restricted.</p>
+<p>Windows 10 consumer editions (Home/Pro) do <strong>not</strong> support full scripted FTP site creation without the IIS Management Console and manual confirmation. The features install, but the PowerShell module (WebAdministration) and appcmd.exe are either missing or restricted.</p>
 <p><strong>1-minute post-reboot step</strong>:</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*Tj1swShejarsHJM0ztT0Bg.png" alt="Article image" width="1291" height="551" loading="lazy" decoding="async">
 <ul>
@@ -420,20 +420,20 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-testing-the-lab">Quick Testing the Lab<a href="#quick-testing-the-lab" class="hash-link" aria-label="Direct link to Quick Testing the Lab" title="Direct link to Quick Testing the Lab" translate="no">​</a></h2>
 <img src="https://cdn-images-1.medium.com/max/800/1*7pZZHH6usq4egw0fM_DDJw.png" alt="Article image" width="1105" height="556" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="explanation-of-introduced-vulnerabilities-updated-for-v90-script">Explanation of Introduced Vulnerabilities (Updated for v9.0 Script)<a href="#explanation-of-introduced-vulnerabilities-updated-for-v90-script" class="hash-link" aria-label="Direct link to Explanation of Introduced Vulnerabilities (Updated for v9.0 Script)" title="Direct link to Explanation of Introduced Vulnerabilities (Updated for v9.0 Script)" translate="no">​</a></h2>
-<p>The final script creates a highly exploitable Windows 10 environment optimized for educational penetration testing. It includes<strong>vulnerable FTP</strong>(manual setup),<strong>SSH with weak credentials</strong>,<strong>RDP</strong>, open shares, and classic privilege escalation paths. Below is a detailed breakdown of each major vulnerability, including real-world exploitation methods (for authorized testing only).</p>
+<p>The final script creates a highly exploitable Windows 10 environment optimized for educational penetration testing. It includes <strong>vulnerable FTP</strong> (manual setup), <strong>SSH with weak credentials</strong>, <strong>RDP</strong>, open shares, and classic privilege escalation paths. Below is a detailed breakdown of each major vulnerability, including real-world exploitation methods (for authorized testing only).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-disabled-defenses">1. Disabled Defenses<a href="#1-disabled-defenses" class="hash-link" aria-label="Direct link to 1. Disabled Defenses" title="Direct link to 1. Disabled Defenses" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Windows Defender &amp; Security Features Disabled</strong>: Real-time monitoring, behavior scanning, etc., turned off.<strong>Exploit</strong>: Malware executes undetected. Example: Drop and run ransomware or trojans without alerts.</p>
+<p><strong>Windows Defender &amp; Security Features Disabled</strong>: Real-time monitoring, behavior scanning, etc., turned off. <strong>Exploit</strong>: Malware executes undetected. Example: Drop and run ransomware or trojans without alerts.</p>
 </li>
 <li class="">
-<p><strong>Firewall Disabled</strong>: All profiles (Domain, Public, Private) off.<strong>Exploit</strong>: Allows unrestricted inbound traffic — enables direct port scans and remote exploits.</p>
+<p><strong>Firewall Disabled</strong>: All profiles (Domain, Public, Private) off. <strong>Exploit</strong>: Allows unrestricted inbound traffic — enables direct port scans and remote exploits.</p>
 </li>
 <li class="">
-<p><strong>UAC &amp; Consent Prompts Disabled</strong>: No elevation prompts.<strong>Exploit</strong>: Low-privilege users can perform admin actions silently.</p>
+<p><strong>UAC &amp; Consent Prompts Disabled</strong>: No elevation prompts. <strong>Exploit</strong>: Low-privilege users can perform admin actions silently.</p>
 </li>
 <li class="">
-<p><strong>VBS, PPL, DEP/NX, Hyper-V Disabled</strong>: Core kernel protections removed.<strong>Exploit</strong>: Facilitates buffer overflows, ROP chains, and kernel exploits (e.g., similar to CVE-2023–29360).</p>
+<p><strong>VBS, PPL, DEP/NX, Hyper-V Disabled</strong>: Core kernel protections removed. <strong>Exploit</strong>: Facilitates buffer overflows, ROP chains, and kernel exploits (e.g., similar to CVE-2023–29360).</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-open-and-vulnerable-services">2. Open and Vulnerable Services<a href="#2-open-and-vulnerable-services" class="hash-link" aria-label="Direct link to 2. Open and Vulnerable Services" title="Direct link to 2. Open and Vulnerable Services" translate="no">​</a></h3>
@@ -442,75 +442,71 @@
 <p><strong>SMBv1 Enabled</strong></p>
 </li>
 <li class="">
-<p><strong>FTP (IIS) Enabled (Manual Setup Required)</strong>: After reboot and GUI configuration, anonymous + basic authentication with full read/write access.<strong>Exploit</strong>: Anonymous login to steal leaked_passwords.txt, upload malicious files, or brute-force weak users (ftp_user:123456). Potential directory traversal in misconfigured IIS.</p>
+<p><strong>FTP (IIS) Enabled (Manual Setup Required)</strong>: After reboot and GUI configuration, anonymous + basic authentication with full read/write access. <strong>Exploit</strong>: Anonymous login to steal leaked_passwords.txt, upload malicious files, or brute-force weak users (ftp_user:123456). Potential directory traversal in misconfigured IIS.</p>
 </li>
 <li class="">
-<p><strong>OpenSSH Server Enabled</strong>: Running on port 22 with weak/default credentials.<strong>Exploit</strong>: Brute-force attacks using Hydra/Medusa/HexStrike on users like guest_user (password123) or ftp_user (123456) to gain shell access.</p>
+<p><strong>OpenSSH Server Enabled</strong>: Running on port 22 with weak/default credentials. <strong>Exploit</strong>: Brute-force attacks using Hydra/Medusa/HexStrike on users like guest_user (password123) or ftp_user (123456) to gain shell access.</p>
 </li>
 <li class="">
-<p><strong>RDP Enabled</strong>: Remote Desktop on port 3389.<strong>Exploit</strong>: BlueKeep (CVE-2019–0708) RCE or credential stuffing/brute-force with weak accounts.</p>
+<p><strong>RDP Enabled</strong>: Remote Desktop on port 3389. <strong>Exploit</strong>: BlueKeep (CVE-2019–0708) RCE or credential stuffing/brute-force with weak accounts.</p>
 </li>
 <li class="">
-<p><strong>HTTP (IIS 10.0) Enabled</strong>: Default web server on port 80.<strong>Exploit</strong>: Directory listing, misconfiguration scans, or older IIS vulnerabilities (e.g., CVE-2021–31166 WebDAV RCE).</p>
+<p><strong>HTTP (IIS 10.0) Enabled</strong>: Default web server on port 80. <strong>Exploit</strong>: Directory listing, misconfiguration scans, or older IIS vulnerabilities (e.g., CVE-2021–31166 WebDAV RCE).</p>
 </li>
 <li class="">
-<p><strong>Open Legacy Ports (NetBIOS, etc.)</strong>: Ports 137–139/445 exposed.<strong>Exploit</strong>: Enhanced null session enumeration and legacy protocol attacks.</p>
+<p><strong>Open Legacy Ports (NetBIOS, etc.)</strong>: Ports 137–139/445 exposed. <strong>Exploit</strong>: Enhanced null session enumeration and legacy protocol attacks.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-weak-identities-and-password-policies">3. Weak Identities and Password Policies<a href="#3-weak-identities-and-password-policies" class="hash-link" aria-label="Direct link to 3. Weak Identities and Password Policies" title="Direct link to 3. Weak Identities and Password Policies" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Weak Users Created</strong>: Accounts like guest_user (password123), ftp_user (123456), web_admin (password123), and high-value it_admin with never-expiring passwords.<strong>Exploit</strong>: Dictionary/brute-force attacks (Hydra, HexStrike) or pass-the-hash with Mimikatz.</p>
+<p><strong>Weak Users Created</strong>: Accounts like guest_user (password123), ftp_user (123456), web_admin (password123), and high-value it_admin with never-expiring passwords. <strong>Exploit</strong>: Dictionary/brute-force attacks (Hydra, HexStrike) or pass-the-hash with Mimikatz.</p>
 </li>
 <li class="">
-<p><strong>Password Policy Weakened</strong>: No complexity requirements, minimum length 0.<strong>Exploit</strong>: Extremely fast brute-forcing across all services (RDP, SSH, FTP).</p>
+<p><strong>Password Policy Weakened</strong>: No complexity requirements, minimum length 0. <strong>Exploit</strong>: Extremely fast brute-forcing across all services (RDP, SSH, FTP).</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-privilege-escalation-paths">4. Privilege Escalation Paths<a href="#4-privilege-escalation-paths" class="hash-link" aria-label="Direct link to 4. Privilege Escalation Paths" title="Direct link to 4. Privilege Escalation Paths" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>AlwaysInstallElevated</strong>: MSI packages run as SYSTEM.<strong>Exploit</strong>: Craft malicious .msi to escalate from standard user to SYSTEM.</p>
+<p><strong>AlwaysInstallElevated</strong>: MSI packages run as SYSTEM. <strong>Exploit</strong>: Craft malicious .msi to escalate from standard user to SYSTEM.</p>
 </li>
 <li class="">
-<p><strong>Unquoted Service Path</strong>: Vulnerable service binary path.<strong>Exploit</strong>: Place malicious executable in intermediate directory (e.g., C:\Program.exe) to hijack service startup.</p>
+<p><strong>Unquoted Service Path</strong>: Vulnerable service binary path. <strong>Exploit</strong>: Place malicious executable in intermediate directory (e.g., C:\Program.exe) to hijack service startup.</p>
 </li>
 <li class="">
-<p><strong>DLL Hijacking Placeholder</strong>: Fake vuln.dll in System32.<strong>Exploit</strong>: Applications searching for missing DLLs load and execute malicious code.</p>
+<p><strong>DLL Hijacking Placeholder</strong>: Fake vuln.dll in System32. <strong>Exploit</strong>: Applications searching for missing DLLs load and execute malicious code.</p>
 </li>
 <li class="">
-<p><strong>AutoRun Registry Keys</strong>: Persistence entry added.<strong>Exploit</strong>: Malware survives reboots and executes on login.</p>
+<p><strong>AutoRun Registry Keys</strong>: Persistence entry added. <strong>Exploit</strong>: Malware survives reboots and executes on login.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-dummy-sensitive-files-and-open-shares">5. Dummy Sensitive Files and Open Shares<a href="#5-dummy-sensitive-files-and-open-shares" class="hash-link" aria-label="Direct link to 5. Dummy Sensitive Files and Open Shares" title="Direct link to 5. Dummy Sensitive Files and Open Shares" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Exposed Files</strong>: passwords.txt (Public), credit_cards.csv (Secrets), user_data.sql (Database), and leaked_passwords.txt (FTP root).<strong>Exploit</strong>: Direct data theft revealing credentials and sensitive info.</p>
+<p><strong>Exposed Files</strong>: passwords.txt (Public), credit_cards.csv (Secrets), user_data.sql (Database), and leaked_passwords.txt (FTP root). <strong>Exploit</strong>: Direct data theft revealing credentials and sensitive info.</p>
 </li>
 <li class="">
-<p><strong>Open SMB Shares</strong>: PublicShare, SecretsShare, and entire C:\ (SystemShare) with<strong>Everyone full access</strong>.<strong>Exploit</strong>: Anonymous mounting (smbclient //IP/SystemShare -N or net use \IP\SystemShare) to read/write entire drive.</p>
+<p><strong>Open SMB Shares</strong>: PublicShare, SecretsShare, and entire C:\ (SystemShare) with <strong>Everyone full access</strong>. <strong>Exploit</strong>: Anonymous mounting (smbclient //IP/SystemShare -N or net use \IP\SystemShare) to read/write entire drive.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-additional-kernelsystem-vulnerabilities">6. Additional Kernel/System Vulnerabilities<a href="#6-additional-kernelsystem-vulnerabilities" class="hash-link" aria-label="Direct link to 6. Additional Kernel/System Vulnerabilities" title="Direct link to 6. Additional Kernel/System Vulnerabilities" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>ASLR Disabled</strong>: No address space randomization.<strong>Exploit</strong>: Predictable memory layout for reliable buffer overflow/ROP exploits.</p>
+<p><strong>ASLR Disabled</strong>: No address space randomization. <strong>Exploit</strong>: Predictable memory layout for reliable buffer overflow/ROP exploits.</p>
 </li>
 <li class="">
-<p><strong>Null Sessions Enabled</strong>: Anonymous IPC$ access allowed.<strong>Exploit</strong>: Enumerate users, shares, and system info without credentials (net view \IP or enum4linux).</p>
+<p><strong>Null Sessions Enabled</strong>: Anonymous IPC$ access allowed. <strong>Exploit</strong>: Enumerate users, shares, and system info without credentials (net view \IP or enum4linux).</p>
 </li>
 </ul>
-<p>This lab is now an ideal target for tools like<strong>HexStrike-AI</strong>(real framework in Kali Linux 2025.4) — it will autonomously discover, brute-force SSH/RDP/FTP, dump shares, and chain exploits via natural-language prompts to Gemini/ChatGPT.</p>
-<p>**All changes require a reboot to fully apply.**Use only in isolated virtual environments for ethical learning or authorized testing.</p>
+<p>This lab is now an ideal target for tools like <strong>HexStrike-AI</strong> (real framework in Kali Linux 2025.4) — it will autonomously discover, brute-force SSH/RDP/FTP, dump shares, and chain exploits via natural-language prompts to Gemini/ChatGPT.</p>
+<p><strong>All changes require a reboot to fully apply.</strong> Use only in isolated virtual environments for ethical learning or authorized testing.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detailed-penetration-test-report-after-hexstrike-ai--gemini-cli-one-promt-pt">Detailed Penetration Test Report (After Hexstrike-AI + Gemini-CLI One promt PT)<a href="#detailed-penetration-test-report-after-hexstrike-ai--gemini-cli-one-promt-pt" class="hash-link" aria-label="Direct link to Detailed Penetration Test Report (After Hexstrike-AI + Gemini-CLI One promt PT)" title="Direct link to Detailed Penetration Test Report (After Hexstrike-AI + Gemini-CLI One promt PT)" translate="no">​</a></h2>
-<details class="plain-large-code" data-plain-code-lines="327"><summary>Large code or log block<!-- --> · <!-- -->327<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># Detailed Penetration Test Report                                                                                                                                                                        │
+<details class="plain-large-code" data-plain-code-lines="123"><summary>Large code or log block<!-- --> · <!-- -->123<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># Detailed Penetration Test Report                                                                                                                                                                        │
 │      2                                                                                                                                                                                                           │
-│      3 
-**Date:**
- 2026-01-05                                                                                                                                                                                      │
+│      3 **Date:** 2026-01-05                                                                                                                                                                                      │
 │      4                                                                                                                                                                                                           │
-│      5 
-**Target:**
- 172.16.59.139                                                                                                                                                                                 │
+│      5 **Target:** 172.16.59.139                                                                                                                                                                                 │
 │      6                                                                                                                                                                                                           │
 │      7 ## Summary                                                                                                                                                                                                │
 │      8                                                                                                                                                                                                           │
@@ -519,315 +515,115 @@
 │     10                                                                                                                                                                                                           │
 │     11 ## Open Ports                                                                                                                                                                                             │
 │     12                                                                                                                                                                                                           │
-│     13 *   
-**21/tcp:**
- FTP - Microsoft ftpd                                                                                                                                                                      │
-│     14 *   
-**80/tcp:**
- HTTP - Microsoft IIS httpd 10.0                                                                                                                                                           │
-│     15 *   
-**135/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                            │
-│     16 *   
-**139/tcp:**
- netbios-ssn - Microsoft Windows netbios-ssn                                                                                                                                              │
-│     17 *   
-**445/tcp:**
- microsoft-ds - Windows 10 Pro 19045 microsoft-ds                                                                                                                                         │
-│     18 *   
-**3389/tcp:**
- ms-wbt-server - Microsoft Terminal Services                                                                                                                                             │
-│     19 *   
-**5040/tcp:**
- unknown                                                                                                                                                                                 │
-│     20 *   
-**7680/tcp:**
- pando-pub?                                                                                                                                                                              │
-│     21 *   
-**49664/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                          │
-│     22 *   
-**49665/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                          │
-│     23 *   
-**49666/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                          │
-│     24 *   
-**49667/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                          │
-│     25 *   
-**49668/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                          │
-│     26 *   
-**49669/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                          │
-│     27 *   
-**49670/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                          │
-│     28 *   
-**49671/tcp:**
- msrpc - Microsoft Windows RPC                                                                                                                                                          │
+│     13 *   **21/tcp:** FTP - Microsoft ftpd                                                                                                                                                                      │
+│     14 *   **80/tcp:** HTTP - Microsoft IIS httpd 10.0                                                                                                                                                           │
+│     15 *   **135/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                            │
+│     16 *   **139/tcp:** netbios-ssn - Microsoft Windows netbios-ssn                                                                                                                                              │
+│     17 *   **445/tcp:** microsoft-ds - Windows 10 Pro 19045 microsoft-ds                                                                                                                                         │
+│     18 *   **3389/tcp:** ms-wbt-server - Microsoft Terminal Services                                                                                                                                             │
+│     19 *   **5040/tcp:** unknown                                                                                                                                                                                 │
+│     20 *   **7680/tcp:** pando-pub?                                                                                                                                                                              │
+│     21 *   **49664/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                          │
+│     22 *   **49665/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                          │
+│     23 *   **49666/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                          │
+│     24 *   **49667/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                          │
+│     25 *   **49668/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                          │
+│     26 *   **49669/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                          │
+│     27 *   **49670/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                          │
+│     28 *   **49671/tcp:** msrpc - Microsoft Windows RPC                                                                                                                                                          │
 │     29                                                                                                                                                                                                           │
 │     30 ## Vulnerabilities                                                                                                                                                                                        │
 │     31                                                                                                                                                                                                           │
-│     32 *   
-**Anonymous FTP Access:**
- The FTP server allows anonymous access, which exposed several sensitive files.                                                                                              │
-│     33 *   
-**Weak Passwords:**
- Several users had weak or default passwords.                                                                                                                                      │
-│     34 *   
-**SMB Message Signing Disabled:**
- The SMB service had message signing disabled, which is a critical vulnerability.                                                                                    │
-│     35 *   
-**Sensitive Files Exposure:**
- File shares contained sensitive files, including credit card numbers and passwords.                                                                                     │
-│     36 *   
-**Excessive User Privileges:**
- The 
-`it_admin`
- user had excessive privileges, which allowed for privilege escalation.                                                                                  │
-│     37 *   
-**Disabled Administrator Account:**
- The 
-`Administrator`
- account was disabled, but could be re-enabled and its password reset.                                                                         │
+│     32 *   **Anonymous FTP Access:** The FTP server allows anonymous access, which exposed several sensitive files.                                                                                              │
+│     33 *   **Weak Passwords:** Several users had weak or default passwords.                                                                                                                                      │
+│     34 *   **SMB Message Signing Disabled:** The SMB service had message signing disabled, which is a critical vulnerability.                                                                                    │
+│     35 *   **Sensitive Files Exposure:** File shares contained sensitive files, including credit card numbers and passwords.                                                                                     │
+│     36 *   **Excessive User Privileges:** The `it_admin` user had excessive privileges, which allowed for privilege escalation.                                                                                  │
+│     37 *   **Disabled Administrator Account:** The `Administrator` account was disabled, but could be re-enabled and its password reset.                                                                         │
 │     38                                                                                                                                                                                                           │
 │     39 ## Tools Used and Steps Taken                                                                                                                                                                             │
 │     40                                                                                                                                                                                                           │
-│     41 1.  
-**Initial Reconnaissance:**
-                                                                                                                                                                           │
-│     42     *   
-`autorecon_scan`
- was used to perform an initial scan of the target.                                                                                                                               │
-│     43     *   
-`nmap_scan`
- was used to get more detailed information about the open ports and services.                                                                                                          │
+│     41 1.  **Initial Reconnaissance:**                                                                                                                                                                           │
+│     42     *   `autorecon_scan` was used to perform an initial scan of the target.                                                                                                                               │
+│     43     *   `nmap_scan` was used to get more detailed information about the open ports and services.                                                                                                          │
 │     44                                                                                                                                                                                                           │
-│     45 2.  
-**FTP Exploitation:**
-                                                                                                                                                                                 │
-│     46     *   
-`wget`
- was used to download files from the anonymous FTP server.                                                                                                                                  │
-│     47     *   
-`leaked_passwords.txt`
- was found, containing a list of usernames and passwords.                                                                                                                   │
+│     45 2.  **FTP Exploitation:**                                                                                                                                                                                 │
+│     46     *   `wget` was used to download files from the anonymous FTP server.                                                                                                                                  │
+│     47     *   `leaked_passwords.txt` was found, containing a list of usernames and passwords.                                                                                                                   │
 │     48                                                                                                                                                                                                           │
-│     49 3.  
-**SMB Exploitation:**
-                                                                                                                                                                                 │
-│     50     *   
-`smbclient`
- was used to connect to the SMB server with the credentials found in 
-`leaked_passwords.txt`
-.                                                                                           │
-│     51     *   The 
-`it_admin:C0mplex_77!_HArd_To_Gu3ss`
- credentials were used to access the 
-`C$`
- share.                                                                                                          │
-│     52     *   
-`SecretsShare`
- and 
-`PublicShare`
- were explored, revealing 
-`credit_cards.csv`
- and 
-`passwords.txt`
-.                                                                                                 │
+│     49 3.  **SMB Exploitation:**                                                                                                                                                                                 │
+│     50     *   `smbclient` was used to connect to the SMB server with the credentials found in `leaked_passwords.txt`.                                                                                           │
+│     51     *   The `it_admin:C0mplex_77!_HArd_To_Gu3ss` credentials were used to access the `C$` share.                                                                                                          │
+│     52     *   `SecretsShare` and `PublicShare` were explored, revealing `credit_cards.csv` and `passwords.txt`.                                                                                                 │
 │     53                                                                                                                                                                                                           │
-│     54 4.  
-**Web Server Exploitation (Failed):**
-                                                                                                                                                                 │
-│     55     *   
-`gobuster`
- and 
-`wfuzz`
- were used to search for login pages and other interesting files on the web server, but without success.                                                                    │
-│     56     *   An attempt was made to upload a web shell (
-`pwn.aspx`
-) to the web server&#x27;s root directory using 
-`smbclient`
-, but the shell was not accessible.                                                    │
+│     54 4.  **Web Server Exploitation (Failed):**                                                                                                                                                                 │
+│     55     *   `gobuster` and `wfuzz` were used to search for login pages and other interesting files on the web server, but without success.                                                                    │
+│     56     *   An attempt was made to upload a web shell (`pwn.aspx`) to the web server&#x27;s root directory using `smbclient`, but the shell was not accessible.                                                    │
 │     57                                                                                                                                                                                                           │
-│     58 5.  
-**Command Execution:**
-                                                                                                                                                                                │
-│     59     *   
-`impacket-wmiexec`
- was used to gain command execution as the 
-`it_admin`
- user.                                                                                                                     │
+│     58 5.  **Command Execution:**                                                                                                                                                                                │
+│     59     *   `impacket-wmiexec` was used to gain command execution as the `it_admin` user.                                                                                                                     │
 │     60                                                                                                                                                                                                           │
-│     61 6.  
-**Privilege Escalation:**
-                                                                                                                                                                             │
-│     62     *   The 
-`it_admin`
- user&#x27;s privileges were checked with 
-`whoami /priv`
-.                                                                                                                                │
-│     63     *   
-`SeBackupPrivilege`
- was abused to save the SAM and SYSTEM hives using 
-`reg.exe`
- via 
-`wmiexec.py`
-.                                                                                                 │
-│     64     *   
-`smbclient`
- was used to download the SAM and SYSTEM hives.                                                                                                                                        │
-│     65     *   
-`impacket-secretsdump`
- was used to extract the password hashes from the hives.                                                                                                                    │
-│     66     *   
-`john`
- and 
-`hashcat`
- were used to crack the Administrator&#x27;s NTLM hash, but were unsuccessful.                                                                                                     │
-│     67     *   The 
-`Administrator`
- account was found to be disabled.                                                                                                                                             │
-│     68     *   
-`net user`
- was used via 
-`wmiexec.py`
- to enable the 
-`Administrator`
- account and reset its password.                                                                                                │
-│     69     *   
-`impacket-wmiexec`
- was used to gain a shell as the 
-`Administrator`
- user with the new password.                                                                                                    │
+│     61 6.  **Privilege Escalation:**                                                                                                                                                                             │
+│     62     *   The `it_admin` user&#x27;s privileges were checked with `whoami /priv`.                                                                                                                                │
+│     63     *   `SeBackupPrivilege` was abused to save the SAM and SYSTEM hives using `reg.exe` via `wmiexec.py`.                                                                                                 │
+│     64     *   `smbclient` was used to download the SAM and SYSTEM hives.                                                                                                                                        │
+│     65     *   `impacket-secretsdump` was used to extract the password hashes from the hives.                                                                                                                    │
+│     66     *   `john` and `hashcat` were used to crack the Administrator&#x27;s NTLM hash, but were unsuccessful.                                                                                                     │
+│     67     *   The `Administrator` account was found to be disabled.                                                                                                                                             │
+│     68     *   `net user` was used via `wmiexec.py` to enable the `Administrator` account and reset its password.                                                                                                │
+│     69     *   `impacket-wmiexec` was used to gain a shell as the `Administrator` user with the new password.                                                                                                    │
 │     70                                                                                                                                                                                                           │
 │     71 ## Found Sensitive Data                                                                                                                                                                                   │
 │     72                                                                                                                                                                                                           │
-│     73 *   
-**`credit
-_cards.csv`:**                                                                                                                                                                               │
+│     73 *   **`credit_cards.csv`:**                                                                                                                                                                               │
 │     74     *   Name,CardNumber,Expiry                                                                                                                                                                            │
 │     75     *   John Doe,4444-5555-6666-7777,12/28                                                                                                                                                                │
 │     76     *   Jane Smith,8888-9999-0000-1111,05/30                                                                                                                                                              │
 │     77 *   **`passwords.txt`:**                                                                                                                                                                                  │
-│     78     *   it_
-admin:C0mplex
-_77!_
-HArd
-_To_
-Gu3ss                                                                                                                                                                │
-│     79     *   ftp
-_user:123456                                                                                                                                                                                   │
-│     80     *   web_
-admin:password123                                                                                                                                                                             │
-│     81     *   guest
-_user:password123                                                                                                                                                                            │
-│     82 *   **`leaked_
-passwords.txt`:**
-                                                                                                                                                                           │
+│     78     *   it_admin:C0mplex_77!_HArd_To_Gu3ss                                                                                                                                                                │
+│     79     *   ftp_user:123456                                                                                                                                                                                   │
+│     80     *   web_admin:password123                                                                                                                                                                             │
+│     81     *   guest_user:password123                                                                                                                                                                            │
+│     82 *   **`leaked_passwords.txt`:**                                                                                                                                                                           │
 │     83     *   admin:password                                                                                                                                                                                    │
 │     84     *   root:toor                                                                                                                                                                                         │
-│     85     *   it
-_admin:C0mplex_
-77!
-_HArd_
-To
-_Gu3ss                                                                                                                                                                │
+│     85     *   it_admin:C0mplex_77!_HArd_To_Gu3ss                                                                                                                                                                │
 │     86                                                                                                                                                                                                           │
 │     87 ## Found/Stolen Credentials                                                                                                                                                                               │
 │     88                                                                                                                                                                                                           │
 │     89 *   `admin:password`                                                                                                                                                                                      │
 │     90 *   `root:toor`                                                                                                                                                                                           │
-│     91 *   `it_
-admin:C0mplex
-_77!_
-HArd
-_To_
-Gu3ss`                                                                                                                                                                  │
-│     92 *   
-`ftp_user:123456`
-                                                                                                                                                                                     │
-│     93 *   
-`web_admin:password123`
-                                                                                                                                                                               │
-│     94 *   
-`guest_user:password123`
-                                                                                                                                                                              │
-│     95 *   Administrator NTLM hash: 
-`31d6cfe0d16ae931b73c59d7e0c089c0`
-                                                                                                                                           │
-│     96 *   Administrator password reset to: 
-`P@ssw0rd123`
-                                                                                                                                                        │
+│     91 *   `it_admin:C0mplex_77!_HArd_To_Gu3ss`                                                                                                                                                                  │
+│     92 *   `ftp_user:123456`                                                                                                                                                                                     │
+│     93 *   `web_admin:password123`                                                                                                                                                                               │
+│     94 *   `guest_user:password123`                                                                                                                                                                              │
+│     95 *   Administrator NTLM hash: `31d6cfe0d16ae931b73c59d7e0c089c0`                                                                                                                                           │
+│     96 *   Administrator password reset to: `P@ssw0rd123`                                                                                                                                                        │
 │     97                                                                                                                                                                                                           │
 │     98 ## Found/Stolen Files                                                                                                                                                                                     │
 │     99                                                                                                                                                                                                           │
-│    100 *   
-`leaked_passwords.txt`
-                                                                                                                                                                                │
-│    101 *   
-`credit_cards.csv`
-                                                                                                                                                                                    │
-│    102 *   
-`passwords.txt`
-                                                                                                                                                                                       │
-│    103 *   
-`sam.save`
-                                                                                                                                                                                            │
-│    104 *   
-`system.save`
-                                                                                                                                                                                         │
-│    105 *   
-`sam.save2`
-                                                                                                                                                                                           │
-│    106 *   
-`system.save2`
-                                                                                                                                                                                        │
-│    107 *   
-`pwn.aspx`
-                                                                                                                                                                                            │
-│    108 *   
-`test.html`
-                                                                                                                                                                                           │
-│    109 *   
-`admin_hash.txt`
-                                                                                                                                                                                      │
-│    110 *   
-`hashes.txt`
-                                                                                                                                                                                          │
-│    111 *   
-`hashes2.txt`
-                                                                                                                                                                                         │
-│    112 *   
-`penetration_test_report.txt`
-                                                                                                                                                                         │
+│    100 *   `leaked_passwords.txt`                                                                                                                                                                                │
+│    101 *   `credit_cards.csv`                                                                                                                                                                                    │
+│    102 *   `passwords.txt`                                                                                                                                                                                       │
+│    103 *   `sam.save`                                                                                                                                                                                            │
+│    104 *   `system.save`                                                                                                                                                                                         │
+│    105 *   `sam.save2`                                                                                                                                                                                           │
+│    106 *   `system.save2`                                                                                                                                                                                        │
+│    107 *   `pwn.aspx`                                                                                                                                                                                            │
+│    108 *   `test.html`                                                                                                                                                                                           │
+│    109 *   `admin_hash.txt`                                                                                                                                                                                      │
+│    110 *   `hashes.txt`                                                                                                                                                                                          │
+│    111 *   `hashes2.txt`                                                                                                                                                                                         │
+│    112 *   `penetration_test_report.txt`                                                                                                                                                                         │
 │    113                                                                                                                                                                                                           │
 │    114 ## Recommendations                                                                                                                                                                                        │
 │    115                                                                                                                                                                                                           │
-│    116 *   
-**FTP:**
- Disable anonymous access to the FTP server. If anonymous access is required, ensure that it is restricted to a specific directory with no sensitive files.                                   │
-│    117 *   
-**Passwords:**
- Enforce a strong password policy for all users. Passwords should be complex and changed regularly.                                                                                     │
-│    118 *   
-**SMB:**
- Enable message signing on the SMB service. Restrict access to the 
-`C$`
- share to only authorized users.                                                                                       │
-│    119 *   
-**File Shares:**
- Review the permissions on all file shares and ensure that they are not exposing sensitive information.                                                                               │
-│    120 *   
-**User Privileges:**
- Review the privileges of all users and ensure that they are following the principle of least privilege.                                                                          │
-│    121 *   
-**Administrator Account:**
- Keep the 
-`Administrator`
- account disabled and use a different account for administrative tasks.
+│    116 *   **FTP:** Disable anonymous access to the FTP server. If anonymous access is required, ensure that it is restricted to a specific directory with no sensitive files.                                   │
+│    117 *   **Passwords:** Enforce a strong password policy for all users. Passwords should be complex and changed regularly.                                                                                     │
+│    118 *   **SMB:** Enable message signing on the SMB service. Restrict access to the `C$` share to only authorized users.                                                                                       │
+│    119 *   **File Shares:** Review the permissions on all file shares and ensure that they are not exposing sensitive information.                                                                               │
+│    120 *   **User Privileges:** Review the privileges of all users and ensure that they are following the principle of least privilege.                                                                          │
+│    121 *   **Administrator Account:** Keep the `Administrator` account disabled and use a different account for administrative tasks.
 </code></pre></details>
 <img src="https://cdn-images-1.medium.com/max/800/1*vF6lByLRbEHDBkxpiZ_fEw.png" alt="Article image" width="1644" height="707" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>

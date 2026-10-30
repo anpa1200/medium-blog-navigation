@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,38 +34,38 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="uncovering-advanced-compromises-through-telemetry-artifacts-mitre-attck-tactics-and-practical-playbooks">Uncovering Advanced Compromises Through Telemetry, Artifacts, MITRE ATT&amp;CK Tactics, and Practical Playbooks<a href="#uncovering-advanced-compromises-through-telemetry-artifacts-mitre-attck-tactics-and-practical-playbooks" class="hash-link" aria-label="Direct link to Uncovering Advanced Compromises Through Telemetry, Artifacts, MITRE ATT&amp;CK Tactics, and Practical Playbooks" title="Direct link to Uncovering Advanced Compromises Through Telemetry, Artifacts, MITRE ATT&amp;CK Tactics, and Practical Playbooks" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="executive-summary">Executive Summary<a href="#executive-summary" class="hash-link" aria-label="Direct link to Executive Summary" title="Direct link to Executive Summary" translate="no">​</a></h2>
-<p>Endpoint threat hunting aims to<strong>proactively detect advanced compromises</strong>on Windows, Linux, and macOS hosts before alerts fire. Hunters search for key Indicators of Compromise (IoCs) — such as known malicious file hashes, domains, IPs, unusual process names or registry entries — and anomalous behaviors that evade signature-based defenses.</p>
+<p>Endpoint threat hunting aims to <strong>proactively detect advanced compromises</strong> on Windows, Linux, and macOS hosts before alerts fire. Hunters search for key Indicators of Compromise (IoCs) — such as known malicious file hashes, domains, IPs, unusual process names or registry entries — and anomalous behaviors that evade signature-based defenses.</p>
 <p>Common attacker tactics include:</p>
 <ul>
 <li class="">
-<p><strong>Initial access</strong>(malicious docs, drive-by downloads, USB-based malware)</p>
+<p><strong>Initial access</strong> (malicious docs, drive-by downloads, USB-based malware)</p>
 </li>
 <li class="">
-<p><strong>Execution</strong>(abusing scripting engines or living-off-the-land binaries)</p>
+<p><strong>Execution</strong> (abusing scripting engines or living-off-the-land binaries)</p>
 </li>
 <li class="">
-<p><strong>Persistence</strong>(e.g. “Run” registry keys, cron jobs, LaunchDaemons)</p>
+<p><strong>Persistence</strong> (e.g. “Run” registry keys, cron jobs, LaunchDaemons)</p>
 </li>
 <li class="">
 <p><strong>Privilege escalation</strong></p>
 </li>
 <li class="">
-<p><strong>Lateral movement</strong>(PsExec, SSH)</p>
+<p><strong>Lateral movement</strong> (PsExec, SSH)</p>
 </li>
 <li class="">
-<p><strong>Data exfiltration</strong>(encrypted tunnels, strange ZIPs, rare extensions)</p>
+<p><strong>Data exfiltration</strong> (encrypted tunnels, strange ZIPs, rare extensions)</p>
 </li>
 </ul>
-<p>To find these, analysts rely on rich telemetry and artifacts: Sysmon and Windows Event Logs, audit/journal logs on Linux/macOS, memory captures, file metadata (MACE times), registry hives, browser/email caches, etc. Capturing detailed endpoint logs is critical — for example,**Sysmon Process Create (EventID 1)**is considered a “workhorse” for seeing every program launch — enabling full visibility into what ran and when. By leveraging this telemetry (logs, registry, memory, filesystem) and cross-referencing known TTPs, threat hunters can spot stealthy compromises that leave subtle traces (e.g. Prefetch/Shimcache entries or unusual Parent‑Child process chains).</p>
+<p>To find these, analysts rely on rich telemetry and artifacts: Sysmon and Windows Event Logs, audit/journal logs on Linux/macOS, memory captures, file metadata (MACE times), registry hives, browser/email caches, etc. Capturing detailed endpoint logs is critical — for example, <strong>Sysmon Process Create (EventID 1)</strong> is considered a “workhorse” for seeing every program launch — enabling full visibility into what ran and when. By leveraging this telemetry (logs, registry, memory, filesystem) and cross-referencing known TTPs, threat hunters can spot stealthy compromises that leave subtle traces (e.g. Prefetch/Shimcache entries or unusual Parent‑Child process chains).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hunting-methodology-and-strategies">Hunting Methodology and Strategies<a href="#hunting-methodology-and-strategies" class="hash-link" aria-label="Direct link to Hunting Methodology and Strategies" title="Direct link to Hunting Methodology and Strategies" translate="no">​</a></h2>
-<p>Threat hunting can be<strong>hypothesis-driven</strong>,<strong>IoC-driven</strong>, or<strong>anomaly-based</strong>(behavioral) — often in combination.</p>
-<p><strong>A hypothesis-driven</strong>hunt starts with an assumption (e.g.<em>“Attacker may be using PowerShell to bypass detection on critical servers”</em>) informed by recent threat intelligence or ATT&amp;CK mappings. The hunter then searches telemetry (process logs, PowerShell script block logs, etc.) to confirm or refine the hypothesis.</p>
-<p><strong>IOC-driven</strong>hunting is reactive: searching for specific artifacts (malicious IPs, domains, file hashes, registry keys) across logs. This is effective for known threats but can miss novel attacks (IoCs age out quickly.</p>
-<p><strong>Anomaly- or behavior-based</strong>hunting looks for deviations from the norm — for example, using statistical “stack counting” or baselining to find<em>least-frequently occurring</em>process names or login locations. High-quality baselines and machine-learning analytics help highlight outliers (though care must be taken to reduce false positives).</p>
-<p>Throughout, threat intelligence should guide hunts: integrating context (APT profiles, TTPs) into hypotheses and enriching IoCs. Importantly, hunters must focus<strong>signal vs. noise</strong>: prioritize high-fidelity data sources and iteratively tune telemetry collection. After each hunt, teams should review which logs yielded hits versus noise and adjust data collection accordingly. In practice, this means emphasizing telemetry that produced true positives (e.g. process command-lines, registry changes) and filtering out low-value chatter.</p>
+<p>Threat hunting can be <strong>hypothesis-driven</strong>, <strong>IoC-driven</strong>, or <strong>anomaly-based</strong> (behavioral) — often in combination.</p>
+<p><strong>A hypothesis-driven</strong> hunt starts with an assumption (e.g. <em>“Attacker may be using PowerShell to bypass detection on critical servers”</em>) informed by recent threat intelligence or ATT&amp;CK mappings. The hunter then searches telemetry (process logs, PowerShell script block logs, etc.) to confirm or refine the hypothesis.</p>
+<p><strong>IOC-driven</strong> hunting is reactive: searching for specific artifacts (malicious IPs, domains, file hashes, registry keys) across logs. This is effective for known threats but can miss novel attacks (IoCs age out quickly.</p>
+<p><strong>Anomaly- or behavior-based</strong> hunting looks for deviations from the norm — for example, using statistical “stack counting” or baselining to find <em>least-frequently occurring</em> process names or login locations. High-quality baselines and machine-learning analytics help highlight outliers (though care must be taken to reduce false positives).</p>
+<p>Throughout, threat intelligence should guide hunts: integrating context (APT profiles, TTPs) into hypotheses and enriching IoCs. Importantly, hunters must focus <strong>signal vs. noise</strong>: prioritize high-fidelity data sources and iteratively tune telemetry collection. After each hunt, teams should review which logs yielded hits versus noise and adjust data collection accordingly. In practice, this means emphasizing telemetry that produced true positives (e.g. process command-lines, registry changes) and filtering out low-value chatter.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="core-endpoint-data-sources">Core Endpoint Data Sources<a href="#core-endpoint-data-sources" class="hash-link" aria-label="Direct link to Core Endpoint Data Sources" title="Direct link to Core Endpoint Data Sources" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="windows-endpoints-the-gold-mine-of-digital-forensics">Windows Endpoints: The Gold Mine of Digital Forensics<a href="#windows-endpoints-the-gold-mine-of-digital-forensics" class="hash-link" aria-label="Direct link to Windows Endpoints: The Gold Mine of Digital Forensics" title="Direct link to Windows Endpoints: The Gold Mine of Digital Forensics" translate="no">​</a></h2>
-<p>In modern incident response, the Windows endpoint is often the primary battlefield. While network logs provide the “where” and “when,” endpoint data provides the “how” and “who.” To reconstruct an attack, investigators must fuse data from three primary pillars:<strong>Sysmon/Event Logs</strong>,<strong>The Registry</strong>, and<strong>Filesystem Artifacts</strong>.</p>
+<p>In modern incident response, the Windows endpoint is often the primary battlefield. While network logs provide the “where” and “when,” endpoint data provides the “how” and “who.” To reconstruct an attack, investigators must fuse data from three primary pillars: <strong>Sysmon/Event Logs</strong>, <strong>The Registry</strong>, and <strong>Filesystem Artifacts</strong>.</p>
 <p>Below is a detailed breakdown of these artifacts and how to interpret them.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-sysmon-the-forensic-workhorse">1. Sysmon: The Forensic Workhorse<a href="#1-sysmon-the-forensic-workhorse" class="hash-link" aria-label="Direct link to 1. Sysmon: The Forensic Workhorse" title="Direct link to 1. Sysmon: The Forensic Workhorse" translate="no">​</a></h3>
 <p>System Monitor (Sysmon) is a Windows system service and device driver that logs system activity to the Windows event log. Unlike standard logs, which are often sparse by default, Sysmon provides granular visibility into process behavior.</p>
@@ -75,71 +75,71 @@
 <p><strong>Event ID 1: Process Create</strong></p>
 </li>
 <li class="">
-<p><strong>Why it matters:<strong>This is the most valuable log source. It details every process launched, including the</strong>Command Line</strong>arguments (vital for seeing PowerShell scripts or encoded commands), the<strong>Parent Process</strong>(to detect anomalies like<code>winword.exe</code>spawning<code>powershell.exe</code>), and the<strong>Process Hash</strong>(MD5/SHA256).</p>
+<p><strong>Why it matters:</strong> This is the most valuable log source. It details every process launched, including the <strong>Command Line</strong> arguments (vital for seeing PowerShell scripts or encoded commands), the <strong>Parent Process</strong> (to detect anomalies like <code>winword.exe</code> spawning <code>powershell.exe</code>), and the <strong>Process Hash</strong> (MD5/SHA256).</p>
 </li>
 <li class="">
-<p>*Investigation Tip:*Look for “Living off the Land” binaries (LOLBins) being used in unexpected ways.</p>
+<p><em>Investigation Tip:</em> Look for “Living off the Land” binaries (LOLBins) being used in unexpected ways.</p>
 </li>
 </ul>
 <p><strong>Event ID 3: Network Connection</strong></p>
 <ul>
 <li class="">
-<p>**Why it matters:**Logs TCP/UDP connections created by processes.</p>
+<p><strong>Why it matters:</strong> Logs TCP/UDP connections created by processes.</p>
 </li>
 <li class="">
-<p>*Investigation Tip:*Correlate this with Event ID 1. If<code>notepad.exe</code>is making an outbound connection to an external IP on port 443, that is a high-confidence indicator of compromise (Process Injection).</p>
+<p><em>Investigation Tip:</em> Correlate this with Event ID 1. If <code>notepad.exe</code> is making an outbound connection to an external IP on port 443, that is a high-confidence indicator of compromise (Process Injection).</p>
 </li>
 </ul>
 <p><strong>Event ID 10: Process Access</strong></p>
 <ul>
 <li class="">
-<p>**Why it matters:**This event logs when a process opens a handle to another process.</p>
+<p><strong>Why it matters:</strong> This event logs when a process opens a handle to another process.</p>
 </li>
 <li class="">
-<p>*Investigation Tip:*This is the primary indicator for credential dumping. Tools like Mimikatz must access<code>lsass.exe</code>to read memory. Look for processes requesting<code>0x1010</code>or<code>0x1400</code>access rights to LSASS.</p>
+<p><em>Investigation Tip:</em> This is the primary indicator for credential dumping. Tools like Mimikatz must access <code>lsass.exe</code> to read memory. Look for processes requesting <code>0x1010</code> or <code>0x1400</code> access rights to LSASS.</p>
 </li>
 </ul>
 <p><strong>Event ID 11: File Create</strong></p>
 <ul>
 <li class="">
-<p>**Why it matters:**Logs when a file is created or overwritten.</p>
+<p><strong>Why it matters:</strong> Logs when a file is created or overwritten.</p>
 </li>
 <li class="">
-<p>*Investigation Tip:*indispensable for tracking ransomware (mass file creation/renaming) or the dropping of web shells and payloads in the<code>Downloads</code>or<code>Temp</code>folders.</p>
+<p><em>Investigation Tip:</em> indispensable for tracking ransomware (mass file creation/renaming) or the dropping of web shells and payloads in the <code>Downloads</code> or <code>Temp</code> folders.</p>
 </li>
 </ul>
 <p><strong>Event ID 13: Registry Value Set</strong></p>
 <ul>
 <li class="">
-<p>**Why it matters:**Logs changes to the Registry.</p>
+<p><strong>Why it matters:</strong> Logs changes to the Registry.</p>
 </li>
 <li class="">
-<p>*Investigation Tip:*Attackers often modify registry keys to establish persistence or lower security settings (e.g., disabling Windows Defender).</p>
+<p><em>Investigation Tip:</em> Attackers often modify registry keys to establish persistence or lower security settings (e.g., disabling Windows Defender).</p>
 </li>
 </ul>
 <p><strong>Event ID 17: Pipe Created</strong></p>
 <ul>
 <li class="">
-<p>**Why it matters:**Named pipes are often used for inter-process communication (IPC).</p>
+<p><strong>Why it matters:</strong> Named pipes are often used for inter-process communication (IPC).</p>
 </li>
 <li class="">
-<p>*Investigation Tip:*This is critical for detecting lateral movement tools like<strong>Cobalt Strike</strong>(which often uses default pipe names) or SMB pivoting.</p>
+<p><em>Investigation Tip:</em> This is critical for detecting lateral movement tools like <strong>Cobalt Strike</strong> (which often uses default pipe names) or SMB pivoting.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-native-windows-event-logs">2. Native Windows Event Logs<a href="#2-native-windows-event-logs" class="hash-link" aria-label="Direct link to 2. Native Windows Event Logs" title="Direct link to 2. Native Windows Event Logs" translate="no">​</a></h3>
 <p>Even without Sysmon, the standard Windows Security and System logs are vital, particularly for authentication and service tracking.</p>
 <ul>
 <li class="">
-<p>**Security Log (Event ID 4624/4625):**Tracks successful and failed logons. Look for Type 3 (Network) logons for lateral movement or Type 10 (Remote Interactive) for RDP access.</p>
+<p><strong>Security Log (Event ID 4624/4625):</strong> Tracks successful and failed logons. Look for Type 3 (Network) logons for lateral movement or Type 10 (Remote Interactive) for RDP access.</p>
 </li>
 <li class="">
-<p>**WMI Activity:**Windows Management Instrumentation (WMI) is a favorite tool for attackers to execute code and maintain persistence without touching the disk.</p>
+<p><strong>WMI Activity:</strong> Windows Management Instrumentation (WMI) is a favorite tool for attackers to execute code and maintain persistence without touching the disk.</p>
 </li>
 <li class="">
-<p><em>Artifact:</em><code>Microsoft-Windows-WMI-Activity/Operational</code>log.</p>
+<p><em>Artifact:</em> <code>Microsoft-Windows-WMI-Activity/Operational</code> log.</p>
 </li>
 <li class="">
-<p>*Red Flag:*Look for “WMI Event Consumer” events that trigger suspicious scripts.</p>
+<p><em>Red Flag:</em> Look for “WMI Event Consumer” events that trigger suspicious scripts.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-the-registry-persistence-and-history">3. The Registry: Persistence and History<a href="#3-the-registry-persistence-and-history" class="hash-link" aria-label="Direct link to 3. The Registry: Persistence and History" title="Direct link to 3. The Registry: Persistence and History" translate="no">​</a></h3>
@@ -148,13 +148,13 @@
 <p>Attackers need their malware to survive a reboot. The Registry is the most common place to hide these instructions.</p>
 <ul>
 <li class="">
-<p><strong>Run Keys:</strong><code>HKLM\Software\Microsoft\Windows\CurrentVersion\Run</code>and<code>RunOnce</code>. Any program listed here starts automatically when a user logs on.</p>
+<p><strong>Run Keys:</strong> <code>HKLM\Software\Microsoft\Windows\CurrentVersion\Run</code> and <code>RunOnce</code>. Any program listed here starts automatically when a user logs on.</p>
 </li>
 <li class="">
-<p><strong>Services:</strong><code>HKLM\SYSTEM\CurrentControlSet\Services</code>. Malware often installs itself as a service to run with SYSTEM privileges.</p>
+<p><strong>Services:</strong> <code>HKLM\SYSTEM\CurrentControlSet\Services</code>. Malware often installs itself as a service to run with SYSTEM privileges.</p>
 </li>
 <li class="">
-<p>*Red Flag:*Look for random service names or services pointing to executables in<code>C:\Users\AppData</code>or<code>C:\Temp</code>.</p>
+<p><em>Red Flag:</em> Look for random service names or services pointing to executables in <code>C:\Users\AppData</code> or <code>C:\Temp</code>.</p>
 </li>
 </ul>
 <p><strong>Forensic Artifacts</strong></p>
@@ -163,19 +163,19 @@
 <p><strong>USB Device History:</strong></p>
 </li>
 <li class="">
-<p><strong>Location:</strong><code>HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR</code></p>
+<p><strong>Location:</strong> <code>HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR</code></p>
 </li>
 <li class="">
-<p>**Insight:**This key lists every USB device ever connected to the machine. It is crucial for proving data exfiltration (insider threats) or the initial infection vector (infected USB drive).</p>
+<p><strong>Insight:</strong> This key lists every USB device ever connected to the machine. It is crucial for proving data exfiltration (insider threats) or the initial infection vector (infected USB drive).</p>
 </li>
 <li class="">
 <p><strong>Office Trust Records:</strong></p>
 </li>
 <li class="">
-<p><strong>Location:</strong><code>HKCU\Software\Microsoft\Office\[Version]\[App]\Security\Trusted Locations</code></p>
+<p><strong>Location:</strong> <code>HKCU\Software\Microsoft\Office\[Version]\[App]\Security\Trusted Locations</code></p>
 </li>
 <li class="">
-<p>**Insight:**Logs when a user enables macros or trusts a document. This can prove a user opened a malicious phish.</p>
+<p><strong>Insight:</strong> Logs when a user enables macros or trusts a document. This can prove a user opened a malicious phish.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-filesystem-execution-artifacts">4. Filesystem Execution Artifacts<a href="#4-filesystem-execution-artifacts" class="hash-link" aria-label="Direct link to 4. Filesystem Execution Artifacts" title="Direct link to 4. Filesystem Execution Artifacts" translate="no">​</a></h3>
@@ -183,49 +183,49 @@
 <p><strong>Prefetch (</strong><code>**.pf**</code><strong>)</strong></p>
 <ul>
 <li class="">
-<p><strong>Location:</strong><code>C:\Windows\Prefetch</code></p>
+<p><strong>Location:</strong> <code>C:\Windows\Prefetch</code></p>
 </li>
 <li class="">
-<p>**Function:**Designed to speed up application launch.</p>
+<p><strong>Function:</strong> Designed to speed up application launch.</p>
 </li>
 <li class="">
-<p>**Forensic Value:**Contains the executable name, run count, and the timestamp of the last 8 executions.</p>
+<p><strong>Forensic Value:</strong> Contains the executable name, run count, and the timestamp of the last 8 executions.</p>
 </li>
 <li class="">
-<p>**Insight:**If you suspect an attacker ran<code>malware.exe</code>, the Prefetch file<code>MALWARE.EXE-[HASH].pf</code>serves as proof of execution.</p>
+<p><strong>Insight:</strong> If you suspect an attacker ran <code>malware.exe</code>, the Prefetch file <code>MALWARE.EXE-[HASH].pf</code> serves as proof of execution.</p>
 </li>
 </ul>
 <p><strong>Shimcache (Application Compatibility Cache)</strong></p>
 <ul>
 <li class="">
-<p>**Location:**Stored in the Registry at<code>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache</code>.</p>
+<p><strong>Location:</strong> Stored in the Registry at <code>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache</code>.</p>
 </li>
 <li class="">
-<p>**Forensic Value:**Tracks executables to ensure compatibility with older Windows versions.</p>
+<p><strong>Forensic Value:</strong> Tracks executables to ensure compatibility with older Windows versions.</p>
 </li>
 <li class="">
-<p>**Insight:**It acts as a “rolling log” of executed files. Crucially, it tracks files even if they have been deleted from the disk, showing the “Last Modified” time of the file (not the execution time).</p>
+<p><strong>Insight:</strong> It acts as a “rolling log” of executed files. Crucially, it tracks files even if they have been deleted from the disk, showing the “Last Modified” time of the file (not the execution time).</p>
 </li>
 </ul>
 <p><strong>AmCache</strong></p>
 <ul>
 <li class="">
-<p><strong>Location:</strong><code>C:\Windows\AppCompat\Programs\Amcache.hve</code></p>
+<p><strong>Location:</strong> <code>C:\Windows\AppCompat\Programs\Amcache.hve</code></p>
 </li>
 <li class="">
-<p>**Forensic Value:**A registry hive file that stores deep metadata about executed programs.</p>
+<p><strong>Forensic Value:</strong> A registry hive file that stores deep metadata about executed programs.</p>
 </li>
 <li class="">
-<p><strong>Insight:<strong>Unlike Prefetch, AmCache records the</strong>SHA1 hash</strong>of the binary. This allows you to identify known malware even if the attacker renamed the file to something benign like<code>svchost.exe</code>.</p>
+<p><strong>Insight:</strong> Unlike Prefetch, AmCache records the <strong>SHA1 hash</strong> of the binary. This allows you to identify known malware even if the attacker renamed the file to something benign like <code>svchost.exe</code>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-scheduled-tasks">5. Scheduled Tasks<a href="#5-scheduled-tasks" class="hash-link" aria-label="Direct link to 5. Scheduled Tasks" title="Direct link to 5. Scheduled Tasks" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Location:</strong><code>C:\Windows\System32\Tasks</code>(XML files) and Registry<code>TaskCache</code>.</p>
+<p><strong>Location:</strong> <code>C:\Windows\System32\Tasks</code> (XML files) and Registry <code>TaskCache</code>.</p>
 </li>
 <li class="">
-<p>**Analysis:**Scheduled tasks are a common persistence method. Attackers may create a task that runs a malicious script every day at 3:00 AM or upon system startup.</p>
+<p><strong>Analysis:</strong> Scheduled tasks are a common persistence method. Attackers may create a task that runs a malicious script every day at 3:00 AM or upon system startup.</p>
 </li>
 <li class="">
 <p><strong>What to look for:</strong></p>
@@ -248,43 +248,43 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-log-sources">Key Log Sources<a href="#key-log-sources" class="hash-link" aria-label="Direct link to Key Log Sources" title="Direct link to Key Log Sources" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Authentication Logs (</strong><code>**/var/log/auth.log**</code><strong>or</strong><code>**/var/log/secure**</code><strong>):</strong></p>
+<p><strong>Authentication Logs (</strong><code>**/var/log/auth.log**</code> <strong>or</strong> <code>**/var/log/secure**</code><strong>):</strong></p>
 </li>
 <li class="">
-<p>**What they are:**The primary record of authentication attempts (SSH, sudo, su).</p>
+<p><strong>What they are:</strong> The primary record of authentication attempts (SSH, sudo, su).</p>
 </li>
 <li class="">
-<p>**Investigation Tip:**Look for “Accepted publickey” (successful SSH) followed by<code>sudo</code>commands. High volumes of &quot;Failed password&quot; indicate brute-force attempts.</p>
+<p><strong>Investigation Tip:</strong> Look for “Accepted publickey” (successful SSH) followed by <code>sudo</code> commands. High volumes of &quot;Failed password&quot; indicate brute-force attempts.</p>
 </li>
 <li class="">
 <p><strong>Auditd (The Linux “Sysmon”):</strong></p>
 </li>
 <li class="">
-<p>**Why it matters:**If the<code>auditd</code>daemon is running, it provides kernel-level visibility far superior to standard logs.</p>
+<p><strong>Why it matters:</strong> If the <code>auditd</code> daemon is running, it provides kernel-level visibility far superior to standard logs.</p>
 </li>
 <li class="">
-<p>**Critical Events:**It tracks syscalls. You can configure it to watch specific files (like<code>/etc/passwd</code>) or execution (<code>execve</code>).</p>
+<p><strong>Critical Events:</strong> It tracks syscalls. You can configure it to watch specific files (like <code>/etc/passwd</code>) or execution (<code>execve</code>).</p>
 </li>
 <li class="">
-<p><strong>Artifact:</strong><code>ausearch</code>is the tool used to query<code>audit.log</code>. Look for<code>type=EXECVE</code>to see every command executed, arguments included.</p>
+<p><strong>Artifact:</strong> <code>ausearch</code> is the tool used to query <code>audit.log</code>. Look for <code>type=EXECVE</code> to see every command executed, arguments included.</p>
 </li>
 <li class="">
 <p><strong>Journalctl:</strong></p>
 </li>
 <li class="">
-<p>On<code>systemd</code>-based distributions (most modern Linux), logs are binary and centralized. Use<code>journalctl -xe</code>to view recent system events, service crashes, or startup errors.</p>
+<p>On <code>systemd</code>-based distributions (most modern Linux), logs are binary and centralized. Use <code>journalctl -xe</code> to view recent system events, service crashes, or startup errors.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shell-history-the-attackers-diary">Shell History: The Attacker’s Diary<a href="#shell-history-the-attackers-diary" class="hash-link" aria-label="Direct link to Shell History: The Attacker’s Diary" title="Direct link to Shell History: The Attacker’s Diary" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Files:</strong><code>~/.bash_history</code>,<code>~/.zsh_history</code>.</p>
+<p><strong>Files:</strong> <code>~/.bash_history</code>, <code>~/.zsh_history</code>.</p>
 </li>
 <li class="">
-<p>**Forensic Value:**Attackers often forget to unset their history file variables. These files can contain a literal script of the attack:<code>wget malicious_tool</code>,<code>tar -xvf</code>, and<code>./exploit</code>.</p>
+<p><strong>Forensic Value:</strong> Attackers often forget to unset their history file variables. These files can contain a literal script of the attack: <code>wget malicious_tool</code>, <code>tar -xvf</code>, and <code>./exploit</code>.</p>
 </li>
 <li class="">
-<p>**Anti-Forensics:**Attackers may run<code>history -c</code>(clear) or prefix commands with a space (which prevents logging in default configs). If<code>.bash_history</code>is empty or sent to<code>/dev/null</code>, treat it as a high-confidence indicator of compromise.</p>
+<p><strong>Anti-Forensics:</strong> Attackers may run <code>history -c</code> (clear) or prefix commands with a space (which prevents logging in default configs). If <code>.bash_history</code> is empty or sent to <code>/dev/null</code>, treat it as a high-confidence indicator of compromise.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="persistence-mechanisms">Persistence Mechanisms<a href="#persistence-mechanisms" class="hash-link" aria-label="Direct link to Persistence Mechanisms" title="Direct link to Persistence Mechanisms" translate="no">​</a></h3>
@@ -293,19 +293,19 @@
 <p><strong>Cron Jobs:</strong></p>
 </li>
 <li class="">
-<p><strong>Locations:</strong><code>/etc/crontab</code>,<code>/var/spool/cron/crontabs/</code>(user specific),<code>/etc/cron.daily/</code>.</p>
+<p><strong>Locations:</strong> <code>/etc/crontab</code>, <code>/var/spool/cron/crontabs/</code> (user specific), <code>/etc/cron.daily/</code>.</p>
 </li>
 <li class="">
-<p>**Red Flag:**Look for curl/wget commands running on a schedule, or scripts running out of<code>/tmp</code>or<code>/var/tmp</code>.</p>
+<p><strong>Red Flag:</strong> Look for curl/wget commands running on a schedule, or scripts running out of <code>/tmp</code> or <code>/var/tmp</code>.</p>
 </li>
 <li class="">
 <p><strong>Systemd Services:</strong></p>
 </li>
 <li class="">
-<p><strong>Location:</strong><code>/etc/systemd/system/</code>.</p>
+<p><strong>Location:</strong> <code>/etc/systemd/system/</code>.</p>
 </li>
 <li class="">
-<p>**Red Flag:**Malicious<code>.service</code>files created to ensure a reverse shell starts on boot.</p>
+<p><strong>Red Flag:</strong> Malicious <code>.service</code> files created to ensure a reverse shell starts on boot.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-macos-endpoints-the-unified-log--launchd">2. macOS Endpoints: The Unified Log &amp; Launchd<a href="#2-macos-endpoints-the-unified-log--launchd" class="hash-link" aria-label="Direct link to 2. macOS Endpoints: The Unified Log &amp; Launchd" title="Direct link to 2. macOS Endpoints: The Unified Log &amp; Launchd" translate="no">​</a></h2>
@@ -313,19 +313,19 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-unified-logging-system-uls">The Unified Logging System (ULS)<a href="#the-unified-logging-system-uls" class="hash-link" aria-label="Direct link to The Unified Logging System (ULS)" title="Direct link to The Unified Logging System (ULS)" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Access:**Viewed via the<code>Console.app</code>or the CLI tool<code>log show</code>.</p>
+<p><strong>Access:</strong> Viewed via the <code>Console.app</code> or the CLI tool <code>log show</code>.</p>
 </li>
 <li class="">
-<p>**Why it matters:**Old-school<code>/var/log/system.log</code>is mostly deprecated. ULS captures high-volume data from the kernel and applications.</p>
+<p><strong>Why it matters:</strong> Old-school <code>/var/log/system.log</code> is mostly deprecated. ULS captures high-volume data from the kernel and applications.</p>
 </li>
 <li class="">
 <p><strong>Investigation Tip:</strong></p>
 </li>
 <li class="">
-<p>Use predicates to filter the noise:<code>log show --predicate &#x27;process == &quot;sudo&quot;&#x27; --info</code>.</p>
+<p>Use predicates to filter the noise: <code>log show --predicate &#x27;process == &quot;sudo&quot;&#x27; --info</code>.</p>
 </li>
 <li class="">
-<p>Look for**TCC (Transparency, Consent, and Control)**prompts. These logs show if an application requested access to the Camera, Mic, or Disk.</p>
+<p>Look for <strong>TCC (Transparency, Consent, and Control)</strong> prompts. These logs show if an application requested access to the Camera, Mic, or Disk.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-artifacts">Security Artifacts<a href="#security-artifacts" class="hash-link" aria-label="Direct link to Security Artifacts" title="Direct link to Security Artifacts" translate="no">​</a></h3>
@@ -337,26 +337,26 @@
 <p>SIP restricts the root user from modifying protected system locations. Attackers often try to disable this.</p>
 </li>
 <li class="">
-<p>**Check:**SIP status changes are logged in the NVRAM or recovery logs.</p>
+<p><strong>Check:</strong> SIP status changes are logged in the NVRAM or recovery logs.</p>
 </li>
 <li class="">
 <p><strong>Keychain Logs:</strong></p>
 </li>
 <li class="">
-<p>The Keychain stores passwords and certificates. Access to the keychain files (<code>~/Library/Keychains/login.keychain-db</code>) or logs indicating<code>security dump-keychain</code>execution are critical red flags for credential theft.</p>
+<p>The Keychain stores passwords and certificates. Access to the keychain files (<code>~/Library/Keychains/login.keychain-db</code>) or logs indicating <code>security dump-keychain</code> execution are critical red flags for credential theft.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="persistence-launchagents--launchdaemons">Persistence: LaunchAgents &amp; LaunchDaemons<a href="#persistence-launchagents--launchdaemons" class="hash-link" aria-label="Direct link to Persistence: LaunchAgents &amp; LaunchDaemons" title="Direct link to Persistence: LaunchAgents &amp; LaunchDaemons" translate="no">​</a></h3>
-<p>macOS uses<code>launchd</code>instead of Cron (though Cron still exists).</p>
+<p>macOS uses <code>launchd</code> instead of Cron (though Cron still exists).</p>
 <ul>
 <li class="">
-<p><strong>LaunchAgents (</strong><code>**~/Library/LaunchAgents**</code>**):**Run when a specific user logs in. This is the most common persistence spot for commodity malware targeting users.</p>
+<p><strong>LaunchAgents (</strong><code>**~/Library/LaunchAgents**</code><strong>):</strong> Run when a specific user logs in. This is the most common persistence spot for commodity malware targeting users.</p>
 </li>
 <li class="">
-<p><strong>LaunchDaemons (</strong><code>**/Library/LaunchDaemons**</code>**):**Run as root on system boot. Malware here has total control.</p>
+<p><strong>LaunchDaemons (</strong><code>**/Library/LaunchDaemons**</code><strong>):</strong> Run as root on system boot. Malware here has total control.</p>
 </li>
 <li class="">
-<p>**Investigation Tip:**Inspect the<code>.plist</code>(Property List) files in these directories. Look for the<code>&amp;lt;ProgramArguments&amp;gt;</code>tag pointing to hidden binaries in user folders.</p>
+<p><strong>Investigation Tip:</strong> Inspect the <code>.plist</code> (Property List) files in these directories. Look for the <code>&amp;lt;ProgramArguments&amp;gt;</code> tag pointing to hidden binaries in user folders.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-volatile-data--live-response-cross-platform">3. Volatile Data &amp; Live Response (Cross-Platform)<a href="#3-volatile-data--live-response-cross-platform" class="hash-link" aria-label="Direct link to 3. Volatile Data &amp; Live Response (Cross-Platform)" title="Direct link to 3. Volatile Data &amp; Live Response (Cross-Platform)" translate="no">​</a></h2>
@@ -364,105 +364,105 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="process-trees--parent-child-relationships">Process Trees &amp; Parent-Child Relationships<a href="#process-trees--parent-child-relationships" class="hash-link" aria-label="Direct link to Process Trees &amp; Parent-Child Relationships" title="Direct link to Process Trees &amp; Parent-Child Relationships" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Tools:</strong><code>ps auxf</code>(Linux) or<code>pstree</code>.</p>
+<p><strong>Tools:</strong> <code>ps auxf</code> (Linux) or <code>pstree</code>.</p>
 </li>
 <li class="">
-<p>**The Anomaly:**Processes should have logical parents.</p>
+<p><strong>The Anomaly:</strong> Processes should have logical parents.</p>
 </li>
 <li class="">
-<p><em>Normal:</em><code>sshd</code>spawns<code>bash</code>.</p>
+<p><em>Normal:</em> <code>sshd</code> spawns <code>bash</code>.</p>
 </li>
 <li class="">
-<p><em>Suspicious:</em><code>apache2</code>(web server) spawns<code>sh</code>or<code>bash</code>. This usually indicates a<strong>Web Shell</strong>(RCE vulnerability exploit).</p>
+<p><em>Suspicious:</em> <code>apache2</code> (web server) spawns <code>sh</code> or <code>bash</code>. This usually indicates a <strong>Web Shell</strong> (RCE vulnerability exploit).</p>
 </li>
 <li class="">
-<p>*Suspicious:*A generic process like<code>calc</code>or<code>flash_update</code>running as root without a parent (orphaned).</p>
+<p><em>Suspicious:</em> A generic process like <code>calc</code> or <code>flash_update</code> running as root without a parent (orphaned).</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="network-connections">Network Connections<a href="#network-connections" class="hash-link" aria-label="Direct link to Network Connections" title="Direct link to Network Connections" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Tools:</strong><code>netstat -antup</code>,<code>ss -lntp</code>, or<code>lsof -i</code>.</p>
+<p><strong>Tools:</strong> <code>netstat -antup</code>, <code>ss -lntp</code>, or <code>lsof -i</code>.</p>
 </li>
 <li class="">
 <p><strong>What to hunt:</strong></p>
 </li>
 <li class="">
-<p><strong>ESTABLISHED</strong>connections to unknown external IPs.</p>
+<p><strong>ESTABLISHED</strong> connections to unknown external IPs.</p>
 </li>
 <li class="">
 <p>Processes listening on high ports (e.g., 4444, 8080) that are not known web services.</p>
 </li>
 <li class="">
-<p>**Zeek Logs:**If network monitoring is available, Zeek logs provide a historic record of these connections even after the process closes.</p>
+<p><strong>Zeek Logs:</strong> If network monitoring is available, Zeek logs provide a historic record of these connections even after the process closes.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="memory-forensics">Memory Forensics<a href="#memory-forensics" class="hash-link" aria-label="Direct link to Memory Forensics" title="Direct link to Memory Forensics" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Acquisition:<strong>Tools like</strong>Lime</strong>(Linux) or<strong>Osxpmem</strong>(macOS) dump the RAM.</p>
+<p><strong>Acquisition:</strong> Tools like <strong>Lime</strong> (Linux) or <strong>Osxpmem</strong> (macOS) dump the RAM.</p>
 </li>
 <li class="">
 <p><strong>Analysis (Volatility/Rekall):</strong></p>
 </li>
 <li class="">
-<p>**Code Injection:**Modern malware “lives” in memory. It might inject a malicious DLL (Windows) or shared object<code>.so</code>(Linux) into a legitimate process like<code>nginx</code>or<code>syslog</code>.</p>
+<p><strong>Code Injection:</strong> Modern malware “lives” in memory. It might inject a malicious DLL (Windows) or shared object <code>.so</code> (Linux) into a legitimate process like <code>nginx</code> or <code>syslog</code>.</p>
 </li>
 <li class="">
-<p>**Rootkits:**Memory analysis is often the<em>only</em>way to detect kernel-mode rootkits that hook system calls to hide files from<code>ls</code>or<code>ps</code>.</p>
+<p><strong>Rootkits:</strong> Memory analysis is often the <em>only</em> way to detect kernel-mode rootkits that hook system calls to hide files from <code>ls</code> or <code>ps</code>.</p>
 </li>
 <li class="">
-<p>**Credentials:**Passwords, SSH keys, and encryption keys can often be scraped in plaintext from a memory dump.</p>
+<p><strong>Credentials:</strong> Passwords, SSH keys, and encryption keys can often be scraped in plaintext from a memory dump.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="open-handles">Open Handles<a href="#open-handles" class="hash-link" aria-label="Direct link to Open Handles" title="Direct link to Open Handles" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Tools:</strong><code>lsof</code>(List Open Files).</p>
+<p><strong>Tools:</strong> <code>lsof</code> (List Open Files).</p>
 </li>
 <li class="">
-<p>**Insight:**In *nix, “files” include network sockets and pipes.</p>
+<p><strong>Insight:</strong> In *nix, “files” include network sockets and pipes.</p>
 </li>
 <li class="">
-<p>**Red Flag:**Use<code>lsof -p [PID]</code>on a suspicious process. You might see it holding open a &quot;deleted&quot; file (a common trick to hide malware execution) or communicating over a hidden pipe.</p>
+<p><strong>Red Flag:</strong> Use <code>lsof -p [PID]</code> on a suspicious process. You might see it holding open a &quot;deleted&quot; file (a common trick to hide malware execution) or communicating over a hidden pipe.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="filesystem-forensics-the-silent-witness">Filesystem Forensics: The Silent Witness<a href="#filesystem-forensics-the-silent-witness" class="hash-link" aria-label="Direct link to Filesystem Forensics: The Silent Witness" title="Direct link to Filesystem Forensics: The Silent Witness" translate="no">​</a></h2>
-<p>The filesystem is the ultimate ledger of an operating system. While logs can be cleared and processes can terminate, the filesystem almost always retains scars of malicious activity. In Digital Forensics, we don’t just look at<em>content</em>; we analyze the<strong>metadata</strong>— the “data about the data.”</p>
+<p>The filesystem is the ultimate ledger of an operating system. While logs can be cleared and processes can terminate, the filesystem almost always retains scars of malicious activity. In Digital Forensics, we don’t just look at <em>content</em>; we analyze the <strong>metadata</strong> — the “data about the data.”</p>
 <p>Below is a detailed breakdown of critical filesystem artifacts, how to interpret timestamps (MACE), and how to uncover hidden threats.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-the-timeline-mace--macb-analysis">1. The Timeline: MACE / MACB Analysis<a href="#1-the-timeline-mace--macb-analysis" class="hash-link" aria-label="Direct link to 1. The Timeline: MACE / MACB Analysis" title="Direct link to 1. The Timeline: MACE / MACB Analysis" translate="no">​</a></h2>
 <p>Every file on a modern system has a set of timestamps. These are the building blocks of forensic timelines.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-attributes">The Attributes<a href="#the-attributes" class="hash-link" aria-label="Direct link to The Attributes" title="Direct link to The Attributes" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>M — Modified:<strong>The last time the file’s</strong>contents</strong>were changed.</p>
+<p><strong>M — Modified:</strong> The last time the file’s <strong>contents</strong> were changed.</p>
 </li>
 <li class="">
-<p>**A — Accessed:**The last time the file was read or executed.</p>
+<p><strong>A — Accessed:</strong> The last time the file was read or executed.</p>
 </li>
 <li class="">
-<p>*Note:*On modern Windows (Windows 10/11), access time updates are often disabled by default to save performance, making this less reliable unless a specific registry key (<code>NtfsDisableLastAccessUpdate</code>) is changed.</p>
+<p><em>Note:</em> On modern Windows (Windows 10/11), access time updates are often disabled by default to save performance, making this less reliable unless a specific registry key (<code>NtfsDisableLastAccessUpdate</code>) is changed.</p>
 </li>
 <li class="">
 <p><strong>C — Created (Windows) / Changed (Linux):</strong></p>
 </li>
 <li class="">
-<p>*Windows:*When the file was born on that specific volume.</p>
+<p><em>Windows:</em> When the file was born on that specific volume.</p>
 </li>
 <li class="">
-<p>*Linux:*<strong>Change</strong>time (metadata change). Linux does not traditionally store a “Birth” time in standard ext4, though newer versions (ext4 with 256-byte inodes) and filesystems like APFS (macOS) do support it (often notated as ‘B’ in MACB).</p>
+<p><em>Linux:</em> <strong>Change</strong> time (metadata change). Linux does not traditionally store a “Birth” time in standard ext4, though newer versions (ext4 with 256-byte inodes) and filesystems like APFS (macOS) do support it (often notated as ‘B’ in MACB).</p>
 </li>
 <li class="">
-<p><strong>E — Entry Modified (MFT Change):<strong>The last time the file’s</strong>metadata</strong>(permissions, name, location) was updated. This is crucial for detecting tampering.</p>
+<p><strong>E — Entry Modified (MFT Change):</strong> The last time the file’s <strong>metadata</strong> (permissions, name, location) was updated. This is crucial for detecting tampering.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-windows-artifacts-ntfs-deep-dive">2. Windows Artifacts: NTFS Deep Dive<a href="#2-windows-artifacts-ntfs-deep-dive" class="hash-link" aria-label="Direct link to 2. Windows Artifacts: NTFS Deep Dive" title="Direct link to 2. Windows Artifacts: NTFS Deep Dive" translate="no">​</a></h2>
-<p>The<strong>New Technology File System (NTFS)<strong>is a relational database where every file is an entry in the</strong>Master File Table ($MFT)</strong>.</p>
+<p>The <strong>New Technology File System (NTFS)</strong> is a relational database where every file is an entry in the <strong>Master File Table ($MFT)</strong>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-master-file-table-mft">The Master File Table ($MFT)<a href="#the-master-file-table-mft" class="hash-link" aria-label="Direct link to The Master File Table ($MFT)" title="Direct link to The Master File Table ($MFT)" translate="no">​</a></h3>
-<p>The<code>$MFT</code>is the most important forensic artifact on Windows. It tracks every file on the partition.</p>
+<p>The <code>$MFT</code> is the most important forensic artifact on Windows. It tracks every file on the partition.</p>
 <ul>
 <li class="">
-<p>**Resident vs. Non-Resident:**Small files (&lt; ~700 bytes) are stored entirely<em>inside</em>the MFT record (“Resident”). This means even if the file is “deleted” and the cluster is overwritten, the data might still exist in the MFT entry.</p>
+<p><strong>Resident vs. Non-Resident:</strong> Small files (&lt; ~700 bytes) are stored entirely <em>inside</em> the MFT record (“Resident”). This means even if the file is “deleted” and the cluster is overwritten, the data might still exist in the MFT entry.</p>
 </li>
 <li class="">
 <p><strong>Timestomping Detection:</strong></p>
@@ -471,229 +471,229 @@
 <p>NTFS stores timestamps in two places within an MFT record:</p>
 </li>
 <li class="">
-<p><code>$Standard_Information</code>(SI): Can be easily modified by user-mode tools (like PowerShell).</p>
+<p><code>$Standard_Information</code> (SI): Can be easily modified by user-mode tools (like PowerShell).</p>
 </li>
 <li class="">
-<p><code>$File_Name</code>(FN): Updated by the kernel only when the file name/path changes.</p>
+<p><code>$File_Name</code> (FN): Updated by the kernel only when the file name/path changes.</p>
 </li>
 <li class="">
-<p><strong>The Check:<strong>If the SI timestamps are<em>earlier</em>than the FN timestamps (e.g., a malware file claims to be created in 2015, but the FN record says 2024), you have detected</strong>Timestomping</strong>.</p>
+<p><strong>The Check:</strong> If the SI timestamps are <em>earlier</em> than the FN timestamps (e.g., a malware file claims to be created in 2015, but the FN record says 2024), you have detected <strong>Timestomping</strong>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternate-data-streams-ads">Alternate Data Streams (ADS)<a href="#alternate-data-streams-ads" class="hash-link" aria-label="Direct link to Alternate Data Streams (ADS)" title="Direct link to Alternate Data Streams (ADS)" translate="no">​</a></h3>
 <p>NTFS allows a file to contain multiple streams of data.</p>
 <ul>
 <li class="">
-<p>**Legitimate Use:**When you download a file, browsers add a<code>Zone.Identifier</code>stream (Mark of the Web) to flag it as &quot;from the internet.&quot;</p>
+<p><strong>Legitimate Use:</strong> When you download a file, browsers add a <code>Zone.Identifier</code> stream (Mark of the Web) to flag it as &quot;from the internet.&quot;</p>
 </li>
 <li class="">
-<p>**Malicious Use:**Attackers can hide an entire payload inside a text file.</p>
+<p><strong>Malicious Use:</strong> Attackers can hide an entire payload inside a text file.</p>
 </li>
 <li class="">
-<p><em>Example:</em><code>readme.txt:malware.exe</code>. The user sees a 1KB text file, but a 5MB executable is hidden behind it.</p>
+<p><em>Example:</em> <code>readme.txt:malware.exe</code>. The user sees a 1KB text file, but a 5MB executable is hidden behind it.</p>
 </li>
 <li class="">
-<p>*Detection:*Standard<code>dir</code>doesn&#x27;t show this. Use<code>dir /R</code>or the Sysinternals tool<code>streams.exe</code>.</p>
+<p><em>Detection:</em> Standard <code>dir</code> doesn&#x27;t show this. Use <code>dir /R</code> or the Sysinternals tool <code>streams.exe</code>.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-linux--macos-artifacts-inodes--extended-attributes">3. Linux &amp; macOS Artifacts: Inodes &amp; Extended Attributes<a href="#3-linux--macos-artifacts-inodes--extended-attributes" class="hash-link" aria-label="Direct link to 3. Linux &amp; macOS Artifacts: Inodes &amp; Extended Attributes" title="Direct link to 3. Linux &amp; macOS Artifacts: Inodes &amp; Extended Attributes" translate="no">​</a></h2>
-<p>Linux filesystems (ext4, XFS) and macOS (APFS/HFS+) use<strong>Inodes</strong>(Index Nodes) to store metadata.</p>
+<p>Linux filesystems (ext4, XFS) and macOS (APFS/HFS+) use <strong>Inodes</strong> (Index Nodes) to store metadata.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inode-forensics">Inode Forensics<a href="#inode-forensics" class="hash-link" aria-label="Direct link to Inode Forensics" title="Direct link to Inode Forensics" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**The Link Count:**An inode tracks how many filenames point to the data.</p>
+<p><strong>The Link Count:</strong> An inode tracks how many filenames point to the data.</p>
 </li>
 <li class="">
-<p>*Investigation Tip:*If a legitimate binary (like<code>ls</code>or<code>ps</code>) has a link count of 0 but the process is still running, the file has been deleted to hide it (&quot;Fileless&quot; execution).</p>
+<p><em>Investigation Tip:</em> If a legitimate binary (like <code>ls</code> or <code>ps</code>) has a link count of 0 but the process is still running, the file has been deleted to hide it (&quot;Fileless&quot; execution).</p>
 </li>
 <li class="">
-<p>**Metadata Change (ctime):**In Linux, you cannot easily fake the<code>ctime</code>(Change time) without kernel-level access or resetting the system clock. If a hacker modifies a file and tries to reset the &quot;Modify&quot; timestamp back to the past, the &quot;Change&quot; timestamp will update to &quot;Now,&quot; revealing the cover-up.</p>
+<p><strong>Metadata Change (ctime):</strong> In Linux, you cannot easily fake the <code>ctime</code> (Change time) without kernel-level access or resetting the system clock. If a hacker modifies a file and tries to reset the &quot;Modify&quot; timestamp back to the past, the &quot;Change&quot; timestamp will update to &quot;Now,&quot; revealing the cover-up.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hidden-files--directories">Hidden Files &amp; Directories<a href="#hidden-files--directories" class="hash-link" aria-label="Direct link to Hidden Files &amp; Directories" title="Direct link to Hidden Files &amp; Directories" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**The Dot (.) Prefix:**Any file starting with<code>.</code>is hidden by default in<code>ls</code>.</p>
+<p><strong>The Dot (.) Prefix:</strong> Any file starting with <code>.</code> is hidden by default in <code>ls</code>.</p>
 </li>
 <li class="">
-<p><em>Common Hiding Spots:</em><code>~/.ssh/</code>(stealing keys),<code>/dev/shm/</code>(shared memory—files here run in RAM, leaving no disk trace if rebooted).</p>
+<p><em>Common Hiding Spots:</em> <code>~/.ssh/</code> (stealing keys), <code>/dev/shm/</code> (shared memory—files here run in RAM, leaving no disk trace if rebooted).</p>
 </li>
 <li class="">
-<p>**Extended Attributes (xattrs):**Similar to ADS, macOS and Linux use extended attributes. macOS uses<code>com.apple.quarantine</code>to track downloaded files (similar to Zone.Identifier).</p>
+<p><strong>Extended Attributes (xattrs):</strong> Similar to ADS, macOS and Linux use extended attributes. macOS uses <code>com.apple.quarantine</code> to track downloaded files (similar to Zone.Identifier).</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-universal-red-flags-the-staging-grounds">4. Universal Red Flags (The “Staging” Grounds)<a href="#4-universal-red-flags-the-staging-grounds" class="hash-link" aria-label="Direct link to 4. Universal Red Flags (The “Staging” Grounds)" title="Direct link to 4. Universal Red Flags (The “Staging” Grounds)" translate="no">​</a></h2>
 <p>Regardless of the OS, attackers tend to use specific locations to stage tools and exfiltrate data.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-suspicious-paths">1. Suspicious Paths<a href="#1-suspicious-paths" class="hash-link" aria-label="Direct link to 1. Suspicious Paths" title="Direct link to 1. Suspicious Paths" translate="no">​</a></h3>
-<p>Attackers look for directories that are<strong>World Writable</strong>(anyone can save files there).</p>
+<p>Attackers look for directories that are <strong>World Writable</strong> (anyone can save files there).</p>
 <ul>
 <li class="">
-<p><strong>Windows:</strong><code>C:\Windows\Temp</code>,<code>C:\Users\[User]\AppData\Local\Temp</code>,<code>C:\ProgramData</code>.</p>
+<p><strong>Windows:</strong> <code>C:\Windows\Temp</code>, <code>C:\Users\[User]\AppData\Local\Temp</code>, <code>C:\ProgramData</code>.</p>
 </li>
 <li class="">
-<p><strong>Linux/macOS:</strong><code>/tmp</code>,<code>/var/tmp</code>,<code>/dev/shm</code>.</p>
+<p><strong>Linux/macOS:</strong> <code>/tmp</code>, <code>/var/tmp</code>, <code>/dev/shm</code>.</p>
 </li>
 <li class="">
-<p>*Red Flag:*A binary named<code>svchost.exe</code>running from<code>C:\Temp</code>is almost certainly malicious. Legitimate system files run from<code>System32</code>.</p>
+<p><em>Red Flag:</em> A binary named <code>svchost.exe</code> running from <code>C:\Temp</code> is almost certainly malicious. Legitimate system files run from <code>System32</code>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-file-extension-anomalies">2. File Extension Anomalies<a href="#2-file-extension-anomalies" class="hash-link" aria-label="Direct link to 2. File Extension Anomalies" title="Direct link to 2. File Extension Anomalies" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><strong>Double Extensions:</strong><code>invoice.pdf.exe</code>or<code>backup.tar.gz.sh</code>. Windows hides known extensions by default, so the user sees &quot;invoice.pdf&quot;.</p>
+<p><strong>Double Extensions:</strong> <code>invoice.pdf.exe</code> or <code>backup.tar.gz.sh</code>. Windows hides known extensions by default, so the user sees &quot;invoice.pdf&quot;.</p>
 </li>
 <li class="">
-<p><strong>Rare/Random Extensions:</strong><code>.dat</code>,<code>.bin</code>,<code>.enc</code>, or random strings (<code>.x8z</code>). Ransomware often renames files with a unique extension during encryption.</p>
+<p><strong>Rare/Random Extensions:</strong> <code>.dat</code>, <code>.bin</code>, <code>.enc</code>, or random strings (<code>.x8z</code>). Ransomware often renames files with a unique extension during encryption.</p>
 </li>
 <li class="">
-<p>**MIME Type Mismatch:**A file named<code>image.png</code>that actually contains an executable header (<code>MZ</code>for Windows,<code>ELF</code>for Linux).</p>
+<p><strong>MIME Type Mismatch:</strong> A file named <code>image.png</code> that actually contains an executable header (<code>MZ</code> for Windows, <code>ELF</code> for Linux).</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-entropy-analysis">3. Entropy Analysis<a href="#3-entropy-analysis" class="hash-link" aria-label="Direct link to 3. Entropy Analysis" title="Direct link to 3. Entropy Analysis" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**What it is:**Entropy measures the randomness of data.</p>
+<p><strong>What it is:</strong> Entropy measures the randomness of data.</p>
 </li>
 <li class="">
 <p><strong>Forensic Value:</strong></p>
 </li>
 <li class="">
-<p>**High Entropy:**Indicates packed malware (compressed to hide code) or encrypted data (ransomware or exfiltration archives).</p>
+<p><strong>High Entropy:</strong> Indicates packed malware (compressed to hide code) or encrypted data (ransomware or exfiltration archives).</p>
 </li>
 <li class="">
-<p>**Investigation Tip:**If you find a random file in<code>AppData</code>with very high entropy, it is likely a staging archive or a crypto-miner..</p>
+<p><strong>Investigation Tip:</strong> If you find a random file in <code>AppData</code> with very high entropy, it is likely a staging archive or a crypto-miner..</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="application-telemetry">Application Telemetry:<a href="#application-telemetry" class="hash-link" aria-label="Direct link to Application Telemetry:" title="Direct link to Application Telemetry:" translate="no">​</a></h2>
 <p>Modern tools generate logs too.</p>
 <ul>
 <li class="">
-<p>**Office macro logs:**Windows Registry “TrustRecords” entries (HKCU…Security\Trusted Documents) show exactly which documents had macros enabled and when.</p>
+<p><strong>Office macro logs:</strong> Windows Registry “TrustRecords” entries (HKCU…Security\Trusted Documents) show exactly which documents had macros enabled and when.</p>
 </li>
 <li class="">
-<p><strong>Browser caches and histories</strong>record visited URLs, downloads, and cookies — use them to trace web-based attacks or data exfil (especially for drive-by compromises)<a href="https://www.magnetforensics.com/blog/investigating-data-exfiltration-key-digital-artifacts-across-windows-linux-and-macos/#:~:text=" target="_blank" rel="noopener noreferrer" class="">magnetforensics.com</a>.</p>
+<p><strong>Browser caches and histories</strong> record visited URLs, downloads, and cookies — use them to trace web-based attacks or data exfil (especially for drive-by compromises)<a href="https://www.magnetforensics.com/blog/investigating-data-exfiltration-key-digital-artifacts-across-windows-linux-and-macos/#:~:text=" target="_blank" rel="noopener noreferrer" class="">magnetforensics.com</a>.</p>
 </li>
 <li class="">
-<p><strong>Email client caches</strong>(e.g. Outlook’s OST/PST files) can be parsed to find malicious attachments or phishing sources.</p>
+<p><strong>Email client caches</strong> (e.g. Outlook’s OST/PST files) can be parsed to find malicious attachments or phishing sources.</p>
 </li>
 <li class="">
-<p>On Linux/Unix,<code>~/.ssh/known_hosts</code>and shell history reveal SSH usage; mail logs (<code>/var/log/mail*</code>) can show large outgoing transfers.</p>
+<p>On Linux/Unix, <code>~/.ssh/known_hosts</code> and shell history reveal SSH usage; mail logs (<code>/var/log/mail*</code>) can show large outgoing transfers.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="attack-techniques-and-iocs-by-mitre-attck-tactic">Attack Techniques and IOCs by MITRE ATT&amp;CK Tactic<a href="#attack-techniques-and-iocs-by-mitre-attck-tactic" class="hash-link" aria-label="Direct link to Attack Techniques and IOCs by MITRE ATT&amp;CK Tactic" title="Direct link to Attack Techniques and IOCs by MITRE ATT&amp;CK Tactic" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Initial Access (TA0001):**Phishing with malicious documents (macros in Office files), drive-by downloads exploiting browsers, USB/removable-media infections, or compromised VPNs. IoCs include document hashes, suspicious URLs/IPs, and registry keys from USB history<a href="https://www.magnetforensics.com/blog/investigating-data-exfiltration-key-digital-artifacts-across-windows-linux-and-macos/#:~:text=" target="_blank" rel="noopener noreferrer" class="">magnetforensics.com</a>. E.g. a “Invoice.docx” enabling macros (traceable in TrustRecords<a href="https://isc.sans.edu/diary/27244#:~:text=HKCU%3A,TrustRecords" target="_blank" rel="noopener noreferrer" class="">isc.sans.edu</a>).</p>
+<p><strong>Initial Access (TA0001):</strong> Phishing with malicious documents (macros in Office files), drive-by downloads exploiting browsers, USB/removable-media infections, or compromised VPNs. IoCs include document hashes, suspicious URLs/IPs, and registry keys from USB history<a href="https://www.magnetforensics.com/blog/investigating-data-exfiltration-key-digital-artifacts-across-windows-linux-and-macos/#:~:text=" target="_blank" rel="noopener noreferrer" class="">magnetforensics.com</a>. E.g. a “Invoice.docx” enabling macros (traceable in TrustRecords<a href="https://isc.sans.edu/diary/27244#:~:text=HKCU%3A,TrustRecords" target="_blank" rel="noopener noreferrer" class="">isc.sans.edu</a>).</p>
 </li>
 <li class="">
-<p>**Execution (TA0002):**Command-line abuse (unusual<code>cmd.exe</code>,<code>bash</code>or<code>powershell.exe</code>arguments), script execution (PowerShell, Bash, Python), or living-off-the-land binaries (LOLBins like<code>rundll32.exe</code>,<code>regsvr32.exe</code>). Look for encoded commands (e.g.<code>-nop -w hidden</code>) or one-off DLL sideloading.</p>
+<p><strong>Execution (TA0002):</strong> Command-line abuse (unusual <code>cmd.exe</code>, <code>bash</code> or <code>powershell.exe</code> arguments), script execution (PowerShell, Bash, Python), or living-off-the-land binaries (LOLBins like <code>rundll32.exe</code>, <code>regsvr32.exe</code>). Look for encoded commands (e.g. <code>-nop -w hidden</code>) or one-off DLL sideloading.</p>
 </li>
 <li class="">
-<p><strong>Persistence (TA0003):<strong>Modifying Run keys or</strong>WMI Event Subscriptions</strong>, creating new cron jobs (Linux), LaunchAgents/Daemons (macOS), or Scheduled Tasks (Windows). Key IOCs include new entries under<code>HKLM:\Software\Microsoft\Windows\CurrentVersion\Run</code>,<code>/etc/cron.d/</code>, or<code>~/Library/LaunchAgents</code>.</p>
+<p><strong>Persistence (TA0003):</strong> Modifying Run keys or <strong>WMI Event Subscriptions</strong>, creating new cron jobs (Linux), LaunchAgents/Daemons (macOS), or Scheduled Tasks (Windows). Key IOCs include new entries under <code>HKLM:\Software\Microsoft\Windows\CurrentVersion\Run</code>, <code>/etc/cron.d/</code>, or <code>~/Library/LaunchAgents</code>.</p>
 </li>
 <li class="">
-<p>**Privilege Escalation (TA0004):**Token stealing or impersonation (Mimikatz attacking LSASS), abusing<code>sudo</code>/<code>su</code>(evidenced in<code>/var/log/auth.log</code>), or Windows UAC bypass scripts. Watch for abnormal service/service DLL registrations or modifications to<code>HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\*</code>(debugger hijack).</p>
+<p><strong>Privilege Escalation (TA0004):</strong> Token stealing or impersonation (Mimikatz attacking LSASS), abusing <code>sudo</code>/<code>su</code> (evidenced in <code>/var/log/auth.log</code>), or Windows UAC bypass scripts. Watch for abnormal service/service DLL registrations or modifications to <code>HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\*</code> (debugger hijack).</p>
 </li>
 <li class="">
-<p>**Defense Evasion (TA0005):**Techniques to hide presence. For example,<strong>parent-child anomalies</strong>: a shell process whose parent is an unrelated system process.<em>Timestomping</em>(manipulating file MACE times) — detect by comparing NTFS $FN or USN Journal against Shadow copies or backups. Malicious image loads: loading drivers or DLLs outside system dirs. Clearing logs (Windows Security log clear event ID 1102) is also a red flag.</p>
+<p><strong>Defense Evasion (TA0005):</strong> Techniques to hide presence. For example, <strong>parent-child anomalies</strong>: a shell process whose parent is an unrelated system process. <em>Timestomping</em> (manipulating file MACE times) — detect by comparing NTFS $FN or USN Journal against Shadow copies or backups. Malicious image loads: loading drivers or DLLs outside system dirs. Clearing logs (Windows Security log clear event ID 1102) is also a red flag.</p>
 </li>
 <li class="">
-<p>**Credential Access (TA0006):**LSASS process access/dumps (catchable via Sysmon 10), dumped SAM or<code>/etc/shadow</code>files (rare file copies), keyloggers (suspicious global hooks), or stealing cached creds (Windows Credential Manager). IoCs: processes like<code>mimikatz.exe</code>, Procdump dumping LSASS, or files created under<code>/root/</code>or<code>%APPDATA%</code>named after<code>hash</code>or<code>dump</code>.</p>
+<p><strong>Credential Access (TA0006):</strong> LSASS process access/dumps (catchable via Sysmon 10), dumped SAM or <code>/etc/shadow</code> files (rare file copies), keyloggers (suspicious global hooks), or stealing cached creds (Windows Credential Manager). IoCs: processes like <code>mimikatz.exe</code>, Procdump dumping LSASS, or files created under <code>/root/</code> or <code>%APPDATA%</code> named after <code>hash</code> or <code>dump</code>.</p>
 </li>
 <li class="">
-<p>**Discovery (TA0007):**Adversaries enumerate network and host info: e.g.<code>netstat</code>,<code>arp -a</code>,<code>whoami</code>,<code>ipconfig</code>,<code>ps</code>,<code>ls</code>, etc. Detection: look for logs of these commands (PowerShell transcripts, shell history). Windows Event 4663 (file access) spikes or mass enumeration of admin tools.</p>
+<p><strong>Discovery (TA0007):</strong> Adversaries enumerate network and host info: e.g. <code>netstat</code>, <code>arp -a</code>, <code>whoami</code>, <code>ipconfig</code>, <code>ps</code>, <code>ls</code>, etc. Detection: look for logs of these commands (PowerShell transcripts, shell history). Windows Event 4663 (file access) spikes or mass enumeration of admin tools.</p>
 </li>
 <li class="">
-<p>**Lateral Movement (TA0008):**SMB/Remote execution (PsExec, Windows Admin Shares — look in Security logs for EventID 5140/5142), RDP, WMI remote calls, or SSH login attempts on Linux. IoCs: log entries showing new SMB connections, domain accounts logging into unfamiliar hosts, or<code>ssh</code>commands in shell history linking known hosts.</p>
+<p><strong>Lateral Movement (TA0008):</strong> SMB/Remote execution (PsExec, Windows Admin Shares — look in Security logs for EventID 5140/5142), RDP, WMI remote calls, or SSH login attempts on Linux. IoCs: log entries showing new SMB connections, domain accounts logging into unfamiliar hosts, or <code>ssh</code> commands in shell history linking known hosts.</p>
 </li>
 <li class="">
-<p>**Collection &amp; Exfiltration (TA0009):**Data staging and exfil. Indicators include large archives (<code>.zip</code>,<code>.rar</code>, strange extensions) created on endpoints, unusual clipboard activity (via<code>clip</code>), or use of uncommon file transfer tools (<code>ftp</code>,<code>curl</code>,<code>scp</code>). Outbound C2 connections (HTTP beacon patterns) often precede exfil. Suspiciously named<code>.zip</code>in user directories or temporary upload scripts in webserver folders are clues.</p>
+<p><strong>Collection &amp; Exfiltration (TA0009):</strong> Data staging and exfil. Indicators include large archives (<code>.zip</code>, <code>.rar</code>, strange extensions) created on endpoints, unusual clipboard activity (via <code>clip</code>), or use of uncommon file transfer tools (<code>ftp</code>, <code>curl</code>, <code>scp</code>). Outbound C2 connections (HTTP beacon patterns) often precede exfil. Suspiciously named <code>.zip</code> in user directories or temporary upload scripts in webserver folders are clues.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-playbooks-and-queries">Detection Playbooks and Queries<a href="#detection-playbooks-and-queries" class="hash-link" aria-label="Direct link to Detection Playbooks and Queries" title="Direct link to Detection Playbooks and Queries" translate="no">​</a></h2>
 <ul>
-<li class=""><strong>Windows (Sysmon/EDR Queries):<strong>Use SIEM queries or Sigma rules to filter Sysmon events. For example, search</strong>EventID 1</strong>for known bad processes:</li>
+<li class=""><strong>Windows (Sysmon/EDR Queries):</strong> Use SIEM queries or Sigma rules to filter Sysmon events. For example, search <strong>EventID 1</strong> for known bad processes:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">index</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=sysmon EventCode=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Image=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*\\powershell.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> CommandLine=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*-nop*&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">index=sysmon EventCode=1 Image=&quot;*\\powershell.exe&quot; CommandLine=&quot;*-nop*&quot;</span><br></div></code></pre></div></div>
 <ul>
 <li class="">or look for uncommon parents:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">index</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sysmon </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EventCode</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ParentImage</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">!</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">explorer.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AND</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Image</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cmd.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OR</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Image</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">\\</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">powershell.exe&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">index=sysmon EventCode=1 ParentImage!=&quot;*\\explorer.exe&quot; AND (Image=&quot;*\\cmd.exe&quot; OR Image=&quot;*\\powershell.exe&quot;)</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
-<p>Check**EventID 3 (Network Connect)<strong>for connections to rare external IPs, and</strong>EventID 10 (Process Access)**where TargetImage endswith<code>lsass.exe</code>. Sigma rules can encode these searches generically across SIEMs. In Splunk or ELK, alerts might trigger on<code>EventID=11</code>(file creation) for sensitive locations (e.g.<code>C:\Windows\System32\Tasks\evil.xml</code>).</p>
+<p>Check <strong>EventID 3 (Network Connect)</strong> for connections to rare external IPs, and <strong>EventID 10 (Process Access)</strong> where TargetImage endswith <code>lsass.exe</code>. Sigma rules can encode these searches generically across SIEMs. In Splunk or ELK, alerts might trigger on <code>EventID=11</code> (file creation) for sensitive locations (e.g. <code>C:\Windows\System32\Tasks\evil.xml</code>).</p>
 </li>
 <li class="">
-<p>**Linux/macOS:**Search shell histories and logs. Example:</p>
+<p><strong>Linux/macOS:</strong> Search shell histories and logs. Example:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">grep -Ei </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;(wget|curl|scp|ftp)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /home/*/.bash_history grep -R </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;netcat\|ncat\|cryptcat&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> /var/log/ journalctl | grep -i </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Failed password&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">grep -Ei &quot;(wget|curl|scp|ftp)&quot; /home/*/.bash_history grep -R &quot;netcat\|ncat\|cryptcat&quot; /var/log/ journalctl | grep -i &quot;Failed password&quot;</span><br></div></code></pre></div></div>
 <ul>
-<li class="">Use<strong>auditd/AIDE</strong>to detect file changes (e.g., new SUID binaries). Example<code>osquery</code>query:</li>
+<li class="">Use <strong>auditd/AIDE</strong> to detect file changes (e.g., new SUID binaries). Example <code>osquery</code> query:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SELECT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FROM</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> file </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">WHERE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">LIKE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;/etc/cron.%&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OR</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> path </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">LIKE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;/usr/sbin/cron&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SELECT * FROM file WHERE path LIKE &#x27;/etc/cron.%&#x27; OR path LIKE &#x27;/usr/sbin/cron&#x27;;</span><br></div></code></pre></div></div>
 <ul>
-<li class="">Inspect login records (<code>last</code>,<code>/var/log/auth.log</code>) for unexpected<code>ssh</code>usage or privilege escalations. Check process parent trees:</li>
+<li class="">Inspect login records (<code>last</code>, <code>/var/log/auth.log</code>) for unexpected <code>ssh</code> usage or privilege escalations. Check process parent trees:</li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ps auxf | </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">grep</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -i </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;ssh\|bash\|cron\|daemon&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ps auxf | grep -i &quot;ssh\|bash\|cron\|daemon&quot;</span><br></div></code></pre></div></div>
 <ul>
 <li class="">
-<p>for odd spawn chains. Look for non-standard binaries (e.g. executables in<code>/tmp</code>or user home) with<code>find / -type f -perm -111 -nouser</code>.</p>
+<p>for odd spawn chains. Look for non-standard binaries (e.g. executables in <code>/tmp</code> or user home) with <code>find / -type f -perm -111 -nouser</code>.</p>
 </li>
 <li class="">
-<p>**Suspicious Process Trees:**Example:<code>rundll32.exe</code>launching a PowerShell child is unusual. A search for Sysmon Process Create where<code>ParentImage=&quot;*\\rundll32.exe&quot;</code>and<code>Image=&quot;*\\powershell.exe&quot;</code>would catch that. Similarly, if<code>explorer.exe</code>is parent of a shell script on mac (<code>bash</code>parented by a GUI app), that should be flagged. Always inspect chains like<code>ServiceHost → svchost → cmd.exe</code>.</p>
+<p><strong>Suspicious Process Trees:</strong> Example: <code>rundll32.exe</code> launching a PowerShell child is unusual. A search for Sysmon Process Create where <code>ParentImage=&quot;*\\rundll32.exe&quot;</code> and <code>Image=&quot;*\\powershell.exe&quot;</code> would catch that. Similarly, if <code>explorer.exe</code> is parent of a shell script on mac (<code>bash</code> parented by a GUI app), that should be flagged. Always inspect chains like <code>ServiceHost → svchost → cmd.exe</code>.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hunting-tools-and-frameworks">Hunting Tools and Frameworks<a href="#hunting-tools-and-frameworks" class="hash-link" aria-label="Direct link to Hunting Tools and Frameworks" title="Direct link to Hunting Tools and Frameworks" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>Commercial EDRs:<strong>Solutions like</strong>CrowdStrike Falcon</strong>,<strong>SentinelOne</strong>,<strong>Microsoft Defender for Endpoint</strong>, and<strong>Elastic Agent</strong>offer real-time endpoint telemetry (processes, registry, disk, memory) and built-in hunting queries. They often integrate with cloud SIEMs for query-based hunting.</p>
+<p><strong>Commercial EDRs:</strong> Solutions like <strong>CrowdStrike Falcon</strong>, <strong>SentinelOne</strong>, <strong>Microsoft Defender for Endpoint</strong>, and <strong>Elastic Agent</strong> offer real-time endpoint telemetry (processes, registry, disk, memory) and built-in hunting queries. They often integrate with cloud SIEMs for query-based hunting.</p>
 </li>
 <li class="">
-<p><strong>Open Source:<strong>Tools like</strong>Velociraptor</strong>(collect endpoint artifacts via VQL),<strong>Osquery</strong>(SQL queries against endpoint data),<strong>Sysmon</strong>(Windows event logging),<strong>KAPE</strong>(collect forensic artifacts),<strong>GRR</strong>(IR framework),<strong>Plaso</strong>(timeline generation), and<strong>Rekall</strong>(memory forensics) are widely used. Velociraptor’s Artifact Exchange provides dozens of ready-made hunts (e.g. Windows.System.PowerShell.ExecutedCommand to find suspicious PowerShell).</p>
+<p><strong>Open Source:</strong> Tools like <strong>Velociraptor</strong> (collect endpoint artifacts via VQL), <strong>Osquery</strong> (SQL queries against endpoint data), <strong>Sysmon</strong> (Windows event logging), <strong>KAPE</strong> (collect forensic artifacts), <strong>GRR</strong> (IR framework), <strong>Plaso</strong> (timeline generation), and <strong>Rekall</strong> (memory forensics) are widely used. Velociraptor’s Artifact Exchange provides dozens of ready-made hunts (e.g. Windows.System.PowerShell.ExecutedCommand to find suspicious PowerShell).</p>
 </li>
 <li class="">
-<p><strong>Memory Analysis:<strong><strong>Volatility 3</strong>,<strong>Redline</strong>,<strong>DumpIt</strong>, and</strong>LiME</strong>can acquire and analyze RAM. Volatility plugins can dump credentials (<code>hashdump</code>), scan for injected code (Mimikatz signatures), or reconstruct execution (<code>pslist</code>,<code>pstree</code>).</p>
+<p><strong>Memory Analysis:</strong> <strong>Volatility 3</strong>, <strong>Redline</strong>, <strong>DumpIt</strong>, and <strong>LiME</strong> can acquire and analyze RAM. Volatility plugins can dump credentials (<code>hashdump</code>), scan for injected code (Mimikatz signatures), or reconstruct execution (<code>pslist</code>, <code>pstree</code>).</p>
 </li>
 <li class="">
-<p><strong>Log Aggregation:<strong>Centralizing logs in</strong>XPLG, ELK Stack</strong>(Elasticsearch/Kibana),<strong>Wazuh</strong>, or<strong>Splunk</strong>allows complex queries. For example, a Splunk query to spot new admin users might be:<code>index=wineventlog EventCode=4728 OR 4729 | stats count by TargetAccount</code>. Kibana dashboards can plot process execution counts by endpoint.</p>
+<p><strong>Log Aggregation:</strong> Centralizing logs in <strong>XPLG, ELK Stack</strong> (Elasticsearch/Kibana), <strong>Wazuh</strong>, or <strong>Splunk</strong> allows complex queries. For example, a Splunk query to spot new admin users might be: <code>index=wineventlog EventCode=4728 OR 4729 | stats count by TargetAccount</code>. Kibana dashboards can plot process execution counts by endpoint.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="practical-hunting-workflow-examples">Practical Hunting Workflow Examples<a href="#practical-hunting-workflow-examples" class="hash-link" aria-label="Direct link to Practical Hunting Workflow Examples" title="Direct link to Practical Hunting Workflow Examples" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Detecting Persistence via Registry/Service:**Suppose a new service is spotted (e.g. “AdobeUpdaterService”) running a strange executable.*Step-by-step:*use<code>Get-Service</code>or WMI to find its image path; check the registry under<code>HKLM:\CurrentControlSet\Services\AdobeUpdaterService</code>for its EXE location. If odd, search the hostname for that EXE. Next, review<code>HKLM:\Software\Microsoft\Windows\CurrentVersion\Run</code>and<code>HKCU:\...\Run</code>to see if the same EXE is listed – it may have created a startup key. Find the process’s parent in Sysmon/Task Manager to ensure it wasn’t launched by a legitimate program.</p>
+<p><strong>Detecting Persistence via Registry/Service:</strong> Suppose a new service is spotted (e.g. “AdobeUpdaterService”) running a strange executable. <em>Step-by-step:</em> use <code>Get-Service</code> or WMI to find its image path; check the registry under <code>HKLM:\CurrentControlSet\Services\AdobeUpdaterService</code> for its EXE location. If odd, search the hostname for that EXE. Next, review <code>HKLM:\Software\Microsoft\Windows\CurrentVersion\Run</code> and <code>HKCU:\...\Run</code> to see if the same EXE is listed – it may have created a startup key. Find the process’s parent in Sysmon/Task Manager to ensure it wasn’t launched by a legitimate program.</p>
 </li>
 <li class="">
-<p>**Timeline Reconstruction (Prefetch + Shimcache + MFT):**Assume a suspicious<code>evil.exe</code>was found. Check<code>C:\Windows\Prefetch\Evil.EXE-*.pf</code>: the filename encodes last run time<a href="https://www.magnetforensics.com/blog/investigating-data-exfiltration-key-digital-artifacts-across-windows-linux-and-macos/#:~:text=" target="_blank" rel="noopener noreferrer" class="">magnetforensics.com</a>. Load it in WinPrefetchView to see execution count and timestamp. In the Registry/System Volume Information, look at Shimcache for the same file path<a href="https://www.magnetforensics.com/blog/investigating-data-exfiltration-key-digital-artifacts-across-windows-linux-and-macos/#:~:text=" target="_blank" rel="noopener noreferrer" class="">magnetforensics.com</a>. Use an MFT parser (e.g. log2timeline) to get precise file creation/modify times. By aligning these times, you can pinpoint when<code>evil.exe</code>appeared and ran. If it ran on multiple hosts, compare their timelines to map lateral movement.</p>
+<p><strong>Timeline Reconstruction (Prefetch + Shimcache + MFT):</strong> Assume a suspicious <code>evil.exe</code> was found. Check <code>C:\Windows\Prefetch\Evil.EXE-*.pf</code>: the filename encodes last run time<a href="https://www.magnetforensics.com/blog/investigating-data-exfiltration-key-digital-artifacts-across-windows-linux-and-macos/#:~:text=" target="_blank" rel="noopener noreferrer" class="">magnetforensics.com</a>. Load it in WinPrefetchView to see execution count and timestamp. In the Registry/System Volume Information, look at Shimcache for the same file path<a href="https://www.magnetforensics.com/blog/investigating-data-exfiltration-key-digital-artifacts-across-windows-linux-and-macos/#:~:text=" target="_blank" rel="noopener noreferrer" class="">magnetforensics.com</a>. Use an MFT parser (e.g. log2timeline) to get precise file creation/modify times. By aligning these times, you can pinpoint when <code>evil.exe</code> appeared and ran. If it ran on multiple hosts, compare their timelines to map lateral movement.</p>
 </li>
 <li class="">
-<p>**Hunting Credential Theft:**Look for Sysmon EventID 10 where<code>TargetImage</code>ends in<code>\lsass.exe</code>. This indicates a process opened LSASS (often for dumping credentials). Cross-reference the<code>Image</code>and<code>ProcessGuid</code>for those events to find the culprit (e.g.<code>procdump.exe</code>or<code>mimikatz.exe</code>). On Linux, check<code>/var/log/auth.log</code>or<code>sudo log</code>for sudden<code>su</code>or<code>sudo</code>usage. Use a memory dump tool to capture<code>lsass.exe</code>(e.g. with ProcDump or Task Manager Dump). Run Volatility’s<code>hashdump</code>or<code>lsa_secrets</code>on the dump to extract account hashes and secrets. Alert on any process loading<code>mimilib.dll</code>or calling<code>LSAOpenProcess</code>.</p>
+<p><strong>Hunting Credential Theft:</strong> Look for Sysmon EventID 10 where <code>TargetImage</code> ends in <code>\lsass.exe</code>. This indicates a process opened LSASS (often for dumping credentials). Cross-reference the <code>Image</code> and <code>ProcessGuid</code> for those events to find the culprit (e.g. <code>procdump.exe</code> or <code>mimikatz.exe</code>). On Linux, check <code>/var/log/auth.log</code> or <code>sudo log</code> for sudden <code>su</code> or <code>sudo</code> usage. Use a memory dump tool to capture <code>lsass.exe</code> (e.g. with ProcDump or Task Manager Dump). Run Volatility’s <code>hashdump</code> or <code>lsa_secrets</code> on the dump to extract account hashes and secrets. Alert on any process loading <code>mimilib.dll</code> or calling <code>LSAOpenProcess</code>.</p>
 </li>
 <li class="">
-<p>**Using Velociraptor to Hunt PowerShell/Macros:**Deploy Velociraptor and import the artifact exchange. For example, use the<code>Windows.System.PowerShell.ExecutedCommand</code>artifact to search all endpoints for suspicious PowerShell. A sample VQL query:</p>
+<p><strong>Using Velociraptor to Hunt PowerShell/Macros:</strong> Deploy Velociraptor and import the artifact exchange. For example, use the <code>Windows.System.PowerShell.ExecutedCommand</code> artifact to search all endpoints for suspicious PowerShell. A sample VQL query:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SELECT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FROM</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> artifact </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">WHERE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> artifact </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;Windows.System.PowerShell.ExecutedCommand&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">AND</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> (cmd_line </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">LIKE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;%Invoke-Expression%&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OR</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> cmd_line </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">LIKE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;%DownloadString%&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div></code></pre></div></div>
-<p>This returns hosts where PowerShell was used to download/execute content. Similarly, use<code>Windows.Forensics.ActiveFiles</code>to find newly created<code>.vbs</code>or<code>.ps1</code>in temporary folders, or<code>Windows.EventLog</code>artifacts to search for Office macro block events.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SELECT * FROM artifact WHERE artifact = &#x27;Windows.System.PowerShell.ExecutedCommand&#x27;  AND (cmd_line LIKE &#x27;%Invoke-Expression%&#x27; OR cmd_line LIKE &#x27;%DownloadString%&#x27;)</span><br></div></code></pre></div></div>
+<p>This returns hosts where PowerShell was used to download/execute content. Similarly, use <code>Windows.Forensics.ActiveFiles</code> to find newly created <code>.vbs</code> or <code>.ps1</code> in temporary folders, or <code>Windows.EventLog</code> artifacts to search for Office macro block events.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="enrichment-pivoting-and-automation">Enrichment, Pivoting, and Automation<a href="#enrichment-pivoting-and-automation" class="hash-link" aria-label="Direct link to Enrichment, Pivoting, and Automation" title="Direct link to Enrichment, Pivoting, and Automation" translate="no">​</a></h2>
-<p>Detected IOCs should be enriched and pivoted across data. For example, lookup a suspicious hash on<strong>VirusTotal</strong>or<strong>Hybrid Analysis</strong>for known malware family information. From one IOC (say a malicious parent process GUID), pivot to find all events with that GUID, all processes with the same parent or same command line. Look for<em>same parent process</em>across multiple hosts,<em>same binary hash</em>in other systems,<em>same user account</em>, or<em>same outbound IP</em>. Automation scripts are invaluable: e.g. an OSQuery script to regularly dump all autorun registry entries, or a PowerShell script using WMI to list all current scheduled tasks. Build alert rules/dashboards in your SIEM for common patterns — e.g. a recurring Splunk search for “ParentProcessName = powershell.exe AND CommandLine contains<code>Invoke-WebRequest</code>”. When hunts succeed, feed their results into<strong>Playbooks</strong>(SOPs) and continuously refine detection rules.</p>
+<p>Detected IOCs should be enriched and pivoted across data. For example, lookup a suspicious hash on <strong>VirusTotal <strong>or</strong> Hybrid Analysis</strong> for known malware family information. From one IOC (say a malicious parent process GUID), pivot to find all events with that GUID, all processes with the same parent or same command line. Look for <em>same parent process</em> across multiple hosts, <em>same binary hash</em> in other systems, <em>same user account</em>, or <em>same outbound IP</em>. Automation scripts are invaluable: e.g. an OSQuery script to regularly dump all autorun registry entries, or a PowerShell script using WMI to list all current scheduled tasks. Build alert rules/dashboards in your SIEM for common patterns — e.g. a recurring Splunk search for “ParentProcessName = powershell.exe AND CommandLine contains <code>Invoke-WebRequest</code>”. When hunts succeed, feed their results into <strong>Playbooks</strong> (SOPs) and continuously refine detection rules.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-reading-and-references">Further Reading and References<a href="#further-reading-and-references" class="hash-link" aria-label="Direct link to Further Reading and References" title="Direct link to Further Reading and References" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>MITRE ATT&amp;CK</strong>— comprehensive mapping of tactics &amp; techniques<a href="https://attack.mitre.org/tactics/TA0001/#:~:text=The%20adversary%20is%20trying%20to,get%20into%20your%20network" target="_blank" rel="noopener noreferrer" class="">attack.mitre.org</a>.</p>
+<p><strong>MITRE ATT&amp;CK</strong> — comprehensive mapping of tactics &amp; techniques <a href="https://attack.mitre.org/tactics/TA0001/#:~:text=The%20adversary%20is%20trying%20to,get%20into%20your%20network" target="_blank" rel="noopener noreferrer" class="">attack.mitre.org</a>.</p>
 </li>
 <li class="">
-<p>**Threat Hunting Frameworks:**PEAK (Microsoft), OTHF, TaHITI, etc. (See Splunk’s PEAK documentation).</p>
+<p><strong>Threat Hunting Frameworks:</strong> PEAK (Microsoft), OTHF, TaHITI, etc. (See Splunk’s PEAK documentation).</p>
 </li>
 <li class="">
-<p>**DFIR Guides:**SANS/ForensicFocus/Huntress/Red Canary blogs offer detection playbooks (e.g. Red Canary’s “3 Keys to Threat Hunting”).</p>
+<p><strong>DFIR Guides:</strong> SANS/ForensicFocus/Huntress/Red Canary blogs offer detection playbooks (e.g. Red Canary’s “3 Keys to Threat Hunting”).</p>
 </li>
 <li class="">
-<p>**GitHub Repos:**SigmaHQ (Sigma rules repository with 3000+ detection rules)<a href="https://github.com/SigmaHQ/sigma#:~:text=Welcome%20to%20the%20Sigma%20main,to%20all%20at%20no%20cost" target="_blank" rel="noopener noreferrer" class="">github.com</a>;<strong>Velociraptor</strong>Artifact Exchange (ready-made hunts); forensic scripts on GitHub (e.g. artifact parsers).</p>
+<p><strong>GitHub Repos:</strong> SigmaHQ (Sigma rules repository with 3000+ detection rules) <a href="https://github.com/SigmaHQ/sigma#:~:text=Welcome%20to%20the%20Sigma%20main,to%20all%20at%20no%20cost" target="_blank" rel="noopener noreferrer" class="">github.com</a>; <strong>Velociraptor</strong> Artifact Exchange (ready-made hunts); forensic scripts on GitHub (e.g. artifact parsers).</p>
 </li>
 <li class="">
-<p>**Public Datasets:**Volatility memory sample repository (e.g. Volatility Foundation’s GitHub), DFIR.training challenges, Malware traffic/zoo sites for practice.</p>
+<p><strong>Public Datasets:</strong> Volatility memory sample repository (e.g. Volatility Foundation’s GitHub), DFIR.training challenges, Malware traffic/zoo sites for practice.</p>
 </li>
 </ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-12-12-protocol-level-network-threat-hunting-a-wireshark-centric-guide-a6770ffc96c6"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Protocol-Level Network Threat Hunting: A Wireshark-Centric Guide</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-12-18-hexstrike-ai-install-configure-and-run-mcp-with-gemini-openai-cursor-llama-85a0e5752949"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">HexStrike AI: Install, Configure, and Run MCP with Gemini, OpenAI, Cursor, Llama</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#uncovering-advanced-compromises-through-telemetry-artifacts-mitre-attck-tactics-and-practical-playbooks" class="table-of-contents__link toc-highlight">Uncovering Advanced Compromises Through Telemetry, Artifacts, MITRE ATT&amp;CK Tactics, and Practical Playbooks</a></li></ul></li><li><a href="#executive-summary" class="table-of-contents__link toc-highlight">Executive Summary</a></li><li><a href="#hunting-methodology-and-strategies" class="table-of-contents__link toc-highlight">Hunting Methodology and Strategies</a></li><li><a href="#core-endpoint-data-sources" class="table-of-contents__link toc-highlight">Core Endpoint Data Sources</a></li><li><a href="#windows-endpoints-the-gold-mine-of-digital-forensics" class="table-of-contents__link toc-highlight">Windows Endpoints: The Gold Mine of Digital Forensics</a><ul><li><a href="#1-sysmon-the-forensic-workhorse" class="table-of-contents__link toc-highlight">1. Sysmon: The Forensic Workhorse</a></li><li><a href="#2-native-windows-event-logs" class="table-of-contents__link toc-highlight">2. Native Windows Event Logs</a></li><li><a href="#3-the-registry-persistence-and-history" class="table-of-contents__link toc-highlight">3. The Registry: Persistence and History</a></li><li><a href="#4-filesystem-execution-artifacts" class="table-of-contents__link toc-highlight">4. Filesystem Execution Artifacts</a></li><li><a href="#5-scheduled-tasks" class="table-of-contents__link toc-highlight">5. Scheduled Tasks</a></li></ul></li><li><a href="#linux--macos-server-rooms-and-developer-workstations" class="table-of-contents__link toc-highlight">Linux &amp; macOS: Server Rooms and Developer Workstations</a></li><li><a href="#1-linux-endpoints-the-server-backbone" class="table-of-contents__link toc-highlight">1. Linux Endpoints: The Server Backbone</a><ul><li><a href="#key-log-sources" class="table-of-contents__link toc-highlight">Key Log Sources</a></li><li><a href="#shell-history-the-attackers-diary" class="table-of-contents__link toc-highlight">Shell History: The Attacker’s Diary</a></li><li><a href="#persistence-mechanisms" class="table-of-contents__link toc-highlight">Persistence Mechanisms</a></li></ul></li><li><a href="#2-macos-endpoints-the-unified-log--launchd" class="table-of-contents__link toc-highlight">2. macOS Endpoints: The Unified Log &amp; Launchd</a><ul><li><a href="#the-unified-logging-system-uls" class="table-of-contents__link toc-highlight">The Unified Logging System (ULS)</a></li><li><a href="#security-artifacts" class="table-of-contents__link toc-highlight">Security Artifacts</a></li><li><a href="#persistence-launchagents--launchdaemons" class="table-of-contents__link toc-highlight">Persistence: LaunchAgents &amp; LaunchDaemons</a></li></ul></li><li><a href="#3-volatile-data--live-response-cross-platform" class="table-of-contents__link toc-highlight">3. Volatile Data &amp; Live Response (Cross-Platform)</a><ul><li><a href="#process-trees--parent-child-relationships" class="table-of-contents__link toc-highlight">Process Trees &amp; Parent-Child Relationships</a></li></ul></li><li><a href="#network-connections" class="table-of-contents__link toc-highlight">Network Connections</a></li><li><a href="#memory-forensics" class="table-of-contents__link toc-highlight">Memory Forensics</a></li><li><a href="#open-handles" class="table-of-contents__link toc-highlight">Open Handles</a></li><li><a href="#filesystem-forensics-the-silent-witness" class="table-of-contents__link toc-highlight">Filesystem Forensics: The Silent Witness</a></li><li><a href="#1-the-timeline-mace--macb-analysis" class="table-of-contents__link toc-highlight">1. The Timeline: MACE / MACB Analysis</a><ul><li><a href="#the-attributes" class="table-of-contents__link toc-highlight">The Attributes</a></li></ul></li><li><a href="#2-windows-artifacts-ntfs-deep-dive" class="table-of-contents__link toc-highlight">2. Windows Artifacts: NTFS Deep Dive</a><ul><li><a href="#the-master-file-table-mft" class="table-of-contents__link toc-highlight">The Master File Table ($MFT)</a></li><li><a href="#alternate-data-streams-ads" class="table-of-contents__link toc-highlight">Alternate Data Streams (ADS)</a></li></ul></li><li><a href="#3-linux--macos-artifacts-inodes--extended-attributes" class="table-of-contents__link toc-highlight">3. Linux &amp; macOS Artifacts: Inodes &amp; Extended Attributes</a><ul><li><a href="#inode-forensics" class="table-of-contents__link toc-highlight">Inode Forensics</a></li><li><a href="#hidden-files--directories" class="table-of-contents__link toc-highlight">Hidden Files &amp; Directories</a></li></ul></li><li><a href="#4-universal-red-flags-the-staging-grounds" class="table-of-contents__link toc-highlight">4. Universal Red Flags (The “Staging” Grounds)</a><ul><li><a href="#1-suspicious-paths" class="table-of-contents__link toc-highlight">1. Suspicious Paths</a></li><li><a href="#2-file-extension-anomalies" class="table-of-contents__link toc-highlight">2. File Extension Anomalies</a></li><li><a href="#3-entropy-analysis" class="table-of-contents__link toc-highlight">3. Entropy Analysis</a></li></ul></li><li><a href="#application-telemetry" class="table-of-contents__link toc-highlight">Application Telemetry:</a></li><li><a href="#attack-techniques-and-iocs-by-mitre-attck-tactic" class="table-of-contents__link toc-highlight">Attack Techniques and IOCs by MITRE ATT&amp;CK Tactic</a></li><li><a href="#detection-playbooks-and-queries" class="table-of-contents__link toc-highlight">Detection Playbooks and Queries</a></li><li><a href="#hunting-tools-and-frameworks" class="table-of-contents__link toc-highlight">Hunting Tools and Frameworks</a></li><li><a href="#practical-hunting-workflow-examples" class="table-of-contents__link toc-highlight">Practical Hunting Workflow Examples</a></li><li><a href="#enrichment-pivoting-and-automation" class="table-of-contents__link toc-highlight">Enrichment, Pivoting, and Automation</a></li><li><a href="#further-reading-and-references" class="table-of-contents__link toc-highlight">Further Reading and References</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>

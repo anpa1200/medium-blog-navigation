@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -39,20 +39,20 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-combine-nmap--llm">Why combine Nmap + LLM?<a href="#why-combine-nmap--llm" class="hash-link" aria-label="Direct link to Why combine Nmap + LLM?" title="Direct link to Why combine Nmap + LLM?" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Speed up triage.**Nmap outputs are factual but noisy. An LLM converts them to prioritized risk lists, short remediation steps, and CVE-mapping suggestions instantly.</p>
+<p><strong>Speed up triage.</strong> Nmap outputs are factual but noisy. An LLM converts them to prioritized risk lists, short remediation steps, and CVE-mapping suggestions instantly.</p>
 </li>
 <li class="">
-<p>**Consistent reporting.**Generate client-ready executive summaries, remediation tickets, and technical playbooks from the same source of truth.</p>
+<p><strong>Consistent reporting.</strong> Generate client-ready executive summaries, remediation tickets, and technical playbooks from the same source of truth.</p>
 </li>
 <li class="">
-<p>**Creative hypothesis generation.**LLMs suggest attack chains or correlated weaknesses (e.g., “FTP + weak TLS + web server → likely file exfil path”) that a human may spot later.</p>
+<p><strong>Creative hypothesis generation.</strong> LLMs suggest attack chains or correlated weaknesses (e.g., “FTP + weak TLS + web server → likely file exfil path”) that a human may spot later.</p>
 </li>
 <li class="">
-<p>**Automate mundane tasks.**Turn XML → CSV → ticket creation → Slack report with a few lines of automation.</p>
+<p><strong>Automate mundane tasks.</strong> Turn XML → CSV → ticket creation → Slack report with a few lines of automation.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-world-workflow-practical">Real-world workflow (practical)<a href="#real-world-workflow-practical" class="hash-link" aria-label="Direct link to Real-world workflow (practical)" title="Direct link to Real-world workflow (practical)" translate="no">​</a></h2>
-<p>For this guide I use a legal training platform:<a href="http://www.hackthissite.org" target="_blank" rel="noopener noreferrer" class="">www.hackthissite.org</a></p>
+<p>For this guide I use a legal training platform: <a href="http://www.hackthissite.org" target="_blank" rel="noopener noreferrer" class="">www.hackthissite.org</a></p>
 <img src="https://cdn-images-1.medium.com/max/800/1*i88-4IUimguzAb_V2J7FfA.png" alt="Article image" width="1507" height="662" loading="lazy" decoding="async">
 <ul>
 <li class="">
@@ -62,5281 +62,561 @@
 <p>Run targeted scans with Nmap:</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sT -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">A</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -O -oX scan_2025-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">11</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">23</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.xml</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">137.74</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">187.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">24</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sT -A -O -oX scan_2025-11-23.xml 137.74.187.0/24</span><br></div></code></pre></div></div>
 <ul>
-<li class="">Save a machine-readable copy:<code>-oX</code>(XML). Example file I used:<code>/mnt/data/hackthissite_scan.xml</code>.</li>
+<li class="">Save a machine-readable copy: <code>-oX</code> (XML). Example file I used: <code>/mnt/data/hackthissite_scan.xml</code>.</li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*sSiTwbBeod_bLZLoIeUJ5w.png" alt="Article image" width="1670" height="913" loading="lazy" decoding="async">
 <p><strong>2. Hand-off to the LLM</strong></p>
 <ul>
 <li class="">
-<p>Give the LLM a<strong>XML file</strong>. Ask for prioritized triage, CVE mapping, and remediation steps.</p>
+<p>Give the LLM a <strong>XML file</strong>. Ask for prioritized triage, CVE mapping, and remediation steps.</p>
 </li>
 <li class="">
 <p>Example prompt templates are below (copy/paste).</p>
 </li>
 </ul>
-<details class="plain-large-code" data-plain-code-lines="386"><summary>Large code or log block<!-- --> · <!-- -->386<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>CONTEXT:
-You will analyze an Nmap XML scan saved at 
-this
- file path: file:
-///mnt/data/hackthissite_scan.xml
-Treat 
-this
- XML as the authoritative scan artifact. Do not invent facts — extract only what is present in the XML. If information is missing or ambiguous, mark it 
-&quot;NEEDS_VALIDATION&quot;
- and explain why.
-GOAL (deliverables):
-Produce a thorough, human-readable security analysis organized as follows:
-  
-1.
- Executive 
-summary
- 
-(
-3
- bullets)
- — top risks and suggested immediate 
-actions
- 
-(non-destructive)
-.
-  
-2.
- For each 
-host
- 
-(sorted by highest risk first)
-:
-     - Host header: IP, PTR/hostname, risk 
-level
- 
-(Critical/High/Medium/Low/Info)
-, numeric risk score and scoring breakdown.
-     - Open services summary: port/service/product/version/CPE/script 
-evidence
- 
-(copy the exact snippet from XML that shows the banner/script output)
-.
-     - Vulnerabilities &amp; misconfigurations 
-found
- 
-(explicit list)
-. For each vulnerability include:
-         a) Short 
-title
- 
-(one line)
-         b) Description (
-2
-–
-4
- sentences; how it can be abused)
-         c) Evidence: exact XML tag or script output 
-line
-(s)
- that justify the 
-finding
- 
-(quote)
-.
-         d) Likely attack vectors / exploitation 
-paths
- 
-(
-1
-–
-3
- one line scenarios)
-         e) Remediation (ordered, prioritized; include exact non-destructive commands or config lines to fix; e.g., `sshd_config: PermitRootLogin no; PasswordAuthentication no` or `sudo apt update &amp;&amp; sudo apt install --only-upgrade openssh-server`)
-         f) **Forensic / investigation checklist** — 
-for
- each vuln, list the exact next checks to discover an attacker’s next step, including:
-            - Log sources and exact paths to 
-check
- 
-(e.g., `/
-var
-/log/auth.log`, `journalctl -u ssh.service`, Apache access/error log paths)
-            - Non-destructive commands to run to validate suspicious 
-activity
- 
-(read-only or safe)
- — e.g., `sudo grep -E 
-&quot;Failed password|Accepted publickey&quot;
- /
-var
-/log/auth.log` or `sudo less /
-var
-/log/apache2/access.log | tail -n 
-200
-` (only read commands; 
-do
- not run exploits)
-            - Indicators to look 
-for
- 
-(unusual usernames, source IPs, abnormal request patterns, suspicious User-Agent strings, file modifications with timestamps)
-            - Quick timeline triage 
-steps
- 
-(e.g., check last 24h auth events, list recently modified webroot files with `find /
-var
-/www -mtime -
-3
- -ls`)
-            - Suggested SIEM/Detection rules to 
-create
- 
-(high-level logic and example detection query, e.g., 
-&quot;Detect &gt;5 failed SSH logins from same source within 5 minutes&quot;
-)
-         g) Validation steps: how to confirm the vulnerability is 
-real
- 
-(non-destructive checks you can run)
-.
-         h) Confidence level: High/Medium/Low and 
-reason
- 
-(e.g., 
-&#x27;banner matched product X version Y&#x27;
- vs 
-&#x27;OS fingerprint ambiguous&#x27;
-)
-.
-     - End host section with a 
-short
- prioritized remediation 
-checklist
- 
-(top 
-3
- actions)
-.
-  
-3.
- Cross-host 
-observations
- 
-(
-if
- any)
-: e.g., same SSL cert across hosts, duplicate SSH hostkeys, multiple hosts with same outdated service — indicate lateral risk or pivot paths.
-  
-4.
- MITRE ATT&amp;CK mapping: 
-for
- the top 
-10
- findings across hosts, list ATT&amp;CK IDs and a 
-short
- mapping reason.
-  
-5.
- Detection &amp; hunting 
-playbook
- 
-(concise)
-:
-     - 
-8
-–
-12
- high-value detection rules / searches (SIEM queries or pseudocode) prioritized by impact.
-     - Quick incident response playbook: triage -&gt; contain -&gt; eradicate -&gt; recover steps specific to 
-this
- scan’s top findings.
-  
-6.
- Appendices:
-     - Raw evidence snippets 
-extracted
- 
-(tagged with XML path or script name and line)
-.
-     - Short machine-readable 
-summary
- 
-(JSON)
- listing hosts with risk_score, risk_level, open_ports and 
-vulnerabilities
- 
-(
-for
- automation use)
-.
-SCORING (show the math):
- - Use a transparent scoring heuristic and show the breakdown per 
-host
- 
-(example weights — you may adapt but display calculation)
-:
-   * FTP open: +
-30
-   * SSH open: +
-20
-   * Web 
-server
- 
-(
-80
-/
-443
-/
-8080
-/
-8443
-)
-: +
-15
-   * Product version indicates outdated/legacy: +
-10
-   * TLS cert expiring &lt;
-45
- days: +
-8
-   * Old 
-kernel
- 
-(
-2.6
-/
-3.
-x fingerprints)
-: +
-6
-   * Sensitive service 
-exposed
- 
-(database, RDP, SMB)
-: +
-25
-   * Filtered/closed ports subtract small amount: -
-2
- - Convert total to risk_level: Critical (&gt;=
-45
-), High (
-30
-–
-44
-), Medium (
-15
-–
-29
-), Low (
-5
-–
-14
-), Info (&lt;
-5
-).
-CVEs and enrichment:
- - If `ALLOW_WEB_LOOKUP=
-true
-` then fetch likely CVEs and CVSS scores 
-for
- observed product+version and include 
-references
- 
-(NVD/MITRE links)
-. If web lookup is NOT permitted, set `cve_candidates` field to 
-&quot;SKIPPED - web lookup disabled&quot;
- and **
-do
- not** invent CVE IDs.
-SAFETY 
-RULES
- 
-(mandatory)
-:
- - Do NOT provide exploit code, exploit PoCs, or step-by-step attack execution instructions. You may describe attack vectors 
-conceptually
- 
-(what an attacker could 
-try
-)
- but not how to perform them.
- - Only include non-destructive verification commands and read-only forensic checks in all remediation/validation steps.
- - Mark uncertain conclusions with `NEEDS_VALIDATION` and explain which data is missing.
-OUTPUT 
-FORMAT
- 
-(human-readable + JSON summary)
-:
- - Primary output: a well-structured human-readable report following the sections 
-above
- 
-(use headings)
-.
- - Secondary 
-output
- 
-(appendix)
-: a JSON summary named `scan_summary` with schema:
-   {
-     
-&quot;hosts&quot;
-: [
-       {
-         
-&quot;ip&quot;
-: 
-&quot;...&quot;
-,
-         
-&quot;hostname&quot;
-: 
-&quot;...&quot;
-,
-         
-&quot;risk_score&quot;
-: N,
-         
-&quot;risk_level&quot;
-: 
-&quot;Critical|High|Medium|Low|Info&quot;
-,
-         
-&quot;open_ports&quot;
-: [{
-&quot;port&quot;
-:n,
-&quot;proto&quot;
-:
-&quot;tcp&quot;
-,
-&quot;service&quot;
-:
-&quot;...&quot;
-,
-&quot;product&quot;
-:
-&quot;...&quot;
-,
-&quot;version&quot;
-:
-&quot;...&quot;
-,
-&quot;cpes&quot;
-:[...],
-&quot;scripts&quot;
-:{
-&quot;id&quot;
-:
-&quot;snippet&quot;
-}}],
-         
-&quot;vulnerabilities&quot;
-: [{
-&quot;title&quot;
-:
-&quot;...&quot;
-,
-&quot;confidence&quot;
-:
-&quot;High|Medium|Low&quot;
-}]
-       }, ...
-     ],
-     
-&quot;top_findings&quot;
-: [
-&quot;string&quot;
-,...]
-   }
- - After the human report, print the JSON summary.
-EXAMPLE EVIDENCE REQUEST:
- - For any claim about TLS expiry, quote the `ssl-cert` script block lines from the XML.
- - For SSH hostkeys, paste the `ssh-hostkey` script fingerprint lines.
- - For web titles/
-400
- responses, paste `http-title` outputs.
-FINAL NOTES:
- - Be conservative: prefer 
-&quot;NEEDS_VALIDATION&quot;
- over asserting exploitability when data is insufficient.
- - Keep language clear and actionable — target audience: penetration testers / DFIR engineers / sysadmins.
- - Start by parsing file:
-///mnt/data/hackthissite_scan.xml and produce the full human-readable report followed by the JSON summary.
-ALLOW_WEB_LOOKUP: 
-false
-</code></pre></details>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">CONTEXT:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">You will analyze an Nmap XML scan saved at this file path: file:///mnt/data/hackthissite_scan.xml</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Treat this XML as the authoritative scan artifact. Do not invent facts — extract only what is present in the XML. If information is missing or ambiguous, mark it &quot;NEEDS_VALIDATION&quot; and explain why.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">GOAL (deliverables):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Produce a thorough, human-readable security analysis organized as follows:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  1. Executive summary (3 bullets) — top risks and suggested immediate actions (non-destructive).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  2. For each host (sorted by highest risk first):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     - Host header: IP, PTR/hostname, risk level (Critical/High/Medium/Low/Info), numeric risk score and scoring breakdown.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     - Open services summary: port/service/product/version/CPE/script evidence (copy the exact snippet from XML that shows the banner/script output).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     - Vulnerabilities &amp; misconfigurations found (explicit list). For each vulnerability include:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         a) Short title (one line)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         b) Description (2–4 sentences; how it can be abused)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         c) Evidence: exact XML tag or script output line(s) that justify the finding (quote).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         d) Likely attack vectors / exploitation paths (1–3 one line scenarios)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         e) Remediation (ordered, prioritized; include exact non-destructive commands or config lines to fix; e.g., `sshd_config: PermitRootLogin no; PasswordAuthentication no` or `sudo apt update &amp;&amp; sudo apt install --only-upgrade openssh-server`)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         f) **Forensic / investigation checklist** — for each vuln, list the exact next checks to discover an attacker’s next step, including:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            - Log sources and exact paths to check (e.g., `/var/log/auth.log`, `journalctl -u ssh.service`, Apache access/error log paths)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            - Non-destructive commands to run to validate suspicious activity (read-only or safe) — e.g., `sudo grep -E &quot;Failed password|Accepted publickey&quot; /var/log/auth.log` or `sudo less /var/log/apache2/access.log | tail -n 200` (only read commands; do not run exploits)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            - Indicators to look for (unusual usernames, source IPs, abnormal request patterns, suspicious User-Agent strings, file modifications with timestamps)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            - Quick timeline triage steps (e.g., check last 24h auth events, list recently modified webroot files with `find /var/www -mtime -3 -ls`)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            - Suggested SIEM/Detection rules to create (high-level logic and example detection query, e.g., &quot;Detect &gt;5 failed SSH logins from same source within 5 minutes&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         g) Validation steps: how to confirm the vulnerability is real (non-destructive checks you can run).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         h) Confidence level: High/Medium/Low and reason (e.g., &#x27;banner matched product X version Y&#x27; vs &#x27;OS fingerprint ambiguous&#x27;).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     - End host section with a short prioritized remediation checklist (top 3 actions).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  3. Cross-host observations (if any): e.g., same SSL cert across hosts, duplicate SSH hostkeys, multiple hosts with same outdated service — indicate lateral risk or pivot paths.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  4. MITRE ATT&amp;CK mapping: for the top 10 findings across hosts, list ATT&amp;CK IDs and a short mapping reason.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  5. Detection &amp; hunting playbook (concise):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     - 8–12 high-value detection rules / searches (SIEM queries or pseudocode) prioritized by impact.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     - Quick incident response playbook: triage -&gt; contain -&gt; eradicate -&gt; recover steps specific to this scan’s top findings.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  6. Appendices:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     - Raw evidence snippets extracted (tagged with XML path or script name and line).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     - Short machine-readable summary (JSON) listing hosts with risk_score, risk_level, open_ports and vulnerabilities (for automation use).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SCORING (show the math):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Use a transparent scoring heuristic and show the breakdown per host (example weights — you may adapt but display calculation):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * FTP open: +30</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * SSH open: +20</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Web server (80/443/8080/8443): +15</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Product version indicates outdated/legacy: +10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * TLS cert expiring &lt;45 days: +8</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Old kernel (2.6/3.x fingerprints): +6</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Sensitive service exposed (database, RDP, SMB): +25</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   * Filtered/closed ports subtract small amount: -2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Convert total to risk_level: Critical (&gt;=45), High (30–44), Medium (15–29), Low (5–14), Info (&lt;5).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CVEs and enrichment:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - If `ALLOW_WEB_LOOKUP=true` then fetch likely CVEs and CVSS scores for observed product+version and include references (NVD/MITRE links). If web lookup is NOT permitted, set `cve_candidates` field to &quot;SKIPPED - web lookup disabled&quot; and **do not** invent CVE IDs.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SAFETY RULES (mandatory):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Do NOT provide exploit code, exploit PoCs, or step-by-step attack execution instructions. You may describe attack vectors conceptually (what an attacker could try) but not how to perform them.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Only include non-destructive verification commands and read-only forensic checks in all remediation/validation steps.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Mark uncertain conclusions with `NEEDS_VALIDATION` and explain which data is missing.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">OUTPUT FORMAT (human-readable + JSON summary):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Primary output: a well-structured human-readable report following the sections above (use headings).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Secondary output (appendix): a JSON summary named `scan_summary` with schema:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     &quot;hosts&quot;: [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         &quot;ip&quot;: &quot;...&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         &quot;hostname&quot;: &quot;...&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         &quot;risk_score&quot;: N,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         &quot;risk_level&quot;: &quot;Critical|High|Medium|Low|Info&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         &quot;open_ports&quot;: [{&quot;port&quot;:n,&quot;proto&quot;:&quot;tcp&quot;,&quot;service&quot;:&quot;...&quot;,&quot;product&quot;:&quot;...&quot;,&quot;version&quot;:&quot;...&quot;,&quot;cpes&quot;:[...],&quot;scripts&quot;:{&quot;id&quot;:&quot;snippet&quot;}}],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">         &quot;vulnerabilities&quot;: [{&quot;title&quot;:&quot;...&quot;,&quot;confidence&quot;:&quot;High|Medium|Low&quot;}]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">       }, ...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     ],</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">     &quot;top_findings&quot;: [&quot;string&quot;,...]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">   }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - After the human report, print the JSON summary.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EXAMPLE EVIDENCE REQUEST:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - For any claim about TLS expiry, quote the `ssl-cert` script block lines from the XML.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - For SSH hostkeys, paste the `ssh-hostkey` script fingerprint lines.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - For web titles/400 responses, paste `http-title` outputs.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">FINAL NOTES:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Be conservative: prefer &quot;NEEDS_VALIDATION&quot; over asserting exploitability when data is insufficient.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Keep language clear and actionable — target audience: penetration testers / DFIR engineers / sysadmins.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Start by parsing file:///mnt/data/hackthissite_scan.xml and produce the full human-readable report followed by the JSON summary.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ALLOW_WEB_LOOKUP: false</span><br></div></code></pre></div></div>
 <p><strong>3. LLM Response:</strong></p>
-<details class="plain-large-code" data-plain-code-lines="1016"><summary>Large code or log block<!-- --> · <!-- -->1016<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># Nmap XML — security analysis
-**Source
- 
-(scan
- 
-artifact):**
- 
-`file:///mnt/data/hackthissite_scan.xml`
- 
-(Nmap
- 
-7.
-94SVN,
- 
-scanned
- 
-`137.74.187.0/24`
- 
-on
- 
-**Sun
- 
-Nov
- 
-23
- 
-2025
-**).
- 
+<details class="plain-large-code" data-plain-code-lines="501"><summary>Large code or log block<!-- --> · <!-- -->501<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># Nmap XML — security analysis
+
+**Source (scan artifact):** `file:///mnt/data/hackthissite_scan.xml` (Nmap 7.94SVN, scanned `137.74.187.0/24` on **Sun Nov 23 2025**). 
+
+&gt; Notes about methodology / constraints
 &gt;
- 
-Notes
- 
-about
- 
-methodology
- 
-/
- 
-constraints
-&gt;
-&gt;
- 
-*
- 
-I
- 
-parsed
- 
-the
- 
-uploaded
- 
-Nmap
- 
-XML
- 
-and
- 
-**only**
- 
-extract
- 
-facts
- 
-present
- 
-in
- 
-that
- 
-XML.
- 
-Where
- 
-the
- 
-XML
- 
-does
- 
-not
- 
-provide
- 
-enough
- 
-detail
- 
-to
- 
-claim
- 
-something
- 
-(for
- 
-example:
- 
-whether
- 
-FTP
- 
-allows
- 
-anonymous
- 
-login),
- 
-I
- 
-mark
- 
-the
- 
-finding
- 
-**NEEDS_VALIDATION**
- 
-and
- 
-explain
- 
-which
- 
-additional
- 
-checks
- 
-are
- 
-required.
-&gt;
- 
-*
- 
-**No
- 
-web
- 
-lookup
- 
-performed**
- 
-(`ALLOW_WEB_LOOKUP=false`),
- 
-so
- 
-I
- 
-do
- 
-**not**
- 
-enumerate
- 
-CVEs
- 
-—
- 
-see
- 
-JSON
- 
-summary
- 
-field
- 
-`cve_candidates:
- 
-&quot;SKIPPED - web lookup disabled&quot;
-`.
-&gt;
- 
-*
- 
-All
- 
-verification/remediation
- 
-steps
- 
-are
- 
-**non-destructive**
- 
-(read-only
- 
-commands
- 
-/
- 
-config
- 
-examples
- 
-/
- 
-safe
- 
-package
- 
-upgrade
- 
-commands).
- 
-No
- 
-exploit
- 
-instructions
- 
-are
- 
-given.
+&gt; * I parsed the uploaded Nmap XML and **only** extract facts present in that XML. Where the XML does not provide enough detail to claim something (for example: whether FTP allows anonymous login), I mark the finding **NEEDS_VALIDATION** and explain which additional checks are required.
+&gt; * **No web lookup performed** (`ALLOW_WEB_LOOKUP=false`), so I do **not** enumerate CVEs — see JSON summary field `cve_candidates: &quot;SKIPPED - web lookup disabled&quot;`.
+&gt; * All verification/remediation steps are **non-destructive** (read-only commands / config examples / safe package upgrade commands). No exploit instructions are given.
+
 ---
+
 ## 1) Executive summary — top risks &amp; immediate non-destructive actions
-*
- 
-**Critical:
- 
-Publicly
- 
-reachable
- 
-hosts
- 
-expose
- 
-multiple
- 
-high-risk
- 
-services.**
- 
-Two
- 
-hosts
- 
-in
- 
-the
- 
-scan
- 
-(`137.74.187.21`
- 
-and
- 
-`137.74.187.28`)
- 
-show
- 
-*open
- 
-SSH
- 
-and
- 
-HTTP/HTTPS*
- 
-and
- 
-one
- 
-shows
- 
-*open
- 
-FTP*,
- 
-producing
- 
-**Critical**
- 
-risk
- 
-scores
- 
-(detailed
- 
-scoring
- 
-below).
- 
-Immediate actions:
- 
-(1)
- 
-Restrict
- 
-management
- 
-ports
- 
-(SSH/FTP)
- 
-to
- 
-known
- 
-admin
- 
-IPs
- 
-via
- 
-firewall,
- 
-(2)
- 
-rotate
- 
-certificates
- 
-/
- 
-validate
- 
-expiry
- 
-and
- 
-renew
- 
-if
- 
-needed,
- 
-(3)
- 
-audit server logs for unexpected authorization events. Evidence:
- 
-ports
- 
-&amp;
- 
-service
- 
-banners
- 
-in
- 
-the
- 
-XML.
- 
-*
- 
-**Certificate
- 
-on
- 
-at
- 
-least
- 
-one
- 
-host
- 
-is
- 
-close
- 
-to
- 
-expiry.**
- 
-The
- 
-scan
- 
-shows
- 
-a
- 
-TLS
- 
-certificate
- 
-with
- 
-`NotAfter:
- 
-2026-01-01T08:46:49
-`
- 
-(scan
- 
-date
- 
-2025-11-23
-),
- 
-i.e.
- 
-**&lt;45
- 
-days**
- 
-until
- 
-expiry
- 
-—
- 
-this
- 
-raises
- 
-availability
- 
-&amp;
- 
-trust risk if not renewed. Action:
- 
-renew
- 
-certificate
- 
-and
- 
-validate
- 
-automated
- 
-renewal
- 
-(Let&#x27;s
- 
-Encrypt
- 
-cron/ACME).
- 
-Evidence:
- 
-`ssl-cert`
- 
-script
- 
-output
- 
-in
- 
-XML.
- 
-*
- 
-**Old/ambiguous
- 
-OS/kernel
- 
-fingerprinting
- 
-and
- 
-multiple
- 
-services
- 
-on
- 
-non-standard
- 
-ports.**
- 
-The
- 
-XML
- 
-shows
- 
-OS
- 
-fingerprint
- 
-matches
- 
-ranging
- 
-from
- 
-older
- 
-kernels
- 
-(2.6.x)
- 
-to
- 
-modern
- 
-5.
-x
- 
-on
- 
-different
- 
-hosts
- 
-—
- 
-where
- 
-2.6
-/3.x
- 
-appears,
- 
-treat
- 
-as
- 
-**NEEDS_VALIDATION**
- 
-because OS fingerprinting can be noisy. Action:
- 
-query
- 
-hosts
- 
-(safe)
- 
-for
- 
-`/proc/version`
- 
-or
- 
-check
- 
-inventory
- 
-to
- 
-confirm
- 
-kernel
- 
-versions;
- 
-patch if kernels are old. Evidence:
- 
-`osmatch`
- 
-blocks
- 
-in
- 
-XML.
- 
+
+* **Critical: Publicly reachable hosts expose multiple high-risk services.** Two hosts in the scan (`137.74.187.21` and `137.74.187.28`) show *open SSH and HTTP/HTTPS* and one shows *open FTP*, producing **Critical** risk scores (detailed scoring below). Immediate actions: (1) Restrict management ports (SSH/FTP) to known admin IPs via firewall, (2) rotate certificates / validate expiry and renew if needed, (3) audit server logs for unexpected authorization events. Evidence: ports &amp; service banners in the XML. 
+* **Certificate on at least one host is close to expiry.** The scan shows a TLS certificate with `NotAfter: 2026-01-01T08:46:49` (scan date 2025-11-23), i.e. **&lt;45 days** until expiry — this raises availability &amp; trust risk if not renewed. Action: renew certificate and validate automated renewal (Let&#x27;s Encrypt cron/ACME). Evidence: `ssl-cert` script output in XML. 
+* **Old/ambiguous OS/kernel fingerprinting and multiple services on non-standard ports.** The XML shows OS fingerprint matches ranging from older kernels (2.6.x) to modern 5.x on different hosts — where 2.6/3.x appears, treat as **NEEDS_VALIDATION** because OS fingerprinting can be noisy. Action: query hosts (safe) for `/proc/version` or check inventory to confirm kernel versions; patch if kernels are old. Evidence: `osmatch` blocks in XML. 
+
 ---
+
 ## 2) Host-by-host analysis (sorted by highest numeric risk score)
+
 ### Scoring method (transparent) — applied per host
-Weights
- 
-used
- 
-(applied
- 
-exactly
- 
-as
- 
-requested):
-*
- 
-FTP open:
- 
-+30
-*
- 
-SSH open:
- 
-+20
-*
- 
-Web
- 
-server
- 
-(80/443/8080/8443):
- 
-+15
-*
- 
-Product/version indicates outdated/legacy:
- 
-+10
-*
- 
-TLS
- 
-cert
- 
-expiring
- 
-&lt;45
- 
-days:
- 
-+8
-*
- 
-Old
- 
-kernel
- 
-(2.6/3.x
- 
-fingerprints):
- 
-+6
-*
- 
-Sensitive
- 
-service
- 
-exposed
- 
-(DB/RDP/SMB):
- 
-+25
- 
-(none
- 
-observed
- 
-here)
-*
- 
-Filtered/closed ports subtract:
- 
--2
-Convert
- 
-total
- 
-→
- 
-risk level:
-*
- 
-Critical
- 
-(&gt;=45),
- 
-High
- 
-(30–44),
- 
-Medium
- 
-(15–29),
- 
-Low
- 
-(5–14),
- 
-Info
- 
-(&lt;5)
+
+Weights used (applied exactly as requested):
+
+* FTP open: +30
+* SSH open: +20
+* Web server (80/443/8080/8443): +15
+* Product/version indicates outdated/legacy: +10
+* TLS cert expiring &lt;45 days: +8
+* Old kernel (2.6/3.x fingerprints): +6
+* Sensitive service exposed (DB/RDP/SMB): +25 (none observed here)
+* Filtered/closed ports subtract: -2
+
+Convert total → risk level:
+
+* Critical (&gt;=45), High (30–44), Medium (15–29), Low (5–14), Info (&lt;5)
+
 ---
+
 ### Host: **137.74.187.21** (PTR `ip21.ip-137-74-187.eu`)
-**Risk
- 
-level:**
- 
-Critical
- 
-—
- 
-**score
- 
-=
- 
-57
-**
-**Scoring
- 
-breakdown
- 
-(math):**
-*
- 
-SSH
- 
-open
- 
-(+20)
- 
-—
- 
-detected
- 
-on
- 
-TCP
- 
-**6666**
- 
-as
- 
-OpenSSH
- 
-7.4
-.
- 
-*
- 
-Web
- 
-server
- 
-present
- 
-(+15)
- 
-—
- 
-Apache
- 
-on
- 
-TCP
- 
-**80**
- 
-and
- 
-Apache
- 
-over
- 
-SSL
- 
-on
- 
-**443**.
- 
-*
- 
-Product
- 
-version
- 
-indicates
- 
-outdated/legacy
- 
-(+10)
- 
-—
- 
-**OpenSSH
- 
-7.4
-**
- 
-(older
- 
-release
- 
-line).
- 
-Evidence:
- 
-service
- 
-banner
- 
-shows
- 
-`OpenSSH
- 
-7.4
-`.
- 
-*
- 
-TLS
- 
-cert
- 
-expiring
- 
-&lt;45
- 
-days
- 
-(+8)
- 
-—
- 
-`ssl-cert`
- 
-output
- 
-shows
- 
-`Not
- 
-valid after:
- 
-2026-01-01T08:46:49
-`
- 
-(scan
- 
-2025-11-23
- 
-→
- 
-~39
- 
-days
- 
-until
- 
-expiry).
-  
-**(see
- 
-note below:
- 
-exact
- 
-xml
- 
-lines
- 
-for
- 
-certificate
- 
-are
- 
-present
- 
-in
- 
-the
- 
-file;
- 
-citation
- 
-above
- 
-references
- 
-the
- 
-file;**
- 
-also
- 
-see
- 
-the
- 
-certificate
- 
-table
- 
-extract
- 
-in
- 
-the
- 
-uploaded
- 
-XML).**
-*
- 
-Old
- 
-kernel
- 
-fingerprint
- 
-present
- 
-(+6)
- 
-—
- 
-OS
- 
-fingerprint
- 
-includes
- 
-`Linux
- 
-2.6
-.32
-`
- 
-among
- 
-matches
- 
-(accuracy
- 
-high),
- 
-which
- 
-increases
- 
-risk
- 
-posture.
- 
-*
- 
-Filtered/closed
- 
-ports
- 
-subtract
- 
-(-2).
-  
-**Total
- 
-=
- 
-20
- 
-+
- 
-15
- 
-+
- 
-10
- 
-+
- 
-8
- 
-+
- 
-6
- 
--
- 
-2
- 
-=
- 
-57
- 
-→
- 
-Critical.**
+
+**Risk level:** Critical — **score = 57**
+**Scoring breakdown (math):**
+
+* SSH open (+20) — detected on TCP **6666** as OpenSSH 7.4. 
+* Web server present (+15) — Apache on TCP **80** and Apache over SSL on **443**. 
+* Product version indicates outdated/legacy (+10) — **OpenSSH 7.4** (older release line). Evidence: service banner shows `OpenSSH 7.4`. 
+* TLS cert expiring &lt;45 days (+8) — `ssl-cert` output shows `Not valid after: 2026-01-01T08:46:49` (scan 2025-11-23 → ~39 days until expiry).  **(see note below: exact xml lines for certificate are present in the file; citation above references the file;** also see the certificate table extract in the uploaded XML).**
+* Old kernel fingerprint present (+6) — OS fingerprint includes `Linux 2.6.32` among matches (accuracy high), which increases risk posture. 
+* Filtered/closed ports subtract (-2).
+  **Total = 20 + 15 + 10 + 8 + 6 - 2 = 57 → Critical.**
+
+&gt; **Host header quick facts (from XML):**
 &gt;
- 
-**Host
- 
-header
- 
-quick
- 
-facts
- 
-(from
- 
-XML):**
-&gt;
-&gt;
- 
-*
- 
-IP:
- 
-`137.74.187.21`
- 
-—
- 
-PTR
- 
-`ip21.ip-137-74-187.eu`.
- 
-&gt;
- 
-*
- 
-Uptime/lastboot
- 
-(from
- 
-scan):
- 
-`lastboot=&quot;Tue
- 
-Oct
-  
-7
- 
-21
-:40:00
- 
-2025
-&quot;` (uptime seconds present in XML).
+&gt; * IP: `137.74.187.21` — PTR `ip21.ip-137-74-187.eu`. 
+&gt; * Uptime/lastboot (from scan): `lastboot=&quot;Tue Oct  7 21:40:00 2025&quot;` (uptime seconds present in XML).
+
 #### Open services summary (exact banner/script outputs copied from XML)
+
 * **tcp/6666 — ssh**
+
   * `service` product/version: `OpenSSH 7.4` (protocol 2.0). 
   * `ssh-hostkey` script output (exact lines):
-</code></pre></details>
-<p>2048 0b:d6:3a:9d:5a:16:31:f3:25:79:c7:3b:5e:a0:93:9b (RSA)
-256 f9:18:8e:7c:11:51:a2:30:a6:21:2f:ee:e6:6a:0d:1c (ECDSA)
-256 5a:54:59:46:4f:c6:76:09:6d:42:f5:3e:34:cc:a7:16 (ED25519)</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">(full key blocks also present in XML). </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* **tcp/80 — http**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* `service`: `Apache httpd`. `http-title` showed: `Site doesn&#x27;t have a title (text/html).` (exact `http-title` output in XML). </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* **tcp/443 — https (Apache, TLS)**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* `service`: `Apache httpd` (tunnel=ssl). `ssl-cert` shows `Subject: commonName=ahorrandoluz.com` and SAN entries; `Not valid after: 2026-01-01T08:46:49`. XML includes certificate PEM and hashes.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt; **Important**: the XML contains the full `ssl-cert` script output (subject, SANs, validity dates, public-key info and `notBefore`/`notAfter`). Use that to confirm expiry/issuer. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">#### Vulnerabilities &amp; misconfigurations (explicit list)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1. **OpenSSH 7.4 — outdated server version**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* **Description:** OpenSSH 7.4 is an older release. Older OpenSSH versions may lack fixes or features present in later releases (bug/crypto fixes, stronger defaults). An attacker could attempt to exploit known weaknesses or use older crypto defaults to attempt downgrade-related attacks or target known CVEs applicable to that branch.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* **Evidence (exact XML snippet):** `service` product/version: `OpenSSH 7.4` on TCP/6666; `ssh-hostkey` block shows host key fingerprints. </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* **Likely attack vectors:** brute-force or credential stuffing against SSH; exploitation of any known CVE affecting 7.4 (requires CVE lookup — skipped here).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* **Remediation (prioritized):**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> 1. Confirm package source and update SSH to a maintained version: `sudo apt update &amp;&amp; sudo apt install --only-upgrade openssh-server` (Debian/Ubuntu) — or appropriate package manager/OS update.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> 2. Harden `/etc/ssh/sshd_config` (non-destructive lines):</span><br></div></code></pre></div></div>
-<p>PermitRootLogin no
-PasswordAuthentication no   # if key-based logins are used
-PubkeyAuthentication yes
-AllowUsers adminuser1 adminuser2
-ClientAliveInterval 300
-ClientAliveCountMax 2</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">3. Reconfigure allowed ciphers / MACs only to modern choices (follow distro guidance).</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* **Forensic / investigation checklist:**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* Logs: `/var/log/auth.log`, `/var/log/secure`, `journalctl -u ssh.service`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">* Read-only commands:</span><br></div></code></pre></div></div>
-<p>sudo grep -E &quot;
-Failed</p>
-<p>password|Accepted</p>
-<p>publickey|Invalid</p>
-<p>user&quot;</p>
-<p>/var/log/auth.log</p>
-<p>|</p>
-<p>tail</p>
-<p>-n</p>
-<p>200</p>
-<p>sudo</p>
-<p>journalctl</p>
-<p>-u</p>
-<p>ssh.service</p>
-<p>--since</p>
-<p>&quot;24 hours ago&quot;</p>
-<p>|</p>
-<p>tail</p>
-<p>-n</p>
-<p>200</p>
-<p>sudo</p>
-<p>last</p>
-<p>-n</p>
-<p>50</p>
-<details class="plain-large-code" data-plain-code-lines="506"><summary>Large code or log block<!-- --> · <!-- -->506<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>     
-*
- 
-Indicators:
- 
-many
- 
-`Failed
- 
-password`
- 
-attempts
- 
-from
- 
-same
- 
-IP;
- 
-`Accepted
- 
-publickey`
- 
-for
- 
-unknown
- 
-accounts;
- 
-logins
- 
-at
- 
-odd
- 
-hours
- 
-or
- 
-from
- 
-unusual
- 
-geolocations.
-     
-*
- 
-Timeline triage:
- 
-check
- 
-last
- 
-24h
- 
-failed/accepted
- 
-events,
- 
-then
- 
-last
- 
-7
- 
-days.
-     
-*
- 
-Suggested SIEM rule:
- 
-*Alert
- 
-if
- 
-&amp;gt;5
- 
-failed
- 
-SSH
- 
-logins
- 
-from
- 
-same
- 
-source
- 
-IP
- 
-within
- 
-10
- 
-minutes*
- 
-(or
- 
-unusual
- 
-success
- 
-following
- 
-multiple
- 
-failures).
-   
-*
- 
-**Validation
- 
-steps
- 
-(non-destructive):**
- 
-check
- 
-`ssh
- 
--v`
- 
-client
- 
-connection
- 
-to
- 
-confirm
- 
-banner;
- 
-`sudo
- 
-dpkg
- 
--l
- 
-|
- 
-grep
- 
-openssh`
- 
-(or
- 
-`rpm
- 
--q
- 
-openssh-server`)
- 
-to
- 
-confirm
- 
-installed
- 
-version.
-   
-*
- 
-**Confidence:**
- 
-**High**
- 
-—
- 
-exact
- 
-banner
- 
-`OpenSSH
- 
-7.4
-`
- 
-is
- 
-present
- 
-in
- 
-XML.
- 
-2
-.
- 
-**TLS
- 
-certificate
- 
-expiry
- 
-—
- 
-certificate
- 
-near
- 
-expiry
- 
-(&amp;lt;45
- 
-days)**
-   
-*
- 
-**Description:**
- 
-The
- 
-web
- 
-server&#x27;s
- 
-certificate
- 
-(`ahorrandoluz.com`)
- 
-expires
- 
-`2026-01-01T08:46:49`
- 
-per
- 
-the
- 
-XML.
- 
-If
- 
-not
- 
-renewed,
- 
-TLS
- 
-will
- 
-fail
- 
-and
- 
-users/clients
- 
-will
- 
-see
- 
-errors;
- 
-certificate
- 
-expiry
- 
-can
- 
-disrupt
- 
-service
- 
-and
- 
-may
- 
-indicate
- 
-ACME
- 
-automation
- 
-is
- 
-broken.
-   
-*
- 
-**Evidence
- 
-(exact
- 
-XML
- 
-snippet):**
- 
-`ssl-cert`
- 
-output
- 
-shows
- 
-`Not
- 
-valid after:
-  
-2026-01-01T08:46:49
-`.
- 
-(Full
- 
-`ssl-cert`
- 
-block
- 
-present
- 
-in
- 
-XML.)
- 
-   
-*
- 
-**Likely
- 
-attack
- 
-vectors:**
- 
-availability
- 
-disruption
- 
-(service
- 
-outage);
- 
-opportunistic
- 
-attacks
- 
-if
- 
-operators
- 
-rush
- 
-fixes.
- 
-Not
- 
-an
- 
-immediate
- 
-remote
- 
-code
- 
-execution,
- 
-but
- 
-affects
- 
-trust
- 
-and
- 
-availability.
-   
-*
- 
-**Remediation
- 
-(ordered):**
-     
-1
-.
- 
-Validate
- 
-ACME/Let&#x27;s
- 
-Encrypt automatic renewal:
- 
-check
- 
-`systemctl
- 
-status
- 
-certbot`
- 
-or
- 
-ACME
- 
-client
- 
-logs.
-     
-2. Manually renew if automation broken:
- 
-`sudo
- 
-certbot
- 
-renew
- 
---dry-run`
- 
-then
- 
-`sudo
- 
-certbot
- 
-renew`
- 
-if
- 
-dry-run
- 
-OK.
-     
-3
-.
- 
-If
- 
-certificate
- 
-not
- 
-managed
- 
-by
- 
-certbot,
- 
-follow
- 
-the
- 
-host&#x27;s
- 
-certificate
- 
-vendor
- 
-process
- 
-and
- 
-ensure
- 
-renewals
- 
-are
- 
-automated
- 
-(e.g.,
- 
-cron/systemd
- 
-timer
- 
-for
- 
-certbot).
-   
-*
- 
-**Forensic
- 
-/
- 
-investigation
- 
-checklist:**
-     
-*
- 
-Log sources:
- 
-ACME/certbot
- 
-logs
- 
-(e.g.,
- 
-`/var/log/letsencrypt/letsencrypt.log`),
- 
-webserver
- 
-error
- 
-logs
- 
-(`/var/log/apache2/error.log`),
- 
-systemd timers:
- 
-`systemctl
- 
-list-timers`.
-     
-*
- 
-Read-only commands:
-       
-</code></pre></details>
-<p>sudo</p>
-<p>ls</p>
-<p>-l</p>
-<p>/etc/letsencrypt/live/</p>
-<p>sudo</p>
-<p>tail</p>
-<p>-n</p>
-<p>200</p>
-<p>/var/log/letsencrypt/letsencrypt.log</p>
-<p>sudo</p>
-<p>apachectl</p>
-<p>-S</p>
-<details class="plain-large-code" data-plain-code-lines="420"><summary>Large code or log block<!-- --> · <!-- -->420<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>     
-*
- 
-Indicators:
- 
-recent
- 
-failed
- 
-renewal
- 
-attempts,
- 
-expired
- 
-cert
- 
-files,
- 
-ACME
- 
-challenge
- 
-failures
- 
-in
- 
-logs.
-     
-*
- 
-SIEM rule:
- 
-*Alert
- 
-when
- 
-certificate
- 
-`notAfter`
- 
-&amp;lt;
- 
-45
- 
-days
- 
-for
- 
-any
- 
-public
- 
-TLS
- 
-service*.
-   
-*
- 
-**Validation
- 
-steps:**
- 
-inspect
- 
-the
- 
-`notAfter`
- 
-field
- 
-in
- 
-the
- 
-`ssl-cert`
- 
-script
- 
-output
- 
-in
- 
-XML
- 
-(already
- 
-present)
- 
-and
- 
-run
- 
-`openssl
- 
-s_client
- 
--connect
- 
-&amp;lt;ip&amp;gt;:443
- 
--servername
- 
-&amp;lt;servername&amp;gt;
- 
--showcerts`
- 
-from
- 
-a
- 
-trusted
- 
-host
- 
-to
- 
-view
- 
-expiry.
-   
-*
- 
-**Confidence:**
- 
-**High**
- 
-—
- 
-XML
- 
-contains
- 
-explicit
- 
-`notAfter`.
- 
-3
-.
- 
-**Web
- 
-server:
- 
-Apache
- 
-—
- 
-generic
- 
-(HTTP/HTTPS)
- 
-configuration
- 
-issues
- 
-/
- 
-missing
- 
-title**
-   
-*
- 
-**Description:**
- 
-Apache
- 
-present
- 
-on
- 
-80
- 
-and
- 
-443
-.
- 
-`http-title`
- 
-for
- 
-port
- 
-80
- 
-indicates
- 
-&quot;Site doesn&#x27;t have a title&quot;
-,
- 
-and
- 
-for
- 
-443
- 
-the
- 
-server
- 
-returns
- 
-`400
- 
-Bad
- 
-Request`
- 
-(per
- 
-XML
- 
-`http-title`).
- 
-These
- 
-suggest
- 
-web
- 
-app
- 
-misconfig
- 
-or
- 
-default/placeholder
- 
-content
- 
-which
- 
-may
- 
-expose
- 
-information
- 
-or
- 
-incomplete
- 
-config.
- 
-Misconfiguration
- 
-may
- 
-allow
- 
-directory
- 
-listing
- 
-or
- 
-public
- 
-exposure
- 
-of
- 
-admin
- 
-pages.
-   
-*
- 
-**Evidence
- 
-(exact
- 
-XML
- 
-snippet):**
- 
-`http-server-header`
- 
-shows
- 
-`Apache`;
- 
-`http-title`
- 
-shows
- 
-`Site
- 
-doesn&#x27;t
- 
-have
- 
-a
- 
-title
- 
-(text/html)`
- 
-for
- 
-port
- 
-80
-,
- 
-and
- 
-`400
- 
-Bad
- 
-Request`
- 
-for
- 
-port
- 
-443
-.
- 
-   
-*
- 
-**Likely
- 
-attack
- 
-vectors:**
- 
-automated
- 
-scanning
- 
-to
- 
-find
- 
-admin
- 
-pages,
- 
-directory
- 
-listing,
- 
-or
- 
-misconfigured
- 
-virtual
- 
-hosts;
- 
-fingerprinting
- 
-for
- 
-CMS
- 
-versions
- 
-via
- 
-other
- 
-probes
- 
-(not
- 
-present
- 
-here).
-   
-*
- 
-**Remediation:**
- 
-review
- 
-vhost
- 
-configs
- 
-under
- 
-`/etc/apache2/sites-enabled/`
- 
-(or
- 
-distro
- 
-equivalent)
- 
-—
- 
-ensure
- 
-default
- 
-pages
- 
-removed,
- 
-`ServerTokens
- 
-Prod`,
- 
-`ServerSignature
- 
-Off`,
- 
-`TraceEnable
- 
-Off`;
- 
-ensure TLS vhosts accept proper SNI. Example config lines:
-     
-</code></pre></details>
-<p>ServerTokens</p>
-<p>Prod</p>
-<p>ServerSignature</p>
-<p>Off</p>
-<p>TraceEnable</p>
-<p>Off</p>
-<details class="plain-large-code" data-plain-code-lines="1065"><summary>Large code or log block<!-- --> · <!-- -->1065<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>   
-*
- 
-**Forensic
- 
-checklist
- 
-&amp;
- 
-validation:**
- 
-check
- 
-access/error
- 
-logs
- 
-(`/var/log/apache2/access.log`,
- 
-`/var/log/apache2/error.log`)
- 
-with
- 
-read-only
- 
-commands
- 
-like
- 
-`sudo
- 
-tail
- 
--n
- 
-200
- 
-/var/log/apache2/error.log`;
- 
-confirm
- 
-vhost
- 
-configuration
- 
-with
- 
-`sudo
- 
-apachectl
- 
--t`
- 
-and
- 
-`sudo
- 
-apachectl
- 
--S`.
-   
-*
- 
-**Confidence:**
- 
-**High**
- 
-for
- 
-presence
- 
-of
- 
-Apache;
- 
-**Medium**
- 
-for
- 
-exact
- 
-misconfiguration
- 
-severity
- 
-because
- 
-`http-title`
- 
-is
- 
-an
- 
-informational
- 
-banner
- 
-only.
- 
-**Top
- 
-3
- 
-prioritized
- 
-remediation
- 
-checklist
- 
-(137.74.187.21)**
-1
-.
- 
-Immediately
- 
-validate
- 
-and
- 
-renew
- 
-the
- 
-TLS
- 
-certificate
- 
-(ACME/letsencrypt
- 
-logs
- 
-+
- 
-`certbot
- 
-renew
- 
---dry-run`).
- 
-2
-.
- 
-Harden
- 
-and,
- 
-if
- 
-possible,
- 
-upgrade
- 
-OpenSSH
- 
-(confirm
- 
-package
- 
-version
- 
-on
- 
-host
- 
-and
- 
-update
- 
-to
- 
-supported
- 
-version).
- 
-Apply
- 
-`PermitRootLogin
- 
-no
-`/`PasswordAuthentication
- 
-no
-`.
- 
-3
-.
- 
-Review
- 
-Apache
- 
-vhost
- 
-configs
- 
-and
- 
-access/error
- 
-logs
- 
-for
- 
-suspicious
- 
-requests;
- 
-reduce
- 
-server
- 
-banner
- 
-noise.
- 
----
-### Host: **137.74.187.28** (PTR `ip28.ip-137-74-187.eu`)
-**Risk
- 
-level:**
- 
-Critical
- 
-—
- 
-**score
- 
-=
- 
-63
-**
-**Scoring
- 
-breakdown
- 
-(math):**
-*
- 
-FTP
- 
-open
- 
-(+30)
- 
-—
- 
-TCP
- 
-**21**
- 
-shows
- 
-`Pure-FTPd`
- 
-service.
-*
- 
-SSH
- 
-open
- 
-(+20)
- 
-—
- 
-TCP
- 
-**6666**
- 
-shows
- 
-`OpenSSH
- 
-10.
-0p2
- 
-Debian
- 
-7
-`.
-*
- 
-Web
- 
-server
- 
-present
- 
-(+15)
- 
-—
- 
-Apache
- 
-on
- 
-TCP
- 
-**80**
- 
-(and
- 
-possibly
- 
-443
-).
-*
- 
-Product/version
- 
-indicates
- 
-outdated
- 
-(+10)
- 
-—
- 
-**Not
- 
-applied**:
- 
-OpenSSH
- 
-10.
-0p2
- 
-is
- 
-recent;
- 
-Pure-FTPd
- 
-version
- 
-not
- 
-enumerated
- 
-in
- 
-XML,
- 
-so
- 
-we
- 
-**do
- 
-not**
- 
-assume
- 
-outdated.
-*
- 
-TLS expiry:
- 
-**NEEDS_VALIDATION**
- 
-—
- 
-XML
- 
-reports
- 
-`ssl-date:
- 
-TLS
- 
-randomness
- 
-does
- 
-not
- 
-represent
- 
-time`
- 
-for
- 
-some
- 
-services
- 
-and
- 
-does
- 
-not
- 
-clearly
- 
-show
- 
-a
- 
-`notAfter`
- 
-for
- 
-this
- 
-host
- 
-in
- 
-the
- 
-snippet;
- 
-certificate
- 
-expiry
- 
-scoring
- 
-not
- 
-applied.
- 
-**(If
- 
-SSL
- 
-cert
- 
-found
- 
-and
- 
-notAfter
- 
-&amp;lt;45
- 
-days,
- 
-add
- 
-+8)**.
- 
-*
- 
-No
- 
-old
- 
-kernel
- 
-weight
- 
-applied.
- 
-Filtered/closed
- 
-ports
- 
-subtract
- 
-(-2).
-  
-**Total
- 
-=
- 
-30
- 
-+
- 
-20
- 
-+
- 
-15
- 
--
- 
-2
- 
-=
- 
-63
- 
-→
- 
-Critical.**
-&amp;gt;
- 
-**Host
- 
-header
- 
-quick
- 
-facts
- 
-(from
- 
-XML):**
-&amp;gt;
-&amp;gt;
- 
-*
- 
-IP:
- 
-`137.74.187.28`
- 
-—
- 
-PTR
- 
-`ip28.ip-137-74-187.eu`.
- 
-#### Open services summary (exact banner/script outputs copied from XML)
-*
- 
-**tcp/21
- 
-—
- 
-ftp**
-  
-*
- 
-`service`
- 
-product:
- 
-`Pure-FTPd`
- 
-(XML
- 
-shows
- 
-`Pure-FTPd`
- 
-as
- 
-detected
- 
-product).
-  
-*
- 
-`ssl-date`
- 
-script output:
- 
-`TLS
- 
-randomness
- 
-does
- 
-not
- 
-represent
- 
-time`
- 
-(present
- 
-in
- 
-XML
- 
-for
- 
-this
- 
-FTP
- 
-port).
-  
-*
- 
-**Important**:
- 
-XML
- 
-does
- 
-**not**
- 
-show
- 
-whether
- 
-anonymous
- 
-login
- 
-is
- 
-allowed
- 
-—
- 
-**NEEDS_VALIDATION**.
-*
- 
-**tcp/80
- 
-—
- 
-http**
-  
-*
- 
-`service`:
- 
-`Apache
- 
-httpd`.
- 
-`http-title`/`http-server-header`
- 
-outputs
- 
-are
- 
-present
- 
-in
- 
-the
- 
-XML
- 
-(see
- 
-`http-server-header`
- 
-=
- 
-`Apache`,
- 
-and
- 
-`http-title`
- 
-outputs,
- 
-e.g.,
- 
-`400
- 
-Bad
- 
-Request`
- 
-in
- 
-some
- 
-host
- 
-contexts).
- 
-*
- 
-**tcp/6666
- 
-—
- 
-ssh**
-  
-*
- 
-`service`:
- 
-`OpenSSH
- 
-10.
-0p2
- 
-Debian
- 
-7
-`
- 
-(banner
- 
-present
- 
-in
- 
-XML).
- 
+
+    ```
+    2048 0b:d6:3a:9d:5a:16:31:f3:25:79:c7:3b:5e:a0:93:9b (RSA)
+    256 f9:18:8e:7c:11:51:a2:30:a6:21:2f:ee:e6:6a:0d:1c (ECDSA)
+    256 5a:54:59:46:4f:c6:76:09:6d:42:f5:3e:34:cc:a7:16 (ED25519)
+    ```
+
+    (full key blocks also present in XML). 
+* **tcp/80 — http**
+
+  * `service`: `Apache httpd`. `http-title` showed: `Site doesn&#x27;t have a title (text/html).` (exact `http-title` output in XML). 
+* **tcp/443 — https (Apache, TLS)**
+
+  * `service`: `Apache httpd` (tunnel=ssl). `ssl-cert` shows `Subject: commonName=ahorrandoluz.com` and SAN entries; `Not valid after: 2026-01-01T08:46:49`. XML includes certificate PEM and hashes.
+
+&gt; **Important**: the XML contains the full `ssl-cert` script output (subject, SANs, validity dates, public-key info and `notBefore`/`notAfter`). Use that to confirm expiry/issuer. 
+
 #### Vulnerabilities &amp; misconfigurations (explicit list)
-1
-.
- 
-**Public
- 
-FTP
- 
-/
- 
-Pure-FTPd
- 
-service
- 
-running
- 
-(unauthenticated
- 
-access
- 
-status
- 
-unknown
- 
-—
- 
-NEEDS_VALIDATION)**
-   
-*
- 
-**Description:**
- 
-FTP
- 
-servers
- 
-often
- 
-allow
- 
-anonymous
- 
-or
- 
-weakly
- 
-authenticated
- 
-access
- 
-if
- 
-misconfigured.
- 
-Public
- 
-FTP
- 
-may
- 
-expose
- 
-upload
- 
-directories
- 
-or
- 
-allow
- 
-retrieval
- 
-of
- 
-sensitive
- 
-files.
- 
-The
- 
-XML
- 
-shows
- 
-`Pure-FTPd`
- 
-running
- 
-on
- 
-port
- 
-21
-.
- 
-Whether
- 
-anonymous
- 
-login
- 
-is
- 
-enabled
- 
-is
- 
-**not
- 
-present**
- 
-in
- 
-the
- 
-XML.
-   
-*
- 
-**Evidence
- 
-(exact
- 
-XML
- 
-snippet):**
- 
-service
- 
-`Pure-FTPd`
- 
-detected
- 
-on
- 
-port
- 
-21
- 
-(XML
- 
-service
- 
-product).
- 
-   
-*
- 
-**Likely
- 
-attack
- 
-vectors:**
- 
-anonymous
- 
-upload
- 
-or
- 
-download
- 
-of
- 
-files,
- 
-credential
- 
-brute-force,
- 
-exploitation
- 
-of
- 
-known
- 
-FTP
- 
-server
- 
-CVEs
- 
-if
- 
-present.
-   
-*
- 
-**Remediation
- 
-(ordered):**
-     
-1
-.
- 
-Immediately
- 
-restrict
- 
-access
- 
-to
- 
-FTP
- 
-to
- 
-management
- 
-network
- 
-(firewall)
- 
-or disable FTP if not required:
- 
-`sudo
- 
-systemctl
- 
-stop
- 
-pure-ftpd`
- 
-and
- 
-`sudo
- 
-systemctl
- 
-disable
- 
-pure-ftpd`
- 
-(if
- 
-decommissioning).
- 
-**If**
- 
-FTP is required:
-     
-2
-.
- 
-Disable
- 
-anonymous
- 
-logins
- 
-in
- 
-Pure-FTPd
- 
-configuration
- 
-(example:
- 
-set
- 
-`NO_ANONYMOUS`/`AnonUpload`
- 
-off
- 
-depending
- 
-on
- 
-packaging),
- 
-and
- 
-force
- 
-TLS
- 
-and
- 
-strong
- 
-auth.
-     
-3
-.
- 
-Configure
- 
-`iptables`/`ufw`
- 
-to
- 
-allow
- 
-FTP
- 
-only
- 
-from
- 
-admin
- 
-IPs.
-   
-*
- 
-**Forensic
- 
-/
- 
-investigation
- 
-checklist:**
-     
-*
- 
-Logs:
- 
-`/var/log/auth.log`,
- 
-Pure-FTPd
- 
-logs
- 
-(varies
- 
-by
- 
-distro,
- 
-e.g.,
- 
-`/var/log/pure-ftpd/`
- 
-or
- 
-syslog
- 
-entries).
-     
-*
- 
-Read-only commands:
-       
-```bash
-       
-sudo
- 
-grep
- 
--i
- 
-pure
- 
-/var/log/syslog
- 
-|
- 
-tail
- 
--n
- 
-200
-       
-sudo
- 
-tail
- 
--n
- 
-200
- 
-/var/log/auth.log
-       
-</code></pre></details>
-<ul>
-<li class=""></li>
-</ul>
-<p>Indicators:</p>
-<p>successful</p>
-<p>anonymous</p>
-<p>login</p>
-<p>entries,</p>
-<p>many</p>
-<p>failed</p>
-<p>logins</p>
-<p>from</p>
-<p>same</p>
-<p>source</p>
-<p>IPs,</p>
-<p>creation</p>
-<p>of</p>
-<p>new</p>
-<p>files</p>
-<p>in</p>
-<p>FTP</p>
-<p>chroot/upload</p>
-<p>directories.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Timeline: list files in webroot/ftp upload directories modified in last 3 days:</p>
-<p>`sudo</p>
-<p>find</p>
-<p>/var/www</p>
-<p>-mtime</p>
-<p>-3</p>
-<p>-ls`</p>
-<p>(example</p>
-<p>path</p>
-<p>—</p>
-<p>adjust</p>
-<p>to</p>
-<p>actual</p>
-<p>FTP</p>
-<p>path).</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>SIEM rule:</p>
-<p>*Alert</p>
-<p>on</p>
-<p>&quot;ANON LOGIN&quot;</p>
-<p>entries</p>
-<p>for</p>
-<p>FTP*</p>
-<p>and</p>
-<p>*files</p>
-<p>created</p>
-<p>under</p>
-<p>upload</p>
-<p>directories</p>
-<p>by</p>
-<p>unprivileged</p>
-<p>users*.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>**Validation</p>
-<p>steps:**</p>
-<p>attempt</p>
-<p>a</p>
-<p>safe</p>
-<p>anonymous</p>
-<p>listing</p>
-<p>from</p>
-<p>a</p>
-<p>trusted</p>
-<p>host</p>
-<p>(only</p>
-<p>if</p>
-<p>allowed</p>
-<p>by</p>
-<p>rules)</p>
-<p>or,</p>
-<p>better,</p>
-<p>check</p>
-<p>server</p>
-<p>config</p>
-<p>for</p>
-<p><code>Anonymous</code></p>
-<p>settings:</p>
-<p>`sudo</p>
-<p>cat</p>
-<p>/etc/pure-ftpd/conf/Anonymous`</p>
-<p>(or</p>
-<p>check</p>
-<p>packaging</p>
-<p>docs).</p>
-<p>**Do</p>
-<p>not</p>
-<p>attempt</p>
-<p>destructive</p>
-<p>operations.**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p><strong>Confidence:</strong></p>
-<p><strong>Medium</strong></p>
-<p>—</p>
-<p>presence</p>
-<p>of</p>
-<p><code>Pure-FTPd</code></p>
-<p>is</p>
-<p>clear,</p>
-<p>but</p>
-<p>anonymous/weak</p>
-<p>auth</p>
-<p>status</p>
-<p>is</p>
-<p><strong>NEEDS_VALIDATION</strong></p>
-<p>because</p>
-<p>XML</p>
-<p>doesn&#x27;t</p>
-<p>show</p>
-<p>auth</p>
-<p>policy.</p>
-<p>2
-.</p>
-<p>**Apache</p>
-<p>HTTP</p>
-<p>—</p>
-<p>default/400</p>
-<p>responses</p>
-<p>/</p>
-<p>potential</p>
-<p>misconfig**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p><strong>Description:</strong></p>
-<p>Apache</p>
-<p>is</p>
-<p>running;</p>
-<p>XML</p>
-<p>shows</p>
-<p>standard</p>
-<p>server</p>
-<p>header</p>
-<p>and</p>
-<p>titles</p>
-<p>like</p>
-<p>`400</p>
-<p>Bad</p>
-<p>Request`</p>
-<p>for</p>
-<p>some</p>
-<p>endpoints.</p>
-<p>Misconfiguration</p>
-<p>could</p>
-<p>leak</p>
-<p>info</p>
-<p>or</p>
-<p>expose</p>
-<p>unused</p>
-<p>vhosts.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p><strong>Evidence:</strong></p>
-<p><code>http-server-header</code></p>
-<p>=</p>
-<p><code>Apache</code>,</p>
-<p><code>http-title</code></p>
-<p>entries</p>
-<p>in</p>
-<p>XML.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>**Remediation</p>
-<p>/</p>
-<p>validation</p>
-<p>/</p>
-<p>forensic</p>
-<p>checklist:**</p>
-<p>same</p>
-<p>approach</p>
-<p>as</p>
-<p>for</p>
-<p>host</p>
-<p>.21</p>
-<p>—</p>
-<p>confirm</p>
-<p>vhost</p>
-<p>configs,</p>
-<p>check</p>
-<p>logs,</p>
-<p>restrict</p>
-<p>access</p>
-<p>to</p>
-<p>admin</p>
-<p>pages,</p>
-<p>remove default pages. Commands:</p>
-<p>`sudo</p>
-<p>apachectl</p>
-<p>-S`,</p>
-<p>`sudo</p>
-<p>tail</p>
-<p>-n</p>
-<p>200</p>
-<p>/var/log/apache2/access.log`.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p><strong>Confidence:</strong></p>
-<p><strong>High</strong></p>
-<p>that</p>
-<p>Apache</p>
-<p>is</p>
-<p>present;</p>
-<p><strong>Medium</strong></p>
-<p>on</p>
-<p>severity</p>
-<p>(needs</p>
-<p>config</p>
-<p>check).</p>
-<p>3
-.</p>
-<p>**SSH</p>
-<p>present</p>
-<p>(OpenSSH</p>
-<ol start="10">
-<li class=""></li>
-</ol>
-<p>0p2)</p>
-<p>—</p>
-<p>management</p>
-<p>exposure**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p><strong>Description:</strong></p>
-<p>SSH</p>
-<p>exposed</p>
-<p>on</p>
-<p>non-standard</p>
-<p>port</p>
-<p>6666
-;</p>
-<p>banner</p>
-<p>shows</p>
-<p>`OpenSSH</p>
-<ol start="10">
-<li class=""></li>
-</ol>
-<p>0p2</p>
-<p>Debian</p>
-<p>7
-`.</p>
-<p>While</p>
-<p>newer,</p>
-<p>it</p>
-<p>still</p>
-<p>needs</p>
-<p>hardening</p>
-<p>and</p>
-<p>access</p>
-<p>control.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p><strong>Evidence:</strong></p>
-<p>service</p>
-<p>product/version</p>
-<p>present</p>
-<p>in</p>
-<p>XML.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>**Remediation</p>
-<p>&amp;</p>
-<p>forensic</p>
-<p>actions:**</p>
-<p>same</p>
-<p>as</p>
-<p>for</p>
-<p>host</p>
-<p>.21</p>
-<p>but</p>
-<p>the</p>
-<p>product</p>
-<p>is</p>
-<p>newer</p>
-<p>(so</p>
-<p>no</p>
-<p><code>outdated</code></p>
-<p>weight).</p>
-<p>Harden</p>
-<p><code>sshd_config</code>,</p>
-<p>restrict</p>
-<p>via</p>
-<p>firewall,</p>
-<p>check</p>
-<p>auth</p>
-<p>logs.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p><strong>Confidence:</strong></p>
-<p><strong>High</strong></p>
-<p>for</p>
-<p>presence;</p>
-<p><strong>Medium</strong></p>
-<p>for</p>
-<p>risk</p>
-<p>(depends</p>
-<p>on</p>
-<p>access</p>
-<p>controls).
-**Top</p>
-<p>3</p>
-<p>prioritized</p>
-<p>remediation</p>
-<p>checklist</p>
-<p>(137.74.187.28)**
-1
-.</p>
-<p>If</p>
-<p>FTP</p>
-<p>is</p>
-<p>not</p>
-<p>required,</p>
-<p><strong>disable</strong></p>
-<p>Pure-FTPd</p>
-<p>(`sudo</p>
-<p>systemctl</p>
-<p>stop</p>
-<p>pure-ftpd</p>
-<p>&amp;&amp;</p>
-<p>sudo</p>
-<p>systemctl</p>
-<p>disable</p>
-<p>pure-ftpd`).</p>
-<p>If</p>
-<p>required,</p>
-<p>restrict</p>
-<p>to</p>
-<p>admin</p>
-<p>IPs</p>
-<p>and</p>
-<p>**disable</p>
-<p>anonymous</p>
-<p>access**.</p>
-<p>2
-.</p>
-<p>Harden</p>
-<p>SSH</p>
-<p>access</p>
-<p>(firewall</p>
-<p>rules</p>
-<p>limiting</p>
-<p>port</p>
-<p>6666
-to</p>
-<p>admin</p>
-<p>IPs;</p>
-<p>enforce</p>
-<p>key-based</p>
-<p>auth</p>
-<p>and</p>
-<p>disable</p>
-<p>root</p>
-<p>login).</p>
-<p>3
-.</p>
-<p>Review</p>
-<p>Apache</p>
-<p>vhosts</p>
-<p>&amp;</p>
-<p>logs</p>
-<p>for</p>
-<p>suspicious</p>
-<p>file</p>
-<p>uploads/requests</p>
-<p>and</p>
-<p>apply</p>
-<p>`ServerSignature</p>
-<p>Off<code>/</code>ServerTokens</p>
-<p>Prod`.</p>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-cross-host-observations">3) Cross-host observations<a href="#3-cross-host-observations" class="hash-link" aria-label="Direct link to 3) Cross-host observations" title="Direct link to 3) Cross-host observations" translate="no">​</a></h2>
-<ul>
-<li class=""></li>
-</ul>
-<p>**Multiple</p>
-<p>hosts</p>
-<p>reuse</p>
-<p>similar</p>
-<p>service</p>
-<p>patterns**:</p>
-<p>Both</p>
-<p><code>137.74.187.21</code></p>
-<p>and</p>
-<p><code>137.74.187.28</code></p>
-<p>expose</p>
-<p>Apache</p>
-<p>and</p>
-<p>SSH</p>
-<p>services</p>
-<p>on</p>
-<p>the</p>
-<p>network,</p>
-<p>increasing the risk of automated pivoting if credentials are re-used. Evidence:</p>
-<p>Apache</p>
-<p>present</p>
-<p>on</p>
-<p>both;</p>
-<p>OpenSSH</p>
-<p>present</p>
-<p>on</p>
-<p>both</p>
-<p>(different</p>
-<p>versions).</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>**SSH</p>
-<p>on</p>
-<p>non-standard</p>
-<p>port</p>
-<p>6666
-on</p>
-<p>multiple</p>
-<p>hosts**</p>
-<p>—</p>
-<p>this</p>
-<p>suggests</p>
-<p>a</p>
-<p>deliberate</p>
-<p>management</p>
-<p>port</p>
-<p>mapping</p>
-<p>across</p>
-<p>hosts;</p>
-<p>ensure</p>
-<p>firewall</p>
-<p>rules</p>
-<p>still</p>
-<p>limit</p>
-<p>exposure.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>**Certificate</p>
-<p>management</p>
-<p>variance**:</p>
-<p>at</p>
-<p>least</p>
-<p>one</p>
-<p>host</p>
-<p>has</p>
-<p>an</p>
-<p>imminent</p>
-<p>cert</p>
-<p>expiry.</p>
-<p>Verify</p>
-<p>ACME</p>
-<p>automation</p>
-<p>across</p>
-<p>all</p>
-<p>TLS</p>
-<p>hosts</p>
-<p>to</p>
-<p>prevent</p>
-<p>outages.</p>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-mitre-attck-mapping-top-10-findings">4) MITRE ATT&amp;CK mapping (top 10 findings)<a href="#4-mitre-attck-mapping-top-10-findings" class="hash-link" aria-label="Direct link to 4) MITRE ATT&amp;CK mapping (top 10 findings)" title="Direct link to 4) MITRE ATT&amp;CK mapping (top 10 findings)" translate="no">​</a></h2>
-<p>For</p>
-<p>each</p>
-<p>top</p>
-<p>finding</p>
-<p>I</p>
-<p>map</p>
-<p>the</p>
-<p>likely</p>
-<p>ATT&amp;CK</p>
-<p>technique(s)</p>
-<p>and</p>
-<p>reason.
-1
-.</p>
-<p>**SSH</p>
-<p>exposed</p>
-<p>/</p>
-<p>credential</p>
-<p>brute</p>
-<p>force</p>
-<p>/</p>
-<p>unauthorized</p>
-<p>access**</p>
-<p>—</p>
-<p>*T1110</p>
-<p>(Brute</p>
-<p>Force)*</p>
-<p>—</p>
-<p>exposed</p>
-<p>SSH</p>
-<p>allows</p>
-<p>online</p>
-<p>guessing</p>
-<p>and</p>
-<p>credential</p>
-<p>stuffing.</p>
-<p>2
-.</p>
-<p>**Valid</p>
-<p>accounts</p>
-<p>via</p>
-<p>SSH</p>
-<p>public</p>
-<p>key**</p>
-<p>—</p>
-<p>*T1078</p>
-<p>(Valid</p>
-<p>Accounts)*</p>
-<p>—</p>
-<p>if attacker obtains or adds keys. Evidence:</p>
-<p><code>ssh-hostkey</code></p>
-<p>present</p>
-<p>(host</p>
-<p>keys),</p>
-<p>actual</p>
-<p>account</p>
-<p>compromise</p>
-<p>not</p>
-<p>shown</p>
-<p>(NEEDS_VALIDATION).</p>
-<p>3
-.</p>
-<p>**FTP</p>
-<p>anonymous</p>
-<p>or</p>
-<p>misconfigured</p>
-<p>upload**</p>
-<p>—</p>
-<p>*T1105</p>
-<p>(Ingress</p>
-<p>Tool</p>
-<p>Transfer)</p>
-<p>/</p>
-<p>T1190</p>
-<p>(Exploit</p>
-<p>Public-Facing</p>
-<p>Application)</p>
-<p>depending</p>
-<p>on</p>
-<p>misconfig*</p>
-<p>—</p>
-<p>file</p>
-<p>uploads</p>
-<p>may</p>
-<p>be</p>
-<p>used</p>
-<p>for</p>
-<p>persistence.</p>
-<p>4
-.</p>
-<p>**Exposed</p>
-<p>webserver</p>
-<p>(Apache)**</p>
-<p>—</p>
-<p>*T1190</p>
-<p>(Exploit</p>
-<p>Public-Facing</p>
-<p>Application),</p>
-<p>T1505</p>
-<p>(Server</p>
-<p>Software</p>
-<p>Component)*</p>
-<p>—</p>
-<p>attackers</p>
-<p>can</p>
-<p>target</p>
-<p>web</p>
-<p>apps</p>
-<p>or</p>
-<p>misconfig.</p>
-<p>5
-.</p>
-<p>**Certificate</p>
-<p>expiry</p>
-<p>/</p>
-<p>availability</p>
-<p>disruption**</p>
-<p>—</p>
-<p>*T1499</p>
-<p>(Endpoint</p>
-<p>DoS)</p>
-<p>or</p>
-<p>T1600</p>
-<p>variant</p>
-<p>regarding</p>
-<p>Availability)*</p>
-<p>—</p>
-<p>expired</p>
-<p>certs</p>
-<p>cause</p>
-<p>service</p>
-<p>outages</p>
-<p>or</p>
-<p>force</p>
-<p>operator</p>
-<p>remediation.</p>
-<p>6
-.</p>
-<p>**Old</p>
-<p>kernel</p>
-<p>/</p>
-<p>known</p>
-<p>OS</p>
-<p>vulnerabilities**</p>
-<p>—</p>
-<p>*T1203</p>
-<p>(Exploitation</p>
-<p>for</p>
-<p>Client</p>
-<p>Execution)*</p>
-<p>—</p>
-<p>old</p>
-<p>kernels</p>
-<p>may</p>
-<p>be</p>
-<p>targetable</p>
-<p>via</p>
-<p>privilege</p>
-<p>escalation.</p>
-<p>7
-.</p>
-<p>**Default</p>
-<p>or</p>
-<p>verbose</p>
-<p>server</p>
-<p>banners</p>
-<p>(Apache/OpenSSH)**</p>
-<p>—</p>
-<p>*T1598</p>
-<p>(Phishing</p>
-<p>for</p>
-<p>Information</p>
-<p>/</p>
-<p>Reconnaissance)*</p>
-<p>—</p>
-<p>useful</p>
-<p>for</p>
-<p>attacker</p>
-<p>reconnaissance</p>
-<p>and</p>
-<p>fingerprinting.</p>
-<p>8
-.</p>
-<p>**Potential</p>
-<p>log-ins</p>
-<p>from</p>
-<p>unusual</p>
-<p>sources</p>
-<p>(if</p>
-<p>found)**</p>
-<p>—</p>
-<p>*T1033</p>
-<p>(Command</p>
-<p>and</p>
-<p>Control)</p>
-<p>/</p>
-<p>T1071</p>
-<p>if</p>
-<p>C2</p>
-<p>uses</p>
-<p>SSH*</p>
-<p>—</p>
-<p>speculative</p>
-<p>until</p>
-<p>logs</p>
-<p>checked</p>
-<p>(NEEDS_VALIDATION).</p>
-<p>9
-.</p>
-<p>**Publicly</p>
-<p>exposed</p>
-<p>management</p>
-<p>ports**</p>
-<p>—</p>
-<p>*T1078</p>
-<p>/</p>
-<p>T1219</p>
-<p>(Remote</p>
-<p>Services)*</p>
-<p>—</p>
-<p>management</p>
-<p>services</p>
-<p>reachable</p>
-<p>from</p>
-<p>Internet.</p>
-<p>10
-.</p>
-<p>**Potential</p>
-<p>misconfigured</p>
-<p>virtual</p>
-<p>hosts**</p>
-<p>—</p>
-<p>*T1592</p>
-<p>(Gather</p>
-<p>Victim</p>
-<p>Host</p>
-<p>Information)*</p>
-<p>—</p>
-<p>attacker</p>
-<p>can</p>
-<p>use</p>
-<p>misconfig</p>
-<p>to</p>
-<p>discover</p>
-<p>hidden</p>
-<p>admin</p>
-<p>pages.</p>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-detection--hunting-playbook">5) Detection &amp; hunting playbook<a href="#5-detection--hunting-playbook" class="hash-link" aria-label="Direct link to 5) Detection &amp; hunting playbook" title="Direct link to 5) Detection &amp; hunting playbook" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-value-detection-rules--siem-searches-prioritized">High-value detection rules / SIEM searches (prioritized)<a href="#high-value-detection-rules--siem-searches-prioritized" class="hash-link" aria-label="Direct link to High-value detection rules / SIEM searches (prioritized)" title="Direct link to High-value detection rules / SIEM searches (prioritized)" translate="no">​</a></h3>
-<p>(Use</p>
-<p>these</p>
-<p>as</p>
-<p>pseudocode</p>
-<p>or</p>
-<p>translate</p>
-<p>to</p>
-<p>your</p>
-<p>SIEM</p>
-<p>query</p>
-<p>language.)
-1
-.</p>
-<p>**SSH</p>
-<p>brute</p>
-<p>force</p>
-<p>detection**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>`COUNT(failed_ssh_auth</p>
-<p>WHERE</p>
-<p>src_ip</p>
-<p>=</p>
-<p>X</p>
-<p>OVER</p>
-<p>10m)</p>
-<p>&gt;=</p>
-<p>5
-`</p>
-<p>→</p>
-<p>alert.</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Data sources:</p>
-<p><code>/var/log/auth.log</code>,</p>
-<p>`journalctl</p>
-<p>-u</p>
-<p>ssh.service`.
-2
-.</p>
-<p>**Successful</p>
-<p>SSH</p>
-<p>after</p>
-<p>multiple</p>
-<p>failures**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>`IF</p>
-<p>(successful_ssh_login)</p>
-<p>AND</p>
-<p>(failed_ssh_auth</p>
-<p>from</p>
-<p>same</p>
-<p>src_ip</p>
-<p>in</p>
-<p>last</p>
-<p>30m</p>
-<p>&gt;=</p>
-<p>5
-)</p>
-<p>THEN</p>
-<p>HIGH_ALERT`.
-3
-.</p>
-<p>**FTP</p>
-<p>anonymous</p>
-<p>login</p>
-<p>/</p>
-<p>new</p>
-<p>file</p>
-<p>upload</p>
-<p>detection**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>detect</p>
-<p><code>ANONYMOUS</code></p>
-<p>in ftp logs OR file creation in FTP chroot:</p>
-<p>`find</p>
-<p>/ftp/uploads</p>
-<p>-mtime</p>
-<p>-1
-`</p>
-<p>→</p>
-<p>alert.
-4
-.</p>
-<p>**Certificate</p>
-<p>expiry</p>
-<p>monitoring**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>ingest</p>
-<p><code>notAfter</code></p>
-<p>field</p>
-<p>from</p>
-<p>TLS</p>
-<p>scans</p>
-<p>/</p>
-<p>certificate</p>
-<p>inventory;</p>
-<p>alert</p>
-<p>if</p>
-<p>`notAfter</p>
-<p>&lt;</p>
-<p>45</p>
-<p>days`.
-5
-.</p>
-<p>**New</p>
-<p>local</p>
-<p>accounts</p>
-<p>/</p>
-<p>sudoers</p>
-<p>changes**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>detect</p>
-<p>creation</p>
-<p>of</p>
-<p>new</p>
-<p>accounts</p>
-<p>or</p>
-<p>change</p>
-<p>to</p>
-<p><code>/etc/sudoers</code></p>
-<p>in</p>
-<p>file</p>
-<p>integrity</p>
-<p>events.
-6
-.</p>
-<p>**Excessive</p>
-<p>400
-/500</p>
-<p>responses</p>
-<p>from</p>
-<p>webserver**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>detect</p>
-<p>bursts</p>
-<p>of</p>
-<p><code>400</code></p>
-<p>or</p>
-<p><code>500</code></p>
-<p>in</p>
-<p>access</p>
-<p>logs</p>
-<p>from</p>
-<p>same</p>
-<p>IP</p>
-<p>—</p>
-<p>may</p>
-<p>indicate</p>
-<p>scanning</p>
-<p>or</p>
-<p>exploitation</p>
-<p>attempts.
-7
-.</p>
-<p>**Unusual</p>
-<p>high-volume</p>
-<p>outbound</p>
-<p>SSH**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>detect</p>
-<p>hosts</p>
-<p>initiating</p>
-<p>many</p>
-<p>outbound</p>
-<p>SSH</p>
-<p>connections</p>
-<p>(possible</p>
-<p>lateral</p>
-<p>movement).
-8
-.</p>
-<p>**Changes</p>
-<p>to</p>
-<p>SSH</p>
-<p>authorized_keys**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>FIM/Logwatch</p>
-<p>alert</p>
-<p>on</p>
-<p>modifications</p>
-<p>to</p>
-<p><code>~/.ssh/authorized_keys</code></p>
-<p>across</p>
-<p>critical</p>
-<p>accounts.
-9
-.</p>
-<p>**Unexpected</p>
-<p>service</p>
-<p>banner</p>
-<p>changes**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>Periodic</p>
-<p>banner</p>
-<p>fingerprinting;</p>
-<p>alert</p>
-<p>if</p>
-<p>banner/version</p>
-<p>changes</p>
-<p>unexpectedly.
-10
-.</p>
-<p>**New</p>
-<p>listening</p>
-<p>service</p>
-<p>detected**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>Asset</p>
-<p>inventory</p>
-<p>compares</p>
-<p>port</p>
-<p>scan</p>
-<p>results</p>
-<p>-&gt;</p>
-<p>alert</p>
-<p>on</p>
-<p>new</p>
-<p>services</p>
-<p>listening</p>
-<p>on</p>
-<p>public</p>
-<p>IPs.
-11
-.</p>
-<p>**File</p>
-<p>upload</p>
-<p>to</p>
-<p>webroot**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>Monitor</p>
-<p>`find</p>
-<p>/var/www</p>
-<p>-mtime</p>
-<p>-1</p>
-<p>-type</p>
-<p>f`</p>
-<p>and</p>
-<p>alert</p>
-<p>on</p>
-<p>files</p>
-<p>with</p>
-<p>executable</p>
-<p>bits</p>
-<p>or</p>
-<p>unusual</p>
-<p>extensions.
-12
-.</p>
-<p>**Multiple</p>
-<p>login</p>
-<p>attempts</p>
-<p>from</p>
-<p>one</p>
-<p>country</p>
-<p>not</p>
-<p>in</p>
-<p>normal</p>
-<p>profile**</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Logic:</p>
-<p>geo-IP</p>
-<p>correlation</p>
-<p>on</p>
-<p>auth</p>
-<p>events.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-incident-response-playbook-triage--contain--eradicate--recover">Quick incident response playbook (triage → contain → eradicate → recover)<a href="#quick-incident-response-playbook-triage--contain--eradicate--recover" class="hash-link" aria-label="Direct link to Quick incident response playbook (triage → contain → eradicate → recover)" title="Direct link to Quick incident response playbook (triage → contain → eradicate → recover)" translate="no">​</a></h3>
-<p><strong>Triage</strong>
-*</p>
-<p>Confirm</p>
-<p>affected</p>
-<p>hosts</p>
-<p>from</p>
-<p>inventory</p>
-<p>and</p>
-<p>the</p>
-<p>XML</p>
-<p>evidence</p>
-<p>(this</p>
-<p>scan).</p>
-<p>Check</p>
-<p>when</p>
-<p>last</p>
-<p>scan</p>
-<p>was</p>
-<p>run</p>
-<p>(Nov</p>
-<p>23
-,</p>
-<p>2025
-).</p>
-<ul>
-<li class=""></li>
-</ul>
-<p>Pull</p>
-<p>authentication</p>
-<p>logs</p>
-<p>for</p>
-<p>past</p>
-<p>24
-–72</p>
-<p>hours</p>
-<p>(<code>/var/log/auth.log</code>,</p>
-<p>`journalctl</p>
-<p>-u</p>
-<p>ssh.service`,</p>
-<p>FTP</p>
-<p>logs,</p>
-<p>Apache</p>
-<p>logs).
-<strong>Contain</strong>
-*</p>
-<p>If</p>
-<p>suspicious</p>
-<p>activity</p>
-<p>found,</p>
-<p>block</p>
-<p>offending</p>
-<p>IPs</p>
-<p>at</p>
-<p>perimeter</p>
-<p>firewall</p>
-<p>and</p>
-<p>on</p>
-<p>host</p>
-<p><code>iptables</code>/<code>ufw</code>.</p>
-<p>Example read-only action plan:</p>
-<p>propose</p>
-<p>firewall</p>
-<p>rule</p>
-<p>`ufw</p>
-<p>allow</p>
-<p>from</p>
-<p>ADMIN_IP</p>
-<p>to</p>
-<p>any</p>
-<p>port</p>
-<p>6666
-proto</p>
-<p>tcp`</p>
-<p>and</p>
-<p>`ufw</p>
-<p>deny</p>
-<p>from</p>
-<p>0.0
-.0
-.0
-/0</p>
-<p>to</p>
-<p>any</p>
-<p>port</p>
-<p>21</p>
-<p>proto</p>
-<p>tcp`</p>
-<p>(if</p>
-<p>FTP</p>
-<p>not</p>
-<p>required).</p>
-<p>Apply</p>
-<p>only</p>
-<p>after</p>
-<p>approval.
-<strong>Eradicate</strong>
-*</p>
-<p>Remove</p>
-<p>unauthorized</p>
-<p>keys/accounts</p>
-<p>found</p>
-<p>in</p>
-<p><code>authorized_keys</code>/<code>/etc/passwd</code>.</p>
-<p>Re-initialize</p>
-<p>credentials</p>
-<p>for</p>
-<p>compromised</p>
-<p>accounts.</p>
-<p>(Follow</p>
-<p>change-control;</p>
-<p>do</p>
-<p>not</p>
-<p>delete</p>
-<p>without</p>
-<p>backups.)
-<strong>Recover</strong>
-*</p>
-<p>Patch/update</p>
-<p>vulnerable</p>
-<p>packages</p>
-<p>(e.g.,</p>
-<p>`sudo</p>
-<p>apt</p>
-<p>update</p>
-<p>&amp;&amp;</p>
-<p>sudo</p>
-<p>apt</p>
-<p>install</p>
-<p>--only-upgrade</p>
-<p>openssh-server</p>
-<p>pure-ftpd</p>
-<p>apache2`).</p>
-<p>Validate</p>
-<p>services</p>
-<p>are</p>
-<p>back,</p>
-<p>TLS</p>
-<p>certs</p>
-<p>are</p>
-<p>renewed,</p>
-<p>and</p>
-<p>monitoring</p>
-<p>rules</p>
-<p>are</p>
-<p>in</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="place">place.<a href="#place" class="hash-link" aria-label="Direct link to place." title="Direct link to place." translate="no">​</a></h2>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-appendices">6) Appendices<a href="#6-appendices" class="hash-link" aria-label="Direct link to 6) Appendices" title="Direct link to 6) Appendices" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a--raw-evidence-snippets-selected-exact-xml-lines">A — Raw evidence snippets (selected, exact XML lines)<a href="#a--raw-evidence-snippets-selected-exact-xml-lines" class="hash-link" aria-label="Direct link to A — Raw evidence snippets (selected, exact XML lines)" title="Direct link to A — Raw evidence snippets (selected, exact XML lines)" translate="no">​</a></h3>
-<p>&gt;</p>
-<p>I</p>
-<p>include</p>
-<p>the</p>
-<p>most</p>
-<p>load-bearing</p>
-<p>XML</p>
-<p>lines</p>
-<p>below</p>
-<p>(quoted</p>
-<p>exactly</p>
-<p>as</p>
-<p>seen).</p>
-<p>Each</p>
-<p>snippet</p>
-<p>is</p>
-<p>followed</p>
-<p>by</p>
-<p>a</p>
-<p>file</p>
-<p>citation</p>
-<p>to</p>
-<p>the</p>
-<p>uploaded</p>
-<p>XML.
-*</p>
-<p>**SSH</p>
-<p>host</p>
-<p>&amp;</p>
-<p>key</p>
-<p>(137.74.187.21,</p>
-<p>port</p>
-<p>6666
-):**</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">protocol=&quot;tcp&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">portid=&quot;6666&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;state</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">state=&quot;open&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reason=&quot;syn-ack&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reason_ttl=&quot;0&quot;/&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;service</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name=&quot;ssh&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">product=&quot;OpenSSH&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">version=&quot;7.4&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">extrainfo=&quot;protocol</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; method=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">probed&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">conf=&quot;10&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;cpe&gt;cpe:/a:openbsd:openssh:7.4&lt;/cpe&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/service&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;script</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id=&quot;ssh-hostkey&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">output=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2048 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">0b:d6:3a:9d:5a:16:31:f3:25:79:c7:3b:5e:a0:93:9b</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(RSA)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">256</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f9:18:8e:7c:11:51:a2:30:a6:21:2f:ee:e6:6a:0d:1c</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(ECDSA)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">256</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">5a:54:59:46:4f:c6:76:09:6d:42:f5:3e:34:cc:a7:16</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(ED25519)&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div></code></pre></div></div>
-<ul>
-<li class=""></li>
-</ul>
-<p>**Apache</p>
-<p>HTTP</p>
-<p>(example</p>
-<p>snippet</p>
-<p>—</p>
-<p>host</p>
-<p>with</p>
-<p><code>http-title</code>)**</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">protocol=&quot;tcp&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">portid=&quot;80&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;state</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">state=&quot;open&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reason=&quot;syn-ack&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reason_ttl=&quot;0&quot;/&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;service</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name=&quot;http&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">product=&quot;Apache</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">httpd&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">method=&quot;probed&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">conf=&quot;10&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;cpe&gt;cpe:/a:apache:http_server&lt;/cpe&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/service&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;script</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id=&quot;http-server-header&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">output=&quot;Apache&quot;&gt;&lt;elem&gt;Apache&lt;/elem&gt;&lt;/script&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;script</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id=&quot;http-title&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">output=&quot;Site</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">doesn&#x27;t</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">have</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">a</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">title</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(text/html).&quot;&gt;&lt;/script&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/port&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div></code></pre></div></div>
-<ul>
-<li class=""></li>
-</ul>
-<p>**TLS</p>
-<p>certificate</p>
-<p>(example</p>
-<p>snippet</p>
-<p>showing</p>
-<p>expiry)**</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;script</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id=&quot;ssl-cert&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">output=&quot;Subject:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">commonName=ahorrandoluz.com</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Subject Alternative Name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DNS:ahorrandoluz.com,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DNS:ahorrandoluz.es,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DNS:www.ahorrandoluz.com,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DNS:www.ahorrandoluz.es</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Not valid before:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2025-10-03T08:46:50</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Not valid after:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2026-01-01T08:46:49</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;table key=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">subject&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;elem</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key=&quot;commonName&quot;&gt;ahorrandoluz.com&lt;/elem&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/table&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;table</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key=&quot;validity&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;elem</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key=&quot;notBefore&quot;&gt;2025-10-03T08:46:50&lt;/elem&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;elem</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key=&quot;notAfter&quot;&gt;2026-01-01T08:46:49&lt;/elem&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/table&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/script&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div></code></pre></div></div>
-<ul>
-<li class=""></li>
-</ul>
-<p>**FTP</p>
-<p>(Pure-FTPd)</p>
-<p>detected</p>
-<p>on</p>
-<p>port</p>
-<p>21</p>
-<p>(host</p>
-<p>137.74
-.187
-.28
-):**</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;port</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">protocol=&quot;tcp&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">portid=&quot;21&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;state</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">state=&quot;open&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reason=&quot;syn-ack&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">reason_ttl=&quot;0&quot;/&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;service</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name=&quot;ftp&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">product=&quot;Pure-FTPd&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">method=&quot;probed&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">conf=&quot;10&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;cpe&gt;cpe:/a:pureftpd:pure-ftpd&lt;/cpe&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/service&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;script</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">id=&quot;ssl-date&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">output=&quot;TLS</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">randomness</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">does</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">not</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">represent</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">time&quot;&gt;&lt;/script&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/port&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div></code></pre></div></div>
-<ul>
-<li class=""></li>
-</ul>
-<p>**OS</p>
-<p>fingerprint</p>
-<p>examples</p>
-<p>(showing</p>
-<p>older</p>
-<p>kernel</p>
-<p>matches):**</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;osmatch</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name=&quot;Linux</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">2.6</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.32</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; accuracy=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">91</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot; line=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">55923</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;osclass type=&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">general</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">purpose&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vendor=&quot;Linux&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">osfamily=&quot;Linux&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">osgen=&quot;2.6.X&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">accuracy=&quot;91&quot;&gt;&lt;cpe&gt;cpe:/o:linux:linux_kernel:2.6.32&lt;/cpe&gt;&lt;/osclass&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/osmatch&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div></code></pre></div></div>
-<p>&gt;</p>
-<p>If</p>
-<p>you</p>
-<p>want</p>
-<p>exact</p>
-<p>line</p>
-<p>numbers</p>
-<p>for</p>
-<p>additional</p>
-<p>snippets</p>
-<p>I</p>
-<p>quoted</p>
-<p>above</p>
-<p>I</p>
-<p>can</p>
-<p>extract</p>
-<p>and</p>
-<p>present</p>
-<p>each</p>
-<p>snippet</p>
-<p>with</p>
-<p>precise</p>
-<p>XML</p>
-<p>line</p>
-<p>ranges</p>
-<p>—</p>
-<p>I</p>
-<p>used</p>
-<p>the</p>
-<p>file&#x27;s</p>
-<p>script</p>
-<p>outputs</p>
-<p>and</p>
-<p>host</p>
-<p>port</p>
-<p>blocks</p>
-<p>as</p>
-<p>the</p>
-<p>canonical</p>
-<p>evidence.</p>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="b--machine-readable-summary-scan_summary-json">B — Machine-readable summary (<code>scan_summary</code> JSON)<a href="#b--machine-readable-summary-scan_summary-json" class="hash-link" aria-label="Direct link to b--machine-readable-summary-scan_summary-json" title="Direct link to b--machine-readable-summary-scan_summary-json" translate="no">​</a></h3>
-<details class="plain-large-code" data-plain-code-lines="324"><summary>Large code or log block<!-- --> · <!-- -->324<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>{
-  
-&quot;hosts&quot;:
- [
+
+1. **OpenSSH 7.4 — outdated server version**
+
+   * **Description:** OpenSSH 7.4 is an older release. Older OpenSSH versions may lack fixes or features present in later releases (bug/crypto fixes, stronger defaults). An attacker could attempt to exploit known weaknesses or use older crypto defaults to attempt downgrade-related attacks or target known CVEs applicable to that branch.
+   * **Evidence (exact XML snippet):** `service` product/version: `OpenSSH 7.4` on TCP/6666; `ssh-hostkey` block shows host key fingerprints. 
+   * **Likely attack vectors:** brute-force or credential stuffing against SSH; exploitation of any known CVE affecting 7.4 (requires CVE lookup — skipped here).
+   * **Remediation (prioritized):**
+
+     1. Confirm package source and update SSH to a maintained version: `sudo apt update &amp;&amp; sudo apt install --only-upgrade openssh-server` (Debian/Ubuntu) — or appropriate package manager/OS update.
+     2. Harden `/etc/ssh/sshd_config` (non-destructive lines):
+
+        ```
+        PermitRootLogin no
+        PasswordAuthentication no   # if key-based logins are used
+        PubkeyAuthentication yes
+        AllowUsers adminuser1 adminuser2
+        ClientAliveInterval 300
+        ClientAliveCountMax 2
+        ```
+     3. Reconfigure allowed ciphers / MACs only to modern choices (follow distro guidance).
+   * **Forensic / investigation checklist:**
+
+     * Logs: `/var/log/auth.log`, `/var/log/secure`, `journalctl -u ssh.service`.
+     * Read-only commands:
+
+       ```
+       sudo grep -E &quot;Failed password|Accepted publickey|Invalid user&quot; /var/log/auth.log | tail -n 200
+       sudo journalctl -u ssh.service --since &quot;24 hours ago&quot; | tail -n 200
+       sudo last -n 50
+       ```
+     * Indicators: many `Failed password` attempts from same IP; `Accepted publickey` for unknown accounts; logins at odd hours or from unusual geolocations.
+     * Timeline triage: check last 24h failed/accepted events, then last 7 days.
+     * Suggested SIEM rule: *Alert if &gt;5 failed SSH logins from same source IP within 10 minutes* (or unusual success following multiple failures).
+   * **Validation steps (non-destructive):** check `ssh -v` client connection to confirm banner; `sudo dpkg -l | grep openssh` (or `rpm -q openssh-server`) to confirm installed version.
+   * **Confidence:** **High** — exact banner `OpenSSH 7.4` is present in XML. 
+
+2. **TLS certificate expiry — certificate near expiry (&lt;45 days)**
+
+   * **Description:** The web server&#x27;s certificate (`ahorrandoluz.com`) expires `2026-01-01T08:46:49` per the XML. If not renewed, TLS will fail and users/clients will see errors; certificate expiry can disrupt service and may indicate ACME automation is broken.
+   * **Evidence (exact XML snippet):** `ssl-cert` output shows `Not valid after:  2026-01-01T08:46:49`. (Full `ssl-cert` block present in XML.) 
+   * **Likely attack vectors:** availability disruption (service outage); opportunistic attacks if operators rush fixes. Not an immediate remote code execution, but affects trust and availability.
+   * **Remediation (ordered):**
+
+     1. Validate ACME/Let&#x27;s Encrypt automatic renewal: check `systemctl status certbot` or ACME client logs.
+     2. Manually renew if automation broken: `sudo certbot renew --dry-run` then `sudo certbot renew` if dry-run OK.
+     3. If certificate not managed by certbot, follow the host&#x27;s certificate vendor process and ensure renewals are automated (e.g., cron/systemd timer for certbot).
+   * **Forensic / investigation checklist:**
+
+     * Log sources: ACME/certbot logs (e.g., `/var/log/letsencrypt/letsencrypt.log`), webserver error logs (`/var/log/apache2/error.log`), systemd timers: `systemctl list-timers`.
+     * Read-only commands:
+
+       ```
+       sudo ls -l /etc/letsencrypt/live/
+       sudo tail -n 200 /var/log/letsencrypt/letsencrypt.log
+       sudo apachectl -S
+       ```
+     * Indicators: recent failed renewal attempts, expired cert files, ACME challenge failures in logs.
+     * SIEM rule: *Alert when certificate `notAfter` &lt; 45 days for any public TLS service*.
+   * **Validation steps:** inspect the `notAfter` field in the `ssl-cert` script output in XML (already present) and run `openssl s_client -connect &lt;ip&gt;:443 -servername &lt;servername&gt; -showcerts` from a trusted host to view expiry.
+   * **Confidence:** **High** — XML contains explicit `notAfter`. 
+
+3. **Web server: Apache — generic (HTTP/HTTPS) configuration issues / missing title**
+
+   * **Description:** Apache present on 80 and 443. `http-title` for port 80 indicates &quot;Site doesn&#x27;t have a title&quot;, and for 443 the server returns `400 Bad Request` (per XML `http-title`). These suggest web app misconfig or default/placeholder content which may expose information or incomplete config. Misconfiguration may allow directory listing or public exposure of admin pages.
+   * **Evidence (exact XML snippet):** `http-server-header` shows `Apache`; `http-title` shows `Site doesn&#x27;t have a title (text/html)` for port 80, and `400 Bad Request` for port 443. 
+   * **Likely attack vectors:** automated scanning to find admin pages, directory listing, or misconfigured virtual hosts; fingerprinting for CMS versions via other probes (not present here).
+   * **Remediation:** review vhost configs under `/etc/apache2/sites-enabled/` (or distro equivalent) — ensure default pages removed, `ServerTokens Prod`, `ServerSignature Off`, `TraceEnable Off`; ensure TLS vhosts accept proper SNI. Example config lines:
+
+     ```
+     ServerTokens Prod
+     ServerSignature Off
+     TraceEnable Off
+     ```
+   * **Forensic checklist &amp; validation:** check access/error logs (`/var/log/apache2/access.log`, `/var/log/apache2/error.log`) with read-only commands like `sudo tail -n 200 /var/log/apache2/error.log`; confirm vhost configuration with `sudo apachectl -t` and `sudo apachectl -S`.
+   * **Confidence:** **High** for presence of Apache; **Medium** for exact misconfiguration severity because `http-title` is an informational banner only. 
+
+**Top 3 prioritized remediation checklist (137.74.187.21)**
+
+1. Immediately validate and renew the TLS certificate (ACME/letsencrypt logs + `certbot renew --dry-run`). 
+2. Harden and, if possible, upgrade OpenSSH (confirm package version on host and update to supported version). Apply `PermitRootLogin no`/`PasswordAuthentication no`. 
+3. Review Apache vhost configs and access/error logs for suspicious requests; reduce server banner noise. 
+
+---
+
+### Host: **137.74.187.28** (PTR `ip28.ip-137-74-187.eu`)
+
+**Risk level:** Critical — **score = 63**
+**Scoring breakdown (math):**
+
+* FTP open (+30) — TCP **21** shows `Pure-FTPd` service.
+* SSH open (+20) — TCP **6666** shows `OpenSSH 10.0p2 Debian 7`.
+* Web server present (+15) — Apache on TCP **80** (and possibly 443).
+* Product/version indicates outdated (+10) — **Not applied**: OpenSSH 10.0p2 is recent; Pure-FTPd version not enumerated in XML, so we **do not** assume outdated.
+* TLS expiry: **NEEDS_VALIDATION** — XML reports `ssl-date: TLS randomness does not represent time` for some services and does not clearly show a `notAfter` for this host in the snippet; certificate expiry scoring not applied. **(If SSL cert found and notAfter &lt;45 days, add +8)**. 
+* No old kernel weight applied. Filtered/closed ports subtract (-2).
+  **Total = 30 + 20 + 15 - 2 = 63 → Critical.**
+
+&gt; **Host header quick facts (from XML):**
+&gt;
+&gt; * IP: `137.74.187.28` — PTR `ip28.ip-137-74-187.eu`. 
+
+#### Open services summary (exact banner/script outputs copied from XML)
+
+* **tcp/21 — ftp**
+
+  * `service` product: `Pure-FTPd` (XML shows `Pure-FTPd` as detected product).
+  * `ssl-date` script output: `TLS randomness does not represent time` (present in XML for this FTP port).
+  * **Important**: XML does **not** show whether anonymous login is allowed — **NEEDS_VALIDATION**.
+* **tcp/80 — http**
+
+  * `service`: `Apache httpd`. `http-title`/`http-server-header` outputs are present in the XML (see `http-server-header` = `Apache`, and `http-title` outputs, e.g., `400 Bad Request` in some host contexts). 
+* **tcp/6666 — ssh**
+
+  * `service`: `OpenSSH 10.0p2 Debian 7` (banner present in XML). 
+
+#### Vulnerabilities &amp; misconfigurations (explicit list)
+
+1. **Public FTP / Pure-FTPd service running (unauthenticated access status unknown — NEEDS_VALIDATION)**
+
+   * **Description:** FTP servers often allow anonymous or weakly authenticated access if misconfigured. Public FTP may expose upload directories or allow retrieval of sensitive files. The XML shows `Pure-FTPd` running on port 21. Whether anonymous login is enabled is **not present** in the XML.
+   * **Evidence (exact XML snippet):** service `Pure-FTPd` detected on port 21 (XML service product). 
+   * **Likely attack vectors:** anonymous upload or download of files, credential brute-force, exploitation of known FTP server CVEs if present.
+   * **Remediation (ordered):**
+
+     1. Immediately restrict access to FTP to management network (firewall) or disable FTP if not required: `sudo systemctl stop pure-ftpd` and `sudo systemctl disable pure-ftpd` (if decommissioning). **If** FTP is required:
+     2. Disable anonymous logins in Pure-FTPd configuration (example: set `NO_ANONYMOUS`/`AnonUpload` off depending on packaging), and force TLS and strong auth.
+     3. Configure `iptables`/`ufw` to allow FTP only from admin IPs.
+   * **Forensic / investigation checklist:**
+
+     * Logs: `/var/log/auth.log`, Pure-FTPd logs (varies by distro, e.g., `/var/log/pure-ftpd/` or syslog entries).
+     * Read-only commands:
+
+       ```bash
+       sudo grep -i pure /var/log/syslog | tail -n 200
+       sudo tail -n 200 /var/log/auth.log
+       ```
+     * Indicators: successful anonymous login entries, many failed logins from same source IPs, creation of new files in FTP chroot/upload directories.
+     * Timeline: list files in webroot/ftp upload directories modified in last 3 days: `sudo find /var/www -mtime -3 -ls` (example path — adjust to actual FTP path).
+     * SIEM rule: *Alert on &quot;ANON LOGIN&quot; entries for FTP* and *files created under upload directories by unprivileged users*.
+   * **Validation steps:** attempt a safe anonymous listing from a trusted host (only if allowed by rules) or, better, check server config for `Anonymous` settings: `sudo cat /etc/pure-ftpd/conf/Anonymous` (or check packaging docs). **Do not attempt destructive operations.**
+   * **Confidence:** **Medium** — presence of `Pure-FTPd` is clear, but anonymous/weak auth status is **NEEDS_VALIDATION** because XML doesn&#x27;t show auth policy. 
+
+2. **Apache HTTP — default/400 responses / potential misconfig**
+
+   * **Description:** Apache is running; XML shows standard server header and titles like `400 Bad Request` for some endpoints. Misconfiguration could leak info or expose unused vhosts.
+   * **Evidence:** `http-server-header` = `Apache`, `http-title` entries in XML. 
+   * **Remediation / validation / forensic checklist:** same approach as for host .21 — confirm vhost configs, check logs, restrict access to admin pages, remove default pages. Commands: `sudo apachectl -S`, `sudo tail -n 200 /var/log/apache2/access.log`.
+   * **Confidence:** **High** that Apache is present; **Medium** on severity (needs config check). 
+
+3. **SSH present (OpenSSH 10.0p2) — management exposure**
+
+   * **Description:** SSH exposed on non-standard port 6666; banner shows `OpenSSH 10.0p2 Debian 7`. While newer, it still needs hardening and access control.
+   * **Evidence:** service product/version present in XML. 
+   * **Remediation &amp; forensic actions:** same as for host .21 but the product is newer (so no `outdated` weight). Harden `sshd_config`, restrict via firewall, check auth logs.
+   * **Confidence:** **High** for presence; **Medium** for risk (depends on access controls).
+
+**Top 3 prioritized remediation checklist (137.74.187.28)**
+
+1. If FTP is not required, **disable** Pure-FTPd (`sudo systemctl stop pure-ftpd &amp;&amp; sudo systemctl disable pure-ftpd`). If required, restrict to admin IPs and **disable anonymous access**. 
+2. Harden SSH access (firewall rules limiting port 6666 to admin IPs; enforce key-based auth and disable root login). 
+3. Review Apache vhosts &amp; logs for suspicious file uploads/requests and apply `ServerSignature Off`/`ServerTokens Prod`. 
+
+---
+
+## 3) Cross-host observations
+
+* **Multiple hosts reuse similar service patterns**: Both `137.74.187.21` and `137.74.187.28` expose Apache and SSH services on the network, increasing the risk of automated pivoting if credentials are re-used. Evidence: Apache present on both; OpenSSH present on both (different versions). 
+* **SSH on non-standard port 6666 on multiple hosts** — this suggests a deliberate management port mapping across hosts; ensure firewall rules still limit exposure. 
+* **Certificate management variance**: at least one host has an imminent cert expiry. Verify ACME automation across all TLS hosts to prevent outages. 
+
+---
+
+## 4) MITRE ATT&amp;CK mapping (top 10 findings)
+
+For each top finding I map the likely ATT&amp;CK technique(s) and reason.
+
+1. **SSH exposed / credential brute force / unauthorized access** — *T1110 (Brute Force)* — exposed SSH allows online guessing and credential stuffing. 
+2. **Valid accounts via SSH public key** — *T1078 (Valid Accounts)* — if attacker obtains or adds keys. Evidence: `ssh-hostkey` present (host keys), actual account compromise not shown (NEEDS_VALIDATION). 
+3. **FTP anonymous or misconfigured upload** — *T1105 (Ingress Tool Transfer) / T1190 (Exploit Public-Facing Application) depending on misconfig* — file uploads may be used for persistence. 
+4. **Exposed webserver (Apache)** — *T1190 (Exploit Public-Facing Application), T1505 (Server Software Component)* — attackers can target web apps or misconfig. 
+5. **Certificate expiry / availability disruption** — *T1499 (Endpoint DoS) or T1600 variant regarding Availability)* — expired certs cause service outages or force operator remediation. 
+6. **Old kernel / known OS vulnerabilities** — *T1203 (Exploitation for Client Execution)* — old kernels may be targetable via privilege escalation. 
+7. **Default or verbose server banners (Apache/OpenSSH)** — *T1598 (Phishing for Information / Reconnaissance)* — useful for attacker reconnaissance and fingerprinting. 
+8. **Potential log-ins from unusual sources (if found)** — *T1033 (Command and Control) / T1071 if C2 uses SSH* — speculative until logs checked (NEEDS_VALIDATION). 
+9. **Publicly exposed management ports** — *T1078 / T1219 (Remote Services)* — management services reachable from Internet. 
+10. **Potential misconfigured virtual hosts** — *T1592 (Gather Victim Host Information)* — attacker can use misconfig to discover hidden admin pages. 
+
+---
+
+## 5) Detection &amp; hunting playbook
+
+### High-value detection rules / SIEM searches (prioritized)
+
+(Use these as pseudocode or translate to your SIEM query language.)
+
+1. **SSH brute force detection**
+
+   * Logic: `COUNT(failed_ssh_auth WHERE src_ip = X OVER 10m) &gt;= 5` → alert.
+   * Data sources: `/var/log/auth.log`, `journalctl -u ssh.service`.
+
+2. **Successful SSH after multiple failures**
+
+   * Logic: `IF (successful_ssh_login) AND (failed_ssh_auth from same src_ip in last 30m &gt;= 5) THEN HIGH_ALERT`.
+
+3. **FTP anonymous login / new file upload detection**
+
+   * Logic: detect `ANONYMOUS` in ftp logs OR file creation in FTP chroot: `find /ftp/uploads -mtime -1` → alert.
+
+4. **Certificate expiry monitoring**
+
+   * Logic: ingest `notAfter` field from TLS scans / certificate inventory; alert if `notAfter &lt; 45 days`.
+
+5. **New local accounts / sudoers changes**
+
+   * Logic: detect creation of new accounts or change to `/etc/sudoers` in file integrity events.
+
+6. **Excessive 400/500 responses from webserver**
+
+   * Logic: detect bursts of `400` or `500` in access logs from same IP — may indicate scanning or exploitation attempts.
+
+7. **Unusual high-volume outbound SSH**
+
+   * Logic: detect hosts initiating many outbound SSH connections (possible lateral movement).
+
+8. **Changes to SSH authorized_keys**
+
+   * Logic: FIM/Logwatch alert on modifications to `~/.ssh/authorized_keys` across critical accounts.
+
+9. **Unexpected service banner changes**
+
+   * Logic: Periodic banner fingerprinting; alert if banner/version changes unexpectedly.
+
+10. **New listening service detected**
+
+    * Logic: Asset inventory compares port scan results -&gt; alert on new services listening on public IPs.
+
+11. **File upload to webroot**
+
+    * Logic: Monitor `find /var/www -mtime -1 -type f` and alert on files with executable bits or unusual extensions.
+
+12. **Multiple login attempts from one country not in normal profile**
+
+    * Logic: geo-IP correlation on auth events.
+
+### Quick incident response playbook (triage → contain → eradicate → recover)
+
+**Triage**
+
+* Confirm affected hosts from inventory and the XML evidence (this scan). Check when last scan was run (Nov 23, 2025). 
+* Pull authentication logs for past 24–72 hours (`/var/log/auth.log`, `journalctl -u ssh.service`, FTP logs, Apache logs).
+
+**Contain**
+
+* If suspicious activity found, block offending IPs at perimeter firewall and on host `iptables`/`ufw`. Example read-only action plan: propose firewall rule `ufw allow from ADMIN_IP to any port 6666 proto tcp` and `ufw deny from 0.0.0.0/0 to any port 21 proto tcp` (if FTP not required). Apply only after approval.
+
+**Eradicate**
+
+* Remove unauthorized keys/accounts found in `authorized_keys`/`/etc/passwd`. Re-initialize credentials for compromised accounts. (Follow change-control; do not delete without backups.)
+
+**Recover**
+
+* Patch/update vulnerable packages (e.g., `sudo apt update &amp;&amp; sudo apt install --only-upgrade openssh-server pure-ftpd apache2`). Validate services are back, TLS certs are renewed, and monitoring rules are in place.
+
+---
+
+## 6) Appendices
+
+### A — Raw evidence snippets (selected, exact XML lines)
+
+&gt; I include the most load-bearing XML lines below (quoted exactly as seen). Each snippet is followed by a file citation to the uploaded XML.
+
+* **SSH host &amp; key (137.74.187.21, port 6666):**
+
+  ```
+  &lt;port protocol=&quot;tcp&quot; portid=&quot;6666&quot;&gt;
+    &lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;0&quot;/&gt;
+    &lt;service name=&quot;ssh&quot; product=&quot;OpenSSH&quot; version=&quot;7.4&quot; extrainfo=&quot;protocol 2.0&quot; method=&quot;probed&quot; conf=&quot;10&quot;&gt;
+      &lt;cpe&gt;cpe:/a:openbsd:openssh:7.4&lt;/cpe&gt;
+    &lt;/service&gt;
+    &lt;script id=&quot;ssh-hostkey&quot; output=&quot;
+      2048 0b:d6:3a:9d:5a:16:31:f3:25:79:c7:3b:5e:a0:93:9b (RSA)
+      256 f9:18:8e:7c:11:51:a2:30:a6:21:2f:ee:e6:6a:0d:1c (ECDSA)
+      256 5a:54:59:46:4f:c6:76:09:6d:42:f5:3e:34:cc:a7:16 (ED25519)&quot;&gt;
+    ...
+  ```
+
+
+
+* **Apache HTTP (example snippet — host with `http-title`)**
+
+  ```
+  &lt;port protocol=&quot;tcp&quot; portid=&quot;80&quot;&gt;
+    &lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;0&quot;/&gt;
+    &lt;service name=&quot;http&quot; product=&quot;Apache httpd&quot; method=&quot;probed&quot; conf=&quot;10&quot;&gt;
+      &lt;cpe&gt;cpe:/a:apache:http_server&lt;/cpe&gt;
+    &lt;/service&gt;
+    &lt;script id=&quot;http-server-header&quot; output=&quot;Apache&quot;&gt;&lt;elem&gt;Apache&lt;/elem&gt;&lt;/script&gt;
+    &lt;script id=&quot;http-title&quot; output=&quot;Site doesn&#x27;t have a title (text/html).&quot;&gt;&lt;/script&gt;
+  &lt;/port&gt;
+  ```
+
+
+
+* **TLS certificate (example snippet showing expiry)**
+
+  ```
+  &lt;script id=&quot;ssl-cert&quot; output=&quot;Subject: commonName=ahorrandoluz.com
+  Subject Alternative Name: DNS:ahorrandoluz.com, DNS:ahorrandoluz.es, DNS:www.ahorrandoluz.com, DNS:www.ahorrandoluz.es
+  Not valid before: 2025-10-03T08:46:50
+  Not valid after:  2026-01-01T08:46:49&quot;&gt;
+    &lt;table key=&quot;subject&quot;&gt; &lt;elem key=&quot;commonName&quot;&gt;ahorrandoluz.com&lt;/elem&gt; &lt;/table&gt;
+    ...
+    &lt;table key=&quot;validity&quot;&gt;
+      &lt;elem key=&quot;notBefore&quot;&gt;2025-10-03T08:46:50&lt;/elem&gt;
+      &lt;elem key=&quot;notAfter&quot;&gt;2026-01-01T08:46:49&lt;/elem&gt;
+    &lt;/table&gt;
+  &lt;/script&gt;
+  ```
+
+
+
+* **FTP (Pure-FTPd) detected on port 21 (host 137.74.187.28):**
+
+  ```
+  &lt;port protocol=&quot;tcp&quot; portid=&quot;21&quot;&gt;
+    &lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;0&quot;/&gt;
+    &lt;service name=&quot;ftp&quot; product=&quot;Pure-FTPd&quot; method=&quot;probed&quot; conf=&quot;10&quot;&gt;
+      &lt;cpe&gt;cpe:/a:pureftpd:pure-ftpd&lt;/cpe&gt;
+    &lt;/service&gt;
+    &lt;script id=&quot;ssl-date&quot; output=&quot;TLS randomness does not represent time&quot;&gt;&lt;/script&gt;
+  &lt;/port&gt;
+  ```
+
+
+
+* **OS fingerprint examples (showing older kernel matches):**
+
+  ```
+  &lt;osmatch name=&quot;Linux 2.6.32&quot; accuracy=&quot;91&quot; line=&quot;55923&quot;&gt;
+    &lt;osclass type=&quot;general purpose&quot; vendor=&quot;Linux&quot; osfamily=&quot;Linux&quot; osgen=&quot;2.6.X&quot; accuracy=&quot;91&quot;&gt;&lt;cpe&gt;cpe:/o:linux:linux_kernel:2.6.32&lt;/cpe&gt;&lt;/osclass&gt;
+  &lt;/osmatch&gt;
+  ```
+
+
+
+&gt; If you want exact line numbers for additional snippets I quoted above I can extract and present each snippet with precise XML line ranges — I used the file&#x27;s script outputs and host port blocks as the canonical evidence. 
+
+---
+
+### B — Machine-readable summary (`scan_summary` JSON)
+
+```json
+{
+  &quot;hosts&quot;: [
     {
-      
-&quot;ip&quot;:
- 
-&quot;137.74.187.21&quot;
-,
-      
-&quot;hostname&quot;:
- 
-&quot;ip21.ip-137-74-187.eu&quot;
-,
-      
-&quot;risk_score&quot;:
- 
-57
-,
-      
-&quot;risk_level&quot;:
- 
-&quot;Critical&quot;
-,
-      
-&quot;open_ports&quot;:
- [
-        {
-&quot;port&quot;:
- 
-6666
-, 
-&quot;proto&quot;:
- 
-&quot;tcp&quot;
-, 
-&quot;service&quot;:
- 
-&quot;ssh&quot;
-, 
-&quot;product&quot;:
- 
-&quot;OpenSSH&quot;
-, 
-&quot;version&quot;:
- 
-&quot;7.4&quot;
-, 
-&quot;cpes&quot;:
- [
-&quot;cpe:/a:openbsd:openssh:7.4&quot;
-], 
-&quot;scripts&quot;:
- {
-&quot;ssh-hostkey&quot;:
- 
-&quot;2048 0b:d6:3a:9d:5a:16:31:f3:25:79:... (RSA); 256 ... (ECDSA); 256 ... (ED25519)&quot;
-}},
-        {
-&quot;port&quot;:
- 
-80
-, 
-&quot;proto&quot;:
- 
-&quot;tcp&quot;
-, 
-&quot;service&quot;:
- 
-&quot;http&quot;
-, 
-&quot;product&quot;:
- 
-&quot;Apache httpd&quot;
-, 
-&quot;version&quot;:
- 
-null
-, 
-&quot;cpes&quot;:
- [
-&quot;cpe:/a:apache:http_server&quot;
-], 
-&quot;scripts&quot;:
- {
-&quot;http-title&quot;:
- 
-&quot;Site doesn&#x27;t have a title (text/html).&quot;
-}},
-        {
-&quot;port&quot;:
- 
-443
-, 
-&quot;proto&quot;:
- 
-&quot;tcp&quot;
-, 
-&quot;service&quot;:
- 
-&quot;http&quot;
-, 
-&quot;product&quot;:
- 
-&quot;Apache httpd&quot;
-, 
-&quot;version&quot;:
- 
-null
-, 
-&quot;cpes&quot;:
- [
-&quot;cpe:/a:apache:http_server&quot;
-], 
-&quot;scripts&quot;:
- {
-&quot;ssl-cert&quot;:
- 
-&quot;Subject: commonName=ahorrandoluz.com; Not valid after: 2026-01-01T08:46:49&quot;
-}}
+      &quot;ip&quot;: &quot;137.74.187.21&quot;,
+      &quot;hostname&quot;: &quot;ip21.ip-137-74-187.eu&quot;,
+      &quot;risk_score&quot;: 57,
+      &quot;risk_level&quot;: &quot;Critical&quot;,
+      &quot;open_ports&quot;: [
+        {&quot;port&quot;: 6666, &quot;proto&quot;: &quot;tcp&quot;, &quot;service&quot;: &quot;ssh&quot;, &quot;product&quot;: &quot;OpenSSH&quot;, &quot;version&quot;: &quot;7.4&quot;, &quot;cpes&quot;: [&quot;cpe:/a:openbsd:openssh:7.4&quot;], &quot;scripts&quot;: {&quot;ssh-hostkey&quot;: &quot;2048 0b:d6:3a:9d:5a:16:31:f3:25:79:... (RSA); 256 ... (ECDSA); 256 ... (ED25519)&quot;}},
+        {&quot;port&quot;: 80, &quot;proto&quot;: &quot;tcp&quot;, &quot;service&quot;: &quot;http&quot;, &quot;product&quot;: &quot;Apache httpd&quot;, &quot;version&quot;: null, &quot;cpes&quot;: [&quot;cpe:/a:apache:http_server&quot;], &quot;scripts&quot;: {&quot;http-title&quot;: &quot;Site doesn&#x27;t have a title (text/html).&quot;}},
+        {&quot;port&quot;: 443, &quot;proto&quot;: &quot;tcp&quot;, &quot;service&quot;: &quot;http&quot;, &quot;product&quot;: &quot;Apache httpd&quot;, &quot;version&quot;: null, &quot;cpes&quot;: [&quot;cpe:/a:apache:http_server&quot;], &quot;scripts&quot;: {&quot;ssl-cert&quot;: &quot;Subject: commonName=ahorrandoluz.com; Not valid after: 2026-01-01T08:46:49&quot;}}
       ],
-      
-&quot;vulnerabilities&quot;:
- [
-        {
-&quot;title&quot;:
- 
-&quot;OpenSSH 7.4 (outdated)&quot;
-, 
-&quot;confidence&quot;:
- 
-&quot;High&quot;
-},
-        {
-&quot;title&quot;:
- 
-&quot;TLS certificate expiring &lt;45 days&quot;
-, 
-&quot;confidence&quot;:
- 
-&quot;High&quot;
-},
-        {
-&quot;title&quot;:
- 
-&quot;Apache default/misconfigured title/400 responses&quot;
-, 
-&quot;confidence&quot;:
- 
-&quot;Medium&quot;
-}
+      &quot;vulnerabilities&quot;: [
+        {&quot;title&quot;: &quot;OpenSSH 7.4 (outdated)&quot;, &quot;confidence&quot;: &quot;High&quot;},
+        {&quot;title&quot;: &quot;TLS certificate expiring &lt;45 days&quot;, &quot;confidence&quot;: &quot;High&quot;},
+        {&quot;title&quot;: &quot;Apache default/misconfigured title/400 responses&quot;, &quot;confidence&quot;: &quot;Medium&quot;}
       ]
     },
     {
-      
-&quot;ip&quot;:
- 
-&quot;137.74.187.28&quot;
-,
-      
-&quot;hostname&quot;:
- 
-&quot;ip28.ip-137-74-187.eu&quot;
-,
-      
-&quot;risk_score&quot;:
- 
-63
-,
-      
-&quot;risk_level&quot;:
- 
-&quot;Critical&quot;
-,
-      
-&quot;open_ports&quot;:
- [
-        {
-&quot;port&quot;:
- 
-21
-, 
-&quot;proto&quot;:
- 
-&quot;tcp&quot;
-, 
-&quot;service&quot;:
- 
-&quot;ftp&quot;
-, 
-&quot;product&quot;:
- 
-&quot;Pure-FTPd&quot;
-, 
-&quot;version&quot;:
- 
-null
-, 
-&quot;cpes&quot;:
- [
-&quot;cpe:/a:pureftpd:pure-ftpd&quot;
-], 
-&quot;scripts&quot;:
- {
-&quot;ssl-date&quot;:
- 
-&quot;TLS randomness does not represent time&quot;
-}},
-        {
-&quot;port&quot;:
- 
-80
-, 
-&quot;proto&quot;:
- 
-&quot;tcp&quot;
-, 
-&quot;service&quot;:
- 
-&quot;http&quot;
-, 
-&quot;product&quot;:
- 
-&quot;Apache httpd&quot;
-, 
-&quot;version&quot;:
- 
-null
-, 
-&quot;cpes&quot;:
- [
-&quot;cpe:/a:apache:http_server&quot;
-], 
-&quot;scripts&quot;:
- {
-&quot;http-server-header&quot;
-:&quot;Apache&quot;
-}},
-        {
-&quot;port&quot;:
- 
-6666
-, 
-&quot;proto&quot;:
- 
-&quot;tcp&quot;
-, 
-&quot;service&quot;:
- 
-&quot;ssh&quot;
-, 
-&quot;product&quot;:
- 
-&quot;OpenSSH&quot;
-, 
-&quot;version&quot;:
- 
-&quot;10.0p2 Debian 7&quot;
-, 
-&quot;cpes&quot;:
- [
-&quot;cpe:/a:openbsd:openssh:10.0p2&quot;
-], 
-&quot;scripts&quot;:
- {}}
+      &quot;ip&quot;: &quot;137.74.187.28&quot;,
+      &quot;hostname&quot;: &quot;ip28.ip-137-74-187.eu&quot;,
+      &quot;risk_score&quot;: 63,
+      &quot;risk_level&quot;: &quot;Critical&quot;,
+      &quot;open_ports&quot;: [
+        {&quot;port&quot;: 21, &quot;proto&quot;: &quot;tcp&quot;, &quot;service&quot;: &quot;ftp&quot;, &quot;product&quot;: &quot;Pure-FTPd&quot;, &quot;version&quot;: null, &quot;cpes&quot;: [&quot;cpe:/a:pureftpd:pure-ftpd&quot;], &quot;scripts&quot;: {&quot;ssl-date&quot;: &quot;TLS randomness does not represent time&quot;}},
+        {&quot;port&quot;: 80, &quot;proto&quot;: &quot;tcp&quot;, &quot;service&quot;: &quot;http&quot;, &quot;product&quot;: &quot;Apache httpd&quot;, &quot;version&quot;: null, &quot;cpes&quot;: [&quot;cpe:/a:apache:http_server&quot;], &quot;scripts&quot;: {&quot;http-server-header&quot;:&quot;Apache&quot;}},
+        {&quot;port&quot;: 6666, &quot;proto&quot;: &quot;tcp&quot;, &quot;service&quot;: &quot;ssh&quot;, &quot;product&quot;: &quot;OpenSSH&quot;, &quot;version&quot;: &quot;10.0p2 Debian 7&quot;, &quot;cpes&quot;: [&quot;cpe:/a:openbsd:openssh:10.0p2&quot;], &quot;scripts&quot;: {}}
       ],
-      
-&quot;vulnerabilities&quot;:
- [
-        {
-&quot;title&quot;:
- 
-&quot;Public FTP (Pure-FTPd) — anonymous/weak auth status unknown (NEEDS_VALIDATION)&quot;
-, 
-&quot;confidence&quot;:
- 
-&quot;Medium&quot;
-},
-        {
-&quot;title&quot;:
- 
-&quot;Exposed management SSH (open, requires hardening)&quot;
-, 
-&quot;confidence&quot;:
- 
-&quot;High&quot;
-},
-        {
-&quot;title&quot;:
- 
-&quot;Apache present (needs config review)&quot;
-, 
-&quot;confidence&quot;:
- 
-&quot;Medium&quot;
-}
+      &quot;vulnerabilities&quot;: [
+        {&quot;title&quot;: &quot;Public FTP (Pure-FTPd) — anonymous/weak auth status unknown (NEEDS_VALIDATION)&quot;, &quot;confidence&quot;: &quot;Medium&quot;},
+        {&quot;title&quot;: &quot;Exposed management SSH (open, requires hardening)&quot;, &quot;confidence&quot;: &quot;High&quot;},
+        {&quot;title&quot;: &quot;Apache present (needs config review)&quot;, &quot;confidence&quot;: &quot;Medium&quot;}
       ]
     }
   ],
-  
-&quot;top_findings&quot;:
- [
-    
-&quot;OpenSSH 7.4 on 137.74.187.21 (outdated) — Hardening/upgrade recommended&quot;
-,
-    
-&quot;TLS certificate on 137.74.187.21 expires 2026-01-01 (renew immediately)&quot;
-,
-    
-&quot;Pure-FTPd on 137.74.187.28 — check for anonymous access and restrict or disable&quot;
-,
-    
-&quot;SSH reachable on non-standard port 6666 on multiple hosts — restrict by firewall&quot;
-,
-    
-&quot;Apache on multiple hosts — review vhost configuration and error logs&quot;
+  &quot;top_findings&quot;: [
+    &quot;OpenSSH 7.4 on 137.74.187.21 (outdated) — Hardening/upgrade recommended&quot;,
+    &quot;TLS certificate on 137.74.187.21 expires 2026-01-01 (renew immediately)&quot;,
+    &quot;Pure-FTPd on 137.74.187.28 — check for anonymous access and restrict or disable&quot;,
+    &quot;SSH reachable on non-standard port 6666 on multiple hosts — restrict by firewall&quot;,
+    &quot;Apache on multiple hosts — review vhost configuration and error logs&quot;
   ],
-  
-&quot;cve_candidates&quot;:
- 
-&quot;SKIPPED - web lookup disabled&quot;
+  &quot;cve_candidates&quot;: &quot;SKIPPED - web lookup disabled&quot;
 }
+```
+
+---
+
+## Final recommendations (concise)
+
+1. **Immediate containment:** restrict access to SSH (port 6666) and FTP (port 21) to admin IPs via firewall rules; consider temporary disable of FTP if not required.
+2. **Certificates &amp; Availability:** renew the certificate expiring ~2026-01-01; verify ACME automation.
+3. **Hardening &amp; patching:** upgrade OpenSSH on hosts with older versions (esp. `7.4`) and apply sshd hardening (`PermitRootLogin no`, `PasswordAuthentication no` if possible).
+4. **Investigate logs:** check `auth.log`, Apache logs, and Pure-FTPd logs for suspicious activity over last 30 days. Create SIEM rules for SSH brute-force and certificate expiry alerts.
+5. **Validate kernel versions:** confirm whether any host is indeed running 2.6/3.x kernels (fingerprinting can be noisy); patch if so.
+
+---
+
+If you want, I can now:
+
+* Extract additional exact XML line ranges for any quoted snippet (so you can paste them into tickets), or
+* Produce exact SIEM queries in your preferred query language (Splunk, Elastic, Datadog, QRadar), or
+* Generate a short email / remediation ticket template to send to ops with the prioritized steps and the exact evidence lines (with file citations).
+
+Which of those should I do next?
 </code></pre></details>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-recommendations-concise">Final recommendations (concise)<a href="#final-recommendations-concise" class="hash-link" aria-label="Direct link to Final recommendations (concise)" title="Direct link to Final recommendations (concise)" translate="no">​</a></h2>
-<p>1
-.</p>
-<p>**Immediate</p>
-<p>containment:**</p>
-<p>restrict</p>
-<p>access</p>
-<p>to</p>
-<p>SSH</p>
-<p>(port</p>
-<p>6666
-)</p>
-<p>and</p>
-<p>FTP</p>
-<p>(port</p>
-<p>21
-)</p>
-<p>to</p>
-<p>admin</p>
-<p>IPs</p>
-<p>via</p>
-<p>firewall</p>
-<p>rules;</p>
-<p>consider</p>
-<p>temporary</p>
-<p>disable</p>
-<p>of</p>
-<p>FTP</p>
-<p>if</p>
-<p>not</p>
-<p>required.
-2
-.</p>
-<p>**Certificates</p>
-<p>&amp;</p>
-<p>Availability:**</p>
-<p>renew</p>
-<p>the</p>
-<p>certificate</p>
-<p>expiring</p>
-<p>~2026-01-01;</p>
-<p>verify</p>
-<p>ACME</p>
-<p>automation.
-3
-.</p>
-<p>**Hardening</p>
-<p>&amp;</p>
-<p>patching:**</p>
-<p>upgrade</p>
-<p>OpenSSH</p>
-<p>on</p>
-<p>hosts</p>
-<p>with</p>
-<p>older</p>
-<p>versions</p>
-<p>(esp.</p>
-<p><code>7.4</code>)</p>
-<p>and</p>
-<p>apply</p>
-<p>sshd</p>
-<p>hardening</p>
-<p>(`PermitRootLogin</p>
-<p>no
-`,</p>
-<p>`PasswordAuthentication</p>
-<p>no
-`</p>
-<p>if</p>
-<p>possible).
-4
-.</p>
-<p>**Investigate</p>
-<p>logs:**</p>
-<p>check</p>
-<p><code>auth.log</code>,</p>
-<p>Apache</p>
-<p>logs,</p>
-<p>and</p>
-<p>Pure-FTPd</p>
-<p>logs</p>
-<p>for</p>
-<p>suspicious</p>
-<p>activity</p>
-<p>over</p>
-<p>last</p>
-<p>30</p>
-<p>days.</p>
-<p>Create</p>
-<p>SIEM</p>
-<p>rules</p>
-<p>for</p>
-<p>SSH</p>
-<p>brute-force</p>
-<p>and</p>
-<p>certificate</p>
-<p>expiry</p>
-<p>alerts.
-5
-.</p>
-<p>**Validate</p>
-<p>kernel</p>
-<p>versions:**</p>
-<p>confirm</p>
-<p>whether</p>
-<p>any</p>
-<p>host</p>
-<p>is</p>
-<p>indeed</p>
-<p>running</p>
-<p>2.6
-/3.x</p>
-<p>kernels</p>
-<p>(fingerprinting</p>
-<p>can</p>
-<p>be</p>
-<p>noisy);</p>
-<p>patch</p>
-<p>if</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="so">so.<a href="#so" class="hash-link" aria-label="Direct link to so." title="Direct link to so." translate="no">​</a></h2>
-<p>If</p>
-<p>you</p>
-<p>want,</p>
-<p>I can now:
-*</p>
-<p>Extract</p>
-<p>additional</p>
-<p>exact</p>
-<p>XML</p>
-<p>line</p>
-<p>ranges</p>
-<p>for</p>
-<p>any</p>
-<p>quoted</p>
-<p>snippet</p>
-<p>(so</p>
-<p>you</p>
-<p>can</p>
-<p>paste</p>
-<p>them</p>
-<p>into</p>
-<p>tickets),</p>
-<p>or
-*</p>
-<p>Produce</p>
-<p>exact</p>
-<p>SIEM</p>
-<p>queries</p>
-<p>in</p>
-<p>your</p>
-<p>preferred</p>
-<p>query</p>
-<p>language</p>
-<p>(Splunk,</p>
-<p>Elastic,</p>
-<p>Datadog,</p>
-<p>QRadar),</p>
-<p>or
-*</p>
-<p>Generate</p>
-<p>a</p>
-<p>short</p>
-<p>email</p>
-<p>/</p>
-<p>remediation</p>
-<p>ticket</p>
-<p>template</p>
-<p>to</p>
-<p>send</p>
-<p>to</p>
-<p>ops</p>
-<p>with</p>
-<p>the</p>
-<p>prioritized</p>
-<p>steps</p>
-<p>and</p>
-<p>the</p>
-<p>exact</p>
-<p>evidence</p>
-<p>lines</p>
-<p>(with</p>
-<p>file</p>
-<p>citations).
-Which</p>
-<p>of</p>
-<p>those</p>
-<p>should</p>
-<p>I</p>
-<p>do</p>
-<p>next?</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**4. Human validation**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Use the LLM output to plan focused manual verification and authenticated scans. LLMs can misinterpret ambiguous banners — validate before changing production.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">**5. Deliver**</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Auto-generate: executive summary (1 page), technical report (10–20 pages), remediation checklist (tickets), and an actionable playbook to hand to devops/sysadmins.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## Safety, ethics, and accuracy caveats</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- **Always have permission.**Never scan or exploit networks you don’t own or don’t have written permission for. Feeding unauthorized scan XML to cloud LLMs could be risky.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- **LLM output ≠ truth.**LLMs can hallucinate CVE IDs or misinterpret ambiguous banners. Use LLM outputs as*assistive*— always validate with tools like Nessus, Metasploit (for proof-of-concept in a lab), vulnerability feeds, or human review.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- **Data exposure.**Your Nmap XML may contain hostnames and internal IPs. Treat it as sensitive data. Redact or avoid posting it publicly.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">## Quick checklist for a single Nmap→LLM session</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Run`nmap -sT -A -O -oX myscan.xml target-range`</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Feed XML+ short instruction to LLM</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Validate LLM suggestions with focused tests</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Create remediation tickets and a rollback-tested fix plan</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Re-scan after fixes and verify</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">### Good luck!</span><br></div></code></pre></div></div></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-11-23-spiderfoot-deep-dive-installation-scans-and-practical-use-cases-11ea6537ad6f"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">SpiderFoot Deep Dive: Installation, Scans, and Practical Use Cases</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Getting More from Burp Suite with LLMs</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#how-i-leveled-up-penetration-tests-by-pairing-classic-tools-nmap-with-llms-like-chatgpt" class="table-of-contents__link toc-highlight">How I leveled up penetration tests by pairing classic tools (NMAP) with LLMs like ChatGPT.</a></li><li><a href="#full-guide-for-nmap-here" class="table-of-contents__link toc-highlight">Full guide for NMAP here</a></li></ul></li><li><a href="#why-combine-nmap--llm" class="table-of-contents__link toc-highlight">Why combine Nmap + LLM?</a></li><li><a href="#real-world-workflow-practical" class="table-of-contents__link toc-highlight">Real-world workflow (practical)</a></li><li><a href="#3-cross-host-observations" class="table-of-contents__link toc-highlight">3) Cross-host observations</a></li><li><a href="#4-mitre-attck-mapping-top-10-findings" class="table-of-contents__link toc-highlight">4) MITRE ATT&amp;CK mapping (top 10 findings)</a></li><li><a href="#5-detection--hunting-playbook" class="table-of-contents__link toc-highlight">5) Detection &amp; hunting playbook</a><ul><li><a href="#high-value-detection-rules--siem-searches-prioritized" class="table-of-contents__link toc-highlight">High-value detection rules / SIEM searches (prioritized)</a></li><li><a href="#quick-incident-response-playbook-triage--contain--eradicate--recover" class="table-of-contents__link toc-highlight">Quick incident response playbook (triage → contain → eradicate → recover)</a></li></ul></li><li><a href="#place" class="table-of-contents__link toc-highlight">place.</a></li><li><a href="#6-appendices" class="table-of-contents__link toc-highlight">6) Appendices</a><ul><li><a href="#a--raw-evidence-snippets-selected-exact-xml-lines" class="table-of-contents__link toc-highlight">A — Raw evidence snippets (selected, exact XML lines)</a></li><li><a href="#b--machine-readable-summary-scan_summary-json" class="table-of-contents__link toc-highlight">B — Machine-readable summary (<code>scan_summary</code> JSON)</a></li></ul></li><li><a href="#final-recommendations-concise" class="table-of-contents__link toc-highlight">Final recommendations (concise)</a></li><li><a href="#so" class="table-of-contents__link toc-highlight">so.</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+<p><strong>4. Human validation</strong></p>
+<ul>
+<li class="">Use the LLM output to plan focused manual verification and authenticated scans. LLMs can misinterpret ambiguous banners — validate before changing production.</li>
+</ul>
+<p><strong>5. Deliver</strong></p>
+<ul>
+<li class="">Auto-generate: executive summary (1 page), technical report (10–20 pages), remediation checklist (tickets), and an actionable playbook to hand to devops/sysadmins.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-ethics-and-accuracy-caveats">Safety, ethics, and accuracy caveats<a href="#safety-ethics-and-accuracy-caveats" class="hash-link" aria-label="Direct link to Safety, ethics, and accuracy caveats" title="Direct link to Safety, ethics, and accuracy caveats" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Always have permission.</strong> Never scan or exploit networks you don’t own or don’t have written permission for. Feeding unauthorized scan XML to cloud LLMs could be risky.</p>
+</li>
+<li class="">
+<p><strong>LLM output ≠ truth.</strong> LLMs can hallucinate CVE IDs or misinterpret ambiguous banners. Use LLM outputs as <em>assistive</em> — always validate with tools like Nessus, Metasploit (for proof-of-concept in a lab), vulnerability feeds, or human review.</p>
+</li>
+<li class="">
+<p><strong>Data exposure.</strong> Your Nmap XML may contain hostnames and internal IPs. Treat it as sensitive data. Redact or avoid posting it publicly.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-checklist-for-a-single-nmapllm-session">Quick checklist for a single Nmap→LLM session<a href="#quick-checklist-for-a-single-nmapllm-session" class="hash-link" aria-label="Direct link to Quick checklist for a single Nmap→LLM session" title="Direct link to Quick checklist for a single Nmap→LLM session" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>Run <code>nmap -sT -A -O -oX myscan.xml target-range</code></p>
+</li>
+<li class="">
+<p>Feed XML+ short instruction to LLM</p>
+</li>
+<li class="">
+<p>Validate LLM suggestions with focused tests</p>
+</li>
+<li class="">
+<p>Create remediation tickets and a rollback-tested fix plan</p>
+</li>
+<li class="">
+<p>Re-scan after fixes and verify</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="good-luck">Good luck!<a href="#good-luck" class="hash-link" aria-label="Direct link to Good luck!" title="Direct link to Good luck!" translate="no">​</a></h3></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-11-23-spiderfoot-deep-dive-installation-scans-and-practical-use-cases-11ea6537ad6f"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">SpiderFoot Deep Dive: Installation, Scans, and Practical Use Cases</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-11-25-getting-more-from-burp-suite-with-llms-fdd03cec343d"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Getting More from Burp Suite with LLMs</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#how-i-leveled-up-penetration-tests-by-pairing-classic-tools-nmap-with-llms-like-chatgpt" class="table-of-contents__link toc-highlight">How I leveled up penetration tests by pairing classic tools (NMAP) with LLMs like ChatGPT.</a></li><li><a href="#full-guide-for-nmap-here" class="table-of-contents__link toc-highlight">Full guide for NMAP here</a></li></ul></li><li><a href="#why-combine-nmap--llm" class="table-of-contents__link toc-highlight">Why combine Nmap + LLM?</a></li><li><a href="#real-world-workflow-practical" class="table-of-contents__link toc-highlight">Real-world workflow (practical)</a></li><li><a href="#safety-ethics-and-accuracy-caveats" class="table-of-contents__link toc-highlight">Safety, ethics, and accuracy caveats</a></li><li><a href="#quick-checklist-for-a-single-nmapllm-session" class="table-of-contents__link toc-highlight">Quick checklist for a single Nmap→LLM session</a><ul><li><a href="#good-luck" class="table-of-contents__link toc-highlight">Good luck!</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -34,7 +34,7 @@
 <p>This page mirrors the original Medium article into the 1200km.com Docusaurus ecosystem. The original article flow, images, screenshots, infographics, and technical blocks are preserved from the export.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deploy-fluent-bit-as-a-daemonset-with-full-metadata-enrichment-rbac-and-http-output-to-xplg-for-real-time-observability">Deploy Fluent Bit as a DaemonSet with full metadata enrichment, RBAC, and HTTP output to XPLG for real-time observability<a href="#deploy-fluent-bit-as-a-daemonset-with-full-metadata-enrichment-rbac-and-http-output-to-xplg-for-real-time-observability" class="hash-link" aria-label="Direct link to Deploy Fluent Bit as a DaemonSet with full metadata enrichment, RBAC, and HTTP output to XPLG for real-time observability" title="Direct link to Deploy Fluent Bit as a DaemonSet with full metadata enrichment, RBAC, and HTTP output to XPLG for real-time observability" translate="no">​</a></h3>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-fluent-bit">What is Fluent Bit?<a href="#what-is-fluent-bit" class="hash-link" aria-label="Direct link to What is Fluent Bit?" title="Direct link to What is Fluent Bit?" translate="no">​</a></h2>
-<p><strong>Fluent Bit</strong>is a lightweight and high-performance log processor and forwarder. It collects logs from files, systemd, or containers (like Docker or Kubernetes pods), enriches them with metadata, transforms if needed, and routes them to various destinations (e.g., Elasticsearch, S3, HTTP APIs).</p>
+<p><strong>Fluent Bit</strong> is a lightweight and high-performance log processor and forwarder. It collects logs from files, systemd, or containers (like Docker or Kubernetes pods), enriches them with metadata, transforms if needed, and routes them to various destinations (e.g., Elasticsearch, S3, HTTP APIs).</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*w7UvnKiL64QEygPS.png" alt="Article image" width="800" height="583" loading="lazy" decoding="async">
 <p><strong>Key Features:</strong></p>
 <ul>
@@ -68,7 +68,7 @@
 </ul>
 <p><a href="https://fluentbit.io" target="_blank" rel="noopener noreferrer" class="">Official Site</a></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-xplg">What is XPLG?<a href="#what-is-xplg" class="hash-link" aria-label="Direct link to What is XPLG?" title="Direct link to What is XPLG?" translate="no">​</a></h2>
-<p><strong>XPLG</strong>is an advanced observability and log analytics platform built to provide full visibility into your applications, infrastructure, and security landscape. It enables real-time log collection, storage, search, visualization, and alerting across hybrid and cloud-native environments.</p>
+<p><strong>XPLG</strong> is an advanced observability and log analytics platform built to provide full visibility into your applications, infrastructure, and security landscape. It enables real-time log collection, storage, search, visualization, and alerting across hybrid and cloud-native environments.</p>
 <img src="https://cdn-images-1.medium.com/max/800/0*rdiYK510JdUG-gp1.png" alt="Article image" width="852" height="329" loading="lazy" decoding="async">
 <p>Key Capabilities:</p>
 <ul>
@@ -91,7 +91,7 @@
 <p>Built-in support for MITRE ATT&amp;CK mapping and security detection rules</p>
 </li>
 </ul>
-<p>In this guide, we use<strong>Fluent Bit to push logs from EKS</strong>directly to XPLG’s<strong>HTTP Listener API</strong>, enabling powerful monitoring and detection based on Kubernetes logs.</p>
+<p>In this guide, we use <strong>Fluent Bit to push logs from EKS</strong> directly to XPLG’s <strong>HTTP Listener API</strong>, enabling powerful monitoring and detection based on Kubernetes logs.</p>
 <p><a href="https://www.xplg.com" target="_blank" rel="noopener noreferrer" class="">Official Site</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h3>
 <ul>
@@ -115,10 +115,10 @@
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-a-daemonset-in-aws-eks">What is a DaemonSet in AWS EKS?<a href="#what-is-a-daemonset-in-aws-eks" class="hash-link" aria-label="Direct link to What is a DaemonSet in AWS EKS?" title="Direct link to What is a DaemonSet in AWS EKS?" translate="no">​</a></h3>
-<p><strong>DaemonSet</strong>is a core Kubernetes controller that ensures<strong>exactly one copy of a specific Pod is running on every node</strong>in your Amazon EKS cluster. As new nodes join the EKS cluster, the DaemonSet<strong>automatically deploys Fluent Bit</strong>on them. If nodes are removed, Kubernetes<strong>cleans up the associated Fluent Bit Pods</strong>.</p>
-<p><em>Reference:</em><a href="http://kubernetes.io" target="_blank" rel="noopener noreferrer" class="">http://kubernetes.io</a></p>
+<p><strong>DaemonSet</strong> is a core Kubernetes controller that ensures <strong>exactly one copy of a specific Pod is running on every node</strong> in your Amazon EKS cluster. As new nodes join the EKS cluster, the DaemonSet <strong>automatically deploys Fluent Bit</strong> on them. If nodes are removed, Kubernetes <strong>cleans up the associated Fluent Bit Pods</strong>.</p>
+<p><em>Reference:</em> <a href="http://kubernetes.io" target="_blank" rel="noopener noreferrer" class="">http://kubernetes.io</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-fluent-bit-uses-a-daemonset-in-eks">Why Fluent Bit Uses a DaemonSet in EKS<a href="#why-fluent-bit-uses-a-daemonset-in-eks" class="hash-link" aria-label="Direct link to Why Fluent Bit Uses a DaemonSet in EKS" title="Direct link to Why Fluent Bit Uses a DaemonSet in EKS" translate="no">​</a></h3>
-<p>In Amazon EKS, logs generated by containers (running on EC2 or Fargate nodes) are<strong>stored locally</strong>on each node in these paths:</p>
+<p>In Amazon EKS, logs generated by containers (running on EC2 or Fargate nodes) are <strong>stored locally</strong> on each node in these paths:</p>
 <ul>
 <li class="">
 <p>/var/log/containers/*.log — symbolic links to container logs</p>
@@ -130,7 +130,7 @@
 <p>/var/lib/docker/containers/&lt;cid&gt;/&lt;cid&gt;-json.log — legacy Docker format</p>
 </li>
 </ul>
-<p>Because<strong>logs live on the node that runs the pod</strong>, Fluent Bit needs<strong>node-local access</strong>to read them. That’s why the DaemonSet pattern is essential: it runs one Fluent Bit agent<strong>per node</strong>, ensuring it can directly tail and ship logs from local disk to your logging backend.</p>
+<p>Because <strong>logs live on the node that runs the pod</strong>, Fluent Bit needs <strong>node-local access</strong> to read them. That’s why the DaemonSet pattern is essential: it runs one Fluent Bit agent <strong>per node</strong>, ensuring it can directly tail and ship logs from local disk to your logging backend.</p>
 <p>Deploying Fluent Bit as a DaemonSet in EKS is the officially recommended and production-ready pattern for scalable, reliable, and secure log collection.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="important">Important:<a href="#important" class="hash-link" aria-label="Direct link to Important:" title="Direct link to Important:" translate="no">​</a></h3>
 <p>If you operate multiple EKS clusters, you must deploy the Fluent Bit DaemonSet separately on each cluster.</p>
@@ -142,12 +142,12 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">aws configure</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*jUWHnTvat36KeP-Dyxw-vQ.png" alt="Article image" width="492" height="124" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-connect-kubectl-to-eks">2. Connect kubectl to EKS:<a href="#2-connect-kubectl-to-eks" class="hash-link" aria-label="Direct link to 2. Connect kubectl to EKS:" title="Direct link to 2. Connect kubectl to EKS:" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">aws eks update-kubeconfig </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--region</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &lt;cluster_region&gt; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &lt;cluster_name&gt;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">aws eks update-kubeconfig --region &lt;cluster_region&gt; --name &lt;cluster_name&gt;</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*CR6g-occ5-89D_-N1wdDNw.png" alt="Article image" width="1284" height="65" loading="lazy" decoding="async">
 <p><strong>Optional: Set environment variables:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">export</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CLUSTER</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;fluentbit-andrey&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">export</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> REGION=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;eu-north-1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">export</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> ACCOUNT_ID=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;655536767854&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">export CLUSTER=&quot;fluentbit-andrey&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">export REGION=&quot;eu-north-1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">export ACCOUNT_ID=&quot;655536767854&quot;</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-create-or-verify-the-kubernetes-namespace-and-service-account">3. Create (or verify) the Kubernetes namespace and Service Account.<a href="#3-create-or-verify-the-kubernetes-namespace-and-service-account" class="hash-link" aria-label="Direct link to 3. Create (or verify) the Kubernetes namespace and Service Account." title="Direct link to 3. Create (or verify) the Kubernetes namespace and Service Account." translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Create namespace only if it doesn&#x27;t exist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kubectl create namespace logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Create ServiceAccount only if it doesn&#x27;t exist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kubectl create serviceaccount fluent-bit-controlplane -n logging</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Create namespace only if it doesn&#x27;t exist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kubectl create namespace logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Create ServiceAccount only if it doesn&#x27;t exist</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kubectl create serviceaccount fluent-bit-controlplane -n logging</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*EbAtPR0P-K87PiJ5KDCOGQ.png" alt="Article image" width="745" height="185" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-configure-rbac">4. Configure RBAC<a href="#4-configure-rbac" class="hash-link" aria-label="Direct link to 4. Configure RBAC" title="Direct link to 4. Configure RBAC" translate="no">​</a></h3>
 <p>RBAC (Role-Based Access Control) ensures Fluent Bit can read Kubernetes metadata like pod names and labels, but without giving it write access.</p>
@@ -163,158 +163,64 @@
 </li>
 </ul>
 <p>Create RBAC config for Fluent Bit</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rbac.authorization.k8s.io/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ClusterRole</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rules:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiGroups:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">resources:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;pods&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;namespaces&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">verbs:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> [</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;get&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;list&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;watch&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rbac.authorization.k8s.io/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ClusterRoleBinding</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">roleRef:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiGroup:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rbac.authorization.k8s.io</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ClusterRole</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">subjects:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ServiceAccount</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">namespace:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">logging</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion: rbac.authorization.k8s.io/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind: ClusterRole</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  name: fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rules:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- apiGroups: [&quot;&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  resources: [&quot;pods&quot;, &quot;namespaces&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">---</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion: rbac.authorization.k8s.io/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind: ClusterRoleBinding</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  name: fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">roleRef:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  apiGroup: rbac.authorization.k8s.io</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  kind: ClusterRole</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  name: fluent-bit-read</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">subjects:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- kind: ServiceAccount</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  name: fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  namespace: logging</span><br></div></code></pre></div></div>
 <p>Apply it:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kubectl apply -f rbac.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">yaml</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kubectl apply -f rbac.yaml</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-create-fluent-bit-configuration-configmap">5. Create Fluent Bit Configuration (ConfigMap)<a href="#5-create-fluent-bit-configuration-configmap" class="hash-link" aria-label="Direct link to 5. Create Fluent Bit Configuration (ConfigMap)" title="Direct link to 5. Create Fluent Bit Configuration (ConfigMap)" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.yaml</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano fluent-bit-config.yaml</span><br></div></code></pre></div></div>
 <p>Full yaml includes RBAC. Just change the token and requirements</p>
-<details class="plain-large-code" data-plain-code-lines="435"><summary>Large code or log block<!-- --> · <!-- -->435<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># --- NAMESPACE ---
-apiVersion:
- 
-v1
-kind:
- 
-Namespace
+<details class="plain-large-code" data-plain-code-lines="165"><summary>Large code or log block<!-- --> · <!-- -->165<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code># --- NAMESPACE ---
+apiVersion: v1
+kind: Namespace
 metadata:
-  
-name:
- 
-logging
-  
-# Create a dedicated namespace for Fluent Bit and logging components
+  name: logging  # Create a dedicated namespace for Fluent Bit and logging components
+
 # --- SERVICE ACCOUNT ---
 ---
-apiVersion:
- 
-v1
-kind:
- 
-ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
 metadata:
-  
-name:
- 
-fluent-bit
-  
-# Service account Fluent Bit will use
-  
-namespace:
- 
-logging
-  
-# Must be in the same namespace as the DaemonSet
+  name: fluent-bit  # Service account Fluent Bit will use
+  namespace: logging  # Must be in the same namespace as the DaemonSet
+
 # --- RBAC: Role and Binding ---
 ---
-apiVersion:
- 
-rbac.authorization.k8s.io/v1
-kind:
- 
-ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
 metadata:
-  
-name:
- 
-fluent-bit-read
+  name: fluent-bit-read
 rules:
--
- 
-apiGroups:
- [
-&quot;&quot;
-]
-  
-resources:
-    
--
- 
-namespaces
-    
--
- 
-pods
-  
-# Needed to get metadata for enrichment
-  
-verbs:
- [
-&quot;get&quot;
-, 
-&quot;list&quot;
-, 
-&quot;watch&quot;
-]  
-# Read-only permissions
+- apiGroups: [&quot;&quot;]
+  resources:
+    - namespaces
+    - pods  # Needed to get metadata for enrichment
+  verbs: [&quot;get&quot;, &quot;list&quot;, &quot;watch&quot;]  # Read-only permissions
+
 ---
-apiVersion:
- 
-rbac.authorization.k8s.io/v1
-kind:
- 
-ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
 metadata:
-  
-name:
- 
-fluent-bit-read
+  name: fluent-bit-read
 roleRef:
-  
-apiGroup:
- 
-rbac.authorization.k8s.io
-  
-kind:
- 
-ClusterRole
-  
-name:
- 
-fluent-bit-read
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: fluent-bit-read
 subjects:
--
- 
-kind:
- 
-ServiceAccount
-  
-name:
- 
-fluent-bit
-  
-namespace:
- 
-logging
-  
-# Binds the role to our ServiceAccount
+- kind: ServiceAccount
+  name: fluent-bit
+  namespace: logging  # Binds the role to our ServiceAccount
+
 # --- CONFIGMAP: Fluent Bit Configuration Files ---
 ---
-apiVersion:
- 
-v1
-kind:
- 
-ConfigMap
+apiVersion: v1
+kind: ConfigMap
 metadata:
-  
-name:
- 
-fluent-bit-config
-  
-namespace:
- 
-logging
-  
-labels:
-    
-app.kubernetes.io/name:
- 
-fluent-bit
+  name: fluent-bit-config
+  namespace: logging
+  labels:
+    app.kubernetes.io/name: fluent-bit
 data:
-  
-fluent-bit.conf:
- 
-|
+  fluent-bit.conf: |
     [SERVICE]
         Flush        5               # Flush logs every 5 seconds
         Daemon       Off             # Run in foreground
@@ -323,28 +229,12 @@ fluent-bit.conf:
         HTTP_Server  On              # Enable health check server
         HTTP_Listen  0.0.0.0
         HTTP_Port    2020            # Health check port
-    
-@INCLUDE
- 
-inputs.conf
-             
-# Include log input config
-    
-@INCLUDE
- 
-filters.conf
-            
-# Include filter config (e.g., enrich with metadata)
-    
-@INCLUDE
- 
-outputs.conf
-            
-# Include output config (e.g., send logs to XPLG)
-  
-inputs.conf:
- 
-|
+
+    @INCLUDE inputs.conf             # Include log input config
+    @INCLUDE filters.conf            # Include filter config (e.g., enrich with metadata)
+    @INCLUDE outputs.conf            # Include output config (e.g., send logs to XPLG)
+
+  inputs.conf: |
     [INPUT]
         Name              tail                          # Tail log files
         Tag               kube.*                        # Tag format for filtering
@@ -353,10 +243,8 @@ inputs.conf:
         Mem_Buf_Limit     5MB                           # Buffer limit per file
         Skip_Long_Lines   On                            # Skip lines too long
         Refresh_Interval  10                            # Check for new files every 10 sec
-  
-filters.conf:
- 
-|
+
+  filters.conf: |
     [FILTER]
         Name                kubernetes
         Match               kube.*                      # Match logs from inputs with kube.* tag
@@ -364,10 +252,8 @@ filters.conf:
         Merge_Log           On                          # Merge log line with Kubernetes metadata
         Merge_Log_Key       log                         # Field name for original log line
         Keep_Log            Off                         # Discard original log if merged
-  
-outputs.conf:
- 
-|
+
+  outputs.conf: |
     [OUTPUT]
         Name              http                          # Output plugin (HTTP)
         Match             *                             # Send all logs
@@ -379,10 +265,8 @@ outputs.conf:
         Json_date_format  iso8601                       # Format timestamps in ISO8601
         Header            X-Xpolog-Sender   eks-pod-logs  # Custom HTTP header
         Retry_Limit       5                             # Retry up to 5 times on failure
-  
-parsers.conf:
- 
-|
+
+  parsers.conf: |
     [PARSER]
         Name             docker                         # Parser name
         Format           json                           # Input format
@@ -391,425 +275,85 @@ parsers.conf:
         Time_Keep        On                             # Preserve original time
         Decode_Field_As  escaped log do_next            # Decode any escaped characters in log
         Decode_Field_As  json log                       # Parse nested JSON from &quot;log&quot; field
+
 # --- DAEMONSET: Deploy Fluent Bit on Each Node ---
 ---
-apiVersion:
- 
-apps/v1
-kind:
- 
-DaemonSet
+apiVersion: apps/v1
+kind: DaemonSet
 metadata:
-  
-name:
- 
-fluent-bit
-  
-namespace:
- 
-logging
-  
-labels:
-    
-app.kubernetes.io/name:
- 
-fluent-bit
+  name: fluent-bit
+  namespace: logging
+  labels:
+    app.kubernetes.io/name: fluent-bit
 spec:
-  
-selector:
-    
-matchLabels:
-      
-app.kubernetes.io/name:
- 
-fluent-bit
-  
-template:
-    
-metadata:
-      
-labels:
-        
-app.kubernetes.io/name:
- 
-fluent-bit
-    
-spec:
-      
-serviceAccountName:
- 
-fluent-bit
-  
-# Use previously created service account
-      
-tolerations:
-        
--
- 
-operator:
- 
-Exists
-            
-# Run on any tainted node (master, control-plane, etc.)
-      
-containers:
-      
--
- 
-name:
- 
-fluent-bit
-        
-image:
- 
-public.ecr.aws/aws-observability/aws-for-fluent-bit:2.32.0
-  
-# AWS-optimized Fluent Bit image
-        
-resources:
-          
-requests:
-            
-cpu:
- 
-50m
-            
-memory:
- 
-100Mi
-             
-# Minimal required resources
-          
-limits:
-            
-cpu:
- 
-100m
-            
-memory:
- 
-200Mi
-            
-# Maximum allowed usage
-        
-volumeMounts:
-        
--
- 
-name:
- 
-config
-          
-mountPath:
- 
-/fluent-bit/etc/
-  
-# Mount config from ConfigMap
-        
--
- 
-name:
- 
-varlog
-          
-mountPath:
- 
-/var/log
-         
-# Mount logs directory
-          
-readOnly:
- 
-true
-        
--
- 
-name:
- 
-varlibdockercontainers
-          
-mountPath:
- 
-/var/lib/docker/containers
-          
-readOnly:
- 
-true
-              
-# For container log metadata
-        
-livenessProbe:
-          
-httpGet:
-            
-path:
- 
-/api/v1/health
-       
-# Health check endpoint
-            
-port:
- 
-2020
-          
-initialDelaySeconds:
- 
-10
-          
-periodSeconds:
- 
-60
-      
-volumes:
-      
--
- 
-name:
- 
-config
-        
-configMap:
-          
-name:
- 
-fluent-bit-config
-      
-# Reference to the above ConfigMap
-      
--
- 
-name:
- 
-varlog
-        
-hostPath:
-          
-path:
- 
-/var/log
-               
-# Mount node log path
-      
--
- 
-name:
- 
-varlibdockercontainers
-        
-hostPath:
-          
-path:
- 
-/var/lib/docker/containers
-  
-# Mount container metadata
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: fluent-bit
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: fluent-bit
+    spec:
+      serviceAccountName: fluent-bit  # Use previously created service account
+      tolerations:
+        - operator: Exists            # Run on any tainted node (master, control-plane, etc.)
+      containers:
+      - name: fluent-bit
+        image: public.ecr.aws/aws-observability/aws-for-fluent-bit:2.32.0  # AWS-optimized Fluent Bit image
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi             # Minimal required resources
+          limits:
+            cpu: 100m
+            memory: 200Mi            # Maximum allowed usage
+        volumeMounts:
+        - name: config
+          mountPath: /fluent-bit/etc/  # Mount config from ConfigMap
+        - name: varlog
+          mountPath: /var/log         # Mount logs directory
+          readOnly: true
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true              # For container log metadata
+        livenessProbe:
+          httpGet:
+            path: /api/v1/health       # Health check endpoint
+            port: 2020
+          initialDelaySeconds: 10
+          periodSeconds: 60
+
+      volumes:
+      - name: config
+        configMap:
+          name: fluent-bit-config      # Reference to the above ConfigMap
+      - name: varlog
+        hostPath:
+          path: /var/log               # Mount node log path
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers  # Mount container metadata
 </code></pre></details>
 <p>Apply it:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kubectl apply -f fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.yaml</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kubectl apply -f fluent-bit-config.yaml</span><br></div></code></pre></div></div>
 <p><strong>Optional</strong></p>
 <p><strong>Deploy Fluent Bit from Private Image in EKS (or any K8s)</strong></p>
 <p><strong>Push Your Fluent Bit Image to Your Registry (e.g., Amazon ECR)</strong></p>
 <p>If you’re using ECR:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">aws ecr create-repository --repository-name fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">custom</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Tag </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> push your image</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">docker tag fluent-bit:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">custom</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">123456789012</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.dkr.ecr.eu-north-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.amazonaws.com/fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">custom</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">aws ecr </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">get</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-login-password | docker login --username AWS --password-stdin </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">123456789012</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.dkr.ecr.eu-north-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.amazonaws.com</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">docker push </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">123456789012</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.dkr.ecr.eu-north-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.amazonaws.com/fluent-bit-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">custom</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">aws ecr create-repository --repository-name fluent-bit-custom</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Tag and push your image</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">docker tag fluent-bit:custom 123456789012.dkr.ecr.eu-north-1.amazonaws.com/fluent-bit-custom</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">aws ecr get-login-password | docker login --username AWS --password-stdin 123456789012.dkr.ecr.eu-north-1.amazonaws.com</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">docker push 123456789012.dkr.ecr.eu-north-1.amazonaws.com/fluent-bit-custom</span><br></div></code></pre></div></div>
 <p><strong>Update Your DaemonSet (or Pod) with Custom Image</strong></p>
 <p>In your Fluent Bit DaemonSet YAML:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">containers:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">image:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">123456789012.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">dkr.ecr.eu-north-1.amazonaws.com/fluent-bit-custom:latest</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">containers:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  - name: fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    image: 123456789012.dkr.ecr.eu-north-1.amazonaws.com/fluent-bit-custom:latest</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-deploy-fluent-bit-as-a-daemonsetseparated-from-configmap">6. Deploy Fluent Bit as a DaemonSet(separated from ConfigMap)<a href="#6-deploy-fluent-bit-as-a-daemonsetseparated-from-configmap" class="hash-link" aria-label="Direct link to 6. Deploy Fluent Bit as a DaemonSet(separated from ConfigMap)" title="Direct link to 6. Deploy Fluent Bit as a DaemonSet(separated from ConfigMap)" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano fluent-bit-daemonset.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">yaml</span><br></div></code></pre></div></div>
-<details class="plain-large-code" data-plain-code-lines="187"><summary>Large code or log block<!-- --> · <!-- -->187<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>apiVersion:
- 
-apps/v1
-kind:
- 
-DaemonSet
-metadata:
-  
-name:
- 
-fluent-bit
-  
-namespace:
- 
-logging
-  
-labels:
-    
-app.kubernetes.io/name:
- 
-fluent-bit
-spec:
-  
-selector:
-    
-matchLabels:
-      
-app.kubernetes.io/name:
- 
-fluent-bit
-  
-template:
-    
-metadata:
-      
-labels:
-        
-app.kubernetes.io/name:
- 
-fluent-bit
-    
-spec:
-      
-serviceAccountName:
- 
-fluent-bit
-      
-tolerations:
-        
--
- 
-operator:
- 
-Exists
-      
-containers:
-      
--
- 
-name:
- 
-fluent-bit
-        
-image:
- 
-public.ecr.aws/aws-observability/aws-for-fluent-bit:2.32.0
-        
-resources:
-          
-requests:
-            
-cpu:
- 
-50m
-            
-memory:
- 
-100Mi
-          
-limits:
-            
-cpu:
- 
-100m
-            
-memory:
- 
-200Mi
-        
-volumeMounts:
-        
--
- 
-name:
- 
-config
-          
-mountPath:
- 
-/fluent-bit/etc/
-        
--
- 
-name:
- 
-varlog
-          
-mountPath:
- 
-/var/log
-          
-readOnly:
- 
-true
-        
--
- 
-name:
- 
-varlibdockercontainers
-          
-mountPath:
- 
-/var/lib/docker/containers
-          
-readOnly:
- 
-true
-        
-livenessProbe:
-          
-httpGet:
-            
-path:
- 
-/api/v1/health
-            
-port:
- 
-2020
-          
-initialDelaySeconds:
- 
-10
-          
-periodSeconds:
- 
-60
-      
-volumes:
-      
--
- 
-name:
- 
-config
-        
-configMap:
-          
-name:
- 
-fluent-bit-config
-      
--
- 
-name:
- 
-varlog
-        
-hostPath:
-          
-path:
- 
-/var/log
-      
--
- 
-name:
- 
-varlibdockercontainers
-        
-hostPath:
-          
-path:
- 
-/var/lib/docker/containers
-</code></pre></details>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kubectl apply -f fluent-bit-daemonset.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">yaml</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nano fluent-bit-daemonset.yaml</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">apiVersion: apps/v1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">kind: DaemonSet</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  name: fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  namespace: logging</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  labels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    app.kubernetes.io/name: fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">spec:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  selector:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    matchLabels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      app.kubernetes.io/name: fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  template:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    metadata:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      labels:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        app.kubernetes.io/name: fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    spec:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      serviceAccountName: fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      tolerations:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        - operator: Exists</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      containers:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      - name: fluent-bit</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        image: public.ecr.aws/aws-observability/aws-for-fluent-bit:2.32.0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        resources:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          requests:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            cpu: 50m</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            memory: 100Mi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          limits:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            cpu: 100m</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            memory: 200Mi</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        volumeMounts:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        - name: config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          mountPath: /fluent-bit/etc/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        - name: varlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          mountPath: /var/log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          readOnly: true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        - name: varlibdockercontainers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          mountPath: /var/lib/docker/containers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          readOnly: true</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        livenessProbe:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          httpGet:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            path: /api/v1/health</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">            port: 2020</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          initialDelaySeconds: 10</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          periodSeconds: 60</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      volumes:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      - name: config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        configMap:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          name: fluent-bit-config</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      - name: varlog</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        hostPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          path: /var/log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      - name: varlibdockercontainers</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        hostPath:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">          path: /var/lib/docker/containers</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">kubectl apply -f fluent-bit-daemonset.yaml</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
 <p><strong>XPLG Official site:</strong></p>
 <p><a href="https://xplg.com" target="_blank" rel="noopener noreferrer" class=""><strong>Home</strong>
-*Log management &amp; analysis automations. Simple, optimized &amp; cost-effective. Try free log parser, collectors, forwarding…*xplg.com</a><a href="https://xplg.com" target="_blank" rel="noopener noreferrer" class=""></a></p>
-<p>**XPLG Official Documentation:
-**<a href="https://xpolog.atlassian.net/wiki/spaces/XPOL/overview" target="_blank" rel="noopener noreferrer" class="">https://xpolog.atlassian.net/wiki/spaces/XPOL/overview</a></p>
+*Log management &amp; analysis automations. Simple, optimized &amp; cost-effective. Try free log parser, collectors, forwarding…*xplg.com</a></p>
+<p><strong>XPLG Official Documentation:</strong>
+<a href="https://xpolog.atlassian.net/wiki/spaces/XPOL/overview" target="_blank" rel="noopener noreferrer" class="">https://xpolog.atlassian.net/wiki/spaces/XPOL/overview</a></p>
 <p><strong>Fluent Bit Official Documentation</strong>
 <a href="https://docs.fluentbit.io" target="_blank" rel="noopener noreferrer" class="">https://docs.fluentbit.io</a></p>
 <ul>

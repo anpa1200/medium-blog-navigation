@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -36,8 +36,8 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h3>
 <p>&gt; This guide demonstrates how HexStrike-AI , orchestrated through Gemini-CLI , can autonomously solve a common security / CTF task:</p>
 <p>&gt; Recover the contents of an encrypted ZIP archive using a known password dictionary.</p>
-<p>What makes this workflow different is not the tools themselves — but<strong>how the AI reasons, pivots, and adapts</strong>when something fails.</p>
-<p>This is a<strong>fully authorized, local lab scenario</strong>.</p>
+<p>What makes this workflow different is not the tools themselves — but <strong>how the AI reasons, pivots, and adapts</strong> when something fails.</p>
+<p>This is a <strong>fully authorized, local lab scenario</strong>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="scenario">Scenario<a href="#scenario" class="hash-link" aria-label="Direct link to Scenario" title="Direct link to Scenario" translate="no">​</a></h2>
 <p><strong>Objective</strong></p>
 <ul>
@@ -82,8 +82,8 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-by-step-execution-flow">Step-by-Step Execution Flow<a href="#step-by-step-execution-flow" class="hash-link" aria-label="Direct link to Step-by-Step Execution Flow" title="Direct link to Step-by-Step Execution Flow" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-task-initiation-llm-driven">1. Task initiation (LLM-driven)<a href="#1-task-initiation-llm-driven" class="hash-link" aria-label="Direct link to 1. Task initiation (LLM-driven)" title="Direct link to 1. Task initiation (LLM-driven)" translate="no">​</a></h2>
-<p>The user provides a<strong>single high-level prompt</strong>:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Open</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> encrypted zip file </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> find the flag </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">using</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> the provided password list.</span><br></div></code></pre></div></div>
+<p>The user provides a <strong>single high-level prompt</strong>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Open encrypted zip file and find the flag using the provided password list.</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*ANUdip5C59veqsAwPgXw1A.png" alt="Article image" width="1369" height="319" loading="lazy" decoding="async">
 <p>No commands.
 No tool selection.
@@ -92,10 +92,10 @@ No manual troubleshooting.</p>
 <p>HexStrike-AI:</p>
 <ul>
 <li class="">
-<p>Determines that ZIP cracking requires<strong>hash extraction</strong></p>
+<p>Determines that ZIP cracking requires <strong>hash extraction</strong></p>
 </li>
 <li class="">
-<p>Locates<code>zip2john</code>automatically</p>
+<p>Locates <code>zip2john</code> automatically</p>
 </li>
 <li class="">
 <p>Verifies tool availability on the system</p>
@@ -103,13 +103,13 @@ No manual troubleshooting.</p>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*0gFo7D_MsfBgaWqvMS00aA.png" alt="Article image" width="1712" height="795" loading="lazy" decoding="async">
 <p><strong>Key point:</strong>
-The AI does<em>environment discovery</em>before acting.</p>
+The AI does <em>environment discovery</em> before acting.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-zip-hash-extraction">3. ZIP hash extraction<a href="#3-zip-hash-extraction" class="hash-link" aria-label="Direct link to 3. ZIP hash extraction" title="Direct link to 3. ZIP hash extraction" translate="no">​</a></h2>
 <p>Initial attempts fail due to incorrect paths.</p>
 <p>HexStrike-AI:</p>
 <ul>
 <li class="">
-<p>Enumerates<code>/home</code></p>
+<p>Enumerates <code>/home</code></p>
 </li>
 <li class="">
 <p>Identifies the correct user (<code>andrey</code>)</p>
@@ -122,7 +122,7 @@ The AI does<em>environment discovery</em>before acting.</p>
 </li>
 </ul>
 <p>Then successfully extracts the ZIP hash:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">zip2john secret_file.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">zip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &gt; zip_hash.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">zip2john secret_file.zip &gt; zip_hash.txt</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-offline-password-cracking">4. Offline password cracking<a href="#4-offline-password-cracking" class="hash-link" aria-label="Direct link to 4. Offline password cracking" title="Direct link to 4. Offline password cracking" translate="no">​</a></h2>
 <p>HexStrike-AI selects the correct cracking strategy:</p>
 <ul>
@@ -130,22 +130,22 @@ The AI does<em>environment discovery</em>before acting.</p>
 <p>Offline attack (safe, fast, no lockouts)</p>
 </li>
 <li class="">
-<p>Uses<code>john</code>with the provided wordlist</p>
+<p>Uses <code>john</code> with the provided wordlist</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--wordlist=passwords_list.txt zip_hash.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">john --wordlist=passwords_list.txt zip_hash.txt</span><br></div></code></pre></div></div>
 <p><strong>Result</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Password found:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Israel123</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Password found: Israel123</span><br></div></code></pre></div></div>
 <img src="https://cdn-images-1.medium.com/max/800/1*TRaSGxPOQBkXbiPg-xGREA.png" alt="Article image" width="1700" height="378" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-first-extraction-attempt-failure-handling">5. First extraction attempt (failure handling)<a href="#5-first-extraction-attempt-failure-handling" class="hash-link" aria-label="Direct link to 5. First extraction attempt (failure handling)" title="Direct link to 5. First extraction attempt (failure handling)" translate="no">​</a></h2>
 <p>The AI attempts:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">unzip -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">P</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Israel123 secret_file</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.zip</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">unzip -P Israel123 secret_file.zip</span><br></div></code></pre></div></div>
 <p>Failure occurs:</p>
 <ul>
 <li class="">Unsupported compression method (AES / method 99)</li>
 </ul>
 <p><strong>Critical behavior:</strong>
-HexStrike-AI does<strong>not stop</strong>and does<strong>not guess</strong>.</p>
+HexStrike-AI does <strong>not stop</strong> and does <strong>not guess</strong>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-adaptive-pivot-tool-switching">6. Adaptive pivot (tool switching)<a href="#6-adaptive-pivot-tool-switching" class="hash-link" aria-label="Direct link to 6. Adaptive pivot (tool switching)" title="Direct link to 6. Adaptive pivot (tool switching)" translate="no">​</a></h2>
 <p>HexStrike-AI:</p>
 <ul>
@@ -156,26 +156,26 @@ HexStrike-AI does<strong>not stop</strong>and does<strong>not guess</strong>.</p
 <p>Checks for alternative tooling</p>
 </li>
 <li class="">
-<p>Detects<code>7z</code>is available</p>
+<p>Detects <code>7z</code> is available</p>
 </li>
 <li class="">
 <p>Switches extraction method automatically</p>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">7z x -pIsrael123 secret_file.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">zip</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">7z x -pIsrael123 secret_file.zip</span><br></div></code></pre></div></div>
 <p>Extraction succeeds.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*8vRwcwtg6s_rZg_nplK6kw.png" alt="Article image" width="1703" height="616" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-flag-retrieval">7. Flag retrieval<a href="#7-flag-retrieval" class="hash-link" aria-label="Direct link to 7. Flag retrieval" title="Direct link to 7. Flag retrieval" translate="no">​</a></h2>
 <p>Final step:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cat</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> secret_file.txt</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cat secret_file.txt</span><br></div></code></pre></div></div>
 <p><strong>Flag recovered</strong></p>
 <img src="https://cdn-images-1.medium.com/max/800/1*XqUL-oAX4gre4MnjbaOb7Q.png" alt="Article image" width="1715" height="256" loading="lazy" decoding="async">
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Your</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Flag</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Your Flag</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-result">Final Result<a href="#final-result" class="hash-link" aria-label="Direct link to Final Result" title="Direct link to Final Result" translate="no">​</a></h2>
 <p>ItemValueZIP Password<code>Israel123</code>EncryptionZIP AESFlag<code>Your Flag</code>Attack TypeOffline dictionaryInteractionSingle promptManual interventionNone</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-matters">Why This Matters<a href="#why-this-matters" class="hash-link" aria-label="Direct link to Why This Matters" title="Direct link to Why This Matters" translate="no">​</a></h2>
-<p>This is<strong>not</strong>about cracking ZIP files.</p>
-<p>This example demonstrates how<strong>AI-driven execution changes security workflows</strong>:</p>
+<p>This is <strong>not</strong> about cracking ZIP files.</p>
+<p>This example demonstrates how <strong>AI-driven execution changes security workflows</strong>:</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-hexstrike-ai-did-autonomously">What HexStrike-AI did autonomously<a href="#what-hexstrike-ai-did-autonomously" class="hash-link" aria-label="Direct link to What HexStrike-AI did autonomously" title="Direct link to What HexStrike-AI did autonomously" translate="no">​</a></h2>
 <ul>
 <li class="">
@@ -215,7 +215,7 @@ HexStrike-AI does<strong>not stop</strong>and does<strong>not guess</strong>.</p
 <p>AI is not “running tools blindly”</p>
 </li>
 <li class="">
-<p>It performs<strong>reasoned decision-making</strong></p>
+<p>It performs <strong>reasoned decision-making</strong></p>
 </li>
 <li class="">
 <p>Failures are treated as signals, not blockers</p>
@@ -224,7 +224,7 @@ HexStrike-AI does<strong>not stop</strong>and does<strong>not guess</strong>.</p
 <p>Tool chaining is dynamic, not scripted</p>
 </li>
 <li class="">
-<p>This mirrors how a<strong>real junior pentester / analyst</strong>works — at machine speed</p>
+<p>This mirrors how a <strong>real junior pentester / analyst</strong> works — at machine speed</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="defensive-perspective">Defensive Perspective<a href="#defensive-perspective" class="hash-link" aria-label="Direct link to Defensive Perspective" title="Direct link to Defensive Perspective" translate="no">​</a></h2>
@@ -241,10 +241,10 @@ HexStrike-AI does<strong>not stop</strong>and does<strong>not guess</strong>.</p
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
-<p>This lab shows how<strong>HexStrike-AI + Gemini-CLI</strong>can execute a complete security task:</p>
+<p>This lab shows how <strong>HexStrike-AI + Gemini-CLI</strong> can execute a complete security task:</p>
 <p>&gt; From problem definition → tool discovery → exploitation → validation → result</p>
-<p>All driven by<strong>one prompt</strong>.</p>
+<p>All driven by <strong>one prompt</strong>.</p>
 <p>This is not automation replacing expertise.
-It is<strong>expertise amplified</strong>.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">AI-Driven Wireless Penetration Testing. One Promt WIFI cracking</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-hexstrike-ai-a-force-multiplier-for-red-teams-and-a-dangerous-shift-in-the-threat-landscap-3e1d4e86f3ae"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">HexStrike-AI: A Force Multiplier for Red Teams — and a Dangerous Shift in the Threat Landscape</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#from-encrypted-archive-to-flag-using-llm-orchestrated-tooling" class="table-of-contents__link toc-highlight">From Encrypted Archive to Flag Using LLM-Orchestrated Tooling</a></li><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li></ul></li><li><a href="#scenario" class="table-of-contents__link toc-highlight">Scenario</a></li><li><a href="#step-by-step-execution-flow" class="table-of-contents__link toc-highlight">Step-by-Step Execution Flow</a></li><li><a href="#1-task-initiation-llm-driven" class="table-of-contents__link toc-highlight">1. Task initiation (LLM-driven)</a></li><li><a href="#2-tool-discovery--preparation" class="table-of-contents__link toc-highlight">2. Tool discovery &amp; preparation</a></li><li><a href="#3-zip-hash-extraction" class="table-of-contents__link toc-highlight">3. ZIP hash extraction</a></li><li><a href="#4-offline-password-cracking" class="table-of-contents__link toc-highlight">4. Offline password cracking</a></li><li><a href="#5-first-extraction-attempt-failure-handling" class="table-of-contents__link toc-highlight">5. First extraction attempt (failure handling)</a></li><li><a href="#6-adaptive-pivot-tool-switching" class="table-of-contents__link toc-highlight">6. Adaptive pivot (tool switching)</a></li><li><a href="#7-flag-retrieval" class="table-of-contents__link toc-highlight">7. Flag retrieval</a></li><li><a href="#final-result" class="table-of-contents__link toc-highlight">Final Result</a></li><li><a href="#why-this-matters" class="table-of-contents__link toc-highlight">Why This Matters</a></li><li><a href="#what-hexstrike-ai-did-autonomously" class="table-of-contents__link toc-highlight">What HexStrike-AI did autonomously</a></li><li><a href="#what-the-user-did" class="table-of-contents__link toc-highlight">What the user did</a></li><li><a href="#key-takeaways" class="table-of-contents__link toc-highlight">Key Takeaways</a></li><li><a href="#defensive-perspective" class="table-of-contents__link toc-highlight">Defensive Perspective</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
+It is <strong>expertise amplified</strong>.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2025/2025-12-24-ai-driven-wireless-penetration-testing-one-promt-wifi-cracking-6477c06f6af4"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">AI-Driven Wireless Penetration Testing. One Promt WIFI cracking</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2025/2025-12-25-hexstrike-ai-a-force-multiplier-for-red-teams-and-a-dangerous-shift-in-the-threat-landscap-3e1d4e86f3ae"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">HexStrike-AI: A Force Multiplier for Red Teams — and a Dangerous Shift in the Threat Landscape</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#from-encrypted-archive-to-flag-using-llm-orchestrated-tooling" class="table-of-contents__link toc-highlight">From Encrypted Archive to Flag Using LLM-Orchestrated Tooling</a></li><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li></ul></li><li><a href="#scenario" class="table-of-contents__link toc-highlight">Scenario</a></li><li><a href="#step-by-step-execution-flow" class="table-of-contents__link toc-highlight">Step-by-Step Execution Flow</a></li><li><a href="#1-task-initiation-llm-driven" class="table-of-contents__link toc-highlight">1. Task initiation (LLM-driven)</a></li><li><a href="#2-tool-discovery--preparation" class="table-of-contents__link toc-highlight">2. Tool discovery &amp; preparation</a></li><li><a href="#3-zip-hash-extraction" class="table-of-contents__link toc-highlight">3. ZIP hash extraction</a></li><li><a href="#4-offline-password-cracking" class="table-of-contents__link toc-highlight">4. Offline password cracking</a></li><li><a href="#5-first-extraction-attempt-failure-handling" class="table-of-contents__link toc-highlight">5. First extraction attempt (failure handling)</a></li><li><a href="#6-adaptive-pivot-tool-switching" class="table-of-contents__link toc-highlight">6. Adaptive pivot (tool switching)</a></li><li><a href="#7-flag-retrieval" class="table-of-contents__link toc-highlight">7. Flag retrieval</a></li><li><a href="#final-result" class="table-of-contents__link toc-highlight">Final Result</a></li><li><a href="#why-this-matters" class="table-of-contents__link toc-highlight">Why This Matters</a></li><li><a href="#what-hexstrike-ai-did-autonomously" class="table-of-contents__link toc-highlight">What HexStrike-AI did autonomously</a></li><li><a href="#what-the-user-did" class="table-of-contents__link toc-highlight">What the user did</a></li><li><a href="#key-takeaways" class="table-of-contents__link toc-highlight">Key Takeaways</a></li><li><a href="#defensive-perspective" class="table-of-contents__link toc-highlight">Defensive Perspective</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
 </body>
 </html>

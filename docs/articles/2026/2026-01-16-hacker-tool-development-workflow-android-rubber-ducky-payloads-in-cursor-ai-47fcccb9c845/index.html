@@ -13,8 +13,8 @@
 <script src="https://1200km.com/assets/theme-bootstrap.js"></script>
 <script src="https://1200km.com/assets/docusaurus-ecosystem.js?v=20260614-3" defer="defer"></script>
 <script src="https://1200km.com/assets/site-theme.js?v=20260721-shell" defer="defer"></script><link rel="stylesheet" href="/medium-blog-navigation/assets/css/styles.c1e57449.css">
-<script src="/medium-blog-navigation/assets/js/runtime~main.ab5f91ad.js" defer="defer"></script>
-<script src="/medium-blog-navigation/assets/js/main.7e23fde8.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/runtime~main.8d79bc55.js" defer="defer"></script>
+<script src="/medium-blog-navigation/assets/js/main.4b84d819.js" defer="defer"></script>
 <meta name="robots" content="noindex,follow">
 </head>
 <body>
@@ -36,7 +36,7 @@
 <p><em>When I needed to build a Rubber Ducky payload for Android, I didn’t just get code suggestions — I got a complete development workflow with visual validation, automated testing, and human-like troubleshooting.</em></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-challenge">The Challenge<a href="#the-challenge" class="hash-link" aria-label="Direct link to The Challenge" title="Direct link to The Challenge" translate="no">​</a></h2>
 <p>I had a seemingly straightforward task: create a USB HID payload for an Arduino Leonardo that would automatically open Google search on an Android phone and type “You are hacked!” as a security demonstration.</p>
-<p>**The catch?**It had to work 100% reliably on real Android devices (Samsung One UI 6.x/7.x), and I needed proof that every step worked correctly — not just “it compiled” or “it ran,” but actual visual confirmation.</p>
+<p><strong>The catch?</strong> It had to work 100% reliably on real Android devices (Samsung One UI 6.x/7.x), and I needed proof that every step worked correctly — not just “it compiled” or “it ran,” but actual visual confirmation.</p>
 <p>Traditional development would have meant:</p>
 <ul>
 <li class="">
@@ -62,12 +62,12 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-1-the-ai-that-sets-up-your-environment">Part 1: The AI That Sets Up Your Environment<a href="#part-1-the-ai-that-sets-up-your-environment" class="hash-link" aria-label="Direct link to Part 1: The AI That Sets Up Your Environment" title="Direct link to Part 1: The AI That Sets Up Your Environment" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="virtual-environment-deployment">Virtual Environment Deployment<a href="#virtual-environment-deployment" class="hash-link" aria-label="Direct link to Virtual Environment Deployment" title="Direct link to Virtual Environment Deployment" translate="no">​</a></h2>
 <p>The first thing Cursor did wasn’t write code — it set up the development environment:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Cursor automatically created and validated:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Python 3.12.3 virtual environment</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> PlatformIO for Arduino development</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Android SDK and emulator tools</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> All required dependencies</span><br></div></code></pre></div></div>
-<p>**What impressed me:**Cursor didn’t just suggest commands — it executed them, validated each step, and confirmed the environment was ready before proceeding. It checked Python versions, verified package installations, and even validated the Android SDK paths.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Cursor automatically created and validated:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Python 3.12.3 virtual environment</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- PlatformIO for Arduino development</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Android SDK and emulator tools</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- All required dependencies</span><br></div></code></pre></div></div>
+<p><strong>What impressed me:</strong> Cursor didn’t just suggest commands — it executed them, validated each step, and confirmed the environment was ready before proceeding. It checked Python versions, verified package installations, and even validated the Android SDK paths.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="android-emulator-configuration">Android Emulator Configuration<a href="#android-emulator-configuration" class="hash-link" aria-label="Direct link to Android Emulator Configuration" title="Direct link to Android Emulator Configuration" translate="no">​</a></h2>
 <p>Next, Cursor configured and launched the Android emulator:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Automated emulator setup:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Created Android 14 (Samsung One UI) AVD</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Validated emulator boot status</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Confirmed ADB connectivity</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Waited for full system initialization</span><br></div></code></pre></div></div>
-<p>**The AI’s approach:**Instead of assuming the emulator was ready, Cursor implemented a boot validation loop that checked<code>sys.boot_completed</code>and waited until Android was fully initialized before proceeding. This attention to detail prevented countless &quot;device not ready&quot; errors.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Automated emulator setup:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Created Android 14 (Samsung One UI) AVD</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Validated emulator boot status</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Confirmed ADB connectivity</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Waited for full system initialization</span><br></div></code></pre></div></div>
+<p><strong>The AI’s approach:</strong> Instead of assuming the emulator was ready, Cursor implemented a boot validation loop that checked <code>sys.boot_completed</code> and waited until Android was fully initialized before proceeding. This attention to detail prevented countless &quot;device not ready&quot; errors.</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*GpbsZo1Y9MOrwWBPLIfpKg.png" alt="Article image" width="1833" height="978" loading="lazy" decoding="async">
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-2-writing-code-with-context-awareness">Part 2: Writing Code with Context Awareness<a href="#part-2-writing-code-with-context-awareness" class="hash-link" aria-label="Direct link to Part 2: Writing Code with Context Awareness" title="Direct link to Part 2: Writing Code with Context Awareness" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="understanding-the-problem-space">Understanding the Problem Space<a href="#understanding-the-problem-space" class="hash-link" aria-label="Direct link to Understanding the Problem Space" title="Direct link to Understanding the Problem Space" translate="no">​</a></h2>
@@ -89,22 +89,22 @@
 <p>HID keyboard recognition delays</p>
 </li>
 </ul>
-<p>**The result:**Code that accounted for real-world timing issues from the start, not code that “works in theory.”</p>
+<p><strong>The result:</strong> Code that accounted for real-world timing issues from the start, not code that “works in theory.”</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="iterative-code-development">Iterative Code Development<a href="#iterative-code-development" class="hash-link" aria-label="Direct link to Iterative Code Development" title="Direct link to Iterative Code Development" translate="no">​</a></h2>
-<p>Cursor didn’t write perfect code on the first try — it wrote<em>working</em>code, then improved it:</p>
-<p>**Version 1.0:**Basic typing sequence</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">typeText</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(&quot;google&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pressKey</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(KEY_RETURN);</span><br></div></code></pre></div></div>
-<p>**Problem discovered:**The META key triggered the alarm clock app on Samsung devices.</p>
-<p>**Version 2.0:**Removed META key, used alternative navigation</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pressKey</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(KEY_ESC);  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">// Back button</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">typeText</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(&quot;google&quot;);</span><br></div></code></pre></div></div>
-<p>**Problem discovered:**Text input wasn’t reliable on home screen.</p>
-<p>**Version 10.0 (Final):**App drawer method with proper timing</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pressKey</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(KEY_ESC);  </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">// x3 to ensure home</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pressKey</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(KEY_UP);   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">// Open app drawer</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">typeText</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(&quot;google&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pressKey</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(KEY_RETURN);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">delay</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(APP_WAIT);   </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">// Wait for app to fully load</span><br></div></code></pre></div></div>
-<p>**What made this different:**Each iteration was based on actual test results, not assumptions.</p>
+<p>Cursor didn’t write perfect code on the first try — it wrote <em>working</em> code, then improved it:</p>
+<p><strong>Version 1.0:</strong> Basic typing sequence</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">typeText(&quot;google&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pressKey(KEY_RETURN);</span><br></div></code></pre></div></div>
+<p><strong>Problem discovered:</strong> The META key triggered the alarm clock app on Samsung devices.</p>
+<p><strong>Version 2.0:</strong> Removed META key, used alternative navigation</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pressKey(KEY_ESC);  // Back button</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">typeText(&quot;google&quot;);</span><br></div></code></pre></div></div>
+<p><strong>Problem discovered:</strong> Text input wasn’t reliable on home screen.</p>
+<p><strong>Version 10.0 (Final):</strong> App drawer method with proper timing</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pressKey(KEY_ESC);  // x3 to ensure home</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pressKey(KEY_UP);   // Open app drawer</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">typeText(&quot;google&quot;);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pressKey(KEY_RETURN);</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">delay(APP_WAIT);   // Wait for app to fully load</span><br></div></code></pre></div></div>
+<p><strong>What made this different:</strong> Each iteration was based on actual test results, not assumptions.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-3-the-game-changer-visual-validation">Part 3: The Game-Changer: Visual Validation<a href="#part-3-the-game-changer-visual-validation" class="hash-link" aria-label="Direct link to Part 3: The Game-Changer: Visual Validation" title="Direct link to Part 3: The Game-Changer: Visual Validation" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="automated-screenshot-capture">Automated Screenshot Capture<a href="#automated-screenshot-capture" class="hash-link" aria-label="Direct link to Automated Screenshot Capture" title="Direct link to Automated Screenshot Capture" translate="no">​</a></h2>
 <p>Cursor created a test framework that captured screenshots at every critical step:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">screenshot</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">name</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;&quot;Save screenshot and validate it exists&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    fn = </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{name}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">.png&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;shell screencap -p /sdcard/screenshot.png&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    run_adb(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">f&quot;pull /sdcard/screenshot.png </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">{fn}</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">return</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> fn </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">if</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> os.path.exists(fn) </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">and</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> os.path.getsize(fn) &gt; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">1000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">else</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">None</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">def screenshot(name):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;&quot;&quot;Save screenshot and validate it exists&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    fn = f&quot;{name}.png&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    run_adb(&quot;shell screencap -p /sdcard/screenshot.png&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    run_adb(f&quot;pull /sdcard/screenshot.png {fn}&quot;)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    return fn if os.path.exists(fn) and os.path.getsize(fn) &gt; 1000 else None</span><br></div></code></pre></div></div>
 <p><strong>The workflow:</strong></p>
 <ul>
 <li class="">
@@ -124,12 +124,12 @@
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="human-like-screenshot-analysis">Human-Like Screenshot Analysis<a href="#human-like-screenshot-analysis" class="hash-link" aria-label="Direct link to Human-Like Screenshot Analysis" title="Direct link to Human-Like Screenshot Analysis" translate="no">​</a></h2>
-<p>Here’s where it gets interesting. Cursor didn’t just take screenshots — it<strong>analyzed them</strong>like a human QA engineer would:</p>
+<p>Here’s where it gets interesting. Cursor didn’t just take screenshots — it <strong>analyzed them</strong> like a human QA engineer would:</p>
 <p><strong>Example from Step 2 validation:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Screenshot Analysis:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Google search interface visible ✓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Google &quot;G&quot; logo in search bar ✓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Search bar placeholder: &quot;Search...&quot; ✓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Trending searches section visible ✓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Virtual keyboard active at bottom ✓</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Validation: Google app successfully opened and ready for input</span><br></div></code></pre></div></div>
 <p><strong>Example from Step 3 validation:</strong></p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Screenshot Analysis:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Search</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> query &quot;You are hacked!&quot; clearly visible </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">in</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">search</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> bar ✓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">Search</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> suggestions displayed ✓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">-</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> Virtual keyboard active ✓</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Screenshot Analysis:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Search query &quot;You are hacked!&quot; clearly visible in search bar ✓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Search suggestions displayed ✓</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Virtual keyboard active ✓</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Validation: Search query successfully typed and visible</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-1-screenshot">Step 1 screenshot<a href="#step-1-screenshot" class="hash-link" aria-label="Direct link to Step 1 screenshot" title="Direct link to Step 1 screenshot" translate="no">​</a></h3>
 <img src="https://cdn-images-1.medium.com/max/800/1*hBPrgqd759sekaXhfQi03g.png" alt="Article image" width="1080" height="2280" loading="lazy" decoding="async">
@@ -139,7 +139,7 @@
 <img src="https://cdn-images-1.medium.com/max/800/1*bd1kGksAP2XsKQyVB447Dg.png" alt="Article image" width="1080" height="2280" loading="lazy" decoding="async">
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="step-4-screenshot">Step 4 screenshot<a href="#step-4-screenshot" class="hash-link" aria-label="Direct link to Step 4 screenshot" title="Direct link to Step 4 screenshot" translate="no">​</a></h3>
 <img src="https://cdn-images-1.medium.com/max/800/1*PaYeIxhOYlrWQrbFDz4Lmw.png" alt="Article image" width="1080" height="2280" loading="lazy" decoding="async">
-<p>**What this means:**Cursor used image analysis to verify:</p>
+<p><strong>What this means:</strong> Cursor used image analysis to verify:</p>
 <ul>
 <li class="">
 <p>The correct app opened</p>
@@ -156,7 +156,7 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-4-the-troubleshooting-loop">Part 4: The Troubleshooting Loop<a href="#part-4-the-troubleshooting-loop" class="hash-link" aria-label="Direct link to Part 4: The Troubleshooting Loop" title="Direct link to Part 4: The Troubleshooting Loop" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="failure-detection">Failure Detection<a href="#failure-detection" class="hash-link" aria-label="Direct link to Failure Detection" title="Direct link to Failure Detection" translate="no">​</a></h2>
-<p>When something didn’t work, Cursor didn’t just report an error — it analyzed<em>why</em>:</p>
+<p>When something didn’t work, Cursor didn’t just report an error — it analyzed <em>why</em>:</p>
 <p><strong>Example failure:</strong></p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Step 3 Screenshot Analysis:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Empty input field ✗</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- Wrong app opened (messaging app, not Google) ✗</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">- No search query visible ✗</span><br></div></code></pre></div></div>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Root Cause: Typing &quot;google&quot; and pressing Enter opened </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">the wrong app. Need alternative method.</span><br></div></code></pre></div></div>
@@ -164,13 +164,13 @@
 <p>Cursor then generated multiple solution approaches:</p>
 <ul>
 <li class="">
-<p>**App Drawer Method:**Use KEY_UP to open app drawer, then search</p>
+<p><strong>App Drawer Method:</strong> Use KEY_UP to open app drawer, then search</p>
 </li>
 <li class="">
-<p>**Direct Launch:**Use ADB<code>am start</code>command (for testing)</p>
+<p><strong>Direct Launch:</strong> Use ADB <code>am start</code> command (for testing)</p>
 </li>
 <li class="">
-<p>**Alternative Navigation:**Try different key combinations</p>
+<p><strong>Alternative Navigation:</strong> Try different key combinations</p>
 </li>
 </ul>
 <p><strong>The AI’s process:</strong></p>
@@ -251,29 +251,29 @@
 <p>Cursor didn’t just write code — it:</p>
 <ul>
 <li class="">
-<p><strong>Designed</strong>the solution architecture</p>
+<p><strong>Designed</strong> the solution architecture</p>
 </li>
 <li class="">
-<p><strong>Implemented</strong>the code</p>
+<p><strong>Implemented</strong> the code</p>
 </li>
 <li class="">
-<p><strong>Tested</strong>the implementation</p>
+<p><strong>Tested</strong> the implementation</p>
 </li>
 <li class="">
-<p><strong>Validated</strong>the results visually</p>
+<p><strong>Validated</strong> the results visually</p>
 </li>
 <li class="">
-<p><strong>Troubleshot</strong>failures</p>
+<p><strong>Troubleshot</strong> failures</p>
 </li>
 <li class="">
-<p><strong>Refined</strong>until perfect</p>
+<p><strong>Refined</strong> until perfect</p>
 </li>
 <li class="">
-<p><strong>Documented</strong>the entire process</p>
+<p><strong>Documented</strong> the entire process</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-human-ai-collaboration">The Human-AI Collaboration<a href="#the-human-ai-collaboration" class="hash-link" aria-label="Direct link to The Human-AI Collaboration" title="Direct link to The Human-AI Collaboration" translate="no">​</a></h2>
-<p>This wasn’t “AI replacing developers” — it was<strong>AI amplifying developer capabilities</strong>:</p>
+<p>This wasn’t “AI replacing developers” — it was <strong>AI amplifying developer capabilities</strong>:</p>
 <p><strong>What I did:</strong></p>
 <ul>
 <li class="">
@@ -307,13 +307,13 @@
 <p>Documentation</p>
 </li>
 </ul>
-<p>**The result:**A fully validated, production-ready payload in hours instead of days</p>
+<p><strong>The result:</strong> A fully validated, production-ready payload in hours instead of days</p>
 <img src="https://cdn-images-1.medium.com/max/800/1*8e1ySSAtORpx-2jSTJNdGQ.png" alt="Article image" width="1920" height="1070" loading="lazy" decoding="async">
 <p>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-7-technical-deep-dive">Part 7: Technical Deep Dive<a href="#part-7-technical-deep-dive" class="hash-link" aria-label="Direct link to Part 7: Technical Deep Dive" title="Direct link to Part 7: Technical Deep Dive" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-screenshot-analysis-system">The Screenshot Analysis System<a href="#the-screenshot-analysis-system" class="hash-link" aria-label="Direct link to The Screenshot Analysis System" title="Direct link to The Screenshot Analysis System" translate="no">​</a></h2>
 <p>Cursor’s screenshot validation wasn’t just “file exists” — it was comprehensive image analysis:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">def</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">validate_screenshot</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">(</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">fn, expected_state</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">&quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Analyzes screenshot to confirm expected state:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - App visibility</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - Text presence</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - UI elements</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - Network indicators</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Image analysis logic</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># State verification</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Return validation result</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">def validate_screenshot(fn, expected_state):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    Analyzes screenshot to confirm expected state:</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - App visibility</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - Text presence</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - UI elements</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    - Network indicators</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    &quot;&quot;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Image analysis logic</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # State verification</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    # Return validation result</span><br></div></code></pre></div></div>
 <p><strong>Key capabilities:</strong></p>
 <ul>
 <li class="">
@@ -334,687 +334,184 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-testing-framework">The Testing Framework<a href="#the-testing-framework" class="hash-link" aria-label="Direct link to The Testing Framework" title="Direct link to The Testing Framework" translate="no">​</a></h2>
 <p>The test framework Cursor created was production-quality:</p>
-<details class="plain-large-code" data-plain-code-lines="682"><summary>Large code or log block<!-- --> · <!-- -->682<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>#!/usr/bin/env python3
+<details class="plain-large-code" data-plain-code-lines="179"><summary>Large code or log block<!-- --> · <!-- -->179<!-- --> lines · expand raw text</summary><button type="button">Copy raw text</button><pre tabindex="0"><code>#!/usr/bin/env python3
 &quot;&quot;&quot;
 Final Test - Direct Google App Launch
 Uses am start to open Google app directly, then types search
 &quot;&quot;&quot;
-import
- subprocess
-import
- time
-import
- os
-import
- sys
-ANDROID_HOME = 
-&quot;/home/andrey/android-sdk&quot;
-ADB = 
-f&quot;
-{ANDROID_HOME}
-/platform-tools/adb&quot;
-SEARCH_QUERY = 
-&quot;You are hacked!&quot;
-def
- 
-run_adb
-(
-cmd
-):
-    
-try
-:
-        result = subprocess.run([ADB] + cmd.split(), capture_output=
-True
-, text=
-True
-, timeout=
-15
-)
-        
-return
- result.returncode == 
-0
-, result.stdout, result.stderr
-    
-except
- Exception 
-as
- e:
-        
-return
- 
-False
-, 
-&quot;&quot;
-, 
-str
-(e)
-def
- 
-key_event
-(
-keycode
-):
-    run_adb(
-f&quot;shell input keyevent 
-{keycode}
-&quot;
-)
-    time.sleep(
-0.3
-)
-def
- 
-type_char
-(
-c, delay=
-0.035
-):
-    
-if
- c == 
-&#x27; &#x27;
-:
-        key_event(
-&quot;KEYCODE_SPACE&quot;
-)
-    
-elif
- c == 
-&#x27;!&#x27;
-:
-        run_adb(
-&#x27;shell input text &quot;!&quot;&#x27;
-)
-    
-else
-:
-        run_adb(
-f&#x27;shell input text &quot;
-{c}
-&quot;&#x27;
-)
+
+import subprocess
+import time
+import os
+import sys
+
+ANDROID_HOME = &quot;/home/andrey/android-sdk&quot;
+ADB = f&quot;{ANDROID_HOME}/platform-tools/adb&quot;
+SEARCH_QUERY = &quot;You are hacked!&quot;
+
+def run_adb(cmd):
+    try:
+        result = subprocess.run([ADB] + cmd.split(), capture_output=True, text=True, timeout=15)
+        return result.returncode == 0, result.stdout, result.stderr
+    except Exception as e:
+        return False, &quot;&quot;, str(e)
+
+def key_event(keycode):
+    run_adb(f&quot;shell input keyevent {keycode}&quot;)
+    time.sleep(0.3)
+
+def type_char(c, delay=0.035):
+    if c == &#x27; &#x27;:
+        key_event(&quot;KEYCODE_SPACE&quot;)
+    elif c == &#x27;!&#x27;:
+        run_adb(&#x27;shell input text &quot;!&quot;&#x27;)
+    else:
+        run_adb(f&#x27;shell input text &quot;{c}&quot;&#x27;)
     time.sleep(delay)
-def
- 
-screenshot
-(
-name
-):
-    fn = 
-f&quot;
-{name}
-.png&quot;
-    ok1, _, _ = run_adb(
-&quot;shell screencap -p /sdcard/screenshot.png&quot;
-)
-    
-if
- 
-not
- ok1:
-        
-return
- 
-None
-    time.sleep(
-0.5
-)
-    ok2, _, _ = run_adb(
-f&quot;pull /sdcard/screenshot.png 
-{fn}
-&quot;
-)
-    
-if
- 
-not
- ok2:
-        
-return
- 
-None
-    time.sleep(
-0.5
-)
-    
-if
- os.path.exists(fn) 
-and
- os.path.getsize(fn) &gt; 
-1000
-:
-        
-return
- fn
-    
-return
- 
-None
-def
- 
-check_network
-():
-    time.sleep(
-1
-)
-    ok, out, _ = run_adb(
-&quot;shell netstat -n 2&gt;/dev/null&quot;
-)
-    
-if
- ok:
-        google_ips = [
-&quot;172.217&quot;
-, 
-&quot;216.58&quot;
-, 
-&quot;142.250&quot;
-, 
-&quot;74.125&quot;
-, 
-&quot;142.251&quot;
-]
-        
-for
- ip 
-in
- google_ips:
-            
-if
- ip 
-in
- out:
-                
-return
- 
-True
-    
-return
- 
-False
-print
-(
-&quot;=&quot;
- * 
-70
-)
-print
-(
-&quot;FINAL TEST - DIRECT GOOGLE APP LAUNCH&quot;
-)
-print
-(
-&quot;=&quot;
- * 
-70
-)
+
+def screenshot(name):
+    fn = f&quot;{name}.png&quot;
+    ok1, _, _ = run_adb(&quot;shell screencap -p /sdcard/screenshot.png&quot;)
+    if not ok1:
+        return None
+    time.sleep(0.5)
+    ok2, _, _ = run_adb(f&quot;pull /sdcard/screenshot.png {fn}&quot;)
+    if not ok2:
+        return None
+    time.sleep(0.5)
+    if os.path.exists(fn) and os.path.getsize(fn) &gt; 1000:
+        return fn
+    return None
+
+def check_network():
+    time.sleep(1)
+    ok, out, _ = run_adb(&quot;shell netstat -n 2&gt;/dev/null&quot;)
+    if ok:
+        google_ips = [&quot;172.217&quot;, &quot;216.58&quot;, &quot;142.250&quot;, &quot;74.125&quot;, &quot;142.251&quot;]
+        for ip in google_ips:
+            if ip in out:
+                return True
+    return False
+
+print(&quot;=&quot; * 70)
+print(&quot;FINAL TEST - DIRECT GOOGLE APP LAUNCH&quot;)
+print(&quot;=&quot; * 70)
+
 # Validate
-print
-(
-&quot;\n[VALIDATION] Virtual Environment...&quot;
-)
-print
-(
-f&quot;  ✓ Python: 
-{sys.executable}
-\n&quot;
-)
-print
-(
-&quot;[VALIDATION] Android Emulator...&quot;
-)
-ok, out, _ = run_adb(
-&quot;devices&quot;
-)
-if
- 
-&quot;device&quot;
- 
-not
- 
-in
- out:
-    
-print
-(
-&quot;  ✗ No emulator!&quot;
-)
-    exit(
-1
-)
-print
-(
-&quot;  ✓ Emulator connected&quot;
-)
-for
- i 
-in
- 
-range
-(
-15
-):
-    ok, out, _ = run_adb(
-&quot;shell getprop sys.boot_completed&quot;
-)
-    
-if
- ok 
-and
- 
-&quot;1&quot;
- 
-in
- out:
-        
-print
-(
-&quot;  ✓ Android fully booted&quot;
-)
-        
-break
-    time.sleep(
-2
-)
-time.sleep(
-5
-)
-print
-(
-&quot;  ✓ Emulator ready\n&quot;
-)
+print(&quot;\n[VALIDATION] Virtual Environment...&quot;)
+print(f&quot;  ✓ Python: {sys.executable}\n&quot;)
+
+print(&quot;[VALIDATION] Android Emulator...&quot;)
+ok, out, _ = run_adb(&quot;devices&quot;)
+if &quot;device&quot; not in out:
+    print(&quot;  ✗ No emulator!&quot;)
+    exit(1)
+
+print(&quot;  ✓ Emulator connected&quot;)
+
+for i in range(15):
+    ok, out, _ = run_adb(&quot;shell getprop sys.boot_completed&quot;)
+    if ok and &quot;1&quot; in out:
+        print(&quot;  ✓ Android fully booted&quot;)
+        break
+    time.sleep(2)
+
+time.sleep(5)
+print(&quot;  ✓ Emulator ready\n&quot;)
+
 # Initialize
-print
-(
-&quot;[Init] USB enumeration delays...&quot;
-)
-time.sleep(
-5.0
-)
-for
- i 
-in
- 
-range
-(
-10
-):
-    key_event(
-&quot;KEYCODE_UNKNOWN&quot;
-)
-    time.sleep(
-0.1
-)
-time.sleep(
-5.0
-)
-print
-(
-&quot;✓ Initialized\n&quot;
-)
+print(&quot;[Init] USB enumeration delays...&quot;)
+time.sleep(5.0)
+for i in range(10):
+    key_event(&quot;KEYCODE_UNKNOWN&quot;)
+    time.sleep(0.1)
+time.sleep(5.0)
+print(&quot;✓ Initialized\n&quot;)
+
 # STEP 1: Back to Home
-print
-(
-&quot;=&quot;
- * 
-70
-)
-print
-(
-&quot;STEP 1: Back to Home Screen&quot;
-)
-print
-(
-&quot;=&quot;
- * 
-70
-)
-for
- i 
-in
- 
-range
-(
-3
-):
-    key_event(
-&quot;KEYCODE_BACK&quot;
-)
-    time.sleep(
-0.3
-)
-time.sleep(
-2.0
-)
-scr1 = screenshot(
-&quot;step1true&quot;
-)
-print
-(
-f&quot;  ✓ Screenshot: 
-{scr1}
-\n&quot;
-)
+print(&quot;=&quot; * 70)
+print(&quot;STEP 1: Back to Home Screen&quot;)
+print(&quot;=&quot; * 70)
+
+for i in range(3):
+    key_event(&quot;KEYCODE_BACK&quot;)
+    time.sleep(0.3)
+time.sleep(2.0)
+
+scr1 = screenshot(&quot;step1true&quot;)
+print(f&quot;  ✓ Screenshot: {scr1}\n&quot;)
+
 # STEP 2: Open Google App Directly
-print
-(
-&quot;=&quot;
- * 
-70
-)
-print
-(
-&quot;STEP 2: Open Google App Directly (am start)&quot;
-)
-print
-(
-&quot;=&quot;
- * 
-70
-)
-print
-(
-&quot;Launching Google app...&quot;
-)
-run_adb(
-&quot;shell am start -n com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity&quot;
-)
-time.sleep(
-7.0
-)
-scr2 = screenshot(
-&quot;step2true&quot;
-)
+print(&quot;=&quot; * 70)
+print(&quot;STEP 2: Open Google App Directly (am start)&quot;)
+print(&quot;=&quot; * 70)
+
+print(&quot;Launching Google app...&quot;)
+run_adb(&quot;shell am start -n com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity&quot;)
+time.sleep(7.0)
+
+scr2 = screenshot(&quot;step2true&quot;)
 network = check_network()
-print
-(
-f&quot;  ✓ Screenshot: 
-{scr2}
-&quot;
-)
-print
-(
-f&quot;  Network: 
-{
-&#x27;✓ Detected&#x27;
- 
-if
- network 
-else
- 
-&#x27;✗ Not detected&#x27;
-}
-&quot;
-)
-print
-(
-&quot;  *** CHECK: Google app should be open ***\n&quot;
-)
+print(f&quot;  ✓ Screenshot: {scr2}&quot;)
+print(f&quot;  Network: {&#x27;✓ Detected&#x27; if network else &#x27;✗ Not detected&#x27;}&quot;)
+print(&quot;  *** CHECK: Google app should be open ***\n&quot;)
+
 # STEP 3: Type Search Query
-print
-(
-&quot;=&quot;
- * 
-70
-)
-print
-(
-&quot;STEP 3: Type Search Query&quot;
-)
-print
-(
-&quot;=&quot;
- * 
-70
-)
-print
-(
-f&quot;Typing: &#x27;
-{SEARCH_QUERY}
-&#x27;...&quot;
-)
-for
- i, c 
-in
- 
-enumerate
-(SEARCH_QUERY):
-    type_char(c, 
-0.035
-)
-    
-if
- (i + 
-1
-) % 
-5
- == 
-0
-:
-        
-print
-(
-f&quot;  Progress: 
-{i+
-1
-}
-/
-{
-len
-(SEARCH_QUERY)}
-&quot;
-)
-time.sleep(
-3.0
-)
-scr3 = screenshot(
-&quot;step3true&quot;
-)
-print
-(
-f&quot;  ✓ Screenshot: 
-{scr3}
-&quot;
-)
-print
-(
-&quot;  *** CHECK: Search query should be visible ***\n&quot;
-)
+print(&quot;=&quot; * 70)
+print(&quot;STEP 3: Type Search Query&quot;)
+print(&quot;=&quot; * 70)
+
+print(f&quot;Typing: &#x27;{SEARCH_QUERY}&#x27;...&quot;)
+for i, c in enumerate(SEARCH_QUERY):
+    type_char(c, 0.035)
+    if (i + 1) % 5 == 0:
+        print(f&quot;  Progress: {i+1}/{len(SEARCH_QUERY)}&quot;)
+time.sleep(3.0)
+
+scr3 = screenshot(&quot;step3true&quot;)
+print(f&quot;  ✓ Screenshot: {scr3}&quot;)
+print(&quot;  *** CHECK: Search query should be visible ***\n&quot;)
+
 # STEP 4: Press Enter - Execute Search
-print
-(
-&quot;=&quot;
- * 
-70
-)
-print
-(
-&quot;STEP 4: Press Enter - Execute Search&quot;
-)
-print
-(
-&quot;=&quot;
- * 
-70
-)
-key_event(
-&quot;KEYCODE_ENTER&quot;
-)
-time.sleep(
-5.0
-)
-scr4 = screenshot(
-&quot;step4true&quot;
-)
+print(&quot;=&quot; * 70)
+print(&quot;STEP 4: Press Enter - Execute Search&quot;)
+print(&quot;=&quot; * 70)
+
+key_event(&quot;KEYCODE_ENTER&quot;)
+time.sleep(5.0)
+
+scr4 = screenshot(&quot;step4true&quot;)
 network_final = check_network()
-print
-(
-f&quot;  ✓ Screenshot: 
-{scr4}
-&quot;
-)
-print
-(
-f&quot;  Network: 
-{
-&#x27;✓ Detected&#x27;
- 
-if
- network_final 
-else
- 
-&#x27;✗ Not detected&#x27;
-}
-\n&quot;
-)
+print(f&quot;  ✓ Screenshot: {scr4}&quot;)
+print(f&quot;  Network: {&#x27;✓ Detected&#x27; if network_final else &#x27;✗ Not detected&#x27;}\n&quot;)
+
 # RESULTS
-print
-(
-&quot;=&quot;
- * 
-70
-)
-print
-(
-&quot;FINAL RESULTS&quot;
-)
-print
-(
-&quot;=&quot;
- * 
-70
-)
+print(&quot;=&quot; * 70)
+print(&quot;FINAL RESULTS&quot;)
+print(&quot;=&quot; * 70)
+
 screenshots = [scr1, scr2, scr3, scr4]
-all_saved = 
-all
-(s 
-is
- 
-not
- 
-None
- 
-for
- s 
-in
- screenshots)
-print
-(
-f&quot;\nScreenshots (step&lt;number&gt;true.png):&quot;
-)
-for
- i, scr 
-in
- 
-enumerate
-(screenshots, 
-1
-):
-    status = 
-&quot;✓&quot;
- 
-if
- scr 
-else
- 
-&quot;✗&quot;
-    
-print
-(
-f&quot;  
-{status}
- step
-{i}
-true.png: 
-{scr 
-if
- scr 
-else
- 
-&#x27;FAILED&#x27;
-}
-&quot;
-)
-print
-(
-f&quot;\nFinal Status:&quot;
-)
-print
-(
-f&quot;  Network Activity: 
-{
-&#x27;✓ Detected&#x27;
- 
-if
- network_final 
-else
- 
-&#x27;✗ Not detected&#x27;
-}
-&quot;
-)
-print
-(
-f&quot;  All Screenshots: 
-{
-&#x27;✓ Saved&#x27;
- 
-if
- all_saved 
-else
- 
-&#x27;✗ Some failed&#x27;
-}
-&quot;
-)
-print
-(
-&quot;\n&quot;
- + 
-&quot;=&quot;
- * 
-70
-)
-if
- all_saved:
-    
-print
-(
-&quot;✓✓✓ TEST COMPLETE - All screenshots saved!&quot;
-)
-    
-print
-(
-&quot;⚠ CHECK step2true.png - Google app must be open&quot;
-)
-    
-print
-(
-&quot;⚠ CHECK step3true.png - Search query must be visible&quot;
-)
-    
-if
- network_final:
-        
-print
-(
-&quot;✓✓✓ Network activity confirms success!&quot;
-)
-else
-:
-    
-print
-(
-&quot;⚠ Some screenshots failed&quot;
-)
-print
-(
-&quot;=&quot;
- * 
-70
-)
+all_saved = all(s is not None for s in screenshots)
+
+print(f&quot;\nScreenshots (step&lt;number&gt;true.png):&quot;)
+for i, scr in enumerate(screenshots, 1):
+    status = &quot;✓&quot; if scr else &quot;✗&quot;
+    print(f&quot;  {status} step{i}true.png: {scr if scr else &#x27;FAILED&#x27;}&quot;)
+
+print(f&quot;\nFinal Status:&quot;)
+print(f&quot;  Network Activity: {&#x27;✓ Detected&#x27; if network_final else &#x27;✗ Not detected&#x27;}&quot;)
+print(f&quot;  All Screenshots: {&#x27;✓ Saved&#x27; if all_saved else &#x27;✗ Some failed&#x27;}&quot;)
+
+print(&quot;\n&quot; + &quot;=&quot; * 70)
+if all_saved:
+    print(&quot;✓✓✓ TEST COMPLETE - All screenshots saved!&quot;)
+    print(&quot;⚠ CHECK step2true.png - Google app must be open&quot;)
+    print(&quot;⚠ CHECK step3true.png - Search query must be visible&quot;)
+    if network_final:
+        print(&quot;✓✓✓ Network activity confirms success!&quot;)
+else:
+    print(&quot;⚠ Some screenshots failed&quot;)
+print(&quot;=&quot; * 70)
 </code></pre></details>
 <p><strong>Features:</strong></p>
 <ul>
@@ -1038,66 +535,66 @@ print
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-worked-exceptionally-well">What Worked Exceptionally Well<a href="#what-worked-exceptionally-well" class="hash-link" aria-label="Direct link to What Worked Exceptionally Well" title="Direct link to What Worked Exceptionally Well" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Visual Validation:**Screenshot analysis caught issues that code-level tests would miss</p>
+<p><strong>Visual Validation:</strong> Screenshot analysis caught issues that code-level tests would miss</p>
 </li>
 <li class="">
-<p>**Iterative Refinement:**Each failure led to a better solution</p>
+<p><strong>Iterative Refinement:</strong> Each failure led to a better solution</p>
 </li>
 <li class="">
-<p>**Automated Testing:**No manual intervention needed for test execution</p>
+<p><strong>Automated Testing:</strong> No manual intervention needed for test execution</p>
 </li>
 <li class="">
-<p>**Comprehensive Logging:**Complete audit trail of every step</p>
+<p><strong>Comprehensive Logging:</strong> Complete audit trail of every step</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="challenges-overcome">Challenges Overcome<a href="#challenges-overcome" class="hash-link" aria-label="Direct link to Challenges Overcome" title="Direct link to Challenges Overcome" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Android Timing:**Delays needed to be precisely tuned</p>
+<p><strong>Android Timing:</strong> Delays needed to be precisely tuned</p>
 </li>
 <li class="">
-<p>**Device-Specific Behavior:**Samsung One UI required specific approaches</p>
+<p><strong>Device-Specific Behavior:</strong> Samsung One UI required specific approaches</p>
 </li>
 <li class="">
-<p>**HID Recognition:**USB enumeration needed careful handling</p>
+<p><strong>HID Recognition:</strong> USB enumeration needed careful handling</p>
 </li>
 <li class="">
-<p>**Visual Validation:**Screenshot analysis required sophisticated image understanding</p>
+<p><strong>Visual Validation:</strong> Screenshot analysis required sophisticated image understanding</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-insights">Key Insights<a href="#key-insights" class="hash-link" aria-label="Direct link to Key Insights" title="Direct link to Key Insights" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p><strong>AI excels at repetitive validation tasks</strong>that humans find tedious</p>
+<p><strong>AI excels at repetitive validation tasks</strong> that humans find tedious</p>
 </li>
 <li class="">
-<p><strong>Visual validation is crucial</strong>for embedded systems and mobile development</p>
+<p><strong>Visual validation is crucial</strong> for embedded systems and mobile development</p>
 </li>
 <li class="">
-<p><strong>Automated testing frameworks</strong>can be generated by AI just as well as application code</p>
+<p><strong>Automated testing frameworks</strong> can be generated by AI just as well as application code</p>
 </li>
 <li class="">
-<p><strong>Iterative development</strong>with AI is faster and more thorough than traditional approaches</p>
+<p><strong>Iterative development</strong> with AI is faster and more thorough than traditional approaches</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-9-the-future-of-ai-assisted-development">Part 9: The Future of AI-Assisted Development<a href="#part-9-the-future-of-ai-assisted-development" class="hash-link" aria-label="Direct link to Part 9: The Future of AI-Assisted Development" title="Direct link to Part 9: The Future of AI-Assisted Development" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-this-case-study-reveals">What This Case Study Reveals<a href="#what-this-case-study-reveals" class="hash-link" aria-label="Direct link to What This Case Study Reveals" title="Direct link to What This Case Study Reveals" translate="no">​</a></h2>
-<p>This project demonstrates that AI development tools are evolving beyond “code completion” to<strong>complete development workflows</strong>:</p>
+<p>This project demonstrates that AI development tools are evolving beyond “code completion” to <strong>complete development workflows</strong>:</p>
 <ul>
 <li class="">
-<p>**Environment Management:**AI can set up and validate development environments</p>
+<p><strong>Environment Management:</strong> AI can set up and validate development environments</p>
 </li>
 <li class="">
-<p>**Test Automation:**AI can create comprehensive test frameworks</p>
+<p><strong>Test Automation:</strong> AI can create comprehensive test frameworks</p>
 </li>
 <li class="">
-<p>**Visual Validation:**AI can analyze screenshots and UI states</p>
+<p><strong>Visual Validation:</strong> AI can analyze screenshots and UI states</p>
 </li>
 <li class="">
-<p>**Troubleshooting:**AI can diagnose issues and generate solutions</p>
+<p><strong>Troubleshooting:</strong> AI can diagnose issues and generate solutions</p>
 </li>
 <li class="">
-<p>**Documentation:**AI can create comprehensive logs and reports</p>
+<p><strong>Documentation:</strong> AI can create comprehensive logs and reports</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="implications-for-developers">Implications for Developers<a href="#implications-for-developers" class="hash-link" aria-label="Direct link to Implications for Developers" title="Direct link to Implications for Developers" translate="no">​</a></h2>
@@ -1142,25 +639,25 @@ print
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-10-conclusion">Part 10: Conclusion<a href="#part-10-conclusion" class="hash-link" aria-label="Direct link to Part 10: Conclusion" title="Direct link to Part 10: Conclusion" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-big-picture">The Big Picture<a href="#the-big-picture" class="hash-link" aria-label="Direct link to The Big Picture" title="Direct link to The Big Picture" translate="no">​</a></h2>
-<p>This case study shows that modern AI development tools like Cursor aren’t just “fancy autocomplete” — they’re<strong>complete development partners</strong>capable of:</p>
+<p>This case study shows that modern AI development tools like Cursor aren’t just “fancy autocomplete” — they’re <strong>complete development partners</strong> capable of:</p>
 <ul>
 <li class="">
-<p><strong>Understanding context</strong>beyond just the current file</p>
+<p><strong>Understanding context</strong> beyond just the current file</p>
 </li>
 <li class="">
-<p><strong>Executing workflows</strong>from setup to validation</p>
+<p><strong>Executing workflows</strong> from setup to validation</p>
 </li>
 <li class="">
-<p><strong>Analyzing results</strong>visually and programmatically</p>
+<p><strong>Analyzing results</strong> visually and programmatically</p>
 </li>
 <li class="">
-<p><strong>Troubleshooting failures</strong>systematically</p>
+<p><strong>Troubleshooting failures</strong> systematically</p>
 </li>
 <li class="">
-<p><strong>Refining solutions</strong>iteratively</p>
+<p><strong>Refining solutions</strong> iteratively</p>
 </li>
 <li class="">
-<p><strong>Documenting everything</strong>comprehensively</p>
+<p><strong>Documenting everything</strong> comprehensively</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-takeaway">The Takeaway<a href="#the-takeaway" class="hash-link" aria-label="Direct link to The Takeaway" title="Direct link to The Takeaway" translate="no">​</a></h2>
@@ -1187,31 +684,31 @@ print
 </ul>
 <p><strong>All orchestrated by AI, validated by screenshots, and ready for production.</strong></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-thoughts">Final Thoughts<a href="#final-thoughts" class="hash-link" aria-label="Direct link to Final Thoughts" title="Direct link to Final Thoughts" translate="no">​</a></h2>
-<p>The future of software development isn’t “AI vs. Developers” — it’s<strong>AI + Developers</strong>creating better software, faster, with more confidence in the results.</p>
+<p>The future of software development isn’t “AI vs. Developers” — it’s <strong>AI + Developers</strong> creating better software, faster, with more confidence in the results.</p>
 <p>And when your AI can look at a screenshot and say “the Google app opened correctly, but the search query isn’t visible — let me fix that,” you know we’re in a new era of development tools.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="appendix-technical-specifications">Appendix: Technical Specifications<a href="#appendix-technical-specifications" class="hash-link" aria-label="Direct link to Appendix: Technical Specifications" title="Direct link to Appendix: Technical Specifications" translate="no">​</a></h2>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware">Hardware<a href="#hardware" class="hash-link" aria-label="Direct link to Hardware" title="Direct link to Hardware" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Device:**Arduino Leonardo</p>
+<p><strong>Device:</strong> Arduino Leonardo</p>
 </li>
 <li class="">
-<p>**Interface:**USB HID Keyboard</p>
+<p><strong>Interface:</strong> USB HID Keyboard</p>
 </li>
 <li class="">
-<p>**Target:**Android 14/15 (Samsung One UI)</p>
+<p><strong>Target:</strong> Android 14/15 (Samsung One UI)</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="software-stack">Software Stack<a href="#software-stack" class="hash-link" aria-label="Direct link to Software Stack" title="Direct link to Software Stack" translate="no">​</a></h2>
 <ul>
 <li class="">
-<p>**Development:**PlatformIO + Arduino Framework</p>
+<p><strong>Development:</strong> PlatformIO + Arduino Framework</p>
 </li>
 <li class="">
-<p>**Testing:**Python 3.12 + ADB</p>
+<p><strong>Testing:</strong> Python 3.12 + ADB</p>
 </li>
 <li class="">
-<p>**Emulator:**Android SDK Emulator (Android 14)</p>
+<p><strong>Emulator:</strong> Android SDK Emulator (Android 14)</p>
 </li>
 </ul>
 <p><em>This article was written based on a real development project. All screenshots, code, and validation results are from actual test runs. The AI-assisted workflow described here represents the current state of Cursor AI capabilities as of January 2026.</em></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/medium-blog-navigation/docs/articles/2026/2026-01-15-building-a-usb-rubber-ducky-with-arduino-leonardo-with-cursor-a23dd64d1bbe"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Building a USB Rubber Ducky with Arduino Leonardo with Cursor.</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/medium-blog-navigation/docs/articles/2026/2026-01-17-the-one-prompt-pt-lab-autonomous-android-security-research-with-cursor-ai-b96ed2053071"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">The One-Prompt PT Lab: Autonomous Android Security Research with Cursor AI</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ecosystem-fit" class="table-of-contents__link toc-highlight">Ecosystem Fit</a><ul><li><a href="#from-plain-english-prompts-to-reliable-hid-flows--validated-with-emulator-screenshots-and-telemetry" class="table-of-contents__link toc-highlight">From plain-English prompts to reliable HID flows — validated with emulator screenshots and telemetry</a></li></ul></li><li><a href="#the-challenge" class="table-of-contents__link toc-highlight">The Challenge</a></li><li><a href="#part-1-the-ai-that-sets-up-your-environment" class="table-of-contents__link toc-highlight">Part 1: The AI That Sets Up Your Environment</a></li><li><a href="#virtual-environment-deployment" class="table-of-contents__link toc-highlight">Virtual Environment Deployment</a></li><li><a href="#android-emulator-configuration" class="table-of-contents__link toc-highlight">Android Emulator Configuration</a></li><li><a href="#part-2-writing-code-with-context-awareness" class="table-of-contents__link toc-highlight">Part 2: Writing Code with Context Awareness</a></li><li><a href="#understanding-the-problem-space" class="table-of-contents__link toc-highlight">Understanding the Problem Space</a></li><li><a href="#iterative-code-development" class="table-of-contents__link toc-highlight">Iterative Code Development</a></li><li><a href="#part-3-the-game-changer-visual-validation" class="table-of-contents__link toc-highlight">Part 3: The Game-Changer: Visual Validation</a></li><li><a href="#automated-screenshot-capture" class="table-of-contents__link toc-highlight">Automated Screenshot Capture</a></li><li><a href="#human-like-screenshot-analysis" class="table-of-contents__link toc-highlight">Human-Like Screenshot Analysis</a><ul><li><a href="#step-1-screenshot" class="table-of-contents__link toc-highlight">Step 1 screenshot</a></li><li><a href="#step-2-screenshot" class="table-of-contents__link toc-highlight">Step 2 screenshot</a></li><li><a href="#step-3-screenshot" class="table-of-contents__link toc-highlight">Step 3 screenshot</a></li><li><a href="#step-4-screenshot" class="table-of-contents__link toc-highlight">Step 4 screenshot</a></li></ul></li><li><a href="#part-4-the-troubleshooting-loop" class="table-of-contents__link toc-highlight">Part 4: The Troubleshooting Loop</a></li><li><a href="#failure-detection" class="table-of-contents__link toc-highlight">Failure Detection</a></li><li><a href="#solution-generation" class="table-of-contents__link toc-highlight">Solution Generation</a></li><li><a href="#iterative-refinement" class="table-of-contents__link toc-highlight">Iterative Refinement</a></li><li><a href="#part-5-the-complete-workflow" class="table-of-contents__link toc-highlight">Part 5: The Complete Workflow</a></li><li><a href="#automated-test-execution" class="table-of-contents__link toc-highlight">Automated Test Execution</a></li><li><a href="#the-validation-report" class="table-of-contents__link toc-highlight">The Validation Report</a><ul><li><a href="#validation-summary" class="table-of-contents__link toc-highlight">VALIDATION SUMMARY</a></li></ul></li><li><a href="#part-6-what-this-means-for-developers" class="table-of-contents__link toc-highlight">Part 6: What This Means for Developers</a></li><li><a href="#beyond-code-generation" class="table-of-contents__link toc-highlight">Beyond Code Generation</a></li><li><a href="#the-human-ai-collaboration" class="table-of-contents__link toc-highlight">The Human-AI Collaboration</a></li><li><a href="#part-7-technical-deep-dive" class="table-of-contents__link toc-highlight">Part 7: Technical Deep Dive</a></li><li><a href="#the-screenshot-analysis-system" class="table-of-contents__link toc-highlight">The Screenshot Analysis System</a></li><li><a href="#the-testing-framework" class="table-of-contents__link toc-highlight">The Testing Framework</a></li><li><a href="#part-8-lessons-learned" class="table-of-contents__link toc-highlight">Part 8: Lessons Learned</a></li><li><a href="#what-worked-exceptionally-well" class="table-of-contents__link toc-highlight">What Worked Exceptionally Well</a></li><li><a href="#challenges-overcome" class="table-of-contents__link toc-highlight">Challenges Overcome</a></li><li><a href="#key-insights" class="table-of-contents__link toc-highlight">Key Insights</a></li><li><a href="#part-9-the-future-of-ai-assisted-development" class="table-of-contents__link toc-highlight">Part 9: The Future of AI-Assisted Development</a></li><li><a href="#what-this-case-study-reveals" class="table-of-contents__link toc-highlight">What This Case Study Reveals</a></li><li><a href="#implications-for-developers" class="table-of-contents__link toc-highlight">Implications for Developers</a></li><li><a href="#part-10-conclusion" class="table-of-contents__link toc-highlight">Part 10: Conclusion</a></li><li><a href="#the-big-picture" class="table-of-contents__link toc-highlight">The Big Picture</a></li><li><a href="#the-takeaway" class="table-of-contents__link toc-highlight">The Takeaway</a></li><li><a href="#final-thoughts" class="table-of-contents__link toc-highlight">Final Thoughts</a></li><li><a href="#appendix-technical-specifications" class="table-of-contents__link toc-highlight">Appendix: Technical Specifications</a></li><li><a href="#hardware" class="table-of-contents__link toc-highlight">Hardware</a></li><li><a href="#software-stack" class="table-of-contents__link toc-highlight">Software Stack</a></li></ul></div></div></div></div></main></div></div></div><footer class="site-footer" data-site-shell="standalone" data-site-shell-version="2026-07-24.1"><div class="shared-footer-inner"><a class="shared-footer-brand" href="/"><img src="/assets/ap-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async"><span><strong>Andrey Pautov</strong><small>Security research</small></span></a><nav class="shared-footer-links" aria-label="Footer navigation"><a href="/cti.html">Research</a><a href="/guides.html">Library</a><a href="/projects.html">Products &amp; Labs</a><a href="/adversarygraph/">AdversaryGraph</a><a href="/about.html">About</a></nav><nav class="shared-footer-meta" aria-label="Site information"><a href="/privacy.html">Privacy / Data Handling</a><a href="/about.html#contact">Contact</a><a href="https://github.com/anpa1200" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></nav></div><div class="shared-footer-bottom"><span>© <!-- -->2026<!-- --> Andrey Pautov · Original research and tooling</span><a href="#top" data-back-to-top="true">Back to top ↑</a></div></footer></div>
