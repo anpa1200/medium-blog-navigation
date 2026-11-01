@@ -1,0 +1,90 @@
+{
+  "source": "https://medium.com/@1200km/can-continuous-recursive-reasoning-give-rise-to-machine-consciousness-c1337530afcf",
+  "accessed_at": "2026-11-01",
+  "access_method": "Public rendered Medium article via browser DOM; direct HTML fetch returned 403",
+  "article_path": "docs/articles/2026/2026-11-01-can-continuous-recursive-reasoning-give-rise-to-machine-consciousness-c1337530afcf.md",
+  "figures": [
+    {
+      "name": "cover",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*UdROe0-fF74uSrSZtsbpbg.png",
+      "path": "static/article-assets/crrh/cover.png",
+      "width": 1400,
+      "height": 991,
+      "sha256": "db99a8e8817f8ee3f617129b03f02bcb4e5f37c51334e62c5a46c14974042fae",
+      "alt": "Cover illustration for continuous recursive reasoning and machine consciousness"
+    },
+    {
+      "name": "persistent-cognition",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*vubRaf6JuAC2skdwWtOtIw.png",
+      "path": "static/article-assets/crrh/persistent-cognition.png",
+      "width": 1400,
+      "height": 933,
+      "sha256": "dc492c0c57b228d951984ec99dc32605780829eecd99ddf99feb68da51632d06",
+      "alt": "Continuous recursive reasoning: isolated response, persistent loop, measurable functions and unresolved subjective experience"
+    },
+    {
+      "name": "token-generation",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*HL-_3KZYOHeJH1A0sOEdWQ.png",
+      "path": "static/article-assets/crrh/token-generation.png",
+      "width": 1400,
+      "height": 933,
+      "sha256": "ffc305267daa36784816dc4c5810431bc512f4c5fd47f89454f73713ae9f98e0",
+      "alt": "Next-token probabilities and the wider deployed AI system"
+    },
+    {
+      "name": "continuous-recursive",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*i_3MOqxsh8jw0-i4dXoTKw.png",
+      "path": "static/article-assets/crrh/continuous-recursive.png",
+      "width": 1400,
+      "height": 933,
+      "sha256": "284f7b46abc39fe473dfa2752f0dd4b977bc36ab928cf257c261cac2790360db",
+      "alt": "Observation, hypothesis, prediction and feedback; state continuity across pauses and recursive reuse"
+    },
+    {
+      "name": "three-meanings",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*Pxd0Yg7CK9rNcaf2-vu_6A.png",
+      "path": "static/article-assets/crrh/three-meanings.png",
+      "width": 826,
+      "height": 274,
+      "sha256": "efbd2dba29fde837a0d6dc424cc064395e02913cc9d7b8eb540be5456e72de62",
+      "alt": "Comparison of intelligent performance, functional self-modeling and subjective consciousness"
+    },
+    {
+      "name": "system-architecture",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*TVZERtwaBl11as1bevaBPA.png",
+      "path": "static/article-assets/crrh/system-architecture.png",
+      "width": 1400,
+      "height": 933,
+      "sha256": "50b7dc9f0428eaf576cec6b2f446f393cc0a8dd447588f51c1df10d46f833278",
+      "alt": "Working state, memory, self-model and observations feeding state updates, actions and environmental feedback"
+    },
+    {
+      "name": "memory-substitution",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*bFbbMqBqm_XCCas4SkaHOw.png",
+      "path": "static/article-assets/crrh/memory-substitution.png",
+      "width": 1400,
+      "height": 933,
+      "sha256": "be772365fe9df031068d47d5ae67c2e2014ce4e8585d4180c91a156154d48249",
+      "alt": "An altered R2 memory record influences later decisions while the actual past remains unchanged"
+    },
+    {
+      "name": "history-comparison",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*eeEMtAZ36j-FGFschEEpuA.png",
+      "path": "static/article-assets/crrh/history-comparison.png",
+      "width": 1400,
+      "height": 933,
+      "sha256": "f80ba76f9d733e05a47de72128df3d1409aeb7f075ebe49e989aeca0782e6126",
+      "alt": "Supplied biography compared with experienced history under equivalent information"
+    },
+    {
+      "name": "revisable-self-model",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*N2m2dSqLTAmjwsGsNEcsmQ.png",
+      "path": "static/article-assets/crrh/revisable-self-model.png",
+      "width": 1400,
+      "height": 933,
+      "sha256": "341a1bff6ded50eccb3b42fab64b90ccde06e061b710cf575ea11965c991e9f2",
+      "alt": "Stale self-description compared with evidence-based revision of capability estimates"
+    }
+  ],
+  "changes": "Published text and heading order preserved; TOC anchors regenerated; formula text fenced for MDX compatibility; trailing pasted backslash omitted; local image alt text and dimensions added; Medium subscription UI excluded."
+}
