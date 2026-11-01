@@ -8,13 +8,13 @@ Generated deterministically from the current source inventory.
 
 ## Summary
 
-- Markdown documents checked: 230
-- Media references checked: 2805
-- Unique remote image URLs: 2142
+- Markdown documents checked: 231
+- Media references checked: 2806
+- Unique remote image URLs: 2143
 - Unique local image/CSS paths: 95
 - Missing local files: 0
 - Remote failures: 0
-- Remote checks skipped: 2142
+- Remote checks skipped: 2143
 
 ## Result
 
