@@ -1,0 +1,77 @@
+{
+  "canonical_url": "https://1200km.com/articles/read/2026/incident-response-lifecycle/",
+  "published_at": "2026-11-08",
+  "article_id": "21779d43b8d9",
+  "article_path": "docs/articles/2026/incident-response-lifecycle.md",
+  "source_sha256": "774122f54d20ad527e3a14e60cc9e59c400d8550387fc67bce5afa267a355d52",
+  "images": [
+    {
+      "file": "static/article-assets/incident-response-lifecycle/cover.webp",
+      "original_filename": "incident-response-cover.png",
+      "source_sha256": "de98f64b1079ac8f6d0134b4fb90b175ceacd9ae7afdb3b3cd96d1983356679f",
+      "published_sha256": "23977fa0ce80e4424a43b7615ecf197b22bc1eac69c5bbfa307263e2e68219fe",
+      "width": 1672,
+      "height": 941,
+      "pixels_identical": true,
+      "source_bytes": 3871603,
+      "published_bytes": 2757380
+    },
+    {
+      "file": "static/article-assets/incident-response-lifecycle/incident-response-lifecycle-infographic.webp",
+      "original_filename": "incident-response-lifecycle-infographic.png",
+      "source_sha256": "a1ad5ab33c7883f8c9f3c080de0e246ff5148f42666708cb8f77388d3be408df",
+      "published_sha256": "81967b89af0f488499dac4ed16fd69a42a2e1226bbe244bb926475c6d5de65fc",
+      "width": 1536,
+      "height": 1024,
+      "pixels_identical": true,
+      "source_bytes": 1453754,
+      "published_bytes": 913158
+    },
+    {
+      "file": "static/article-assets/incident-response-lifecycle/ir-evidence-assessment-infographic.webp",
+      "original_filename": "ir-evidence-assessment-infographic.png",
+      "source_sha256": "248eb232b0dca5a5fd4e7c2478ddf12d5aef0ee378b36c3a543a91788af8e83f",
+      "published_sha256": "dba5b0f18c01166db3dc02df0f309f853a9acb85485464b85b185fa44c8d6dd0",
+      "width": 1536,
+      "height": 1024,
+      "pixels_identical": true,
+      "source_bytes": 1442440,
+      "published_bytes": 946144
+    },
+    {
+      "file": "static/article-assets/incident-response-lifecycle/ir-containment-access-paths-infographic.webp",
+      "original_filename": "ir-containment-access-paths-infographic.png",
+      "source_sha256": "c847bdf90451cbf3e36817052475bfc9c64906cd2d3b0dee50bdac5714da63a7",
+      "published_sha256": "4571cc90b5123954d3a4300ca7da6b42025b563874741d8db5337993122ef3bd",
+      "width": 1536,
+      "height": 1024,
+      "pixels_identical": true,
+      "source_bytes": 1528758,
+      "published_bytes": 1033538
+    },
+    {
+      "file": "static/article-assets/incident-response-lifecycle/ir-recovery-validation-infographic.webp",
+      "original_filename": "ir-recovery-validation-infographic.png",
+      "source_sha256": "d387c681a095cbbe5ab77d6eeeb3161966e4267aced03baec577432ce6ded842",
+      "published_sha256": "8fee042cfbb7495c4bdf0ef8ebe4a53bb347dd8db3614c4fda3b312f582d3c95",
+      "width": 1536,
+      "height": 1024,
+      "pixels_identical": true,
+      "source_bytes": 1512960,
+      "published_bytes": 1016218
+    },
+    {
+      "file": "static/article-assets/incident-response-lifecycle/ir-lessons-to-tested-change-infographic.webp",
+      "original_filename": "ir-lessons-to-tested-change-infographic.png",
+      "source_sha256": "170a3169168e93bb12edc8c0bd37e01b05280d72c415630466233af3004bc366",
+      "published_sha256": "c2dc626c34733e4ed544f84408995a5e35b388b932a5fe6b07509d547489db23",
+      "width": 1536,
+      "height": 1024,
+      "pixels_identical": true,
+      "source_bytes": 1418085,
+      "published_bytes": 947858
+    }
+  ],
+  "changes": "Publication metadata and five relevant ecosystem links added. Original article prose, five figure captions, references, and evidence limits preserved. Images losslessly encoded for the article; original PNG cover retained for social previews.",
+  "validation_boundary": "Documentation-based field guide with synthetic scenarios; no production incident or response performance claim."
+}
