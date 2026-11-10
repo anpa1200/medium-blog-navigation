@@ -1,0 +1,161 @@
+{
+  "canonical_url": "https://1200km.com/articles/read/2026/threat-hunting-from-intelligence-to-validated-defense/",
+  "prepared_at": "2026-11-10",
+  "publication_status": "local release candidate; not published",
+  "images": [
+    {
+      "file": "threat-hunting-cover.png",
+      "sha256": "8cf73312cd6be41591c3c88cf26fdd6f8c17a4392ce21ceffb6930e90a001f8b",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1750555
+    },
+    {
+      "file": "02-lifecycle.png",
+      "sha256": "b89e45be7f0d2314d136df5a41dc5c2a72153e71f134bbae0869c80ac9fe736b",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1592257
+    },
+    {
+      "file": "01-ecosystem.png",
+      "sha256": "b4435b0f34d9035218c759ae8eca6f6736b7ed12c0e8a28ec802c16b3f98c4c6",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1697160
+    },
+    {
+      "file": "03-evidence-workspace.png",
+      "sha256": "55832a905e342d5aa0e11d80c58698640af35b768ecd55bf9c60045c0ba9a3dd",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1611697
+    },
+    {
+      "file": "04-evidence-chain.png",
+      "sha256": "44f2b3d9aae0f5efdb8edb051571f42b3589ae5db1a63ceece3978db23c7d06b",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1540360
+    },
+    {
+      "file": "05-telemetry-readiness.png",
+      "sha256": "514369b7cb51b3e8d8f0ad6bd7be0655ec7e023a82d523bb247c4cd8e2128a6b",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1502603
+    },
+    {
+      "file": "06-scheduled-task.png",
+      "sha256": "39d0ee1f3ba7d6f527af212631a60558d8fdf4e8fb4ce3922dc269893e9f67dc",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1486468
+    },
+    {
+      "file": "07-ai-human-gates.png",
+      "sha256": "1b5fd5fe9808e47b0ac434d692ea724a0c95bbdde960d8c6feeb5333446ce1f3",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1582910
+    },
+    {
+      "file": "08-knowledge-loop.png",
+      "sha256": "b18e8177dfa366773263a2e0fe1878b98efade580a24327250666514680ae363",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1657362
+    },
+    {
+      "file": "09-thirty-day-plan.png",
+      "sha256": "8a24dcfdf8d9d6e4d61b01f1e1b63742df42dae11ed4a874ad3ea3700578c60d",
+      "width": 1752,
+      "height": 897,
+      "bytes": 1562378
+    }
+  ],
+  "operational_validation": "Not tenant or lab tested",
+  "web_assets": [
+    {
+      "source": "01-ecosystem.png",
+      "web_asset": "01-ecosystem.webp",
+      "source_bytes": 1697160,
+      "web_bytes": 1174314,
+      "identical_decoded_pixels": true,
+      "sha256": "cb432cb9a16ed941b42757600c51c83ed461d39d24f19796bed2dbd684a74895"
+    },
+    {
+      "source": "05-telemetry-readiness.png",
+      "web_asset": "05-telemetry-readiness.webp",
+      "source_bytes": 1502603,
+      "web_bytes": 1005680,
+      "identical_decoded_pixels": true,
+      "sha256": "0fbf7731adb2653419fe7c1f46586d17590a8f8911afe8c2190e229d7aa32a64"
+    },
+    {
+      "source": "07-ai-human-gates.png",
+      "web_asset": "07-ai-human-gates.webp",
+      "source_bytes": 1582910,
+      "web_bytes": 1091916,
+      "identical_decoded_pixels": true,
+      "sha256": "59469390fa55d2c3d500ea9948a6b02fa93234c023b741c9469b3b0e6a19bfd9"
+    },
+    {
+      "source": "09-thirty-day-plan.png",
+      "web_asset": "09-thirty-day-plan.webp",
+      "source_bytes": 1562378,
+      "web_bytes": 1076528,
+      "identical_decoded_pixels": true,
+      "sha256": "7b13ea78997d83746edb1a4d4f49d587257a51d9a359c5f671ccd5594ef27600"
+    },
+    {
+      "source": "02-lifecycle.png",
+      "web_asset": "02-lifecycle.webp",
+      "source_bytes": 1592257,
+      "web_bytes": 1081638,
+      "identical_decoded_pixels": true,
+      "sha256": "bc419220d180a237c5b79d4af060d1b13a2d65d5be14dbff5358d87ef788e874"
+    },
+    {
+      "source": "03-evidence-workspace.png",
+      "web_asset": "03-evidence-workspace.webp",
+      "source_bytes": 1611697,
+      "web_bytes": 1070024,
+      "identical_decoded_pixels": true,
+      "sha256": "5e6bdba5459c99356313899c473ba4419adebd02ab9e6821efee3a6c0f155dd4"
+    },
+    {
+      "source": "08-knowledge-loop.png",
+      "web_asset": "08-knowledge-loop.webp",
+      "source_bytes": 1657362,
+      "web_bytes": 1110538,
+      "identical_decoded_pixels": true,
+      "sha256": "1c4bfb75f23c4edd87115e79936121feea6d25f0091f2e26bb9ad2f261b7e410"
+    },
+    {
+      "source": "06-scheduled-task.png",
+      "web_asset": "06-scheduled-task.webp",
+      "source_bytes": 1486468,
+      "web_bytes": 996494,
+      "identical_decoded_pixels": true,
+      "sha256": "df30b5b9037e3bc1948f62bdaac8b4b4dbdc122027f19fe6e433c42cb183b1e7"
+    },
+    {
+      "source": "04-evidence-chain.png",
+      "web_asset": "04-evidence-chain.webp",
+      "source_bytes": 1540360,
+      "web_bytes": 1041234,
+      "identical_decoded_pixels": true,
+      "sha256": "61f437d71f53c0e3706db4538198a2803e0dac924f96c32c45756f9e09f481af"
+    },
+    {
+      "source": "threat-hunting-cover.png",
+      "web_asset": "threat-hunting-cover.webp",
+      "source_bytes": 1750555,
+      "web_bytes": 1204084,
+      "identical_decoded_pixels": true,
+      "sha256": "b48d21bb0278ff9e95480703de334c8fa51ee823f299d666125a1aa5846f68a9"
+    }
+  ],
+  "accessibility": "Article-scoped readable code colors and underlined prose links; browser results tracked separately."
+}
