@@ -1,5 +1,38 @@
 [
   {
+    "id": "8744af9779d7",
+    "title": "Threat Hunting From Intelligence to Validated Defense",
+    "summary": "A practical threat hunting guide connecting intelligence, telemetry, AdversaryGraph, human review, detection engineering, and reusable knowledge.",
+    "published_at": "2026-11-10",
+    "updated_at": "2026-11-10",
+    "year": "2026",
+    "category": "Threat Hunting",
+    "tags": [
+      "Threat Hunting",
+      "Detection Engineering",
+      "Threat Intelligence",
+      "AdversaryGraph"
+    ],
+    "images": 10,
+    "code_blocks": 5,
+    "slug": "threat-hunting-from-intelligence-to-validated-defense",
+    "local_path": "2026/threat-hunting-from-intelligence-to-validated-defense",
+    "source_url": "https://1200km.com/articles/read/2026/threat-hunting-from-intelligence-to-validated-defense",
+    "cover_image": "https://1200km.com/articles/article-assets/threat-hunting-from-intelligence-to-validated-defense/threat-hunting-cover.png",
+    "canonical_url": "https://1200km.com/articles/read/2026/threat-hunting-from-intelligence-to-validated-defense",
+    "canonical_owner": "1200km.com",
+    "preferred_canonical_url": "https://1200km.com/articles/read/2026/threat-hunting-from-intelligence-to-validated-defense",
+    "original_publication_url": "https://1200km.com/articles/read/2026/threat-hunting-from-intelligence-to-validated-defense",
+    "original_publication_platform": "1200km.com",
+    "canonical_migration_status": "local-original",
+    "external_canonical_verified": false,
+    "external_canonical_verified_at": null,
+    "migration_note": "Original 1200km field guide, prepared for publication with ten images. Documentation and offline validation; operational examples require local testing.",
+    "source_platform": "1200km.com",
+    "source_repository": "anpa1200/medium-blog-navigation",
+    "collection_tier": "core"
+  },
+  {
     "id": "21779d43b8d9",
     "title": "The Incident Response Lifecycle: From First Alert to Verified Recovery",
     "summary": "A practical incident response lifecycle guide: NIST SP 800-61 Rev. 3, evidence handling, identity containment, verified recovery, and tested improvements.",

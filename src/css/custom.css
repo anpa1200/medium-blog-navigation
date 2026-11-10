@@ -676,3 +676,25 @@ html[data-theme="dark"] .navbar {
 html[data-theme="dark"] footer.footer {
   background: rgba(5, 10, 22, 0.92) !important;
 }
+
+/* Threat-hunting guide: readable code and links across light/dark themes. */
+html[data-theme='light'] article:has(#worked-hunt-scheduled-task-abuse) pre,
+html[data-theme='light'] article:has(#worked-hunt-scheduled-task-abuse) pre code,
+html[data-theme='light'] article:has(#worked-hunt-scheduled-task-abuse) pre .token {
+  color: #172b4d !important;
+  background-color: #f4f6f8 !important;
+}
+html[data-theme='dark'] article:has(#worked-hunt-scheduled-task-abuse) pre,
+html[data-theme='dark'] article:has(#worked-hunt-scheduled-task-abuse) pre code,
+html[data-theme='dark'] article:has(#worked-hunt-scheduled-task-abuse) pre .token {
+  color: #edf2f7 !important;
+  background-color: #172b4d !important;
+}
+article:has(#worked-hunt-scheduled-task-abuse) .markdown a:not(.hash-link) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+/* Keep decorative page artwork behind the reading surface in dark mode. */
+html[data-theme='dark'] article:has(#worked-hunt-scheduled-task-abuse) {
+  background-color: #081322;
+}
