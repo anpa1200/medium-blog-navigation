@@ -351,9 +351,9 @@ Review the <a href="https://training.trainsec.net/soc-analyst-professional-attac
 
 3. [Uriel Kosayev’s TrainSec profile](https://trainsec.net/uriel-kosayev/)
 
-4. [Uriel Kosayev, *Detection Engineering Professional: Attack Simulation & Defense*, supplied course presentation, 367 pages. Relevant sections include hunting (pp. 160–169), Windows logs and Sysmon (pp. 178–200), Elastic architecture and query languages (pp. 201–227), technique demonstrations (pp. 228–309), and detection workflow and labs (pp. 310–367).](#uriel-kosayev-detection-engineering-professional-attack-simulation--defense-supplied-course-presentation-367-pages-relevant-sections-include-hunting-pp-160169-windows-logs-and-sysmon-pp-178200-elastic-architecture-and-query-languages-pp-201227-technique-demonstrations-pp-228309-and-detection-workflow-and-labs-pp-310367)
+4. Uriel Kosayev, *Detection Engineering Professional: Attack Simulation & Defense*, supplied course presentation, 367 pages. Relevant sections include hunting (pp. 160–169), Windows logs and Sysmon (pp. 178–200), Elastic architecture and query languages (pp. 201–227), technique demonstrations (pp. 228–309), and detection workflow and labs (pp. 310–367).
 
-5. [*Attack Simulation and Detection Engineering Practice Labs*, supplied workbook, 19 pages. The lab method and environment are on pp. 2–3; six scenarios occupy pp. 4–18; the reusable analyst template is on p. 19.](#attack-simulation-and-detection-engineering-practice-labs-supplied-workbook-19-pages-the-lab-method-and-environment-are-on-pp-23-six-scenarios-occupy-pp-418-the-reusable-analyst-template-is-on-p-19)
+5. *Attack Simulation and Detection Engineering Practice Labs*, supplied workbook, 19 pages. The lab method and environment are on pp. 2–3; six scenarios occupy pp. 4–18; the reusable analyst template is on p. 19.
 
 ## Follow my work
 
