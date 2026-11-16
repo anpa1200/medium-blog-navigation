@@ -1,14 +1,14 @@
 ---
 title: "TrainSec Detection Engineering Professional Course Review"
 description: "An independent review of TrainSec detection engineering training, attack simulations, Windows telemetry, Elastic investigations, workload, and companion resources."
-image: "https://1200km.com/articles/article-assets/trainsec-detection-engineering-review/cover.png"
+image: "https://1200km.com/articles/article-assets/trainsec-detection-engineering-review/cover.webp"
 ---
 
 # TrainSec Detection Engineering Professional Course Review
 
 *How attack simulations, endpoint telemetry, and clear investigation workflows turn detection engineering into a practical discipline.*
 
-<img src={require('@site/static/article-assets/trainsec-detection-engineering-review/cover.png').default} alt="TrainSec Detection Engineering Professional course review cover from the published Medium article" width="700" height="394" loading="eager" fetchPriority="high" decoding="async" />
+<img src={require('@site/static/article-assets/trainsec-detection-engineering-review/cover.webp').default} alt="TrainSec Detection Engineering Professional course review cover from the published Medium article" width="700" height="394" loading="eager" fetchPriority="high" decoding="async" />
 
 **By Andrey Pautov**
 
